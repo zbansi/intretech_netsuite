@@ -14,6 +14,7 @@ import com.bansi.remote.webservice.server.FisrtWebService;
 public class FisrtWebServiceImpl implements FisrtWebService{
 	
 
+	@Override
 	public String getAddressByPhoneNo(String phoneNo) {
         return phoneNo + ": 归属地是上海";
 }

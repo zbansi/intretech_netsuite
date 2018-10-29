@@ -1,0 +1,14 @@
+/**
+ * 
+ */
+package com.bansi.remote.webservice.server;
+
+/**
+ * @author YQ12681
+ *
+ */
+public interface FisrtWebService {
+	
+    String getAddressByPhoneNo(String phoneNo);
+
+}
