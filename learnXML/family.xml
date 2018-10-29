@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<family xmlns="http://www.bansi.com/schemas/family">
+	<LiQianFamily>
+		<Member>
+			<Name>LiQian
+		</Name>
+			<Gender>男
+		</Gender>
+			<Role>Son
+		</Role>
+			<Birthday>2016/10/20</Birthday>
+			<Age>2</Age>
+		</Member>
+	</LiQianFamily>
+</family>

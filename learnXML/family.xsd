@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified" xmlns:b="http://www.bansi.com/schemas/family" targetNamespace="http://www.bansi.com/schemas/family">
+	<xs:annotation>
+		<xs:documentation>Bansi Family Chart</xs:documentation>
+	</xs:annotation>
+	<xs:element name="Family" type="b:FamilyType"/>
+	<xs:complexType name="FamilyType">
+		<xs:annotation>
+			<xs:documentation>Comment describing your root element</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+	<xs:element name="Name"/>
+	<xs:element name="Birthday" type="xs:date"/>
+	<xs:element name="Gender" type="b:GenderType"/>
+		<xs:element name="Address" type="b:AddressType"/>
+	
+	<xs:element name="Role"/>
+	<xs:element name="Age"/>
+		</xs:sequence>
+			</xs:complexType>
+			
+	<xs:complexType name="AddressType">
+		<xs:sequence>
+			<xs:element ref="b:Contury"/>
+			<xs:element ref="b:Province"/>
+			<xs:element ref="b:City"/>
+			<xs:element name="Address1" minOccurs="0"/>			
+		</xs:sequence>
+	</xs:complexType>
+	<xs:simpleType name="GenderType">
+		<xs:restriction base="xs:string">
+		<xs:enumeration value="男"/>
+		<xs:enumeration value="女"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:element name="Contury" type="xs:string"/>
+	<xs:element name="Province" type="xs:string"/>
+	<xs:element name="City" type="xs:string"/>
+</xs:schema>
