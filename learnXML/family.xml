@@ -1,15 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<family xmlns="http://www.bansi.com/schemas/family">
-	<LiQianFamily>
-		<Member>
-			<Name>LiQian
-		</Name>
-			<Gender>男
-		</Gender>
-			<Role>Son
-		</Role>
-			<Birthday>2016/10/20</Birthday>
-			<Age>2</Age>
-		</Member>
-	</LiQianFamily>
-</family>
+<?xml-stylesheet type="text/xsl" href="D:\workspaceNS\learnXML\family.xsl"?>
+<Family xmlns="http://www.bansi.com/schemas/family" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.bansi.com/schemas/family D:\workspaceNS\learnXML\family.xsd" xsi:noNamespaceSchemaLocation="D:\workspaceNS\learnXML\family.xsd">
+	<!--<Family xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="D:\workspaceNS\learnXML\family.xsd"> -->
+	<FamilyName>LiQian's Family</FamilyName>
+	<FamilyMember>
+		<Name>LiQian</Name>
+		<Birthday>2016-10-20</Birthday>
+		<Gender>男</Gender>
+		<Address>
+			<Contury>中国</Contury>
+			<Province>福建</Province>
+			<City>厦门</City>
+		</Address>
+		<Role>Son</Role>
+		<Age>2</Age>
+	</FamilyMember>
+	<FamilyMember>
+		<Name>Bansi</Name>
+		<Birthday>1988-12-10</Birthday>
+		<Gender>男</Gender>
+		<Address>
+			<Contury>中国</Contury>
+			<Province>湖北</Province>
+			<City>通城</City>
+			<Address1>朱家坡</Address1>
+		</Address>
+		<Role>Father</Role>
+		<Age>30</Age>
+	</FamilyMember>
+</Family>
