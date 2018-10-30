@@ -1,12 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xs:schema targetNamespace="http://www.bansi.com/schemas/family" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:b="http://www.bansi.com/schemas/family" elementFormDefault="qualified" attributeFormDefault="unqualified">
+<xs:schema targetNamespace="http://www.bansi.com/schemas/family" xmlns:b="http://www.bansi.com/schemas/family" xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
 	<xs:annotation>
 		<xs:documentation>Bansi Family Chart</xs:documentation>
 	</xs:annotation>
+	<xs:element name="FamilySet"/>
+	<xs:complexType name="FamilySetType">
+		<xs:sequence>
+			<xs:element ref="b:Family" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
 	<xs:element name="Family" type="b:FamilyType"/>
 	<xs:complexType name="FamilyType">
 		<xs:annotation>
-			<xs:documentation>Comment describing your root element</xs:documentation>
+			<xs:documentation>家庭类型</xs:documentation>
 		</xs:annotation>
 		<xs:sequence>
 			<xs:element name="FamilyName"/>

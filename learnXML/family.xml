@@ -1,31 +1,63 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<?xml-stylesheet type="text/xsl" href="D:\workspaceNS\learnXML\family.xsl"?>
-<Family xmlns="http://www.bansi.com/schemas/family" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.bansi.com/schemas/family D:\workspaceNS\learnXML\family.xsd" xsi:noNamespaceSchemaLocation="D:\workspaceNS\learnXML\family.xsd">
-	<!--<Family xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="D:\workspaceNS\learnXML\family.xsd"> -->
-	<FamilyName>LiQian's Family</FamilyName>
-	<FamilyMember>
-		<Name>LiQian</Name>
-		<Birthday>2016-10-20</Birthday>
-		<Gender>ç”·</Gender>
-		<Address>
-			<Contury>ä¸­å›½</Contury>
-			<Province>ç¦å»º</Province>
-			<City>å¦é—¨</City>
-		</Address>
-		<Role>Son</Role>
-		<Age>2</Age>
-	</FamilyMember>
-	<FamilyMember>
-		<Name>Bansi</Name>
-		<Birthday>1988-12-10</Birthday>
-		<Gender>ç”·</Gender>
-		<Address>
-			<Contury>ä¸­å›½</Contury>
-			<Province>æ¹–åŒ—</Province>
-			<City>é€šåŸ</City>
-			<Address1>æœ±å®¶å¡</Address1>
-		</Address>
-		<Role>Father</Role>
-		<Age>30</Age>
-	</FamilyMember>
-</Family>
+<?xml version="1.0" encoding="gb2312"?>
+<?xml-stylesheet type="text/xsl" href="family.xsl"?>
+<!--xmlÓëxsl½áºÏ¾Í¿ÉÒÔ×ª»»³ÉhtmlÏÔÊ¾£¬²»ĞèÒªschema¡£Èç¹ûÒªÒıÈëschema£¬xml¸ù½áµãÖĞµÄnamespace±ØĞëÓëxslÖĞÒ»ÖÂ¡£²»ÒªÉèÄ¬ÈÏnamespace¡£
+<Family xmlns="http://www.bansi.com/schemas/family" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.bansi.com/schemas/family family.xsd" xsi:noNamespaceSchemaLocation="family.xsd">
+-->
+<a:FamilySet xmlns:a="http://www.bansi.com/schemas/family" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.bansi.com/schemas/family family.xsd" xsi:noNamespaceSchemaLocation="family.xsd">
+	<Family>
+		<FamilyName>LiQian's Family</FamilyName>
+		<FamilyMember>
+			<Name>LiQian</Name>
+			<Birthday>2016-10-20</Birthday>
+			<Gender>ÄĞ</Gender>
+			<Address>
+				<Contury>ÖĞ¹ú</Contury>
+				<Province>¸£½¨</Province>
+				<City>ÏÃÃÅ</City>
+			</Address>
+			<Role>Son</Role>
+			<Age>2</Age>
+		</FamilyMember>
+		<FamilyMember>
+			<Name>Bansi</Name>
+			<Birthday>1988-12-10</Birthday>
+			<Gender>ÄĞ</Gender>
+			<Address>
+				<Contury>ÖĞ¹ú</Contury>
+				<Province>ºş±±</Province>
+				<City>Í¨³Ç</City>
+				<Address1>Öì¼ÒÆÂ</Address1>
+			</Address>
+			<Role>Father</Role>
+			<Age>30</Age>
+		</FamilyMember>
+	</Family>
+	<Family>
+		<FamilyName>XiaoJie's Family</FamilyName>
+		<FamilyMember>
+			<Name>XiaoJie</Name>
+			<Birthday>2010-09-14</Birthday>
+			<Gender>ÄĞ</Gender>
+			<Address>
+				<Contury>ÖĞ¹ú</Contury>
+				<Province>ºş±±</Province>
+				<City>Îäºº</City>
+			</Address>
+			<Role>Son</Role>
+			<Age>8</Age>
+		</FamilyMember>
+		<FamilyMember>
+			<Name>Wind</Name>
+			<Birthday>1982-04-06</Birthday>
+			<Gender>Å®</Gender>
+			<Address>
+				<Contury>ÖĞ¹ú</Contury>
+				<Province>ºş±±</Province>
+				<City>Í¨³Ç</City>
+				<Address1>Öì¼ÒÆÂ</Address1>
+			</Address>
+			<Role>Mother</Role>
+			<Age>36</Age>
+		</FamilyMember>
+	</Family>
+</a:FamilySet>

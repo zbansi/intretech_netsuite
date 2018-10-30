@@ -1,38 +1,45 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:a="http://www.bansi.com/schemas/family D:\workspaceNS\learnXML\family.xsd">
-	<xsl:output method="xml" version="1.0" encoding="UTF-8" omit-xml-declaration="no" indent="no" media-type="text/html"/>
-	<xsl:template match="a:Family">
+<?xml version="1.0" encoding="gb2312"?>
+<xsl:stylesheet version="1.0" xmlns:a="http://www.bansi.com/schemas/family" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+	<xsl:output method="html" version="1.0" encoding="gb2312" indent="yes"/>
+	<xsl:template match="/">
 		<html>
 			<head>
-				<title>å¤§å®¶åº­</title>
+				<title>´ó¼ÒÍ¥</title>
 			</head>
 			<body>
-				<table>
-					<tr>
-						<th>
-							<xsl:value-of select="FamilyName"/>
-						</th>
-					</tr>
-				</table>
-				<table>
-					<xsl:for-each select="FamilyMember">
-						<tr>
+				<table border="1">
+					<xsl:for-each select="a:FamilySet/Family">
+						<tr bgcolor="#9acd32">
 							<td>
-								<xsl:value-of select="Name"/>
-							</td>
-							<td>
-								<xsl:value-of select="Gender"/>
-							</td>
-							<td>
-								<xsl:value-of select="Birthday"/>
-							</td>
-							<td>
-								<xsl:apply-templates select="Address"/>
-							</td>
-							<td>
-								<xsl:value-of select="Age"/>
+								<xsl:value-of select="FamilyName"/>
 							</td>
 						</tr>
+						<tr>
+							<th>ÐÕÃû</th>
+							<th>ÐÔ±ð</th>
+							<th>³öÉúÈÕÆÚ</th>
+							<th>×¡Ö·</th>
+							<th>ÄêÁä</th>
+						</tr>
+						<xsl:for-each select="FamilyMember">
+							<tr>
+								<td>
+									<xsl:value-of select="Name"/>
+								</td>
+								<td>
+									<xsl:value-of select="Gender"/>
+								</td>
+								<td>
+									<xsl:value-of select="Birthday"/>
+								</td>
+								<td>
+									<xsl:apply-templates select="Address"/>
+								</td>
+								<td>
+									<xsl:value-of select="Age"/>
+								</td>
+							</tr>
+						</xsl:for-each>
 					</xsl:for-each>
 				</table>
 			</body>
