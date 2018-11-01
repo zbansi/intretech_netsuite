@@ -1,0 +1,337 @@
+
+package com.netsuite.webservices.lists.marketing_2018_2;
+
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlSchemaType;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.datatype.XMLGregorianCalendar;
+import com.netsuite.webservices.lists.marketing_2018_2.types.CampaignCampaignDirectMailStatus;
+import com.netsuite.webservices.platform.core_2018_2.CustomFieldList;
+import com.netsuite.webservices.platform.core_2018_2.RecordRef;
+
+
+/**
+ * <p>CampaignDirectMail complex type的 Java 类。
+ * 
+ * <p>以下模式片段指定包含在此类中的预期内容。
+ * 
+ * <pre>
+ * &lt;complexType name="CampaignDirectMail">
+ *   &lt;complexContent>
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+ *       &lt;sequence>
+ *         &lt;element name="internalId" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *         &lt;element name="campaignGroup" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
+ *         &lt;element name="template" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
+ *         &lt;element name="description" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *         &lt;element name="subscription" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
+ *         &lt;element name="channel" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
+ *         &lt;element name="cost" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
+ *         &lt;element name="status" type="{urn:types.marketing_2018_2.lists.webservices.netsuite.com}CampaignCampaignDirectMailStatus" minOccurs="0"/>
+ *         &lt;element name="dateScheduled" type="{http://www.w3.org/2001/XMLSchema}dateTime" minOccurs="0"/>
+ *         &lt;element name="promoCode" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
+ *         &lt;element name="customFieldList" type="{urn:core_2018_2.platform.webservices.netsuite.com}CustomFieldList" minOccurs="0"/>
+ *       &lt;/sequence>
+ *     &lt;/restriction>
+ *   &lt;/complexContent>
+ * &lt;/complexType>
+ * </pre>
+ * 
+ * 
+ */
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlType(name = "CampaignDirectMail", propOrder = {
+    "internalId",
+    "campaignGroup",
+    "template",
+    "description",
+    "subscription",
+    "channel",
+    "cost",
+    "status",
+    "dateScheduled",
+    "promoCode",
+    "customFieldList"
+})
+public class CampaignDirectMail {
+
+    protected String internalId;
+    protected RecordRef campaignGroup;
+    protected RecordRef template;
+    protected String description;
+    protected RecordRef subscription;
+    protected RecordRef channel;
+    protected Double cost;
+    @XmlSchemaType(name = "string")
+    protected CampaignCampaignDirectMailStatus status;
+    @XmlSchemaType(name = "dateTime")
+    protected XMLGregorianCalendar dateScheduled;
+    protected RecordRef promoCode;
+    protected CustomFieldList customFieldList;
+
+    /**
+     * 获取internalId属性的值。
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getInternalId() {
+        return internalId;
+    }
+
+    /**
+     * 设置internalId属性的值。
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setInternalId(String value) {
+        this.internalId = value;
+    }
+
+    /**
+     * 获取campaignGroup属性的值。
+     * 
+     * @return
+     *     possible object is
+     *     {@link RecordRef }
+     *     
+     */
+    public RecordRef getCampaignGroup() {
+        return campaignGroup;
+    }
+
+    /**
+     * 设置campaignGroup属性的值。
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link RecordRef }
+     *     
+     */
+    public void setCampaignGroup(RecordRef value) {
+        this.campaignGroup = value;
+    }
+
+    /**
+     * 获取template属性的值。
+     * 
+     * @return
+     *     possible object is
+     *     {@link RecordRef }
+     *     
+     */
+    public RecordRef getTemplate() {
+        return template;
+    }
+
+    /**
+     * 设置template属性的值。
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link RecordRef }
+     *     
+     */
+    public void setTemplate(RecordRef value) {
+        this.template = value;
+    }
+
+    /**
+     * 获取description属性的值。
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getDescription() {
+        return description;
+    }
+
+    /**
+     * 设置description属性的值。
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setDescription(String value) {
+        this.description = value;
+    }
+
+    /**
+     * 获取subscription属性的值。
+     * 
+     * @return
+     *     possible object is
+     *     {@link RecordRef }
+     *     
+     */
+    public RecordRef getSubscription() {
+        return subscription;
+    }
+
+    /**
+     * 设置subscription属性的值。
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link RecordRef }
+     *     
+     */
+    public void setSubscription(RecordRef value) {
+        this.subscription = value;
+    }
+
+    /**
+     * 获取channel属性的值。
+     * 
+     * @return
+     *     possible object is
+     *     {@link RecordRef }
+     *     
+     */
+    public RecordRef getChannel() {
+        return channel;
+    }
+
+    /**
+     * 设置channel属性的值。
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link RecordRef }
+     *     
+     */
+    public void setChannel(RecordRef value) {
+        this.channel = value;
+    }
+
+    /**
+     * 获取cost属性的值。
+     * 
+     * @return
+     *     possible object is
+     *     {@link Double }
+     *     
+     */
+    public Double getCost() {
+        return cost;
+    }
+
+    /**
+     * 设置cost属性的值。
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link Double }
+     *     
+     */
+    public void setCost(Double value) {
+        this.cost = value;
+    }
+
+    /**
+     * 获取status属性的值。
+     * 
+     * @return
+     *     possible object is
+     *     {@link CampaignCampaignDirectMailStatus }
+     *     
+     */
+    public CampaignCampaignDirectMailStatus getStatus() {
+        return status;
+    }
+
+    /**
+     * 设置status属性的值。
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link CampaignCampaignDirectMailStatus }
+     *     
+     */
+    public void setStatus(CampaignCampaignDirectMailStatus value) {
+        this.status = value;
+    }
+
+    /**
+     * 获取dateScheduled属性的值。
+     * 
+     * @return
+     *     possible object is
+     *     {@link XMLGregorianCalendar }
+     *     
+     */
+    public XMLGregorianCalendar getDateScheduled() {
+        return dateScheduled;
+    }
+
+    /**
+     * 设置dateScheduled属性的值。
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link XMLGregorianCalendar }
+     *     
+     */
+    public void setDateScheduled(XMLGregorianCalendar value) {
+        this.dateScheduled = value;
+    }
+
+    /**
+     * 获取promoCode属性的值。
+     * 
+     * @return
+     *     possible object is
+     *     {@link RecordRef }
+     *     
+     */
+    public RecordRef getPromoCode() {
+        return promoCode;
+    }
+
+    /**
+     * 设置promoCode属性的值。
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link RecordRef }
+     *     
+     */
+    public void setPromoCode(RecordRef value) {
+        this.promoCode = value;
+    }
+
+    /**
+     * 获取customFieldList属性的值。
+     * 
+     * @return
+     *     possible object is
+     *     {@link CustomFieldList }
+     *     
+     */
+    public CustomFieldList getCustomFieldList() {
+        return customFieldList;
+    }
+
+    /**
+     * 设置customFieldList属性的值。
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link CustomFieldList }
+     *     
+     */
+    public void setCustomFieldList(CustomFieldList value) {
+        this.customFieldList = value;
+    }
+
+}
