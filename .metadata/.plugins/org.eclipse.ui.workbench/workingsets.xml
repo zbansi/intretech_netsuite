@@ -1,4 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <workingSetManager>
+<workingSet editPageId="org.eclipse.ui.resourceWorkingSetPage" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1542253062795_1" label="scribejava" name="scribejava">
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/scribejava" type="4"/>
+</workingSet>
 <workingSet aggregate="true" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1542249248227_0" label="Window Working Set" name="Aggregate for window 1540191946486"/>
 </workingSetManager>
