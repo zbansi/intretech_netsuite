@@ -1,0 +1,73 @@
+/**
+ * Module Description
+ * 
+ * Version    Date            Author           Remarks
+ * 1.00       05 Nov 2018     Bansi
+ *
+ */
+/**
+ * @NApiVersion 2.x
+ * @NScriptType UserEventScript
+ * @NModuleScope SameAccount
+ */
+
+//Load two Standard modules.
+define([ 'N/record', 'N/ui/serverWidget'],
+
+		//Add the callback function.
+function(record,serverWidget) {
+   
+    /**
+     * Function definition to be triggered before record is loaded.
+     *
+     * @param {Object} scriptContext
+     * @param {Record} scriptContext.newRecord - New record
+     * @param {string} scriptContext.type - Trigger type
+     * @param {Form} scriptContext.form - Current form
+     * @Since 2015.2
+     */
+	//In the before load function, disable the Notes filed.
+    function beforeLoad(scriptContext) {
+if(scriptContext.type!==scriptContext.UserEventType.CREATE)
+	return;
+
+var form = scriptContext.form;
+
+var notesField = form2.getField({id: 'comments'});
+
+
+    }
+
+    /**
+     * Function definition to be triggered before record is loaded.
+     *
+     * @param {Object} scriptContext
+     * @param {Record} scriptContext.newRecord - New record
+     * @param {Record} scriptContext.oldRecord - Old record
+     * @param {string} scriptContext.type - Trigger type
+     * @Since 2015.2
+     */
+    function beforeSubmit(scriptContext) {
+
+    }
+
+    /**
+     * Function definition to be triggered before record is loaded.
+     *
+     * @param {Object} scriptContext
+     * @param {Record} scriptContext.newRecord - New record
+     * @param {Record} scriptContext.oldRecord - Old record
+     * @param {string} scriptContext.type - Trigger type
+     * @Since 2015.2
+     */
+    function afterSubmit(scriptContext) {
+
+    }
+
+    return {
+        beforeLoad: beforeLoad,
+        beforeSubmit: beforeSubmit,
+        afterSubmit: afterSubmit
+    };
+    
+});

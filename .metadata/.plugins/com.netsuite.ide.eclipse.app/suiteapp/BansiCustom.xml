@@ -1,0 +1,35 @@
+<suiteappindex>
+  <scriptids/>
+  <files>
+    <file name="FileCabinet/SuiteScripts/BundleInstallation/BundleInstallSamp01.js"/>
+    <file name="FileCabinet/SuiteScripts/Client/ClientSamp01CallRESTlet.js"/>
+    <file name="FileCabinet/SuiteScripts/RESTlet/RESTletSamp01.js"/>
+    <file name="FileCabinet/SuiteScripts/RESTlet/RESTletSamp02.js"/>
+    <file name="FileCabinet/SuiteScripts/RESTlet/RESTletSamp03.js"/>
+    <file name="FileCabinet/SuiteScripts/Suitelet/SuiteletSamp01.js"/>
+    <file name="FileCabinet/SuiteScripts/Suitelet/SuiteletSamp02CallRESTlet.js"/>
+    <file name="FileCabinet/SuiteScripts/UserEvent/UserEventSamp01.js"/>
+    <file name="FileCabinet/SuiteScripts/UserEvent/UserEventSamp02CreateTask.js"/>
+    <file name="deploy.xml"/>
+    <file name="manifest.xml"/>
+  </files>
+  <customfields/>
+  <customlists/>
+  <deployfiles>
+    <deployfile path="deploy.xml">
+      <deployfileobjectpaths>
+        <deployfileobjectpath>~/Objects/*</deployfileobjectpath>
+      </deployfileobjectpaths>
+      <deployfilefilepaths>
+        <deployfilefilepath>~/FileCabinet/*</deployfilefilepath>
+      </deployfilefilepaths>
+    </deployfile>
+  </deployfiles>
+  <attributefiles/>
+  <manifestfile>
+    <dependencies>
+      <applications/>
+    </dependencies>
+  </manifestfile>
+  <deploymentpreferences/>
+</suiteappindex>

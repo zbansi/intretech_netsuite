@@ -1,0 +1,75 @@
+/**
+ * @NApiVersion 2.x
+ * @NScriptType Suitelet
+ */
+define([ 'N/ui/serverWidget' ],
+
+function(ui) {
+
+	/**
+	 * Definition of the Suitelet script trigger point.
+	 * 
+	 * @param {Object}
+	 *            context
+	 * @param {ServerRequest}
+	 *            context.request - Encapsulation of the incoming request
+	 * @param {ServerResponse}
+	 *            context.response - Encapsulation of the Suitelet response
+	 * @Since 2015.2
+	 */
+	function onRequest(context) {
+		if (context.request.method === 'GET') {
+			var form = ui.createForm({
+				title : 'A bansi Suitelet Form'
+			});
+			var abansiTextField = form.addField({
+				id : 'abansi',
+				label : 'abansi Text Field',
+				type : serverWidget.FieldType.TEXT
+			});
+			form.addSubmitButton({
+				label : 'Click me!'
+			});
+			context.response.writePage(form);
+		} else {
+			switch (abansiTextField) {
+			case 'file':
+				require([ 'N/file' ], function(file) {
+					function createAndSaveFile() {
+						var fileObj = file.create({
+							name : 'test.txt',
+							fileType : file.Type.PLAINTEXT,
+							contents : 'Hello World\nHello World'
+						});
+						fileObj.folder = -15;
+						var id = fileObj.save();
+						fileObj = file.load({
+							id : id
+						});
+					}
+					createAndSaveFile();
+				});
+
+			case 'email':
+				require([ 'N/email', 'N/runtime' ], function(email, runtime) {
+
+					var request = context.request;
+					email.send({
+						author : runtime.getCurrentUser().id,
+						recipients : '377132229@qq.com',
+						subject : request.parameters.abansi,
+						body : 'a bansi suitelet form test'
+					});
+				});
+
+			}
+
+		}
+
+	}
+
+	return {
+		onRequest : onRequest
+	};
+
+});
