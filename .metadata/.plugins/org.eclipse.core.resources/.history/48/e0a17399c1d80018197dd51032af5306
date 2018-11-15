@@ -1,0 +1,5 @@
+package com.bansi.remote.webservice.client;
+
+public class PhoneAddressClient {
+
+}

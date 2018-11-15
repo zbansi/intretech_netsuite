@@ -1,0 +1,18 @@
+/**
+ * 
+ */
+package com.bansi.remote.webservice.server.impl;
+
+/**
+ * @author YQ12681
+ *
+ */
+
+@WebService
+public class FisrtWebServiceImpl {
+	
+
+	public String getAddressByPhoneNo(String phoneNo) {
+        return phoneNo + ": 归属地是上海";
+}
+}
