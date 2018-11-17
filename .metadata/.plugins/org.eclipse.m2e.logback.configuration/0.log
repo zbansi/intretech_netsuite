@@ -746,3 +746,15 @@
 2018-11-15 16:41:30,500 [Worker-40] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
 2018-11-15 16:41:30,502 [Worker-40] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (GBK actually) to copy filtered resources, i.e. build is platform dependent!
 2018-11-15 16:41:30,503 [Worker-40] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\workspaceNS\seckill\src\test\resources
+2018-11-16 08:02:16,841 [Worker-2] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.maven.ide.eclipse.wtp.WarLifecycleMapping lifecycle mapping for MavenProject: com.bansi.seckill:seckill:1.0-SNAPSHOT @ D:\workspaceNS\seckill\pom.xml.
+2018-11-16 08:02:18,784 [Worker-2] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (GBK actually) to copy filtered resources, i.e. build is platform dependent!
+2018-11-16 08:02:18,819 [Worker-2] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2018-11-16 08:02:18,820 [Worker-2] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (GBK actually) to copy filtered resources, i.e. build is platform dependent!
+2018-11-16 08:02:18,824 [Worker-2] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\workspaceNS\seckill\src\test\resources
+2018-11-16 08:02:18,864 [Worker-2] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Changed resources require a complete clean of filtered resources of seckill
+2018-11-16 08:02:18,865 [Worker-2] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Executing resource filtering for seckill
+2018-11-16 08:02:18,869 [Worker-2] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (GBK actually) to copy filtered resources, i.e. build is platform dependent!
+2018-11-16 08:02:20,900 [Worker-4] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (GBK actually) to copy filtered resources, i.e. build is platform dependent!
+2018-11-16 08:02:20,901 [Worker-4] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2018-11-16 08:02:20,902 [Worker-4] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (GBK actually) to copy filtered resources, i.e. build is platform dependent!
+2018-11-16 08:02:20,902 [Worker-4] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\workspaceNS\seckill\src\test\resources
