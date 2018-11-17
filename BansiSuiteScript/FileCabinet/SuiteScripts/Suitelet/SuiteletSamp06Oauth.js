@@ -4,12 +4,12 @@
  */
 require.config({
 	paths : {
-		"oauth" : "oauth_valid/oauth-1.0a.js",
-		"cryptojs" : "crypto_lib/components/core.js",
+		"oauth" : "./oauth_valid",
+		"cryptojs" : "./crypto_lib/components",
 	},
 	shim : {
 		"oauth-1.0a" : {//这个键名为要载入的目标文件的文件名，不能随便命名。
-			exports : "OAuth"//exports的值为.js提供的 对外接口的名称
+			exports : "OAuth"//exports的值为oauth.js提供的 对外接口的名称
 		},
 		"core" : {
 			exports : "CryptoJS"
@@ -18,7 +18,7 @@ require.config({
 });
 
 define(
-		[ 'N/https', 'oauth-1.0a', 'core' ],
+		[ 'N/https', 'oauth', 'cryptojs' ],
 		function(https, oauth, cryptojs) {
 			function testRequest(context) {
 				if (context.request.method == 'GET') {
