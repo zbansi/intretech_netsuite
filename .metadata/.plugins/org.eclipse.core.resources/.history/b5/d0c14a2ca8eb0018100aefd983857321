@@ -1,0 +1,16 @@
+<html>
+<head>我是一个兵
+</head>
+<body>
+<p id = "abc"></p>
+	<tr>
+		<script type="text/javascript" src='main.js'></script>
+		
+		
+	</tr>
+	<tr>
+		<script type="text/javascript" src='app.js'>
+		document.getElementById("abc").innerHTML = sayHello();
+		</script></tr>
+</body>
+</html>
