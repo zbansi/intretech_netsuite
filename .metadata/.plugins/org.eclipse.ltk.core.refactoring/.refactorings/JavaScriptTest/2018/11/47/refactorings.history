@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;JavaScriptTest/vector&apos; to &apos;vector.js&apos;" description="Rename resource &apos;vector&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="vector" name="vector.js" stamp="1542776094919" updateReferences="true"/>
+</session>
