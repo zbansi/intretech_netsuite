@@ -1,0 +1,11 @@
+contextsDir=D\:\\apache-tomcat-8.0.53\\conf\\Catalina\\localhost
+eclipse.preferences.version=1
+managerPassword=admin
+managerUrl=http\://localhost\:8080/manager
+managerUser=admin
+projectsInSourcePath=WebServiceNS;WebServicesTest;ejb-example;seckill;soap-ws-example;
+tomcatBase=D\:\\apache-tomcat-8.0.53
+tomcatConfigFile=D\:\\apache-tomcat-8.0.53\\conf\\server.xml
+tomcatDir=D\:\\apache-tomcat-8.0.53
+tomcatJRE=1542249248065
+tomcatVersion=tomcatV8

@@ -1,0 +1,4 @@
+#Tomcat publish data
+#Sat Nov 24 13:05:11 CST 2018
+org.eclipse.jst.jee.server\:wstest=D\:\\apache-tomcat-8.0.53\\webapps\\wstest
+org.eclipse.jst.jee.server\:soap-ws-example=D\:\\apache-tomcat-8.0.53\\webapps\\soap-ws-example
