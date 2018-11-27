@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="WebServiceNS" basedir="." default="usage">
+	<property name="webContent.dir" value="WebContent" />
+	<property name="src.dir" value="src" />
+	<property name="client.dir" value="client" />
+	<property name="server.dir" value="server" />
+	<property name="compile.dir" value="${webContent.dir}/WEB-INF/classes" />
+	
+	
+	<target name="generate.interfaces" description="Generates client interfaces using Axis">
+		<echo>Generating client interfaces using Apache Axis</echo>
+		<axis-wsdl2java timeout="120000" output="${generated.src.dir}" verbose="true"
+			url="${wsdl.url}" all="true" wrapArrays="ture">
+			<mapping namespace="http://axis.apache.org/ns/interop"
+				package="interop"></mapping>
+		</axis-wsdl2java>
+	</target>	
+</project>

@@ -1,6 +1,0 @@
-{
-	"paths": {
-		"oauth": "./oauth_valid/oauth-1.0a",
-		"crypto": "./crypto_lib/rollups/sha256"		
-		}
-}

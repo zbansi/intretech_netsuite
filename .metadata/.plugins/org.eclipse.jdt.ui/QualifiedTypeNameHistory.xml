@@ -2,7 +2,6 @@
 <qualifiedTypeNameHistroy>
 <fullyQualifiedTypeName name="javax.xml.bind.annotation.XmlType"/>
 <fullyQualifiedTypeName name="javax.xml.bind.annotation.XmlAccessorType"/>
-<fullyQualifiedTypeName name="javax.jws.WebService"/>
 <fullyQualifiedTypeName name="com.bansi.ws.example.Score"/>
 <fullyQualifiedTypeName name="javax.jws.WebMethod"/>
 <fullyQualifiedTypeName name="org.omg.CORBA.PUBLIC_MEMBER"/>
@@ -20,6 +19,12 @@
 <fullyQualifiedTypeName name="com.bansi.ws.example.HelloService"/>
 <fullyQualifiedTypeName name="com.bansi.ws.example.SayHiService"/>
 <fullyQualifiedTypeName name="com.bansi.ws.example.SayHiServiceImpService"/>
-<fullyQualifiedTypeName name="com.bansi.ws.example.hello.HelloService"/>
 <fullyQualifiedTypeName name="com.bansi.ws.example.sayhi.SayHiService"/>
+<fullyQualifiedTypeName name="javax.jws.WebService"/>
+<fullyQualifiedTypeName name="javax.jws.soap.SOAPBinding"/>
+<fullyQualifiedTypeName name="com.oracle.xmlns.internal.webservices.jaxws_databinding.SoapBindingParameterStyle"/>
+<fullyQualifiedTypeName name="com.bansi.ws.example.hello.HelloService"/>
+<fullyQualifiedTypeName name="com.bansi.ws.example.hello.Hello"/>
+<fullyQualifiedTypeName name="javax.xml.ws.WebServiceException"/>
+<fullyQualifiedTypeName name="com.netsuite.webservices.platform_2018_2.NetSuitePortType"/>
 </qualifiedTypeNameHistroy>

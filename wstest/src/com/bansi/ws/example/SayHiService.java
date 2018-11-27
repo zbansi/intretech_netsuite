@@ -11,7 +11,7 @@ import javax.jws.soap.SOAPBinding;
 /**
  * 作为测试的WebService接口
  * 
- * @author Johness
+ * @author Bansi
  * 
  */
 @WebService

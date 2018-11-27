@@ -1,7 +1,0 @@
-//  app.js
-
-function sayHello(name) {
-
-	alert('Hi ' + name);
-}
-document.getElementById("abc").innerHTML = sayHello();

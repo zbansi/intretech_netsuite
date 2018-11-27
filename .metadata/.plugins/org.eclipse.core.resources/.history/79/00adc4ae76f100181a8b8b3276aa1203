@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="WebServiceNS" basedir="." default="usage">
+	<property name="webroot.dir" value="WebContent"/>
+	<property name="src.dir" value="src"/> 
+	<property name="client.dir" value="client"/> 
+	<property name="server.dir" value="server"/> 
+	<property name="compile.dir" value="${webroot.dir}/WEB-INF/classes"/>
+	
+	<target name="usage">
+		<echo message=""/>
+		<echo message="Portlet-struts build file"/>
+		<echo message="------------------------------------------------------"/>
+		<echo message=""/>
+		<echo message="Available targets are:"/>
+		<echo message=""/>
+		<echo message="java2wsdl    		-->java文件生成wsdl文件，java2wsdl -Ddir=com/starit/cxf/java2wsdl -Dsrc=com.starit.cxf.java2wsdl.Hello"/>
+		<echo message="wsdl2javaClient    	-->java文件生成client，java2wsdl -Ddir=com/starit/cxf/java2wsdl -Dwsdl=hello.wsdl"/>
+		<echo message="wsdl2javaServer    	-->java文件生成server，java2wsdl -Ddir=com/starit/cxf/java2wsdl -Dwsdl=hello.wsdl"/>
+		<echo message="wsdl2javaImpl    	-->java文件生成实现类，java2wsdl -Ddir=com/starit/cxf/java2wsdl -Dwsdl=hello.wsdl"/>
+		<echo message="wsdl2javaAll    	    -->java文件生成All，java2wsdl -Ddir=com/starit/cxf/java2wsdl -Dwsdl=hello.wsdl"/>
+		<echo message=""/>
+	</target>
+	
+	<target name="java2wsdl">
+		<echo message="生成wsdl文件"/>
+      	<exec dir="${compile.dir}" executable="cmd.exe" >      
+			<arg line="/c java2wsdl"/>
+			<arg line="-o hello.wsdl ${src}"/>
+      	</exec>
+      	<!-- copy资源文件 -->
+		<move todir="${src.dir}/${dir}" preservelastmodified="true">
+			<fileset dir="${compile.dir}">
+				<include name="**/*.wsdl"/>
+			</fileset>
+		</move>
+		<move todir="${src.dir}" preservelastmodified="true">
+			<fileset dir="${compile.dir}">
+				<include name="**/*.java"/>
+			</fileset>
+		</move>
+  	</target>
+  	
+  	<target name="wsdl2javaClient">
+  		<echo message="生成java client文件"/>
+  		<mkdir dir="${client.dir}/${dir}"/>
+      	<exec dir="." executable="cmd.exe" >      
+			<arg line="/c wsdl2java"/>
+			<arg line="-client"/>
+			<arg line="-d ${client.dir} ${src.dir}/${dir}/${wsdl}"/>
+      	</exec>
+  	</target>
+  	
+	<target name="wsdl2javaServer">
+  		<echo message="生成java server文件"/>
+  		<mkdir dir="${server.dir}/${dir}"/>
+      	<exec dir="." executable="cmd.exe" >      
+			<arg line="/c wsdl2java"/>
+			<arg line="-server"/>
+			<arg line="-d ${server.dir} ${src.dir}/${dir}/${wsdl}"/>
+      	</exec>
+  	</target>
+  	
+  	<target name="wsdl2javaImpl">
+  		<echo message="生成java Impl文件"/>
+  		<mkdir dir="${server.dir}/${dir}"/>
+      	<exec dir="." executable="cmd.exe" >      
+			<arg line="/c wsdl2java"/>
+			<arg line="-impl"/>
+			<arg line="-d ${src.dir} ${src.dir}/${dir}/${wsdl}"/>
+      	</exec>
+  	</target>
+  	
+  	<target name="wsdl2javaAll">
+  		<echo message="生成java Impl文件"/>
+  		<mkdir dir="${server.dir}/${dir}"/>
+      	<exec dir="." executable="cmd.exe" >      
+			<arg line="/c wsdl2java"/>
+			<arg line="-all"/>
+			<arg line="-d ${src.dir} ${src.dir}/${dir}/${wsdl}"/>
+      	</exec>
+  	</target>
+</project>

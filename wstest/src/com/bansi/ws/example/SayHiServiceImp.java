@@ -43,12 +43,6 @@ public class SayHiServiceImp implements SayHiService {
 
 
  
-    public String testService(String params){
-        return "hello " + params;
-    }
- 
-    public String testStudent(Student student){
-        return student.getName() + " : " + student.getAge();
-    }
+  
  
 }
