@@ -1,439 +1,638 @@
+/**
+ * InboundShipmentItems.java
+ *
+ * This file was auto-generated from WSDL
+ * by the Apache Axis 1.4 Jul 28, 2010 (04:07:04 PDT) WSDL2Java emitter.
+ */
 
 package com.netsuite.webservices.transactions.purchases_2018_2;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlType;
-import com.netsuite.webservices.platform.core_2018_2.RecordRef;
+public class InboundShipmentItems  implements java.io.Serializable {
+    private java.lang.Long id;
 
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef purchaseOrder;
 
-/**
- * <p>InboundShipmentItems complex type的 Java 类。
- * 
- * <p>以下模式片段指定包含在此类中的预期内容。
- * 
- * <pre>
- * &lt;complexType name="InboundShipmentItems">
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element name="id" type="{http://www.w3.org/2001/XMLSchema}long" minOccurs="0"/>
- *         &lt;element name="purchaseOrder" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="shipmentItem" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="shipmentItemDescription" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="poVendor" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="receivingLocation" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="quantityReceived" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
- *         &lt;element name="quantityExpected" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
- *         &lt;element name="quantityRemaining" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
- *         &lt;element name="unit" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="poRate" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
- *         &lt;element name="expectedRate" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
- *         &lt;element name="shipmentItemAmount" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
- *         &lt;element name="poCurrency" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="incoterm" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
- */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "InboundShipmentItems", propOrder = {
-    "id",
-    "purchaseOrder",
-    "shipmentItem",
-    "shipmentItemDescription",
-    "poVendor",
-    "receivingLocation",
-    "quantityReceived",
-    "quantityExpected",
-    "quantityRemaining",
-    "unit",
-    "poRate",
-    "expectedRate",
-    "shipmentItemAmount",
-    "poCurrency",
-    "incoterm"
-})
-public class InboundShipmentItems {
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef shipmentItem;
 
-    protected Long id;
-    protected RecordRef purchaseOrder;
-    protected RecordRef shipmentItem;
-    protected String shipmentItemDescription;
-    protected String poVendor;
-    protected RecordRef receivingLocation;
-    protected Double quantityReceived;
-    protected Double quantityExpected;
-    protected Double quantityRemaining;
-    protected RecordRef unit;
-    protected Double poRate;
-    protected Double expectedRate;
-    protected Double shipmentItemAmount;
-    protected RecordRef poCurrency;
-    protected RecordRef incoterm;
+    private java.lang.String shipmentItemDescription;
+
+    private java.lang.String poVendor;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef receivingLocation;
+
+    private java.lang.Double quantityReceived;
+
+    private java.lang.Double quantityExpected;
+
+    private java.lang.Double quantityRemaining;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef unit;
+
+    private java.lang.Double poRate;
+
+    private java.lang.Double expectedRate;
+
+    private java.lang.Double shipmentItemAmount;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef poCurrency;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef incoterm;
+
+    public InboundShipmentItems() {
+    }
+
+    public InboundShipmentItems(
+           java.lang.Long id,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef purchaseOrder,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef shipmentItem,
+           java.lang.String shipmentItemDescription,
+           java.lang.String poVendor,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef receivingLocation,
+           java.lang.Double quantityReceived,
+           java.lang.Double quantityExpected,
+           java.lang.Double quantityRemaining,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef unit,
+           java.lang.Double poRate,
+           java.lang.Double expectedRate,
+           java.lang.Double shipmentItemAmount,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef poCurrency,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef incoterm) {
+           this.id = id;
+           this.purchaseOrder = purchaseOrder;
+           this.shipmentItem = shipmentItem;
+           this.shipmentItemDescription = shipmentItemDescription;
+           this.poVendor = poVendor;
+           this.receivingLocation = receivingLocation;
+           this.quantityReceived = quantityReceived;
+           this.quantityExpected = quantityExpected;
+           this.quantityRemaining = quantityRemaining;
+           this.unit = unit;
+           this.poRate = poRate;
+           this.expectedRate = expectedRate;
+           this.shipmentItemAmount = shipmentItemAmount;
+           this.poCurrency = poCurrency;
+           this.incoterm = incoterm;
+    }
+
 
     /**
-     * 获取id属性的值。
+     * Gets the id value for this InboundShipmentItems.
      * 
-     * @return
-     *     possible object is
-     *     {@link Long }
-     *     
+     * @return id
      */
-    public Long getId() {
+    public java.lang.Long getId() {
         return id;
     }
 
-    /**
-     * 设置id属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Long }
-     *     
-     */
-    public void setId(Long value) {
-        this.id = value;
-    }
 
     /**
-     * 获取purchaseOrder属性的值。
+     * Sets the id value for this InboundShipmentItems.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param id
      */
-    public RecordRef getPurchaseOrder() {
+    public void setId(java.lang.Long id) {
+        this.id = id;
+    }
+
+
+    /**
+     * Gets the purchaseOrder value for this InboundShipmentItems.
+     * 
+     * @return purchaseOrder
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getPurchaseOrder() {
         return purchaseOrder;
     }
 
-    /**
-     * 设置purchaseOrder属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setPurchaseOrder(RecordRef value) {
-        this.purchaseOrder = value;
-    }
 
     /**
-     * 获取shipmentItem属性的值。
+     * Sets the purchaseOrder value for this InboundShipmentItems.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param purchaseOrder
      */
-    public RecordRef getShipmentItem() {
+    public void setPurchaseOrder(com.netsuite.webservices.platform.core_2018_2.RecordRef purchaseOrder) {
+        this.purchaseOrder = purchaseOrder;
+    }
+
+
+    /**
+     * Gets the shipmentItem value for this InboundShipmentItems.
+     * 
+     * @return shipmentItem
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getShipmentItem() {
         return shipmentItem;
     }
 
-    /**
-     * 设置shipmentItem属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setShipmentItem(RecordRef value) {
-        this.shipmentItem = value;
-    }
 
     /**
-     * 获取shipmentItemDescription属性的值。
+     * Sets the shipmentItem value for this InboundShipmentItems.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param shipmentItem
      */
-    public String getShipmentItemDescription() {
+    public void setShipmentItem(com.netsuite.webservices.platform.core_2018_2.RecordRef shipmentItem) {
+        this.shipmentItem = shipmentItem;
+    }
+
+
+    /**
+     * Gets the shipmentItemDescription value for this InboundShipmentItems.
+     * 
+     * @return shipmentItemDescription
+     */
+    public java.lang.String getShipmentItemDescription() {
         return shipmentItemDescription;
     }
 
-    /**
-     * 设置shipmentItemDescription属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setShipmentItemDescription(String value) {
-        this.shipmentItemDescription = value;
-    }
 
     /**
-     * 获取poVendor属性的值。
+     * Sets the shipmentItemDescription value for this InboundShipmentItems.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param shipmentItemDescription
      */
-    public String getPoVendor() {
+    public void setShipmentItemDescription(java.lang.String shipmentItemDescription) {
+        this.shipmentItemDescription = shipmentItemDescription;
+    }
+
+
+    /**
+     * Gets the poVendor value for this InboundShipmentItems.
+     * 
+     * @return poVendor
+     */
+    public java.lang.String getPoVendor() {
         return poVendor;
     }
 
-    /**
-     * 设置poVendor属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setPoVendor(String value) {
-        this.poVendor = value;
-    }
 
     /**
-     * 获取receivingLocation属性的值。
+     * Sets the poVendor value for this InboundShipmentItems.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param poVendor
      */
-    public RecordRef getReceivingLocation() {
+    public void setPoVendor(java.lang.String poVendor) {
+        this.poVendor = poVendor;
+    }
+
+
+    /**
+     * Gets the receivingLocation value for this InboundShipmentItems.
+     * 
+     * @return receivingLocation
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getReceivingLocation() {
         return receivingLocation;
     }
 
-    /**
-     * 设置receivingLocation属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setReceivingLocation(RecordRef value) {
-        this.receivingLocation = value;
-    }
 
     /**
-     * 获取quantityReceived属性的值。
+     * Sets the receivingLocation value for this InboundShipmentItems.
      * 
-     * @return
-     *     possible object is
-     *     {@link Double }
-     *     
+     * @param receivingLocation
      */
-    public Double getQuantityReceived() {
+    public void setReceivingLocation(com.netsuite.webservices.platform.core_2018_2.RecordRef receivingLocation) {
+        this.receivingLocation = receivingLocation;
+    }
+
+
+    /**
+     * Gets the quantityReceived value for this InboundShipmentItems.
+     * 
+     * @return quantityReceived
+     */
+    public java.lang.Double getQuantityReceived() {
         return quantityReceived;
     }
 
-    /**
-     * 设置quantityReceived属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Double }
-     *     
-     */
-    public void setQuantityReceived(Double value) {
-        this.quantityReceived = value;
-    }
 
     /**
-     * 获取quantityExpected属性的值。
+     * Sets the quantityReceived value for this InboundShipmentItems.
      * 
-     * @return
-     *     possible object is
-     *     {@link Double }
-     *     
+     * @param quantityReceived
      */
-    public Double getQuantityExpected() {
+    public void setQuantityReceived(java.lang.Double quantityReceived) {
+        this.quantityReceived = quantityReceived;
+    }
+
+
+    /**
+     * Gets the quantityExpected value for this InboundShipmentItems.
+     * 
+     * @return quantityExpected
+     */
+    public java.lang.Double getQuantityExpected() {
         return quantityExpected;
     }
 
-    /**
-     * 设置quantityExpected属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Double }
-     *     
-     */
-    public void setQuantityExpected(Double value) {
-        this.quantityExpected = value;
-    }
 
     /**
-     * 获取quantityRemaining属性的值。
+     * Sets the quantityExpected value for this InboundShipmentItems.
      * 
-     * @return
-     *     possible object is
-     *     {@link Double }
-     *     
+     * @param quantityExpected
      */
-    public Double getQuantityRemaining() {
+    public void setQuantityExpected(java.lang.Double quantityExpected) {
+        this.quantityExpected = quantityExpected;
+    }
+
+
+    /**
+     * Gets the quantityRemaining value for this InboundShipmentItems.
+     * 
+     * @return quantityRemaining
+     */
+    public java.lang.Double getQuantityRemaining() {
         return quantityRemaining;
     }
 
-    /**
-     * 设置quantityRemaining属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Double }
-     *     
-     */
-    public void setQuantityRemaining(Double value) {
-        this.quantityRemaining = value;
-    }
 
     /**
-     * 获取unit属性的值。
+     * Sets the quantityRemaining value for this InboundShipmentItems.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param quantityRemaining
      */
-    public RecordRef getUnit() {
+    public void setQuantityRemaining(java.lang.Double quantityRemaining) {
+        this.quantityRemaining = quantityRemaining;
+    }
+
+
+    /**
+     * Gets the unit value for this InboundShipmentItems.
+     * 
+     * @return unit
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getUnit() {
         return unit;
     }
 
-    /**
-     * 设置unit属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setUnit(RecordRef value) {
-        this.unit = value;
-    }
 
     /**
-     * 获取poRate属性的值。
+     * Sets the unit value for this InboundShipmentItems.
      * 
-     * @return
-     *     possible object is
-     *     {@link Double }
-     *     
+     * @param unit
      */
-    public Double getPoRate() {
+    public void setUnit(com.netsuite.webservices.platform.core_2018_2.RecordRef unit) {
+        this.unit = unit;
+    }
+
+
+    /**
+     * Gets the poRate value for this InboundShipmentItems.
+     * 
+     * @return poRate
+     */
+    public java.lang.Double getPoRate() {
         return poRate;
     }
 
-    /**
-     * 设置poRate属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Double }
-     *     
-     */
-    public void setPoRate(Double value) {
-        this.poRate = value;
-    }
 
     /**
-     * 获取expectedRate属性的值。
+     * Sets the poRate value for this InboundShipmentItems.
      * 
-     * @return
-     *     possible object is
-     *     {@link Double }
-     *     
+     * @param poRate
      */
-    public Double getExpectedRate() {
+    public void setPoRate(java.lang.Double poRate) {
+        this.poRate = poRate;
+    }
+
+
+    /**
+     * Gets the expectedRate value for this InboundShipmentItems.
+     * 
+     * @return expectedRate
+     */
+    public java.lang.Double getExpectedRate() {
         return expectedRate;
     }
 
-    /**
-     * 设置expectedRate属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Double }
-     *     
-     */
-    public void setExpectedRate(Double value) {
-        this.expectedRate = value;
-    }
 
     /**
-     * 获取shipmentItemAmount属性的值。
+     * Sets the expectedRate value for this InboundShipmentItems.
      * 
-     * @return
-     *     possible object is
-     *     {@link Double }
-     *     
+     * @param expectedRate
      */
-    public Double getShipmentItemAmount() {
+    public void setExpectedRate(java.lang.Double expectedRate) {
+        this.expectedRate = expectedRate;
+    }
+
+
+    /**
+     * Gets the shipmentItemAmount value for this InboundShipmentItems.
+     * 
+     * @return shipmentItemAmount
+     */
+    public java.lang.Double getShipmentItemAmount() {
         return shipmentItemAmount;
     }
 
-    /**
-     * 设置shipmentItemAmount属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Double }
-     *     
-     */
-    public void setShipmentItemAmount(Double value) {
-        this.shipmentItemAmount = value;
-    }
 
     /**
-     * 获取poCurrency属性的值。
+     * Sets the shipmentItemAmount value for this InboundShipmentItems.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param shipmentItemAmount
      */
-    public RecordRef getPoCurrency() {
+    public void setShipmentItemAmount(java.lang.Double shipmentItemAmount) {
+        this.shipmentItemAmount = shipmentItemAmount;
+    }
+
+
+    /**
+     * Gets the poCurrency value for this InboundShipmentItems.
+     * 
+     * @return poCurrency
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getPoCurrency() {
         return poCurrency;
     }
 
-    /**
-     * 设置poCurrency属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setPoCurrency(RecordRef value) {
-        this.poCurrency = value;
-    }
 
     /**
-     * 获取incoterm属性的值。
+     * Sets the poCurrency value for this InboundShipmentItems.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param poCurrency
      */
-    public RecordRef getIncoterm() {
+    public void setPoCurrency(com.netsuite.webservices.platform.core_2018_2.RecordRef poCurrency) {
+        this.poCurrency = poCurrency;
+    }
+
+
+    /**
+     * Gets the incoterm value for this InboundShipmentItems.
+     * 
+     * @return incoterm
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getIncoterm() {
         return incoterm;
     }
 
+
     /**
-     * 设置incoterm属性的值。
+     * Sets the incoterm value for this InboundShipmentItems.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
+     * @param incoterm
      */
-    public void setIncoterm(RecordRef value) {
-        this.incoterm = value;
+    public void setIncoterm(com.netsuite.webservices.platform.core_2018_2.RecordRef incoterm) {
+        this.incoterm = incoterm;
+    }
+
+    private java.lang.Object __equalsCalc = null;
+    public synchronized boolean equals(java.lang.Object obj) {
+        if (!(obj instanceof InboundShipmentItems)) return false;
+        InboundShipmentItems other = (InboundShipmentItems) obj;
+        if (obj == null) return false;
+        if (this == obj) return true;
+        if (__equalsCalc != null) {
+            return (__equalsCalc == obj);
+        }
+        __equalsCalc = obj;
+        boolean _equals;
+        _equals = true && 
+            ((this.id==null && other.getId()==null) || 
+             (this.id!=null &&
+              this.id.equals(other.getId()))) &&
+            ((this.purchaseOrder==null && other.getPurchaseOrder()==null) || 
+             (this.purchaseOrder!=null &&
+              this.purchaseOrder.equals(other.getPurchaseOrder()))) &&
+            ((this.shipmentItem==null && other.getShipmentItem()==null) || 
+             (this.shipmentItem!=null &&
+              this.shipmentItem.equals(other.getShipmentItem()))) &&
+            ((this.shipmentItemDescription==null && other.getShipmentItemDescription()==null) || 
+             (this.shipmentItemDescription!=null &&
+              this.shipmentItemDescription.equals(other.getShipmentItemDescription()))) &&
+            ((this.poVendor==null && other.getPoVendor()==null) || 
+             (this.poVendor!=null &&
+              this.poVendor.equals(other.getPoVendor()))) &&
+            ((this.receivingLocation==null && other.getReceivingLocation()==null) || 
+             (this.receivingLocation!=null &&
+              this.receivingLocation.equals(other.getReceivingLocation()))) &&
+            ((this.quantityReceived==null && other.getQuantityReceived()==null) || 
+             (this.quantityReceived!=null &&
+              this.quantityReceived.equals(other.getQuantityReceived()))) &&
+            ((this.quantityExpected==null && other.getQuantityExpected()==null) || 
+             (this.quantityExpected!=null &&
+              this.quantityExpected.equals(other.getQuantityExpected()))) &&
+            ((this.quantityRemaining==null && other.getQuantityRemaining()==null) || 
+             (this.quantityRemaining!=null &&
+              this.quantityRemaining.equals(other.getQuantityRemaining()))) &&
+            ((this.unit==null && other.getUnit()==null) || 
+             (this.unit!=null &&
+              this.unit.equals(other.getUnit()))) &&
+            ((this.poRate==null && other.getPoRate()==null) || 
+             (this.poRate!=null &&
+              this.poRate.equals(other.getPoRate()))) &&
+            ((this.expectedRate==null && other.getExpectedRate()==null) || 
+             (this.expectedRate!=null &&
+              this.expectedRate.equals(other.getExpectedRate()))) &&
+            ((this.shipmentItemAmount==null && other.getShipmentItemAmount()==null) || 
+             (this.shipmentItemAmount!=null &&
+              this.shipmentItemAmount.equals(other.getShipmentItemAmount()))) &&
+            ((this.poCurrency==null && other.getPoCurrency()==null) || 
+             (this.poCurrency!=null &&
+              this.poCurrency.equals(other.getPoCurrency()))) &&
+            ((this.incoterm==null && other.getIncoterm()==null) || 
+             (this.incoterm!=null &&
+              this.incoterm.equals(other.getIncoterm())));
+        __equalsCalc = null;
+        return _equals;
+    }
+
+    private boolean __hashCodeCalc = false;
+    public synchronized int hashCode() {
+        if (__hashCodeCalc) {
+            return 0;
+        }
+        __hashCodeCalc = true;
+        int _hashCode = 1;
+        if (getId() != null) {
+            _hashCode += getId().hashCode();
+        }
+        if (getPurchaseOrder() != null) {
+            _hashCode += getPurchaseOrder().hashCode();
+        }
+        if (getShipmentItem() != null) {
+            _hashCode += getShipmentItem().hashCode();
+        }
+        if (getShipmentItemDescription() != null) {
+            _hashCode += getShipmentItemDescription().hashCode();
+        }
+        if (getPoVendor() != null) {
+            _hashCode += getPoVendor().hashCode();
+        }
+        if (getReceivingLocation() != null) {
+            _hashCode += getReceivingLocation().hashCode();
+        }
+        if (getQuantityReceived() != null) {
+            _hashCode += getQuantityReceived().hashCode();
+        }
+        if (getQuantityExpected() != null) {
+            _hashCode += getQuantityExpected().hashCode();
+        }
+        if (getQuantityRemaining() != null) {
+            _hashCode += getQuantityRemaining().hashCode();
+        }
+        if (getUnit() != null) {
+            _hashCode += getUnit().hashCode();
+        }
+        if (getPoRate() != null) {
+            _hashCode += getPoRate().hashCode();
+        }
+        if (getExpectedRate() != null) {
+            _hashCode += getExpectedRate().hashCode();
+        }
+        if (getShipmentItemAmount() != null) {
+            _hashCode += getShipmentItemAmount().hashCode();
+        }
+        if (getPoCurrency() != null) {
+            _hashCode += getPoCurrency().hashCode();
+        }
+        if (getIncoterm() != null) {
+            _hashCode += getIncoterm().hashCode();
+        }
+        __hashCodeCalc = false;
+        return _hashCode;
+    }
+
+    // Type metadata
+    private static org.apache.axis.description.TypeDesc typeDesc =
+        new org.apache.axis.description.TypeDesc(InboundShipmentItems.class, true);
+
+    static {
+        typeDesc.setXmlType(new javax.xml.namespace.QName("urn:purchases_2018_2.transactions.webservices.netsuite.com", "InboundShipmentItems"));
+        org.apache.axis.description.ElementDesc elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("id");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:purchases_2018_2.transactions.webservices.netsuite.com", "id"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "long"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("purchaseOrder");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:purchases_2018_2.transactions.webservices.netsuite.com", "purchaseOrder"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("shipmentItem");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:purchases_2018_2.transactions.webservices.netsuite.com", "shipmentItem"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("shipmentItemDescription");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:purchases_2018_2.transactions.webservices.netsuite.com", "shipmentItemDescription"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("poVendor");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:purchases_2018_2.transactions.webservices.netsuite.com", "poVendor"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("receivingLocation");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:purchases_2018_2.transactions.webservices.netsuite.com", "receivingLocation"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("quantityReceived");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:purchases_2018_2.transactions.webservices.netsuite.com", "quantityReceived"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "double"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("quantityExpected");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:purchases_2018_2.transactions.webservices.netsuite.com", "quantityExpected"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "double"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("quantityRemaining");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:purchases_2018_2.transactions.webservices.netsuite.com", "quantityRemaining"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "double"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("unit");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:purchases_2018_2.transactions.webservices.netsuite.com", "unit"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("poRate");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:purchases_2018_2.transactions.webservices.netsuite.com", "poRate"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "double"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("expectedRate");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:purchases_2018_2.transactions.webservices.netsuite.com", "expectedRate"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "double"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("shipmentItemAmount");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:purchases_2018_2.transactions.webservices.netsuite.com", "shipmentItemAmount"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "double"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("poCurrency");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:purchases_2018_2.transactions.webservices.netsuite.com", "poCurrency"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("incoterm");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:purchases_2018_2.transactions.webservices.netsuite.com", "incoterm"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+    }
+
+    /**
+     * Return type metadata object
+     */
+    public static org.apache.axis.description.TypeDesc getTypeDesc() {
+        return typeDesc;
+    }
+
+    /**
+     * Get Custom Serializer
+     */
+    public static org.apache.axis.encoding.Serializer getSerializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanSerializer(
+            _javaType, _xmlType, typeDesc);
+    }
+
+    /**
+     * Get Custom Deserializer
+     */
+    public static org.apache.axis.encoding.Deserializer getDeserializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanDeserializer(
+            _javaType, _xmlType, typeDesc);
     }
 
 }

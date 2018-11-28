@@ -1,148 +1,231 @@
+/**
+ * AccountingTransactionSearchRow.java
+ *
+ * This file was auto-generated from WSDL
+ * by the Apache Axis 1.4 Jul 28, 2010 (04:07:04 PDT) WSDL2Java emitter.
+ */
 
 package com.netsuite.webservices.transactions.sales_2018_2;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlType;
-import com.netsuite.webservices.platform.common_2018_2.AccountSearchRowBasic;
-import com.netsuite.webservices.platform.common_2018_2.AccountingTransactionSearchRowBasic;
-import com.netsuite.webservices.platform.common_2018_2.RevRecScheduleSearchRowBasic;
-import com.netsuite.webservices.platform.common_2018_2.TransactionSearchRowBasic;
-import com.netsuite.webservices.platform.core_2018_2.SearchRow;
+public class AccountingTransactionSearchRow  extends com.netsuite.webservices.platform.core_2018_2.SearchRow  implements java.io.Serializable {
+    private com.netsuite.webservices.platform.common_2018_2.AccountingTransactionSearchRowBasic basic;
 
+    private com.netsuite.webservices.platform.common_2018_2.AccountSearchRowBasic accountJoin;
 
-/**
- * <p>AccountingTransactionSearchRow complex type的 Java 类。
- * 
- * <p>以下模式片段指定包含在此类中的预期内容。
- * 
- * <pre>
- * &lt;complexType name="AccountingTransactionSearchRow">
- *   &lt;complexContent>
- *     &lt;extension base="{urn:core_2018_2.platform.webservices.netsuite.com}SearchRow">
- *       &lt;sequence>
- *         &lt;element name="basic" type="{urn:common_2018_2.platform.webservices.netsuite.com}AccountingTransactionSearchRowBasic" minOccurs="0"/>
- *         &lt;element name="accountJoin" type="{urn:common_2018_2.platform.webservices.netsuite.com}AccountSearchRowBasic" minOccurs="0"/>
- *         &lt;element name="revRecScheduleJoin" type="{urn:common_2018_2.platform.webservices.netsuite.com}RevRecScheduleSearchRowBasic" minOccurs="0"/>
- *         &lt;element name="transactionJoin" type="{urn:common_2018_2.platform.webservices.netsuite.com}TransactionSearchRowBasic" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/extension>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
- */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "AccountingTransactionSearchRow", propOrder = {
-    "basic",
-    "accountJoin",
-    "revRecScheduleJoin",
-    "transactionJoin"
-})
-public class AccountingTransactionSearchRow
-    extends SearchRow
-{
+    private com.netsuite.webservices.platform.common_2018_2.RevRecScheduleSearchRowBasic revRecScheduleJoin;
 
-    protected AccountingTransactionSearchRowBasic basic;
-    protected AccountSearchRowBasic accountJoin;
-    protected RevRecScheduleSearchRowBasic revRecScheduleJoin;
-    protected TransactionSearchRowBasic transactionJoin;
+    private com.netsuite.webservices.platform.common_2018_2.TransactionSearchRowBasic transactionJoin;
+
+    public AccountingTransactionSearchRow() {
+    }
+
+    public AccountingTransactionSearchRow(
+           com.netsuite.webservices.platform.common_2018_2.AccountingTransactionSearchRowBasic basic,
+           com.netsuite.webservices.platform.common_2018_2.AccountSearchRowBasic accountJoin,
+           com.netsuite.webservices.platform.common_2018_2.RevRecScheduleSearchRowBasic revRecScheduleJoin,
+           com.netsuite.webservices.platform.common_2018_2.TransactionSearchRowBasic transactionJoin) {
+        this.basic = basic;
+        this.accountJoin = accountJoin;
+        this.revRecScheduleJoin = revRecScheduleJoin;
+        this.transactionJoin = transactionJoin;
+    }
+
 
     /**
-     * 获取basic属性的值。
+     * Gets the basic value for this AccountingTransactionSearchRow.
      * 
-     * @return
-     *     possible object is
-     *     {@link AccountingTransactionSearchRowBasic }
-     *     
+     * @return basic
      */
-    public AccountingTransactionSearchRowBasic getBasic() {
+    public com.netsuite.webservices.platform.common_2018_2.AccountingTransactionSearchRowBasic getBasic() {
         return basic;
     }
 
-    /**
-     * 设置basic属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link AccountingTransactionSearchRowBasic }
-     *     
-     */
-    public void setBasic(AccountingTransactionSearchRowBasic value) {
-        this.basic = value;
-    }
 
     /**
-     * 获取accountJoin属性的值。
+     * Sets the basic value for this AccountingTransactionSearchRow.
      * 
-     * @return
-     *     possible object is
-     *     {@link AccountSearchRowBasic }
-     *     
+     * @param basic
      */
-    public AccountSearchRowBasic getAccountJoin() {
+    public void setBasic(com.netsuite.webservices.platform.common_2018_2.AccountingTransactionSearchRowBasic basic) {
+        this.basic = basic;
+    }
+
+
+    /**
+     * Gets the accountJoin value for this AccountingTransactionSearchRow.
+     * 
+     * @return accountJoin
+     */
+    public com.netsuite.webservices.platform.common_2018_2.AccountSearchRowBasic getAccountJoin() {
         return accountJoin;
     }
 
-    /**
-     * 设置accountJoin属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link AccountSearchRowBasic }
-     *     
-     */
-    public void setAccountJoin(AccountSearchRowBasic value) {
-        this.accountJoin = value;
-    }
 
     /**
-     * 获取revRecScheduleJoin属性的值。
+     * Sets the accountJoin value for this AccountingTransactionSearchRow.
      * 
-     * @return
-     *     possible object is
-     *     {@link RevRecScheduleSearchRowBasic }
-     *     
+     * @param accountJoin
      */
-    public RevRecScheduleSearchRowBasic getRevRecScheduleJoin() {
+    public void setAccountJoin(com.netsuite.webservices.platform.common_2018_2.AccountSearchRowBasic accountJoin) {
+        this.accountJoin = accountJoin;
+    }
+
+
+    /**
+     * Gets the revRecScheduleJoin value for this AccountingTransactionSearchRow.
+     * 
+     * @return revRecScheduleJoin
+     */
+    public com.netsuite.webservices.platform.common_2018_2.RevRecScheduleSearchRowBasic getRevRecScheduleJoin() {
         return revRecScheduleJoin;
     }
 
-    /**
-     * 设置revRecScheduleJoin属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RevRecScheduleSearchRowBasic }
-     *     
-     */
-    public void setRevRecScheduleJoin(RevRecScheduleSearchRowBasic value) {
-        this.revRecScheduleJoin = value;
-    }
 
     /**
-     * 获取transactionJoin属性的值。
+     * Sets the revRecScheduleJoin value for this AccountingTransactionSearchRow.
      * 
-     * @return
-     *     possible object is
-     *     {@link TransactionSearchRowBasic }
-     *     
+     * @param revRecScheduleJoin
      */
-    public TransactionSearchRowBasic getTransactionJoin() {
+    public void setRevRecScheduleJoin(com.netsuite.webservices.platform.common_2018_2.RevRecScheduleSearchRowBasic revRecScheduleJoin) {
+        this.revRecScheduleJoin = revRecScheduleJoin;
+    }
+
+
+    /**
+     * Gets the transactionJoin value for this AccountingTransactionSearchRow.
+     * 
+     * @return transactionJoin
+     */
+    public com.netsuite.webservices.platform.common_2018_2.TransactionSearchRowBasic getTransactionJoin() {
         return transactionJoin;
     }
 
+
     /**
-     * 设置transactionJoin属性的值。
+     * Sets the transactionJoin value for this AccountingTransactionSearchRow.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link TransactionSearchRowBasic }
-     *     
+     * @param transactionJoin
      */
-    public void setTransactionJoin(TransactionSearchRowBasic value) {
-        this.transactionJoin = value;
+    public void setTransactionJoin(com.netsuite.webservices.platform.common_2018_2.TransactionSearchRowBasic transactionJoin) {
+        this.transactionJoin = transactionJoin;
+    }
+
+    private java.lang.Object __equalsCalc = null;
+    public synchronized boolean equals(java.lang.Object obj) {
+        if (!(obj instanceof AccountingTransactionSearchRow)) return false;
+        AccountingTransactionSearchRow other = (AccountingTransactionSearchRow) obj;
+        if (obj == null) return false;
+        if (this == obj) return true;
+        if (__equalsCalc != null) {
+            return (__equalsCalc == obj);
+        }
+        __equalsCalc = obj;
+        boolean _equals;
+        _equals = super.equals(obj) && 
+            ((this.basic==null && other.getBasic()==null) || 
+             (this.basic!=null &&
+              this.basic.equals(other.getBasic()))) &&
+            ((this.accountJoin==null && other.getAccountJoin()==null) || 
+             (this.accountJoin!=null &&
+              this.accountJoin.equals(other.getAccountJoin()))) &&
+            ((this.revRecScheduleJoin==null && other.getRevRecScheduleJoin()==null) || 
+             (this.revRecScheduleJoin!=null &&
+              this.revRecScheduleJoin.equals(other.getRevRecScheduleJoin()))) &&
+            ((this.transactionJoin==null && other.getTransactionJoin()==null) || 
+             (this.transactionJoin!=null &&
+              this.transactionJoin.equals(other.getTransactionJoin())));
+        __equalsCalc = null;
+        return _equals;
+    }
+
+    private boolean __hashCodeCalc = false;
+    public synchronized int hashCode() {
+        if (__hashCodeCalc) {
+            return 0;
+        }
+        __hashCodeCalc = true;
+        int _hashCode = super.hashCode();
+        if (getBasic() != null) {
+            _hashCode += getBasic().hashCode();
+        }
+        if (getAccountJoin() != null) {
+            _hashCode += getAccountJoin().hashCode();
+        }
+        if (getRevRecScheduleJoin() != null) {
+            _hashCode += getRevRecScheduleJoin().hashCode();
+        }
+        if (getTransactionJoin() != null) {
+            _hashCode += getTransactionJoin().hashCode();
+        }
+        __hashCodeCalc = false;
+        return _hashCode;
+    }
+
+    // Type metadata
+    private static org.apache.axis.description.TypeDesc typeDesc =
+        new org.apache.axis.description.TypeDesc(AccountingTransactionSearchRow.class, true);
+
+    static {
+        typeDesc.setXmlType(new javax.xml.namespace.QName("urn:sales_2018_2.transactions.webservices.netsuite.com", "AccountingTransactionSearchRow"));
+        org.apache.axis.description.ElementDesc elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("basic");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:sales_2018_2.transactions.webservices.netsuite.com", "basic"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "AccountingTransactionSearchRowBasic"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("accountJoin");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:sales_2018_2.transactions.webservices.netsuite.com", "accountJoin"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "AccountSearchRowBasic"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("revRecScheduleJoin");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:sales_2018_2.transactions.webservices.netsuite.com", "revRecScheduleJoin"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "RevRecScheduleSearchRowBasic"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("transactionJoin");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:sales_2018_2.transactions.webservices.netsuite.com", "transactionJoin"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "TransactionSearchRowBasic"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+    }
+
+    /**
+     * Return type metadata object
+     */
+    public static org.apache.axis.description.TypeDesc getTypeDesc() {
+        return typeDesc;
+    }
+
+    /**
+     * Get Custom Serializer
+     */
+    public static org.apache.axis.encoding.Serializer getSerializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanSerializer(
+            _javaType, _xmlType, typeDesc);
+    }
+
+    /**
+     * Get Custom Deserializer
+     */
+    public static org.apache.axis.encoding.Deserializer getDeserializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanDeserializer(
+            _javaType, _xmlType, typeDesc);
     }
 
 }

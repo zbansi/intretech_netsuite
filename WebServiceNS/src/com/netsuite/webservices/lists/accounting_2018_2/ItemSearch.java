@@ -1,681 +1,951 @@
+/**
+ * ItemSearch.java
+ *
+ * This file was auto-generated from WSDL
+ * by the Apache Axis 1.4 Jul 28, 2010 (04:07:04 PDT) WSDL2Java emitter.
+ */
 
 package com.netsuite.webservices.lists.accounting_2018_2;
 
-import java.util.ArrayList;
-import java.util.List;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlType;
-import com.netsuite.webservices.platform.common_2018_2.AssemblyItemBomSearchBasic;
-import com.netsuite.webservices.platform.common_2018_2.BinSearchBasic;
-import com.netsuite.webservices.platform.common_2018_2.CustomSearchJoin;
-import com.netsuite.webservices.platform.common_2018_2.CustomerSearchBasic;
-import com.netsuite.webservices.platform.common_2018_2.EmployeeSearchBasic;
-import com.netsuite.webservices.platform.common_2018_2.FileSearchBasic;
-import com.netsuite.webservices.platform.common_2018_2.InventoryDetailSearchBasic;
-import com.netsuite.webservices.platform.common_2018_2.InventoryNumberBinSearchBasic;
-import com.netsuite.webservices.platform.common_2018_2.InventoryNumberSearchBasic;
-import com.netsuite.webservices.platform.common_2018_2.ItemBinNumberSearchBasic;
-import com.netsuite.webservices.platform.common_2018_2.ItemRevisionSearchBasic;
-import com.netsuite.webservices.platform.common_2018_2.ItemSearchBasic;
-import com.netsuite.webservices.platform.common_2018_2.LocationSearchBasic;
-import com.netsuite.webservices.platform.common_2018_2.NoteSearchBasic;
-import com.netsuite.webservices.platform.common_2018_2.PricingSearchBasic;
-import com.netsuite.webservices.platform.common_2018_2.TransactionSearchBasic;
-import com.netsuite.webservices.platform.common_2018_2.VendorSearchBasic;
-import com.netsuite.webservices.platform.core_2018_2.SearchRecord;
+public class ItemSearch  extends com.netsuite.webservices.platform.core_2018_2.SearchRecord  implements java.io.Serializable {
+    private com.netsuite.webservices.platform.common_2018_2.ItemSearchBasic basic;
 
+    private com.netsuite.webservices.platform.common_2018_2.AssemblyItemBomSearchBasic assemblyItemBillOfMaterialsJoin;
 
-/**
- * <p>ItemSearch complex type的 Java 类。
- * 
- * <p>以下模式片段指定包含在此类中的预期内容。
- * 
- * <pre>
- * &lt;complexType name="ItemSearch">
- *   &lt;complexContent>
- *     &lt;extension base="{urn:core_2018_2.platform.webservices.netsuite.com}SearchRecord">
- *       &lt;sequence>
- *         &lt;element name="basic" type="{urn:common_2018_2.platform.webservices.netsuite.com}ItemSearchBasic" minOccurs="0"/>
- *         &lt;element name="assemblyItemBillOfMaterialsJoin" type="{urn:common_2018_2.platform.webservices.netsuite.com}AssemblyItemBomSearchBasic" minOccurs="0"/>
- *         &lt;element name="binNumberJoin" type="{urn:common_2018_2.platform.webservices.netsuite.com}BinSearchBasic" minOccurs="0"/>
- *         &lt;element name="binOnHandJoin" type="{urn:common_2018_2.platform.webservices.netsuite.com}ItemBinNumberSearchBasic" minOccurs="0"/>
- *         &lt;element name="correlatedItemJoin" type="{urn:common_2018_2.platform.webservices.netsuite.com}ItemSearchBasic" minOccurs="0"/>
- *         &lt;element name="effectiveRevisionJoin" type="{urn:common_2018_2.platform.webservices.netsuite.com}ItemRevisionSearchBasic" minOccurs="0"/>
- *         &lt;element name="fileJoin" type="{urn:common_2018_2.platform.webservices.netsuite.com}FileSearchBasic" minOccurs="0"/>
- *         &lt;element name="inventoryDetailJoin" type="{urn:common_2018_2.platform.webservices.netsuite.com}InventoryDetailSearchBasic" minOccurs="0"/>
- *         &lt;element name="inventoryLocationJoin" type="{urn:common_2018_2.platform.webservices.netsuite.com}LocationSearchBasic" minOccurs="0"/>
- *         &lt;element name="inventoryNumberJoin" type="{urn:common_2018_2.platform.webservices.netsuite.com}InventoryNumberSearchBasic" minOccurs="0"/>
- *         &lt;element name="inventoryNumberBinOnHandJoin" type="{urn:common_2018_2.platform.webservices.netsuite.com}InventoryNumberBinSearchBasic" minOccurs="0"/>
- *         &lt;element name="memberItemJoin" type="{urn:common_2018_2.platform.webservices.netsuite.com}ItemSearchBasic" minOccurs="0"/>
- *         &lt;element name="obsoleteRevisionJoin" type="{urn:common_2018_2.platform.webservices.netsuite.com}ItemRevisionSearchBasic" minOccurs="0"/>
- *         &lt;element name="parentJoin" type="{urn:common_2018_2.platform.webservices.netsuite.com}ItemSearchBasic" minOccurs="0"/>
- *         &lt;element name="preferredLocationJoin" type="{urn:common_2018_2.platform.webservices.netsuite.com}LocationSearchBasic" minOccurs="0"/>
- *         &lt;element name="preferredVendorJoin" type="{urn:common_2018_2.platform.webservices.netsuite.com}VendorSearchBasic" minOccurs="0"/>
- *         &lt;element name="pricingJoin" type="{urn:common_2018_2.platform.webservices.netsuite.com}PricingSearchBasic" minOccurs="0"/>
- *         &lt;element name="shopperJoin" type="{urn:common_2018_2.platform.webservices.netsuite.com}CustomerSearchBasic" minOccurs="0"/>
- *         &lt;element name="transactionJoin" type="{urn:common_2018_2.platform.webservices.netsuite.com}TransactionSearchBasic" minOccurs="0"/>
- *         &lt;element name="userJoin" type="{urn:common_2018_2.platform.webservices.netsuite.com}EmployeeSearchBasic" minOccurs="0"/>
- *         &lt;element name="userNotesJoin" type="{urn:common_2018_2.platform.webservices.netsuite.com}NoteSearchBasic" minOccurs="0"/>
- *         &lt;element name="vendorJoin" type="{urn:common_2018_2.platform.webservices.netsuite.com}VendorSearchBasic" minOccurs="0"/>
- *         &lt;element name="customSearchJoin" type="{urn:common_2018_2.platform.webservices.netsuite.com}CustomSearchJoin" maxOccurs="unbounded" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/extension>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
- */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "ItemSearch", propOrder = {
-    "basic",
-    "assemblyItemBillOfMaterialsJoin",
-    "binNumberJoin",
-    "binOnHandJoin",
-    "correlatedItemJoin",
-    "effectiveRevisionJoin",
-    "fileJoin",
-    "inventoryDetailJoin",
-    "inventoryLocationJoin",
-    "inventoryNumberJoin",
-    "inventoryNumberBinOnHandJoin",
-    "memberItemJoin",
-    "obsoleteRevisionJoin",
-    "parentJoin",
-    "preferredLocationJoin",
-    "preferredVendorJoin",
-    "pricingJoin",
-    "shopperJoin",
-    "transactionJoin",
-    "userJoin",
-    "userNotesJoin",
-    "vendorJoin",
-    "customSearchJoin"
-})
-public class ItemSearch
-    extends SearchRecord
-{
+    private com.netsuite.webservices.platform.common_2018_2.BinSearchBasic binNumberJoin;
 
-    protected ItemSearchBasic basic;
-    protected AssemblyItemBomSearchBasic assemblyItemBillOfMaterialsJoin;
-    protected BinSearchBasic binNumberJoin;
-    protected ItemBinNumberSearchBasic binOnHandJoin;
-    protected ItemSearchBasic correlatedItemJoin;
-    protected ItemRevisionSearchBasic effectiveRevisionJoin;
-    protected FileSearchBasic fileJoin;
-    protected InventoryDetailSearchBasic inventoryDetailJoin;
-    protected LocationSearchBasic inventoryLocationJoin;
-    protected InventoryNumberSearchBasic inventoryNumberJoin;
-    protected InventoryNumberBinSearchBasic inventoryNumberBinOnHandJoin;
-    protected ItemSearchBasic memberItemJoin;
-    protected ItemRevisionSearchBasic obsoleteRevisionJoin;
-    protected ItemSearchBasic parentJoin;
-    protected LocationSearchBasic preferredLocationJoin;
-    protected VendorSearchBasic preferredVendorJoin;
-    protected PricingSearchBasic pricingJoin;
-    protected CustomerSearchBasic shopperJoin;
-    protected TransactionSearchBasic transactionJoin;
-    protected EmployeeSearchBasic userJoin;
-    protected NoteSearchBasic userNotesJoin;
-    protected VendorSearchBasic vendorJoin;
-    protected List<CustomSearchJoin> customSearchJoin;
+    private com.netsuite.webservices.platform.common_2018_2.ItemBinNumberSearchBasic binOnHandJoin;
+
+    private com.netsuite.webservices.platform.common_2018_2.ItemSearchBasic correlatedItemJoin;
+
+    private com.netsuite.webservices.platform.common_2018_2.ItemRevisionSearchBasic effectiveRevisionJoin;
+
+    private com.netsuite.webservices.platform.common_2018_2.FileSearchBasic fileJoin;
+
+    private com.netsuite.webservices.platform.common_2018_2.InventoryDetailSearchBasic inventoryDetailJoin;
+
+    private com.netsuite.webservices.platform.common_2018_2.LocationSearchBasic inventoryLocationJoin;
+
+    private com.netsuite.webservices.platform.common_2018_2.InventoryNumberSearchBasic inventoryNumberJoin;
+
+    private com.netsuite.webservices.platform.common_2018_2.InventoryNumberBinSearchBasic inventoryNumberBinOnHandJoin;
+
+    private com.netsuite.webservices.platform.common_2018_2.ItemSearchBasic memberItemJoin;
+
+    private com.netsuite.webservices.platform.common_2018_2.ItemRevisionSearchBasic obsoleteRevisionJoin;
+
+    private com.netsuite.webservices.platform.common_2018_2.ItemSearchBasic parentJoin;
+
+    private com.netsuite.webservices.platform.common_2018_2.LocationSearchBasic preferredLocationJoin;
+
+    private com.netsuite.webservices.platform.common_2018_2.VendorSearchBasic preferredVendorJoin;
+
+    private com.netsuite.webservices.platform.common_2018_2.PricingSearchBasic pricingJoin;
+
+    private com.netsuite.webservices.platform.common_2018_2.CustomerSearchBasic shopperJoin;
+
+    private com.netsuite.webservices.platform.common_2018_2.TransactionSearchBasic transactionJoin;
+
+    private com.netsuite.webservices.platform.common_2018_2.EmployeeSearchBasic userJoin;
+
+    private com.netsuite.webservices.platform.common_2018_2.NoteSearchBasic userNotesJoin;
+
+    private com.netsuite.webservices.platform.common_2018_2.VendorSearchBasic vendorJoin;
+
+    private com.netsuite.webservices.platform.common_2018_2.CustomSearchJoin[] customSearchJoin;
+
+    public ItemSearch() {
+    }
+
+    public ItemSearch(
+           com.netsuite.webservices.platform.common_2018_2.ItemSearchBasic basic,
+           com.netsuite.webservices.platform.common_2018_2.AssemblyItemBomSearchBasic assemblyItemBillOfMaterialsJoin,
+           com.netsuite.webservices.platform.common_2018_2.BinSearchBasic binNumberJoin,
+           com.netsuite.webservices.platform.common_2018_2.ItemBinNumberSearchBasic binOnHandJoin,
+           com.netsuite.webservices.platform.common_2018_2.ItemSearchBasic correlatedItemJoin,
+           com.netsuite.webservices.platform.common_2018_2.ItemRevisionSearchBasic effectiveRevisionJoin,
+           com.netsuite.webservices.platform.common_2018_2.FileSearchBasic fileJoin,
+           com.netsuite.webservices.platform.common_2018_2.InventoryDetailSearchBasic inventoryDetailJoin,
+           com.netsuite.webservices.platform.common_2018_2.LocationSearchBasic inventoryLocationJoin,
+           com.netsuite.webservices.platform.common_2018_2.InventoryNumberSearchBasic inventoryNumberJoin,
+           com.netsuite.webservices.platform.common_2018_2.InventoryNumberBinSearchBasic inventoryNumberBinOnHandJoin,
+           com.netsuite.webservices.platform.common_2018_2.ItemSearchBasic memberItemJoin,
+           com.netsuite.webservices.platform.common_2018_2.ItemRevisionSearchBasic obsoleteRevisionJoin,
+           com.netsuite.webservices.platform.common_2018_2.ItemSearchBasic parentJoin,
+           com.netsuite.webservices.platform.common_2018_2.LocationSearchBasic preferredLocationJoin,
+           com.netsuite.webservices.platform.common_2018_2.VendorSearchBasic preferredVendorJoin,
+           com.netsuite.webservices.platform.common_2018_2.PricingSearchBasic pricingJoin,
+           com.netsuite.webservices.platform.common_2018_2.CustomerSearchBasic shopperJoin,
+           com.netsuite.webservices.platform.common_2018_2.TransactionSearchBasic transactionJoin,
+           com.netsuite.webservices.platform.common_2018_2.EmployeeSearchBasic userJoin,
+           com.netsuite.webservices.platform.common_2018_2.NoteSearchBasic userNotesJoin,
+           com.netsuite.webservices.platform.common_2018_2.VendorSearchBasic vendorJoin,
+           com.netsuite.webservices.platform.common_2018_2.CustomSearchJoin[] customSearchJoin) {
+        this.basic = basic;
+        this.assemblyItemBillOfMaterialsJoin = assemblyItemBillOfMaterialsJoin;
+        this.binNumberJoin = binNumberJoin;
+        this.binOnHandJoin = binOnHandJoin;
+        this.correlatedItemJoin = correlatedItemJoin;
+        this.effectiveRevisionJoin = effectiveRevisionJoin;
+        this.fileJoin = fileJoin;
+        this.inventoryDetailJoin = inventoryDetailJoin;
+        this.inventoryLocationJoin = inventoryLocationJoin;
+        this.inventoryNumberJoin = inventoryNumberJoin;
+        this.inventoryNumberBinOnHandJoin = inventoryNumberBinOnHandJoin;
+        this.memberItemJoin = memberItemJoin;
+        this.obsoleteRevisionJoin = obsoleteRevisionJoin;
+        this.parentJoin = parentJoin;
+        this.preferredLocationJoin = preferredLocationJoin;
+        this.preferredVendorJoin = preferredVendorJoin;
+        this.pricingJoin = pricingJoin;
+        this.shopperJoin = shopperJoin;
+        this.transactionJoin = transactionJoin;
+        this.userJoin = userJoin;
+        this.userNotesJoin = userNotesJoin;
+        this.vendorJoin = vendorJoin;
+        this.customSearchJoin = customSearchJoin;
+    }
+
 
     /**
-     * 获取basic属性的值。
+     * Gets the basic value for this ItemSearch.
      * 
-     * @return
-     *     possible object is
-     *     {@link ItemSearchBasic }
-     *     
+     * @return basic
      */
-    public ItemSearchBasic getBasic() {
+    public com.netsuite.webservices.platform.common_2018_2.ItemSearchBasic getBasic() {
         return basic;
     }
 
-    /**
-     * 设置basic属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link ItemSearchBasic }
-     *     
-     */
-    public void setBasic(ItemSearchBasic value) {
-        this.basic = value;
-    }
 
     /**
-     * 获取assemblyItemBillOfMaterialsJoin属性的值。
+     * Sets the basic value for this ItemSearch.
      * 
-     * @return
-     *     possible object is
-     *     {@link AssemblyItemBomSearchBasic }
-     *     
+     * @param basic
      */
-    public AssemblyItemBomSearchBasic getAssemblyItemBillOfMaterialsJoin() {
+    public void setBasic(com.netsuite.webservices.platform.common_2018_2.ItemSearchBasic basic) {
+        this.basic = basic;
+    }
+
+
+    /**
+     * Gets the assemblyItemBillOfMaterialsJoin value for this ItemSearch.
+     * 
+     * @return assemblyItemBillOfMaterialsJoin
+     */
+    public com.netsuite.webservices.platform.common_2018_2.AssemblyItemBomSearchBasic getAssemblyItemBillOfMaterialsJoin() {
         return assemblyItemBillOfMaterialsJoin;
     }
 
-    /**
-     * 设置assemblyItemBillOfMaterialsJoin属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link AssemblyItemBomSearchBasic }
-     *     
-     */
-    public void setAssemblyItemBillOfMaterialsJoin(AssemblyItemBomSearchBasic value) {
-        this.assemblyItemBillOfMaterialsJoin = value;
-    }
 
     /**
-     * 获取binNumberJoin属性的值。
+     * Sets the assemblyItemBillOfMaterialsJoin value for this ItemSearch.
      * 
-     * @return
-     *     possible object is
-     *     {@link BinSearchBasic }
-     *     
+     * @param assemblyItemBillOfMaterialsJoin
      */
-    public BinSearchBasic getBinNumberJoin() {
+    public void setAssemblyItemBillOfMaterialsJoin(com.netsuite.webservices.platform.common_2018_2.AssemblyItemBomSearchBasic assemblyItemBillOfMaterialsJoin) {
+        this.assemblyItemBillOfMaterialsJoin = assemblyItemBillOfMaterialsJoin;
+    }
+
+
+    /**
+     * Gets the binNumberJoin value for this ItemSearch.
+     * 
+     * @return binNumberJoin
+     */
+    public com.netsuite.webservices.platform.common_2018_2.BinSearchBasic getBinNumberJoin() {
         return binNumberJoin;
     }
 
-    /**
-     * 设置binNumberJoin属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link BinSearchBasic }
-     *     
-     */
-    public void setBinNumberJoin(BinSearchBasic value) {
-        this.binNumberJoin = value;
-    }
 
     /**
-     * 获取binOnHandJoin属性的值。
+     * Sets the binNumberJoin value for this ItemSearch.
      * 
-     * @return
-     *     possible object is
-     *     {@link ItemBinNumberSearchBasic }
-     *     
+     * @param binNumberJoin
      */
-    public ItemBinNumberSearchBasic getBinOnHandJoin() {
+    public void setBinNumberJoin(com.netsuite.webservices.platform.common_2018_2.BinSearchBasic binNumberJoin) {
+        this.binNumberJoin = binNumberJoin;
+    }
+
+
+    /**
+     * Gets the binOnHandJoin value for this ItemSearch.
+     * 
+     * @return binOnHandJoin
+     */
+    public com.netsuite.webservices.platform.common_2018_2.ItemBinNumberSearchBasic getBinOnHandJoin() {
         return binOnHandJoin;
     }
 
-    /**
-     * 设置binOnHandJoin属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link ItemBinNumberSearchBasic }
-     *     
-     */
-    public void setBinOnHandJoin(ItemBinNumberSearchBasic value) {
-        this.binOnHandJoin = value;
-    }
 
     /**
-     * 获取correlatedItemJoin属性的值。
+     * Sets the binOnHandJoin value for this ItemSearch.
      * 
-     * @return
-     *     possible object is
-     *     {@link ItemSearchBasic }
-     *     
+     * @param binOnHandJoin
      */
-    public ItemSearchBasic getCorrelatedItemJoin() {
+    public void setBinOnHandJoin(com.netsuite.webservices.platform.common_2018_2.ItemBinNumberSearchBasic binOnHandJoin) {
+        this.binOnHandJoin = binOnHandJoin;
+    }
+
+
+    /**
+     * Gets the correlatedItemJoin value for this ItemSearch.
+     * 
+     * @return correlatedItemJoin
+     */
+    public com.netsuite.webservices.platform.common_2018_2.ItemSearchBasic getCorrelatedItemJoin() {
         return correlatedItemJoin;
     }
 
-    /**
-     * 设置correlatedItemJoin属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link ItemSearchBasic }
-     *     
-     */
-    public void setCorrelatedItemJoin(ItemSearchBasic value) {
-        this.correlatedItemJoin = value;
-    }
 
     /**
-     * 获取effectiveRevisionJoin属性的值。
+     * Sets the correlatedItemJoin value for this ItemSearch.
      * 
-     * @return
-     *     possible object is
-     *     {@link ItemRevisionSearchBasic }
-     *     
+     * @param correlatedItemJoin
      */
-    public ItemRevisionSearchBasic getEffectiveRevisionJoin() {
+    public void setCorrelatedItemJoin(com.netsuite.webservices.platform.common_2018_2.ItemSearchBasic correlatedItemJoin) {
+        this.correlatedItemJoin = correlatedItemJoin;
+    }
+
+
+    /**
+     * Gets the effectiveRevisionJoin value for this ItemSearch.
+     * 
+     * @return effectiveRevisionJoin
+     */
+    public com.netsuite.webservices.platform.common_2018_2.ItemRevisionSearchBasic getEffectiveRevisionJoin() {
         return effectiveRevisionJoin;
     }
 
-    /**
-     * 设置effectiveRevisionJoin属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link ItemRevisionSearchBasic }
-     *     
-     */
-    public void setEffectiveRevisionJoin(ItemRevisionSearchBasic value) {
-        this.effectiveRevisionJoin = value;
-    }
 
     /**
-     * 获取fileJoin属性的值。
+     * Sets the effectiveRevisionJoin value for this ItemSearch.
      * 
-     * @return
-     *     possible object is
-     *     {@link FileSearchBasic }
-     *     
+     * @param effectiveRevisionJoin
      */
-    public FileSearchBasic getFileJoin() {
+    public void setEffectiveRevisionJoin(com.netsuite.webservices.platform.common_2018_2.ItemRevisionSearchBasic effectiveRevisionJoin) {
+        this.effectiveRevisionJoin = effectiveRevisionJoin;
+    }
+
+
+    /**
+     * Gets the fileJoin value for this ItemSearch.
+     * 
+     * @return fileJoin
+     */
+    public com.netsuite.webservices.platform.common_2018_2.FileSearchBasic getFileJoin() {
         return fileJoin;
     }
 
-    /**
-     * 设置fileJoin属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link FileSearchBasic }
-     *     
-     */
-    public void setFileJoin(FileSearchBasic value) {
-        this.fileJoin = value;
-    }
 
     /**
-     * 获取inventoryDetailJoin属性的值。
+     * Sets the fileJoin value for this ItemSearch.
      * 
-     * @return
-     *     possible object is
-     *     {@link InventoryDetailSearchBasic }
-     *     
+     * @param fileJoin
      */
-    public InventoryDetailSearchBasic getInventoryDetailJoin() {
+    public void setFileJoin(com.netsuite.webservices.platform.common_2018_2.FileSearchBasic fileJoin) {
+        this.fileJoin = fileJoin;
+    }
+
+
+    /**
+     * Gets the inventoryDetailJoin value for this ItemSearch.
+     * 
+     * @return inventoryDetailJoin
+     */
+    public com.netsuite.webservices.platform.common_2018_2.InventoryDetailSearchBasic getInventoryDetailJoin() {
         return inventoryDetailJoin;
     }
 
-    /**
-     * 设置inventoryDetailJoin属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link InventoryDetailSearchBasic }
-     *     
-     */
-    public void setInventoryDetailJoin(InventoryDetailSearchBasic value) {
-        this.inventoryDetailJoin = value;
-    }
 
     /**
-     * 获取inventoryLocationJoin属性的值。
+     * Sets the inventoryDetailJoin value for this ItemSearch.
      * 
-     * @return
-     *     possible object is
-     *     {@link LocationSearchBasic }
-     *     
+     * @param inventoryDetailJoin
      */
-    public LocationSearchBasic getInventoryLocationJoin() {
+    public void setInventoryDetailJoin(com.netsuite.webservices.platform.common_2018_2.InventoryDetailSearchBasic inventoryDetailJoin) {
+        this.inventoryDetailJoin = inventoryDetailJoin;
+    }
+
+
+    /**
+     * Gets the inventoryLocationJoin value for this ItemSearch.
+     * 
+     * @return inventoryLocationJoin
+     */
+    public com.netsuite.webservices.platform.common_2018_2.LocationSearchBasic getInventoryLocationJoin() {
         return inventoryLocationJoin;
     }
 
-    /**
-     * 设置inventoryLocationJoin属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link LocationSearchBasic }
-     *     
-     */
-    public void setInventoryLocationJoin(LocationSearchBasic value) {
-        this.inventoryLocationJoin = value;
-    }
 
     /**
-     * 获取inventoryNumberJoin属性的值。
+     * Sets the inventoryLocationJoin value for this ItemSearch.
      * 
-     * @return
-     *     possible object is
-     *     {@link InventoryNumberSearchBasic }
-     *     
+     * @param inventoryLocationJoin
      */
-    public InventoryNumberSearchBasic getInventoryNumberJoin() {
+    public void setInventoryLocationJoin(com.netsuite.webservices.platform.common_2018_2.LocationSearchBasic inventoryLocationJoin) {
+        this.inventoryLocationJoin = inventoryLocationJoin;
+    }
+
+
+    /**
+     * Gets the inventoryNumberJoin value for this ItemSearch.
+     * 
+     * @return inventoryNumberJoin
+     */
+    public com.netsuite.webservices.platform.common_2018_2.InventoryNumberSearchBasic getInventoryNumberJoin() {
         return inventoryNumberJoin;
     }
 
-    /**
-     * 设置inventoryNumberJoin属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link InventoryNumberSearchBasic }
-     *     
-     */
-    public void setInventoryNumberJoin(InventoryNumberSearchBasic value) {
-        this.inventoryNumberJoin = value;
-    }
 
     /**
-     * 获取inventoryNumberBinOnHandJoin属性的值。
+     * Sets the inventoryNumberJoin value for this ItemSearch.
      * 
-     * @return
-     *     possible object is
-     *     {@link InventoryNumberBinSearchBasic }
-     *     
+     * @param inventoryNumberJoin
      */
-    public InventoryNumberBinSearchBasic getInventoryNumberBinOnHandJoin() {
+    public void setInventoryNumberJoin(com.netsuite.webservices.platform.common_2018_2.InventoryNumberSearchBasic inventoryNumberJoin) {
+        this.inventoryNumberJoin = inventoryNumberJoin;
+    }
+
+
+    /**
+     * Gets the inventoryNumberBinOnHandJoin value for this ItemSearch.
+     * 
+     * @return inventoryNumberBinOnHandJoin
+     */
+    public com.netsuite.webservices.platform.common_2018_2.InventoryNumberBinSearchBasic getInventoryNumberBinOnHandJoin() {
         return inventoryNumberBinOnHandJoin;
     }
 
-    /**
-     * 设置inventoryNumberBinOnHandJoin属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link InventoryNumberBinSearchBasic }
-     *     
-     */
-    public void setInventoryNumberBinOnHandJoin(InventoryNumberBinSearchBasic value) {
-        this.inventoryNumberBinOnHandJoin = value;
-    }
 
     /**
-     * 获取memberItemJoin属性的值。
+     * Sets the inventoryNumberBinOnHandJoin value for this ItemSearch.
      * 
-     * @return
-     *     possible object is
-     *     {@link ItemSearchBasic }
-     *     
+     * @param inventoryNumberBinOnHandJoin
      */
-    public ItemSearchBasic getMemberItemJoin() {
+    public void setInventoryNumberBinOnHandJoin(com.netsuite.webservices.platform.common_2018_2.InventoryNumberBinSearchBasic inventoryNumberBinOnHandJoin) {
+        this.inventoryNumberBinOnHandJoin = inventoryNumberBinOnHandJoin;
+    }
+
+
+    /**
+     * Gets the memberItemJoin value for this ItemSearch.
+     * 
+     * @return memberItemJoin
+     */
+    public com.netsuite.webservices.platform.common_2018_2.ItemSearchBasic getMemberItemJoin() {
         return memberItemJoin;
     }
 
-    /**
-     * 设置memberItemJoin属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link ItemSearchBasic }
-     *     
-     */
-    public void setMemberItemJoin(ItemSearchBasic value) {
-        this.memberItemJoin = value;
-    }
 
     /**
-     * 获取obsoleteRevisionJoin属性的值。
+     * Sets the memberItemJoin value for this ItemSearch.
      * 
-     * @return
-     *     possible object is
-     *     {@link ItemRevisionSearchBasic }
-     *     
+     * @param memberItemJoin
      */
-    public ItemRevisionSearchBasic getObsoleteRevisionJoin() {
+    public void setMemberItemJoin(com.netsuite.webservices.platform.common_2018_2.ItemSearchBasic memberItemJoin) {
+        this.memberItemJoin = memberItemJoin;
+    }
+
+
+    /**
+     * Gets the obsoleteRevisionJoin value for this ItemSearch.
+     * 
+     * @return obsoleteRevisionJoin
+     */
+    public com.netsuite.webservices.platform.common_2018_2.ItemRevisionSearchBasic getObsoleteRevisionJoin() {
         return obsoleteRevisionJoin;
     }
 
-    /**
-     * 设置obsoleteRevisionJoin属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link ItemRevisionSearchBasic }
-     *     
-     */
-    public void setObsoleteRevisionJoin(ItemRevisionSearchBasic value) {
-        this.obsoleteRevisionJoin = value;
-    }
 
     /**
-     * 获取parentJoin属性的值。
+     * Sets the obsoleteRevisionJoin value for this ItemSearch.
      * 
-     * @return
-     *     possible object is
-     *     {@link ItemSearchBasic }
-     *     
+     * @param obsoleteRevisionJoin
      */
-    public ItemSearchBasic getParentJoin() {
+    public void setObsoleteRevisionJoin(com.netsuite.webservices.platform.common_2018_2.ItemRevisionSearchBasic obsoleteRevisionJoin) {
+        this.obsoleteRevisionJoin = obsoleteRevisionJoin;
+    }
+
+
+    /**
+     * Gets the parentJoin value for this ItemSearch.
+     * 
+     * @return parentJoin
+     */
+    public com.netsuite.webservices.platform.common_2018_2.ItemSearchBasic getParentJoin() {
         return parentJoin;
     }
 
-    /**
-     * 设置parentJoin属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link ItemSearchBasic }
-     *     
-     */
-    public void setParentJoin(ItemSearchBasic value) {
-        this.parentJoin = value;
-    }
 
     /**
-     * 获取preferredLocationJoin属性的值。
+     * Sets the parentJoin value for this ItemSearch.
      * 
-     * @return
-     *     possible object is
-     *     {@link LocationSearchBasic }
-     *     
+     * @param parentJoin
      */
-    public LocationSearchBasic getPreferredLocationJoin() {
+    public void setParentJoin(com.netsuite.webservices.platform.common_2018_2.ItemSearchBasic parentJoin) {
+        this.parentJoin = parentJoin;
+    }
+
+
+    /**
+     * Gets the preferredLocationJoin value for this ItemSearch.
+     * 
+     * @return preferredLocationJoin
+     */
+    public com.netsuite.webservices.platform.common_2018_2.LocationSearchBasic getPreferredLocationJoin() {
         return preferredLocationJoin;
     }
 
-    /**
-     * 设置preferredLocationJoin属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link LocationSearchBasic }
-     *     
-     */
-    public void setPreferredLocationJoin(LocationSearchBasic value) {
-        this.preferredLocationJoin = value;
-    }
 
     /**
-     * 获取preferredVendorJoin属性的值。
+     * Sets the preferredLocationJoin value for this ItemSearch.
      * 
-     * @return
-     *     possible object is
-     *     {@link VendorSearchBasic }
-     *     
+     * @param preferredLocationJoin
      */
-    public VendorSearchBasic getPreferredVendorJoin() {
+    public void setPreferredLocationJoin(com.netsuite.webservices.platform.common_2018_2.LocationSearchBasic preferredLocationJoin) {
+        this.preferredLocationJoin = preferredLocationJoin;
+    }
+
+
+    /**
+     * Gets the preferredVendorJoin value for this ItemSearch.
+     * 
+     * @return preferredVendorJoin
+     */
+    public com.netsuite.webservices.platform.common_2018_2.VendorSearchBasic getPreferredVendorJoin() {
         return preferredVendorJoin;
     }
 
-    /**
-     * 设置preferredVendorJoin属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link VendorSearchBasic }
-     *     
-     */
-    public void setPreferredVendorJoin(VendorSearchBasic value) {
-        this.preferredVendorJoin = value;
-    }
 
     /**
-     * 获取pricingJoin属性的值。
+     * Sets the preferredVendorJoin value for this ItemSearch.
      * 
-     * @return
-     *     possible object is
-     *     {@link PricingSearchBasic }
-     *     
+     * @param preferredVendorJoin
      */
-    public PricingSearchBasic getPricingJoin() {
+    public void setPreferredVendorJoin(com.netsuite.webservices.platform.common_2018_2.VendorSearchBasic preferredVendorJoin) {
+        this.preferredVendorJoin = preferredVendorJoin;
+    }
+
+
+    /**
+     * Gets the pricingJoin value for this ItemSearch.
+     * 
+     * @return pricingJoin
+     */
+    public com.netsuite.webservices.platform.common_2018_2.PricingSearchBasic getPricingJoin() {
         return pricingJoin;
     }
 
-    /**
-     * 设置pricingJoin属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link PricingSearchBasic }
-     *     
-     */
-    public void setPricingJoin(PricingSearchBasic value) {
-        this.pricingJoin = value;
-    }
 
     /**
-     * 获取shopperJoin属性的值。
+     * Sets the pricingJoin value for this ItemSearch.
      * 
-     * @return
-     *     possible object is
-     *     {@link CustomerSearchBasic }
-     *     
+     * @param pricingJoin
      */
-    public CustomerSearchBasic getShopperJoin() {
+    public void setPricingJoin(com.netsuite.webservices.platform.common_2018_2.PricingSearchBasic pricingJoin) {
+        this.pricingJoin = pricingJoin;
+    }
+
+
+    /**
+     * Gets the shopperJoin value for this ItemSearch.
+     * 
+     * @return shopperJoin
+     */
+    public com.netsuite.webservices.platform.common_2018_2.CustomerSearchBasic getShopperJoin() {
         return shopperJoin;
     }
 
-    /**
-     * 设置shopperJoin属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link CustomerSearchBasic }
-     *     
-     */
-    public void setShopperJoin(CustomerSearchBasic value) {
-        this.shopperJoin = value;
-    }
 
     /**
-     * 获取transactionJoin属性的值。
+     * Sets the shopperJoin value for this ItemSearch.
      * 
-     * @return
-     *     possible object is
-     *     {@link TransactionSearchBasic }
-     *     
+     * @param shopperJoin
      */
-    public TransactionSearchBasic getTransactionJoin() {
+    public void setShopperJoin(com.netsuite.webservices.platform.common_2018_2.CustomerSearchBasic shopperJoin) {
+        this.shopperJoin = shopperJoin;
+    }
+
+
+    /**
+     * Gets the transactionJoin value for this ItemSearch.
+     * 
+     * @return transactionJoin
+     */
+    public com.netsuite.webservices.platform.common_2018_2.TransactionSearchBasic getTransactionJoin() {
         return transactionJoin;
     }
 
-    /**
-     * 设置transactionJoin属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link TransactionSearchBasic }
-     *     
-     */
-    public void setTransactionJoin(TransactionSearchBasic value) {
-        this.transactionJoin = value;
-    }
 
     /**
-     * 获取userJoin属性的值。
+     * Sets the transactionJoin value for this ItemSearch.
      * 
-     * @return
-     *     possible object is
-     *     {@link EmployeeSearchBasic }
-     *     
+     * @param transactionJoin
      */
-    public EmployeeSearchBasic getUserJoin() {
+    public void setTransactionJoin(com.netsuite.webservices.platform.common_2018_2.TransactionSearchBasic transactionJoin) {
+        this.transactionJoin = transactionJoin;
+    }
+
+
+    /**
+     * Gets the userJoin value for this ItemSearch.
+     * 
+     * @return userJoin
+     */
+    public com.netsuite.webservices.platform.common_2018_2.EmployeeSearchBasic getUserJoin() {
         return userJoin;
     }
 
-    /**
-     * 设置userJoin属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link EmployeeSearchBasic }
-     *     
-     */
-    public void setUserJoin(EmployeeSearchBasic value) {
-        this.userJoin = value;
-    }
 
     /**
-     * 获取userNotesJoin属性的值。
+     * Sets the userJoin value for this ItemSearch.
      * 
-     * @return
-     *     possible object is
-     *     {@link NoteSearchBasic }
-     *     
+     * @param userJoin
      */
-    public NoteSearchBasic getUserNotesJoin() {
+    public void setUserJoin(com.netsuite.webservices.platform.common_2018_2.EmployeeSearchBasic userJoin) {
+        this.userJoin = userJoin;
+    }
+
+
+    /**
+     * Gets the userNotesJoin value for this ItemSearch.
+     * 
+     * @return userNotesJoin
+     */
+    public com.netsuite.webservices.platform.common_2018_2.NoteSearchBasic getUserNotesJoin() {
         return userNotesJoin;
     }
 
-    /**
-     * 设置userNotesJoin属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link NoteSearchBasic }
-     *     
-     */
-    public void setUserNotesJoin(NoteSearchBasic value) {
-        this.userNotesJoin = value;
-    }
 
     /**
-     * 获取vendorJoin属性的值。
+     * Sets the userNotesJoin value for this ItemSearch.
      * 
-     * @return
-     *     possible object is
-     *     {@link VendorSearchBasic }
-     *     
+     * @param userNotesJoin
      */
-    public VendorSearchBasic getVendorJoin() {
+    public void setUserNotesJoin(com.netsuite.webservices.platform.common_2018_2.NoteSearchBasic userNotesJoin) {
+        this.userNotesJoin = userNotesJoin;
+    }
+
+
+    /**
+     * Gets the vendorJoin value for this ItemSearch.
+     * 
+     * @return vendorJoin
+     */
+    public com.netsuite.webservices.platform.common_2018_2.VendorSearchBasic getVendorJoin() {
         return vendorJoin;
     }
 
+
     /**
-     * 设置vendorJoin属性的值。
+     * Sets the vendorJoin value for this ItemSearch.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link VendorSearchBasic }
-     *     
+     * @param vendorJoin
      */
-    public void setVendorJoin(VendorSearchBasic value) {
-        this.vendorJoin = value;
+    public void setVendorJoin(com.netsuite.webservices.platform.common_2018_2.VendorSearchBasic vendorJoin) {
+        this.vendorJoin = vendorJoin;
+    }
+
+
+    /**
+     * Gets the customSearchJoin value for this ItemSearch.
+     * 
+     * @return customSearchJoin
+     */
+    public com.netsuite.webservices.platform.common_2018_2.CustomSearchJoin[] getCustomSearchJoin() {
+        return customSearchJoin;
+    }
+
+
+    /**
+     * Sets the customSearchJoin value for this ItemSearch.
+     * 
+     * @param customSearchJoin
+     */
+    public void setCustomSearchJoin(com.netsuite.webservices.platform.common_2018_2.CustomSearchJoin[] customSearchJoin) {
+        this.customSearchJoin = customSearchJoin;
+    }
+
+    public com.netsuite.webservices.platform.common_2018_2.CustomSearchJoin getCustomSearchJoin(int i) {
+        return this.customSearchJoin[i];
+    }
+
+    public void setCustomSearchJoin(int i, com.netsuite.webservices.platform.common_2018_2.CustomSearchJoin _value) {
+        this.customSearchJoin[i] = _value;
+    }
+
+    private java.lang.Object __equalsCalc = null;
+    public synchronized boolean equals(java.lang.Object obj) {
+        if (!(obj instanceof ItemSearch)) return false;
+        ItemSearch other = (ItemSearch) obj;
+        if (obj == null) return false;
+        if (this == obj) return true;
+        if (__equalsCalc != null) {
+            return (__equalsCalc == obj);
+        }
+        __equalsCalc = obj;
+        boolean _equals;
+        _equals = super.equals(obj) && 
+            ((this.basic==null && other.getBasic()==null) || 
+             (this.basic!=null &&
+              this.basic.equals(other.getBasic()))) &&
+            ((this.assemblyItemBillOfMaterialsJoin==null && other.getAssemblyItemBillOfMaterialsJoin()==null) || 
+             (this.assemblyItemBillOfMaterialsJoin!=null &&
+              this.assemblyItemBillOfMaterialsJoin.equals(other.getAssemblyItemBillOfMaterialsJoin()))) &&
+            ((this.binNumberJoin==null && other.getBinNumberJoin()==null) || 
+             (this.binNumberJoin!=null &&
+              this.binNumberJoin.equals(other.getBinNumberJoin()))) &&
+            ((this.binOnHandJoin==null && other.getBinOnHandJoin()==null) || 
+             (this.binOnHandJoin!=null &&
+              this.binOnHandJoin.equals(other.getBinOnHandJoin()))) &&
+            ((this.correlatedItemJoin==null && other.getCorrelatedItemJoin()==null) || 
+             (this.correlatedItemJoin!=null &&
+              this.correlatedItemJoin.equals(other.getCorrelatedItemJoin()))) &&
+            ((this.effectiveRevisionJoin==null && other.getEffectiveRevisionJoin()==null) || 
+             (this.effectiveRevisionJoin!=null &&
+              this.effectiveRevisionJoin.equals(other.getEffectiveRevisionJoin()))) &&
+            ((this.fileJoin==null && other.getFileJoin()==null) || 
+             (this.fileJoin!=null &&
+              this.fileJoin.equals(other.getFileJoin()))) &&
+            ((this.inventoryDetailJoin==null && other.getInventoryDetailJoin()==null) || 
+             (this.inventoryDetailJoin!=null &&
+              this.inventoryDetailJoin.equals(other.getInventoryDetailJoin()))) &&
+            ((this.inventoryLocationJoin==null && other.getInventoryLocationJoin()==null) || 
+             (this.inventoryLocationJoin!=null &&
+              this.inventoryLocationJoin.equals(other.getInventoryLocationJoin()))) &&
+            ((this.inventoryNumberJoin==null && other.getInventoryNumberJoin()==null) || 
+             (this.inventoryNumberJoin!=null &&
+              this.inventoryNumberJoin.equals(other.getInventoryNumberJoin()))) &&
+            ((this.inventoryNumberBinOnHandJoin==null && other.getInventoryNumberBinOnHandJoin()==null) || 
+             (this.inventoryNumberBinOnHandJoin!=null &&
+              this.inventoryNumberBinOnHandJoin.equals(other.getInventoryNumberBinOnHandJoin()))) &&
+            ((this.memberItemJoin==null && other.getMemberItemJoin()==null) || 
+             (this.memberItemJoin!=null &&
+              this.memberItemJoin.equals(other.getMemberItemJoin()))) &&
+            ((this.obsoleteRevisionJoin==null && other.getObsoleteRevisionJoin()==null) || 
+             (this.obsoleteRevisionJoin!=null &&
+              this.obsoleteRevisionJoin.equals(other.getObsoleteRevisionJoin()))) &&
+            ((this.parentJoin==null && other.getParentJoin()==null) || 
+             (this.parentJoin!=null &&
+              this.parentJoin.equals(other.getParentJoin()))) &&
+            ((this.preferredLocationJoin==null && other.getPreferredLocationJoin()==null) || 
+             (this.preferredLocationJoin!=null &&
+              this.preferredLocationJoin.equals(other.getPreferredLocationJoin()))) &&
+            ((this.preferredVendorJoin==null && other.getPreferredVendorJoin()==null) || 
+             (this.preferredVendorJoin!=null &&
+              this.preferredVendorJoin.equals(other.getPreferredVendorJoin()))) &&
+            ((this.pricingJoin==null && other.getPricingJoin()==null) || 
+             (this.pricingJoin!=null &&
+              this.pricingJoin.equals(other.getPricingJoin()))) &&
+            ((this.shopperJoin==null && other.getShopperJoin()==null) || 
+             (this.shopperJoin!=null &&
+              this.shopperJoin.equals(other.getShopperJoin()))) &&
+            ((this.transactionJoin==null && other.getTransactionJoin()==null) || 
+             (this.transactionJoin!=null &&
+              this.transactionJoin.equals(other.getTransactionJoin()))) &&
+            ((this.userJoin==null && other.getUserJoin()==null) || 
+             (this.userJoin!=null &&
+              this.userJoin.equals(other.getUserJoin()))) &&
+            ((this.userNotesJoin==null && other.getUserNotesJoin()==null) || 
+             (this.userNotesJoin!=null &&
+              this.userNotesJoin.equals(other.getUserNotesJoin()))) &&
+            ((this.vendorJoin==null && other.getVendorJoin()==null) || 
+             (this.vendorJoin!=null &&
+              this.vendorJoin.equals(other.getVendorJoin()))) &&
+            ((this.customSearchJoin==null && other.getCustomSearchJoin()==null) || 
+             (this.customSearchJoin!=null &&
+              java.util.Arrays.equals(this.customSearchJoin, other.getCustomSearchJoin())));
+        __equalsCalc = null;
+        return _equals;
+    }
+
+    private boolean __hashCodeCalc = false;
+    public synchronized int hashCode() {
+        if (__hashCodeCalc) {
+            return 0;
+        }
+        __hashCodeCalc = true;
+        int _hashCode = super.hashCode();
+        if (getBasic() != null) {
+            _hashCode += getBasic().hashCode();
+        }
+        if (getAssemblyItemBillOfMaterialsJoin() != null) {
+            _hashCode += getAssemblyItemBillOfMaterialsJoin().hashCode();
+        }
+        if (getBinNumberJoin() != null) {
+            _hashCode += getBinNumberJoin().hashCode();
+        }
+        if (getBinOnHandJoin() != null) {
+            _hashCode += getBinOnHandJoin().hashCode();
+        }
+        if (getCorrelatedItemJoin() != null) {
+            _hashCode += getCorrelatedItemJoin().hashCode();
+        }
+        if (getEffectiveRevisionJoin() != null) {
+            _hashCode += getEffectiveRevisionJoin().hashCode();
+        }
+        if (getFileJoin() != null) {
+            _hashCode += getFileJoin().hashCode();
+        }
+        if (getInventoryDetailJoin() != null) {
+            _hashCode += getInventoryDetailJoin().hashCode();
+        }
+        if (getInventoryLocationJoin() != null) {
+            _hashCode += getInventoryLocationJoin().hashCode();
+        }
+        if (getInventoryNumberJoin() != null) {
+            _hashCode += getInventoryNumberJoin().hashCode();
+        }
+        if (getInventoryNumberBinOnHandJoin() != null) {
+            _hashCode += getInventoryNumberBinOnHandJoin().hashCode();
+        }
+        if (getMemberItemJoin() != null) {
+            _hashCode += getMemberItemJoin().hashCode();
+        }
+        if (getObsoleteRevisionJoin() != null) {
+            _hashCode += getObsoleteRevisionJoin().hashCode();
+        }
+        if (getParentJoin() != null) {
+            _hashCode += getParentJoin().hashCode();
+        }
+        if (getPreferredLocationJoin() != null) {
+            _hashCode += getPreferredLocationJoin().hashCode();
+        }
+        if (getPreferredVendorJoin() != null) {
+            _hashCode += getPreferredVendorJoin().hashCode();
+        }
+        if (getPricingJoin() != null) {
+            _hashCode += getPricingJoin().hashCode();
+        }
+        if (getShopperJoin() != null) {
+            _hashCode += getShopperJoin().hashCode();
+        }
+        if (getTransactionJoin() != null) {
+            _hashCode += getTransactionJoin().hashCode();
+        }
+        if (getUserJoin() != null) {
+            _hashCode += getUserJoin().hashCode();
+        }
+        if (getUserNotesJoin() != null) {
+            _hashCode += getUserNotesJoin().hashCode();
+        }
+        if (getVendorJoin() != null) {
+            _hashCode += getVendorJoin().hashCode();
+        }
+        if (getCustomSearchJoin() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getCustomSearchJoin());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getCustomSearchJoin(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        __hashCodeCalc = false;
+        return _hashCode;
+    }
+
+    // Type metadata
+    private static org.apache.axis.description.TypeDesc typeDesc =
+        new org.apache.axis.description.TypeDesc(ItemSearch.class, true);
+
+    static {
+        typeDesc.setXmlType(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "ItemSearch"));
+        org.apache.axis.description.ElementDesc elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("basic");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "basic"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "ItemSearchBasic"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("assemblyItemBillOfMaterialsJoin");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "assemblyItemBillOfMaterialsJoin"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "AssemblyItemBomSearchBasic"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("binNumberJoin");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "binNumberJoin"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "BinSearchBasic"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("binOnHandJoin");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "binOnHandJoin"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "ItemBinNumberSearchBasic"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("correlatedItemJoin");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "correlatedItemJoin"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "ItemSearchBasic"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("effectiveRevisionJoin");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "effectiveRevisionJoin"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "ItemRevisionSearchBasic"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("fileJoin");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "fileJoin"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "FileSearchBasic"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("inventoryDetailJoin");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "inventoryDetailJoin"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "InventoryDetailSearchBasic"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("inventoryLocationJoin");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "inventoryLocationJoin"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "LocationSearchBasic"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("inventoryNumberJoin");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "inventoryNumberJoin"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "InventoryNumberSearchBasic"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("inventoryNumberBinOnHandJoin");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "inventoryNumberBinOnHandJoin"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "InventoryNumberBinSearchBasic"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("memberItemJoin");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "memberItemJoin"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "ItemSearchBasic"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("obsoleteRevisionJoin");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "obsoleteRevisionJoin"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "ItemRevisionSearchBasic"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("parentJoin");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "parentJoin"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "ItemSearchBasic"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("preferredLocationJoin");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "preferredLocationJoin"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "LocationSearchBasic"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("preferredVendorJoin");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "preferredVendorJoin"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "VendorSearchBasic"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("pricingJoin");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "pricingJoin"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "PricingSearchBasic"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("shopperJoin");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "shopperJoin"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "CustomerSearchBasic"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("transactionJoin");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "transactionJoin"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "TransactionSearchBasic"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("userJoin");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "userJoin"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "EmployeeSearchBasic"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("userNotesJoin");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "userNotesJoin"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "NoteSearchBasic"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("vendorJoin");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "vendorJoin"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "VendorSearchBasic"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("customSearchJoin");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "customSearchJoin"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "CustomSearchJoin"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
     }
 
     /**
-     * Gets the value of the customSearchJoin property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the customSearchJoin property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getCustomSearchJoin().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link CustomSearchJoin }
-     * 
-     * 
+     * Return type metadata object
      */
-    public List<CustomSearchJoin> getCustomSearchJoin() {
-        if (customSearchJoin == null) {
-            customSearchJoin = new ArrayList<CustomSearchJoin>();
-        }
-        return this.customSearchJoin;
+    public static org.apache.axis.description.TypeDesc getTypeDesc() {
+        return typeDesc;
+    }
+
+    /**
+     * Get Custom Serializer
+     */
+    public static org.apache.axis.encoding.Serializer getSerializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanSerializer(
+            _javaType, _xmlType, typeDesc);
+    }
+
+    /**
+     * Get Custom Deserializer
+     */
+    public static org.apache.axis.encoding.Deserializer getDeserializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanDeserializer(
+            _javaType, _xmlType, typeDesc);
     }
 
 }

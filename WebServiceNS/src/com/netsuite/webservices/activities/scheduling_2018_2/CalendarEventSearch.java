@@ -1,407 +1,581 @@
+/**
+ * CalendarEventSearch.java
+ *
+ * This file was auto-generated from WSDL
+ * by the Apache Axis 1.4 Jul 28, 2010 (04:07:04 PDT) WSDL2Java emitter.
+ */
 
 package com.netsuite.webservices.activities.scheduling_2018_2;
 
-import java.util.ArrayList;
-import java.util.List;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlType;
-import com.netsuite.webservices.platform.common_2018_2.CalendarEventSearchBasic;
-import com.netsuite.webservices.platform.common_2018_2.ContactSearchBasic;
-import com.netsuite.webservices.platform.common_2018_2.CustomSearchJoin;
-import com.netsuite.webservices.platform.common_2018_2.CustomerSearchBasic;
-import com.netsuite.webservices.platform.common_2018_2.EmployeeSearchBasic;
-import com.netsuite.webservices.platform.common_2018_2.EntitySearchBasic;
-import com.netsuite.webservices.platform.common_2018_2.FileSearchBasic;
-import com.netsuite.webservices.platform.common_2018_2.NoteSearchBasic;
-import com.netsuite.webservices.platform.common_2018_2.OpportunitySearchBasic;
-import com.netsuite.webservices.platform.common_2018_2.OriginatingLeadSearchBasic;
-import com.netsuite.webservices.platform.common_2018_2.SupportCaseSearchBasic;
-import com.netsuite.webservices.platform.common_2018_2.TimeBillSearchBasic;
-import com.netsuite.webservices.platform.common_2018_2.TransactionSearchBasic;
-import com.netsuite.webservices.platform.core_2018_2.SearchRecord;
+public class CalendarEventSearch  extends com.netsuite.webservices.platform.core_2018_2.SearchRecord  implements java.io.Serializable {
+    private com.netsuite.webservices.platform.common_2018_2.CalendarEventSearchBasic basic;
 
+    private com.netsuite.webservices.platform.common_2018_2.EntitySearchBasic attendeeJoin;
 
-/**
- * <p>CalendarEventSearch complex type的 Java 类。
- * 
- * <p>以下模式片段指定包含在此类中的预期内容。
- * 
- * <pre>
- * &lt;complexType name="CalendarEventSearch">
- *   &lt;complexContent>
- *     &lt;extension base="{urn:core_2018_2.platform.webservices.netsuite.com}SearchRecord">
- *       &lt;sequence>
- *         &lt;element name="basic" type="{urn:common_2018_2.platform.webservices.netsuite.com}CalendarEventSearchBasic" minOccurs="0"/>
- *         &lt;element name="attendeeJoin" type="{urn:common_2018_2.platform.webservices.netsuite.com}EntitySearchBasic" minOccurs="0"/>
- *         &lt;element name="attendeeContactJoin" type="{urn:common_2018_2.platform.webservices.netsuite.com}ContactSearchBasic" minOccurs="0"/>
- *         &lt;element name="attendeeCustomerJoin" type="{urn:common_2018_2.platform.webservices.netsuite.com}CustomerSearchBasic" minOccurs="0"/>
- *         &lt;element name="caseJoin" type="{urn:common_2018_2.platform.webservices.netsuite.com}SupportCaseSearchBasic" minOccurs="0"/>
- *         &lt;element name="fileJoin" type="{urn:common_2018_2.platform.webservices.netsuite.com}FileSearchBasic" minOccurs="0"/>
- *         &lt;element name="opportunityJoin" type="{urn:common_2018_2.platform.webservices.netsuite.com}OpportunitySearchBasic" minOccurs="0"/>
- *         &lt;element name="originatingLeadJoin" type="{urn:common_2018_2.platform.webservices.netsuite.com}OriginatingLeadSearchBasic" minOccurs="0"/>
- *         &lt;element name="timeJoin" type="{urn:common_2018_2.platform.webservices.netsuite.com}TimeBillSearchBasic" minOccurs="0"/>
- *         &lt;element name="transactionJoin" type="{urn:common_2018_2.platform.webservices.netsuite.com}TransactionSearchBasic" minOccurs="0"/>
- *         &lt;element name="userJoin" type="{urn:common_2018_2.platform.webservices.netsuite.com}EmployeeSearchBasic" minOccurs="0"/>
- *         &lt;element name="userNotesJoin" type="{urn:common_2018_2.platform.webservices.netsuite.com}NoteSearchBasic" minOccurs="0"/>
- *         &lt;element name="customSearchJoin" type="{urn:common_2018_2.platform.webservices.netsuite.com}CustomSearchJoin" maxOccurs="unbounded" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/extension>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
- */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "CalendarEventSearch", propOrder = {
-    "basic",
-    "attendeeJoin",
-    "attendeeContactJoin",
-    "attendeeCustomerJoin",
-    "caseJoin",
-    "fileJoin",
-    "opportunityJoin",
-    "originatingLeadJoin",
-    "timeJoin",
-    "transactionJoin",
-    "userJoin",
-    "userNotesJoin",
-    "customSearchJoin"
-})
-public class CalendarEventSearch
-    extends SearchRecord
-{
+    private com.netsuite.webservices.platform.common_2018_2.ContactSearchBasic attendeeContactJoin;
 
-    protected CalendarEventSearchBasic basic;
-    protected EntitySearchBasic attendeeJoin;
-    protected ContactSearchBasic attendeeContactJoin;
-    protected CustomerSearchBasic attendeeCustomerJoin;
-    protected SupportCaseSearchBasic caseJoin;
-    protected FileSearchBasic fileJoin;
-    protected OpportunitySearchBasic opportunityJoin;
-    protected OriginatingLeadSearchBasic originatingLeadJoin;
-    protected TimeBillSearchBasic timeJoin;
-    protected TransactionSearchBasic transactionJoin;
-    protected EmployeeSearchBasic userJoin;
-    protected NoteSearchBasic userNotesJoin;
-    protected List<CustomSearchJoin> customSearchJoin;
+    private com.netsuite.webservices.platform.common_2018_2.CustomerSearchBasic attendeeCustomerJoin;
+
+    private com.netsuite.webservices.platform.common_2018_2.SupportCaseSearchBasic caseJoin;
+
+    private com.netsuite.webservices.platform.common_2018_2.FileSearchBasic fileJoin;
+
+    private com.netsuite.webservices.platform.common_2018_2.OpportunitySearchBasic opportunityJoin;
+
+    private com.netsuite.webservices.platform.common_2018_2.OriginatingLeadSearchBasic originatingLeadJoin;
+
+    private com.netsuite.webservices.platform.common_2018_2.TimeBillSearchBasic timeJoin;
+
+    private com.netsuite.webservices.platform.common_2018_2.TransactionSearchBasic transactionJoin;
+
+    private com.netsuite.webservices.platform.common_2018_2.EmployeeSearchBasic userJoin;
+
+    private com.netsuite.webservices.platform.common_2018_2.NoteSearchBasic userNotesJoin;
+
+    private com.netsuite.webservices.platform.common_2018_2.CustomSearchJoin[] customSearchJoin;
+
+    public CalendarEventSearch() {
+    }
+
+    public CalendarEventSearch(
+           com.netsuite.webservices.platform.common_2018_2.CalendarEventSearchBasic basic,
+           com.netsuite.webservices.platform.common_2018_2.EntitySearchBasic attendeeJoin,
+           com.netsuite.webservices.platform.common_2018_2.ContactSearchBasic attendeeContactJoin,
+           com.netsuite.webservices.platform.common_2018_2.CustomerSearchBasic attendeeCustomerJoin,
+           com.netsuite.webservices.platform.common_2018_2.SupportCaseSearchBasic caseJoin,
+           com.netsuite.webservices.platform.common_2018_2.FileSearchBasic fileJoin,
+           com.netsuite.webservices.platform.common_2018_2.OpportunitySearchBasic opportunityJoin,
+           com.netsuite.webservices.platform.common_2018_2.OriginatingLeadSearchBasic originatingLeadJoin,
+           com.netsuite.webservices.platform.common_2018_2.TimeBillSearchBasic timeJoin,
+           com.netsuite.webservices.platform.common_2018_2.TransactionSearchBasic transactionJoin,
+           com.netsuite.webservices.platform.common_2018_2.EmployeeSearchBasic userJoin,
+           com.netsuite.webservices.platform.common_2018_2.NoteSearchBasic userNotesJoin,
+           com.netsuite.webservices.platform.common_2018_2.CustomSearchJoin[] customSearchJoin) {
+        this.basic = basic;
+        this.attendeeJoin = attendeeJoin;
+        this.attendeeContactJoin = attendeeContactJoin;
+        this.attendeeCustomerJoin = attendeeCustomerJoin;
+        this.caseJoin = caseJoin;
+        this.fileJoin = fileJoin;
+        this.opportunityJoin = opportunityJoin;
+        this.originatingLeadJoin = originatingLeadJoin;
+        this.timeJoin = timeJoin;
+        this.transactionJoin = transactionJoin;
+        this.userJoin = userJoin;
+        this.userNotesJoin = userNotesJoin;
+        this.customSearchJoin = customSearchJoin;
+    }
+
 
     /**
-     * 获取basic属性的值。
+     * Gets the basic value for this CalendarEventSearch.
      * 
-     * @return
-     *     possible object is
-     *     {@link CalendarEventSearchBasic }
-     *     
+     * @return basic
      */
-    public CalendarEventSearchBasic getBasic() {
+    public com.netsuite.webservices.platform.common_2018_2.CalendarEventSearchBasic getBasic() {
         return basic;
     }
 
-    /**
-     * 设置basic属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link CalendarEventSearchBasic }
-     *     
-     */
-    public void setBasic(CalendarEventSearchBasic value) {
-        this.basic = value;
-    }
 
     /**
-     * 获取attendeeJoin属性的值。
+     * Sets the basic value for this CalendarEventSearch.
      * 
-     * @return
-     *     possible object is
-     *     {@link EntitySearchBasic }
-     *     
+     * @param basic
      */
-    public EntitySearchBasic getAttendeeJoin() {
+    public void setBasic(com.netsuite.webservices.platform.common_2018_2.CalendarEventSearchBasic basic) {
+        this.basic = basic;
+    }
+
+
+    /**
+     * Gets the attendeeJoin value for this CalendarEventSearch.
+     * 
+     * @return attendeeJoin
+     */
+    public com.netsuite.webservices.platform.common_2018_2.EntitySearchBasic getAttendeeJoin() {
         return attendeeJoin;
     }
 
-    /**
-     * 设置attendeeJoin属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link EntitySearchBasic }
-     *     
-     */
-    public void setAttendeeJoin(EntitySearchBasic value) {
-        this.attendeeJoin = value;
-    }
 
     /**
-     * 获取attendeeContactJoin属性的值。
+     * Sets the attendeeJoin value for this CalendarEventSearch.
      * 
-     * @return
-     *     possible object is
-     *     {@link ContactSearchBasic }
-     *     
+     * @param attendeeJoin
      */
-    public ContactSearchBasic getAttendeeContactJoin() {
+    public void setAttendeeJoin(com.netsuite.webservices.platform.common_2018_2.EntitySearchBasic attendeeJoin) {
+        this.attendeeJoin = attendeeJoin;
+    }
+
+
+    /**
+     * Gets the attendeeContactJoin value for this CalendarEventSearch.
+     * 
+     * @return attendeeContactJoin
+     */
+    public com.netsuite.webservices.platform.common_2018_2.ContactSearchBasic getAttendeeContactJoin() {
         return attendeeContactJoin;
     }
 
-    /**
-     * 设置attendeeContactJoin属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link ContactSearchBasic }
-     *     
-     */
-    public void setAttendeeContactJoin(ContactSearchBasic value) {
-        this.attendeeContactJoin = value;
-    }
 
     /**
-     * 获取attendeeCustomerJoin属性的值。
+     * Sets the attendeeContactJoin value for this CalendarEventSearch.
      * 
-     * @return
-     *     possible object is
-     *     {@link CustomerSearchBasic }
-     *     
+     * @param attendeeContactJoin
      */
-    public CustomerSearchBasic getAttendeeCustomerJoin() {
+    public void setAttendeeContactJoin(com.netsuite.webservices.platform.common_2018_2.ContactSearchBasic attendeeContactJoin) {
+        this.attendeeContactJoin = attendeeContactJoin;
+    }
+
+
+    /**
+     * Gets the attendeeCustomerJoin value for this CalendarEventSearch.
+     * 
+     * @return attendeeCustomerJoin
+     */
+    public com.netsuite.webservices.platform.common_2018_2.CustomerSearchBasic getAttendeeCustomerJoin() {
         return attendeeCustomerJoin;
     }
 
-    /**
-     * 设置attendeeCustomerJoin属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link CustomerSearchBasic }
-     *     
-     */
-    public void setAttendeeCustomerJoin(CustomerSearchBasic value) {
-        this.attendeeCustomerJoin = value;
-    }
 
     /**
-     * 获取caseJoin属性的值。
+     * Sets the attendeeCustomerJoin value for this CalendarEventSearch.
      * 
-     * @return
-     *     possible object is
-     *     {@link SupportCaseSearchBasic }
-     *     
+     * @param attendeeCustomerJoin
      */
-    public SupportCaseSearchBasic getCaseJoin() {
+    public void setAttendeeCustomerJoin(com.netsuite.webservices.platform.common_2018_2.CustomerSearchBasic attendeeCustomerJoin) {
+        this.attendeeCustomerJoin = attendeeCustomerJoin;
+    }
+
+
+    /**
+     * Gets the caseJoin value for this CalendarEventSearch.
+     * 
+     * @return caseJoin
+     */
+    public com.netsuite.webservices.platform.common_2018_2.SupportCaseSearchBasic getCaseJoin() {
         return caseJoin;
     }
 
-    /**
-     * 设置caseJoin属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SupportCaseSearchBasic }
-     *     
-     */
-    public void setCaseJoin(SupportCaseSearchBasic value) {
-        this.caseJoin = value;
-    }
 
     /**
-     * 获取fileJoin属性的值。
+     * Sets the caseJoin value for this CalendarEventSearch.
      * 
-     * @return
-     *     possible object is
-     *     {@link FileSearchBasic }
-     *     
+     * @param caseJoin
      */
-    public FileSearchBasic getFileJoin() {
+    public void setCaseJoin(com.netsuite.webservices.platform.common_2018_2.SupportCaseSearchBasic caseJoin) {
+        this.caseJoin = caseJoin;
+    }
+
+
+    /**
+     * Gets the fileJoin value for this CalendarEventSearch.
+     * 
+     * @return fileJoin
+     */
+    public com.netsuite.webservices.platform.common_2018_2.FileSearchBasic getFileJoin() {
         return fileJoin;
     }
 
-    /**
-     * 设置fileJoin属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link FileSearchBasic }
-     *     
-     */
-    public void setFileJoin(FileSearchBasic value) {
-        this.fileJoin = value;
-    }
 
     /**
-     * 获取opportunityJoin属性的值。
+     * Sets the fileJoin value for this CalendarEventSearch.
      * 
-     * @return
-     *     possible object is
-     *     {@link OpportunitySearchBasic }
-     *     
+     * @param fileJoin
      */
-    public OpportunitySearchBasic getOpportunityJoin() {
+    public void setFileJoin(com.netsuite.webservices.platform.common_2018_2.FileSearchBasic fileJoin) {
+        this.fileJoin = fileJoin;
+    }
+
+
+    /**
+     * Gets the opportunityJoin value for this CalendarEventSearch.
+     * 
+     * @return opportunityJoin
+     */
+    public com.netsuite.webservices.platform.common_2018_2.OpportunitySearchBasic getOpportunityJoin() {
         return opportunityJoin;
     }
 
-    /**
-     * 设置opportunityJoin属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link OpportunitySearchBasic }
-     *     
-     */
-    public void setOpportunityJoin(OpportunitySearchBasic value) {
-        this.opportunityJoin = value;
-    }
 
     /**
-     * 获取originatingLeadJoin属性的值。
+     * Sets the opportunityJoin value for this CalendarEventSearch.
      * 
-     * @return
-     *     possible object is
-     *     {@link OriginatingLeadSearchBasic }
-     *     
+     * @param opportunityJoin
      */
-    public OriginatingLeadSearchBasic getOriginatingLeadJoin() {
+    public void setOpportunityJoin(com.netsuite.webservices.platform.common_2018_2.OpportunitySearchBasic opportunityJoin) {
+        this.opportunityJoin = opportunityJoin;
+    }
+
+
+    /**
+     * Gets the originatingLeadJoin value for this CalendarEventSearch.
+     * 
+     * @return originatingLeadJoin
+     */
+    public com.netsuite.webservices.platform.common_2018_2.OriginatingLeadSearchBasic getOriginatingLeadJoin() {
         return originatingLeadJoin;
     }
 
-    /**
-     * 设置originatingLeadJoin属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link OriginatingLeadSearchBasic }
-     *     
-     */
-    public void setOriginatingLeadJoin(OriginatingLeadSearchBasic value) {
-        this.originatingLeadJoin = value;
-    }
 
     /**
-     * 获取timeJoin属性的值。
+     * Sets the originatingLeadJoin value for this CalendarEventSearch.
      * 
-     * @return
-     *     possible object is
-     *     {@link TimeBillSearchBasic }
-     *     
+     * @param originatingLeadJoin
      */
-    public TimeBillSearchBasic getTimeJoin() {
+    public void setOriginatingLeadJoin(com.netsuite.webservices.platform.common_2018_2.OriginatingLeadSearchBasic originatingLeadJoin) {
+        this.originatingLeadJoin = originatingLeadJoin;
+    }
+
+
+    /**
+     * Gets the timeJoin value for this CalendarEventSearch.
+     * 
+     * @return timeJoin
+     */
+    public com.netsuite.webservices.platform.common_2018_2.TimeBillSearchBasic getTimeJoin() {
         return timeJoin;
     }
 
-    /**
-     * 设置timeJoin属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link TimeBillSearchBasic }
-     *     
-     */
-    public void setTimeJoin(TimeBillSearchBasic value) {
-        this.timeJoin = value;
-    }
 
     /**
-     * 获取transactionJoin属性的值。
+     * Sets the timeJoin value for this CalendarEventSearch.
      * 
-     * @return
-     *     possible object is
-     *     {@link TransactionSearchBasic }
-     *     
+     * @param timeJoin
      */
-    public TransactionSearchBasic getTransactionJoin() {
+    public void setTimeJoin(com.netsuite.webservices.platform.common_2018_2.TimeBillSearchBasic timeJoin) {
+        this.timeJoin = timeJoin;
+    }
+
+
+    /**
+     * Gets the transactionJoin value for this CalendarEventSearch.
+     * 
+     * @return transactionJoin
+     */
+    public com.netsuite.webservices.platform.common_2018_2.TransactionSearchBasic getTransactionJoin() {
         return transactionJoin;
     }
 
-    /**
-     * 设置transactionJoin属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link TransactionSearchBasic }
-     *     
-     */
-    public void setTransactionJoin(TransactionSearchBasic value) {
-        this.transactionJoin = value;
-    }
 
     /**
-     * 获取userJoin属性的值。
+     * Sets the transactionJoin value for this CalendarEventSearch.
      * 
-     * @return
-     *     possible object is
-     *     {@link EmployeeSearchBasic }
-     *     
+     * @param transactionJoin
      */
-    public EmployeeSearchBasic getUserJoin() {
+    public void setTransactionJoin(com.netsuite.webservices.platform.common_2018_2.TransactionSearchBasic transactionJoin) {
+        this.transactionJoin = transactionJoin;
+    }
+
+
+    /**
+     * Gets the userJoin value for this CalendarEventSearch.
+     * 
+     * @return userJoin
+     */
+    public com.netsuite.webservices.platform.common_2018_2.EmployeeSearchBasic getUserJoin() {
         return userJoin;
     }
 
-    /**
-     * 设置userJoin属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link EmployeeSearchBasic }
-     *     
-     */
-    public void setUserJoin(EmployeeSearchBasic value) {
-        this.userJoin = value;
-    }
 
     /**
-     * 获取userNotesJoin属性的值。
+     * Sets the userJoin value for this CalendarEventSearch.
      * 
-     * @return
-     *     possible object is
-     *     {@link NoteSearchBasic }
-     *     
+     * @param userJoin
      */
-    public NoteSearchBasic getUserNotesJoin() {
+    public void setUserJoin(com.netsuite.webservices.platform.common_2018_2.EmployeeSearchBasic userJoin) {
+        this.userJoin = userJoin;
+    }
+
+
+    /**
+     * Gets the userNotesJoin value for this CalendarEventSearch.
+     * 
+     * @return userNotesJoin
+     */
+    public com.netsuite.webservices.platform.common_2018_2.NoteSearchBasic getUserNotesJoin() {
         return userNotesJoin;
     }
 
+
     /**
-     * 设置userNotesJoin属性的值。
+     * Sets the userNotesJoin value for this CalendarEventSearch.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link NoteSearchBasic }
-     *     
+     * @param userNotesJoin
      */
-    public void setUserNotesJoin(NoteSearchBasic value) {
-        this.userNotesJoin = value;
+    public void setUserNotesJoin(com.netsuite.webservices.platform.common_2018_2.NoteSearchBasic userNotesJoin) {
+        this.userNotesJoin = userNotesJoin;
+    }
+
+
+    /**
+     * Gets the customSearchJoin value for this CalendarEventSearch.
+     * 
+     * @return customSearchJoin
+     */
+    public com.netsuite.webservices.platform.common_2018_2.CustomSearchJoin[] getCustomSearchJoin() {
+        return customSearchJoin;
+    }
+
+
+    /**
+     * Sets the customSearchJoin value for this CalendarEventSearch.
+     * 
+     * @param customSearchJoin
+     */
+    public void setCustomSearchJoin(com.netsuite.webservices.platform.common_2018_2.CustomSearchJoin[] customSearchJoin) {
+        this.customSearchJoin = customSearchJoin;
+    }
+
+    public com.netsuite.webservices.platform.common_2018_2.CustomSearchJoin getCustomSearchJoin(int i) {
+        return this.customSearchJoin[i];
+    }
+
+    public void setCustomSearchJoin(int i, com.netsuite.webservices.platform.common_2018_2.CustomSearchJoin _value) {
+        this.customSearchJoin[i] = _value;
+    }
+
+    private java.lang.Object __equalsCalc = null;
+    public synchronized boolean equals(java.lang.Object obj) {
+        if (!(obj instanceof CalendarEventSearch)) return false;
+        CalendarEventSearch other = (CalendarEventSearch) obj;
+        if (obj == null) return false;
+        if (this == obj) return true;
+        if (__equalsCalc != null) {
+            return (__equalsCalc == obj);
+        }
+        __equalsCalc = obj;
+        boolean _equals;
+        _equals = super.equals(obj) && 
+            ((this.basic==null && other.getBasic()==null) || 
+             (this.basic!=null &&
+              this.basic.equals(other.getBasic()))) &&
+            ((this.attendeeJoin==null && other.getAttendeeJoin()==null) || 
+             (this.attendeeJoin!=null &&
+              this.attendeeJoin.equals(other.getAttendeeJoin()))) &&
+            ((this.attendeeContactJoin==null && other.getAttendeeContactJoin()==null) || 
+             (this.attendeeContactJoin!=null &&
+              this.attendeeContactJoin.equals(other.getAttendeeContactJoin()))) &&
+            ((this.attendeeCustomerJoin==null && other.getAttendeeCustomerJoin()==null) || 
+             (this.attendeeCustomerJoin!=null &&
+              this.attendeeCustomerJoin.equals(other.getAttendeeCustomerJoin()))) &&
+            ((this.caseJoin==null && other.getCaseJoin()==null) || 
+             (this.caseJoin!=null &&
+              this.caseJoin.equals(other.getCaseJoin()))) &&
+            ((this.fileJoin==null && other.getFileJoin()==null) || 
+             (this.fileJoin!=null &&
+              this.fileJoin.equals(other.getFileJoin()))) &&
+            ((this.opportunityJoin==null && other.getOpportunityJoin()==null) || 
+             (this.opportunityJoin!=null &&
+              this.opportunityJoin.equals(other.getOpportunityJoin()))) &&
+            ((this.originatingLeadJoin==null && other.getOriginatingLeadJoin()==null) || 
+             (this.originatingLeadJoin!=null &&
+              this.originatingLeadJoin.equals(other.getOriginatingLeadJoin()))) &&
+            ((this.timeJoin==null && other.getTimeJoin()==null) || 
+             (this.timeJoin!=null &&
+              this.timeJoin.equals(other.getTimeJoin()))) &&
+            ((this.transactionJoin==null && other.getTransactionJoin()==null) || 
+             (this.transactionJoin!=null &&
+              this.transactionJoin.equals(other.getTransactionJoin()))) &&
+            ((this.userJoin==null && other.getUserJoin()==null) || 
+             (this.userJoin!=null &&
+              this.userJoin.equals(other.getUserJoin()))) &&
+            ((this.userNotesJoin==null && other.getUserNotesJoin()==null) || 
+             (this.userNotesJoin!=null &&
+              this.userNotesJoin.equals(other.getUserNotesJoin()))) &&
+            ((this.customSearchJoin==null && other.getCustomSearchJoin()==null) || 
+             (this.customSearchJoin!=null &&
+              java.util.Arrays.equals(this.customSearchJoin, other.getCustomSearchJoin())));
+        __equalsCalc = null;
+        return _equals;
+    }
+
+    private boolean __hashCodeCalc = false;
+    public synchronized int hashCode() {
+        if (__hashCodeCalc) {
+            return 0;
+        }
+        __hashCodeCalc = true;
+        int _hashCode = super.hashCode();
+        if (getBasic() != null) {
+            _hashCode += getBasic().hashCode();
+        }
+        if (getAttendeeJoin() != null) {
+            _hashCode += getAttendeeJoin().hashCode();
+        }
+        if (getAttendeeContactJoin() != null) {
+            _hashCode += getAttendeeContactJoin().hashCode();
+        }
+        if (getAttendeeCustomerJoin() != null) {
+            _hashCode += getAttendeeCustomerJoin().hashCode();
+        }
+        if (getCaseJoin() != null) {
+            _hashCode += getCaseJoin().hashCode();
+        }
+        if (getFileJoin() != null) {
+            _hashCode += getFileJoin().hashCode();
+        }
+        if (getOpportunityJoin() != null) {
+            _hashCode += getOpportunityJoin().hashCode();
+        }
+        if (getOriginatingLeadJoin() != null) {
+            _hashCode += getOriginatingLeadJoin().hashCode();
+        }
+        if (getTimeJoin() != null) {
+            _hashCode += getTimeJoin().hashCode();
+        }
+        if (getTransactionJoin() != null) {
+            _hashCode += getTransactionJoin().hashCode();
+        }
+        if (getUserJoin() != null) {
+            _hashCode += getUserJoin().hashCode();
+        }
+        if (getUserNotesJoin() != null) {
+            _hashCode += getUserNotesJoin().hashCode();
+        }
+        if (getCustomSearchJoin() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getCustomSearchJoin());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getCustomSearchJoin(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        __hashCodeCalc = false;
+        return _hashCode;
+    }
+
+    // Type metadata
+    private static org.apache.axis.description.TypeDesc typeDesc =
+        new org.apache.axis.description.TypeDesc(CalendarEventSearch.class, true);
+
+    static {
+        typeDesc.setXmlType(new javax.xml.namespace.QName("urn:scheduling_2018_2.activities.webservices.netsuite.com", "CalendarEventSearch"));
+        org.apache.axis.description.ElementDesc elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("basic");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:scheduling_2018_2.activities.webservices.netsuite.com", "basic"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "CalendarEventSearchBasic"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("attendeeJoin");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:scheduling_2018_2.activities.webservices.netsuite.com", "attendeeJoin"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "EntitySearchBasic"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("attendeeContactJoin");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:scheduling_2018_2.activities.webservices.netsuite.com", "attendeeContactJoin"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "ContactSearchBasic"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("attendeeCustomerJoin");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:scheduling_2018_2.activities.webservices.netsuite.com", "attendeeCustomerJoin"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "CustomerSearchBasic"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("caseJoin");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:scheduling_2018_2.activities.webservices.netsuite.com", "caseJoin"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "SupportCaseSearchBasic"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("fileJoin");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:scheduling_2018_2.activities.webservices.netsuite.com", "fileJoin"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "FileSearchBasic"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("opportunityJoin");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:scheduling_2018_2.activities.webservices.netsuite.com", "opportunityJoin"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "OpportunitySearchBasic"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("originatingLeadJoin");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:scheduling_2018_2.activities.webservices.netsuite.com", "originatingLeadJoin"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "OriginatingLeadSearchBasic"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("timeJoin");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:scheduling_2018_2.activities.webservices.netsuite.com", "timeJoin"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "TimeBillSearchBasic"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("transactionJoin");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:scheduling_2018_2.activities.webservices.netsuite.com", "transactionJoin"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "TransactionSearchBasic"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("userJoin");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:scheduling_2018_2.activities.webservices.netsuite.com", "userJoin"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "EmployeeSearchBasic"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("userNotesJoin");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:scheduling_2018_2.activities.webservices.netsuite.com", "userNotesJoin"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "NoteSearchBasic"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("customSearchJoin");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:scheduling_2018_2.activities.webservices.netsuite.com", "customSearchJoin"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "CustomSearchJoin"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
     }
 
     /**
-     * Gets the value of the customSearchJoin property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the customSearchJoin property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getCustomSearchJoin().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link CustomSearchJoin }
-     * 
-     * 
+     * Return type metadata object
      */
-    public List<CustomSearchJoin> getCustomSearchJoin() {
-        if (customSearchJoin == null) {
-            customSearchJoin = new ArrayList<CustomSearchJoin>();
-        }
-        return this.customSearchJoin;
+    public static org.apache.axis.description.TypeDesc getTypeDesc() {
+        return typeDesc;
+    }
+
+    /**
+     * Get Custom Serializer
+     */
+    public static org.apache.axis.encoding.Serializer getSerializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanSerializer(
+            _javaType, _xmlType, typeDesc);
+    }
+
+    /**
+     * Get Custom Deserializer
+     */
+    public static org.apache.axis.encoding.Deserializer getDeserializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanDeserializer(
+            _javaType, _xmlType, typeDesc);
     }
 
 }

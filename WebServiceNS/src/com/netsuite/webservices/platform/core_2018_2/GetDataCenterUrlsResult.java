@@ -1,89 +1,164 @@
+/**
+ * GetDataCenterUrlsResult.java
+ *
+ * This file was auto-generated from WSDL
+ * by the Apache Axis 1.4 Jul 28, 2010 (04:07:04 PDT) WSDL2Java emitter.
+ */
 
 package com.netsuite.webservices.platform.core_2018_2;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlType;
+public class GetDataCenterUrlsResult  implements java.io.Serializable {
+    private com.netsuite.webservices.platform.core_2018_2.StatusDetail[] status;
 
+    private com.netsuite.webservices.platform.core_2018_2.DataCenterUrls dataCenterUrls;
 
-/**
- * <p>GetDataCenterUrlsResult complex type的 Java 类。
- * 
- * <p>以下模式片段指定包含在此类中的预期内容。
- * 
- * <pre>
- * &lt;complexType name="GetDataCenterUrlsResult">
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element ref="{urn:core_2018_2.platform.webservices.netsuite.com}status"/>
- *         &lt;element name="dataCenterUrls" type="{urn:core_2018_2.platform.webservices.netsuite.com}DataCenterUrls" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
- */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "GetDataCenterUrlsResult", propOrder = {
-    "status",
-    "dataCenterUrls"
-})
-public class GetDataCenterUrlsResult {
+    public GetDataCenterUrlsResult() {
+    }
 
-    @XmlElement(required = true)
-    protected Status status;
-    protected DataCenterUrls dataCenterUrls;
+    public GetDataCenterUrlsResult(
+           com.netsuite.webservices.platform.core_2018_2.StatusDetail[] status,
+           com.netsuite.webservices.platform.core_2018_2.DataCenterUrls dataCenterUrls) {
+           this.status = status;
+           this.dataCenterUrls = dataCenterUrls;
+    }
+
 
     /**
-     * 获取status属性的值。
+     * Gets the status value for this GetDataCenterUrlsResult.
      * 
-     * @return
-     *     possible object is
-     *     {@link Status }
-     *     
+     * @return status
      */
-    public Status getStatus() {
+    public com.netsuite.webservices.platform.core_2018_2.StatusDetail[] getStatus() {
         return status;
     }
 
-    /**
-     * 设置status属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Status }
-     *     
-     */
-    public void setStatus(Status value) {
-        this.status = value;
-    }
 
     /**
-     * 获取dataCenterUrls属性的值。
+     * Sets the status value for this GetDataCenterUrlsResult.
      * 
-     * @return
-     *     possible object is
-     *     {@link DataCenterUrls }
-     *     
+     * @param status
      */
-    public DataCenterUrls getDataCenterUrls() {
+    public void setStatus(com.netsuite.webservices.platform.core_2018_2.StatusDetail[] status) {
+        this.status = status;
+    }
+
+
+    /**
+     * Gets the dataCenterUrls value for this GetDataCenterUrlsResult.
+     * 
+     * @return dataCenterUrls
+     */
+    public com.netsuite.webservices.platform.core_2018_2.DataCenterUrls getDataCenterUrls() {
         return dataCenterUrls;
     }
 
+
     /**
-     * 设置dataCenterUrls属性的值。
+     * Sets the dataCenterUrls value for this GetDataCenterUrlsResult.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link DataCenterUrls }
-     *     
+     * @param dataCenterUrls
      */
-    public void setDataCenterUrls(DataCenterUrls value) {
-        this.dataCenterUrls = value;
+    public void setDataCenterUrls(com.netsuite.webservices.platform.core_2018_2.DataCenterUrls dataCenterUrls) {
+        this.dataCenterUrls = dataCenterUrls;
+    }
+
+    private java.lang.Object __equalsCalc = null;
+    public synchronized boolean equals(java.lang.Object obj) {
+        if (!(obj instanceof GetDataCenterUrlsResult)) return false;
+        GetDataCenterUrlsResult other = (GetDataCenterUrlsResult) obj;
+        if (obj == null) return false;
+        if (this == obj) return true;
+        if (__equalsCalc != null) {
+            return (__equalsCalc == obj);
+        }
+        __equalsCalc = obj;
+        boolean _equals;
+        _equals = true && 
+            ((this.status==null && other.getStatus()==null) || 
+             (this.status!=null &&
+              java.util.Arrays.equals(this.status, other.getStatus()))) &&
+            ((this.dataCenterUrls==null && other.getDataCenterUrls()==null) || 
+             (this.dataCenterUrls!=null &&
+              this.dataCenterUrls.equals(other.getDataCenterUrls())));
+        __equalsCalc = null;
+        return _equals;
+    }
+
+    private boolean __hashCodeCalc = false;
+    public synchronized int hashCode() {
+        if (__hashCodeCalc) {
+            return 0;
+        }
+        __hashCodeCalc = true;
+        int _hashCode = 1;
+        if (getStatus() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getStatus());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getStatus(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getDataCenterUrls() != null) {
+            _hashCode += getDataCenterUrls().hashCode();
+        }
+        __hashCodeCalc = false;
+        return _hashCode;
+    }
+
+    // Type metadata
+    private static org.apache.axis.description.TypeDesc typeDesc =
+        new org.apache.axis.description.TypeDesc(GetDataCenterUrlsResult.class, true);
+
+    static {
+        typeDesc.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "GetDataCenterUrlsResult"));
+        org.apache.axis.description.ElementDesc elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("status");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "status"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "Status"));
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("dataCenterUrls");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "dataCenterUrls"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "DataCenterUrls"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+    }
+
+    /**
+     * Return type metadata object
+     */
+    public static org.apache.axis.description.TypeDesc getTypeDesc() {
+        return typeDesc;
+    }
+
+    /**
+     * Get Custom Serializer
+     */
+    public static org.apache.axis.encoding.Serializer getSerializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanSerializer(
+            _javaType, _xmlType, typeDesc);
+    }
+
+    /**
+     * Get Custom Deserializer
+     */
+    public static org.apache.axis.encoding.Deserializer getDeserializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanDeserializer(
+            _javaType, _xmlType, typeDesc);
     }
 
 }

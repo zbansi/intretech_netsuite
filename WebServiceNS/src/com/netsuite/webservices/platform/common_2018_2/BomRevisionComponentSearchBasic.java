@@ -1,419 +1,646 @@
+/**
+ * BomRevisionComponentSearchBasic.java
+ *
+ * This file was auto-generated from WSDL
+ * by the Apache Axis 1.4 Jul 28, 2010 (04:07:04 PDT) WSDL2Java emitter.
+ */
 
 package com.netsuite.webservices.platform.common_2018_2;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlType;
-import com.netsuite.webservices.platform.core_2018_2.SearchDoubleField;
-import com.netsuite.webservices.platform.core_2018_2.SearchEnumMultiSelectField;
-import com.netsuite.webservices.platform.core_2018_2.SearchLongField;
-import com.netsuite.webservices.platform.core_2018_2.SearchMultiSelectField;
-import com.netsuite.webservices.platform.core_2018_2.SearchRecordBasic;
-import com.netsuite.webservices.platform.core_2018_2.SearchStringField;
+public class BomRevisionComponentSearchBasic  extends com.netsuite.webservices.platform.core_2018_2.SearchRecordBasic  implements java.io.Serializable {
+    private com.netsuite.webservices.platform.core_2018_2.SearchDoubleField bomQuantity;
 
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef[] bomRevision;
 
-/**
- * <p>BomRevisionComponentSearchBasic complex type的 Java 类。
- * 
- * <p>以下模式片段指定包含在此类中的预期内容。
- * 
- * <pre>
- * &lt;complexType name="BomRevisionComponentSearchBasic">
- *   &lt;complexContent>
- *     &lt;extension base="{urn:core_2018_2.platform.webservices.netsuite.com}SearchRecordBasic">
- *       &lt;sequence>
- *         &lt;element name="bomQuantity" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchDoubleField" minOccurs="0"/>
- *         &lt;element name="bomRevision" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchMultiSelectField" minOccurs="0"/>
- *         &lt;element name="componentYield" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchDoubleField" minOccurs="0"/>
- *         &lt;element name="description" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchStringField" minOccurs="0"/>
- *         &lt;element name="internalId" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchMultiSelectField" minOccurs="0"/>
- *         &lt;element name="internalIdNumber" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchLongField" minOccurs="0"/>
- *         &lt;element name="item" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchMultiSelectField" minOccurs="0"/>
- *         &lt;element name="itemSource" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchEnumMultiSelectField" minOccurs="0"/>
- *         &lt;element name="itemSubtype" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchStringField" minOccurs="0"/>
- *         &lt;element name="itemType" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchMultiSelectField" minOccurs="0"/>
- *         &lt;element name="lineId" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchLongField" minOccurs="0"/>
- *         &lt;element name="quantity" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchDoubleField" minOccurs="0"/>
- *         &lt;element name="units" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchStringField" minOccurs="0"/>
- *         &lt;element name="weight" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchDoubleField" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/extension>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
- */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "BomRevisionComponentSearchBasic", propOrder = {
-    "bomQuantity",
-    "bomRevision",
-    "componentYield",
-    "description",
-    "internalId",
-    "internalIdNumber",
-    "item",
-    "itemSource",
-    "itemSubtype",
-    "itemType",
-    "lineId",
-    "quantity",
-    "units",
-    "weight"
-})
-public class BomRevisionComponentSearchBasic
-    extends SearchRecordBasic
-{
+    private com.netsuite.webservices.platform.core_2018_2.SearchDoubleField componentYield;
 
-    protected SearchDoubleField bomQuantity;
-    protected SearchMultiSelectField bomRevision;
-    protected SearchDoubleField componentYield;
-    protected SearchStringField description;
-    protected SearchMultiSelectField internalId;
-    protected SearchLongField internalIdNumber;
-    protected SearchMultiSelectField item;
-    protected SearchEnumMultiSelectField itemSource;
-    protected SearchStringField itemSubtype;
-    protected SearchMultiSelectField itemType;
-    protected SearchLongField lineId;
-    protected SearchDoubleField quantity;
-    protected SearchStringField units;
-    protected SearchDoubleField weight;
+    private com.netsuite.webservices.platform.core_2018_2.SearchStringField description;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef[] internalId;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchLongField internalIdNumber;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef[] item;
+
+    private java.lang.String[] itemSource;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchStringField itemSubtype;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef[] itemType;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchLongField lineId;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchDoubleField quantity;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchStringField units;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchDoubleField weight;
+
+    public BomRevisionComponentSearchBasic() {
+    }
+
+    public BomRevisionComponentSearchBasic(
+           com.netsuite.webservices.platform.core_2018_2.SearchDoubleField bomQuantity,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef[] bomRevision,
+           com.netsuite.webservices.platform.core_2018_2.SearchDoubleField componentYield,
+           com.netsuite.webservices.platform.core_2018_2.SearchStringField description,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef[] internalId,
+           com.netsuite.webservices.platform.core_2018_2.SearchLongField internalIdNumber,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef[] item,
+           java.lang.String[] itemSource,
+           com.netsuite.webservices.platform.core_2018_2.SearchStringField itemSubtype,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef[] itemType,
+           com.netsuite.webservices.platform.core_2018_2.SearchLongField lineId,
+           com.netsuite.webservices.platform.core_2018_2.SearchDoubleField quantity,
+           com.netsuite.webservices.platform.core_2018_2.SearchStringField units,
+           com.netsuite.webservices.platform.core_2018_2.SearchDoubleField weight) {
+        this.bomQuantity = bomQuantity;
+        this.bomRevision = bomRevision;
+        this.componentYield = componentYield;
+        this.description = description;
+        this.internalId = internalId;
+        this.internalIdNumber = internalIdNumber;
+        this.item = item;
+        this.itemSource = itemSource;
+        this.itemSubtype = itemSubtype;
+        this.itemType = itemType;
+        this.lineId = lineId;
+        this.quantity = quantity;
+        this.units = units;
+        this.weight = weight;
+    }
+
 
     /**
-     * 获取bomQuantity属性的值。
+     * Gets the bomQuantity value for this BomRevisionComponentSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchDoubleField }
-     *     
+     * @return bomQuantity
      */
-    public SearchDoubleField getBomQuantity() {
+    public com.netsuite.webservices.platform.core_2018_2.SearchDoubleField getBomQuantity() {
         return bomQuantity;
     }
 
-    /**
-     * 设置bomQuantity属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchDoubleField }
-     *     
-     */
-    public void setBomQuantity(SearchDoubleField value) {
-        this.bomQuantity = value;
-    }
 
     /**
-     * 获取bomRevision属性的值。
+     * Sets the bomQuantity value for this BomRevisionComponentSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchMultiSelectField }
-     *     
+     * @param bomQuantity
      */
-    public SearchMultiSelectField getBomRevision() {
+    public void setBomQuantity(com.netsuite.webservices.platform.core_2018_2.SearchDoubleField bomQuantity) {
+        this.bomQuantity = bomQuantity;
+    }
+
+
+    /**
+     * Gets the bomRevision value for this BomRevisionComponentSearchBasic.
+     * 
+     * @return bomRevision
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef[] getBomRevision() {
         return bomRevision;
     }
 
-    /**
-     * 设置bomRevision属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchMultiSelectField }
-     *     
-     */
-    public void setBomRevision(SearchMultiSelectField value) {
-        this.bomRevision = value;
-    }
 
     /**
-     * 获取componentYield属性的值。
+     * Sets the bomRevision value for this BomRevisionComponentSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchDoubleField }
-     *     
+     * @param bomRevision
      */
-    public SearchDoubleField getComponentYield() {
+    public void setBomRevision(com.netsuite.webservices.platform.core_2018_2.RecordRef[] bomRevision) {
+        this.bomRevision = bomRevision;
+    }
+
+
+    /**
+     * Gets the componentYield value for this BomRevisionComponentSearchBasic.
+     * 
+     * @return componentYield
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchDoubleField getComponentYield() {
         return componentYield;
     }
 
-    /**
-     * 设置componentYield属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchDoubleField }
-     *     
-     */
-    public void setComponentYield(SearchDoubleField value) {
-        this.componentYield = value;
-    }
 
     /**
-     * 获取description属性的值。
+     * Sets the componentYield value for this BomRevisionComponentSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchStringField }
-     *     
+     * @param componentYield
      */
-    public SearchStringField getDescription() {
+    public void setComponentYield(com.netsuite.webservices.platform.core_2018_2.SearchDoubleField componentYield) {
+        this.componentYield = componentYield;
+    }
+
+
+    /**
+     * Gets the description value for this BomRevisionComponentSearchBasic.
+     * 
+     * @return description
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchStringField getDescription() {
         return description;
     }
 
-    /**
-     * 设置description属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchStringField }
-     *     
-     */
-    public void setDescription(SearchStringField value) {
-        this.description = value;
-    }
 
     /**
-     * 获取internalId属性的值。
+     * Sets the description value for this BomRevisionComponentSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchMultiSelectField }
-     *     
+     * @param description
      */
-    public SearchMultiSelectField getInternalId() {
+    public void setDescription(com.netsuite.webservices.platform.core_2018_2.SearchStringField description) {
+        this.description = description;
+    }
+
+
+    /**
+     * Gets the internalId value for this BomRevisionComponentSearchBasic.
+     * 
+     * @return internalId
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef[] getInternalId() {
         return internalId;
     }
 
-    /**
-     * 设置internalId属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchMultiSelectField }
-     *     
-     */
-    public void setInternalId(SearchMultiSelectField value) {
-        this.internalId = value;
-    }
 
     /**
-     * 获取internalIdNumber属性的值。
+     * Sets the internalId value for this BomRevisionComponentSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchLongField }
-     *     
+     * @param internalId
      */
-    public SearchLongField getInternalIdNumber() {
+    public void setInternalId(com.netsuite.webservices.platform.core_2018_2.RecordRef[] internalId) {
+        this.internalId = internalId;
+    }
+
+
+    /**
+     * Gets the internalIdNumber value for this BomRevisionComponentSearchBasic.
+     * 
+     * @return internalIdNumber
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchLongField getInternalIdNumber() {
         return internalIdNumber;
     }
 
-    /**
-     * 设置internalIdNumber属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchLongField }
-     *     
-     */
-    public void setInternalIdNumber(SearchLongField value) {
-        this.internalIdNumber = value;
-    }
 
     /**
-     * 获取item属性的值。
+     * Sets the internalIdNumber value for this BomRevisionComponentSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchMultiSelectField }
-     *     
+     * @param internalIdNumber
      */
-    public SearchMultiSelectField getItem() {
+    public void setInternalIdNumber(com.netsuite.webservices.platform.core_2018_2.SearchLongField internalIdNumber) {
+        this.internalIdNumber = internalIdNumber;
+    }
+
+
+    /**
+     * Gets the item value for this BomRevisionComponentSearchBasic.
+     * 
+     * @return item
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef[] getItem() {
         return item;
     }
 
-    /**
-     * 设置item属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchMultiSelectField }
-     *     
-     */
-    public void setItem(SearchMultiSelectField value) {
-        this.item = value;
-    }
 
     /**
-     * 获取itemSource属性的值。
+     * Sets the item value for this BomRevisionComponentSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchEnumMultiSelectField }
-     *     
+     * @param item
      */
-    public SearchEnumMultiSelectField getItemSource() {
+    public void setItem(com.netsuite.webservices.platform.core_2018_2.RecordRef[] item) {
+        this.item = item;
+    }
+
+
+    /**
+     * Gets the itemSource value for this BomRevisionComponentSearchBasic.
+     * 
+     * @return itemSource
+     */
+    public java.lang.String[] getItemSource() {
         return itemSource;
     }
 
-    /**
-     * 设置itemSource属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchEnumMultiSelectField }
-     *     
-     */
-    public void setItemSource(SearchEnumMultiSelectField value) {
-        this.itemSource = value;
-    }
 
     /**
-     * 获取itemSubtype属性的值。
+     * Sets the itemSource value for this BomRevisionComponentSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchStringField }
-     *     
+     * @param itemSource
      */
-    public SearchStringField getItemSubtype() {
+    public void setItemSource(java.lang.String[] itemSource) {
+        this.itemSource = itemSource;
+    }
+
+
+    /**
+     * Gets the itemSubtype value for this BomRevisionComponentSearchBasic.
+     * 
+     * @return itemSubtype
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchStringField getItemSubtype() {
         return itemSubtype;
     }
 
-    /**
-     * 设置itemSubtype属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchStringField }
-     *     
-     */
-    public void setItemSubtype(SearchStringField value) {
-        this.itemSubtype = value;
-    }
 
     /**
-     * 获取itemType属性的值。
+     * Sets the itemSubtype value for this BomRevisionComponentSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchMultiSelectField }
-     *     
+     * @param itemSubtype
      */
-    public SearchMultiSelectField getItemType() {
+    public void setItemSubtype(com.netsuite.webservices.platform.core_2018_2.SearchStringField itemSubtype) {
+        this.itemSubtype = itemSubtype;
+    }
+
+
+    /**
+     * Gets the itemType value for this BomRevisionComponentSearchBasic.
+     * 
+     * @return itemType
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef[] getItemType() {
         return itemType;
     }
 
-    /**
-     * 设置itemType属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchMultiSelectField }
-     *     
-     */
-    public void setItemType(SearchMultiSelectField value) {
-        this.itemType = value;
-    }
 
     /**
-     * 获取lineId属性的值。
+     * Sets the itemType value for this BomRevisionComponentSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchLongField }
-     *     
+     * @param itemType
      */
-    public SearchLongField getLineId() {
+    public void setItemType(com.netsuite.webservices.platform.core_2018_2.RecordRef[] itemType) {
+        this.itemType = itemType;
+    }
+
+
+    /**
+     * Gets the lineId value for this BomRevisionComponentSearchBasic.
+     * 
+     * @return lineId
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchLongField getLineId() {
         return lineId;
     }
 
-    /**
-     * 设置lineId属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchLongField }
-     *     
-     */
-    public void setLineId(SearchLongField value) {
-        this.lineId = value;
-    }
 
     /**
-     * 获取quantity属性的值。
+     * Sets the lineId value for this BomRevisionComponentSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchDoubleField }
-     *     
+     * @param lineId
      */
-    public SearchDoubleField getQuantity() {
+    public void setLineId(com.netsuite.webservices.platform.core_2018_2.SearchLongField lineId) {
+        this.lineId = lineId;
+    }
+
+
+    /**
+     * Gets the quantity value for this BomRevisionComponentSearchBasic.
+     * 
+     * @return quantity
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchDoubleField getQuantity() {
         return quantity;
     }
 
-    /**
-     * 设置quantity属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchDoubleField }
-     *     
-     */
-    public void setQuantity(SearchDoubleField value) {
-        this.quantity = value;
-    }
 
     /**
-     * 获取units属性的值。
+     * Sets the quantity value for this BomRevisionComponentSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchStringField }
-     *     
+     * @param quantity
      */
-    public SearchStringField getUnits() {
+    public void setQuantity(com.netsuite.webservices.platform.core_2018_2.SearchDoubleField quantity) {
+        this.quantity = quantity;
+    }
+
+
+    /**
+     * Gets the units value for this BomRevisionComponentSearchBasic.
+     * 
+     * @return units
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchStringField getUnits() {
         return units;
     }
 
-    /**
-     * 设置units属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchStringField }
-     *     
-     */
-    public void setUnits(SearchStringField value) {
-        this.units = value;
-    }
 
     /**
-     * 获取weight属性的值。
+     * Sets the units value for this BomRevisionComponentSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchDoubleField }
-     *     
+     * @param units
      */
-    public SearchDoubleField getWeight() {
+    public void setUnits(com.netsuite.webservices.platform.core_2018_2.SearchStringField units) {
+        this.units = units;
+    }
+
+
+    /**
+     * Gets the weight value for this BomRevisionComponentSearchBasic.
+     * 
+     * @return weight
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchDoubleField getWeight() {
         return weight;
     }
 
+
     /**
-     * 设置weight属性的值。
+     * Sets the weight value for this BomRevisionComponentSearchBasic.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchDoubleField }
-     *     
+     * @param weight
      */
-    public void setWeight(SearchDoubleField value) {
-        this.weight = value;
+    public void setWeight(com.netsuite.webservices.platform.core_2018_2.SearchDoubleField weight) {
+        this.weight = weight;
+    }
+
+    private java.lang.Object __equalsCalc = null;
+    public synchronized boolean equals(java.lang.Object obj) {
+        if (!(obj instanceof BomRevisionComponentSearchBasic)) return false;
+        BomRevisionComponentSearchBasic other = (BomRevisionComponentSearchBasic) obj;
+        if (obj == null) return false;
+        if (this == obj) return true;
+        if (__equalsCalc != null) {
+            return (__equalsCalc == obj);
+        }
+        __equalsCalc = obj;
+        boolean _equals;
+        _equals = super.equals(obj) && 
+            ((this.bomQuantity==null && other.getBomQuantity()==null) || 
+             (this.bomQuantity!=null &&
+              this.bomQuantity.equals(other.getBomQuantity()))) &&
+            ((this.bomRevision==null && other.getBomRevision()==null) || 
+             (this.bomRevision!=null &&
+              java.util.Arrays.equals(this.bomRevision, other.getBomRevision()))) &&
+            ((this.componentYield==null && other.getComponentYield()==null) || 
+             (this.componentYield!=null &&
+              this.componentYield.equals(other.getComponentYield()))) &&
+            ((this.description==null && other.getDescription()==null) || 
+             (this.description!=null &&
+              this.description.equals(other.getDescription()))) &&
+            ((this.internalId==null && other.getInternalId()==null) || 
+             (this.internalId!=null &&
+              java.util.Arrays.equals(this.internalId, other.getInternalId()))) &&
+            ((this.internalIdNumber==null && other.getInternalIdNumber()==null) || 
+             (this.internalIdNumber!=null &&
+              this.internalIdNumber.equals(other.getInternalIdNumber()))) &&
+            ((this.item==null && other.getItem()==null) || 
+             (this.item!=null &&
+              java.util.Arrays.equals(this.item, other.getItem()))) &&
+            ((this.itemSource==null && other.getItemSource()==null) || 
+             (this.itemSource!=null &&
+              java.util.Arrays.equals(this.itemSource, other.getItemSource()))) &&
+            ((this.itemSubtype==null && other.getItemSubtype()==null) || 
+             (this.itemSubtype!=null &&
+              this.itemSubtype.equals(other.getItemSubtype()))) &&
+            ((this.itemType==null && other.getItemType()==null) || 
+             (this.itemType!=null &&
+              java.util.Arrays.equals(this.itemType, other.getItemType()))) &&
+            ((this.lineId==null && other.getLineId()==null) || 
+             (this.lineId!=null &&
+              this.lineId.equals(other.getLineId()))) &&
+            ((this.quantity==null && other.getQuantity()==null) || 
+             (this.quantity!=null &&
+              this.quantity.equals(other.getQuantity()))) &&
+            ((this.units==null && other.getUnits()==null) || 
+             (this.units!=null &&
+              this.units.equals(other.getUnits()))) &&
+            ((this.weight==null && other.getWeight()==null) || 
+             (this.weight!=null &&
+              this.weight.equals(other.getWeight())));
+        __equalsCalc = null;
+        return _equals;
+    }
+
+    private boolean __hashCodeCalc = false;
+    public synchronized int hashCode() {
+        if (__hashCodeCalc) {
+            return 0;
+        }
+        __hashCodeCalc = true;
+        int _hashCode = super.hashCode();
+        if (getBomQuantity() != null) {
+            _hashCode += getBomQuantity().hashCode();
+        }
+        if (getBomRevision() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getBomRevision());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getBomRevision(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getComponentYield() != null) {
+            _hashCode += getComponentYield().hashCode();
+        }
+        if (getDescription() != null) {
+            _hashCode += getDescription().hashCode();
+        }
+        if (getInternalId() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getInternalId());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getInternalId(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getInternalIdNumber() != null) {
+            _hashCode += getInternalIdNumber().hashCode();
+        }
+        if (getItem() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getItem());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getItem(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getItemSource() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getItemSource());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getItemSource(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getItemSubtype() != null) {
+            _hashCode += getItemSubtype().hashCode();
+        }
+        if (getItemType() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getItemType());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getItemType(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getLineId() != null) {
+            _hashCode += getLineId().hashCode();
+        }
+        if (getQuantity() != null) {
+            _hashCode += getQuantity().hashCode();
+        }
+        if (getUnits() != null) {
+            _hashCode += getUnits().hashCode();
+        }
+        if (getWeight() != null) {
+            _hashCode += getWeight().hashCode();
+        }
+        __hashCodeCalc = false;
+        return _hashCode;
+    }
+
+    // Type metadata
+    private static org.apache.axis.description.TypeDesc typeDesc =
+        new org.apache.axis.description.TypeDesc(BomRevisionComponentSearchBasic.class, true);
+
+    static {
+        typeDesc.setXmlType(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "BomRevisionComponentSearchBasic"));
+        org.apache.axis.description.ElementDesc elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("bomQuantity");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "bomQuantity"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchDoubleField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("bomRevision");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "bomRevision"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "searchValue"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("componentYield");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "componentYield"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchDoubleField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("description");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "description"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchStringField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("internalId");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "internalId"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "searchValue"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("internalIdNumber");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "internalIdNumber"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchLongField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("item");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "item"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "searchValue"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("itemSource");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "itemSource"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "searchValue"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("itemSubtype");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "itemSubtype"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchStringField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("itemType");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "itemType"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "searchValue"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("lineId");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "lineId"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchLongField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("quantity");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "quantity"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchDoubleField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("units");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "units"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchStringField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("weight");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "weight"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchDoubleField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+    }
+
+    /**
+     * Return type metadata object
+     */
+    public static org.apache.axis.description.TypeDesc getTypeDesc() {
+        return typeDesc;
+    }
+
+    /**
+     * Get Custom Serializer
+     */
+    public static org.apache.axis.encoding.Serializer getSerializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanSerializer(
+            _javaType, _xmlType, typeDesc);
+    }
+
+    /**
+     * Get Custom Deserializer
+     */
+    public static org.apache.axis.encoding.Deserializer getDeserializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanDeserializer(
+            _javaType, _xmlType, typeDesc);
     }
 
 }

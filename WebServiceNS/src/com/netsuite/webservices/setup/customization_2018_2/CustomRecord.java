@@ -1,1231 +1,1728 @@
+/**
+ * CustomRecord.java
+ *
+ * This file was auto-generated from WSDL
+ * by the Apache Axis 1.4 Jul 28, 2010 (04:07:04 PDT) WSDL2Java emitter.
+ */
 
 package com.netsuite.webservices.setup.customization_2018_2;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlAttribute;
-import javax.xml.bind.annotation.XmlSchemaType;
-import javax.xml.bind.annotation.XmlType;
-import javax.xml.datatype.XMLGregorianCalendar;
-import com.netsuite.webservices.platform.core_2018_2.CustomFieldList;
-import com.netsuite.webservices.platform.core_2018_2.Record;
-import com.netsuite.webservices.platform.core_2018_2.RecordRef;
+public class CustomRecord  extends com.netsuite.webservices.platform.core_2018_2.Record  implements java.io.Serializable {
+    private java.lang.String customRecordId;
 
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef customForm;
 
-/**
- * <p>CustomRecord complex type的 Java 类。
- * 
- * <p>以下模式片段指定包含在此类中的预期内容。
- * 
- * <pre>
- * &lt;complexType name="CustomRecord">
- *   &lt;complexContent>
- *     &lt;extension base="{urn:core_2018_2.platform.webservices.netsuite.com}Record">
- *       &lt;sequence>
- *         &lt;element name="customRecordId" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="customForm" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="isInactive" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         &lt;element name="parent" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="disclaimer" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="created" type="{http://www.w3.org/2001/XMLSchema}dateTime" minOccurs="0"/>
- *         &lt;element name="lastModified" type="{http://www.w3.org/2001/XMLSchema}dateTime" minOccurs="0"/>
- *         &lt;element name="name" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="autoName" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         &lt;element name="altName" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="owner" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="recType" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="enableNumbering" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         &lt;element name="numberingPrefix" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="numberingSuffix" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="numberingMinDigits" type="{http://www.w3.org/2001/XMLSchema}long" minOccurs="0"/>
- *         &lt;element name="description" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="numberingInit" type="{http://www.w3.org/2001/XMLSchema}long" minOccurs="0"/>
- *         &lt;element name="numberingCurrentNumber" type="{http://www.w3.org/2001/XMLSchema}long" minOccurs="0"/>
- *         &lt;element name="allowNumberingOverride" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         &lt;element name="isNumberingUpdateable" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         &lt;element name="translationsList" type="{urn:customization_2018_2.setup.webservices.netsuite.com}CustomRecordTranslationsList" minOccurs="0"/>
- *         &lt;element name="includeName" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         &lt;element name="showId" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         &lt;element name="showCreationDate" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         &lt;element name="showCreationDateOnList" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         &lt;element name="showLastModified" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         &lt;element name="showLastModifiedOnList" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         &lt;element name="showOwner" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         &lt;element name="showOwnerOnList" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         &lt;element name="showOwnerAllowChange" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         &lt;element name="usePermissions" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         &lt;element name="allowAttachments" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         &lt;element name="showNotes" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         &lt;element name="enablEmailMerge" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         &lt;element name="isOrdered" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         &lt;element name="allowInlineEditing" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         &lt;element name="isAvailableOffline" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         &lt;element name="allowQuickSearch" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         &lt;element name="recordName" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="scriptId" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="customFieldList" type="{urn:core_2018_2.platform.webservices.netsuite.com}CustomFieldList" minOccurs="0"/>
- *       &lt;/sequence>
- *       &lt;attribute name="internalId" type="{http://www.w3.org/2001/XMLSchema}string" />
- *       &lt;attribute name="externalId" type="{http://www.w3.org/2001/XMLSchema}string" />
- *     &lt;/extension>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
- */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "CustomRecord", propOrder = {
-    "customRecordId",
-    "customForm",
-    "isInactive",
-    "parent",
-    "disclaimer",
-    "created",
-    "lastModified",
-    "name",
-    "autoName",
-    "altName",
-    "owner",
-    "recType",
-    "enableNumbering",
-    "numberingPrefix",
-    "numberingSuffix",
-    "numberingMinDigits",
-    "description",
-    "numberingInit",
-    "numberingCurrentNumber",
-    "allowNumberingOverride",
-    "isNumberingUpdateable",
-    "translationsList",
-    "includeName",
-    "showId",
-    "showCreationDate",
-    "showCreationDateOnList",
-    "showLastModified",
-    "showLastModifiedOnList",
-    "showOwner",
-    "showOwnerOnList",
-    "showOwnerAllowChange",
-    "usePermissions",
-    "allowAttachments",
-    "showNotes",
-    "enablEmailMerge",
-    "isOrdered",
-    "allowInlineEditing",
-    "isAvailableOffline",
-    "allowQuickSearch",
-    "recordName",
-    "scriptId",
-    "customFieldList"
-})
-public class CustomRecord
-    extends Record
-{
+    private java.lang.Boolean isInactive;
 
-    protected String customRecordId;
-    protected RecordRef customForm;
-    protected Boolean isInactive;
-    protected RecordRef parent;
-    protected String disclaimer;
-    @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar created;
-    @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar lastModified;
-    protected String name;
-    protected Boolean autoName;
-    protected String altName;
-    protected RecordRef owner;
-    protected RecordRef recType;
-    protected Boolean enableNumbering;
-    protected String numberingPrefix;
-    protected String numberingSuffix;
-    protected Long numberingMinDigits;
-    protected String description;
-    protected Long numberingInit;
-    protected Long numberingCurrentNumber;
-    protected Boolean allowNumberingOverride;
-    protected Boolean isNumberingUpdateable;
-    protected CustomRecordTranslationsList translationsList;
-    protected Boolean includeName;
-    protected Boolean showId;
-    protected Boolean showCreationDate;
-    protected Boolean showCreationDateOnList;
-    protected Boolean showLastModified;
-    protected Boolean showLastModifiedOnList;
-    protected Boolean showOwner;
-    protected Boolean showOwnerOnList;
-    protected Boolean showOwnerAllowChange;
-    protected Boolean usePermissions;
-    protected Boolean allowAttachments;
-    protected Boolean showNotes;
-    protected Boolean enablEmailMerge;
-    protected Boolean isOrdered;
-    protected Boolean allowInlineEditing;
-    protected Boolean isAvailableOffline;
-    protected Boolean allowQuickSearch;
-    protected String recordName;
-    protected String scriptId;
-    protected CustomFieldList customFieldList;
-    @XmlAttribute(name = "internalId")
-    protected String internalId;
-    @XmlAttribute(name = "externalId")
-    protected String externalId;
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef parent;
+
+    private java.lang.String disclaimer;
+
+    private java.util.Calendar created;
+
+    private java.util.Calendar lastModified;
+
+    private java.lang.String name;
+
+    private java.lang.Boolean autoName;
+
+    private java.lang.String altName;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef owner;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef recType;
+
+    private java.lang.Boolean enableNumbering;
+
+    private java.lang.String numberingPrefix;
+
+    private java.lang.String numberingSuffix;
+
+    private java.lang.Long numberingMinDigits;
+
+    private java.lang.String description;
+
+    private java.lang.Long numberingInit;
+
+    private java.lang.Long numberingCurrentNumber;
+
+    private java.lang.Boolean allowNumberingOverride;
+
+    private java.lang.Boolean isNumberingUpdateable;
+
+    private com.netsuite.webservices.setup.customization_2018_2.CustomRecordTranslations[] translationsList;
+
+    private java.lang.Boolean includeName;
+
+    private java.lang.Boolean showId;
+
+    private java.lang.Boolean showCreationDate;
+
+    private java.lang.Boolean showCreationDateOnList;
+
+    private java.lang.Boolean showLastModified;
+
+    private java.lang.Boolean showLastModifiedOnList;
+
+    private java.lang.Boolean showOwner;
+
+    private java.lang.Boolean showOwnerOnList;
+
+    private java.lang.Boolean showOwnerAllowChange;
+
+    private java.lang.Boolean usePermissions;
+
+    private java.lang.Boolean allowAttachments;
+
+    private java.lang.Boolean showNotes;
+
+    private java.lang.Boolean enablEmailMerge;
+
+    private java.lang.Boolean isOrdered;
+
+    private java.lang.Boolean allowInlineEditing;
+
+    private java.lang.Boolean isAvailableOffline;
+
+    private java.lang.Boolean allowQuickSearch;
+
+    private java.lang.String recordName;
+
+    private java.lang.String scriptId;
+
+    private com.netsuite.webservices.platform.core_2018_2.CustomFieldRef[] customFieldList;
+
+    private java.lang.String internalId;  // attribute
+
+    private java.lang.String externalId;  // attribute
+
+    public CustomRecord() {
+    }
+
+    public CustomRecord(
+           java.lang.String[] nullFieldList,
+           java.lang.String internalId,
+           java.lang.String externalId,
+           java.lang.String customRecordId,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef customForm,
+           java.lang.Boolean isInactive,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef parent,
+           java.lang.String disclaimer,
+           java.util.Calendar created,
+           java.util.Calendar lastModified,
+           java.lang.String name,
+           java.lang.Boolean autoName,
+           java.lang.String altName,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef owner,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef recType,
+           java.lang.Boolean enableNumbering,
+           java.lang.String numberingPrefix,
+           java.lang.String numberingSuffix,
+           java.lang.Long numberingMinDigits,
+           java.lang.String description,
+           java.lang.Long numberingInit,
+           java.lang.Long numberingCurrentNumber,
+           java.lang.Boolean allowNumberingOverride,
+           java.lang.Boolean isNumberingUpdateable,
+           com.netsuite.webservices.setup.customization_2018_2.CustomRecordTranslations[] translationsList,
+           java.lang.Boolean includeName,
+           java.lang.Boolean showId,
+           java.lang.Boolean showCreationDate,
+           java.lang.Boolean showCreationDateOnList,
+           java.lang.Boolean showLastModified,
+           java.lang.Boolean showLastModifiedOnList,
+           java.lang.Boolean showOwner,
+           java.lang.Boolean showOwnerOnList,
+           java.lang.Boolean showOwnerAllowChange,
+           java.lang.Boolean usePermissions,
+           java.lang.Boolean allowAttachments,
+           java.lang.Boolean showNotes,
+           java.lang.Boolean enablEmailMerge,
+           java.lang.Boolean isOrdered,
+           java.lang.Boolean allowInlineEditing,
+           java.lang.Boolean isAvailableOffline,
+           java.lang.Boolean allowQuickSearch,
+           java.lang.String recordName,
+           java.lang.String scriptId,
+           com.netsuite.webservices.platform.core_2018_2.CustomFieldRef[] customFieldList) {
+        super(
+            nullFieldList);
+        this.internalId = internalId;
+        this.externalId = externalId;
+        this.customRecordId = customRecordId;
+        this.customForm = customForm;
+        this.isInactive = isInactive;
+        this.parent = parent;
+        this.disclaimer = disclaimer;
+        this.created = created;
+        this.lastModified = lastModified;
+        this.name = name;
+        this.autoName = autoName;
+        this.altName = altName;
+        this.owner = owner;
+        this.recType = recType;
+        this.enableNumbering = enableNumbering;
+        this.numberingPrefix = numberingPrefix;
+        this.numberingSuffix = numberingSuffix;
+        this.numberingMinDigits = numberingMinDigits;
+        this.description = description;
+        this.numberingInit = numberingInit;
+        this.numberingCurrentNumber = numberingCurrentNumber;
+        this.allowNumberingOverride = allowNumberingOverride;
+        this.isNumberingUpdateable = isNumberingUpdateable;
+        this.translationsList = translationsList;
+        this.includeName = includeName;
+        this.showId = showId;
+        this.showCreationDate = showCreationDate;
+        this.showCreationDateOnList = showCreationDateOnList;
+        this.showLastModified = showLastModified;
+        this.showLastModifiedOnList = showLastModifiedOnList;
+        this.showOwner = showOwner;
+        this.showOwnerOnList = showOwnerOnList;
+        this.showOwnerAllowChange = showOwnerAllowChange;
+        this.usePermissions = usePermissions;
+        this.allowAttachments = allowAttachments;
+        this.showNotes = showNotes;
+        this.enablEmailMerge = enablEmailMerge;
+        this.isOrdered = isOrdered;
+        this.allowInlineEditing = allowInlineEditing;
+        this.isAvailableOffline = isAvailableOffline;
+        this.allowQuickSearch = allowQuickSearch;
+        this.recordName = recordName;
+        this.scriptId = scriptId;
+        this.customFieldList = customFieldList;
+    }
+
 
     /**
-     * 获取customRecordId属性的值。
+     * Gets the customRecordId value for this CustomRecord.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @return customRecordId
      */
-    public String getCustomRecordId() {
+    public java.lang.String getCustomRecordId() {
         return customRecordId;
     }
 
-    /**
-     * 设置customRecordId属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setCustomRecordId(String value) {
-        this.customRecordId = value;
-    }
 
     /**
-     * 获取customForm属性的值。
+     * Sets the customRecordId value for this CustomRecord.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param customRecordId
      */
-    public RecordRef getCustomForm() {
+    public void setCustomRecordId(java.lang.String customRecordId) {
+        this.customRecordId = customRecordId;
+    }
+
+
+    /**
+     * Gets the customForm value for this CustomRecord.
+     * 
+     * @return customForm
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getCustomForm() {
         return customForm;
     }
 
-    /**
-     * 设置customForm属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setCustomForm(RecordRef value) {
-        this.customForm = value;
-    }
 
     /**
-     * 获取isInactive属性的值。
+     * Sets the customForm value for this CustomRecord.
      * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
+     * @param customForm
      */
-    public Boolean isIsInactive() {
+    public void setCustomForm(com.netsuite.webservices.platform.core_2018_2.RecordRef customForm) {
+        this.customForm = customForm;
+    }
+
+
+    /**
+     * Gets the isInactive value for this CustomRecord.
+     * 
+     * @return isInactive
+     */
+    public java.lang.Boolean getIsInactive() {
         return isInactive;
     }
 
-    /**
-     * 设置isInactive属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
-     */
-    public void setIsInactive(Boolean value) {
-        this.isInactive = value;
-    }
 
     /**
-     * 获取parent属性的值。
+     * Sets the isInactive value for this CustomRecord.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param isInactive
      */
-    public RecordRef getParent() {
+    public void setIsInactive(java.lang.Boolean isInactive) {
+        this.isInactive = isInactive;
+    }
+
+
+    /**
+     * Gets the parent value for this CustomRecord.
+     * 
+     * @return parent
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getParent() {
         return parent;
     }
 
-    /**
-     * 设置parent属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setParent(RecordRef value) {
-        this.parent = value;
-    }
 
     /**
-     * 获取disclaimer属性的值。
+     * Sets the parent value for this CustomRecord.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param parent
      */
-    public String getDisclaimer() {
+    public void setParent(com.netsuite.webservices.platform.core_2018_2.RecordRef parent) {
+        this.parent = parent;
+    }
+
+
+    /**
+     * Gets the disclaimer value for this CustomRecord.
+     * 
+     * @return disclaimer
+     */
+    public java.lang.String getDisclaimer() {
         return disclaimer;
     }
 
-    /**
-     * 设置disclaimer属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setDisclaimer(String value) {
-        this.disclaimer = value;
-    }
 
     /**
-     * 获取created属性的值。
+     * Sets the disclaimer value for this CustomRecord.
      * 
-     * @return
-     *     possible object is
-     *     {@link XMLGregorianCalendar }
-     *     
+     * @param disclaimer
      */
-    public XMLGregorianCalendar getCreated() {
+    public void setDisclaimer(java.lang.String disclaimer) {
+        this.disclaimer = disclaimer;
+    }
+
+
+    /**
+     * Gets the created value for this CustomRecord.
+     * 
+     * @return created
+     */
+    public java.util.Calendar getCreated() {
         return created;
     }
 
-    /**
-     * 设置created属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link XMLGregorianCalendar }
-     *     
-     */
-    public void setCreated(XMLGregorianCalendar value) {
-        this.created = value;
-    }
 
     /**
-     * 获取lastModified属性的值。
+     * Sets the created value for this CustomRecord.
      * 
-     * @return
-     *     possible object is
-     *     {@link XMLGregorianCalendar }
-     *     
+     * @param created
      */
-    public XMLGregorianCalendar getLastModified() {
+    public void setCreated(java.util.Calendar created) {
+        this.created = created;
+    }
+
+
+    /**
+     * Gets the lastModified value for this CustomRecord.
+     * 
+     * @return lastModified
+     */
+    public java.util.Calendar getLastModified() {
         return lastModified;
     }
 
-    /**
-     * 设置lastModified属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link XMLGregorianCalendar }
-     *     
-     */
-    public void setLastModified(XMLGregorianCalendar value) {
-        this.lastModified = value;
-    }
 
     /**
-     * 获取name属性的值。
+     * Sets the lastModified value for this CustomRecord.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param lastModified
      */
-    public String getName() {
+    public void setLastModified(java.util.Calendar lastModified) {
+        this.lastModified = lastModified;
+    }
+
+
+    /**
+     * Gets the name value for this CustomRecord.
+     * 
+     * @return name
+     */
+    public java.lang.String getName() {
         return name;
     }
 
-    /**
-     * 设置name属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setName(String value) {
-        this.name = value;
-    }
 
     /**
-     * 获取autoName属性的值。
+     * Sets the name value for this CustomRecord.
      * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
+     * @param name
      */
-    public Boolean isAutoName() {
+    public void setName(java.lang.String name) {
+        this.name = name;
+    }
+
+
+    /**
+     * Gets the autoName value for this CustomRecord.
+     * 
+     * @return autoName
+     */
+    public java.lang.Boolean getAutoName() {
         return autoName;
     }
 
-    /**
-     * 设置autoName属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
-     */
-    public void setAutoName(Boolean value) {
-        this.autoName = value;
-    }
 
     /**
-     * 获取altName属性的值。
+     * Sets the autoName value for this CustomRecord.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param autoName
      */
-    public String getAltName() {
+    public void setAutoName(java.lang.Boolean autoName) {
+        this.autoName = autoName;
+    }
+
+
+    /**
+     * Gets the altName value for this CustomRecord.
+     * 
+     * @return altName
+     */
+    public java.lang.String getAltName() {
         return altName;
     }
 
-    /**
-     * 设置altName属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setAltName(String value) {
-        this.altName = value;
-    }
 
     /**
-     * 获取owner属性的值。
+     * Sets the altName value for this CustomRecord.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param altName
      */
-    public RecordRef getOwner() {
+    public void setAltName(java.lang.String altName) {
+        this.altName = altName;
+    }
+
+
+    /**
+     * Gets the owner value for this CustomRecord.
+     * 
+     * @return owner
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getOwner() {
         return owner;
     }
 
-    /**
-     * 设置owner属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setOwner(RecordRef value) {
-        this.owner = value;
-    }
 
     /**
-     * 获取recType属性的值。
+     * Sets the owner value for this CustomRecord.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param owner
      */
-    public RecordRef getRecType() {
+    public void setOwner(com.netsuite.webservices.platform.core_2018_2.RecordRef owner) {
+        this.owner = owner;
+    }
+
+
+    /**
+     * Gets the recType value for this CustomRecord.
+     * 
+     * @return recType
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getRecType() {
         return recType;
     }
 
-    /**
-     * 设置recType属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setRecType(RecordRef value) {
-        this.recType = value;
-    }
 
     /**
-     * 获取enableNumbering属性的值。
+     * Sets the recType value for this CustomRecord.
      * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
+     * @param recType
      */
-    public Boolean isEnableNumbering() {
+    public void setRecType(com.netsuite.webservices.platform.core_2018_2.RecordRef recType) {
+        this.recType = recType;
+    }
+
+
+    /**
+     * Gets the enableNumbering value for this CustomRecord.
+     * 
+     * @return enableNumbering
+     */
+    public java.lang.Boolean getEnableNumbering() {
         return enableNumbering;
     }
 
-    /**
-     * 设置enableNumbering属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
-     */
-    public void setEnableNumbering(Boolean value) {
-        this.enableNumbering = value;
-    }
 
     /**
-     * 获取numberingPrefix属性的值。
+     * Sets the enableNumbering value for this CustomRecord.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param enableNumbering
      */
-    public String getNumberingPrefix() {
+    public void setEnableNumbering(java.lang.Boolean enableNumbering) {
+        this.enableNumbering = enableNumbering;
+    }
+
+
+    /**
+     * Gets the numberingPrefix value for this CustomRecord.
+     * 
+     * @return numberingPrefix
+     */
+    public java.lang.String getNumberingPrefix() {
         return numberingPrefix;
     }
 
-    /**
-     * 设置numberingPrefix属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setNumberingPrefix(String value) {
-        this.numberingPrefix = value;
-    }
 
     /**
-     * 获取numberingSuffix属性的值。
+     * Sets the numberingPrefix value for this CustomRecord.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param numberingPrefix
      */
-    public String getNumberingSuffix() {
+    public void setNumberingPrefix(java.lang.String numberingPrefix) {
+        this.numberingPrefix = numberingPrefix;
+    }
+
+
+    /**
+     * Gets the numberingSuffix value for this CustomRecord.
+     * 
+     * @return numberingSuffix
+     */
+    public java.lang.String getNumberingSuffix() {
         return numberingSuffix;
     }
 
-    /**
-     * 设置numberingSuffix属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setNumberingSuffix(String value) {
-        this.numberingSuffix = value;
-    }
 
     /**
-     * 获取numberingMinDigits属性的值。
+     * Sets the numberingSuffix value for this CustomRecord.
      * 
-     * @return
-     *     possible object is
-     *     {@link Long }
-     *     
+     * @param numberingSuffix
      */
-    public Long getNumberingMinDigits() {
+    public void setNumberingSuffix(java.lang.String numberingSuffix) {
+        this.numberingSuffix = numberingSuffix;
+    }
+
+
+    /**
+     * Gets the numberingMinDigits value for this CustomRecord.
+     * 
+     * @return numberingMinDigits
+     */
+    public java.lang.Long getNumberingMinDigits() {
         return numberingMinDigits;
     }
 
-    /**
-     * 设置numberingMinDigits属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Long }
-     *     
-     */
-    public void setNumberingMinDigits(Long value) {
-        this.numberingMinDigits = value;
-    }
 
     /**
-     * 获取description属性的值。
+     * Sets the numberingMinDigits value for this CustomRecord.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param numberingMinDigits
      */
-    public String getDescription() {
+    public void setNumberingMinDigits(java.lang.Long numberingMinDigits) {
+        this.numberingMinDigits = numberingMinDigits;
+    }
+
+
+    /**
+     * Gets the description value for this CustomRecord.
+     * 
+     * @return description
+     */
+    public java.lang.String getDescription() {
         return description;
     }
 
-    /**
-     * 设置description属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setDescription(String value) {
-        this.description = value;
-    }
 
     /**
-     * 获取numberingInit属性的值。
+     * Sets the description value for this CustomRecord.
      * 
-     * @return
-     *     possible object is
-     *     {@link Long }
-     *     
+     * @param description
      */
-    public Long getNumberingInit() {
+    public void setDescription(java.lang.String description) {
+        this.description = description;
+    }
+
+
+    /**
+     * Gets the numberingInit value for this CustomRecord.
+     * 
+     * @return numberingInit
+     */
+    public java.lang.Long getNumberingInit() {
         return numberingInit;
     }
 
-    /**
-     * 设置numberingInit属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Long }
-     *     
-     */
-    public void setNumberingInit(Long value) {
-        this.numberingInit = value;
-    }
 
     /**
-     * 获取numberingCurrentNumber属性的值。
+     * Sets the numberingInit value for this CustomRecord.
      * 
-     * @return
-     *     possible object is
-     *     {@link Long }
-     *     
+     * @param numberingInit
      */
-    public Long getNumberingCurrentNumber() {
+    public void setNumberingInit(java.lang.Long numberingInit) {
+        this.numberingInit = numberingInit;
+    }
+
+
+    /**
+     * Gets the numberingCurrentNumber value for this CustomRecord.
+     * 
+     * @return numberingCurrentNumber
+     */
+    public java.lang.Long getNumberingCurrentNumber() {
         return numberingCurrentNumber;
     }
 
-    /**
-     * 设置numberingCurrentNumber属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Long }
-     *     
-     */
-    public void setNumberingCurrentNumber(Long value) {
-        this.numberingCurrentNumber = value;
-    }
 
     /**
-     * 获取allowNumberingOverride属性的值。
+     * Sets the numberingCurrentNumber value for this CustomRecord.
      * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
+     * @param numberingCurrentNumber
      */
-    public Boolean isAllowNumberingOverride() {
+    public void setNumberingCurrentNumber(java.lang.Long numberingCurrentNumber) {
+        this.numberingCurrentNumber = numberingCurrentNumber;
+    }
+
+
+    /**
+     * Gets the allowNumberingOverride value for this CustomRecord.
+     * 
+     * @return allowNumberingOverride
+     */
+    public java.lang.Boolean getAllowNumberingOverride() {
         return allowNumberingOverride;
     }
 
-    /**
-     * 设置allowNumberingOverride属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
-     */
-    public void setAllowNumberingOverride(Boolean value) {
-        this.allowNumberingOverride = value;
-    }
 
     /**
-     * 获取isNumberingUpdateable属性的值。
+     * Sets the allowNumberingOverride value for this CustomRecord.
      * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
+     * @param allowNumberingOverride
      */
-    public Boolean isIsNumberingUpdateable() {
+    public void setAllowNumberingOverride(java.lang.Boolean allowNumberingOverride) {
+        this.allowNumberingOverride = allowNumberingOverride;
+    }
+
+
+    /**
+     * Gets the isNumberingUpdateable value for this CustomRecord.
+     * 
+     * @return isNumberingUpdateable
+     */
+    public java.lang.Boolean getIsNumberingUpdateable() {
         return isNumberingUpdateable;
     }
 
-    /**
-     * 设置isNumberingUpdateable属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
-     */
-    public void setIsNumberingUpdateable(Boolean value) {
-        this.isNumberingUpdateable = value;
-    }
 
     /**
-     * 获取translationsList属性的值。
+     * Sets the isNumberingUpdateable value for this CustomRecord.
      * 
-     * @return
-     *     possible object is
-     *     {@link CustomRecordTranslationsList }
-     *     
+     * @param isNumberingUpdateable
      */
-    public CustomRecordTranslationsList getTranslationsList() {
+    public void setIsNumberingUpdateable(java.lang.Boolean isNumberingUpdateable) {
+        this.isNumberingUpdateable = isNumberingUpdateable;
+    }
+
+
+    /**
+     * Gets the translationsList value for this CustomRecord.
+     * 
+     * @return translationsList
+     */
+    public com.netsuite.webservices.setup.customization_2018_2.CustomRecordTranslations[] getTranslationsList() {
         return translationsList;
     }
 
-    /**
-     * 设置translationsList属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link CustomRecordTranslationsList }
-     *     
-     */
-    public void setTranslationsList(CustomRecordTranslationsList value) {
-        this.translationsList = value;
-    }
 
     /**
-     * 获取includeName属性的值。
+     * Sets the translationsList value for this CustomRecord.
      * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
+     * @param translationsList
      */
-    public Boolean isIncludeName() {
+    public void setTranslationsList(com.netsuite.webservices.setup.customization_2018_2.CustomRecordTranslations[] translationsList) {
+        this.translationsList = translationsList;
+    }
+
+
+    /**
+     * Gets the includeName value for this CustomRecord.
+     * 
+     * @return includeName
+     */
+    public java.lang.Boolean getIncludeName() {
         return includeName;
     }
 
-    /**
-     * 设置includeName属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
-     */
-    public void setIncludeName(Boolean value) {
-        this.includeName = value;
-    }
 
     /**
-     * 获取showId属性的值。
+     * Sets the includeName value for this CustomRecord.
      * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
+     * @param includeName
      */
-    public Boolean isShowId() {
+    public void setIncludeName(java.lang.Boolean includeName) {
+        this.includeName = includeName;
+    }
+
+
+    /**
+     * Gets the showId value for this CustomRecord.
+     * 
+     * @return showId
+     */
+    public java.lang.Boolean getShowId() {
         return showId;
     }
 
-    /**
-     * 设置showId属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
-     */
-    public void setShowId(Boolean value) {
-        this.showId = value;
-    }
 
     /**
-     * 获取showCreationDate属性的值。
+     * Sets the showId value for this CustomRecord.
      * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
+     * @param showId
      */
-    public Boolean isShowCreationDate() {
+    public void setShowId(java.lang.Boolean showId) {
+        this.showId = showId;
+    }
+
+
+    /**
+     * Gets the showCreationDate value for this CustomRecord.
+     * 
+     * @return showCreationDate
+     */
+    public java.lang.Boolean getShowCreationDate() {
         return showCreationDate;
     }
 
-    /**
-     * 设置showCreationDate属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
-     */
-    public void setShowCreationDate(Boolean value) {
-        this.showCreationDate = value;
-    }
 
     /**
-     * 获取showCreationDateOnList属性的值。
+     * Sets the showCreationDate value for this CustomRecord.
      * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
+     * @param showCreationDate
      */
-    public Boolean isShowCreationDateOnList() {
+    public void setShowCreationDate(java.lang.Boolean showCreationDate) {
+        this.showCreationDate = showCreationDate;
+    }
+
+
+    /**
+     * Gets the showCreationDateOnList value for this CustomRecord.
+     * 
+     * @return showCreationDateOnList
+     */
+    public java.lang.Boolean getShowCreationDateOnList() {
         return showCreationDateOnList;
     }
 
-    /**
-     * 设置showCreationDateOnList属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
-     */
-    public void setShowCreationDateOnList(Boolean value) {
-        this.showCreationDateOnList = value;
-    }
 
     /**
-     * 获取showLastModified属性的值。
+     * Sets the showCreationDateOnList value for this CustomRecord.
      * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
+     * @param showCreationDateOnList
      */
-    public Boolean isShowLastModified() {
+    public void setShowCreationDateOnList(java.lang.Boolean showCreationDateOnList) {
+        this.showCreationDateOnList = showCreationDateOnList;
+    }
+
+
+    /**
+     * Gets the showLastModified value for this CustomRecord.
+     * 
+     * @return showLastModified
+     */
+    public java.lang.Boolean getShowLastModified() {
         return showLastModified;
     }
 
-    /**
-     * 设置showLastModified属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
-     */
-    public void setShowLastModified(Boolean value) {
-        this.showLastModified = value;
-    }
 
     /**
-     * 获取showLastModifiedOnList属性的值。
+     * Sets the showLastModified value for this CustomRecord.
      * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
+     * @param showLastModified
      */
-    public Boolean isShowLastModifiedOnList() {
+    public void setShowLastModified(java.lang.Boolean showLastModified) {
+        this.showLastModified = showLastModified;
+    }
+
+
+    /**
+     * Gets the showLastModifiedOnList value for this CustomRecord.
+     * 
+     * @return showLastModifiedOnList
+     */
+    public java.lang.Boolean getShowLastModifiedOnList() {
         return showLastModifiedOnList;
     }
 
-    /**
-     * 设置showLastModifiedOnList属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
-     */
-    public void setShowLastModifiedOnList(Boolean value) {
-        this.showLastModifiedOnList = value;
-    }
 
     /**
-     * 获取showOwner属性的值。
+     * Sets the showLastModifiedOnList value for this CustomRecord.
      * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
+     * @param showLastModifiedOnList
      */
-    public Boolean isShowOwner() {
+    public void setShowLastModifiedOnList(java.lang.Boolean showLastModifiedOnList) {
+        this.showLastModifiedOnList = showLastModifiedOnList;
+    }
+
+
+    /**
+     * Gets the showOwner value for this CustomRecord.
+     * 
+     * @return showOwner
+     */
+    public java.lang.Boolean getShowOwner() {
         return showOwner;
     }
 
-    /**
-     * 设置showOwner属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
-     */
-    public void setShowOwner(Boolean value) {
-        this.showOwner = value;
-    }
 
     /**
-     * 获取showOwnerOnList属性的值。
+     * Sets the showOwner value for this CustomRecord.
      * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
+     * @param showOwner
      */
-    public Boolean isShowOwnerOnList() {
+    public void setShowOwner(java.lang.Boolean showOwner) {
+        this.showOwner = showOwner;
+    }
+
+
+    /**
+     * Gets the showOwnerOnList value for this CustomRecord.
+     * 
+     * @return showOwnerOnList
+     */
+    public java.lang.Boolean getShowOwnerOnList() {
         return showOwnerOnList;
     }
 
-    /**
-     * 设置showOwnerOnList属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
-     */
-    public void setShowOwnerOnList(Boolean value) {
-        this.showOwnerOnList = value;
-    }
 
     /**
-     * 获取showOwnerAllowChange属性的值。
+     * Sets the showOwnerOnList value for this CustomRecord.
      * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
+     * @param showOwnerOnList
      */
-    public Boolean isShowOwnerAllowChange() {
+    public void setShowOwnerOnList(java.lang.Boolean showOwnerOnList) {
+        this.showOwnerOnList = showOwnerOnList;
+    }
+
+
+    /**
+     * Gets the showOwnerAllowChange value for this CustomRecord.
+     * 
+     * @return showOwnerAllowChange
+     */
+    public java.lang.Boolean getShowOwnerAllowChange() {
         return showOwnerAllowChange;
     }
 
-    /**
-     * 设置showOwnerAllowChange属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
-     */
-    public void setShowOwnerAllowChange(Boolean value) {
-        this.showOwnerAllowChange = value;
-    }
 
     /**
-     * 获取usePermissions属性的值。
+     * Sets the showOwnerAllowChange value for this CustomRecord.
      * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
+     * @param showOwnerAllowChange
      */
-    public Boolean isUsePermissions() {
+    public void setShowOwnerAllowChange(java.lang.Boolean showOwnerAllowChange) {
+        this.showOwnerAllowChange = showOwnerAllowChange;
+    }
+
+
+    /**
+     * Gets the usePermissions value for this CustomRecord.
+     * 
+     * @return usePermissions
+     */
+    public java.lang.Boolean getUsePermissions() {
         return usePermissions;
     }
 
-    /**
-     * 设置usePermissions属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
-     */
-    public void setUsePermissions(Boolean value) {
-        this.usePermissions = value;
-    }
 
     /**
-     * 获取allowAttachments属性的值。
+     * Sets the usePermissions value for this CustomRecord.
      * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
+     * @param usePermissions
      */
-    public Boolean isAllowAttachments() {
+    public void setUsePermissions(java.lang.Boolean usePermissions) {
+        this.usePermissions = usePermissions;
+    }
+
+
+    /**
+     * Gets the allowAttachments value for this CustomRecord.
+     * 
+     * @return allowAttachments
+     */
+    public java.lang.Boolean getAllowAttachments() {
         return allowAttachments;
     }
 
-    /**
-     * 设置allowAttachments属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
-     */
-    public void setAllowAttachments(Boolean value) {
-        this.allowAttachments = value;
-    }
 
     /**
-     * 获取showNotes属性的值。
+     * Sets the allowAttachments value for this CustomRecord.
      * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
+     * @param allowAttachments
      */
-    public Boolean isShowNotes() {
+    public void setAllowAttachments(java.lang.Boolean allowAttachments) {
+        this.allowAttachments = allowAttachments;
+    }
+
+
+    /**
+     * Gets the showNotes value for this CustomRecord.
+     * 
+     * @return showNotes
+     */
+    public java.lang.Boolean getShowNotes() {
         return showNotes;
     }
 
-    /**
-     * 设置showNotes属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
-     */
-    public void setShowNotes(Boolean value) {
-        this.showNotes = value;
-    }
 
     /**
-     * 获取enablEmailMerge属性的值。
+     * Sets the showNotes value for this CustomRecord.
      * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
+     * @param showNotes
      */
-    public Boolean isEnablEmailMerge() {
+    public void setShowNotes(java.lang.Boolean showNotes) {
+        this.showNotes = showNotes;
+    }
+
+
+    /**
+     * Gets the enablEmailMerge value for this CustomRecord.
+     * 
+     * @return enablEmailMerge
+     */
+    public java.lang.Boolean getEnablEmailMerge() {
         return enablEmailMerge;
     }
 
-    /**
-     * 设置enablEmailMerge属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
-     */
-    public void setEnablEmailMerge(Boolean value) {
-        this.enablEmailMerge = value;
-    }
 
     /**
-     * 获取isOrdered属性的值。
+     * Sets the enablEmailMerge value for this CustomRecord.
      * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
+     * @param enablEmailMerge
      */
-    public Boolean isIsOrdered() {
+    public void setEnablEmailMerge(java.lang.Boolean enablEmailMerge) {
+        this.enablEmailMerge = enablEmailMerge;
+    }
+
+
+    /**
+     * Gets the isOrdered value for this CustomRecord.
+     * 
+     * @return isOrdered
+     */
+    public java.lang.Boolean getIsOrdered() {
         return isOrdered;
     }
 
-    /**
-     * 设置isOrdered属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
-     */
-    public void setIsOrdered(Boolean value) {
-        this.isOrdered = value;
-    }
 
     /**
-     * 获取allowInlineEditing属性的值。
+     * Sets the isOrdered value for this CustomRecord.
      * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
+     * @param isOrdered
      */
-    public Boolean isAllowInlineEditing() {
+    public void setIsOrdered(java.lang.Boolean isOrdered) {
+        this.isOrdered = isOrdered;
+    }
+
+
+    /**
+     * Gets the allowInlineEditing value for this CustomRecord.
+     * 
+     * @return allowInlineEditing
+     */
+    public java.lang.Boolean getAllowInlineEditing() {
         return allowInlineEditing;
     }
 
-    /**
-     * 设置allowInlineEditing属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
-     */
-    public void setAllowInlineEditing(Boolean value) {
-        this.allowInlineEditing = value;
-    }
 
     /**
-     * 获取isAvailableOffline属性的值。
+     * Sets the allowInlineEditing value for this CustomRecord.
      * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
+     * @param allowInlineEditing
      */
-    public Boolean isIsAvailableOffline() {
+    public void setAllowInlineEditing(java.lang.Boolean allowInlineEditing) {
+        this.allowInlineEditing = allowInlineEditing;
+    }
+
+
+    /**
+     * Gets the isAvailableOffline value for this CustomRecord.
+     * 
+     * @return isAvailableOffline
+     */
+    public java.lang.Boolean getIsAvailableOffline() {
         return isAvailableOffline;
     }
 
-    /**
-     * 设置isAvailableOffline属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
-     */
-    public void setIsAvailableOffline(Boolean value) {
-        this.isAvailableOffline = value;
-    }
 
     /**
-     * 获取allowQuickSearch属性的值。
+     * Sets the isAvailableOffline value for this CustomRecord.
      * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
+     * @param isAvailableOffline
      */
-    public Boolean isAllowQuickSearch() {
+    public void setIsAvailableOffline(java.lang.Boolean isAvailableOffline) {
+        this.isAvailableOffline = isAvailableOffline;
+    }
+
+
+    /**
+     * Gets the allowQuickSearch value for this CustomRecord.
+     * 
+     * @return allowQuickSearch
+     */
+    public java.lang.Boolean getAllowQuickSearch() {
         return allowQuickSearch;
     }
 
-    /**
-     * 设置allowQuickSearch属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
-     */
-    public void setAllowQuickSearch(Boolean value) {
-        this.allowQuickSearch = value;
-    }
 
     /**
-     * 获取recordName属性的值。
+     * Sets the allowQuickSearch value for this CustomRecord.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param allowQuickSearch
      */
-    public String getRecordName() {
+    public void setAllowQuickSearch(java.lang.Boolean allowQuickSearch) {
+        this.allowQuickSearch = allowQuickSearch;
+    }
+
+
+    /**
+     * Gets the recordName value for this CustomRecord.
+     * 
+     * @return recordName
+     */
+    public java.lang.String getRecordName() {
         return recordName;
     }
 
-    /**
-     * 设置recordName属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setRecordName(String value) {
-        this.recordName = value;
-    }
 
     /**
-     * 获取scriptId属性的值。
+     * Sets the recordName value for this CustomRecord.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param recordName
      */
-    public String getScriptId() {
+    public void setRecordName(java.lang.String recordName) {
+        this.recordName = recordName;
+    }
+
+
+    /**
+     * Gets the scriptId value for this CustomRecord.
+     * 
+     * @return scriptId
+     */
+    public java.lang.String getScriptId() {
         return scriptId;
     }
 
-    /**
-     * 设置scriptId属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setScriptId(String value) {
-        this.scriptId = value;
-    }
 
     /**
-     * 获取customFieldList属性的值。
+     * Sets the scriptId value for this CustomRecord.
      * 
-     * @return
-     *     possible object is
-     *     {@link CustomFieldList }
-     *     
+     * @param scriptId
      */
-    public CustomFieldList getCustomFieldList() {
+    public void setScriptId(java.lang.String scriptId) {
+        this.scriptId = scriptId;
+    }
+
+
+    /**
+     * Gets the customFieldList value for this CustomRecord.
+     * 
+     * @return customFieldList
+     */
+    public com.netsuite.webservices.platform.core_2018_2.CustomFieldRef[] getCustomFieldList() {
         return customFieldList;
     }
 
-    /**
-     * 设置customFieldList属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link CustomFieldList }
-     *     
-     */
-    public void setCustomFieldList(CustomFieldList value) {
-        this.customFieldList = value;
-    }
 
     /**
-     * 获取internalId属性的值。
+     * Sets the customFieldList value for this CustomRecord.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param customFieldList
      */
-    public String getInternalId() {
+    public void setCustomFieldList(com.netsuite.webservices.platform.core_2018_2.CustomFieldRef[] customFieldList) {
+        this.customFieldList = customFieldList;
+    }
+
+
+    /**
+     * Gets the internalId value for this CustomRecord.
+     * 
+     * @return internalId
+     */
+    public java.lang.String getInternalId() {
         return internalId;
     }
 
-    /**
-     * 设置internalId属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setInternalId(String value) {
-        this.internalId = value;
-    }
 
     /**
-     * 获取externalId属性的值。
+     * Sets the internalId value for this CustomRecord.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param internalId
      */
-    public String getExternalId() {
+    public void setInternalId(java.lang.String internalId) {
+        this.internalId = internalId;
+    }
+
+
+    /**
+     * Gets the externalId value for this CustomRecord.
+     * 
+     * @return externalId
+     */
+    public java.lang.String getExternalId() {
         return externalId;
     }
 
+
     /**
-     * 设置externalId属性的值。
+     * Sets the externalId value for this CustomRecord.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     * @param externalId
      */
-    public void setExternalId(String value) {
-        this.externalId = value;
+    public void setExternalId(java.lang.String externalId) {
+        this.externalId = externalId;
+    }
+
+    private java.lang.Object __equalsCalc = null;
+    public synchronized boolean equals(java.lang.Object obj) {
+        if (!(obj instanceof CustomRecord)) return false;
+        CustomRecord other = (CustomRecord) obj;
+        if (obj == null) return false;
+        if (this == obj) return true;
+        if (__equalsCalc != null) {
+            return (__equalsCalc == obj);
+        }
+        __equalsCalc = obj;
+        boolean _equals;
+        _equals = super.equals(obj) && 
+            ((this.customRecordId==null && other.getCustomRecordId()==null) || 
+             (this.customRecordId!=null &&
+              this.customRecordId.equals(other.getCustomRecordId()))) &&
+            ((this.customForm==null && other.getCustomForm()==null) || 
+             (this.customForm!=null &&
+              this.customForm.equals(other.getCustomForm()))) &&
+            ((this.isInactive==null && other.getIsInactive()==null) || 
+             (this.isInactive!=null &&
+              this.isInactive.equals(other.getIsInactive()))) &&
+            ((this.parent==null && other.getParent()==null) || 
+             (this.parent!=null &&
+              this.parent.equals(other.getParent()))) &&
+            ((this.disclaimer==null && other.getDisclaimer()==null) || 
+             (this.disclaimer!=null &&
+              this.disclaimer.equals(other.getDisclaimer()))) &&
+            ((this.created==null && other.getCreated()==null) || 
+             (this.created!=null &&
+              this.created.equals(other.getCreated()))) &&
+            ((this.lastModified==null && other.getLastModified()==null) || 
+             (this.lastModified!=null &&
+              this.lastModified.equals(other.getLastModified()))) &&
+            ((this.name==null && other.getName()==null) || 
+             (this.name!=null &&
+              this.name.equals(other.getName()))) &&
+            ((this.autoName==null && other.getAutoName()==null) || 
+             (this.autoName!=null &&
+              this.autoName.equals(other.getAutoName()))) &&
+            ((this.altName==null && other.getAltName()==null) || 
+             (this.altName!=null &&
+              this.altName.equals(other.getAltName()))) &&
+            ((this.owner==null && other.getOwner()==null) || 
+             (this.owner!=null &&
+              this.owner.equals(other.getOwner()))) &&
+            ((this.recType==null && other.getRecType()==null) || 
+             (this.recType!=null &&
+              this.recType.equals(other.getRecType()))) &&
+            ((this.enableNumbering==null && other.getEnableNumbering()==null) || 
+             (this.enableNumbering!=null &&
+              this.enableNumbering.equals(other.getEnableNumbering()))) &&
+            ((this.numberingPrefix==null && other.getNumberingPrefix()==null) || 
+             (this.numberingPrefix!=null &&
+              this.numberingPrefix.equals(other.getNumberingPrefix()))) &&
+            ((this.numberingSuffix==null && other.getNumberingSuffix()==null) || 
+             (this.numberingSuffix!=null &&
+              this.numberingSuffix.equals(other.getNumberingSuffix()))) &&
+            ((this.numberingMinDigits==null && other.getNumberingMinDigits()==null) || 
+             (this.numberingMinDigits!=null &&
+              this.numberingMinDigits.equals(other.getNumberingMinDigits()))) &&
+            ((this.description==null && other.getDescription()==null) || 
+             (this.description!=null &&
+              this.description.equals(other.getDescription()))) &&
+            ((this.numberingInit==null && other.getNumberingInit()==null) || 
+             (this.numberingInit!=null &&
+              this.numberingInit.equals(other.getNumberingInit()))) &&
+            ((this.numberingCurrentNumber==null && other.getNumberingCurrentNumber()==null) || 
+             (this.numberingCurrentNumber!=null &&
+              this.numberingCurrentNumber.equals(other.getNumberingCurrentNumber()))) &&
+            ((this.allowNumberingOverride==null && other.getAllowNumberingOverride()==null) || 
+             (this.allowNumberingOverride!=null &&
+              this.allowNumberingOverride.equals(other.getAllowNumberingOverride()))) &&
+            ((this.isNumberingUpdateable==null && other.getIsNumberingUpdateable()==null) || 
+             (this.isNumberingUpdateable!=null &&
+              this.isNumberingUpdateable.equals(other.getIsNumberingUpdateable()))) &&
+            ((this.translationsList==null && other.getTranslationsList()==null) || 
+             (this.translationsList!=null &&
+              java.util.Arrays.equals(this.translationsList, other.getTranslationsList()))) &&
+            ((this.includeName==null && other.getIncludeName()==null) || 
+             (this.includeName!=null &&
+              this.includeName.equals(other.getIncludeName()))) &&
+            ((this.showId==null && other.getShowId()==null) || 
+             (this.showId!=null &&
+              this.showId.equals(other.getShowId()))) &&
+            ((this.showCreationDate==null && other.getShowCreationDate()==null) || 
+             (this.showCreationDate!=null &&
+              this.showCreationDate.equals(other.getShowCreationDate()))) &&
+            ((this.showCreationDateOnList==null && other.getShowCreationDateOnList()==null) || 
+             (this.showCreationDateOnList!=null &&
+              this.showCreationDateOnList.equals(other.getShowCreationDateOnList()))) &&
+            ((this.showLastModified==null && other.getShowLastModified()==null) || 
+             (this.showLastModified!=null &&
+              this.showLastModified.equals(other.getShowLastModified()))) &&
+            ((this.showLastModifiedOnList==null && other.getShowLastModifiedOnList()==null) || 
+             (this.showLastModifiedOnList!=null &&
+              this.showLastModifiedOnList.equals(other.getShowLastModifiedOnList()))) &&
+            ((this.showOwner==null && other.getShowOwner()==null) || 
+             (this.showOwner!=null &&
+              this.showOwner.equals(other.getShowOwner()))) &&
+            ((this.showOwnerOnList==null && other.getShowOwnerOnList()==null) || 
+             (this.showOwnerOnList!=null &&
+              this.showOwnerOnList.equals(other.getShowOwnerOnList()))) &&
+            ((this.showOwnerAllowChange==null && other.getShowOwnerAllowChange()==null) || 
+             (this.showOwnerAllowChange!=null &&
+              this.showOwnerAllowChange.equals(other.getShowOwnerAllowChange()))) &&
+            ((this.usePermissions==null && other.getUsePermissions()==null) || 
+             (this.usePermissions!=null &&
+              this.usePermissions.equals(other.getUsePermissions()))) &&
+            ((this.allowAttachments==null && other.getAllowAttachments()==null) || 
+             (this.allowAttachments!=null &&
+              this.allowAttachments.equals(other.getAllowAttachments()))) &&
+            ((this.showNotes==null && other.getShowNotes()==null) || 
+             (this.showNotes!=null &&
+              this.showNotes.equals(other.getShowNotes()))) &&
+            ((this.enablEmailMerge==null && other.getEnablEmailMerge()==null) || 
+             (this.enablEmailMerge!=null &&
+              this.enablEmailMerge.equals(other.getEnablEmailMerge()))) &&
+            ((this.isOrdered==null && other.getIsOrdered()==null) || 
+             (this.isOrdered!=null &&
+              this.isOrdered.equals(other.getIsOrdered()))) &&
+            ((this.allowInlineEditing==null && other.getAllowInlineEditing()==null) || 
+             (this.allowInlineEditing!=null &&
+              this.allowInlineEditing.equals(other.getAllowInlineEditing()))) &&
+            ((this.isAvailableOffline==null && other.getIsAvailableOffline()==null) || 
+             (this.isAvailableOffline!=null &&
+              this.isAvailableOffline.equals(other.getIsAvailableOffline()))) &&
+            ((this.allowQuickSearch==null && other.getAllowQuickSearch()==null) || 
+             (this.allowQuickSearch!=null &&
+              this.allowQuickSearch.equals(other.getAllowQuickSearch()))) &&
+            ((this.recordName==null && other.getRecordName()==null) || 
+             (this.recordName!=null &&
+              this.recordName.equals(other.getRecordName()))) &&
+            ((this.scriptId==null && other.getScriptId()==null) || 
+             (this.scriptId!=null &&
+              this.scriptId.equals(other.getScriptId()))) &&
+            ((this.customFieldList==null && other.getCustomFieldList()==null) || 
+             (this.customFieldList!=null &&
+              java.util.Arrays.equals(this.customFieldList, other.getCustomFieldList()))) &&
+            ((this.internalId==null && other.getInternalId()==null) || 
+             (this.internalId!=null &&
+              this.internalId.equals(other.getInternalId()))) &&
+            ((this.externalId==null && other.getExternalId()==null) || 
+             (this.externalId!=null &&
+              this.externalId.equals(other.getExternalId())));
+        __equalsCalc = null;
+        return _equals;
+    }
+
+    private boolean __hashCodeCalc = false;
+    public synchronized int hashCode() {
+        if (__hashCodeCalc) {
+            return 0;
+        }
+        __hashCodeCalc = true;
+        int _hashCode = super.hashCode();
+        if (getCustomRecordId() != null) {
+            _hashCode += getCustomRecordId().hashCode();
+        }
+        if (getCustomForm() != null) {
+            _hashCode += getCustomForm().hashCode();
+        }
+        if (getIsInactive() != null) {
+            _hashCode += getIsInactive().hashCode();
+        }
+        if (getParent() != null) {
+            _hashCode += getParent().hashCode();
+        }
+        if (getDisclaimer() != null) {
+            _hashCode += getDisclaimer().hashCode();
+        }
+        if (getCreated() != null) {
+            _hashCode += getCreated().hashCode();
+        }
+        if (getLastModified() != null) {
+            _hashCode += getLastModified().hashCode();
+        }
+        if (getName() != null) {
+            _hashCode += getName().hashCode();
+        }
+        if (getAutoName() != null) {
+            _hashCode += getAutoName().hashCode();
+        }
+        if (getAltName() != null) {
+            _hashCode += getAltName().hashCode();
+        }
+        if (getOwner() != null) {
+            _hashCode += getOwner().hashCode();
+        }
+        if (getRecType() != null) {
+            _hashCode += getRecType().hashCode();
+        }
+        if (getEnableNumbering() != null) {
+            _hashCode += getEnableNumbering().hashCode();
+        }
+        if (getNumberingPrefix() != null) {
+            _hashCode += getNumberingPrefix().hashCode();
+        }
+        if (getNumberingSuffix() != null) {
+            _hashCode += getNumberingSuffix().hashCode();
+        }
+        if (getNumberingMinDigits() != null) {
+            _hashCode += getNumberingMinDigits().hashCode();
+        }
+        if (getDescription() != null) {
+            _hashCode += getDescription().hashCode();
+        }
+        if (getNumberingInit() != null) {
+            _hashCode += getNumberingInit().hashCode();
+        }
+        if (getNumberingCurrentNumber() != null) {
+            _hashCode += getNumberingCurrentNumber().hashCode();
+        }
+        if (getAllowNumberingOverride() != null) {
+            _hashCode += getAllowNumberingOverride().hashCode();
+        }
+        if (getIsNumberingUpdateable() != null) {
+            _hashCode += getIsNumberingUpdateable().hashCode();
+        }
+        if (getTranslationsList() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getTranslationsList());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getTranslationsList(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getIncludeName() != null) {
+            _hashCode += getIncludeName().hashCode();
+        }
+        if (getShowId() != null) {
+            _hashCode += getShowId().hashCode();
+        }
+        if (getShowCreationDate() != null) {
+            _hashCode += getShowCreationDate().hashCode();
+        }
+        if (getShowCreationDateOnList() != null) {
+            _hashCode += getShowCreationDateOnList().hashCode();
+        }
+        if (getShowLastModified() != null) {
+            _hashCode += getShowLastModified().hashCode();
+        }
+        if (getShowLastModifiedOnList() != null) {
+            _hashCode += getShowLastModifiedOnList().hashCode();
+        }
+        if (getShowOwner() != null) {
+            _hashCode += getShowOwner().hashCode();
+        }
+        if (getShowOwnerOnList() != null) {
+            _hashCode += getShowOwnerOnList().hashCode();
+        }
+        if (getShowOwnerAllowChange() != null) {
+            _hashCode += getShowOwnerAllowChange().hashCode();
+        }
+        if (getUsePermissions() != null) {
+            _hashCode += getUsePermissions().hashCode();
+        }
+        if (getAllowAttachments() != null) {
+            _hashCode += getAllowAttachments().hashCode();
+        }
+        if (getShowNotes() != null) {
+            _hashCode += getShowNotes().hashCode();
+        }
+        if (getEnablEmailMerge() != null) {
+            _hashCode += getEnablEmailMerge().hashCode();
+        }
+        if (getIsOrdered() != null) {
+            _hashCode += getIsOrdered().hashCode();
+        }
+        if (getAllowInlineEditing() != null) {
+            _hashCode += getAllowInlineEditing().hashCode();
+        }
+        if (getIsAvailableOffline() != null) {
+            _hashCode += getIsAvailableOffline().hashCode();
+        }
+        if (getAllowQuickSearch() != null) {
+            _hashCode += getAllowQuickSearch().hashCode();
+        }
+        if (getRecordName() != null) {
+            _hashCode += getRecordName().hashCode();
+        }
+        if (getScriptId() != null) {
+            _hashCode += getScriptId().hashCode();
+        }
+        if (getCustomFieldList() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getCustomFieldList());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getCustomFieldList(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getInternalId() != null) {
+            _hashCode += getInternalId().hashCode();
+        }
+        if (getExternalId() != null) {
+            _hashCode += getExternalId().hashCode();
+        }
+        __hashCodeCalc = false;
+        return _hashCode;
+    }
+
+    // Type metadata
+    private static org.apache.axis.description.TypeDesc typeDesc =
+        new org.apache.axis.description.TypeDesc(CustomRecord.class, true);
+
+    static {
+        typeDesc.setXmlType(new javax.xml.namespace.QName("urn:customization_2018_2.setup.webservices.netsuite.com", "CustomRecord"));
+        org.apache.axis.description.AttributeDesc attrField = new org.apache.axis.description.AttributeDesc();
+        attrField.setFieldName("internalId");
+        attrField.setXmlName(new javax.xml.namespace.QName("", "internalId"));
+        attrField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        typeDesc.addFieldDesc(attrField);
+        attrField = new org.apache.axis.description.AttributeDesc();
+        attrField.setFieldName("externalId");
+        attrField.setXmlName(new javax.xml.namespace.QName("", "externalId"));
+        attrField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        typeDesc.addFieldDesc(attrField);
+        org.apache.axis.description.ElementDesc elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("customRecordId");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:customization_2018_2.setup.webservices.netsuite.com", "customRecordId"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("customForm");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:customization_2018_2.setup.webservices.netsuite.com", "customForm"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("isInactive");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:customization_2018_2.setup.webservices.netsuite.com", "isInactive"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("parent");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:customization_2018_2.setup.webservices.netsuite.com", "parent"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("disclaimer");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:customization_2018_2.setup.webservices.netsuite.com", "disclaimer"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("created");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:customization_2018_2.setup.webservices.netsuite.com", "created"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "dateTime"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("lastModified");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:customization_2018_2.setup.webservices.netsuite.com", "lastModified"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "dateTime"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("name");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:customization_2018_2.setup.webservices.netsuite.com", "name"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("autoName");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:customization_2018_2.setup.webservices.netsuite.com", "autoName"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("altName");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:customization_2018_2.setup.webservices.netsuite.com", "altName"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("owner");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:customization_2018_2.setup.webservices.netsuite.com", "owner"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("recType");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:customization_2018_2.setup.webservices.netsuite.com", "recType"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("enableNumbering");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:customization_2018_2.setup.webservices.netsuite.com", "enableNumbering"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("numberingPrefix");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:customization_2018_2.setup.webservices.netsuite.com", "numberingPrefix"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("numberingSuffix");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:customization_2018_2.setup.webservices.netsuite.com", "numberingSuffix"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("numberingMinDigits");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:customization_2018_2.setup.webservices.netsuite.com", "numberingMinDigits"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "long"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("description");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:customization_2018_2.setup.webservices.netsuite.com", "description"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("numberingInit");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:customization_2018_2.setup.webservices.netsuite.com", "numberingInit"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "long"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("numberingCurrentNumber");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:customization_2018_2.setup.webservices.netsuite.com", "numberingCurrentNumber"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "long"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("allowNumberingOverride");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:customization_2018_2.setup.webservices.netsuite.com", "allowNumberingOverride"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("isNumberingUpdateable");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:customization_2018_2.setup.webservices.netsuite.com", "isNumberingUpdateable"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("translationsList");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:customization_2018_2.setup.webservices.netsuite.com", "translationsList"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:customization_2018_2.setup.webservices.netsuite.com", "CustomRecordTranslations"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:customization_2018_2.setup.webservices.netsuite.com", "customRecordTranslations"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("includeName");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:customization_2018_2.setup.webservices.netsuite.com", "includeName"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("showId");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:customization_2018_2.setup.webservices.netsuite.com", "showId"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("showCreationDate");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:customization_2018_2.setup.webservices.netsuite.com", "showCreationDate"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("showCreationDateOnList");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:customization_2018_2.setup.webservices.netsuite.com", "showCreationDateOnList"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("showLastModified");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:customization_2018_2.setup.webservices.netsuite.com", "showLastModified"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("showLastModifiedOnList");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:customization_2018_2.setup.webservices.netsuite.com", "showLastModifiedOnList"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("showOwner");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:customization_2018_2.setup.webservices.netsuite.com", "showOwner"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("showOwnerOnList");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:customization_2018_2.setup.webservices.netsuite.com", "showOwnerOnList"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("showOwnerAllowChange");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:customization_2018_2.setup.webservices.netsuite.com", "showOwnerAllowChange"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("usePermissions");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:customization_2018_2.setup.webservices.netsuite.com", "usePermissions"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("allowAttachments");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:customization_2018_2.setup.webservices.netsuite.com", "allowAttachments"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("showNotes");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:customization_2018_2.setup.webservices.netsuite.com", "showNotes"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("enablEmailMerge");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:customization_2018_2.setup.webservices.netsuite.com", "enablEmailMerge"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("isOrdered");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:customization_2018_2.setup.webservices.netsuite.com", "isOrdered"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("allowInlineEditing");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:customization_2018_2.setup.webservices.netsuite.com", "allowInlineEditing"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("isAvailableOffline");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:customization_2018_2.setup.webservices.netsuite.com", "isAvailableOffline"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("allowQuickSearch");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:customization_2018_2.setup.webservices.netsuite.com", "allowQuickSearch"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("recordName");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:customization_2018_2.setup.webservices.netsuite.com", "recordName"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("scriptId");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:customization_2018_2.setup.webservices.netsuite.com", "scriptId"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("customFieldList");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:customization_2018_2.setup.webservices.netsuite.com", "customFieldList"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "CustomFieldRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "customField"));
+        typeDesc.addFieldDesc(elemField);
+    }
+
+    /**
+     * Return type metadata object
+     */
+    public static org.apache.axis.description.TypeDesc getTypeDesc() {
+        return typeDesc;
+    }
+
+    /**
+     * Get Custom Serializer
+     */
+    public static org.apache.axis.encoding.Serializer getSerializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanSerializer(
+            _javaType, _xmlType, typeDesc);
+    }
+
+    /**
+     * Get Custom Deserializer
+     */
+    public static org.apache.axis.encoding.Deserializer getDeserializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanDeserializer(
+            _javaType, _xmlType, typeDesc);
     }
 
 }

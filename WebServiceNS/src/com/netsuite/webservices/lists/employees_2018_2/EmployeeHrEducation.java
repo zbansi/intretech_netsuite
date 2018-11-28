@@ -1,118 +1,194 @@
+/**
+ * EmployeeHrEducation.java
+ *
+ * This file was auto-generated from WSDL
+ * by the Apache Axis 1.4 Jul 28, 2010 (04:07:04 PDT) WSDL2Java emitter.
+ */
 
 package com.netsuite.webservices.lists.employees_2018_2;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlSchemaType;
-import javax.xml.bind.annotation.XmlType;
-import javax.xml.datatype.XMLGregorianCalendar;
-import com.netsuite.webservices.platform.core_2018_2.RecordRef;
+public class EmployeeHrEducation  implements java.io.Serializable {
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef education;
 
+    private java.lang.String degree;
 
-/**
- * <p>EmployeeHrEducation complex type的 Java 类。
- * 
- * <p>以下模式片段指定包含在此类中的预期内容。
- * 
- * <pre>
- * &lt;complexType name="EmployeeHrEducation">
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element name="education" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="degree" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="degreeDate" type="{http://www.w3.org/2001/XMLSchema}dateTime" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
- */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "EmployeeHrEducation", propOrder = {
-    "education",
-    "degree",
-    "degreeDate"
-})
-public class EmployeeHrEducation {
+    private java.util.Calendar degreeDate;
 
-    protected RecordRef education;
-    protected String degree;
-    @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar degreeDate;
+    public EmployeeHrEducation() {
+    }
+
+    public EmployeeHrEducation(
+           com.netsuite.webservices.platform.core_2018_2.RecordRef education,
+           java.lang.String degree,
+           java.util.Calendar degreeDate) {
+           this.education = education;
+           this.degree = degree;
+           this.degreeDate = degreeDate;
+    }
+
 
     /**
-     * 获取education属性的值。
+     * Gets the education value for this EmployeeHrEducation.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @return education
      */
-    public RecordRef getEducation() {
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getEducation() {
         return education;
     }
 
-    /**
-     * 设置education属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setEducation(RecordRef value) {
-        this.education = value;
-    }
 
     /**
-     * 获取degree属性的值。
+     * Sets the education value for this EmployeeHrEducation.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param education
      */
-    public String getDegree() {
+    public void setEducation(com.netsuite.webservices.platform.core_2018_2.RecordRef education) {
+        this.education = education;
+    }
+
+
+    /**
+     * Gets the degree value for this EmployeeHrEducation.
+     * 
+     * @return degree
+     */
+    public java.lang.String getDegree() {
         return degree;
     }
 
-    /**
-     * 设置degree属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setDegree(String value) {
-        this.degree = value;
-    }
 
     /**
-     * 获取degreeDate属性的值。
+     * Sets the degree value for this EmployeeHrEducation.
      * 
-     * @return
-     *     possible object is
-     *     {@link XMLGregorianCalendar }
-     *     
+     * @param degree
      */
-    public XMLGregorianCalendar getDegreeDate() {
+    public void setDegree(java.lang.String degree) {
+        this.degree = degree;
+    }
+
+
+    /**
+     * Gets the degreeDate value for this EmployeeHrEducation.
+     * 
+     * @return degreeDate
+     */
+    public java.util.Calendar getDegreeDate() {
         return degreeDate;
     }
 
+
     /**
-     * 设置degreeDate属性的值。
+     * Sets the degreeDate value for this EmployeeHrEducation.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link XMLGregorianCalendar }
-     *     
+     * @param degreeDate
      */
-    public void setDegreeDate(XMLGregorianCalendar value) {
-        this.degreeDate = value;
+    public void setDegreeDate(java.util.Calendar degreeDate) {
+        this.degreeDate = degreeDate;
+    }
+
+    private java.lang.Object __equalsCalc = null;
+    public synchronized boolean equals(java.lang.Object obj) {
+        if (!(obj instanceof EmployeeHrEducation)) return false;
+        EmployeeHrEducation other = (EmployeeHrEducation) obj;
+        if (obj == null) return false;
+        if (this == obj) return true;
+        if (__equalsCalc != null) {
+            return (__equalsCalc == obj);
+        }
+        __equalsCalc = obj;
+        boolean _equals;
+        _equals = true && 
+            ((this.education==null && other.getEducation()==null) || 
+             (this.education!=null &&
+              this.education.equals(other.getEducation()))) &&
+            ((this.degree==null && other.getDegree()==null) || 
+             (this.degree!=null &&
+              this.degree.equals(other.getDegree()))) &&
+            ((this.degreeDate==null && other.getDegreeDate()==null) || 
+             (this.degreeDate!=null &&
+              this.degreeDate.equals(other.getDegreeDate())));
+        __equalsCalc = null;
+        return _equals;
+    }
+
+    private boolean __hashCodeCalc = false;
+    public synchronized int hashCode() {
+        if (__hashCodeCalc) {
+            return 0;
+        }
+        __hashCodeCalc = true;
+        int _hashCode = 1;
+        if (getEducation() != null) {
+            _hashCode += getEducation().hashCode();
+        }
+        if (getDegree() != null) {
+            _hashCode += getDegree().hashCode();
+        }
+        if (getDegreeDate() != null) {
+            _hashCode += getDegreeDate().hashCode();
+        }
+        __hashCodeCalc = false;
+        return _hashCode;
+    }
+
+    // Type metadata
+    private static org.apache.axis.description.TypeDesc typeDesc =
+        new org.apache.axis.description.TypeDesc(EmployeeHrEducation.class, true);
+
+    static {
+        typeDesc.setXmlType(new javax.xml.namespace.QName("urn:employees_2018_2.lists.webservices.netsuite.com", "EmployeeHrEducation"));
+        org.apache.axis.description.ElementDesc elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("education");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:employees_2018_2.lists.webservices.netsuite.com", "education"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("degree");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:employees_2018_2.lists.webservices.netsuite.com", "degree"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("degreeDate");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:employees_2018_2.lists.webservices.netsuite.com", "degreeDate"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "dateTime"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+    }
+
+    /**
+     * Return type metadata object
+     */
+    public static org.apache.axis.description.TypeDesc getTypeDesc() {
+        return typeDesc;
+    }
+
+    /**
+     * Get Custom Serializer
+     */
+    public static org.apache.axis.encoding.Serializer getSerializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanSerializer(
+            _javaType, _xmlType, typeDesc);
+    }
+
+    /**
+     * Get Custom Deserializer
+     */
+    public static org.apache.axis.encoding.Deserializer getDeserializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanDeserializer(
+            _javaType, _xmlType, typeDesc);
     }
 
 }

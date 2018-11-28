@@ -1,442 +1,647 @@
+/**
+ * PurchaseRequisitionExpense.java
+ *
+ * This file was auto-generated from WSDL
+ * by the Apache Axis 1.4 Jul 28, 2010 (04:07:04 PDT) WSDL2Java emitter.
+ */
 
 package com.netsuite.webservices.transactions.purchases_2018_2;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlType;
-import com.netsuite.webservices.platform.core_2018_2.RecordRef;
-import com.netsuite.webservices.platform.core_2018_2.RecordRefList;
+public class PurchaseRequisitionExpense  implements java.io.Serializable {
+    private java.lang.Long line;
 
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef category;
 
-/**
- * <p>PurchaseRequisitionExpense complex type的 Java 类。
- * 
- * <p>以下模式片段指定包含在此类中的预期内容。
- * 
- * <pre>
- * &lt;complexType name="PurchaseRequisitionExpense">
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element name="line" type="{http://www.w3.org/2001/XMLSchema}long" minOccurs="0"/>
- *         &lt;element name="category" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="location" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="isClosed" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         &lt;element name="account" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="poVendor" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="estimatedAmount" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
- *         &lt;element name="amount" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
- *         &lt;element name="memo" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="department" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="class" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="customer" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="linkedOrderList" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRefList" minOccurs="0"/>
- *         &lt;element name="linkedOrderStatus" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="isBillable" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
- */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "PurchaseRequisitionExpense", propOrder = {
-    "line",
-    "category",
-    "location",
-    "isClosed",
-    "account",
-    "poVendor",
-    "estimatedAmount",
-    "amount",
-    "memo",
-    "department",
-    "clazz",
-    "customer",
-    "linkedOrderList",
-    "linkedOrderStatus",
-    "isBillable"
-})
-public class PurchaseRequisitionExpense {
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef location;
 
-    protected Long line;
-    protected RecordRef category;
-    protected RecordRef location;
-    protected Boolean isClosed;
-    protected RecordRef account;
-    protected RecordRef poVendor;
-    protected Double estimatedAmount;
-    protected Double amount;
-    protected String memo;
-    protected RecordRef department;
-    @XmlElement(name = "class")
-    protected RecordRef clazz;
-    protected RecordRef customer;
-    protected RecordRefList linkedOrderList;
-    protected String linkedOrderStatus;
-    protected Boolean isBillable;
+    private java.lang.Boolean isClosed;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef account;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef poVendor;
+
+    private java.lang.Double estimatedAmount;
+
+    private java.lang.Double amount;
+
+    private java.lang.String memo;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef department;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef _class;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef customer;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef[] linkedOrderList;
+
+    private java.lang.String linkedOrderStatus;
+
+    private java.lang.Boolean isBillable;
+
+    public PurchaseRequisitionExpense() {
+    }
+
+    public PurchaseRequisitionExpense(
+           java.lang.Long line,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef category,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef location,
+           java.lang.Boolean isClosed,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef account,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef poVendor,
+           java.lang.Double estimatedAmount,
+           java.lang.Double amount,
+           java.lang.String memo,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef department,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef _class,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef customer,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef[] linkedOrderList,
+           java.lang.String linkedOrderStatus,
+           java.lang.Boolean isBillable) {
+           this.line = line;
+           this.category = category;
+           this.location = location;
+           this.isClosed = isClosed;
+           this.account = account;
+           this.poVendor = poVendor;
+           this.estimatedAmount = estimatedAmount;
+           this.amount = amount;
+           this.memo = memo;
+           this.department = department;
+           this._class = _class;
+           this.customer = customer;
+           this.linkedOrderList = linkedOrderList;
+           this.linkedOrderStatus = linkedOrderStatus;
+           this.isBillable = isBillable;
+    }
+
 
     /**
-     * 获取line属性的值。
+     * Gets the line value for this PurchaseRequisitionExpense.
      * 
-     * @return
-     *     possible object is
-     *     {@link Long }
-     *     
+     * @return line
      */
-    public Long getLine() {
+    public java.lang.Long getLine() {
         return line;
     }
 
-    /**
-     * 设置line属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Long }
-     *     
-     */
-    public void setLine(Long value) {
-        this.line = value;
-    }
 
     /**
-     * 获取category属性的值。
+     * Sets the line value for this PurchaseRequisitionExpense.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param line
      */
-    public RecordRef getCategory() {
+    public void setLine(java.lang.Long line) {
+        this.line = line;
+    }
+
+
+    /**
+     * Gets the category value for this PurchaseRequisitionExpense.
+     * 
+     * @return category
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getCategory() {
         return category;
     }
 
-    /**
-     * 设置category属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setCategory(RecordRef value) {
-        this.category = value;
-    }
 
     /**
-     * 获取location属性的值。
+     * Sets the category value for this PurchaseRequisitionExpense.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param category
      */
-    public RecordRef getLocation() {
+    public void setCategory(com.netsuite.webservices.platform.core_2018_2.RecordRef category) {
+        this.category = category;
+    }
+
+
+    /**
+     * Gets the location value for this PurchaseRequisitionExpense.
+     * 
+     * @return location
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getLocation() {
         return location;
     }
 
-    /**
-     * 设置location属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setLocation(RecordRef value) {
-        this.location = value;
-    }
 
     /**
-     * 获取isClosed属性的值。
+     * Sets the location value for this PurchaseRequisitionExpense.
      * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
+     * @param location
      */
-    public Boolean isIsClosed() {
+    public void setLocation(com.netsuite.webservices.platform.core_2018_2.RecordRef location) {
+        this.location = location;
+    }
+
+
+    /**
+     * Gets the isClosed value for this PurchaseRequisitionExpense.
+     * 
+     * @return isClosed
+     */
+    public java.lang.Boolean getIsClosed() {
         return isClosed;
     }
 
-    /**
-     * 设置isClosed属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
-     */
-    public void setIsClosed(Boolean value) {
-        this.isClosed = value;
-    }
 
     /**
-     * 获取account属性的值。
+     * Sets the isClosed value for this PurchaseRequisitionExpense.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param isClosed
      */
-    public RecordRef getAccount() {
+    public void setIsClosed(java.lang.Boolean isClosed) {
+        this.isClosed = isClosed;
+    }
+
+
+    /**
+     * Gets the account value for this PurchaseRequisitionExpense.
+     * 
+     * @return account
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getAccount() {
         return account;
     }
 
-    /**
-     * 设置account属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setAccount(RecordRef value) {
-        this.account = value;
-    }
 
     /**
-     * 获取poVendor属性的值。
+     * Sets the account value for this PurchaseRequisitionExpense.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param account
      */
-    public RecordRef getPoVendor() {
+    public void setAccount(com.netsuite.webservices.platform.core_2018_2.RecordRef account) {
+        this.account = account;
+    }
+
+
+    /**
+     * Gets the poVendor value for this PurchaseRequisitionExpense.
+     * 
+     * @return poVendor
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getPoVendor() {
         return poVendor;
     }
 
-    /**
-     * 设置poVendor属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setPoVendor(RecordRef value) {
-        this.poVendor = value;
-    }
 
     /**
-     * 获取estimatedAmount属性的值。
+     * Sets the poVendor value for this PurchaseRequisitionExpense.
      * 
-     * @return
-     *     possible object is
-     *     {@link Double }
-     *     
+     * @param poVendor
      */
-    public Double getEstimatedAmount() {
+    public void setPoVendor(com.netsuite.webservices.platform.core_2018_2.RecordRef poVendor) {
+        this.poVendor = poVendor;
+    }
+
+
+    /**
+     * Gets the estimatedAmount value for this PurchaseRequisitionExpense.
+     * 
+     * @return estimatedAmount
+     */
+    public java.lang.Double getEstimatedAmount() {
         return estimatedAmount;
     }
 
-    /**
-     * 设置estimatedAmount属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Double }
-     *     
-     */
-    public void setEstimatedAmount(Double value) {
-        this.estimatedAmount = value;
-    }
 
     /**
-     * 获取amount属性的值。
+     * Sets the estimatedAmount value for this PurchaseRequisitionExpense.
      * 
-     * @return
-     *     possible object is
-     *     {@link Double }
-     *     
+     * @param estimatedAmount
      */
-    public Double getAmount() {
+    public void setEstimatedAmount(java.lang.Double estimatedAmount) {
+        this.estimatedAmount = estimatedAmount;
+    }
+
+
+    /**
+     * Gets the amount value for this PurchaseRequisitionExpense.
+     * 
+     * @return amount
+     */
+    public java.lang.Double getAmount() {
         return amount;
     }
 
-    /**
-     * 设置amount属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Double }
-     *     
-     */
-    public void setAmount(Double value) {
-        this.amount = value;
-    }
 
     /**
-     * 获取memo属性的值。
+     * Sets the amount value for this PurchaseRequisitionExpense.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param amount
      */
-    public String getMemo() {
+    public void setAmount(java.lang.Double amount) {
+        this.amount = amount;
+    }
+
+
+    /**
+     * Gets the memo value for this PurchaseRequisitionExpense.
+     * 
+     * @return memo
+     */
+    public java.lang.String getMemo() {
         return memo;
     }
 
-    /**
-     * 设置memo属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setMemo(String value) {
-        this.memo = value;
-    }
 
     /**
-     * 获取department属性的值。
+     * Sets the memo value for this PurchaseRequisitionExpense.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param memo
      */
-    public RecordRef getDepartment() {
+    public void setMemo(java.lang.String memo) {
+        this.memo = memo;
+    }
+
+
+    /**
+     * Gets the department value for this PurchaseRequisitionExpense.
+     * 
+     * @return department
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getDepartment() {
         return department;
     }
 
-    /**
-     * 设置department属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setDepartment(RecordRef value) {
-        this.department = value;
-    }
 
     /**
-     * 获取clazz属性的值。
+     * Sets the department value for this PurchaseRequisitionExpense.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param department
      */
-    public RecordRef getClazz() {
-        return clazz;
+    public void setDepartment(com.netsuite.webservices.platform.core_2018_2.RecordRef department) {
+        this.department = department;
     }
 
-    /**
-     * 设置clazz属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setClazz(RecordRef value) {
-        this.clazz = value;
-    }
 
     /**
-     * 获取customer属性的值。
+     * Gets the _class value for this PurchaseRequisitionExpense.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @return _class
      */
-    public RecordRef getCustomer() {
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef get_class() {
+        return _class;
+    }
+
+
+    /**
+     * Sets the _class value for this PurchaseRequisitionExpense.
+     * 
+     * @param _class
+     */
+    public void set_class(com.netsuite.webservices.platform.core_2018_2.RecordRef _class) {
+        this._class = _class;
+    }
+
+
+    /**
+     * Gets the customer value for this PurchaseRequisitionExpense.
+     * 
+     * @return customer
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getCustomer() {
         return customer;
     }
 
-    /**
-     * 设置customer属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setCustomer(RecordRef value) {
-        this.customer = value;
-    }
 
     /**
-     * 获取linkedOrderList属性的值。
+     * Sets the customer value for this PurchaseRequisitionExpense.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRefList }
-     *     
+     * @param customer
      */
-    public RecordRefList getLinkedOrderList() {
+    public void setCustomer(com.netsuite.webservices.platform.core_2018_2.RecordRef customer) {
+        this.customer = customer;
+    }
+
+
+    /**
+     * Gets the linkedOrderList value for this PurchaseRequisitionExpense.
+     * 
+     * @return linkedOrderList
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef[] getLinkedOrderList() {
         return linkedOrderList;
     }
 
-    /**
-     * 设置linkedOrderList属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRefList }
-     *     
-     */
-    public void setLinkedOrderList(RecordRefList value) {
-        this.linkedOrderList = value;
-    }
 
     /**
-     * 获取linkedOrderStatus属性的值。
+     * Sets the linkedOrderList value for this PurchaseRequisitionExpense.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param linkedOrderList
      */
-    public String getLinkedOrderStatus() {
+    public void setLinkedOrderList(com.netsuite.webservices.platform.core_2018_2.RecordRef[] linkedOrderList) {
+        this.linkedOrderList = linkedOrderList;
+    }
+
+
+    /**
+     * Gets the linkedOrderStatus value for this PurchaseRequisitionExpense.
+     * 
+     * @return linkedOrderStatus
+     */
+    public java.lang.String getLinkedOrderStatus() {
         return linkedOrderStatus;
     }
 
-    /**
-     * 设置linkedOrderStatus属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setLinkedOrderStatus(String value) {
-        this.linkedOrderStatus = value;
-    }
 
     /**
-     * 获取isBillable属性的值。
+     * Sets the linkedOrderStatus value for this PurchaseRequisitionExpense.
      * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
+     * @param linkedOrderStatus
      */
-    public Boolean isIsBillable() {
+    public void setLinkedOrderStatus(java.lang.String linkedOrderStatus) {
+        this.linkedOrderStatus = linkedOrderStatus;
+    }
+
+
+    /**
+     * Gets the isBillable value for this PurchaseRequisitionExpense.
+     * 
+     * @return isBillable
+     */
+    public java.lang.Boolean getIsBillable() {
         return isBillable;
     }
 
+
     /**
-     * 设置isBillable属性的值。
+     * Sets the isBillable value for this PurchaseRequisitionExpense.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
+     * @param isBillable
      */
-    public void setIsBillable(Boolean value) {
-        this.isBillable = value;
+    public void setIsBillable(java.lang.Boolean isBillable) {
+        this.isBillable = isBillable;
+    }
+
+    private java.lang.Object __equalsCalc = null;
+    public synchronized boolean equals(java.lang.Object obj) {
+        if (!(obj instanceof PurchaseRequisitionExpense)) return false;
+        PurchaseRequisitionExpense other = (PurchaseRequisitionExpense) obj;
+        if (obj == null) return false;
+        if (this == obj) return true;
+        if (__equalsCalc != null) {
+            return (__equalsCalc == obj);
+        }
+        __equalsCalc = obj;
+        boolean _equals;
+        _equals = true && 
+            ((this.line==null && other.getLine()==null) || 
+             (this.line!=null &&
+              this.line.equals(other.getLine()))) &&
+            ((this.category==null && other.getCategory()==null) || 
+             (this.category!=null &&
+              this.category.equals(other.getCategory()))) &&
+            ((this.location==null && other.getLocation()==null) || 
+             (this.location!=null &&
+              this.location.equals(other.getLocation()))) &&
+            ((this.isClosed==null && other.getIsClosed()==null) || 
+             (this.isClosed!=null &&
+              this.isClosed.equals(other.getIsClosed()))) &&
+            ((this.account==null && other.getAccount()==null) || 
+             (this.account!=null &&
+              this.account.equals(other.getAccount()))) &&
+            ((this.poVendor==null && other.getPoVendor()==null) || 
+             (this.poVendor!=null &&
+              this.poVendor.equals(other.getPoVendor()))) &&
+            ((this.estimatedAmount==null && other.getEstimatedAmount()==null) || 
+             (this.estimatedAmount!=null &&
+              this.estimatedAmount.equals(other.getEstimatedAmount()))) &&
+            ((this.amount==null && other.getAmount()==null) || 
+             (this.amount!=null &&
+              this.amount.equals(other.getAmount()))) &&
+            ((this.memo==null && other.getMemo()==null) || 
+             (this.memo!=null &&
+              this.memo.equals(other.getMemo()))) &&
+            ((this.department==null && other.getDepartment()==null) || 
+             (this.department!=null &&
+              this.department.equals(other.getDepartment()))) &&
+            ((this._class==null && other.get_class()==null) || 
+             (this._class!=null &&
+              this._class.equals(other.get_class()))) &&
+            ((this.customer==null && other.getCustomer()==null) || 
+             (this.customer!=null &&
+              this.customer.equals(other.getCustomer()))) &&
+            ((this.linkedOrderList==null && other.getLinkedOrderList()==null) || 
+             (this.linkedOrderList!=null &&
+              java.util.Arrays.equals(this.linkedOrderList, other.getLinkedOrderList()))) &&
+            ((this.linkedOrderStatus==null && other.getLinkedOrderStatus()==null) || 
+             (this.linkedOrderStatus!=null &&
+              this.linkedOrderStatus.equals(other.getLinkedOrderStatus()))) &&
+            ((this.isBillable==null && other.getIsBillable()==null) || 
+             (this.isBillable!=null &&
+              this.isBillable.equals(other.getIsBillable())));
+        __equalsCalc = null;
+        return _equals;
+    }
+
+    private boolean __hashCodeCalc = false;
+    public synchronized int hashCode() {
+        if (__hashCodeCalc) {
+            return 0;
+        }
+        __hashCodeCalc = true;
+        int _hashCode = 1;
+        if (getLine() != null) {
+            _hashCode += getLine().hashCode();
+        }
+        if (getCategory() != null) {
+            _hashCode += getCategory().hashCode();
+        }
+        if (getLocation() != null) {
+            _hashCode += getLocation().hashCode();
+        }
+        if (getIsClosed() != null) {
+            _hashCode += getIsClosed().hashCode();
+        }
+        if (getAccount() != null) {
+            _hashCode += getAccount().hashCode();
+        }
+        if (getPoVendor() != null) {
+            _hashCode += getPoVendor().hashCode();
+        }
+        if (getEstimatedAmount() != null) {
+            _hashCode += getEstimatedAmount().hashCode();
+        }
+        if (getAmount() != null) {
+            _hashCode += getAmount().hashCode();
+        }
+        if (getMemo() != null) {
+            _hashCode += getMemo().hashCode();
+        }
+        if (getDepartment() != null) {
+            _hashCode += getDepartment().hashCode();
+        }
+        if (get_class() != null) {
+            _hashCode += get_class().hashCode();
+        }
+        if (getCustomer() != null) {
+            _hashCode += getCustomer().hashCode();
+        }
+        if (getLinkedOrderList() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getLinkedOrderList());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getLinkedOrderList(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getLinkedOrderStatus() != null) {
+            _hashCode += getLinkedOrderStatus().hashCode();
+        }
+        if (getIsBillable() != null) {
+            _hashCode += getIsBillable().hashCode();
+        }
+        __hashCodeCalc = false;
+        return _hashCode;
+    }
+
+    // Type metadata
+    private static org.apache.axis.description.TypeDesc typeDesc =
+        new org.apache.axis.description.TypeDesc(PurchaseRequisitionExpense.class, true);
+
+    static {
+        typeDesc.setXmlType(new javax.xml.namespace.QName("urn:purchases_2018_2.transactions.webservices.netsuite.com", "PurchaseRequisitionExpense"));
+        org.apache.axis.description.ElementDesc elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("line");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:purchases_2018_2.transactions.webservices.netsuite.com", "line"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "long"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("category");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:purchases_2018_2.transactions.webservices.netsuite.com", "category"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("location");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:purchases_2018_2.transactions.webservices.netsuite.com", "location"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("isClosed");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:purchases_2018_2.transactions.webservices.netsuite.com", "isClosed"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("account");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:purchases_2018_2.transactions.webservices.netsuite.com", "account"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("poVendor");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:purchases_2018_2.transactions.webservices.netsuite.com", "poVendor"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("estimatedAmount");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:purchases_2018_2.transactions.webservices.netsuite.com", "estimatedAmount"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "double"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("amount");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:purchases_2018_2.transactions.webservices.netsuite.com", "amount"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "double"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("memo");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:purchases_2018_2.transactions.webservices.netsuite.com", "memo"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("department");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:purchases_2018_2.transactions.webservices.netsuite.com", "department"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("_class");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:purchases_2018_2.transactions.webservices.netsuite.com", "class"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("customer");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:purchases_2018_2.transactions.webservices.netsuite.com", "customer"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("linkedOrderList");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:purchases_2018_2.transactions.webservices.netsuite.com", "linkedOrderList"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "recordRef"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("linkedOrderStatus");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:purchases_2018_2.transactions.webservices.netsuite.com", "linkedOrderStatus"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("isBillable");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:purchases_2018_2.transactions.webservices.netsuite.com", "isBillable"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+    }
+
+    /**
+     * Return type metadata object
+     */
+    public static org.apache.axis.description.TypeDesc getTypeDesc() {
+        return typeDesc;
+    }
+
+    /**
+     * Get Custom Serializer
+     */
+    public static org.apache.axis.encoding.Serializer getSerializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanSerializer(
+            _javaType, _xmlType, typeDesc);
+    }
+
+    /**
+     * Get Custom Deserializer
+     */
+    public static org.apache.axis.encoding.Deserializer getDeserializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanDeserializer(
+            _javaType, _xmlType, typeDesc);
     }
 
 }

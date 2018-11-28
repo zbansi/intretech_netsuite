@@ -1,67 +1,119 @@
+/**
+ * AttachReference.java
+ *
+ * This file was auto-generated from WSDL
+ * by the Apache Axis 1.4 Jul 28, 2010 (04:07:04 PDT) WSDL2Java emitter.
+ */
 
 package com.netsuite.webservices.platform.core_2018_2;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlSeeAlso;
-import javax.xml.bind.annotation.XmlType;
+public abstract class AttachReference  implements java.io.Serializable {
+    private com.netsuite.webservices.platform.core_2018_2.BaseRef attachTo;
 
+    public AttachReference() {
+    }
 
-/**
- * <p>AttachReference complex type的 Java 类。
- * 
- * <p>以下模式片段指定包含在此类中的预期内容。
- * 
- * <pre>
- * &lt;complexType name="AttachReference">
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element name="attachTo" type="{urn:core_2018_2.platform.webservices.netsuite.com}BaseRef"/>
- *       &lt;/sequence>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
- */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "AttachReference", propOrder = {
-    "attachTo"
-})
-@XmlSeeAlso({
-    AttachContactReference.class,
-    AttachBasicReference.class
-})
-public abstract class AttachReference {
+    public AttachReference(
+           com.netsuite.webservices.platform.core_2018_2.BaseRef attachTo) {
+           this.attachTo = attachTo;
+    }
 
-    @XmlElement(required = true)
-    protected BaseRef attachTo;
 
     /**
-     * 获取attachTo属性的值。
+     * Gets the attachTo value for this AttachReference.
      * 
-     * @return
-     *     possible object is
-     *     {@link BaseRef }
-     *     
+     * @return attachTo
      */
-    public BaseRef getAttachTo() {
+    public com.netsuite.webservices.platform.core_2018_2.BaseRef getAttachTo() {
         return attachTo;
     }
 
+
     /**
-     * 设置attachTo属性的值。
+     * Sets the attachTo value for this AttachReference.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link BaseRef }
-     *     
+     * @param attachTo
      */
-    public void setAttachTo(BaseRef value) {
-        this.attachTo = value;
+    public void setAttachTo(com.netsuite.webservices.platform.core_2018_2.BaseRef attachTo) {
+        this.attachTo = attachTo;
+    }
+
+    private java.lang.Object __equalsCalc = null;
+    public synchronized boolean equals(java.lang.Object obj) {
+        if (!(obj instanceof AttachReference)) return false;
+        AttachReference other = (AttachReference) obj;
+        if (obj == null) return false;
+        if (this == obj) return true;
+        if (__equalsCalc != null) {
+            return (__equalsCalc == obj);
+        }
+        __equalsCalc = obj;
+        boolean _equals;
+        _equals = true && 
+            ((this.attachTo==null && other.getAttachTo()==null) || 
+             (this.attachTo!=null &&
+              this.attachTo.equals(other.getAttachTo())));
+        __equalsCalc = null;
+        return _equals;
+    }
+
+    private boolean __hashCodeCalc = false;
+    public synchronized int hashCode() {
+        if (__hashCodeCalc) {
+            return 0;
+        }
+        __hashCodeCalc = true;
+        int _hashCode = 1;
+        if (getAttachTo() != null) {
+            _hashCode += getAttachTo().hashCode();
+        }
+        __hashCodeCalc = false;
+        return _hashCode;
+    }
+
+    // Type metadata
+    private static org.apache.axis.description.TypeDesc typeDesc =
+        new org.apache.axis.description.TypeDesc(AttachReference.class, true);
+
+    static {
+        typeDesc.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "AttachReference"));
+        org.apache.axis.description.ElementDesc elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("attachTo");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "attachTo"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "BaseRef"));
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+    }
+
+    /**
+     * Return type metadata object
+     */
+    public static org.apache.axis.description.TypeDesc getTypeDesc() {
+        return typeDesc;
+    }
+
+    /**
+     * Get Custom Serializer
+     */
+    public static org.apache.axis.encoding.Serializer getSerializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanSerializer(
+            _javaType, _xmlType, typeDesc);
+    }
+
+    /**
+     * Get Custom Deserializer
+     */
+    public static org.apache.axis.encoding.Deserializer getDeserializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanDeserializer(
+            _javaType, _xmlType, typeDesc);
     }
 
 }

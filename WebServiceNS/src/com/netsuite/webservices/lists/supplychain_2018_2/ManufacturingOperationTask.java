@@ -1,747 +1,1071 @@
+/**
+ * ManufacturingOperationTask.java
+ *
+ * This file was auto-generated from WSDL
+ * by the Apache Axis 1.4 Jul 28, 2010 (04:07:04 PDT) WSDL2Java emitter.
+ */
 
 package com.netsuite.webservices.lists.supplychain_2018_2;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlAttribute;
-import javax.xml.bind.annotation.XmlSchemaType;
-import javax.xml.bind.annotation.XmlType;
-import javax.xml.datatype.XMLGregorianCalendar;
-import com.netsuite.webservices.lists.supplychain_2018_2.types.ManufacturingOperationTaskStatus;
-import com.netsuite.webservices.platform.core_2018_2.CustomFieldList;
-import com.netsuite.webservices.platform.core_2018_2.Record;
-import com.netsuite.webservices.platform.core_2018_2.RecordRef;
+public class ManufacturingOperationTask  extends com.netsuite.webservices.platform.core_2018_2.Record  implements java.io.Serializable {
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef customForm;
 
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef manufacturingWorkCenter;
 
-/**
- * <p>ManufacturingOperationTask complex type的 Java 类。
- * 
- * <p>以下模式片段指定包含在此类中的预期内容。
- * 
- * <pre>
- * &lt;complexType name="ManufacturingOperationTask">
- *   &lt;complexContent>
- *     &lt;extension base="{urn:core_2018_2.platform.webservices.netsuite.com}Record">
- *       &lt;sequence>
- *         &lt;element name="customForm" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="manufacturingWorkCenter" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="manufacturingCostTemplate" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="title" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="operationSequence" type="{http://www.w3.org/2001/XMLSchema}long" minOccurs="0"/>
- *         &lt;element name="workOrder" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="order" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="status" type="{urn:types.supplychain_2018_2.lists.webservices.netsuite.com}ManufacturingOperationTaskStatus" minOccurs="0"/>
- *         &lt;element name="message" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="estimatedWork" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
- *         &lt;element name="actualWork" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
- *         &lt;element name="remainingWork" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
- *         &lt;element name="inputQuantity" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
- *         &lt;element name="completedQuantity" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
- *         &lt;element name="setupTime" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
- *         &lt;element name="runRate" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
- *         &lt;element name="startDate" type="{http://www.w3.org/2001/XMLSchema}dateTime" minOccurs="0"/>
- *         &lt;element name="endDate" type="{http://www.w3.org/2001/XMLSchema}dateTime" minOccurs="0"/>
- *         &lt;element name="autoCalculateLag" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         &lt;element name="machineResources" type="{http://www.w3.org/2001/XMLSchema}long" minOccurs="0"/>
- *         &lt;element name="laborResources" type="{http://www.w3.org/2001/XMLSchema}long" minOccurs="0"/>
- *         &lt;element name="costDetailList" type="{urn:supplychain_2018_2.lists.webservices.netsuite.com}ManufacturingCostDetailList" minOccurs="0"/>
- *         &lt;element name="predecessorList" type="{urn:supplychain_2018_2.lists.webservices.netsuite.com}ManufacturingOperationTaskPredecessorList" minOccurs="0"/>
- *         &lt;element name="customFieldList" type="{urn:core_2018_2.platform.webservices.netsuite.com}CustomFieldList" minOccurs="0"/>
- *       &lt;/sequence>
- *       &lt;attribute name="internalId" type="{http://www.w3.org/2001/XMLSchema}string" />
- *       &lt;attribute name="externalId" type="{http://www.w3.org/2001/XMLSchema}string" />
- *     &lt;/extension>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
- */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "ManufacturingOperationTask", propOrder = {
-    "customForm",
-    "manufacturingWorkCenter",
-    "manufacturingCostTemplate",
-    "title",
-    "operationSequence",
-    "workOrder",
-    "order",
-    "status",
-    "message",
-    "estimatedWork",
-    "actualWork",
-    "remainingWork",
-    "inputQuantity",
-    "completedQuantity",
-    "setupTime",
-    "runRate",
-    "startDate",
-    "endDate",
-    "autoCalculateLag",
-    "machineResources",
-    "laborResources",
-    "costDetailList",
-    "predecessorList",
-    "customFieldList"
-})
-public class ManufacturingOperationTask
-    extends Record
-{
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef manufacturingCostTemplate;
 
-    protected RecordRef customForm;
-    protected RecordRef manufacturingWorkCenter;
-    protected RecordRef manufacturingCostTemplate;
-    protected String title;
-    protected Long operationSequence;
-    protected RecordRef workOrder;
-    protected RecordRef order;
-    @XmlSchemaType(name = "string")
-    protected ManufacturingOperationTaskStatus status;
-    protected String message;
-    protected Double estimatedWork;
-    protected Double actualWork;
-    protected Double remainingWork;
-    protected Double inputQuantity;
-    protected Double completedQuantity;
-    protected Double setupTime;
-    protected Double runRate;
-    @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar startDate;
-    @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar endDate;
-    protected Boolean autoCalculateLag;
-    protected Long machineResources;
-    protected Long laborResources;
-    protected ManufacturingCostDetailList costDetailList;
-    protected ManufacturingOperationTaskPredecessorList predecessorList;
-    protected CustomFieldList customFieldList;
-    @XmlAttribute(name = "internalId")
-    protected String internalId;
-    @XmlAttribute(name = "externalId")
-    protected String externalId;
+    private java.lang.String title;
+
+    private java.lang.Long operationSequence;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef workOrder;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef order;
+
+    private com.netsuite.webservices.lists.supplychain_2018_2.types.ManufacturingOperationTaskStatus status;
+
+    private java.lang.String message;
+
+    private java.lang.Double estimatedWork;
+
+    private java.lang.Double actualWork;
+
+    private java.lang.Double remainingWork;
+
+    private java.lang.Double inputQuantity;
+
+    private java.lang.Double completedQuantity;
+
+    private java.lang.Double setupTime;
+
+    private java.lang.Double runRate;
+
+    private java.util.Calendar startDate;
+
+    private java.util.Calendar endDate;
+
+    private java.lang.Boolean autoCalculateLag;
+
+    private java.lang.Long machineResources;
+
+    private java.lang.Long laborResources;
+
+    private com.netsuite.webservices.lists.supplychain_2018_2.ManufacturingCostDetail[] costDetailList;
+
+    private com.netsuite.webservices.lists.supplychain_2018_2.ManufacturingOperationTaskPredecessor[] predecessorList;
+
+    private com.netsuite.webservices.platform.core_2018_2.CustomFieldRef[] customFieldList;
+
+    private java.lang.String internalId;  // attribute
+
+    private java.lang.String externalId;  // attribute
+
+    public ManufacturingOperationTask() {
+    }
+
+    public ManufacturingOperationTask(
+           java.lang.String[] nullFieldList,
+           java.lang.String internalId,
+           java.lang.String externalId,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef customForm,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef manufacturingWorkCenter,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef manufacturingCostTemplate,
+           java.lang.String title,
+           java.lang.Long operationSequence,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef workOrder,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef order,
+           com.netsuite.webservices.lists.supplychain_2018_2.types.ManufacturingOperationTaskStatus status,
+           java.lang.String message,
+           java.lang.Double estimatedWork,
+           java.lang.Double actualWork,
+           java.lang.Double remainingWork,
+           java.lang.Double inputQuantity,
+           java.lang.Double completedQuantity,
+           java.lang.Double setupTime,
+           java.lang.Double runRate,
+           java.util.Calendar startDate,
+           java.util.Calendar endDate,
+           java.lang.Boolean autoCalculateLag,
+           java.lang.Long machineResources,
+           java.lang.Long laborResources,
+           com.netsuite.webservices.lists.supplychain_2018_2.ManufacturingCostDetail[] costDetailList,
+           com.netsuite.webservices.lists.supplychain_2018_2.ManufacturingOperationTaskPredecessor[] predecessorList,
+           com.netsuite.webservices.platform.core_2018_2.CustomFieldRef[] customFieldList) {
+        super(
+            nullFieldList);
+        this.internalId = internalId;
+        this.externalId = externalId;
+        this.customForm = customForm;
+        this.manufacturingWorkCenter = manufacturingWorkCenter;
+        this.manufacturingCostTemplate = manufacturingCostTemplate;
+        this.title = title;
+        this.operationSequence = operationSequence;
+        this.workOrder = workOrder;
+        this.order = order;
+        this.status = status;
+        this.message = message;
+        this.estimatedWork = estimatedWork;
+        this.actualWork = actualWork;
+        this.remainingWork = remainingWork;
+        this.inputQuantity = inputQuantity;
+        this.completedQuantity = completedQuantity;
+        this.setupTime = setupTime;
+        this.runRate = runRate;
+        this.startDate = startDate;
+        this.endDate = endDate;
+        this.autoCalculateLag = autoCalculateLag;
+        this.machineResources = machineResources;
+        this.laborResources = laborResources;
+        this.costDetailList = costDetailList;
+        this.predecessorList = predecessorList;
+        this.customFieldList = customFieldList;
+    }
+
 
     /**
-     * 获取customForm属性的值。
+     * Gets the customForm value for this ManufacturingOperationTask.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @return customForm
      */
-    public RecordRef getCustomForm() {
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getCustomForm() {
         return customForm;
     }
 
-    /**
-     * 设置customForm属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setCustomForm(RecordRef value) {
-        this.customForm = value;
-    }
 
     /**
-     * 获取manufacturingWorkCenter属性的值。
+     * Sets the customForm value for this ManufacturingOperationTask.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param customForm
      */
-    public RecordRef getManufacturingWorkCenter() {
+    public void setCustomForm(com.netsuite.webservices.platform.core_2018_2.RecordRef customForm) {
+        this.customForm = customForm;
+    }
+
+
+    /**
+     * Gets the manufacturingWorkCenter value for this ManufacturingOperationTask.
+     * 
+     * @return manufacturingWorkCenter
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getManufacturingWorkCenter() {
         return manufacturingWorkCenter;
     }
 
-    /**
-     * 设置manufacturingWorkCenter属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setManufacturingWorkCenter(RecordRef value) {
-        this.manufacturingWorkCenter = value;
-    }
 
     /**
-     * 获取manufacturingCostTemplate属性的值。
+     * Sets the manufacturingWorkCenter value for this ManufacturingOperationTask.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param manufacturingWorkCenter
      */
-    public RecordRef getManufacturingCostTemplate() {
+    public void setManufacturingWorkCenter(com.netsuite.webservices.platform.core_2018_2.RecordRef manufacturingWorkCenter) {
+        this.manufacturingWorkCenter = manufacturingWorkCenter;
+    }
+
+
+    /**
+     * Gets the manufacturingCostTemplate value for this ManufacturingOperationTask.
+     * 
+     * @return manufacturingCostTemplate
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getManufacturingCostTemplate() {
         return manufacturingCostTemplate;
     }
 
-    /**
-     * 设置manufacturingCostTemplate属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setManufacturingCostTemplate(RecordRef value) {
-        this.manufacturingCostTemplate = value;
-    }
 
     /**
-     * 获取title属性的值。
+     * Sets the manufacturingCostTemplate value for this ManufacturingOperationTask.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param manufacturingCostTemplate
      */
-    public String getTitle() {
+    public void setManufacturingCostTemplate(com.netsuite.webservices.platform.core_2018_2.RecordRef manufacturingCostTemplate) {
+        this.manufacturingCostTemplate = manufacturingCostTemplate;
+    }
+
+
+    /**
+     * Gets the title value for this ManufacturingOperationTask.
+     * 
+     * @return title
+     */
+    public java.lang.String getTitle() {
         return title;
     }
 
-    /**
-     * 设置title属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setTitle(String value) {
-        this.title = value;
-    }
 
     /**
-     * 获取operationSequence属性的值。
+     * Sets the title value for this ManufacturingOperationTask.
      * 
-     * @return
-     *     possible object is
-     *     {@link Long }
-     *     
+     * @param title
      */
-    public Long getOperationSequence() {
+    public void setTitle(java.lang.String title) {
+        this.title = title;
+    }
+
+
+    /**
+     * Gets the operationSequence value for this ManufacturingOperationTask.
+     * 
+     * @return operationSequence
+     */
+    public java.lang.Long getOperationSequence() {
         return operationSequence;
     }
 
-    /**
-     * 设置operationSequence属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Long }
-     *     
-     */
-    public void setOperationSequence(Long value) {
-        this.operationSequence = value;
-    }
 
     /**
-     * 获取workOrder属性的值。
+     * Sets the operationSequence value for this ManufacturingOperationTask.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param operationSequence
      */
-    public RecordRef getWorkOrder() {
+    public void setOperationSequence(java.lang.Long operationSequence) {
+        this.operationSequence = operationSequence;
+    }
+
+
+    /**
+     * Gets the workOrder value for this ManufacturingOperationTask.
+     * 
+     * @return workOrder
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getWorkOrder() {
         return workOrder;
     }
 
-    /**
-     * 设置workOrder属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setWorkOrder(RecordRef value) {
-        this.workOrder = value;
-    }
 
     /**
-     * 获取order属性的值。
+     * Sets the workOrder value for this ManufacturingOperationTask.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param workOrder
      */
-    public RecordRef getOrder() {
+    public void setWorkOrder(com.netsuite.webservices.platform.core_2018_2.RecordRef workOrder) {
+        this.workOrder = workOrder;
+    }
+
+
+    /**
+     * Gets the order value for this ManufacturingOperationTask.
+     * 
+     * @return order
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getOrder() {
         return order;
     }
 
-    /**
-     * 设置order属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setOrder(RecordRef value) {
-        this.order = value;
-    }
 
     /**
-     * 获取status属性的值。
+     * Sets the order value for this ManufacturingOperationTask.
      * 
-     * @return
-     *     possible object is
-     *     {@link ManufacturingOperationTaskStatus }
-     *     
+     * @param order
      */
-    public ManufacturingOperationTaskStatus getStatus() {
+    public void setOrder(com.netsuite.webservices.platform.core_2018_2.RecordRef order) {
+        this.order = order;
+    }
+
+
+    /**
+     * Gets the status value for this ManufacturingOperationTask.
+     * 
+     * @return status
+     */
+    public com.netsuite.webservices.lists.supplychain_2018_2.types.ManufacturingOperationTaskStatus getStatus() {
         return status;
     }
 
-    /**
-     * 设置status属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link ManufacturingOperationTaskStatus }
-     *     
-     */
-    public void setStatus(ManufacturingOperationTaskStatus value) {
-        this.status = value;
-    }
 
     /**
-     * 获取message属性的值。
+     * Sets the status value for this ManufacturingOperationTask.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param status
      */
-    public String getMessage() {
+    public void setStatus(com.netsuite.webservices.lists.supplychain_2018_2.types.ManufacturingOperationTaskStatus status) {
+        this.status = status;
+    }
+
+
+    /**
+     * Gets the message value for this ManufacturingOperationTask.
+     * 
+     * @return message
+     */
+    public java.lang.String getMessage() {
         return message;
     }
 
-    /**
-     * 设置message属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setMessage(String value) {
-        this.message = value;
-    }
 
     /**
-     * 获取estimatedWork属性的值。
+     * Sets the message value for this ManufacturingOperationTask.
      * 
-     * @return
-     *     possible object is
-     *     {@link Double }
-     *     
+     * @param message
      */
-    public Double getEstimatedWork() {
+    public void setMessage(java.lang.String message) {
+        this.message = message;
+    }
+
+
+    /**
+     * Gets the estimatedWork value for this ManufacturingOperationTask.
+     * 
+     * @return estimatedWork
+     */
+    public java.lang.Double getEstimatedWork() {
         return estimatedWork;
     }
 
-    /**
-     * 设置estimatedWork属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Double }
-     *     
-     */
-    public void setEstimatedWork(Double value) {
-        this.estimatedWork = value;
-    }
 
     /**
-     * 获取actualWork属性的值。
+     * Sets the estimatedWork value for this ManufacturingOperationTask.
      * 
-     * @return
-     *     possible object is
-     *     {@link Double }
-     *     
+     * @param estimatedWork
      */
-    public Double getActualWork() {
+    public void setEstimatedWork(java.lang.Double estimatedWork) {
+        this.estimatedWork = estimatedWork;
+    }
+
+
+    /**
+     * Gets the actualWork value for this ManufacturingOperationTask.
+     * 
+     * @return actualWork
+     */
+    public java.lang.Double getActualWork() {
         return actualWork;
     }
 
-    /**
-     * 设置actualWork属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Double }
-     *     
-     */
-    public void setActualWork(Double value) {
-        this.actualWork = value;
-    }
 
     /**
-     * 获取remainingWork属性的值。
+     * Sets the actualWork value for this ManufacturingOperationTask.
      * 
-     * @return
-     *     possible object is
-     *     {@link Double }
-     *     
+     * @param actualWork
      */
-    public Double getRemainingWork() {
+    public void setActualWork(java.lang.Double actualWork) {
+        this.actualWork = actualWork;
+    }
+
+
+    /**
+     * Gets the remainingWork value for this ManufacturingOperationTask.
+     * 
+     * @return remainingWork
+     */
+    public java.lang.Double getRemainingWork() {
         return remainingWork;
     }
 
-    /**
-     * 设置remainingWork属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Double }
-     *     
-     */
-    public void setRemainingWork(Double value) {
-        this.remainingWork = value;
-    }
 
     /**
-     * 获取inputQuantity属性的值。
+     * Sets the remainingWork value for this ManufacturingOperationTask.
      * 
-     * @return
-     *     possible object is
-     *     {@link Double }
-     *     
+     * @param remainingWork
      */
-    public Double getInputQuantity() {
+    public void setRemainingWork(java.lang.Double remainingWork) {
+        this.remainingWork = remainingWork;
+    }
+
+
+    /**
+     * Gets the inputQuantity value for this ManufacturingOperationTask.
+     * 
+     * @return inputQuantity
+     */
+    public java.lang.Double getInputQuantity() {
         return inputQuantity;
     }
 
-    /**
-     * 设置inputQuantity属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Double }
-     *     
-     */
-    public void setInputQuantity(Double value) {
-        this.inputQuantity = value;
-    }
 
     /**
-     * 获取completedQuantity属性的值。
+     * Sets the inputQuantity value for this ManufacturingOperationTask.
      * 
-     * @return
-     *     possible object is
-     *     {@link Double }
-     *     
+     * @param inputQuantity
      */
-    public Double getCompletedQuantity() {
+    public void setInputQuantity(java.lang.Double inputQuantity) {
+        this.inputQuantity = inputQuantity;
+    }
+
+
+    /**
+     * Gets the completedQuantity value for this ManufacturingOperationTask.
+     * 
+     * @return completedQuantity
+     */
+    public java.lang.Double getCompletedQuantity() {
         return completedQuantity;
     }
 
-    /**
-     * 设置completedQuantity属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Double }
-     *     
-     */
-    public void setCompletedQuantity(Double value) {
-        this.completedQuantity = value;
-    }
 
     /**
-     * 获取setupTime属性的值。
+     * Sets the completedQuantity value for this ManufacturingOperationTask.
      * 
-     * @return
-     *     possible object is
-     *     {@link Double }
-     *     
+     * @param completedQuantity
      */
-    public Double getSetupTime() {
+    public void setCompletedQuantity(java.lang.Double completedQuantity) {
+        this.completedQuantity = completedQuantity;
+    }
+
+
+    /**
+     * Gets the setupTime value for this ManufacturingOperationTask.
+     * 
+     * @return setupTime
+     */
+    public java.lang.Double getSetupTime() {
         return setupTime;
     }
 
-    /**
-     * 设置setupTime属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Double }
-     *     
-     */
-    public void setSetupTime(Double value) {
-        this.setupTime = value;
-    }
 
     /**
-     * 获取runRate属性的值。
+     * Sets the setupTime value for this ManufacturingOperationTask.
      * 
-     * @return
-     *     possible object is
-     *     {@link Double }
-     *     
+     * @param setupTime
      */
-    public Double getRunRate() {
+    public void setSetupTime(java.lang.Double setupTime) {
+        this.setupTime = setupTime;
+    }
+
+
+    /**
+     * Gets the runRate value for this ManufacturingOperationTask.
+     * 
+     * @return runRate
+     */
+    public java.lang.Double getRunRate() {
         return runRate;
     }
 
-    /**
-     * 设置runRate属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Double }
-     *     
-     */
-    public void setRunRate(Double value) {
-        this.runRate = value;
-    }
 
     /**
-     * 获取startDate属性的值。
+     * Sets the runRate value for this ManufacturingOperationTask.
      * 
-     * @return
-     *     possible object is
-     *     {@link XMLGregorianCalendar }
-     *     
+     * @param runRate
      */
-    public XMLGregorianCalendar getStartDate() {
+    public void setRunRate(java.lang.Double runRate) {
+        this.runRate = runRate;
+    }
+
+
+    /**
+     * Gets the startDate value for this ManufacturingOperationTask.
+     * 
+     * @return startDate
+     */
+    public java.util.Calendar getStartDate() {
         return startDate;
     }
 
-    /**
-     * 设置startDate属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link XMLGregorianCalendar }
-     *     
-     */
-    public void setStartDate(XMLGregorianCalendar value) {
-        this.startDate = value;
-    }
 
     /**
-     * 获取endDate属性的值。
+     * Sets the startDate value for this ManufacturingOperationTask.
      * 
-     * @return
-     *     possible object is
-     *     {@link XMLGregorianCalendar }
-     *     
+     * @param startDate
      */
-    public XMLGregorianCalendar getEndDate() {
+    public void setStartDate(java.util.Calendar startDate) {
+        this.startDate = startDate;
+    }
+
+
+    /**
+     * Gets the endDate value for this ManufacturingOperationTask.
+     * 
+     * @return endDate
+     */
+    public java.util.Calendar getEndDate() {
         return endDate;
     }
 
-    /**
-     * 设置endDate属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link XMLGregorianCalendar }
-     *     
-     */
-    public void setEndDate(XMLGregorianCalendar value) {
-        this.endDate = value;
-    }
 
     /**
-     * 获取autoCalculateLag属性的值。
+     * Sets the endDate value for this ManufacturingOperationTask.
      * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
+     * @param endDate
      */
-    public Boolean isAutoCalculateLag() {
+    public void setEndDate(java.util.Calendar endDate) {
+        this.endDate = endDate;
+    }
+
+
+    /**
+     * Gets the autoCalculateLag value for this ManufacturingOperationTask.
+     * 
+     * @return autoCalculateLag
+     */
+    public java.lang.Boolean getAutoCalculateLag() {
         return autoCalculateLag;
     }
 
-    /**
-     * 设置autoCalculateLag属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
-     */
-    public void setAutoCalculateLag(Boolean value) {
-        this.autoCalculateLag = value;
-    }
 
     /**
-     * 获取machineResources属性的值。
+     * Sets the autoCalculateLag value for this ManufacturingOperationTask.
      * 
-     * @return
-     *     possible object is
-     *     {@link Long }
-     *     
+     * @param autoCalculateLag
      */
-    public Long getMachineResources() {
+    public void setAutoCalculateLag(java.lang.Boolean autoCalculateLag) {
+        this.autoCalculateLag = autoCalculateLag;
+    }
+
+
+    /**
+     * Gets the machineResources value for this ManufacturingOperationTask.
+     * 
+     * @return machineResources
+     */
+    public java.lang.Long getMachineResources() {
         return machineResources;
     }
 
-    /**
-     * 设置machineResources属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Long }
-     *     
-     */
-    public void setMachineResources(Long value) {
-        this.machineResources = value;
-    }
 
     /**
-     * 获取laborResources属性的值。
+     * Sets the machineResources value for this ManufacturingOperationTask.
      * 
-     * @return
-     *     possible object is
-     *     {@link Long }
-     *     
+     * @param machineResources
      */
-    public Long getLaborResources() {
+    public void setMachineResources(java.lang.Long machineResources) {
+        this.machineResources = machineResources;
+    }
+
+
+    /**
+     * Gets the laborResources value for this ManufacturingOperationTask.
+     * 
+     * @return laborResources
+     */
+    public java.lang.Long getLaborResources() {
         return laborResources;
     }
 
-    /**
-     * 设置laborResources属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Long }
-     *     
-     */
-    public void setLaborResources(Long value) {
-        this.laborResources = value;
-    }
 
     /**
-     * 获取costDetailList属性的值。
+     * Sets the laborResources value for this ManufacturingOperationTask.
      * 
-     * @return
-     *     possible object is
-     *     {@link ManufacturingCostDetailList }
-     *     
+     * @param laborResources
      */
-    public ManufacturingCostDetailList getCostDetailList() {
+    public void setLaborResources(java.lang.Long laborResources) {
+        this.laborResources = laborResources;
+    }
+
+
+    /**
+     * Gets the costDetailList value for this ManufacturingOperationTask.
+     * 
+     * @return costDetailList
+     */
+    public com.netsuite.webservices.lists.supplychain_2018_2.ManufacturingCostDetail[] getCostDetailList() {
         return costDetailList;
     }
 
-    /**
-     * 设置costDetailList属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link ManufacturingCostDetailList }
-     *     
-     */
-    public void setCostDetailList(ManufacturingCostDetailList value) {
-        this.costDetailList = value;
-    }
 
     /**
-     * 获取predecessorList属性的值。
+     * Sets the costDetailList value for this ManufacturingOperationTask.
      * 
-     * @return
-     *     possible object is
-     *     {@link ManufacturingOperationTaskPredecessorList }
-     *     
+     * @param costDetailList
      */
-    public ManufacturingOperationTaskPredecessorList getPredecessorList() {
+    public void setCostDetailList(com.netsuite.webservices.lists.supplychain_2018_2.ManufacturingCostDetail[] costDetailList) {
+        this.costDetailList = costDetailList;
+    }
+
+
+    /**
+     * Gets the predecessorList value for this ManufacturingOperationTask.
+     * 
+     * @return predecessorList
+     */
+    public com.netsuite.webservices.lists.supplychain_2018_2.ManufacturingOperationTaskPredecessor[] getPredecessorList() {
         return predecessorList;
     }
 
-    /**
-     * 设置predecessorList属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link ManufacturingOperationTaskPredecessorList }
-     *     
-     */
-    public void setPredecessorList(ManufacturingOperationTaskPredecessorList value) {
-        this.predecessorList = value;
-    }
 
     /**
-     * 获取customFieldList属性的值。
+     * Sets the predecessorList value for this ManufacturingOperationTask.
      * 
-     * @return
-     *     possible object is
-     *     {@link CustomFieldList }
-     *     
+     * @param predecessorList
      */
-    public CustomFieldList getCustomFieldList() {
+    public void setPredecessorList(com.netsuite.webservices.lists.supplychain_2018_2.ManufacturingOperationTaskPredecessor[] predecessorList) {
+        this.predecessorList = predecessorList;
+    }
+
+
+    /**
+     * Gets the customFieldList value for this ManufacturingOperationTask.
+     * 
+     * @return customFieldList
+     */
+    public com.netsuite.webservices.platform.core_2018_2.CustomFieldRef[] getCustomFieldList() {
         return customFieldList;
     }
 
-    /**
-     * 设置customFieldList属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link CustomFieldList }
-     *     
-     */
-    public void setCustomFieldList(CustomFieldList value) {
-        this.customFieldList = value;
-    }
 
     /**
-     * 获取internalId属性的值。
+     * Sets the customFieldList value for this ManufacturingOperationTask.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param customFieldList
      */
-    public String getInternalId() {
+    public void setCustomFieldList(com.netsuite.webservices.platform.core_2018_2.CustomFieldRef[] customFieldList) {
+        this.customFieldList = customFieldList;
+    }
+
+
+    /**
+     * Gets the internalId value for this ManufacturingOperationTask.
+     * 
+     * @return internalId
+     */
+    public java.lang.String getInternalId() {
         return internalId;
     }
 
-    /**
-     * 设置internalId属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setInternalId(String value) {
-        this.internalId = value;
-    }
 
     /**
-     * 获取externalId属性的值。
+     * Sets the internalId value for this ManufacturingOperationTask.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param internalId
      */
-    public String getExternalId() {
+    public void setInternalId(java.lang.String internalId) {
+        this.internalId = internalId;
+    }
+
+
+    /**
+     * Gets the externalId value for this ManufacturingOperationTask.
+     * 
+     * @return externalId
+     */
+    public java.lang.String getExternalId() {
         return externalId;
     }
 
+
     /**
-     * 设置externalId属性的值。
+     * Sets the externalId value for this ManufacturingOperationTask.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     * @param externalId
      */
-    public void setExternalId(String value) {
-        this.externalId = value;
+    public void setExternalId(java.lang.String externalId) {
+        this.externalId = externalId;
+    }
+
+    private java.lang.Object __equalsCalc = null;
+    public synchronized boolean equals(java.lang.Object obj) {
+        if (!(obj instanceof ManufacturingOperationTask)) return false;
+        ManufacturingOperationTask other = (ManufacturingOperationTask) obj;
+        if (obj == null) return false;
+        if (this == obj) return true;
+        if (__equalsCalc != null) {
+            return (__equalsCalc == obj);
+        }
+        __equalsCalc = obj;
+        boolean _equals;
+        _equals = super.equals(obj) && 
+            ((this.customForm==null && other.getCustomForm()==null) || 
+             (this.customForm!=null &&
+              this.customForm.equals(other.getCustomForm()))) &&
+            ((this.manufacturingWorkCenter==null && other.getManufacturingWorkCenter()==null) || 
+             (this.manufacturingWorkCenter!=null &&
+              this.manufacturingWorkCenter.equals(other.getManufacturingWorkCenter()))) &&
+            ((this.manufacturingCostTemplate==null && other.getManufacturingCostTemplate()==null) || 
+             (this.manufacturingCostTemplate!=null &&
+              this.manufacturingCostTemplate.equals(other.getManufacturingCostTemplate()))) &&
+            ((this.title==null && other.getTitle()==null) || 
+             (this.title!=null &&
+              this.title.equals(other.getTitle()))) &&
+            ((this.operationSequence==null && other.getOperationSequence()==null) || 
+             (this.operationSequence!=null &&
+              this.operationSequence.equals(other.getOperationSequence()))) &&
+            ((this.workOrder==null && other.getWorkOrder()==null) || 
+             (this.workOrder!=null &&
+              this.workOrder.equals(other.getWorkOrder()))) &&
+            ((this.order==null && other.getOrder()==null) || 
+             (this.order!=null &&
+              this.order.equals(other.getOrder()))) &&
+            ((this.status==null && other.getStatus()==null) || 
+             (this.status!=null &&
+              this.status.equals(other.getStatus()))) &&
+            ((this.message==null && other.getMessage()==null) || 
+             (this.message!=null &&
+              this.message.equals(other.getMessage()))) &&
+            ((this.estimatedWork==null && other.getEstimatedWork()==null) || 
+             (this.estimatedWork!=null &&
+              this.estimatedWork.equals(other.getEstimatedWork()))) &&
+            ((this.actualWork==null && other.getActualWork()==null) || 
+             (this.actualWork!=null &&
+              this.actualWork.equals(other.getActualWork()))) &&
+            ((this.remainingWork==null && other.getRemainingWork()==null) || 
+             (this.remainingWork!=null &&
+              this.remainingWork.equals(other.getRemainingWork()))) &&
+            ((this.inputQuantity==null && other.getInputQuantity()==null) || 
+             (this.inputQuantity!=null &&
+              this.inputQuantity.equals(other.getInputQuantity()))) &&
+            ((this.completedQuantity==null && other.getCompletedQuantity()==null) || 
+             (this.completedQuantity!=null &&
+              this.completedQuantity.equals(other.getCompletedQuantity()))) &&
+            ((this.setupTime==null && other.getSetupTime()==null) || 
+             (this.setupTime!=null &&
+              this.setupTime.equals(other.getSetupTime()))) &&
+            ((this.runRate==null && other.getRunRate()==null) || 
+             (this.runRate!=null &&
+              this.runRate.equals(other.getRunRate()))) &&
+            ((this.startDate==null && other.getStartDate()==null) || 
+             (this.startDate!=null &&
+              this.startDate.equals(other.getStartDate()))) &&
+            ((this.endDate==null && other.getEndDate()==null) || 
+             (this.endDate!=null &&
+              this.endDate.equals(other.getEndDate()))) &&
+            ((this.autoCalculateLag==null && other.getAutoCalculateLag()==null) || 
+             (this.autoCalculateLag!=null &&
+              this.autoCalculateLag.equals(other.getAutoCalculateLag()))) &&
+            ((this.machineResources==null && other.getMachineResources()==null) || 
+             (this.machineResources!=null &&
+              this.machineResources.equals(other.getMachineResources()))) &&
+            ((this.laborResources==null && other.getLaborResources()==null) || 
+             (this.laborResources!=null &&
+              this.laborResources.equals(other.getLaborResources()))) &&
+            ((this.costDetailList==null && other.getCostDetailList()==null) || 
+             (this.costDetailList!=null &&
+              java.util.Arrays.equals(this.costDetailList, other.getCostDetailList()))) &&
+            ((this.predecessorList==null && other.getPredecessorList()==null) || 
+             (this.predecessorList!=null &&
+              java.util.Arrays.equals(this.predecessorList, other.getPredecessorList()))) &&
+            ((this.customFieldList==null && other.getCustomFieldList()==null) || 
+             (this.customFieldList!=null &&
+              java.util.Arrays.equals(this.customFieldList, other.getCustomFieldList()))) &&
+            ((this.internalId==null && other.getInternalId()==null) || 
+             (this.internalId!=null &&
+              this.internalId.equals(other.getInternalId()))) &&
+            ((this.externalId==null && other.getExternalId()==null) || 
+             (this.externalId!=null &&
+              this.externalId.equals(other.getExternalId())));
+        __equalsCalc = null;
+        return _equals;
+    }
+
+    private boolean __hashCodeCalc = false;
+    public synchronized int hashCode() {
+        if (__hashCodeCalc) {
+            return 0;
+        }
+        __hashCodeCalc = true;
+        int _hashCode = super.hashCode();
+        if (getCustomForm() != null) {
+            _hashCode += getCustomForm().hashCode();
+        }
+        if (getManufacturingWorkCenter() != null) {
+            _hashCode += getManufacturingWorkCenter().hashCode();
+        }
+        if (getManufacturingCostTemplate() != null) {
+            _hashCode += getManufacturingCostTemplate().hashCode();
+        }
+        if (getTitle() != null) {
+            _hashCode += getTitle().hashCode();
+        }
+        if (getOperationSequence() != null) {
+            _hashCode += getOperationSequence().hashCode();
+        }
+        if (getWorkOrder() != null) {
+            _hashCode += getWorkOrder().hashCode();
+        }
+        if (getOrder() != null) {
+            _hashCode += getOrder().hashCode();
+        }
+        if (getStatus() != null) {
+            _hashCode += getStatus().hashCode();
+        }
+        if (getMessage() != null) {
+            _hashCode += getMessage().hashCode();
+        }
+        if (getEstimatedWork() != null) {
+            _hashCode += getEstimatedWork().hashCode();
+        }
+        if (getActualWork() != null) {
+            _hashCode += getActualWork().hashCode();
+        }
+        if (getRemainingWork() != null) {
+            _hashCode += getRemainingWork().hashCode();
+        }
+        if (getInputQuantity() != null) {
+            _hashCode += getInputQuantity().hashCode();
+        }
+        if (getCompletedQuantity() != null) {
+            _hashCode += getCompletedQuantity().hashCode();
+        }
+        if (getSetupTime() != null) {
+            _hashCode += getSetupTime().hashCode();
+        }
+        if (getRunRate() != null) {
+            _hashCode += getRunRate().hashCode();
+        }
+        if (getStartDate() != null) {
+            _hashCode += getStartDate().hashCode();
+        }
+        if (getEndDate() != null) {
+            _hashCode += getEndDate().hashCode();
+        }
+        if (getAutoCalculateLag() != null) {
+            _hashCode += getAutoCalculateLag().hashCode();
+        }
+        if (getMachineResources() != null) {
+            _hashCode += getMachineResources().hashCode();
+        }
+        if (getLaborResources() != null) {
+            _hashCode += getLaborResources().hashCode();
+        }
+        if (getCostDetailList() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getCostDetailList());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getCostDetailList(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getPredecessorList() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getPredecessorList());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getPredecessorList(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getCustomFieldList() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getCustomFieldList());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getCustomFieldList(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getInternalId() != null) {
+            _hashCode += getInternalId().hashCode();
+        }
+        if (getExternalId() != null) {
+            _hashCode += getExternalId().hashCode();
+        }
+        __hashCodeCalc = false;
+        return _hashCode;
+    }
+
+    // Type metadata
+    private static org.apache.axis.description.TypeDesc typeDesc =
+        new org.apache.axis.description.TypeDesc(ManufacturingOperationTask.class, true);
+
+    static {
+        typeDesc.setXmlType(new javax.xml.namespace.QName("urn:supplychain_2018_2.lists.webservices.netsuite.com", "ManufacturingOperationTask"));
+        org.apache.axis.description.AttributeDesc attrField = new org.apache.axis.description.AttributeDesc();
+        attrField.setFieldName("internalId");
+        attrField.setXmlName(new javax.xml.namespace.QName("", "internalId"));
+        attrField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        typeDesc.addFieldDesc(attrField);
+        attrField = new org.apache.axis.description.AttributeDesc();
+        attrField.setFieldName("externalId");
+        attrField.setXmlName(new javax.xml.namespace.QName("", "externalId"));
+        attrField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        typeDesc.addFieldDesc(attrField);
+        org.apache.axis.description.ElementDesc elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("customForm");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:supplychain_2018_2.lists.webservices.netsuite.com", "customForm"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("manufacturingWorkCenter");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:supplychain_2018_2.lists.webservices.netsuite.com", "manufacturingWorkCenter"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("manufacturingCostTemplate");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:supplychain_2018_2.lists.webservices.netsuite.com", "manufacturingCostTemplate"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("title");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:supplychain_2018_2.lists.webservices.netsuite.com", "title"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("operationSequence");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:supplychain_2018_2.lists.webservices.netsuite.com", "operationSequence"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "long"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("workOrder");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:supplychain_2018_2.lists.webservices.netsuite.com", "workOrder"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("order");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:supplychain_2018_2.lists.webservices.netsuite.com", "order"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("status");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:supplychain_2018_2.lists.webservices.netsuite.com", "status"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:types.supplychain_2018_2.lists.webservices.netsuite.com", "ManufacturingOperationTaskStatus"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("message");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:supplychain_2018_2.lists.webservices.netsuite.com", "message"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("estimatedWork");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:supplychain_2018_2.lists.webservices.netsuite.com", "estimatedWork"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "double"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("actualWork");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:supplychain_2018_2.lists.webservices.netsuite.com", "actualWork"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "double"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("remainingWork");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:supplychain_2018_2.lists.webservices.netsuite.com", "remainingWork"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "double"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("inputQuantity");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:supplychain_2018_2.lists.webservices.netsuite.com", "inputQuantity"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "double"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("completedQuantity");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:supplychain_2018_2.lists.webservices.netsuite.com", "completedQuantity"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "double"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("setupTime");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:supplychain_2018_2.lists.webservices.netsuite.com", "setupTime"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "double"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("runRate");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:supplychain_2018_2.lists.webservices.netsuite.com", "runRate"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "double"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("startDate");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:supplychain_2018_2.lists.webservices.netsuite.com", "startDate"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "dateTime"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("endDate");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:supplychain_2018_2.lists.webservices.netsuite.com", "endDate"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "dateTime"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("autoCalculateLag");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:supplychain_2018_2.lists.webservices.netsuite.com", "autoCalculateLag"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("machineResources");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:supplychain_2018_2.lists.webservices.netsuite.com", "machineResources"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "long"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("laborResources");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:supplychain_2018_2.lists.webservices.netsuite.com", "laborResources"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "long"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("costDetailList");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:supplychain_2018_2.lists.webservices.netsuite.com", "costDetailList"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:supplychain_2018_2.lists.webservices.netsuite.com", "ManufacturingCostDetail"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:supplychain_2018_2.lists.webservices.netsuite.com", "manufacturingCostDetail"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("predecessorList");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:supplychain_2018_2.lists.webservices.netsuite.com", "predecessorList"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:supplychain_2018_2.lists.webservices.netsuite.com", "ManufacturingOperationTaskPredecessor"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:supplychain_2018_2.lists.webservices.netsuite.com", "manufacturingOperationTaskPredecessor"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("customFieldList");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:supplychain_2018_2.lists.webservices.netsuite.com", "customFieldList"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "CustomFieldRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "customField"));
+        typeDesc.addFieldDesc(elemField);
+    }
+
+    /**
+     * Return type metadata object
+     */
+    public static org.apache.axis.description.TypeDesc getTypeDesc() {
+        return typeDesc;
+    }
+
+    /**
+     * Get Custom Serializer
+     */
+    public static org.apache.axis.encoding.Serializer getSerializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanSerializer(
+            _javaType, _xmlType, typeDesc);
+    }
+
+    /**
+     * Get Custom Deserializer
+     */
+    public static org.apache.axis.encoding.Deserializer getDeserializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanDeserializer(
+            _javaType, _xmlType, typeDesc);
     }
 
 }

@@ -1,98 +1,181 @@
+/**
+ * WriteResponseList.java
+ *
+ * This file was auto-generated from WSDL
+ * by the Apache Axis 1.4 Jul 28, 2010 (04:07:04 PDT) WSDL2Java emitter.
+ */
 
 package com.netsuite.webservices.platform.messages_2018_2;
 
-import java.util.ArrayList;
-import java.util.List;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlType;
-import com.netsuite.webservices.platform.core_2018_2.Status;
+public class WriteResponseList  implements java.io.Serializable {
+    private com.netsuite.webservices.platform.core_2018_2.StatusDetail[] status;
 
+    private com.netsuite.webservices.platform.messages_2018_2.WriteResponse[] writeResponse;
 
-/**
- * <p>WriteResponseList complex type的 Java 类。
- * 
- * <p>以下模式片段指定包含在此类中的预期内容。
- * 
- * <pre>
- * &lt;complexType name="WriteResponseList">
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element ref="{urn:core_2018_2.platform.webservices.netsuite.com}status" minOccurs="0"/>
- *         &lt;element name="writeResponse" type="{urn:messages_2018_2.platform.webservices.netsuite.com}WriteResponse" maxOccurs="unbounded"/>
- *       &lt;/sequence>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
- */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "WriteResponseList", propOrder = {
-    "status",
-    "writeResponse"
-})
-public class WriteResponseList {
+    public WriteResponseList() {
+    }
 
-    @XmlElement(namespace = "urn:core_2018_2.platform.webservices.netsuite.com")
-    protected Status status;
-    @XmlElement(required = true)
-    protected List<WriteResponse> writeResponse;
+    public WriteResponseList(
+           com.netsuite.webservices.platform.core_2018_2.StatusDetail[] status,
+           com.netsuite.webservices.platform.messages_2018_2.WriteResponse[] writeResponse) {
+           this.status = status;
+           this.writeResponse = writeResponse;
+    }
+
 
     /**
-     * 获取status属性的值。
+     * Gets the status value for this WriteResponseList.
      * 
-     * @return
-     *     possible object is
-     *     {@link Status }
-     *     
+     * @return status
      */
-    public Status getStatus() {
+    public com.netsuite.webservices.platform.core_2018_2.StatusDetail[] getStatus() {
         return status;
     }
 
+
     /**
-     * 设置status属性的值。
+     * Sets the status value for this WriteResponseList.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link Status }
-     *     
+     * @param status
      */
-    public void setStatus(Status value) {
-        this.status = value;
+    public void setStatus(com.netsuite.webservices.platform.core_2018_2.StatusDetail[] status) {
+        this.status = status;
+    }
+
+
+    /**
+     * Gets the writeResponse value for this WriteResponseList.
+     * 
+     * @return writeResponse
+     */
+    public com.netsuite.webservices.platform.messages_2018_2.WriteResponse[] getWriteResponse() {
+        return writeResponse;
+    }
+
+
+    /**
+     * Sets the writeResponse value for this WriteResponseList.
+     * 
+     * @param writeResponse
+     */
+    public void setWriteResponse(com.netsuite.webservices.platform.messages_2018_2.WriteResponse[] writeResponse) {
+        this.writeResponse = writeResponse;
+    }
+
+    public com.netsuite.webservices.platform.messages_2018_2.WriteResponse getWriteResponse(int i) {
+        return this.writeResponse[i];
+    }
+
+    public void setWriteResponse(int i, com.netsuite.webservices.platform.messages_2018_2.WriteResponse _value) {
+        this.writeResponse[i] = _value;
+    }
+
+    private java.lang.Object __equalsCalc = null;
+    public synchronized boolean equals(java.lang.Object obj) {
+        if (!(obj instanceof WriteResponseList)) return false;
+        WriteResponseList other = (WriteResponseList) obj;
+        if (obj == null) return false;
+        if (this == obj) return true;
+        if (__equalsCalc != null) {
+            return (__equalsCalc == obj);
+        }
+        __equalsCalc = obj;
+        boolean _equals;
+        _equals = true && 
+            ((this.status==null && other.getStatus()==null) || 
+             (this.status!=null &&
+              java.util.Arrays.equals(this.status, other.getStatus()))) &&
+            ((this.writeResponse==null && other.getWriteResponse()==null) || 
+             (this.writeResponse!=null &&
+              java.util.Arrays.equals(this.writeResponse, other.getWriteResponse())));
+        __equalsCalc = null;
+        return _equals;
+    }
+
+    private boolean __hashCodeCalc = false;
+    public synchronized int hashCode() {
+        if (__hashCodeCalc) {
+            return 0;
+        }
+        __hashCodeCalc = true;
+        int _hashCode = 1;
+        if (getStatus() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getStatus());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getStatus(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getWriteResponse() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getWriteResponse());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getWriteResponse(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        __hashCodeCalc = false;
+        return _hashCode;
+    }
+
+    // Type metadata
+    private static org.apache.axis.description.TypeDesc typeDesc =
+        new org.apache.axis.description.TypeDesc(WriteResponseList.class, true);
+
+    static {
+        typeDesc.setXmlType(new javax.xml.namespace.QName("urn:messages_2018_2.platform.webservices.netsuite.com", "WriteResponseList"));
+        org.apache.axis.description.ElementDesc elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("status");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "status"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "Status"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("writeResponse");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:messages_2018_2.platform.webservices.netsuite.com", "writeResponse"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:messages_2018_2.platform.webservices.netsuite.com", "WriteResponse"));
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
     }
 
     /**
-     * Gets the value of the writeResponse property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the writeResponse property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getWriteResponse().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link WriteResponse }
-     * 
-     * 
+     * Return type metadata object
      */
-    public List<WriteResponse> getWriteResponse() {
-        if (writeResponse == null) {
-            writeResponse = new ArrayList<WriteResponse>();
-        }
-        return this.writeResponse;
+    public static org.apache.axis.description.TypeDesc getTypeDesc() {
+        return typeDesc;
+    }
+
+    /**
+     * Get Custom Serializer
+     */
+    public static org.apache.axis.encoding.Serializer getSerializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanSerializer(
+            _javaType, _xmlType, typeDesc);
+    }
+
+    /**
+     * Get Custom Deserializer
+     */
+    public static org.apache.axis.encoding.Deserializer getDeserializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanDeserializer(
+            _javaType, _xmlType, typeDesc);
     }
 
 }

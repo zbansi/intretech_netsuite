@@ -1,172 +1,268 @@
+/**
+ * PresentationItem.java
+ *
+ * This file was auto-generated from WSDL
+ * by the Apache Axis 1.4 Jul 28, 2010 (04:07:04 PDT) WSDL2Java emitter.
+ */
 
 package com.netsuite.webservices.platform.common_2018_2;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlSchemaType;
-import javax.xml.bind.annotation.XmlType;
-import com.netsuite.webservices.platform.common_2018_2.types.PresentationItemType;
-import com.netsuite.webservices.platform.core_2018_2.RecordRef;
+public class PresentationItem  implements java.io.Serializable {
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef item;
 
+    private com.netsuite.webservices.platform.common_2018_2.types.PresentationItemType itemType;
 
-/**
- * <p>PresentationItem complex type的 Java 类。
- * 
- * <p>以下模式片段指定包含在此类中的预期内容。
- * 
- * <pre>
- * &lt;complexType name="PresentationItem">
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element name="item" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="itemType" type="{urn:types.common_2018_2.platform.webservices.netsuite.com}PresentationItemType" minOccurs="0"/>
- *         &lt;element name="description" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="onlinePrice" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
- *         &lt;element name="basePrice" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
- */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "PresentationItem", propOrder = {
-    "item",
-    "itemType",
-    "description",
-    "onlinePrice",
-    "basePrice"
-})
-public class PresentationItem {
+    private java.lang.String description;
 
-    protected RecordRef item;
-    @XmlSchemaType(name = "string")
-    protected PresentationItemType itemType;
-    protected String description;
-    protected Double onlinePrice;
-    protected Double basePrice;
+    private java.lang.Double onlinePrice;
+
+    private java.lang.Double basePrice;
+
+    public PresentationItem() {
+    }
+
+    public PresentationItem(
+           com.netsuite.webservices.platform.core_2018_2.RecordRef item,
+           com.netsuite.webservices.platform.common_2018_2.types.PresentationItemType itemType,
+           java.lang.String description,
+           java.lang.Double onlinePrice,
+           java.lang.Double basePrice) {
+           this.item = item;
+           this.itemType = itemType;
+           this.description = description;
+           this.onlinePrice = onlinePrice;
+           this.basePrice = basePrice;
+    }
+
 
     /**
-     * 获取item属性的值。
+     * Gets the item value for this PresentationItem.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @return item
      */
-    public RecordRef getItem() {
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getItem() {
         return item;
     }
 
-    /**
-     * 设置item属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setItem(RecordRef value) {
-        this.item = value;
-    }
 
     /**
-     * 获取itemType属性的值。
+     * Sets the item value for this PresentationItem.
      * 
-     * @return
-     *     possible object is
-     *     {@link PresentationItemType }
-     *     
+     * @param item
      */
-    public PresentationItemType getItemType() {
+    public void setItem(com.netsuite.webservices.platform.core_2018_2.RecordRef item) {
+        this.item = item;
+    }
+
+
+    /**
+     * Gets the itemType value for this PresentationItem.
+     * 
+     * @return itemType
+     */
+    public com.netsuite.webservices.platform.common_2018_2.types.PresentationItemType getItemType() {
         return itemType;
     }
 
-    /**
-     * 设置itemType属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link PresentationItemType }
-     *     
-     */
-    public void setItemType(PresentationItemType value) {
-        this.itemType = value;
-    }
 
     /**
-     * 获取description属性的值。
+     * Sets the itemType value for this PresentationItem.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param itemType
      */
-    public String getDescription() {
+    public void setItemType(com.netsuite.webservices.platform.common_2018_2.types.PresentationItemType itemType) {
+        this.itemType = itemType;
+    }
+
+
+    /**
+     * Gets the description value for this PresentationItem.
+     * 
+     * @return description
+     */
+    public java.lang.String getDescription() {
         return description;
     }
 
-    /**
-     * 设置description属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setDescription(String value) {
-        this.description = value;
-    }
 
     /**
-     * 获取onlinePrice属性的值。
+     * Sets the description value for this PresentationItem.
      * 
-     * @return
-     *     possible object is
-     *     {@link Double }
-     *     
+     * @param description
      */
-    public Double getOnlinePrice() {
+    public void setDescription(java.lang.String description) {
+        this.description = description;
+    }
+
+
+    /**
+     * Gets the onlinePrice value for this PresentationItem.
+     * 
+     * @return onlinePrice
+     */
+    public java.lang.Double getOnlinePrice() {
         return onlinePrice;
     }
 
-    /**
-     * 设置onlinePrice属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Double }
-     *     
-     */
-    public void setOnlinePrice(Double value) {
-        this.onlinePrice = value;
-    }
 
     /**
-     * 获取basePrice属性的值。
+     * Sets the onlinePrice value for this PresentationItem.
      * 
-     * @return
-     *     possible object is
-     *     {@link Double }
-     *     
+     * @param onlinePrice
      */
-    public Double getBasePrice() {
+    public void setOnlinePrice(java.lang.Double onlinePrice) {
+        this.onlinePrice = onlinePrice;
+    }
+
+
+    /**
+     * Gets the basePrice value for this PresentationItem.
+     * 
+     * @return basePrice
+     */
+    public java.lang.Double getBasePrice() {
         return basePrice;
     }
 
+
     /**
-     * 设置basePrice属性的值。
+     * Sets the basePrice value for this PresentationItem.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link Double }
-     *     
+     * @param basePrice
      */
-    public void setBasePrice(Double value) {
-        this.basePrice = value;
+    public void setBasePrice(java.lang.Double basePrice) {
+        this.basePrice = basePrice;
+    }
+
+    private java.lang.Object __equalsCalc = null;
+    public synchronized boolean equals(java.lang.Object obj) {
+        if (!(obj instanceof PresentationItem)) return false;
+        PresentationItem other = (PresentationItem) obj;
+        if (obj == null) return false;
+        if (this == obj) return true;
+        if (__equalsCalc != null) {
+            return (__equalsCalc == obj);
+        }
+        __equalsCalc = obj;
+        boolean _equals;
+        _equals = true && 
+            ((this.item==null && other.getItem()==null) || 
+             (this.item!=null &&
+              this.item.equals(other.getItem()))) &&
+            ((this.itemType==null && other.getItemType()==null) || 
+             (this.itemType!=null &&
+              this.itemType.equals(other.getItemType()))) &&
+            ((this.description==null && other.getDescription()==null) || 
+             (this.description!=null &&
+              this.description.equals(other.getDescription()))) &&
+            ((this.onlinePrice==null && other.getOnlinePrice()==null) || 
+             (this.onlinePrice!=null &&
+              this.onlinePrice.equals(other.getOnlinePrice()))) &&
+            ((this.basePrice==null && other.getBasePrice()==null) || 
+             (this.basePrice!=null &&
+              this.basePrice.equals(other.getBasePrice())));
+        __equalsCalc = null;
+        return _equals;
+    }
+
+    private boolean __hashCodeCalc = false;
+    public synchronized int hashCode() {
+        if (__hashCodeCalc) {
+            return 0;
+        }
+        __hashCodeCalc = true;
+        int _hashCode = 1;
+        if (getItem() != null) {
+            _hashCode += getItem().hashCode();
+        }
+        if (getItemType() != null) {
+            _hashCode += getItemType().hashCode();
+        }
+        if (getDescription() != null) {
+            _hashCode += getDescription().hashCode();
+        }
+        if (getOnlinePrice() != null) {
+            _hashCode += getOnlinePrice().hashCode();
+        }
+        if (getBasePrice() != null) {
+            _hashCode += getBasePrice().hashCode();
+        }
+        __hashCodeCalc = false;
+        return _hashCode;
+    }
+
+    // Type metadata
+    private static org.apache.axis.description.TypeDesc typeDesc =
+        new org.apache.axis.description.TypeDesc(PresentationItem.class, true);
+
+    static {
+        typeDesc.setXmlType(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "PresentationItem"));
+        org.apache.axis.description.ElementDesc elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("item");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "item"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("itemType");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "itemType"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:types.common_2018_2.platform.webservices.netsuite.com", "PresentationItemType"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("description");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "description"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("onlinePrice");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "onlinePrice"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "double"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("basePrice");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "basePrice"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "double"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+    }
+
+    /**
+     * Return type metadata object
+     */
+    public static org.apache.axis.description.TypeDesc getTypeDesc() {
+        return typeDesc;
+    }
+
+    /**
+     * Get Custom Serializer
+     */
+    public static org.apache.axis.encoding.Serializer getSerializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanSerializer(
+            _javaType, _xmlType, typeDesc);
+    }
+
+    /**
+     * Get Custom Deserializer
+     */
+    public static org.apache.axis.encoding.Deserializer getDeserializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanDeserializer(
+            _javaType, _xmlType, typeDesc);
     }
 
 }

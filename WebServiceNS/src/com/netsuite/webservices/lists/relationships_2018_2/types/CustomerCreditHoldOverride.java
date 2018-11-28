@@ -1,54 +1,72 @@
+/**
+ * CustomerCreditHoldOverride.java
+ *
+ * This file was auto-generated from WSDL
+ * by the Apache Axis 1.4 Jul 28, 2010 (04:07:04 PDT) WSDL2Java emitter.
+ */
 
 package com.netsuite.webservices.lists.relationships_2018_2.types;
 
-import javax.xml.bind.annotation.XmlEnum;
-import javax.xml.bind.annotation.XmlEnumValue;
-import javax.xml.bind.annotation.XmlType;
+public class CustomerCreditHoldOverride implements java.io.Serializable {
+    private java.lang.String _value_;
+    private static java.util.HashMap _table_ = new java.util.HashMap();
 
-
-/**
- * <p>CustomerCreditHoldOverride的 Java 类。
- * 
- * <p>以下模式片段指定包含在此类中的预期内容。
- * <p>
- * <pre>
- * &lt;simpleType name="CustomerCreditHoldOverride">
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     &lt;enumeration value="_auto"/>
- *     &lt;enumeration value="_on"/>
- *     &lt;enumeration value="_off"/>
- *   &lt;/restriction>
- * &lt;/simpleType>
- * </pre>
- * 
- */
-@XmlType(name = "CustomerCreditHoldOverride", namespace = "urn:types.relationships_2018_2.lists.webservices.netsuite.com")
-@XmlEnum
-public enum CustomerCreditHoldOverride {
-
-    @XmlEnumValue("_auto")
-    AUTO("_auto"),
-    @XmlEnumValue("_on")
-    ON("_on"),
-    @XmlEnumValue("_off")
-    OFF("_off");
-    private final String value;
-
-    CustomerCreditHoldOverride(String v) {
-        value = v;
+    // Constructor
+    protected CustomerCreditHoldOverride(java.lang.String value) {
+        _value_ = value;
+        _table_.put(_value_,this);
     }
 
-    public String value() {
-        return value;
+    public static final java.lang.String __auto = "_auto";
+    public static final java.lang.String __on = "_on";
+    public static final java.lang.String __off = "_off";
+    public static final CustomerCreditHoldOverride _auto = new CustomerCreditHoldOverride(__auto);
+    public static final CustomerCreditHoldOverride _on = new CustomerCreditHoldOverride(__on);
+    public static final CustomerCreditHoldOverride _off = new CustomerCreditHoldOverride(__off);
+    public java.lang.String getValue() { return _value_;}
+    public static CustomerCreditHoldOverride fromValue(java.lang.String value)
+          throws java.lang.IllegalArgumentException {
+        CustomerCreditHoldOverride enumeration = (CustomerCreditHoldOverride)
+            _table_.get(value);
+        if (enumeration==null) throw new java.lang.IllegalArgumentException();
+        return enumeration;
     }
+    public static CustomerCreditHoldOverride fromString(java.lang.String value)
+          throws java.lang.IllegalArgumentException {
+        return fromValue(value);
+    }
+    public boolean equals(java.lang.Object obj) {return (obj == this);}
+    public int hashCode() { return toString().hashCode();}
+    public java.lang.String toString() { return _value_;}
+    public java.lang.Object readResolve() throws java.io.ObjectStreamException { return fromValue(_value_);}
+    public static org.apache.axis.encoding.Serializer getSerializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new org.apache.axis.encoding.ser.EnumSerializer(
+            _javaType, _xmlType);
+    }
+    public static org.apache.axis.encoding.Deserializer getDeserializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new org.apache.axis.encoding.ser.EnumDeserializer(
+            _javaType, _xmlType);
+    }
+    // Type metadata
+    private static org.apache.axis.description.TypeDesc typeDesc =
+        new org.apache.axis.description.TypeDesc(CustomerCreditHoldOverride.class);
 
-    public static CustomerCreditHoldOverride fromValue(String v) {
-        for (CustomerCreditHoldOverride c: CustomerCreditHoldOverride.values()) {
-            if (c.value.equals(v)) {
-                return c;
-            }
-        }
-        throw new IllegalArgumentException(v);
+    static {
+        typeDesc.setXmlType(new javax.xml.namespace.QName("urn:types.relationships_2018_2.lists.webservices.netsuite.com", "CustomerCreditHoldOverride"));
+    }
+    /**
+     * Return type metadata object
+     */
+    public static org.apache.axis.description.TypeDesc getTypeDesc() {
+        return typeDesc;
     }
 
 }

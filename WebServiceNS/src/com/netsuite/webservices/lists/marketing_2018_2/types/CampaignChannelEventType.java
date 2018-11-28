@@ -1,57 +1,74 @@
+/**
+ * CampaignChannelEventType.java
+ *
+ * This file was auto-generated from WSDL
+ * by the Apache Axis 1.4 Jul 28, 2010 (04:07:04 PDT) WSDL2Java emitter.
+ */
 
 package com.netsuite.webservices.lists.marketing_2018_2.types;
 
-import javax.xml.bind.annotation.XmlEnum;
-import javax.xml.bind.annotation.XmlEnumValue;
-import javax.xml.bind.annotation.XmlType;
+public class CampaignChannelEventType implements java.io.Serializable {
+    private java.lang.String _value_;
+    private static java.util.HashMap _table_ = new java.util.HashMap();
 
-
-/**
- * <p>CampaignChannelEventType的 Java 类。
- * 
- * <p>以下模式片段指定包含在此类中的预期内容。
- * <p>
- * <pre>
- * &lt;simpleType name="CampaignChannelEventType">
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     &lt;enumeration value="_directMail"/>
- *     &lt;enumeration value="_email"/>
- *     &lt;enumeration value="_integration"/>
- *     &lt;enumeration value="_other"/>
- *   &lt;/restriction>
- * &lt;/simpleType>
- * </pre>
- * 
- */
-@XmlType(name = "CampaignChannelEventType", namespace = "urn:types.marketing_2018_2.lists.webservices.netsuite.com")
-@XmlEnum
-public enum CampaignChannelEventType {
-
-    @XmlEnumValue("_directMail")
-    DIRECT_MAIL("_directMail"),
-    @XmlEnumValue("_email")
-    EMAIL("_email"),
-    @XmlEnumValue("_integration")
-    INTEGRATION("_integration"),
-    @XmlEnumValue("_other")
-    OTHER("_other");
-    private final String value;
-
-    CampaignChannelEventType(String v) {
-        value = v;
+    // Constructor
+    protected CampaignChannelEventType(java.lang.String value) {
+        _value_ = value;
+        _table_.put(_value_,this);
     }
 
-    public String value() {
-        return value;
+    public static final java.lang.String __directMail = "_directMail";
+    public static final java.lang.String __email = "_email";
+    public static final java.lang.String __integration = "_integration";
+    public static final java.lang.String __other = "_other";
+    public static final CampaignChannelEventType _directMail = new CampaignChannelEventType(__directMail);
+    public static final CampaignChannelEventType _email = new CampaignChannelEventType(__email);
+    public static final CampaignChannelEventType _integration = new CampaignChannelEventType(__integration);
+    public static final CampaignChannelEventType _other = new CampaignChannelEventType(__other);
+    public java.lang.String getValue() { return _value_;}
+    public static CampaignChannelEventType fromValue(java.lang.String value)
+          throws java.lang.IllegalArgumentException {
+        CampaignChannelEventType enumeration = (CampaignChannelEventType)
+            _table_.get(value);
+        if (enumeration==null) throw new java.lang.IllegalArgumentException();
+        return enumeration;
     }
+    public static CampaignChannelEventType fromString(java.lang.String value)
+          throws java.lang.IllegalArgumentException {
+        return fromValue(value);
+    }
+    public boolean equals(java.lang.Object obj) {return (obj == this);}
+    public int hashCode() { return toString().hashCode();}
+    public java.lang.String toString() { return _value_;}
+    public java.lang.Object readResolve() throws java.io.ObjectStreamException { return fromValue(_value_);}
+    public static org.apache.axis.encoding.Serializer getSerializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new org.apache.axis.encoding.ser.EnumSerializer(
+            _javaType, _xmlType);
+    }
+    public static org.apache.axis.encoding.Deserializer getDeserializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new org.apache.axis.encoding.ser.EnumDeserializer(
+            _javaType, _xmlType);
+    }
+    // Type metadata
+    private static org.apache.axis.description.TypeDesc typeDesc =
+        new org.apache.axis.description.TypeDesc(CampaignChannelEventType.class);
 
-    public static CampaignChannelEventType fromValue(String v) {
-        for (CampaignChannelEventType c: CampaignChannelEventType.values()) {
-            if (c.value.equals(v)) {
-                return c;
-            }
-        }
-        throw new IllegalArgumentException(v);
+    static {
+        typeDesc.setXmlType(new javax.xml.namespace.QName("urn:types.marketing_2018_2.lists.webservices.netsuite.com", "CampaignChannelEventType"));
+    }
+    /**
+     * Return type metadata object
+     */
+    public static org.apache.axis.description.TypeDesc getTypeDesc() {
+        return typeDesc;
     }
 
 }

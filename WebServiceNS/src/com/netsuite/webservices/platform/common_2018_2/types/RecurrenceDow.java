@@ -1,66 +1,80 @@
+/**
+ * RecurrenceDow.java
+ *
+ * This file was auto-generated from WSDL
+ * by the Apache Axis 1.4 Jul 28, 2010 (04:07:04 PDT) WSDL2Java emitter.
+ */
 
 package com.netsuite.webservices.platform.common_2018_2.types;
 
-import javax.xml.bind.annotation.XmlEnum;
-import javax.xml.bind.annotation.XmlEnumValue;
-import javax.xml.bind.annotation.XmlType;
+public class RecurrenceDow implements java.io.Serializable {
+    private java.lang.String _value_;
+    private static java.util.HashMap _table_ = new java.util.HashMap();
 
-
-/**
- * <p>RecurrenceDow的 Java 类。
- * 
- * <p>以下模式片段指定包含在此类中的预期内容。
- * <p>
- * <pre>
- * &lt;simpleType name="RecurrenceDow">
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     &lt;enumeration value="_sunday"/>
- *     &lt;enumeration value="_monday"/>
- *     &lt;enumeration value="_tuesday"/>
- *     &lt;enumeration value="_wednesday"/>
- *     &lt;enumeration value="_thursday"/>
- *     &lt;enumeration value="_friday"/>
- *     &lt;enumeration value="_saturday"/>
- *   &lt;/restriction>
- * &lt;/simpleType>
- * </pre>
- * 
- */
-@XmlType(name = "RecurrenceDow", namespace = "urn:types.common_2018_2.platform.webservices.netsuite.com")
-@XmlEnum
-public enum RecurrenceDow {
-
-    @XmlEnumValue("_sunday")
-    SUNDAY("_sunday"),
-    @XmlEnumValue("_monday")
-    MONDAY("_monday"),
-    @XmlEnumValue("_tuesday")
-    TUESDAY("_tuesday"),
-    @XmlEnumValue("_wednesday")
-    WEDNESDAY("_wednesday"),
-    @XmlEnumValue("_thursday")
-    THURSDAY("_thursday"),
-    @XmlEnumValue("_friday")
-    FRIDAY("_friday"),
-    @XmlEnumValue("_saturday")
-    SATURDAY("_saturday");
-    private final String value;
-
-    RecurrenceDow(String v) {
-        value = v;
+    // Constructor
+    protected RecurrenceDow(java.lang.String value) {
+        _value_ = value;
+        _table_.put(_value_,this);
     }
 
-    public String value() {
-        return value;
+    public static final java.lang.String __sunday = "_sunday";
+    public static final java.lang.String __monday = "_monday";
+    public static final java.lang.String __tuesday = "_tuesday";
+    public static final java.lang.String __wednesday = "_wednesday";
+    public static final java.lang.String __thursday = "_thursday";
+    public static final java.lang.String __friday = "_friday";
+    public static final java.lang.String __saturday = "_saturday";
+    public static final RecurrenceDow _sunday = new RecurrenceDow(__sunday);
+    public static final RecurrenceDow _monday = new RecurrenceDow(__monday);
+    public static final RecurrenceDow _tuesday = new RecurrenceDow(__tuesday);
+    public static final RecurrenceDow _wednesday = new RecurrenceDow(__wednesday);
+    public static final RecurrenceDow _thursday = new RecurrenceDow(__thursday);
+    public static final RecurrenceDow _friday = new RecurrenceDow(__friday);
+    public static final RecurrenceDow _saturday = new RecurrenceDow(__saturday);
+    public java.lang.String getValue() { return _value_;}
+    public static RecurrenceDow fromValue(java.lang.String value)
+          throws java.lang.IllegalArgumentException {
+        RecurrenceDow enumeration = (RecurrenceDow)
+            _table_.get(value);
+        if (enumeration==null) throw new java.lang.IllegalArgumentException();
+        return enumeration;
     }
+    public static RecurrenceDow fromString(java.lang.String value)
+          throws java.lang.IllegalArgumentException {
+        return fromValue(value);
+    }
+    public boolean equals(java.lang.Object obj) {return (obj == this);}
+    public int hashCode() { return toString().hashCode();}
+    public java.lang.String toString() { return _value_;}
+    public java.lang.Object readResolve() throws java.io.ObjectStreamException { return fromValue(_value_);}
+    public static org.apache.axis.encoding.Serializer getSerializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new org.apache.axis.encoding.ser.EnumSerializer(
+            _javaType, _xmlType);
+    }
+    public static org.apache.axis.encoding.Deserializer getDeserializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new org.apache.axis.encoding.ser.EnumDeserializer(
+            _javaType, _xmlType);
+    }
+    // Type metadata
+    private static org.apache.axis.description.TypeDesc typeDesc =
+        new org.apache.axis.description.TypeDesc(RecurrenceDow.class);
 
-    public static RecurrenceDow fromValue(String v) {
-        for (RecurrenceDow c: RecurrenceDow.values()) {
-            if (c.value.equals(v)) {
-                return c;
-            }
-        }
-        throw new IllegalArgumentException(v);
+    static {
+        typeDesc.setXmlType(new javax.xml.namespace.QName("urn:types.common_2018_2.platform.webservices.netsuite.com", "RecurrenceDow"));
+    }
+    /**
+     * Return type metadata object
+     */
+    public static org.apache.axis.description.TypeDesc getTypeDesc() {
+        return typeDesc;
     }
 
 }

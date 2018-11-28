@@ -1,81 +1,90 @@
+/**
+ * CostCategoryItemCostType.java
+ *
+ * This file was auto-generated from WSDL
+ * by the Apache Axis 1.4 Jul 28, 2010 (04:07:04 PDT) WSDL2Java emitter.
+ */
 
 package com.netsuite.webservices.lists.accounting_2018_2.types;
 
-import javax.xml.bind.annotation.XmlEnum;
-import javax.xml.bind.annotation.XmlEnumValue;
-import javax.xml.bind.annotation.XmlType;
+public class CostCategoryItemCostType implements java.io.Serializable {
+    private java.lang.String _value_;
+    private static java.util.HashMap _table_ = new java.util.HashMap();
 
-
-/**
- * <p>CostCategoryItemCostType的 Java 类。
- * 
- * <p>以下模式片段指定包含在此类中的预期内容。
- * <p>
- * <pre>
- * &lt;simpleType name="CostCategoryItemCostType">
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     &lt;enumeration value="_laborRun"/>
- *     &lt;enumeration value="_laborRunOverhead"/>
- *     &lt;enumeration value="_laborSetup"/>
- *     &lt;enumeration value="_laborSetupOverhead"/>
- *     &lt;enumeration value="_landed"/>
- *     &lt;enumeration value="_machineRun"/>
- *     &lt;enumeration value="_machineRunOverhead"/>
- *     &lt;enumeration value="_machineSetup"/>
- *     &lt;enumeration value="_machineSetupOverhead"/>
- *     &lt;enumeration value="_material"/>
- *     &lt;enumeration value="_materialOverhead"/>
- *     &lt;enumeration value="_service"/>
- *   &lt;/restriction>
- * &lt;/simpleType>
- * </pre>
- * 
- */
-@XmlType(name = "CostCategoryItemCostType", namespace = "urn:types.accounting_2018_2.lists.webservices.netsuite.com")
-@XmlEnum
-public enum CostCategoryItemCostType {
-
-    @XmlEnumValue("_laborRun")
-    LABOR_RUN("_laborRun"),
-    @XmlEnumValue("_laborRunOverhead")
-    LABOR_RUN_OVERHEAD("_laborRunOverhead"),
-    @XmlEnumValue("_laborSetup")
-    LABOR_SETUP("_laborSetup"),
-    @XmlEnumValue("_laborSetupOverhead")
-    LABOR_SETUP_OVERHEAD("_laborSetupOverhead"),
-    @XmlEnumValue("_landed")
-    LANDED("_landed"),
-    @XmlEnumValue("_machineRun")
-    MACHINE_RUN("_machineRun"),
-    @XmlEnumValue("_machineRunOverhead")
-    MACHINE_RUN_OVERHEAD("_machineRunOverhead"),
-    @XmlEnumValue("_machineSetup")
-    MACHINE_SETUP("_machineSetup"),
-    @XmlEnumValue("_machineSetupOverhead")
-    MACHINE_SETUP_OVERHEAD("_machineSetupOverhead"),
-    @XmlEnumValue("_material")
-    MATERIAL("_material"),
-    @XmlEnumValue("_materialOverhead")
-    MATERIAL_OVERHEAD("_materialOverhead"),
-    @XmlEnumValue("_service")
-    SERVICE("_service");
-    private final String value;
-
-    CostCategoryItemCostType(String v) {
-        value = v;
+    // Constructor
+    protected CostCategoryItemCostType(java.lang.String value) {
+        _value_ = value;
+        _table_.put(_value_,this);
     }
 
-    public String value() {
-        return value;
+    public static final java.lang.String __laborRun = "_laborRun";
+    public static final java.lang.String __laborRunOverhead = "_laborRunOverhead";
+    public static final java.lang.String __laborSetup = "_laborSetup";
+    public static final java.lang.String __laborSetupOverhead = "_laborSetupOverhead";
+    public static final java.lang.String __landed = "_landed";
+    public static final java.lang.String __machineRun = "_machineRun";
+    public static final java.lang.String __machineRunOverhead = "_machineRunOverhead";
+    public static final java.lang.String __machineSetup = "_machineSetup";
+    public static final java.lang.String __machineSetupOverhead = "_machineSetupOverhead";
+    public static final java.lang.String __material = "_material";
+    public static final java.lang.String __materialOverhead = "_materialOverhead";
+    public static final java.lang.String __service = "_service";
+    public static final CostCategoryItemCostType _laborRun = new CostCategoryItemCostType(__laborRun);
+    public static final CostCategoryItemCostType _laborRunOverhead = new CostCategoryItemCostType(__laborRunOverhead);
+    public static final CostCategoryItemCostType _laborSetup = new CostCategoryItemCostType(__laborSetup);
+    public static final CostCategoryItemCostType _laborSetupOverhead = new CostCategoryItemCostType(__laborSetupOverhead);
+    public static final CostCategoryItemCostType _landed = new CostCategoryItemCostType(__landed);
+    public static final CostCategoryItemCostType _machineRun = new CostCategoryItemCostType(__machineRun);
+    public static final CostCategoryItemCostType _machineRunOverhead = new CostCategoryItemCostType(__machineRunOverhead);
+    public static final CostCategoryItemCostType _machineSetup = new CostCategoryItemCostType(__machineSetup);
+    public static final CostCategoryItemCostType _machineSetupOverhead = new CostCategoryItemCostType(__machineSetupOverhead);
+    public static final CostCategoryItemCostType _material = new CostCategoryItemCostType(__material);
+    public static final CostCategoryItemCostType _materialOverhead = new CostCategoryItemCostType(__materialOverhead);
+    public static final CostCategoryItemCostType _service = new CostCategoryItemCostType(__service);
+    public java.lang.String getValue() { return _value_;}
+    public static CostCategoryItemCostType fromValue(java.lang.String value)
+          throws java.lang.IllegalArgumentException {
+        CostCategoryItemCostType enumeration = (CostCategoryItemCostType)
+            _table_.get(value);
+        if (enumeration==null) throw new java.lang.IllegalArgumentException();
+        return enumeration;
     }
+    public static CostCategoryItemCostType fromString(java.lang.String value)
+          throws java.lang.IllegalArgumentException {
+        return fromValue(value);
+    }
+    public boolean equals(java.lang.Object obj) {return (obj == this);}
+    public int hashCode() { return toString().hashCode();}
+    public java.lang.String toString() { return _value_;}
+    public java.lang.Object readResolve() throws java.io.ObjectStreamException { return fromValue(_value_);}
+    public static org.apache.axis.encoding.Serializer getSerializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new org.apache.axis.encoding.ser.EnumSerializer(
+            _javaType, _xmlType);
+    }
+    public static org.apache.axis.encoding.Deserializer getDeserializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new org.apache.axis.encoding.ser.EnumDeserializer(
+            _javaType, _xmlType);
+    }
+    // Type metadata
+    private static org.apache.axis.description.TypeDesc typeDesc =
+        new org.apache.axis.description.TypeDesc(CostCategoryItemCostType.class);
 
-    public static CostCategoryItemCostType fromValue(String v) {
-        for (CostCategoryItemCostType c: CostCategoryItemCostType.values()) {
-            if (c.value.equals(v)) {
-                return c;
-            }
-        }
-        throw new IllegalArgumentException(v);
+    static {
+        typeDesc.setXmlType(new javax.xml.namespace.QName("urn:types.accounting_2018_2.lists.webservices.netsuite.com", "CostCategoryItemCostType"));
+    }
+    /**
+     * Return type metadata object
+     */
+    public static org.apache.axis.description.TypeDesc getTypeDesc() {
+        return typeDesc;
     }
 
 }

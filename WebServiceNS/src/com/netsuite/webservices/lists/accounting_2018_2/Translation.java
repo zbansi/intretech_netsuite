@@ -1,387 +1,564 @@
+/**
+ * Translation.java
+ *
+ * This file was auto-generated from WSDL
+ * by the Apache Axis 1.4 Jul 28, 2010 (04:07:04 PDT) WSDL2Java emitter.
+ */
 
 package com.netsuite.webservices.lists.accounting_2018_2;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlSchemaType;
-import javax.xml.bind.annotation.XmlType;
-import com.netsuite.webservices.platform.common_2018_2.types.Language;
+public class Translation  implements java.io.Serializable {
+    private com.netsuite.webservices.platform.common_2018_2.types.Language locale;
 
+    private java.lang.String language;
 
-/**
- * <p>Translation complex type的 Java 类。
- * 
- * <p>以下模式片段指定包含在此类中的预期内容。
- * 
- * <pre>
- * &lt;complexType name="Translation">
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element name="locale" type="{urn:types.common_2018_2.platform.webservices.netsuite.com}Language" minOccurs="0"/>
- *         &lt;element name="language" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="displayName" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="description" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="salesDescription" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="storeDisplayName" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="storeDescription" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="storeDetailedDescription" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="featuredDescription" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="specialsDescription" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="pageTitle" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="noPriceMessage" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="outOfStockMessage" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
- */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "Translation", propOrder = {
-    "locale",
-    "language",
-    "displayName",
-    "description",
-    "salesDescription",
-    "storeDisplayName",
-    "storeDescription",
-    "storeDetailedDescription",
-    "featuredDescription",
-    "specialsDescription",
-    "pageTitle",
-    "noPriceMessage",
-    "outOfStockMessage"
-})
-public class Translation {
+    private java.lang.String displayName;
 
-    @XmlSchemaType(name = "string")
-    protected Language locale;
-    protected String language;
-    protected String displayName;
-    protected String description;
-    protected String salesDescription;
-    protected String storeDisplayName;
-    protected String storeDescription;
-    protected String storeDetailedDescription;
-    protected String featuredDescription;
-    protected String specialsDescription;
-    protected String pageTitle;
-    protected String noPriceMessage;
-    protected String outOfStockMessage;
+    private java.lang.String description;
+
+    private java.lang.String salesDescription;
+
+    private java.lang.String storeDisplayName;
+
+    private java.lang.String storeDescription;
+
+    private java.lang.String storeDetailedDescription;
+
+    private java.lang.String featuredDescription;
+
+    private java.lang.String specialsDescription;
+
+    private java.lang.String pageTitle;
+
+    private java.lang.String noPriceMessage;
+
+    private java.lang.String outOfStockMessage;
+
+    public Translation() {
+    }
+
+    public Translation(
+           com.netsuite.webservices.platform.common_2018_2.types.Language locale,
+           java.lang.String language,
+           java.lang.String displayName,
+           java.lang.String description,
+           java.lang.String salesDescription,
+           java.lang.String storeDisplayName,
+           java.lang.String storeDescription,
+           java.lang.String storeDetailedDescription,
+           java.lang.String featuredDescription,
+           java.lang.String specialsDescription,
+           java.lang.String pageTitle,
+           java.lang.String noPriceMessage,
+           java.lang.String outOfStockMessage) {
+           this.locale = locale;
+           this.language = language;
+           this.displayName = displayName;
+           this.description = description;
+           this.salesDescription = salesDescription;
+           this.storeDisplayName = storeDisplayName;
+           this.storeDescription = storeDescription;
+           this.storeDetailedDescription = storeDetailedDescription;
+           this.featuredDescription = featuredDescription;
+           this.specialsDescription = specialsDescription;
+           this.pageTitle = pageTitle;
+           this.noPriceMessage = noPriceMessage;
+           this.outOfStockMessage = outOfStockMessage;
+    }
+
 
     /**
-     * 获取locale属性的值。
+     * Gets the locale value for this Translation.
      * 
-     * @return
-     *     possible object is
-     *     {@link Language }
-     *     
+     * @return locale
      */
-    public Language getLocale() {
+    public com.netsuite.webservices.platform.common_2018_2.types.Language getLocale() {
         return locale;
     }
 
-    /**
-     * 设置locale属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Language }
-     *     
-     */
-    public void setLocale(Language value) {
-        this.locale = value;
-    }
 
     /**
-     * 获取language属性的值。
+     * Sets the locale value for this Translation.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param locale
      */
-    public String getLanguage() {
+    public void setLocale(com.netsuite.webservices.platform.common_2018_2.types.Language locale) {
+        this.locale = locale;
+    }
+
+
+    /**
+     * Gets the language value for this Translation.
+     * 
+     * @return language
+     */
+    public java.lang.String getLanguage() {
         return language;
     }
 
-    /**
-     * 设置language属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setLanguage(String value) {
-        this.language = value;
-    }
 
     /**
-     * 获取displayName属性的值。
+     * Sets the language value for this Translation.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param language
      */
-    public String getDisplayName() {
+    public void setLanguage(java.lang.String language) {
+        this.language = language;
+    }
+
+
+    /**
+     * Gets the displayName value for this Translation.
+     * 
+     * @return displayName
+     */
+    public java.lang.String getDisplayName() {
         return displayName;
     }
 
-    /**
-     * 设置displayName属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setDisplayName(String value) {
-        this.displayName = value;
-    }
 
     /**
-     * 获取description属性的值。
+     * Sets the displayName value for this Translation.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param displayName
      */
-    public String getDescription() {
+    public void setDisplayName(java.lang.String displayName) {
+        this.displayName = displayName;
+    }
+
+
+    /**
+     * Gets the description value for this Translation.
+     * 
+     * @return description
+     */
+    public java.lang.String getDescription() {
         return description;
     }
 
-    /**
-     * 设置description属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setDescription(String value) {
-        this.description = value;
-    }
 
     /**
-     * 获取salesDescription属性的值。
+     * Sets the description value for this Translation.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param description
      */
-    public String getSalesDescription() {
+    public void setDescription(java.lang.String description) {
+        this.description = description;
+    }
+
+
+    /**
+     * Gets the salesDescription value for this Translation.
+     * 
+     * @return salesDescription
+     */
+    public java.lang.String getSalesDescription() {
         return salesDescription;
     }
 
-    /**
-     * 设置salesDescription属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setSalesDescription(String value) {
-        this.salesDescription = value;
-    }
 
     /**
-     * 获取storeDisplayName属性的值。
+     * Sets the salesDescription value for this Translation.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param salesDescription
      */
-    public String getStoreDisplayName() {
+    public void setSalesDescription(java.lang.String salesDescription) {
+        this.salesDescription = salesDescription;
+    }
+
+
+    /**
+     * Gets the storeDisplayName value for this Translation.
+     * 
+     * @return storeDisplayName
+     */
+    public java.lang.String getStoreDisplayName() {
         return storeDisplayName;
     }
 
-    /**
-     * 设置storeDisplayName属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setStoreDisplayName(String value) {
-        this.storeDisplayName = value;
-    }
 
     /**
-     * 获取storeDescription属性的值。
+     * Sets the storeDisplayName value for this Translation.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param storeDisplayName
      */
-    public String getStoreDescription() {
+    public void setStoreDisplayName(java.lang.String storeDisplayName) {
+        this.storeDisplayName = storeDisplayName;
+    }
+
+
+    /**
+     * Gets the storeDescription value for this Translation.
+     * 
+     * @return storeDescription
+     */
+    public java.lang.String getStoreDescription() {
         return storeDescription;
     }
 
-    /**
-     * 设置storeDescription属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setStoreDescription(String value) {
-        this.storeDescription = value;
-    }
 
     /**
-     * 获取storeDetailedDescription属性的值。
+     * Sets the storeDescription value for this Translation.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param storeDescription
      */
-    public String getStoreDetailedDescription() {
+    public void setStoreDescription(java.lang.String storeDescription) {
+        this.storeDescription = storeDescription;
+    }
+
+
+    /**
+     * Gets the storeDetailedDescription value for this Translation.
+     * 
+     * @return storeDetailedDescription
+     */
+    public java.lang.String getStoreDetailedDescription() {
         return storeDetailedDescription;
     }
 
-    /**
-     * 设置storeDetailedDescription属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setStoreDetailedDescription(String value) {
-        this.storeDetailedDescription = value;
-    }
 
     /**
-     * 获取featuredDescription属性的值。
+     * Sets the storeDetailedDescription value for this Translation.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param storeDetailedDescription
      */
-    public String getFeaturedDescription() {
+    public void setStoreDetailedDescription(java.lang.String storeDetailedDescription) {
+        this.storeDetailedDescription = storeDetailedDescription;
+    }
+
+
+    /**
+     * Gets the featuredDescription value for this Translation.
+     * 
+     * @return featuredDescription
+     */
+    public java.lang.String getFeaturedDescription() {
         return featuredDescription;
     }
 
-    /**
-     * 设置featuredDescription属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setFeaturedDescription(String value) {
-        this.featuredDescription = value;
-    }
 
     /**
-     * 获取specialsDescription属性的值。
+     * Sets the featuredDescription value for this Translation.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param featuredDescription
      */
-    public String getSpecialsDescription() {
+    public void setFeaturedDescription(java.lang.String featuredDescription) {
+        this.featuredDescription = featuredDescription;
+    }
+
+
+    /**
+     * Gets the specialsDescription value for this Translation.
+     * 
+     * @return specialsDescription
+     */
+    public java.lang.String getSpecialsDescription() {
         return specialsDescription;
     }
 
-    /**
-     * 设置specialsDescription属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setSpecialsDescription(String value) {
-        this.specialsDescription = value;
-    }
 
     /**
-     * 获取pageTitle属性的值。
+     * Sets the specialsDescription value for this Translation.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param specialsDescription
      */
-    public String getPageTitle() {
+    public void setSpecialsDescription(java.lang.String specialsDescription) {
+        this.specialsDescription = specialsDescription;
+    }
+
+
+    /**
+     * Gets the pageTitle value for this Translation.
+     * 
+     * @return pageTitle
+     */
+    public java.lang.String getPageTitle() {
         return pageTitle;
     }
 
-    /**
-     * 设置pageTitle属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setPageTitle(String value) {
-        this.pageTitle = value;
-    }
 
     /**
-     * 获取noPriceMessage属性的值。
+     * Sets the pageTitle value for this Translation.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param pageTitle
      */
-    public String getNoPriceMessage() {
+    public void setPageTitle(java.lang.String pageTitle) {
+        this.pageTitle = pageTitle;
+    }
+
+
+    /**
+     * Gets the noPriceMessage value for this Translation.
+     * 
+     * @return noPriceMessage
+     */
+    public java.lang.String getNoPriceMessage() {
         return noPriceMessage;
     }
 
-    /**
-     * 设置noPriceMessage属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setNoPriceMessage(String value) {
-        this.noPriceMessage = value;
-    }
 
     /**
-     * 获取outOfStockMessage属性的值。
+     * Sets the noPriceMessage value for this Translation.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param noPriceMessage
      */
-    public String getOutOfStockMessage() {
+    public void setNoPriceMessage(java.lang.String noPriceMessage) {
+        this.noPriceMessage = noPriceMessage;
+    }
+
+
+    /**
+     * Gets the outOfStockMessage value for this Translation.
+     * 
+     * @return outOfStockMessage
+     */
+    public java.lang.String getOutOfStockMessage() {
         return outOfStockMessage;
     }
 
+
     /**
-     * 设置outOfStockMessage属性的值。
+     * Sets the outOfStockMessage value for this Translation.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     * @param outOfStockMessage
      */
-    public void setOutOfStockMessage(String value) {
-        this.outOfStockMessage = value;
+    public void setOutOfStockMessage(java.lang.String outOfStockMessage) {
+        this.outOfStockMessage = outOfStockMessage;
+    }
+
+    private java.lang.Object __equalsCalc = null;
+    public synchronized boolean equals(java.lang.Object obj) {
+        if (!(obj instanceof Translation)) return false;
+        Translation other = (Translation) obj;
+        if (obj == null) return false;
+        if (this == obj) return true;
+        if (__equalsCalc != null) {
+            return (__equalsCalc == obj);
+        }
+        __equalsCalc = obj;
+        boolean _equals;
+        _equals = true && 
+            ((this.locale==null && other.getLocale()==null) || 
+             (this.locale!=null &&
+              this.locale.equals(other.getLocale()))) &&
+            ((this.language==null && other.getLanguage()==null) || 
+             (this.language!=null &&
+              this.language.equals(other.getLanguage()))) &&
+            ((this.displayName==null && other.getDisplayName()==null) || 
+             (this.displayName!=null &&
+              this.displayName.equals(other.getDisplayName()))) &&
+            ((this.description==null && other.getDescription()==null) || 
+             (this.description!=null &&
+              this.description.equals(other.getDescription()))) &&
+            ((this.salesDescription==null && other.getSalesDescription()==null) || 
+             (this.salesDescription!=null &&
+              this.salesDescription.equals(other.getSalesDescription()))) &&
+            ((this.storeDisplayName==null && other.getStoreDisplayName()==null) || 
+             (this.storeDisplayName!=null &&
+              this.storeDisplayName.equals(other.getStoreDisplayName()))) &&
+            ((this.storeDescription==null && other.getStoreDescription()==null) || 
+             (this.storeDescription!=null &&
+              this.storeDescription.equals(other.getStoreDescription()))) &&
+            ((this.storeDetailedDescription==null && other.getStoreDetailedDescription()==null) || 
+             (this.storeDetailedDescription!=null &&
+              this.storeDetailedDescription.equals(other.getStoreDetailedDescription()))) &&
+            ((this.featuredDescription==null && other.getFeaturedDescription()==null) || 
+             (this.featuredDescription!=null &&
+              this.featuredDescription.equals(other.getFeaturedDescription()))) &&
+            ((this.specialsDescription==null && other.getSpecialsDescription()==null) || 
+             (this.specialsDescription!=null &&
+              this.specialsDescription.equals(other.getSpecialsDescription()))) &&
+            ((this.pageTitle==null && other.getPageTitle()==null) || 
+             (this.pageTitle!=null &&
+              this.pageTitle.equals(other.getPageTitle()))) &&
+            ((this.noPriceMessage==null && other.getNoPriceMessage()==null) || 
+             (this.noPriceMessage!=null &&
+              this.noPriceMessage.equals(other.getNoPriceMessage()))) &&
+            ((this.outOfStockMessage==null && other.getOutOfStockMessage()==null) || 
+             (this.outOfStockMessage!=null &&
+              this.outOfStockMessage.equals(other.getOutOfStockMessage())));
+        __equalsCalc = null;
+        return _equals;
+    }
+
+    private boolean __hashCodeCalc = false;
+    public synchronized int hashCode() {
+        if (__hashCodeCalc) {
+            return 0;
+        }
+        __hashCodeCalc = true;
+        int _hashCode = 1;
+        if (getLocale() != null) {
+            _hashCode += getLocale().hashCode();
+        }
+        if (getLanguage() != null) {
+            _hashCode += getLanguage().hashCode();
+        }
+        if (getDisplayName() != null) {
+            _hashCode += getDisplayName().hashCode();
+        }
+        if (getDescription() != null) {
+            _hashCode += getDescription().hashCode();
+        }
+        if (getSalesDescription() != null) {
+            _hashCode += getSalesDescription().hashCode();
+        }
+        if (getStoreDisplayName() != null) {
+            _hashCode += getStoreDisplayName().hashCode();
+        }
+        if (getStoreDescription() != null) {
+            _hashCode += getStoreDescription().hashCode();
+        }
+        if (getStoreDetailedDescription() != null) {
+            _hashCode += getStoreDetailedDescription().hashCode();
+        }
+        if (getFeaturedDescription() != null) {
+            _hashCode += getFeaturedDescription().hashCode();
+        }
+        if (getSpecialsDescription() != null) {
+            _hashCode += getSpecialsDescription().hashCode();
+        }
+        if (getPageTitle() != null) {
+            _hashCode += getPageTitle().hashCode();
+        }
+        if (getNoPriceMessage() != null) {
+            _hashCode += getNoPriceMessage().hashCode();
+        }
+        if (getOutOfStockMessage() != null) {
+            _hashCode += getOutOfStockMessage().hashCode();
+        }
+        __hashCodeCalc = false;
+        return _hashCode;
+    }
+
+    // Type metadata
+    private static org.apache.axis.description.TypeDesc typeDesc =
+        new org.apache.axis.description.TypeDesc(Translation.class, true);
+
+    static {
+        typeDesc.setXmlType(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "Translation"));
+        org.apache.axis.description.ElementDesc elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("locale");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "locale"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:types.common_2018_2.platform.webservices.netsuite.com", "Language"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("language");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "language"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("displayName");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "displayName"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("description");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "description"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("salesDescription");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "salesDescription"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("storeDisplayName");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "storeDisplayName"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("storeDescription");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "storeDescription"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("storeDetailedDescription");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "storeDetailedDescription"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("featuredDescription");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "featuredDescription"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("specialsDescription");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "specialsDescription"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("pageTitle");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "pageTitle"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("noPriceMessage");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "noPriceMessage"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("outOfStockMessage");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "outOfStockMessage"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+    }
+
+    /**
+     * Return type metadata object
+     */
+    public static org.apache.axis.description.TypeDesc getTypeDesc() {
+        return typeDesc;
+    }
+
+    /**
+     * Get Custom Serializer
+     */
+    public static org.apache.axis.encoding.Serializer getSerializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanSerializer(
+            _javaType, _xmlType, typeDesc);
+    }
+
+    /**
+     * Get Custom Deserializer
+     */
+    public static org.apache.axis.encoding.Deserializer getDeserializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanDeserializer(
+            _javaType, _xmlType, typeDesc);
     }
 
 }

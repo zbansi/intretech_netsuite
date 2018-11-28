@@ -1,1592 +1,2236 @@
+/**
+ * CustomerPayment.java
+ *
+ * This file was auto-generated from WSDL
+ * by the Apache Axis 1.4 Jul 28, 2010 (04:07:04 PDT) WSDL2Java emitter.
+ */
 
 package com.netsuite.webservices.transactions.customers_2018_2;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlAttribute;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlSchemaType;
-import javax.xml.bind.annotation.XmlType;
-import javax.xml.datatype.XMLGregorianCalendar;
-import com.netsuite.webservices.platform.common_2018_2.AccountingBookDetailList;
-import com.netsuite.webservices.platform.common_2018_2.types.AvsMatchCode;
-import com.netsuite.webservices.platform.core_2018_2.CustomFieldList;
-import com.netsuite.webservices.platform.core_2018_2.Record;
-import com.netsuite.webservices.platform.core_2018_2.RecordRef;
+public class CustomerPayment  extends com.netsuite.webservices.platform.core_2018_2.Record  implements java.io.Serializable {
+    private java.util.Calendar createdDate;
 
+    private java.util.Calendar lastModifiedDate;
 
-/**
- * <p>CustomerPayment complex type的 Java 类。
- * 
- * <p>以下模式片段指定包含在此类中的预期内容。
- * 
- * <pre>
- * &lt;complexType name="CustomerPayment">
- *   &lt;complexContent>
- *     &lt;extension base="{urn:core_2018_2.platform.webservices.netsuite.com}Record">
- *       &lt;sequence>
- *         &lt;element name="createdDate" type="{http://www.w3.org/2001/XMLSchema}dateTime" minOccurs="0"/>
- *         &lt;element name="lastModifiedDate" type="{http://www.w3.org/2001/XMLSchema}dateTime" minOccurs="0"/>
- *         &lt;element name="customForm" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="arAcct" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="customer" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="balance" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
- *         &lt;element name="pending" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
- *         &lt;element name="currency" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="payment" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
- *         &lt;element name="autoApply" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         &lt;element name="tranDate" type="{http://www.w3.org/2001/XMLSchema}dateTime" minOccurs="0"/>
- *         &lt;element name="tranId" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="postingPeriod" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="paymentMethod" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="ccIsPurchaseCardBin" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         &lt;element name="memo" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="ccProcessAsPurchaseCard" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         &lt;element name="checkNum" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="currencyName" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="exchangeRate" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
- *         &lt;element name="creditCard" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="chargeIt" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         &lt;element name="ccNumber" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="ccExpireDate" type="{http://www.w3.org/2001/XMLSchema}dateTime" minOccurs="0"/>
- *         &lt;element name="ccName" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="ccStreet" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="ccZipCode" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="ccApproved" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         &lt;element name="authCode" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="ccAvsStreetMatch" type="{urn:types.common_2018_2.platform.webservices.netsuite.com}AvsMatchCode" minOccurs="0"/>
- *         &lt;element name="ccAvsZipMatch" type="{urn:types.common_2018_2.platform.webservices.netsuite.com}AvsMatchCode" minOccurs="0"/>
- *         &lt;element name="isRecurringPayment" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         &lt;element name="ccSecurityCode" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="ignoreAvs" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         &lt;element name="ccSecurityCodeMatch" type="{urn:types.common_2018_2.platform.webservices.netsuite.com}AvsMatchCode" minOccurs="0"/>
- *         &lt;element name="threeDStatusCode" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="pnRefNum" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="creditCardProcessor" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="debitCardIssueNo" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="validFrom" type="{http://www.w3.org/2001/XMLSchema}dateTime" minOccurs="0"/>
- *         &lt;element name="undepFunds" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         &lt;element name="account" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="total" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
- *         &lt;element name="subsidiary" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="applied" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
- *         &lt;element name="unapplied" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
- *         &lt;element name="class" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="department" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="location" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="status" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="applyList" type="{urn:customers_2018_2.transactions.webservices.netsuite.com}CustomerPaymentApplyList" minOccurs="0"/>
- *         &lt;element name="creditList" type="{urn:customers_2018_2.transactions.webservices.netsuite.com}CustomerPaymentCreditList" minOccurs="0"/>
- *         &lt;element name="depositList" type="{urn:customers_2018_2.transactions.webservices.netsuite.com}CustomerPaymentDepositList" minOccurs="0"/>
- *         &lt;element name="accountingBookDetailList" type="{urn:common_2018_2.platform.webservices.netsuite.com}AccountingBookDetailList" minOccurs="0"/>
- *         &lt;element name="customFieldList" type="{urn:core_2018_2.platform.webservices.netsuite.com}CustomFieldList" minOccurs="0"/>
- *       &lt;/sequence>
- *       &lt;attribute name="internalId" type="{http://www.w3.org/2001/XMLSchema}string" />
- *       &lt;attribute name="externalId" type="{http://www.w3.org/2001/XMLSchema}string" />
- *     &lt;/extension>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
- */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "CustomerPayment", propOrder = {
-    "createdDate",
-    "lastModifiedDate",
-    "customForm",
-    "arAcct",
-    "customer",
-    "balance",
-    "pending",
-    "currency",
-    "payment",
-    "autoApply",
-    "tranDate",
-    "tranId",
-    "postingPeriod",
-    "paymentMethod",
-    "ccIsPurchaseCardBin",
-    "memo",
-    "ccProcessAsPurchaseCard",
-    "checkNum",
-    "currencyName",
-    "exchangeRate",
-    "creditCard",
-    "chargeIt",
-    "ccNumber",
-    "ccExpireDate",
-    "ccName",
-    "ccStreet",
-    "ccZipCode",
-    "ccApproved",
-    "authCode",
-    "ccAvsStreetMatch",
-    "ccAvsZipMatch",
-    "isRecurringPayment",
-    "ccSecurityCode",
-    "ignoreAvs",
-    "ccSecurityCodeMatch",
-    "threeDStatusCode",
-    "pnRefNum",
-    "creditCardProcessor",
-    "debitCardIssueNo",
-    "validFrom",
-    "undepFunds",
-    "account",
-    "total",
-    "subsidiary",
-    "applied",
-    "unapplied",
-    "clazz",
-    "department",
-    "location",
-    "status",
-    "applyList",
-    "creditList",
-    "depositList",
-    "accountingBookDetailList",
-    "customFieldList"
-})
-public class CustomerPayment
-    extends Record
-{
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef customForm;
 
-    @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar createdDate;
-    @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar lastModifiedDate;
-    protected RecordRef customForm;
-    protected RecordRef arAcct;
-    protected RecordRef customer;
-    protected Double balance;
-    protected Double pending;
-    protected RecordRef currency;
-    protected Double payment;
-    protected Boolean autoApply;
-    @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar tranDate;
-    protected String tranId;
-    protected RecordRef postingPeriod;
-    protected RecordRef paymentMethod;
-    protected Boolean ccIsPurchaseCardBin;
-    protected String memo;
-    protected Boolean ccProcessAsPurchaseCard;
-    protected String checkNum;
-    protected String currencyName;
-    protected Double exchangeRate;
-    protected RecordRef creditCard;
-    protected Boolean chargeIt;
-    protected String ccNumber;
-    @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar ccExpireDate;
-    protected String ccName;
-    protected String ccStreet;
-    protected String ccZipCode;
-    protected Boolean ccApproved;
-    protected String authCode;
-    @XmlSchemaType(name = "string")
-    protected AvsMatchCode ccAvsStreetMatch;
-    @XmlSchemaType(name = "string")
-    protected AvsMatchCode ccAvsZipMatch;
-    protected Boolean isRecurringPayment;
-    protected String ccSecurityCode;
-    protected Boolean ignoreAvs;
-    @XmlSchemaType(name = "string")
-    protected AvsMatchCode ccSecurityCodeMatch;
-    protected String threeDStatusCode;
-    protected String pnRefNum;
-    protected RecordRef creditCardProcessor;
-    protected String debitCardIssueNo;
-    @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar validFrom;
-    protected Boolean undepFunds;
-    protected RecordRef account;
-    protected Double total;
-    protected RecordRef subsidiary;
-    protected Double applied;
-    protected Double unapplied;
-    @XmlElement(name = "class")
-    protected RecordRef clazz;
-    protected RecordRef department;
-    protected RecordRef location;
-    protected String status;
-    protected CustomerPaymentApplyList applyList;
-    protected CustomerPaymentCreditList creditList;
-    protected CustomerPaymentDepositList depositList;
-    protected AccountingBookDetailList accountingBookDetailList;
-    protected CustomFieldList customFieldList;
-    @XmlAttribute(name = "internalId")
-    protected String internalId;
-    @XmlAttribute(name = "externalId")
-    protected String externalId;
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef arAcct;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef customer;
+
+    private java.lang.Double balance;
+
+    private java.lang.Double pending;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef currency;
+
+    private java.lang.Double payment;
+
+    private java.lang.Boolean autoApply;
+
+    private java.util.Calendar tranDate;
+
+    private java.lang.String tranId;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef postingPeriod;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef paymentMethod;
+
+    private java.lang.Boolean ccIsPurchaseCardBin;
+
+    private java.lang.String memo;
+
+    private java.lang.Boolean ccProcessAsPurchaseCard;
+
+    private java.lang.String checkNum;
+
+    private java.lang.String currencyName;
+
+    private java.lang.Double exchangeRate;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef creditCard;
+
+    private java.lang.Boolean chargeIt;
+
+    private java.lang.String ccNumber;
+
+    private java.util.Calendar ccExpireDate;
+
+    private java.lang.String ccName;
+
+    private java.lang.String ccStreet;
+
+    private java.lang.String ccZipCode;
+
+    private java.lang.Boolean ccApproved;
+
+    private java.lang.String authCode;
+
+    private com.netsuite.webservices.platform.common_2018_2.types.AvsMatchCode ccAvsStreetMatch;
+
+    private com.netsuite.webservices.platform.common_2018_2.types.AvsMatchCode ccAvsZipMatch;
+
+    private java.lang.Boolean isRecurringPayment;
+
+    private java.lang.String ccSecurityCode;
+
+    private java.lang.Boolean ignoreAvs;
+
+    private com.netsuite.webservices.platform.common_2018_2.types.AvsMatchCode ccSecurityCodeMatch;
+
+    private java.lang.String threeDStatusCode;
+
+    private java.lang.String pnRefNum;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef creditCardProcessor;
+
+    private java.lang.String debitCardIssueNo;
+
+    private java.util.Calendar validFrom;
+
+    private java.lang.Boolean undepFunds;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef account;
+
+    private java.lang.Double total;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef subsidiary;
+
+    private java.lang.Double applied;
+
+    private java.lang.Double unapplied;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef _class;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef department;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef location;
+
+    private java.lang.String status;
+
+    private com.netsuite.webservices.transactions.customers_2018_2.CustomerPaymentApply[] applyList;
+
+    private com.netsuite.webservices.transactions.customers_2018_2.CustomerPaymentCredit[] creditList;
+
+    private com.netsuite.webservices.transactions.customers_2018_2.CustomerPaymentDeposit[] depositList;
+
+    private com.netsuite.webservices.platform.common_2018_2.AccountingBookDetail[] accountingBookDetailList;
+
+    private com.netsuite.webservices.platform.core_2018_2.CustomFieldRef[] customFieldList;
+
+    private java.lang.String internalId;  // attribute
+
+    private java.lang.String externalId;  // attribute
+
+    public CustomerPayment() {
+    }
+
+    public CustomerPayment(
+           java.lang.String[] nullFieldList,
+           java.lang.String internalId,
+           java.lang.String externalId,
+           java.util.Calendar createdDate,
+           java.util.Calendar lastModifiedDate,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef customForm,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef arAcct,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef customer,
+           java.lang.Double balance,
+           java.lang.Double pending,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef currency,
+           java.lang.Double payment,
+           java.lang.Boolean autoApply,
+           java.util.Calendar tranDate,
+           java.lang.String tranId,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef postingPeriod,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef paymentMethod,
+           java.lang.Boolean ccIsPurchaseCardBin,
+           java.lang.String memo,
+           java.lang.Boolean ccProcessAsPurchaseCard,
+           java.lang.String checkNum,
+           java.lang.String currencyName,
+           java.lang.Double exchangeRate,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef creditCard,
+           java.lang.Boolean chargeIt,
+           java.lang.String ccNumber,
+           java.util.Calendar ccExpireDate,
+           java.lang.String ccName,
+           java.lang.String ccStreet,
+           java.lang.String ccZipCode,
+           java.lang.Boolean ccApproved,
+           java.lang.String authCode,
+           com.netsuite.webservices.platform.common_2018_2.types.AvsMatchCode ccAvsStreetMatch,
+           com.netsuite.webservices.platform.common_2018_2.types.AvsMatchCode ccAvsZipMatch,
+           java.lang.Boolean isRecurringPayment,
+           java.lang.String ccSecurityCode,
+           java.lang.Boolean ignoreAvs,
+           com.netsuite.webservices.platform.common_2018_2.types.AvsMatchCode ccSecurityCodeMatch,
+           java.lang.String threeDStatusCode,
+           java.lang.String pnRefNum,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef creditCardProcessor,
+           java.lang.String debitCardIssueNo,
+           java.util.Calendar validFrom,
+           java.lang.Boolean undepFunds,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef account,
+           java.lang.Double total,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef subsidiary,
+           java.lang.Double applied,
+           java.lang.Double unapplied,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef _class,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef department,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef location,
+           java.lang.String status,
+           com.netsuite.webservices.transactions.customers_2018_2.CustomerPaymentApply[] applyList,
+           com.netsuite.webservices.transactions.customers_2018_2.CustomerPaymentCredit[] creditList,
+           com.netsuite.webservices.transactions.customers_2018_2.CustomerPaymentDeposit[] depositList,
+           com.netsuite.webservices.platform.common_2018_2.AccountingBookDetail[] accountingBookDetailList,
+           com.netsuite.webservices.platform.core_2018_2.CustomFieldRef[] customFieldList) {
+        super(
+            nullFieldList);
+        this.internalId = internalId;
+        this.externalId = externalId;
+        this.createdDate = createdDate;
+        this.lastModifiedDate = lastModifiedDate;
+        this.customForm = customForm;
+        this.arAcct = arAcct;
+        this.customer = customer;
+        this.balance = balance;
+        this.pending = pending;
+        this.currency = currency;
+        this.payment = payment;
+        this.autoApply = autoApply;
+        this.tranDate = tranDate;
+        this.tranId = tranId;
+        this.postingPeriod = postingPeriod;
+        this.paymentMethod = paymentMethod;
+        this.ccIsPurchaseCardBin = ccIsPurchaseCardBin;
+        this.memo = memo;
+        this.ccProcessAsPurchaseCard = ccProcessAsPurchaseCard;
+        this.checkNum = checkNum;
+        this.currencyName = currencyName;
+        this.exchangeRate = exchangeRate;
+        this.creditCard = creditCard;
+        this.chargeIt = chargeIt;
+        this.ccNumber = ccNumber;
+        this.ccExpireDate = ccExpireDate;
+        this.ccName = ccName;
+        this.ccStreet = ccStreet;
+        this.ccZipCode = ccZipCode;
+        this.ccApproved = ccApproved;
+        this.authCode = authCode;
+        this.ccAvsStreetMatch = ccAvsStreetMatch;
+        this.ccAvsZipMatch = ccAvsZipMatch;
+        this.isRecurringPayment = isRecurringPayment;
+        this.ccSecurityCode = ccSecurityCode;
+        this.ignoreAvs = ignoreAvs;
+        this.ccSecurityCodeMatch = ccSecurityCodeMatch;
+        this.threeDStatusCode = threeDStatusCode;
+        this.pnRefNum = pnRefNum;
+        this.creditCardProcessor = creditCardProcessor;
+        this.debitCardIssueNo = debitCardIssueNo;
+        this.validFrom = validFrom;
+        this.undepFunds = undepFunds;
+        this.account = account;
+        this.total = total;
+        this.subsidiary = subsidiary;
+        this.applied = applied;
+        this.unapplied = unapplied;
+        this._class = _class;
+        this.department = department;
+        this.location = location;
+        this.status = status;
+        this.applyList = applyList;
+        this.creditList = creditList;
+        this.depositList = depositList;
+        this.accountingBookDetailList = accountingBookDetailList;
+        this.customFieldList = customFieldList;
+    }
+
 
     /**
-     * 获取createdDate属性的值。
+     * Gets the createdDate value for this CustomerPayment.
      * 
-     * @return
-     *     possible object is
-     *     {@link XMLGregorianCalendar }
-     *     
+     * @return createdDate
      */
-    public XMLGregorianCalendar getCreatedDate() {
+    public java.util.Calendar getCreatedDate() {
         return createdDate;
     }
 
-    /**
-     * 设置createdDate属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link XMLGregorianCalendar }
-     *     
-     */
-    public void setCreatedDate(XMLGregorianCalendar value) {
-        this.createdDate = value;
-    }
 
     /**
-     * 获取lastModifiedDate属性的值。
+     * Sets the createdDate value for this CustomerPayment.
      * 
-     * @return
-     *     possible object is
-     *     {@link XMLGregorianCalendar }
-     *     
+     * @param createdDate
      */
-    public XMLGregorianCalendar getLastModifiedDate() {
+    public void setCreatedDate(java.util.Calendar createdDate) {
+        this.createdDate = createdDate;
+    }
+
+
+    /**
+     * Gets the lastModifiedDate value for this CustomerPayment.
+     * 
+     * @return lastModifiedDate
+     */
+    public java.util.Calendar getLastModifiedDate() {
         return lastModifiedDate;
     }
 
-    /**
-     * 设置lastModifiedDate属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link XMLGregorianCalendar }
-     *     
-     */
-    public void setLastModifiedDate(XMLGregorianCalendar value) {
-        this.lastModifiedDate = value;
-    }
 
     /**
-     * 获取customForm属性的值。
+     * Sets the lastModifiedDate value for this CustomerPayment.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param lastModifiedDate
      */
-    public RecordRef getCustomForm() {
+    public void setLastModifiedDate(java.util.Calendar lastModifiedDate) {
+        this.lastModifiedDate = lastModifiedDate;
+    }
+
+
+    /**
+     * Gets the customForm value for this CustomerPayment.
+     * 
+     * @return customForm
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getCustomForm() {
         return customForm;
     }
 
-    /**
-     * 设置customForm属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setCustomForm(RecordRef value) {
-        this.customForm = value;
-    }
 
     /**
-     * 获取arAcct属性的值。
+     * Sets the customForm value for this CustomerPayment.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param customForm
      */
-    public RecordRef getArAcct() {
+    public void setCustomForm(com.netsuite.webservices.platform.core_2018_2.RecordRef customForm) {
+        this.customForm = customForm;
+    }
+
+
+    /**
+     * Gets the arAcct value for this CustomerPayment.
+     * 
+     * @return arAcct
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getArAcct() {
         return arAcct;
     }
 
-    /**
-     * 设置arAcct属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setArAcct(RecordRef value) {
-        this.arAcct = value;
-    }
 
     /**
-     * 获取customer属性的值。
+     * Sets the arAcct value for this CustomerPayment.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param arAcct
      */
-    public RecordRef getCustomer() {
+    public void setArAcct(com.netsuite.webservices.platform.core_2018_2.RecordRef arAcct) {
+        this.arAcct = arAcct;
+    }
+
+
+    /**
+     * Gets the customer value for this CustomerPayment.
+     * 
+     * @return customer
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getCustomer() {
         return customer;
     }
 
-    /**
-     * 设置customer属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setCustomer(RecordRef value) {
-        this.customer = value;
-    }
 
     /**
-     * 获取balance属性的值。
+     * Sets the customer value for this CustomerPayment.
      * 
-     * @return
-     *     possible object is
-     *     {@link Double }
-     *     
+     * @param customer
      */
-    public Double getBalance() {
+    public void setCustomer(com.netsuite.webservices.platform.core_2018_2.RecordRef customer) {
+        this.customer = customer;
+    }
+
+
+    /**
+     * Gets the balance value for this CustomerPayment.
+     * 
+     * @return balance
+     */
+    public java.lang.Double getBalance() {
         return balance;
     }
 
-    /**
-     * 设置balance属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Double }
-     *     
-     */
-    public void setBalance(Double value) {
-        this.balance = value;
-    }
 
     /**
-     * 获取pending属性的值。
+     * Sets the balance value for this CustomerPayment.
      * 
-     * @return
-     *     possible object is
-     *     {@link Double }
-     *     
+     * @param balance
      */
-    public Double getPending() {
+    public void setBalance(java.lang.Double balance) {
+        this.balance = balance;
+    }
+
+
+    /**
+     * Gets the pending value for this CustomerPayment.
+     * 
+     * @return pending
+     */
+    public java.lang.Double getPending() {
         return pending;
     }
 
-    /**
-     * 设置pending属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Double }
-     *     
-     */
-    public void setPending(Double value) {
-        this.pending = value;
-    }
 
     /**
-     * 获取currency属性的值。
+     * Sets the pending value for this CustomerPayment.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param pending
      */
-    public RecordRef getCurrency() {
+    public void setPending(java.lang.Double pending) {
+        this.pending = pending;
+    }
+
+
+    /**
+     * Gets the currency value for this CustomerPayment.
+     * 
+     * @return currency
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getCurrency() {
         return currency;
     }
 
-    /**
-     * 设置currency属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setCurrency(RecordRef value) {
-        this.currency = value;
-    }
 
     /**
-     * 获取payment属性的值。
+     * Sets the currency value for this CustomerPayment.
      * 
-     * @return
-     *     possible object is
-     *     {@link Double }
-     *     
+     * @param currency
      */
-    public Double getPayment() {
+    public void setCurrency(com.netsuite.webservices.platform.core_2018_2.RecordRef currency) {
+        this.currency = currency;
+    }
+
+
+    /**
+     * Gets the payment value for this CustomerPayment.
+     * 
+     * @return payment
+     */
+    public java.lang.Double getPayment() {
         return payment;
     }
 
-    /**
-     * 设置payment属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Double }
-     *     
-     */
-    public void setPayment(Double value) {
-        this.payment = value;
-    }
 
     /**
-     * 获取autoApply属性的值。
+     * Sets the payment value for this CustomerPayment.
      * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
+     * @param payment
      */
-    public Boolean isAutoApply() {
+    public void setPayment(java.lang.Double payment) {
+        this.payment = payment;
+    }
+
+
+    /**
+     * Gets the autoApply value for this CustomerPayment.
+     * 
+     * @return autoApply
+     */
+    public java.lang.Boolean getAutoApply() {
         return autoApply;
     }
 
-    /**
-     * 设置autoApply属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
-     */
-    public void setAutoApply(Boolean value) {
-        this.autoApply = value;
-    }
 
     /**
-     * 获取tranDate属性的值。
+     * Sets the autoApply value for this CustomerPayment.
      * 
-     * @return
-     *     possible object is
-     *     {@link XMLGregorianCalendar }
-     *     
+     * @param autoApply
      */
-    public XMLGregorianCalendar getTranDate() {
+    public void setAutoApply(java.lang.Boolean autoApply) {
+        this.autoApply = autoApply;
+    }
+
+
+    /**
+     * Gets the tranDate value for this CustomerPayment.
+     * 
+     * @return tranDate
+     */
+    public java.util.Calendar getTranDate() {
         return tranDate;
     }
 
-    /**
-     * 设置tranDate属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link XMLGregorianCalendar }
-     *     
-     */
-    public void setTranDate(XMLGregorianCalendar value) {
-        this.tranDate = value;
-    }
 
     /**
-     * 获取tranId属性的值。
+     * Sets the tranDate value for this CustomerPayment.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param tranDate
      */
-    public String getTranId() {
+    public void setTranDate(java.util.Calendar tranDate) {
+        this.tranDate = tranDate;
+    }
+
+
+    /**
+     * Gets the tranId value for this CustomerPayment.
+     * 
+     * @return tranId
+     */
+    public java.lang.String getTranId() {
         return tranId;
     }
 
-    /**
-     * 设置tranId属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setTranId(String value) {
-        this.tranId = value;
-    }
 
     /**
-     * 获取postingPeriod属性的值。
+     * Sets the tranId value for this CustomerPayment.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param tranId
      */
-    public RecordRef getPostingPeriod() {
+    public void setTranId(java.lang.String tranId) {
+        this.tranId = tranId;
+    }
+
+
+    /**
+     * Gets the postingPeriod value for this CustomerPayment.
+     * 
+     * @return postingPeriod
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getPostingPeriod() {
         return postingPeriod;
     }
 
-    /**
-     * 设置postingPeriod属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setPostingPeriod(RecordRef value) {
-        this.postingPeriod = value;
-    }
 
     /**
-     * 获取paymentMethod属性的值。
+     * Sets the postingPeriod value for this CustomerPayment.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param postingPeriod
      */
-    public RecordRef getPaymentMethod() {
+    public void setPostingPeriod(com.netsuite.webservices.platform.core_2018_2.RecordRef postingPeriod) {
+        this.postingPeriod = postingPeriod;
+    }
+
+
+    /**
+     * Gets the paymentMethod value for this CustomerPayment.
+     * 
+     * @return paymentMethod
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getPaymentMethod() {
         return paymentMethod;
     }
 
-    /**
-     * 设置paymentMethod属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setPaymentMethod(RecordRef value) {
-        this.paymentMethod = value;
-    }
 
     /**
-     * 获取ccIsPurchaseCardBin属性的值。
+     * Sets the paymentMethod value for this CustomerPayment.
      * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
+     * @param paymentMethod
      */
-    public Boolean isCcIsPurchaseCardBin() {
+    public void setPaymentMethod(com.netsuite.webservices.platform.core_2018_2.RecordRef paymentMethod) {
+        this.paymentMethod = paymentMethod;
+    }
+
+
+    /**
+     * Gets the ccIsPurchaseCardBin value for this CustomerPayment.
+     * 
+     * @return ccIsPurchaseCardBin
+     */
+    public java.lang.Boolean getCcIsPurchaseCardBin() {
         return ccIsPurchaseCardBin;
     }
 
-    /**
-     * 设置ccIsPurchaseCardBin属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
-     */
-    public void setCcIsPurchaseCardBin(Boolean value) {
-        this.ccIsPurchaseCardBin = value;
-    }
 
     /**
-     * 获取memo属性的值。
+     * Sets the ccIsPurchaseCardBin value for this CustomerPayment.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param ccIsPurchaseCardBin
      */
-    public String getMemo() {
+    public void setCcIsPurchaseCardBin(java.lang.Boolean ccIsPurchaseCardBin) {
+        this.ccIsPurchaseCardBin = ccIsPurchaseCardBin;
+    }
+
+
+    /**
+     * Gets the memo value for this CustomerPayment.
+     * 
+     * @return memo
+     */
+    public java.lang.String getMemo() {
         return memo;
     }
 
-    /**
-     * 设置memo属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setMemo(String value) {
-        this.memo = value;
-    }
 
     /**
-     * 获取ccProcessAsPurchaseCard属性的值。
+     * Sets the memo value for this CustomerPayment.
      * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
+     * @param memo
      */
-    public Boolean isCcProcessAsPurchaseCard() {
+    public void setMemo(java.lang.String memo) {
+        this.memo = memo;
+    }
+
+
+    /**
+     * Gets the ccProcessAsPurchaseCard value for this CustomerPayment.
+     * 
+     * @return ccProcessAsPurchaseCard
+     */
+    public java.lang.Boolean getCcProcessAsPurchaseCard() {
         return ccProcessAsPurchaseCard;
     }
 
-    /**
-     * 设置ccProcessAsPurchaseCard属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
-     */
-    public void setCcProcessAsPurchaseCard(Boolean value) {
-        this.ccProcessAsPurchaseCard = value;
-    }
 
     /**
-     * 获取checkNum属性的值。
+     * Sets the ccProcessAsPurchaseCard value for this CustomerPayment.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param ccProcessAsPurchaseCard
      */
-    public String getCheckNum() {
+    public void setCcProcessAsPurchaseCard(java.lang.Boolean ccProcessAsPurchaseCard) {
+        this.ccProcessAsPurchaseCard = ccProcessAsPurchaseCard;
+    }
+
+
+    /**
+     * Gets the checkNum value for this CustomerPayment.
+     * 
+     * @return checkNum
+     */
+    public java.lang.String getCheckNum() {
         return checkNum;
     }
 
-    /**
-     * 设置checkNum属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setCheckNum(String value) {
-        this.checkNum = value;
-    }
 
     /**
-     * 获取currencyName属性的值。
+     * Sets the checkNum value for this CustomerPayment.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param checkNum
      */
-    public String getCurrencyName() {
+    public void setCheckNum(java.lang.String checkNum) {
+        this.checkNum = checkNum;
+    }
+
+
+    /**
+     * Gets the currencyName value for this CustomerPayment.
+     * 
+     * @return currencyName
+     */
+    public java.lang.String getCurrencyName() {
         return currencyName;
     }
 
-    /**
-     * 设置currencyName属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setCurrencyName(String value) {
-        this.currencyName = value;
-    }
 
     /**
-     * 获取exchangeRate属性的值。
+     * Sets the currencyName value for this CustomerPayment.
      * 
-     * @return
-     *     possible object is
-     *     {@link Double }
-     *     
+     * @param currencyName
      */
-    public Double getExchangeRate() {
+    public void setCurrencyName(java.lang.String currencyName) {
+        this.currencyName = currencyName;
+    }
+
+
+    /**
+     * Gets the exchangeRate value for this CustomerPayment.
+     * 
+     * @return exchangeRate
+     */
+    public java.lang.Double getExchangeRate() {
         return exchangeRate;
     }
 
-    /**
-     * 设置exchangeRate属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Double }
-     *     
-     */
-    public void setExchangeRate(Double value) {
-        this.exchangeRate = value;
-    }
 
     /**
-     * 获取creditCard属性的值。
+     * Sets the exchangeRate value for this CustomerPayment.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param exchangeRate
      */
-    public RecordRef getCreditCard() {
+    public void setExchangeRate(java.lang.Double exchangeRate) {
+        this.exchangeRate = exchangeRate;
+    }
+
+
+    /**
+     * Gets the creditCard value for this CustomerPayment.
+     * 
+     * @return creditCard
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getCreditCard() {
         return creditCard;
     }
 
-    /**
-     * 设置creditCard属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setCreditCard(RecordRef value) {
-        this.creditCard = value;
-    }
 
     /**
-     * 获取chargeIt属性的值。
+     * Sets the creditCard value for this CustomerPayment.
      * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
+     * @param creditCard
      */
-    public Boolean isChargeIt() {
+    public void setCreditCard(com.netsuite.webservices.platform.core_2018_2.RecordRef creditCard) {
+        this.creditCard = creditCard;
+    }
+
+
+    /**
+     * Gets the chargeIt value for this CustomerPayment.
+     * 
+     * @return chargeIt
+     */
+    public java.lang.Boolean getChargeIt() {
         return chargeIt;
     }
 
-    /**
-     * 设置chargeIt属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
-     */
-    public void setChargeIt(Boolean value) {
-        this.chargeIt = value;
-    }
 
     /**
-     * 获取ccNumber属性的值。
+     * Sets the chargeIt value for this CustomerPayment.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param chargeIt
      */
-    public String getCcNumber() {
+    public void setChargeIt(java.lang.Boolean chargeIt) {
+        this.chargeIt = chargeIt;
+    }
+
+
+    /**
+     * Gets the ccNumber value for this CustomerPayment.
+     * 
+     * @return ccNumber
+     */
+    public java.lang.String getCcNumber() {
         return ccNumber;
     }
 
-    /**
-     * 设置ccNumber属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setCcNumber(String value) {
-        this.ccNumber = value;
-    }
 
     /**
-     * 获取ccExpireDate属性的值。
+     * Sets the ccNumber value for this CustomerPayment.
      * 
-     * @return
-     *     possible object is
-     *     {@link XMLGregorianCalendar }
-     *     
+     * @param ccNumber
      */
-    public XMLGregorianCalendar getCcExpireDate() {
+    public void setCcNumber(java.lang.String ccNumber) {
+        this.ccNumber = ccNumber;
+    }
+
+
+    /**
+     * Gets the ccExpireDate value for this CustomerPayment.
+     * 
+     * @return ccExpireDate
+     */
+    public java.util.Calendar getCcExpireDate() {
         return ccExpireDate;
     }
 
-    /**
-     * 设置ccExpireDate属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link XMLGregorianCalendar }
-     *     
-     */
-    public void setCcExpireDate(XMLGregorianCalendar value) {
-        this.ccExpireDate = value;
-    }
 
     /**
-     * 获取ccName属性的值。
+     * Sets the ccExpireDate value for this CustomerPayment.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param ccExpireDate
      */
-    public String getCcName() {
+    public void setCcExpireDate(java.util.Calendar ccExpireDate) {
+        this.ccExpireDate = ccExpireDate;
+    }
+
+
+    /**
+     * Gets the ccName value for this CustomerPayment.
+     * 
+     * @return ccName
+     */
+    public java.lang.String getCcName() {
         return ccName;
     }
 
-    /**
-     * 设置ccName属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setCcName(String value) {
-        this.ccName = value;
-    }
 
     /**
-     * 获取ccStreet属性的值。
+     * Sets the ccName value for this CustomerPayment.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param ccName
      */
-    public String getCcStreet() {
+    public void setCcName(java.lang.String ccName) {
+        this.ccName = ccName;
+    }
+
+
+    /**
+     * Gets the ccStreet value for this CustomerPayment.
+     * 
+     * @return ccStreet
+     */
+    public java.lang.String getCcStreet() {
         return ccStreet;
     }
 
-    /**
-     * 设置ccStreet属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setCcStreet(String value) {
-        this.ccStreet = value;
-    }
 
     /**
-     * 获取ccZipCode属性的值。
+     * Sets the ccStreet value for this CustomerPayment.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param ccStreet
      */
-    public String getCcZipCode() {
+    public void setCcStreet(java.lang.String ccStreet) {
+        this.ccStreet = ccStreet;
+    }
+
+
+    /**
+     * Gets the ccZipCode value for this CustomerPayment.
+     * 
+     * @return ccZipCode
+     */
+    public java.lang.String getCcZipCode() {
         return ccZipCode;
     }
 
-    /**
-     * 设置ccZipCode属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setCcZipCode(String value) {
-        this.ccZipCode = value;
-    }
 
     /**
-     * 获取ccApproved属性的值。
+     * Sets the ccZipCode value for this CustomerPayment.
      * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
+     * @param ccZipCode
      */
-    public Boolean isCcApproved() {
+    public void setCcZipCode(java.lang.String ccZipCode) {
+        this.ccZipCode = ccZipCode;
+    }
+
+
+    /**
+     * Gets the ccApproved value for this CustomerPayment.
+     * 
+     * @return ccApproved
+     */
+    public java.lang.Boolean getCcApproved() {
         return ccApproved;
     }
 
-    /**
-     * 设置ccApproved属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
-     */
-    public void setCcApproved(Boolean value) {
-        this.ccApproved = value;
-    }
 
     /**
-     * 获取authCode属性的值。
+     * Sets the ccApproved value for this CustomerPayment.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param ccApproved
      */
-    public String getAuthCode() {
+    public void setCcApproved(java.lang.Boolean ccApproved) {
+        this.ccApproved = ccApproved;
+    }
+
+
+    /**
+     * Gets the authCode value for this CustomerPayment.
+     * 
+     * @return authCode
+     */
+    public java.lang.String getAuthCode() {
         return authCode;
     }
 
-    /**
-     * 设置authCode属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setAuthCode(String value) {
-        this.authCode = value;
-    }
 
     /**
-     * 获取ccAvsStreetMatch属性的值。
+     * Sets the authCode value for this CustomerPayment.
      * 
-     * @return
-     *     possible object is
-     *     {@link AvsMatchCode }
-     *     
+     * @param authCode
      */
-    public AvsMatchCode getCcAvsStreetMatch() {
+    public void setAuthCode(java.lang.String authCode) {
+        this.authCode = authCode;
+    }
+
+
+    /**
+     * Gets the ccAvsStreetMatch value for this CustomerPayment.
+     * 
+     * @return ccAvsStreetMatch
+     */
+    public com.netsuite.webservices.platform.common_2018_2.types.AvsMatchCode getCcAvsStreetMatch() {
         return ccAvsStreetMatch;
     }
 
-    /**
-     * 设置ccAvsStreetMatch属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link AvsMatchCode }
-     *     
-     */
-    public void setCcAvsStreetMatch(AvsMatchCode value) {
-        this.ccAvsStreetMatch = value;
-    }
 
     /**
-     * 获取ccAvsZipMatch属性的值。
+     * Sets the ccAvsStreetMatch value for this CustomerPayment.
      * 
-     * @return
-     *     possible object is
-     *     {@link AvsMatchCode }
-     *     
+     * @param ccAvsStreetMatch
      */
-    public AvsMatchCode getCcAvsZipMatch() {
+    public void setCcAvsStreetMatch(com.netsuite.webservices.platform.common_2018_2.types.AvsMatchCode ccAvsStreetMatch) {
+        this.ccAvsStreetMatch = ccAvsStreetMatch;
+    }
+
+
+    /**
+     * Gets the ccAvsZipMatch value for this CustomerPayment.
+     * 
+     * @return ccAvsZipMatch
+     */
+    public com.netsuite.webservices.platform.common_2018_2.types.AvsMatchCode getCcAvsZipMatch() {
         return ccAvsZipMatch;
     }
 
-    /**
-     * 设置ccAvsZipMatch属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link AvsMatchCode }
-     *     
-     */
-    public void setCcAvsZipMatch(AvsMatchCode value) {
-        this.ccAvsZipMatch = value;
-    }
 
     /**
-     * 获取isRecurringPayment属性的值。
+     * Sets the ccAvsZipMatch value for this CustomerPayment.
      * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
+     * @param ccAvsZipMatch
      */
-    public Boolean isIsRecurringPayment() {
+    public void setCcAvsZipMatch(com.netsuite.webservices.platform.common_2018_2.types.AvsMatchCode ccAvsZipMatch) {
+        this.ccAvsZipMatch = ccAvsZipMatch;
+    }
+
+
+    /**
+     * Gets the isRecurringPayment value for this CustomerPayment.
+     * 
+     * @return isRecurringPayment
+     */
+    public java.lang.Boolean getIsRecurringPayment() {
         return isRecurringPayment;
     }
 
-    /**
-     * 设置isRecurringPayment属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
-     */
-    public void setIsRecurringPayment(Boolean value) {
-        this.isRecurringPayment = value;
-    }
 
     /**
-     * 获取ccSecurityCode属性的值。
+     * Sets the isRecurringPayment value for this CustomerPayment.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param isRecurringPayment
      */
-    public String getCcSecurityCode() {
+    public void setIsRecurringPayment(java.lang.Boolean isRecurringPayment) {
+        this.isRecurringPayment = isRecurringPayment;
+    }
+
+
+    /**
+     * Gets the ccSecurityCode value for this CustomerPayment.
+     * 
+     * @return ccSecurityCode
+     */
+    public java.lang.String getCcSecurityCode() {
         return ccSecurityCode;
     }
 
-    /**
-     * 设置ccSecurityCode属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setCcSecurityCode(String value) {
-        this.ccSecurityCode = value;
-    }
 
     /**
-     * 获取ignoreAvs属性的值。
+     * Sets the ccSecurityCode value for this CustomerPayment.
      * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
+     * @param ccSecurityCode
      */
-    public Boolean isIgnoreAvs() {
+    public void setCcSecurityCode(java.lang.String ccSecurityCode) {
+        this.ccSecurityCode = ccSecurityCode;
+    }
+
+
+    /**
+     * Gets the ignoreAvs value for this CustomerPayment.
+     * 
+     * @return ignoreAvs
+     */
+    public java.lang.Boolean getIgnoreAvs() {
         return ignoreAvs;
     }
 
-    /**
-     * 设置ignoreAvs属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
-     */
-    public void setIgnoreAvs(Boolean value) {
-        this.ignoreAvs = value;
-    }
 
     /**
-     * 获取ccSecurityCodeMatch属性的值。
+     * Sets the ignoreAvs value for this CustomerPayment.
      * 
-     * @return
-     *     possible object is
-     *     {@link AvsMatchCode }
-     *     
+     * @param ignoreAvs
      */
-    public AvsMatchCode getCcSecurityCodeMatch() {
+    public void setIgnoreAvs(java.lang.Boolean ignoreAvs) {
+        this.ignoreAvs = ignoreAvs;
+    }
+
+
+    /**
+     * Gets the ccSecurityCodeMatch value for this CustomerPayment.
+     * 
+     * @return ccSecurityCodeMatch
+     */
+    public com.netsuite.webservices.platform.common_2018_2.types.AvsMatchCode getCcSecurityCodeMatch() {
         return ccSecurityCodeMatch;
     }
 
-    /**
-     * 设置ccSecurityCodeMatch属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link AvsMatchCode }
-     *     
-     */
-    public void setCcSecurityCodeMatch(AvsMatchCode value) {
-        this.ccSecurityCodeMatch = value;
-    }
 
     /**
-     * 获取threeDStatusCode属性的值。
+     * Sets the ccSecurityCodeMatch value for this CustomerPayment.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param ccSecurityCodeMatch
      */
-    public String getThreeDStatusCode() {
+    public void setCcSecurityCodeMatch(com.netsuite.webservices.platform.common_2018_2.types.AvsMatchCode ccSecurityCodeMatch) {
+        this.ccSecurityCodeMatch = ccSecurityCodeMatch;
+    }
+
+
+    /**
+     * Gets the threeDStatusCode value for this CustomerPayment.
+     * 
+     * @return threeDStatusCode
+     */
+    public java.lang.String getThreeDStatusCode() {
         return threeDStatusCode;
     }
 
-    /**
-     * 设置threeDStatusCode属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setThreeDStatusCode(String value) {
-        this.threeDStatusCode = value;
-    }
 
     /**
-     * 获取pnRefNum属性的值。
+     * Sets the threeDStatusCode value for this CustomerPayment.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param threeDStatusCode
      */
-    public String getPnRefNum() {
+    public void setThreeDStatusCode(java.lang.String threeDStatusCode) {
+        this.threeDStatusCode = threeDStatusCode;
+    }
+
+
+    /**
+     * Gets the pnRefNum value for this CustomerPayment.
+     * 
+     * @return pnRefNum
+     */
+    public java.lang.String getPnRefNum() {
         return pnRefNum;
     }
 
-    /**
-     * 设置pnRefNum属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setPnRefNum(String value) {
-        this.pnRefNum = value;
-    }
 
     /**
-     * 获取creditCardProcessor属性的值。
+     * Sets the pnRefNum value for this CustomerPayment.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param pnRefNum
      */
-    public RecordRef getCreditCardProcessor() {
+    public void setPnRefNum(java.lang.String pnRefNum) {
+        this.pnRefNum = pnRefNum;
+    }
+
+
+    /**
+     * Gets the creditCardProcessor value for this CustomerPayment.
+     * 
+     * @return creditCardProcessor
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getCreditCardProcessor() {
         return creditCardProcessor;
     }
 
-    /**
-     * 设置creditCardProcessor属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setCreditCardProcessor(RecordRef value) {
-        this.creditCardProcessor = value;
-    }
 
     /**
-     * 获取debitCardIssueNo属性的值。
+     * Sets the creditCardProcessor value for this CustomerPayment.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param creditCardProcessor
      */
-    public String getDebitCardIssueNo() {
+    public void setCreditCardProcessor(com.netsuite.webservices.platform.core_2018_2.RecordRef creditCardProcessor) {
+        this.creditCardProcessor = creditCardProcessor;
+    }
+
+
+    /**
+     * Gets the debitCardIssueNo value for this CustomerPayment.
+     * 
+     * @return debitCardIssueNo
+     */
+    public java.lang.String getDebitCardIssueNo() {
         return debitCardIssueNo;
     }
 
-    /**
-     * 设置debitCardIssueNo属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setDebitCardIssueNo(String value) {
-        this.debitCardIssueNo = value;
-    }
 
     /**
-     * 获取validFrom属性的值。
+     * Sets the debitCardIssueNo value for this CustomerPayment.
      * 
-     * @return
-     *     possible object is
-     *     {@link XMLGregorianCalendar }
-     *     
+     * @param debitCardIssueNo
      */
-    public XMLGregorianCalendar getValidFrom() {
+    public void setDebitCardIssueNo(java.lang.String debitCardIssueNo) {
+        this.debitCardIssueNo = debitCardIssueNo;
+    }
+
+
+    /**
+     * Gets the validFrom value for this CustomerPayment.
+     * 
+     * @return validFrom
+     */
+    public java.util.Calendar getValidFrom() {
         return validFrom;
     }
 
-    /**
-     * 设置validFrom属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link XMLGregorianCalendar }
-     *     
-     */
-    public void setValidFrom(XMLGregorianCalendar value) {
-        this.validFrom = value;
-    }
 
     /**
-     * 获取undepFunds属性的值。
+     * Sets the validFrom value for this CustomerPayment.
      * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
+     * @param validFrom
      */
-    public Boolean isUndepFunds() {
+    public void setValidFrom(java.util.Calendar validFrom) {
+        this.validFrom = validFrom;
+    }
+
+
+    /**
+     * Gets the undepFunds value for this CustomerPayment.
+     * 
+     * @return undepFunds
+     */
+    public java.lang.Boolean getUndepFunds() {
         return undepFunds;
     }
 
-    /**
-     * 设置undepFunds属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
-     */
-    public void setUndepFunds(Boolean value) {
-        this.undepFunds = value;
-    }
 
     /**
-     * 获取account属性的值。
+     * Sets the undepFunds value for this CustomerPayment.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param undepFunds
      */
-    public RecordRef getAccount() {
+    public void setUndepFunds(java.lang.Boolean undepFunds) {
+        this.undepFunds = undepFunds;
+    }
+
+
+    /**
+     * Gets the account value for this CustomerPayment.
+     * 
+     * @return account
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getAccount() {
         return account;
     }
 
-    /**
-     * 设置account属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setAccount(RecordRef value) {
-        this.account = value;
-    }
 
     /**
-     * 获取total属性的值。
+     * Sets the account value for this CustomerPayment.
      * 
-     * @return
-     *     possible object is
-     *     {@link Double }
-     *     
+     * @param account
      */
-    public Double getTotal() {
+    public void setAccount(com.netsuite.webservices.platform.core_2018_2.RecordRef account) {
+        this.account = account;
+    }
+
+
+    /**
+     * Gets the total value for this CustomerPayment.
+     * 
+     * @return total
+     */
+    public java.lang.Double getTotal() {
         return total;
     }
 
-    /**
-     * 设置total属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Double }
-     *     
-     */
-    public void setTotal(Double value) {
-        this.total = value;
-    }
 
     /**
-     * 获取subsidiary属性的值。
+     * Sets the total value for this CustomerPayment.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param total
      */
-    public RecordRef getSubsidiary() {
+    public void setTotal(java.lang.Double total) {
+        this.total = total;
+    }
+
+
+    /**
+     * Gets the subsidiary value for this CustomerPayment.
+     * 
+     * @return subsidiary
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getSubsidiary() {
         return subsidiary;
     }
 
-    /**
-     * 设置subsidiary属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setSubsidiary(RecordRef value) {
-        this.subsidiary = value;
-    }
 
     /**
-     * 获取applied属性的值。
+     * Sets the subsidiary value for this CustomerPayment.
      * 
-     * @return
-     *     possible object is
-     *     {@link Double }
-     *     
+     * @param subsidiary
      */
-    public Double getApplied() {
+    public void setSubsidiary(com.netsuite.webservices.platform.core_2018_2.RecordRef subsidiary) {
+        this.subsidiary = subsidiary;
+    }
+
+
+    /**
+     * Gets the applied value for this CustomerPayment.
+     * 
+     * @return applied
+     */
+    public java.lang.Double getApplied() {
         return applied;
     }
 
-    /**
-     * 设置applied属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Double }
-     *     
-     */
-    public void setApplied(Double value) {
-        this.applied = value;
-    }
 
     /**
-     * 获取unapplied属性的值。
+     * Sets the applied value for this CustomerPayment.
      * 
-     * @return
-     *     possible object is
-     *     {@link Double }
-     *     
+     * @param applied
      */
-    public Double getUnapplied() {
+    public void setApplied(java.lang.Double applied) {
+        this.applied = applied;
+    }
+
+
+    /**
+     * Gets the unapplied value for this CustomerPayment.
+     * 
+     * @return unapplied
+     */
+    public java.lang.Double getUnapplied() {
         return unapplied;
     }
 
-    /**
-     * 设置unapplied属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Double }
-     *     
-     */
-    public void setUnapplied(Double value) {
-        this.unapplied = value;
-    }
 
     /**
-     * 获取clazz属性的值。
+     * Sets the unapplied value for this CustomerPayment.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param unapplied
      */
-    public RecordRef getClazz() {
-        return clazz;
+    public void setUnapplied(java.lang.Double unapplied) {
+        this.unapplied = unapplied;
     }
 
-    /**
-     * 设置clazz属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setClazz(RecordRef value) {
-        this.clazz = value;
-    }
 
     /**
-     * 获取department属性的值。
+     * Gets the _class value for this CustomerPayment.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @return _class
      */
-    public RecordRef getDepartment() {
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef get_class() {
+        return _class;
+    }
+
+
+    /**
+     * Sets the _class value for this CustomerPayment.
+     * 
+     * @param _class
+     */
+    public void set_class(com.netsuite.webservices.platform.core_2018_2.RecordRef _class) {
+        this._class = _class;
+    }
+
+
+    /**
+     * Gets the department value for this CustomerPayment.
+     * 
+     * @return department
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getDepartment() {
         return department;
     }
 
-    /**
-     * 设置department属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setDepartment(RecordRef value) {
-        this.department = value;
-    }
 
     /**
-     * 获取location属性的值。
+     * Sets the department value for this CustomerPayment.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param department
      */
-    public RecordRef getLocation() {
+    public void setDepartment(com.netsuite.webservices.platform.core_2018_2.RecordRef department) {
+        this.department = department;
+    }
+
+
+    /**
+     * Gets the location value for this CustomerPayment.
+     * 
+     * @return location
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getLocation() {
         return location;
     }
 
-    /**
-     * 设置location属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setLocation(RecordRef value) {
-        this.location = value;
-    }
 
     /**
-     * 获取status属性的值。
+     * Sets the location value for this CustomerPayment.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param location
      */
-    public String getStatus() {
+    public void setLocation(com.netsuite.webservices.platform.core_2018_2.RecordRef location) {
+        this.location = location;
+    }
+
+
+    /**
+     * Gets the status value for this CustomerPayment.
+     * 
+     * @return status
+     */
+    public java.lang.String getStatus() {
         return status;
     }
 
-    /**
-     * 设置status属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setStatus(String value) {
-        this.status = value;
-    }
 
     /**
-     * 获取applyList属性的值。
+     * Sets the status value for this CustomerPayment.
      * 
-     * @return
-     *     possible object is
-     *     {@link CustomerPaymentApplyList }
-     *     
+     * @param status
      */
-    public CustomerPaymentApplyList getApplyList() {
+    public void setStatus(java.lang.String status) {
+        this.status = status;
+    }
+
+
+    /**
+     * Gets the applyList value for this CustomerPayment.
+     * 
+     * @return applyList
+     */
+    public com.netsuite.webservices.transactions.customers_2018_2.CustomerPaymentApply[] getApplyList() {
         return applyList;
     }
 
-    /**
-     * 设置applyList属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link CustomerPaymentApplyList }
-     *     
-     */
-    public void setApplyList(CustomerPaymentApplyList value) {
-        this.applyList = value;
-    }
 
     /**
-     * 获取creditList属性的值。
+     * Sets the applyList value for this CustomerPayment.
      * 
-     * @return
-     *     possible object is
-     *     {@link CustomerPaymentCreditList }
-     *     
+     * @param applyList
      */
-    public CustomerPaymentCreditList getCreditList() {
+    public void setApplyList(com.netsuite.webservices.transactions.customers_2018_2.CustomerPaymentApply[] applyList) {
+        this.applyList = applyList;
+    }
+
+
+    /**
+     * Gets the creditList value for this CustomerPayment.
+     * 
+     * @return creditList
+     */
+    public com.netsuite.webservices.transactions.customers_2018_2.CustomerPaymentCredit[] getCreditList() {
         return creditList;
     }
 
-    /**
-     * 设置creditList属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link CustomerPaymentCreditList }
-     *     
-     */
-    public void setCreditList(CustomerPaymentCreditList value) {
-        this.creditList = value;
-    }
 
     /**
-     * 获取depositList属性的值。
+     * Sets the creditList value for this CustomerPayment.
      * 
-     * @return
-     *     possible object is
-     *     {@link CustomerPaymentDepositList }
-     *     
+     * @param creditList
      */
-    public CustomerPaymentDepositList getDepositList() {
+    public void setCreditList(com.netsuite.webservices.transactions.customers_2018_2.CustomerPaymentCredit[] creditList) {
+        this.creditList = creditList;
+    }
+
+
+    /**
+     * Gets the depositList value for this CustomerPayment.
+     * 
+     * @return depositList
+     */
+    public com.netsuite.webservices.transactions.customers_2018_2.CustomerPaymentDeposit[] getDepositList() {
         return depositList;
     }
 
-    /**
-     * 设置depositList属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link CustomerPaymentDepositList }
-     *     
-     */
-    public void setDepositList(CustomerPaymentDepositList value) {
-        this.depositList = value;
-    }
 
     /**
-     * 获取accountingBookDetailList属性的值。
+     * Sets the depositList value for this CustomerPayment.
      * 
-     * @return
-     *     possible object is
-     *     {@link AccountingBookDetailList }
-     *     
+     * @param depositList
      */
-    public AccountingBookDetailList getAccountingBookDetailList() {
+    public void setDepositList(com.netsuite.webservices.transactions.customers_2018_2.CustomerPaymentDeposit[] depositList) {
+        this.depositList = depositList;
+    }
+
+
+    /**
+     * Gets the accountingBookDetailList value for this CustomerPayment.
+     * 
+     * @return accountingBookDetailList
+     */
+    public com.netsuite.webservices.platform.common_2018_2.AccountingBookDetail[] getAccountingBookDetailList() {
         return accountingBookDetailList;
     }
 
-    /**
-     * 设置accountingBookDetailList属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link AccountingBookDetailList }
-     *     
-     */
-    public void setAccountingBookDetailList(AccountingBookDetailList value) {
-        this.accountingBookDetailList = value;
-    }
 
     /**
-     * 获取customFieldList属性的值。
+     * Sets the accountingBookDetailList value for this CustomerPayment.
      * 
-     * @return
-     *     possible object is
-     *     {@link CustomFieldList }
-     *     
+     * @param accountingBookDetailList
      */
-    public CustomFieldList getCustomFieldList() {
+    public void setAccountingBookDetailList(com.netsuite.webservices.platform.common_2018_2.AccountingBookDetail[] accountingBookDetailList) {
+        this.accountingBookDetailList = accountingBookDetailList;
+    }
+
+
+    /**
+     * Gets the customFieldList value for this CustomerPayment.
+     * 
+     * @return customFieldList
+     */
+    public com.netsuite.webservices.platform.core_2018_2.CustomFieldRef[] getCustomFieldList() {
         return customFieldList;
     }
 
-    /**
-     * 设置customFieldList属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link CustomFieldList }
-     *     
-     */
-    public void setCustomFieldList(CustomFieldList value) {
-        this.customFieldList = value;
-    }
 
     /**
-     * 获取internalId属性的值。
+     * Sets the customFieldList value for this CustomerPayment.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param customFieldList
      */
-    public String getInternalId() {
+    public void setCustomFieldList(com.netsuite.webservices.platform.core_2018_2.CustomFieldRef[] customFieldList) {
+        this.customFieldList = customFieldList;
+    }
+
+
+    /**
+     * Gets the internalId value for this CustomerPayment.
+     * 
+     * @return internalId
+     */
+    public java.lang.String getInternalId() {
         return internalId;
     }
 
-    /**
-     * 设置internalId属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setInternalId(String value) {
-        this.internalId = value;
-    }
 
     /**
-     * 获取externalId属性的值。
+     * Sets the internalId value for this CustomerPayment.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param internalId
      */
-    public String getExternalId() {
+    public void setInternalId(java.lang.String internalId) {
+        this.internalId = internalId;
+    }
+
+
+    /**
+     * Gets the externalId value for this CustomerPayment.
+     * 
+     * @return externalId
+     */
+    public java.lang.String getExternalId() {
         return externalId;
     }
 
+
     /**
-     * 设置externalId属性的值。
+     * Sets the externalId value for this CustomerPayment.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     * @param externalId
      */
-    public void setExternalId(String value) {
-        this.externalId = value;
+    public void setExternalId(java.lang.String externalId) {
+        this.externalId = externalId;
+    }
+
+    private java.lang.Object __equalsCalc = null;
+    public synchronized boolean equals(java.lang.Object obj) {
+        if (!(obj instanceof CustomerPayment)) return false;
+        CustomerPayment other = (CustomerPayment) obj;
+        if (obj == null) return false;
+        if (this == obj) return true;
+        if (__equalsCalc != null) {
+            return (__equalsCalc == obj);
+        }
+        __equalsCalc = obj;
+        boolean _equals;
+        _equals = super.equals(obj) && 
+            ((this.createdDate==null && other.getCreatedDate()==null) || 
+             (this.createdDate!=null &&
+              this.createdDate.equals(other.getCreatedDate()))) &&
+            ((this.lastModifiedDate==null && other.getLastModifiedDate()==null) || 
+             (this.lastModifiedDate!=null &&
+              this.lastModifiedDate.equals(other.getLastModifiedDate()))) &&
+            ((this.customForm==null && other.getCustomForm()==null) || 
+             (this.customForm!=null &&
+              this.customForm.equals(other.getCustomForm()))) &&
+            ((this.arAcct==null && other.getArAcct()==null) || 
+             (this.arAcct!=null &&
+              this.arAcct.equals(other.getArAcct()))) &&
+            ((this.customer==null && other.getCustomer()==null) || 
+             (this.customer!=null &&
+              this.customer.equals(other.getCustomer()))) &&
+            ((this.balance==null && other.getBalance()==null) || 
+             (this.balance!=null &&
+              this.balance.equals(other.getBalance()))) &&
+            ((this.pending==null && other.getPending()==null) || 
+             (this.pending!=null &&
+              this.pending.equals(other.getPending()))) &&
+            ((this.currency==null && other.getCurrency()==null) || 
+             (this.currency!=null &&
+              this.currency.equals(other.getCurrency()))) &&
+            ((this.payment==null && other.getPayment()==null) || 
+             (this.payment!=null &&
+              this.payment.equals(other.getPayment()))) &&
+            ((this.autoApply==null && other.getAutoApply()==null) || 
+             (this.autoApply!=null &&
+              this.autoApply.equals(other.getAutoApply()))) &&
+            ((this.tranDate==null && other.getTranDate()==null) || 
+             (this.tranDate!=null &&
+              this.tranDate.equals(other.getTranDate()))) &&
+            ((this.tranId==null && other.getTranId()==null) || 
+             (this.tranId!=null &&
+              this.tranId.equals(other.getTranId()))) &&
+            ((this.postingPeriod==null && other.getPostingPeriod()==null) || 
+             (this.postingPeriod!=null &&
+              this.postingPeriod.equals(other.getPostingPeriod()))) &&
+            ((this.paymentMethod==null && other.getPaymentMethod()==null) || 
+             (this.paymentMethod!=null &&
+              this.paymentMethod.equals(other.getPaymentMethod()))) &&
+            ((this.ccIsPurchaseCardBin==null && other.getCcIsPurchaseCardBin()==null) || 
+             (this.ccIsPurchaseCardBin!=null &&
+              this.ccIsPurchaseCardBin.equals(other.getCcIsPurchaseCardBin()))) &&
+            ((this.memo==null && other.getMemo()==null) || 
+             (this.memo!=null &&
+              this.memo.equals(other.getMemo()))) &&
+            ((this.ccProcessAsPurchaseCard==null && other.getCcProcessAsPurchaseCard()==null) || 
+             (this.ccProcessAsPurchaseCard!=null &&
+              this.ccProcessAsPurchaseCard.equals(other.getCcProcessAsPurchaseCard()))) &&
+            ((this.checkNum==null && other.getCheckNum()==null) || 
+             (this.checkNum!=null &&
+              this.checkNum.equals(other.getCheckNum()))) &&
+            ((this.currencyName==null && other.getCurrencyName()==null) || 
+             (this.currencyName!=null &&
+              this.currencyName.equals(other.getCurrencyName()))) &&
+            ((this.exchangeRate==null && other.getExchangeRate()==null) || 
+             (this.exchangeRate!=null &&
+              this.exchangeRate.equals(other.getExchangeRate()))) &&
+            ((this.creditCard==null && other.getCreditCard()==null) || 
+             (this.creditCard!=null &&
+              this.creditCard.equals(other.getCreditCard()))) &&
+            ((this.chargeIt==null && other.getChargeIt()==null) || 
+             (this.chargeIt!=null &&
+              this.chargeIt.equals(other.getChargeIt()))) &&
+            ((this.ccNumber==null && other.getCcNumber()==null) || 
+             (this.ccNumber!=null &&
+              this.ccNumber.equals(other.getCcNumber()))) &&
+            ((this.ccExpireDate==null && other.getCcExpireDate()==null) || 
+             (this.ccExpireDate!=null &&
+              this.ccExpireDate.equals(other.getCcExpireDate()))) &&
+            ((this.ccName==null && other.getCcName()==null) || 
+             (this.ccName!=null &&
+              this.ccName.equals(other.getCcName()))) &&
+            ((this.ccStreet==null && other.getCcStreet()==null) || 
+             (this.ccStreet!=null &&
+              this.ccStreet.equals(other.getCcStreet()))) &&
+            ((this.ccZipCode==null && other.getCcZipCode()==null) || 
+             (this.ccZipCode!=null &&
+              this.ccZipCode.equals(other.getCcZipCode()))) &&
+            ((this.ccApproved==null && other.getCcApproved()==null) || 
+             (this.ccApproved!=null &&
+              this.ccApproved.equals(other.getCcApproved()))) &&
+            ((this.authCode==null && other.getAuthCode()==null) || 
+             (this.authCode!=null &&
+              this.authCode.equals(other.getAuthCode()))) &&
+            ((this.ccAvsStreetMatch==null && other.getCcAvsStreetMatch()==null) || 
+             (this.ccAvsStreetMatch!=null &&
+              this.ccAvsStreetMatch.equals(other.getCcAvsStreetMatch()))) &&
+            ((this.ccAvsZipMatch==null && other.getCcAvsZipMatch()==null) || 
+             (this.ccAvsZipMatch!=null &&
+              this.ccAvsZipMatch.equals(other.getCcAvsZipMatch()))) &&
+            ((this.isRecurringPayment==null && other.getIsRecurringPayment()==null) || 
+             (this.isRecurringPayment!=null &&
+              this.isRecurringPayment.equals(other.getIsRecurringPayment()))) &&
+            ((this.ccSecurityCode==null && other.getCcSecurityCode()==null) || 
+             (this.ccSecurityCode!=null &&
+              this.ccSecurityCode.equals(other.getCcSecurityCode()))) &&
+            ((this.ignoreAvs==null && other.getIgnoreAvs()==null) || 
+             (this.ignoreAvs!=null &&
+              this.ignoreAvs.equals(other.getIgnoreAvs()))) &&
+            ((this.ccSecurityCodeMatch==null && other.getCcSecurityCodeMatch()==null) || 
+             (this.ccSecurityCodeMatch!=null &&
+              this.ccSecurityCodeMatch.equals(other.getCcSecurityCodeMatch()))) &&
+            ((this.threeDStatusCode==null && other.getThreeDStatusCode()==null) || 
+             (this.threeDStatusCode!=null &&
+              this.threeDStatusCode.equals(other.getThreeDStatusCode()))) &&
+            ((this.pnRefNum==null && other.getPnRefNum()==null) || 
+             (this.pnRefNum!=null &&
+              this.pnRefNum.equals(other.getPnRefNum()))) &&
+            ((this.creditCardProcessor==null && other.getCreditCardProcessor()==null) || 
+             (this.creditCardProcessor!=null &&
+              this.creditCardProcessor.equals(other.getCreditCardProcessor()))) &&
+            ((this.debitCardIssueNo==null && other.getDebitCardIssueNo()==null) || 
+             (this.debitCardIssueNo!=null &&
+              this.debitCardIssueNo.equals(other.getDebitCardIssueNo()))) &&
+            ((this.validFrom==null && other.getValidFrom()==null) || 
+             (this.validFrom!=null &&
+              this.validFrom.equals(other.getValidFrom()))) &&
+            ((this.undepFunds==null && other.getUndepFunds()==null) || 
+             (this.undepFunds!=null &&
+              this.undepFunds.equals(other.getUndepFunds()))) &&
+            ((this.account==null && other.getAccount()==null) || 
+             (this.account!=null &&
+              this.account.equals(other.getAccount()))) &&
+            ((this.total==null && other.getTotal()==null) || 
+             (this.total!=null &&
+              this.total.equals(other.getTotal()))) &&
+            ((this.subsidiary==null && other.getSubsidiary()==null) || 
+             (this.subsidiary!=null &&
+              this.subsidiary.equals(other.getSubsidiary()))) &&
+            ((this.applied==null && other.getApplied()==null) || 
+             (this.applied!=null &&
+              this.applied.equals(other.getApplied()))) &&
+            ((this.unapplied==null && other.getUnapplied()==null) || 
+             (this.unapplied!=null &&
+              this.unapplied.equals(other.getUnapplied()))) &&
+            ((this._class==null && other.get_class()==null) || 
+             (this._class!=null &&
+              this._class.equals(other.get_class()))) &&
+            ((this.department==null && other.getDepartment()==null) || 
+             (this.department!=null &&
+              this.department.equals(other.getDepartment()))) &&
+            ((this.location==null && other.getLocation()==null) || 
+             (this.location!=null &&
+              this.location.equals(other.getLocation()))) &&
+            ((this.status==null && other.getStatus()==null) || 
+             (this.status!=null &&
+              this.status.equals(other.getStatus()))) &&
+            ((this.applyList==null && other.getApplyList()==null) || 
+             (this.applyList!=null &&
+              java.util.Arrays.equals(this.applyList, other.getApplyList()))) &&
+            ((this.creditList==null && other.getCreditList()==null) || 
+             (this.creditList!=null &&
+              java.util.Arrays.equals(this.creditList, other.getCreditList()))) &&
+            ((this.depositList==null && other.getDepositList()==null) || 
+             (this.depositList!=null &&
+              java.util.Arrays.equals(this.depositList, other.getDepositList()))) &&
+            ((this.accountingBookDetailList==null && other.getAccountingBookDetailList()==null) || 
+             (this.accountingBookDetailList!=null &&
+              java.util.Arrays.equals(this.accountingBookDetailList, other.getAccountingBookDetailList()))) &&
+            ((this.customFieldList==null && other.getCustomFieldList()==null) || 
+             (this.customFieldList!=null &&
+              java.util.Arrays.equals(this.customFieldList, other.getCustomFieldList()))) &&
+            ((this.internalId==null && other.getInternalId()==null) || 
+             (this.internalId!=null &&
+              this.internalId.equals(other.getInternalId()))) &&
+            ((this.externalId==null && other.getExternalId()==null) || 
+             (this.externalId!=null &&
+              this.externalId.equals(other.getExternalId())));
+        __equalsCalc = null;
+        return _equals;
+    }
+
+    private boolean __hashCodeCalc = false;
+    public synchronized int hashCode() {
+        if (__hashCodeCalc) {
+            return 0;
+        }
+        __hashCodeCalc = true;
+        int _hashCode = super.hashCode();
+        if (getCreatedDate() != null) {
+            _hashCode += getCreatedDate().hashCode();
+        }
+        if (getLastModifiedDate() != null) {
+            _hashCode += getLastModifiedDate().hashCode();
+        }
+        if (getCustomForm() != null) {
+            _hashCode += getCustomForm().hashCode();
+        }
+        if (getArAcct() != null) {
+            _hashCode += getArAcct().hashCode();
+        }
+        if (getCustomer() != null) {
+            _hashCode += getCustomer().hashCode();
+        }
+        if (getBalance() != null) {
+            _hashCode += getBalance().hashCode();
+        }
+        if (getPending() != null) {
+            _hashCode += getPending().hashCode();
+        }
+        if (getCurrency() != null) {
+            _hashCode += getCurrency().hashCode();
+        }
+        if (getPayment() != null) {
+            _hashCode += getPayment().hashCode();
+        }
+        if (getAutoApply() != null) {
+            _hashCode += getAutoApply().hashCode();
+        }
+        if (getTranDate() != null) {
+            _hashCode += getTranDate().hashCode();
+        }
+        if (getTranId() != null) {
+            _hashCode += getTranId().hashCode();
+        }
+        if (getPostingPeriod() != null) {
+            _hashCode += getPostingPeriod().hashCode();
+        }
+        if (getPaymentMethod() != null) {
+            _hashCode += getPaymentMethod().hashCode();
+        }
+        if (getCcIsPurchaseCardBin() != null) {
+            _hashCode += getCcIsPurchaseCardBin().hashCode();
+        }
+        if (getMemo() != null) {
+            _hashCode += getMemo().hashCode();
+        }
+        if (getCcProcessAsPurchaseCard() != null) {
+            _hashCode += getCcProcessAsPurchaseCard().hashCode();
+        }
+        if (getCheckNum() != null) {
+            _hashCode += getCheckNum().hashCode();
+        }
+        if (getCurrencyName() != null) {
+            _hashCode += getCurrencyName().hashCode();
+        }
+        if (getExchangeRate() != null) {
+            _hashCode += getExchangeRate().hashCode();
+        }
+        if (getCreditCard() != null) {
+            _hashCode += getCreditCard().hashCode();
+        }
+        if (getChargeIt() != null) {
+            _hashCode += getChargeIt().hashCode();
+        }
+        if (getCcNumber() != null) {
+            _hashCode += getCcNumber().hashCode();
+        }
+        if (getCcExpireDate() != null) {
+            _hashCode += getCcExpireDate().hashCode();
+        }
+        if (getCcName() != null) {
+            _hashCode += getCcName().hashCode();
+        }
+        if (getCcStreet() != null) {
+            _hashCode += getCcStreet().hashCode();
+        }
+        if (getCcZipCode() != null) {
+            _hashCode += getCcZipCode().hashCode();
+        }
+        if (getCcApproved() != null) {
+            _hashCode += getCcApproved().hashCode();
+        }
+        if (getAuthCode() != null) {
+            _hashCode += getAuthCode().hashCode();
+        }
+        if (getCcAvsStreetMatch() != null) {
+            _hashCode += getCcAvsStreetMatch().hashCode();
+        }
+        if (getCcAvsZipMatch() != null) {
+            _hashCode += getCcAvsZipMatch().hashCode();
+        }
+        if (getIsRecurringPayment() != null) {
+            _hashCode += getIsRecurringPayment().hashCode();
+        }
+        if (getCcSecurityCode() != null) {
+            _hashCode += getCcSecurityCode().hashCode();
+        }
+        if (getIgnoreAvs() != null) {
+            _hashCode += getIgnoreAvs().hashCode();
+        }
+        if (getCcSecurityCodeMatch() != null) {
+            _hashCode += getCcSecurityCodeMatch().hashCode();
+        }
+        if (getThreeDStatusCode() != null) {
+            _hashCode += getThreeDStatusCode().hashCode();
+        }
+        if (getPnRefNum() != null) {
+            _hashCode += getPnRefNum().hashCode();
+        }
+        if (getCreditCardProcessor() != null) {
+            _hashCode += getCreditCardProcessor().hashCode();
+        }
+        if (getDebitCardIssueNo() != null) {
+            _hashCode += getDebitCardIssueNo().hashCode();
+        }
+        if (getValidFrom() != null) {
+            _hashCode += getValidFrom().hashCode();
+        }
+        if (getUndepFunds() != null) {
+            _hashCode += getUndepFunds().hashCode();
+        }
+        if (getAccount() != null) {
+            _hashCode += getAccount().hashCode();
+        }
+        if (getTotal() != null) {
+            _hashCode += getTotal().hashCode();
+        }
+        if (getSubsidiary() != null) {
+            _hashCode += getSubsidiary().hashCode();
+        }
+        if (getApplied() != null) {
+            _hashCode += getApplied().hashCode();
+        }
+        if (getUnapplied() != null) {
+            _hashCode += getUnapplied().hashCode();
+        }
+        if (get_class() != null) {
+            _hashCode += get_class().hashCode();
+        }
+        if (getDepartment() != null) {
+            _hashCode += getDepartment().hashCode();
+        }
+        if (getLocation() != null) {
+            _hashCode += getLocation().hashCode();
+        }
+        if (getStatus() != null) {
+            _hashCode += getStatus().hashCode();
+        }
+        if (getApplyList() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getApplyList());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getApplyList(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getCreditList() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getCreditList());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getCreditList(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getDepositList() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getDepositList());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getDepositList(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getAccountingBookDetailList() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getAccountingBookDetailList());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getAccountingBookDetailList(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getCustomFieldList() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getCustomFieldList());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getCustomFieldList(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getInternalId() != null) {
+            _hashCode += getInternalId().hashCode();
+        }
+        if (getExternalId() != null) {
+            _hashCode += getExternalId().hashCode();
+        }
+        __hashCodeCalc = false;
+        return _hashCode;
+    }
+
+    // Type metadata
+    private static org.apache.axis.description.TypeDesc typeDesc =
+        new org.apache.axis.description.TypeDesc(CustomerPayment.class, true);
+
+    static {
+        typeDesc.setXmlType(new javax.xml.namespace.QName("urn:customers_2018_2.transactions.webservices.netsuite.com", "CustomerPayment"));
+        org.apache.axis.description.AttributeDesc attrField = new org.apache.axis.description.AttributeDesc();
+        attrField.setFieldName("internalId");
+        attrField.setXmlName(new javax.xml.namespace.QName("", "internalId"));
+        attrField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        typeDesc.addFieldDesc(attrField);
+        attrField = new org.apache.axis.description.AttributeDesc();
+        attrField.setFieldName("externalId");
+        attrField.setXmlName(new javax.xml.namespace.QName("", "externalId"));
+        attrField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        typeDesc.addFieldDesc(attrField);
+        org.apache.axis.description.ElementDesc elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("createdDate");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:customers_2018_2.transactions.webservices.netsuite.com", "createdDate"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "dateTime"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("lastModifiedDate");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:customers_2018_2.transactions.webservices.netsuite.com", "lastModifiedDate"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "dateTime"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("customForm");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:customers_2018_2.transactions.webservices.netsuite.com", "customForm"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("arAcct");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:customers_2018_2.transactions.webservices.netsuite.com", "arAcct"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("customer");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:customers_2018_2.transactions.webservices.netsuite.com", "customer"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("balance");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:customers_2018_2.transactions.webservices.netsuite.com", "balance"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "double"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("pending");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:customers_2018_2.transactions.webservices.netsuite.com", "pending"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "double"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("currency");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:customers_2018_2.transactions.webservices.netsuite.com", "currency"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("payment");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:customers_2018_2.transactions.webservices.netsuite.com", "payment"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "double"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("autoApply");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:customers_2018_2.transactions.webservices.netsuite.com", "autoApply"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("tranDate");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:customers_2018_2.transactions.webservices.netsuite.com", "tranDate"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "dateTime"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("tranId");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:customers_2018_2.transactions.webservices.netsuite.com", "tranId"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("postingPeriod");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:customers_2018_2.transactions.webservices.netsuite.com", "postingPeriod"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("paymentMethod");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:customers_2018_2.transactions.webservices.netsuite.com", "paymentMethod"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("ccIsPurchaseCardBin");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:customers_2018_2.transactions.webservices.netsuite.com", "ccIsPurchaseCardBin"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("memo");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:customers_2018_2.transactions.webservices.netsuite.com", "memo"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("ccProcessAsPurchaseCard");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:customers_2018_2.transactions.webservices.netsuite.com", "ccProcessAsPurchaseCard"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("checkNum");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:customers_2018_2.transactions.webservices.netsuite.com", "checkNum"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("currencyName");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:customers_2018_2.transactions.webservices.netsuite.com", "currencyName"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("exchangeRate");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:customers_2018_2.transactions.webservices.netsuite.com", "exchangeRate"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "double"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("creditCard");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:customers_2018_2.transactions.webservices.netsuite.com", "creditCard"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("chargeIt");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:customers_2018_2.transactions.webservices.netsuite.com", "chargeIt"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("ccNumber");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:customers_2018_2.transactions.webservices.netsuite.com", "ccNumber"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("ccExpireDate");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:customers_2018_2.transactions.webservices.netsuite.com", "ccExpireDate"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "dateTime"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("ccName");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:customers_2018_2.transactions.webservices.netsuite.com", "ccName"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("ccStreet");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:customers_2018_2.transactions.webservices.netsuite.com", "ccStreet"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("ccZipCode");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:customers_2018_2.transactions.webservices.netsuite.com", "ccZipCode"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("ccApproved");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:customers_2018_2.transactions.webservices.netsuite.com", "ccApproved"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("authCode");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:customers_2018_2.transactions.webservices.netsuite.com", "authCode"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("ccAvsStreetMatch");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:customers_2018_2.transactions.webservices.netsuite.com", "ccAvsStreetMatch"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:types.common_2018_2.platform.webservices.netsuite.com", "AvsMatchCode"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("ccAvsZipMatch");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:customers_2018_2.transactions.webservices.netsuite.com", "ccAvsZipMatch"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:types.common_2018_2.platform.webservices.netsuite.com", "AvsMatchCode"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("isRecurringPayment");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:customers_2018_2.transactions.webservices.netsuite.com", "isRecurringPayment"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("ccSecurityCode");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:customers_2018_2.transactions.webservices.netsuite.com", "ccSecurityCode"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("ignoreAvs");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:customers_2018_2.transactions.webservices.netsuite.com", "ignoreAvs"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("ccSecurityCodeMatch");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:customers_2018_2.transactions.webservices.netsuite.com", "ccSecurityCodeMatch"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:types.common_2018_2.platform.webservices.netsuite.com", "AvsMatchCode"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("threeDStatusCode");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:customers_2018_2.transactions.webservices.netsuite.com", "threeDStatusCode"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("pnRefNum");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:customers_2018_2.transactions.webservices.netsuite.com", "pnRefNum"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("creditCardProcessor");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:customers_2018_2.transactions.webservices.netsuite.com", "creditCardProcessor"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("debitCardIssueNo");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:customers_2018_2.transactions.webservices.netsuite.com", "debitCardIssueNo"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("validFrom");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:customers_2018_2.transactions.webservices.netsuite.com", "validFrom"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "dateTime"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("undepFunds");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:customers_2018_2.transactions.webservices.netsuite.com", "undepFunds"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("account");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:customers_2018_2.transactions.webservices.netsuite.com", "account"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("total");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:customers_2018_2.transactions.webservices.netsuite.com", "total"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "double"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("subsidiary");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:customers_2018_2.transactions.webservices.netsuite.com", "subsidiary"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("applied");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:customers_2018_2.transactions.webservices.netsuite.com", "applied"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "double"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("unapplied");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:customers_2018_2.transactions.webservices.netsuite.com", "unapplied"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "double"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("_class");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:customers_2018_2.transactions.webservices.netsuite.com", "class"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("department");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:customers_2018_2.transactions.webservices.netsuite.com", "department"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("location");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:customers_2018_2.transactions.webservices.netsuite.com", "location"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("status");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:customers_2018_2.transactions.webservices.netsuite.com", "status"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("applyList");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:customers_2018_2.transactions.webservices.netsuite.com", "applyList"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:customers_2018_2.transactions.webservices.netsuite.com", "CustomerPaymentApply"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:customers_2018_2.transactions.webservices.netsuite.com", "apply"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("creditList");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:customers_2018_2.transactions.webservices.netsuite.com", "creditList"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:customers_2018_2.transactions.webservices.netsuite.com", "CustomerPaymentCredit"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:customers_2018_2.transactions.webservices.netsuite.com", "credit"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("depositList");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:customers_2018_2.transactions.webservices.netsuite.com", "depositList"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:customers_2018_2.transactions.webservices.netsuite.com", "CustomerPaymentDeposit"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:customers_2018_2.transactions.webservices.netsuite.com", "deposit"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("accountingBookDetailList");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:customers_2018_2.transactions.webservices.netsuite.com", "accountingBookDetailList"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "AccountingBookDetail"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "accountingBookDetail"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("customFieldList");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:customers_2018_2.transactions.webservices.netsuite.com", "customFieldList"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "CustomFieldRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "customField"));
+        typeDesc.addFieldDesc(elemField);
+    }
+
+    /**
+     * Return type metadata object
+     */
+    public static org.apache.axis.description.TypeDesc getTypeDesc() {
+        return typeDesc;
+    }
+
+    /**
+     * Get Custom Serializer
+     */
+    public static org.apache.axis.encoding.Serializer getSerializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanSerializer(
+            _javaType, _xmlType, typeDesc);
+    }
+
+    /**
+     * Get Custom Deserializer
+     */
+    public static org.apache.axis.encoding.Deserializer getDeserializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanDeserializer(
+            _javaType, _xmlType, typeDesc);
     }
 
 }

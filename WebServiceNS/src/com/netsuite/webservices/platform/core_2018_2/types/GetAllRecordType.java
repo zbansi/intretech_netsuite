@@ -1,99 +1,102 @@
+/**
+ * GetAllRecordType.java
+ *
+ * This file was auto-generated from WSDL
+ * by the Apache Axis 1.4 Jul 28, 2010 (04:07:04 PDT) WSDL2Java emitter.
+ */
 
 package com.netsuite.webservices.platform.core_2018_2.types;
 
-import javax.xml.bind.annotation.XmlEnum;
-import javax.xml.bind.annotation.XmlEnumValue;
-import javax.xml.bind.annotation.XmlType;
+public class GetAllRecordType implements java.io.Serializable {
+    private java.lang.String _value_;
+    private static java.util.HashMap _table_ = new java.util.HashMap();
 
-
-/**
- * <p>GetAllRecordType的 Java 类。
- * 
- * <p>以下模式片段指定包含在此类中的预期内容。
- * <p>
- * <pre>
- * &lt;simpleType name="GetAllRecordType">
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     &lt;enumeration value="budgetCategory"/>
- *     &lt;enumeration value="campaignAudience"/>
- *     &lt;enumeration value="campaignCategory"/>
- *     &lt;enumeration value="campaignChannel"/>
- *     &lt;enumeration value="campaignFamily"/>
- *     &lt;enumeration value="campaignOffer"/>
- *     &lt;enumeration value="campaignSearchEngine"/>
- *     &lt;enumeration value="campaignSubscription"/>
- *     &lt;enumeration value="campaignVertical"/>
- *     &lt;enumeration value="currency"/>
- *     &lt;enumeration value="leadSource"/>
- *     &lt;enumeration value="state"/>
- *     &lt;enumeration value="supportCaseIssue"/>
- *     &lt;enumeration value="supportCaseOrigin"/>
- *     &lt;enumeration value="supportCasePriority"/>
- *     &lt;enumeration value="supportCaseStatus"/>
- *     &lt;enumeration value="supportCaseType"/>
- *     &lt;enumeration value="taxAcct"/>
- *   &lt;/restriction>
- * &lt;/simpleType>
- * </pre>
- * 
- */
-@XmlType(name = "GetAllRecordType", namespace = "urn:types.core_2018_2.platform.webservices.netsuite.com")
-@XmlEnum
-public enum GetAllRecordType {
-
-    @XmlEnumValue("budgetCategory")
-    BUDGET_CATEGORY("budgetCategory"),
-    @XmlEnumValue("campaignAudience")
-    CAMPAIGN_AUDIENCE("campaignAudience"),
-    @XmlEnumValue("campaignCategory")
-    CAMPAIGN_CATEGORY("campaignCategory"),
-    @XmlEnumValue("campaignChannel")
-    CAMPAIGN_CHANNEL("campaignChannel"),
-    @XmlEnumValue("campaignFamily")
-    CAMPAIGN_FAMILY("campaignFamily"),
-    @XmlEnumValue("campaignOffer")
-    CAMPAIGN_OFFER("campaignOffer"),
-    @XmlEnumValue("campaignSearchEngine")
-    CAMPAIGN_SEARCH_ENGINE("campaignSearchEngine"),
-    @XmlEnumValue("campaignSubscription")
-    CAMPAIGN_SUBSCRIPTION("campaignSubscription"),
-    @XmlEnumValue("campaignVertical")
-    CAMPAIGN_VERTICAL("campaignVertical"),
-    @XmlEnumValue("currency")
-    CURRENCY("currency"),
-    @XmlEnumValue("leadSource")
-    LEAD_SOURCE("leadSource"),
-    @XmlEnumValue("state")
-    STATE("state"),
-    @XmlEnumValue("supportCaseIssue")
-    SUPPORT_CASE_ISSUE("supportCaseIssue"),
-    @XmlEnumValue("supportCaseOrigin")
-    SUPPORT_CASE_ORIGIN("supportCaseOrigin"),
-    @XmlEnumValue("supportCasePriority")
-    SUPPORT_CASE_PRIORITY("supportCasePriority"),
-    @XmlEnumValue("supportCaseStatus")
-    SUPPORT_CASE_STATUS("supportCaseStatus"),
-    @XmlEnumValue("supportCaseType")
-    SUPPORT_CASE_TYPE("supportCaseType"),
-    @XmlEnumValue("taxAcct")
-    TAX_ACCT("taxAcct");
-    private final String value;
-
-    GetAllRecordType(String v) {
-        value = v;
+    // Constructor
+    protected GetAllRecordType(java.lang.String value) {
+        _value_ = value;
+        _table_.put(_value_,this);
     }
 
-    public String value() {
-        return value;
+    public static final java.lang.String _budgetCategory = "budgetCategory";
+    public static final java.lang.String _campaignAudience = "campaignAudience";
+    public static final java.lang.String _campaignCategory = "campaignCategory";
+    public static final java.lang.String _campaignChannel = "campaignChannel";
+    public static final java.lang.String _campaignFamily = "campaignFamily";
+    public static final java.lang.String _campaignOffer = "campaignOffer";
+    public static final java.lang.String _campaignSearchEngine = "campaignSearchEngine";
+    public static final java.lang.String _campaignSubscription = "campaignSubscription";
+    public static final java.lang.String _campaignVertical = "campaignVertical";
+    public static final java.lang.String _currency = "currency";
+    public static final java.lang.String _leadSource = "leadSource";
+    public static final java.lang.String _state = "state";
+    public static final java.lang.String _supportCaseIssue = "supportCaseIssue";
+    public static final java.lang.String _supportCaseOrigin = "supportCaseOrigin";
+    public static final java.lang.String _supportCasePriority = "supportCasePriority";
+    public static final java.lang.String _supportCaseStatus = "supportCaseStatus";
+    public static final java.lang.String _supportCaseType = "supportCaseType";
+    public static final java.lang.String _taxAcct = "taxAcct";
+    public static final GetAllRecordType budgetCategory = new GetAllRecordType(_budgetCategory);
+    public static final GetAllRecordType campaignAudience = new GetAllRecordType(_campaignAudience);
+    public static final GetAllRecordType campaignCategory = new GetAllRecordType(_campaignCategory);
+    public static final GetAllRecordType campaignChannel = new GetAllRecordType(_campaignChannel);
+    public static final GetAllRecordType campaignFamily = new GetAllRecordType(_campaignFamily);
+    public static final GetAllRecordType campaignOffer = new GetAllRecordType(_campaignOffer);
+    public static final GetAllRecordType campaignSearchEngine = new GetAllRecordType(_campaignSearchEngine);
+    public static final GetAllRecordType campaignSubscription = new GetAllRecordType(_campaignSubscription);
+    public static final GetAllRecordType campaignVertical = new GetAllRecordType(_campaignVertical);
+    public static final GetAllRecordType currency = new GetAllRecordType(_currency);
+    public static final GetAllRecordType leadSource = new GetAllRecordType(_leadSource);
+    public static final GetAllRecordType state = new GetAllRecordType(_state);
+    public static final GetAllRecordType supportCaseIssue = new GetAllRecordType(_supportCaseIssue);
+    public static final GetAllRecordType supportCaseOrigin = new GetAllRecordType(_supportCaseOrigin);
+    public static final GetAllRecordType supportCasePriority = new GetAllRecordType(_supportCasePriority);
+    public static final GetAllRecordType supportCaseStatus = new GetAllRecordType(_supportCaseStatus);
+    public static final GetAllRecordType supportCaseType = new GetAllRecordType(_supportCaseType);
+    public static final GetAllRecordType taxAcct = new GetAllRecordType(_taxAcct);
+    public java.lang.String getValue() { return _value_;}
+    public static GetAllRecordType fromValue(java.lang.String value)
+          throws java.lang.IllegalArgumentException {
+        GetAllRecordType enumeration = (GetAllRecordType)
+            _table_.get(value);
+        if (enumeration==null) throw new java.lang.IllegalArgumentException();
+        return enumeration;
     }
+    public static GetAllRecordType fromString(java.lang.String value)
+          throws java.lang.IllegalArgumentException {
+        return fromValue(value);
+    }
+    public boolean equals(java.lang.Object obj) {return (obj == this);}
+    public int hashCode() { return toString().hashCode();}
+    public java.lang.String toString() { return _value_;}
+    public java.lang.Object readResolve() throws java.io.ObjectStreamException { return fromValue(_value_);}
+    public static org.apache.axis.encoding.Serializer getSerializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new org.apache.axis.encoding.ser.EnumSerializer(
+            _javaType, _xmlType);
+    }
+    public static org.apache.axis.encoding.Deserializer getDeserializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new org.apache.axis.encoding.ser.EnumDeserializer(
+            _javaType, _xmlType);
+    }
+    // Type metadata
+    private static org.apache.axis.description.TypeDesc typeDesc =
+        new org.apache.axis.description.TypeDesc(GetAllRecordType.class);
 
-    public static GetAllRecordType fromValue(String v) {
-        for (GetAllRecordType c: GetAllRecordType.values()) {
-            if (c.value.equals(v)) {
-                return c;
-            }
-        }
-        throw new IllegalArgumentException(v);
+    static {
+        typeDesc.setXmlType(new javax.xml.namespace.QName("urn:types.core_2018_2.platform.webservices.netsuite.com", "GetAllRecordType"));
+    }
+    /**
+     * Return type metadata object
+     */
+    public static org.apache.axis.description.TypeDesc getTypeDesc() {
+        return typeDesc;
     }
 
 }

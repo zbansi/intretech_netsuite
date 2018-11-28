@@ -1,1232 +1,1828 @@
+/**
+ * ProjectTaskSearchBasic.java
+ *
+ * This file was auto-generated from WSDL
+ * by the Apache Axis 1.4 Jul 28, 2010 (04:07:04 PDT) WSDL2Java emitter.
+ */
 
 package com.netsuite.webservices.platform.common_2018_2;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlType;
-import com.netsuite.webservices.platform.core_2018_2.SearchBooleanField;
-import com.netsuite.webservices.platform.core_2018_2.SearchCustomFieldList;
-import com.netsuite.webservices.platform.core_2018_2.SearchDateField;
-import com.netsuite.webservices.platform.core_2018_2.SearchDoubleField;
-import com.netsuite.webservices.platform.core_2018_2.SearchEnumMultiSelectField;
-import com.netsuite.webservices.platform.core_2018_2.SearchLongField;
-import com.netsuite.webservices.platform.core_2018_2.SearchMultiSelectField;
-import com.netsuite.webservices.platform.core_2018_2.SearchRecordBasic;
-import com.netsuite.webservices.platform.core_2018_2.SearchStringField;
+public class ProjectTaskSearchBasic  extends com.netsuite.webservices.platform.core_2018_2.SearchRecordBasic  implements java.io.Serializable {
+    private com.netsuite.webservices.platform.core_2018_2.SearchDoubleField actualWork;
 
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef[] assignee;
 
-/**
- * <p>ProjectTaskSearchBasic complex type的 Java 类。
- * 
- * <p>以下模式片段指定包含在此类中的预期内容。
- * 
- * <pre>
- * &lt;complexType name="ProjectTaskSearchBasic">
- *   &lt;complexContent>
- *     &lt;extension base="{urn:core_2018_2.platform.webservices.netsuite.com}SearchRecordBasic">
- *       &lt;sequence>
- *         &lt;element name="actualWork" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchDoubleField" minOccurs="0"/>
- *         &lt;element name="assignee" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchMultiSelectField" minOccurs="0"/>
- *         &lt;element name="company" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchMultiSelectField" minOccurs="0"/>
- *         &lt;element name="constraintType" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchEnumMultiSelectField" minOccurs="0"/>
- *         &lt;element name="contact" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchMultiSelectField" minOccurs="0"/>
- *         &lt;element name="cost" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchDoubleField" minOccurs="0"/>
- *         &lt;element name="costBase" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchDoubleField" minOccurs="0"/>
- *         &lt;element name="costBaseBaseline" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchDoubleField" minOccurs="0"/>
- *         &lt;element name="costBaseline" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchDoubleField" minOccurs="0"/>
- *         &lt;element name="costBaseVariance" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchDoubleField" minOccurs="0"/>
- *         &lt;element name="costVariance" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchDoubleField" minOccurs="0"/>
- *         &lt;element name="costVariancePercent" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchDoubleField" minOccurs="0"/>
- *         &lt;element name="createdDate" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchDateField" minOccurs="0"/>
- *         &lt;element name="endDate" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchDateField" minOccurs="0"/>
- *         &lt;element name="endDateBaseline" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchDateField" minOccurs="0"/>
- *         &lt;element name="endDateVariance" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchDoubleField" minOccurs="0"/>
- *         &lt;element name="estimatedWork" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchDoubleField" minOccurs="0"/>
- *         &lt;element name="estimatedWorkBaseline" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchDoubleField" minOccurs="0"/>
- *         &lt;element name="estimatedWorkVariance" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchDoubleField" minOccurs="0"/>
- *         &lt;element name="estimatedWorkVariancePercent" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchDoubleField" minOccurs="0"/>
- *         &lt;element name="externalId" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchMultiSelectField" minOccurs="0"/>
- *         &lt;element name="externalIdString" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchStringField" minOccurs="0"/>
- *         &lt;element name="finishByDate" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchDateField" minOccurs="0"/>
- *         &lt;element name="id" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchLongField" minOccurs="0"/>
- *         &lt;element name="internalId" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchMultiSelectField" minOccurs="0"/>
- *         &lt;element name="internalIdNumber" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchLongField" minOccurs="0"/>
- *         &lt;element name="isMilestone" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchBooleanField" minOccurs="0"/>
- *         &lt;element name="isSummaryTask" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchBooleanField" minOccurs="0"/>
- *         &lt;element name="lastModifiedDate" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchDateField" minOccurs="0"/>
- *         &lt;element name="nonBillableTask" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchBooleanField" minOccurs="0"/>
- *         &lt;element name="owner" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchMultiSelectField" minOccurs="0"/>
- *         &lt;element name="parent" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchMultiSelectField" minOccurs="0"/>
- *         &lt;element name="percentWorkComplete" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchDoubleField" minOccurs="0"/>
- *         &lt;element name="predecessor" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchMultiSelectField" minOccurs="0"/>
- *         &lt;element name="predecessors" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchStringField" minOccurs="0"/>
- *         &lt;element name="priority" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchEnumMultiSelectField" minOccurs="0"/>
- *         &lt;element name="remainingWork" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchDoubleField" minOccurs="0"/>
- *         &lt;element name="startDate" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchDateField" minOccurs="0"/>
- *         &lt;element name="startDateBaseline" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchDateField" minOccurs="0"/>
- *         &lt;element name="startDateVariance" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchDoubleField" minOccurs="0"/>
- *         &lt;element name="status" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchEnumMultiSelectField" minOccurs="0"/>
- *         &lt;element name="successor" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchMultiSelectField" minOccurs="0"/>
- *         &lt;element name="title" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchStringField" minOccurs="0"/>
- *         &lt;element name="customFieldList" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchCustomFieldList" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/extension>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
- */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "ProjectTaskSearchBasic", propOrder = {
-    "actualWork",
-    "assignee",
-    "company",
-    "constraintType",
-    "contact",
-    "cost",
-    "costBase",
-    "costBaseBaseline",
-    "costBaseline",
-    "costBaseVariance",
-    "costVariance",
-    "costVariancePercent",
-    "createdDate",
-    "endDate",
-    "endDateBaseline",
-    "endDateVariance",
-    "estimatedWork",
-    "estimatedWorkBaseline",
-    "estimatedWorkVariance",
-    "estimatedWorkVariancePercent",
-    "externalId",
-    "externalIdString",
-    "finishByDate",
-    "id",
-    "internalId",
-    "internalIdNumber",
-    "isMilestone",
-    "isSummaryTask",
-    "lastModifiedDate",
-    "nonBillableTask",
-    "owner",
-    "parent",
-    "percentWorkComplete",
-    "predecessor",
-    "predecessors",
-    "priority",
-    "remainingWork",
-    "startDate",
-    "startDateBaseline",
-    "startDateVariance",
-    "status",
-    "successor",
-    "title",
-    "customFieldList"
-})
-public class ProjectTaskSearchBasic
-    extends SearchRecordBasic
-{
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef[] company;
 
-    protected SearchDoubleField actualWork;
-    protected SearchMultiSelectField assignee;
-    protected SearchMultiSelectField company;
-    protected SearchEnumMultiSelectField constraintType;
-    protected SearchMultiSelectField contact;
-    protected SearchDoubleField cost;
-    protected SearchDoubleField costBase;
-    protected SearchDoubleField costBaseBaseline;
-    protected SearchDoubleField costBaseline;
-    protected SearchDoubleField costBaseVariance;
-    protected SearchDoubleField costVariance;
-    protected SearchDoubleField costVariancePercent;
-    protected SearchDateField createdDate;
-    protected SearchDateField endDate;
-    protected SearchDateField endDateBaseline;
-    protected SearchDoubleField endDateVariance;
-    protected SearchDoubleField estimatedWork;
-    protected SearchDoubleField estimatedWorkBaseline;
-    protected SearchDoubleField estimatedWorkVariance;
-    protected SearchDoubleField estimatedWorkVariancePercent;
-    protected SearchMultiSelectField externalId;
-    protected SearchStringField externalIdString;
-    protected SearchDateField finishByDate;
-    protected SearchLongField id;
-    protected SearchMultiSelectField internalId;
-    protected SearchLongField internalIdNumber;
-    protected SearchBooleanField isMilestone;
-    protected SearchBooleanField isSummaryTask;
-    protected SearchDateField lastModifiedDate;
-    protected SearchBooleanField nonBillableTask;
-    protected SearchMultiSelectField owner;
-    protected SearchMultiSelectField parent;
-    protected SearchDoubleField percentWorkComplete;
-    protected SearchMultiSelectField predecessor;
-    protected SearchStringField predecessors;
-    protected SearchEnumMultiSelectField priority;
-    protected SearchDoubleField remainingWork;
-    protected SearchDateField startDate;
-    protected SearchDateField startDateBaseline;
-    protected SearchDoubleField startDateVariance;
-    protected SearchEnumMultiSelectField status;
-    protected SearchMultiSelectField successor;
-    protected SearchStringField title;
-    protected SearchCustomFieldList customFieldList;
+    private java.lang.String[] constraintType;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef[] contact;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchDoubleField cost;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchDoubleField costBase;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchDoubleField costBaseBaseline;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchDoubleField costBaseline;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchDoubleField costBaseVariance;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchDoubleField costVariance;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchDoubleField costVariancePercent;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchDateField createdDate;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchDateField endDate;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchDateField endDateBaseline;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchDoubleField endDateVariance;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchDoubleField estimatedWork;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchDoubleField estimatedWorkBaseline;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchDoubleField estimatedWorkVariance;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchDoubleField estimatedWorkVariancePercent;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef[] externalId;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchStringField externalIdString;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchDateField finishByDate;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchLongField id;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef[] internalId;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchLongField internalIdNumber;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchBooleanField isMilestone;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchBooleanField isSummaryTask;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchDateField lastModifiedDate;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchBooleanField nonBillableTask;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef[] owner;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef[] parent;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchDoubleField percentWorkComplete;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef[] predecessor;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchStringField predecessors;
+
+    private java.lang.String[] priority;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchDoubleField remainingWork;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchDateField startDate;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchDateField startDateBaseline;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchDoubleField startDateVariance;
+
+    private java.lang.String[] status;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef[] successor;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchStringField title;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchCustomField[] customFieldList;
+
+    public ProjectTaskSearchBasic() {
+    }
+
+    public ProjectTaskSearchBasic(
+           com.netsuite.webservices.platform.core_2018_2.SearchDoubleField actualWork,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef[] assignee,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef[] company,
+           java.lang.String[] constraintType,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef[] contact,
+           com.netsuite.webservices.platform.core_2018_2.SearchDoubleField cost,
+           com.netsuite.webservices.platform.core_2018_2.SearchDoubleField costBase,
+           com.netsuite.webservices.platform.core_2018_2.SearchDoubleField costBaseBaseline,
+           com.netsuite.webservices.platform.core_2018_2.SearchDoubleField costBaseline,
+           com.netsuite.webservices.platform.core_2018_2.SearchDoubleField costBaseVariance,
+           com.netsuite.webservices.platform.core_2018_2.SearchDoubleField costVariance,
+           com.netsuite.webservices.platform.core_2018_2.SearchDoubleField costVariancePercent,
+           com.netsuite.webservices.platform.core_2018_2.SearchDateField createdDate,
+           com.netsuite.webservices.platform.core_2018_2.SearchDateField endDate,
+           com.netsuite.webservices.platform.core_2018_2.SearchDateField endDateBaseline,
+           com.netsuite.webservices.platform.core_2018_2.SearchDoubleField endDateVariance,
+           com.netsuite.webservices.platform.core_2018_2.SearchDoubleField estimatedWork,
+           com.netsuite.webservices.platform.core_2018_2.SearchDoubleField estimatedWorkBaseline,
+           com.netsuite.webservices.platform.core_2018_2.SearchDoubleField estimatedWorkVariance,
+           com.netsuite.webservices.platform.core_2018_2.SearchDoubleField estimatedWorkVariancePercent,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef[] externalId,
+           com.netsuite.webservices.platform.core_2018_2.SearchStringField externalIdString,
+           com.netsuite.webservices.platform.core_2018_2.SearchDateField finishByDate,
+           com.netsuite.webservices.platform.core_2018_2.SearchLongField id,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef[] internalId,
+           com.netsuite.webservices.platform.core_2018_2.SearchLongField internalIdNumber,
+           com.netsuite.webservices.platform.core_2018_2.SearchBooleanField isMilestone,
+           com.netsuite.webservices.platform.core_2018_2.SearchBooleanField isSummaryTask,
+           com.netsuite.webservices.platform.core_2018_2.SearchDateField lastModifiedDate,
+           com.netsuite.webservices.platform.core_2018_2.SearchBooleanField nonBillableTask,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef[] owner,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef[] parent,
+           com.netsuite.webservices.platform.core_2018_2.SearchDoubleField percentWorkComplete,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef[] predecessor,
+           com.netsuite.webservices.platform.core_2018_2.SearchStringField predecessors,
+           java.lang.String[] priority,
+           com.netsuite.webservices.platform.core_2018_2.SearchDoubleField remainingWork,
+           com.netsuite.webservices.platform.core_2018_2.SearchDateField startDate,
+           com.netsuite.webservices.platform.core_2018_2.SearchDateField startDateBaseline,
+           com.netsuite.webservices.platform.core_2018_2.SearchDoubleField startDateVariance,
+           java.lang.String[] status,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef[] successor,
+           com.netsuite.webservices.platform.core_2018_2.SearchStringField title,
+           com.netsuite.webservices.platform.core_2018_2.SearchCustomField[] customFieldList) {
+        this.actualWork = actualWork;
+        this.assignee = assignee;
+        this.company = company;
+        this.constraintType = constraintType;
+        this.contact = contact;
+        this.cost = cost;
+        this.costBase = costBase;
+        this.costBaseBaseline = costBaseBaseline;
+        this.costBaseline = costBaseline;
+        this.costBaseVariance = costBaseVariance;
+        this.costVariance = costVariance;
+        this.costVariancePercent = costVariancePercent;
+        this.createdDate = createdDate;
+        this.endDate = endDate;
+        this.endDateBaseline = endDateBaseline;
+        this.endDateVariance = endDateVariance;
+        this.estimatedWork = estimatedWork;
+        this.estimatedWorkBaseline = estimatedWorkBaseline;
+        this.estimatedWorkVariance = estimatedWorkVariance;
+        this.estimatedWorkVariancePercent = estimatedWorkVariancePercent;
+        this.externalId = externalId;
+        this.externalIdString = externalIdString;
+        this.finishByDate = finishByDate;
+        this.id = id;
+        this.internalId = internalId;
+        this.internalIdNumber = internalIdNumber;
+        this.isMilestone = isMilestone;
+        this.isSummaryTask = isSummaryTask;
+        this.lastModifiedDate = lastModifiedDate;
+        this.nonBillableTask = nonBillableTask;
+        this.owner = owner;
+        this.parent = parent;
+        this.percentWorkComplete = percentWorkComplete;
+        this.predecessor = predecessor;
+        this.predecessors = predecessors;
+        this.priority = priority;
+        this.remainingWork = remainingWork;
+        this.startDate = startDate;
+        this.startDateBaseline = startDateBaseline;
+        this.startDateVariance = startDateVariance;
+        this.status = status;
+        this.successor = successor;
+        this.title = title;
+        this.customFieldList = customFieldList;
+    }
+
 
     /**
-     * 获取actualWork属性的值。
+     * Gets the actualWork value for this ProjectTaskSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchDoubleField }
-     *     
+     * @return actualWork
      */
-    public SearchDoubleField getActualWork() {
+    public com.netsuite.webservices.platform.core_2018_2.SearchDoubleField getActualWork() {
         return actualWork;
     }
 
-    /**
-     * 设置actualWork属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchDoubleField }
-     *     
-     */
-    public void setActualWork(SearchDoubleField value) {
-        this.actualWork = value;
-    }
 
     /**
-     * 获取assignee属性的值。
+     * Sets the actualWork value for this ProjectTaskSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchMultiSelectField }
-     *     
+     * @param actualWork
      */
-    public SearchMultiSelectField getAssignee() {
+    public void setActualWork(com.netsuite.webservices.platform.core_2018_2.SearchDoubleField actualWork) {
+        this.actualWork = actualWork;
+    }
+
+
+    /**
+     * Gets the assignee value for this ProjectTaskSearchBasic.
+     * 
+     * @return assignee
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef[] getAssignee() {
         return assignee;
     }
 
-    /**
-     * 设置assignee属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchMultiSelectField }
-     *     
-     */
-    public void setAssignee(SearchMultiSelectField value) {
-        this.assignee = value;
-    }
 
     /**
-     * 获取company属性的值。
+     * Sets the assignee value for this ProjectTaskSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchMultiSelectField }
-     *     
+     * @param assignee
      */
-    public SearchMultiSelectField getCompany() {
+    public void setAssignee(com.netsuite.webservices.platform.core_2018_2.RecordRef[] assignee) {
+        this.assignee = assignee;
+    }
+
+
+    /**
+     * Gets the company value for this ProjectTaskSearchBasic.
+     * 
+     * @return company
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef[] getCompany() {
         return company;
     }
 
-    /**
-     * 设置company属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchMultiSelectField }
-     *     
-     */
-    public void setCompany(SearchMultiSelectField value) {
-        this.company = value;
-    }
 
     /**
-     * 获取constraintType属性的值。
+     * Sets the company value for this ProjectTaskSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchEnumMultiSelectField }
-     *     
+     * @param company
      */
-    public SearchEnumMultiSelectField getConstraintType() {
+    public void setCompany(com.netsuite.webservices.platform.core_2018_2.RecordRef[] company) {
+        this.company = company;
+    }
+
+
+    /**
+     * Gets the constraintType value for this ProjectTaskSearchBasic.
+     * 
+     * @return constraintType
+     */
+    public java.lang.String[] getConstraintType() {
         return constraintType;
     }
 
-    /**
-     * 设置constraintType属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchEnumMultiSelectField }
-     *     
-     */
-    public void setConstraintType(SearchEnumMultiSelectField value) {
-        this.constraintType = value;
-    }
 
     /**
-     * 获取contact属性的值。
+     * Sets the constraintType value for this ProjectTaskSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchMultiSelectField }
-     *     
+     * @param constraintType
      */
-    public SearchMultiSelectField getContact() {
+    public void setConstraintType(java.lang.String[] constraintType) {
+        this.constraintType = constraintType;
+    }
+
+
+    /**
+     * Gets the contact value for this ProjectTaskSearchBasic.
+     * 
+     * @return contact
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef[] getContact() {
         return contact;
     }
 
-    /**
-     * 设置contact属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchMultiSelectField }
-     *     
-     */
-    public void setContact(SearchMultiSelectField value) {
-        this.contact = value;
-    }
 
     /**
-     * 获取cost属性的值。
+     * Sets the contact value for this ProjectTaskSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchDoubleField }
-     *     
+     * @param contact
      */
-    public SearchDoubleField getCost() {
+    public void setContact(com.netsuite.webservices.platform.core_2018_2.RecordRef[] contact) {
+        this.contact = contact;
+    }
+
+
+    /**
+     * Gets the cost value for this ProjectTaskSearchBasic.
+     * 
+     * @return cost
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchDoubleField getCost() {
         return cost;
     }
 
-    /**
-     * 设置cost属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchDoubleField }
-     *     
-     */
-    public void setCost(SearchDoubleField value) {
-        this.cost = value;
-    }
 
     /**
-     * 获取costBase属性的值。
+     * Sets the cost value for this ProjectTaskSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchDoubleField }
-     *     
+     * @param cost
      */
-    public SearchDoubleField getCostBase() {
+    public void setCost(com.netsuite.webservices.platform.core_2018_2.SearchDoubleField cost) {
+        this.cost = cost;
+    }
+
+
+    /**
+     * Gets the costBase value for this ProjectTaskSearchBasic.
+     * 
+     * @return costBase
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchDoubleField getCostBase() {
         return costBase;
     }
 
-    /**
-     * 设置costBase属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchDoubleField }
-     *     
-     */
-    public void setCostBase(SearchDoubleField value) {
-        this.costBase = value;
-    }
 
     /**
-     * 获取costBaseBaseline属性的值。
+     * Sets the costBase value for this ProjectTaskSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchDoubleField }
-     *     
+     * @param costBase
      */
-    public SearchDoubleField getCostBaseBaseline() {
+    public void setCostBase(com.netsuite.webservices.platform.core_2018_2.SearchDoubleField costBase) {
+        this.costBase = costBase;
+    }
+
+
+    /**
+     * Gets the costBaseBaseline value for this ProjectTaskSearchBasic.
+     * 
+     * @return costBaseBaseline
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchDoubleField getCostBaseBaseline() {
         return costBaseBaseline;
     }
 
-    /**
-     * 设置costBaseBaseline属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchDoubleField }
-     *     
-     */
-    public void setCostBaseBaseline(SearchDoubleField value) {
-        this.costBaseBaseline = value;
-    }
 
     /**
-     * 获取costBaseline属性的值。
+     * Sets the costBaseBaseline value for this ProjectTaskSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchDoubleField }
-     *     
+     * @param costBaseBaseline
      */
-    public SearchDoubleField getCostBaseline() {
+    public void setCostBaseBaseline(com.netsuite.webservices.platform.core_2018_2.SearchDoubleField costBaseBaseline) {
+        this.costBaseBaseline = costBaseBaseline;
+    }
+
+
+    /**
+     * Gets the costBaseline value for this ProjectTaskSearchBasic.
+     * 
+     * @return costBaseline
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchDoubleField getCostBaseline() {
         return costBaseline;
     }
 
-    /**
-     * 设置costBaseline属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchDoubleField }
-     *     
-     */
-    public void setCostBaseline(SearchDoubleField value) {
-        this.costBaseline = value;
-    }
 
     /**
-     * 获取costBaseVariance属性的值。
+     * Sets the costBaseline value for this ProjectTaskSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchDoubleField }
-     *     
+     * @param costBaseline
      */
-    public SearchDoubleField getCostBaseVariance() {
+    public void setCostBaseline(com.netsuite.webservices.platform.core_2018_2.SearchDoubleField costBaseline) {
+        this.costBaseline = costBaseline;
+    }
+
+
+    /**
+     * Gets the costBaseVariance value for this ProjectTaskSearchBasic.
+     * 
+     * @return costBaseVariance
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchDoubleField getCostBaseVariance() {
         return costBaseVariance;
     }
 
-    /**
-     * 设置costBaseVariance属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchDoubleField }
-     *     
-     */
-    public void setCostBaseVariance(SearchDoubleField value) {
-        this.costBaseVariance = value;
-    }
 
     /**
-     * 获取costVariance属性的值。
+     * Sets the costBaseVariance value for this ProjectTaskSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchDoubleField }
-     *     
+     * @param costBaseVariance
      */
-    public SearchDoubleField getCostVariance() {
+    public void setCostBaseVariance(com.netsuite.webservices.platform.core_2018_2.SearchDoubleField costBaseVariance) {
+        this.costBaseVariance = costBaseVariance;
+    }
+
+
+    /**
+     * Gets the costVariance value for this ProjectTaskSearchBasic.
+     * 
+     * @return costVariance
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchDoubleField getCostVariance() {
         return costVariance;
     }
 
-    /**
-     * 设置costVariance属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchDoubleField }
-     *     
-     */
-    public void setCostVariance(SearchDoubleField value) {
-        this.costVariance = value;
-    }
 
     /**
-     * 获取costVariancePercent属性的值。
+     * Sets the costVariance value for this ProjectTaskSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchDoubleField }
-     *     
+     * @param costVariance
      */
-    public SearchDoubleField getCostVariancePercent() {
+    public void setCostVariance(com.netsuite.webservices.platform.core_2018_2.SearchDoubleField costVariance) {
+        this.costVariance = costVariance;
+    }
+
+
+    /**
+     * Gets the costVariancePercent value for this ProjectTaskSearchBasic.
+     * 
+     * @return costVariancePercent
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchDoubleField getCostVariancePercent() {
         return costVariancePercent;
     }
 
-    /**
-     * 设置costVariancePercent属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchDoubleField }
-     *     
-     */
-    public void setCostVariancePercent(SearchDoubleField value) {
-        this.costVariancePercent = value;
-    }
 
     /**
-     * 获取createdDate属性的值。
+     * Sets the costVariancePercent value for this ProjectTaskSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchDateField }
-     *     
+     * @param costVariancePercent
      */
-    public SearchDateField getCreatedDate() {
+    public void setCostVariancePercent(com.netsuite.webservices.platform.core_2018_2.SearchDoubleField costVariancePercent) {
+        this.costVariancePercent = costVariancePercent;
+    }
+
+
+    /**
+     * Gets the createdDate value for this ProjectTaskSearchBasic.
+     * 
+     * @return createdDate
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchDateField getCreatedDate() {
         return createdDate;
     }
 
-    /**
-     * 设置createdDate属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchDateField }
-     *     
-     */
-    public void setCreatedDate(SearchDateField value) {
-        this.createdDate = value;
-    }
 
     /**
-     * 获取endDate属性的值。
+     * Sets the createdDate value for this ProjectTaskSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchDateField }
-     *     
+     * @param createdDate
      */
-    public SearchDateField getEndDate() {
+    public void setCreatedDate(com.netsuite.webservices.platform.core_2018_2.SearchDateField createdDate) {
+        this.createdDate = createdDate;
+    }
+
+
+    /**
+     * Gets the endDate value for this ProjectTaskSearchBasic.
+     * 
+     * @return endDate
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchDateField getEndDate() {
         return endDate;
     }
 
-    /**
-     * 设置endDate属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchDateField }
-     *     
-     */
-    public void setEndDate(SearchDateField value) {
-        this.endDate = value;
-    }
 
     /**
-     * 获取endDateBaseline属性的值。
+     * Sets the endDate value for this ProjectTaskSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchDateField }
-     *     
+     * @param endDate
      */
-    public SearchDateField getEndDateBaseline() {
+    public void setEndDate(com.netsuite.webservices.platform.core_2018_2.SearchDateField endDate) {
+        this.endDate = endDate;
+    }
+
+
+    /**
+     * Gets the endDateBaseline value for this ProjectTaskSearchBasic.
+     * 
+     * @return endDateBaseline
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchDateField getEndDateBaseline() {
         return endDateBaseline;
     }
 
-    /**
-     * 设置endDateBaseline属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchDateField }
-     *     
-     */
-    public void setEndDateBaseline(SearchDateField value) {
-        this.endDateBaseline = value;
-    }
 
     /**
-     * 获取endDateVariance属性的值。
+     * Sets the endDateBaseline value for this ProjectTaskSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchDoubleField }
-     *     
+     * @param endDateBaseline
      */
-    public SearchDoubleField getEndDateVariance() {
+    public void setEndDateBaseline(com.netsuite.webservices.platform.core_2018_2.SearchDateField endDateBaseline) {
+        this.endDateBaseline = endDateBaseline;
+    }
+
+
+    /**
+     * Gets the endDateVariance value for this ProjectTaskSearchBasic.
+     * 
+     * @return endDateVariance
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchDoubleField getEndDateVariance() {
         return endDateVariance;
     }
 
-    /**
-     * 设置endDateVariance属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchDoubleField }
-     *     
-     */
-    public void setEndDateVariance(SearchDoubleField value) {
-        this.endDateVariance = value;
-    }
 
     /**
-     * 获取estimatedWork属性的值。
+     * Sets the endDateVariance value for this ProjectTaskSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchDoubleField }
-     *     
+     * @param endDateVariance
      */
-    public SearchDoubleField getEstimatedWork() {
+    public void setEndDateVariance(com.netsuite.webservices.platform.core_2018_2.SearchDoubleField endDateVariance) {
+        this.endDateVariance = endDateVariance;
+    }
+
+
+    /**
+     * Gets the estimatedWork value for this ProjectTaskSearchBasic.
+     * 
+     * @return estimatedWork
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchDoubleField getEstimatedWork() {
         return estimatedWork;
     }
 
-    /**
-     * 设置estimatedWork属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchDoubleField }
-     *     
-     */
-    public void setEstimatedWork(SearchDoubleField value) {
-        this.estimatedWork = value;
-    }
 
     /**
-     * 获取estimatedWorkBaseline属性的值。
+     * Sets the estimatedWork value for this ProjectTaskSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchDoubleField }
-     *     
+     * @param estimatedWork
      */
-    public SearchDoubleField getEstimatedWorkBaseline() {
+    public void setEstimatedWork(com.netsuite.webservices.platform.core_2018_2.SearchDoubleField estimatedWork) {
+        this.estimatedWork = estimatedWork;
+    }
+
+
+    /**
+     * Gets the estimatedWorkBaseline value for this ProjectTaskSearchBasic.
+     * 
+     * @return estimatedWorkBaseline
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchDoubleField getEstimatedWorkBaseline() {
         return estimatedWorkBaseline;
     }
 
-    /**
-     * 设置estimatedWorkBaseline属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchDoubleField }
-     *     
-     */
-    public void setEstimatedWorkBaseline(SearchDoubleField value) {
-        this.estimatedWorkBaseline = value;
-    }
 
     /**
-     * 获取estimatedWorkVariance属性的值。
+     * Sets the estimatedWorkBaseline value for this ProjectTaskSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchDoubleField }
-     *     
+     * @param estimatedWorkBaseline
      */
-    public SearchDoubleField getEstimatedWorkVariance() {
+    public void setEstimatedWorkBaseline(com.netsuite.webservices.platform.core_2018_2.SearchDoubleField estimatedWorkBaseline) {
+        this.estimatedWorkBaseline = estimatedWorkBaseline;
+    }
+
+
+    /**
+     * Gets the estimatedWorkVariance value for this ProjectTaskSearchBasic.
+     * 
+     * @return estimatedWorkVariance
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchDoubleField getEstimatedWorkVariance() {
         return estimatedWorkVariance;
     }
 
-    /**
-     * 设置estimatedWorkVariance属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchDoubleField }
-     *     
-     */
-    public void setEstimatedWorkVariance(SearchDoubleField value) {
-        this.estimatedWorkVariance = value;
-    }
 
     /**
-     * 获取estimatedWorkVariancePercent属性的值。
+     * Sets the estimatedWorkVariance value for this ProjectTaskSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchDoubleField }
-     *     
+     * @param estimatedWorkVariance
      */
-    public SearchDoubleField getEstimatedWorkVariancePercent() {
+    public void setEstimatedWorkVariance(com.netsuite.webservices.platform.core_2018_2.SearchDoubleField estimatedWorkVariance) {
+        this.estimatedWorkVariance = estimatedWorkVariance;
+    }
+
+
+    /**
+     * Gets the estimatedWorkVariancePercent value for this ProjectTaskSearchBasic.
+     * 
+     * @return estimatedWorkVariancePercent
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchDoubleField getEstimatedWorkVariancePercent() {
         return estimatedWorkVariancePercent;
     }
 
-    /**
-     * 设置estimatedWorkVariancePercent属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchDoubleField }
-     *     
-     */
-    public void setEstimatedWorkVariancePercent(SearchDoubleField value) {
-        this.estimatedWorkVariancePercent = value;
-    }
 
     /**
-     * 获取externalId属性的值。
+     * Sets the estimatedWorkVariancePercent value for this ProjectTaskSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchMultiSelectField }
-     *     
+     * @param estimatedWorkVariancePercent
      */
-    public SearchMultiSelectField getExternalId() {
+    public void setEstimatedWorkVariancePercent(com.netsuite.webservices.platform.core_2018_2.SearchDoubleField estimatedWorkVariancePercent) {
+        this.estimatedWorkVariancePercent = estimatedWorkVariancePercent;
+    }
+
+
+    /**
+     * Gets the externalId value for this ProjectTaskSearchBasic.
+     * 
+     * @return externalId
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef[] getExternalId() {
         return externalId;
     }
 
-    /**
-     * 设置externalId属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchMultiSelectField }
-     *     
-     */
-    public void setExternalId(SearchMultiSelectField value) {
-        this.externalId = value;
-    }
 
     /**
-     * 获取externalIdString属性的值。
+     * Sets the externalId value for this ProjectTaskSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchStringField }
-     *     
+     * @param externalId
      */
-    public SearchStringField getExternalIdString() {
+    public void setExternalId(com.netsuite.webservices.platform.core_2018_2.RecordRef[] externalId) {
+        this.externalId = externalId;
+    }
+
+
+    /**
+     * Gets the externalIdString value for this ProjectTaskSearchBasic.
+     * 
+     * @return externalIdString
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchStringField getExternalIdString() {
         return externalIdString;
     }
 
-    /**
-     * 设置externalIdString属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchStringField }
-     *     
-     */
-    public void setExternalIdString(SearchStringField value) {
-        this.externalIdString = value;
-    }
 
     /**
-     * 获取finishByDate属性的值。
+     * Sets the externalIdString value for this ProjectTaskSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchDateField }
-     *     
+     * @param externalIdString
      */
-    public SearchDateField getFinishByDate() {
+    public void setExternalIdString(com.netsuite.webservices.platform.core_2018_2.SearchStringField externalIdString) {
+        this.externalIdString = externalIdString;
+    }
+
+
+    /**
+     * Gets the finishByDate value for this ProjectTaskSearchBasic.
+     * 
+     * @return finishByDate
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchDateField getFinishByDate() {
         return finishByDate;
     }
 
-    /**
-     * 设置finishByDate属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchDateField }
-     *     
-     */
-    public void setFinishByDate(SearchDateField value) {
-        this.finishByDate = value;
-    }
 
     /**
-     * 获取id属性的值。
+     * Sets the finishByDate value for this ProjectTaskSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchLongField }
-     *     
+     * @param finishByDate
      */
-    public SearchLongField getId() {
+    public void setFinishByDate(com.netsuite.webservices.platform.core_2018_2.SearchDateField finishByDate) {
+        this.finishByDate = finishByDate;
+    }
+
+
+    /**
+     * Gets the id value for this ProjectTaskSearchBasic.
+     * 
+     * @return id
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchLongField getId() {
         return id;
     }
 
-    /**
-     * 设置id属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchLongField }
-     *     
-     */
-    public void setId(SearchLongField value) {
-        this.id = value;
-    }
 
     /**
-     * 获取internalId属性的值。
+     * Sets the id value for this ProjectTaskSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchMultiSelectField }
-     *     
+     * @param id
      */
-    public SearchMultiSelectField getInternalId() {
+    public void setId(com.netsuite.webservices.platform.core_2018_2.SearchLongField id) {
+        this.id = id;
+    }
+
+
+    /**
+     * Gets the internalId value for this ProjectTaskSearchBasic.
+     * 
+     * @return internalId
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef[] getInternalId() {
         return internalId;
     }
 
-    /**
-     * 设置internalId属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchMultiSelectField }
-     *     
-     */
-    public void setInternalId(SearchMultiSelectField value) {
-        this.internalId = value;
-    }
 
     /**
-     * 获取internalIdNumber属性的值。
+     * Sets the internalId value for this ProjectTaskSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchLongField }
-     *     
+     * @param internalId
      */
-    public SearchLongField getInternalIdNumber() {
+    public void setInternalId(com.netsuite.webservices.platform.core_2018_2.RecordRef[] internalId) {
+        this.internalId = internalId;
+    }
+
+
+    /**
+     * Gets the internalIdNumber value for this ProjectTaskSearchBasic.
+     * 
+     * @return internalIdNumber
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchLongField getInternalIdNumber() {
         return internalIdNumber;
     }
 
-    /**
-     * 设置internalIdNumber属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchLongField }
-     *     
-     */
-    public void setInternalIdNumber(SearchLongField value) {
-        this.internalIdNumber = value;
-    }
 
     /**
-     * 获取isMilestone属性的值。
+     * Sets the internalIdNumber value for this ProjectTaskSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchBooleanField }
-     *     
+     * @param internalIdNumber
      */
-    public SearchBooleanField getIsMilestone() {
+    public void setInternalIdNumber(com.netsuite.webservices.platform.core_2018_2.SearchLongField internalIdNumber) {
+        this.internalIdNumber = internalIdNumber;
+    }
+
+
+    /**
+     * Gets the isMilestone value for this ProjectTaskSearchBasic.
+     * 
+     * @return isMilestone
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchBooleanField getIsMilestone() {
         return isMilestone;
     }
 
-    /**
-     * 设置isMilestone属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchBooleanField }
-     *     
-     */
-    public void setIsMilestone(SearchBooleanField value) {
-        this.isMilestone = value;
-    }
 
     /**
-     * 获取isSummaryTask属性的值。
+     * Sets the isMilestone value for this ProjectTaskSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchBooleanField }
-     *     
+     * @param isMilestone
      */
-    public SearchBooleanField getIsSummaryTask() {
+    public void setIsMilestone(com.netsuite.webservices.platform.core_2018_2.SearchBooleanField isMilestone) {
+        this.isMilestone = isMilestone;
+    }
+
+
+    /**
+     * Gets the isSummaryTask value for this ProjectTaskSearchBasic.
+     * 
+     * @return isSummaryTask
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchBooleanField getIsSummaryTask() {
         return isSummaryTask;
     }
 
-    /**
-     * 设置isSummaryTask属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchBooleanField }
-     *     
-     */
-    public void setIsSummaryTask(SearchBooleanField value) {
-        this.isSummaryTask = value;
-    }
 
     /**
-     * 获取lastModifiedDate属性的值。
+     * Sets the isSummaryTask value for this ProjectTaskSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchDateField }
-     *     
+     * @param isSummaryTask
      */
-    public SearchDateField getLastModifiedDate() {
+    public void setIsSummaryTask(com.netsuite.webservices.platform.core_2018_2.SearchBooleanField isSummaryTask) {
+        this.isSummaryTask = isSummaryTask;
+    }
+
+
+    /**
+     * Gets the lastModifiedDate value for this ProjectTaskSearchBasic.
+     * 
+     * @return lastModifiedDate
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchDateField getLastModifiedDate() {
         return lastModifiedDate;
     }
 
-    /**
-     * 设置lastModifiedDate属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchDateField }
-     *     
-     */
-    public void setLastModifiedDate(SearchDateField value) {
-        this.lastModifiedDate = value;
-    }
 
     /**
-     * 获取nonBillableTask属性的值。
+     * Sets the lastModifiedDate value for this ProjectTaskSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchBooleanField }
-     *     
+     * @param lastModifiedDate
      */
-    public SearchBooleanField getNonBillableTask() {
+    public void setLastModifiedDate(com.netsuite.webservices.platform.core_2018_2.SearchDateField lastModifiedDate) {
+        this.lastModifiedDate = lastModifiedDate;
+    }
+
+
+    /**
+     * Gets the nonBillableTask value for this ProjectTaskSearchBasic.
+     * 
+     * @return nonBillableTask
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchBooleanField getNonBillableTask() {
         return nonBillableTask;
     }
 
-    /**
-     * 设置nonBillableTask属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchBooleanField }
-     *     
-     */
-    public void setNonBillableTask(SearchBooleanField value) {
-        this.nonBillableTask = value;
-    }
 
     /**
-     * 获取owner属性的值。
+     * Sets the nonBillableTask value for this ProjectTaskSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchMultiSelectField }
-     *     
+     * @param nonBillableTask
      */
-    public SearchMultiSelectField getOwner() {
+    public void setNonBillableTask(com.netsuite.webservices.platform.core_2018_2.SearchBooleanField nonBillableTask) {
+        this.nonBillableTask = nonBillableTask;
+    }
+
+
+    /**
+     * Gets the owner value for this ProjectTaskSearchBasic.
+     * 
+     * @return owner
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef[] getOwner() {
         return owner;
     }
 
-    /**
-     * 设置owner属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchMultiSelectField }
-     *     
-     */
-    public void setOwner(SearchMultiSelectField value) {
-        this.owner = value;
-    }
 
     /**
-     * 获取parent属性的值。
+     * Sets the owner value for this ProjectTaskSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchMultiSelectField }
-     *     
+     * @param owner
      */
-    public SearchMultiSelectField getParent() {
+    public void setOwner(com.netsuite.webservices.platform.core_2018_2.RecordRef[] owner) {
+        this.owner = owner;
+    }
+
+
+    /**
+     * Gets the parent value for this ProjectTaskSearchBasic.
+     * 
+     * @return parent
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef[] getParent() {
         return parent;
     }
 
-    /**
-     * 设置parent属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchMultiSelectField }
-     *     
-     */
-    public void setParent(SearchMultiSelectField value) {
-        this.parent = value;
-    }
 
     /**
-     * 获取percentWorkComplete属性的值。
+     * Sets the parent value for this ProjectTaskSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchDoubleField }
-     *     
+     * @param parent
      */
-    public SearchDoubleField getPercentWorkComplete() {
+    public void setParent(com.netsuite.webservices.platform.core_2018_2.RecordRef[] parent) {
+        this.parent = parent;
+    }
+
+
+    /**
+     * Gets the percentWorkComplete value for this ProjectTaskSearchBasic.
+     * 
+     * @return percentWorkComplete
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchDoubleField getPercentWorkComplete() {
         return percentWorkComplete;
     }
 
-    /**
-     * 设置percentWorkComplete属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchDoubleField }
-     *     
-     */
-    public void setPercentWorkComplete(SearchDoubleField value) {
-        this.percentWorkComplete = value;
-    }
 
     /**
-     * 获取predecessor属性的值。
+     * Sets the percentWorkComplete value for this ProjectTaskSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchMultiSelectField }
-     *     
+     * @param percentWorkComplete
      */
-    public SearchMultiSelectField getPredecessor() {
+    public void setPercentWorkComplete(com.netsuite.webservices.platform.core_2018_2.SearchDoubleField percentWorkComplete) {
+        this.percentWorkComplete = percentWorkComplete;
+    }
+
+
+    /**
+     * Gets the predecessor value for this ProjectTaskSearchBasic.
+     * 
+     * @return predecessor
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef[] getPredecessor() {
         return predecessor;
     }
 
-    /**
-     * 设置predecessor属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchMultiSelectField }
-     *     
-     */
-    public void setPredecessor(SearchMultiSelectField value) {
-        this.predecessor = value;
-    }
 
     /**
-     * 获取predecessors属性的值。
+     * Sets the predecessor value for this ProjectTaskSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchStringField }
-     *     
+     * @param predecessor
      */
-    public SearchStringField getPredecessors() {
+    public void setPredecessor(com.netsuite.webservices.platform.core_2018_2.RecordRef[] predecessor) {
+        this.predecessor = predecessor;
+    }
+
+
+    /**
+     * Gets the predecessors value for this ProjectTaskSearchBasic.
+     * 
+     * @return predecessors
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchStringField getPredecessors() {
         return predecessors;
     }
 
-    /**
-     * 设置predecessors属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchStringField }
-     *     
-     */
-    public void setPredecessors(SearchStringField value) {
-        this.predecessors = value;
-    }
 
     /**
-     * 获取priority属性的值。
+     * Sets the predecessors value for this ProjectTaskSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchEnumMultiSelectField }
-     *     
+     * @param predecessors
      */
-    public SearchEnumMultiSelectField getPriority() {
+    public void setPredecessors(com.netsuite.webservices.platform.core_2018_2.SearchStringField predecessors) {
+        this.predecessors = predecessors;
+    }
+
+
+    /**
+     * Gets the priority value for this ProjectTaskSearchBasic.
+     * 
+     * @return priority
+     */
+    public java.lang.String[] getPriority() {
         return priority;
     }
 
-    /**
-     * 设置priority属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchEnumMultiSelectField }
-     *     
-     */
-    public void setPriority(SearchEnumMultiSelectField value) {
-        this.priority = value;
-    }
 
     /**
-     * 获取remainingWork属性的值。
+     * Sets the priority value for this ProjectTaskSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchDoubleField }
-     *     
+     * @param priority
      */
-    public SearchDoubleField getRemainingWork() {
+    public void setPriority(java.lang.String[] priority) {
+        this.priority = priority;
+    }
+
+
+    /**
+     * Gets the remainingWork value for this ProjectTaskSearchBasic.
+     * 
+     * @return remainingWork
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchDoubleField getRemainingWork() {
         return remainingWork;
     }
 
-    /**
-     * 设置remainingWork属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchDoubleField }
-     *     
-     */
-    public void setRemainingWork(SearchDoubleField value) {
-        this.remainingWork = value;
-    }
 
     /**
-     * 获取startDate属性的值。
+     * Sets the remainingWork value for this ProjectTaskSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchDateField }
-     *     
+     * @param remainingWork
      */
-    public SearchDateField getStartDate() {
+    public void setRemainingWork(com.netsuite.webservices.platform.core_2018_2.SearchDoubleField remainingWork) {
+        this.remainingWork = remainingWork;
+    }
+
+
+    /**
+     * Gets the startDate value for this ProjectTaskSearchBasic.
+     * 
+     * @return startDate
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchDateField getStartDate() {
         return startDate;
     }
 
-    /**
-     * 设置startDate属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchDateField }
-     *     
-     */
-    public void setStartDate(SearchDateField value) {
-        this.startDate = value;
-    }
 
     /**
-     * 获取startDateBaseline属性的值。
+     * Sets the startDate value for this ProjectTaskSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchDateField }
-     *     
+     * @param startDate
      */
-    public SearchDateField getStartDateBaseline() {
+    public void setStartDate(com.netsuite.webservices.platform.core_2018_2.SearchDateField startDate) {
+        this.startDate = startDate;
+    }
+
+
+    /**
+     * Gets the startDateBaseline value for this ProjectTaskSearchBasic.
+     * 
+     * @return startDateBaseline
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchDateField getStartDateBaseline() {
         return startDateBaseline;
     }
 
-    /**
-     * 设置startDateBaseline属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchDateField }
-     *     
-     */
-    public void setStartDateBaseline(SearchDateField value) {
-        this.startDateBaseline = value;
-    }
 
     /**
-     * 获取startDateVariance属性的值。
+     * Sets the startDateBaseline value for this ProjectTaskSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchDoubleField }
-     *     
+     * @param startDateBaseline
      */
-    public SearchDoubleField getStartDateVariance() {
+    public void setStartDateBaseline(com.netsuite.webservices.platform.core_2018_2.SearchDateField startDateBaseline) {
+        this.startDateBaseline = startDateBaseline;
+    }
+
+
+    /**
+     * Gets the startDateVariance value for this ProjectTaskSearchBasic.
+     * 
+     * @return startDateVariance
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchDoubleField getStartDateVariance() {
         return startDateVariance;
     }
 
-    /**
-     * 设置startDateVariance属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchDoubleField }
-     *     
-     */
-    public void setStartDateVariance(SearchDoubleField value) {
-        this.startDateVariance = value;
-    }
 
     /**
-     * 获取status属性的值。
+     * Sets the startDateVariance value for this ProjectTaskSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchEnumMultiSelectField }
-     *     
+     * @param startDateVariance
      */
-    public SearchEnumMultiSelectField getStatus() {
+    public void setStartDateVariance(com.netsuite.webservices.platform.core_2018_2.SearchDoubleField startDateVariance) {
+        this.startDateVariance = startDateVariance;
+    }
+
+
+    /**
+     * Gets the status value for this ProjectTaskSearchBasic.
+     * 
+     * @return status
+     */
+    public java.lang.String[] getStatus() {
         return status;
     }
 
-    /**
-     * 设置status属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchEnumMultiSelectField }
-     *     
-     */
-    public void setStatus(SearchEnumMultiSelectField value) {
-        this.status = value;
-    }
 
     /**
-     * 获取successor属性的值。
+     * Sets the status value for this ProjectTaskSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchMultiSelectField }
-     *     
+     * @param status
      */
-    public SearchMultiSelectField getSuccessor() {
+    public void setStatus(java.lang.String[] status) {
+        this.status = status;
+    }
+
+
+    /**
+     * Gets the successor value for this ProjectTaskSearchBasic.
+     * 
+     * @return successor
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef[] getSuccessor() {
         return successor;
     }
 
-    /**
-     * 设置successor属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchMultiSelectField }
-     *     
-     */
-    public void setSuccessor(SearchMultiSelectField value) {
-        this.successor = value;
-    }
 
     /**
-     * 获取title属性的值。
+     * Sets the successor value for this ProjectTaskSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchStringField }
-     *     
+     * @param successor
      */
-    public SearchStringField getTitle() {
+    public void setSuccessor(com.netsuite.webservices.platform.core_2018_2.RecordRef[] successor) {
+        this.successor = successor;
+    }
+
+
+    /**
+     * Gets the title value for this ProjectTaskSearchBasic.
+     * 
+     * @return title
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchStringField getTitle() {
         return title;
     }
 
-    /**
-     * 设置title属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchStringField }
-     *     
-     */
-    public void setTitle(SearchStringField value) {
-        this.title = value;
-    }
 
     /**
-     * 获取customFieldList属性的值。
+     * Sets the title value for this ProjectTaskSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchCustomFieldList }
-     *     
+     * @param title
      */
-    public SearchCustomFieldList getCustomFieldList() {
+    public void setTitle(com.netsuite.webservices.platform.core_2018_2.SearchStringField title) {
+        this.title = title;
+    }
+
+
+    /**
+     * Gets the customFieldList value for this ProjectTaskSearchBasic.
+     * 
+     * @return customFieldList
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchCustomField[] getCustomFieldList() {
         return customFieldList;
     }
 
+
     /**
-     * 设置customFieldList属性的值。
+     * Sets the customFieldList value for this ProjectTaskSearchBasic.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchCustomFieldList }
-     *     
+     * @param customFieldList
      */
-    public void setCustomFieldList(SearchCustomFieldList value) {
-        this.customFieldList = value;
+    public void setCustomFieldList(com.netsuite.webservices.platform.core_2018_2.SearchCustomField[] customFieldList) {
+        this.customFieldList = customFieldList;
+    }
+
+    private java.lang.Object __equalsCalc = null;
+    public synchronized boolean equals(java.lang.Object obj) {
+        if (!(obj instanceof ProjectTaskSearchBasic)) return false;
+        ProjectTaskSearchBasic other = (ProjectTaskSearchBasic) obj;
+        if (obj == null) return false;
+        if (this == obj) return true;
+        if (__equalsCalc != null) {
+            return (__equalsCalc == obj);
+        }
+        __equalsCalc = obj;
+        boolean _equals;
+        _equals = super.equals(obj) && 
+            ((this.actualWork==null && other.getActualWork()==null) || 
+             (this.actualWork!=null &&
+              this.actualWork.equals(other.getActualWork()))) &&
+            ((this.assignee==null && other.getAssignee()==null) || 
+             (this.assignee!=null &&
+              java.util.Arrays.equals(this.assignee, other.getAssignee()))) &&
+            ((this.company==null && other.getCompany()==null) || 
+             (this.company!=null &&
+              java.util.Arrays.equals(this.company, other.getCompany()))) &&
+            ((this.constraintType==null && other.getConstraintType()==null) || 
+             (this.constraintType!=null &&
+              java.util.Arrays.equals(this.constraintType, other.getConstraintType()))) &&
+            ((this.contact==null && other.getContact()==null) || 
+             (this.contact!=null &&
+              java.util.Arrays.equals(this.contact, other.getContact()))) &&
+            ((this.cost==null && other.getCost()==null) || 
+             (this.cost!=null &&
+              this.cost.equals(other.getCost()))) &&
+            ((this.costBase==null && other.getCostBase()==null) || 
+             (this.costBase!=null &&
+              this.costBase.equals(other.getCostBase()))) &&
+            ((this.costBaseBaseline==null && other.getCostBaseBaseline()==null) || 
+             (this.costBaseBaseline!=null &&
+              this.costBaseBaseline.equals(other.getCostBaseBaseline()))) &&
+            ((this.costBaseline==null && other.getCostBaseline()==null) || 
+             (this.costBaseline!=null &&
+              this.costBaseline.equals(other.getCostBaseline()))) &&
+            ((this.costBaseVariance==null && other.getCostBaseVariance()==null) || 
+             (this.costBaseVariance!=null &&
+              this.costBaseVariance.equals(other.getCostBaseVariance()))) &&
+            ((this.costVariance==null && other.getCostVariance()==null) || 
+             (this.costVariance!=null &&
+              this.costVariance.equals(other.getCostVariance()))) &&
+            ((this.costVariancePercent==null && other.getCostVariancePercent()==null) || 
+             (this.costVariancePercent!=null &&
+              this.costVariancePercent.equals(other.getCostVariancePercent()))) &&
+            ((this.createdDate==null && other.getCreatedDate()==null) || 
+             (this.createdDate!=null &&
+              this.createdDate.equals(other.getCreatedDate()))) &&
+            ((this.endDate==null && other.getEndDate()==null) || 
+             (this.endDate!=null &&
+              this.endDate.equals(other.getEndDate()))) &&
+            ((this.endDateBaseline==null && other.getEndDateBaseline()==null) || 
+             (this.endDateBaseline!=null &&
+              this.endDateBaseline.equals(other.getEndDateBaseline()))) &&
+            ((this.endDateVariance==null && other.getEndDateVariance()==null) || 
+             (this.endDateVariance!=null &&
+              this.endDateVariance.equals(other.getEndDateVariance()))) &&
+            ((this.estimatedWork==null && other.getEstimatedWork()==null) || 
+             (this.estimatedWork!=null &&
+              this.estimatedWork.equals(other.getEstimatedWork()))) &&
+            ((this.estimatedWorkBaseline==null && other.getEstimatedWorkBaseline()==null) || 
+             (this.estimatedWorkBaseline!=null &&
+              this.estimatedWorkBaseline.equals(other.getEstimatedWorkBaseline()))) &&
+            ((this.estimatedWorkVariance==null && other.getEstimatedWorkVariance()==null) || 
+             (this.estimatedWorkVariance!=null &&
+              this.estimatedWorkVariance.equals(other.getEstimatedWorkVariance()))) &&
+            ((this.estimatedWorkVariancePercent==null && other.getEstimatedWorkVariancePercent()==null) || 
+             (this.estimatedWorkVariancePercent!=null &&
+              this.estimatedWorkVariancePercent.equals(other.getEstimatedWorkVariancePercent()))) &&
+            ((this.externalId==null && other.getExternalId()==null) || 
+             (this.externalId!=null &&
+              java.util.Arrays.equals(this.externalId, other.getExternalId()))) &&
+            ((this.externalIdString==null && other.getExternalIdString()==null) || 
+             (this.externalIdString!=null &&
+              this.externalIdString.equals(other.getExternalIdString()))) &&
+            ((this.finishByDate==null && other.getFinishByDate()==null) || 
+             (this.finishByDate!=null &&
+              this.finishByDate.equals(other.getFinishByDate()))) &&
+            ((this.id==null && other.getId()==null) || 
+             (this.id!=null &&
+              this.id.equals(other.getId()))) &&
+            ((this.internalId==null && other.getInternalId()==null) || 
+             (this.internalId!=null &&
+              java.util.Arrays.equals(this.internalId, other.getInternalId()))) &&
+            ((this.internalIdNumber==null && other.getInternalIdNumber()==null) || 
+             (this.internalIdNumber!=null &&
+              this.internalIdNumber.equals(other.getInternalIdNumber()))) &&
+            ((this.isMilestone==null && other.getIsMilestone()==null) || 
+             (this.isMilestone!=null &&
+              this.isMilestone.equals(other.getIsMilestone()))) &&
+            ((this.isSummaryTask==null && other.getIsSummaryTask()==null) || 
+             (this.isSummaryTask!=null &&
+              this.isSummaryTask.equals(other.getIsSummaryTask()))) &&
+            ((this.lastModifiedDate==null && other.getLastModifiedDate()==null) || 
+             (this.lastModifiedDate!=null &&
+              this.lastModifiedDate.equals(other.getLastModifiedDate()))) &&
+            ((this.nonBillableTask==null && other.getNonBillableTask()==null) || 
+             (this.nonBillableTask!=null &&
+              this.nonBillableTask.equals(other.getNonBillableTask()))) &&
+            ((this.owner==null && other.getOwner()==null) || 
+             (this.owner!=null &&
+              java.util.Arrays.equals(this.owner, other.getOwner()))) &&
+            ((this.parent==null && other.getParent()==null) || 
+             (this.parent!=null &&
+              java.util.Arrays.equals(this.parent, other.getParent()))) &&
+            ((this.percentWorkComplete==null && other.getPercentWorkComplete()==null) || 
+             (this.percentWorkComplete!=null &&
+              this.percentWorkComplete.equals(other.getPercentWorkComplete()))) &&
+            ((this.predecessor==null && other.getPredecessor()==null) || 
+             (this.predecessor!=null &&
+              java.util.Arrays.equals(this.predecessor, other.getPredecessor()))) &&
+            ((this.predecessors==null && other.getPredecessors()==null) || 
+             (this.predecessors!=null &&
+              this.predecessors.equals(other.getPredecessors()))) &&
+            ((this.priority==null && other.getPriority()==null) || 
+             (this.priority!=null &&
+              java.util.Arrays.equals(this.priority, other.getPriority()))) &&
+            ((this.remainingWork==null && other.getRemainingWork()==null) || 
+             (this.remainingWork!=null &&
+              this.remainingWork.equals(other.getRemainingWork()))) &&
+            ((this.startDate==null && other.getStartDate()==null) || 
+             (this.startDate!=null &&
+              this.startDate.equals(other.getStartDate()))) &&
+            ((this.startDateBaseline==null && other.getStartDateBaseline()==null) || 
+             (this.startDateBaseline!=null &&
+              this.startDateBaseline.equals(other.getStartDateBaseline()))) &&
+            ((this.startDateVariance==null && other.getStartDateVariance()==null) || 
+             (this.startDateVariance!=null &&
+              this.startDateVariance.equals(other.getStartDateVariance()))) &&
+            ((this.status==null && other.getStatus()==null) || 
+             (this.status!=null &&
+              java.util.Arrays.equals(this.status, other.getStatus()))) &&
+            ((this.successor==null && other.getSuccessor()==null) || 
+             (this.successor!=null &&
+              java.util.Arrays.equals(this.successor, other.getSuccessor()))) &&
+            ((this.title==null && other.getTitle()==null) || 
+             (this.title!=null &&
+              this.title.equals(other.getTitle()))) &&
+            ((this.customFieldList==null && other.getCustomFieldList()==null) || 
+             (this.customFieldList!=null &&
+              java.util.Arrays.equals(this.customFieldList, other.getCustomFieldList())));
+        __equalsCalc = null;
+        return _equals;
+    }
+
+    private boolean __hashCodeCalc = false;
+    public synchronized int hashCode() {
+        if (__hashCodeCalc) {
+            return 0;
+        }
+        __hashCodeCalc = true;
+        int _hashCode = super.hashCode();
+        if (getActualWork() != null) {
+            _hashCode += getActualWork().hashCode();
+        }
+        if (getAssignee() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getAssignee());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getAssignee(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getCompany() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getCompany());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getCompany(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getConstraintType() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getConstraintType());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getConstraintType(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getContact() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getContact());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getContact(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getCost() != null) {
+            _hashCode += getCost().hashCode();
+        }
+        if (getCostBase() != null) {
+            _hashCode += getCostBase().hashCode();
+        }
+        if (getCostBaseBaseline() != null) {
+            _hashCode += getCostBaseBaseline().hashCode();
+        }
+        if (getCostBaseline() != null) {
+            _hashCode += getCostBaseline().hashCode();
+        }
+        if (getCostBaseVariance() != null) {
+            _hashCode += getCostBaseVariance().hashCode();
+        }
+        if (getCostVariance() != null) {
+            _hashCode += getCostVariance().hashCode();
+        }
+        if (getCostVariancePercent() != null) {
+            _hashCode += getCostVariancePercent().hashCode();
+        }
+        if (getCreatedDate() != null) {
+            _hashCode += getCreatedDate().hashCode();
+        }
+        if (getEndDate() != null) {
+            _hashCode += getEndDate().hashCode();
+        }
+        if (getEndDateBaseline() != null) {
+            _hashCode += getEndDateBaseline().hashCode();
+        }
+        if (getEndDateVariance() != null) {
+            _hashCode += getEndDateVariance().hashCode();
+        }
+        if (getEstimatedWork() != null) {
+            _hashCode += getEstimatedWork().hashCode();
+        }
+        if (getEstimatedWorkBaseline() != null) {
+            _hashCode += getEstimatedWorkBaseline().hashCode();
+        }
+        if (getEstimatedWorkVariance() != null) {
+            _hashCode += getEstimatedWorkVariance().hashCode();
+        }
+        if (getEstimatedWorkVariancePercent() != null) {
+            _hashCode += getEstimatedWorkVariancePercent().hashCode();
+        }
+        if (getExternalId() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getExternalId());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getExternalId(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getExternalIdString() != null) {
+            _hashCode += getExternalIdString().hashCode();
+        }
+        if (getFinishByDate() != null) {
+            _hashCode += getFinishByDate().hashCode();
+        }
+        if (getId() != null) {
+            _hashCode += getId().hashCode();
+        }
+        if (getInternalId() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getInternalId());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getInternalId(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getInternalIdNumber() != null) {
+            _hashCode += getInternalIdNumber().hashCode();
+        }
+        if (getIsMilestone() != null) {
+            _hashCode += getIsMilestone().hashCode();
+        }
+        if (getIsSummaryTask() != null) {
+            _hashCode += getIsSummaryTask().hashCode();
+        }
+        if (getLastModifiedDate() != null) {
+            _hashCode += getLastModifiedDate().hashCode();
+        }
+        if (getNonBillableTask() != null) {
+            _hashCode += getNonBillableTask().hashCode();
+        }
+        if (getOwner() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getOwner());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getOwner(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getParent() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getParent());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getParent(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getPercentWorkComplete() != null) {
+            _hashCode += getPercentWorkComplete().hashCode();
+        }
+        if (getPredecessor() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getPredecessor());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getPredecessor(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getPredecessors() != null) {
+            _hashCode += getPredecessors().hashCode();
+        }
+        if (getPriority() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getPriority());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getPriority(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getRemainingWork() != null) {
+            _hashCode += getRemainingWork().hashCode();
+        }
+        if (getStartDate() != null) {
+            _hashCode += getStartDate().hashCode();
+        }
+        if (getStartDateBaseline() != null) {
+            _hashCode += getStartDateBaseline().hashCode();
+        }
+        if (getStartDateVariance() != null) {
+            _hashCode += getStartDateVariance().hashCode();
+        }
+        if (getStatus() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getStatus());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getStatus(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getSuccessor() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getSuccessor());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getSuccessor(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getTitle() != null) {
+            _hashCode += getTitle().hashCode();
+        }
+        if (getCustomFieldList() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getCustomFieldList());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getCustomFieldList(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        __hashCodeCalc = false;
+        return _hashCode;
+    }
+
+    // Type metadata
+    private static org.apache.axis.description.TypeDesc typeDesc =
+        new org.apache.axis.description.TypeDesc(ProjectTaskSearchBasic.class, true);
+
+    static {
+        typeDesc.setXmlType(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "ProjectTaskSearchBasic"));
+        org.apache.axis.description.ElementDesc elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("actualWork");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "actualWork"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchDoubleField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("assignee");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "assignee"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "searchValue"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("company");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "company"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "searchValue"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("constraintType");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "constraintType"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "searchValue"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("contact");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "contact"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "searchValue"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("cost");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "cost"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchDoubleField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("costBase");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "costBase"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchDoubleField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("costBaseBaseline");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "costBaseBaseline"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchDoubleField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("costBaseline");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "costBaseline"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchDoubleField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("costBaseVariance");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "costBaseVariance"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchDoubleField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("costVariance");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "costVariance"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchDoubleField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("costVariancePercent");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "costVariancePercent"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchDoubleField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("createdDate");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "createdDate"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchDateField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("endDate");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "endDate"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchDateField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("endDateBaseline");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "endDateBaseline"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchDateField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("endDateVariance");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "endDateVariance"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchDoubleField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("estimatedWork");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "estimatedWork"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchDoubleField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("estimatedWorkBaseline");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "estimatedWorkBaseline"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchDoubleField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("estimatedWorkVariance");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "estimatedWorkVariance"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchDoubleField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("estimatedWorkVariancePercent");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "estimatedWorkVariancePercent"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchDoubleField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("externalId");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "externalId"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "searchValue"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("externalIdString");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "externalIdString"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchStringField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("finishByDate");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "finishByDate"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchDateField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("id");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "id"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchLongField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("internalId");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "internalId"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "searchValue"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("internalIdNumber");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "internalIdNumber"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchLongField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("isMilestone");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "isMilestone"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchBooleanField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("isSummaryTask");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "isSummaryTask"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchBooleanField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("lastModifiedDate");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "lastModifiedDate"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchDateField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("nonBillableTask");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "nonBillableTask"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchBooleanField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("owner");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "owner"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "searchValue"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("parent");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "parent"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "searchValue"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("percentWorkComplete");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "percentWorkComplete"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchDoubleField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("predecessor");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "predecessor"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "searchValue"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("predecessors");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "predecessors"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchStringField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("priority");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "priority"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "searchValue"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("remainingWork");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "remainingWork"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchDoubleField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("startDate");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "startDate"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchDateField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("startDateBaseline");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "startDateBaseline"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchDateField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("startDateVariance");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "startDateVariance"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchDoubleField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("status");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "status"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "searchValue"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("successor");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "successor"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "searchValue"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("title");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "title"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchStringField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("customFieldList");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "customFieldList"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchCustomField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "customField"));
+        typeDesc.addFieldDesc(elemField);
+    }
+
+    /**
+     * Return type metadata object
+     */
+    public static org.apache.axis.description.TypeDesc getTypeDesc() {
+        return typeDesc;
+    }
+
+    /**
+     * Get Custom Serializer
+     */
+    public static org.apache.axis.encoding.Serializer getSerializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanSerializer(
+            _javaType, _xmlType, typeDesc);
+    }
+
+    /**
+     * Get Custom Deserializer
+     */
+    public static org.apache.axis.encoding.Deserializer getDeserializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanDeserializer(
+            _javaType, _xmlType, typeDesc);
     }
 
 }

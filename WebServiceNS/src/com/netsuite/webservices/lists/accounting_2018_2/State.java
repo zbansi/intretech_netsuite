@@ -1,148 +1,232 @@
+/**
+ * State.java
+ *
+ * This file was auto-generated from WSDL
+ * by the Apache Axis 1.4 Jul 28, 2010 (04:07:04 PDT) WSDL2Java emitter.
+ */
 
 package com.netsuite.webservices.lists.accounting_2018_2;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlAttribute;
-import javax.xml.bind.annotation.XmlSchemaType;
-import javax.xml.bind.annotation.XmlType;
-import com.netsuite.webservices.platform.common_2018_2.types.Country;
-import com.netsuite.webservices.platform.core_2018_2.Record;
+public class State  extends com.netsuite.webservices.platform.core_2018_2.Record  implements java.io.Serializable {
+    private com.netsuite.webservices.platform.common_2018_2.types.Country country;
 
+    private java.lang.String fullName;
 
-/**
- * <p>State complex type的 Java 类。
- * 
- * <p>以下模式片段指定包含在此类中的预期内容。
- * 
- * <pre>
- * &lt;complexType name="State">
- *   &lt;complexContent>
- *     &lt;extension base="{urn:core_2018_2.platform.webservices.netsuite.com}Record">
- *       &lt;sequence>
- *         &lt;element name="country" type="{urn:types.common_2018_2.platform.webservices.netsuite.com}Country" minOccurs="0"/>
- *         &lt;element name="fullName" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="shortname" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *       &lt;/sequence>
- *       &lt;attribute name="internalId" type="{http://www.w3.org/2001/XMLSchema}string" />
- *     &lt;/extension>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
- */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "State", propOrder = {
-    "country",
-    "fullName",
-    "shortname"
-})
-public class State
-    extends Record
-{
+    private java.lang.String shortname;
 
-    @XmlSchemaType(name = "string")
-    protected Country country;
-    protected String fullName;
-    protected String shortname;
-    @XmlAttribute(name = "internalId")
-    protected String internalId;
+    private java.lang.String internalId;  // attribute
+
+    public State() {
+    }
+
+    public State(
+           java.lang.String[] nullFieldList,
+           java.lang.String internalId,
+           com.netsuite.webservices.platform.common_2018_2.types.Country country,
+           java.lang.String fullName,
+           java.lang.String shortname) {
+        super(
+            nullFieldList);
+        this.internalId = internalId;
+        this.country = country;
+        this.fullName = fullName;
+        this.shortname = shortname;
+    }
+
 
     /**
-     * 获取country属性的值。
+     * Gets the country value for this State.
      * 
-     * @return
-     *     possible object is
-     *     {@link Country }
-     *     
+     * @return country
      */
-    public Country getCountry() {
+    public com.netsuite.webservices.platform.common_2018_2.types.Country getCountry() {
         return country;
     }
 
-    /**
-     * 设置country属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Country }
-     *     
-     */
-    public void setCountry(Country value) {
-        this.country = value;
-    }
 
     /**
-     * 获取fullName属性的值。
+     * Sets the country value for this State.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param country
      */
-    public String getFullName() {
+    public void setCountry(com.netsuite.webservices.platform.common_2018_2.types.Country country) {
+        this.country = country;
+    }
+
+
+    /**
+     * Gets the fullName value for this State.
+     * 
+     * @return fullName
+     */
+    public java.lang.String getFullName() {
         return fullName;
     }
 
-    /**
-     * 设置fullName属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setFullName(String value) {
-        this.fullName = value;
-    }
 
     /**
-     * 获取shortname属性的值。
+     * Sets the fullName value for this State.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param fullName
      */
-    public String getShortname() {
+    public void setFullName(java.lang.String fullName) {
+        this.fullName = fullName;
+    }
+
+
+    /**
+     * Gets the shortname value for this State.
+     * 
+     * @return shortname
+     */
+    public java.lang.String getShortname() {
         return shortname;
     }
 
-    /**
-     * 设置shortname属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setShortname(String value) {
-        this.shortname = value;
-    }
 
     /**
-     * 获取internalId属性的值。
+     * Sets the shortname value for this State.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param shortname
      */
-    public String getInternalId() {
+    public void setShortname(java.lang.String shortname) {
+        this.shortname = shortname;
+    }
+
+
+    /**
+     * Gets the internalId value for this State.
+     * 
+     * @return internalId
+     */
+    public java.lang.String getInternalId() {
         return internalId;
     }
 
+
     /**
-     * 设置internalId属性的值。
+     * Sets the internalId value for this State.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     * @param internalId
      */
-    public void setInternalId(String value) {
-        this.internalId = value;
+    public void setInternalId(java.lang.String internalId) {
+        this.internalId = internalId;
+    }
+
+    private java.lang.Object __equalsCalc = null;
+    public synchronized boolean equals(java.lang.Object obj) {
+        if (!(obj instanceof State)) return false;
+        State other = (State) obj;
+        if (obj == null) return false;
+        if (this == obj) return true;
+        if (__equalsCalc != null) {
+            return (__equalsCalc == obj);
+        }
+        __equalsCalc = obj;
+        boolean _equals;
+        _equals = super.equals(obj) && 
+            ((this.country==null && other.getCountry()==null) || 
+             (this.country!=null &&
+              this.country.equals(other.getCountry()))) &&
+            ((this.fullName==null && other.getFullName()==null) || 
+             (this.fullName!=null &&
+              this.fullName.equals(other.getFullName()))) &&
+            ((this.shortname==null && other.getShortname()==null) || 
+             (this.shortname!=null &&
+              this.shortname.equals(other.getShortname()))) &&
+            ((this.internalId==null && other.getInternalId()==null) || 
+             (this.internalId!=null &&
+              this.internalId.equals(other.getInternalId())));
+        __equalsCalc = null;
+        return _equals;
+    }
+
+    private boolean __hashCodeCalc = false;
+    public synchronized int hashCode() {
+        if (__hashCodeCalc) {
+            return 0;
+        }
+        __hashCodeCalc = true;
+        int _hashCode = super.hashCode();
+        if (getCountry() != null) {
+            _hashCode += getCountry().hashCode();
+        }
+        if (getFullName() != null) {
+            _hashCode += getFullName().hashCode();
+        }
+        if (getShortname() != null) {
+            _hashCode += getShortname().hashCode();
+        }
+        if (getInternalId() != null) {
+            _hashCode += getInternalId().hashCode();
+        }
+        __hashCodeCalc = false;
+        return _hashCode;
+    }
+
+    // Type metadata
+    private static org.apache.axis.description.TypeDesc typeDesc =
+        new org.apache.axis.description.TypeDesc(State.class, true);
+
+    static {
+        typeDesc.setXmlType(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "State"));
+        org.apache.axis.description.AttributeDesc attrField = new org.apache.axis.description.AttributeDesc();
+        attrField.setFieldName("internalId");
+        attrField.setXmlName(new javax.xml.namespace.QName("", "internalId"));
+        attrField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        typeDesc.addFieldDesc(attrField);
+        org.apache.axis.description.ElementDesc elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("country");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "country"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:types.common_2018_2.platform.webservices.netsuite.com", "Country"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("fullName");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "fullName"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("shortname");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "shortname"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+    }
+
+    /**
+     * Return type metadata object
+     */
+    public static org.apache.axis.description.TypeDesc getTypeDesc() {
+        return typeDesc;
+    }
+
+    /**
+     * Get Custom Serializer
+     */
+    public static org.apache.axis.encoding.Serializer getSerializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanSerializer(
+            _javaType, _xmlType, typeDesc);
+    }
+
+    /**
+     * Get Custom Deserializer
+     */
+    public static org.apache.axis.encoding.Deserializer getDeserializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanDeserializer(
+            _javaType, _xmlType, typeDesc);
     }
 
 }

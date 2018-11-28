@@ -1,54 +1,72 @@
+/**
+ * TransactionApprovalStatus.java
+ *
+ * This file was auto-generated from WSDL
+ * by the Apache Axis 1.4 Jul 28, 2010 (04:07:04 PDT) WSDL2Java emitter.
+ */
 
 package com.netsuite.webservices.transactions.sales_2018_2.types;
 
-import javax.xml.bind.annotation.XmlEnum;
-import javax.xml.bind.annotation.XmlEnumValue;
-import javax.xml.bind.annotation.XmlType;
+public class TransactionApprovalStatus implements java.io.Serializable {
+    private java.lang.String _value_;
+    private static java.util.HashMap _table_ = new java.util.HashMap();
 
-
-/**
- * <p>TransactionApprovalStatus的 Java 类。
- * 
- * <p>以下模式片段指定包含在此类中的预期内容。
- * <p>
- * <pre>
- * &lt;simpleType name="TransactionApprovalStatus">
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     &lt;enumeration value="_approved"/>
- *     &lt;enumeration value="_pendingApproval"/>
- *     &lt;enumeration value="_rejected"/>
- *   &lt;/restriction>
- * &lt;/simpleType>
- * </pre>
- * 
- */
-@XmlType(name = "TransactionApprovalStatus", namespace = "urn:types.sales_2018_2.transactions.webservices.netsuite.com")
-@XmlEnum
-public enum TransactionApprovalStatus {
-
-    @XmlEnumValue("_approved")
-    APPROVED("_approved"),
-    @XmlEnumValue("_pendingApproval")
-    PENDING_APPROVAL("_pendingApproval"),
-    @XmlEnumValue("_rejected")
-    REJECTED("_rejected");
-    private final String value;
-
-    TransactionApprovalStatus(String v) {
-        value = v;
+    // Constructor
+    protected TransactionApprovalStatus(java.lang.String value) {
+        _value_ = value;
+        _table_.put(_value_,this);
     }
 
-    public String value() {
-        return value;
+    public static final java.lang.String __approved = "_approved";
+    public static final java.lang.String __pendingApproval = "_pendingApproval";
+    public static final java.lang.String __rejected = "_rejected";
+    public static final TransactionApprovalStatus _approved = new TransactionApprovalStatus(__approved);
+    public static final TransactionApprovalStatus _pendingApproval = new TransactionApprovalStatus(__pendingApproval);
+    public static final TransactionApprovalStatus _rejected = new TransactionApprovalStatus(__rejected);
+    public java.lang.String getValue() { return _value_;}
+    public static TransactionApprovalStatus fromValue(java.lang.String value)
+          throws java.lang.IllegalArgumentException {
+        TransactionApprovalStatus enumeration = (TransactionApprovalStatus)
+            _table_.get(value);
+        if (enumeration==null) throw new java.lang.IllegalArgumentException();
+        return enumeration;
     }
+    public static TransactionApprovalStatus fromString(java.lang.String value)
+          throws java.lang.IllegalArgumentException {
+        return fromValue(value);
+    }
+    public boolean equals(java.lang.Object obj) {return (obj == this);}
+    public int hashCode() { return toString().hashCode();}
+    public java.lang.String toString() { return _value_;}
+    public java.lang.Object readResolve() throws java.io.ObjectStreamException { return fromValue(_value_);}
+    public static org.apache.axis.encoding.Serializer getSerializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new org.apache.axis.encoding.ser.EnumSerializer(
+            _javaType, _xmlType);
+    }
+    public static org.apache.axis.encoding.Deserializer getDeserializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new org.apache.axis.encoding.ser.EnumDeserializer(
+            _javaType, _xmlType);
+    }
+    // Type metadata
+    private static org.apache.axis.description.TypeDesc typeDesc =
+        new org.apache.axis.description.TypeDesc(TransactionApprovalStatus.class);
 
-    public static TransactionApprovalStatus fromValue(String v) {
-        for (TransactionApprovalStatus c: TransactionApprovalStatus.values()) {
-            if (c.value.equals(v)) {
-                return c;
-            }
-        }
-        throw new IllegalArgumentException(v);
+    static {
+        typeDesc.setXmlType(new javax.xml.namespace.QName("urn:types.sales_2018_2.transactions.webservices.netsuite.com", "TransactionApprovalStatus"));
+    }
+    /**
+     * Return type metadata object
+     */
+    public static org.apache.axis.description.TypeDesc getTypeDesc() {
+        return typeDesc;
     }
 
 }

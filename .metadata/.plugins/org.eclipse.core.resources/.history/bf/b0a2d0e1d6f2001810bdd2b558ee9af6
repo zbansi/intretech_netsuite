@@ -1,0 +1,6 @@
+package com.bansi.ws.nsclient;
+import com.netsuite.webservices.*;
+
+public class NetSuiteClientTest {
+	NetSuiteServiceLocator service = new NetSuiteServiceLocator();
+}

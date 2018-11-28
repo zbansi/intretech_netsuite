@@ -1,256 +1,379 @@
+/**
+ * SubsidiaryTaxRegistration.java
+ *
+ * This file was auto-generated from WSDL
+ * by the Apache Axis 1.4 Jul 28, 2010 (04:07:04 PDT) WSDL2Java emitter.
+ */
 
 package com.netsuite.webservices.lists.accounting_2018_2;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlSchemaType;
-import javax.xml.bind.annotation.XmlType;
-import javax.xml.datatype.XMLGregorianCalendar;
-import com.netsuite.webservices.platform.common_2018_2.types.Country;
-import com.netsuite.webservices.platform.core_2018_2.RecordRef;
+public class SubsidiaryTaxRegistration  implements java.io.Serializable {
+    private java.lang.Long id;
 
+    private com.netsuite.webservices.platform.common_2018_2.types.Country nexusCountry;
 
-/**
- * <p>SubsidiaryTaxRegistration complex type的 Java 类。
- * 
- * <p>以下模式片段指定包含在此类中的预期内容。
- * 
- * <pre>
- * &lt;complexType name="SubsidiaryTaxRegistration">
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element name="id" type="{http://www.w3.org/2001/XMLSchema}long" minOccurs="0"/>
- *         &lt;element name="nexusCountry" type="{urn:types.common_2018_2.platform.webservices.netsuite.com}Country" minOccurs="0"/>
- *         &lt;element name="nexus" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="taxAgency" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="taxRegistrationNumber" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="taxEngine" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="effectiveFrom" type="{http://www.w3.org/2001/XMLSchema}dateTime" minOccurs="0"/>
- *         &lt;element name="validUntil" type="{http://www.w3.org/2001/XMLSchema}dateTime" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
- */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "SubsidiaryTaxRegistration", propOrder = {
-    "id",
-    "nexusCountry",
-    "nexus",
-    "taxAgency",
-    "taxRegistrationNumber",
-    "taxEngine",
-    "effectiveFrom",
-    "validUntil"
-})
-public class SubsidiaryTaxRegistration {
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef nexus;
 
-    protected Long id;
-    @XmlSchemaType(name = "string")
-    protected Country nexusCountry;
-    protected RecordRef nexus;
-    protected RecordRef taxAgency;
-    protected String taxRegistrationNumber;
-    protected RecordRef taxEngine;
-    @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar effectiveFrom;
-    @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar validUntil;
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef taxAgency;
+
+    private java.lang.String taxRegistrationNumber;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef taxEngine;
+
+    private java.util.Calendar effectiveFrom;
+
+    private java.util.Calendar validUntil;
+
+    public SubsidiaryTaxRegistration() {
+    }
+
+    public SubsidiaryTaxRegistration(
+           java.lang.Long id,
+           com.netsuite.webservices.platform.common_2018_2.types.Country nexusCountry,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef nexus,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef taxAgency,
+           java.lang.String taxRegistrationNumber,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef taxEngine,
+           java.util.Calendar effectiveFrom,
+           java.util.Calendar validUntil) {
+           this.id = id;
+           this.nexusCountry = nexusCountry;
+           this.nexus = nexus;
+           this.taxAgency = taxAgency;
+           this.taxRegistrationNumber = taxRegistrationNumber;
+           this.taxEngine = taxEngine;
+           this.effectiveFrom = effectiveFrom;
+           this.validUntil = validUntil;
+    }
+
 
     /**
-     * 获取id属性的值。
+     * Gets the id value for this SubsidiaryTaxRegistration.
      * 
-     * @return
-     *     possible object is
-     *     {@link Long }
-     *     
+     * @return id
      */
-    public Long getId() {
+    public java.lang.Long getId() {
         return id;
     }
 
-    /**
-     * 设置id属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Long }
-     *     
-     */
-    public void setId(Long value) {
-        this.id = value;
-    }
 
     /**
-     * 获取nexusCountry属性的值。
+     * Sets the id value for this SubsidiaryTaxRegistration.
      * 
-     * @return
-     *     possible object is
-     *     {@link Country }
-     *     
+     * @param id
      */
-    public Country getNexusCountry() {
+    public void setId(java.lang.Long id) {
+        this.id = id;
+    }
+
+
+    /**
+     * Gets the nexusCountry value for this SubsidiaryTaxRegistration.
+     * 
+     * @return nexusCountry
+     */
+    public com.netsuite.webservices.platform.common_2018_2.types.Country getNexusCountry() {
         return nexusCountry;
     }
 
-    /**
-     * 设置nexusCountry属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Country }
-     *     
-     */
-    public void setNexusCountry(Country value) {
-        this.nexusCountry = value;
-    }
 
     /**
-     * 获取nexus属性的值。
+     * Sets the nexusCountry value for this SubsidiaryTaxRegistration.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param nexusCountry
      */
-    public RecordRef getNexus() {
+    public void setNexusCountry(com.netsuite.webservices.platform.common_2018_2.types.Country nexusCountry) {
+        this.nexusCountry = nexusCountry;
+    }
+
+
+    /**
+     * Gets the nexus value for this SubsidiaryTaxRegistration.
+     * 
+     * @return nexus
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getNexus() {
         return nexus;
     }
 
-    /**
-     * 设置nexus属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setNexus(RecordRef value) {
-        this.nexus = value;
-    }
 
     /**
-     * 获取taxAgency属性的值。
+     * Sets the nexus value for this SubsidiaryTaxRegistration.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param nexus
      */
-    public RecordRef getTaxAgency() {
+    public void setNexus(com.netsuite.webservices.platform.core_2018_2.RecordRef nexus) {
+        this.nexus = nexus;
+    }
+
+
+    /**
+     * Gets the taxAgency value for this SubsidiaryTaxRegistration.
+     * 
+     * @return taxAgency
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getTaxAgency() {
         return taxAgency;
     }
 
-    /**
-     * 设置taxAgency属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setTaxAgency(RecordRef value) {
-        this.taxAgency = value;
-    }
 
     /**
-     * 获取taxRegistrationNumber属性的值。
+     * Sets the taxAgency value for this SubsidiaryTaxRegistration.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param taxAgency
      */
-    public String getTaxRegistrationNumber() {
+    public void setTaxAgency(com.netsuite.webservices.platform.core_2018_2.RecordRef taxAgency) {
+        this.taxAgency = taxAgency;
+    }
+
+
+    /**
+     * Gets the taxRegistrationNumber value for this SubsidiaryTaxRegistration.
+     * 
+     * @return taxRegistrationNumber
+     */
+    public java.lang.String getTaxRegistrationNumber() {
         return taxRegistrationNumber;
     }
 
-    /**
-     * 设置taxRegistrationNumber属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setTaxRegistrationNumber(String value) {
-        this.taxRegistrationNumber = value;
-    }
 
     /**
-     * 获取taxEngine属性的值。
+     * Sets the taxRegistrationNumber value for this SubsidiaryTaxRegistration.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param taxRegistrationNumber
      */
-    public RecordRef getTaxEngine() {
+    public void setTaxRegistrationNumber(java.lang.String taxRegistrationNumber) {
+        this.taxRegistrationNumber = taxRegistrationNumber;
+    }
+
+
+    /**
+     * Gets the taxEngine value for this SubsidiaryTaxRegistration.
+     * 
+     * @return taxEngine
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getTaxEngine() {
         return taxEngine;
     }
 
-    /**
-     * 设置taxEngine属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setTaxEngine(RecordRef value) {
-        this.taxEngine = value;
-    }
 
     /**
-     * 获取effectiveFrom属性的值。
+     * Sets the taxEngine value for this SubsidiaryTaxRegistration.
      * 
-     * @return
-     *     possible object is
-     *     {@link XMLGregorianCalendar }
-     *     
+     * @param taxEngine
      */
-    public XMLGregorianCalendar getEffectiveFrom() {
+    public void setTaxEngine(com.netsuite.webservices.platform.core_2018_2.RecordRef taxEngine) {
+        this.taxEngine = taxEngine;
+    }
+
+
+    /**
+     * Gets the effectiveFrom value for this SubsidiaryTaxRegistration.
+     * 
+     * @return effectiveFrom
+     */
+    public java.util.Calendar getEffectiveFrom() {
         return effectiveFrom;
     }
 
-    /**
-     * 设置effectiveFrom属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link XMLGregorianCalendar }
-     *     
-     */
-    public void setEffectiveFrom(XMLGregorianCalendar value) {
-        this.effectiveFrom = value;
-    }
 
     /**
-     * 获取validUntil属性的值。
+     * Sets the effectiveFrom value for this SubsidiaryTaxRegistration.
      * 
-     * @return
-     *     possible object is
-     *     {@link XMLGregorianCalendar }
-     *     
+     * @param effectiveFrom
      */
-    public XMLGregorianCalendar getValidUntil() {
+    public void setEffectiveFrom(java.util.Calendar effectiveFrom) {
+        this.effectiveFrom = effectiveFrom;
+    }
+
+
+    /**
+     * Gets the validUntil value for this SubsidiaryTaxRegistration.
+     * 
+     * @return validUntil
+     */
+    public java.util.Calendar getValidUntil() {
         return validUntil;
     }
 
+
     /**
-     * 设置validUntil属性的值。
+     * Sets the validUntil value for this SubsidiaryTaxRegistration.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link XMLGregorianCalendar }
-     *     
+     * @param validUntil
      */
-    public void setValidUntil(XMLGregorianCalendar value) {
-        this.validUntil = value;
+    public void setValidUntil(java.util.Calendar validUntil) {
+        this.validUntil = validUntil;
+    }
+
+    private java.lang.Object __equalsCalc = null;
+    public synchronized boolean equals(java.lang.Object obj) {
+        if (!(obj instanceof SubsidiaryTaxRegistration)) return false;
+        SubsidiaryTaxRegistration other = (SubsidiaryTaxRegistration) obj;
+        if (obj == null) return false;
+        if (this == obj) return true;
+        if (__equalsCalc != null) {
+            return (__equalsCalc == obj);
+        }
+        __equalsCalc = obj;
+        boolean _equals;
+        _equals = true && 
+            ((this.id==null && other.getId()==null) || 
+             (this.id!=null &&
+              this.id.equals(other.getId()))) &&
+            ((this.nexusCountry==null && other.getNexusCountry()==null) || 
+             (this.nexusCountry!=null &&
+              this.nexusCountry.equals(other.getNexusCountry()))) &&
+            ((this.nexus==null && other.getNexus()==null) || 
+             (this.nexus!=null &&
+              this.nexus.equals(other.getNexus()))) &&
+            ((this.taxAgency==null && other.getTaxAgency()==null) || 
+             (this.taxAgency!=null &&
+              this.taxAgency.equals(other.getTaxAgency()))) &&
+            ((this.taxRegistrationNumber==null && other.getTaxRegistrationNumber()==null) || 
+             (this.taxRegistrationNumber!=null &&
+              this.taxRegistrationNumber.equals(other.getTaxRegistrationNumber()))) &&
+            ((this.taxEngine==null && other.getTaxEngine()==null) || 
+             (this.taxEngine!=null &&
+              this.taxEngine.equals(other.getTaxEngine()))) &&
+            ((this.effectiveFrom==null && other.getEffectiveFrom()==null) || 
+             (this.effectiveFrom!=null &&
+              this.effectiveFrom.equals(other.getEffectiveFrom()))) &&
+            ((this.validUntil==null && other.getValidUntil()==null) || 
+             (this.validUntil!=null &&
+              this.validUntil.equals(other.getValidUntil())));
+        __equalsCalc = null;
+        return _equals;
+    }
+
+    private boolean __hashCodeCalc = false;
+    public synchronized int hashCode() {
+        if (__hashCodeCalc) {
+            return 0;
+        }
+        __hashCodeCalc = true;
+        int _hashCode = 1;
+        if (getId() != null) {
+            _hashCode += getId().hashCode();
+        }
+        if (getNexusCountry() != null) {
+            _hashCode += getNexusCountry().hashCode();
+        }
+        if (getNexus() != null) {
+            _hashCode += getNexus().hashCode();
+        }
+        if (getTaxAgency() != null) {
+            _hashCode += getTaxAgency().hashCode();
+        }
+        if (getTaxRegistrationNumber() != null) {
+            _hashCode += getTaxRegistrationNumber().hashCode();
+        }
+        if (getTaxEngine() != null) {
+            _hashCode += getTaxEngine().hashCode();
+        }
+        if (getEffectiveFrom() != null) {
+            _hashCode += getEffectiveFrom().hashCode();
+        }
+        if (getValidUntil() != null) {
+            _hashCode += getValidUntil().hashCode();
+        }
+        __hashCodeCalc = false;
+        return _hashCode;
+    }
+
+    // Type metadata
+    private static org.apache.axis.description.TypeDesc typeDesc =
+        new org.apache.axis.description.TypeDesc(SubsidiaryTaxRegistration.class, true);
+
+    static {
+        typeDesc.setXmlType(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "SubsidiaryTaxRegistration"));
+        org.apache.axis.description.ElementDesc elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("id");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "id"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "long"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("nexusCountry");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "nexusCountry"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:types.common_2018_2.platform.webservices.netsuite.com", "Country"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("nexus");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "nexus"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("taxAgency");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "taxAgency"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("taxRegistrationNumber");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "taxRegistrationNumber"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("taxEngine");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "taxEngine"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("effectiveFrom");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "effectiveFrom"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "dateTime"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("validUntil");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "validUntil"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "dateTime"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+    }
+
+    /**
+     * Return type metadata object
+     */
+    public static org.apache.axis.description.TypeDesc getTypeDesc() {
+        return typeDesc;
+    }
+
+    /**
+     * Get Custom Serializer
+     */
+    public static org.apache.axis.encoding.Serializer getSerializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanSerializer(
+            _javaType, _xmlType, typeDesc);
+    }
+
+    /**
+     * Get Custom Deserializer
+     */
+    public static org.apache.axis.encoding.Deserializer getDeserializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanDeserializer(
+            _javaType, _xmlType, typeDesc);
     }
 
 }

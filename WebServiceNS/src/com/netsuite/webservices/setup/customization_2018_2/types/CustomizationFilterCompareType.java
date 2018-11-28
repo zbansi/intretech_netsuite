@@ -1,63 +1,78 @@
+/**
+ * CustomizationFilterCompareType.java
+ *
+ * This file was auto-generated from WSDL
+ * by the Apache Axis 1.4 Jul 28, 2010 (04:07:04 PDT) WSDL2Java emitter.
+ */
 
 package com.netsuite.webservices.setup.customization_2018_2.types;
 
-import javax.xml.bind.annotation.XmlEnum;
-import javax.xml.bind.annotation.XmlEnumValue;
-import javax.xml.bind.annotation.XmlType;
+public class CustomizationFilterCompareType implements java.io.Serializable {
+    private java.lang.String _value_;
+    private static java.util.HashMap _table_ = new java.util.HashMap();
 
-
-/**
- * <p>CustomizationFilterCompareType的 Java 类。
- * 
- * <p>以下模式片段指定包含在此类中的预期内容。
- * <p>
- * <pre>
- * &lt;simpleType name="CustomizationFilterCompareType">
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     &lt;enumeration value="_equal"/>
- *     &lt;enumeration value="_greaterThan"/>
- *     &lt;enumeration value="_greaterThanOrEqual"/>
- *     &lt;enumeration value="_lessThan"/>
- *     &lt;enumeration value="_lessThanOrEqual"/>
- *     &lt;enumeration value="_notEqual"/>
- *   &lt;/restriction>
- * &lt;/simpleType>
- * </pre>
- * 
- */
-@XmlType(name = "CustomizationFilterCompareType", namespace = "urn:types.customization_2018_2.setup.webservices.netsuite.com")
-@XmlEnum
-public enum CustomizationFilterCompareType {
-
-    @XmlEnumValue("_equal")
-    EQUAL("_equal"),
-    @XmlEnumValue("_greaterThan")
-    GREATER_THAN("_greaterThan"),
-    @XmlEnumValue("_greaterThanOrEqual")
-    GREATER_THAN_OR_EQUAL("_greaterThanOrEqual"),
-    @XmlEnumValue("_lessThan")
-    LESS_THAN("_lessThan"),
-    @XmlEnumValue("_lessThanOrEqual")
-    LESS_THAN_OR_EQUAL("_lessThanOrEqual"),
-    @XmlEnumValue("_notEqual")
-    NOT_EQUAL("_notEqual");
-    private final String value;
-
-    CustomizationFilterCompareType(String v) {
-        value = v;
+    // Constructor
+    protected CustomizationFilterCompareType(java.lang.String value) {
+        _value_ = value;
+        _table_.put(_value_,this);
     }
 
-    public String value() {
-        return value;
+    public static final java.lang.String __equal = "_equal";
+    public static final java.lang.String __greaterThan = "_greaterThan";
+    public static final java.lang.String __greaterThanOrEqual = "_greaterThanOrEqual";
+    public static final java.lang.String __lessThan = "_lessThan";
+    public static final java.lang.String __lessThanOrEqual = "_lessThanOrEqual";
+    public static final java.lang.String __notEqual = "_notEqual";
+    public static final CustomizationFilterCompareType _equal = new CustomizationFilterCompareType(__equal);
+    public static final CustomizationFilterCompareType _greaterThan = new CustomizationFilterCompareType(__greaterThan);
+    public static final CustomizationFilterCompareType _greaterThanOrEqual = new CustomizationFilterCompareType(__greaterThanOrEqual);
+    public static final CustomizationFilterCompareType _lessThan = new CustomizationFilterCompareType(__lessThan);
+    public static final CustomizationFilterCompareType _lessThanOrEqual = new CustomizationFilterCompareType(__lessThanOrEqual);
+    public static final CustomizationFilterCompareType _notEqual = new CustomizationFilterCompareType(__notEqual);
+    public java.lang.String getValue() { return _value_;}
+    public static CustomizationFilterCompareType fromValue(java.lang.String value)
+          throws java.lang.IllegalArgumentException {
+        CustomizationFilterCompareType enumeration = (CustomizationFilterCompareType)
+            _table_.get(value);
+        if (enumeration==null) throw new java.lang.IllegalArgumentException();
+        return enumeration;
     }
+    public static CustomizationFilterCompareType fromString(java.lang.String value)
+          throws java.lang.IllegalArgumentException {
+        return fromValue(value);
+    }
+    public boolean equals(java.lang.Object obj) {return (obj == this);}
+    public int hashCode() { return toString().hashCode();}
+    public java.lang.String toString() { return _value_;}
+    public java.lang.Object readResolve() throws java.io.ObjectStreamException { return fromValue(_value_);}
+    public static org.apache.axis.encoding.Serializer getSerializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new org.apache.axis.encoding.ser.EnumSerializer(
+            _javaType, _xmlType);
+    }
+    public static org.apache.axis.encoding.Deserializer getDeserializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new org.apache.axis.encoding.ser.EnumDeserializer(
+            _javaType, _xmlType);
+    }
+    // Type metadata
+    private static org.apache.axis.description.TypeDesc typeDesc =
+        new org.apache.axis.description.TypeDesc(CustomizationFilterCompareType.class);
 
-    public static CustomizationFilterCompareType fromValue(String v) {
-        for (CustomizationFilterCompareType c: CustomizationFilterCompareType.values()) {
-            if (c.value.equals(v)) {
-                return c;
-            }
-        }
-        throw new IllegalArgumentException(v);
+    static {
+        typeDesc.setXmlType(new javax.xml.namespace.QName("urn:types.customization_2018_2.setup.webservices.netsuite.com", "CustomizationFilterCompareType"));
+    }
+    /**
+     * Return type metadata object
+     */
+    public static org.apache.axis.description.TypeDesc getTypeDesc() {
+        return typeDesc;
     }
 
 }

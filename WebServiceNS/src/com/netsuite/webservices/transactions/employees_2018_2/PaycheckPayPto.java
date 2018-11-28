@@ -1,168 +1,268 @@
+/**
+ * PaycheckPayPto.java
+ *
+ * This file was auto-generated from WSDL
+ * by the Apache Axis 1.4 Jul 28, 2010 (04:07:04 PDT) WSDL2Java emitter.
+ */
 
 package com.netsuite.webservices.transactions.employees_2018_2;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlType;
+public class PaycheckPayPto  implements java.io.Serializable {
+    private java.lang.Long payItem;
 
+    private java.lang.String payItemName;
 
-/**
- * <p>PaycheckPayPto complex type的 Java 类。
- * 
- * <p>以下模式片段指定包含在此类中的预期内容。
- * 
- * <pre>
- * &lt;complexType name="PaycheckPayPto">
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element name="payItem" type="{http://www.w3.org/2001/XMLSchema}long" minOccurs="0"/>
- *         &lt;element name="payItemName" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="hoursAccrued" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
- *         &lt;element name="hoursUsed" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
- *         &lt;element name="hoursBalance" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
- */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "PaycheckPayPto", propOrder = {
-    "payItem",
-    "payItemName",
-    "hoursAccrued",
-    "hoursUsed",
-    "hoursBalance"
-})
-public class PaycheckPayPto {
+    private java.lang.Double hoursAccrued;
 
-    protected Long payItem;
-    protected String payItemName;
-    protected Double hoursAccrued;
-    protected Double hoursUsed;
-    protected Double hoursBalance;
+    private java.lang.Double hoursUsed;
+
+    private java.lang.Double hoursBalance;
+
+    public PaycheckPayPto() {
+    }
+
+    public PaycheckPayPto(
+           java.lang.Long payItem,
+           java.lang.String payItemName,
+           java.lang.Double hoursAccrued,
+           java.lang.Double hoursUsed,
+           java.lang.Double hoursBalance) {
+           this.payItem = payItem;
+           this.payItemName = payItemName;
+           this.hoursAccrued = hoursAccrued;
+           this.hoursUsed = hoursUsed;
+           this.hoursBalance = hoursBalance;
+    }
+
 
     /**
-     * 获取payItem属性的值。
+     * Gets the payItem value for this PaycheckPayPto.
      * 
-     * @return
-     *     possible object is
-     *     {@link Long }
-     *     
+     * @return payItem
      */
-    public Long getPayItem() {
+    public java.lang.Long getPayItem() {
         return payItem;
     }
 
-    /**
-     * 设置payItem属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Long }
-     *     
-     */
-    public void setPayItem(Long value) {
-        this.payItem = value;
-    }
 
     /**
-     * 获取payItemName属性的值。
+     * Sets the payItem value for this PaycheckPayPto.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param payItem
      */
-    public String getPayItemName() {
+    public void setPayItem(java.lang.Long payItem) {
+        this.payItem = payItem;
+    }
+
+
+    /**
+     * Gets the payItemName value for this PaycheckPayPto.
+     * 
+     * @return payItemName
+     */
+    public java.lang.String getPayItemName() {
         return payItemName;
     }
 
-    /**
-     * 设置payItemName属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setPayItemName(String value) {
-        this.payItemName = value;
-    }
 
     /**
-     * 获取hoursAccrued属性的值。
+     * Sets the payItemName value for this PaycheckPayPto.
      * 
-     * @return
-     *     possible object is
-     *     {@link Double }
-     *     
+     * @param payItemName
      */
-    public Double getHoursAccrued() {
+    public void setPayItemName(java.lang.String payItemName) {
+        this.payItemName = payItemName;
+    }
+
+
+    /**
+     * Gets the hoursAccrued value for this PaycheckPayPto.
+     * 
+     * @return hoursAccrued
+     */
+    public java.lang.Double getHoursAccrued() {
         return hoursAccrued;
     }
 
-    /**
-     * 设置hoursAccrued属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Double }
-     *     
-     */
-    public void setHoursAccrued(Double value) {
-        this.hoursAccrued = value;
-    }
 
     /**
-     * 获取hoursUsed属性的值。
+     * Sets the hoursAccrued value for this PaycheckPayPto.
      * 
-     * @return
-     *     possible object is
-     *     {@link Double }
-     *     
+     * @param hoursAccrued
      */
-    public Double getHoursUsed() {
+    public void setHoursAccrued(java.lang.Double hoursAccrued) {
+        this.hoursAccrued = hoursAccrued;
+    }
+
+
+    /**
+     * Gets the hoursUsed value for this PaycheckPayPto.
+     * 
+     * @return hoursUsed
+     */
+    public java.lang.Double getHoursUsed() {
         return hoursUsed;
     }
 
-    /**
-     * 设置hoursUsed属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Double }
-     *     
-     */
-    public void setHoursUsed(Double value) {
-        this.hoursUsed = value;
-    }
 
     /**
-     * 获取hoursBalance属性的值。
+     * Sets the hoursUsed value for this PaycheckPayPto.
      * 
-     * @return
-     *     possible object is
-     *     {@link Double }
-     *     
+     * @param hoursUsed
      */
-    public Double getHoursBalance() {
+    public void setHoursUsed(java.lang.Double hoursUsed) {
+        this.hoursUsed = hoursUsed;
+    }
+
+
+    /**
+     * Gets the hoursBalance value for this PaycheckPayPto.
+     * 
+     * @return hoursBalance
+     */
+    public java.lang.Double getHoursBalance() {
         return hoursBalance;
     }
 
+
     /**
-     * 设置hoursBalance属性的值。
+     * Sets the hoursBalance value for this PaycheckPayPto.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link Double }
-     *     
+     * @param hoursBalance
      */
-    public void setHoursBalance(Double value) {
-        this.hoursBalance = value;
+    public void setHoursBalance(java.lang.Double hoursBalance) {
+        this.hoursBalance = hoursBalance;
+    }
+
+    private java.lang.Object __equalsCalc = null;
+    public synchronized boolean equals(java.lang.Object obj) {
+        if (!(obj instanceof PaycheckPayPto)) return false;
+        PaycheckPayPto other = (PaycheckPayPto) obj;
+        if (obj == null) return false;
+        if (this == obj) return true;
+        if (__equalsCalc != null) {
+            return (__equalsCalc == obj);
+        }
+        __equalsCalc = obj;
+        boolean _equals;
+        _equals = true && 
+            ((this.payItem==null && other.getPayItem()==null) || 
+             (this.payItem!=null &&
+              this.payItem.equals(other.getPayItem()))) &&
+            ((this.payItemName==null && other.getPayItemName()==null) || 
+             (this.payItemName!=null &&
+              this.payItemName.equals(other.getPayItemName()))) &&
+            ((this.hoursAccrued==null && other.getHoursAccrued()==null) || 
+             (this.hoursAccrued!=null &&
+              this.hoursAccrued.equals(other.getHoursAccrued()))) &&
+            ((this.hoursUsed==null && other.getHoursUsed()==null) || 
+             (this.hoursUsed!=null &&
+              this.hoursUsed.equals(other.getHoursUsed()))) &&
+            ((this.hoursBalance==null && other.getHoursBalance()==null) || 
+             (this.hoursBalance!=null &&
+              this.hoursBalance.equals(other.getHoursBalance())));
+        __equalsCalc = null;
+        return _equals;
+    }
+
+    private boolean __hashCodeCalc = false;
+    public synchronized int hashCode() {
+        if (__hashCodeCalc) {
+            return 0;
+        }
+        __hashCodeCalc = true;
+        int _hashCode = 1;
+        if (getPayItem() != null) {
+            _hashCode += getPayItem().hashCode();
+        }
+        if (getPayItemName() != null) {
+            _hashCode += getPayItemName().hashCode();
+        }
+        if (getHoursAccrued() != null) {
+            _hashCode += getHoursAccrued().hashCode();
+        }
+        if (getHoursUsed() != null) {
+            _hashCode += getHoursUsed().hashCode();
+        }
+        if (getHoursBalance() != null) {
+            _hashCode += getHoursBalance().hashCode();
+        }
+        __hashCodeCalc = false;
+        return _hashCode;
+    }
+
+    // Type metadata
+    private static org.apache.axis.description.TypeDesc typeDesc =
+        new org.apache.axis.description.TypeDesc(PaycheckPayPto.class, true);
+
+    static {
+        typeDesc.setXmlType(new javax.xml.namespace.QName("urn:employees_2018_2.transactions.webservices.netsuite.com", "PaycheckPayPto"));
+        org.apache.axis.description.ElementDesc elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("payItem");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:employees_2018_2.transactions.webservices.netsuite.com", "payItem"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "long"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("payItemName");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:employees_2018_2.transactions.webservices.netsuite.com", "payItemName"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("hoursAccrued");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:employees_2018_2.transactions.webservices.netsuite.com", "hoursAccrued"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "double"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("hoursUsed");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:employees_2018_2.transactions.webservices.netsuite.com", "hoursUsed"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "double"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("hoursBalance");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:employees_2018_2.transactions.webservices.netsuite.com", "hoursBalance"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "double"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+    }
+
+    /**
+     * Return type metadata object
+     */
+    public static org.apache.axis.description.TypeDesc getTypeDesc() {
+        return typeDesc;
+    }
+
+    /**
+     * Get Custom Serializer
+     */
+    public static org.apache.axis.encoding.Serializer getSerializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanSerializer(
+            _javaType, _xmlType, typeDesc);
+    }
+
+    /**
+     * Get Custom Deserializer
+     */
+    public static org.apache.axis.encoding.Deserializer getDeserializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanDeserializer(
+            _javaType, _xmlType, typeDesc);
     }
 
 }

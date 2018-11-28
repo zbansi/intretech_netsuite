@@ -1,51 +1,70 @@
+/**
+ * SearchMultiSelectFieldOperator.java
+ *
+ * This file was auto-generated from WSDL
+ * by the Apache Axis 1.4 Jul 28, 2010 (04:07:04 PDT) WSDL2Java emitter.
+ */
 
 package com.netsuite.webservices.platform.core_2018_2.types;
 
-import javax.xml.bind.annotation.XmlEnum;
-import javax.xml.bind.annotation.XmlEnumValue;
-import javax.xml.bind.annotation.XmlType;
+public class SearchMultiSelectFieldOperator implements java.io.Serializable {
+    private java.lang.String _value_;
+    private static java.util.HashMap _table_ = new java.util.HashMap();
 
-
-/**
- * <p>SearchMultiSelectFieldOperator的 Java 类。
- * 
- * <p>以下模式片段指定包含在此类中的预期内容。
- * <p>
- * <pre>
- * &lt;simpleType name="SearchMultiSelectFieldOperator">
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     &lt;enumeration value="anyOf"/>
- *     &lt;enumeration value="noneOf"/>
- *   &lt;/restriction>
- * &lt;/simpleType>
- * </pre>
- * 
- */
-@XmlType(name = "SearchMultiSelectFieldOperator", namespace = "urn:types.core_2018_2.platform.webservices.netsuite.com")
-@XmlEnum
-public enum SearchMultiSelectFieldOperator {
-
-    @XmlEnumValue("anyOf")
-    ANY_OF("anyOf"),
-    @XmlEnumValue("noneOf")
-    NONE_OF("noneOf");
-    private final String value;
-
-    SearchMultiSelectFieldOperator(String v) {
-        value = v;
+    // Constructor
+    protected SearchMultiSelectFieldOperator(java.lang.String value) {
+        _value_ = value;
+        _table_.put(_value_,this);
     }
 
-    public String value() {
-        return value;
+    public static final java.lang.String _anyOf = "anyOf";
+    public static final java.lang.String _noneOf = "noneOf";
+    public static final SearchMultiSelectFieldOperator anyOf = new SearchMultiSelectFieldOperator(_anyOf);
+    public static final SearchMultiSelectFieldOperator noneOf = new SearchMultiSelectFieldOperator(_noneOf);
+    public java.lang.String getValue() { return _value_;}
+    public static SearchMultiSelectFieldOperator fromValue(java.lang.String value)
+          throws java.lang.IllegalArgumentException {
+        SearchMultiSelectFieldOperator enumeration = (SearchMultiSelectFieldOperator)
+            _table_.get(value);
+        if (enumeration==null) throw new java.lang.IllegalArgumentException();
+        return enumeration;
     }
+    public static SearchMultiSelectFieldOperator fromString(java.lang.String value)
+          throws java.lang.IllegalArgumentException {
+        return fromValue(value);
+    }
+    public boolean equals(java.lang.Object obj) {return (obj == this);}
+    public int hashCode() { return toString().hashCode();}
+    public java.lang.String toString() { return _value_;}
+    public java.lang.Object readResolve() throws java.io.ObjectStreamException { return fromValue(_value_);}
+    public static org.apache.axis.encoding.Serializer getSerializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new org.apache.axis.encoding.ser.EnumSerializer(
+            _javaType, _xmlType);
+    }
+    public static org.apache.axis.encoding.Deserializer getDeserializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new org.apache.axis.encoding.ser.EnumDeserializer(
+            _javaType, _xmlType);
+    }
+    // Type metadata
+    private static org.apache.axis.description.TypeDesc typeDesc =
+        new org.apache.axis.description.TypeDesc(SearchMultiSelectFieldOperator.class);
 
-    public static SearchMultiSelectFieldOperator fromValue(String v) {
-        for (SearchMultiSelectFieldOperator c: SearchMultiSelectFieldOperator.values()) {
-            if (c.value.equals(v)) {
-                return c;
-            }
-        }
-        throw new IllegalArgumentException(v);
+    static {
+        typeDesc.setXmlType(new javax.xml.namespace.QName("urn:types.core_2018_2.platform.webservices.netsuite.com", "SearchMultiSelectFieldOperator"));
+    }
+    /**
+     * Return type metadata object
+     */
+    public static org.apache.axis.description.TypeDesc getTypeDesc() {
+        return typeDesc;
     }
 
 }

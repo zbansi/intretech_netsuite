@@ -1,349 +1,507 @@
+/**
+ * ProjectTaskSearch.java
+ *
+ * This file was auto-generated from WSDL
+ * by the Apache Axis 1.4 Jul 28, 2010 (04:07:04 PDT) WSDL2Java emitter.
+ */
 
 package com.netsuite.webservices.activities.scheduling_2018_2;
 
-import java.util.ArrayList;
-import java.util.List;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlType;
-import com.netsuite.webservices.platform.common_2018_2.CustomSearchJoin;
-import com.netsuite.webservices.platform.common_2018_2.EmployeeSearchBasic;
-import com.netsuite.webservices.platform.common_2018_2.JobSearchBasic;
-import com.netsuite.webservices.platform.common_2018_2.NoteSearchBasic;
-import com.netsuite.webservices.platform.common_2018_2.ProjectTaskAssignmentSearchBasic;
-import com.netsuite.webservices.platform.common_2018_2.ProjectTaskSearchBasic;
-import com.netsuite.webservices.platform.common_2018_2.ResourceAllocationSearchBasic;
-import com.netsuite.webservices.platform.common_2018_2.TimeBillSearchBasic;
-import com.netsuite.webservices.platform.common_2018_2.TransactionSearchBasic;
-import com.netsuite.webservices.platform.core_2018_2.SearchRecord;
+public class ProjectTaskSearch  extends com.netsuite.webservices.platform.core_2018_2.SearchRecord  implements java.io.Serializable {
+    private com.netsuite.webservices.platform.common_2018_2.ProjectTaskSearchBasic basic;
 
+    private com.netsuite.webservices.platform.common_2018_2.JobSearchBasic jobJoin;
 
-/**
- * <p>ProjectTaskSearch complex type的 Java 类。
- * 
- * <p>以下模式片段指定包含在此类中的预期内容。
- * 
- * <pre>
- * &lt;complexType name="ProjectTaskSearch">
- *   &lt;complexContent>
- *     &lt;extension base="{urn:core_2018_2.platform.webservices.netsuite.com}SearchRecord">
- *       &lt;sequence>
- *         &lt;element name="basic" type="{urn:common_2018_2.platform.webservices.netsuite.com}ProjectTaskSearchBasic" minOccurs="0"/>
- *         &lt;element name="jobJoin" type="{urn:common_2018_2.platform.webservices.netsuite.com}JobSearchBasic" minOccurs="0"/>
- *         &lt;element name="predecessorJoin" type="{urn:common_2018_2.platform.webservices.netsuite.com}ProjectTaskSearchBasic" minOccurs="0"/>
- *         &lt;element name="projectTaskAssignmentJoin" type="{urn:common_2018_2.platform.webservices.netsuite.com}ProjectTaskAssignmentSearchBasic" minOccurs="0"/>
- *         &lt;element name="resourceAllocationJoin" type="{urn:common_2018_2.platform.webservices.netsuite.com}ResourceAllocationSearchBasic" minOccurs="0"/>
- *         &lt;element name="successorJoin" type="{urn:common_2018_2.platform.webservices.netsuite.com}ProjectTaskSearchBasic" minOccurs="0"/>
- *         &lt;element name="timeJoin" type="{urn:common_2018_2.platform.webservices.netsuite.com}TimeBillSearchBasic" minOccurs="0"/>
- *         &lt;element name="transactionJoin" type="{urn:common_2018_2.platform.webservices.netsuite.com}TransactionSearchBasic" minOccurs="0"/>
- *         &lt;element name="userJoin" type="{urn:common_2018_2.platform.webservices.netsuite.com}EmployeeSearchBasic" minOccurs="0"/>
- *         &lt;element name="userNotesJoin" type="{urn:common_2018_2.platform.webservices.netsuite.com}NoteSearchBasic" minOccurs="0"/>
- *         &lt;element name="customSearchJoin" type="{urn:common_2018_2.platform.webservices.netsuite.com}CustomSearchJoin" maxOccurs="unbounded" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/extension>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
- */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "ProjectTaskSearch", propOrder = {
-    "basic",
-    "jobJoin",
-    "predecessorJoin",
-    "projectTaskAssignmentJoin",
-    "resourceAllocationJoin",
-    "successorJoin",
-    "timeJoin",
-    "transactionJoin",
-    "userJoin",
-    "userNotesJoin",
-    "customSearchJoin"
-})
-public class ProjectTaskSearch
-    extends SearchRecord
-{
+    private com.netsuite.webservices.platform.common_2018_2.ProjectTaskSearchBasic predecessorJoin;
 
-    protected ProjectTaskSearchBasic basic;
-    protected JobSearchBasic jobJoin;
-    protected ProjectTaskSearchBasic predecessorJoin;
-    protected ProjectTaskAssignmentSearchBasic projectTaskAssignmentJoin;
-    protected ResourceAllocationSearchBasic resourceAllocationJoin;
-    protected ProjectTaskSearchBasic successorJoin;
-    protected TimeBillSearchBasic timeJoin;
-    protected TransactionSearchBasic transactionJoin;
-    protected EmployeeSearchBasic userJoin;
-    protected NoteSearchBasic userNotesJoin;
-    protected List<CustomSearchJoin> customSearchJoin;
+    private com.netsuite.webservices.platform.common_2018_2.ProjectTaskAssignmentSearchBasic projectTaskAssignmentJoin;
+
+    private com.netsuite.webservices.platform.common_2018_2.ResourceAllocationSearchBasic resourceAllocationJoin;
+
+    private com.netsuite.webservices.platform.common_2018_2.ProjectTaskSearchBasic successorJoin;
+
+    private com.netsuite.webservices.platform.common_2018_2.TimeBillSearchBasic timeJoin;
+
+    private com.netsuite.webservices.platform.common_2018_2.TransactionSearchBasic transactionJoin;
+
+    private com.netsuite.webservices.platform.common_2018_2.EmployeeSearchBasic userJoin;
+
+    private com.netsuite.webservices.platform.common_2018_2.NoteSearchBasic userNotesJoin;
+
+    private com.netsuite.webservices.platform.common_2018_2.CustomSearchJoin[] customSearchJoin;
+
+    public ProjectTaskSearch() {
+    }
+
+    public ProjectTaskSearch(
+           com.netsuite.webservices.platform.common_2018_2.ProjectTaskSearchBasic basic,
+           com.netsuite.webservices.platform.common_2018_2.JobSearchBasic jobJoin,
+           com.netsuite.webservices.platform.common_2018_2.ProjectTaskSearchBasic predecessorJoin,
+           com.netsuite.webservices.platform.common_2018_2.ProjectTaskAssignmentSearchBasic projectTaskAssignmentJoin,
+           com.netsuite.webservices.platform.common_2018_2.ResourceAllocationSearchBasic resourceAllocationJoin,
+           com.netsuite.webservices.platform.common_2018_2.ProjectTaskSearchBasic successorJoin,
+           com.netsuite.webservices.platform.common_2018_2.TimeBillSearchBasic timeJoin,
+           com.netsuite.webservices.platform.common_2018_2.TransactionSearchBasic transactionJoin,
+           com.netsuite.webservices.platform.common_2018_2.EmployeeSearchBasic userJoin,
+           com.netsuite.webservices.platform.common_2018_2.NoteSearchBasic userNotesJoin,
+           com.netsuite.webservices.platform.common_2018_2.CustomSearchJoin[] customSearchJoin) {
+        this.basic = basic;
+        this.jobJoin = jobJoin;
+        this.predecessorJoin = predecessorJoin;
+        this.projectTaskAssignmentJoin = projectTaskAssignmentJoin;
+        this.resourceAllocationJoin = resourceAllocationJoin;
+        this.successorJoin = successorJoin;
+        this.timeJoin = timeJoin;
+        this.transactionJoin = transactionJoin;
+        this.userJoin = userJoin;
+        this.userNotesJoin = userNotesJoin;
+        this.customSearchJoin = customSearchJoin;
+    }
+
 
     /**
-     * 获取basic属性的值。
+     * Gets the basic value for this ProjectTaskSearch.
      * 
-     * @return
-     *     possible object is
-     *     {@link ProjectTaskSearchBasic }
-     *     
+     * @return basic
      */
-    public ProjectTaskSearchBasic getBasic() {
+    public com.netsuite.webservices.platform.common_2018_2.ProjectTaskSearchBasic getBasic() {
         return basic;
     }
 
-    /**
-     * 设置basic属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link ProjectTaskSearchBasic }
-     *     
-     */
-    public void setBasic(ProjectTaskSearchBasic value) {
-        this.basic = value;
-    }
 
     /**
-     * 获取jobJoin属性的值。
+     * Sets the basic value for this ProjectTaskSearch.
      * 
-     * @return
-     *     possible object is
-     *     {@link JobSearchBasic }
-     *     
+     * @param basic
      */
-    public JobSearchBasic getJobJoin() {
+    public void setBasic(com.netsuite.webservices.platform.common_2018_2.ProjectTaskSearchBasic basic) {
+        this.basic = basic;
+    }
+
+
+    /**
+     * Gets the jobJoin value for this ProjectTaskSearch.
+     * 
+     * @return jobJoin
+     */
+    public com.netsuite.webservices.platform.common_2018_2.JobSearchBasic getJobJoin() {
         return jobJoin;
     }
 
-    /**
-     * 设置jobJoin属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link JobSearchBasic }
-     *     
-     */
-    public void setJobJoin(JobSearchBasic value) {
-        this.jobJoin = value;
-    }
 
     /**
-     * 获取predecessorJoin属性的值。
+     * Sets the jobJoin value for this ProjectTaskSearch.
      * 
-     * @return
-     *     possible object is
-     *     {@link ProjectTaskSearchBasic }
-     *     
+     * @param jobJoin
      */
-    public ProjectTaskSearchBasic getPredecessorJoin() {
+    public void setJobJoin(com.netsuite.webservices.platform.common_2018_2.JobSearchBasic jobJoin) {
+        this.jobJoin = jobJoin;
+    }
+
+
+    /**
+     * Gets the predecessorJoin value for this ProjectTaskSearch.
+     * 
+     * @return predecessorJoin
+     */
+    public com.netsuite.webservices.platform.common_2018_2.ProjectTaskSearchBasic getPredecessorJoin() {
         return predecessorJoin;
     }
 
-    /**
-     * 设置predecessorJoin属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link ProjectTaskSearchBasic }
-     *     
-     */
-    public void setPredecessorJoin(ProjectTaskSearchBasic value) {
-        this.predecessorJoin = value;
-    }
 
     /**
-     * 获取projectTaskAssignmentJoin属性的值。
+     * Sets the predecessorJoin value for this ProjectTaskSearch.
      * 
-     * @return
-     *     possible object is
-     *     {@link ProjectTaskAssignmentSearchBasic }
-     *     
+     * @param predecessorJoin
      */
-    public ProjectTaskAssignmentSearchBasic getProjectTaskAssignmentJoin() {
+    public void setPredecessorJoin(com.netsuite.webservices.platform.common_2018_2.ProjectTaskSearchBasic predecessorJoin) {
+        this.predecessorJoin = predecessorJoin;
+    }
+
+
+    /**
+     * Gets the projectTaskAssignmentJoin value for this ProjectTaskSearch.
+     * 
+     * @return projectTaskAssignmentJoin
+     */
+    public com.netsuite.webservices.platform.common_2018_2.ProjectTaskAssignmentSearchBasic getProjectTaskAssignmentJoin() {
         return projectTaskAssignmentJoin;
     }
 
-    /**
-     * 设置projectTaskAssignmentJoin属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link ProjectTaskAssignmentSearchBasic }
-     *     
-     */
-    public void setProjectTaskAssignmentJoin(ProjectTaskAssignmentSearchBasic value) {
-        this.projectTaskAssignmentJoin = value;
-    }
 
     /**
-     * 获取resourceAllocationJoin属性的值。
+     * Sets the projectTaskAssignmentJoin value for this ProjectTaskSearch.
      * 
-     * @return
-     *     possible object is
-     *     {@link ResourceAllocationSearchBasic }
-     *     
+     * @param projectTaskAssignmentJoin
      */
-    public ResourceAllocationSearchBasic getResourceAllocationJoin() {
+    public void setProjectTaskAssignmentJoin(com.netsuite.webservices.platform.common_2018_2.ProjectTaskAssignmentSearchBasic projectTaskAssignmentJoin) {
+        this.projectTaskAssignmentJoin = projectTaskAssignmentJoin;
+    }
+
+
+    /**
+     * Gets the resourceAllocationJoin value for this ProjectTaskSearch.
+     * 
+     * @return resourceAllocationJoin
+     */
+    public com.netsuite.webservices.platform.common_2018_2.ResourceAllocationSearchBasic getResourceAllocationJoin() {
         return resourceAllocationJoin;
     }
 
-    /**
-     * 设置resourceAllocationJoin属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link ResourceAllocationSearchBasic }
-     *     
-     */
-    public void setResourceAllocationJoin(ResourceAllocationSearchBasic value) {
-        this.resourceAllocationJoin = value;
-    }
 
     /**
-     * 获取successorJoin属性的值。
+     * Sets the resourceAllocationJoin value for this ProjectTaskSearch.
      * 
-     * @return
-     *     possible object is
-     *     {@link ProjectTaskSearchBasic }
-     *     
+     * @param resourceAllocationJoin
      */
-    public ProjectTaskSearchBasic getSuccessorJoin() {
+    public void setResourceAllocationJoin(com.netsuite.webservices.platform.common_2018_2.ResourceAllocationSearchBasic resourceAllocationJoin) {
+        this.resourceAllocationJoin = resourceAllocationJoin;
+    }
+
+
+    /**
+     * Gets the successorJoin value for this ProjectTaskSearch.
+     * 
+     * @return successorJoin
+     */
+    public com.netsuite.webservices.platform.common_2018_2.ProjectTaskSearchBasic getSuccessorJoin() {
         return successorJoin;
     }
 
-    /**
-     * 设置successorJoin属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link ProjectTaskSearchBasic }
-     *     
-     */
-    public void setSuccessorJoin(ProjectTaskSearchBasic value) {
-        this.successorJoin = value;
-    }
 
     /**
-     * 获取timeJoin属性的值。
+     * Sets the successorJoin value for this ProjectTaskSearch.
      * 
-     * @return
-     *     possible object is
-     *     {@link TimeBillSearchBasic }
-     *     
+     * @param successorJoin
      */
-    public TimeBillSearchBasic getTimeJoin() {
+    public void setSuccessorJoin(com.netsuite.webservices.platform.common_2018_2.ProjectTaskSearchBasic successorJoin) {
+        this.successorJoin = successorJoin;
+    }
+
+
+    /**
+     * Gets the timeJoin value for this ProjectTaskSearch.
+     * 
+     * @return timeJoin
+     */
+    public com.netsuite.webservices.platform.common_2018_2.TimeBillSearchBasic getTimeJoin() {
         return timeJoin;
     }
 
-    /**
-     * 设置timeJoin属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link TimeBillSearchBasic }
-     *     
-     */
-    public void setTimeJoin(TimeBillSearchBasic value) {
-        this.timeJoin = value;
-    }
 
     /**
-     * 获取transactionJoin属性的值。
+     * Sets the timeJoin value for this ProjectTaskSearch.
      * 
-     * @return
-     *     possible object is
-     *     {@link TransactionSearchBasic }
-     *     
+     * @param timeJoin
      */
-    public TransactionSearchBasic getTransactionJoin() {
+    public void setTimeJoin(com.netsuite.webservices.platform.common_2018_2.TimeBillSearchBasic timeJoin) {
+        this.timeJoin = timeJoin;
+    }
+
+
+    /**
+     * Gets the transactionJoin value for this ProjectTaskSearch.
+     * 
+     * @return transactionJoin
+     */
+    public com.netsuite.webservices.platform.common_2018_2.TransactionSearchBasic getTransactionJoin() {
         return transactionJoin;
     }
 
-    /**
-     * 设置transactionJoin属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link TransactionSearchBasic }
-     *     
-     */
-    public void setTransactionJoin(TransactionSearchBasic value) {
-        this.transactionJoin = value;
-    }
 
     /**
-     * 获取userJoin属性的值。
+     * Sets the transactionJoin value for this ProjectTaskSearch.
      * 
-     * @return
-     *     possible object is
-     *     {@link EmployeeSearchBasic }
-     *     
+     * @param transactionJoin
      */
-    public EmployeeSearchBasic getUserJoin() {
+    public void setTransactionJoin(com.netsuite.webservices.platform.common_2018_2.TransactionSearchBasic transactionJoin) {
+        this.transactionJoin = transactionJoin;
+    }
+
+
+    /**
+     * Gets the userJoin value for this ProjectTaskSearch.
+     * 
+     * @return userJoin
+     */
+    public com.netsuite.webservices.platform.common_2018_2.EmployeeSearchBasic getUserJoin() {
         return userJoin;
     }
 
-    /**
-     * 设置userJoin属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link EmployeeSearchBasic }
-     *     
-     */
-    public void setUserJoin(EmployeeSearchBasic value) {
-        this.userJoin = value;
-    }
 
     /**
-     * 获取userNotesJoin属性的值。
+     * Sets the userJoin value for this ProjectTaskSearch.
      * 
-     * @return
-     *     possible object is
-     *     {@link NoteSearchBasic }
-     *     
+     * @param userJoin
      */
-    public NoteSearchBasic getUserNotesJoin() {
+    public void setUserJoin(com.netsuite.webservices.platform.common_2018_2.EmployeeSearchBasic userJoin) {
+        this.userJoin = userJoin;
+    }
+
+
+    /**
+     * Gets the userNotesJoin value for this ProjectTaskSearch.
+     * 
+     * @return userNotesJoin
+     */
+    public com.netsuite.webservices.platform.common_2018_2.NoteSearchBasic getUserNotesJoin() {
         return userNotesJoin;
     }
 
+
     /**
-     * 设置userNotesJoin属性的值。
+     * Sets the userNotesJoin value for this ProjectTaskSearch.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link NoteSearchBasic }
-     *     
+     * @param userNotesJoin
      */
-    public void setUserNotesJoin(NoteSearchBasic value) {
-        this.userNotesJoin = value;
+    public void setUserNotesJoin(com.netsuite.webservices.platform.common_2018_2.NoteSearchBasic userNotesJoin) {
+        this.userNotesJoin = userNotesJoin;
+    }
+
+
+    /**
+     * Gets the customSearchJoin value for this ProjectTaskSearch.
+     * 
+     * @return customSearchJoin
+     */
+    public com.netsuite.webservices.platform.common_2018_2.CustomSearchJoin[] getCustomSearchJoin() {
+        return customSearchJoin;
+    }
+
+
+    /**
+     * Sets the customSearchJoin value for this ProjectTaskSearch.
+     * 
+     * @param customSearchJoin
+     */
+    public void setCustomSearchJoin(com.netsuite.webservices.platform.common_2018_2.CustomSearchJoin[] customSearchJoin) {
+        this.customSearchJoin = customSearchJoin;
+    }
+
+    public com.netsuite.webservices.platform.common_2018_2.CustomSearchJoin getCustomSearchJoin(int i) {
+        return this.customSearchJoin[i];
+    }
+
+    public void setCustomSearchJoin(int i, com.netsuite.webservices.platform.common_2018_2.CustomSearchJoin _value) {
+        this.customSearchJoin[i] = _value;
+    }
+
+    private java.lang.Object __equalsCalc = null;
+    public synchronized boolean equals(java.lang.Object obj) {
+        if (!(obj instanceof ProjectTaskSearch)) return false;
+        ProjectTaskSearch other = (ProjectTaskSearch) obj;
+        if (obj == null) return false;
+        if (this == obj) return true;
+        if (__equalsCalc != null) {
+            return (__equalsCalc == obj);
+        }
+        __equalsCalc = obj;
+        boolean _equals;
+        _equals = super.equals(obj) && 
+            ((this.basic==null && other.getBasic()==null) || 
+             (this.basic!=null &&
+              this.basic.equals(other.getBasic()))) &&
+            ((this.jobJoin==null && other.getJobJoin()==null) || 
+             (this.jobJoin!=null &&
+              this.jobJoin.equals(other.getJobJoin()))) &&
+            ((this.predecessorJoin==null && other.getPredecessorJoin()==null) || 
+             (this.predecessorJoin!=null &&
+              this.predecessorJoin.equals(other.getPredecessorJoin()))) &&
+            ((this.projectTaskAssignmentJoin==null && other.getProjectTaskAssignmentJoin()==null) || 
+             (this.projectTaskAssignmentJoin!=null &&
+              this.projectTaskAssignmentJoin.equals(other.getProjectTaskAssignmentJoin()))) &&
+            ((this.resourceAllocationJoin==null && other.getResourceAllocationJoin()==null) || 
+             (this.resourceAllocationJoin!=null &&
+              this.resourceAllocationJoin.equals(other.getResourceAllocationJoin()))) &&
+            ((this.successorJoin==null && other.getSuccessorJoin()==null) || 
+             (this.successorJoin!=null &&
+              this.successorJoin.equals(other.getSuccessorJoin()))) &&
+            ((this.timeJoin==null && other.getTimeJoin()==null) || 
+             (this.timeJoin!=null &&
+              this.timeJoin.equals(other.getTimeJoin()))) &&
+            ((this.transactionJoin==null && other.getTransactionJoin()==null) || 
+             (this.transactionJoin!=null &&
+              this.transactionJoin.equals(other.getTransactionJoin()))) &&
+            ((this.userJoin==null && other.getUserJoin()==null) || 
+             (this.userJoin!=null &&
+              this.userJoin.equals(other.getUserJoin()))) &&
+            ((this.userNotesJoin==null && other.getUserNotesJoin()==null) || 
+             (this.userNotesJoin!=null &&
+              this.userNotesJoin.equals(other.getUserNotesJoin()))) &&
+            ((this.customSearchJoin==null && other.getCustomSearchJoin()==null) || 
+             (this.customSearchJoin!=null &&
+              java.util.Arrays.equals(this.customSearchJoin, other.getCustomSearchJoin())));
+        __equalsCalc = null;
+        return _equals;
+    }
+
+    private boolean __hashCodeCalc = false;
+    public synchronized int hashCode() {
+        if (__hashCodeCalc) {
+            return 0;
+        }
+        __hashCodeCalc = true;
+        int _hashCode = super.hashCode();
+        if (getBasic() != null) {
+            _hashCode += getBasic().hashCode();
+        }
+        if (getJobJoin() != null) {
+            _hashCode += getJobJoin().hashCode();
+        }
+        if (getPredecessorJoin() != null) {
+            _hashCode += getPredecessorJoin().hashCode();
+        }
+        if (getProjectTaskAssignmentJoin() != null) {
+            _hashCode += getProjectTaskAssignmentJoin().hashCode();
+        }
+        if (getResourceAllocationJoin() != null) {
+            _hashCode += getResourceAllocationJoin().hashCode();
+        }
+        if (getSuccessorJoin() != null) {
+            _hashCode += getSuccessorJoin().hashCode();
+        }
+        if (getTimeJoin() != null) {
+            _hashCode += getTimeJoin().hashCode();
+        }
+        if (getTransactionJoin() != null) {
+            _hashCode += getTransactionJoin().hashCode();
+        }
+        if (getUserJoin() != null) {
+            _hashCode += getUserJoin().hashCode();
+        }
+        if (getUserNotesJoin() != null) {
+            _hashCode += getUserNotesJoin().hashCode();
+        }
+        if (getCustomSearchJoin() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getCustomSearchJoin());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getCustomSearchJoin(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        __hashCodeCalc = false;
+        return _hashCode;
+    }
+
+    // Type metadata
+    private static org.apache.axis.description.TypeDesc typeDesc =
+        new org.apache.axis.description.TypeDesc(ProjectTaskSearch.class, true);
+
+    static {
+        typeDesc.setXmlType(new javax.xml.namespace.QName("urn:scheduling_2018_2.activities.webservices.netsuite.com", "ProjectTaskSearch"));
+        org.apache.axis.description.ElementDesc elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("basic");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:scheduling_2018_2.activities.webservices.netsuite.com", "basic"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "ProjectTaskSearchBasic"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("jobJoin");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:scheduling_2018_2.activities.webservices.netsuite.com", "jobJoin"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "JobSearchBasic"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("predecessorJoin");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:scheduling_2018_2.activities.webservices.netsuite.com", "predecessorJoin"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "ProjectTaskSearchBasic"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("projectTaskAssignmentJoin");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:scheduling_2018_2.activities.webservices.netsuite.com", "projectTaskAssignmentJoin"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "ProjectTaskAssignmentSearchBasic"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("resourceAllocationJoin");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:scheduling_2018_2.activities.webservices.netsuite.com", "resourceAllocationJoin"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "ResourceAllocationSearchBasic"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("successorJoin");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:scheduling_2018_2.activities.webservices.netsuite.com", "successorJoin"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "ProjectTaskSearchBasic"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("timeJoin");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:scheduling_2018_2.activities.webservices.netsuite.com", "timeJoin"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "TimeBillSearchBasic"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("transactionJoin");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:scheduling_2018_2.activities.webservices.netsuite.com", "transactionJoin"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "TransactionSearchBasic"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("userJoin");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:scheduling_2018_2.activities.webservices.netsuite.com", "userJoin"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "EmployeeSearchBasic"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("userNotesJoin");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:scheduling_2018_2.activities.webservices.netsuite.com", "userNotesJoin"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "NoteSearchBasic"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("customSearchJoin");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:scheduling_2018_2.activities.webservices.netsuite.com", "customSearchJoin"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "CustomSearchJoin"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
     }
 
     /**
-     * Gets the value of the customSearchJoin property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the customSearchJoin property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getCustomSearchJoin().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link CustomSearchJoin }
-     * 
-     * 
+     * Return type metadata object
      */
-    public List<CustomSearchJoin> getCustomSearchJoin() {
-        if (customSearchJoin == null) {
-            customSearchJoin = new ArrayList<CustomSearchJoin>();
-        }
-        return this.customSearchJoin;
+    public static org.apache.axis.description.TypeDesc getTypeDesc() {
+        return typeDesc;
+    }
+
+    /**
+     * Get Custom Serializer
+     */
+    public static org.apache.axis.encoding.Serializer getSerializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanSerializer(
+            _javaType, _xmlType, typeDesc);
+    }
+
+    /**
+     * Get Custom Deserializer
+     */
+    public static org.apache.axis.encoding.Deserializer getDeserializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanDeserializer(
+            _javaType, _xmlType, typeDesc);
     }
 
 }

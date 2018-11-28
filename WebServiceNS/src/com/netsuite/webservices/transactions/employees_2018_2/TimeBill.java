@@ -1,913 +1,1275 @@
+/**
+ * TimeBill.java
+ *
+ * This file was auto-generated from WSDL
+ * by the Apache Axis 1.4 Jul 28, 2010 (04:07:04 PDT) WSDL2Java emitter.
+ */
 
 package com.netsuite.webservices.transactions.employees_2018_2;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlAttribute;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlSchemaType;
-import javax.xml.bind.annotation.XmlType;
-import javax.xml.datatype.XMLGregorianCalendar;
-import com.netsuite.webservices.platform.core_2018_2.CustomFieldList;
-import com.netsuite.webservices.platform.core_2018_2.Duration;
-import com.netsuite.webservices.platform.core_2018_2.Record;
-import com.netsuite.webservices.platform.core_2018_2.RecordRef;
-import com.netsuite.webservices.transactions.employees_2018_2.types.TimeBillTimeType;
+public class TimeBill  extends com.netsuite.webservices.platform.core_2018_2.Record  implements java.io.Serializable {
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef customForm;
 
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef employee;
 
-/**
- * <p>TimeBill complex type的 Java 类。
- * 
- * <p>以下模式片段指定包含在此类中的预期内容。
- * 
- * <pre>
- * &lt;complexType name="TimeBill">
- *   &lt;complexContent>
- *     &lt;extension base="{urn:core_2018_2.platform.webservices.netsuite.com}Record">
- *       &lt;sequence>
- *         &lt;element name="customForm" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="employee" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="tranDate" type="{http://www.w3.org/2001/XMLSchema}dateTime" minOccurs="0"/>
- *         &lt;element name="approvalStatus" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="customer" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="caseTaskEvent" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="isBillable" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         &lt;element name="payrollItem" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="paidExternally" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         &lt;element name="workplace" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="item" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="department" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="class" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="location" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="hours" type="{urn:core_2018_2.platform.webservices.netsuite.com}Duration" minOccurs="0"/>
- *         &lt;element name="price" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="timeType" type="{urn:types.employees_2018_2.transactions.webservices.netsuite.com}TimeBillTimeType" minOccurs="0"/>
- *         &lt;element name="rate" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
- *         &lt;element name="overrideRate" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         &lt;element name="temporaryLocalJurisdiction" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="temporaryStateJurisdiction" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="memo" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="rejectionNote" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="subsidiary" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="supervisorApproval" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         &lt;element name="createdDate" type="{http://www.w3.org/2001/XMLSchema}dateTime" minOccurs="0"/>
- *         &lt;element name="lastModifiedDate" type="{http://www.w3.org/2001/XMLSchema}dateTime" minOccurs="0"/>
- *         &lt;element name="timeSheet" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="status" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="customFieldList" type="{urn:core_2018_2.platform.webservices.netsuite.com}CustomFieldList" minOccurs="0"/>
- *       &lt;/sequence>
- *       &lt;attribute name="internalId" type="{http://www.w3.org/2001/XMLSchema}string" />
- *       &lt;attribute name="externalId" type="{http://www.w3.org/2001/XMLSchema}string" />
- *     &lt;/extension>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
- */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "TimeBill", propOrder = {
-    "customForm",
-    "employee",
-    "tranDate",
-    "approvalStatus",
-    "customer",
-    "caseTaskEvent",
-    "isBillable",
-    "payrollItem",
-    "paidExternally",
-    "workplace",
-    "item",
-    "department",
-    "clazz",
-    "location",
-    "hours",
-    "price",
-    "timeType",
-    "rate",
-    "overrideRate",
-    "temporaryLocalJurisdiction",
-    "temporaryStateJurisdiction",
-    "memo",
-    "rejectionNote",
-    "subsidiary",
-    "supervisorApproval",
-    "createdDate",
-    "lastModifiedDate",
-    "timeSheet",
-    "status",
-    "customFieldList"
-})
-public class TimeBill
-    extends Record
-{
+    private java.util.Calendar tranDate;
 
-    protected RecordRef customForm;
-    protected RecordRef employee;
-    @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar tranDate;
-    protected RecordRef approvalStatus;
-    protected RecordRef customer;
-    protected RecordRef caseTaskEvent;
-    protected Boolean isBillable;
-    protected RecordRef payrollItem;
-    protected Boolean paidExternally;
-    protected RecordRef workplace;
-    protected RecordRef item;
-    protected RecordRef department;
-    @XmlElement(name = "class")
-    protected RecordRef clazz;
-    protected RecordRef location;
-    protected Duration hours;
-    protected RecordRef price;
-    @XmlSchemaType(name = "string")
-    protected TimeBillTimeType timeType;
-    protected Double rate;
-    protected Boolean overrideRate;
-    protected RecordRef temporaryLocalJurisdiction;
-    protected RecordRef temporaryStateJurisdiction;
-    protected String memo;
-    protected String rejectionNote;
-    protected RecordRef subsidiary;
-    protected Boolean supervisorApproval;
-    @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar createdDate;
-    @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar lastModifiedDate;
-    protected RecordRef timeSheet;
-    protected String status;
-    protected CustomFieldList customFieldList;
-    @XmlAttribute(name = "internalId")
-    protected String internalId;
-    @XmlAttribute(name = "externalId")
-    protected String externalId;
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef approvalStatus;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef customer;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef caseTaskEvent;
+
+    private java.lang.Boolean isBillable;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef payrollItem;
+
+    private java.lang.Boolean paidExternally;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef workplace;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef item;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef department;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef _class;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef location;
+
+    private com.netsuite.webservices.platform.core_2018_2.Duration hours;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef price;
+
+    private com.netsuite.webservices.transactions.employees_2018_2.types.TimeBillTimeType timeType;
+
+    private java.lang.Double rate;
+
+    private java.lang.Boolean overrideRate;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef temporaryLocalJurisdiction;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef temporaryStateJurisdiction;
+
+    private java.lang.String memo;
+
+    private java.lang.String rejectionNote;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef subsidiary;
+
+    private java.lang.Boolean supervisorApproval;
+
+    private java.util.Calendar createdDate;
+
+    private java.util.Calendar lastModifiedDate;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef timeSheet;
+
+    private java.lang.String status;
+
+    private com.netsuite.webservices.platform.core_2018_2.CustomFieldRef[] customFieldList;
+
+    private java.lang.String internalId;  // attribute
+
+    private java.lang.String externalId;  // attribute
+
+    public TimeBill() {
+    }
+
+    public TimeBill(
+           java.lang.String[] nullFieldList,
+           java.lang.String internalId,
+           java.lang.String externalId,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef customForm,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef employee,
+           java.util.Calendar tranDate,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef approvalStatus,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef customer,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef caseTaskEvent,
+           java.lang.Boolean isBillable,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef payrollItem,
+           java.lang.Boolean paidExternally,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef workplace,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef item,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef department,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef _class,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef location,
+           com.netsuite.webservices.platform.core_2018_2.Duration hours,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef price,
+           com.netsuite.webservices.transactions.employees_2018_2.types.TimeBillTimeType timeType,
+           java.lang.Double rate,
+           java.lang.Boolean overrideRate,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef temporaryLocalJurisdiction,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef temporaryStateJurisdiction,
+           java.lang.String memo,
+           java.lang.String rejectionNote,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef subsidiary,
+           java.lang.Boolean supervisorApproval,
+           java.util.Calendar createdDate,
+           java.util.Calendar lastModifiedDate,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef timeSheet,
+           java.lang.String status,
+           com.netsuite.webservices.platform.core_2018_2.CustomFieldRef[] customFieldList) {
+        super(
+            nullFieldList);
+        this.internalId = internalId;
+        this.externalId = externalId;
+        this.customForm = customForm;
+        this.employee = employee;
+        this.tranDate = tranDate;
+        this.approvalStatus = approvalStatus;
+        this.customer = customer;
+        this.caseTaskEvent = caseTaskEvent;
+        this.isBillable = isBillable;
+        this.payrollItem = payrollItem;
+        this.paidExternally = paidExternally;
+        this.workplace = workplace;
+        this.item = item;
+        this.department = department;
+        this._class = _class;
+        this.location = location;
+        this.hours = hours;
+        this.price = price;
+        this.timeType = timeType;
+        this.rate = rate;
+        this.overrideRate = overrideRate;
+        this.temporaryLocalJurisdiction = temporaryLocalJurisdiction;
+        this.temporaryStateJurisdiction = temporaryStateJurisdiction;
+        this.memo = memo;
+        this.rejectionNote = rejectionNote;
+        this.subsidiary = subsidiary;
+        this.supervisorApproval = supervisorApproval;
+        this.createdDate = createdDate;
+        this.lastModifiedDate = lastModifiedDate;
+        this.timeSheet = timeSheet;
+        this.status = status;
+        this.customFieldList = customFieldList;
+    }
+
 
     /**
-     * 获取customForm属性的值。
+     * Gets the customForm value for this TimeBill.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @return customForm
      */
-    public RecordRef getCustomForm() {
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getCustomForm() {
         return customForm;
     }
 
-    /**
-     * 设置customForm属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setCustomForm(RecordRef value) {
-        this.customForm = value;
-    }
 
     /**
-     * 获取employee属性的值。
+     * Sets the customForm value for this TimeBill.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param customForm
      */
-    public RecordRef getEmployee() {
+    public void setCustomForm(com.netsuite.webservices.platform.core_2018_2.RecordRef customForm) {
+        this.customForm = customForm;
+    }
+
+
+    /**
+     * Gets the employee value for this TimeBill.
+     * 
+     * @return employee
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getEmployee() {
         return employee;
     }
 
-    /**
-     * 设置employee属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setEmployee(RecordRef value) {
-        this.employee = value;
-    }
 
     /**
-     * 获取tranDate属性的值。
+     * Sets the employee value for this TimeBill.
      * 
-     * @return
-     *     possible object is
-     *     {@link XMLGregorianCalendar }
-     *     
+     * @param employee
      */
-    public XMLGregorianCalendar getTranDate() {
+    public void setEmployee(com.netsuite.webservices.platform.core_2018_2.RecordRef employee) {
+        this.employee = employee;
+    }
+
+
+    /**
+     * Gets the tranDate value for this TimeBill.
+     * 
+     * @return tranDate
+     */
+    public java.util.Calendar getTranDate() {
         return tranDate;
     }
 
-    /**
-     * 设置tranDate属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link XMLGregorianCalendar }
-     *     
-     */
-    public void setTranDate(XMLGregorianCalendar value) {
-        this.tranDate = value;
-    }
 
     /**
-     * 获取approvalStatus属性的值。
+     * Sets the tranDate value for this TimeBill.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param tranDate
      */
-    public RecordRef getApprovalStatus() {
+    public void setTranDate(java.util.Calendar tranDate) {
+        this.tranDate = tranDate;
+    }
+
+
+    /**
+     * Gets the approvalStatus value for this TimeBill.
+     * 
+     * @return approvalStatus
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getApprovalStatus() {
         return approvalStatus;
     }
 
-    /**
-     * 设置approvalStatus属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setApprovalStatus(RecordRef value) {
-        this.approvalStatus = value;
-    }
 
     /**
-     * 获取customer属性的值。
+     * Sets the approvalStatus value for this TimeBill.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param approvalStatus
      */
-    public RecordRef getCustomer() {
+    public void setApprovalStatus(com.netsuite.webservices.platform.core_2018_2.RecordRef approvalStatus) {
+        this.approvalStatus = approvalStatus;
+    }
+
+
+    /**
+     * Gets the customer value for this TimeBill.
+     * 
+     * @return customer
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getCustomer() {
         return customer;
     }
 
-    /**
-     * 设置customer属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setCustomer(RecordRef value) {
-        this.customer = value;
-    }
 
     /**
-     * 获取caseTaskEvent属性的值。
+     * Sets the customer value for this TimeBill.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param customer
      */
-    public RecordRef getCaseTaskEvent() {
+    public void setCustomer(com.netsuite.webservices.platform.core_2018_2.RecordRef customer) {
+        this.customer = customer;
+    }
+
+
+    /**
+     * Gets the caseTaskEvent value for this TimeBill.
+     * 
+     * @return caseTaskEvent
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getCaseTaskEvent() {
         return caseTaskEvent;
     }
 
-    /**
-     * 设置caseTaskEvent属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setCaseTaskEvent(RecordRef value) {
-        this.caseTaskEvent = value;
-    }
 
     /**
-     * 获取isBillable属性的值。
+     * Sets the caseTaskEvent value for this TimeBill.
      * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
+     * @param caseTaskEvent
      */
-    public Boolean isIsBillable() {
+    public void setCaseTaskEvent(com.netsuite.webservices.platform.core_2018_2.RecordRef caseTaskEvent) {
+        this.caseTaskEvent = caseTaskEvent;
+    }
+
+
+    /**
+     * Gets the isBillable value for this TimeBill.
+     * 
+     * @return isBillable
+     */
+    public java.lang.Boolean getIsBillable() {
         return isBillable;
     }
 
-    /**
-     * 设置isBillable属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
-     */
-    public void setIsBillable(Boolean value) {
-        this.isBillable = value;
-    }
 
     /**
-     * 获取payrollItem属性的值。
+     * Sets the isBillable value for this TimeBill.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param isBillable
      */
-    public RecordRef getPayrollItem() {
+    public void setIsBillable(java.lang.Boolean isBillable) {
+        this.isBillable = isBillable;
+    }
+
+
+    /**
+     * Gets the payrollItem value for this TimeBill.
+     * 
+     * @return payrollItem
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getPayrollItem() {
         return payrollItem;
     }
 
-    /**
-     * 设置payrollItem属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setPayrollItem(RecordRef value) {
-        this.payrollItem = value;
-    }
 
     /**
-     * 获取paidExternally属性的值。
+     * Sets the payrollItem value for this TimeBill.
      * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
+     * @param payrollItem
      */
-    public Boolean isPaidExternally() {
+    public void setPayrollItem(com.netsuite.webservices.platform.core_2018_2.RecordRef payrollItem) {
+        this.payrollItem = payrollItem;
+    }
+
+
+    /**
+     * Gets the paidExternally value for this TimeBill.
+     * 
+     * @return paidExternally
+     */
+    public java.lang.Boolean getPaidExternally() {
         return paidExternally;
     }
 
-    /**
-     * 设置paidExternally属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
-     */
-    public void setPaidExternally(Boolean value) {
-        this.paidExternally = value;
-    }
 
     /**
-     * 获取workplace属性的值。
+     * Sets the paidExternally value for this TimeBill.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param paidExternally
      */
-    public RecordRef getWorkplace() {
+    public void setPaidExternally(java.lang.Boolean paidExternally) {
+        this.paidExternally = paidExternally;
+    }
+
+
+    /**
+     * Gets the workplace value for this TimeBill.
+     * 
+     * @return workplace
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getWorkplace() {
         return workplace;
     }
 
-    /**
-     * 设置workplace属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setWorkplace(RecordRef value) {
-        this.workplace = value;
-    }
 
     /**
-     * 获取item属性的值。
+     * Sets the workplace value for this TimeBill.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param workplace
      */
-    public RecordRef getItem() {
+    public void setWorkplace(com.netsuite.webservices.platform.core_2018_2.RecordRef workplace) {
+        this.workplace = workplace;
+    }
+
+
+    /**
+     * Gets the item value for this TimeBill.
+     * 
+     * @return item
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getItem() {
         return item;
     }
 
-    /**
-     * 设置item属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setItem(RecordRef value) {
-        this.item = value;
-    }
 
     /**
-     * 获取department属性的值。
+     * Sets the item value for this TimeBill.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param item
      */
-    public RecordRef getDepartment() {
+    public void setItem(com.netsuite.webservices.platform.core_2018_2.RecordRef item) {
+        this.item = item;
+    }
+
+
+    /**
+     * Gets the department value for this TimeBill.
+     * 
+     * @return department
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getDepartment() {
         return department;
     }
 
-    /**
-     * 设置department属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setDepartment(RecordRef value) {
-        this.department = value;
-    }
 
     /**
-     * 获取clazz属性的值。
+     * Sets the department value for this TimeBill.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param department
      */
-    public RecordRef getClazz() {
-        return clazz;
+    public void setDepartment(com.netsuite.webservices.platform.core_2018_2.RecordRef department) {
+        this.department = department;
     }
 
-    /**
-     * 设置clazz属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setClazz(RecordRef value) {
-        this.clazz = value;
-    }
 
     /**
-     * 获取location属性的值。
+     * Gets the _class value for this TimeBill.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @return _class
      */
-    public RecordRef getLocation() {
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef get_class() {
+        return _class;
+    }
+
+
+    /**
+     * Sets the _class value for this TimeBill.
+     * 
+     * @param _class
+     */
+    public void set_class(com.netsuite.webservices.platform.core_2018_2.RecordRef _class) {
+        this._class = _class;
+    }
+
+
+    /**
+     * Gets the location value for this TimeBill.
+     * 
+     * @return location
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getLocation() {
         return location;
     }
 
-    /**
-     * 设置location属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setLocation(RecordRef value) {
-        this.location = value;
-    }
 
     /**
-     * 获取hours属性的值。
+     * Sets the location value for this TimeBill.
      * 
-     * @return
-     *     possible object is
-     *     {@link Duration }
-     *     
+     * @param location
      */
-    public Duration getHours() {
+    public void setLocation(com.netsuite.webservices.platform.core_2018_2.RecordRef location) {
+        this.location = location;
+    }
+
+
+    /**
+     * Gets the hours value for this TimeBill.
+     * 
+     * @return hours
+     */
+    public com.netsuite.webservices.platform.core_2018_2.Duration getHours() {
         return hours;
     }
 
-    /**
-     * 设置hours属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Duration }
-     *     
-     */
-    public void setHours(Duration value) {
-        this.hours = value;
-    }
 
     /**
-     * 获取price属性的值。
+     * Sets the hours value for this TimeBill.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param hours
      */
-    public RecordRef getPrice() {
+    public void setHours(com.netsuite.webservices.platform.core_2018_2.Duration hours) {
+        this.hours = hours;
+    }
+
+
+    /**
+     * Gets the price value for this TimeBill.
+     * 
+     * @return price
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getPrice() {
         return price;
     }
 
-    /**
-     * 设置price属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setPrice(RecordRef value) {
-        this.price = value;
-    }
 
     /**
-     * 获取timeType属性的值。
+     * Sets the price value for this TimeBill.
      * 
-     * @return
-     *     possible object is
-     *     {@link TimeBillTimeType }
-     *     
+     * @param price
      */
-    public TimeBillTimeType getTimeType() {
+    public void setPrice(com.netsuite.webservices.platform.core_2018_2.RecordRef price) {
+        this.price = price;
+    }
+
+
+    /**
+     * Gets the timeType value for this TimeBill.
+     * 
+     * @return timeType
+     */
+    public com.netsuite.webservices.transactions.employees_2018_2.types.TimeBillTimeType getTimeType() {
         return timeType;
     }
 
-    /**
-     * 设置timeType属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link TimeBillTimeType }
-     *     
-     */
-    public void setTimeType(TimeBillTimeType value) {
-        this.timeType = value;
-    }
 
     /**
-     * 获取rate属性的值。
+     * Sets the timeType value for this TimeBill.
      * 
-     * @return
-     *     possible object is
-     *     {@link Double }
-     *     
+     * @param timeType
      */
-    public Double getRate() {
+    public void setTimeType(com.netsuite.webservices.transactions.employees_2018_2.types.TimeBillTimeType timeType) {
+        this.timeType = timeType;
+    }
+
+
+    /**
+     * Gets the rate value for this TimeBill.
+     * 
+     * @return rate
+     */
+    public java.lang.Double getRate() {
         return rate;
     }
 
-    /**
-     * 设置rate属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Double }
-     *     
-     */
-    public void setRate(Double value) {
-        this.rate = value;
-    }
 
     /**
-     * 获取overrideRate属性的值。
+     * Sets the rate value for this TimeBill.
      * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
+     * @param rate
      */
-    public Boolean isOverrideRate() {
+    public void setRate(java.lang.Double rate) {
+        this.rate = rate;
+    }
+
+
+    /**
+     * Gets the overrideRate value for this TimeBill.
+     * 
+     * @return overrideRate
+     */
+    public java.lang.Boolean getOverrideRate() {
         return overrideRate;
     }
 
-    /**
-     * 设置overrideRate属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
-     */
-    public void setOverrideRate(Boolean value) {
-        this.overrideRate = value;
-    }
 
     /**
-     * 获取temporaryLocalJurisdiction属性的值。
+     * Sets the overrideRate value for this TimeBill.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param overrideRate
      */
-    public RecordRef getTemporaryLocalJurisdiction() {
+    public void setOverrideRate(java.lang.Boolean overrideRate) {
+        this.overrideRate = overrideRate;
+    }
+
+
+    /**
+     * Gets the temporaryLocalJurisdiction value for this TimeBill.
+     * 
+     * @return temporaryLocalJurisdiction
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getTemporaryLocalJurisdiction() {
         return temporaryLocalJurisdiction;
     }
 
-    /**
-     * 设置temporaryLocalJurisdiction属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setTemporaryLocalJurisdiction(RecordRef value) {
-        this.temporaryLocalJurisdiction = value;
-    }
 
     /**
-     * 获取temporaryStateJurisdiction属性的值。
+     * Sets the temporaryLocalJurisdiction value for this TimeBill.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param temporaryLocalJurisdiction
      */
-    public RecordRef getTemporaryStateJurisdiction() {
+    public void setTemporaryLocalJurisdiction(com.netsuite.webservices.platform.core_2018_2.RecordRef temporaryLocalJurisdiction) {
+        this.temporaryLocalJurisdiction = temporaryLocalJurisdiction;
+    }
+
+
+    /**
+     * Gets the temporaryStateJurisdiction value for this TimeBill.
+     * 
+     * @return temporaryStateJurisdiction
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getTemporaryStateJurisdiction() {
         return temporaryStateJurisdiction;
     }
 
-    /**
-     * 设置temporaryStateJurisdiction属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setTemporaryStateJurisdiction(RecordRef value) {
-        this.temporaryStateJurisdiction = value;
-    }
 
     /**
-     * 获取memo属性的值。
+     * Sets the temporaryStateJurisdiction value for this TimeBill.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param temporaryStateJurisdiction
      */
-    public String getMemo() {
+    public void setTemporaryStateJurisdiction(com.netsuite.webservices.platform.core_2018_2.RecordRef temporaryStateJurisdiction) {
+        this.temporaryStateJurisdiction = temporaryStateJurisdiction;
+    }
+
+
+    /**
+     * Gets the memo value for this TimeBill.
+     * 
+     * @return memo
+     */
+    public java.lang.String getMemo() {
         return memo;
     }
 
-    /**
-     * 设置memo属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setMemo(String value) {
-        this.memo = value;
-    }
 
     /**
-     * 获取rejectionNote属性的值。
+     * Sets the memo value for this TimeBill.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param memo
      */
-    public String getRejectionNote() {
+    public void setMemo(java.lang.String memo) {
+        this.memo = memo;
+    }
+
+
+    /**
+     * Gets the rejectionNote value for this TimeBill.
+     * 
+     * @return rejectionNote
+     */
+    public java.lang.String getRejectionNote() {
         return rejectionNote;
     }
 
-    /**
-     * 设置rejectionNote属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setRejectionNote(String value) {
-        this.rejectionNote = value;
-    }
 
     /**
-     * 获取subsidiary属性的值。
+     * Sets the rejectionNote value for this TimeBill.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param rejectionNote
      */
-    public RecordRef getSubsidiary() {
+    public void setRejectionNote(java.lang.String rejectionNote) {
+        this.rejectionNote = rejectionNote;
+    }
+
+
+    /**
+     * Gets the subsidiary value for this TimeBill.
+     * 
+     * @return subsidiary
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getSubsidiary() {
         return subsidiary;
     }
 
-    /**
-     * 设置subsidiary属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setSubsidiary(RecordRef value) {
-        this.subsidiary = value;
-    }
 
     /**
-     * 获取supervisorApproval属性的值。
+     * Sets the subsidiary value for this TimeBill.
      * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
+     * @param subsidiary
      */
-    public Boolean isSupervisorApproval() {
+    public void setSubsidiary(com.netsuite.webservices.platform.core_2018_2.RecordRef subsidiary) {
+        this.subsidiary = subsidiary;
+    }
+
+
+    /**
+     * Gets the supervisorApproval value for this TimeBill.
+     * 
+     * @return supervisorApproval
+     */
+    public java.lang.Boolean getSupervisorApproval() {
         return supervisorApproval;
     }
 
-    /**
-     * 设置supervisorApproval属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
-     */
-    public void setSupervisorApproval(Boolean value) {
-        this.supervisorApproval = value;
-    }
 
     /**
-     * 获取createdDate属性的值。
+     * Sets the supervisorApproval value for this TimeBill.
      * 
-     * @return
-     *     possible object is
-     *     {@link XMLGregorianCalendar }
-     *     
+     * @param supervisorApproval
      */
-    public XMLGregorianCalendar getCreatedDate() {
+    public void setSupervisorApproval(java.lang.Boolean supervisorApproval) {
+        this.supervisorApproval = supervisorApproval;
+    }
+
+
+    /**
+     * Gets the createdDate value for this TimeBill.
+     * 
+     * @return createdDate
+     */
+    public java.util.Calendar getCreatedDate() {
         return createdDate;
     }
 
-    /**
-     * 设置createdDate属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link XMLGregorianCalendar }
-     *     
-     */
-    public void setCreatedDate(XMLGregorianCalendar value) {
-        this.createdDate = value;
-    }
 
     /**
-     * 获取lastModifiedDate属性的值。
+     * Sets the createdDate value for this TimeBill.
      * 
-     * @return
-     *     possible object is
-     *     {@link XMLGregorianCalendar }
-     *     
+     * @param createdDate
      */
-    public XMLGregorianCalendar getLastModifiedDate() {
+    public void setCreatedDate(java.util.Calendar createdDate) {
+        this.createdDate = createdDate;
+    }
+
+
+    /**
+     * Gets the lastModifiedDate value for this TimeBill.
+     * 
+     * @return lastModifiedDate
+     */
+    public java.util.Calendar getLastModifiedDate() {
         return lastModifiedDate;
     }
 
-    /**
-     * 设置lastModifiedDate属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link XMLGregorianCalendar }
-     *     
-     */
-    public void setLastModifiedDate(XMLGregorianCalendar value) {
-        this.lastModifiedDate = value;
-    }
 
     /**
-     * 获取timeSheet属性的值。
+     * Sets the lastModifiedDate value for this TimeBill.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param lastModifiedDate
      */
-    public RecordRef getTimeSheet() {
+    public void setLastModifiedDate(java.util.Calendar lastModifiedDate) {
+        this.lastModifiedDate = lastModifiedDate;
+    }
+
+
+    /**
+     * Gets the timeSheet value for this TimeBill.
+     * 
+     * @return timeSheet
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getTimeSheet() {
         return timeSheet;
     }
 
-    /**
-     * 设置timeSheet属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setTimeSheet(RecordRef value) {
-        this.timeSheet = value;
-    }
 
     /**
-     * 获取status属性的值。
+     * Sets the timeSheet value for this TimeBill.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param timeSheet
      */
-    public String getStatus() {
+    public void setTimeSheet(com.netsuite.webservices.platform.core_2018_2.RecordRef timeSheet) {
+        this.timeSheet = timeSheet;
+    }
+
+
+    /**
+     * Gets the status value for this TimeBill.
+     * 
+     * @return status
+     */
+    public java.lang.String getStatus() {
         return status;
     }
 
-    /**
-     * 设置status属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setStatus(String value) {
-        this.status = value;
-    }
 
     /**
-     * 获取customFieldList属性的值。
+     * Sets the status value for this TimeBill.
      * 
-     * @return
-     *     possible object is
-     *     {@link CustomFieldList }
-     *     
+     * @param status
      */
-    public CustomFieldList getCustomFieldList() {
+    public void setStatus(java.lang.String status) {
+        this.status = status;
+    }
+
+
+    /**
+     * Gets the customFieldList value for this TimeBill.
+     * 
+     * @return customFieldList
+     */
+    public com.netsuite.webservices.platform.core_2018_2.CustomFieldRef[] getCustomFieldList() {
         return customFieldList;
     }
 
-    /**
-     * 设置customFieldList属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link CustomFieldList }
-     *     
-     */
-    public void setCustomFieldList(CustomFieldList value) {
-        this.customFieldList = value;
-    }
 
     /**
-     * 获取internalId属性的值。
+     * Sets the customFieldList value for this TimeBill.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param customFieldList
      */
-    public String getInternalId() {
+    public void setCustomFieldList(com.netsuite.webservices.platform.core_2018_2.CustomFieldRef[] customFieldList) {
+        this.customFieldList = customFieldList;
+    }
+
+
+    /**
+     * Gets the internalId value for this TimeBill.
+     * 
+     * @return internalId
+     */
+    public java.lang.String getInternalId() {
         return internalId;
     }
 
-    /**
-     * 设置internalId属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setInternalId(String value) {
-        this.internalId = value;
-    }
 
     /**
-     * 获取externalId属性的值。
+     * Sets the internalId value for this TimeBill.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param internalId
      */
-    public String getExternalId() {
+    public void setInternalId(java.lang.String internalId) {
+        this.internalId = internalId;
+    }
+
+
+    /**
+     * Gets the externalId value for this TimeBill.
+     * 
+     * @return externalId
+     */
+    public java.lang.String getExternalId() {
         return externalId;
     }
 
+
     /**
-     * 设置externalId属性的值。
+     * Sets the externalId value for this TimeBill.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     * @param externalId
      */
-    public void setExternalId(String value) {
-        this.externalId = value;
+    public void setExternalId(java.lang.String externalId) {
+        this.externalId = externalId;
+    }
+
+    private java.lang.Object __equalsCalc = null;
+    public synchronized boolean equals(java.lang.Object obj) {
+        if (!(obj instanceof TimeBill)) return false;
+        TimeBill other = (TimeBill) obj;
+        if (obj == null) return false;
+        if (this == obj) return true;
+        if (__equalsCalc != null) {
+            return (__equalsCalc == obj);
+        }
+        __equalsCalc = obj;
+        boolean _equals;
+        _equals = super.equals(obj) && 
+            ((this.customForm==null && other.getCustomForm()==null) || 
+             (this.customForm!=null &&
+              this.customForm.equals(other.getCustomForm()))) &&
+            ((this.employee==null && other.getEmployee()==null) || 
+             (this.employee!=null &&
+              this.employee.equals(other.getEmployee()))) &&
+            ((this.tranDate==null && other.getTranDate()==null) || 
+             (this.tranDate!=null &&
+              this.tranDate.equals(other.getTranDate()))) &&
+            ((this.approvalStatus==null && other.getApprovalStatus()==null) || 
+             (this.approvalStatus!=null &&
+              this.approvalStatus.equals(other.getApprovalStatus()))) &&
+            ((this.customer==null && other.getCustomer()==null) || 
+             (this.customer!=null &&
+              this.customer.equals(other.getCustomer()))) &&
+            ((this.caseTaskEvent==null && other.getCaseTaskEvent()==null) || 
+             (this.caseTaskEvent!=null &&
+              this.caseTaskEvent.equals(other.getCaseTaskEvent()))) &&
+            ((this.isBillable==null && other.getIsBillable()==null) || 
+             (this.isBillable!=null &&
+              this.isBillable.equals(other.getIsBillable()))) &&
+            ((this.payrollItem==null && other.getPayrollItem()==null) || 
+             (this.payrollItem!=null &&
+              this.payrollItem.equals(other.getPayrollItem()))) &&
+            ((this.paidExternally==null && other.getPaidExternally()==null) || 
+             (this.paidExternally!=null &&
+              this.paidExternally.equals(other.getPaidExternally()))) &&
+            ((this.workplace==null && other.getWorkplace()==null) || 
+             (this.workplace!=null &&
+              this.workplace.equals(other.getWorkplace()))) &&
+            ((this.item==null && other.getItem()==null) || 
+             (this.item!=null &&
+              this.item.equals(other.getItem()))) &&
+            ((this.department==null && other.getDepartment()==null) || 
+             (this.department!=null &&
+              this.department.equals(other.getDepartment()))) &&
+            ((this._class==null && other.get_class()==null) || 
+             (this._class!=null &&
+              this._class.equals(other.get_class()))) &&
+            ((this.location==null && other.getLocation()==null) || 
+             (this.location!=null &&
+              this.location.equals(other.getLocation()))) &&
+            ((this.hours==null && other.getHours()==null) || 
+             (this.hours!=null &&
+              this.hours.equals(other.getHours()))) &&
+            ((this.price==null && other.getPrice()==null) || 
+             (this.price!=null &&
+              this.price.equals(other.getPrice()))) &&
+            ((this.timeType==null && other.getTimeType()==null) || 
+             (this.timeType!=null &&
+              this.timeType.equals(other.getTimeType()))) &&
+            ((this.rate==null && other.getRate()==null) || 
+             (this.rate!=null &&
+              this.rate.equals(other.getRate()))) &&
+            ((this.overrideRate==null && other.getOverrideRate()==null) || 
+             (this.overrideRate!=null &&
+              this.overrideRate.equals(other.getOverrideRate()))) &&
+            ((this.temporaryLocalJurisdiction==null && other.getTemporaryLocalJurisdiction()==null) || 
+             (this.temporaryLocalJurisdiction!=null &&
+              this.temporaryLocalJurisdiction.equals(other.getTemporaryLocalJurisdiction()))) &&
+            ((this.temporaryStateJurisdiction==null && other.getTemporaryStateJurisdiction()==null) || 
+             (this.temporaryStateJurisdiction!=null &&
+              this.temporaryStateJurisdiction.equals(other.getTemporaryStateJurisdiction()))) &&
+            ((this.memo==null && other.getMemo()==null) || 
+             (this.memo!=null &&
+              this.memo.equals(other.getMemo()))) &&
+            ((this.rejectionNote==null && other.getRejectionNote()==null) || 
+             (this.rejectionNote!=null &&
+              this.rejectionNote.equals(other.getRejectionNote()))) &&
+            ((this.subsidiary==null && other.getSubsidiary()==null) || 
+             (this.subsidiary!=null &&
+              this.subsidiary.equals(other.getSubsidiary()))) &&
+            ((this.supervisorApproval==null && other.getSupervisorApproval()==null) || 
+             (this.supervisorApproval!=null &&
+              this.supervisorApproval.equals(other.getSupervisorApproval()))) &&
+            ((this.createdDate==null && other.getCreatedDate()==null) || 
+             (this.createdDate!=null &&
+              this.createdDate.equals(other.getCreatedDate()))) &&
+            ((this.lastModifiedDate==null && other.getLastModifiedDate()==null) || 
+             (this.lastModifiedDate!=null &&
+              this.lastModifiedDate.equals(other.getLastModifiedDate()))) &&
+            ((this.timeSheet==null && other.getTimeSheet()==null) || 
+             (this.timeSheet!=null &&
+              this.timeSheet.equals(other.getTimeSheet()))) &&
+            ((this.status==null && other.getStatus()==null) || 
+             (this.status!=null &&
+              this.status.equals(other.getStatus()))) &&
+            ((this.customFieldList==null && other.getCustomFieldList()==null) || 
+             (this.customFieldList!=null &&
+              java.util.Arrays.equals(this.customFieldList, other.getCustomFieldList()))) &&
+            ((this.internalId==null && other.getInternalId()==null) || 
+             (this.internalId!=null &&
+              this.internalId.equals(other.getInternalId()))) &&
+            ((this.externalId==null && other.getExternalId()==null) || 
+             (this.externalId!=null &&
+              this.externalId.equals(other.getExternalId())));
+        __equalsCalc = null;
+        return _equals;
+    }
+
+    private boolean __hashCodeCalc = false;
+    public synchronized int hashCode() {
+        if (__hashCodeCalc) {
+            return 0;
+        }
+        __hashCodeCalc = true;
+        int _hashCode = super.hashCode();
+        if (getCustomForm() != null) {
+            _hashCode += getCustomForm().hashCode();
+        }
+        if (getEmployee() != null) {
+            _hashCode += getEmployee().hashCode();
+        }
+        if (getTranDate() != null) {
+            _hashCode += getTranDate().hashCode();
+        }
+        if (getApprovalStatus() != null) {
+            _hashCode += getApprovalStatus().hashCode();
+        }
+        if (getCustomer() != null) {
+            _hashCode += getCustomer().hashCode();
+        }
+        if (getCaseTaskEvent() != null) {
+            _hashCode += getCaseTaskEvent().hashCode();
+        }
+        if (getIsBillable() != null) {
+            _hashCode += getIsBillable().hashCode();
+        }
+        if (getPayrollItem() != null) {
+            _hashCode += getPayrollItem().hashCode();
+        }
+        if (getPaidExternally() != null) {
+            _hashCode += getPaidExternally().hashCode();
+        }
+        if (getWorkplace() != null) {
+            _hashCode += getWorkplace().hashCode();
+        }
+        if (getItem() != null) {
+            _hashCode += getItem().hashCode();
+        }
+        if (getDepartment() != null) {
+            _hashCode += getDepartment().hashCode();
+        }
+        if (get_class() != null) {
+            _hashCode += get_class().hashCode();
+        }
+        if (getLocation() != null) {
+            _hashCode += getLocation().hashCode();
+        }
+        if (getHours() != null) {
+            _hashCode += getHours().hashCode();
+        }
+        if (getPrice() != null) {
+            _hashCode += getPrice().hashCode();
+        }
+        if (getTimeType() != null) {
+            _hashCode += getTimeType().hashCode();
+        }
+        if (getRate() != null) {
+            _hashCode += getRate().hashCode();
+        }
+        if (getOverrideRate() != null) {
+            _hashCode += getOverrideRate().hashCode();
+        }
+        if (getTemporaryLocalJurisdiction() != null) {
+            _hashCode += getTemporaryLocalJurisdiction().hashCode();
+        }
+        if (getTemporaryStateJurisdiction() != null) {
+            _hashCode += getTemporaryStateJurisdiction().hashCode();
+        }
+        if (getMemo() != null) {
+            _hashCode += getMemo().hashCode();
+        }
+        if (getRejectionNote() != null) {
+            _hashCode += getRejectionNote().hashCode();
+        }
+        if (getSubsidiary() != null) {
+            _hashCode += getSubsidiary().hashCode();
+        }
+        if (getSupervisorApproval() != null) {
+            _hashCode += getSupervisorApproval().hashCode();
+        }
+        if (getCreatedDate() != null) {
+            _hashCode += getCreatedDate().hashCode();
+        }
+        if (getLastModifiedDate() != null) {
+            _hashCode += getLastModifiedDate().hashCode();
+        }
+        if (getTimeSheet() != null) {
+            _hashCode += getTimeSheet().hashCode();
+        }
+        if (getStatus() != null) {
+            _hashCode += getStatus().hashCode();
+        }
+        if (getCustomFieldList() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getCustomFieldList());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getCustomFieldList(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getInternalId() != null) {
+            _hashCode += getInternalId().hashCode();
+        }
+        if (getExternalId() != null) {
+            _hashCode += getExternalId().hashCode();
+        }
+        __hashCodeCalc = false;
+        return _hashCode;
+    }
+
+    // Type metadata
+    private static org.apache.axis.description.TypeDesc typeDesc =
+        new org.apache.axis.description.TypeDesc(TimeBill.class, true);
+
+    static {
+        typeDesc.setXmlType(new javax.xml.namespace.QName("urn:employees_2018_2.transactions.webservices.netsuite.com", "TimeBill"));
+        org.apache.axis.description.AttributeDesc attrField = new org.apache.axis.description.AttributeDesc();
+        attrField.setFieldName("internalId");
+        attrField.setXmlName(new javax.xml.namespace.QName("", "internalId"));
+        attrField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        typeDesc.addFieldDesc(attrField);
+        attrField = new org.apache.axis.description.AttributeDesc();
+        attrField.setFieldName("externalId");
+        attrField.setXmlName(new javax.xml.namespace.QName("", "externalId"));
+        attrField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        typeDesc.addFieldDesc(attrField);
+        org.apache.axis.description.ElementDesc elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("customForm");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:employees_2018_2.transactions.webservices.netsuite.com", "customForm"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("employee");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:employees_2018_2.transactions.webservices.netsuite.com", "employee"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("tranDate");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:employees_2018_2.transactions.webservices.netsuite.com", "tranDate"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "dateTime"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("approvalStatus");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:employees_2018_2.transactions.webservices.netsuite.com", "approvalStatus"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("customer");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:employees_2018_2.transactions.webservices.netsuite.com", "customer"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("caseTaskEvent");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:employees_2018_2.transactions.webservices.netsuite.com", "caseTaskEvent"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("isBillable");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:employees_2018_2.transactions.webservices.netsuite.com", "isBillable"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("payrollItem");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:employees_2018_2.transactions.webservices.netsuite.com", "payrollItem"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("paidExternally");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:employees_2018_2.transactions.webservices.netsuite.com", "paidExternally"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("workplace");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:employees_2018_2.transactions.webservices.netsuite.com", "workplace"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("item");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:employees_2018_2.transactions.webservices.netsuite.com", "item"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("department");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:employees_2018_2.transactions.webservices.netsuite.com", "department"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("_class");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:employees_2018_2.transactions.webservices.netsuite.com", "class"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("location");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:employees_2018_2.transactions.webservices.netsuite.com", "location"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("hours");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:employees_2018_2.transactions.webservices.netsuite.com", "hours"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "Duration"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("price");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:employees_2018_2.transactions.webservices.netsuite.com", "price"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("timeType");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:employees_2018_2.transactions.webservices.netsuite.com", "timeType"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:types.employees_2018_2.transactions.webservices.netsuite.com", "TimeBillTimeType"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("rate");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:employees_2018_2.transactions.webservices.netsuite.com", "rate"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "double"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("overrideRate");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:employees_2018_2.transactions.webservices.netsuite.com", "overrideRate"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("temporaryLocalJurisdiction");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:employees_2018_2.transactions.webservices.netsuite.com", "temporaryLocalJurisdiction"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("temporaryStateJurisdiction");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:employees_2018_2.transactions.webservices.netsuite.com", "temporaryStateJurisdiction"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("memo");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:employees_2018_2.transactions.webservices.netsuite.com", "memo"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("rejectionNote");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:employees_2018_2.transactions.webservices.netsuite.com", "rejectionNote"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("subsidiary");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:employees_2018_2.transactions.webservices.netsuite.com", "subsidiary"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("supervisorApproval");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:employees_2018_2.transactions.webservices.netsuite.com", "supervisorApproval"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("createdDate");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:employees_2018_2.transactions.webservices.netsuite.com", "createdDate"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "dateTime"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("lastModifiedDate");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:employees_2018_2.transactions.webservices.netsuite.com", "lastModifiedDate"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "dateTime"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("timeSheet");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:employees_2018_2.transactions.webservices.netsuite.com", "timeSheet"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("status");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:employees_2018_2.transactions.webservices.netsuite.com", "status"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("customFieldList");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:employees_2018_2.transactions.webservices.netsuite.com", "customFieldList"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "CustomFieldRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "customField"));
+        typeDesc.addFieldDesc(elemField);
+    }
+
+    /**
+     * Return type metadata object
+     */
+    public static org.apache.axis.description.TypeDesc getTypeDesc() {
+        return typeDesc;
+    }
+
+    /**
+     * Get Custom Serializer
+     */
+    public static org.apache.axis.encoding.Serializer getSerializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanSerializer(
+            _javaType, _xmlType, typeDesc);
+    }
+
+    /**
+     * Get Custom Deserializer
+     */
+    public static org.apache.axis.encoding.Deserializer getDeserializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanDeserializer(
+            _javaType, _xmlType, typeDesc);
     }
 
 }

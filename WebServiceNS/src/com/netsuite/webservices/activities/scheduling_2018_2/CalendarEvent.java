@@ -1,1059 +1,1505 @@
+/**
+ * CalendarEvent.java
+ *
+ * This file was auto-generated from WSDL
+ * by the Apache Axis 1.4 Jul 28, 2010 (04:07:04 PDT) WSDL2Java emitter.
+ */
 
 package com.netsuite.webservices.activities.scheduling_2018_2;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlAttribute;
-import javax.xml.bind.annotation.XmlSchemaType;
-import javax.xml.bind.annotation.XmlType;
-import javax.xml.datatype.XMLGregorianCalendar;
-import com.netsuite.webservices.activities.scheduling_2018_2.types.CalendarEventAccessLevel;
-import com.netsuite.webservices.activities.scheduling_2018_2.types.CalendarEventReminderType;
-import com.netsuite.webservices.activities.scheduling_2018_2.types.CalendarEventStatus;
-import com.netsuite.webservices.platform.common_2018_2.RecurrenceDowMaskList;
-import com.netsuite.webservices.platform.common_2018_2.types.RecurrenceDow;
-import com.netsuite.webservices.platform.common_2018_2.types.RecurrenceDowim;
-import com.netsuite.webservices.platform.common_2018_2.types.RecurrenceFrequency;
-import com.netsuite.webservices.platform.core_2018_2.CustomFieldList;
-import com.netsuite.webservices.platform.core_2018_2.Record;
-import com.netsuite.webservices.platform.core_2018_2.RecordRef;
+public class CalendarEvent  extends com.netsuite.webservices.platform.core_2018_2.Record  implements java.io.Serializable {
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef company;
 
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef contact;
 
-/**
- * <p>CalendarEvent complex type的 Java 类。
- * 
- * <p>以下模式片段指定包含在此类中的预期内容。
- * 
- * <pre>
- * &lt;complexType name="CalendarEvent">
- *   &lt;complexContent>
- *     &lt;extension base="{urn:core_2018_2.platform.webservices.netsuite.com}Record">
- *       &lt;sequence>
- *         &lt;element name="company" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="contact" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="supportCase" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="transaction" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="period" type="{http://www.w3.org/2001/XMLSchema}long" minOccurs="0"/>
- *         &lt;element name="frequency" type="{urn:types.common_2018_2.platform.webservices.netsuite.com}RecurrenceFrequency" minOccurs="0"/>
- *         &lt;element name="recurrenceDowMaskList" type="{urn:common_2018_2.platform.webservices.netsuite.com}RecurrenceDowMaskList" minOccurs="0"/>
- *         &lt;element name="recurrenceDow" type="{urn:types.common_2018_2.platform.webservices.netsuite.com}RecurrenceDow" minOccurs="0"/>
- *         &lt;element name="recurrenceDowim" type="{urn:types.common_2018_2.platform.webservices.netsuite.com}RecurrenceDowim" minOccurs="0"/>
- *         &lt;element name="seriesStartDate" type="{http://www.w3.org/2001/XMLSchema}dateTime" minOccurs="0"/>
- *         &lt;element name="endByDate" type="{http://www.w3.org/2001/XMLSchema}dateTime" minOccurs="0"/>
- *         &lt;element name="noEndDate" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         &lt;element name="sendEmail" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         &lt;element name="customForm" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="title" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="recurrence" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="location" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="startDate" type="{http://www.w3.org/2001/XMLSchema}dateTime" minOccurs="0"/>
- *         &lt;element name="allDayEvent" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         &lt;element name="timedEvent" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         &lt;element name="reminderType" type="{urn:types.scheduling_2018_2.activities.webservices.netsuite.com}CalendarEventReminderType" minOccurs="0"/>
- *         &lt;element name="reminderMinutes" type="{urn:types.scheduling_2018_2.activities.webservices.netsuite.com}CalendarEventReminderMinutes" minOccurs="0"/>
- *         &lt;element name="status" type="{urn:types.scheduling_2018_2.activities.webservices.netsuite.com}CalendarEventStatus" minOccurs="0"/>
- *         &lt;element name="accessLevel" type="{urn:types.scheduling_2018_2.activities.webservices.netsuite.com}CalendarEventAccessLevel" minOccurs="0"/>
- *         &lt;element name="organizer" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="message" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="createdDate" type="{http://www.w3.org/2001/XMLSchema}dateTime" minOccurs="0"/>
- *         &lt;element name="endDate" type="{http://www.w3.org/2001/XMLSchema}dateTime" minOccurs="0"/>
- *         &lt;element name="exclusionDateList" type="{urn:scheduling_2018_2.activities.webservices.netsuite.com}ExclusionDateList" minOccurs="0"/>
- *         &lt;element name="lastModifiedDate" type="{http://www.w3.org/2001/XMLSchema}dateTime" minOccurs="0"/>
- *         &lt;element name="owner" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="attendeeList" type="{urn:scheduling_2018_2.activities.webservices.netsuite.com}CalendarEventAttendeeList" minOccurs="0"/>
- *         &lt;element name="resourceList" type="{urn:scheduling_2018_2.activities.webservices.netsuite.com}CalendarEventResourceList" minOccurs="0"/>
- *         &lt;element name="timeItemList" type="{urn:scheduling_2018_2.activities.webservices.netsuite.com}CalendarEventTimeItemList" minOccurs="0"/>
- *         &lt;element name="customFieldList" type="{urn:core_2018_2.platform.webservices.netsuite.com}CustomFieldList" minOccurs="0"/>
- *       &lt;/sequence>
- *       &lt;attribute name="internalId" type="{http://www.w3.org/2001/XMLSchema}string" />
- *       &lt;attribute name="externalId" type="{http://www.w3.org/2001/XMLSchema}string" />
- *     &lt;/extension>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
- */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "CalendarEvent", propOrder = {
-    "company",
-    "contact",
-    "supportCase",
-    "transaction",
-    "period",
-    "frequency",
-    "recurrenceDowMaskList",
-    "recurrenceDow",
-    "recurrenceDowim",
-    "seriesStartDate",
-    "endByDate",
-    "noEndDate",
-    "sendEmail",
-    "customForm",
-    "title",
-    "recurrence",
-    "location",
-    "startDate",
-    "allDayEvent",
-    "timedEvent",
-    "reminderType",
-    "reminderMinutes",
-    "status",
-    "accessLevel",
-    "organizer",
-    "message",
-    "createdDate",
-    "endDate",
-    "exclusionDateList",
-    "lastModifiedDate",
-    "owner",
-    "attendeeList",
-    "resourceList",
-    "timeItemList",
-    "customFieldList"
-})
-public class CalendarEvent
-    extends Record
-{
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef supportCase;
 
-    protected RecordRef company;
-    protected RecordRef contact;
-    protected RecordRef supportCase;
-    protected RecordRef transaction;
-    protected Long period;
-    @XmlSchemaType(name = "string")
-    protected RecurrenceFrequency frequency;
-    protected RecurrenceDowMaskList recurrenceDowMaskList;
-    @XmlSchemaType(name = "string")
-    protected RecurrenceDow recurrenceDow;
-    @XmlSchemaType(name = "string")
-    protected RecurrenceDowim recurrenceDowim;
-    @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar seriesStartDate;
-    @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar endByDate;
-    protected Boolean noEndDate;
-    protected Boolean sendEmail;
-    protected RecordRef customForm;
-    protected String title;
-    protected String recurrence;
-    protected String location;
-    @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar startDate;
-    protected Boolean allDayEvent;
-    protected Boolean timedEvent;
-    @XmlSchemaType(name = "string")
-    protected CalendarEventReminderType reminderType;
-    protected String reminderMinutes;
-    @XmlSchemaType(name = "string")
-    protected CalendarEventStatus status;
-    @XmlSchemaType(name = "string")
-    protected CalendarEventAccessLevel accessLevel;
-    protected RecordRef organizer;
-    protected String message;
-    @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar createdDate;
-    @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar endDate;
-    protected ExclusionDateList exclusionDateList;
-    @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar lastModifiedDate;
-    protected RecordRef owner;
-    protected CalendarEventAttendeeList attendeeList;
-    protected CalendarEventResourceList resourceList;
-    protected CalendarEventTimeItemList timeItemList;
-    protected CustomFieldList customFieldList;
-    @XmlAttribute(name = "internalId")
-    protected String internalId;
-    @XmlAttribute(name = "externalId")
-    protected String externalId;
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef transaction;
+
+    private java.lang.Long period;
+
+    private com.netsuite.webservices.platform.common_2018_2.types.RecurrenceFrequency frequency;
+
+    private com.netsuite.webservices.platform.common_2018_2.types.RecurrenceDow[] recurrenceDowMaskList;
+
+    private com.netsuite.webservices.platform.common_2018_2.types.RecurrenceDow recurrenceDow;
+
+    private com.netsuite.webservices.platform.common_2018_2.types.RecurrenceDowim recurrenceDowim;
+
+    private java.util.Calendar seriesStartDate;
+
+    private java.util.Calendar endByDate;
+
+    private java.lang.Boolean noEndDate;
+
+    private java.lang.Boolean sendEmail;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef customForm;
+
+    private java.lang.String title;
+
+    private java.lang.String recurrence;
+
+    private java.lang.String location;
+
+    private java.util.Calendar startDate;
+
+    private java.lang.Boolean allDayEvent;
+
+    private java.lang.Boolean timedEvent;
+
+    private com.netsuite.webservices.activities.scheduling_2018_2.types.CalendarEventReminderType reminderType;
+
+    private com.netsuite.webservices.activities.scheduling_2018_2.types.CalendarEventReminderMinutes reminderMinutes;
+
+    private com.netsuite.webservices.activities.scheduling_2018_2.types.CalendarEventStatus status;
+
+    private com.netsuite.webservices.activities.scheduling_2018_2.types.CalendarEventAccessLevel accessLevel;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef organizer;
+
+    private java.lang.String message;
+
+    private java.util.Calendar createdDate;
+
+    private java.util.Calendar endDate;
+
+    private java.util.Calendar[] exclusionDateList;
+
+    private java.util.Calendar lastModifiedDate;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef owner;
+
+    private com.netsuite.webservices.activities.scheduling_2018_2.CalendarEventAttendee[] attendeeList;
+
+    private com.netsuite.webservices.activities.scheduling_2018_2.CalendarEventResource[] resourceList;
+
+    private com.netsuite.webservices.platform.common_2018_2.TimeItem[] timeItemList;
+
+    private com.netsuite.webservices.platform.core_2018_2.CustomFieldRef[] customFieldList;
+
+    private java.lang.String internalId;  // attribute
+
+    private java.lang.String externalId;  // attribute
+
+    public CalendarEvent() {
+    }
+
+    public CalendarEvent(
+           java.lang.String[] nullFieldList,
+           java.lang.String internalId,
+           java.lang.String externalId,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef company,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef contact,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef supportCase,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef transaction,
+           java.lang.Long period,
+           com.netsuite.webservices.platform.common_2018_2.types.RecurrenceFrequency frequency,
+           com.netsuite.webservices.platform.common_2018_2.types.RecurrenceDow[] recurrenceDowMaskList,
+           com.netsuite.webservices.platform.common_2018_2.types.RecurrenceDow recurrenceDow,
+           com.netsuite.webservices.platform.common_2018_2.types.RecurrenceDowim recurrenceDowim,
+           java.util.Calendar seriesStartDate,
+           java.util.Calendar endByDate,
+           java.lang.Boolean noEndDate,
+           java.lang.Boolean sendEmail,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef customForm,
+           java.lang.String title,
+           java.lang.String recurrence,
+           java.lang.String location,
+           java.util.Calendar startDate,
+           java.lang.Boolean allDayEvent,
+           java.lang.Boolean timedEvent,
+           com.netsuite.webservices.activities.scheduling_2018_2.types.CalendarEventReminderType reminderType,
+           com.netsuite.webservices.activities.scheduling_2018_2.types.CalendarEventReminderMinutes reminderMinutes,
+           com.netsuite.webservices.activities.scheduling_2018_2.types.CalendarEventStatus status,
+           com.netsuite.webservices.activities.scheduling_2018_2.types.CalendarEventAccessLevel accessLevel,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef organizer,
+           java.lang.String message,
+           java.util.Calendar createdDate,
+           java.util.Calendar endDate,
+           java.util.Calendar[] exclusionDateList,
+           java.util.Calendar lastModifiedDate,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef owner,
+           com.netsuite.webservices.activities.scheduling_2018_2.CalendarEventAttendee[] attendeeList,
+           com.netsuite.webservices.activities.scheduling_2018_2.CalendarEventResource[] resourceList,
+           com.netsuite.webservices.platform.common_2018_2.TimeItem[] timeItemList,
+           com.netsuite.webservices.platform.core_2018_2.CustomFieldRef[] customFieldList) {
+        super(
+            nullFieldList);
+        this.internalId = internalId;
+        this.externalId = externalId;
+        this.company = company;
+        this.contact = contact;
+        this.supportCase = supportCase;
+        this.transaction = transaction;
+        this.period = period;
+        this.frequency = frequency;
+        this.recurrenceDowMaskList = recurrenceDowMaskList;
+        this.recurrenceDow = recurrenceDow;
+        this.recurrenceDowim = recurrenceDowim;
+        this.seriesStartDate = seriesStartDate;
+        this.endByDate = endByDate;
+        this.noEndDate = noEndDate;
+        this.sendEmail = sendEmail;
+        this.customForm = customForm;
+        this.title = title;
+        this.recurrence = recurrence;
+        this.location = location;
+        this.startDate = startDate;
+        this.allDayEvent = allDayEvent;
+        this.timedEvent = timedEvent;
+        this.reminderType = reminderType;
+        this.reminderMinutes = reminderMinutes;
+        this.status = status;
+        this.accessLevel = accessLevel;
+        this.organizer = organizer;
+        this.message = message;
+        this.createdDate = createdDate;
+        this.endDate = endDate;
+        this.exclusionDateList = exclusionDateList;
+        this.lastModifiedDate = lastModifiedDate;
+        this.owner = owner;
+        this.attendeeList = attendeeList;
+        this.resourceList = resourceList;
+        this.timeItemList = timeItemList;
+        this.customFieldList = customFieldList;
+    }
+
 
     /**
-     * 获取company属性的值。
+     * Gets the company value for this CalendarEvent.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @return company
      */
-    public RecordRef getCompany() {
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getCompany() {
         return company;
     }
 
-    /**
-     * 设置company属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setCompany(RecordRef value) {
-        this.company = value;
-    }
 
     /**
-     * 获取contact属性的值。
+     * Sets the company value for this CalendarEvent.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param company
      */
-    public RecordRef getContact() {
+    public void setCompany(com.netsuite.webservices.platform.core_2018_2.RecordRef company) {
+        this.company = company;
+    }
+
+
+    /**
+     * Gets the contact value for this CalendarEvent.
+     * 
+     * @return contact
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getContact() {
         return contact;
     }
 
-    /**
-     * 设置contact属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setContact(RecordRef value) {
-        this.contact = value;
-    }
 
     /**
-     * 获取supportCase属性的值。
+     * Sets the contact value for this CalendarEvent.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param contact
      */
-    public RecordRef getSupportCase() {
+    public void setContact(com.netsuite.webservices.platform.core_2018_2.RecordRef contact) {
+        this.contact = contact;
+    }
+
+
+    /**
+     * Gets the supportCase value for this CalendarEvent.
+     * 
+     * @return supportCase
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getSupportCase() {
         return supportCase;
     }
 
-    /**
-     * 设置supportCase属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setSupportCase(RecordRef value) {
-        this.supportCase = value;
-    }
 
     /**
-     * 获取transaction属性的值。
+     * Sets the supportCase value for this CalendarEvent.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param supportCase
      */
-    public RecordRef getTransaction() {
+    public void setSupportCase(com.netsuite.webservices.platform.core_2018_2.RecordRef supportCase) {
+        this.supportCase = supportCase;
+    }
+
+
+    /**
+     * Gets the transaction value for this CalendarEvent.
+     * 
+     * @return transaction
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getTransaction() {
         return transaction;
     }
 
-    /**
-     * 设置transaction属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setTransaction(RecordRef value) {
-        this.transaction = value;
-    }
 
     /**
-     * 获取period属性的值。
+     * Sets the transaction value for this CalendarEvent.
      * 
-     * @return
-     *     possible object is
-     *     {@link Long }
-     *     
+     * @param transaction
      */
-    public Long getPeriod() {
+    public void setTransaction(com.netsuite.webservices.platform.core_2018_2.RecordRef transaction) {
+        this.transaction = transaction;
+    }
+
+
+    /**
+     * Gets the period value for this CalendarEvent.
+     * 
+     * @return period
+     */
+    public java.lang.Long getPeriod() {
         return period;
     }
 
-    /**
-     * 设置period属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Long }
-     *     
-     */
-    public void setPeriod(Long value) {
-        this.period = value;
-    }
 
     /**
-     * 获取frequency属性的值。
+     * Sets the period value for this CalendarEvent.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecurrenceFrequency }
-     *     
+     * @param period
      */
-    public RecurrenceFrequency getFrequency() {
+    public void setPeriod(java.lang.Long period) {
+        this.period = period;
+    }
+
+
+    /**
+     * Gets the frequency value for this CalendarEvent.
+     * 
+     * @return frequency
+     */
+    public com.netsuite.webservices.platform.common_2018_2.types.RecurrenceFrequency getFrequency() {
         return frequency;
     }
 
-    /**
-     * 设置frequency属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecurrenceFrequency }
-     *     
-     */
-    public void setFrequency(RecurrenceFrequency value) {
-        this.frequency = value;
-    }
 
     /**
-     * 获取recurrenceDowMaskList属性的值。
+     * Sets the frequency value for this CalendarEvent.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecurrenceDowMaskList }
-     *     
+     * @param frequency
      */
-    public RecurrenceDowMaskList getRecurrenceDowMaskList() {
+    public void setFrequency(com.netsuite.webservices.platform.common_2018_2.types.RecurrenceFrequency frequency) {
+        this.frequency = frequency;
+    }
+
+
+    /**
+     * Gets the recurrenceDowMaskList value for this CalendarEvent.
+     * 
+     * @return recurrenceDowMaskList
+     */
+    public com.netsuite.webservices.platform.common_2018_2.types.RecurrenceDow[] getRecurrenceDowMaskList() {
         return recurrenceDowMaskList;
     }
 
-    /**
-     * 设置recurrenceDowMaskList属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecurrenceDowMaskList }
-     *     
-     */
-    public void setRecurrenceDowMaskList(RecurrenceDowMaskList value) {
-        this.recurrenceDowMaskList = value;
-    }
 
     /**
-     * 获取recurrenceDow属性的值。
+     * Sets the recurrenceDowMaskList value for this CalendarEvent.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecurrenceDow }
-     *     
+     * @param recurrenceDowMaskList
      */
-    public RecurrenceDow getRecurrenceDow() {
+    public void setRecurrenceDowMaskList(com.netsuite.webservices.platform.common_2018_2.types.RecurrenceDow[] recurrenceDowMaskList) {
+        this.recurrenceDowMaskList = recurrenceDowMaskList;
+    }
+
+
+    /**
+     * Gets the recurrenceDow value for this CalendarEvent.
+     * 
+     * @return recurrenceDow
+     */
+    public com.netsuite.webservices.platform.common_2018_2.types.RecurrenceDow getRecurrenceDow() {
         return recurrenceDow;
     }
 
-    /**
-     * 设置recurrenceDow属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecurrenceDow }
-     *     
-     */
-    public void setRecurrenceDow(RecurrenceDow value) {
-        this.recurrenceDow = value;
-    }
 
     /**
-     * 获取recurrenceDowim属性的值。
+     * Sets the recurrenceDow value for this CalendarEvent.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecurrenceDowim }
-     *     
+     * @param recurrenceDow
      */
-    public RecurrenceDowim getRecurrenceDowim() {
+    public void setRecurrenceDow(com.netsuite.webservices.platform.common_2018_2.types.RecurrenceDow recurrenceDow) {
+        this.recurrenceDow = recurrenceDow;
+    }
+
+
+    /**
+     * Gets the recurrenceDowim value for this CalendarEvent.
+     * 
+     * @return recurrenceDowim
+     */
+    public com.netsuite.webservices.platform.common_2018_2.types.RecurrenceDowim getRecurrenceDowim() {
         return recurrenceDowim;
     }
 
-    /**
-     * 设置recurrenceDowim属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecurrenceDowim }
-     *     
-     */
-    public void setRecurrenceDowim(RecurrenceDowim value) {
-        this.recurrenceDowim = value;
-    }
 
     /**
-     * 获取seriesStartDate属性的值。
+     * Sets the recurrenceDowim value for this CalendarEvent.
      * 
-     * @return
-     *     possible object is
-     *     {@link XMLGregorianCalendar }
-     *     
+     * @param recurrenceDowim
      */
-    public XMLGregorianCalendar getSeriesStartDate() {
+    public void setRecurrenceDowim(com.netsuite.webservices.platform.common_2018_2.types.RecurrenceDowim recurrenceDowim) {
+        this.recurrenceDowim = recurrenceDowim;
+    }
+
+
+    /**
+     * Gets the seriesStartDate value for this CalendarEvent.
+     * 
+     * @return seriesStartDate
+     */
+    public java.util.Calendar getSeriesStartDate() {
         return seriesStartDate;
     }
 
-    /**
-     * 设置seriesStartDate属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link XMLGregorianCalendar }
-     *     
-     */
-    public void setSeriesStartDate(XMLGregorianCalendar value) {
-        this.seriesStartDate = value;
-    }
 
     /**
-     * 获取endByDate属性的值。
+     * Sets the seriesStartDate value for this CalendarEvent.
      * 
-     * @return
-     *     possible object is
-     *     {@link XMLGregorianCalendar }
-     *     
+     * @param seriesStartDate
      */
-    public XMLGregorianCalendar getEndByDate() {
+    public void setSeriesStartDate(java.util.Calendar seriesStartDate) {
+        this.seriesStartDate = seriesStartDate;
+    }
+
+
+    /**
+     * Gets the endByDate value for this CalendarEvent.
+     * 
+     * @return endByDate
+     */
+    public java.util.Calendar getEndByDate() {
         return endByDate;
     }
 
-    /**
-     * 设置endByDate属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link XMLGregorianCalendar }
-     *     
-     */
-    public void setEndByDate(XMLGregorianCalendar value) {
-        this.endByDate = value;
-    }
 
     /**
-     * 获取noEndDate属性的值。
+     * Sets the endByDate value for this CalendarEvent.
      * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
+     * @param endByDate
      */
-    public Boolean isNoEndDate() {
+    public void setEndByDate(java.util.Calendar endByDate) {
+        this.endByDate = endByDate;
+    }
+
+
+    /**
+     * Gets the noEndDate value for this CalendarEvent.
+     * 
+     * @return noEndDate
+     */
+    public java.lang.Boolean getNoEndDate() {
         return noEndDate;
     }
 
-    /**
-     * 设置noEndDate属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
-     */
-    public void setNoEndDate(Boolean value) {
-        this.noEndDate = value;
-    }
 
     /**
-     * 获取sendEmail属性的值。
+     * Sets the noEndDate value for this CalendarEvent.
      * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
+     * @param noEndDate
      */
-    public Boolean isSendEmail() {
+    public void setNoEndDate(java.lang.Boolean noEndDate) {
+        this.noEndDate = noEndDate;
+    }
+
+
+    /**
+     * Gets the sendEmail value for this CalendarEvent.
+     * 
+     * @return sendEmail
+     */
+    public java.lang.Boolean getSendEmail() {
         return sendEmail;
     }
 
-    /**
-     * 设置sendEmail属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
-     */
-    public void setSendEmail(Boolean value) {
-        this.sendEmail = value;
-    }
 
     /**
-     * 获取customForm属性的值。
+     * Sets the sendEmail value for this CalendarEvent.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param sendEmail
      */
-    public RecordRef getCustomForm() {
+    public void setSendEmail(java.lang.Boolean sendEmail) {
+        this.sendEmail = sendEmail;
+    }
+
+
+    /**
+     * Gets the customForm value for this CalendarEvent.
+     * 
+     * @return customForm
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getCustomForm() {
         return customForm;
     }
 
-    /**
-     * 设置customForm属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setCustomForm(RecordRef value) {
-        this.customForm = value;
-    }
 
     /**
-     * 获取title属性的值。
+     * Sets the customForm value for this CalendarEvent.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param customForm
      */
-    public String getTitle() {
+    public void setCustomForm(com.netsuite.webservices.platform.core_2018_2.RecordRef customForm) {
+        this.customForm = customForm;
+    }
+
+
+    /**
+     * Gets the title value for this CalendarEvent.
+     * 
+     * @return title
+     */
+    public java.lang.String getTitle() {
         return title;
     }
 
-    /**
-     * 设置title属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setTitle(String value) {
-        this.title = value;
-    }
 
     /**
-     * 获取recurrence属性的值。
+     * Sets the title value for this CalendarEvent.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param title
      */
-    public String getRecurrence() {
+    public void setTitle(java.lang.String title) {
+        this.title = title;
+    }
+
+
+    /**
+     * Gets the recurrence value for this CalendarEvent.
+     * 
+     * @return recurrence
+     */
+    public java.lang.String getRecurrence() {
         return recurrence;
     }
 
-    /**
-     * 设置recurrence属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setRecurrence(String value) {
-        this.recurrence = value;
-    }
 
     /**
-     * 获取location属性的值。
+     * Sets the recurrence value for this CalendarEvent.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param recurrence
      */
-    public String getLocation() {
+    public void setRecurrence(java.lang.String recurrence) {
+        this.recurrence = recurrence;
+    }
+
+
+    /**
+     * Gets the location value for this CalendarEvent.
+     * 
+     * @return location
+     */
+    public java.lang.String getLocation() {
         return location;
     }
 
-    /**
-     * 设置location属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setLocation(String value) {
-        this.location = value;
-    }
 
     /**
-     * 获取startDate属性的值。
+     * Sets the location value for this CalendarEvent.
      * 
-     * @return
-     *     possible object is
-     *     {@link XMLGregorianCalendar }
-     *     
+     * @param location
      */
-    public XMLGregorianCalendar getStartDate() {
+    public void setLocation(java.lang.String location) {
+        this.location = location;
+    }
+
+
+    /**
+     * Gets the startDate value for this CalendarEvent.
+     * 
+     * @return startDate
+     */
+    public java.util.Calendar getStartDate() {
         return startDate;
     }
 
-    /**
-     * 设置startDate属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link XMLGregorianCalendar }
-     *     
-     */
-    public void setStartDate(XMLGregorianCalendar value) {
-        this.startDate = value;
-    }
 
     /**
-     * 获取allDayEvent属性的值。
+     * Sets the startDate value for this CalendarEvent.
      * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
+     * @param startDate
      */
-    public Boolean isAllDayEvent() {
+    public void setStartDate(java.util.Calendar startDate) {
+        this.startDate = startDate;
+    }
+
+
+    /**
+     * Gets the allDayEvent value for this CalendarEvent.
+     * 
+     * @return allDayEvent
+     */
+    public java.lang.Boolean getAllDayEvent() {
         return allDayEvent;
     }
 
-    /**
-     * 设置allDayEvent属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
-     */
-    public void setAllDayEvent(Boolean value) {
-        this.allDayEvent = value;
-    }
 
     /**
-     * 获取timedEvent属性的值。
+     * Sets the allDayEvent value for this CalendarEvent.
      * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
+     * @param allDayEvent
      */
-    public Boolean isTimedEvent() {
+    public void setAllDayEvent(java.lang.Boolean allDayEvent) {
+        this.allDayEvent = allDayEvent;
+    }
+
+
+    /**
+     * Gets the timedEvent value for this CalendarEvent.
+     * 
+     * @return timedEvent
+     */
+    public java.lang.Boolean getTimedEvent() {
         return timedEvent;
     }
 
-    /**
-     * 设置timedEvent属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
-     */
-    public void setTimedEvent(Boolean value) {
-        this.timedEvent = value;
-    }
 
     /**
-     * 获取reminderType属性的值。
+     * Sets the timedEvent value for this CalendarEvent.
      * 
-     * @return
-     *     possible object is
-     *     {@link CalendarEventReminderType }
-     *     
+     * @param timedEvent
      */
-    public CalendarEventReminderType getReminderType() {
+    public void setTimedEvent(java.lang.Boolean timedEvent) {
+        this.timedEvent = timedEvent;
+    }
+
+
+    /**
+     * Gets the reminderType value for this CalendarEvent.
+     * 
+     * @return reminderType
+     */
+    public com.netsuite.webservices.activities.scheduling_2018_2.types.CalendarEventReminderType getReminderType() {
         return reminderType;
     }
 
-    /**
-     * 设置reminderType属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link CalendarEventReminderType }
-     *     
-     */
-    public void setReminderType(CalendarEventReminderType value) {
-        this.reminderType = value;
-    }
 
     /**
-     * 获取reminderMinutes属性的值。
+     * Sets the reminderType value for this CalendarEvent.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param reminderType
      */
-    public String getReminderMinutes() {
+    public void setReminderType(com.netsuite.webservices.activities.scheduling_2018_2.types.CalendarEventReminderType reminderType) {
+        this.reminderType = reminderType;
+    }
+
+
+    /**
+     * Gets the reminderMinutes value for this CalendarEvent.
+     * 
+     * @return reminderMinutes
+     */
+    public com.netsuite.webservices.activities.scheduling_2018_2.types.CalendarEventReminderMinutes getReminderMinutes() {
         return reminderMinutes;
     }
 
-    /**
-     * 设置reminderMinutes属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setReminderMinutes(String value) {
-        this.reminderMinutes = value;
-    }
 
     /**
-     * 获取status属性的值。
+     * Sets the reminderMinutes value for this CalendarEvent.
      * 
-     * @return
-     *     possible object is
-     *     {@link CalendarEventStatus }
-     *     
+     * @param reminderMinutes
      */
-    public CalendarEventStatus getStatus() {
+    public void setReminderMinutes(com.netsuite.webservices.activities.scheduling_2018_2.types.CalendarEventReminderMinutes reminderMinutes) {
+        this.reminderMinutes = reminderMinutes;
+    }
+
+
+    /**
+     * Gets the status value for this CalendarEvent.
+     * 
+     * @return status
+     */
+    public com.netsuite.webservices.activities.scheduling_2018_2.types.CalendarEventStatus getStatus() {
         return status;
     }
 
-    /**
-     * 设置status属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link CalendarEventStatus }
-     *     
-     */
-    public void setStatus(CalendarEventStatus value) {
-        this.status = value;
-    }
 
     /**
-     * 获取accessLevel属性的值。
+     * Sets the status value for this CalendarEvent.
      * 
-     * @return
-     *     possible object is
-     *     {@link CalendarEventAccessLevel }
-     *     
+     * @param status
      */
-    public CalendarEventAccessLevel getAccessLevel() {
+    public void setStatus(com.netsuite.webservices.activities.scheduling_2018_2.types.CalendarEventStatus status) {
+        this.status = status;
+    }
+
+
+    /**
+     * Gets the accessLevel value for this CalendarEvent.
+     * 
+     * @return accessLevel
+     */
+    public com.netsuite.webservices.activities.scheduling_2018_2.types.CalendarEventAccessLevel getAccessLevel() {
         return accessLevel;
     }
 
-    /**
-     * 设置accessLevel属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link CalendarEventAccessLevel }
-     *     
-     */
-    public void setAccessLevel(CalendarEventAccessLevel value) {
-        this.accessLevel = value;
-    }
 
     /**
-     * 获取organizer属性的值。
+     * Sets the accessLevel value for this CalendarEvent.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param accessLevel
      */
-    public RecordRef getOrganizer() {
+    public void setAccessLevel(com.netsuite.webservices.activities.scheduling_2018_2.types.CalendarEventAccessLevel accessLevel) {
+        this.accessLevel = accessLevel;
+    }
+
+
+    /**
+     * Gets the organizer value for this CalendarEvent.
+     * 
+     * @return organizer
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getOrganizer() {
         return organizer;
     }
 
-    /**
-     * 设置organizer属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setOrganizer(RecordRef value) {
-        this.organizer = value;
-    }
 
     /**
-     * 获取message属性的值。
+     * Sets the organizer value for this CalendarEvent.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param organizer
      */
-    public String getMessage() {
+    public void setOrganizer(com.netsuite.webservices.platform.core_2018_2.RecordRef organizer) {
+        this.organizer = organizer;
+    }
+
+
+    /**
+     * Gets the message value for this CalendarEvent.
+     * 
+     * @return message
+     */
+    public java.lang.String getMessage() {
         return message;
     }
 
-    /**
-     * 设置message属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setMessage(String value) {
-        this.message = value;
-    }
 
     /**
-     * 获取createdDate属性的值。
+     * Sets the message value for this CalendarEvent.
      * 
-     * @return
-     *     possible object is
-     *     {@link XMLGregorianCalendar }
-     *     
+     * @param message
      */
-    public XMLGregorianCalendar getCreatedDate() {
+    public void setMessage(java.lang.String message) {
+        this.message = message;
+    }
+
+
+    /**
+     * Gets the createdDate value for this CalendarEvent.
+     * 
+     * @return createdDate
+     */
+    public java.util.Calendar getCreatedDate() {
         return createdDate;
     }
 
-    /**
-     * 设置createdDate属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link XMLGregorianCalendar }
-     *     
-     */
-    public void setCreatedDate(XMLGregorianCalendar value) {
-        this.createdDate = value;
-    }
 
     /**
-     * 获取endDate属性的值。
+     * Sets the createdDate value for this CalendarEvent.
      * 
-     * @return
-     *     possible object is
-     *     {@link XMLGregorianCalendar }
-     *     
+     * @param createdDate
      */
-    public XMLGregorianCalendar getEndDate() {
+    public void setCreatedDate(java.util.Calendar createdDate) {
+        this.createdDate = createdDate;
+    }
+
+
+    /**
+     * Gets the endDate value for this CalendarEvent.
+     * 
+     * @return endDate
+     */
+    public java.util.Calendar getEndDate() {
         return endDate;
     }
 
-    /**
-     * 设置endDate属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link XMLGregorianCalendar }
-     *     
-     */
-    public void setEndDate(XMLGregorianCalendar value) {
-        this.endDate = value;
-    }
 
     /**
-     * 获取exclusionDateList属性的值。
+     * Sets the endDate value for this CalendarEvent.
      * 
-     * @return
-     *     possible object is
-     *     {@link ExclusionDateList }
-     *     
+     * @param endDate
      */
-    public ExclusionDateList getExclusionDateList() {
+    public void setEndDate(java.util.Calendar endDate) {
+        this.endDate = endDate;
+    }
+
+
+    /**
+     * Gets the exclusionDateList value for this CalendarEvent.
+     * 
+     * @return exclusionDateList
+     */
+    public java.util.Calendar[] getExclusionDateList() {
         return exclusionDateList;
     }
 
-    /**
-     * 设置exclusionDateList属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link ExclusionDateList }
-     *     
-     */
-    public void setExclusionDateList(ExclusionDateList value) {
-        this.exclusionDateList = value;
-    }
 
     /**
-     * 获取lastModifiedDate属性的值。
+     * Sets the exclusionDateList value for this CalendarEvent.
      * 
-     * @return
-     *     possible object is
-     *     {@link XMLGregorianCalendar }
-     *     
+     * @param exclusionDateList
      */
-    public XMLGregorianCalendar getLastModifiedDate() {
+    public void setExclusionDateList(java.util.Calendar[] exclusionDateList) {
+        this.exclusionDateList = exclusionDateList;
+    }
+
+
+    /**
+     * Gets the lastModifiedDate value for this CalendarEvent.
+     * 
+     * @return lastModifiedDate
+     */
+    public java.util.Calendar getLastModifiedDate() {
         return lastModifiedDate;
     }
 
-    /**
-     * 设置lastModifiedDate属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link XMLGregorianCalendar }
-     *     
-     */
-    public void setLastModifiedDate(XMLGregorianCalendar value) {
-        this.lastModifiedDate = value;
-    }
 
     /**
-     * 获取owner属性的值。
+     * Sets the lastModifiedDate value for this CalendarEvent.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param lastModifiedDate
      */
-    public RecordRef getOwner() {
+    public void setLastModifiedDate(java.util.Calendar lastModifiedDate) {
+        this.lastModifiedDate = lastModifiedDate;
+    }
+
+
+    /**
+     * Gets the owner value for this CalendarEvent.
+     * 
+     * @return owner
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getOwner() {
         return owner;
     }
 
-    /**
-     * 设置owner属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setOwner(RecordRef value) {
-        this.owner = value;
-    }
 
     /**
-     * 获取attendeeList属性的值。
+     * Sets the owner value for this CalendarEvent.
      * 
-     * @return
-     *     possible object is
-     *     {@link CalendarEventAttendeeList }
-     *     
+     * @param owner
      */
-    public CalendarEventAttendeeList getAttendeeList() {
+    public void setOwner(com.netsuite.webservices.platform.core_2018_2.RecordRef owner) {
+        this.owner = owner;
+    }
+
+
+    /**
+     * Gets the attendeeList value for this CalendarEvent.
+     * 
+     * @return attendeeList
+     */
+    public com.netsuite.webservices.activities.scheduling_2018_2.CalendarEventAttendee[] getAttendeeList() {
         return attendeeList;
     }
 
-    /**
-     * 设置attendeeList属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link CalendarEventAttendeeList }
-     *     
-     */
-    public void setAttendeeList(CalendarEventAttendeeList value) {
-        this.attendeeList = value;
-    }
 
     /**
-     * 获取resourceList属性的值。
+     * Sets the attendeeList value for this CalendarEvent.
      * 
-     * @return
-     *     possible object is
-     *     {@link CalendarEventResourceList }
-     *     
+     * @param attendeeList
      */
-    public CalendarEventResourceList getResourceList() {
+    public void setAttendeeList(com.netsuite.webservices.activities.scheduling_2018_2.CalendarEventAttendee[] attendeeList) {
+        this.attendeeList = attendeeList;
+    }
+
+
+    /**
+     * Gets the resourceList value for this CalendarEvent.
+     * 
+     * @return resourceList
+     */
+    public com.netsuite.webservices.activities.scheduling_2018_2.CalendarEventResource[] getResourceList() {
         return resourceList;
     }
 
-    /**
-     * 设置resourceList属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link CalendarEventResourceList }
-     *     
-     */
-    public void setResourceList(CalendarEventResourceList value) {
-        this.resourceList = value;
-    }
 
     /**
-     * 获取timeItemList属性的值。
+     * Sets the resourceList value for this CalendarEvent.
      * 
-     * @return
-     *     possible object is
-     *     {@link CalendarEventTimeItemList }
-     *     
+     * @param resourceList
      */
-    public CalendarEventTimeItemList getTimeItemList() {
+    public void setResourceList(com.netsuite.webservices.activities.scheduling_2018_2.CalendarEventResource[] resourceList) {
+        this.resourceList = resourceList;
+    }
+
+
+    /**
+     * Gets the timeItemList value for this CalendarEvent.
+     * 
+     * @return timeItemList
+     */
+    public com.netsuite.webservices.platform.common_2018_2.TimeItem[] getTimeItemList() {
         return timeItemList;
     }
 
-    /**
-     * 设置timeItemList属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link CalendarEventTimeItemList }
-     *     
-     */
-    public void setTimeItemList(CalendarEventTimeItemList value) {
-        this.timeItemList = value;
-    }
 
     /**
-     * 获取customFieldList属性的值。
+     * Sets the timeItemList value for this CalendarEvent.
      * 
-     * @return
-     *     possible object is
-     *     {@link CustomFieldList }
-     *     
+     * @param timeItemList
      */
-    public CustomFieldList getCustomFieldList() {
+    public void setTimeItemList(com.netsuite.webservices.platform.common_2018_2.TimeItem[] timeItemList) {
+        this.timeItemList = timeItemList;
+    }
+
+
+    /**
+     * Gets the customFieldList value for this CalendarEvent.
+     * 
+     * @return customFieldList
+     */
+    public com.netsuite.webservices.platform.core_2018_2.CustomFieldRef[] getCustomFieldList() {
         return customFieldList;
     }
 
-    /**
-     * 设置customFieldList属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link CustomFieldList }
-     *     
-     */
-    public void setCustomFieldList(CustomFieldList value) {
-        this.customFieldList = value;
-    }
 
     /**
-     * 获取internalId属性的值。
+     * Sets the customFieldList value for this CalendarEvent.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param customFieldList
      */
-    public String getInternalId() {
+    public void setCustomFieldList(com.netsuite.webservices.platform.core_2018_2.CustomFieldRef[] customFieldList) {
+        this.customFieldList = customFieldList;
+    }
+
+
+    /**
+     * Gets the internalId value for this CalendarEvent.
+     * 
+     * @return internalId
+     */
+    public java.lang.String getInternalId() {
         return internalId;
     }
 
-    /**
-     * 设置internalId属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setInternalId(String value) {
-        this.internalId = value;
-    }
 
     /**
-     * 获取externalId属性的值。
+     * Sets the internalId value for this CalendarEvent.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param internalId
      */
-    public String getExternalId() {
+    public void setInternalId(java.lang.String internalId) {
+        this.internalId = internalId;
+    }
+
+
+    /**
+     * Gets the externalId value for this CalendarEvent.
+     * 
+     * @return externalId
+     */
+    public java.lang.String getExternalId() {
         return externalId;
     }
 
+
     /**
-     * 设置externalId属性的值。
+     * Sets the externalId value for this CalendarEvent.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     * @param externalId
      */
-    public void setExternalId(String value) {
-        this.externalId = value;
+    public void setExternalId(java.lang.String externalId) {
+        this.externalId = externalId;
+    }
+
+    private java.lang.Object __equalsCalc = null;
+    public synchronized boolean equals(java.lang.Object obj) {
+        if (!(obj instanceof CalendarEvent)) return false;
+        CalendarEvent other = (CalendarEvent) obj;
+        if (obj == null) return false;
+        if (this == obj) return true;
+        if (__equalsCalc != null) {
+            return (__equalsCalc == obj);
+        }
+        __equalsCalc = obj;
+        boolean _equals;
+        _equals = super.equals(obj) && 
+            ((this.company==null && other.getCompany()==null) || 
+             (this.company!=null &&
+              this.company.equals(other.getCompany()))) &&
+            ((this.contact==null && other.getContact()==null) || 
+             (this.contact!=null &&
+              this.contact.equals(other.getContact()))) &&
+            ((this.supportCase==null && other.getSupportCase()==null) || 
+             (this.supportCase!=null &&
+              this.supportCase.equals(other.getSupportCase()))) &&
+            ((this.transaction==null && other.getTransaction()==null) || 
+             (this.transaction!=null &&
+              this.transaction.equals(other.getTransaction()))) &&
+            ((this.period==null && other.getPeriod()==null) || 
+             (this.period!=null &&
+              this.period.equals(other.getPeriod()))) &&
+            ((this.frequency==null && other.getFrequency()==null) || 
+             (this.frequency!=null &&
+              this.frequency.equals(other.getFrequency()))) &&
+            ((this.recurrenceDowMaskList==null && other.getRecurrenceDowMaskList()==null) || 
+             (this.recurrenceDowMaskList!=null &&
+              java.util.Arrays.equals(this.recurrenceDowMaskList, other.getRecurrenceDowMaskList()))) &&
+            ((this.recurrenceDow==null && other.getRecurrenceDow()==null) || 
+             (this.recurrenceDow!=null &&
+              this.recurrenceDow.equals(other.getRecurrenceDow()))) &&
+            ((this.recurrenceDowim==null && other.getRecurrenceDowim()==null) || 
+             (this.recurrenceDowim!=null &&
+              this.recurrenceDowim.equals(other.getRecurrenceDowim()))) &&
+            ((this.seriesStartDate==null && other.getSeriesStartDate()==null) || 
+             (this.seriesStartDate!=null &&
+              this.seriesStartDate.equals(other.getSeriesStartDate()))) &&
+            ((this.endByDate==null && other.getEndByDate()==null) || 
+             (this.endByDate!=null &&
+              this.endByDate.equals(other.getEndByDate()))) &&
+            ((this.noEndDate==null && other.getNoEndDate()==null) || 
+             (this.noEndDate!=null &&
+              this.noEndDate.equals(other.getNoEndDate()))) &&
+            ((this.sendEmail==null && other.getSendEmail()==null) || 
+             (this.sendEmail!=null &&
+              this.sendEmail.equals(other.getSendEmail()))) &&
+            ((this.customForm==null && other.getCustomForm()==null) || 
+             (this.customForm!=null &&
+              this.customForm.equals(other.getCustomForm()))) &&
+            ((this.title==null && other.getTitle()==null) || 
+             (this.title!=null &&
+              this.title.equals(other.getTitle()))) &&
+            ((this.recurrence==null && other.getRecurrence()==null) || 
+             (this.recurrence!=null &&
+              this.recurrence.equals(other.getRecurrence()))) &&
+            ((this.location==null && other.getLocation()==null) || 
+             (this.location!=null &&
+              this.location.equals(other.getLocation()))) &&
+            ((this.startDate==null && other.getStartDate()==null) || 
+             (this.startDate!=null &&
+              this.startDate.equals(other.getStartDate()))) &&
+            ((this.allDayEvent==null && other.getAllDayEvent()==null) || 
+             (this.allDayEvent!=null &&
+              this.allDayEvent.equals(other.getAllDayEvent()))) &&
+            ((this.timedEvent==null && other.getTimedEvent()==null) || 
+             (this.timedEvent!=null &&
+              this.timedEvent.equals(other.getTimedEvent()))) &&
+            ((this.reminderType==null && other.getReminderType()==null) || 
+             (this.reminderType!=null &&
+              this.reminderType.equals(other.getReminderType()))) &&
+            ((this.reminderMinutes==null && other.getReminderMinutes()==null) || 
+             (this.reminderMinutes!=null &&
+              this.reminderMinutes.equals(other.getReminderMinutes()))) &&
+            ((this.status==null && other.getStatus()==null) || 
+             (this.status!=null &&
+              this.status.equals(other.getStatus()))) &&
+            ((this.accessLevel==null && other.getAccessLevel()==null) || 
+             (this.accessLevel!=null &&
+              this.accessLevel.equals(other.getAccessLevel()))) &&
+            ((this.organizer==null && other.getOrganizer()==null) || 
+             (this.organizer!=null &&
+              this.organizer.equals(other.getOrganizer()))) &&
+            ((this.message==null && other.getMessage()==null) || 
+             (this.message!=null &&
+              this.message.equals(other.getMessage()))) &&
+            ((this.createdDate==null && other.getCreatedDate()==null) || 
+             (this.createdDate!=null &&
+              this.createdDate.equals(other.getCreatedDate()))) &&
+            ((this.endDate==null && other.getEndDate()==null) || 
+             (this.endDate!=null &&
+              this.endDate.equals(other.getEndDate()))) &&
+            ((this.exclusionDateList==null && other.getExclusionDateList()==null) || 
+             (this.exclusionDateList!=null &&
+              java.util.Arrays.equals(this.exclusionDateList, other.getExclusionDateList()))) &&
+            ((this.lastModifiedDate==null && other.getLastModifiedDate()==null) || 
+             (this.lastModifiedDate!=null &&
+              this.lastModifiedDate.equals(other.getLastModifiedDate()))) &&
+            ((this.owner==null && other.getOwner()==null) || 
+             (this.owner!=null &&
+              this.owner.equals(other.getOwner()))) &&
+            ((this.attendeeList==null && other.getAttendeeList()==null) || 
+             (this.attendeeList!=null &&
+              java.util.Arrays.equals(this.attendeeList, other.getAttendeeList()))) &&
+            ((this.resourceList==null && other.getResourceList()==null) || 
+             (this.resourceList!=null &&
+              java.util.Arrays.equals(this.resourceList, other.getResourceList()))) &&
+            ((this.timeItemList==null && other.getTimeItemList()==null) || 
+             (this.timeItemList!=null &&
+              java.util.Arrays.equals(this.timeItemList, other.getTimeItemList()))) &&
+            ((this.customFieldList==null && other.getCustomFieldList()==null) || 
+             (this.customFieldList!=null &&
+              java.util.Arrays.equals(this.customFieldList, other.getCustomFieldList()))) &&
+            ((this.internalId==null && other.getInternalId()==null) || 
+             (this.internalId!=null &&
+              this.internalId.equals(other.getInternalId()))) &&
+            ((this.externalId==null && other.getExternalId()==null) || 
+             (this.externalId!=null &&
+              this.externalId.equals(other.getExternalId())));
+        __equalsCalc = null;
+        return _equals;
+    }
+
+    private boolean __hashCodeCalc = false;
+    public synchronized int hashCode() {
+        if (__hashCodeCalc) {
+            return 0;
+        }
+        __hashCodeCalc = true;
+        int _hashCode = super.hashCode();
+        if (getCompany() != null) {
+            _hashCode += getCompany().hashCode();
+        }
+        if (getContact() != null) {
+            _hashCode += getContact().hashCode();
+        }
+        if (getSupportCase() != null) {
+            _hashCode += getSupportCase().hashCode();
+        }
+        if (getTransaction() != null) {
+            _hashCode += getTransaction().hashCode();
+        }
+        if (getPeriod() != null) {
+            _hashCode += getPeriod().hashCode();
+        }
+        if (getFrequency() != null) {
+            _hashCode += getFrequency().hashCode();
+        }
+        if (getRecurrenceDowMaskList() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getRecurrenceDowMaskList());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getRecurrenceDowMaskList(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getRecurrenceDow() != null) {
+            _hashCode += getRecurrenceDow().hashCode();
+        }
+        if (getRecurrenceDowim() != null) {
+            _hashCode += getRecurrenceDowim().hashCode();
+        }
+        if (getSeriesStartDate() != null) {
+            _hashCode += getSeriesStartDate().hashCode();
+        }
+        if (getEndByDate() != null) {
+            _hashCode += getEndByDate().hashCode();
+        }
+        if (getNoEndDate() != null) {
+            _hashCode += getNoEndDate().hashCode();
+        }
+        if (getSendEmail() != null) {
+            _hashCode += getSendEmail().hashCode();
+        }
+        if (getCustomForm() != null) {
+            _hashCode += getCustomForm().hashCode();
+        }
+        if (getTitle() != null) {
+            _hashCode += getTitle().hashCode();
+        }
+        if (getRecurrence() != null) {
+            _hashCode += getRecurrence().hashCode();
+        }
+        if (getLocation() != null) {
+            _hashCode += getLocation().hashCode();
+        }
+        if (getStartDate() != null) {
+            _hashCode += getStartDate().hashCode();
+        }
+        if (getAllDayEvent() != null) {
+            _hashCode += getAllDayEvent().hashCode();
+        }
+        if (getTimedEvent() != null) {
+            _hashCode += getTimedEvent().hashCode();
+        }
+        if (getReminderType() != null) {
+            _hashCode += getReminderType().hashCode();
+        }
+        if (getReminderMinutes() != null) {
+            _hashCode += getReminderMinutes().hashCode();
+        }
+        if (getStatus() != null) {
+            _hashCode += getStatus().hashCode();
+        }
+        if (getAccessLevel() != null) {
+            _hashCode += getAccessLevel().hashCode();
+        }
+        if (getOrganizer() != null) {
+            _hashCode += getOrganizer().hashCode();
+        }
+        if (getMessage() != null) {
+            _hashCode += getMessage().hashCode();
+        }
+        if (getCreatedDate() != null) {
+            _hashCode += getCreatedDate().hashCode();
+        }
+        if (getEndDate() != null) {
+            _hashCode += getEndDate().hashCode();
+        }
+        if (getExclusionDateList() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getExclusionDateList());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getExclusionDateList(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getLastModifiedDate() != null) {
+            _hashCode += getLastModifiedDate().hashCode();
+        }
+        if (getOwner() != null) {
+            _hashCode += getOwner().hashCode();
+        }
+        if (getAttendeeList() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getAttendeeList());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getAttendeeList(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getResourceList() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getResourceList());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getResourceList(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getTimeItemList() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getTimeItemList());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getTimeItemList(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getCustomFieldList() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getCustomFieldList());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getCustomFieldList(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getInternalId() != null) {
+            _hashCode += getInternalId().hashCode();
+        }
+        if (getExternalId() != null) {
+            _hashCode += getExternalId().hashCode();
+        }
+        __hashCodeCalc = false;
+        return _hashCode;
+    }
+
+    // Type metadata
+    private static org.apache.axis.description.TypeDesc typeDesc =
+        new org.apache.axis.description.TypeDesc(CalendarEvent.class, true);
+
+    static {
+        typeDesc.setXmlType(new javax.xml.namespace.QName("urn:scheduling_2018_2.activities.webservices.netsuite.com", "CalendarEvent"));
+        org.apache.axis.description.AttributeDesc attrField = new org.apache.axis.description.AttributeDesc();
+        attrField.setFieldName("internalId");
+        attrField.setXmlName(new javax.xml.namespace.QName("", "internalId"));
+        attrField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        typeDesc.addFieldDesc(attrField);
+        attrField = new org.apache.axis.description.AttributeDesc();
+        attrField.setFieldName("externalId");
+        attrField.setXmlName(new javax.xml.namespace.QName("", "externalId"));
+        attrField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        typeDesc.addFieldDesc(attrField);
+        org.apache.axis.description.ElementDesc elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("company");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:scheduling_2018_2.activities.webservices.netsuite.com", "company"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("contact");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:scheduling_2018_2.activities.webservices.netsuite.com", "contact"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("supportCase");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:scheduling_2018_2.activities.webservices.netsuite.com", "supportCase"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("transaction");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:scheduling_2018_2.activities.webservices.netsuite.com", "transaction"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("period");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:scheduling_2018_2.activities.webservices.netsuite.com", "period"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "long"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("frequency");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:scheduling_2018_2.activities.webservices.netsuite.com", "frequency"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:types.common_2018_2.platform.webservices.netsuite.com", "RecurrenceFrequency"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("recurrenceDowMaskList");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:scheduling_2018_2.activities.webservices.netsuite.com", "recurrenceDowMaskList"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:types.common_2018_2.platform.webservices.netsuite.com", "RecurrenceDow"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "recurrenceDowMask"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("recurrenceDow");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:scheduling_2018_2.activities.webservices.netsuite.com", "recurrenceDow"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:types.common_2018_2.platform.webservices.netsuite.com", "RecurrenceDow"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("recurrenceDowim");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:scheduling_2018_2.activities.webservices.netsuite.com", "recurrenceDowim"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:types.common_2018_2.platform.webservices.netsuite.com", "RecurrenceDowim"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("seriesStartDate");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:scheduling_2018_2.activities.webservices.netsuite.com", "seriesStartDate"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "dateTime"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("endByDate");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:scheduling_2018_2.activities.webservices.netsuite.com", "endByDate"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "dateTime"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("noEndDate");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:scheduling_2018_2.activities.webservices.netsuite.com", "noEndDate"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("sendEmail");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:scheduling_2018_2.activities.webservices.netsuite.com", "sendEmail"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("customForm");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:scheduling_2018_2.activities.webservices.netsuite.com", "customForm"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("title");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:scheduling_2018_2.activities.webservices.netsuite.com", "title"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("recurrence");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:scheduling_2018_2.activities.webservices.netsuite.com", "recurrence"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("location");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:scheduling_2018_2.activities.webservices.netsuite.com", "location"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("startDate");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:scheduling_2018_2.activities.webservices.netsuite.com", "startDate"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "dateTime"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("allDayEvent");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:scheduling_2018_2.activities.webservices.netsuite.com", "allDayEvent"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("timedEvent");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:scheduling_2018_2.activities.webservices.netsuite.com", "timedEvent"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("reminderType");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:scheduling_2018_2.activities.webservices.netsuite.com", "reminderType"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:types.scheduling_2018_2.activities.webservices.netsuite.com", "CalendarEventReminderType"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("reminderMinutes");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:scheduling_2018_2.activities.webservices.netsuite.com", "reminderMinutes"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:types.scheduling_2018_2.activities.webservices.netsuite.com", "CalendarEventReminderMinutes"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("status");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:scheduling_2018_2.activities.webservices.netsuite.com", "status"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:types.scheduling_2018_2.activities.webservices.netsuite.com", "CalendarEventStatus"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("accessLevel");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:scheduling_2018_2.activities.webservices.netsuite.com", "accessLevel"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:types.scheduling_2018_2.activities.webservices.netsuite.com", "CalendarEventAccessLevel"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("organizer");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:scheduling_2018_2.activities.webservices.netsuite.com", "organizer"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("message");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:scheduling_2018_2.activities.webservices.netsuite.com", "message"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("createdDate");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:scheduling_2018_2.activities.webservices.netsuite.com", "createdDate"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "dateTime"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("endDate");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:scheduling_2018_2.activities.webservices.netsuite.com", "endDate"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "dateTime"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("exclusionDateList");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:scheduling_2018_2.activities.webservices.netsuite.com", "exclusionDateList"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "dateTime"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:scheduling_2018_2.activities.webservices.netsuite.com", "exclusionDate"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("lastModifiedDate");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:scheduling_2018_2.activities.webservices.netsuite.com", "lastModifiedDate"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "dateTime"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("owner");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:scheduling_2018_2.activities.webservices.netsuite.com", "owner"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("attendeeList");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:scheduling_2018_2.activities.webservices.netsuite.com", "attendeeList"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:scheduling_2018_2.activities.webservices.netsuite.com", "CalendarEventAttendee"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:scheduling_2018_2.activities.webservices.netsuite.com", "attendee"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("resourceList");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:scheduling_2018_2.activities.webservices.netsuite.com", "resourceList"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:scheduling_2018_2.activities.webservices.netsuite.com", "CalendarEventResource"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:scheduling_2018_2.activities.webservices.netsuite.com", "resource"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("timeItemList");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:scheduling_2018_2.activities.webservices.netsuite.com", "timeItemList"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "TimeItem"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:scheduling_2018_2.activities.webservices.netsuite.com", "timeItem"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("customFieldList");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:scheduling_2018_2.activities.webservices.netsuite.com", "customFieldList"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "CustomFieldRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "customField"));
+        typeDesc.addFieldDesc(elemField);
+    }
+
+    /**
+     * Return type metadata object
+     */
+    public static org.apache.axis.description.TypeDesc getTypeDesc() {
+        return typeDesc;
+    }
+
+    /**
+     * Get Custom Serializer
+     */
+    public static org.apache.axis.encoding.Serializer getSerializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanSerializer(
+            _javaType, _xmlType, typeDesc);
+    }
+
+    /**
+     * Get Custom Deserializer
+     */
+    public static org.apache.axis.encoding.Deserializer getDeserializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanDeserializer(
+            _javaType, _xmlType, typeDesc);
     }
 
 }

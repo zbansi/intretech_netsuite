@@ -1,175 +1,268 @@
+/**
+ * ProjectTaskPredecessor.java
+ *
+ * This file was auto-generated from WSDL
+ * by the Apache Axis 1.4 Jul 28, 2010 (04:07:04 PDT) WSDL2Java emitter.
+ */
 
 package com.netsuite.webservices.activities.scheduling_2018_2;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlSchemaType;
-import javax.xml.bind.annotation.XmlType;
-import javax.xml.datatype.XMLGregorianCalendar;
-import com.netsuite.webservices.activities.scheduling_2018_2.types.ProjectTaskPredecessorPredecessorType;
-import com.netsuite.webservices.platform.core_2018_2.RecordRef;
+public class ProjectTaskPredecessor  implements java.io.Serializable {
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef task;
 
+    private com.netsuite.webservices.activities.scheduling_2018_2.types.ProjectTaskPredecessorPredecessorType type;
 
-/**
- * <p>ProjectTaskPredecessor complex type的 Java 类。
- * 
- * <p>以下模式片段指定包含在此类中的预期内容。
- * 
- * <pre>
- * &lt;complexType name="ProjectTaskPredecessor">
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element name="task" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="type" type="{urn:types.scheduling_2018_2.activities.webservices.netsuite.com}ProjectTaskPredecessorPredecessorType" minOccurs="0"/>
- *         &lt;element name="lagDays" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
- *         &lt;element name="startDate" type="{http://www.w3.org/2001/XMLSchema}dateTime" minOccurs="0"/>
- *         &lt;element name="endDate" type="{http://www.w3.org/2001/XMLSchema}dateTime" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
- */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "ProjectTaskPredecessor", propOrder = {
-    "task",
-    "type",
-    "lagDays",
-    "startDate",
-    "endDate"
-})
-public class ProjectTaskPredecessor {
+    private java.lang.Double lagDays;
 
-    protected RecordRef task;
-    @XmlSchemaType(name = "string")
-    protected ProjectTaskPredecessorPredecessorType type;
-    protected Double lagDays;
-    @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar startDate;
-    @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar endDate;
+    private java.util.Calendar startDate;
+
+    private java.util.Calendar endDate;
+
+    public ProjectTaskPredecessor() {
+    }
+
+    public ProjectTaskPredecessor(
+           com.netsuite.webservices.platform.core_2018_2.RecordRef task,
+           com.netsuite.webservices.activities.scheduling_2018_2.types.ProjectTaskPredecessorPredecessorType type,
+           java.lang.Double lagDays,
+           java.util.Calendar startDate,
+           java.util.Calendar endDate) {
+           this.task = task;
+           this.type = type;
+           this.lagDays = lagDays;
+           this.startDate = startDate;
+           this.endDate = endDate;
+    }
+
 
     /**
-     * 获取task属性的值。
+     * Gets the task value for this ProjectTaskPredecessor.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @return task
      */
-    public RecordRef getTask() {
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getTask() {
         return task;
     }
 
-    /**
-     * 设置task属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setTask(RecordRef value) {
-        this.task = value;
-    }
 
     /**
-     * 获取type属性的值。
+     * Sets the task value for this ProjectTaskPredecessor.
      * 
-     * @return
-     *     possible object is
-     *     {@link ProjectTaskPredecessorPredecessorType }
-     *     
+     * @param task
      */
-    public ProjectTaskPredecessorPredecessorType getType() {
+    public void setTask(com.netsuite.webservices.platform.core_2018_2.RecordRef task) {
+        this.task = task;
+    }
+
+
+    /**
+     * Gets the type value for this ProjectTaskPredecessor.
+     * 
+     * @return type
+     */
+    public com.netsuite.webservices.activities.scheduling_2018_2.types.ProjectTaskPredecessorPredecessorType getType() {
         return type;
     }
 
-    /**
-     * 设置type属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link ProjectTaskPredecessorPredecessorType }
-     *     
-     */
-    public void setType(ProjectTaskPredecessorPredecessorType value) {
-        this.type = value;
-    }
 
     /**
-     * 获取lagDays属性的值。
+     * Sets the type value for this ProjectTaskPredecessor.
      * 
-     * @return
-     *     possible object is
-     *     {@link Double }
-     *     
+     * @param type
      */
-    public Double getLagDays() {
+    public void setType(com.netsuite.webservices.activities.scheduling_2018_2.types.ProjectTaskPredecessorPredecessorType type) {
+        this.type = type;
+    }
+
+
+    /**
+     * Gets the lagDays value for this ProjectTaskPredecessor.
+     * 
+     * @return lagDays
+     */
+    public java.lang.Double getLagDays() {
         return lagDays;
     }
 
-    /**
-     * 设置lagDays属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Double }
-     *     
-     */
-    public void setLagDays(Double value) {
-        this.lagDays = value;
-    }
 
     /**
-     * 获取startDate属性的值。
+     * Sets the lagDays value for this ProjectTaskPredecessor.
      * 
-     * @return
-     *     possible object is
-     *     {@link XMLGregorianCalendar }
-     *     
+     * @param lagDays
      */
-    public XMLGregorianCalendar getStartDate() {
+    public void setLagDays(java.lang.Double lagDays) {
+        this.lagDays = lagDays;
+    }
+
+
+    /**
+     * Gets the startDate value for this ProjectTaskPredecessor.
+     * 
+     * @return startDate
+     */
+    public java.util.Calendar getStartDate() {
         return startDate;
     }
 
-    /**
-     * 设置startDate属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link XMLGregorianCalendar }
-     *     
-     */
-    public void setStartDate(XMLGregorianCalendar value) {
-        this.startDate = value;
-    }
 
     /**
-     * 获取endDate属性的值。
+     * Sets the startDate value for this ProjectTaskPredecessor.
      * 
-     * @return
-     *     possible object is
-     *     {@link XMLGregorianCalendar }
-     *     
+     * @param startDate
      */
-    public XMLGregorianCalendar getEndDate() {
+    public void setStartDate(java.util.Calendar startDate) {
+        this.startDate = startDate;
+    }
+
+
+    /**
+     * Gets the endDate value for this ProjectTaskPredecessor.
+     * 
+     * @return endDate
+     */
+    public java.util.Calendar getEndDate() {
         return endDate;
     }
 
+
     /**
-     * 设置endDate属性的值。
+     * Sets the endDate value for this ProjectTaskPredecessor.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link XMLGregorianCalendar }
-     *     
+     * @param endDate
      */
-    public void setEndDate(XMLGregorianCalendar value) {
-        this.endDate = value;
+    public void setEndDate(java.util.Calendar endDate) {
+        this.endDate = endDate;
+    }
+
+    private java.lang.Object __equalsCalc = null;
+    public synchronized boolean equals(java.lang.Object obj) {
+        if (!(obj instanceof ProjectTaskPredecessor)) return false;
+        ProjectTaskPredecessor other = (ProjectTaskPredecessor) obj;
+        if (obj == null) return false;
+        if (this == obj) return true;
+        if (__equalsCalc != null) {
+            return (__equalsCalc == obj);
+        }
+        __equalsCalc = obj;
+        boolean _equals;
+        _equals = true && 
+            ((this.task==null && other.getTask()==null) || 
+             (this.task!=null &&
+              this.task.equals(other.getTask()))) &&
+            ((this.type==null && other.getType()==null) || 
+             (this.type!=null &&
+              this.type.equals(other.getType()))) &&
+            ((this.lagDays==null && other.getLagDays()==null) || 
+             (this.lagDays!=null &&
+              this.lagDays.equals(other.getLagDays()))) &&
+            ((this.startDate==null && other.getStartDate()==null) || 
+             (this.startDate!=null &&
+              this.startDate.equals(other.getStartDate()))) &&
+            ((this.endDate==null && other.getEndDate()==null) || 
+             (this.endDate!=null &&
+              this.endDate.equals(other.getEndDate())));
+        __equalsCalc = null;
+        return _equals;
+    }
+
+    private boolean __hashCodeCalc = false;
+    public synchronized int hashCode() {
+        if (__hashCodeCalc) {
+            return 0;
+        }
+        __hashCodeCalc = true;
+        int _hashCode = 1;
+        if (getTask() != null) {
+            _hashCode += getTask().hashCode();
+        }
+        if (getType() != null) {
+            _hashCode += getType().hashCode();
+        }
+        if (getLagDays() != null) {
+            _hashCode += getLagDays().hashCode();
+        }
+        if (getStartDate() != null) {
+            _hashCode += getStartDate().hashCode();
+        }
+        if (getEndDate() != null) {
+            _hashCode += getEndDate().hashCode();
+        }
+        __hashCodeCalc = false;
+        return _hashCode;
+    }
+
+    // Type metadata
+    private static org.apache.axis.description.TypeDesc typeDesc =
+        new org.apache.axis.description.TypeDesc(ProjectTaskPredecessor.class, true);
+
+    static {
+        typeDesc.setXmlType(new javax.xml.namespace.QName("urn:scheduling_2018_2.activities.webservices.netsuite.com", "ProjectTaskPredecessor"));
+        org.apache.axis.description.ElementDesc elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("task");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:scheduling_2018_2.activities.webservices.netsuite.com", "task"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("type");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:scheduling_2018_2.activities.webservices.netsuite.com", "type"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:types.scheduling_2018_2.activities.webservices.netsuite.com", "ProjectTaskPredecessorPredecessorType"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("lagDays");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:scheduling_2018_2.activities.webservices.netsuite.com", "lagDays"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "double"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("startDate");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:scheduling_2018_2.activities.webservices.netsuite.com", "startDate"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "dateTime"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("endDate");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:scheduling_2018_2.activities.webservices.netsuite.com", "endDate"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "dateTime"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+    }
+
+    /**
+     * Return type metadata object
+     */
+    public static org.apache.axis.description.TypeDesc getTypeDesc() {
+        return typeDesc;
+    }
+
+    /**
+     * Get Custom Serializer
+     */
+    public static org.apache.axis.encoding.Serializer getSerializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanSerializer(
+            _javaType, _xmlType, typeDesc);
+    }
+
+    /**
+     * Get Custom Deserializer
+     */
+    public static org.apache.axis.encoding.Deserializer getDeserializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanDeserializer(
+            _javaType, _xmlType, typeDesc);
     }
 
 }

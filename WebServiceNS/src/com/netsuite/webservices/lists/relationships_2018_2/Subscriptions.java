@@ -1,118 +1,194 @@
+/**
+ * Subscriptions.java
+ *
+ * This file was auto-generated from WSDL
+ * by the Apache Axis 1.4 Jul 28, 2010 (04:07:04 PDT) WSDL2Java emitter.
+ */
 
 package com.netsuite.webservices.lists.relationships_2018_2;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlSchemaType;
-import javax.xml.bind.annotation.XmlType;
-import javax.xml.datatype.XMLGregorianCalendar;
-import com.netsuite.webservices.platform.core_2018_2.RecordRef;
+public class Subscriptions  implements java.io.Serializable {
+    private java.lang.Boolean subscribed;
 
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef subscription;
 
-/**
- * <p>Subscriptions complex type的 Java 类。
- * 
- * <p>以下模式片段指定包含在此类中的预期内容。
- * 
- * <pre>
- * &lt;complexType name="Subscriptions">
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element name="subscribed" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         &lt;element name="subscription" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="lastModifiedDate" type="{http://www.w3.org/2001/XMLSchema}dateTime" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
- */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "Subscriptions", propOrder = {
-    "subscribed",
-    "subscription",
-    "lastModifiedDate"
-})
-public class Subscriptions {
+    private java.util.Calendar lastModifiedDate;
 
-    protected Boolean subscribed;
-    protected RecordRef subscription;
-    @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar lastModifiedDate;
+    public Subscriptions() {
+    }
+
+    public Subscriptions(
+           java.lang.Boolean subscribed,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef subscription,
+           java.util.Calendar lastModifiedDate) {
+           this.subscribed = subscribed;
+           this.subscription = subscription;
+           this.lastModifiedDate = lastModifiedDate;
+    }
+
 
     /**
-     * 获取subscribed属性的值。
+     * Gets the subscribed value for this Subscriptions.
      * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
+     * @return subscribed
      */
-    public Boolean isSubscribed() {
+    public java.lang.Boolean getSubscribed() {
         return subscribed;
     }
 
-    /**
-     * 设置subscribed属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
-     */
-    public void setSubscribed(Boolean value) {
-        this.subscribed = value;
-    }
 
     /**
-     * 获取subscription属性的值。
+     * Sets the subscribed value for this Subscriptions.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param subscribed
      */
-    public RecordRef getSubscription() {
+    public void setSubscribed(java.lang.Boolean subscribed) {
+        this.subscribed = subscribed;
+    }
+
+
+    /**
+     * Gets the subscription value for this Subscriptions.
+     * 
+     * @return subscription
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getSubscription() {
         return subscription;
     }
 
-    /**
-     * 设置subscription属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setSubscription(RecordRef value) {
-        this.subscription = value;
-    }
 
     /**
-     * 获取lastModifiedDate属性的值。
+     * Sets the subscription value for this Subscriptions.
      * 
-     * @return
-     *     possible object is
-     *     {@link XMLGregorianCalendar }
-     *     
+     * @param subscription
      */
-    public XMLGregorianCalendar getLastModifiedDate() {
+    public void setSubscription(com.netsuite.webservices.platform.core_2018_2.RecordRef subscription) {
+        this.subscription = subscription;
+    }
+
+
+    /**
+     * Gets the lastModifiedDate value for this Subscriptions.
+     * 
+     * @return lastModifiedDate
+     */
+    public java.util.Calendar getLastModifiedDate() {
         return lastModifiedDate;
     }
 
+
     /**
-     * 设置lastModifiedDate属性的值。
+     * Sets the lastModifiedDate value for this Subscriptions.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link XMLGregorianCalendar }
-     *     
+     * @param lastModifiedDate
      */
-    public void setLastModifiedDate(XMLGregorianCalendar value) {
-        this.lastModifiedDate = value;
+    public void setLastModifiedDate(java.util.Calendar lastModifiedDate) {
+        this.lastModifiedDate = lastModifiedDate;
+    }
+
+    private java.lang.Object __equalsCalc = null;
+    public synchronized boolean equals(java.lang.Object obj) {
+        if (!(obj instanceof Subscriptions)) return false;
+        Subscriptions other = (Subscriptions) obj;
+        if (obj == null) return false;
+        if (this == obj) return true;
+        if (__equalsCalc != null) {
+            return (__equalsCalc == obj);
+        }
+        __equalsCalc = obj;
+        boolean _equals;
+        _equals = true && 
+            ((this.subscribed==null && other.getSubscribed()==null) || 
+             (this.subscribed!=null &&
+              this.subscribed.equals(other.getSubscribed()))) &&
+            ((this.subscription==null && other.getSubscription()==null) || 
+             (this.subscription!=null &&
+              this.subscription.equals(other.getSubscription()))) &&
+            ((this.lastModifiedDate==null && other.getLastModifiedDate()==null) || 
+             (this.lastModifiedDate!=null &&
+              this.lastModifiedDate.equals(other.getLastModifiedDate())));
+        __equalsCalc = null;
+        return _equals;
+    }
+
+    private boolean __hashCodeCalc = false;
+    public synchronized int hashCode() {
+        if (__hashCodeCalc) {
+            return 0;
+        }
+        __hashCodeCalc = true;
+        int _hashCode = 1;
+        if (getSubscribed() != null) {
+            _hashCode += getSubscribed().hashCode();
+        }
+        if (getSubscription() != null) {
+            _hashCode += getSubscription().hashCode();
+        }
+        if (getLastModifiedDate() != null) {
+            _hashCode += getLastModifiedDate().hashCode();
+        }
+        __hashCodeCalc = false;
+        return _hashCode;
+    }
+
+    // Type metadata
+    private static org.apache.axis.description.TypeDesc typeDesc =
+        new org.apache.axis.description.TypeDesc(Subscriptions.class, true);
+
+    static {
+        typeDesc.setXmlType(new javax.xml.namespace.QName("urn:relationships_2018_2.lists.webservices.netsuite.com", "Subscriptions"));
+        org.apache.axis.description.ElementDesc elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("subscribed");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:relationships_2018_2.lists.webservices.netsuite.com", "subscribed"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("subscription");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:relationships_2018_2.lists.webservices.netsuite.com", "subscription"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("lastModifiedDate");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:relationships_2018_2.lists.webservices.netsuite.com", "lastModifiedDate"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "dateTime"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+    }
+
+    /**
+     * Return type metadata object
+     */
+    public static org.apache.axis.description.TypeDesc getTypeDesc() {
+        return typeDesc;
+    }
+
+    /**
+     * Get Custom Serializer
+     */
+    public static org.apache.axis.encoding.Serializer getSerializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanSerializer(
+            _javaType, _xmlType, typeDesc);
+    }
+
+    /**
+     * Get Custom Deserializer
+     */
+    public static org.apache.axis.encoding.Deserializer getDeserializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanDeserializer(
+            _javaType, _xmlType, typeDesc);
     }
 
 }

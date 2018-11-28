@@ -26,5 +26,18 @@
 <fullyQualifiedTypeName name="com.bansi.ws.example.hello.HelloService"/>
 <fullyQualifiedTypeName name="com.bansi.ws.example.hello.Hello"/>
 <fullyQualifiedTypeName name="javax.xml.ws.WebServiceException"/>
+<fullyQualifiedTypeName name="java.security.Provider.Service"/>
+<fullyQualifiedTypeName name="java.net.PasswordAuthentication"/>
+<fullyQualifiedTypeName name="com.netsuite.webservices.platform.messages_2017_1.WriteResponse"/>
+<fullyQualifiedTypeName name="com.netsuite.webservices.platform.core_2017_1.Passport"/>
+<fullyQualifiedTypeName name="javax.management.relation.Role"/>
+<fullyQualifiedTypeName name="com.netsuite.webservices.lists.relationships_2017_1.Customer"/>
+<fullyQualifiedTypeName name="com.netsuite.webservices.platform.core_2018_2.Status"/>
+<fullyQualifiedTypeName name="com.netsuite.webservices.platform.core_2017_1.StatusDetail"/>
+<fullyQualifiedTypeName name="com.netsuite.webservices.platform.core_2017_1.types.RecordType"/>
+<fullyQualifiedTypeName name="com.netsuite.webservices.lists.employees_2017_1.Employee"/>
+<fullyQualifiedTypeName name="com.netsuite.webservices.platform_2017_1.NetSuiteServiceLocator"/>
+<fullyQualifiedTypeName name="com.netsuite.webservices.platform.core_2017_1.RecordRef"/>
+<fullyQualifiedTypeName name="com.netsuite.webservices.platform_2017_1.NetSuitePortType"/>
 <fullyQualifiedTypeName name="com.netsuite.webservices.platform_2018_2.NetSuitePortType"/>
 </qualifiedTypeNameHistroy>

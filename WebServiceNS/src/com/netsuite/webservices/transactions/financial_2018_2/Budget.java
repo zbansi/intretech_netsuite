@@ -1,1070 +1,1499 @@
+/**
+ * Budget.java
+ *
+ * This file was auto-generated from WSDL
+ * by the Apache Axis 1.4 Jul 28, 2010 (04:07:04 PDT) WSDL2Java emitter.
+ */
 
 package com.netsuite.webservices.transactions.financial_2018_2;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlAttribute;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlSchemaType;
-import javax.xml.bind.annotation.XmlType;
-import com.netsuite.webservices.platform.core_2018_2.CustomFieldList;
-import com.netsuite.webservices.platform.core_2018_2.Record;
-import com.netsuite.webservices.platform.core_2018_2.RecordRef;
-import com.netsuite.webservices.transactions.financial_2018_2.types.BudgetBudgetType;
+public class Budget  extends com.netsuite.webservices.platform.core_2018_2.Record  implements java.io.Serializable {
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef year;
 
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef customer;
 
-/**
- * <p>Budget complex type的 Java 类。
- * 
- * <p>以下模式片段指定包含在此类中的预期内容。
- * 
- * <pre>
- * &lt;complexType name="Budget">
- *   &lt;complexContent>
- *     &lt;extension base="{urn:core_2018_2.platform.webservices.netsuite.com}Record">
- *       &lt;sequence>
- *         &lt;element name="year" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="customer" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="item" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="class" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="department" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="location" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="account" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="subsidiary" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="category" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="budgetType" type="{urn:types.financial_2018_2.transactions.webservices.netsuite.com}BudgetBudgetType" minOccurs="0"/>
- *         &lt;element name="currency" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="periodAmount1" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
- *         &lt;element name="periodAmount2" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
- *         &lt;element name="periodAmount3" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
- *         &lt;element name="periodAmount4" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
- *         &lt;element name="periodAmount5" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
- *         &lt;element name="periodAmount6" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
- *         &lt;element name="periodAmount7" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
- *         &lt;element name="periodAmount8" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
- *         &lt;element name="periodAmount9" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
- *         &lt;element name="periodAmount10" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
- *         &lt;element name="periodAmount11" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
- *         &lt;element name="periodAmount12" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
- *         &lt;element name="periodAmount13" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
- *         &lt;element name="periodAmount14" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
- *         &lt;element name="periodAmount15" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
- *         &lt;element name="periodAmount16" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
- *         &lt;element name="periodAmount17" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
- *         &lt;element name="periodAmount18" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
- *         &lt;element name="periodAmount19" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
- *         &lt;element name="periodAmount20" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
- *         &lt;element name="periodAmount21" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
- *         &lt;element name="periodAmount22" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
- *         &lt;element name="periodAmount23" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
- *         &lt;element name="periodAmount24" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
- *         &lt;element name="amount" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
- *         &lt;element name="customFieldList" type="{urn:core_2018_2.platform.webservices.netsuite.com}CustomFieldList" minOccurs="0"/>
- *       &lt;/sequence>
- *       &lt;attribute name="internalId" type="{http://www.w3.org/2001/XMLSchema}string" />
- *     &lt;/extension>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
- */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "Budget", propOrder = {
-    "year",
-    "customer",
-    "item",
-    "clazz",
-    "department",
-    "location",
-    "account",
-    "subsidiary",
-    "category",
-    "budgetType",
-    "currency",
-    "periodAmount1",
-    "periodAmount2",
-    "periodAmount3",
-    "periodAmount4",
-    "periodAmount5",
-    "periodAmount6",
-    "periodAmount7",
-    "periodAmount8",
-    "periodAmount9",
-    "periodAmount10",
-    "periodAmount11",
-    "periodAmount12",
-    "periodAmount13",
-    "periodAmount14",
-    "periodAmount15",
-    "periodAmount16",
-    "periodAmount17",
-    "periodAmount18",
-    "periodAmount19",
-    "periodAmount20",
-    "periodAmount21",
-    "periodAmount22",
-    "periodAmount23",
-    "periodAmount24",
-    "amount",
-    "customFieldList"
-})
-public class Budget
-    extends Record
-{
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef item;
 
-    protected RecordRef year;
-    protected RecordRef customer;
-    protected RecordRef item;
-    @XmlElement(name = "class")
-    protected RecordRef clazz;
-    protected RecordRef department;
-    protected RecordRef location;
-    protected RecordRef account;
-    protected RecordRef subsidiary;
-    protected RecordRef category;
-    @XmlSchemaType(name = "string")
-    protected BudgetBudgetType budgetType;
-    protected RecordRef currency;
-    protected Double periodAmount1;
-    protected Double periodAmount2;
-    protected Double periodAmount3;
-    protected Double periodAmount4;
-    protected Double periodAmount5;
-    protected Double periodAmount6;
-    protected Double periodAmount7;
-    protected Double periodAmount8;
-    protected Double periodAmount9;
-    protected Double periodAmount10;
-    protected Double periodAmount11;
-    protected Double periodAmount12;
-    protected Double periodAmount13;
-    protected Double periodAmount14;
-    protected Double periodAmount15;
-    protected Double periodAmount16;
-    protected Double periodAmount17;
-    protected Double periodAmount18;
-    protected Double periodAmount19;
-    protected Double periodAmount20;
-    protected Double periodAmount21;
-    protected Double periodAmount22;
-    protected Double periodAmount23;
-    protected Double periodAmount24;
-    protected Double amount;
-    protected CustomFieldList customFieldList;
-    @XmlAttribute(name = "internalId")
-    protected String internalId;
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef _class;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef department;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef location;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef account;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef subsidiary;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef category;
+
+    private com.netsuite.webservices.transactions.financial_2018_2.types.BudgetBudgetType budgetType;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef currency;
+
+    private java.lang.Double periodAmount1;
+
+    private java.lang.Double periodAmount2;
+
+    private java.lang.Double periodAmount3;
+
+    private java.lang.Double periodAmount4;
+
+    private java.lang.Double periodAmount5;
+
+    private java.lang.Double periodAmount6;
+
+    private java.lang.Double periodAmount7;
+
+    private java.lang.Double periodAmount8;
+
+    private java.lang.Double periodAmount9;
+
+    private java.lang.Double periodAmount10;
+
+    private java.lang.Double periodAmount11;
+
+    private java.lang.Double periodAmount12;
+
+    private java.lang.Double periodAmount13;
+
+    private java.lang.Double periodAmount14;
+
+    private java.lang.Double periodAmount15;
+
+    private java.lang.Double periodAmount16;
+
+    private java.lang.Double periodAmount17;
+
+    private java.lang.Double periodAmount18;
+
+    private java.lang.Double periodAmount19;
+
+    private java.lang.Double periodAmount20;
+
+    private java.lang.Double periodAmount21;
+
+    private java.lang.Double periodAmount22;
+
+    private java.lang.Double periodAmount23;
+
+    private java.lang.Double periodAmount24;
+
+    private java.lang.Double amount;
+
+    private com.netsuite.webservices.platform.core_2018_2.CustomFieldRef[] customFieldList;
+
+    private java.lang.String internalId;  // attribute
+
+    public Budget() {
+    }
+
+    public Budget(
+           java.lang.String[] nullFieldList,
+           java.lang.String internalId,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef year,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef customer,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef item,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef _class,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef department,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef location,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef account,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef subsidiary,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef category,
+           com.netsuite.webservices.transactions.financial_2018_2.types.BudgetBudgetType budgetType,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef currency,
+           java.lang.Double periodAmount1,
+           java.lang.Double periodAmount2,
+           java.lang.Double periodAmount3,
+           java.lang.Double periodAmount4,
+           java.lang.Double periodAmount5,
+           java.lang.Double periodAmount6,
+           java.lang.Double periodAmount7,
+           java.lang.Double periodAmount8,
+           java.lang.Double periodAmount9,
+           java.lang.Double periodAmount10,
+           java.lang.Double periodAmount11,
+           java.lang.Double periodAmount12,
+           java.lang.Double periodAmount13,
+           java.lang.Double periodAmount14,
+           java.lang.Double periodAmount15,
+           java.lang.Double periodAmount16,
+           java.lang.Double periodAmount17,
+           java.lang.Double periodAmount18,
+           java.lang.Double periodAmount19,
+           java.lang.Double periodAmount20,
+           java.lang.Double periodAmount21,
+           java.lang.Double periodAmount22,
+           java.lang.Double periodAmount23,
+           java.lang.Double periodAmount24,
+           java.lang.Double amount,
+           com.netsuite.webservices.platform.core_2018_2.CustomFieldRef[] customFieldList) {
+        super(
+            nullFieldList);
+        this.internalId = internalId;
+        this.year = year;
+        this.customer = customer;
+        this.item = item;
+        this._class = _class;
+        this.department = department;
+        this.location = location;
+        this.account = account;
+        this.subsidiary = subsidiary;
+        this.category = category;
+        this.budgetType = budgetType;
+        this.currency = currency;
+        this.periodAmount1 = periodAmount1;
+        this.periodAmount2 = periodAmount2;
+        this.periodAmount3 = periodAmount3;
+        this.periodAmount4 = periodAmount4;
+        this.periodAmount5 = periodAmount5;
+        this.periodAmount6 = periodAmount6;
+        this.periodAmount7 = periodAmount7;
+        this.periodAmount8 = periodAmount8;
+        this.periodAmount9 = periodAmount9;
+        this.periodAmount10 = periodAmount10;
+        this.periodAmount11 = periodAmount11;
+        this.periodAmount12 = periodAmount12;
+        this.periodAmount13 = periodAmount13;
+        this.periodAmount14 = periodAmount14;
+        this.periodAmount15 = periodAmount15;
+        this.periodAmount16 = periodAmount16;
+        this.periodAmount17 = periodAmount17;
+        this.periodAmount18 = periodAmount18;
+        this.periodAmount19 = periodAmount19;
+        this.periodAmount20 = periodAmount20;
+        this.periodAmount21 = periodAmount21;
+        this.periodAmount22 = periodAmount22;
+        this.periodAmount23 = periodAmount23;
+        this.periodAmount24 = periodAmount24;
+        this.amount = amount;
+        this.customFieldList = customFieldList;
+    }
+
 
     /**
-     * 获取year属性的值。
+     * Gets the year value for this Budget.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @return year
      */
-    public RecordRef getYear() {
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getYear() {
         return year;
     }
 
-    /**
-     * 设置year属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setYear(RecordRef value) {
-        this.year = value;
-    }
 
     /**
-     * 获取customer属性的值。
+     * Sets the year value for this Budget.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param year
      */
-    public RecordRef getCustomer() {
+    public void setYear(com.netsuite.webservices.platform.core_2018_2.RecordRef year) {
+        this.year = year;
+    }
+
+
+    /**
+     * Gets the customer value for this Budget.
+     * 
+     * @return customer
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getCustomer() {
         return customer;
     }
 
-    /**
-     * 设置customer属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setCustomer(RecordRef value) {
-        this.customer = value;
-    }
 
     /**
-     * 获取item属性的值。
+     * Sets the customer value for this Budget.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param customer
      */
-    public RecordRef getItem() {
+    public void setCustomer(com.netsuite.webservices.platform.core_2018_2.RecordRef customer) {
+        this.customer = customer;
+    }
+
+
+    /**
+     * Gets the item value for this Budget.
+     * 
+     * @return item
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getItem() {
         return item;
     }
 
-    /**
-     * 设置item属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setItem(RecordRef value) {
-        this.item = value;
-    }
 
     /**
-     * 获取clazz属性的值。
+     * Sets the item value for this Budget.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param item
      */
-    public RecordRef getClazz() {
-        return clazz;
+    public void setItem(com.netsuite.webservices.platform.core_2018_2.RecordRef item) {
+        this.item = item;
     }
 
-    /**
-     * 设置clazz属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setClazz(RecordRef value) {
-        this.clazz = value;
-    }
 
     /**
-     * 获取department属性的值。
+     * Gets the _class value for this Budget.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @return _class
      */
-    public RecordRef getDepartment() {
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef get_class() {
+        return _class;
+    }
+
+
+    /**
+     * Sets the _class value for this Budget.
+     * 
+     * @param _class
+     */
+    public void set_class(com.netsuite.webservices.platform.core_2018_2.RecordRef _class) {
+        this._class = _class;
+    }
+
+
+    /**
+     * Gets the department value for this Budget.
+     * 
+     * @return department
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getDepartment() {
         return department;
     }
 
-    /**
-     * 设置department属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setDepartment(RecordRef value) {
-        this.department = value;
-    }
 
     /**
-     * 获取location属性的值。
+     * Sets the department value for this Budget.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param department
      */
-    public RecordRef getLocation() {
+    public void setDepartment(com.netsuite.webservices.platform.core_2018_2.RecordRef department) {
+        this.department = department;
+    }
+
+
+    /**
+     * Gets the location value for this Budget.
+     * 
+     * @return location
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getLocation() {
         return location;
     }
 
-    /**
-     * 设置location属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setLocation(RecordRef value) {
-        this.location = value;
-    }
 
     /**
-     * 获取account属性的值。
+     * Sets the location value for this Budget.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param location
      */
-    public RecordRef getAccount() {
+    public void setLocation(com.netsuite.webservices.platform.core_2018_2.RecordRef location) {
+        this.location = location;
+    }
+
+
+    /**
+     * Gets the account value for this Budget.
+     * 
+     * @return account
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getAccount() {
         return account;
     }
 
-    /**
-     * 设置account属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setAccount(RecordRef value) {
-        this.account = value;
-    }
 
     /**
-     * 获取subsidiary属性的值。
+     * Sets the account value for this Budget.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param account
      */
-    public RecordRef getSubsidiary() {
+    public void setAccount(com.netsuite.webservices.platform.core_2018_2.RecordRef account) {
+        this.account = account;
+    }
+
+
+    /**
+     * Gets the subsidiary value for this Budget.
+     * 
+     * @return subsidiary
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getSubsidiary() {
         return subsidiary;
     }
 
-    /**
-     * 设置subsidiary属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setSubsidiary(RecordRef value) {
-        this.subsidiary = value;
-    }
 
     /**
-     * 获取category属性的值。
+     * Sets the subsidiary value for this Budget.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param subsidiary
      */
-    public RecordRef getCategory() {
+    public void setSubsidiary(com.netsuite.webservices.platform.core_2018_2.RecordRef subsidiary) {
+        this.subsidiary = subsidiary;
+    }
+
+
+    /**
+     * Gets the category value for this Budget.
+     * 
+     * @return category
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getCategory() {
         return category;
     }
 
-    /**
-     * 设置category属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setCategory(RecordRef value) {
-        this.category = value;
-    }
 
     /**
-     * 获取budgetType属性的值。
+     * Sets the category value for this Budget.
      * 
-     * @return
-     *     possible object is
-     *     {@link BudgetBudgetType }
-     *     
+     * @param category
      */
-    public BudgetBudgetType getBudgetType() {
+    public void setCategory(com.netsuite.webservices.platform.core_2018_2.RecordRef category) {
+        this.category = category;
+    }
+
+
+    /**
+     * Gets the budgetType value for this Budget.
+     * 
+     * @return budgetType
+     */
+    public com.netsuite.webservices.transactions.financial_2018_2.types.BudgetBudgetType getBudgetType() {
         return budgetType;
     }
 
-    /**
-     * 设置budgetType属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link BudgetBudgetType }
-     *     
-     */
-    public void setBudgetType(BudgetBudgetType value) {
-        this.budgetType = value;
-    }
 
     /**
-     * 获取currency属性的值。
+     * Sets the budgetType value for this Budget.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param budgetType
      */
-    public RecordRef getCurrency() {
+    public void setBudgetType(com.netsuite.webservices.transactions.financial_2018_2.types.BudgetBudgetType budgetType) {
+        this.budgetType = budgetType;
+    }
+
+
+    /**
+     * Gets the currency value for this Budget.
+     * 
+     * @return currency
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getCurrency() {
         return currency;
     }
 
-    /**
-     * 设置currency属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setCurrency(RecordRef value) {
-        this.currency = value;
-    }
 
     /**
-     * 获取periodAmount1属性的值。
+     * Sets the currency value for this Budget.
      * 
-     * @return
-     *     possible object is
-     *     {@link Double }
-     *     
+     * @param currency
      */
-    public Double getPeriodAmount1() {
+    public void setCurrency(com.netsuite.webservices.platform.core_2018_2.RecordRef currency) {
+        this.currency = currency;
+    }
+
+
+    /**
+     * Gets the periodAmount1 value for this Budget.
+     * 
+     * @return periodAmount1
+     */
+    public java.lang.Double getPeriodAmount1() {
         return periodAmount1;
     }
 
-    /**
-     * 设置periodAmount1属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Double }
-     *     
-     */
-    public void setPeriodAmount1(Double value) {
-        this.periodAmount1 = value;
-    }
 
     /**
-     * 获取periodAmount2属性的值。
+     * Sets the periodAmount1 value for this Budget.
      * 
-     * @return
-     *     possible object is
-     *     {@link Double }
-     *     
+     * @param periodAmount1
      */
-    public Double getPeriodAmount2() {
+    public void setPeriodAmount1(java.lang.Double periodAmount1) {
+        this.periodAmount1 = periodAmount1;
+    }
+
+
+    /**
+     * Gets the periodAmount2 value for this Budget.
+     * 
+     * @return periodAmount2
+     */
+    public java.lang.Double getPeriodAmount2() {
         return periodAmount2;
     }
 
-    /**
-     * 设置periodAmount2属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Double }
-     *     
-     */
-    public void setPeriodAmount2(Double value) {
-        this.periodAmount2 = value;
-    }
 
     /**
-     * 获取periodAmount3属性的值。
+     * Sets the periodAmount2 value for this Budget.
      * 
-     * @return
-     *     possible object is
-     *     {@link Double }
-     *     
+     * @param periodAmount2
      */
-    public Double getPeriodAmount3() {
+    public void setPeriodAmount2(java.lang.Double periodAmount2) {
+        this.periodAmount2 = periodAmount2;
+    }
+
+
+    /**
+     * Gets the periodAmount3 value for this Budget.
+     * 
+     * @return periodAmount3
+     */
+    public java.lang.Double getPeriodAmount3() {
         return periodAmount3;
     }
 
-    /**
-     * 设置periodAmount3属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Double }
-     *     
-     */
-    public void setPeriodAmount3(Double value) {
-        this.periodAmount3 = value;
-    }
 
     /**
-     * 获取periodAmount4属性的值。
+     * Sets the periodAmount3 value for this Budget.
      * 
-     * @return
-     *     possible object is
-     *     {@link Double }
-     *     
+     * @param periodAmount3
      */
-    public Double getPeriodAmount4() {
+    public void setPeriodAmount3(java.lang.Double periodAmount3) {
+        this.periodAmount3 = periodAmount3;
+    }
+
+
+    /**
+     * Gets the periodAmount4 value for this Budget.
+     * 
+     * @return periodAmount4
+     */
+    public java.lang.Double getPeriodAmount4() {
         return periodAmount4;
     }
 
-    /**
-     * 设置periodAmount4属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Double }
-     *     
-     */
-    public void setPeriodAmount4(Double value) {
-        this.periodAmount4 = value;
-    }
 
     /**
-     * 获取periodAmount5属性的值。
+     * Sets the periodAmount4 value for this Budget.
      * 
-     * @return
-     *     possible object is
-     *     {@link Double }
-     *     
+     * @param periodAmount4
      */
-    public Double getPeriodAmount5() {
+    public void setPeriodAmount4(java.lang.Double periodAmount4) {
+        this.periodAmount4 = periodAmount4;
+    }
+
+
+    /**
+     * Gets the periodAmount5 value for this Budget.
+     * 
+     * @return periodAmount5
+     */
+    public java.lang.Double getPeriodAmount5() {
         return periodAmount5;
     }
 
-    /**
-     * 设置periodAmount5属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Double }
-     *     
-     */
-    public void setPeriodAmount5(Double value) {
-        this.periodAmount5 = value;
-    }
 
     /**
-     * 获取periodAmount6属性的值。
+     * Sets the periodAmount5 value for this Budget.
      * 
-     * @return
-     *     possible object is
-     *     {@link Double }
-     *     
+     * @param periodAmount5
      */
-    public Double getPeriodAmount6() {
+    public void setPeriodAmount5(java.lang.Double periodAmount5) {
+        this.periodAmount5 = periodAmount5;
+    }
+
+
+    /**
+     * Gets the periodAmount6 value for this Budget.
+     * 
+     * @return periodAmount6
+     */
+    public java.lang.Double getPeriodAmount6() {
         return periodAmount6;
     }
 
-    /**
-     * 设置periodAmount6属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Double }
-     *     
-     */
-    public void setPeriodAmount6(Double value) {
-        this.periodAmount6 = value;
-    }
 
     /**
-     * 获取periodAmount7属性的值。
+     * Sets the periodAmount6 value for this Budget.
      * 
-     * @return
-     *     possible object is
-     *     {@link Double }
-     *     
+     * @param periodAmount6
      */
-    public Double getPeriodAmount7() {
+    public void setPeriodAmount6(java.lang.Double periodAmount6) {
+        this.periodAmount6 = periodAmount6;
+    }
+
+
+    /**
+     * Gets the periodAmount7 value for this Budget.
+     * 
+     * @return periodAmount7
+     */
+    public java.lang.Double getPeriodAmount7() {
         return periodAmount7;
     }
 
-    /**
-     * 设置periodAmount7属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Double }
-     *     
-     */
-    public void setPeriodAmount7(Double value) {
-        this.periodAmount7 = value;
-    }
 
     /**
-     * 获取periodAmount8属性的值。
+     * Sets the periodAmount7 value for this Budget.
      * 
-     * @return
-     *     possible object is
-     *     {@link Double }
-     *     
+     * @param periodAmount7
      */
-    public Double getPeriodAmount8() {
+    public void setPeriodAmount7(java.lang.Double periodAmount7) {
+        this.periodAmount7 = periodAmount7;
+    }
+
+
+    /**
+     * Gets the periodAmount8 value for this Budget.
+     * 
+     * @return periodAmount8
+     */
+    public java.lang.Double getPeriodAmount8() {
         return periodAmount8;
     }
 
-    /**
-     * 设置periodAmount8属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Double }
-     *     
-     */
-    public void setPeriodAmount8(Double value) {
-        this.periodAmount8 = value;
-    }
 
     /**
-     * 获取periodAmount9属性的值。
+     * Sets the periodAmount8 value for this Budget.
      * 
-     * @return
-     *     possible object is
-     *     {@link Double }
-     *     
+     * @param periodAmount8
      */
-    public Double getPeriodAmount9() {
+    public void setPeriodAmount8(java.lang.Double periodAmount8) {
+        this.periodAmount8 = periodAmount8;
+    }
+
+
+    /**
+     * Gets the periodAmount9 value for this Budget.
+     * 
+     * @return periodAmount9
+     */
+    public java.lang.Double getPeriodAmount9() {
         return periodAmount9;
     }
 
-    /**
-     * 设置periodAmount9属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Double }
-     *     
-     */
-    public void setPeriodAmount9(Double value) {
-        this.periodAmount9 = value;
-    }
 
     /**
-     * 获取periodAmount10属性的值。
+     * Sets the periodAmount9 value for this Budget.
      * 
-     * @return
-     *     possible object is
-     *     {@link Double }
-     *     
+     * @param periodAmount9
      */
-    public Double getPeriodAmount10() {
+    public void setPeriodAmount9(java.lang.Double periodAmount9) {
+        this.periodAmount9 = periodAmount9;
+    }
+
+
+    /**
+     * Gets the periodAmount10 value for this Budget.
+     * 
+     * @return periodAmount10
+     */
+    public java.lang.Double getPeriodAmount10() {
         return periodAmount10;
     }
 
-    /**
-     * 设置periodAmount10属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Double }
-     *     
-     */
-    public void setPeriodAmount10(Double value) {
-        this.periodAmount10 = value;
-    }
 
     /**
-     * 获取periodAmount11属性的值。
+     * Sets the periodAmount10 value for this Budget.
      * 
-     * @return
-     *     possible object is
-     *     {@link Double }
-     *     
+     * @param periodAmount10
      */
-    public Double getPeriodAmount11() {
+    public void setPeriodAmount10(java.lang.Double periodAmount10) {
+        this.periodAmount10 = periodAmount10;
+    }
+
+
+    /**
+     * Gets the periodAmount11 value for this Budget.
+     * 
+     * @return periodAmount11
+     */
+    public java.lang.Double getPeriodAmount11() {
         return periodAmount11;
     }
 
-    /**
-     * 设置periodAmount11属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Double }
-     *     
-     */
-    public void setPeriodAmount11(Double value) {
-        this.periodAmount11 = value;
-    }
 
     /**
-     * 获取periodAmount12属性的值。
+     * Sets the periodAmount11 value for this Budget.
      * 
-     * @return
-     *     possible object is
-     *     {@link Double }
-     *     
+     * @param periodAmount11
      */
-    public Double getPeriodAmount12() {
+    public void setPeriodAmount11(java.lang.Double periodAmount11) {
+        this.periodAmount11 = periodAmount11;
+    }
+
+
+    /**
+     * Gets the periodAmount12 value for this Budget.
+     * 
+     * @return periodAmount12
+     */
+    public java.lang.Double getPeriodAmount12() {
         return periodAmount12;
     }
 
-    /**
-     * 设置periodAmount12属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Double }
-     *     
-     */
-    public void setPeriodAmount12(Double value) {
-        this.periodAmount12 = value;
-    }
 
     /**
-     * 获取periodAmount13属性的值。
+     * Sets the periodAmount12 value for this Budget.
      * 
-     * @return
-     *     possible object is
-     *     {@link Double }
-     *     
+     * @param periodAmount12
      */
-    public Double getPeriodAmount13() {
+    public void setPeriodAmount12(java.lang.Double periodAmount12) {
+        this.periodAmount12 = periodAmount12;
+    }
+
+
+    /**
+     * Gets the periodAmount13 value for this Budget.
+     * 
+     * @return periodAmount13
+     */
+    public java.lang.Double getPeriodAmount13() {
         return periodAmount13;
     }
 
-    /**
-     * 设置periodAmount13属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Double }
-     *     
-     */
-    public void setPeriodAmount13(Double value) {
-        this.periodAmount13 = value;
-    }
 
     /**
-     * 获取periodAmount14属性的值。
+     * Sets the periodAmount13 value for this Budget.
      * 
-     * @return
-     *     possible object is
-     *     {@link Double }
-     *     
+     * @param periodAmount13
      */
-    public Double getPeriodAmount14() {
+    public void setPeriodAmount13(java.lang.Double periodAmount13) {
+        this.periodAmount13 = periodAmount13;
+    }
+
+
+    /**
+     * Gets the periodAmount14 value for this Budget.
+     * 
+     * @return periodAmount14
+     */
+    public java.lang.Double getPeriodAmount14() {
         return periodAmount14;
     }
 
-    /**
-     * 设置periodAmount14属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Double }
-     *     
-     */
-    public void setPeriodAmount14(Double value) {
-        this.periodAmount14 = value;
-    }
 
     /**
-     * 获取periodAmount15属性的值。
+     * Sets the periodAmount14 value for this Budget.
      * 
-     * @return
-     *     possible object is
-     *     {@link Double }
-     *     
+     * @param periodAmount14
      */
-    public Double getPeriodAmount15() {
+    public void setPeriodAmount14(java.lang.Double periodAmount14) {
+        this.periodAmount14 = periodAmount14;
+    }
+
+
+    /**
+     * Gets the periodAmount15 value for this Budget.
+     * 
+     * @return periodAmount15
+     */
+    public java.lang.Double getPeriodAmount15() {
         return periodAmount15;
     }
 
-    /**
-     * 设置periodAmount15属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Double }
-     *     
-     */
-    public void setPeriodAmount15(Double value) {
-        this.periodAmount15 = value;
-    }
 
     /**
-     * 获取periodAmount16属性的值。
+     * Sets the periodAmount15 value for this Budget.
      * 
-     * @return
-     *     possible object is
-     *     {@link Double }
-     *     
+     * @param periodAmount15
      */
-    public Double getPeriodAmount16() {
+    public void setPeriodAmount15(java.lang.Double periodAmount15) {
+        this.periodAmount15 = periodAmount15;
+    }
+
+
+    /**
+     * Gets the periodAmount16 value for this Budget.
+     * 
+     * @return periodAmount16
+     */
+    public java.lang.Double getPeriodAmount16() {
         return periodAmount16;
     }
 
-    /**
-     * 设置periodAmount16属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Double }
-     *     
-     */
-    public void setPeriodAmount16(Double value) {
-        this.periodAmount16 = value;
-    }
 
     /**
-     * 获取periodAmount17属性的值。
+     * Sets the periodAmount16 value for this Budget.
      * 
-     * @return
-     *     possible object is
-     *     {@link Double }
-     *     
+     * @param periodAmount16
      */
-    public Double getPeriodAmount17() {
+    public void setPeriodAmount16(java.lang.Double periodAmount16) {
+        this.periodAmount16 = periodAmount16;
+    }
+
+
+    /**
+     * Gets the periodAmount17 value for this Budget.
+     * 
+     * @return periodAmount17
+     */
+    public java.lang.Double getPeriodAmount17() {
         return periodAmount17;
     }
 
-    /**
-     * 设置periodAmount17属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Double }
-     *     
-     */
-    public void setPeriodAmount17(Double value) {
-        this.periodAmount17 = value;
-    }
 
     /**
-     * 获取periodAmount18属性的值。
+     * Sets the periodAmount17 value for this Budget.
      * 
-     * @return
-     *     possible object is
-     *     {@link Double }
-     *     
+     * @param periodAmount17
      */
-    public Double getPeriodAmount18() {
+    public void setPeriodAmount17(java.lang.Double periodAmount17) {
+        this.periodAmount17 = periodAmount17;
+    }
+
+
+    /**
+     * Gets the periodAmount18 value for this Budget.
+     * 
+     * @return periodAmount18
+     */
+    public java.lang.Double getPeriodAmount18() {
         return periodAmount18;
     }
 
-    /**
-     * 设置periodAmount18属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Double }
-     *     
-     */
-    public void setPeriodAmount18(Double value) {
-        this.periodAmount18 = value;
-    }
 
     /**
-     * 获取periodAmount19属性的值。
+     * Sets the periodAmount18 value for this Budget.
      * 
-     * @return
-     *     possible object is
-     *     {@link Double }
-     *     
+     * @param periodAmount18
      */
-    public Double getPeriodAmount19() {
+    public void setPeriodAmount18(java.lang.Double periodAmount18) {
+        this.periodAmount18 = periodAmount18;
+    }
+
+
+    /**
+     * Gets the periodAmount19 value for this Budget.
+     * 
+     * @return periodAmount19
+     */
+    public java.lang.Double getPeriodAmount19() {
         return periodAmount19;
     }
 
-    /**
-     * 设置periodAmount19属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Double }
-     *     
-     */
-    public void setPeriodAmount19(Double value) {
-        this.periodAmount19 = value;
-    }
 
     /**
-     * 获取periodAmount20属性的值。
+     * Sets the periodAmount19 value for this Budget.
      * 
-     * @return
-     *     possible object is
-     *     {@link Double }
-     *     
+     * @param periodAmount19
      */
-    public Double getPeriodAmount20() {
+    public void setPeriodAmount19(java.lang.Double periodAmount19) {
+        this.periodAmount19 = periodAmount19;
+    }
+
+
+    /**
+     * Gets the periodAmount20 value for this Budget.
+     * 
+     * @return periodAmount20
+     */
+    public java.lang.Double getPeriodAmount20() {
         return periodAmount20;
     }
 
-    /**
-     * 设置periodAmount20属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Double }
-     *     
-     */
-    public void setPeriodAmount20(Double value) {
-        this.periodAmount20 = value;
-    }
 
     /**
-     * 获取periodAmount21属性的值。
+     * Sets the periodAmount20 value for this Budget.
      * 
-     * @return
-     *     possible object is
-     *     {@link Double }
-     *     
+     * @param periodAmount20
      */
-    public Double getPeriodAmount21() {
+    public void setPeriodAmount20(java.lang.Double periodAmount20) {
+        this.periodAmount20 = periodAmount20;
+    }
+
+
+    /**
+     * Gets the periodAmount21 value for this Budget.
+     * 
+     * @return periodAmount21
+     */
+    public java.lang.Double getPeriodAmount21() {
         return periodAmount21;
     }
 
-    /**
-     * 设置periodAmount21属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Double }
-     *     
-     */
-    public void setPeriodAmount21(Double value) {
-        this.periodAmount21 = value;
-    }
 
     /**
-     * 获取periodAmount22属性的值。
+     * Sets the periodAmount21 value for this Budget.
      * 
-     * @return
-     *     possible object is
-     *     {@link Double }
-     *     
+     * @param periodAmount21
      */
-    public Double getPeriodAmount22() {
+    public void setPeriodAmount21(java.lang.Double periodAmount21) {
+        this.periodAmount21 = periodAmount21;
+    }
+
+
+    /**
+     * Gets the periodAmount22 value for this Budget.
+     * 
+     * @return periodAmount22
+     */
+    public java.lang.Double getPeriodAmount22() {
         return periodAmount22;
     }
 
-    /**
-     * 设置periodAmount22属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Double }
-     *     
-     */
-    public void setPeriodAmount22(Double value) {
-        this.periodAmount22 = value;
-    }
 
     /**
-     * 获取periodAmount23属性的值。
+     * Sets the periodAmount22 value for this Budget.
      * 
-     * @return
-     *     possible object is
-     *     {@link Double }
-     *     
+     * @param periodAmount22
      */
-    public Double getPeriodAmount23() {
+    public void setPeriodAmount22(java.lang.Double periodAmount22) {
+        this.periodAmount22 = periodAmount22;
+    }
+
+
+    /**
+     * Gets the periodAmount23 value for this Budget.
+     * 
+     * @return periodAmount23
+     */
+    public java.lang.Double getPeriodAmount23() {
         return periodAmount23;
     }
 
-    /**
-     * 设置periodAmount23属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Double }
-     *     
-     */
-    public void setPeriodAmount23(Double value) {
-        this.periodAmount23 = value;
-    }
 
     /**
-     * 获取periodAmount24属性的值。
+     * Sets the periodAmount23 value for this Budget.
      * 
-     * @return
-     *     possible object is
-     *     {@link Double }
-     *     
+     * @param periodAmount23
      */
-    public Double getPeriodAmount24() {
+    public void setPeriodAmount23(java.lang.Double periodAmount23) {
+        this.periodAmount23 = periodAmount23;
+    }
+
+
+    /**
+     * Gets the periodAmount24 value for this Budget.
+     * 
+     * @return periodAmount24
+     */
+    public java.lang.Double getPeriodAmount24() {
         return periodAmount24;
     }
 
-    /**
-     * 设置periodAmount24属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Double }
-     *     
-     */
-    public void setPeriodAmount24(Double value) {
-        this.periodAmount24 = value;
-    }
 
     /**
-     * 获取amount属性的值。
+     * Sets the periodAmount24 value for this Budget.
      * 
-     * @return
-     *     possible object is
-     *     {@link Double }
-     *     
+     * @param periodAmount24
      */
-    public Double getAmount() {
+    public void setPeriodAmount24(java.lang.Double periodAmount24) {
+        this.periodAmount24 = periodAmount24;
+    }
+
+
+    /**
+     * Gets the amount value for this Budget.
+     * 
+     * @return amount
+     */
+    public java.lang.Double getAmount() {
         return amount;
     }
 
-    /**
-     * 设置amount属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Double }
-     *     
-     */
-    public void setAmount(Double value) {
-        this.amount = value;
-    }
 
     /**
-     * 获取customFieldList属性的值。
+     * Sets the amount value for this Budget.
      * 
-     * @return
-     *     possible object is
-     *     {@link CustomFieldList }
-     *     
+     * @param amount
      */
-    public CustomFieldList getCustomFieldList() {
+    public void setAmount(java.lang.Double amount) {
+        this.amount = amount;
+    }
+
+
+    /**
+     * Gets the customFieldList value for this Budget.
+     * 
+     * @return customFieldList
+     */
+    public com.netsuite.webservices.platform.core_2018_2.CustomFieldRef[] getCustomFieldList() {
         return customFieldList;
     }
 
-    /**
-     * 设置customFieldList属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link CustomFieldList }
-     *     
-     */
-    public void setCustomFieldList(CustomFieldList value) {
-        this.customFieldList = value;
-    }
 
     /**
-     * 获取internalId属性的值。
+     * Sets the customFieldList value for this Budget.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param customFieldList
      */
-    public String getInternalId() {
+    public void setCustomFieldList(com.netsuite.webservices.platform.core_2018_2.CustomFieldRef[] customFieldList) {
+        this.customFieldList = customFieldList;
+    }
+
+
+    /**
+     * Gets the internalId value for this Budget.
+     * 
+     * @return internalId
+     */
+    public java.lang.String getInternalId() {
         return internalId;
     }
 
+
     /**
-     * 设置internalId属性的值。
+     * Sets the internalId value for this Budget.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     * @param internalId
      */
-    public void setInternalId(String value) {
-        this.internalId = value;
+    public void setInternalId(java.lang.String internalId) {
+        this.internalId = internalId;
+    }
+
+    private java.lang.Object __equalsCalc = null;
+    public synchronized boolean equals(java.lang.Object obj) {
+        if (!(obj instanceof Budget)) return false;
+        Budget other = (Budget) obj;
+        if (obj == null) return false;
+        if (this == obj) return true;
+        if (__equalsCalc != null) {
+            return (__equalsCalc == obj);
+        }
+        __equalsCalc = obj;
+        boolean _equals;
+        _equals = super.equals(obj) && 
+            ((this.year==null && other.getYear()==null) || 
+             (this.year!=null &&
+              this.year.equals(other.getYear()))) &&
+            ((this.customer==null && other.getCustomer()==null) || 
+             (this.customer!=null &&
+              this.customer.equals(other.getCustomer()))) &&
+            ((this.item==null && other.getItem()==null) || 
+             (this.item!=null &&
+              this.item.equals(other.getItem()))) &&
+            ((this._class==null && other.get_class()==null) || 
+             (this._class!=null &&
+              this._class.equals(other.get_class()))) &&
+            ((this.department==null && other.getDepartment()==null) || 
+             (this.department!=null &&
+              this.department.equals(other.getDepartment()))) &&
+            ((this.location==null && other.getLocation()==null) || 
+             (this.location!=null &&
+              this.location.equals(other.getLocation()))) &&
+            ((this.account==null && other.getAccount()==null) || 
+             (this.account!=null &&
+              this.account.equals(other.getAccount()))) &&
+            ((this.subsidiary==null && other.getSubsidiary()==null) || 
+             (this.subsidiary!=null &&
+              this.subsidiary.equals(other.getSubsidiary()))) &&
+            ((this.category==null && other.getCategory()==null) || 
+             (this.category!=null &&
+              this.category.equals(other.getCategory()))) &&
+            ((this.budgetType==null && other.getBudgetType()==null) || 
+             (this.budgetType!=null &&
+              this.budgetType.equals(other.getBudgetType()))) &&
+            ((this.currency==null && other.getCurrency()==null) || 
+             (this.currency!=null &&
+              this.currency.equals(other.getCurrency()))) &&
+            ((this.periodAmount1==null && other.getPeriodAmount1()==null) || 
+             (this.periodAmount1!=null &&
+              this.periodAmount1.equals(other.getPeriodAmount1()))) &&
+            ((this.periodAmount2==null && other.getPeriodAmount2()==null) || 
+             (this.periodAmount2!=null &&
+              this.periodAmount2.equals(other.getPeriodAmount2()))) &&
+            ((this.periodAmount3==null && other.getPeriodAmount3()==null) || 
+             (this.periodAmount3!=null &&
+              this.periodAmount3.equals(other.getPeriodAmount3()))) &&
+            ((this.periodAmount4==null && other.getPeriodAmount4()==null) || 
+             (this.periodAmount4!=null &&
+              this.periodAmount4.equals(other.getPeriodAmount4()))) &&
+            ((this.periodAmount5==null && other.getPeriodAmount5()==null) || 
+             (this.periodAmount5!=null &&
+              this.periodAmount5.equals(other.getPeriodAmount5()))) &&
+            ((this.periodAmount6==null && other.getPeriodAmount6()==null) || 
+             (this.periodAmount6!=null &&
+              this.periodAmount6.equals(other.getPeriodAmount6()))) &&
+            ((this.periodAmount7==null && other.getPeriodAmount7()==null) || 
+             (this.periodAmount7!=null &&
+              this.periodAmount7.equals(other.getPeriodAmount7()))) &&
+            ((this.periodAmount8==null && other.getPeriodAmount8()==null) || 
+             (this.periodAmount8!=null &&
+              this.periodAmount8.equals(other.getPeriodAmount8()))) &&
+            ((this.periodAmount9==null && other.getPeriodAmount9()==null) || 
+             (this.periodAmount9!=null &&
+              this.periodAmount9.equals(other.getPeriodAmount9()))) &&
+            ((this.periodAmount10==null && other.getPeriodAmount10()==null) || 
+             (this.periodAmount10!=null &&
+              this.periodAmount10.equals(other.getPeriodAmount10()))) &&
+            ((this.periodAmount11==null && other.getPeriodAmount11()==null) || 
+             (this.periodAmount11!=null &&
+              this.periodAmount11.equals(other.getPeriodAmount11()))) &&
+            ((this.periodAmount12==null && other.getPeriodAmount12()==null) || 
+             (this.periodAmount12!=null &&
+              this.periodAmount12.equals(other.getPeriodAmount12()))) &&
+            ((this.periodAmount13==null && other.getPeriodAmount13()==null) || 
+             (this.periodAmount13!=null &&
+              this.periodAmount13.equals(other.getPeriodAmount13()))) &&
+            ((this.periodAmount14==null && other.getPeriodAmount14()==null) || 
+             (this.periodAmount14!=null &&
+              this.periodAmount14.equals(other.getPeriodAmount14()))) &&
+            ((this.periodAmount15==null && other.getPeriodAmount15()==null) || 
+             (this.periodAmount15!=null &&
+              this.periodAmount15.equals(other.getPeriodAmount15()))) &&
+            ((this.periodAmount16==null && other.getPeriodAmount16()==null) || 
+             (this.periodAmount16!=null &&
+              this.periodAmount16.equals(other.getPeriodAmount16()))) &&
+            ((this.periodAmount17==null && other.getPeriodAmount17()==null) || 
+             (this.periodAmount17!=null &&
+              this.periodAmount17.equals(other.getPeriodAmount17()))) &&
+            ((this.periodAmount18==null && other.getPeriodAmount18()==null) || 
+             (this.periodAmount18!=null &&
+              this.periodAmount18.equals(other.getPeriodAmount18()))) &&
+            ((this.periodAmount19==null && other.getPeriodAmount19()==null) || 
+             (this.periodAmount19!=null &&
+              this.periodAmount19.equals(other.getPeriodAmount19()))) &&
+            ((this.periodAmount20==null && other.getPeriodAmount20()==null) || 
+             (this.periodAmount20!=null &&
+              this.periodAmount20.equals(other.getPeriodAmount20()))) &&
+            ((this.periodAmount21==null && other.getPeriodAmount21()==null) || 
+             (this.periodAmount21!=null &&
+              this.periodAmount21.equals(other.getPeriodAmount21()))) &&
+            ((this.periodAmount22==null && other.getPeriodAmount22()==null) || 
+             (this.periodAmount22!=null &&
+              this.periodAmount22.equals(other.getPeriodAmount22()))) &&
+            ((this.periodAmount23==null && other.getPeriodAmount23()==null) || 
+             (this.periodAmount23!=null &&
+              this.periodAmount23.equals(other.getPeriodAmount23()))) &&
+            ((this.periodAmount24==null && other.getPeriodAmount24()==null) || 
+             (this.periodAmount24!=null &&
+              this.periodAmount24.equals(other.getPeriodAmount24()))) &&
+            ((this.amount==null && other.getAmount()==null) || 
+             (this.amount!=null &&
+              this.amount.equals(other.getAmount()))) &&
+            ((this.customFieldList==null && other.getCustomFieldList()==null) || 
+             (this.customFieldList!=null &&
+              java.util.Arrays.equals(this.customFieldList, other.getCustomFieldList()))) &&
+            ((this.internalId==null && other.getInternalId()==null) || 
+             (this.internalId!=null &&
+              this.internalId.equals(other.getInternalId())));
+        __equalsCalc = null;
+        return _equals;
+    }
+
+    private boolean __hashCodeCalc = false;
+    public synchronized int hashCode() {
+        if (__hashCodeCalc) {
+            return 0;
+        }
+        __hashCodeCalc = true;
+        int _hashCode = super.hashCode();
+        if (getYear() != null) {
+            _hashCode += getYear().hashCode();
+        }
+        if (getCustomer() != null) {
+            _hashCode += getCustomer().hashCode();
+        }
+        if (getItem() != null) {
+            _hashCode += getItem().hashCode();
+        }
+        if (get_class() != null) {
+            _hashCode += get_class().hashCode();
+        }
+        if (getDepartment() != null) {
+            _hashCode += getDepartment().hashCode();
+        }
+        if (getLocation() != null) {
+            _hashCode += getLocation().hashCode();
+        }
+        if (getAccount() != null) {
+            _hashCode += getAccount().hashCode();
+        }
+        if (getSubsidiary() != null) {
+            _hashCode += getSubsidiary().hashCode();
+        }
+        if (getCategory() != null) {
+            _hashCode += getCategory().hashCode();
+        }
+        if (getBudgetType() != null) {
+            _hashCode += getBudgetType().hashCode();
+        }
+        if (getCurrency() != null) {
+            _hashCode += getCurrency().hashCode();
+        }
+        if (getPeriodAmount1() != null) {
+            _hashCode += getPeriodAmount1().hashCode();
+        }
+        if (getPeriodAmount2() != null) {
+            _hashCode += getPeriodAmount2().hashCode();
+        }
+        if (getPeriodAmount3() != null) {
+            _hashCode += getPeriodAmount3().hashCode();
+        }
+        if (getPeriodAmount4() != null) {
+            _hashCode += getPeriodAmount4().hashCode();
+        }
+        if (getPeriodAmount5() != null) {
+            _hashCode += getPeriodAmount5().hashCode();
+        }
+        if (getPeriodAmount6() != null) {
+            _hashCode += getPeriodAmount6().hashCode();
+        }
+        if (getPeriodAmount7() != null) {
+            _hashCode += getPeriodAmount7().hashCode();
+        }
+        if (getPeriodAmount8() != null) {
+            _hashCode += getPeriodAmount8().hashCode();
+        }
+        if (getPeriodAmount9() != null) {
+            _hashCode += getPeriodAmount9().hashCode();
+        }
+        if (getPeriodAmount10() != null) {
+            _hashCode += getPeriodAmount10().hashCode();
+        }
+        if (getPeriodAmount11() != null) {
+            _hashCode += getPeriodAmount11().hashCode();
+        }
+        if (getPeriodAmount12() != null) {
+            _hashCode += getPeriodAmount12().hashCode();
+        }
+        if (getPeriodAmount13() != null) {
+            _hashCode += getPeriodAmount13().hashCode();
+        }
+        if (getPeriodAmount14() != null) {
+            _hashCode += getPeriodAmount14().hashCode();
+        }
+        if (getPeriodAmount15() != null) {
+            _hashCode += getPeriodAmount15().hashCode();
+        }
+        if (getPeriodAmount16() != null) {
+            _hashCode += getPeriodAmount16().hashCode();
+        }
+        if (getPeriodAmount17() != null) {
+            _hashCode += getPeriodAmount17().hashCode();
+        }
+        if (getPeriodAmount18() != null) {
+            _hashCode += getPeriodAmount18().hashCode();
+        }
+        if (getPeriodAmount19() != null) {
+            _hashCode += getPeriodAmount19().hashCode();
+        }
+        if (getPeriodAmount20() != null) {
+            _hashCode += getPeriodAmount20().hashCode();
+        }
+        if (getPeriodAmount21() != null) {
+            _hashCode += getPeriodAmount21().hashCode();
+        }
+        if (getPeriodAmount22() != null) {
+            _hashCode += getPeriodAmount22().hashCode();
+        }
+        if (getPeriodAmount23() != null) {
+            _hashCode += getPeriodAmount23().hashCode();
+        }
+        if (getPeriodAmount24() != null) {
+            _hashCode += getPeriodAmount24().hashCode();
+        }
+        if (getAmount() != null) {
+            _hashCode += getAmount().hashCode();
+        }
+        if (getCustomFieldList() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getCustomFieldList());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getCustomFieldList(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getInternalId() != null) {
+            _hashCode += getInternalId().hashCode();
+        }
+        __hashCodeCalc = false;
+        return _hashCode;
+    }
+
+    // Type metadata
+    private static org.apache.axis.description.TypeDesc typeDesc =
+        new org.apache.axis.description.TypeDesc(Budget.class, true);
+
+    static {
+        typeDesc.setXmlType(new javax.xml.namespace.QName("urn:financial_2018_2.transactions.webservices.netsuite.com", "Budget"));
+        org.apache.axis.description.AttributeDesc attrField = new org.apache.axis.description.AttributeDesc();
+        attrField.setFieldName("internalId");
+        attrField.setXmlName(new javax.xml.namespace.QName("", "internalId"));
+        attrField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        typeDesc.addFieldDesc(attrField);
+        org.apache.axis.description.ElementDesc elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("year");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:financial_2018_2.transactions.webservices.netsuite.com", "year"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("customer");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:financial_2018_2.transactions.webservices.netsuite.com", "customer"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("item");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:financial_2018_2.transactions.webservices.netsuite.com", "item"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("_class");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:financial_2018_2.transactions.webservices.netsuite.com", "class"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("department");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:financial_2018_2.transactions.webservices.netsuite.com", "department"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("location");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:financial_2018_2.transactions.webservices.netsuite.com", "location"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("account");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:financial_2018_2.transactions.webservices.netsuite.com", "account"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("subsidiary");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:financial_2018_2.transactions.webservices.netsuite.com", "subsidiary"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("category");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:financial_2018_2.transactions.webservices.netsuite.com", "category"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("budgetType");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:financial_2018_2.transactions.webservices.netsuite.com", "budgetType"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:types.financial_2018_2.transactions.webservices.netsuite.com", "BudgetBudgetType"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("currency");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:financial_2018_2.transactions.webservices.netsuite.com", "currency"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("periodAmount1");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:financial_2018_2.transactions.webservices.netsuite.com", "periodAmount1"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "double"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("periodAmount2");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:financial_2018_2.transactions.webservices.netsuite.com", "periodAmount2"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "double"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("periodAmount3");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:financial_2018_2.transactions.webservices.netsuite.com", "periodAmount3"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "double"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("periodAmount4");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:financial_2018_2.transactions.webservices.netsuite.com", "periodAmount4"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "double"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("periodAmount5");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:financial_2018_2.transactions.webservices.netsuite.com", "periodAmount5"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "double"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("periodAmount6");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:financial_2018_2.transactions.webservices.netsuite.com", "periodAmount6"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "double"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("periodAmount7");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:financial_2018_2.transactions.webservices.netsuite.com", "periodAmount7"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "double"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("periodAmount8");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:financial_2018_2.transactions.webservices.netsuite.com", "periodAmount8"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "double"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("periodAmount9");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:financial_2018_2.transactions.webservices.netsuite.com", "periodAmount9"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "double"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("periodAmount10");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:financial_2018_2.transactions.webservices.netsuite.com", "periodAmount10"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "double"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("periodAmount11");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:financial_2018_2.transactions.webservices.netsuite.com", "periodAmount11"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "double"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("periodAmount12");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:financial_2018_2.transactions.webservices.netsuite.com", "periodAmount12"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "double"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("periodAmount13");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:financial_2018_2.transactions.webservices.netsuite.com", "periodAmount13"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "double"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("periodAmount14");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:financial_2018_2.transactions.webservices.netsuite.com", "periodAmount14"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "double"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("periodAmount15");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:financial_2018_2.transactions.webservices.netsuite.com", "periodAmount15"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "double"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("periodAmount16");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:financial_2018_2.transactions.webservices.netsuite.com", "periodAmount16"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "double"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("periodAmount17");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:financial_2018_2.transactions.webservices.netsuite.com", "periodAmount17"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "double"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("periodAmount18");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:financial_2018_2.transactions.webservices.netsuite.com", "periodAmount18"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "double"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("periodAmount19");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:financial_2018_2.transactions.webservices.netsuite.com", "periodAmount19"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "double"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("periodAmount20");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:financial_2018_2.transactions.webservices.netsuite.com", "periodAmount20"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "double"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("periodAmount21");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:financial_2018_2.transactions.webservices.netsuite.com", "periodAmount21"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "double"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("periodAmount22");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:financial_2018_2.transactions.webservices.netsuite.com", "periodAmount22"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "double"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("periodAmount23");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:financial_2018_2.transactions.webservices.netsuite.com", "periodAmount23"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "double"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("periodAmount24");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:financial_2018_2.transactions.webservices.netsuite.com", "periodAmount24"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "double"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("amount");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:financial_2018_2.transactions.webservices.netsuite.com", "amount"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "double"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("customFieldList");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:financial_2018_2.transactions.webservices.netsuite.com", "customFieldList"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "CustomFieldRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "customField"));
+        typeDesc.addFieldDesc(elemField);
+    }
+
+    /**
+     * Return type metadata object
+     */
+    public static org.apache.axis.description.TypeDesc getTypeDesc() {
+        return typeDesc;
+    }
+
+    /**
+     * Get Custom Serializer
+     */
+    public static org.apache.axis.encoding.Serializer getSerializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanSerializer(
+            _javaType, _xmlType, typeDesc);
+    }
+
+    /**
+     * Get Custom Deserializer
+     */
+    public static org.apache.axis.encoding.Deserializer getDeserializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanDeserializer(
+            _javaType, _xmlType, typeDesc);
     }
 
 }

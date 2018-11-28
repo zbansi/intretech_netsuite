@@ -1,115 +1,203 @@
+/**
+ * CustomRecordTypeTabs.java
+ *
+ * This file was auto-generated from WSDL
+ * by the Apache Axis 1.4 Jul 28, 2010 (04:07:04 PDT) WSDL2Java emitter.
+ */
 
 package com.netsuite.webservices.setup.customization_2018_2;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlType;
-import com.netsuite.webservices.platform.core_2018_2.RecordRef;
+public class CustomRecordTypeTabs  implements java.io.Serializable {
+    private java.lang.String tabTitle;
 
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef tabParent;
 
-/**
- * <p>CustomRecordTypeTabs complex type的 Java 类。
- * 
- * <p>以下模式片段指定包含在此类中的预期内容。
- * 
- * <pre>
- * &lt;complexType name="CustomRecordTypeTabs">
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element name="tabTitle" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="tabParent" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="tabTitleLanguageValueList" type="{urn:customization_2018_2.setup.webservices.netsuite.com}LanguageValueList" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
- */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "CustomRecordTypeTabs", propOrder = {
-    "tabTitle",
-    "tabParent",
-    "tabTitleLanguageValueList"
-})
-public class CustomRecordTypeTabs {
+    private com.netsuite.webservices.setup.customization_2018_2.LanguageValue[] tabTitleLanguageValueList;
 
-    protected String tabTitle;
-    protected RecordRef tabParent;
-    protected LanguageValueList tabTitleLanguageValueList;
+    public CustomRecordTypeTabs() {
+    }
+
+    public CustomRecordTypeTabs(
+           java.lang.String tabTitle,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef tabParent,
+           com.netsuite.webservices.setup.customization_2018_2.LanguageValue[] tabTitleLanguageValueList) {
+           this.tabTitle = tabTitle;
+           this.tabParent = tabParent;
+           this.tabTitleLanguageValueList = tabTitleLanguageValueList;
+    }
+
 
     /**
-     * 获取tabTitle属性的值。
+     * Gets the tabTitle value for this CustomRecordTypeTabs.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @return tabTitle
      */
-    public String getTabTitle() {
+    public java.lang.String getTabTitle() {
         return tabTitle;
     }
 
-    /**
-     * 设置tabTitle属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setTabTitle(String value) {
-        this.tabTitle = value;
-    }
 
     /**
-     * 获取tabParent属性的值。
+     * Sets the tabTitle value for this CustomRecordTypeTabs.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param tabTitle
      */
-    public RecordRef getTabParent() {
+    public void setTabTitle(java.lang.String tabTitle) {
+        this.tabTitle = tabTitle;
+    }
+
+
+    /**
+     * Gets the tabParent value for this CustomRecordTypeTabs.
+     * 
+     * @return tabParent
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getTabParent() {
         return tabParent;
     }
 
-    /**
-     * 设置tabParent属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setTabParent(RecordRef value) {
-        this.tabParent = value;
-    }
 
     /**
-     * 获取tabTitleLanguageValueList属性的值。
+     * Sets the tabParent value for this CustomRecordTypeTabs.
      * 
-     * @return
-     *     possible object is
-     *     {@link LanguageValueList }
-     *     
+     * @param tabParent
      */
-    public LanguageValueList getTabTitleLanguageValueList() {
+    public void setTabParent(com.netsuite.webservices.platform.core_2018_2.RecordRef tabParent) {
+        this.tabParent = tabParent;
+    }
+
+
+    /**
+     * Gets the tabTitleLanguageValueList value for this CustomRecordTypeTabs.
+     * 
+     * @return tabTitleLanguageValueList
+     */
+    public com.netsuite.webservices.setup.customization_2018_2.LanguageValue[] getTabTitleLanguageValueList() {
         return tabTitleLanguageValueList;
     }
 
+
     /**
-     * 设置tabTitleLanguageValueList属性的值。
+     * Sets the tabTitleLanguageValueList value for this CustomRecordTypeTabs.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link LanguageValueList }
-     *     
+     * @param tabTitleLanguageValueList
      */
-    public void setTabTitleLanguageValueList(LanguageValueList value) {
-        this.tabTitleLanguageValueList = value;
+    public void setTabTitleLanguageValueList(com.netsuite.webservices.setup.customization_2018_2.LanguageValue[] tabTitleLanguageValueList) {
+        this.tabTitleLanguageValueList = tabTitleLanguageValueList;
+    }
+
+    private java.lang.Object __equalsCalc = null;
+    public synchronized boolean equals(java.lang.Object obj) {
+        if (!(obj instanceof CustomRecordTypeTabs)) return false;
+        CustomRecordTypeTabs other = (CustomRecordTypeTabs) obj;
+        if (obj == null) return false;
+        if (this == obj) return true;
+        if (__equalsCalc != null) {
+            return (__equalsCalc == obj);
+        }
+        __equalsCalc = obj;
+        boolean _equals;
+        _equals = true && 
+            ((this.tabTitle==null && other.getTabTitle()==null) || 
+             (this.tabTitle!=null &&
+              this.tabTitle.equals(other.getTabTitle()))) &&
+            ((this.tabParent==null && other.getTabParent()==null) || 
+             (this.tabParent!=null &&
+              this.tabParent.equals(other.getTabParent()))) &&
+            ((this.tabTitleLanguageValueList==null && other.getTabTitleLanguageValueList()==null) || 
+             (this.tabTitleLanguageValueList!=null &&
+              java.util.Arrays.equals(this.tabTitleLanguageValueList, other.getTabTitleLanguageValueList())));
+        __equalsCalc = null;
+        return _equals;
+    }
+
+    private boolean __hashCodeCalc = false;
+    public synchronized int hashCode() {
+        if (__hashCodeCalc) {
+            return 0;
+        }
+        __hashCodeCalc = true;
+        int _hashCode = 1;
+        if (getTabTitle() != null) {
+            _hashCode += getTabTitle().hashCode();
+        }
+        if (getTabParent() != null) {
+            _hashCode += getTabParent().hashCode();
+        }
+        if (getTabTitleLanguageValueList() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getTabTitleLanguageValueList());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getTabTitleLanguageValueList(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        __hashCodeCalc = false;
+        return _hashCode;
+    }
+
+    // Type metadata
+    private static org.apache.axis.description.TypeDesc typeDesc =
+        new org.apache.axis.description.TypeDesc(CustomRecordTypeTabs.class, true);
+
+    static {
+        typeDesc.setXmlType(new javax.xml.namespace.QName("urn:customization_2018_2.setup.webservices.netsuite.com", "CustomRecordTypeTabs"));
+        org.apache.axis.description.ElementDesc elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("tabTitle");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:customization_2018_2.setup.webservices.netsuite.com", "tabTitle"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("tabParent");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:customization_2018_2.setup.webservices.netsuite.com", "tabParent"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("tabTitleLanguageValueList");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:customization_2018_2.setup.webservices.netsuite.com", "tabTitleLanguageValueList"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:customization_2018_2.setup.webservices.netsuite.com", "LanguageValue"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:customization_2018_2.setup.webservices.netsuite.com", "languageValue"));
+        typeDesc.addFieldDesc(elemField);
+    }
+
+    /**
+     * Return type metadata object
+     */
+    public static org.apache.axis.description.TypeDesc getTypeDesc() {
+        return typeDesc;
+    }
+
+    /**
+     * Get Custom Serializer
+     */
+    public static org.apache.axis.encoding.Serializer getSerializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanSerializer(
+            _javaType, _xmlType, typeDesc);
+    }
+
+    /**
+     * Get Custom Deserializer
+     */
+    public static org.apache.axis.encoding.Deserializer getDeserializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanDeserializer(
+            _javaType, _xmlType, typeDesc);
     }
 
 }

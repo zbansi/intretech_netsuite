@@ -1,142 +1,231 @@
+/**
+ * GiftCertRedemption.java
+ *
+ * This file was auto-generated from WSDL
+ * by the Apache Axis 1.4 Jul 28, 2010 (04:07:04 PDT) WSDL2Java emitter.
+ */
 
 package com.netsuite.webservices.transactions.sales_2018_2;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlType;
-import com.netsuite.webservices.platform.core_2018_2.RecordRef;
+public class GiftCertRedemption  implements java.io.Serializable {
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef authCode;
 
+    private java.lang.Double authCodeApplied;
 
-/**
- * <p>GiftCertRedemption complex type的 Java 类。
- * 
- * <p>以下模式片段指定包含在此类中的预期内容。
- * 
- * <pre>
- * &lt;complexType name="GiftCertRedemption">
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element name="authCode" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="authCodeApplied" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
- *         &lt;element name="authCodeAmtRemaining" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
- *         &lt;element name="giftCertAvailable" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
- */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "GiftCertRedemption", propOrder = {
-    "authCode",
-    "authCodeApplied",
-    "authCodeAmtRemaining",
-    "giftCertAvailable"
-})
-public class GiftCertRedemption {
+    private java.lang.Double authCodeAmtRemaining;
 
-    protected RecordRef authCode;
-    protected Double authCodeApplied;
-    protected Double authCodeAmtRemaining;
-    protected Double giftCertAvailable;
+    private java.lang.Double giftCertAvailable;
+
+    public GiftCertRedemption() {
+    }
+
+    public GiftCertRedemption(
+           com.netsuite.webservices.platform.core_2018_2.RecordRef authCode,
+           java.lang.Double authCodeApplied,
+           java.lang.Double authCodeAmtRemaining,
+           java.lang.Double giftCertAvailable) {
+           this.authCode = authCode;
+           this.authCodeApplied = authCodeApplied;
+           this.authCodeAmtRemaining = authCodeAmtRemaining;
+           this.giftCertAvailable = giftCertAvailable;
+    }
+
 
     /**
-     * 获取authCode属性的值。
+     * Gets the authCode value for this GiftCertRedemption.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @return authCode
      */
-    public RecordRef getAuthCode() {
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getAuthCode() {
         return authCode;
     }
 
-    /**
-     * 设置authCode属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setAuthCode(RecordRef value) {
-        this.authCode = value;
-    }
 
     /**
-     * 获取authCodeApplied属性的值。
+     * Sets the authCode value for this GiftCertRedemption.
      * 
-     * @return
-     *     possible object is
-     *     {@link Double }
-     *     
+     * @param authCode
      */
-    public Double getAuthCodeApplied() {
+    public void setAuthCode(com.netsuite.webservices.platform.core_2018_2.RecordRef authCode) {
+        this.authCode = authCode;
+    }
+
+
+    /**
+     * Gets the authCodeApplied value for this GiftCertRedemption.
+     * 
+     * @return authCodeApplied
+     */
+    public java.lang.Double getAuthCodeApplied() {
         return authCodeApplied;
     }
 
-    /**
-     * 设置authCodeApplied属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Double }
-     *     
-     */
-    public void setAuthCodeApplied(Double value) {
-        this.authCodeApplied = value;
-    }
 
     /**
-     * 获取authCodeAmtRemaining属性的值。
+     * Sets the authCodeApplied value for this GiftCertRedemption.
      * 
-     * @return
-     *     possible object is
-     *     {@link Double }
-     *     
+     * @param authCodeApplied
      */
-    public Double getAuthCodeAmtRemaining() {
+    public void setAuthCodeApplied(java.lang.Double authCodeApplied) {
+        this.authCodeApplied = authCodeApplied;
+    }
+
+
+    /**
+     * Gets the authCodeAmtRemaining value for this GiftCertRedemption.
+     * 
+     * @return authCodeAmtRemaining
+     */
+    public java.lang.Double getAuthCodeAmtRemaining() {
         return authCodeAmtRemaining;
     }
 
-    /**
-     * 设置authCodeAmtRemaining属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Double }
-     *     
-     */
-    public void setAuthCodeAmtRemaining(Double value) {
-        this.authCodeAmtRemaining = value;
-    }
 
     /**
-     * 获取giftCertAvailable属性的值。
+     * Sets the authCodeAmtRemaining value for this GiftCertRedemption.
      * 
-     * @return
-     *     possible object is
-     *     {@link Double }
-     *     
+     * @param authCodeAmtRemaining
      */
-    public Double getGiftCertAvailable() {
+    public void setAuthCodeAmtRemaining(java.lang.Double authCodeAmtRemaining) {
+        this.authCodeAmtRemaining = authCodeAmtRemaining;
+    }
+
+
+    /**
+     * Gets the giftCertAvailable value for this GiftCertRedemption.
+     * 
+     * @return giftCertAvailable
+     */
+    public java.lang.Double getGiftCertAvailable() {
         return giftCertAvailable;
     }
 
+
     /**
-     * 设置giftCertAvailable属性的值。
+     * Sets the giftCertAvailable value for this GiftCertRedemption.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link Double }
-     *     
+     * @param giftCertAvailable
      */
-    public void setGiftCertAvailable(Double value) {
-        this.giftCertAvailable = value;
+    public void setGiftCertAvailable(java.lang.Double giftCertAvailable) {
+        this.giftCertAvailable = giftCertAvailable;
+    }
+
+    private java.lang.Object __equalsCalc = null;
+    public synchronized boolean equals(java.lang.Object obj) {
+        if (!(obj instanceof GiftCertRedemption)) return false;
+        GiftCertRedemption other = (GiftCertRedemption) obj;
+        if (obj == null) return false;
+        if (this == obj) return true;
+        if (__equalsCalc != null) {
+            return (__equalsCalc == obj);
+        }
+        __equalsCalc = obj;
+        boolean _equals;
+        _equals = true && 
+            ((this.authCode==null && other.getAuthCode()==null) || 
+             (this.authCode!=null &&
+              this.authCode.equals(other.getAuthCode()))) &&
+            ((this.authCodeApplied==null && other.getAuthCodeApplied()==null) || 
+             (this.authCodeApplied!=null &&
+              this.authCodeApplied.equals(other.getAuthCodeApplied()))) &&
+            ((this.authCodeAmtRemaining==null && other.getAuthCodeAmtRemaining()==null) || 
+             (this.authCodeAmtRemaining!=null &&
+              this.authCodeAmtRemaining.equals(other.getAuthCodeAmtRemaining()))) &&
+            ((this.giftCertAvailable==null && other.getGiftCertAvailable()==null) || 
+             (this.giftCertAvailable!=null &&
+              this.giftCertAvailable.equals(other.getGiftCertAvailable())));
+        __equalsCalc = null;
+        return _equals;
+    }
+
+    private boolean __hashCodeCalc = false;
+    public synchronized int hashCode() {
+        if (__hashCodeCalc) {
+            return 0;
+        }
+        __hashCodeCalc = true;
+        int _hashCode = 1;
+        if (getAuthCode() != null) {
+            _hashCode += getAuthCode().hashCode();
+        }
+        if (getAuthCodeApplied() != null) {
+            _hashCode += getAuthCodeApplied().hashCode();
+        }
+        if (getAuthCodeAmtRemaining() != null) {
+            _hashCode += getAuthCodeAmtRemaining().hashCode();
+        }
+        if (getGiftCertAvailable() != null) {
+            _hashCode += getGiftCertAvailable().hashCode();
+        }
+        __hashCodeCalc = false;
+        return _hashCode;
+    }
+
+    // Type metadata
+    private static org.apache.axis.description.TypeDesc typeDesc =
+        new org.apache.axis.description.TypeDesc(GiftCertRedemption.class, true);
+
+    static {
+        typeDesc.setXmlType(new javax.xml.namespace.QName("urn:sales_2018_2.transactions.webservices.netsuite.com", "GiftCertRedemption"));
+        org.apache.axis.description.ElementDesc elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("authCode");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:sales_2018_2.transactions.webservices.netsuite.com", "authCode"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("authCodeApplied");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:sales_2018_2.transactions.webservices.netsuite.com", "authCodeApplied"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "double"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("authCodeAmtRemaining");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:sales_2018_2.transactions.webservices.netsuite.com", "authCodeAmtRemaining"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "double"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("giftCertAvailable");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:sales_2018_2.transactions.webservices.netsuite.com", "giftCertAvailable"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "double"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+    }
+
+    /**
+     * Return type metadata object
+     */
+    public static org.apache.axis.description.TypeDesc getTypeDesc() {
+        return typeDesc;
+    }
+
+    /**
+     * Get Custom Serializer
+     */
+    public static org.apache.axis.encoding.Serializer getSerializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanSerializer(
+            _javaType, _xmlType, typeDesc);
+    }
+
+    /**
+     * Get Custom Deserializer
+     */
+    public static org.apache.axis.encoding.Deserializer getDeserializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanDeserializer(
+            _javaType, _xmlType, typeDesc);
     }
 
 }

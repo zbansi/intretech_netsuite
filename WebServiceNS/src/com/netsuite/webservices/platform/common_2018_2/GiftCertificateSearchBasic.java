@@ -1,529 +1,794 @@
+/**
+ * GiftCertificateSearchBasic.java
+ *
+ * This file was auto-generated from WSDL
+ * by the Apache Axis 1.4 Jul 28, 2010 (04:07:04 PDT) WSDL2Java emitter.
+ */
 
 package com.netsuite.webservices.platform.common_2018_2;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlType;
-import com.netsuite.webservices.platform.core_2018_2.SearchBooleanField;
-import com.netsuite.webservices.platform.core_2018_2.SearchCustomFieldList;
-import com.netsuite.webservices.platform.core_2018_2.SearchDateField;
-import com.netsuite.webservices.platform.core_2018_2.SearchDoubleField;
-import com.netsuite.webservices.platform.core_2018_2.SearchLongField;
-import com.netsuite.webservices.platform.core_2018_2.SearchMultiSelectField;
-import com.netsuite.webservices.platform.core_2018_2.SearchRecordBasic;
-import com.netsuite.webservices.platform.core_2018_2.SearchStringField;
+public class GiftCertificateSearchBasic  extends com.netsuite.webservices.platform.core_2018_2.SearchRecordBasic  implements java.io.Serializable {
+    private com.netsuite.webservices.platform.core_2018_2.SearchDoubleField amountAvailableBilled;
 
+    private com.netsuite.webservices.platform.core_2018_2.SearchDoubleField amountRemaining;
 
-/**
- * <p>GiftCertificateSearchBasic complex type的 Java 类。
- * 
- * <p>以下模式片段指定包含在此类中的预期内容。
- * 
- * <pre>
- * &lt;complexType name="GiftCertificateSearchBasic">
- *   &lt;complexContent>
- *     &lt;extension base="{urn:core_2018_2.platform.webservices.netsuite.com}SearchRecordBasic">
- *       &lt;sequence>
- *         &lt;element name="amountAvailableBilled" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchDoubleField" minOccurs="0"/>
- *         &lt;element name="amountRemaining" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchDoubleField" minOccurs="0"/>
- *         &lt;element name="createdDate" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchDateField" minOccurs="0"/>
- *         &lt;element name="email" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchStringField" minOccurs="0"/>
- *         &lt;element name="expirationDate" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchDateField" minOccurs="0"/>
- *         &lt;element name="giftCertCode" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchStringField" minOccurs="0"/>
- *         &lt;element name="incomeAccount" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchMultiSelectField" minOccurs="0"/>
- *         &lt;element name="internalId" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchMultiSelectField" minOccurs="0"/>
- *         &lt;element name="internalIdNumber" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchLongField" minOccurs="0"/>
- *         &lt;element name="isActive" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchBooleanField" minOccurs="0"/>
- *         &lt;element name="item" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchMultiSelectField" minOccurs="0"/>
- *         &lt;element name="liabilityAccount" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchMultiSelectField" minOccurs="0"/>
- *         &lt;element name="message" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchStringField" minOccurs="0"/>
- *         &lt;element name="name" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchStringField" minOccurs="0"/>
- *         &lt;element name="originalAmount" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchDoubleField" minOccurs="0"/>
- *         &lt;element name="purchaseDate" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchDateField" minOccurs="0"/>
- *         &lt;element name="sender" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchStringField" minOccurs="0"/>
- *         &lt;element name="customFieldList" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchCustomFieldList" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/extension>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
- */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "GiftCertificateSearchBasic", propOrder = {
-    "amountAvailableBilled",
-    "amountRemaining",
-    "createdDate",
-    "email",
-    "expirationDate",
-    "giftCertCode",
-    "incomeAccount",
-    "internalId",
-    "internalIdNumber",
-    "isActive",
-    "item",
-    "liabilityAccount",
-    "message",
-    "name",
-    "originalAmount",
-    "purchaseDate",
-    "sender",
-    "customFieldList"
-})
-public class GiftCertificateSearchBasic
-    extends SearchRecordBasic
-{
+    private com.netsuite.webservices.platform.core_2018_2.SearchDateField createdDate;
 
-    protected SearchDoubleField amountAvailableBilled;
-    protected SearchDoubleField amountRemaining;
-    protected SearchDateField createdDate;
-    protected SearchStringField email;
-    protected SearchDateField expirationDate;
-    protected SearchStringField giftCertCode;
-    protected SearchMultiSelectField incomeAccount;
-    protected SearchMultiSelectField internalId;
-    protected SearchLongField internalIdNumber;
-    protected SearchBooleanField isActive;
-    protected SearchMultiSelectField item;
-    protected SearchMultiSelectField liabilityAccount;
-    protected SearchStringField message;
-    protected SearchStringField name;
-    protected SearchDoubleField originalAmount;
-    protected SearchDateField purchaseDate;
-    protected SearchStringField sender;
-    protected SearchCustomFieldList customFieldList;
+    private com.netsuite.webservices.platform.core_2018_2.SearchStringField email;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchDateField expirationDate;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchStringField giftCertCode;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef[] incomeAccount;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef[] internalId;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchLongField internalIdNumber;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchBooleanField isActive;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef[] item;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef[] liabilityAccount;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchStringField message;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchStringField name;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchDoubleField originalAmount;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchDateField purchaseDate;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchStringField sender;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchCustomField[] customFieldList;
+
+    public GiftCertificateSearchBasic() {
+    }
+
+    public GiftCertificateSearchBasic(
+           com.netsuite.webservices.platform.core_2018_2.SearchDoubleField amountAvailableBilled,
+           com.netsuite.webservices.platform.core_2018_2.SearchDoubleField amountRemaining,
+           com.netsuite.webservices.platform.core_2018_2.SearchDateField createdDate,
+           com.netsuite.webservices.platform.core_2018_2.SearchStringField email,
+           com.netsuite.webservices.platform.core_2018_2.SearchDateField expirationDate,
+           com.netsuite.webservices.platform.core_2018_2.SearchStringField giftCertCode,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef[] incomeAccount,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef[] internalId,
+           com.netsuite.webservices.platform.core_2018_2.SearchLongField internalIdNumber,
+           com.netsuite.webservices.platform.core_2018_2.SearchBooleanField isActive,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef[] item,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef[] liabilityAccount,
+           com.netsuite.webservices.platform.core_2018_2.SearchStringField message,
+           com.netsuite.webservices.platform.core_2018_2.SearchStringField name,
+           com.netsuite.webservices.platform.core_2018_2.SearchDoubleField originalAmount,
+           com.netsuite.webservices.platform.core_2018_2.SearchDateField purchaseDate,
+           com.netsuite.webservices.platform.core_2018_2.SearchStringField sender,
+           com.netsuite.webservices.platform.core_2018_2.SearchCustomField[] customFieldList) {
+        this.amountAvailableBilled = amountAvailableBilled;
+        this.amountRemaining = amountRemaining;
+        this.createdDate = createdDate;
+        this.email = email;
+        this.expirationDate = expirationDate;
+        this.giftCertCode = giftCertCode;
+        this.incomeAccount = incomeAccount;
+        this.internalId = internalId;
+        this.internalIdNumber = internalIdNumber;
+        this.isActive = isActive;
+        this.item = item;
+        this.liabilityAccount = liabilityAccount;
+        this.message = message;
+        this.name = name;
+        this.originalAmount = originalAmount;
+        this.purchaseDate = purchaseDate;
+        this.sender = sender;
+        this.customFieldList = customFieldList;
+    }
+
 
     /**
-     * 获取amountAvailableBilled属性的值。
+     * Gets the amountAvailableBilled value for this GiftCertificateSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchDoubleField }
-     *     
+     * @return amountAvailableBilled
      */
-    public SearchDoubleField getAmountAvailableBilled() {
+    public com.netsuite.webservices.platform.core_2018_2.SearchDoubleField getAmountAvailableBilled() {
         return amountAvailableBilled;
     }
 
-    /**
-     * 设置amountAvailableBilled属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchDoubleField }
-     *     
-     */
-    public void setAmountAvailableBilled(SearchDoubleField value) {
-        this.amountAvailableBilled = value;
-    }
 
     /**
-     * 获取amountRemaining属性的值。
+     * Sets the amountAvailableBilled value for this GiftCertificateSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchDoubleField }
-     *     
+     * @param amountAvailableBilled
      */
-    public SearchDoubleField getAmountRemaining() {
+    public void setAmountAvailableBilled(com.netsuite.webservices.platform.core_2018_2.SearchDoubleField amountAvailableBilled) {
+        this.amountAvailableBilled = amountAvailableBilled;
+    }
+
+
+    /**
+     * Gets the amountRemaining value for this GiftCertificateSearchBasic.
+     * 
+     * @return amountRemaining
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchDoubleField getAmountRemaining() {
         return amountRemaining;
     }
 
-    /**
-     * 设置amountRemaining属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchDoubleField }
-     *     
-     */
-    public void setAmountRemaining(SearchDoubleField value) {
-        this.amountRemaining = value;
-    }
 
     /**
-     * 获取createdDate属性的值。
+     * Sets the amountRemaining value for this GiftCertificateSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchDateField }
-     *     
+     * @param amountRemaining
      */
-    public SearchDateField getCreatedDate() {
+    public void setAmountRemaining(com.netsuite.webservices.platform.core_2018_2.SearchDoubleField amountRemaining) {
+        this.amountRemaining = amountRemaining;
+    }
+
+
+    /**
+     * Gets the createdDate value for this GiftCertificateSearchBasic.
+     * 
+     * @return createdDate
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchDateField getCreatedDate() {
         return createdDate;
     }
 
-    /**
-     * 设置createdDate属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchDateField }
-     *     
-     */
-    public void setCreatedDate(SearchDateField value) {
-        this.createdDate = value;
-    }
 
     /**
-     * 获取email属性的值。
+     * Sets the createdDate value for this GiftCertificateSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchStringField }
-     *     
+     * @param createdDate
      */
-    public SearchStringField getEmail() {
+    public void setCreatedDate(com.netsuite.webservices.platform.core_2018_2.SearchDateField createdDate) {
+        this.createdDate = createdDate;
+    }
+
+
+    /**
+     * Gets the email value for this GiftCertificateSearchBasic.
+     * 
+     * @return email
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchStringField getEmail() {
         return email;
     }
 
-    /**
-     * 设置email属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchStringField }
-     *     
-     */
-    public void setEmail(SearchStringField value) {
-        this.email = value;
-    }
 
     /**
-     * 获取expirationDate属性的值。
+     * Sets the email value for this GiftCertificateSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchDateField }
-     *     
+     * @param email
      */
-    public SearchDateField getExpirationDate() {
+    public void setEmail(com.netsuite.webservices.platform.core_2018_2.SearchStringField email) {
+        this.email = email;
+    }
+
+
+    /**
+     * Gets the expirationDate value for this GiftCertificateSearchBasic.
+     * 
+     * @return expirationDate
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchDateField getExpirationDate() {
         return expirationDate;
     }
 
-    /**
-     * 设置expirationDate属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchDateField }
-     *     
-     */
-    public void setExpirationDate(SearchDateField value) {
-        this.expirationDate = value;
-    }
 
     /**
-     * 获取giftCertCode属性的值。
+     * Sets the expirationDate value for this GiftCertificateSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchStringField }
-     *     
+     * @param expirationDate
      */
-    public SearchStringField getGiftCertCode() {
+    public void setExpirationDate(com.netsuite.webservices.platform.core_2018_2.SearchDateField expirationDate) {
+        this.expirationDate = expirationDate;
+    }
+
+
+    /**
+     * Gets the giftCertCode value for this GiftCertificateSearchBasic.
+     * 
+     * @return giftCertCode
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchStringField getGiftCertCode() {
         return giftCertCode;
     }
 
-    /**
-     * 设置giftCertCode属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchStringField }
-     *     
-     */
-    public void setGiftCertCode(SearchStringField value) {
-        this.giftCertCode = value;
-    }
 
     /**
-     * 获取incomeAccount属性的值。
+     * Sets the giftCertCode value for this GiftCertificateSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchMultiSelectField }
-     *     
+     * @param giftCertCode
      */
-    public SearchMultiSelectField getIncomeAccount() {
+    public void setGiftCertCode(com.netsuite.webservices.platform.core_2018_2.SearchStringField giftCertCode) {
+        this.giftCertCode = giftCertCode;
+    }
+
+
+    /**
+     * Gets the incomeAccount value for this GiftCertificateSearchBasic.
+     * 
+     * @return incomeAccount
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef[] getIncomeAccount() {
         return incomeAccount;
     }
 
-    /**
-     * 设置incomeAccount属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchMultiSelectField }
-     *     
-     */
-    public void setIncomeAccount(SearchMultiSelectField value) {
-        this.incomeAccount = value;
-    }
 
     /**
-     * 获取internalId属性的值。
+     * Sets the incomeAccount value for this GiftCertificateSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchMultiSelectField }
-     *     
+     * @param incomeAccount
      */
-    public SearchMultiSelectField getInternalId() {
+    public void setIncomeAccount(com.netsuite.webservices.platform.core_2018_2.RecordRef[] incomeAccount) {
+        this.incomeAccount = incomeAccount;
+    }
+
+
+    /**
+     * Gets the internalId value for this GiftCertificateSearchBasic.
+     * 
+     * @return internalId
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef[] getInternalId() {
         return internalId;
     }
 
-    /**
-     * 设置internalId属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchMultiSelectField }
-     *     
-     */
-    public void setInternalId(SearchMultiSelectField value) {
-        this.internalId = value;
-    }
 
     /**
-     * 获取internalIdNumber属性的值。
+     * Sets the internalId value for this GiftCertificateSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchLongField }
-     *     
+     * @param internalId
      */
-    public SearchLongField getInternalIdNumber() {
+    public void setInternalId(com.netsuite.webservices.platform.core_2018_2.RecordRef[] internalId) {
+        this.internalId = internalId;
+    }
+
+
+    /**
+     * Gets the internalIdNumber value for this GiftCertificateSearchBasic.
+     * 
+     * @return internalIdNumber
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchLongField getInternalIdNumber() {
         return internalIdNumber;
     }
 
-    /**
-     * 设置internalIdNumber属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchLongField }
-     *     
-     */
-    public void setInternalIdNumber(SearchLongField value) {
-        this.internalIdNumber = value;
-    }
 
     /**
-     * 获取isActive属性的值。
+     * Sets the internalIdNumber value for this GiftCertificateSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchBooleanField }
-     *     
+     * @param internalIdNumber
      */
-    public SearchBooleanField getIsActive() {
+    public void setInternalIdNumber(com.netsuite.webservices.platform.core_2018_2.SearchLongField internalIdNumber) {
+        this.internalIdNumber = internalIdNumber;
+    }
+
+
+    /**
+     * Gets the isActive value for this GiftCertificateSearchBasic.
+     * 
+     * @return isActive
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchBooleanField getIsActive() {
         return isActive;
     }
 
-    /**
-     * 设置isActive属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchBooleanField }
-     *     
-     */
-    public void setIsActive(SearchBooleanField value) {
-        this.isActive = value;
-    }
 
     /**
-     * 获取item属性的值。
+     * Sets the isActive value for this GiftCertificateSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchMultiSelectField }
-     *     
+     * @param isActive
      */
-    public SearchMultiSelectField getItem() {
+    public void setIsActive(com.netsuite.webservices.platform.core_2018_2.SearchBooleanField isActive) {
+        this.isActive = isActive;
+    }
+
+
+    /**
+     * Gets the item value for this GiftCertificateSearchBasic.
+     * 
+     * @return item
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef[] getItem() {
         return item;
     }
 
-    /**
-     * 设置item属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchMultiSelectField }
-     *     
-     */
-    public void setItem(SearchMultiSelectField value) {
-        this.item = value;
-    }
 
     /**
-     * 获取liabilityAccount属性的值。
+     * Sets the item value for this GiftCertificateSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchMultiSelectField }
-     *     
+     * @param item
      */
-    public SearchMultiSelectField getLiabilityAccount() {
+    public void setItem(com.netsuite.webservices.platform.core_2018_2.RecordRef[] item) {
+        this.item = item;
+    }
+
+
+    /**
+     * Gets the liabilityAccount value for this GiftCertificateSearchBasic.
+     * 
+     * @return liabilityAccount
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef[] getLiabilityAccount() {
         return liabilityAccount;
     }
 
-    /**
-     * 设置liabilityAccount属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchMultiSelectField }
-     *     
-     */
-    public void setLiabilityAccount(SearchMultiSelectField value) {
-        this.liabilityAccount = value;
-    }
 
     /**
-     * 获取message属性的值。
+     * Sets the liabilityAccount value for this GiftCertificateSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchStringField }
-     *     
+     * @param liabilityAccount
      */
-    public SearchStringField getMessage() {
+    public void setLiabilityAccount(com.netsuite.webservices.platform.core_2018_2.RecordRef[] liabilityAccount) {
+        this.liabilityAccount = liabilityAccount;
+    }
+
+
+    /**
+     * Gets the message value for this GiftCertificateSearchBasic.
+     * 
+     * @return message
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchStringField getMessage() {
         return message;
     }
 
-    /**
-     * 设置message属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchStringField }
-     *     
-     */
-    public void setMessage(SearchStringField value) {
-        this.message = value;
-    }
 
     /**
-     * 获取name属性的值。
+     * Sets the message value for this GiftCertificateSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchStringField }
-     *     
+     * @param message
      */
-    public SearchStringField getName() {
+    public void setMessage(com.netsuite.webservices.platform.core_2018_2.SearchStringField message) {
+        this.message = message;
+    }
+
+
+    /**
+     * Gets the name value for this GiftCertificateSearchBasic.
+     * 
+     * @return name
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchStringField getName() {
         return name;
     }
 
-    /**
-     * 设置name属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchStringField }
-     *     
-     */
-    public void setName(SearchStringField value) {
-        this.name = value;
-    }
 
     /**
-     * 获取originalAmount属性的值。
+     * Sets the name value for this GiftCertificateSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchDoubleField }
-     *     
+     * @param name
      */
-    public SearchDoubleField getOriginalAmount() {
+    public void setName(com.netsuite.webservices.platform.core_2018_2.SearchStringField name) {
+        this.name = name;
+    }
+
+
+    /**
+     * Gets the originalAmount value for this GiftCertificateSearchBasic.
+     * 
+     * @return originalAmount
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchDoubleField getOriginalAmount() {
         return originalAmount;
     }
 
-    /**
-     * 设置originalAmount属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchDoubleField }
-     *     
-     */
-    public void setOriginalAmount(SearchDoubleField value) {
-        this.originalAmount = value;
-    }
 
     /**
-     * 获取purchaseDate属性的值。
+     * Sets the originalAmount value for this GiftCertificateSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchDateField }
-     *     
+     * @param originalAmount
      */
-    public SearchDateField getPurchaseDate() {
+    public void setOriginalAmount(com.netsuite.webservices.platform.core_2018_2.SearchDoubleField originalAmount) {
+        this.originalAmount = originalAmount;
+    }
+
+
+    /**
+     * Gets the purchaseDate value for this GiftCertificateSearchBasic.
+     * 
+     * @return purchaseDate
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchDateField getPurchaseDate() {
         return purchaseDate;
     }
 
-    /**
-     * 设置purchaseDate属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchDateField }
-     *     
-     */
-    public void setPurchaseDate(SearchDateField value) {
-        this.purchaseDate = value;
-    }
 
     /**
-     * 获取sender属性的值。
+     * Sets the purchaseDate value for this GiftCertificateSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchStringField }
-     *     
+     * @param purchaseDate
      */
-    public SearchStringField getSender() {
+    public void setPurchaseDate(com.netsuite.webservices.platform.core_2018_2.SearchDateField purchaseDate) {
+        this.purchaseDate = purchaseDate;
+    }
+
+
+    /**
+     * Gets the sender value for this GiftCertificateSearchBasic.
+     * 
+     * @return sender
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchStringField getSender() {
         return sender;
     }
 
-    /**
-     * 设置sender属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchStringField }
-     *     
-     */
-    public void setSender(SearchStringField value) {
-        this.sender = value;
-    }
 
     /**
-     * 获取customFieldList属性的值。
+     * Sets the sender value for this GiftCertificateSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchCustomFieldList }
-     *     
+     * @param sender
      */
-    public SearchCustomFieldList getCustomFieldList() {
+    public void setSender(com.netsuite.webservices.platform.core_2018_2.SearchStringField sender) {
+        this.sender = sender;
+    }
+
+
+    /**
+     * Gets the customFieldList value for this GiftCertificateSearchBasic.
+     * 
+     * @return customFieldList
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchCustomField[] getCustomFieldList() {
         return customFieldList;
     }
 
+
     /**
-     * 设置customFieldList属性的值。
+     * Sets the customFieldList value for this GiftCertificateSearchBasic.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchCustomFieldList }
-     *     
+     * @param customFieldList
      */
-    public void setCustomFieldList(SearchCustomFieldList value) {
-        this.customFieldList = value;
+    public void setCustomFieldList(com.netsuite.webservices.platform.core_2018_2.SearchCustomField[] customFieldList) {
+        this.customFieldList = customFieldList;
+    }
+
+    private java.lang.Object __equalsCalc = null;
+    public synchronized boolean equals(java.lang.Object obj) {
+        if (!(obj instanceof GiftCertificateSearchBasic)) return false;
+        GiftCertificateSearchBasic other = (GiftCertificateSearchBasic) obj;
+        if (obj == null) return false;
+        if (this == obj) return true;
+        if (__equalsCalc != null) {
+            return (__equalsCalc == obj);
+        }
+        __equalsCalc = obj;
+        boolean _equals;
+        _equals = super.equals(obj) && 
+            ((this.amountAvailableBilled==null && other.getAmountAvailableBilled()==null) || 
+             (this.amountAvailableBilled!=null &&
+              this.amountAvailableBilled.equals(other.getAmountAvailableBilled()))) &&
+            ((this.amountRemaining==null && other.getAmountRemaining()==null) || 
+             (this.amountRemaining!=null &&
+              this.amountRemaining.equals(other.getAmountRemaining()))) &&
+            ((this.createdDate==null && other.getCreatedDate()==null) || 
+             (this.createdDate!=null &&
+              this.createdDate.equals(other.getCreatedDate()))) &&
+            ((this.email==null && other.getEmail()==null) || 
+             (this.email!=null &&
+              this.email.equals(other.getEmail()))) &&
+            ((this.expirationDate==null && other.getExpirationDate()==null) || 
+             (this.expirationDate!=null &&
+              this.expirationDate.equals(other.getExpirationDate()))) &&
+            ((this.giftCertCode==null && other.getGiftCertCode()==null) || 
+             (this.giftCertCode!=null &&
+              this.giftCertCode.equals(other.getGiftCertCode()))) &&
+            ((this.incomeAccount==null && other.getIncomeAccount()==null) || 
+             (this.incomeAccount!=null &&
+              java.util.Arrays.equals(this.incomeAccount, other.getIncomeAccount()))) &&
+            ((this.internalId==null && other.getInternalId()==null) || 
+             (this.internalId!=null &&
+              java.util.Arrays.equals(this.internalId, other.getInternalId()))) &&
+            ((this.internalIdNumber==null && other.getInternalIdNumber()==null) || 
+             (this.internalIdNumber!=null &&
+              this.internalIdNumber.equals(other.getInternalIdNumber()))) &&
+            ((this.isActive==null && other.getIsActive()==null) || 
+             (this.isActive!=null &&
+              this.isActive.equals(other.getIsActive()))) &&
+            ((this.item==null && other.getItem()==null) || 
+             (this.item!=null &&
+              java.util.Arrays.equals(this.item, other.getItem()))) &&
+            ((this.liabilityAccount==null && other.getLiabilityAccount()==null) || 
+             (this.liabilityAccount!=null &&
+              java.util.Arrays.equals(this.liabilityAccount, other.getLiabilityAccount()))) &&
+            ((this.message==null && other.getMessage()==null) || 
+             (this.message!=null &&
+              this.message.equals(other.getMessage()))) &&
+            ((this.name==null && other.getName()==null) || 
+             (this.name!=null &&
+              this.name.equals(other.getName()))) &&
+            ((this.originalAmount==null && other.getOriginalAmount()==null) || 
+             (this.originalAmount!=null &&
+              this.originalAmount.equals(other.getOriginalAmount()))) &&
+            ((this.purchaseDate==null && other.getPurchaseDate()==null) || 
+             (this.purchaseDate!=null &&
+              this.purchaseDate.equals(other.getPurchaseDate()))) &&
+            ((this.sender==null && other.getSender()==null) || 
+             (this.sender!=null &&
+              this.sender.equals(other.getSender()))) &&
+            ((this.customFieldList==null && other.getCustomFieldList()==null) || 
+             (this.customFieldList!=null &&
+              java.util.Arrays.equals(this.customFieldList, other.getCustomFieldList())));
+        __equalsCalc = null;
+        return _equals;
+    }
+
+    private boolean __hashCodeCalc = false;
+    public synchronized int hashCode() {
+        if (__hashCodeCalc) {
+            return 0;
+        }
+        __hashCodeCalc = true;
+        int _hashCode = super.hashCode();
+        if (getAmountAvailableBilled() != null) {
+            _hashCode += getAmountAvailableBilled().hashCode();
+        }
+        if (getAmountRemaining() != null) {
+            _hashCode += getAmountRemaining().hashCode();
+        }
+        if (getCreatedDate() != null) {
+            _hashCode += getCreatedDate().hashCode();
+        }
+        if (getEmail() != null) {
+            _hashCode += getEmail().hashCode();
+        }
+        if (getExpirationDate() != null) {
+            _hashCode += getExpirationDate().hashCode();
+        }
+        if (getGiftCertCode() != null) {
+            _hashCode += getGiftCertCode().hashCode();
+        }
+        if (getIncomeAccount() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getIncomeAccount());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getIncomeAccount(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getInternalId() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getInternalId());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getInternalId(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getInternalIdNumber() != null) {
+            _hashCode += getInternalIdNumber().hashCode();
+        }
+        if (getIsActive() != null) {
+            _hashCode += getIsActive().hashCode();
+        }
+        if (getItem() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getItem());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getItem(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getLiabilityAccount() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getLiabilityAccount());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getLiabilityAccount(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getMessage() != null) {
+            _hashCode += getMessage().hashCode();
+        }
+        if (getName() != null) {
+            _hashCode += getName().hashCode();
+        }
+        if (getOriginalAmount() != null) {
+            _hashCode += getOriginalAmount().hashCode();
+        }
+        if (getPurchaseDate() != null) {
+            _hashCode += getPurchaseDate().hashCode();
+        }
+        if (getSender() != null) {
+            _hashCode += getSender().hashCode();
+        }
+        if (getCustomFieldList() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getCustomFieldList());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getCustomFieldList(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        __hashCodeCalc = false;
+        return _hashCode;
+    }
+
+    // Type metadata
+    private static org.apache.axis.description.TypeDesc typeDesc =
+        new org.apache.axis.description.TypeDesc(GiftCertificateSearchBasic.class, true);
+
+    static {
+        typeDesc.setXmlType(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "GiftCertificateSearchBasic"));
+        org.apache.axis.description.ElementDesc elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("amountAvailableBilled");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "amountAvailableBilled"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchDoubleField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("amountRemaining");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "amountRemaining"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchDoubleField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("createdDate");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "createdDate"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchDateField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("email");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "email"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchStringField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("expirationDate");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "expirationDate"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchDateField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("giftCertCode");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "giftCertCode"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchStringField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("incomeAccount");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "incomeAccount"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "searchValue"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("internalId");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "internalId"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "searchValue"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("internalIdNumber");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "internalIdNumber"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchLongField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("isActive");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "isActive"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchBooleanField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("item");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "item"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "searchValue"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("liabilityAccount");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "liabilityAccount"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "searchValue"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("message");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "message"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchStringField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("name");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "name"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchStringField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("originalAmount");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "originalAmount"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchDoubleField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("purchaseDate");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "purchaseDate"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchDateField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("sender");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "sender"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchStringField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("customFieldList");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "customFieldList"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchCustomField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "customField"));
+        typeDesc.addFieldDesc(elemField);
+    }
+
+    /**
+     * Return type metadata object
+     */
+    public static org.apache.axis.description.TypeDesc getTypeDesc() {
+        return typeDesc;
+    }
+
+    /**
+     * Get Custom Serializer
+     */
+    public static org.apache.axis.encoding.Serializer getSerializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanSerializer(
+            _javaType, _xmlType, typeDesc);
+    }
+
+    /**
+     * Get Custom Deserializer
+     */
+    public static org.apache.axis.encoding.Deserializer getDeserializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanDeserializer(
+            _javaType, _xmlType, typeDesc);
     }
 
 }

@@ -2,12 +2,13 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="HmacSHA256" key="selection"/>
+		<item value="2018_2" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="2017_1"/>
 			<item value="HmacSHA256"/>
 			<item value="CryptoJS.lib.HmacSHA256"/>
 			<item value="CryptoJS.HmacSHA256"/>
@@ -16,6 +17,7 @@
 			<item value="Context.UserEventType"/>
 		</list>
 		<list key="replacehistory">
+			<item value="2018_2"/>
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">

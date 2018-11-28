@@ -1,306 +1,453 @@
+/**
+ * PaycheckPayTime.java
+ *
+ * This file was auto-generated from WSDL
+ * by the Apache Axis 1.4 Jul 28, 2010 (04:07:04 PDT) WSDL2Java emitter.
+ */
 
 package com.netsuite.webservices.transactions.employees_2018_2;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlSchemaType;
-import javax.xml.bind.annotation.XmlType;
-import javax.xml.datatype.XMLGregorianCalendar;
+public class PaycheckPayTime  implements java.io.Serializable {
+    private java.lang.Boolean apply;
 
+    private java.lang.Long line;
 
-/**
- * <p>PaycheckPayTime complex type的 Java 类。
- * 
- * <p>以下模式片段指定包含在此类中的预期内容。
- * 
- * <pre>
- * &lt;complexType name="PaycheckPayTime">
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element name="apply" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         &lt;element name="line" type="{http://www.w3.org/2001/XMLSchema}long" minOccurs="0"/>
- *         &lt;element name="payItem" type="{http://www.w3.org/2001/XMLSchema}long" minOccurs="0"/>
- *         &lt;element name="payItemName" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="ddate" type="{http://www.w3.org/2001/XMLSchema}dateTime" minOccurs="0"/>
- *         &lt;element name="custJob" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="serviceItem" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="count" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
- *         &lt;element name="rate" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
- *         &lt;element name="amount" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
- */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "PaycheckPayTime", propOrder = {
-    "apply",
-    "line",
-    "payItem",
-    "payItemName",
-    "ddate",
-    "custJob",
-    "serviceItem",
-    "count",
-    "rate",
-    "amount"
-})
-public class PaycheckPayTime {
+    private java.lang.Long payItem;
 
-    protected Boolean apply;
-    protected Long line;
-    protected Long payItem;
-    protected String payItemName;
-    @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar ddate;
-    protected String custJob;
-    protected String serviceItem;
-    protected Double count;
-    protected Double rate;
-    protected Double amount;
+    private java.lang.String payItemName;
+
+    private java.util.Calendar ddate;
+
+    private java.lang.String custJob;
+
+    private java.lang.String serviceItem;
+
+    private java.lang.Double count;
+
+    private java.lang.Double rate;
+
+    private java.lang.Double amount;
+
+    public PaycheckPayTime() {
+    }
+
+    public PaycheckPayTime(
+           java.lang.Boolean apply,
+           java.lang.Long line,
+           java.lang.Long payItem,
+           java.lang.String payItemName,
+           java.util.Calendar ddate,
+           java.lang.String custJob,
+           java.lang.String serviceItem,
+           java.lang.Double count,
+           java.lang.Double rate,
+           java.lang.Double amount) {
+           this.apply = apply;
+           this.line = line;
+           this.payItem = payItem;
+           this.payItemName = payItemName;
+           this.ddate = ddate;
+           this.custJob = custJob;
+           this.serviceItem = serviceItem;
+           this.count = count;
+           this.rate = rate;
+           this.amount = amount;
+    }
+
 
     /**
-     * 获取apply属性的值。
+     * Gets the apply value for this PaycheckPayTime.
      * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
+     * @return apply
      */
-    public Boolean isApply() {
+    public java.lang.Boolean getApply() {
         return apply;
     }
 
-    /**
-     * 设置apply属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
-     */
-    public void setApply(Boolean value) {
-        this.apply = value;
-    }
 
     /**
-     * 获取line属性的值。
+     * Sets the apply value for this PaycheckPayTime.
      * 
-     * @return
-     *     possible object is
-     *     {@link Long }
-     *     
+     * @param apply
      */
-    public Long getLine() {
+    public void setApply(java.lang.Boolean apply) {
+        this.apply = apply;
+    }
+
+
+    /**
+     * Gets the line value for this PaycheckPayTime.
+     * 
+     * @return line
+     */
+    public java.lang.Long getLine() {
         return line;
     }
 
-    /**
-     * 设置line属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Long }
-     *     
-     */
-    public void setLine(Long value) {
-        this.line = value;
-    }
 
     /**
-     * 获取payItem属性的值。
+     * Sets the line value for this PaycheckPayTime.
      * 
-     * @return
-     *     possible object is
-     *     {@link Long }
-     *     
+     * @param line
      */
-    public Long getPayItem() {
+    public void setLine(java.lang.Long line) {
+        this.line = line;
+    }
+
+
+    /**
+     * Gets the payItem value for this PaycheckPayTime.
+     * 
+     * @return payItem
+     */
+    public java.lang.Long getPayItem() {
         return payItem;
     }
 
-    /**
-     * 设置payItem属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Long }
-     *     
-     */
-    public void setPayItem(Long value) {
-        this.payItem = value;
-    }
 
     /**
-     * 获取payItemName属性的值。
+     * Sets the payItem value for this PaycheckPayTime.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param payItem
      */
-    public String getPayItemName() {
+    public void setPayItem(java.lang.Long payItem) {
+        this.payItem = payItem;
+    }
+
+
+    /**
+     * Gets the payItemName value for this PaycheckPayTime.
+     * 
+     * @return payItemName
+     */
+    public java.lang.String getPayItemName() {
         return payItemName;
     }
 
-    /**
-     * 设置payItemName属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setPayItemName(String value) {
-        this.payItemName = value;
-    }
 
     /**
-     * 获取ddate属性的值。
+     * Sets the payItemName value for this PaycheckPayTime.
      * 
-     * @return
-     *     possible object is
-     *     {@link XMLGregorianCalendar }
-     *     
+     * @param payItemName
      */
-    public XMLGregorianCalendar getDdate() {
+    public void setPayItemName(java.lang.String payItemName) {
+        this.payItemName = payItemName;
+    }
+
+
+    /**
+     * Gets the ddate value for this PaycheckPayTime.
+     * 
+     * @return ddate
+     */
+    public java.util.Calendar getDdate() {
         return ddate;
     }
 
-    /**
-     * 设置ddate属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link XMLGregorianCalendar }
-     *     
-     */
-    public void setDdate(XMLGregorianCalendar value) {
-        this.ddate = value;
-    }
 
     /**
-     * 获取custJob属性的值。
+     * Sets the ddate value for this PaycheckPayTime.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param ddate
      */
-    public String getCustJob() {
+    public void setDdate(java.util.Calendar ddate) {
+        this.ddate = ddate;
+    }
+
+
+    /**
+     * Gets the custJob value for this PaycheckPayTime.
+     * 
+     * @return custJob
+     */
+    public java.lang.String getCustJob() {
         return custJob;
     }
 
-    /**
-     * 设置custJob属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setCustJob(String value) {
-        this.custJob = value;
-    }
 
     /**
-     * 获取serviceItem属性的值。
+     * Sets the custJob value for this PaycheckPayTime.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param custJob
      */
-    public String getServiceItem() {
+    public void setCustJob(java.lang.String custJob) {
+        this.custJob = custJob;
+    }
+
+
+    /**
+     * Gets the serviceItem value for this PaycheckPayTime.
+     * 
+     * @return serviceItem
+     */
+    public java.lang.String getServiceItem() {
         return serviceItem;
     }
 
-    /**
-     * 设置serviceItem属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setServiceItem(String value) {
-        this.serviceItem = value;
-    }
 
     /**
-     * 获取count属性的值。
+     * Sets the serviceItem value for this PaycheckPayTime.
      * 
-     * @return
-     *     possible object is
-     *     {@link Double }
-     *     
+     * @param serviceItem
      */
-    public Double getCount() {
+    public void setServiceItem(java.lang.String serviceItem) {
+        this.serviceItem = serviceItem;
+    }
+
+
+    /**
+     * Gets the count value for this PaycheckPayTime.
+     * 
+     * @return count
+     */
+    public java.lang.Double getCount() {
         return count;
     }
 
-    /**
-     * 设置count属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Double }
-     *     
-     */
-    public void setCount(Double value) {
-        this.count = value;
-    }
 
     /**
-     * 获取rate属性的值。
+     * Sets the count value for this PaycheckPayTime.
      * 
-     * @return
-     *     possible object is
-     *     {@link Double }
-     *     
+     * @param count
      */
-    public Double getRate() {
+    public void setCount(java.lang.Double count) {
+        this.count = count;
+    }
+
+
+    /**
+     * Gets the rate value for this PaycheckPayTime.
+     * 
+     * @return rate
+     */
+    public java.lang.Double getRate() {
         return rate;
     }
 
-    /**
-     * 设置rate属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Double }
-     *     
-     */
-    public void setRate(Double value) {
-        this.rate = value;
-    }
 
     /**
-     * 获取amount属性的值。
+     * Sets the rate value for this PaycheckPayTime.
      * 
-     * @return
-     *     possible object is
-     *     {@link Double }
-     *     
+     * @param rate
      */
-    public Double getAmount() {
+    public void setRate(java.lang.Double rate) {
+        this.rate = rate;
+    }
+
+
+    /**
+     * Gets the amount value for this PaycheckPayTime.
+     * 
+     * @return amount
+     */
+    public java.lang.Double getAmount() {
         return amount;
     }
 
+
     /**
-     * 设置amount属性的值。
+     * Sets the amount value for this PaycheckPayTime.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link Double }
-     *     
+     * @param amount
      */
-    public void setAmount(Double value) {
-        this.amount = value;
+    public void setAmount(java.lang.Double amount) {
+        this.amount = amount;
+    }
+
+    private java.lang.Object __equalsCalc = null;
+    public synchronized boolean equals(java.lang.Object obj) {
+        if (!(obj instanceof PaycheckPayTime)) return false;
+        PaycheckPayTime other = (PaycheckPayTime) obj;
+        if (obj == null) return false;
+        if (this == obj) return true;
+        if (__equalsCalc != null) {
+            return (__equalsCalc == obj);
+        }
+        __equalsCalc = obj;
+        boolean _equals;
+        _equals = true && 
+            ((this.apply==null && other.getApply()==null) || 
+             (this.apply!=null &&
+              this.apply.equals(other.getApply()))) &&
+            ((this.line==null && other.getLine()==null) || 
+             (this.line!=null &&
+              this.line.equals(other.getLine()))) &&
+            ((this.payItem==null && other.getPayItem()==null) || 
+             (this.payItem!=null &&
+              this.payItem.equals(other.getPayItem()))) &&
+            ((this.payItemName==null && other.getPayItemName()==null) || 
+             (this.payItemName!=null &&
+              this.payItemName.equals(other.getPayItemName()))) &&
+            ((this.ddate==null && other.getDdate()==null) || 
+             (this.ddate!=null &&
+              this.ddate.equals(other.getDdate()))) &&
+            ((this.custJob==null && other.getCustJob()==null) || 
+             (this.custJob!=null &&
+              this.custJob.equals(other.getCustJob()))) &&
+            ((this.serviceItem==null && other.getServiceItem()==null) || 
+             (this.serviceItem!=null &&
+              this.serviceItem.equals(other.getServiceItem()))) &&
+            ((this.count==null && other.getCount()==null) || 
+             (this.count!=null &&
+              this.count.equals(other.getCount()))) &&
+            ((this.rate==null && other.getRate()==null) || 
+             (this.rate!=null &&
+              this.rate.equals(other.getRate()))) &&
+            ((this.amount==null && other.getAmount()==null) || 
+             (this.amount!=null &&
+              this.amount.equals(other.getAmount())));
+        __equalsCalc = null;
+        return _equals;
+    }
+
+    private boolean __hashCodeCalc = false;
+    public synchronized int hashCode() {
+        if (__hashCodeCalc) {
+            return 0;
+        }
+        __hashCodeCalc = true;
+        int _hashCode = 1;
+        if (getApply() != null) {
+            _hashCode += getApply().hashCode();
+        }
+        if (getLine() != null) {
+            _hashCode += getLine().hashCode();
+        }
+        if (getPayItem() != null) {
+            _hashCode += getPayItem().hashCode();
+        }
+        if (getPayItemName() != null) {
+            _hashCode += getPayItemName().hashCode();
+        }
+        if (getDdate() != null) {
+            _hashCode += getDdate().hashCode();
+        }
+        if (getCustJob() != null) {
+            _hashCode += getCustJob().hashCode();
+        }
+        if (getServiceItem() != null) {
+            _hashCode += getServiceItem().hashCode();
+        }
+        if (getCount() != null) {
+            _hashCode += getCount().hashCode();
+        }
+        if (getRate() != null) {
+            _hashCode += getRate().hashCode();
+        }
+        if (getAmount() != null) {
+            _hashCode += getAmount().hashCode();
+        }
+        __hashCodeCalc = false;
+        return _hashCode;
+    }
+
+    // Type metadata
+    private static org.apache.axis.description.TypeDesc typeDesc =
+        new org.apache.axis.description.TypeDesc(PaycheckPayTime.class, true);
+
+    static {
+        typeDesc.setXmlType(new javax.xml.namespace.QName("urn:employees_2018_2.transactions.webservices.netsuite.com", "PaycheckPayTime"));
+        org.apache.axis.description.ElementDesc elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("apply");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:employees_2018_2.transactions.webservices.netsuite.com", "apply"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("line");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:employees_2018_2.transactions.webservices.netsuite.com", "line"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "long"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("payItem");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:employees_2018_2.transactions.webservices.netsuite.com", "payItem"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "long"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("payItemName");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:employees_2018_2.transactions.webservices.netsuite.com", "payItemName"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("ddate");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:employees_2018_2.transactions.webservices.netsuite.com", "ddate"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "dateTime"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("custJob");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:employees_2018_2.transactions.webservices.netsuite.com", "custJob"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("serviceItem");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:employees_2018_2.transactions.webservices.netsuite.com", "serviceItem"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("count");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:employees_2018_2.transactions.webservices.netsuite.com", "count"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "double"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("rate");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:employees_2018_2.transactions.webservices.netsuite.com", "rate"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "double"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("amount");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:employees_2018_2.transactions.webservices.netsuite.com", "amount"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "double"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+    }
+
+    /**
+     * Return type metadata object
+     */
+    public static org.apache.axis.description.TypeDesc getTypeDesc() {
+        return typeDesc;
+    }
+
+    /**
+     * Get Custom Serializer
+     */
+    public static org.apache.axis.encoding.Serializer getSerializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanSerializer(
+            _javaType, _xmlType, typeDesc);
+    }
+
+    /**
+     * Get Custom Deserializer
+     */
+    public static org.apache.axis.encoding.Deserializer getDeserializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanDeserializer(
+            _javaType, _xmlType, typeDesc);
     }
 
 }

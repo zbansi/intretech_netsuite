@@ -1,102 +1,104 @@
+/**
+ * PayrollItemItemTypeNoHierarchy.java
+ *
+ * This file was auto-generated from WSDL
+ * by the Apache Axis 1.4 Jul 28, 2010 (04:07:04 PDT) WSDL2Java emitter.
+ */
 
 package com.netsuite.webservices.lists.employees_2018_2.types;
 
-import javax.xml.bind.annotation.XmlEnum;
-import javax.xml.bind.annotation.XmlEnumValue;
-import javax.xml.bind.annotation.XmlType;
+public class PayrollItemItemTypeNoHierarchy implements java.io.Serializable {
+    private java.lang.String _value_;
+    private static java.util.HashMap _table_ = new java.util.HashMap();
 
-
-/**
- * <p>PayrollItemItemTypeNoHierarchy的 Java 类。
- * 
- * <p>以下模式片段指定包含在此类中的预期内容。
- * <p>
- * <pre>
- * &lt;simpleType name="PayrollItemItemTypeNoHierarchy">
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     &lt;enumeration value="_addition"/>
- *     &lt;enumeration value="_commission"/>
- *     &lt;enumeration value="_deduction"/>
- *     &lt;enumeration value="_directDeposit"/>
- *     &lt;enumeration value="_disability"/>
- *     &lt;enumeration value="_earning"/>
- *     &lt;enumeration value="_employerContribution"/>
- *     &lt;enumeration value="_expense"/>
- *     &lt;enumeration value="_federal"/>
- *     &lt;enumeration value="_medicare"/>
- *     &lt;enumeration value="_other"/>
- *     &lt;enumeration value="_salary"/>
- *     &lt;enumeration value="_sick"/>
- *     &lt;enumeration value="_socialSecurity"/>
- *     &lt;enumeration value="_state"/>
- *     &lt;enumeration value="_tax"/>
- *     &lt;enumeration value="_unemployment"/>
- *     &lt;enumeration value="_vacation"/>
- *     &lt;enumeration value="_wage"/>
- *   &lt;/restriction>
- * &lt;/simpleType>
- * </pre>
- * 
- */
-@XmlType(name = "PayrollItemItemTypeNoHierarchy", namespace = "urn:types.employees_2018_2.lists.webservices.netsuite.com")
-@XmlEnum
-public enum PayrollItemItemTypeNoHierarchy {
-
-    @XmlEnumValue("_addition")
-    ADDITION("_addition"),
-    @XmlEnumValue("_commission")
-    COMMISSION("_commission"),
-    @XmlEnumValue("_deduction")
-    DEDUCTION("_deduction"),
-    @XmlEnumValue("_directDeposit")
-    DIRECT_DEPOSIT("_directDeposit"),
-    @XmlEnumValue("_disability")
-    DISABILITY("_disability"),
-    @XmlEnumValue("_earning")
-    EARNING("_earning"),
-    @XmlEnumValue("_employerContribution")
-    EMPLOYER_CONTRIBUTION("_employerContribution"),
-    @XmlEnumValue("_expense")
-    EXPENSE("_expense"),
-    @XmlEnumValue("_federal")
-    FEDERAL("_federal"),
-    @XmlEnumValue("_medicare")
-    MEDICARE("_medicare"),
-    @XmlEnumValue("_other")
-    OTHER("_other"),
-    @XmlEnumValue("_salary")
-    SALARY("_salary"),
-    @XmlEnumValue("_sick")
-    SICK("_sick"),
-    @XmlEnumValue("_socialSecurity")
-    SOCIAL_SECURITY("_socialSecurity"),
-    @XmlEnumValue("_state")
-    STATE("_state"),
-    @XmlEnumValue("_tax")
-    TAX("_tax"),
-    @XmlEnumValue("_unemployment")
-    UNEMPLOYMENT("_unemployment"),
-    @XmlEnumValue("_vacation")
-    VACATION("_vacation"),
-    @XmlEnumValue("_wage")
-    WAGE("_wage");
-    private final String value;
-
-    PayrollItemItemTypeNoHierarchy(String v) {
-        value = v;
+    // Constructor
+    protected PayrollItemItemTypeNoHierarchy(java.lang.String value) {
+        _value_ = value;
+        _table_.put(_value_,this);
     }
 
-    public String value() {
-        return value;
+    public static final java.lang.String __addition = "_addition";
+    public static final java.lang.String __commission = "_commission";
+    public static final java.lang.String __deduction = "_deduction";
+    public static final java.lang.String __directDeposit = "_directDeposit";
+    public static final java.lang.String __disability = "_disability";
+    public static final java.lang.String __earning = "_earning";
+    public static final java.lang.String __employerContribution = "_employerContribution";
+    public static final java.lang.String __expense = "_expense";
+    public static final java.lang.String __federal = "_federal";
+    public static final java.lang.String __medicare = "_medicare";
+    public static final java.lang.String __other = "_other";
+    public static final java.lang.String __salary = "_salary";
+    public static final java.lang.String __sick = "_sick";
+    public static final java.lang.String __socialSecurity = "_socialSecurity";
+    public static final java.lang.String __state = "_state";
+    public static final java.lang.String __tax = "_tax";
+    public static final java.lang.String __unemployment = "_unemployment";
+    public static final java.lang.String __vacation = "_vacation";
+    public static final java.lang.String __wage = "_wage";
+    public static final PayrollItemItemTypeNoHierarchy _addition = new PayrollItemItemTypeNoHierarchy(__addition);
+    public static final PayrollItemItemTypeNoHierarchy _commission = new PayrollItemItemTypeNoHierarchy(__commission);
+    public static final PayrollItemItemTypeNoHierarchy _deduction = new PayrollItemItemTypeNoHierarchy(__deduction);
+    public static final PayrollItemItemTypeNoHierarchy _directDeposit = new PayrollItemItemTypeNoHierarchy(__directDeposit);
+    public static final PayrollItemItemTypeNoHierarchy _disability = new PayrollItemItemTypeNoHierarchy(__disability);
+    public static final PayrollItemItemTypeNoHierarchy _earning = new PayrollItemItemTypeNoHierarchy(__earning);
+    public static final PayrollItemItemTypeNoHierarchy _employerContribution = new PayrollItemItemTypeNoHierarchy(__employerContribution);
+    public static final PayrollItemItemTypeNoHierarchy _expense = new PayrollItemItemTypeNoHierarchy(__expense);
+    public static final PayrollItemItemTypeNoHierarchy _federal = new PayrollItemItemTypeNoHierarchy(__federal);
+    public static final PayrollItemItemTypeNoHierarchy _medicare = new PayrollItemItemTypeNoHierarchy(__medicare);
+    public static final PayrollItemItemTypeNoHierarchy _other = new PayrollItemItemTypeNoHierarchy(__other);
+    public static final PayrollItemItemTypeNoHierarchy _salary = new PayrollItemItemTypeNoHierarchy(__salary);
+    public static final PayrollItemItemTypeNoHierarchy _sick = new PayrollItemItemTypeNoHierarchy(__sick);
+    public static final PayrollItemItemTypeNoHierarchy _socialSecurity = new PayrollItemItemTypeNoHierarchy(__socialSecurity);
+    public static final PayrollItemItemTypeNoHierarchy _state = new PayrollItemItemTypeNoHierarchy(__state);
+    public static final PayrollItemItemTypeNoHierarchy _tax = new PayrollItemItemTypeNoHierarchy(__tax);
+    public static final PayrollItemItemTypeNoHierarchy _unemployment = new PayrollItemItemTypeNoHierarchy(__unemployment);
+    public static final PayrollItemItemTypeNoHierarchy _vacation = new PayrollItemItemTypeNoHierarchy(__vacation);
+    public static final PayrollItemItemTypeNoHierarchy _wage = new PayrollItemItemTypeNoHierarchy(__wage);
+    public java.lang.String getValue() { return _value_;}
+    public static PayrollItemItemTypeNoHierarchy fromValue(java.lang.String value)
+          throws java.lang.IllegalArgumentException {
+        PayrollItemItemTypeNoHierarchy enumeration = (PayrollItemItemTypeNoHierarchy)
+            _table_.get(value);
+        if (enumeration==null) throw new java.lang.IllegalArgumentException();
+        return enumeration;
     }
+    public static PayrollItemItemTypeNoHierarchy fromString(java.lang.String value)
+          throws java.lang.IllegalArgumentException {
+        return fromValue(value);
+    }
+    public boolean equals(java.lang.Object obj) {return (obj == this);}
+    public int hashCode() { return toString().hashCode();}
+    public java.lang.String toString() { return _value_;}
+    public java.lang.Object readResolve() throws java.io.ObjectStreamException { return fromValue(_value_);}
+    public static org.apache.axis.encoding.Serializer getSerializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new org.apache.axis.encoding.ser.EnumSerializer(
+            _javaType, _xmlType);
+    }
+    public static org.apache.axis.encoding.Deserializer getDeserializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new org.apache.axis.encoding.ser.EnumDeserializer(
+            _javaType, _xmlType);
+    }
+    // Type metadata
+    private static org.apache.axis.description.TypeDesc typeDesc =
+        new org.apache.axis.description.TypeDesc(PayrollItemItemTypeNoHierarchy.class);
 
-    public static PayrollItemItemTypeNoHierarchy fromValue(String v) {
-        for (PayrollItemItemTypeNoHierarchy c: PayrollItemItemTypeNoHierarchy.values()) {
-            if (c.value.equals(v)) {
-                return c;
-            }
-        }
-        throw new IllegalArgumentException(v);
+    static {
+        typeDesc.setXmlType(new javax.xml.namespace.QName("urn:types.employees_2018_2.lists.webservices.netsuite.com", "PayrollItemItemTypeNoHierarchy"));
+    }
+    /**
+     * Return type metadata object
+     */
+    public static org.apache.axis.description.TypeDesc getTypeDesc() {
+        return typeDesc;
     }
 
 }

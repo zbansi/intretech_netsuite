@@ -1,557 +1,786 @@
+/**
+ * ItemMember.java
+ *
+ * This file was auto-generated from WSDL
+ * by the Apache Axis 1.4 Jul 28, 2010 (04:07:04 PDT) WSDL2Java emitter.
+ */
 
 package com.netsuite.webservices.lists.accounting_2018_2;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlSchemaType;
-import javax.xml.bind.annotation.XmlType;
-import javax.xml.datatype.XMLGregorianCalendar;
-import com.netsuite.webservices.platform.common_2018_2.types.ItemSource;
-import com.netsuite.webservices.platform.common_2018_2.types.VsoeDeferral;
-import com.netsuite.webservices.platform.common_2018_2.types.VsoePermitDiscount;
-import com.netsuite.webservices.platform.core_2018_2.RecordRef;
+public class ItemMember  implements java.io.Serializable {
+    private java.lang.String memberDescr;
 
+    private java.lang.Double componentYield;
 
-/**
- * <p>ItemMember complex type的 Java 类。
- * 
- * <p>以下模式片段指定包含在此类中的预期内容。
- * 
- * <pre>
- * &lt;complexType name="ItemMember">
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element name="memberDescr" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="componentYield" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
- *         &lt;element name="bomQuantity" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
- *         &lt;element name="itemSource" type="{urn:types.common_2018_2.platform.webservices.netsuite.com}ItemSource" minOccurs="0"/>
- *         &lt;element name="quantity" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
- *         &lt;element name="memberUnit" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="vsoeDeferral" type="{urn:types.common_2018_2.platform.webservices.netsuite.com}VsoeDeferral" minOccurs="0"/>
- *         &lt;element name="vsoePermitDiscount" type="{urn:types.common_2018_2.platform.webservices.netsuite.com}VsoePermitDiscount" minOccurs="0"/>
- *         &lt;element name="vsoeDelivered" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         &lt;element name="taxSchedule" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="taxcode" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="item" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="taxrate" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
- *         &lt;element name="effectiveDate" type="{http://www.w3.org/2001/XMLSchema}dateTime" minOccurs="0"/>
- *         &lt;element name="obsoleteDate" type="{http://www.w3.org/2001/XMLSchema}dateTime" minOccurs="0"/>
- *         &lt;element name="effectiveRevision" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="obsoleteRevision" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="lineNumber" type="{http://www.w3.org/2001/XMLSchema}long" minOccurs="0"/>
- *         &lt;element name="memberKey" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
- */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "ItemMember", propOrder = {
-    "memberDescr",
-    "componentYield",
-    "bomQuantity",
-    "itemSource",
-    "quantity",
-    "memberUnit",
-    "vsoeDeferral",
-    "vsoePermitDiscount",
-    "vsoeDelivered",
-    "taxSchedule",
-    "taxcode",
-    "item",
-    "taxrate",
-    "effectiveDate",
-    "obsoleteDate",
-    "effectiveRevision",
-    "obsoleteRevision",
-    "lineNumber",
-    "memberKey"
-})
-public class ItemMember {
+    private java.lang.Double bomQuantity;
 
-    protected String memberDescr;
-    protected Double componentYield;
-    protected Double bomQuantity;
-    @XmlSchemaType(name = "string")
-    protected ItemSource itemSource;
-    protected Double quantity;
-    protected String memberUnit;
-    @XmlSchemaType(name = "string")
-    protected VsoeDeferral vsoeDeferral;
-    @XmlSchemaType(name = "string")
-    protected VsoePermitDiscount vsoePermitDiscount;
-    protected Boolean vsoeDelivered;
-    protected RecordRef taxSchedule;
-    protected String taxcode;
-    protected RecordRef item;
-    protected Double taxrate;
-    @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar effectiveDate;
-    @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar obsoleteDate;
-    protected RecordRef effectiveRevision;
-    protected RecordRef obsoleteRevision;
-    protected Long lineNumber;
-    protected String memberKey;
+    private com.netsuite.webservices.platform.common_2018_2.types.ItemSource itemSource;
+
+    private java.lang.Double quantity;
+
+    private java.lang.String memberUnit;
+
+    private com.netsuite.webservices.platform.common_2018_2.types.VsoeDeferral vsoeDeferral;
+
+    private com.netsuite.webservices.platform.common_2018_2.types.VsoePermitDiscount vsoePermitDiscount;
+
+    private java.lang.Boolean vsoeDelivered;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef taxSchedule;
+
+    private java.lang.String taxcode;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef item;
+
+    private java.lang.Double taxrate;
+
+    private java.util.Calendar effectiveDate;
+
+    private java.util.Calendar obsoleteDate;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef effectiveRevision;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef obsoleteRevision;
+
+    private java.lang.Long lineNumber;
+
+    private java.lang.String memberKey;
+
+    public ItemMember() {
+    }
+
+    public ItemMember(
+           java.lang.String memberDescr,
+           java.lang.Double componentYield,
+           java.lang.Double bomQuantity,
+           com.netsuite.webservices.platform.common_2018_2.types.ItemSource itemSource,
+           java.lang.Double quantity,
+           java.lang.String memberUnit,
+           com.netsuite.webservices.platform.common_2018_2.types.VsoeDeferral vsoeDeferral,
+           com.netsuite.webservices.platform.common_2018_2.types.VsoePermitDiscount vsoePermitDiscount,
+           java.lang.Boolean vsoeDelivered,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef taxSchedule,
+           java.lang.String taxcode,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef item,
+           java.lang.Double taxrate,
+           java.util.Calendar effectiveDate,
+           java.util.Calendar obsoleteDate,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef effectiveRevision,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef obsoleteRevision,
+           java.lang.Long lineNumber,
+           java.lang.String memberKey) {
+           this.memberDescr = memberDescr;
+           this.componentYield = componentYield;
+           this.bomQuantity = bomQuantity;
+           this.itemSource = itemSource;
+           this.quantity = quantity;
+           this.memberUnit = memberUnit;
+           this.vsoeDeferral = vsoeDeferral;
+           this.vsoePermitDiscount = vsoePermitDiscount;
+           this.vsoeDelivered = vsoeDelivered;
+           this.taxSchedule = taxSchedule;
+           this.taxcode = taxcode;
+           this.item = item;
+           this.taxrate = taxrate;
+           this.effectiveDate = effectiveDate;
+           this.obsoleteDate = obsoleteDate;
+           this.effectiveRevision = effectiveRevision;
+           this.obsoleteRevision = obsoleteRevision;
+           this.lineNumber = lineNumber;
+           this.memberKey = memberKey;
+    }
+
 
     /**
-     * 获取memberDescr属性的值。
+     * Gets the memberDescr value for this ItemMember.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @return memberDescr
      */
-    public String getMemberDescr() {
+    public java.lang.String getMemberDescr() {
         return memberDescr;
     }
 
-    /**
-     * 设置memberDescr属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setMemberDescr(String value) {
-        this.memberDescr = value;
-    }
 
     /**
-     * 获取componentYield属性的值。
+     * Sets the memberDescr value for this ItemMember.
      * 
-     * @return
-     *     possible object is
-     *     {@link Double }
-     *     
+     * @param memberDescr
      */
-    public Double getComponentYield() {
+    public void setMemberDescr(java.lang.String memberDescr) {
+        this.memberDescr = memberDescr;
+    }
+
+
+    /**
+     * Gets the componentYield value for this ItemMember.
+     * 
+     * @return componentYield
+     */
+    public java.lang.Double getComponentYield() {
         return componentYield;
     }
 
-    /**
-     * 设置componentYield属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Double }
-     *     
-     */
-    public void setComponentYield(Double value) {
-        this.componentYield = value;
-    }
 
     /**
-     * 获取bomQuantity属性的值。
+     * Sets the componentYield value for this ItemMember.
      * 
-     * @return
-     *     possible object is
-     *     {@link Double }
-     *     
+     * @param componentYield
      */
-    public Double getBomQuantity() {
+    public void setComponentYield(java.lang.Double componentYield) {
+        this.componentYield = componentYield;
+    }
+
+
+    /**
+     * Gets the bomQuantity value for this ItemMember.
+     * 
+     * @return bomQuantity
+     */
+    public java.lang.Double getBomQuantity() {
         return bomQuantity;
     }
 
-    /**
-     * 设置bomQuantity属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Double }
-     *     
-     */
-    public void setBomQuantity(Double value) {
-        this.bomQuantity = value;
-    }
 
     /**
-     * 获取itemSource属性的值。
+     * Sets the bomQuantity value for this ItemMember.
      * 
-     * @return
-     *     possible object is
-     *     {@link ItemSource }
-     *     
+     * @param bomQuantity
      */
-    public ItemSource getItemSource() {
+    public void setBomQuantity(java.lang.Double bomQuantity) {
+        this.bomQuantity = bomQuantity;
+    }
+
+
+    /**
+     * Gets the itemSource value for this ItemMember.
+     * 
+     * @return itemSource
+     */
+    public com.netsuite.webservices.platform.common_2018_2.types.ItemSource getItemSource() {
         return itemSource;
     }
 
-    /**
-     * 设置itemSource属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link ItemSource }
-     *     
-     */
-    public void setItemSource(ItemSource value) {
-        this.itemSource = value;
-    }
 
     /**
-     * 获取quantity属性的值。
+     * Sets the itemSource value for this ItemMember.
      * 
-     * @return
-     *     possible object is
-     *     {@link Double }
-     *     
+     * @param itemSource
      */
-    public Double getQuantity() {
+    public void setItemSource(com.netsuite.webservices.platform.common_2018_2.types.ItemSource itemSource) {
+        this.itemSource = itemSource;
+    }
+
+
+    /**
+     * Gets the quantity value for this ItemMember.
+     * 
+     * @return quantity
+     */
+    public java.lang.Double getQuantity() {
         return quantity;
     }
 
-    /**
-     * 设置quantity属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Double }
-     *     
-     */
-    public void setQuantity(Double value) {
-        this.quantity = value;
-    }
 
     /**
-     * 获取memberUnit属性的值。
+     * Sets the quantity value for this ItemMember.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param quantity
      */
-    public String getMemberUnit() {
+    public void setQuantity(java.lang.Double quantity) {
+        this.quantity = quantity;
+    }
+
+
+    /**
+     * Gets the memberUnit value for this ItemMember.
+     * 
+     * @return memberUnit
+     */
+    public java.lang.String getMemberUnit() {
         return memberUnit;
     }
 
-    /**
-     * 设置memberUnit属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setMemberUnit(String value) {
-        this.memberUnit = value;
-    }
 
     /**
-     * 获取vsoeDeferral属性的值。
+     * Sets the memberUnit value for this ItemMember.
      * 
-     * @return
-     *     possible object is
-     *     {@link VsoeDeferral }
-     *     
+     * @param memberUnit
      */
-    public VsoeDeferral getVsoeDeferral() {
+    public void setMemberUnit(java.lang.String memberUnit) {
+        this.memberUnit = memberUnit;
+    }
+
+
+    /**
+     * Gets the vsoeDeferral value for this ItemMember.
+     * 
+     * @return vsoeDeferral
+     */
+    public com.netsuite.webservices.platform.common_2018_2.types.VsoeDeferral getVsoeDeferral() {
         return vsoeDeferral;
     }
 
-    /**
-     * 设置vsoeDeferral属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link VsoeDeferral }
-     *     
-     */
-    public void setVsoeDeferral(VsoeDeferral value) {
-        this.vsoeDeferral = value;
-    }
 
     /**
-     * 获取vsoePermitDiscount属性的值。
+     * Sets the vsoeDeferral value for this ItemMember.
      * 
-     * @return
-     *     possible object is
-     *     {@link VsoePermitDiscount }
-     *     
+     * @param vsoeDeferral
      */
-    public VsoePermitDiscount getVsoePermitDiscount() {
+    public void setVsoeDeferral(com.netsuite.webservices.platform.common_2018_2.types.VsoeDeferral vsoeDeferral) {
+        this.vsoeDeferral = vsoeDeferral;
+    }
+
+
+    /**
+     * Gets the vsoePermitDiscount value for this ItemMember.
+     * 
+     * @return vsoePermitDiscount
+     */
+    public com.netsuite.webservices.platform.common_2018_2.types.VsoePermitDiscount getVsoePermitDiscount() {
         return vsoePermitDiscount;
     }
 
-    /**
-     * 设置vsoePermitDiscount属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link VsoePermitDiscount }
-     *     
-     */
-    public void setVsoePermitDiscount(VsoePermitDiscount value) {
-        this.vsoePermitDiscount = value;
-    }
 
     /**
-     * 获取vsoeDelivered属性的值。
+     * Sets the vsoePermitDiscount value for this ItemMember.
      * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
+     * @param vsoePermitDiscount
      */
-    public Boolean isVsoeDelivered() {
+    public void setVsoePermitDiscount(com.netsuite.webservices.platform.common_2018_2.types.VsoePermitDiscount vsoePermitDiscount) {
+        this.vsoePermitDiscount = vsoePermitDiscount;
+    }
+
+
+    /**
+     * Gets the vsoeDelivered value for this ItemMember.
+     * 
+     * @return vsoeDelivered
+     */
+    public java.lang.Boolean getVsoeDelivered() {
         return vsoeDelivered;
     }
 
-    /**
-     * 设置vsoeDelivered属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
-     */
-    public void setVsoeDelivered(Boolean value) {
-        this.vsoeDelivered = value;
-    }
 
     /**
-     * 获取taxSchedule属性的值。
+     * Sets the vsoeDelivered value for this ItemMember.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param vsoeDelivered
      */
-    public RecordRef getTaxSchedule() {
+    public void setVsoeDelivered(java.lang.Boolean vsoeDelivered) {
+        this.vsoeDelivered = vsoeDelivered;
+    }
+
+
+    /**
+     * Gets the taxSchedule value for this ItemMember.
+     * 
+     * @return taxSchedule
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getTaxSchedule() {
         return taxSchedule;
     }
 
-    /**
-     * 设置taxSchedule属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setTaxSchedule(RecordRef value) {
-        this.taxSchedule = value;
-    }
 
     /**
-     * 获取taxcode属性的值。
+     * Sets the taxSchedule value for this ItemMember.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param taxSchedule
      */
-    public String getTaxcode() {
+    public void setTaxSchedule(com.netsuite.webservices.platform.core_2018_2.RecordRef taxSchedule) {
+        this.taxSchedule = taxSchedule;
+    }
+
+
+    /**
+     * Gets the taxcode value for this ItemMember.
+     * 
+     * @return taxcode
+     */
+    public java.lang.String getTaxcode() {
         return taxcode;
     }
 
-    /**
-     * 设置taxcode属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setTaxcode(String value) {
-        this.taxcode = value;
-    }
 
     /**
-     * 获取item属性的值。
+     * Sets the taxcode value for this ItemMember.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param taxcode
      */
-    public RecordRef getItem() {
+    public void setTaxcode(java.lang.String taxcode) {
+        this.taxcode = taxcode;
+    }
+
+
+    /**
+     * Gets the item value for this ItemMember.
+     * 
+     * @return item
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getItem() {
         return item;
     }
 
-    /**
-     * 设置item属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setItem(RecordRef value) {
-        this.item = value;
-    }
 
     /**
-     * 获取taxrate属性的值。
+     * Sets the item value for this ItemMember.
      * 
-     * @return
-     *     possible object is
-     *     {@link Double }
-     *     
+     * @param item
      */
-    public Double getTaxrate() {
+    public void setItem(com.netsuite.webservices.platform.core_2018_2.RecordRef item) {
+        this.item = item;
+    }
+
+
+    /**
+     * Gets the taxrate value for this ItemMember.
+     * 
+     * @return taxrate
+     */
+    public java.lang.Double getTaxrate() {
         return taxrate;
     }
 
-    /**
-     * 设置taxrate属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Double }
-     *     
-     */
-    public void setTaxrate(Double value) {
-        this.taxrate = value;
-    }
 
     /**
-     * 获取effectiveDate属性的值。
+     * Sets the taxrate value for this ItemMember.
      * 
-     * @return
-     *     possible object is
-     *     {@link XMLGregorianCalendar }
-     *     
+     * @param taxrate
      */
-    public XMLGregorianCalendar getEffectiveDate() {
+    public void setTaxrate(java.lang.Double taxrate) {
+        this.taxrate = taxrate;
+    }
+
+
+    /**
+     * Gets the effectiveDate value for this ItemMember.
+     * 
+     * @return effectiveDate
+     */
+    public java.util.Calendar getEffectiveDate() {
         return effectiveDate;
     }
 
-    /**
-     * 设置effectiveDate属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link XMLGregorianCalendar }
-     *     
-     */
-    public void setEffectiveDate(XMLGregorianCalendar value) {
-        this.effectiveDate = value;
-    }
 
     /**
-     * 获取obsoleteDate属性的值。
+     * Sets the effectiveDate value for this ItemMember.
      * 
-     * @return
-     *     possible object is
-     *     {@link XMLGregorianCalendar }
-     *     
+     * @param effectiveDate
      */
-    public XMLGregorianCalendar getObsoleteDate() {
+    public void setEffectiveDate(java.util.Calendar effectiveDate) {
+        this.effectiveDate = effectiveDate;
+    }
+
+
+    /**
+     * Gets the obsoleteDate value for this ItemMember.
+     * 
+     * @return obsoleteDate
+     */
+    public java.util.Calendar getObsoleteDate() {
         return obsoleteDate;
     }
 
-    /**
-     * 设置obsoleteDate属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link XMLGregorianCalendar }
-     *     
-     */
-    public void setObsoleteDate(XMLGregorianCalendar value) {
-        this.obsoleteDate = value;
-    }
 
     /**
-     * 获取effectiveRevision属性的值。
+     * Sets the obsoleteDate value for this ItemMember.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param obsoleteDate
      */
-    public RecordRef getEffectiveRevision() {
+    public void setObsoleteDate(java.util.Calendar obsoleteDate) {
+        this.obsoleteDate = obsoleteDate;
+    }
+
+
+    /**
+     * Gets the effectiveRevision value for this ItemMember.
+     * 
+     * @return effectiveRevision
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getEffectiveRevision() {
         return effectiveRevision;
     }
 
-    /**
-     * 设置effectiveRevision属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setEffectiveRevision(RecordRef value) {
-        this.effectiveRevision = value;
-    }
 
     /**
-     * 获取obsoleteRevision属性的值。
+     * Sets the effectiveRevision value for this ItemMember.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param effectiveRevision
      */
-    public RecordRef getObsoleteRevision() {
+    public void setEffectiveRevision(com.netsuite.webservices.platform.core_2018_2.RecordRef effectiveRevision) {
+        this.effectiveRevision = effectiveRevision;
+    }
+
+
+    /**
+     * Gets the obsoleteRevision value for this ItemMember.
+     * 
+     * @return obsoleteRevision
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getObsoleteRevision() {
         return obsoleteRevision;
     }
 
-    /**
-     * 设置obsoleteRevision属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setObsoleteRevision(RecordRef value) {
-        this.obsoleteRevision = value;
-    }
 
     /**
-     * 获取lineNumber属性的值。
+     * Sets the obsoleteRevision value for this ItemMember.
      * 
-     * @return
-     *     possible object is
-     *     {@link Long }
-     *     
+     * @param obsoleteRevision
      */
-    public Long getLineNumber() {
+    public void setObsoleteRevision(com.netsuite.webservices.platform.core_2018_2.RecordRef obsoleteRevision) {
+        this.obsoleteRevision = obsoleteRevision;
+    }
+
+
+    /**
+     * Gets the lineNumber value for this ItemMember.
+     * 
+     * @return lineNumber
+     */
+    public java.lang.Long getLineNumber() {
         return lineNumber;
     }
 
-    /**
-     * 设置lineNumber属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Long }
-     *     
-     */
-    public void setLineNumber(Long value) {
-        this.lineNumber = value;
-    }
 
     /**
-     * 获取memberKey属性的值。
+     * Sets the lineNumber value for this ItemMember.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param lineNumber
      */
-    public String getMemberKey() {
+    public void setLineNumber(java.lang.Long lineNumber) {
+        this.lineNumber = lineNumber;
+    }
+
+
+    /**
+     * Gets the memberKey value for this ItemMember.
+     * 
+     * @return memberKey
+     */
+    public java.lang.String getMemberKey() {
         return memberKey;
     }
 
+
     /**
-     * 设置memberKey属性的值。
+     * Sets the memberKey value for this ItemMember.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     * @param memberKey
      */
-    public void setMemberKey(String value) {
-        this.memberKey = value;
+    public void setMemberKey(java.lang.String memberKey) {
+        this.memberKey = memberKey;
+    }
+
+    private java.lang.Object __equalsCalc = null;
+    public synchronized boolean equals(java.lang.Object obj) {
+        if (!(obj instanceof ItemMember)) return false;
+        ItemMember other = (ItemMember) obj;
+        if (obj == null) return false;
+        if (this == obj) return true;
+        if (__equalsCalc != null) {
+            return (__equalsCalc == obj);
+        }
+        __equalsCalc = obj;
+        boolean _equals;
+        _equals = true && 
+            ((this.memberDescr==null && other.getMemberDescr()==null) || 
+             (this.memberDescr!=null &&
+              this.memberDescr.equals(other.getMemberDescr()))) &&
+            ((this.componentYield==null && other.getComponentYield()==null) || 
+             (this.componentYield!=null &&
+              this.componentYield.equals(other.getComponentYield()))) &&
+            ((this.bomQuantity==null && other.getBomQuantity()==null) || 
+             (this.bomQuantity!=null &&
+              this.bomQuantity.equals(other.getBomQuantity()))) &&
+            ((this.itemSource==null && other.getItemSource()==null) || 
+             (this.itemSource!=null &&
+              this.itemSource.equals(other.getItemSource()))) &&
+            ((this.quantity==null && other.getQuantity()==null) || 
+             (this.quantity!=null &&
+              this.quantity.equals(other.getQuantity()))) &&
+            ((this.memberUnit==null && other.getMemberUnit()==null) || 
+             (this.memberUnit!=null &&
+              this.memberUnit.equals(other.getMemberUnit()))) &&
+            ((this.vsoeDeferral==null && other.getVsoeDeferral()==null) || 
+             (this.vsoeDeferral!=null &&
+              this.vsoeDeferral.equals(other.getVsoeDeferral()))) &&
+            ((this.vsoePermitDiscount==null && other.getVsoePermitDiscount()==null) || 
+             (this.vsoePermitDiscount!=null &&
+              this.vsoePermitDiscount.equals(other.getVsoePermitDiscount()))) &&
+            ((this.vsoeDelivered==null && other.getVsoeDelivered()==null) || 
+             (this.vsoeDelivered!=null &&
+              this.vsoeDelivered.equals(other.getVsoeDelivered()))) &&
+            ((this.taxSchedule==null && other.getTaxSchedule()==null) || 
+             (this.taxSchedule!=null &&
+              this.taxSchedule.equals(other.getTaxSchedule()))) &&
+            ((this.taxcode==null && other.getTaxcode()==null) || 
+             (this.taxcode!=null &&
+              this.taxcode.equals(other.getTaxcode()))) &&
+            ((this.item==null && other.getItem()==null) || 
+             (this.item!=null &&
+              this.item.equals(other.getItem()))) &&
+            ((this.taxrate==null && other.getTaxrate()==null) || 
+             (this.taxrate!=null &&
+              this.taxrate.equals(other.getTaxrate()))) &&
+            ((this.effectiveDate==null && other.getEffectiveDate()==null) || 
+             (this.effectiveDate!=null &&
+              this.effectiveDate.equals(other.getEffectiveDate()))) &&
+            ((this.obsoleteDate==null && other.getObsoleteDate()==null) || 
+             (this.obsoleteDate!=null &&
+              this.obsoleteDate.equals(other.getObsoleteDate()))) &&
+            ((this.effectiveRevision==null && other.getEffectiveRevision()==null) || 
+             (this.effectiveRevision!=null &&
+              this.effectiveRevision.equals(other.getEffectiveRevision()))) &&
+            ((this.obsoleteRevision==null && other.getObsoleteRevision()==null) || 
+             (this.obsoleteRevision!=null &&
+              this.obsoleteRevision.equals(other.getObsoleteRevision()))) &&
+            ((this.lineNumber==null && other.getLineNumber()==null) || 
+             (this.lineNumber!=null &&
+              this.lineNumber.equals(other.getLineNumber()))) &&
+            ((this.memberKey==null && other.getMemberKey()==null) || 
+             (this.memberKey!=null &&
+              this.memberKey.equals(other.getMemberKey())));
+        __equalsCalc = null;
+        return _equals;
+    }
+
+    private boolean __hashCodeCalc = false;
+    public synchronized int hashCode() {
+        if (__hashCodeCalc) {
+            return 0;
+        }
+        __hashCodeCalc = true;
+        int _hashCode = 1;
+        if (getMemberDescr() != null) {
+            _hashCode += getMemberDescr().hashCode();
+        }
+        if (getComponentYield() != null) {
+            _hashCode += getComponentYield().hashCode();
+        }
+        if (getBomQuantity() != null) {
+            _hashCode += getBomQuantity().hashCode();
+        }
+        if (getItemSource() != null) {
+            _hashCode += getItemSource().hashCode();
+        }
+        if (getQuantity() != null) {
+            _hashCode += getQuantity().hashCode();
+        }
+        if (getMemberUnit() != null) {
+            _hashCode += getMemberUnit().hashCode();
+        }
+        if (getVsoeDeferral() != null) {
+            _hashCode += getVsoeDeferral().hashCode();
+        }
+        if (getVsoePermitDiscount() != null) {
+            _hashCode += getVsoePermitDiscount().hashCode();
+        }
+        if (getVsoeDelivered() != null) {
+            _hashCode += getVsoeDelivered().hashCode();
+        }
+        if (getTaxSchedule() != null) {
+            _hashCode += getTaxSchedule().hashCode();
+        }
+        if (getTaxcode() != null) {
+            _hashCode += getTaxcode().hashCode();
+        }
+        if (getItem() != null) {
+            _hashCode += getItem().hashCode();
+        }
+        if (getTaxrate() != null) {
+            _hashCode += getTaxrate().hashCode();
+        }
+        if (getEffectiveDate() != null) {
+            _hashCode += getEffectiveDate().hashCode();
+        }
+        if (getObsoleteDate() != null) {
+            _hashCode += getObsoleteDate().hashCode();
+        }
+        if (getEffectiveRevision() != null) {
+            _hashCode += getEffectiveRevision().hashCode();
+        }
+        if (getObsoleteRevision() != null) {
+            _hashCode += getObsoleteRevision().hashCode();
+        }
+        if (getLineNumber() != null) {
+            _hashCode += getLineNumber().hashCode();
+        }
+        if (getMemberKey() != null) {
+            _hashCode += getMemberKey().hashCode();
+        }
+        __hashCodeCalc = false;
+        return _hashCode;
+    }
+
+    // Type metadata
+    private static org.apache.axis.description.TypeDesc typeDesc =
+        new org.apache.axis.description.TypeDesc(ItemMember.class, true);
+
+    static {
+        typeDesc.setXmlType(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "ItemMember"));
+        org.apache.axis.description.ElementDesc elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("memberDescr");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "memberDescr"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("componentYield");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "componentYield"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "double"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("bomQuantity");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "bomQuantity"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "double"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("itemSource");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "itemSource"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:types.common_2018_2.platform.webservices.netsuite.com", "ItemSource"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("quantity");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "quantity"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "double"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("memberUnit");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "memberUnit"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("vsoeDeferral");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "vsoeDeferral"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:types.common_2018_2.platform.webservices.netsuite.com", "VsoeDeferral"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("vsoePermitDiscount");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "vsoePermitDiscount"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:types.common_2018_2.platform.webservices.netsuite.com", "VsoePermitDiscount"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("vsoeDelivered");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "vsoeDelivered"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("taxSchedule");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "taxSchedule"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("taxcode");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "taxcode"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("item");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "item"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("taxrate");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "taxrate"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "double"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("effectiveDate");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "effectiveDate"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "dateTime"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("obsoleteDate");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "obsoleteDate"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "dateTime"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("effectiveRevision");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "effectiveRevision"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("obsoleteRevision");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "obsoleteRevision"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("lineNumber");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "lineNumber"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "long"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("memberKey");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "memberKey"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+    }
+
+    /**
+     * Return type metadata object
+     */
+    public static org.apache.axis.description.TypeDesc getTypeDesc() {
+        return typeDesc;
+    }
+
+    /**
+     * Get Custom Serializer
+     */
+    public static org.apache.axis.encoding.Serializer getSerializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanSerializer(
+            _javaType, _xmlType, typeDesc);
+    }
+
+    /**
+     * Get Custom Deserializer
+     */
+    public static org.apache.axis.encoding.Deserializer getDeserializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanDeserializer(
+            _javaType, _xmlType, typeDesc);
     }
 
 }

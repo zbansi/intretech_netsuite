@@ -1,60 +1,76 @@
+/**
+ * BillingScheduleType.java
+ *
+ * This file was auto-generated from WSDL
+ * by the Apache Axis 1.4 Jul 28, 2010 (04:07:04 PDT) WSDL2Java emitter.
+ */
 
 package com.netsuite.webservices.lists.accounting_2018_2.types;
 
-import javax.xml.bind.annotation.XmlEnum;
-import javax.xml.bind.annotation.XmlEnumValue;
-import javax.xml.bind.annotation.XmlType;
+public class BillingScheduleType implements java.io.Serializable {
+    private java.lang.String _value_;
+    private static java.util.HashMap _table_ = new java.util.HashMap();
 
-
-/**
- * <p>BillingScheduleType的 Java 类。
- * 
- * <p>以下模式片段指定包含在此类中的预期内容。
- * <p>
- * <pre>
- * &lt;simpleType name="BillingScheduleType">
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     &lt;enumeration value="_chargeBased"/>
- *     &lt;enumeration value="_fixedBidInterval"/>
- *     &lt;enumeration value="_fixedBidMilestone"/>
- *     &lt;enumeration value="_standard"/>
- *     &lt;enumeration value="_timeAndMaterials"/>
- *   &lt;/restriction>
- * &lt;/simpleType>
- * </pre>
- * 
- */
-@XmlType(name = "BillingScheduleType", namespace = "urn:types.accounting_2018_2.lists.webservices.netsuite.com")
-@XmlEnum
-public enum BillingScheduleType {
-
-    @XmlEnumValue("_chargeBased")
-    CHARGE_BASED("_chargeBased"),
-    @XmlEnumValue("_fixedBidInterval")
-    FIXED_BID_INTERVAL("_fixedBidInterval"),
-    @XmlEnumValue("_fixedBidMilestone")
-    FIXED_BID_MILESTONE("_fixedBidMilestone"),
-    @XmlEnumValue("_standard")
-    STANDARD("_standard"),
-    @XmlEnumValue("_timeAndMaterials")
-    TIME_AND_MATERIALS("_timeAndMaterials");
-    private final String value;
-
-    BillingScheduleType(String v) {
-        value = v;
+    // Constructor
+    protected BillingScheduleType(java.lang.String value) {
+        _value_ = value;
+        _table_.put(_value_,this);
     }
 
-    public String value() {
-        return value;
+    public static final java.lang.String __chargeBased = "_chargeBased";
+    public static final java.lang.String __fixedBidInterval = "_fixedBidInterval";
+    public static final java.lang.String __fixedBidMilestone = "_fixedBidMilestone";
+    public static final java.lang.String __standard = "_standard";
+    public static final java.lang.String __timeAndMaterials = "_timeAndMaterials";
+    public static final BillingScheduleType _chargeBased = new BillingScheduleType(__chargeBased);
+    public static final BillingScheduleType _fixedBidInterval = new BillingScheduleType(__fixedBidInterval);
+    public static final BillingScheduleType _fixedBidMilestone = new BillingScheduleType(__fixedBidMilestone);
+    public static final BillingScheduleType _standard = new BillingScheduleType(__standard);
+    public static final BillingScheduleType _timeAndMaterials = new BillingScheduleType(__timeAndMaterials);
+    public java.lang.String getValue() { return _value_;}
+    public static BillingScheduleType fromValue(java.lang.String value)
+          throws java.lang.IllegalArgumentException {
+        BillingScheduleType enumeration = (BillingScheduleType)
+            _table_.get(value);
+        if (enumeration==null) throw new java.lang.IllegalArgumentException();
+        return enumeration;
     }
+    public static BillingScheduleType fromString(java.lang.String value)
+          throws java.lang.IllegalArgumentException {
+        return fromValue(value);
+    }
+    public boolean equals(java.lang.Object obj) {return (obj == this);}
+    public int hashCode() { return toString().hashCode();}
+    public java.lang.String toString() { return _value_;}
+    public java.lang.Object readResolve() throws java.io.ObjectStreamException { return fromValue(_value_);}
+    public static org.apache.axis.encoding.Serializer getSerializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new org.apache.axis.encoding.ser.EnumSerializer(
+            _javaType, _xmlType);
+    }
+    public static org.apache.axis.encoding.Deserializer getDeserializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new org.apache.axis.encoding.ser.EnumDeserializer(
+            _javaType, _xmlType);
+    }
+    // Type metadata
+    private static org.apache.axis.description.TypeDesc typeDesc =
+        new org.apache.axis.description.TypeDesc(BillingScheduleType.class);
 
-    public static BillingScheduleType fromValue(String v) {
-        for (BillingScheduleType c: BillingScheduleType.values()) {
-            if (c.value.equals(v)) {
-                return c;
-            }
-        }
-        throw new IllegalArgumentException(v);
+    static {
+        typeDesc.setXmlType(new javax.xml.namespace.QName("urn:types.accounting_2018_2.lists.webservices.netsuite.com", "BillingScheduleType"));
+    }
+    /**
+     * Return type metadata object
+     */
+    public static org.apache.axis.description.TypeDesc getTypeDesc() {
+        return typeDesc;
     }
 
 }

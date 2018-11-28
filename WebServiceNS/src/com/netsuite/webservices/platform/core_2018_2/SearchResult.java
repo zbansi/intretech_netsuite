@@ -1,251 +1,402 @@
+/**
+ * SearchResult.java
+ *
+ * This file was auto-generated from WSDL
+ * by the Apache Axis 1.4 Jul 28, 2010 (04:07:04 PDT) WSDL2Java emitter.
+ */
 
 package com.netsuite.webservices.platform.core_2018_2;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlType;
+public class SearchResult  implements java.io.Serializable {
+    private com.netsuite.webservices.platform.core_2018_2.StatusDetail[] status;
 
+    private java.lang.Integer totalRecords;
 
-/**
- * <p>SearchResult complex type的 Java 类。
- * 
- * <p>以下模式片段指定包含在此类中的预期内容。
- * 
- * <pre>
- * &lt;complexType name="SearchResult">
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element ref="{urn:core_2018_2.platform.webservices.netsuite.com}status"/>
- *         &lt;element name="totalRecords" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/>
- *         &lt;element name="pageSize" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/>
- *         &lt;element name="totalPages" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/>
- *         &lt;element name="pageIndex" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/>
- *         &lt;element name="searchId" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element ref="{urn:core_2018_2.platform.webservices.netsuite.com}recordList" minOccurs="0"/>
- *         &lt;element ref="{urn:core_2018_2.platform.webservices.netsuite.com}searchRowList" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
- */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "SearchResult", propOrder = {
-    "status",
-    "totalRecords",
-    "pageSize",
-    "totalPages",
-    "pageIndex",
-    "searchId",
-    "recordList",
-    "searchRowList"
-})
-public class SearchResult {
+    private java.lang.Integer pageSize;
 
-    @XmlElement(required = true)
-    protected Status status;
-    protected Integer totalRecords;
-    protected Integer pageSize;
-    protected Integer totalPages;
-    protected Integer pageIndex;
-    protected String searchId;
-    protected RecordList recordList;
-    protected SearchRowList searchRowList;
+    private java.lang.Integer totalPages;
+
+    private java.lang.Integer pageIndex;
+
+    private java.lang.String searchId;
+
+    private com.netsuite.webservices.platform.core_2018_2.Record[] recordList;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchRow[] searchRowList;
+
+    public SearchResult() {
+    }
+
+    public SearchResult(
+           com.netsuite.webservices.platform.core_2018_2.StatusDetail[] status,
+           java.lang.Integer totalRecords,
+           java.lang.Integer pageSize,
+           java.lang.Integer totalPages,
+           java.lang.Integer pageIndex,
+           java.lang.String searchId,
+           com.netsuite.webservices.platform.core_2018_2.Record[] recordList,
+           com.netsuite.webservices.platform.core_2018_2.SearchRow[] searchRowList) {
+           this.status = status;
+           this.totalRecords = totalRecords;
+           this.pageSize = pageSize;
+           this.totalPages = totalPages;
+           this.pageIndex = pageIndex;
+           this.searchId = searchId;
+           this.recordList = recordList;
+           this.searchRowList = searchRowList;
+    }
+
 
     /**
-     * 获取status属性的值。
+     * Gets the status value for this SearchResult.
      * 
-     * @return
-     *     possible object is
-     *     {@link Status }
-     *     
+     * @return status
      */
-    public Status getStatus() {
+    public com.netsuite.webservices.platform.core_2018_2.StatusDetail[] getStatus() {
         return status;
     }
 
-    /**
-     * 设置status属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Status }
-     *     
-     */
-    public void setStatus(Status value) {
-        this.status = value;
-    }
 
     /**
-     * 获取totalRecords属性的值。
+     * Sets the status value for this SearchResult.
      * 
-     * @return
-     *     possible object is
-     *     {@link Integer }
-     *     
+     * @param status
      */
-    public Integer getTotalRecords() {
+    public void setStatus(com.netsuite.webservices.platform.core_2018_2.StatusDetail[] status) {
+        this.status = status;
+    }
+
+
+    /**
+     * Gets the totalRecords value for this SearchResult.
+     * 
+     * @return totalRecords
+     */
+    public java.lang.Integer getTotalRecords() {
         return totalRecords;
     }
 
-    /**
-     * 设置totalRecords属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Integer }
-     *     
-     */
-    public void setTotalRecords(Integer value) {
-        this.totalRecords = value;
-    }
 
     /**
-     * 获取pageSize属性的值。
+     * Sets the totalRecords value for this SearchResult.
      * 
-     * @return
-     *     possible object is
-     *     {@link Integer }
-     *     
+     * @param totalRecords
      */
-    public Integer getPageSize() {
+    public void setTotalRecords(java.lang.Integer totalRecords) {
+        this.totalRecords = totalRecords;
+    }
+
+
+    /**
+     * Gets the pageSize value for this SearchResult.
+     * 
+     * @return pageSize
+     */
+    public java.lang.Integer getPageSize() {
         return pageSize;
     }
 
-    /**
-     * 设置pageSize属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Integer }
-     *     
-     */
-    public void setPageSize(Integer value) {
-        this.pageSize = value;
-    }
 
     /**
-     * 获取totalPages属性的值。
+     * Sets the pageSize value for this SearchResult.
      * 
-     * @return
-     *     possible object is
-     *     {@link Integer }
-     *     
+     * @param pageSize
      */
-    public Integer getTotalPages() {
+    public void setPageSize(java.lang.Integer pageSize) {
+        this.pageSize = pageSize;
+    }
+
+
+    /**
+     * Gets the totalPages value for this SearchResult.
+     * 
+     * @return totalPages
+     */
+    public java.lang.Integer getTotalPages() {
         return totalPages;
     }
 
-    /**
-     * 设置totalPages属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Integer }
-     *     
-     */
-    public void setTotalPages(Integer value) {
-        this.totalPages = value;
-    }
 
     /**
-     * 获取pageIndex属性的值。
+     * Sets the totalPages value for this SearchResult.
      * 
-     * @return
-     *     possible object is
-     *     {@link Integer }
-     *     
+     * @param totalPages
      */
-    public Integer getPageIndex() {
+    public void setTotalPages(java.lang.Integer totalPages) {
+        this.totalPages = totalPages;
+    }
+
+
+    /**
+     * Gets the pageIndex value for this SearchResult.
+     * 
+     * @return pageIndex
+     */
+    public java.lang.Integer getPageIndex() {
         return pageIndex;
     }
 
-    /**
-     * 设置pageIndex属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Integer }
-     *     
-     */
-    public void setPageIndex(Integer value) {
-        this.pageIndex = value;
-    }
 
     /**
-     * 获取searchId属性的值。
+     * Sets the pageIndex value for this SearchResult.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param pageIndex
      */
-    public String getSearchId() {
+    public void setPageIndex(java.lang.Integer pageIndex) {
+        this.pageIndex = pageIndex;
+    }
+
+
+    /**
+     * Gets the searchId value for this SearchResult.
+     * 
+     * @return searchId
+     */
+    public java.lang.String getSearchId() {
         return searchId;
     }
 
-    /**
-     * 设置searchId属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setSearchId(String value) {
-        this.searchId = value;
-    }
 
     /**
-     * 获取recordList属性的值。
+     * Sets the searchId value for this SearchResult.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordList }
-     *     
+     * @param searchId
      */
-    public RecordList getRecordList() {
+    public void setSearchId(java.lang.String searchId) {
+        this.searchId = searchId;
+    }
+
+
+    /**
+     * Gets the recordList value for this SearchResult.
+     * 
+     * @return recordList
+     */
+    public com.netsuite.webservices.platform.core_2018_2.Record[] getRecordList() {
         return recordList;
     }
 
-    /**
-     * 设置recordList属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordList }
-     *     
-     */
-    public void setRecordList(RecordList value) {
-        this.recordList = value;
-    }
 
     /**
-     * 获取searchRowList属性的值。
+     * Sets the recordList value for this SearchResult.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchRowList }
-     *     
+     * @param recordList
      */
-    public SearchRowList getSearchRowList() {
+    public void setRecordList(com.netsuite.webservices.platform.core_2018_2.Record[] recordList) {
+        this.recordList = recordList;
+    }
+
+
+    /**
+     * Gets the searchRowList value for this SearchResult.
+     * 
+     * @return searchRowList
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchRow[] getSearchRowList() {
         return searchRowList;
     }
 
+
     /**
-     * 设置searchRowList属性的值。
+     * Sets the searchRowList value for this SearchResult.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchRowList }
-     *     
+     * @param searchRowList
      */
-    public void setSearchRowList(SearchRowList value) {
-        this.searchRowList = value;
+    public void setSearchRowList(com.netsuite.webservices.platform.core_2018_2.SearchRow[] searchRowList) {
+        this.searchRowList = searchRowList;
+    }
+
+    private java.lang.Object __equalsCalc = null;
+    public synchronized boolean equals(java.lang.Object obj) {
+        if (!(obj instanceof SearchResult)) return false;
+        SearchResult other = (SearchResult) obj;
+        if (obj == null) return false;
+        if (this == obj) return true;
+        if (__equalsCalc != null) {
+            return (__equalsCalc == obj);
+        }
+        __equalsCalc = obj;
+        boolean _equals;
+        _equals = true && 
+            ((this.status==null && other.getStatus()==null) || 
+             (this.status!=null &&
+              java.util.Arrays.equals(this.status, other.getStatus()))) &&
+            ((this.totalRecords==null && other.getTotalRecords()==null) || 
+             (this.totalRecords!=null &&
+              this.totalRecords.equals(other.getTotalRecords()))) &&
+            ((this.pageSize==null && other.getPageSize()==null) || 
+             (this.pageSize!=null &&
+              this.pageSize.equals(other.getPageSize()))) &&
+            ((this.totalPages==null && other.getTotalPages()==null) || 
+             (this.totalPages!=null &&
+              this.totalPages.equals(other.getTotalPages()))) &&
+            ((this.pageIndex==null && other.getPageIndex()==null) || 
+             (this.pageIndex!=null &&
+              this.pageIndex.equals(other.getPageIndex()))) &&
+            ((this.searchId==null && other.getSearchId()==null) || 
+             (this.searchId!=null &&
+              this.searchId.equals(other.getSearchId()))) &&
+            ((this.recordList==null && other.getRecordList()==null) || 
+             (this.recordList!=null &&
+              java.util.Arrays.equals(this.recordList, other.getRecordList()))) &&
+            ((this.searchRowList==null && other.getSearchRowList()==null) || 
+             (this.searchRowList!=null &&
+              java.util.Arrays.equals(this.searchRowList, other.getSearchRowList())));
+        __equalsCalc = null;
+        return _equals;
+    }
+
+    private boolean __hashCodeCalc = false;
+    public synchronized int hashCode() {
+        if (__hashCodeCalc) {
+            return 0;
+        }
+        __hashCodeCalc = true;
+        int _hashCode = 1;
+        if (getStatus() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getStatus());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getStatus(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getTotalRecords() != null) {
+            _hashCode += getTotalRecords().hashCode();
+        }
+        if (getPageSize() != null) {
+            _hashCode += getPageSize().hashCode();
+        }
+        if (getTotalPages() != null) {
+            _hashCode += getTotalPages().hashCode();
+        }
+        if (getPageIndex() != null) {
+            _hashCode += getPageIndex().hashCode();
+        }
+        if (getSearchId() != null) {
+            _hashCode += getSearchId().hashCode();
+        }
+        if (getRecordList() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getRecordList());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getRecordList(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getSearchRowList() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getSearchRowList());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getSearchRowList(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        __hashCodeCalc = false;
+        return _hashCode;
+    }
+
+    // Type metadata
+    private static org.apache.axis.description.TypeDesc typeDesc =
+        new org.apache.axis.description.TypeDesc(SearchResult.class, true);
+
+    static {
+        typeDesc.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchResult"));
+        org.apache.axis.description.ElementDesc elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("status");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "status"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "Status"));
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("totalRecords");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "totalRecords"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("pageSize");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "pageSize"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("totalPages");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "totalPages"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("pageIndex");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "pageIndex"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("searchId");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "searchId"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("recordList");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "recordList"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordList"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("searchRowList");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "searchRowList"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchRowList"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+    }
+
+    /**
+     * Return type metadata object
+     */
+    public static org.apache.axis.description.TypeDesc getTypeDesc() {
+        return typeDesc;
+    }
+
+    /**
+     * Get Custom Serializer
+     */
+    public static org.apache.axis.encoding.Serializer getSerializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanSerializer(
+            _javaType, _xmlType, typeDesc);
+    }
+
+    /**
+     * Get Custom Deserializer
+     */
+    public static org.apache.axis.encoding.Deserializer getDeserializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanDeserializer(
+            _javaType, _xmlType, typeDesc);
     }
 
 }

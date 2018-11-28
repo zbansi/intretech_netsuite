@@ -1,78 +1,88 @@
+/**
+ * IssueRelationship.java
+ *
+ * This file was auto-generated from WSDL
+ * by the Apache Axis 1.4 Jul 28, 2010 (04:07:04 PDT) WSDL2Java emitter.
+ */
 
 package com.netsuite.webservices.lists.support_2018_2.types;
 
-import javax.xml.bind.annotation.XmlEnum;
-import javax.xml.bind.annotation.XmlEnumValue;
-import javax.xml.bind.annotation.XmlType;
+public class IssueRelationship implements java.io.Serializable {
+    private java.lang.String _value_;
+    private static java.util.HashMap _table_ = new java.util.HashMap();
 
-
-/**
- * <p>IssueRelationship的 Java 类。
- * 
- * <p>以下模式片段指定包含在此类中的预期内容。
- * <p>
- * <pre>
- * &lt;simpleType name="IssueRelationship">
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     &lt;enumeration value="_blocks"/>
- *     &lt;enumeration value="_dependsOn"/>
- *     &lt;enumeration value="_duplicatedBy"/>
- *     &lt;enumeration value="_duplicates"/>
- *     &lt;enumeration value="_followedUpBy"/>
- *     &lt;enumeration value="_followUpFor"/>
- *     &lt;enumeration value="_injectedBy"/>
- *     &lt;enumeration value="_injects"/>
- *     &lt;enumeration value="_isBlockedBy"/>
- *     &lt;enumeration value="_isRequiredFor"/>
- *     &lt;enumeration value="_relatedTo"/>
- *   &lt;/restriction>
- * &lt;/simpleType>
- * </pre>
- * 
- */
-@XmlType(name = "IssueRelationship", namespace = "urn:types.support_2018_2.lists.webservices.netsuite.com")
-@XmlEnum
-public enum IssueRelationship {
-
-    @XmlEnumValue("_blocks")
-    BLOCKS("_blocks"),
-    @XmlEnumValue("_dependsOn")
-    DEPENDS_ON("_dependsOn"),
-    @XmlEnumValue("_duplicatedBy")
-    DUPLICATED_BY("_duplicatedBy"),
-    @XmlEnumValue("_duplicates")
-    DUPLICATES("_duplicates"),
-    @XmlEnumValue("_followedUpBy")
-    FOLLOWED_UP_BY("_followedUpBy"),
-    @XmlEnumValue("_followUpFor")
-    FOLLOW_UP_FOR("_followUpFor"),
-    @XmlEnumValue("_injectedBy")
-    INJECTED_BY("_injectedBy"),
-    @XmlEnumValue("_injects")
-    INJECTS("_injects"),
-    @XmlEnumValue("_isBlockedBy")
-    IS_BLOCKED_BY("_isBlockedBy"),
-    @XmlEnumValue("_isRequiredFor")
-    IS_REQUIRED_FOR("_isRequiredFor"),
-    @XmlEnumValue("_relatedTo")
-    RELATED_TO("_relatedTo");
-    private final String value;
-
-    IssueRelationship(String v) {
-        value = v;
+    // Constructor
+    protected IssueRelationship(java.lang.String value) {
+        _value_ = value;
+        _table_.put(_value_,this);
     }
 
-    public String value() {
-        return value;
+    public static final java.lang.String __blocks = "_blocks";
+    public static final java.lang.String __dependsOn = "_dependsOn";
+    public static final java.lang.String __duplicatedBy = "_duplicatedBy";
+    public static final java.lang.String __duplicates = "_duplicates";
+    public static final java.lang.String __followedUpBy = "_followedUpBy";
+    public static final java.lang.String __followUpFor = "_followUpFor";
+    public static final java.lang.String __injectedBy = "_injectedBy";
+    public static final java.lang.String __injects = "_injects";
+    public static final java.lang.String __isBlockedBy = "_isBlockedBy";
+    public static final java.lang.String __isRequiredFor = "_isRequiredFor";
+    public static final java.lang.String __relatedTo = "_relatedTo";
+    public static final IssueRelationship _blocks = new IssueRelationship(__blocks);
+    public static final IssueRelationship _dependsOn = new IssueRelationship(__dependsOn);
+    public static final IssueRelationship _duplicatedBy = new IssueRelationship(__duplicatedBy);
+    public static final IssueRelationship _duplicates = new IssueRelationship(__duplicates);
+    public static final IssueRelationship _followedUpBy = new IssueRelationship(__followedUpBy);
+    public static final IssueRelationship _followUpFor = new IssueRelationship(__followUpFor);
+    public static final IssueRelationship _injectedBy = new IssueRelationship(__injectedBy);
+    public static final IssueRelationship _injects = new IssueRelationship(__injects);
+    public static final IssueRelationship _isBlockedBy = new IssueRelationship(__isBlockedBy);
+    public static final IssueRelationship _isRequiredFor = new IssueRelationship(__isRequiredFor);
+    public static final IssueRelationship _relatedTo = new IssueRelationship(__relatedTo);
+    public java.lang.String getValue() { return _value_;}
+    public static IssueRelationship fromValue(java.lang.String value)
+          throws java.lang.IllegalArgumentException {
+        IssueRelationship enumeration = (IssueRelationship)
+            _table_.get(value);
+        if (enumeration==null) throw new java.lang.IllegalArgumentException();
+        return enumeration;
     }
+    public static IssueRelationship fromString(java.lang.String value)
+          throws java.lang.IllegalArgumentException {
+        return fromValue(value);
+    }
+    public boolean equals(java.lang.Object obj) {return (obj == this);}
+    public int hashCode() { return toString().hashCode();}
+    public java.lang.String toString() { return _value_;}
+    public java.lang.Object readResolve() throws java.io.ObjectStreamException { return fromValue(_value_);}
+    public static org.apache.axis.encoding.Serializer getSerializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new org.apache.axis.encoding.ser.EnumSerializer(
+            _javaType, _xmlType);
+    }
+    public static org.apache.axis.encoding.Deserializer getDeserializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new org.apache.axis.encoding.ser.EnumDeserializer(
+            _javaType, _xmlType);
+    }
+    // Type metadata
+    private static org.apache.axis.description.TypeDesc typeDesc =
+        new org.apache.axis.description.TypeDesc(IssueRelationship.class);
 
-    public static IssueRelationship fromValue(String v) {
-        for (IssueRelationship c: IssueRelationship.values()) {
-            if (c.value.equals(v)) {
-                return c;
-            }
-        }
-        throw new IllegalArgumentException(v);
+    static {
+        typeDesc.setXmlType(new javax.xml.namespace.QName("urn:types.support_2018_2.lists.webservices.netsuite.com", "IssueRelationship"));
+    }
+    /**
+     * Return type metadata object
+     */
+    public static org.apache.axis.description.TypeDesc getTypeDesc() {
+        return typeDesc;
     }
 
 }

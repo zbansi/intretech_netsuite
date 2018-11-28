@@ -1,880 +1,1347 @@
+/**
+ * InboundShipmentSearchBasic.java
+ *
+ * This file was auto-generated from WSDL
+ * by the Apache Axis 1.4 Jul 28, 2010 (04:07:04 PDT) WSDL2Java emitter.
+ */
 
 package com.netsuite.webservices.platform.common_2018_2;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlType;
-import com.netsuite.webservices.platform.core_2018_2.SearchCustomFieldList;
-import com.netsuite.webservices.platform.core_2018_2.SearchDateField;
-import com.netsuite.webservices.platform.core_2018_2.SearchDoubleField;
-import com.netsuite.webservices.platform.core_2018_2.SearchEnumMultiSelectField;
-import com.netsuite.webservices.platform.core_2018_2.SearchLongField;
-import com.netsuite.webservices.platform.core_2018_2.SearchMultiSelectField;
-import com.netsuite.webservices.platform.core_2018_2.SearchRecordBasic;
-import com.netsuite.webservices.platform.core_2018_2.SearchStringField;
+public class InboundShipmentSearchBasic  extends com.netsuite.webservices.platform.core_2018_2.SearchRecordBasic  implements java.io.Serializable {
+    private com.netsuite.webservices.platform.core_2018_2.SearchDateField actualDeliveryDate;
 
+    private com.netsuite.webservices.platform.core_2018_2.SearchDateField actualShippingDate;
 
-/**
- * <p>InboundShipmentSearchBasic complex type的 Java 类。
- * 
- * <p>以下模式片段指定包含在此类中的预期内容。
- * 
- * <pre>
- * &lt;complexType name="InboundShipmentSearchBasic">
- *   &lt;complexContent>
- *     &lt;extension base="{urn:core_2018_2.platform.webservices.netsuite.com}SearchRecordBasic">
- *       &lt;sequence>
- *         &lt;element name="actualDeliveryDate" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchDateField" minOccurs="0"/>
- *         &lt;element name="actualShippingDate" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchDateField" minOccurs="0"/>
- *         &lt;element name="billOfLading" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchStringField" minOccurs="0"/>
- *         &lt;element name="createdDate" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchDateField" minOccurs="0"/>
- *         &lt;element name="currency" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchMultiSelectField" minOccurs="0"/>
- *         &lt;element name="description" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchStringField" minOccurs="0"/>
- *         &lt;element name="expectedDeliveryDate" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchDateField" minOccurs="0"/>
- *         &lt;element name="expectedRate" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchDoubleField" minOccurs="0"/>
- *         &lt;element name="expectedShippingDate" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchDateField" minOccurs="0"/>
- *         &lt;element name="externalDocumentNumber" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchMultiSelectField" minOccurs="0"/>
- *         &lt;element name="externalId" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchMultiSelectField" minOccurs="0"/>
- *         &lt;element name="externalIdString" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchStringField" minOccurs="0"/>
- *         &lt;element name="incoterm" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchMultiSelectField" minOccurs="0"/>
- *         &lt;element name="internalId" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchMultiSelectField" minOccurs="0"/>
- *         &lt;element name="internalIdNumber" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchLongField" minOccurs="0"/>
- *         &lt;element name="item" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchMultiSelectField" minOccurs="0"/>
- *         &lt;element name="memo" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchStringField" minOccurs="0"/>
- *         &lt;element name="poAmount" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchDoubleField" minOccurs="0"/>
- *         &lt;element name="poRate" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchDoubleField" minOccurs="0"/>
- *         &lt;element name="purchaseOrder" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchMultiSelectField" minOccurs="0"/>
- *         &lt;element name="quantityBilled" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchDoubleField" minOccurs="0"/>
- *         &lt;element name="quantityExpected" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchDoubleField" minOccurs="0"/>
- *         &lt;element name="quantityReceived" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchDoubleField" minOccurs="0"/>
- *         &lt;element name="quantityRemaining" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchDoubleField" minOccurs="0"/>
- *         &lt;element name="receivingLocation" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchMultiSelectField" minOccurs="0"/>
- *         &lt;element name="shipmentNumber" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchMultiSelectField" minOccurs="0"/>
- *         &lt;element name="status" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchEnumMultiSelectField" minOccurs="0"/>
- *         &lt;element name="unit" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchMultiSelectField" minOccurs="0"/>
- *         &lt;element name="vendor" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchMultiSelectField" minOccurs="0"/>
- *         &lt;element name="vesselNumber" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchStringField" minOccurs="0"/>
- *         &lt;element name="customFieldList" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchCustomFieldList" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/extension>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
- */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "InboundShipmentSearchBasic", propOrder = {
-    "actualDeliveryDate",
-    "actualShippingDate",
-    "billOfLading",
-    "createdDate",
-    "currency",
-    "description",
-    "expectedDeliveryDate",
-    "expectedRate",
-    "expectedShippingDate",
-    "externalDocumentNumber",
-    "externalId",
-    "externalIdString",
-    "incoterm",
-    "internalId",
-    "internalIdNumber",
-    "item",
-    "memo",
-    "poAmount",
-    "poRate",
-    "purchaseOrder",
-    "quantityBilled",
-    "quantityExpected",
-    "quantityReceived",
-    "quantityRemaining",
-    "receivingLocation",
-    "shipmentNumber",
-    "status",
-    "unit",
-    "vendor",
-    "vesselNumber",
-    "customFieldList"
-})
-public class InboundShipmentSearchBasic
-    extends SearchRecordBasic
-{
+    private com.netsuite.webservices.platform.core_2018_2.SearchStringField billOfLading;
 
-    protected SearchDateField actualDeliveryDate;
-    protected SearchDateField actualShippingDate;
-    protected SearchStringField billOfLading;
-    protected SearchDateField createdDate;
-    protected SearchMultiSelectField currency;
-    protected SearchStringField description;
-    protected SearchDateField expectedDeliveryDate;
-    protected SearchDoubleField expectedRate;
-    protected SearchDateField expectedShippingDate;
-    protected SearchMultiSelectField externalDocumentNumber;
-    protected SearchMultiSelectField externalId;
-    protected SearchStringField externalIdString;
-    protected SearchMultiSelectField incoterm;
-    protected SearchMultiSelectField internalId;
-    protected SearchLongField internalIdNumber;
-    protected SearchMultiSelectField item;
-    protected SearchStringField memo;
-    protected SearchDoubleField poAmount;
-    protected SearchDoubleField poRate;
-    protected SearchMultiSelectField purchaseOrder;
-    protected SearchDoubleField quantityBilled;
-    protected SearchDoubleField quantityExpected;
-    protected SearchDoubleField quantityReceived;
-    protected SearchDoubleField quantityRemaining;
-    protected SearchMultiSelectField receivingLocation;
-    protected SearchMultiSelectField shipmentNumber;
-    protected SearchEnumMultiSelectField status;
-    protected SearchMultiSelectField unit;
-    protected SearchMultiSelectField vendor;
-    protected SearchStringField vesselNumber;
-    protected SearchCustomFieldList customFieldList;
+    private com.netsuite.webservices.platform.core_2018_2.SearchDateField createdDate;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef[] currency;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchStringField description;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchDateField expectedDeliveryDate;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchDoubleField expectedRate;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchDateField expectedShippingDate;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef[] externalDocumentNumber;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef[] externalId;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchStringField externalIdString;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef[] incoterm;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef[] internalId;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchLongField internalIdNumber;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef[] item;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchStringField memo;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchDoubleField poAmount;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchDoubleField poRate;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef[] purchaseOrder;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchDoubleField quantityBilled;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchDoubleField quantityExpected;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchDoubleField quantityReceived;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchDoubleField quantityRemaining;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef[] receivingLocation;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef[] shipmentNumber;
+
+    private java.lang.String[] status;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef[] unit;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef[] vendor;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchStringField vesselNumber;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchCustomField[] customFieldList;
+
+    public InboundShipmentSearchBasic() {
+    }
+
+    public InboundShipmentSearchBasic(
+           com.netsuite.webservices.platform.core_2018_2.SearchDateField actualDeliveryDate,
+           com.netsuite.webservices.platform.core_2018_2.SearchDateField actualShippingDate,
+           com.netsuite.webservices.platform.core_2018_2.SearchStringField billOfLading,
+           com.netsuite.webservices.platform.core_2018_2.SearchDateField createdDate,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef[] currency,
+           com.netsuite.webservices.platform.core_2018_2.SearchStringField description,
+           com.netsuite.webservices.platform.core_2018_2.SearchDateField expectedDeliveryDate,
+           com.netsuite.webservices.platform.core_2018_2.SearchDoubleField expectedRate,
+           com.netsuite.webservices.platform.core_2018_2.SearchDateField expectedShippingDate,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef[] externalDocumentNumber,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef[] externalId,
+           com.netsuite.webservices.platform.core_2018_2.SearchStringField externalIdString,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef[] incoterm,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef[] internalId,
+           com.netsuite.webservices.platform.core_2018_2.SearchLongField internalIdNumber,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef[] item,
+           com.netsuite.webservices.platform.core_2018_2.SearchStringField memo,
+           com.netsuite.webservices.platform.core_2018_2.SearchDoubleField poAmount,
+           com.netsuite.webservices.platform.core_2018_2.SearchDoubleField poRate,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef[] purchaseOrder,
+           com.netsuite.webservices.platform.core_2018_2.SearchDoubleField quantityBilled,
+           com.netsuite.webservices.platform.core_2018_2.SearchDoubleField quantityExpected,
+           com.netsuite.webservices.platform.core_2018_2.SearchDoubleField quantityReceived,
+           com.netsuite.webservices.platform.core_2018_2.SearchDoubleField quantityRemaining,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef[] receivingLocation,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef[] shipmentNumber,
+           java.lang.String[] status,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef[] unit,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef[] vendor,
+           com.netsuite.webservices.platform.core_2018_2.SearchStringField vesselNumber,
+           com.netsuite.webservices.platform.core_2018_2.SearchCustomField[] customFieldList) {
+        this.actualDeliveryDate = actualDeliveryDate;
+        this.actualShippingDate = actualShippingDate;
+        this.billOfLading = billOfLading;
+        this.createdDate = createdDate;
+        this.currency = currency;
+        this.description = description;
+        this.expectedDeliveryDate = expectedDeliveryDate;
+        this.expectedRate = expectedRate;
+        this.expectedShippingDate = expectedShippingDate;
+        this.externalDocumentNumber = externalDocumentNumber;
+        this.externalId = externalId;
+        this.externalIdString = externalIdString;
+        this.incoterm = incoterm;
+        this.internalId = internalId;
+        this.internalIdNumber = internalIdNumber;
+        this.item = item;
+        this.memo = memo;
+        this.poAmount = poAmount;
+        this.poRate = poRate;
+        this.purchaseOrder = purchaseOrder;
+        this.quantityBilled = quantityBilled;
+        this.quantityExpected = quantityExpected;
+        this.quantityReceived = quantityReceived;
+        this.quantityRemaining = quantityRemaining;
+        this.receivingLocation = receivingLocation;
+        this.shipmentNumber = shipmentNumber;
+        this.status = status;
+        this.unit = unit;
+        this.vendor = vendor;
+        this.vesselNumber = vesselNumber;
+        this.customFieldList = customFieldList;
+    }
+
 
     /**
-     * 获取actualDeliveryDate属性的值。
+     * Gets the actualDeliveryDate value for this InboundShipmentSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchDateField }
-     *     
+     * @return actualDeliveryDate
      */
-    public SearchDateField getActualDeliveryDate() {
+    public com.netsuite.webservices.platform.core_2018_2.SearchDateField getActualDeliveryDate() {
         return actualDeliveryDate;
     }
 
-    /**
-     * 设置actualDeliveryDate属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchDateField }
-     *     
-     */
-    public void setActualDeliveryDate(SearchDateField value) {
-        this.actualDeliveryDate = value;
-    }
 
     /**
-     * 获取actualShippingDate属性的值。
+     * Sets the actualDeliveryDate value for this InboundShipmentSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchDateField }
-     *     
+     * @param actualDeliveryDate
      */
-    public SearchDateField getActualShippingDate() {
+    public void setActualDeliveryDate(com.netsuite.webservices.platform.core_2018_2.SearchDateField actualDeliveryDate) {
+        this.actualDeliveryDate = actualDeliveryDate;
+    }
+
+
+    /**
+     * Gets the actualShippingDate value for this InboundShipmentSearchBasic.
+     * 
+     * @return actualShippingDate
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchDateField getActualShippingDate() {
         return actualShippingDate;
     }
 
-    /**
-     * 设置actualShippingDate属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchDateField }
-     *     
-     */
-    public void setActualShippingDate(SearchDateField value) {
-        this.actualShippingDate = value;
-    }
 
     /**
-     * 获取billOfLading属性的值。
+     * Sets the actualShippingDate value for this InboundShipmentSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchStringField }
-     *     
+     * @param actualShippingDate
      */
-    public SearchStringField getBillOfLading() {
+    public void setActualShippingDate(com.netsuite.webservices.platform.core_2018_2.SearchDateField actualShippingDate) {
+        this.actualShippingDate = actualShippingDate;
+    }
+
+
+    /**
+     * Gets the billOfLading value for this InboundShipmentSearchBasic.
+     * 
+     * @return billOfLading
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchStringField getBillOfLading() {
         return billOfLading;
     }
 
-    /**
-     * 设置billOfLading属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchStringField }
-     *     
-     */
-    public void setBillOfLading(SearchStringField value) {
-        this.billOfLading = value;
-    }
 
     /**
-     * 获取createdDate属性的值。
+     * Sets the billOfLading value for this InboundShipmentSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchDateField }
-     *     
+     * @param billOfLading
      */
-    public SearchDateField getCreatedDate() {
+    public void setBillOfLading(com.netsuite.webservices.platform.core_2018_2.SearchStringField billOfLading) {
+        this.billOfLading = billOfLading;
+    }
+
+
+    /**
+     * Gets the createdDate value for this InboundShipmentSearchBasic.
+     * 
+     * @return createdDate
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchDateField getCreatedDate() {
         return createdDate;
     }
 
-    /**
-     * 设置createdDate属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchDateField }
-     *     
-     */
-    public void setCreatedDate(SearchDateField value) {
-        this.createdDate = value;
-    }
 
     /**
-     * 获取currency属性的值。
+     * Sets the createdDate value for this InboundShipmentSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchMultiSelectField }
-     *     
+     * @param createdDate
      */
-    public SearchMultiSelectField getCurrency() {
+    public void setCreatedDate(com.netsuite.webservices.platform.core_2018_2.SearchDateField createdDate) {
+        this.createdDate = createdDate;
+    }
+
+
+    /**
+     * Gets the currency value for this InboundShipmentSearchBasic.
+     * 
+     * @return currency
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef[] getCurrency() {
         return currency;
     }
 
-    /**
-     * 设置currency属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchMultiSelectField }
-     *     
-     */
-    public void setCurrency(SearchMultiSelectField value) {
-        this.currency = value;
-    }
 
     /**
-     * 获取description属性的值。
+     * Sets the currency value for this InboundShipmentSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchStringField }
-     *     
+     * @param currency
      */
-    public SearchStringField getDescription() {
+    public void setCurrency(com.netsuite.webservices.platform.core_2018_2.RecordRef[] currency) {
+        this.currency = currency;
+    }
+
+
+    /**
+     * Gets the description value for this InboundShipmentSearchBasic.
+     * 
+     * @return description
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchStringField getDescription() {
         return description;
     }
 
-    /**
-     * 设置description属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchStringField }
-     *     
-     */
-    public void setDescription(SearchStringField value) {
-        this.description = value;
-    }
 
     /**
-     * 获取expectedDeliveryDate属性的值。
+     * Sets the description value for this InboundShipmentSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchDateField }
-     *     
+     * @param description
      */
-    public SearchDateField getExpectedDeliveryDate() {
+    public void setDescription(com.netsuite.webservices.platform.core_2018_2.SearchStringField description) {
+        this.description = description;
+    }
+
+
+    /**
+     * Gets the expectedDeliveryDate value for this InboundShipmentSearchBasic.
+     * 
+     * @return expectedDeliveryDate
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchDateField getExpectedDeliveryDate() {
         return expectedDeliveryDate;
     }
 
-    /**
-     * 设置expectedDeliveryDate属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchDateField }
-     *     
-     */
-    public void setExpectedDeliveryDate(SearchDateField value) {
-        this.expectedDeliveryDate = value;
-    }
 
     /**
-     * 获取expectedRate属性的值。
+     * Sets the expectedDeliveryDate value for this InboundShipmentSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchDoubleField }
-     *     
+     * @param expectedDeliveryDate
      */
-    public SearchDoubleField getExpectedRate() {
+    public void setExpectedDeliveryDate(com.netsuite.webservices.platform.core_2018_2.SearchDateField expectedDeliveryDate) {
+        this.expectedDeliveryDate = expectedDeliveryDate;
+    }
+
+
+    /**
+     * Gets the expectedRate value for this InboundShipmentSearchBasic.
+     * 
+     * @return expectedRate
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchDoubleField getExpectedRate() {
         return expectedRate;
     }
 
-    /**
-     * 设置expectedRate属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchDoubleField }
-     *     
-     */
-    public void setExpectedRate(SearchDoubleField value) {
-        this.expectedRate = value;
-    }
 
     /**
-     * 获取expectedShippingDate属性的值。
+     * Sets the expectedRate value for this InboundShipmentSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchDateField }
-     *     
+     * @param expectedRate
      */
-    public SearchDateField getExpectedShippingDate() {
+    public void setExpectedRate(com.netsuite.webservices.platform.core_2018_2.SearchDoubleField expectedRate) {
+        this.expectedRate = expectedRate;
+    }
+
+
+    /**
+     * Gets the expectedShippingDate value for this InboundShipmentSearchBasic.
+     * 
+     * @return expectedShippingDate
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchDateField getExpectedShippingDate() {
         return expectedShippingDate;
     }
 
-    /**
-     * 设置expectedShippingDate属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchDateField }
-     *     
-     */
-    public void setExpectedShippingDate(SearchDateField value) {
-        this.expectedShippingDate = value;
-    }
 
     /**
-     * 获取externalDocumentNumber属性的值。
+     * Sets the expectedShippingDate value for this InboundShipmentSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchMultiSelectField }
-     *     
+     * @param expectedShippingDate
      */
-    public SearchMultiSelectField getExternalDocumentNumber() {
+    public void setExpectedShippingDate(com.netsuite.webservices.platform.core_2018_2.SearchDateField expectedShippingDate) {
+        this.expectedShippingDate = expectedShippingDate;
+    }
+
+
+    /**
+     * Gets the externalDocumentNumber value for this InboundShipmentSearchBasic.
+     * 
+     * @return externalDocumentNumber
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef[] getExternalDocumentNumber() {
         return externalDocumentNumber;
     }
 
-    /**
-     * 设置externalDocumentNumber属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchMultiSelectField }
-     *     
-     */
-    public void setExternalDocumentNumber(SearchMultiSelectField value) {
-        this.externalDocumentNumber = value;
-    }
 
     /**
-     * 获取externalId属性的值。
+     * Sets the externalDocumentNumber value for this InboundShipmentSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchMultiSelectField }
-     *     
+     * @param externalDocumentNumber
      */
-    public SearchMultiSelectField getExternalId() {
+    public void setExternalDocumentNumber(com.netsuite.webservices.platform.core_2018_2.RecordRef[] externalDocumentNumber) {
+        this.externalDocumentNumber = externalDocumentNumber;
+    }
+
+
+    /**
+     * Gets the externalId value for this InboundShipmentSearchBasic.
+     * 
+     * @return externalId
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef[] getExternalId() {
         return externalId;
     }
 
-    /**
-     * 设置externalId属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchMultiSelectField }
-     *     
-     */
-    public void setExternalId(SearchMultiSelectField value) {
-        this.externalId = value;
-    }
 
     /**
-     * 获取externalIdString属性的值。
+     * Sets the externalId value for this InboundShipmentSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchStringField }
-     *     
+     * @param externalId
      */
-    public SearchStringField getExternalIdString() {
+    public void setExternalId(com.netsuite.webservices.platform.core_2018_2.RecordRef[] externalId) {
+        this.externalId = externalId;
+    }
+
+
+    /**
+     * Gets the externalIdString value for this InboundShipmentSearchBasic.
+     * 
+     * @return externalIdString
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchStringField getExternalIdString() {
         return externalIdString;
     }
 
-    /**
-     * 设置externalIdString属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchStringField }
-     *     
-     */
-    public void setExternalIdString(SearchStringField value) {
-        this.externalIdString = value;
-    }
 
     /**
-     * 获取incoterm属性的值。
+     * Sets the externalIdString value for this InboundShipmentSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchMultiSelectField }
-     *     
+     * @param externalIdString
      */
-    public SearchMultiSelectField getIncoterm() {
+    public void setExternalIdString(com.netsuite.webservices.platform.core_2018_2.SearchStringField externalIdString) {
+        this.externalIdString = externalIdString;
+    }
+
+
+    /**
+     * Gets the incoterm value for this InboundShipmentSearchBasic.
+     * 
+     * @return incoterm
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef[] getIncoterm() {
         return incoterm;
     }
 
-    /**
-     * 设置incoterm属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchMultiSelectField }
-     *     
-     */
-    public void setIncoterm(SearchMultiSelectField value) {
-        this.incoterm = value;
-    }
 
     /**
-     * 获取internalId属性的值。
+     * Sets the incoterm value for this InboundShipmentSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchMultiSelectField }
-     *     
+     * @param incoterm
      */
-    public SearchMultiSelectField getInternalId() {
+    public void setIncoterm(com.netsuite.webservices.platform.core_2018_2.RecordRef[] incoterm) {
+        this.incoterm = incoterm;
+    }
+
+
+    /**
+     * Gets the internalId value for this InboundShipmentSearchBasic.
+     * 
+     * @return internalId
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef[] getInternalId() {
         return internalId;
     }
 
-    /**
-     * 设置internalId属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchMultiSelectField }
-     *     
-     */
-    public void setInternalId(SearchMultiSelectField value) {
-        this.internalId = value;
-    }
 
     /**
-     * 获取internalIdNumber属性的值。
+     * Sets the internalId value for this InboundShipmentSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchLongField }
-     *     
+     * @param internalId
      */
-    public SearchLongField getInternalIdNumber() {
+    public void setInternalId(com.netsuite.webservices.platform.core_2018_2.RecordRef[] internalId) {
+        this.internalId = internalId;
+    }
+
+
+    /**
+     * Gets the internalIdNumber value for this InboundShipmentSearchBasic.
+     * 
+     * @return internalIdNumber
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchLongField getInternalIdNumber() {
         return internalIdNumber;
     }
 
-    /**
-     * 设置internalIdNumber属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchLongField }
-     *     
-     */
-    public void setInternalIdNumber(SearchLongField value) {
-        this.internalIdNumber = value;
-    }
 
     /**
-     * 获取item属性的值。
+     * Sets the internalIdNumber value for this InboundShipmentSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchMultiSelectField }
-     *     
+     * @param internalIdNumber
      */
-    public SearchMultiSelectField getItem() {
+    public void setInternalIdNumber(com.netsuite.webservices.platform.core_2018_2.SearchLongField internalIdNumber) {
+        this.internalIdNumber = internalIdNumber;
+    }
+
+
+    /**
+     * Gets the item value for this InboundShipmentSearchBasic.
+     * 
+     * @return item
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef[] getItem() {
         return item;
     }
 
-    /**
-     * 设置item属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchMultiSelectField }
-     *     
-     */
-    public void setItem(SearchMultiSelectField value) {
-        this.item = value;
-    }
 
     /**
-     * 获取memo属性的值。
+     * Sets the item value for this InboundShipmentSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchStringField }
-     *     
+     * @param item
      */
-    public SearchStringField getMemo() {
+    public void setItem(com.netsuite.webservices.platform.core_2018_2.RecordRef[] item) {
+        this.item = item;
+    }
+
+
+    /**
+     * Gets the memo value for this InboundShipmentSearchBasic.
+     * 
+     * @return memo
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchStringField getMemo() {
         return memo;
     }
 
-    /**
-     * 设置memo属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchStringField }
-     *     
-     */
-    public void setMemo(SearchStringField value) {
-        this.memo = value;
-    }
 
     /**
-     * 获取poAmount属性的值。
+     * Sets the memo value for this InboundShipmentSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchDoubleField }
-     *     
+     * @param memo
      */
-    public SearchDoubleField getPoAmount() {
+    public void setMemo(com.netsuite.webservices.platform.core_2018_2.SearchStringField memo) {
+        this.memo = memo;
+    }
+
+
+    /**
+     * Gets the poAmount value for this InboundShipmentSearchBasic.
+     * 
+     * @return poAmount
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchDoubleField getPoAmount() {
         return poAmount;
     }
 
-    /**
-     * 设置poAmount属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchDoubleField }
-     *     
-     */
-    public void setPoAmount(SearchDoubleField value) {
-        this.poAmount = value;
-    }
 
     /**
-     * 获取poRate属性的值。
+     * Sets the poAmount value for this InboundShipmentSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchDoubleField }
-     *     
+     * @param poAmount
      */
-    public SearchDoubleField getPoRate() {
+    public void setPoAmount(com.netsuite.webservices.platform.core_2018_2.SearchDoubleField poAmount) {
+        this.poAmount = poAmount;
+    }
+
+
+    /**
+     * Gets the poRate value for this InboundShipmentSearchBasic.
+     * 
+     * @return poRate
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchDoubleField getPoRate() {
         return poRate;
     }
 
-    /**
-     * 设置poRate属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchDoubleField }
-     *     
-     */
-    public void setPoRate(SearchDoubleField value) {
-        this.poRate = value;
-    }
 
     /**
-     * 获取purchaseOrder属性的值。
+     * Sets the poRate value for this InboundShipmentSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchMultiSelectField }
-     *     
+     * @param poRate
      */
-    public SearchMultiSelectField getPurchaseOrder() {
+    public void setPoRate(com.netsuite.webservices.platform.core_2018_2.SearchDoubleField poRate) {
+        this.poRate = poRate;
+    }
+
+
+    /**
+     * Gets the purchaseOrder value for this InboundShipmentSearchBasic.
+     * 
+     * @return purchaseOrder
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef[] getPurchaseOrder() {
         return purchaseOrder;
     }
 
-    /**
-     * 设置purchaseOrder属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchMultiSelectField }
-     *     
-     */
-    public void setPurchaseOrder(SearchMultiSelectField value) {
-        this.purchaseOrder = value;
-    }
 
     /**
-     * 获取quantityBilled属性的值。
+     * Sets the purchaseOrder value for this InboundShipmentSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchDoubleField }
-     *     
+     * @param purchaseOrder
      */
-    public SearchDoubleField getQuantityBilled() {
+    public void setPurchaseOrder(com.netsuite.webservices.platform.core_2018_2.RecordRef[] purchaseOrder) {
+        this.purchaseOrder = purchaseOrder;
+    }
+
+
+    /**
+     * Gets the quantityBilled value for this InboundShipmentSearchBasic.
+     * 
+     * @return quantityBilled
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchDoubleField getQuantityBilled() {
         return quantityBilled;
     }
 
-    /**
-     * 设置quantityBilled属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchDoubleField }
-     *     
-     */
-    public void setQuantityBilled(SearchDoubleField value) {
-        this.quantityBilled = value;
-    }
 
     /**
-     * 获取quantityExpected属性的值。
+     * Sets the quantityBilled value for this InboundShipmentSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchDoubleField }
-     *     
+     * @param quantityBilled
      */
-    public SearchDoubleField getQuantityExpected() {
+    public void setQuantityBilled(com.netsuite.webservices.platform.core_2018_2.SearchDoubleField quantityBilled) {
+        this.quantityBilled = quantityBilled;
+    }
+
+
+    /**
+     * Gets the quantityExpected value for this InboundShipmentSearchBasic.
+     * 
+     * @return quantityExpected
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchDoubleField getQuantityExpected() {
         return quantityExpected;
     }
 
-    /**
-     * 设置quantityExpected属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchDoubleField }
-     *     
-     */
-    public void setQuantityExpected(SearchDoubleField value) {
-        this.quantityExpected = value;
-    }
 
     /**
-     * 获取quantityReceived属性的值。
+     * Sets the quantityExpected value for this InboundShipmentSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchDoubleField }
-     *     
+     * @param quantityExpected
      */
-    public SearchDoubleField getQuantityReceived() {
+    public void setQuantityExpected(com.netsuite.webservices.platform.core_2018_2.SearchDoubleField quantityExpected) {
+        this.quantityExpected = quantityExpected;
+    }
+
+
+    /**
+     * Gets the quantityReceived value for this InboundShipmentSearchBasic.
+     * 
+     * @return quantityReceived
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchDoubleField getQuantityReceived() {
         return quantityReceived;
     }
 
-    /**
-     * 设置quantityReceived属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchDoubleField }
-     *     
-     */
-    public void setQuantityReceived(SearchDoubleField value) {
-        this.quantityReceived = value;
-    }
 
     /**
-     * 获取quantityRemaining属性的值。
+     * Sets the quantityReceived value for this InboundShipmentSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchDoubleField }
-     *     
+     * @param quantityReceived
      */
-    public SearchDoubleField getQuantityRemaining() {
+    public void setQuantityReceived(com.netsuite.webservices.platform.core_2018_2.SearchDoubleField quantityReceived) {
+        this.quantityReceived = quantityReceived;
+    }
+
+
+    /**
+     * Gets the quantityRemaining value for this InboundShipmentSearchBasic.
+     * 
+     * @return quantityRemaining
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchDoubleField getQuantityRemaining() {
         return quantityRemaining;
     }
 
-    /**
-     * 设置quantityRemaining属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchDoubleField }
-     *     
-     */
-    public void setQuantityRemaining(SearchDoubleField value) {
-        this.quantityRemaining = value;
-    }
 
     /**
-     * 获取receivingLocation属性的值。
+     * Sets the quantityRemaining value for this InboundShipmentSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchMultiSelectField }
-     *     
+     * @param quantityRemaining
      */
-    public SearchMultiSelectField getReceivingLocation() {
+    public void setQuantityRemaining(com.netsuite.webservices.platform.core_2018_2.SearchDoubleField quantityRemaining) {
+        this.quantityRemaining = quantityRemaining;
+    }
+
+
+    /**
+     * Gets the receivingLocation value for this InboundShipmentSearchBasic.
+     * 
+     * @return receivingLocation
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef[] getReceivingLocation() {
         return receivingLocation;
     }
 
-    /**
-     * 设置receivingLocation属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchMultiSelectField }
-     *     
-     */
-    public void setReceivingLocation(SearchMultiSelectField value) {
-        this.receivingLocation = value;
-    }
 
     /**
-     * 获取shipmentNumber属性的值。
+     * Sets the receivingLocation value for this InboundShipmentSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchMultiSelectField }
-     *     
+     * @param receivingLocation
      */
-    public SearchMultiSelectField getShipmentNumber() {
+    public void setReceivingLocation(com.netsuite.webservices.platform.core_2018_2.RecordRef[] receivingLocation) {
+        this.receivingLocation = receivingLocation;
+    }
+
+
+    /**
+     * Gets the shipmentNumber value for this InboundShipmentSearchBasic.
+     * 
+     * @return shipmentNumber
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef[] getShipmentNumber() {
         return shipmentNumber;
     }
 
-    /**
-     * 设置shipmentNumber属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchMultiSelectField }
-     *     
-     */
-    public void setShipmentNumber(SearchMultiSelectField value) {
-        this.shipmentNumber = value;
-    }
 
     /**
-     * 获取status属性的值。
+     * Sets the shipmentNumber value for this InboundShipmentSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchEnumMultiSelectField }
-     *     
+     * @param shipmentNumber
      */
-    public SearchEnumMultiSelectField getStatus() {
+    public void setShipmentNumber(com.netsuite.webservices.platform.core_2018_2.RecordRef[] shipmentNumber) {
+        this.shipmentNumber = shipmentNumber;
+    }
+
+
+    /**
+     * Gets the status value for this InboundShipmentSearchBasic.
+     * 
+     * @return status
+     */
+    public java.lang.String[] getStatus() {
         return status;
     }
 
-    /**
-     * 设置status属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchEnumMultiSelectField }
-     *     
-     */
-    public void setStatus(SearchEnumMultiSelectField value) {
-        this.status = value;
-    }
 
     /**
-     * 获取unit属性的值。
+     * Sets the status value for this InboundShipmentSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchMultiSelectField }
-     *     
+     * @param status
      */
-    public SearchMultiSelectField getUnit() {
+    public void setStatus(java.lang.String[] status) {
+        this.status = status;
+    }
+
+
+    /**
+     * Gets the unit value for this InboundShipmentSearchBasic.
+     * 
+     * @return unit
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef[] getUnit() {
         return unit;
     }
 
-    /**
-     * 设置unit属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchMultiSelectField }
-     *     
-     */
-    public void setUnit(SearchMultiSelectField value) {
-        this.unit = value;
-    }
 
     /**
-     * 获取vendor属性的值。
+     * Sets the unit value for this InboundShipmentSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchMultiSelectField }
-     *     
+     * @param unit
      */
-    public SearchMultiSelectField getVendor() {
+    public void setUnit(com.netsuite.webservices.platform.core_2018_2.RecordRef[] unit) {
+        this.unit = unit;
+    }
+
+
+    /**
+     * Gets the vendor value for this InboundShipmentSearchBasic.
+     * 
+     * @return vendor
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef[] getVendor() {
         return vendor;
     }
 
-    /**
-     * 设置vendor属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchMultiSelectField }
-     *     
-     */
-    public void setVendor(SearchMultiSelectField value) {
-        this.vendor = value;
-    }
 
     /**
-     * 获取vesselNumber属性的值。
+     * Sets the vendor value for this InboundShipmentSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchStringField }
-     *     
+     * @param vendor
      */
-    public SearchStringField getVesselNumber() {
+    public void setVendor(com.netsuite.webservices.platform.core_2018_2.RecordRef[] vendor) {
+        this.vendor = vendor;
+    }
+
+
+    /**
+     * Gets the vesselNumber value for this InboundShipmentSearchBasic.
+     * 
+     * @return vesselNumber
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchStringField getVesselNumber() {
         return vesselNumber;
     }
 
-    /**
-     * 设置vesselNumber属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchStringField }
-     *     
-     */
-    public void setVesselNumber(SearchStringField value) {
-        this.vesselNumber = value;
-    }
 
     /**
-     * 获取customFieldList属性的值。
+     * Sets the vesselNumber value for this InboundShipmentSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchCustomFieldList }
-     *     
+     * @param vesselNumber
      */
-    public SearchCustomFieldList getCustomFieldList() {
+    public void setVesselNumber(com.netsuite.webservices.platform.core_2018_2.SearchStringField vesselNumber) {
+        this.vesselNumber = vesselNumber;
+    }
+
+
+    /**
+     * Gets the customFieldList value for this InboundShipmentSearchBasic.
+     * 
+     * @return customFieldList
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchCustomField[] getCustomFieldList() {
         return customFieldList;
     }
 
+
     /**
-     * 设置customFieldList属性的值。
+     * Sets the customFieldList value for this InboundShipmentSearchBasic.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchCustomFieldList }
-     *     
+     * @param customFieldList
      */
-    public void setCustomFieldList(SearchCustomFieldList value) {
-        this.customFieldList = value;
+    public void setCustomFieldList(com.netsuite.webservices.platform.core_2018_2.SearchCustomField[] customFieldList) {
+        this.customFieldList = customFieldList;
+    }
+
+    private java.lang.Object __equalsCalc = null;
+    public synchronized boolean equals(java.lang.Object obj) {
+        if (!(obj instanceof InboundShipmentSearchBasic)) return false;
+        InboundShipmentSearchBasic other = (InboundShipmentSearchBasic) obj;
+        if (obj == null) return false;
+        if (this == obj) return true;
+        if (__equalsCalc != null) {
+            return (__equalsCalc == obj);
+        }
+        __equalsCalc = obj;
+        boolean _equals;
+        _equals = super.equals(obj) && 
+            ((this.actualDeliveryDate==null && other.getActualDeliveryDate()==null) || 
+             (this.actualDeliveryDate!=null &&
+              this.actualDeliveryDate.equals(other.getActualDeliveryDate()))) &&
+            ((this.actualShippingDate==null && other.getActualShippingDate()==null) || 
+             (this.actualShippingDate!=null &&
+              this.actualShippingDate.equals(other.getActualShippingDate()))) &&
+            ((this.billOfLading==null && other.getBillOfLading()==null) || 
+             (this.billOfLading!=null &&
+              this.billOfLading.equals(other.getBillOfLading()))) &&
+            ((this.createdDate==null && other.getCreatedDate()==null) || 
+             (this.createdDate!=null &&
+              this.createdDate.equals(other.getCreatedDate()))) &&
+            ((this.currency==null && other.getCurrency()==null) || 
+             (this.currency!=null &&
+              java.util.Arrays.equals(this.currency, other.getCurrency()))) &&
+            ((this.description==null && other.getDescription()==null) || 
+             (this.description!=null &&
+              this.description.equals(other.getDescription()))) &&
+            ((this.expectedDeliveryDate==null && other.getExpectedDeliveryDate()==null) || 
+             (this.expectedDeliveryDate!=null &&
+              this.expectedDeliveryDate.equals(other.getExpectedDeliveryDate()))) &&
+            ((this.expectedRate==null && other.getExpectedRate()==null) || 
+             (this.expectedRate!=null &&
+              this.expectedRate.equals(other.getExpectedRate()))) &&
+            ((this.expectedShippingDate==null && other.getExpectedShippingDate()==null) || 
+             (this.expectedShippingDate!=null &&
+              this.expectedShippingDate.equals(other.getExpectedShippingDate()))) &&
+            ((this.externalDocumentNumber==null && other.getExternalDocumentNumber()==null) || 
+             (this.externalDocumentNumber!=null &&
+              java.util.Arrays.equals(this.externalDocumentNumber, other.getExternalDocumentNumber()))) &&
+            ((this.externalId==null && other.getExternalId()==null) || 
+             (this.externalId!=null &&
+              java.util.Arrays.equals(this.externalId, other.getExternalId()))) &&
+            ((this.externalIdString==null && other.getExternalIdString()==null) || 
+             (this.externalIdString!=null &&
+              this.externalIdString.equals(other.getExternalIdString()))) &&
+            ((this.incoterm==null && other.getIncoterm()==null) || 
+             (this.incoterm!=null &&
+              java.util.Arrays.equals(this.incoterm, other.getIncoterm()))) &&
+            ((this.internalId==null && other.getInternalId()==null) || 
+             (this.internalId!=null &&
+              java.util.Arrays.equals(this.internalId, other.getInternalId()))) &&
+            ((this.internalIdNumber==null && other.getInternalIdNumber()==null) || 
+             (this.internalIdNumber!=null &&
+              this.internalIdNumber.equals(other.getInternalIdNumber()))) &&
+            ((this.item==null && other.getItem()==null) || 
+             (this.item!=null &&
+              java.util.Arrays.equals(this.item, other.getItem()))) &&
+            ((this.memo==null && other.getMemo()==null) || 
+             (this.memo!=null &&
+              this.memo.equals(other.getMemo()))) &&
+            ((this.poAmount==null && other.getPoAmount()==null) || 
+             (this.poAmount!=null &&
+              this.poAmount.equals(other.getPoAmount()))) &&
+            ((this.poRate==null && other.getPoRate()==null) || 
+             (this.poRate!=null &&
+              this.poRate.equals(other.getPoRate()))) &&
+            ((this.purchaseOrder==null && other.getPurchaseOrder()==null) || 
+             (this.purchaseOrder!=null &&
+              java.util.Arrays.equals(this.purchaseOrder, other.getPurchaseOrder()))) &&
+            ((this.quantityBilled==null && other.getQuantityBilled()==null) || 
+             (this.quantityBilled!=null &&
+              this.quantityBilled.equals(other.getQuantityBilled()))) &&
+            ((this.quantityExpected==null && other.getQuantityExpected()==null) || 
+             (this.quantityExpected!=null &&
+              this.quantityExpected.equals(other.getQuantityExpected()))) &&
+            ((this.quantityReceived==null && other.getQuantityReceived()==null) || 
+             (this.quantityReceived!=null &&
+              this.quantityReceived.equals(other.getQuantityReceived()))) &&
+            ((this.quantityRemaining==null && other.getQuantityRemaining()==null) || 
+             (this.quantityRemaining!=null &&
+              this.quantityRemaining.equals(other.getQuantityRemaining()))) &&
+            ((this.receivingLocation==null && other.getReceivingLocation()==null) || 
+             (this.receivingLocation!=null &&
+              java.util.Arrays.equals(this.receivingLocation, other.getReceivingLocation()))) &&
+            ((this.shipmentNumber==null && other.getShipmentNumber()==null) || 
+             (this.shipmentNumber!=null &&
+              java.util.Arrays.equals(this.shipmentNumber, other.getShipmentNumber()))) &&
+            ((this.status==null && other.getStatus()==null) || 
+             (this.status!=null &&
+              java.util.Arrays.equals(this.status, other.getStatus()))) &&
+            ((this.unit==null && other.getUnit()==null) || 
+             (this.unit!=null &&
+              java.util.Arrays.equals(this.unit, other.getUnit()))) &&
+            ((this.vendor==null && other.getVendor()==null) || 
+             (this.vendor!=null &&
+              java.util.Arrays.equals(this.vendor, other.getVendor()))) &&
+            ((this.vesselNumber==null && other.getVesselNumber()==null) || 
+             (this.vesselNumber!=null &&
+              this.vesselNumber.equals(other.getVesselNumber()))) &&
+            ((this.customFieldList==null && other.getCustomFieldList()==null) || 
+             (this.customFieldList!=null &&
+              java.util.Arrays.equals(this.customFieldList, other.getCustomFieldList())));
+        __equalsCalc = null;
+        return _equals;
+    }
+
+    private boolean __hashCodeCalc = false;
+    public synchronized int hashCode() {
+        if (__hashCodeCalc) {
+            return 0;
+        }
+        __hashCodeCalc = true;
+        int _hashCode = super.hashCode();
+        if (getActualDeliveryDate() != null) {
+            _hashCode += getActualDeliveryDate().hashCode();
+        }
+        if (getActualShippingDate() != null) {
+            _hashCode += getActualShippingDate().hashCode();
+        }
+        if (getBillOfLading() != null) {
+            _hashCode += getBillOfLading().hashCode();
+        }
+        if (getCreatedDate() != null) {
+            _hashCode += getCreatedDate().hashCode();
+        }
+        if (getCurrency() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getCurrency());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getCurrency(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getDescription() != null) {
+            _hashCode += getDescription().hashCode();
+        }
+        if (getExpectedDeliveryDate() != null) {
+            _hashCode += getExpectedDeliveryDate().hashCode();
+        }
+        if (getExpectedRate() != null) {
+            _hashCode += getExpectedRate().hashCode();
+        }
+        if (getExpectedShippingDate() != null) {
+            _hashCode += getExpectedShippingDate().hashCode();
+        }
+        if (getExternalDocumentNumber() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getExternalDocumentNumber());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getExternalDocumentNumber(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getExternalId() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getExternalId());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getExternalId(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getExternalIdString() != null) {
+            _hashCode += getExternalIdString().hashCode();
+        }
+        if (getIncoterm() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getIncoterm());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getIncoterm(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getInternalId() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getInternalId());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getInternalId(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getInternalIdNumber() != null) {
+            _hashCode += getInternalIdNumber().hashCode();
+        }
+        if (getItem() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getItem());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getItem(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getMemo() != null) {
+            _hashCode += getMemo().hashCode();
+        }
+        if (getPoAmount() != null) {
+            _hashCode += getPoAmount().hashCode();
+        }
+        if (getPoRate() != null) {
+            _hashCode += getPoRate().hashCode();
+        }
+        if (getPurchaseOrder() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getPurchaseOrder());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getPurchaseOrder(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getQuantityBilled() != null) {
+            _hashCode += getQuantityBilled().hashCode();
+        }
+        if (getQuantityExpected() != null) {
+            _hashCode += getQuantityExpected().hashCode();
+        }
+        if (getQuantityReceived() != null) {
+            _hashCode += getQuantityReceived().hashCode();
+        }
+        if (getQuantityRemaining() != null) {
+            _hashCode += getQuantityRemaining().hashCode();
+        }
+        if (getReceivingLocation() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getReceivingLocation());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getReceivingLocation(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getShipmentNumber() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getShipmentNumber());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getShipmentNumber(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getStatus() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getStatus());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getStatus(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getUnit() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getUnit());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getUnit(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getVendor() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getVendor());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getVendor(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getVesselNumber() != null) {
+            _hashCode += getVesselNumber().hashCode();
+        }
+        if (getCustomFieldList() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getCustomFieldList());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getCustomFieldList(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        __hashCodeCalc = false;
+        return _hashCode;
+    }
+
+    // Type metadata
+    private static org.apache.axis.description.TypeDesc typeDesc =
+        new org.apache.axis.description.TypeDesc(InboundShipmentSearchBasic.class, true);
+
+    static {
+        typeDesc.setXmlType(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "InboundShipmentSearchBasic"));
+        org.apache.axis.description.ElementDesc elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("actualDeliveryDate");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "actualDeliveryDate"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchDateField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("actualShippingDate");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "actualShippingDate"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchDateField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("billOfLading");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "billOfLading"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchStringField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("createdDate");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "createdDate"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchDateField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("currency");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "currency"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "searchValue"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("description");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "description"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchStringField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("expectedDeliveryDate");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "expectedDeliveryDate"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchDateField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("expectedRate");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "expectedRate"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchDoubleField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("expectedShippingDate");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "expectedShippingDate"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchDateField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("externalDocumentNumber");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "externalDocumentNumber"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "searchValue"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("externalId");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "externalId"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "searchValue"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("externalIdString");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "externalIdString"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchStringField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("incoterm");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "incoterm"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "searchValue"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("internalId");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "internalId"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "searchValue"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("internalIdNumber");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "internalIdNumber"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchLongField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("item");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "item"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "searchValue"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("memo");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "memo"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchStringField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("poAmount");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "poAmount"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchDoubleField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("poRate");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "poRate"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchDoubleField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("purchaseOrder");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "purchaseOrder"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "searchValue"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("quantityBilled");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "quantityBilled"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchDoubleField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("quantityExpected");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "quantityExpected"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchDoubleField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("quantityReceived");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "quantityReceived"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchDoubleField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("quantityRemaining");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "quantityRemaining"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchDoubleField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("receivingLocation");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "receivingLocation"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "searchValue"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("shipmentNumber");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "shipmentNumber"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "searchValue"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("status");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "status"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "searchValue"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("unit");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "unit"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "searchValue"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("vendor");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "vendor"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "searchValue"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("vesselNumber");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "vesselNumber"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchStringField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("customFieldList");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "customFieldList"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchCustomField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "customField"));
+        typeDesc.addFieldDesc(elemField);
+    }
+
+    /**
+     * Return type metadata object
+     */
+    public static org.apache.axis.description.TypeDesc getTypeDesc() {
+        return typeDesc;
+    }
+
+    /**
+     * Get Custom Serializer
+     */
+    public static org.apache.axis.encoding.Serializer getSerializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanSerializer(
+            _javaType, _xmlType, typeDesc);
+    }
+
+    /**
+     * Get Custom Deserializer
+     */
+    public static org.apache.axis.encoding.Deserializer getDeserializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanDeserializer(
+            _javaType, _xmlType, typeDesc);
     }
 
 }

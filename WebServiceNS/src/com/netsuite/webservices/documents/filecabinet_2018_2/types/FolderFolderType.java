@@ -1,96 +1,100 @@
+/**
+ * FolderFolderType.java
+ *
+ * This file was auto-generated from WSDL
+ * by the Apache Axis 1.4 Jul 28, 2010 (04:07:04 PDT) WSDL2Java emitter.
+ */
 
 package com.netsuite.webservices.documents.filecabinet_2018_2.types;
 
-import javax.xml.bind.annotation.XmlEnum;
-import javax.xml.bind.annotation.XmlEnumValue;
-import javax.xml.bind.annotation.XmlType;
+public class FolderFolderType implements java.io.Serializable {
+    private java.lang.String _value_;
+    private static java.util.HashMap _table_ = new java.util.HashMap();
 
-
-/**
- * <p>FolderFolderType的 Java 类。
- * 
- * <p>以下模式片段指定包含在此类中的预期内容。
- * <p>
- * <pre>
- * &lt;simpleType name="FolderFolderType">
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     &lt;enumeration value="_appPackages"/>
- *     &lt;enumeration value="_attachmentsReceived"/>
- *     &lt;enumeration value="_attachmentsSent"/>
- *     &lt;enumeration value="_certificates"/>
- *     &lt;enumeration value="_documentsAndFiles"/>
- *     &lt;enumeration value="_emailTemplates"/>
- *     &lt;enumeration value="_faxTemplates"/>
- *     &lt;enumeration value="_images"/>
- *     &lt;enumeration value="_letterTemplates"/>
- *     &lt;enumeration value="_mailMerge"/>
- *     &lt;enumeration value="_marketingTemplates"/>
- *     &lt;enumeration value="_pdfTemplates"/>
- *     &lt;enumeration value="_suitebundles"/>
- *     &lt;enumeration value="_suitecommerceAdvancedSiteTemplates"/>
- *     &lt;enumeration value="_suitescripts"/>
- *     &lt;enumeration value="_templates"/>
- *     &lt;enumeration value="_webSiteHostingFiles"/>
- *   &lt;/restriction>
- * &lt;/simpleType>
- * </pre>
- * 
- */
-@XmlType(name = "FolderFolderType", namespace = "urn:types.filecabinet_2018_2.documents.webservices.netsuite.com")
-@XmlEnum
-public enum FolderFolderType {
-
-    @XmlEnumValue("_appPackages")
-    APP_PACKAGES("_appPackages"),
-    @XmlEnumValue("_attachmentsReceived")
-    ATTACHMENTS_RECEIVED("_attachmentsReceived"),
-    @XmlEnumValue("_attachmentsSent")
-    ATTACHMENTS_SENT("_attachmentsSent"),
-    @XmlEnumValue("_certificates")
-    CERTIFICATES("_certificates"),
-    @XmlEnumValue("_documentsAndFiles")
-    DOCUMENTS_AND_FILES("_documentsAndFiles"),
-    @XmlEnumValue("_emailTemplates")
-    EMAIL_TEMPLATES("_emailTemplates"),
-    @XmlEnumValue("_faxTemplates")
-    FAX_TEMPLATES("_faxTemplates"),
-    @XmlEnumValue("_images")
-    IMAGES("_images"),
-    @XmlEnumValue("_letterTemplates")
-    LETTER_TEMPLATES("_letterTemplates"),
-    @XmlEnumValue("_mailMerge")
-    MAIL_MERGE("_mailMerge"),
-    @XmlEnumValue("_marketingTemplates")
-    MARKETING_TEMPLATES("_marketingTemplates"),
-    @XmlEnumValue("_pdfTemplates")
-    PDF_TEMPLATES("_pdfTemplates"),
-    @XmlEnumValue("_suitebundles")
-    SUITEBUNDLES("_suitebundles"),
-    @XmlEnumValue("_suitecommerceAdvancedSiteTemplates")
-    SUITECOMMERCE_ADVANCED_SITE_TEMPLATES("_suitecommerceAdvancedSiteTemplates"),
-    @XmlEnumValue("_suitescripts")
-    SUITESCRIPTS("_suitescripts"),
-    @XmlEnumValue("_templates")
-    TEMPLATES("_templates"),
-    @XmlEnumValue("_webSiteHostingFiles")
-    WEB_SITE_HOSTING_FILES("_webSiteHostingFiles");
-    private final String value;
-
-    FolderFolderType(String v) {
-        value = v;
+    // Constructor
+    protected FolderFolderType(java.lang.String value) {
+        _value_ = value;
+        _table_.put(_value_,this);
     }
 
-    public String value() {
-        return value;
+    public static final java.lang.String __appPackages = "_appPackages";
+    public static final java.lang.String __attachmentsReceived = "_attachmentsReceived";
+    public static final java.lang.String __attachmentsSent = "_attachmentsSent";
+    public static final java.lang.String __certificates = "_certificates";
+    public static final java.lang.String __documentsAndFiles = "_documentsAndFiles";
+    public static final java.lang.String __emailTemplates = "_emailTemplates";
+    public static final java.lang.String __faxTemplates = "_faxTemplates";
+    public static final java.lang.String __images = "_images";
+    public static final java.lang.String __letterTemplates = "_letterTemplates";
+    public static final java.lang.String __mailMerge = "_mailMerge";
+    public static final java.lang.String __marketingTemplates = "_marketingTemplates";
+    public static final java.lang.String __pdfTemplates = "_pdfTemplates";
+    public static final java.lang.String __suitebundles = "_suitebundles";
+    public static final java.lang.String __suitecommerceAdvancedSiteTemplates = "_suitecommerceAdvancedSiteTemplates";
+    public static final java.lang.String __suitescripts = "_suitescripts";
+    public static final java.lang.String __templates = "_templates";
+    public static final java.lang.String __webSiteHostingFiles = "_webSiteHostingFiles";
+    public static final FolderFolderType _appPackages = new FolderFolderType(__appPackages);
+    public static final FolderFolderType _attachmentsReceived = new FolderFolderType(__attachmentsReceived);
+    public static final FolderFolderType _attachmentsSent = new FolderFolderType(__attachmentsSent);
+    public static final FolderFolderType _certificates = new FolderFolderType(__certificates);
+    public static final FolderFolderType _documentsAndFiles = new FolderFolderType(__documentsAndFiles);
+    public static final FolderFolderType _emailTemplates = new FolderFolderType(__emailTemplates);
+    public static final FolderFolderType _faxTemplates = new FolderFolderType(__faxTemplates);
+    public static final FolderFolderType _images = new FolderFolderType(__images);
+    public static final FolderFolderType _letterTemplates = new FolderFolderType(__letterTemplates);
+    public static final FolderFolderType _mailMerge = new FolderFolderType(__mailMerge);
+    public static final FolderFolderType _marketingTemplates = new FolderFolderType(__marketingTemplates);
+    public static final FolderFolderType _pdfTemplates = new FolderFolderType(__pdfTemplates);
+    public static final FolderFolderType _suitebundles = new FolderFolderType(__suitebundles);
+    public static final FolderFolderType _suitecommerceAdvancedSiteTemplates = new FolderFolderType(__suitecommerceAdvancedSiteTemplates);
+    public static final FolderFolderType _suitescripts = new FolderFolderType(__suitescripts);
+    public static final FolderFolderType _templates = new FolderFolderType(__templates);
+    public static final FolderFolderType _webSiteHostingFiles = new FolderFolderType(__webSiteHostingFiles);
+    public java.lang.String getValue() { return _value_;}
+    public static FolderFolderType fromValue(java.lang.String value)
+          throws java.lang.IllegalArgumentException {
+        FolderFolderType enumeration = (FolderFolderType)
+            _table_.get(value);
+        if (enumeration==null) throw new java.lang.IllegalArgumentException();
+        return enumeration;
     }
+    public static FolderFolderType fromString(java.lang.String value)
+          throws java.lang.IllegalArgumentException {
+        return fromValue(value);
+    }
+    public boolean equals(java.lang.Object obj) {return (obj == this);}
+    public int hashCode() { return toString().hashCode();}
+    public java.lang.String toString() { return _value_;}
+    public java.lang.Object readResolve() throws java.io.ObjectStreamException { return fromValue(_value_);}
+    public static org.apache.axis.encoding.Serializer getSerializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new org.apache.axis.encoding.ser.EnumSerializer(
+            _javaType, _xmlType);
+    }
+    public static org.apache.axis.encoding.Deserializer getDeserializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new org.apache.axis.encoding.ser.EnumDeserializer(
+            _javaType, _xmlType);
+    }
+    // Type metadata
+    private static org.apache.axis.description.TypeDesc typeDesc =
+        new org.apache.axis.description.TypeDesc(FolderFolderType.class);
 
-    public static FolderFolderType fromValue(String v) {
-        for (FolderFolderType c: FolderFolderType.values()) {
-            if (c.value.equals(v)) {
-                return c;
-            }
-        }
-        throw new IllegalArgumentException(v);
+    static {
+        typeDesc.setXmlType(new javax.xml.namespace.QName("urn:types.filecabinet_2018_2.documents.webservices.netsuite.com", "FolderFolderType"));
+    }
+    /**
+     * Return type metadata object
+     */
+    public static org.apache.axis.description.TypeDesc getTypeDesc() {
+        return typeDesc;
     }
 
 }

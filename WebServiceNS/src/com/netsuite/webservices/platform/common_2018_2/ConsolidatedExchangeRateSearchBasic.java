@@ -1,311 +1,507 @@
+/**
+ * ConsolidatedExchangeRateSearchBasic.java
+ *
+ * This file was auto-generated from WSDL
+ * by the Apache Axis 1.4 Jul 28, 2010 (04:07:04 PDT) WSDL2Java emitter.
+ */
 
 package com.netsuite.webservices.platform.common_2018_2;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlType;
-import com.netsuite.webservices.platform.core_2018_2.SearchBooleanField;
-import com.netsuite.webservices.platform.core_2018_2.SearchDateField;
-import com.netsuite.webservices.platform.core_2018_2.SearchLongField;
-import com.netsuite.webservices.platform.core_2018_2.SearchMultiSelectField;
-import com.netsuite.webservices.platform.core_2018_2.SearchRecordBasic;
-import com.netsuite.webservices.platform.core_2018_2.SearchStringField;
+public class ConsolidatedExchangeRateSearchBasic  extends com.netsuite.webservices.platform.core_2018_2.SearchRecordBasic  implements java.io.Serializable {
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef[] accountingBook;
 
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef[] externalId;
 
-/**
- * <p>ConsolidatedExchangeRateSearchBasic complex type的 Java 类。
- * 
- * <p>以下模式片段指定包含在此类中的预期内容。
- * 
- * <pre>
- * &lt;complexType name="ConsolidatedExchangeRateSearchBasic">
- *   &lt;complexContent>
- *     &lt;extension base="{urn:core_2018_2.platform.webservices.netsuite.com}SearchRecordBasic">
- *       &lt;sequence>
- *         &lt;element name="accountingBook" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchMultiSelectField" minOccurs="0"/>
- *         &lt;element name="externalId" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchMultiSelectField" minOccurs="0"/>
- *         &lt;element name="externalIdString" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchStringField" minOccurs="0"/>
- *         &lt;element name="fromSubsidiary" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchMultiSelectField" minOccurs="0"/>
- *         &lt;element name="internalId" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchMultiSelectField" minOccurs="0"/>
- *         &lt;element name="internalIdNumber" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchLongField" minOccurs="0"/>
- *         &lt;element name="isDerivedRate" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchBooleanField" minOccurs="0"/>
- *         &lt;element name="period" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchMultiSelectField" minOccurs="0"/>
- *         &lt;element name="periodStartDate" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchDateField" minOccurs="0"/>
- *         &lt;element name="toSubsidiary" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchMultiSelectField" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/extension>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
- */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "ConsolidatedExchangeRateSearchBasic", propOrder = {
-    "accountingBook",
-    "externalId",
-    "externalIdString",
-    "fromSubsidiary",
-    "internalId",
-    "internalIdNumber",
-    "isDerivedRate",
-    "period",
-    "periodStartDate",
-    "toSubsidiary"
-})
-public class ConsolidatedExchangeRateSearchBasic
-    extends SearchRecordBasic
-{
+    private com.netsuite.webservices.platform.core_2018_2.SearchStringField externalIdString;
 
-    protected SearchMultiSelectField accountingBook;
-    protected SearchMultiSelectField externalId;
-    protected SearchStringField externalIdString;
-    protected SearchMultiSelectField fromSubsidiary;
-    protected SearchMultiSelectField internalId;
-    protected SearchLongField internalIdNumber;
-    protected SearchBooleanField isDerivedRate;
-    protected SearchMultiSelectField period;
-    protected SearchDateField periodStartDate;
-    protected SearchMultiSelectField toSubsidiary;
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef[] fromSubsidiary;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef[] internalId;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchLongField internalIdNumber;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchBooleanField isDerivedRate;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef[] period;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchDateField periodStartDate;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef[] toSubsidiary;
+
+    public ConsolidatedExchangeRateSearchBasic() {
+    }
+
+    public ConsolidatedExchangeRateSearchBasic(
+           com.netsuite.webservices.platform.core_2018_2.RecordRef[] accountingBook,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef[] externalId,
+           com.netsuite.webservices.platform.core_2018_2.SearchStringField externalIdString,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef[] fromSubsidiary,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef[] internalId,
+           com.netsuite.webservices.platform.core_2018_2.SearchLongField internalIdNumber,
+           com.netsuite.webservices.platform.core_2018_2.SearchBooleanField isDerivedRate,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef[] period,
+           com.netsuite.webservices.platform.core_2018_2.SearchDateField periodStartDate,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef[] toSubsidiary) {
+        this.accountingBook = accountingBook;
+        this.externalId = externalId;
+        this.externalIdString = externalIdString;
+        this.fromSubsidiary = fromSubsidiary;
+        this.internalId = internalId;
+        this.internalIdNumber = internalIdNumber;
+        this.isDerivedRate = isDerivedRate;
+        this.period = period;
+        this.periodStartDate = periodStartDate;
+        this.toSubsidiary = toSubsidiary;
+    }
+
 
     /**
-     * 获取accountingBook属性的值。
+     * Gets the accountingBook value for this ConsolidatedExchangeRateSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchMultiSelectField }
-     *     
+     * @return accountingBook
      */
-    public SearchMultiSelectField getAccountingBook() {
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef[] getAccountingBook() {
         return accountingBook;
     }
 
-    /**
-     * 设置accountingBook属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchMultiSelectField }
-     *     
-     */
-    public void setAccountingBook(SearchMultiSelectField value) {
-        this.accountingBook = value;
-    }
 
     /**
-     * 获取externalId属性的值。
+     * Sets the accountingBook value for this ConsolidatedExchangeRateSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchMultiSelectField }
-     *     
+     * @param accountingBook
      */
-    public SearchMultiSelectField getExternalId() {
+    public void setAccountingBook(com.netsuite.webservices.platform.core_2018_2.RecordRef[] accountingBook) {
+        this.accountingBook = accountingBook;
+    }
+
+
+    /**
+     * Gets the externalId value for this ConsolidatedExchangeRateSearchBasic.
+     * 
+     * @return externalId
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef[] getExternalId() {
         return externalId;
     }
 
-    /**
-     * 设置externalId属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchMultiSelectField }
-     *     
-     */
-    public void setExternalId(SearchMultiSelectField value) {
-        this.externalId = value;
-    }
 
     /**
-     * 获取externalIdString属性的值。
+     * Sets the externalId value for this ConsolidatedExchangeRateSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchStringField }
-     *     
+     * @param externalId
      */
-    public SearchStringField getExternalIdString() {
+    public void setExternalId(com.netsuite.webservices.platform.core_2018_2.RecordRef[] externalId) {
+        this.externalId = externalId;
+    }
+
+
+    /**
+     * Gets the externalIdString value for this ConsolidatedExchangeRateSearchBasic.
+     * 
+     * @return externalIdString
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchStringField getExternalIdString() {
         return externalIdString;
     }
 
-    /**
-     * 设置externalIdString属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchStringField }
-     *     
-     */
-    public void setExternalIdString(SearchStringField value) {
-        this.externalIdString = value;
-    }
 
     /**
-     * 获取fromSubsidiary属性的值。
+     * Sets the externalIdString value for this ConsolidatedExchangeRateSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchMultiSelectField }
-     *     
+     * @param externalIdString
      */
-    public SearchMultiSelectField getFromSubsidiary() {
+    public void setExternalIdString(com.netsuite.webservices.platform.core_2018_2.SearchStringField externalIdString) {
+        this.externalIdString = externalIdString;
+    }
+
+
+    /**
+     * Gets the fromSubsidiary value for this ConsolidatedExchangeRateSearchBasic.
+     * 
+     * @return fromSubsidiary
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef[] getFromSubsidiary() {
         return fromSubsidiary;
     }
 
-    /**
-     * 设置fromSubsidiary属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchMultiSelectField }
-     *     
-     */
-    public void setFromSubsidiary(SearchMultiSelectField value) {
-        this.fromSubsidiary = value;
-    }
 
     /**
-     * 获取internalId属性的值。
+     * Sets the fromSubsidiary value for this ConsolidatedExchangeRateSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchMultiSelectField }
-     *     
+     * @param fromSubsidiary
      */
-    public SearchMultiSelectField getInternalId() {
+    public void setFromSubsidiary(com.netsuite.webservices.platform.core_2018_2.RecordRef[] fromSubsidiary) {
+        this.fromSubsidiary = fromSubsidiary;
+    }
+
+
+    /**
+     * Gets the internalId value for this ConsolidatedExchangeRateSearchBasic.
+     * 
+     * @return internalId
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef[] getInternalId() {
         return internalId;
     }
 
-    /**
-     * 设置internalId属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchMultiSelectField }
-     *     
-     */
-    public void setInternalId(SearchMultiSelectField value) {
-        this.internalId = value;
-    }
 
     /**
-     * 获取internalIdNumber属性的值。
+     * Sets the internalId value for this ConsolidatedExchangeRateSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchLongField }
-     *     
+     * @param internalId
      */
-    public SearchLongField getInternalIdNumber() {
+    public void setInternalId(com.netsuite.webservices.platform.core_2018_2.RecordRef[] internalId) {
+        this.internalId = internalId;
+    }
+
+
+    /**
+     * Gets the internalIdNumber value for this ConsolidatedExchangeRateSearchBasic.
+     * 
+     * @return internalIdNumber
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchLongField getInternalIdNumber() {
         return internalIdNumber;
     }
 
-    /**
-     * 设置internalIdNumber属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchLongField }
-     *     
-     */
-    public void setInternalIdNumber(SearchLongField value) {
-        this.internalIdNumber = value;
-    }
 
     /**
-     * 获取isDerivedRate属性的值。
+     * Sets the internalIdNumber value for this ConsolidatedExchangeRateSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchBooleanField }
-     *     
+     * @param internalIdNumber
      */
-    public SearchBooleanField getIsDerivedRate() {
+    public void setInternalIdNumber(com.netsuite.webservices.platform.core_2018_2.SearchLongField internalIdNumber) {
+        this.internalIdNumber = internalIdNumber;
+    }
+
+
+    /**
+     * Gets the isDerivedRate value for this ConsolidatedExchangeRateSearchBasic.
+     * 
+     * @return isDerivedRate
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchBooleanField getIsDerivedRate() {
         return isDerivedRate;
     }
 
-    /**
-     * 设置isDerivedRate属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchBooleanField }
-     *     
-     */
-    public void setIsDerivedRate(SearchBooleanField value) {
-        this.isDerivedRate = value;
-    }
 
     /**
-     * 获取period属性的值。
+     * Sets the isDerivedRate value for this ConsolidatedExchangeRateSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchMultiSelectField }
-     *     
+     * @param isDerivedRate
      */
-    public SearchMultiSelectField getPeriod() {
+    public void setIsDerivedRate(com.netsuite.webservices.platform.core_2018_2.SearchBooleanField isDerivedRate) {
+        this.isDerivedRate = isDerivedRate;
+    }
+
+
+    /**
+     * Gets the period value for this ConsolidatedExchangeRateSearchBasic.
+     * 
+     * @return period
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef[] getPeriod() {
         return period;
     }
 
-    /**
-     * 设置period属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchMultiSelectField }
-     *     
-     */
-    public void setPeriod(SearchMultiSelectField value) {
-        this.period = value;
-    }
 
     /**
-     * 获取periodStartDate属性的值。
+     * Sets the period value for this ConsolidatedExchangeRateSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchDateField }
-     *     
+     * @param period
      */
-    public SearchDateField getPeriodStartDate() {
+    public void setPeriod(com.netsuite.webservices.platform.core_2018_2.RecordRef[] period) {
+        this.period = period;
+    }
+
+
+    /**
+     * Gets the periodStartDate value for this ConsolidatedExchangeRateSearchBasic.
+     * 
+     * @return periodStartDate
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchDateField getPeriodStartDate() {
         return periodStartDate;
     }
 
-    /**
-     * 设置periodStartDate属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchDateField }
-     *     
-     */
-    public void setPeriodStartDate(SearchDateField value) {
-        this.periodStartDate = value;
-    }
 
     /**
-     * 获取toSubsidiary属性的值。
+     * Sets the periodStartDate value for this ConsolidatedExchangeRateSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchMultiSelectField }
-     *     
+     * @param periodStartDate
      */
-    public SearchMultiSelectField getToSubsidiary() {
+    public void setPeriodStartDate(com.netsuite.webservices.platform.core_2018_2.SearchDateField periodStartDate) {
+        this.periodStartDate = periodStartDate;
+    }
+
+
+    /**
+     * Gets the toSubsidiary value for this ConsolidatedExchangeRateSearchBasic.
+     * 
+     * @return toSubsidiary
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef[] getToSubsidiary() {
         return toSubsidiary;
     }
 
+
     /**
-     * 设置toSubsidiary属性的值。
+     * Sets the toSubsidiary value for this ConsolidatedExchangeRateSearchBasic.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchMultiSelectField }
-     *     
+     * @param toSubsidiary
      */
-    public void setToSubsidiary(SearchMultiSelectField value) {
-        this.toSubsidiary = value;
+    public void setToSubsidiary(com.netsuite.webservices.platform.core_2018_2.RecordRef[] toSubsidiary) {
+        this.toSubsidiary = toSubsidiary;
+    }
+
+    private java.lang.Object __equalsCalc = null;
+    public synchronized boolean equals(java.lang.Object obj) {
+        if (!(obj instanceof ConsolidatedExchangeRateSearchBasic)) return false;
+        ConsolidatedExchangeRateSearchBasic other = (ConsolidatedExchangeRateSearchBasic) obj;
+        if (obj == null) return false;
+        if (this == obj) return true;
+        if (__equalsCalc != null) {
+            return (__equalsCalc == obj);
+        }
+        __equalsCalc = obj;
+        boolean _equals;
+        _equals = super.equals(obj) && 
+            ((this.accountingBook==null && other.getAccountingBook()==null) || 
+             (this.accountingBook!=null &&
+              java.util.Arrays.equals(this.accountingBook, other.getAccountingBook()))) &&
+            ((this.externalId==null && other.getExternalId()==null) || 
+             (this.externalId!=null &&
+              java.util.Arrays.equals(this.externalId, other.getExternalId()))) &&
+            ((this.externalIdString==null && other.getExternalIdString()==null) || 
+             (this.externalIdString!=null &&
+              this.externalIdString.equals(other.getExternalIdString()))) &&
+            ((this.fromSubsidiary==null && other.getFromSubsidiary()==null) || 
+             (this.fromSubsidiary!=null &&
+              java.util.Arrays.equals(this.fromSubsidiary, other.getFromSubsidiary()))) &&
+            ((this.internalId==null && other.getInternalId()==null) || 
+             (this.internalId!=null &&
+              java.util.Arrays.equals(this.internalId, other.getInternalId()))) &&
+            ((this.internalIdNumber==null && other.getInternalIdNumber()==null) || 
+             (this.internalIdNumber!=null &&
+              this.internalIdNumber.equals(other.getInternalIdNumber()))) &&
+            ((this.isDerivedRate==null && other.getIsDerivedRate()==null) || 
+             (this.isDerivedRate!=null &&
+              this.isDerivedRate.equals(other.getIsDerivedRate()))) &&
+            ((this.period==null && other.getPeriod()==null) || 
+             (this.period!=null &&
+              java.util.Arrays.equals(this.period, other.getPeriod()))) &&
+            ((this.periodStartDate==null && other.getPeriodStartDate()==null) || 
+             (this.periodStartDate!=null &&
+              this.periodStartDate.equals(other.getPeriodStartDate()))) &&
+            ((this.toSubsidiary==null && other.getToSubsidiary()==null) || 
+             (this.toSubsidiary!=null &&
+              java.util.Arrays.equals(this.toSubsidiary, other.getToSubsidiary())));
+        __equalsCalc = null;
+        return _equals;
+    }
+
+    private boolean __hashCodeCalc = false;
+    public synchronized int hashCode() {
+        if (__hashCodeCalc) {
+            return 0;
+        }
+        __hashCodeCalc = true;
+        int _hashCode = super.hashCode();
+        if (getAccountingBook() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getAccountingBook());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getAccountingBook(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getExternalId() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getExternalId());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getExternalId(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getExternalIdString() != null) {
+            _hashCode += getExternalIdString().hashCode();
+        }
+        if (getFromSubsidiary() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getFromSubsidiary());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getFromSubsidiary(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getInternalId() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getInternalId());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getInternalId(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getInternalIdNumber() != null) {
+            _hashCode += getInternalIdNumber().hashCode();
+        }
+        if (getIsDerivedRate() != null) {
+            _hashCode += getIsDerivedRate().hashCode();
+        }
+        if (getPeriod() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getPeriod());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getPeriod(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getPeriodStartDate() != null) {
+            _hashCode += getPeriodStartDate().hashCode();
+        }
+        if (getToSubsidiary() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getToSubsidiary());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getToSubsidiary(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        __hashCodeCalc = false;
+        return _hashCode;
+    }
+
+    // Type metadata
+    private static org.apache.axis.description.TypeDesc typeDesc =
+        new org.apache.axis.description.TypeDesc(ConsolidatedExchangeRateSearchBasic.class, true);
+
+    static {
+        typeDesc.setXmlType(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "ConsolidatedExchangeRateSearchBasic"));
+        org.apache.axis.description.ElementDesc elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("accountingBook");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "accountingBook"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "searchValue"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("externalId");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "externalId"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "searchValue"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("externalIdString");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "externalIdString"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchStringField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("fromSubsidiary");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "fromSubsidiary"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "searchValue"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("internalId");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "internalId"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "searchValue"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("internalIdNumber");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "internalIdNumber"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchLongField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("isDerivedRate");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "isDerivedRate"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchBooleanField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("period");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "period"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "searchValue"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("periodStartDate");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "periodStartDate"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchDateField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("toSubsidiary");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "toSubsidiary"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "searchValue"));
+        typeDesc.addFieldDesc(elemField);
+    }
+
+    /**
+     * Return type metadata object
+     */
+    public static org.apache.axis.description.TypeDesc getTypeDesc() {
+        return typeDesc;
+    }
+
+    /**
+     * Get Custom Serializer
+     */
+    public static org.apache.axis.encoding.Serializer getSerializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanSerializer(
+            _javaType, _xmlType, typeDesc);
+    }
+
+    /**
+     * Get Custom Deserializer
+     */
+    public static org.apache.axis.encoding.Deserializer getDeserializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanDeserializer(
+            _javaType, _xmlType, typeDesc);
     }
 
 }

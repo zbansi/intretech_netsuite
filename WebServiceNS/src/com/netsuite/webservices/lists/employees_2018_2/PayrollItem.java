@@ -1,336 +1,498 @@
+/**
+ * PayrollItem.java
+ *
+ * This file was auto-generated from WSDL
+ * by the Apache Axis 1.4 Jul 28, 2010 (04:07:04 PDT) WSDL2Java emitter.
+ */
 
 package com.netsuite.webservices.lists.employees_2018_2;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlAttribute;
-import javax.xml.bind.annotation.XmlType;
-import com.netsuite.webservices.platform.core_2018_2.CustomFieldList;
-import com.netsuite.webservices.platform.core_2018_2.Record;
-import com.netsuite.webservices.platform.core_2018_2.RecordRef;
+public class PayrollItem  extends com.netsuite.webservices.platform.core_2018_2.Record  implements java.io.Serializable {
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef subsidiary;
 
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef itemType;
 
-/**
- * <p>PayrollItem complex type的 Java 类。
- * 
- * <p>以下模式片段指定包含在此类中的预期内容。
- * 
- * <pre>
- * &lt;complexType name="PayrollItem">
- *   &lt;complexContent>
- *     &lt;extension base="{urn:core_2018_2.platform.webservices.netsuite.com}Record">
- *       &lt;sequence>
- *         &lt;element name="subsidiary" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="itemType" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="name" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="vendor" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="expenseAccount" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="liabilityAccount" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="employeePaid" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         &lt;element name="inactive" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         &lt;element name="customFieldList" type="{urn:core_2018_2.platform.webservices.netsuite.com}CustomFieldList" minOccurs="0"/>
- *       &lt;/sequence>
- *       &lt;attribute name="internalId" type="{http://www.w3.org/2001/XMLSchema}string" />
- *       &lt;attribute name="externalId" type="{http://www.w3.org/2001/XMLSchema}string" />
- *     &lt;/extension>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
- */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "PayrollItem", propOrder = {
-    "subsidiary",
-    "itemType",
-    "name",
-    "vendor",
-    "expenseAccount",
-    "liabilityAccount",
-    "employeePaid",
-    "inactive",
-    "customFieldList"
-})
-public class PayrollItem
-    extends Record
-{
+    private java.lang.String name;
 
-    protected RecordRef subsidiary;
-    protected RecordRef itemType;
-    protected String name;
-    protected RecordRef vendor;
-    protected RecordRef expenseAccount;
-    protected RecordRef liabilityAccount;
-    protected Boolean employeePaid;
-    protected Boolean inactive;
-    protected CustomFieldList customFieldList;
-    @XmlAttribute(name = "internalId")
-    protected String internalId;
-    @XmlAttribute(name = "externalId")
-    protected String externalId;
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef vendor;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef expenseAccount;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef liabilityAccount;
+
+    private java.lang.Boolean employeePaid;
+
+    private java.lang.Boolean inactive;
+
+    private com.netsuite.webservices.platform.core_2018_2.CustomFieldRef[] customFieldList;
+
+    private java.lang.String internalId;  // attribute
+
+    private java.lang.String externalId;  // attribute
+
+    public PayrollItem() {
+    }
+
+    public PayrollItem(
+           java.lang.String[] nullFieldList,
+           java.lang.String internalId,
+           java.lang.String externalId,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef subsidiary,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef itemType,
+           java.lang.String name,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef vendor,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef expenseAccount,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef liabilityAccount,
+           java.lang.Boolean employeePaid,
+           java.lang.Boolean inactive,
+           com.netsuite.webservices.platform.core_2018_2.CustomFieldRef[] customFieldList) {
+        super(
+            nullFieldList);
+        this.internalId = internalId;
+        this.externalId = externalId;
+        this.subsidiary = subsidiary;
+        this.itemType = itemType;
+        this.name = name;
+        this.vendor = vendor;
+        this.expenseAccount = expenseAccount;
+        this.liabilityAccount = liabilityAccount;
+        this.employeePaid = employeePaid;
+        this.inactive = inactive;
+        this.customFieldList = customFieldList;
+    }
+
 
     /**
-     * 获取subsidiary属性的值。
+     * Gets the subsidiary value for this PayrollItem.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @return subsidiary
      */
-    public RecordRef getSubsidiary() {
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getSubsidiary() {
         return subsidiary;
     }
 
-    /**
-     * 设置subsidiary属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setSubsidiary(RecordRef value) {
-        this.subsidiary = value;
-    }
 
     /**
-     * 获取itemType属性的值。
+     * Sets the subsidiary value for this PayrollItem.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param subsidiary
      */
-    public RecordRef getItemType() {
+    public void setSubsidiary(com.netsuite.webservices.platform.core_2018_2.RecordRef subsidiary) {
+        this.subsidiary = subsidiary;
+    }
+
+
+    /**
+     * Gets the itemType value for this PayrollItem.
+     * 
+     * @return itemType
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getItemType() {
         return itemType;
     }
 
-    /**
-     * 设置itemType属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setItemType(RecordRef value) {
-        this.itemType = value;
-    }
 
     /**
-     * 获取name属性的值。
+     * Sets the itemType value for this PayrollItem.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param itemType
      */
-    public String getName() {
+    public void setItemType(com.netsuite.webservices.platform.core_2018_2.RecordRef itemType) {
+        this.itemType = itemType;
+    }
+
+
+    /**
+     * Gets the name value for this PayrollItem.
+     * 
+     * @return name
+     */
+    public java.lang.String getName() {
         return name;
     }
 
-    /**
-     * 设置name属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setName(String value) {
-        this.name = value;
-    }
 
     /**
-     * 获取vendor属性的值。
+     * Sets the name value for this PayrollItem.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param name
      */
-    public RecordRef getVendor() {
+    public void setName(java.lang.String name) {
+        this.name = name;
+    }
+
+
+    /**
+     * Gets the vendor value for this PayrollItem.
+     * 
+     * @return vendor
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getVendor() {
         return vendor;
     }
 
-    /**
-     * 设置vendor属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setVendor(RecordRef value) {
-        this.vendor = value;
-    }
 
     /**
-     * 获取expenseAccount属性的值。
+     * Sets the vendor value for this PayrollItem.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param vendor
      */
-    public RecordRef getExpenseAccount() {
+    public void setVendor(com.netsuite.webservices.platform.core_2018_2.RecordRef vendor) {
+        this.vendor = vendor;
+    }
+
+
+    /**
+     * Gets the expenseAccount value for this PayrollItem.
+     * 
+     * @return expenseAccount
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getExpenseAccount() {
         return expenseAccount;
     }
 
-    /**
-     * 设置expenseAccount属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setExpenseAccount(RecordRef value) {
-        this.expenseAccount = value;
-    }
 
     /**
-     * 获取liabilityAccount属性的值。
+     * Sets the expenseAccount value for this PayrollItem.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param expenseAccount
      */
-    public RecordRef getLiabilityAccount() {
+    public void setExpenseAccount(com.netsuite.webservices.platform.core_2018_2.RecordRef expenseAccount) {
+        this.expenseAccount = expenseAccount;
+    }
+
+
+    /**
+     * Gets the liabilityAccount value for this PayrollItem.
+     * 
+     * @return liabilityAccount
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getLiabilityAccount() {
         return liabilityAccount;
     }
 
-    /**
-     * 设置liabilityAccount属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setLiabilityAccount(RecordRef value) {
-        this.liabilityAccount = value;
-    }
 
     /**
-     * 获取employeePaid属性的值。
+     * Sets the liabilityAccount value for this PayrollItem.
      * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
+     * @param liabilityAccount
      */
-    public Boolean isEmployeePaid() {
+    public void setLiabilityAccount(com.netsuite.webservices.platform.core_2018_2.RecordRef liabilityAccount) {
+        this.liabilityAccount = liabilityAccount;
+    }
+
+
+    /**
+     * Gets the employeePaid value for this PayrollItem.
+     * 
+     * @return employeePaid
+     */
+    public java.lang.Boolean getEmployeePaid() {
         return employeePaid;
     }
 
-    /**
-     * 设置employeePaid属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
-     */
-    public void setEmployeePaid(Boolean value) {
-        this.employeePaid = value;
-    }
 
     /**
-     * 获取inactive属性的值。
+     * Sets the employeePaid value for this PayrollItem.
      * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
+     * @param employeePaid
      */
-    public Boolean isInactive() {
+    public void setEmployeePaid(java.lang.Boolean employeePaid) {
+        this.employeePaid = employeePaid;
+    }
+
+
+    /**
+     * Gets the inactive value for this PayrollItem.
+     * 
+     * @return inactive
+     */
+    public java.lang.Boolean getInactive() {
         return inactive;
     }
 
-    /**
-     * 设置inactive属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
-     */
-    public void setInactive(Boolean value) {
-        this.inactive = value;
-    }
 
     /**
-     * 获取customFieldList属性的值。
+     * Sets the inactive value for this PayrollItem.
      * 
-     * @return
-     *     possible object is
-     *     {@link CustomFieldList }
-     *     
+     * @param inactive
      */
-    public CustomFieldList getCustomFieldList() {
+    public void setInactive(java.lang.Boolean inactive) {
+        this.inactive = inactive;
+    }
+
+
+    /**
+     * Gets the customFieldList value for this PayrollItem.
+     * 
+     * @return customFieldList
+     */
+    public com.netsuite.webservices.platform.core_2018_2.CustomFieldRef[] getCustomFieldList() {
         return customFieldList;
     }
 
-    /**
-     * 设置customFieldList属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link CustomFieldList }
-     *     
-     */
-    public void setCustomFieldList(CustomFieldList value) {
-        this.customFieldList = value;
-    }
 
     /**
-     * 获取internalId属性的值。
+     * Sets the customFieldList value for this PayrollItem.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param customFieldList
      */
-    public String getInternalId() {
+    public void setCustomFieldList(com.netsuite.webservices.platform.core_2018_2.CustomFieldRef[] customFieldList) {
+        this.customFieldList = customFieldList;
+    }
+
+
+    /**
+     * Gets the internalId value for this PayrollItem.
+     * 
+     * @return internalId
+     */
+    public java.lang.String getInternalId() {
         return internalId;
     }
 
-    /**
-     * 设置internalId属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setInternalId(String value) {
-        this.internalId = value;
-    }
 
     /**
-     * 获取externalId属性的值。
+     * Sets the internalId value for this PayrollItem.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param internalId
      */
-    public String getExternalId() {
+    public void setInternalId(java.lang.String internalId) {
+        this.internalId = internalId;
+    }
+
+
+    /**
+     * Gets the externalId value for this PayrollItem.
+     * 
+     * @return externalId
+     */
+    public java.lang.String getExternalId() {
         return externalId;
     }
 
+
     /**
-     * 设置externalId属性的值。
+     * Sets the externalId value for this PayrollItem.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     * @param externalId
      */
-    public void setExternalId(String value) {
-        this.externalId = value;
+    public void setExternalId(java.lang.String externalId) {
+        this.externalId = externalId;
+    }
+
+    private java.lang.Object __equalsCalc = null;
+    public synchronized boolean equals(java.lang.Object obj) {
+        if (!(obj instanceof PayrollItem)) return false;
+        PayrollItem other = (PayrollItem) obj;
+        if (obj == null) return false;
+        if (this == obj) return true;
+        if (__equalsCalc != null) {
+            return (__equalsCalc == obj);
+        }
+        __equalsCalc = obj;
+        boolean _equals;
+        _equals = super.equals(obj) && 
+            ((this.subsidiary==null && other.getSubsidiary()==null) || 
+             (this.subsidiary!=null &&
+              this.subsidiary.equals(other.getSubsidiary()))) &&
+            ((this.itemType==null && other.getItemType()==null) || 
+             (this.itemType!=null &&
+              this.itemType.equals(other.getItemType()))) &&
+            ((this.name==null && other.getName()==null) || 
+             (this.name!=null &&
+              this.name.equals(other.getName()))) &&
+            ((this.vendor==null && other.getVendor()==null) || 
+             (this.vendor!=null &&
+              this.vendor.equals(other.getVendor()))) &&
+            ((this.expenseAccount==null && other.getExpenseAccount()==null) || 
+             (this.expenseAccount!=null &&
+              this.expenseAccount.equals(other.getExpenseAccount()))) &&
+            ((this.liabilityAccount==null && other.getLiabilityAccount()==null) || 
+             (this.liabilityAccount!=null &&
+              this.liabilityAccount.equals(other.getLiabilityAccount()))) &&
+            ((this.employeePaid==null && other.getEmployeePaid()==null) || 
+             (this.employeePaid!=null &&
+              this.employeePaid.equals(other.getEmployeePaid()))) &&
+            ((this.inactive==null && other.getInactive()==null) || 
+             (this.inactive!=null &&
+              this.inactive.equals(other.getInactive()))) &&
+            ((this.customFieldList==null && other.getCustomFieldList()==null) || 
+             (this.customFieldList!=null &&
+              java.util.Arrays.equals(this.customFieldList, other.getCustomFieldList()))) &&
+            ((this.internalId==null && other.getInternalId()==null) || 
+             (this.internalId!=null &&
+              this.internalId.equals(other.getInternalId()))) &&
+            ((this.externalId==null && other.getExternalId()==null) || 
+             (this.externalId!=null &&
+              this.externalId.equals(other.getExternalId())));
+        __equalsCalc = null;
+        return _equals;
+    }
+
+    private boolean __hashCodeCalc = false;
+    public synchronized int hashCode() {
+        if (__hashCodeCalc) {
+            return 0;
+        }
+        __hashCodeCalc = true;
+        int _hashCode = super.hashCode();
+        if (getSubsidiary() != null) {
+            _hashCode += getSubsidiary().hashCode();
+        }
+        if (getItemType() != null) {
+            _hashCode += getItemType().hashCode();
+        }
+        if (getName() != null) {
+            _hashCode += getName().hashCode();
+        }
+        if (getVendor() != null) {
+            _hashCode += getVendor().hashCode();
+        }
+        if (getExpenseAccount() != null) {
+            _hashCode += getExpenseAccount().hashCode();
+        }
+        if (getLiabilityAccount() != null) {
+            _hashCode += getLiabilityAccount().hashCode();
+        }
+        if (getEmployeePaid() != null) {
+            _hashCode += getEmployeePaid().hashCode();
+        }
+        if (getInactive() != null) {
+            _hashCode += getInactive().hashCode();
+        }
+        if (getCustomFieldList() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getCustomFieldList());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getCustomFieldList(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getInternalId() != null) {
+            _hashCode += getInternalId().hashCode();
+        }
+        if (getExternalId() != null) {
+            _hashCode += getExternalId().hashCode();
+        }
+        __hashCodeCalc = false;
+        return _hashCode;
+    }
+
+    // Type metadata
+    private static org.apache.axis.description.TypeDesc typeDesc =
+        new org.apache.axis.description.TypeDesc(PayrollItem.class, true);
+
+    static {
+        typeDesc.setXmlType(new javax.xml.namespace.QName("urn:employees_2018_2.lists.webservices.netsuite.com", "PayrollItem"));
+        org.apache.axis.description.AttributeDesc attrField = new org.apache.axis.description.AttributeDesc();
+        attrField.setFieldName("internalId");
+        attrField.setXmlName(new javax.xml.namespace.QName("", "internalId"));
+        attrField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        typeDesc.addFieldDesc(attrField);
+        attrField = new org.apache.axis.description.AttributeDesc();
+        attrField.setFieldName("externalId");
+        attrField.setXmlName(new javax.xml.namespace.QName("", "externalId"));
+        attrField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        typeDesc.addFieldDesc(attrField);
+        org.apache.axis.description.ElementDesc elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("subsidiary");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:employees_2018_2.lists.webservices.netsuite.com", "subsidiary"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("itemType");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:employees_2018_2.lists.webservices.netsuite.com", "itemType"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("name");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:employees_2018_2.lists.webservices.netsuite.com", "name"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("vendor");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:employees_2018_2.lists.webservices.netsuite.com", "vendor"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("expenseAccount");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:employees_2018_2.lists.webservices.netsuite.com", "expenseAccount"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("liabilityAccount");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:employees_2018_2.lists.webservices.netsuite.com", "liabilityAccount"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("employeePaid");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:employees_2018_2.lists.webservices.netsuite.com", "employeePaid"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("inactive");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:employees_2018_2.lists.webservices.netsuite.com", "inactive"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("customFieldList");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:employees_2018_2.lists.webservices.netsuite.com", "customFieldList"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "CustomFieldRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "customField"));
+        typeDesc.addFieldDesc(elemField);
+    }
+
+    /**
+     * Return type metadata object
+     */
+    public static org.apache.axis.description.TypeDesc getTypeDesc() {
+        return typeDesc;
+    }
+
+    /**
+     * Get Custom Serializer
+     */
+    public static org.apache.axis.encoding.Serializer getSerializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanSerializer(
+            _javaType, _xmlType, typeDesc);
+    }
+
+    /**
+     * Get Custom Deserializer
+     */
+    public static org.apache.axis.encoding.Deserializer getDeserializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanDeserializer(
+            _javaType, _xmlType, typeDesc);
     }
 
 }

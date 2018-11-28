@@ -1,3593 +1,6069 @@
+/**
+ * JobSearchRowBasic.java
+ *
+ * This file was auto-generated from WSDL
+ * by the Apache Axis 1.4 Jul 28, 2010 (04:07:04 PDT) WSDL2Java emitter.
+ */
 
 package com.netsuite.webservices.platform.common_2018_2;
 
-import java.util.ArrayList;
-import java.util.List;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlType;
-import com.netsuite.webservices.platform.core_2018_2.SearchColumnBooleanField;
-import com.netsuite.webservices.platform.core_2018_2.SearchColumnCustomFieldList;
-import com.netsuite.webservices.platform.core_2018_2.SearchColumnDateField;
-import com.netsuite.webservices.platform.core_2018_2.SearchColumnDoubleField;
-import com.netsuite.webservices.platform.core_2018_2.SearchColumnEnumSelectField;
-import com.netsuite.webservices.platform.core_2018_2.SearchColumnLongField;
-import com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField;
-import com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField;
-import com.netsuite.webservices.platform.core_2018_2.SearchRowBasic;
-
-
-/**
- * <p>JobSearchRowBasic complex type的 Java 类。
- * 
- * <p>以下模式片段指定包含在此类中的预期内容。
- * 
- * <pre>
- * &lt;complexType name="JobSearchRowBasic">
- *   &lt;complexContent>
- *     &lt;extension base="{urn:core_2018_2.platform.webservices.netsuite.com}SearchRowBasic">
- *       &lt;sequence>
- *         &lt;element name="accountNumber" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnStringField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="actualTime" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnDoubleField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="address" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnStringField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="address1" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnStringField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="address2" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnStringField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="address3" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnStringField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="addressee" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnStringField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="addressInternalId" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnStringField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="addressLabel" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnStringField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="addressPhone" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnStringField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="allocatePayrollExpenses" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnBooleanField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="allowAllResourcesForTasks" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnBooleanField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="allowExpenses" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnBooleanField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="allowTime" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnBooleanField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="altContact" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnStringField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="altEmail" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnStringField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="altName" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnStringField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="altPhone" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnStringField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="attention" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnStringField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="billAddress1" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnStringField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="billAddress2" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnStringField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="billAddress3" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnStringField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="billAddressee" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnStringField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="billAttention" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnStringField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="billCity" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnStringField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="billCountry" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnEnumSelectField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="billCountryCode" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnStringField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="billingSchedule" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnSelectField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="billPhone" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnStringField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="billState" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnStringField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="billZipCode" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnStringField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="calculatedEndDate" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnDateField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="calculatedEndDateBaseline" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnDateField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="category" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnSelectField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="city" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnStringField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="comments" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnStringField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="companyName" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnStringField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="contact" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnStringField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="country" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnEnumSelectField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="countryCode" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnStringField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="customer" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnSelectField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="dateCreated" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnDateField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="email" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnStringField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="endDate" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnDateField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="entityId" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnStringField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="entityNumber" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnLongField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="entityStatus" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnSelectField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="estimatedCost" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnDoubleField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="estimatedGrossProfit" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnDoubleField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="estimatedGrossProfitPercent" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnDoubleField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="estimatedLaborCost" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnDoubleField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="estimatedLaborCostBaseline" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnDoubleField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="estimatedLaborRevenue" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnDoubleField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="estimatedRevenue" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnDoubleField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="estimatedTime" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnDoubleField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="estimatedTimeOverride" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnDoubleField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="estimatedTimeOverrideBaseline" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnDoubleField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="externalId" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnSelectField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="fax" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnStringField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="globalSubscriptionStatus" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnEnumSelectField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="image" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnSelectField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="includeCrmTasksInTotals" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnBooleanField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="internalId" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnSelectField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="isDefaultBilling" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnBooleanField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="isDefaultShipping" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnBooleanField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="isExemptTime" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnBooleanField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="isInactive" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnBooleanField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="isProductiveTime" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnBooleanField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="isUtilizedTime" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnBooleanField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="jobBillingType" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnEnumSelectField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="jobItem" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnSelectField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="jobPrice" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnDoubleField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="jobResource" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnSelectField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="jobResourceRole" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnSelectField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="language" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnEnumSelectField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="lastBaselineDate" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnDateField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="lastModifiedDate" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnDateField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="level" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnEnumSelectField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="limitTimeToAssignees" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnBooleanField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="materializeTime" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnBooleanField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="percentComplete" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnDoubleField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="percentTimeComplete" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnDoubleField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="permission" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnEnumSelectField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="phone" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnStringField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="phoneticName" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnStringField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="projectedEndDate" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnDateField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="projectedEndDateBaseline" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnDateField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="projectExpenseType" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnSelectField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="revRecForecastRule" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnSelectField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="shipAddress1" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnStringField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="shipAddress2" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnStringField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="shipAddress3" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnStringField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="shipAddressee" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnStringField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="shipAttention" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnStringField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="shipCity" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnStringField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="shipCountry" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnEnumSelectField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="shipCountryCode" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnStringField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="shipPhone" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnStringField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="shipState" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnStringField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="shipZip" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnStringField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="startDate" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnDateField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="startDateBaseline" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnDateField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="state" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnStringField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="subscription" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnSelectField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="subscriptionDate" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnDateField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="subscriptionStatus" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnBooleanField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="subsidiary" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnSelectField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="timeRemaining" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnDoubleField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="usePercentCompleteOverride" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnBooleanField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="zipCode" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnStringField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="customFieldList" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnCustomFieldList" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/extension>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
- */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "JobSearchRowBasic", propOrder = {
-    "accountNumber",
-    "actualTime",
-    "address",
-    "address1",
-    "address2",
-    "address3",
-    "addressee",
-    "addressInternalId",
-    "addressLabel",
-    "addressPhone",
-    "allocatePayrollExpenses",
-    "allowAllResourcesForTasks",
-    "allowExpenses",
-    "allowTime",
-    "altContact",
-    "altEmail",
-    "altName",
-    "altPhone",
-    "attention",
-    "billAddress1",
-    "billAddress2",
-    "billAddress3",
-    "billAddressee",
-    "billAttention",
-    "billCity",
-    "billCountry",
-    "billCountryCode",
-    "billingSchedule",
-    "billPhone",
-    "billState",
-    "billZipCode",
-    "calculatedEndDate",
-    "calculatedEndDateBaseline",
-    "category",
-    "city",
-    "comments",
-    "companyName",
-    "contact",
-    "country",
-    "countryCode",
-    "customer",
-    "dateCreated",
-    "email",
-    "endDate",
-    "entityId",
-    "entityNumber",
-    "entityStatus",
-    "estimatedCost",
-    "estimatedGrossProfit",
-    "estimatedGrossProfitPercent",
-    "estimatedLaborCost",
-    "estimatedLaborCostBaseline",
-    "estimatedLaborRevenue",
-    "estimatedRevenue",
-    "estimatedTime",
-    "estimatedTimeOverride",
-    "estimatedTimeOverrideBaseline",
-    "externalId",
-    "fax",
-    "globalSubscriptionStatus",
-    "image",
-    "includeCrmTasksInTotals",
-    "internalId",
-    "isDefaultBilling",
-    "isDefaultShipping",
-    "isExemptTime",
-    "isInactive",
-    "isProductiveTime",
-    "isUtilizedTime",
-    "jobBillingType",
-    "jobItem",
-    "jobPrice",
-    "jobResource",
-    "jobResourceRole",
-    "language",
-    "lastBaselineDate",
-    "lastModifiedDate",
-    "level",
-    "limitTimeToAssignees",
-    "materializeTime",
-    "percentComplete",
-    "percentTimeComplete",
-    "permission",
-    "phone",
-    "phoneticName",
-    "projectedEndDate",
-    "projectedEndDateBaseline",
-    "projectExpenseType",
-    "revRecForecastRule",
-    "shipAddress1",
-    "shipAddress2",
-    "shipAddress3",
-    "shipAddressee",
-    "shipAttention",
-    "shipCity",
-    "shipCountry",
-    "shipCountryCode",
-    "shipPhone",
-    "shipState",
-    "shipZip",
-    "startDate",
-    "startDateBaseline",
-    "state",
-    "subscription",
-    "subscriptionDate",
-    "subscriptionStatus",
-    "subsidiary",
-    "timeRemaining",
-    "usePercentCompleteOverride",
-    "zipCode",
-    "customFieldList"
-})
-public class JobSearchRowBasic
-    extends SearchRowBasic
-{
-
-    protected List<SearchColumnStringField> accountNumber;
-    protected List<SearchColumnDoubleField> actualTime;
-    protected List<SearchColumnStringField> address;
-    protected List<SearchColumnStringField> address1;
-    protected List<SearchColumnStringField> address2;
-    protected List<SearchColumnStringField> address3;
-    protected List<SearchColumnStringField> addressee;
-    protected List<SearchColumnStringField> addressInternalId;
-    protected List<SearchColumnStringField> addressLabel;
-    protected List<SearchColumnStringField> addressPhone;
-    protected List<SearchColumnBooleanField> allocatePayrollExpenses;
-    protected List<SearchColumnBooleanField> allowAllResourcesForTasks;
-    protected List<SearchColumnBooleanField> allowExpenses;
-    protected List<SearchColumnBooleanField> allowTime;
-    protected List<SearchColumnStringField> altContact;
-    protected List<SearchColumnStringField> altEmail;
-    protected List<SearchColumnStringField> altName;
-    protected List<SearchColumnStringField> altPhone;
-    protected List<SearchColumnStringField> attention;
-    protected List<SearchColumnStringField> billAddress1;
-    protected List<SearchColumnStringField> billAddress2;
-    protected List<SearchColumnStringField> billAddress3;
-    protected List<SearchColumnStringField> billAddressee;
-    protected List<SearchColumnStringField> billAttention;
-    protected List<SearchColumnStringField> billCity;
-    protected List<SearchColumnEnumSelectField> billCountry;
-    protected List<SearchColumnStringField> billCountryCode;
-    protected List<SearchColumnSelectField> billingSchedule;
-    protected List<SearchColumnStringField> billPhone;
-    protected List<SearchColumnStringField> billState;
-    protected List<SearchColumnStringField> billZipCode;
-    protected List<SearchColumnDateField> calculatedEndDate;
-    protected List<SearchColumnDateField> calculatedEndDateBaseline;
-    protected List<SearchColumnSelectField> category;
-    protected List<SearchColumnStringField> city;
-    protected List<SearchColumnStringField> comments;
-    protected List<SearchColumnStringField> companyName;
-    protected List<SearchColumnStringField> contact;
-    protected List<SearchColumnEnumSelectField> country;
-    protected List<SearchColumnStringField> countryCode;
-    protected List<SearchColumnSelectField> customer;
-    protected List<SearchColumnDateField> dateCreated;
-    protected List<SearchColumnStringField> email;
-    protected List<SearchColumnDateField> endDate;
-    protected List<SearchColumnStringField> entityId;
-    protected List<SearchColumnLongField> entityNumber;
-    protected List<SearchColumnSelectField> entityStatus;
-    protected List<SearchColumnDoubleField> estimatedCost;
-    protected List<SearchColumnDoubleField> estimatedGrossProfit;
-    protected List<SearchColumnDoubleField> estimatedGrossProfitPercent;
-    protected List<SearchColumnDoubleField> estimatedLaborCost;
-    protected List<SearchColumnDoubleField> estimatedLaborCostBaseline;
-    protected List<SearchColumnDoubleField> estimatedLaborRevenue;
-    protected List<SearchColumnDoubleField> estimatedRevenue;
-    protected List<SearchColumnDoubleField> estimatedTime;
-    protected List<SearchColumnDoubleField> estimatedTimeOverride;
-    protected List<SearchColumnDoubleField> estimatedTimeOverrideBaseline;
-    protected List<SearchColumnSelectField> externalId;
-    protected List<SearchColumnStringField> fax;
-    protected List<SearchColumnEnumSelectField> globalSubscriptionStatus;
-    protected List<SearchColumnSelectField> image;
-    protected List<SearchColumnBooleanField> includeCrmTasksInTotals;
-    protected List<SearchColumnSelectField> internalId;
-    protected List<SearchColumnBooleanField> isDefaultBilling;
-    protected List<SearchColumnBooleanField> isDefaultShipping;
-    protected List<SearchColumnBooleanField> isExemptTime;
-    protected List<SearchColumnBooleanField> isInactive;
-    protected List<SearchColumnBooleanField> isProductiveTime;
-    protected List<SearchColumnBooleanField> isUtilizedTime;
-    protected List<SearchColumnEnumSelectField> jobBillingType;
-    protected List<SearchColumnSelectField> jobItem;
-    protected List<SearchColumnDoubleField> jobPrice;
-    protected List<SearchColumnSelectField> jobResource;
-    protected List<SearchColumnSelectField> jobResourceRole;
-    protected List<SearchColumnEnumSelectField> language;
-    protected List<SearchColumnDateField> lastBaselineDate;
-    protected List<SearchColumnDateField> lastModifiedDate;
-    protected List<SearchColumnEnumSelectField> level;
-    protected List<SearchColumnBooleanField> limitTimeToAssignees;
-    protected List<SearchColumnBooleanField> materializeTime;
-    protected List<SearchColumnDoubleField> percentComplete;
-    protected List<SearchColumnDoubleField> percentTimeComplete;
-    protected List<SearchColumnEnumSelectField> permission;
-    protected List<SearchColumnStringField> phone;
-    protected List<SearchColumnStringField> phoneticName;
-    protected List<SearchColumnDateField> projectedEndDate;
-    protected List<SearchColumnDateField> projectedEndDateBaseline;
-    protected List<SearchColumnSelectField> projectExpenseType;
-    protected List<SearchColumnSelectField> revRecForecastRule;
-    protected List<SearchColumnStringField> shipAddress1;
-    protected List<SearchColumnStringField> shipAddress2;
-    protected List<SearchColumnStringField> shipAddress3;
-    protected List<SearchColumnStringField> shipAddressee;
-    protected List<SearchColumnStringField> shipAttention;
-    protected List<SearchColumnStringField> shipCity;
-    protected List<SearchColumnEnumSelectField> shipCountry;
-    protected List<SearchColumnStringField> shipCountryCode;
-    protected List<SearchColumnStringField> shipPhone;
-    protected List<SearchColumnStringField> shipState;
-    protected List<SearchColumnStringField> shipZip;
-    protected List<SearchColumnDateField> startDate;
-    protected List<SearchColumnDateField> startDateBaseline;
-    protected List<SearchColumnStringField> state;
-    protected List<SearchColumnSelectField> subscription;
-    protected List<SearchColumnDateField> subscriptionDate;
-    protected List<SearchColumnBooleanField> subscriptionStatus;
-    protected List<SearchColumnSelectField> subsidiary;
-    protected List<SearchColumnDoubleField> timeRemaining;
-    protected List<SearchColumnBooleanField> usePercentCompleteOverride;
-    protected List<SearchColumnStringField> zipCode;
-    protected SearchColumnCustomFieldList customFieldList;
-
-    /**
-     * Gets the value of the accountNumber property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the accountNumber property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getAccountNumber().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnStringField }
-     * 
-     * 
-     */
-    public List<SearchColumnStringField> getAccountNumber() {
-        if (accountNumber == null) {
-            accountNumber = new ArrayList<SearchColumnStringField>();
-        }
-        return this.accountNumber;
-    }
-
-    /**
-     * Gets the value of the actualTime property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the actualTime property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getActualTime().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnDoubleField }
-     * 
-     * 
-     */
-    public List<SearchColumnDoubleField> getActualTime() {
-        if (actualTime == null) {
-            actualTime = new ArrayList<SearchColumnDoubleField>();
-        }
-        return this.actualTime;
-    }
-
-    /**
-     * Gets the value of the address property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the address property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getAddress().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnStringField }
-     * 
-     * 
-     */
-    public List<SearchColumnStringField> getAddress() {
-        if (address == null) {
-            address = new ArrayList<SearchColumnStringField>();
-        }
-        return this.address;
-    }
-
-    /**
-     * Gets the value of the address1 property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the address1 property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getAddress1().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnStringField }
-     * 
-     * 
-     */
-    public List<SearchColumnStringField> getAddress1() {
-        if (address1 == null) {
-            address1 = new ArrayList<SearchColumnStringField>();
-        }
-        return this.address1;
-    }
-
-    /**
-     * Gets the value of the address2 property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the address2 property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getAddress2().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnStringField }
-     * 
-     * 
-     */
-    public List<SearchColumnStringField> getAddress2() {
-        if (address2 == null) {
-            address2 = new ArrayList<SearchColumnStringField>();
-        }
-        return this.address2;
-    }
-
-    /**
-     * Gets the value of the address3 property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the address3 property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getAddress3().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnStringField }
-     * 
-     * 
-     */
-    public List<SearchColumnStringField> getAddress3() {
-        if (address3 == null) {
-            address3 = new ArrayList<SearchColumnStringField>();
-        }
-        return this.address3;
-    }
-
-    /**
-     * Gets the value of the addressee property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the addressee property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getAddressee().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnStringField }
-     * 
-     * 
-     */
-    public List<SearchColumnStringField> getAddressee() {
-        if (addressee == null) {
-            addressee = new ArrayList<SearchColumnStringField>();
-        }
-        return this.addressee;
-    }
-
-    /**
-     * Gets the value of the addressInternalId property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the addressInternalId property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getAddressInternalId().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnStringField }
-     * 
-     * 
-     */
-    public List<SearchColumnStringField> getAddressInternalId() {
-        if (addressInternalId == null) {
-            addressInternalId = new ArrayList<SearchColumnStringField>();
-        }
-        return this.addressInternalId;
-    }
-
-    /**
-     * Gets the value of the addressLabel property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the addressLabel property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getAddressLabel().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnStringField }
-     * 
-     * 
-     */
-    public List<SearchColumnStringField> getAddressLabel() {
-        if (addressLabel == null) {
-            addressLabel = new ArrayList<SearchColumnStringField>();
-        }
-        return this.addressLabel;
-    }
-
-    /**
-     * Gets the value of the addressPhone property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the addressPhone property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getAddressPhone().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnStringField }
-     * 
-     * 
-     */
-    public List<SearchColumnStringField> getAddressPhone() {
-        if (addressPhone == null) {
-            addressPhone = new ArrayList<SearchColumnStringField>();
-        }
-        return this.addressPhone;
-    }
-
-    /**
-     * Gets the value of the allocatePayrollExpenses property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the allocatePayrollExpenses property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getAllocatePayrollExpenses().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnBooleanField }
-     * 
-     * 
-     */
-    public List<SearchColumnBooleanField> getAllocatePayrollExpenses() {
-        if (allocatePayrollExpenses == null) {
-            allocatePayrollExpenses = new ArrayList<SearchColumnBooleanField>();
-        }
-        return this.allocatePayrollExpenses;
-    }
-
-    /**
-     * Gets the value of the allowAllResourcesForTasks property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the allowAllResourcesForTasks property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getAllowAllResourcesForTasks().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnBooleanField }
-     * 
-     * 
-     */
-    public List<SearchColumnBooleanField> getAllowAllResourcesForTasks() {
-        if (allowAllResourcesForTasks == null) {
-            allowAllResourcesForTasks = new ArrayList<SearchColumnBooleanField>();
-        }
-        return this.allowAllResourcesForTasks;
-    }
-
-    /**
-     * Gets the value of the allowExpenses property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the allowExpenses property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getAllowExpenses().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnBooleanField }
-     * 
-     * 
-     */
-    public List<SearchColumnBooleanField> getAllowExpenses() {
-        if (allowExpenses == null) {
-            allowExpenses = new ArrayList<SearchColumnBooleanField>();
-        }
-        return this.allowExpenses;
-    }
-
-    /**
-     * Gets the value of the allowTime property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the allowTime property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getAllowTime().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnBooleanField }
-     * 
-     * 
-     */
-    public List<SearchColumnBooleanField> getAllowTime() {
-        if (allowTime == null) {
-            allowTime = new ArrayList<SearchColumnBooleanField>();
-        }
-        return this.allowTime;
-    }
-
-    /**
-     * Gets the value of the altContact property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the altContact property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getAltContact().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnStringField }
-     * 
-     * 
-     */
-    public List<SearchColumnStringField> getAltContact() {
-        if (altContact == null) {
-            altContact = new ArrayList<SearchColumnStringField>();
-        }
-        return this.altContact;
-    }
-
-    /**
-     * Gets the value of the altEmail property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the altEmail property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getAltEmail().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnStringField }
-     * 
-     * 
-     */
-    public List<SearchColumnStringField> getAltEmail() {
-        if (altEmail == null) {
-            altEmail = new ArrayList<SearchColumnStringField>();
-        }
-        return this.altEmail;
-    }
-
-    /**
-     * Gets the value of the altName property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the altName property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getAltName().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnStringField }
-     * 
-     * 
-     */
-    public List<SearchColumnStringField> getAltName() {
-        if (altName == null) {
-            altName = new ArrayList<SearchColumnStringField>();
-        }
-        return this.altName;
-    }
-
-    /**
-     * Gets the value of the altPhone property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the altPhone property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getAltPhone().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnStringField }
-     * 
-     * 
-     */
-    public List<SearchColumnStringField> getAltPhone() {
-        if (altPhone == null) {
-            altPhone = new ArrayList<SearchColumnStringField>();
-        }
-        return this.altPhone;
-    }
-
-    /**
-     * Gets the value of the attention property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the attention property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getAttention().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnStringField }
-     * 
-     * 
-     */
-    public List<SearchColumnStringField> getAttention() {
-        if (attention == null) {
-            attention = new ArrayList<SearchColumnStringField>();
-        }
-        return this.attention;
-    }
-
-    /**
-     * Gets the value of the billAddress1 property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the billAddress1 property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getBillAddress1().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnStringField }
-     * 
-     * 
-     */
-    public List<SearchColumnStringField> getBillAddress1() {
-        if (billAddress1 == null) {
-            billAddress1 = new ArrayList<SearchColumnStringField>();
-        }
-        return this.billAddress1;
-    }
-
-    /**
-     * Gets the value of the billAddress2 property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the billAddress2 property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getBillAddress2().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnStringField }
+public class JobSearchRowBasic  extends com.netsuite.webservices.platform.core_2018_2.SearchRowBasic  implements java.io.Serializable {
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] accountNumber;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnDoubleField[] actualTime;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] address;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] address1;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] address2;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] address3;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] addressee;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] addressInternalId;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] addressLabel;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] addressPhone;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnBooleanField[] allocatePayrollExpenses;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnBooleanField[] allowAllResourcesForTasks;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnBooleanField[] allowExpenses;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnBooleanField[] allowTime;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] altContact;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] altEmail;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] altName;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] altPhone;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] attention;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] billAddress1;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] billAddress2;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] billAddress3;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] billAddressee;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] billAttention;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] billCity;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnEnumSelectField[] billCountry;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] billCountryCode;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] billingSchedule;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] billPhone;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] billState;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] billZipCode;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnDateField[] calculatedEndDate;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnDateField[] calculatedEndDateBaseline;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] category;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] city;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] comments;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] companyName;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] contact;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnEnumSelectField[] country;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] countryCode;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] customer;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnDateField[] dateCreated;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] email;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnDateField[] endDate;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] entityId;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnLongField[] entityNumber;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] entityStatus;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnDoubleField[] estimatedCost;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnDoubleField[] estimatedGrossProfit;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnDoubleField[] estimatedGrossProfitPercent;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnDoubleField[] estimatedLaborCost;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnDoubleField[] estimatedLaborCostBaseline;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnDoubleField[] estimatedLaborRevenue;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnDoubleField[] estimatedRevenue;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnDoubleField[] estimatedTime;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnDoubleField[] estimatedTimeOverride;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnDoubleField[] estimatedTimeOverrideBaseline;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] externalId;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] fax;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnEnumSelectField[] globalSubscriptionStatus;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] image;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnBooleanField[] includeCrmTasksInTotals;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] internalId;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnBooleanField[] isDefaultBilling;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnBooleanField[] isDefaultShipping;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnBooleanField[] isExemptTime;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnBooleanField[] isInactive;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnBooleanField[] isProductiveTime;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnBooleanField[] isUtilizedTime;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnEnumSelectField[] jobBillingType;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] jobItem;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnDoubleField[] jobPrice;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] jobResource;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] jobResourceRole;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnEnumSelectField[] language;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnDateField[] lastBaselineDate;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnDateField[] lastModifiedDate;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnEnumSelectField[] level;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnBooleanField[] limitTimeToAssignees;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnBooleanField[] materializeTime;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnDoubleField[] percentComplete;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnDoubleField[] percentTimeComplete;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnEnumSelectField[] permission;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] phone;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] phoneticName;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnDateField[] projectedEndDate;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnDateField[] projectedEndDateBaseline;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] projectExpenseType;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] revRecForecastRule;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] shipAddress1;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] shipAddress2;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] shipAddress3;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] shipAddressee;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] shipAttention;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] shipCity;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnEnumSelectField[] shipCountry;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] shipCountryCode;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] shipPhone;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] shipState;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] shipZip;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnDateField[] startDate;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnDateField[] startDateBaseline;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] state;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] subscription;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnDateField[] subscriptionDate;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnBooleanField[] subscriptionStatus;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] subsidiary;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnDoubleField[] timeRemaining;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnBooleanField[] usePercentCompleteOverride;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] zipCode;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnCustomField[] customFieldList;
+
+    public JobSearchRowBasic() {
+    }
+
+    public JobSearchRowBasic(
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] accountNumber,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnDoubleField[] actualTime,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] address,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] address1,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] address2,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] address3,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] addressee,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] addressInternalId,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] addressLabel,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] addressPhone,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnBooleanField[] allocatePayrollExpenses,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnBooleanField[] allowAllResourcesForTasks,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnBooleanField[] allowExpenses,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnBooleanField[] allowTime,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] altContact,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] altEmail,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] altName,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] altPhone,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] attention,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] billAddress1,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] billAddress2,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] billAddress3,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] billAddressee,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] billAttention,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] billCity,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnEnumSelectField[] billCountry,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] billCountryCode,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] billingSchedule,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] billPhone,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] billState,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] billZipCode,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnDateField[] calculatedEndDate,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnDateField[] calculatedEndDateBaseline,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] category,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] city,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] comments,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] companyName,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] contact,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnEnumSelectField[] country,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] countryCode,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] customer,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnDateField[] dateCreated,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] email,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnDateField[] endDate,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] entityId,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnLongField[] entityNumber,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] entityStatus,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnDoubleField[] estimatedCost,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnDoubleField[] estimatedGrossProfit,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnDoubleField[] estimatedGrossProfitPercent,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnDoubleField[] estimatedLaborCost,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnDoubleField[] estimatedLaborCostBaseline,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnDoubleField[] estimatedLaborRevenue,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnDoubleField[] estimatedRevenue,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnDoubleField[] estimatedTime,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnDoubleField[] estimatedTimeOverride,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnDoubleField[] estimatedTimeOverrideBaseline,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] externalId,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] fax,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnEnumSelectField[] globalSubscriptionStatus,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] image,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnBooleanField[] includeCrmTasksInTotals,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] internalId,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnBooleanField[] isDefaultBilling,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnBooleanField[] isDefaultShipping,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnBooleanField[] isExemptTime,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnBooleanField[] isInactive,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnBooleanField[] isProductiveTime,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnBooleanField[] isUtilizedTime,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnEnumSelectField[] jobBillingType,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] jobItem,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnDoubleField[] jobPrice,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] jobResource,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] jobResourceRole,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnEnumSelectField[] language,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnDateField[] lastBaselineDate,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnDateField[] lastModifiedDate,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnEnumSelectField[] level,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnBooleanField[] limitTimeToAssignees,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnBooleanField[] materializeTime,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnDoubleField[] percentComplete,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnDoubleField[] percentTimeComplete,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnEnumSelectField[] permission,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] phone,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] phoneticName,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnDateField[] projectedEndDate,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnDateField[] projectedEndDateBaseline,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] projectExpenseType,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] revRecForecastRule,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] shipAddress1,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] shipAddress2,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] shipAddress3,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] shipAddressee,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] shipAttention,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] shipCity,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnEnumSelectField[] shipCountry,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] shipCountryCode,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] shipPhone,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] shipState,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] shipZip,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnDateField[] startDate,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnDateField[] startDateBaseline,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] state,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] subscription,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnDateField[] subscriptionDate,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnBooleanField[] subscriptionStatus,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] subsidiary,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnDoubleField[] timeRemaining,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnBooleanField[] usePercentCompleteOverride,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] zipCode,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnCustomField[] customFieldList) {
+        this.accountNumber = accountNumber;
+        this.actualTime = actualTime;
+        this.address = address;
+        this.address1 = address1;
+        this.address2 = address2;
+        this.address3 = address3;
+        this.addressee = addressee;
+        this.addressInternalId = addressInternalId;
+        this.addressLabel = addressLabel;
+        this.addressPhone = addressPhone;
+        this.allocatePayrollExpenses = allocatePayrollExpenses;
+        this.allowAllResourcesForTasks = allowAllResourcesForTasks;
+        this.allowExpenses = allowExpenses;
+        this.allowTime = allowTime;
+        this.altContact = altContact;
+        this.altEmail = altEmail;
+        this.altName = altName;
+        this.altPhone = altPhone;
+        this.attention = attention;
+        this.billAddress1 = billAddress1;
+        this.billAddress2 = billAddress2;
+        this.billAddress3 = billAddress3;
+        this.billAddressee = billAddressee;
+        this.billAttention = billAttention;
+        this.billCity = billCity;
+        this.billCountry = billCountry;
+        this.billCountryCode = billCountryCode;
+        this.billingSchedule = billingSchedule;
+        this.billPhone = billPhone;
+        this.billState = billState;
+        this.billZipCode = billZipCode;
+        this.calculatedEndDate = calculatedEndDate;
+        this.calculatedEndDateBaseline = calculatedEndDateBaseline;
+        this.category = category;
+        this.city = city;
+        this.comments = comments;
+        this.companyName = companyName;
+        this.contact = contact;
+        this.country = country;
+        this.countryCode = countryCode;
+        this.customer = customer;
+        this.dateCreated = dateCreated;
+        this.email = email;
+        this.endDate = endDate;
+        this.entityId = entityId;
+        this.entityNumber = entityNumber;
+        this.entityStatus = entityStatus;
+        this.estimatedCost = estimatedCost;
+        this.estimatedGrossProfit = estimatedGrossProfit;
+        this.estimatedGrossProfitPercent = estimatedGrossProfitPercent;
+        this.estimatedLaborCost = estimatedLaborCost;
+        this.estimatedLaborCostBaseline = estimatedLaborCostBaseline;
+        this.estimatedLaborRevenue = estimatedLaborRevenue;
+        this.estimatedRevenue = estimatedRevenue;
+        this.estimatedTime = estimatedTime;
+        this.estimatedTimeOverride = estimatedTimeOverride;
+        this.estimatedTimeOverrideBaseline = estimatedTimeOverrideBaseline;
+        this.externalId = externalId;
+        this.fax = fax;
+        this.globalSubscriptionStatus = globalSubscriptionStatus;
+        this.image = image;
+        this.includeCrmTasksInTotals = includeCrmTasksInTotals;
+        this.internalId = internalId;
+        this.isDefaultBilling = isDefaultBilling;
+        this.isDefaultShipping = isDefaultShipping;
+        this.isExemptTime = isExemptTime;
+        this.isInactive = isInactive;
+        this.isProductiveTime = isProductiveTime;
+        this.isUtilizedTime = isUtilizedTime;
+        this.jobBillingType = jobBillingType;
+        this.jobItem = jobItem;
+        this.jobPrice = jobPrice;
+        this.jobResource = jobResource;
+        this.jobResourceRole = jobResourceRole;
+        this.language = language;
+        this.lastBaselineDate = lastBaselineDate;
+        this.lastModifiedDate = lastModifiedDate;
+        this.level = level;
+        this.limitTimeToAssignees = limitTimeToAssignees;
+        this.materializeTime = materializeTime;
+        this.percentComplete = percentComplete;
+        this.percentTimeComplete = percentTimeComplete;
+        this.permission = permission;
+        this.phone = phone;
+        this.phoneticName = phoneticName;
+        this.projectedEndDate = projectedEndDate;
+        this.projectedEndDateBaseline = projectedEndDateBaseline;
+        this.projectExpenseType = projectExpenseType;
+        this.revRecForecastRule = revRecForecastRule;
+        this.shipAddress1 = shipAddress1;
+        this.shipAddress2 = shipAddress2;
+        this.shipAddress3 = shipAddress3;
+        this.shipAddressee = shipAddressee;
+        this.shipAttention = shipAttention;
+        this.shipCity = shipCity;
+        this.shipCountry = shipCountry;
+        this.shipCountryCode = shipCountryCode;
+        this.shipPhone = shipPhone;
+        this.shipState = shipState;
+        this.shipZip = shipZip;
+        this.startDate = startDate;
+        this.startDateBaseline = startDateBaseline;
+        this.state = state;
+        this.subscription = subscription;
+        this.subscriptionDate = subscriptionDate;
+        this.subscriptionStatus = subscriptionStatus;
+        this.subsidiary = subsidiary;
+        this.timeRemaining = timeRemaining;
+        this.usePercentCompleteOverride = usePercentCompleteOverride;
+        this.zipCode = zipCode;
+        this.customFieldList = customFieldList;
+    }
+
+
+    /**
+     * Gets the accountNumber value for this JobSearchRowBasic.
+     * 
+     * @return accountNumber
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] getAccountNumber() {
+        return accountNumber;
+    }
+
+
+    /**
+     * Sets the accountNumber value for this JobSearchRowBasic.
+     * 
+     * @param accountNumber
+     */
+    public void setAccountNumber(com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] accountNumber) {
+        this.accountNumber = accountNumber;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField getAccountNumber(int i) {
+        return this.accountNumber[i];
+    }
+
+    public void setAccountNumber(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField _value) {
+        this.accountNumber[i] = _value;
+    }
+
+
+    /**
+     * Gets the actualTime value for this JobSearchRowBasic.
+     * 
+     * @return actualTime
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnDoubleField[] getActualTime() {
+        return actualTime;
+    }
+
+
+    /**
+     * Sets the actualTime value for this JobSearchRowBasic.
+     * 
+     * @param actualTime
+     */
+    public void setActualTime(com.netsuite.webservices.platform.core_2018_2.SearchColumnDoubleField[] actualTime) {
+        this.actualTime = actualTime;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnDoubleField getActualTime(int i) {
+        return this.actualTime[i];
+    }
+
+    public void setActualTime(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnDoubleField _value) {
+        this.actualTime[i] = _value;
+    }
+
+
+    /**
+     * Gets the address value for this JobSearchRowBasic.
+     * 
+     * @return address
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] getAddress() {
+        return address;
+    }
+
+
+    /**
+     * Sets the address value for this JobSearchRowBasic.
+     * 
+     * @param address
+     */
+    public void setAddress(com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] address) {
+        this.address = address;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField getAddress(int i) {
+        return this.address[i];
+    }
+
+    public void setAddress(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField _value) {
+        this.address[i] = _value;
+    }
+
+
+    /**
+     * Gets the address1 value for this JobSearchRowBasic.
+     * 
+     * @return address1
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] getAddress1() {
+        return address1;
+    }
+
+
+    /**
+     * Sets the address1 value for this JobSearchRowBasic.
+     * 
+     * @param address1
+     */
+    public void setAddress1(com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] address1) {
+        this.address1 = address1;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField getAddress1(int i) {
+        return this.address1[i];
+    }
+
+    public void setAddress1(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField _value) {
+        this.address1[i] = _value;
+    }
+
+
+    /**
+     * Gets the address2 value for this JobSearchRowBasic.
+     * 
+     * @return address2
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] getAddress2() {
+        return address2;
+    }
+
+
+    /**
+     * Sets the address2 value for this JobSearchRowBasic.
+     * 
+     * @param address2
+     */
+    public void setAddress2(com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] address2) {
+        this.address2 = address2;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField getAddress2(int i) {
+        return this.address2[i];
+    }
+
+    public void setAddress2(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField _value) {
+        this.address2[i] = _value;
+    }
+
+
+    /**
+     * Gets the address3 value for this JobSearchRowBasic.
+     * 
+     * @return address3
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] getAddress3() {
+        return address3;
+    }
+
+
+    /**
+     * Sets the address3 value for this JobSearchRowBasic.
+     * 
+     * @param address3
+     */
+    public void setAddress3(com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] address3) {
+        this.address3 = address3;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField getAddress3(int i) {
+        return this.address3[i];
+    }
+
+    public void setAddress3(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField _value) {
+        this.address3[i] = _value;
+    }
+
+
+    /**
+     * Gets the addressee value for this JobSearchRowBasic.
+     * 
+     * @return addressee
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] getAddressee() {
+        return addressee;
+    }
+
+
+    /**
+     * Sets the addressee value for this JobSearchRowBasic.
+     * 
+     * @param addressee
+     */
+    public void setAddressee(com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] addressee) {
+        this.addressee = addressee;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField getAddressee(int i) {
+        return this.addressee[i];
+    }
+
+    public void setAddressee(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField _value) {
+        this.addressee[i] = _value;
+    }
+
+
+    /**
+     * Gets the addressInternalId value for this JobSearchRowBasic.
+     * 
+     * @return addressInternalId
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] getAddressInternalId() {
+        return addressInternalId;
+    }
+
+
+    /**
+     * Sets the addressInternalId value for this JobSearchRowBasic.
+     * 
+     * @param addressInternalId
+     */
+    public void setAddressInternalId(com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] addressInternalId) {
+        this.addressInternalId = addressInternalId;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField getAddressInternalId(int i) {
+        return this.addressInternalId[i];
+    }
+
+    public void setAddressInternalId(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField _value) {
+        this.addressInternalId[i] = _value;
+    }
+
+
+    /**
+     * Gets the addressLabel value for this JobSearchRowBasic.
+     * 
+     * @return addressLabel
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] getAddressLabel() {
+        return addressLabel;
+    }
+
+
+    /**
+     * Sets the addressLabel value for this JobSearchRowBasic.
+     * 
+     * @param addressLabel
+     */
+    public void setAddressLabel(com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] addressLabel) {
+        this.addressLabel = addressLabel;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField getAddressLabel(int i) {
+        return this.addressLabel[i];
+    }
+
+    public void setAddressLabel(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField _value) {
+        this.addressLabel[i] = _value;
+    }
+
+
+    /**
+     * Gets the addressPhone value for this JobSearchRowBasic.
+     * 
+     * @return addressPhone
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] getAddressPhone() {
+        return addressPhone;
+    }
+
+
+    /**
+     * Sets the addressPhone value for this JobSearchRowBasic.
+     * 
+     * @param addressPhone
+     */
+    public void setAddressPhone(com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] addressPhone) {
+        this.addressPhone = addressPhone;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField getAddressPhone(int i) {
+        return this.addressPhone[i];
+    }
+
+    public void setAddressPhone(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField _value) {
+        this.addressPhone[i] = _value;
+    }
+
+
+    /**
+     * Gets the allocatePayrollExpenses value for this JobSearchRowBasic.
+     * 
+     * @return allocatePayrollExpenses
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnBooleanField[] getAllocatePayrollExpenses() {
+        return allocatePayrollExpenses;
+    }
+
+
+    /**
+     * Sets the allocatePayrollExpenses value for this JobSearchRowBasic.
+     * 
+     * @param allocatePayrollExpenses
+     */
+    public void setAllocatePayrollExpenses(com.netsuite.webservices.platform.core_2018_2.SearchColumnBooleanField[] allocatePayrollExpenses) {
+        this.allocatePayrollExpenses = allocatePayrollExpenses;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnBooleanField getAllocatePayrollExpenses(int i) {
+        return this.allocatePayrollExpenses[i];
+    }
+
+    public void setAllocatePayrollExpenses(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnBooleanField _value) {
+        this.allocatePayrollExpenses[i] = _value;
+    }
+
+
+    /**
+     * Gets the allowAllResourcesForTasks value for this JobSearchRowBasic.
+     * 
+     * @return allowAllResourcesForTasks
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnBooleanField[] getAllowAllResourcesForTasks() {
+        return allowAllResourcesForTasks;
+    }
+
+
+    /**
+     * Sets the allowAllResourcesForTasks value for this JobSearchRowBasic.
+     * 
+     * @param allowAllResourcesForTasks
+     */
+    public void setAllowAllResourcesForTasks(com.netsuite.webservices.platform.core_2018_2.SearchColumnBooleanField[] allowAllResourcesForTasks) {
+        this.allowAllResourcesForTasks = allowAllResourcesForTasks;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnBooleanField getAllowAllResourcesForTasks(int i) {
+        return this.allowAllResourcesForTasks[i];
+    }
+
+    public void setAllowAllResourcesForTasks(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnBooleanField _value) {
+        this.allowAllResourcesForTasks[i] = _value;
+    }
+
+
+    /**
+     * Gets the allowExpenses value for this JobSearchRowBasic.
+     * 
+     * @return allowExpenses
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnBooleanField[] getAllowExpenses() {
+        return allowExpenses;
+    }
+
+
+    /**
+     * Sets the allowExpenses value for this JobSearchRowBasic.
+     * 
+     * @param allowExpenses
+     */
+    public void setAllowExpenses(com.netsuite.webservices.platform.core_2018_2.SearchColumnBooleanField[] allowExpenses) {
+        this.allowExpenses = allowExpenses;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnBooleanField getAllowExpenses(int i) {
+        return this.allowExpenses[i];
+    }
+
+    public void setAllowExpenses(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnBooleanField _value) {
+        this.allowExpenses[i] = _value;
+    }
+
+
+    /**
+     * Gets the allowTime value for this JobSearchRowBasic.
+     * 
+     * @return allowTime
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnBooleanField[] getAllowTime() {
+        return allowTime;
+    }
+
+
+    /**
+     * Sets the allowTime value for this JobSearchRowBasic.
+     * 
+     * @param allowTime
+     */
+    public void setAllowTime(com.netsuite.webservices.platform.core_2018_2.SearchColumnBooleanField[] allowTime) {
+        this.allowTime = allowTime;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnBooleanField getAllowTime(int i) {
+        return this.allowTime[i];
+    }
+
+    public void setAllowTime(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnBooleanField _value) {
+        this.allowTime[i] = _value;
+    }
+
+
+    /**
+     * Gets the altContact value for this JobSearchRowBasic.
+     * 
+     * @return altContact
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] getAltContact() {
+        return altContact;
+    }
+
+
+    /**
+     * Sets the altContact value for this JobSearchRowBasic.
+     * 
+     * @param altContact
+     */
+    public void setAltContact(com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] altContact) {
+        this.altContact = altContact;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField getAltContact(int i) {
+        return this.altContact[i];
+    }
+
+    public void setAltContact(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField _value) {
+        this.altContact[i] = _value;
+    }
+
+
+    /**
+     * Gets the altEmail value for this JobSearchRowBasic.
+     * 
+     * @return altEmail
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] getAltEmail() {
+        return altEmail;
+    }
+
+
+    /**
+     * Sets the altEmail value for this JobSearchRowBasic.
+     * 
+     * @param altEmail
+     */
+    public void setAltEmail(com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] altEmail) {
+        this.altEmail = altEmail;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField getAltEmail(int i) {
+        return this.altEmail[i];
+    }
+
+    public void setAltEmail(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField _value) {
+        this.altEmail[i] = _value;
+    }
+
+
+    /**
+     * Gets the altName value for this JobSearchRowBasic.
+     * 
+     * @return altName
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] getAltName() {
+        return altName;
+    }
+
+
+    /**
+     * Sets the altName value for this JobSearchRowBasic.
+     * 
+     * @param altName
+     */
+    public void setAltName(com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] altName) {
+        this.altName = altName;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField getAltName(int i) {
+        return this.altName[i];
+    }
+
+    public void setAltName(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField _value) {
+        this.altName[i] = _value;
+    }
+
+
+    /**
+     * Gets the altPhone value for this JobSearchRowBasic.
+     * 
+     * @return altPhone
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] getAltPhone() {
+        return altPhone;
+    }
+
+
+    /**
+     * Sets the altPhone value for this JobSearchRowBasic.
+     * 
+     * @param altPhone
+     */
+    public void setAltPhone(com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] altPhone) {
+        this.altPhone = altPhone;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField getAltPhone(int i) {
+        return this.altPhone[i];
+    }
+
+    public void setAltPhone(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField _value) {
+        this.altPhone[i] = _value;
+    }
+
+
+    /**
+     * Gets the attention value for this JobSearchRowBasic.
+     * 
+     * @return attention
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] getAttention() {
+        return attention;
+    }
+
+
+    /**
+     * Sets the attention value for this JobSearchRowBasic.
+     * 
+     * @param attention
+     */
+    public void setAttention(com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] attention) {
+        this.attention = attention;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField getAttention(int i) {
+        return this.attention[i];
+    }
+
+    public void setAttention(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField _value) {
+        this.attention[i] = _value;
+    }
+
+
+    /**
+     * Gets the billAddress1 value for this JobSearchRowBasic.
+     * 
+     * @return billAddress1
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] getBillAddress1() {
+        return billAddress1;
+    }
+
+
+    /**
+     * Sets the billAddress1 value for this JobSearchRowBasic.
+     * 
+     * @param billAddress1
+     */
+    public void setBillAddress1(com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] billAddress1) {
+        this.billAddress1 = billAddress1;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField getBillAddress1(int i) {
+        return this.billAddress1[i];
+    }
+
+    public void setBillAddress1(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField _value) {
+        this.billAddress1[i] = _value;
+    }
+
+
+    /**
+     * Gets the billAddress2 value for this JobSearchRowBasic.
+     * 
+     * @return billAddress2
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] getBillAddress2() {
+        return billAddress2;
+    }
+
+
+    /**
+     * Sets the billAddress2 value for this JobSearchRowBasic.
+     * 
+     * @param billAddress2
+     */
+    public void setBillAddress2(com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] billAddress2) {
+        this.billAddress2 = billAddress2;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField getBillAddress2(int i) {
+        return this.billAddress2[i];
+    }
+
+    public void setBillAddress2(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField _value) {
+        this.billAddress2[i] = _value;
+    }
+
+
+    /**
+     * Gets the billAddress3 value for this JobSearchRowBasic.
+     * 
+     * @return billAddress3
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] getBillAddress3() {
+        return billAddress3;
+    }
+
+
+    /**
+     * Sets the billAddress3 value for this JobSearchRowBasic.
+     * 
+     * @param billAddress3
+     */
+    public void setBillAddress3(com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] billAddress3) {
+        this.billAddress3 = billAddress3;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField getBillAddress3(int i) {
+        return this.billAddress3[i];
+    }
+
+    public void setBillAddress3(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField _value) {
+        this.billAddress3[i] = _value;
+    }
+
+
+    /**
+     * Gets the billAddressee value for this JobSearchRowBasic.
+     * 
+     * @return billAddressee
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] getBillAddressee() {
+        return billAddressee;
+    }
+
+
+    /**
+     * Sets the billAddressee value for this JobSearchRowBasic.
+     * 
+     * @param billAddressee
+     */
+    public void setBillAddressee(com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] billAddressee) {
+        this.billAddressee = billAddressee;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField getBillAddressee(int i) {
+        return this.billAddressee[i];
+    }
+
+    public void setBillAddressee(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField _value) {
+        this.billAddressee[i] = _value;
+    }
+
+
+    /**
+     * Gets the billAttention value for this JobSearchRowBasic.
+     * 
+     * @return billAttention
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] getBillAttention() {
+        return billAttention;
+    }
+
+
+    /**
+     * Sets the billAttention value for this JobSearchRowBasic.
+     * 
+     * @param billAttention
+     */
+    public void setBillAttention(com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] billAttention) {
+        this.billAttention = billAttention;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField getBillAttention(int i) {
+        return this.billAttention[i];
+    }
+
+    public void setBillAttention(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField _value) {
+        this.billAttention[i] = _value;
+    }
+
+
+    /**
+     * Gets the billCity value for this JobSearchRowBasic.
+     * 
+     * @return billCity
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] getBillCity() {
+        return billCity;
+    }
+
+
+    /**
+     * Sets the billCity value for this JobSearchRowBasic.
+     * 
+     * @param billCity
+     */
+    public void setBillCity(com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] billCity) {
+        this.billCity = billCity;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField getBillCity(int i) {
+        return this.billCity[i];
+    }
+
+    public void setBillCity(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField _value) {
+        this.billCity[i] = _value;
+    }
+
+
+    /**
+     * Gets the billCountry value for this JobSearchRowBasic.
+     * 
+     * @return billCountry
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnEnumSelectField[] getBillCountry() {
+        return billCountry;
+    }
+
+
+    /**
+     * Sets the billCountry value for this JobSearchRowBasic.
+     * 
+     * @param billCountry
+     */
+    public void setBillCountry(com.netsuite.webservices.platform.core_2018_2.SearchColumnEnumSelectField[] billCountry) {
+        this.billCountry = billCountry;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnEnumSelectField getBillCountry(int i) {
+        return this.billCountry[i];
+    }
+
+    public void setBillCountry(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnEnumSelectField _value) {
+        this.billCountry[i] = _value;
+    }
+
+
+    /**
+     * Gets the billCountryCode value for this JobSearchRowBasic.
+     * 
+     * @return billCountryCode
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] getBillCountryCode() {
+        return billCountryCode;
+    }
+
+
+    /**
+     * Sets the billCountryCode value for this JobSearchRowBasic.
+     * 
+     * @param billCountryCode
+     */
+    public void setBillCountryCode(com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] billCountryCode) {
+        this.billCountryCode = billCountryCode;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField getBillCountryCode(int i) {
+        return this.billCountryCode[i];
+    }
+
+    public void setBillCountryCode(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField _value) {
+        this.billCountryCode[i] = _value;
+    }
+
+
+    /**
+     * Gets the billingSchedule value for this JobSearchRowBasic.
+     * 
+     * @return billingSchedule
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] getBillingSchedule() {
+        return billingSchedule;
+    }
+
+
+    /**
+     * Sets the billingSchedule value for this JobSearchRowBasic.
+     * 
+     * @param billingSchedule
+     */
+    public void setBillingSchedule(com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] billingSchedule) {
+        this.billingSchedule = billingSchedule;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField getBillingSchedule(int i) {
+        return this.billingSchedule[i];
+    }
+
+    public void setBillingSchedule(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField _value) {
+        this.billingSchedule[i] = _value;
+    }
+
+
+    /**
+     * Gets the billPhone value for this JobSearchRowBasic.
+     * 
+     * @return billPhone
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] getBillPhone() {
+        return billPhone;
+    }
+
+
+    /**
+     * Sets the billPhone value for this JobSearchRowBasic.
+     * 
+     * @param billPhone
+     */
+    public void setBillPhone(com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] billPhone) {
+        this.billPhone = billPhone;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField getBillPhone(int i) {
+        return this.billPhone[i];
+    }
+
+    public void setBillPhone(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField _value) {
+        this.billPhone[i] = _value;
+    }
+
+
+    /**
+     * Gets the billState value for this JobSearchRowBasic.
+     * 
+     * @return billState
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] getBillState() {
+        return billState;
+    }
+
+
+    /**
+     * Sets the billState value for this JobSearchRowBasic.
+     * 
+     * @param billState
+     */
+    public void setBillState(com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] billState) {
+        this.billState = billState;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField getBillState(int i) {
+        return this.billState[i];
+    }
+
+    public void setBillState(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField _value) {
+        this.billState[i] = _value;
+    }
+
+
+    /**
+     * Gets the billZipCode value for this JobSearchRowBasic.
+     * 
+     * @return billZipCode
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] getBillZipCode() {
+        return billZipCode;
+    }
+
+
+    /**
+     * Sets the billZipCode value for this JobSearchRowBasic.
+     * 
+     * @param billZipCode
+     */
+    public void setBillZipCode(com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] billZipCode) {
+        this.billZipCode = billZipCode;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField getBillZipCode(int i) {
+        return this.billZipCode[i];
+    }
+
+    public void setBillZipCode(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField _value) {
+        this.billZipCode[i] = _value;
+    }
+
+
+    /**
+     * Gets the calculatedEndDate value for this JobSearchRowBasic.
+     * 
+     * @return calculatedEndDate
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnDateField[] getCalculatedEndDate() {
+        return calculatedEndDate;
+    }
+
+
+    /**
+     * Sets the calculatedEndDate value for this JobSearchRowBasic.
+     * 
+     * @param calculatedEndDate
+     */
+    public void setCalculatedEndDate(com.netsuite.webservices.platform.core_2018_2.SearchColumnDateField[] calculatedEndDate) {
+        this.calculatedEndDate = calculatedEndDate;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnDateField getCalculatedEndDate(int i) {
+        return this.calculatedEndDate[i];
+    }
+
+    public void setCalculatedEndDate(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnDateField _value) {
+        this.calculatedEndDate[i] = _value;
+    }
+
+
+    /**
+     * Gets the calculatedEndDateBaseline value for this JobSearchRowBasic.
+     * 
+     * @return calculatedEndDateBaseline
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnDateField[] getCalculatedEndDateBaseline() {
+        return calculatedEndDateBaseline;
+    }
+
+
+    /**
+     * Sets the calculatedEndDateBaseline value for this JobSearchRowBasic.
+     * 
+     * @param calculatedEndDateBaseline
+     */
+    public void setCalculatedEndDateBaseline(com.netsuite.webservices.platform.core_2018_2.SearchColumnDateField[] calculatedEndDateBaseline) {
+        this.calculatedEndDateBaseline = calculatedEndDateBaseline;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnDateField getCalculatedEndDateBaseline(int i) {
+        return this.calculatedEndDateBaseline[i];
+    }
+
+    public void setCalculatedEndDateBaseline(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnDateField _value) {
+        this.calculatedEndDateBaseline[i] = _value;
+    }
+
+
+    /**
+     * Gets the category value for this JobSearchRowBasic.
+     * 
+     * @return category
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] getCategory() {
+        return category;
+    }
+
+
+    /**
+     * Sets the category value for this JobSearchRowBasic.
+     * 
+     * @param category
+     */
+    public void setCategory(com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] category) {
+        this.category = category;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField getCategory(int i) {
+        return this.category[i];
+    }
+
+    public void setCategory(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField _value) {
+        this.category[i] = _value;
+    }
+
+
+    /**
+     * Gets the city value for this JobSearchRowBasic.
+     * 
+     * @return city
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] getCity() {
+        return city;
+    }
+
+
+    /**
+     * Sets the city value for this JobSearchRowBasic.
+     * 
+     * @param city
+     */
+    public void setCity(com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] city) {
+        this.city = city;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField getCity(int i) {
+        return this.city[i];
+    }
+
+    public void setCity(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField _value) {
+        this.city[i] = _value;
+    }
+
+
+    /**
+     * Gets the comments value for this JobSearchRowBasic.
+     * 
+     * @return comments
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] getComments() {
+        return comments;
+    }
+
+
+    /**
+     * Sets the comments value for this JobSearchRowBasic.
+     * 
+     * @param comments
+     */
+    public void setComments(com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] comments) {
+        this.comments = comments;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField getComments(int i) {
+        return this.comments[i];
+    }
+
+    public void setComments(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField _value) {
+        this.comments[i] = _value;
+    }
+
+
+    /**
+     * Gets the companyName value for this JobSearchRowBasic.
+     * 
+     * @return companyName
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] getCompanyName() {
+        return companyName;
+    }
+
+
+    /**
+     * Sets the companyName value for this JobSearchRowBasic.
+     * 
+     * @param companyName
+     */
+    public void setCompanyName(com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] companyName) {
+        this.companyName = companyName;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField getCompanyName(int i) {
+        return this.companyName[i];
+    }
+
+    public void setCompanyName(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField _value) {
+        this.companyName[i] = _value;
+    }
+
+
+    /**
+     * Gets the contact value for this JobSearchRowBasic.
+     * 
+     * @return contact
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] getContact() {
+        return contact;
+    }
+
+
+    /**
+     * Sets the contact value for this JobSearchRowBasic.
+     * 
+     * @param contact
+     */
+    public void setContact(com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] contact) {
+        this.contact = contact;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField getContact(int i) {
+        return this.contact[i];
+    }
+
+    public void setContact(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField _value) {
+        this.contact[i] = _value;
+    }
+
+
+    /**
+     * Gets the country value for this JobSearchRowBasic.
+     * 
+     * @return country
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnEnumSelectField[] getCountry() {
+        return country;
+    }
+
+
+    /**
+     * Sets the country value for this JobSearchRowBasic.
+     * 
+     * @param country
+     */
+    public void setCountry(com.netsuite.webservices.platform.core_2018_2.SearchColumnEnumSelectField[] country) {
+        this.country = country;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnEnumSelectField getCountry(int i) {
+        return this.country[i];
+    }
+
+    public void setCountry(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnEnumSelectField _value) {
+        this.country[i] = _value;
+    }
+
+
+    /**
+     * Gets the countryCode value for this JobSearchRowBasic.
+     * 
+     * @return countryCode
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] getCountryCode() {
+        return countryCode;
+    }
+
+
+    /**
+     * Sets the countryCode value for this JobSearchRowBasic.
+     * 
+     * @param countryCode
+     */
+    public void setCountryCode(com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] countryCode) {
+        this.countryCode = countryCode;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField getCountryCode(int i) {
+        return this.countryCode[i];
+    }
+
+    public void setCountryCode(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField _value) {
+        this.countryCode[i] = _value;
+    }
+
+
+    /**
+     * Gets the customer value for this JobSearchRowBasic.
+     * 
+     * @return customer
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] getCustomer() {
+        return customer;
+    }
+
+
+    /**
+     * Sets the customer value for this JobSearchRowBasic.
+     * 
+     * @param customer
+     */
+    public void setCustomer(com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] customer) {
+        this.customer = customer;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField getCustomer(int i) {
+        return this.customer[i];
+    }
+
+    public void setCustomer(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField _value) {
+        this.customer[i] = _value;
+    }
+
+
+    /**
+     * Gets the dateCreated value for this JobSearchRowBasic.
+     * 
+     * @return dateCreated
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnDateField[] getDateCreated() {
+        return dateCreated;
+    }
+
+
+    /**
+     * Sets the dateCreated value for this JobSearchRowBasic.
+     * 
+     * @param dateCreated
+     */
+    public void setDateCreated(com.netsuite.webservices.platform.core_2018_2.SearchColumnDateField[] dateCreated) {
+        this.dateCreated = dateCreated;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnDateField getDateCreated(int i) {
+        return this.dateCreated[i];
+    }
+
+    public void setDateCreated(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnDateField _value) {
+        this.dateCreated[i] = _value;
+    }
+
+
+    /**
+     * Gets the email value for this JobSearchRowBasic.
+     * 
+     * @return email
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] getEmail() {
+        return email;
+    }
+
+
+    /**
+     * Sets the email value for this JobSearchRowBasic.
+     * 
+     * @param email
+     */
+    public void setEmail(com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] email) {
+        this.email = email;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField getEmail(int i) {
+        return this.email[i];
+    }
+
+    public void setEmail(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField _value) {
+        this.email[i] = _value;
+    }
+
+
+    /**
+     * Gets the endDate value for this JobSearchRowBasic.
+     * 
+     * @return endDate
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnDateField[] getEndDate() {
+        return endDate;
+    }
+
+
+    /**
+     * Sets the endDate value for this JobSearchRowBasic.
+     * 
+     * @param endDate
+     */
+    public void setEndDate(com.netsuite.webservices.platform.core_2018_2.SearchColumnDateField[] endDate) {
+        this.endDate = endDate;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnDateField getEndDate(int i) {
+        return this.endDate[i];
+    }
+
+    public void setEndDate(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnDateField _value) {
+        this.endDate[i] = _value;
+    }
+
+
+    /**
+     * Gets the entityId value for this JobSearchRowBasic.
+     * 
+     * @return entityId
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] getEntityId() {
+        return entityId;
+    }
+
+
+    /**
+     * Sets the entityId value for this JobSearchRowBasic.
+     * 
+     * @param entityId
+     */
+    public void setEntityId(com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] entityId) {
+        this.entityId = entityId;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField getEntityId(int i) {
+        return this.entityId[i];
+    }
+
+    public void setEntityId(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField _value) {
+        this.entityId[i] = _value;
+    }
+
+
+    /**
+     * Gets the entityNumber value for this JobSearchRowBasic.
+     * 
+     * @return entityNumber
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnLongField[] getEntityNumber() {
+        return entityNumber;
+    }
+
+
+    /**
+     * Sets the entityNumber value for this JobSearchRowBasic.
+     * 
+     * @param entityNumber
+     */
+    public void setEntityNumber(com.netsuite.webservices.platform.core_2018_2.SearchColumnLongField[] entityNumber) {
+        this.entityNumber = entityNumber;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnLongField getEntityNumber(int i) {
+        return this.entityNumber[i];
+    }
+
+    public void setEntityNumber(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnLongField _value) {
+        this.entityNumber[i] = _value;
+    }
+
+
+    /**
+     * Gets the entityStatus value for this JobSearchRowBasic.
+     * 
+     * @return entityStatus
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] getEntityStatus() {
+        return entityStatus;
+    }
+
+
+    /**
+     * Sets the entityStatus value for this JobSearchRowBasic.
+     * 
+     * @param entityStatus
+     */
+    public void setEntityStatus(com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] entityStatus) {
+        this.entityStatus = entityStatus;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField getEntityStatus(int i) {
+        return this.entityStatus[i];
+    }
+
+    public void setEntityStatus(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField _value) {
+        this.entityStatus[i] = _value;
+    }
+
+
+    /**
+     * Gets the estimatedCost value for this JobSearchRowBasic.
+     * 
+     * @return estimatedCost
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnDoubleField[] getEstimatedCost() {
+        return estimatedCost;
+    }
+
+
+    /**
+     * Sets the estimatedCost value for this JobSearchRowBasic.
+     * 
+     * @param estimatedCost
+     */
+    public void setEstimatedCost(com.netsuite.webservices.platform.core_2018_2.SearchColumnDoubleField[] estimatedCost) {
+        this.estimatedCost = estimatedCost;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnDoubleField getEstimatedCost(int i) {
+        return this.estimatedCost[i];
+    }
+
+    public void setEstimatedCost(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnDoubleField _value) {
+        this.estimatedCost[i] = _value;
+    }
+
+
+    /**
+     * Gets the estimatedGrossProfit value for this JobSearchRowBasic.
+     * 
+     * @return estimatedGrossProfit
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnDoubleField[] getEstimatedGrossProfit() {
+        return estimatedGrossProfit;
+    }
+
+
+    /**
+     * Sets the estimatedGrossProfit value for this JobSearchRowBasic.
+     * 
+     * @param estimatedGrossProfit
+     */
+    public void setEstimatedGrossProfit(com.netsuite.webservices.platform.core_2018_2.SearchColumnDoubleField[] estimatedGrossProfit) {
+        this.estimatedGrossProfit = estimatedGrossProfit;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnDoubleField getEstimatedGrossProfit(int i) {
+        return this.estimatedGrossProfit[i];
+    }
+
+    public void setEstimatedGrossProfit(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnDoubleField _value) {
+        this.estimatedGrossProfit[i] = _value;
+    }
+
+
+    /**
+     * Gets the estimatedGrossProfitPercent value for this JobSearchRowBasic.
+     * 
+     * @return estimatedGrossProfitPercent
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnDoubleField[] getEstimatedGrossProfitPercent() {
+        return estimatedGrossProfitPercent;
+    }
+
+
+    /**
+     * Sets the estimatedGrossProfitPercent value for this JobSearchRowBasic.
+     * 
+     * @param estimatedGrossProfitPercent
+     */
+    public void setEstimatedGrossProfitPercent(com.netsuite.webservices.platform.core_2018_2.SearchColumnDoubleField[] estimatedGrossProfitPercent) {
+        this.estimatedGrossProfitPercent = estimatedGrossProfitPercent;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnDoubleField getEstimatedGrossProfitPercent(int i) {
+        return this.estimatedGrossProfitPercent[i];
+    }
+
+    public void setEstimatedGrossProfitPercent(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnDoubleField _value) {
+        this.estimatedGrossProfitPercent[i] = _value;
+    }
+
+
+    /**
+     * Gets the estimatedLaborCost value for this JobSearchRowBasic.
+     * 
+     * @return estimatedLaborCost
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnDoubleField[] getEstimatedLaborCost() {
+        return estimatedLaborCost;
+    }
+
+
+    /**
+     * Sets the estimatedLaborCost value for this JobSearchRowBasic.
+     * 
+     * @param estimatedLaborCost
+     */
+    public void setEstimatedLaborCost(com.netsuite.webservices.platform.core_2018_2.SearchColumnDoubleField[] estimatedLaborCost) {
+        this.estimatedLaborCost = estimatedLaborCost;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnDoubleField getEstimatedLaborCost(int i) {
+        return this.estimatedLaborCost[i];
+    }
+
+    public void setEstimatedLaborCost(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnDoubleField _value) {
+        this.estimatedLaborCost[i] = _value;
+    }
+
+
+    /**
+     * Gets the estimatedLaborCostBaseline value for this JobSearchRowBasic.
+     * 
+     * @return estimatedLaborCostBaseline
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnDoubleField[] getEstimatedLaborCostBaseline() {
+        return estimatedLaborCostBaseline;
+    }
+
+
+    /**
+     * Sets the estimatedLaborCostBaseline value for this JobSearchRowBasic.
+     * 
+     * @param estimatedLaborCostBaseline
+     */
+    public void setEstimatedLaborCostBaseline(com.netsuite.webservices.platform.core_2018_2.SearchColumnDoubleField[] estimatedLaborCostBaseline) {
+        this.estimatedLaborCostBaseline = estimatedLaborCostBaseline;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnDoubleField getEstimatedLaborCostBaseline(int i) {
+        return this.estimatedLaborCostBaseline[i];
+    }
+
+    public void setEstimatedLaborCostBaseline(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnDoubleField _value) {
+        this.estimatedLaborCostBaseline[i] = _value;
+    }
+
+
+    /**
+     * Gets the estimatedLaborRevenue value for this JobSearchRowBasic.
+     * 
+     * @return estimatedLaborRevenue
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnDoubleField[] getEstimatedLaborRevenue() {
+        return estimatedLaborRevenue;
+    }
+
+
+    /**
+     * Sets the estimatedLaborRevenue value for this JobSearchRowBasic.
+     * 
+     * @param estimatedLaborRevenue
+     */
+    public void setEstimatedLaborRevenue(com.netsuite.webservices.platform.core_2018_2.SearchColumnDoubleField[] estimatedLaborRevenue) {
+        this.estimatedLaborRevenue = estimatedLaborRevenue;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnDoubleField getEstimatedLaborRevenue(int i) {
+        return this.estimatedLaborRevenue[i];
+    }
+
+    public void setEstimatedLaborRevenue(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnDoubleField _value) {
+        this.estimatedLaborRevenue[i] = _value;
+    }
+
+
+    /**
+     * Gets the estimatedRevenue value for this JobSearchRowBasic.
+     * 
+     * @return estimatedRevenue
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnDoubleField[] getEstimatedRevenue() {
+        return estimatedRevenue;
+    }
+
+
+    /**
+     * Sets the estimatedRevenue value for this JobSearchRowBasic.
+     * 
+     * @param estimatedRevenue
+     */
+    public void setEstimatedRevenue(com.netsuite.webservices.platform.core_2018_2.SearchColumnDoubleField[] estimatedRevenue) {
+        this.estimatedRevenue = estimatedRevenue;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnDoubleField getEstimatedRevenue(int i) {
+        return this.estimatedRevenue[i];
+    }
+
+    public void setEstimatedRevenue(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnDoubleField _value) {
+        this.estimatedRevenue[i] = _value;
+    }
+
+
+    /**
+     * Gets the estimatedTime value for this JobSearchRowBasic.
+     * 
+     * @return estimatedTime
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnDoubleField[] getEstimatedTime() {
+        return estimatedTime;
+    }
+
+
+    /**
+     * Sets the estimatedTime value for this JobSearchRowBasic.
+     * 
+     * @param estimatedTime
+     */
+    public void setEstimatedTime(com.netsuite.webservices.platform.core_2018_2.SearchColumnDoubleField[] estimatedTime) {
+        this.estimatedTime = estimatedTime;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnDoubleField getEstimatedTime(int i) {
+        return this.estimatedTime[i];
+    }
+
+    public void setEstimatedTime(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnDoubleField _value) {
+        this.estimatedTime[i] = _value;
+    }
+
+
+    /**
+     * Gets the estimatedTimeOverride value for this JobSearchRowBasic.
+     * 
+     * @return estimatedTimeOverride
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnDoubleField[] getEstimatedTimeOverride() {
+        return estimatedTimeOverride;
+    }
+
+
+    /**
+     * Sets the estimatedTimeOverride value for this JobSearchRowBasic.
+     * 
+     * @param estimatedTimeOverride
+     */
+    public void setEstimatedTimeOverride(com.netsuite.webservices.platform.core_2018_2.SearchColumnDoubleField[] estimatedTimeOverride) {
+        this.estimatedTimeOverride = estimatedTimeOverride;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnDoubleField getEstimatedTimeOverride(int i) {
+        return this.estimatedTimeOverride[i];
+    }
+
+    public void setEstimatedTimeOverride(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnDoubleField _value) {
+        this.estimatedTimeOverride[i] = _value;
+    }
+
+
+    /**
+     * Gets the estimatedTimeOverrideBaseline value for this JobSearchRowBasic.
+     * 
+     * @return estimatedTimeOverrideBaseline
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnDoubleField[] getEstimatedTimeOverrideBaseline() {
+        return estimatedTimeOverrideBaseline;
+    }
+
+
+    /**
+     * Sets the estimatedTimeOverrideBaseline value for this JobSearchRowBasic.
+     * 
+     * @param estimatedTimeOverrideBaseline
+     */
+    public void setEstimatedTimeOverrideBaseline(com.netsuite.webservices.platform.core_2018_2.SearchColumnDoubleField[] estimatedTimeOverrideBaseline) {
+        this.estimatedTimeOverrideBaseline = estimatedTimeOverrideBaseline;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnDoubleField getEstimatedTimeOverrideBaseline(int i) {
+        return this.estimatedTimeOverrideBaseline[i];
+    }
+
+    public void setEstimatedTimeOverrideBaseline(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnDoubleField _value) {
+        this.estimatedTimeOverrideBaseline[i] = _value;
+    }
+
+
+    /**
+     * Gets the externalId value for this JobSearchRowBasic.
+     * 
+     * @return externalId
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] getExternalId() {
+        return externalId;
+    }
+
+
+    /**
+     * Sets the externalId value for this JobSearchRowBasic.
      * 
+     * @param externalId
+     */
+    public void setExternalId(com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] externalId) {
+        this.externalId = externalId;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField getExternalId(int i) {
+        return this.externalId[i];
+    }
+
+    public void setExternalId(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField _value) {
+        this.externalId[i] = _value;
+    }
+
+
+    /**
+     * Gets the fax value for this JobSearchRowBasic.
      * 
+     * @return fax
      */
-    public List<SearchColumnStringField> getBillAddress2() {
-        if (billAddress2 == null) {
-            billAddress2 = new ArrayList<SearchColumnStringField>();
-        }
-        return this.billAddress2;
-    }
-
-    /**
-     * Gets the value of the billAddress3 property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the billAddress3 property.
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] getFax() {
+        return fax;
+    }
+
+
+    /**
+     * Sets the fax value for this JobSearchRowBasic.
      * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getBillAddress3().add(newItem);
-     * </pre>
+     * @param fax
+     */
+    public void setFax(com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] fax) {
+        this.fax = fax;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField getFax(int i) {
+        return this.fax[i];
+    }
+
+    public void setFax(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField _value) {
+        this.fax[i] = _value;
+    }
+
+
+    /**
+     * Gets the globalSubscriptionStatus value for this JobSearchRowBasic.
      * 
+     * @return globalSubscriptionStatus
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnEnumSelectField[] getGlobalSubscriptionStatus() {
+        return globalSubscriptionStatus;
+    }
+
+
+    /**
+     * Sets the globalSubscriptionStatus value for this JobSearchRowBasic.
      * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnStringField }
+     * @param globalSubscriptionStatus
+     */
+    public void setGlobalSubscriptionStatus(com.netsuite.webservices.platform.core_2018_2.SearchColumnEnumSelectField[] globalSubscriptionStatus) {
+        this.globalSubscriptionStatus = globalSubscriptionStatus;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnEnumSelectField getGlobalSubscriptionStatus(int i) {
+        return this.globalSubscriptionStatus[i];
+    }
+
+    public void setGlobalSubscriptionStatus(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnEnumSelectField _value) {
+        this.globalSubscriptionStatus[i] = _value;
+    }
+
+
+    /**
+     * Gets the image value for this JobSearchRowBasic.
      * 
+     * @return image
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] getImage() {
+        return image;
+    }
+
+
+    /**
+     * Sets the image value for this JobSearchRowBasic.
      * 
+     * @param image
      */
-    public List<SearchColumnStringField> getBillAddress3() {
-        if (billAddress3 == null) {
-            billAddress3 = new ArrayList<SearchColumnStringField>();
-        }
-        return this.billAddress3;
+    public void setImage(com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] image) {
+        this.image = image;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField getImage(int i) {
+        return this.image[i];
     }
 
+    public void setImage(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField _value) {
+        this.image[i] = _value;
+    }
+
+
     /**
-     * Gets the value of the billAddressee property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the billAddressee property.
+     * Gets the includeCrmTasksInTotals value for this JobSearchRowBasic.
      * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getBillAddressee().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnStringField }
-     * 
-     * 
+     * @return includeCrmTasksInTotals
      */
-    public List<SearchColumnStringField> getBillAddressee() {
-        if (billAddressee == null) {
-            billAddressee = new ArrayList<SearchColumnStringField>();
-        }
-        return this.billAddressee;
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnBooleanField[] getIncludeCrmTasksInTotals() {
+        return includeCrmTasksInTotals;
     }
 
+
     /**
-     * Gets the value of the billAttention property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the billAttention property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getBillAttention().add(newItem);
-     * </pre>
-     * 
+     * Sets the includeCrmTasksInTotals value for this JobSearchRowBasic.
      * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnStringField }
-     * 
-     * 
+     * @param includeCrmTasksInTotals
      */
-    public List<SearchColumnStringField> getBillAttention() {
-        if (billAttention == null) {
-            billAttention = new ArrayList<SearchColumnStringField>();
-        }
-        return this.billAttention;
+    public void setIncludeCrmTasksInTotals(com.netsuite.webservices.platform.core_2018_2.SearchColumnBooleanField[] includeCrmTasksInTotals) {
+        this.includeCrmTasksInTotals = includeCrmTasksInTotals;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnBooleanField getIncludeCrmTasksInTotals(int i) {
+        return this.includeCrmTasksInTotals[i];
     }
 
+    public void setIncludeCrmTasksInTotals(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnBooleanField _value) {
+        this.includeCrmTasksInTotals[i] = _value;
+    }
+
+
     /**
-     * Gets the value of the billCity property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the billCity property.
+     * Gets the internalId value for this JobSearchRowBasic.
      * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getBillCity().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnStringField }
-     * 
-     * 
+     * @return internalId
      */
-    public List<SearchColumnStringField> getBillCity() {
-        if (billCity == null) {
-            billCity = new ArrayList<SearchColumnStringField>();
-        }
-        return this.billCity;
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] getInternalId() {
+        return internalId;
     }
 
+
     /**
-     * Gets the value of the billCountry property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the billCountry property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getBillCountry().add(newItem);
-     * </pre>
-     * 
+     * Sets the internalId value for this JobSearchRowBasic.
      * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnEnumSelectField }
-     * 
-     * 
+     * @param internalId
      */
-    public List<SearchColumnEnumSelectField> getBillCountry() {
-        if (billCountry == null) {
-            billCountry = new ArrayList<SearchColumnEnumSelectField>();
-        }
-        return this.billCountry;
+    public void setInternalId(com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] internalId) {
+        this.internalId = internalId;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField getInternalId(int i) {
+        return this.internalId[i];
     }
 
+    public void setInternalId(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField _value) {
+        this.internalId[i] = _value;
+    }
+
+
     /**
-     * Gets the value of the billCountryCode property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the billCountryCode property.
+     * Gets the isDefaultBilling value for this JobSearchRowBasic.
      * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getBillCountryCode().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnStringField }
-     * 
-     * 
+     * @return isDefaultBilling
      */
-    public List<SearchColumnStringField> getBillCountryCode() {
-        if (billCountryCode == null) {
-            billCountryCode = new ArrayList<SearchColumnStringField>();
-        }
-        return this.billCountryCode;
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnBooleanField[] getIsDefaultBilling() {
+        return isDefaultBilling;
     }
 
+
     /**
-     * Gets the value of the billingSchedule property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the billingSchedule property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getBillingSchedule().add(newItem);
-     * </pre>
-     * 
+     * Sets the isDefaultBilling value for this JobSearchRowBasic.
      * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnSelectField }
-     * 
-     * 
+     * @param isDefaultBilling
      */
-    public List<SearchColumnSelectField> getBillingSchedule() {
-        if (billingSchedule == null) {
-            billingSchedule = new ArrayList<SearchColumnSelectField>();
-        }
-        return this.billingSchedule;
+    public void setIsDefaultBilling(com.netsuite.webservices.platform.core_2018_2.SearchColumnBooleanField[] isDefaultBilling) {
+        this.isDefaultBilling = isDefaultBilling;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnBooleanField getIsDefaultBilling(int i) {
+        return this.isDefaultBilling[i];
     }
 
+    public void setIsDefaultBilling(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnBooleanField _value) {
+        this.isDefaultBilling[i] = _value;
+    }
+
+
     /**
-     * Gets the value of the billPhone property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the billPhone property.
+     * Gets the isDefaultShipping value for this JobSearchRowBasic.
      * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getBillPhone().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnStringField }
-     * 
-     * 
+     * @return isDefaultShipping
      */
-    public List<SearchColumnStringField> getBillPhone() {
-        if (billPhone == null) {
-            billPhone = new ArrayList<SearchColumnStringField>();
-        }
-        return this.billPhone;
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnBooleanField[] getIsDefaultShipping() {
+        return isDefaultShipping;
     }
 
+
     /**
-     * Gets the value of the billState property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the billState property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getBillState().add(newItem);
-     * </pre>
-     * 
+     * Sets the isDefaultShipping value for this JobSearchRowBasic.
      * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnStringField }
-     * 
-     * 
+     * @param isDefaultShipping
      */
-    public List<SearchColumnStringField> getBillState() {
-        if (billState == null) {
-            billState = new ArrayList<SearchColumnStringField>();
-        }
-        return this.billState;
+    public void setIsDefaultShipping(com.netsuite.webservices.platform.core_2018_2.SearchColumnBooleanField[] isDefaultShipping) {
+        this.isDefaultShipping = isDefaultShipping;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnBooleanField getIsDefaultShipping(int i) {
+        return this.isDefaultShipping[i];
     }
 
+    public void setIsDefaultShipping(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnBooleanField _value) {
+        this.isDefaultShipping[i] = _value;
+    }
+
+
     /**
-     * Gets the value of the billZipCode property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the billZipCode property.
+     * Gets the isExemptTime value for this JobSearchRowBasic.
      * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getBillZipCode().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnStringField }
-     * 
-     * 
+     * @return isExemptTime
      */
-    public List<SearchColumnStringField> getBillZipCode() {
-        if (billZipCode == null) {
-            billZipCode = new ArrayList<SearchColumnStringField>();
-        }
-        return this.billZipCode;
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnBooleanField[] getIsExemptTime() {
+        return isExemptTime;
     }
 
+
     /**
-     * Gets the value of the calculatedEndDate property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the calculatedEndDate property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getCalculatedEndDate().add(newItem);
-     * </pre>
-     * 
+     * Sets the isExemptTime value for this JobSearchRowBasic.
      * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnDateField }
-     * 
-     * 
+     * @param isExemptTime
      */
-    public List<SearchColumnDateField> getCalculatedEndDate() {
-        if (calculatedEndDate == null) {
-            calculatedEndDate = new ArrayList<SearchColumnDateField>();
-        }
-        return this.calculatedEndDate;
+    public void setIsExemptTime(com.netsuite.webservices.platform.core_2018_2.SearchColumnBooleanField[] isExemptTime) {
+        this.isExemptTime = isExemptTime;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnBooleanField getIsExemptTime(int i) {
+        return this.isExemptTime[i];
     }
 
+    public void setIsExemptTime(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnBooleanField _value) {
+        this.isExemptTime[i] = _value;
+    }
+
+
     /**
-     * Gets the value of the calculatedEndDateBaseline property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the calculatedEndDateBaseline property.
+     * Gets the isInactive value for this JobSearchRowBasic.
      * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getCalculatedEndDateBaseline().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnDateField }
-     * 
-     * 
+     * @return isInactive
      */
-    public List<SearchColumnDateField> getCalculatedEndDateBaseline() {
-        if (calculatedEndDateBaseline == null) {
-            calculatedEndDateBaseline = new ArrayList<SearchColumnDateField>();
-        }
-        return this.calculatedEndDateBaseline;
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnBooleanField[] getIsInactive() {
+        return isInactive;
     }
 
+
     /**
-     * Gets the value of the category property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the category property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getCategory().add(newItem);
-     * </pre>
-     * 
+     * Sets the isInactive value for this JobSearchRowBasic.
      * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnSelectField }
-     * 
-     * 
+     * @param isInactive
      */
-    public List<SearchColumnSelectField> getCategory() {
-        if (category == null) {
-            category = new ArrayList<SearchColumnSelectField>();
-        }
-        return this.category;
+    public void setIsInactive(com.netsuite.webservices.platform.core_2018_2.SearchColumnBooleanField[] isInactive) {
+        this.isInactive = isInactive;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnBooleanField getIsInactive(int i) {
+        return this.isInactive[i];
     }
 
+    public void setIsInactive(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnBooleanField _value) {
+        this.isInactive[i] = _value;
+    }
+
+
     /**
-     * Gets the value of the city property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the city property.
+     * Gets the isProductiveTime value for this JobSearchRowBasic.
      * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getCity().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnStringField }
-     * 
-     * 
+     * @return isProductiveTime
      */
-    public List<SearchColumnStringField> getCity() {
-        if (city == null) {
-            city = new ArrayList<SearchColumnStringField>();
-        }
-        return this.city;
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnBooleanField[] getIsProductiveTime() {
+        return isProductiveTime;
     }
 
+
     /**
-     * Gets the value of the comments property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the comments property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getComments().add(newItem);
-     * </pre>
-     * 
+     * Sets the isProductiveTime value for this JobSearchRowBasic.
      * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnStringField }
-     * 
-     * 
+     * @param isProductiveTime
      */
-    public List<SearchColumnStringField> getComments() {
-        if (comments == null) {
-            comments = new ArrayList<SearchColumnStringField>();
-        }
-        return this.comments;
+    public void setIsProductiveTime(com.netsuite.webservices.platform.core_2018_2.SearchColumnBooleanField[] isProductiveTime) {
+        this.isProductiveTime = isProductiveTime;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnBooleanField getIsProductiveTime(int i) {
+        return this.isProductiveTime[i];
     }
 
+    public void setIsProductiveTime(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnBooleanField _value) {
+        this.isProductiveTime[i] = _value;
+    }
+
+
     /**
-     * Gets the value of the companyName property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the companyName property.
+     * Gets the isUtilizedTime value for this JobSearchRowBasic.
      * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getCompanyName().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnStringField }
-     * 
-     * 
+     * @return isUtilizedTime
      */
-    public List<SearchColumnStringField> getCompanyName() {
-        if (companyName == null) {
-            companyName = new ArrayList<SearchColumnStringField>();
-        }
-        return this.companyName;
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnBooleanField[] getIsUtilizedTime() {
+        return isUtilizedTime;
     }
 
+
     /**
-     * Gets the value of the contact property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the contact property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getContact().add(newItem);
-     * </pre>
-     * 
+     * Sets the isUtilizedTime value for this JobSearchRowBasic.
      * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnStringField }
-     * 
-     * 
+     * @param isUtilizedTime
      */
-    public List<SearchColumnStringField> getContact() {
-        if (contact == null) {
-            contact = new ArrayList<SearchColumnStringField>();
-        }
-        return this.contact;
+    public void setIsUtilizedTime(com.netsuite.webservices.platform.core_2018_2.SearchColumnBooleanField[] isUtilizedTime) {
+        this.isUtilizedTime = isUtilizedTime;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnBooleanField getIsUtilizedTime(int i) {
+        return this.isUtilizedTime[i];
     }
 
+    public void setIsUtilizedTime(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnBooleanField _value) {
+        this.isUtilizedTime[i] = _value;
+    }
+
+
     /**
-     * Gets the value of the country property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the country property.
+     * Gets the jobBillingType value for this JobSearchRowBasic.
      * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getCountry().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnEnumSelectField }
-     * 
-     * 
+     * @return jobBillingType
      */
-    public List<SearchColumnEnumSelectField> getCountry() {
-        if (country == null) {
-            country = new ArrayList<SearchColumnEnumSelectField>();
-        }
-        return this.country;
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnEnumSelectField[] getJobBillingType() {
+        return jobBillingType;
     }
 
+
     /**
-     * Gets the value of the countryCode property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the countryCode property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getCountryCode().add(newItem);
-     * </pre>
-     * 
+     * Sets the jobBillingType value for this JobSearchRowBasic.
      * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnStringField }
-     * 
-     * 
+     * @param jobBillingType
      */
-    public List<SearchColumnStringField> getCountryCode() {
-        if (countryCode == null) {
-            countryCode = new ArrayList<SearchColumnStringField>();
-        }
-        return this.countryCode;
+    public void setJobBillingType(com.netsuite.webservices.platform.core_2018_2.SearchColumnEnumSelectField[] jobBillingType) {
+        this.jobBillingType = jobBillingType;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnEnumSelectField getJobBillingType(int i) {
+        return this.jobBillingType[i];
     }
 
+    public void setJobBillingType(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnEnumSelectField _value) {
+        this.jobBillingType[i] = _value;
+    }
+
+
     /**
-     * Gets the value of the customer property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the customer property.
+     * Gets the jobItem value for this JobSearchRowBasic.
      * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getCustomer().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnSelectField }
-     * 
-     * 
+     * @return jobItem
      */
-    public List<SearchColumnSelectField> getCustomer() {
-        if (customer == null) {
-            customer = new ArrayList<SearchColumnSelectField>();
-        }
-        return this.customer;
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] getJobItem() {
+        return jobItem;
     }
 
+
     /**
-     * Gets the value of the dateCreated property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the dateCreated property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getDateCreated().add(newItem);
-     * </pre>
-     * 
+     * Sets the jobItem value for this JobSearchRowBasic.
      * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnDateField }
-     * 
-     * 
+     * @param jobItem
      */
-    public List<SearchColumnDateField> getDateCreated() {
-        if (dateCreated == null) {
-            dateCreated = new ArrayList<SearchColumnDateField>();
-        }
-        return this.dateCreated;
+    public void setJobItem(com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] jobItem) {
+        this.jobItem = jobItem;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField getJobItem(int i) {
+        return this.jobItem[i];
     }
 
+    public void setJobItem(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField _value) {
+        this.jobItem[i] = _value;
+    }
+
+
     /**
-     * Gets the value of the email property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the email property.
+     * Gets the jobPrice value for this JobSearchRowBasic.
      * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getEmail().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnStringField }
-     * 
-     * 
+     * @return jobPrice
      */
-    public List<SearchColumnStringField> getEmail() {
-        if (email == null) {
-            email = new ArrayList<SearchColumnStringField>();
-        }
-        return this.email;
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnDoubleField[] getJobPrice() {
+        return jobPrice;
     }
 
+
     /**
-     * Gets the value of the endDate property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the endDate property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getEndDate().add(newItem);
-     * </pre>
-     * 
+     * Sets the jobPrice value for this JobSearchRowBasic.
      * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnDateField }
-     * 
-     * 
+     * @param jobPrice
      */
-    public List<SearchColumnDateField> getEndDate() {
-        if (endDate == null) {
-            endDate = new ArrayList<SearchColumnDateField>();
-        }
-        return this.endDate;
+    public void setJobPrice(com.netsuite.webservices.platform.core_2018_2.SearchColumnDoubleField[] jobPrice) {
+        this.jobPrice = jobPrice;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnDoubleField getJobPrice(int i) {
+        return this.jobPrice[i];
     }
 
+    public void setJobPrice(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnDoubleField _value) {
+        this.jobPrice[i] = _value;
+    }
+
+
     /**
-     * Gets the value of the entityId property.
+     * Gets the jobResource value for this JobSearchRowBasic.
      * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the entityId property.
+     * @return jobResource
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] getJobResource() {
+        return jobResource;
+    }
+
+
+    /**
+     * Sets the jobResource value for this JobSearchRowBasic.
      * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getEntityId().add(newItem);
-     * </pre>
+     * @param jobResource
+     */
+    public void setJobResource(com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] jobResource) {
+        this.jobResource = jobResource;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField getJobResource(int i) {
+        return this.jobResource[i];
+    }
+
+    public void setJobResource(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField _value) {
+        this.jobResource[i] = _value;
+    }
+
+
+    /**
+     * Gets the jobResourceRole value for this JobSearchRowBasic.
      * 
+     * @return jobResourceRole
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] getJobResourceRole() {
+        return jobResourceRole;
+    }
+
+
+    /**
+     * Sets the jobResourceRole value for this JobSearchRowBasic.
      * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnStringField }
+     * @param jobResourceRole
+     */
+    public void setJobResourceRole(com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] jobResourceRole) {
+        this.jobResourceRole = jobResourceRole;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField getJobResourceRole(int i) {
+        return this.jobResourceRole[i];
+    }
+
+    public void setJobResourceRole(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField _value) {
+        this.jobResourceRole[i] = _value;
+    }
+
+
+    /**
+     * Gets the language value for this JobSearchRowBasic.
      * 
+     * @return language
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnEnumSelectField[] getLanguage() {
+        return language;
+    }
+
+
+    /**
+     * Sets the language value for this JobSearchRowBasic.
      * 
+     * @param language
      */
-    public List<SearchColumnStringField> getEntityId() {
-        if (entityId == null) {
-            entityId = new ArrayList<SearchColumnStringField>();
-        }
-        return this.entityId;
+    public void setLanguage(com.netsuite.webservices.platform.core_2018_2.SearchColumnEnumSelectField[] language) {
+        this.language = language;
     }
 
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnEnumSelectField getLanguage(int i) {
+        return this.language[i];
+    }
+
+    public void setLanguage(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnEnumSelectField _value) {
+        this.language[i] = _value;
+    }
+
+
     /**
-     * Gets the value of the entityNumber property.
+     * Gets the lastBaselineDate value for this JobSearchRowBasic.
      * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the entityNumber property.
+     * @return lastBaselineDate
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnDateField[] getLastBaselineDate() {
+        return lastBaselineDate;
+    }
+
+
+    /**
+     * Sets the lastBaselineDate value for this JobSearchRowBasic.
      * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getEntityNumber().add(newItem);
-     * </pre>
+     * @param lastBaselineDate
+     */
+    public void setLastBaselineDate(com.netsuite.webservices.platform.core_2018_2.SearchColumnDateField[] lastBaselineDate) {
+        this.lastBaselineDate = lastBaselineDate;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnDateField getLastBaselineDate(int i) {
+        return this.lastBaselineDate[i];
+    }
+
+    public void setLastBaselineDate(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnDateField _value) {
+        this.lastBaselineDate[i] = _value;
+    }
+
+
+    /**
+     * Gets the lastModifiedDate value for this JobSearchRowBasic.
      * 
+     * @return lastModifiedDate
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnDateField[] getLastModifiedDate() {
+        return lastModifiedDate;
+    }
+
+
+    /**
+     * Sets the lastModifiedDate value for this JobSearchRowBasic.
      * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnLongField }
+     * @param lastModifiedDate
+     */
+    public void setLastModifiedDate(com.netsuite.webservices.platform.core_2018_2.SearchColumnDateField[] lastModifiedDate) {
+        this.lastModifiedDate = lastModifiedDate;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnDateField getLastModifiedDate(int i) {
+        return this.lastModifiedDate[i];
+    }
+
+    public void setLastModifiedDate(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnDateField _value) {
+        this.lastModifiedDate[i] = _value;
+    }
+
+
+    /**
+     * Gets the level value for this JobSearchRowBasic.
      * 
+     * @return level
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnEnumSelectField[] getLevel() {
+        return level;
+    }
+
+
+    /**
+     * Sets the level value for this JobSearchRowBasic.
      * 
+     * @param level
      */
-    public List<SearchColumnLongField> getEntityNumber() {
-        if (entityNumber == null) {
-            entityNumber = new ArrayList<SearchColumnLongField>();
-        }
-        return this.entityNumber;
+    public void setLevel(com.netsuite.webservices.platform.core_2018_2.SearchColumnEnumSelectField[] level) {
+        this.level = level;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnEnumSelectField getLevel(int i) {
+        return this.level[i];
+    }
+
+    public void setLevel(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnEnumSelectField _value) {
+        this.level[i] = _value;
     }
+
 
     /**
-     * Gets the value of the entityStatus property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the entityStatus property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getEntityStatus().add(newItem);
-     * </pre>
+     * Gets the limitTimeToAssignees value for this JobSearchRowBasic.
      * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnSelectField }
-     * 
-     * 
+     * @return limitTimeToAssignees
      */
-    public List<SearchColumnSelectField> getEntityStatus() {
-        if (entityStatus == null) {
-            entityStatus = new ArrayList<SearchColumnSelectField>();
-        }
-        return this.entityStatus;
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnBooleanField[] getLimitTimeToAssignees() {
+        return limitTimeToAssignees;
     }
+
 
     /**
-     * Gets the value of the estimatedCost property.
+     * Sets the limitTimeToAssignees value for this JobSearchRowBasic.
      * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the estimatedCost property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getEstimatedCost().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnDoubleField }
-     * 
-     * 
+     * @param limitTimeToAssignees
      */
-    public List<SearchColumnDoubleField> getEstimatedCost() {
-        if (estimatedCost == null) {
-            estimatedCost = new ArrayList<SearchColumnDoubleField>();
-        }
-        return this.estimatedCost;
+    public void setLimitTimeToAssignees(com.netsuite.webservices.platform.core_2018_2.SearchColumnBooleanField[] limitTimeToAssignees) {
+        this.limitTimeToAssignees = limitTimeToAssignees;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnBooleanField getLimitTimeToAssignees(int i) {
+        return this.limitTimeToAssignees[i];
+    }
+
+    public void setLimitTimeToAssignees(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnBooleanField _value) {
+        this.limitTimeToAssignees[i] = _value;
     }
+
 
     /**
-     * Gets the value of the estimatedGrossProfit property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the estimatedGrossProfit property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getEstimatedGrossProfit().add(newItem);
-     * </pre>
+     * Gets the materializeTime value for this JobSearchRowBasic.
      * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnDoubleField }
-     * 
-     * 
+     * @return materializeTime
      */
-    public List<SearchColumnDoubleField> getEstimatedGrossProfit() {
-        if (estimatedGrossProfit == null) {
-            estimatedGrossProfit = new ArrayList<SearchColumnDoubleField>();
-        }
-        return this.estimatedGrossProfit;
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnBooleanField[] getMaterializeTime() {
+        return materializeTime;
     }
+
 
     /**
-     * Gets the value of the estimatedGrossProfitPercent property.
+     * Sets the materializeTime value for this JobSearchRowBasic.
      * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the estimatedGrossProfitPercent property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getEstimatedGrossProfitPercent().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnDoubleField }
-     * 
-     * 
+     * @param materializeTime
      */
-    public List<SearchColumnDoubleField> getEstimatedGrossProfitPercent() {
-        if (estimatedGrossProfitPercent == null) {
-            estimatedGrossProfitPercent = new ArrayList<SearchColumnDoubleField>();
-        }
-        return this.estimatedGrossProfitPercent;
+    public void setMaterializeTime(com.netsuite.webservices.platform.core_2018_2.SearchColumnBooleanField[] materializeTime) {
+        this.materializeTime = materializeTime;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnBooleanField getMaterializeTime(int i) {
+        return this.materializeTime[i];
+    }
+
+    public void setMaterializeTime(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnBooleanField _value) {
+        this.materializeTime[i] = _value;
     }
+
 
     /**
-     * Gets the value of the estimatedLaborCost property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the estimatedLaborCost property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getEstimatedLaborCost().add(newItem);
-     * </pre>
+     * Gets the percentComplete value for this JobSearchRowBasic.
      * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnDoubleField }
-     * 
-     * 
+     * @return percentComplete
      */
-    public List<SearchColumnDoubleField> getEstimatedLaborCost() {
-        if (estimatedLaborCost == null) {
-            estimatedLaborCost = new ArrayList<SearchColumnDoubleField>();
-        }
-        return this.estimatedLaborCost;
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnDoubleField[] getPercentComplete() {
+        return percentComplete;
     }
+
 
     /**
-     * Gets the value of the estimatedLaborCostBaseline property.
+     * Sets the percentComplete value for this JobSearchRowBasic.
      * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the estimatedLaborCostBaseline property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getEstimatedLaborCostBaseline().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnDoubleField }
-     * 
-     * 
+     * @param percentComplete
      */
-    public List<SearchColumnDoubleField> getEstimatedLaborCostBaseline() {
-        if (estimatedLaborCostBaseline == null) {
-            estimatedLaborCostBaseline = new ArrayList<SearchColumnDoubleField>();
-        }
-        return this.estimatedLaborCostBaseline;
+    public void setPercentComplete(com.netsuite.webservices.platform.core_2018_2.SearchColumnDoubleField[] percentComplete) {
+        this.percentComplete = percentComplete;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnDoubleField getPercentComplete(int i) {
+        return this.percentComplete[i];
+    }
+
+    public void setPercentComplete(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnDoubleField _value) {
+        this.percentComplete[i] = _value;
     }
+
 
     /**
-     * Gets the value of the estimatedLaborRevenue property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the estimatedLaborRevenue property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getEstimatedLaborRevenue().add(newItem);
-     * </pre>
+     * Gets the percentTimeComplete value for this JobSearchRowBasic.
      * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnDoubleField }
-     * 
-     * 
+     * @return percentTimeComplete
      */
-    public List<SearchColumnDoubleField> getEstimatedLaborRevenue() {
-        if (estimatedLaborRevenue == null) {
-            estimatedLaborRevenue = new ArrayList<SearchColumnDoubleField>();
-        }
-        return this.estimatedLaborRevenue;
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnDoubleField[] getPercentTimeComplete() {
+        return percentTimeComplete;
     }
+
 
     /**
-     * Gets the value of the estimatedRevenue property.
+     * Sets the percentTimeComplete value for this JobSearchRowBasic.
      * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the estimatedRevenue property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getEstimatedRevenue().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnDoubleField }
-     * 
-     * 
+     * @param percentTimeComplete
      */
-    public List<SearchColumnDoubleField> getEstimatedRevenue() {
-        if (estimatedRevenue == null) {
-            estimatedRevenue = new ArrayList<SearchColumnDoubleField>();
-        }
-        return this.estimatedRevenue;
+    public void setPercentTimeComplete(com.netsuite.webservices.platform.core_2018_2.SearchColumnDoubleField[] percentTimeComplete) {
+        this.percentTimeComplete = percentTimeComplete;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnDoubleField getPercentTimeComplete(int i) {
+        return this.percentTimeComplete[i];
+    }
+
+    public void setPercentTimeComplete(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnDoubleField _value) {
+        this.percentTimeComplete[i] = _value;
     }
+
 
     /**
-     * Gets the value of the estimatedTime property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the estimatedTime property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getEstimatedTime().add(newItem);
-     * </pre>
+     * Gets the permission value for this JobSearchRowBasic.
      * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnDoubleField }
-     * 
-     * 
+     * @return permission
      */
-    public List<SearchColumnDoubleField> getEstimatedTime() {
-        if (estimatedTime == null) {
-            estimatedTime = new ArrayList<SearchColumnDoubleField>();
-        }
-        return this.estimatedTime;
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnEnumSelectField[] getPermission() {
+        return permission;
     }
+
 
     /**
-     * Gets the value of the estimatedTimeOverride property.
+     * Sets the permission value for this JobSearchRowBasic.
      * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the estimatedTimeOverride property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getEstimatedTimeOverride().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnDoubleField }
-     * 
-     * 
+     * @param permission
      */
-    public List<SearchColumnDoubleField> getEstimatedTimeOverride() {
-        if (estimatedTimeOverride == null) {
-            estimatedTimeOverride = new ArrayList<SearchColumnDoubleField>();
-        }
-        return this.estimatedTimeOverride;
+    public void setPermission(com.netsuite.webservices.platform.core_2018_2.SearchColumnEnumSelectField[] permission) {
+        this.permission = permission;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnEnumSelectField getPermission(int i) {
+        return this.permission[i];
+    }
+
+    public void setPermission(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnEnumSelectField _value) {
+        this.permission[i] = _value;
     }
+
 
     /**
-     * Gets the value of the estimatedTimeOverrideBaseline property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the estimatedTimeOverrideBaseline property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getEstimatedTimeOverrideBaseline().add(newItem);
-     * </pre>
+     * Gets the phone value for this JobSearchRowBasic.
      * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnDoubleField }
-     * 
-     * 
+     * @return phone
      */
-    public List<SearchColumnDoubleField> getEstimatedTimeOverrideBaseline() {
-        if (estimatedTimeOverrideBaseline == null) {
-            estimatedTimeOverrideBaseline = new ArrayList<SearchColumnDoubleField>();
-        }
-        return this.estimatedTimeOverrideBaseline;
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] getPhone() {
+        return phone;
     }
+
 
     /**
-     * Gets the value of the externalId property.
+     * Sets the phone value for this JobSearchRowBasic.
      * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the externalId property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getExternalId().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnSelectField }
-     * 
-     * 
+     * @param phone
      */
-    public List<SearchColumnSelectField> getExternalId() {
-        if (externalId == null) {
-            externalId = new ArrayList<SearchColumnSelectField>();
-        }
-        return this.externalId;
+    public void setPhone(com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] phone) {
+        this.phone = phone;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField getPhone(int i) {
+        return this.phone[i];
+    }
+
+    public void setPhone(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField _value) {
+        this.phone[i] = _value;
     }
+
 
     /**
-     * Gets the value of the fax property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the fax property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getFax().add(newItem);
-     * </pre>
+     * Gets the phoneticName value for this JobSearchRowBasic.
      * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnStringField }
-     * 
-     * 
+     * @return phoneticName
      */
-    public List<SearchColumnStringField> getFax() {
-        if (fax == null) {
-            fax = new ArrayList<SearchColumnStringField>();
-        }
-        return this.fax;
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] getPhoneticName() {
+        return phoneticName;
     }
+
 
     /**
-     * Gets the value of the globalSubscriptionStatus property.
+     * Sets the phoneticName value for this JobSearchRowBasic.
      * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the globalSubscriptionStatus property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getGlobalSubscriptionStatus().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnEnumSelectField }
-     * 
-     * 
+     * @param phoneticName
      */
-    public List<SearchColumnEnumSelectField> getGlobalSubscriptionStatus() {
-        if (globalSubscriptionStatus == null) {
-            globalSubscriptionStatus = new ArrayList<SearchColumnEnumSelectField>();
-        }
-        return this.globalSubscriptionStatus;
+    public void setPhoneticName(com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] phoneticName) {
+        this.phoneticName = phoneticName;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField getPhoneticName(int i) {
+        return this.phoneticName[i];
+    }
+
+    public void setPhoneticName(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField _value) {
+        this.phoneticName[i] = _value;
     }
+
 
     /**
-     * Gets the value of the image property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the image property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getImage().add(newItem);
-     * </pre>
+     * Gets the projectedEndDate value for this JobSearchRowBasic.
      * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnSelectField }
-     * 
-     * 
+     * @return projectedEndDate
      */
-    public List<SearchColumnSelectField> getImage() {
-        if (image == null) {
-            image = new ArrayList<SearchColumnSelectField>();
-        }
-        return this.image;
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnDateField[] getProjectedEndDate() {
+        return projectedEndDate;
     }
+
 
     /**
-     * Gets the value of the includeCrmTasksInTotals property.
+     * Sets the projectedEndDate value for this JobSearchRowBasic.
      * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the includeCrmTasksInTotals property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getIncludeCrmTasksInTotals().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnBooleanField }
-     * 
-     * 
+     * @param projectedEndDate
      */
-    public List<SearchColumnBooleanField> getIncludeCrmTasksInTotals() {
-        if (includeCrmTasksInTotals == null) {
-            includeCrmTasksInTotals = new ArrayList<SearchColumnBooleanField>();
-        }
-        return this.includeCrmTasksInTotals;
+    public void setProjectedEndDate(com.netsuite.webservices.platform.core_2018_2.SearchColumnDateField[] projectedEndDate) {
+        this.projectedEndDate = projectedEndDate;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnDateField getProjectedEndDate(int i) {
+        return this.projectedEndDate[i];
+    }
+
+    public void setProjectedEndDate(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnDateField _value) {
+        this.projectedEndDate[i] = _value;
     }
+
 
     /**
-     * Gets the value of the internalId property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the internalId property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getInternalId().add(newItem);
-     * </pre>
+     * Gets the projectedEndDateBaseline value for this JobSearchRowBasic.
      * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnSelectField }
-     * 
-     * 
+     * @return projectedEndDateBaseline
      */
-    public List<SearchColumnSelectField> getInternalId() {
-        if (internalId == null) {
-            internalId = new ArrayList<SearchColumnSelectField>();
-        }
-        return this.internalId;
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnDateField[] getProjectedEndDateBaseline() {
+        return projectedEndDateBaseline;
     }
+
 
     /**
-     * Gets the value of the isDefaultBilling property.
+     * Sets the projectedEndDateBaseline value for this JobSearchRowBasic.
      * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the isDefaultBilling property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getIsDefaultBilling().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnBooleanField }
-     * 
-     * 
+     * @param projectedEndDateBaseline
      */
-    public List<SearchColumnBooleanField> getIsDefaultBilling() {
-        if (isDefaultBilling == null) {
-            isDefaultBilling = new ArrayList<SearchColumnBooleanField>();
-        }
-        return this.isDefaultBilling;
+    public void setProjectedEndDateBaseline(com.netsuite.webservices.platform.core_2018_2.SearchColumnDateField[] projectedEndDateBaseline) {
+        this.projectedEndDateBaseline = projectedEndDateBaseline;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnDateField getProjectedEndDateBaseline(int i) {
+        return this.projectedEndDateBaseline[i];
+    }
+
+    public void setProjectedEndDateBaseline(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnDateField _value) {
+        this.projectedEndDateBaseline[i] = _value;
     }
+
 
     /**
-     * Gets the value of the isDefaultShipping property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the isDefaultShipping property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getIsDefaultShipping().add(newItem);
-     * </pre>
+     * Gets the projectExpenseType value for this JobSearchRowBasic.
      * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnBooleanField }
-     * 
-     * 
+     * @return projectExpenseType
      */
-    public List<SearchColumnBooleanField> getIsDefaultShipping() {
-        if (isDefaultShipping == null) {
-            isDefaultShipping = new ArrayList<SearchColumnBooleanField>();
-        }
-        return this.isDefaultShipping;
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] getProjectExpenseType() {
+        return projectExpenseType;
     }
+
 
     /**
-     * Gets the value of the isExemptTime property.
+     * Sets the projectExpenseType value for this JobSearchRowBasic.
      * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the isExemptTime property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getIsExemptTime().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnBooleanField }
-     * 
-     * 
+     * @param projectExpenseType
      */
-    public List<SearchColumnBooleanField> getIsExemptTime() {
-        if (isExemptTime == null) {
-            isExemptTime = new ArrayList<SearchColumnBooleanField>();
-        }
-        return this.isExemptTime;
+    public void setProjectExpenseType(com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] projectExpenseType) {
+        this.projectExpenseType = projectExpenseType;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField getProjectExpenseType(int i) {
+        return this.projectExpenseType[i];
+    }
+
+    public void setProjectExpenseType(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField _value) {
+        this.projectExpenseType[i] = _value;
     }
+
 
     /**
-     * Gets the value of the isInactive property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the isInactive property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getIsInactive().add(newItem);
-     * </pre>
+     * Gets the revRecForecastRule value for this JobSearchRowBasic.
      * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnBooleanField }
-     * 
-     * 
+     * @return revRecForecastRule
      */
-    public List<SearchColumnBooleanField> getIsInactive() {
-        if (isInactive == null) {
-            isInactive = new ArrayList<SearchColumnBooleanField>();
-        }
-        return this.isInactive;
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] getRevRecForecastRule() {
+        return revRecForecastRule;
     }
+
 
     /**
-     * Gets the value of the isProductiveTime property.
+     * Sets the revRecForecastRule value for this JobSearchRowBasic.
      * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the isProductiveTime property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getIsProductiveTime().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnBooleanField }
-     * 
-     * 
+     * @param revRecForecastRule
      */
-    public List<SearchColumnBooleanField> getIsProductiveTime() {
-        if (isProductiveTime == null) {
-            isProductiveTime = new ArrayList<SearchColumnBooleanField>();
-        }
-        return this.isProductiveTime;
+    public void setRevRecForecastRule(com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] revRecForecastRule) {
+        this.revRecForecastRule = revRecForecastRule;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField getRevRecForecastRule(int i) {
+        return this.revRecForecastRule[i];
+    }
+
+    public void setRevRecForecastRule(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField _value) {
+        this.revRecForecastRule[i] = _value;
     }
+
 
     /**
-     * Gets the value of the isUtilizedTime property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the isUtilizedTime property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getIsUtilizedTime().add(newItem);
-     * </pre>
+     * Gets the shipAddress1 value for this JobSearchRowBasic.
      * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnBooleanField }
-     * 
-     * 
+     * @return shipAddress1
      */
-    public List<SearchColumnBooleanField> getIsUtilizedTime() {
-        if (isUtilizedTime == null) {
-            isUtilizedTime = new ArrayList<SearchColumnBooleanField>();
-        }
-        return this.isUtilizedTime;
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] getShipAddress1() {
+        return shipAddress1;
     }
+
 
     /**
-     * Gets the value of the jobBillingType property.
+     * Sets the shipAddress1 value for this JobSearchRowBasic.
      * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the jobBillingType property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getJobBillingType().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnEnumSelectField }
-     * 
-     * 
+     * @param shipAddress1
      */
-    public List<SearchColumnEnumSelectField> getJobBillingType() {
-        if (jobBillingType == null) {
-            jobBillingType = new ArrayList<SearchColumnEnumSelectField>();
-        }
-        return this.jobBillingType;
+    public void setShipAddress1(com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] shipAddress1) {
+        this.shipAddress1 = shipAddress1;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField getShipAddress1(int i) {
+        return this.shipAddress1[i];
+    }
+
+    public void setShipAddress1(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField _value) {
+        this.shipAddress1[i] = _value;
     }
+
 
     /**
-     * Gets the value of the jobItem property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the jobItem property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getJobItem().add(newItem);
-     * </pre>
+     * Gets the shipAddress2 value for this JobSearchRowBasic.
      * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnSelectField }
-     * 
-     * 
+     * @return shipAddress2
      */
-    public List<SearchColumnSelectField> getJobItem() {
-        if (jobItem == null) {
-            jobItem = new ArrayList<SearchColumnSelectField>();
-        }
-        return this.jobItem;
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] getShipAddress2() {
+        return shipAddress2;
     }
+
 
     /**
-     * Gets the value of the jobPrice property.
+     * Sets the shipAddress2 value for this JobSearchRowBasic.
      * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the jobPrice property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getJobPrice().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnDoubleField }
-     * 
-     * 
+     * @param shipAddress2
      */
-    public List<SearchColumnDoubleField> getJobPrice() {
-        if (jobPrice == null) {
-            jobPrice = new ArrayList<SearchColumnDoubleField>();
-        }
-        return this.jobPrice;
+    public void setShipAddress2(com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] shipAddress2) {
+        this.shipAddress2 = shipAddress2;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField getShipAddress2(int i) {
+        return this.shipAddress2[i];
+    }
+
+    public void setShipAddress2(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField _value) {
+        this.shipAddress2[i] = _value;
     }
+
 
     /**
-     * Gets the value of the jobResource property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the jobResource property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getJobResource().add(newItem);
-     * </pre>
+     * Gets the shipAddress3 value for this JobSearchRowBasic.
      * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnSelectField }
-     * 
-     * 
+     * @return shipAddress3
      */
-    public List<SearchColumnSelectField> getJobResource() {
-        if (jobResource == null) {
-            jobResource = new ArrayList<SearchColumnSelectField>();
-        }
-        return this.jobResource;
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] getShipAddress3() {
+        return shipAddress3;
     }
+
 
     /**
-     * Gets the value of the jobResourceRole property.
+     * Sets the shipAddress3 value for this JobSearchRowBasic.
      * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the jobResourceRole property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getJobResourceRole().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnSelectField }
-     * 
-     * 
+     * @param shipAddress3
      */
-    public List<SearchColumnSelectField> getJobResourceRole() {
-        if (jobResourceRole == null) {
-            jobResourceRole = new ArrayList<SearchColumnSelectField>();
-        }
-        return this.jobResourceRole;
+    public void setShipAddress3(com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] shipAddress3) {
+        this.shipAddress3 = shipAddress3;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField getShipAddress3(int i) {
+        return this.shipAddress3[i];
+    }
+
+    public void setShipAddress3(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField _value) {
+        this.shipAddress3[i] = _value;
     }
+
 
     /**
-     * Gets the value of the language property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the language property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getLanguage().add(newItem);
-     * </pre>
+     * Gets the shipAddressee value for this JobSearchRowBasic.
      * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnEnumSelectField }
-     * 
-     * 
+     * @return shipAddressee
      */
-    public List<SearchColumnEnumSelectField> getLanguage() {
-        if (language == null) {
-            language = new ArrayList<SearchColumnEnumSelectField>();
-        }
-        return this.language;
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] getShipAddressee() {
+        return shipAddressee;
     }
+
 
     /**
-     * Gets the value of the lastBaselineDate property.
+     * Sets the shipAddressee value for this JobSearchRowBasic.
      * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the lastBaselineDate property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getLastBaselineDate().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnDateField }
-     * 
-     * 
+     * @param shipAddressee
      */
-    public List<SearchColumnDateField> getLastBaselineDate() {
-        if (lastBaselineDate == null) {
-            lastBaselineDate = new ArrayList<SearchColumnDateField>();
-        }
-        return this.lastBaselineDate;
+    public void setShipAddressee(com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] shipAddressee) {
+        this.shipAddressee = shipAddressee;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField getShipAddressee(int i) {
+        return this.shipAddressee[i];
+    }
+
+    public void setShipAddressee(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField _value) {
+        this.shipAddressee[i] = _value;
     }
+
 
     /**
-     * Gets the value of the lastModifiedDate property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the lastModifiedDate property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getLastModifiedDate().add(newItem);
-     * </pre>
+     * Gets the shipAttention value for this JobSearchRowBasic.
      * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnDateField }
-     * 
-     * 
+     * @return shipAttention
      */
-    public List<SearchColumnDateField> getLastModifiedDate() {
-        if (lastModifiedDate == null) {
-            lastModifiedDate = new ArrayList<SearchColumnDateField>();
-        }
-        return this.lastModifiedDate;
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] getShipAttention() {
+        return shipAttention;
     }
+
 
     /**
-     * Gets the value of the level property.
+     * Sets the shipAttention value for this JobSearchRowBasic.
      * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the level property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getLevel().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnEnumSelectField }
-     * 
-     * 
+     * @param shipAttention
      */
-    public List<SearchColumnEnumSelectField> getLevel() {
-        if (level == null) {
-            level = new ArrayList<SearchColumnEnumSelectField>();
-        }
-        return this.level;
+    public void setShipAttention(com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] shipAttention) {
+        this.shipAttention = shipAttention;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField getShipAttention(int i) {
+        return this.shipAttention[i];
+    }
+
+    public void setShipAttention(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField _value) {
+        this.shipAttention[i] = _value;
     }
 
+
     /**
-     * Gets the value of the limitTimeToAssignees property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the limitTimeToAssignees property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getLimitTimeToAssignees().add(newItem);
-     * </pre>
-     * 
+     * Gets the shipCity value for this JobSearchRowBasic.
      * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnBooleanField }
-     * 
-     * 
+     * @return shipCity
      */
-    public List<SearchColumnBooleanField> getLimitTimeToAssignees() {
-        if (limitTimeToAssignees == null) {
-            limitTimeToAssignees = new ArrayList<SearchColumnBooleanField>();
-        }
-        return this.limitTimeToAssignees;
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] getShipCity() {
+        return shipCity;
     }
 
+
     /**
-     * Gets the value of the materializeTime property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the materializeTime property.
+     * Sets the shipCity value for this JobSearchRowBasic.
      * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getMaterializeTime().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnBooleanField }
-     * 
-     * 
+     * @param shipCity
      */
-    public List<SearchColumnBooleanField> getMaterializeTime() {
-        if (materializeTime == null) {
-            materializeTime = new ArrayList<SearchColumnBooleanField>();
-        }
-        return this.materializeTime;
+    public void setShipCity(com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] shipCity) {
+        this.shipCity = shipCity;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField getShipCity(int i) {
+        return this.shipCity[i];
+    }
+
+    public void setShipCity(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField _value) {
+        this.shipCity[i] = _value;
     }
 
+
     /**
-     * Gets the value of the percentComplete property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the percentComplete property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getPercentComplete().add(newItem);
-     * </pre>
-     * 
+     * Gets the shipCountry value for this JobSearchRowBasic.
      * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnDoubleField }
-     * 
-     * 
+     * @return shipCountry
      */
-    public List<SearchColumnDoubleField> getPercentComplete() {
-        if (percentComplete == null) {
-            percentComplete = new ArrayList<SearchColumnDoubleField>();
-        }
-        return this.percentComplete;
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnEnumSelectField[] getShipCountry() {
+        return shipCountry;
     }
 
+
     /**
-     * Gets the value of the percentTimeComplete property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the percentTimeComplete property.
+     * Sets the shipCountry value for this JobSearchRowBasic.
      * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getPercentTimeComplete().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnDoubleField }
-     * 
-     * 
+     * @param shipCountry
      */
-    public List<SearchColumnDoubleField> getPercentTimeComplete() {
-        if (percentTimeComplete == null) {
-            percentTimeComplete = new ArrayList<SearchColumnDoubleField>();
-        }
-        return this.percentTimeComplete;
+    public void setShipCountry(com.netsuite.webservices.platform.core_2018_2.SearchColumnEnumSelectField[] shipCountry) {
+        this.shipCountry = shipCountry;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnEnumSelectField getShipCountry(int i) {
+        return this.shipCountry[i];
+    }
+
+    public void setShipCountry(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnEnumSelectField _value) {
+        this.shipCountry[i] = _value;
     }
 
+
     /**
-     * Gets the value of the permission property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the permission property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getPermission().add(newItem);
-     * </pre>
-     * 
+     * Gets the shipCountryCode value for this JobSearchRowBasic.
      * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnEnumSelectField }
-     * 
-     * 
+     * @return shipCountryCode
      */
-    public List<SearchColumnEnumSelectField> getPermission() {
-        if (permission == null) {
-            permission = new ArrayList<SearchColumnEnumSelectField>();
-        }
-        return this.permission;
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] getShipCountryCode() {
+        return shipCountryCode;
     }
 
+
     /**
-     * Gets the value of the phone property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the phone property.
+     * Sets the shipCountryCode value for this JobSearchRowBasic.
      * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getPhone().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnStringField }
-     * 
-     * 
+     * @param shipCountryCode
      */
-    public List<SearchColumnStringField> getPhone() {
-        if (phone == null) {
-            phone = new ArrayList<SearchColumnStringField>();
-        }
-        return this.phone;
+    public void setShipCountryCode(com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] shipCountryCode) {
+        this.shipCountryCode = shipCountryCode;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField getShipCountryCode(int i) {
+        return this.shipCountryCode[i];
+    }
+
+    public void setShipCountryCode(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField _value) {
+        this.shipCountryCode[i] = _value;
     }
 
+
     /**
-     * Gets the value of the phoneticName property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the phoneticName property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getPhoneticName().add(newItem);
-     * </pre>
-     * 
+     * Gets the shipPhone value for this JobSearchRowBasic.
      * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnStringField }
-     * 
-     * 
+     * @return shipPhone
      */
-    public List<SearchColumnStringField> getPhoneticName() {
-        if (phoneticName == null) {
-            phoneticName = new ArrayList<SearchColumnStringField>();
-        }
-        return this.phoneticName;
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] getShipPhone() {
+        return shipPhone;
     }
 
+
     /**
-     * Gets the value of the projectedEndDate property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the projectedEndDate property.
+     * Sets the shipPhone value for this JobSearchRowBasic.
      * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getProjectedEndDate().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnDateField }
-     * 
-     * 
+     * @param shipPhone
      */
-    public List<SearchColumnDateField> getProjectedEndDate() {
-        if (projectedEndDate == null) {
-            projectedEndDate = new ArrayList<SearchColumnDateField>();
-        }
-        return this.projectedEndDate;
+    public void setShipPhone(com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] shipPhone) {
+        this.shipPhone = shipPhone;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField getShipPhone(int i) {
+        return this.shipPhone[i];
+    }
+
+    public void setShipPhone(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField _value) {
+        this.shipPhone[i] = _value;
     }
 
+
     /**
-     * Gets the value of the projectedEndDateBaseline property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the projectedEndDateBaseline property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getProjectedEndDateBaseline().add(newItem);
-     * </pre>
-     * 
+     * Gets the shipState value for this JobSearchRowBasic.
      * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnDateField }
-     * 
-     * 
+     * @return shipState
      */
-    public List<SearchColumnDateField> getProjectedEndDateBaseline() {
-        if (projectedEndDateBaseline == null) {
-            projectedEndDateBaseline = new ArrayList<SearchColumnDateField>();
-        }
-        return this.projectedEndDateBaseline;
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] getShipState() {
+        return shipState;
     }
 
+
     /**
-     * Gets the value of the projectExpenseType property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the projectExpenseType property.
+     * Sets the shipState value for this JobSearchRowBasic.
      * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getProjectExpenseType().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnSelectField }
-     * 
-     * 
+     * @param shipState
      */
-    public List<SearchColumnSelectField> getProjectExpenseType() {
-        if (projectExpenseType == null) {
-            projectExpenseType = new ArrayList<SearchColumnSelectField>();
-        }
-        return this.projectExpenseType;
+    public void setShipState(com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] shipState) {
+        this.shipState = shipState;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField getShipState(int i) {
+        return this.shipState[i];
+    }
+
+    public void setShipState(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField _value) {
+        this.shipState[i] = _value;
     }
 
+
     /**
-     * Gets the value of the revRecForecastRule property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the revRecForecastRule property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getRevRecForecastRule().add(newItem);
-     * </pre>
-     * 
+     * Gets the shipZip value for this JobSearchRowBasic.
      * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnSelectField }
-     * 
-     * 
+     * @return shipZip
      */
-    public List<SearchColumnSelectField> getRevRecForecastRule() {
-        if (revRecForecastRule == null) {
-            revRecForecastRule = new ArrayList<SearchColumnSelectField>();
-        }
-        return this.revRecForecastRule;
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] getShipZip() {
+        return shipZip;
     }
 
+
     /**
-     * Gets the value of the shipAddress1 property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the shipAddress1 property.
+     * Sets the shipZip value for this JobSearchRowBasic.
      * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getShipAddress1().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnStringField }
-     * 
-     * 
+     * @param shipZip
      */
-    public List<SearchColumnStringField> getShipAddress1() {
-        if (shipAddress1 == null) {
-            shipAddress1 = new ArrayList<SearchColumnStringField>();
-        }
-        return this.shipAddress1;
+    public void setShipZip(com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] shipZip) {
+        this.shipZip = shipZip;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField getShipZip(int i) {
+        return this.shipZip[i];
+    }
+
+    public void setShipZip(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField _value) {
+        this.shipZip[i] = _value;
     }
 
+
     /**
-     * Gets the value of the shipAddress2 property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the shipAddress2 property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getShipAddress2().add(newItem);
-     * </pre>
-     * 
+     * Gets the startDate value for this JobSearchRowBasic.
      * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnStringField }
-     * 
-     * 
+     * @return startDate
      */
-    public List<SearchColumnStringField> getShipAddress2() {
-        if (shipAddress2 == null) {
-            shipAddress2 = new ArrayList<SearchColumnStringField>();
-        }
-        return this.shipAddress2;
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnDateField[] getStartDate() {
+        return startDate;
     }
 
+
     /**
-     * Gets the value of the shipAddress3 property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the shipAddress3 property.
+     * Sets the startDate value for this JobSearchRowBasic.
      * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getShipAddress3().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnStringField }
-     * 
-     * 
+     * @param startDate
      */
-    public List<SearchColumnStringField> getShipAddress3() {
-        if (shipAddress3 == null) {
-            shipAddress3 = new ArrayList<SearchColumnStringField>();
-        }
-        return this.shipAddress3;
+    public void setStartDate(com.netsuite.webservices.platform.core_2018_2.SearchColumnDateField[] startDate) {
+        this.startDate = startDate;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnDateField getStartDate(int i) {
+        return this.startDate[i];
+    }
+
+    public void setStartDate(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnDateField _value) {
+        this.startDate[i] = _value;
     }
 
+
     /**
-     * Gets the value of the shipAddressee property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the shipAddressee property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getShipAddressee().add(newItem);
-     * </pre>
-     * 
+     * Gets the startDateBaseline value for this JobSearchRowBasic.
      * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnStringField }
-     * 
-     * 
+     * @return startDateBaseline
      */
-    public List<SearchColumnStringField> getShipAddressee() {
-        if (shipAddressee == null) {
-            shipAddressee = new ArrayList<SearchColumnStringField>();
-        }
-        return this.shipAddressee;
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnDateField[] getStartDateBaseline() {
+        return startDateBaseline;
     }
 
+
     /**
-     * Gets the value of the shipAttention property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the shipAttention property.
+     * Sets the startDateBaseline value for this JobSearchRowBasic.
      * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getShipAttention().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnStringField }
-     * 
-     * 
+     * @param startDateBaseline
      */
-    public List<SearchColumnStringField> getShipAttention() {
-        if (shipAttention == null) {
-            shipAttention = new ArrayList<SearchColumnStringField>();
-        }
-        return this.shipAttention;
+    public void setStartDateBaseline(com.netsuite.webservices.platform.core_2018_2.SearchColumnDateField[] startDateBaseline) {
+        this.startDateBaseline = startDateBaseline;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnDateField getStartDateBaseline(int i) {
+        return this.startDateBaseline[i];
+    }
+
+    public void setStartDateBaseline(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnDateField _value) {
+        this.startDateBaseline[i] = _value;
     }
 
+
     /**
-     * Gets the value of the shipCity property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the shipCity property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getShipCity().add(newItem);
-     * </pre>
-     * 
+     * Gets the state value for this JobSearchRowBasic.
      * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnStringField }
-     * 
-     * 
+     * @return state
      */
-    public List<SearchColumnStringField> getShipCity() {
-        if (shipCity == null) {
-            shipCity = new ArrayList<SearchColumnStringField>();
-        }
-        return this.shipCity;
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] getState() {
+        return state;
     }
 
+
     /**
-     * Gets the value of the shipCountry property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the shipCountry property.
+     * Sets the state value for this JobSearchRowBasic.
      * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getShipCountry().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnEnumSelectField }
-     * 
-     * 
+     * @param state
      */
-    public List<SearchColumnEnumSelectField> getShipCountry() {
-        if (shipCountry == null) {
-            shipCountry = new ArrayList<SearchColumnEnumSelectField>();
-        }
-        return this.shipCountry;
+    public void setState(com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] state) {
+        this.state = state;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField getState(int i) {
+        return this.state[i];
+    }
+
+    public void setState(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField _value) {
+        this.state[i] = _value;
     }
 
+
     /**
-     * Gets the value of the shipCountryCode property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the shipCountryCode property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getShipCountryCode().add(newItem);
-     * </pre>
-     * 
+     * Gets the subscription value for this JobSearchRowBasic.
      * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnStringField }
-     * 
-     * 
+     * @return subscription
      */
-    public List<SearchColumnStringField> getShipCountryCode() {
-        if (shipCountryCode == null) {
-            shipCountryCode = new ArrayList<SearchColumnStringField>();
-        }
-        return this.shipCountryCode;
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] getSubscription() {
+        return subscription;
     }
 
+
     /**
-     * Gets the value of the shipPhone property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the shipPhone property.
+     * Sets the subscription value for this JobSearchRowBasic.
      * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getShipPhone().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnStringField }
-     * 
-     * 
+     * @param subscription
      */
-    public List<SearchColumnStringField> getShipPhone() {
-        if (shipPhone == null) {
-            shipPhone = new ArrayList<SearchColumnStringField>();
-        }
-        return this.shipPhone;
+    public void setSubscription(com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] subscription) {
+        this.subscription = subscription;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField getSubscription(int i) {
+        return this.subscription[i];
+    }
+
+    public void setSubscription(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField _value) {
+        this.subscription[i] = _value;
     }
 
+
     /**
-     * Gets the value of the shipState property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the shipState property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getShipState().add(newItem);
-     * </pre>
-     * 
+     * Gets the subscriptionDate value for this JobSearchRowBasic.
      * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnStringField }
-     * 
-     * 
+     * @return subscriptionDate
      */
-    public List<SearchColumnStringField> getShipState() {
-        if (shipState == null) {
-            shipState = new ArrayList<SearchColumnStringField>();
-        }
-        return this.shipState;
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnDateField[] getSubscriptionDate() {
+        return subscriptionDate;
     }
 
+
     /**
-     * Gets the value of the shipZip property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the shipZip property.
+     * Sets the subscriptionDate value for this JobSearchRowBasic.
      * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getShipZip().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnStringField }
-     * 
-     * 
+     * @param subscriptionDate
      */
-    public List<SearchColumnStringField> getShipZip() {
-        if (shipZip == null) {
-            shipZip = new ArrayList<SearchColumnStringField>();
-        }
-        return this.shipZip;
+    public void setSubscriptionDate(com.netsuite.webservices.platform.core_2018_2.SearchColumnDateField[] subscriptionDate) {
+        this.subscriptionDate = subscriptionDate;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnDateField getSubscriptionDate(int i) {
+        return this.subscriptionDate[i];
+    }
+
+    public void setSubscriptionDate(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnDateField _value) {
+        this.subscriptionDate[i] = _value;
     }
 
+
     /**
-     * Gets the value of the startDate property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the startDate property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getStartDate().add(newItem);
-     * </pre>
-     * 
+     * Gets the subscriptionStatus value for this JobSearchRowBasic.
      * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnDateField }
-     * 
-     * 
+     * @return subscriptionStatus
      */
-    public List<SearchColumnDateField> getStartDate() {
-        if (startDate == null) {
-            startDate = new ArrayList<SearchColumnDateField>();
-        }
-        return this.startDate;
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnBooleanField[] getSubscriptionStatus() {
+        return subscriptionStatus;
     }
 
+
     /**
-     * Gets the value of the startDateBaseline property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the startDateBaseline property.
+     * Sets the subscriptionStatus value for this JobSearchRowBasic.
      * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getStartDateBaseline().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnDateField }
-     * 
-     * 
+     * @param subscriptionStatus
      */
-    public List<SearchColumnDateField> getStartDateBaseline() {
-        if (startDateBaseline == null) {
-            startDateBaseline = new ArrayList<SearchColumnDateField>();
-        }
-        return this.startDateBaseline;
+    public void setSubscriptionStatus(com.netsuite.webservices.platform.core_2018_2.SearchColumnBooleanField[] subscriptionStatus) {
+        this.subscriptionStatus = subscriptionStatus;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnBooleanField getSubscriptionStatus(int i) {
+        return this.subscriptionStatus[i];
+    }
+
+    public void setSubscriptionStatus(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnBooleanField _value) {
+        this.subscriptionStatus[i] = _value;
     }
 
+
     /**
-     * Gets the value of the state property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the state property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getState().add(newItem);
-     * </pre>
-     * 
+     * Gets the subsidiary value for this JobSearchRowBasic.
      * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnStringField }
-     * 
-     * 
+     * @return subsidiary
      */
-    public List<SearchColumnStringField> getState() {
-        if (state == null) {
-            state = new ArrayList<SearchColumnStringField>();
-        }
-        return this.state;
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] getSubsidiary() {
+        return subsidiary;
     }
 
+
     /**
-     * Gets the value of the subscription property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the subscription property.
+     * Sets the subsidiary value for this JobSearchRowBasic.
      * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getSubscription().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnSelectField }
-     * 
-     * 
+     * @param subsidiary
      */
-    public List<SearchColumnSelectField> getSubscription() {
-        if (subscription == null) {
-            subscription = new ArrayList<SearchColumnSelectField>();
-        }
-        return this.subscription;
+    public void setSubsidiary(com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] subsidiary) {
+        this.subsidiary = subsidiary;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField getSubsidiary(int i) {
+        return this.subsidiary[i];
+    }
+
+    public void setSubsidiary(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField _value) {
+        this.subsidiary[i] = _value;
     }
 
+
     /**
-     * Gets the value of the subscriptionDate property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the subscriptionDate property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getSubscriptionDate().add(newItem);
-     * </pre>
-     * 
+     * Gets the timeRemaining value for this JobSearchRowBasic.
      * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnDateField }
-     * 
-     * 
+     * @return timeRemaining
      */
-    public List<SearchColumnDateField> getSubscriptionDate() {
-        if (subscriptionDate == null) {
-            subscriptionDate = new ArrayList<SearchColumnDateField>();
-        }
-        return this.subscriptionDate;
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnDoubleField[] getTimeRemaining() {
+        return timeRemaining;
     }
 
+
     /**
-     * Gets the value of the subscriptionStatus property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the subscriptionStatus property.
+     * Sets the timeRemaining value for this JobSearchRowBasic.
      * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getSubscriptionStatus().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnBooleanField }
-     * 
-     * 
+     * @param timeRemaining
      */
-    public List<SearchColumnBooleanField> getSubscriptionStatus() {
-        if (subscriptionStatus == null) {
-            subscriptionStatus = new ArrayList<SearchColumnBooleanField>();
-        }
-        return this.subscriptionStatus;
+    public void setTimeRemaining(com.netsuite.webservices.platform.core_2018_2.SearchColumnDoubleField[] timeRemaining) {
+        this.timeRemaining = timeRemaining;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnDoubleField getTimeRemaining(int i) {
+        return this.timeRemaining[i];
+    }
+
+    public void setTimeRemaining(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnDoubleField _value) {
+        this.timeRemaining[i] = _value;
     }
 
+
     /**
-     * Gets the value of the subsidiary property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the subsidiary property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getSubsidiary().add(newItem);
-     * </pre>
-     * 
+     * Gets the usePercentCompleteOverride value for this JobSearchRowBasic.
      * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnSelectField }
-     * 
-     * 
+     * @return usePercentCompleteOverride
      */
-    public List<SearchColumnSelectField> getSubsidiary() {
-        if (subsidiary == null) {
-            subsidiary = new ArrayList<SearchColumnSelectField>();
-        }
-        return this.subsidiary;
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnBooleanField[] getUsePercentCompleteOverride() {
+        return usePercentCompleteOverride;
     }
 
+
     /**
-     * Gets the value of the timeRemaining property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the timeRemaining property.
+     * Sets the usePercentCompleteOverride value for this JobSearchRowBasic.
      * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getTimeRemaining().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnDoubleField }
-     * 
-     * 
+     * @param usePercentCompleteOverride
      */
-    public List<SearchColumnDoubleField> getTimeRemaining() {
-        if (timeRemaining == null) {
-            timeRemaining = new ArrayList<SearchColumnDoubleField>();
-        }
-        return this.timeRemaining;
+    public void setUsePercentCompleteOverride(com.netsuite.webservices.platform.core_2018_2.SearchColumnBooleanField[] usePercentCompleteOverride) {
+        this.usePercentCompleteOverride = usePercentCompleteOverride;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnBooleanField getUsePercentCompleteOverride(int i) {
+        return this.usePercentCompleteOverride[i];
+    }
+
+    public void setUsePercentCompleteOverride(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnBooleanField _value) {
+        this.usePercentCompleteOverride[i] = _value;
     }
 
+
     /**
-     * Gets the value of the usePercentCompleteOverride property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the usePercentCompleteOverride property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getUsePercentCompleteOverride().add(newItem);
-     * </pre>
-     * 
+     * Gets the zipCode value for this JobSearchRowBasic.
      * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnBooleanField }
-     * 
-     * 
+     * @return zipCode
      */
-    public List<SearchColumnBooleanField> getUsePercentCompleteOverride() {
-        if (usePercentCompleteOverride == null) {
-            usePercentCompleteOverride = new ArrayList<SearchColumnBooleanField>();
-        }
-        return this.usePercentCompleteOverride;
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] getZipCode() {
+        return zipCode;
     }
 
+
     /**
-     * Gets the value of the zipCode property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the zipCode property.
+     * Sets the zipCode value for this JobSearchRowBasic.
      * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getZipCode().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnStringField }
-     * 
-     * 
+     * @param zipCode
      */
-    public List<SearchColumnStringField> getZipCode() {
-        if (zipCode == null) {
-            zipCode = new ArrayList<SearchColumnStringField>();
-        }
-        return this.zipCode;
+    public void setZipCode(com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] zipCode) {
+        this.zipCode = zipCode;
     }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField getZipCode(int i) {
+        return this.zipCode[i];
+    }
+
+    public void setZipCode(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField _value) {
+        this.zipCode[i] = _value;
+    }
+
 
     /**
-     * 获取customFieldList属性的值。
+     * Gets the customFieldList value for this JobSearchRowBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchColumnCustomFieldList }
-     *     
+     * @return customFieldList
      */
-    public SearchColumnCustomFieldList getCustomFieldList() {
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnCustomField[] getCustomFieldList() {
         return customFieldList;
     }
 
+
     /**
-     * 设置customFieldList属性的值。
+     * Sets the customFieldList value for this JobSearchRowBasic.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchColumnCustomFieldList }
-     *     
+     * @param customFieldList
      */
-    public void setCustomFieldList(SearchColumnCustomFieldList value) {
-        this.customFieldList = value;
+    public void setCustomFieldList(com.netsuite.webservices.platform.core_2018_2.SearchColumnCustomField[] customFieldList) {
+        this.customFieldList = customFieldList;
+    }
+
+    private java.lang.Object __equalsCalc = null;
+    public synchronized boolean equals(java.lang.Object obj) {
+        if (!(obj instanceof JobSearchRowBasic)) return false;
+        JobSearchRowBasic other = (JobSearchRowBasic) obj;
+        if (obj == null) return false;
+        if (this == obj) return true;
+        if (__equalsCalc != null) {
+            return (__equalsCalc == obj);
+        }
+        __equalsCalc = obj;
+        boolean _equals;
+        _equals = super.equals(obj) && 
+            ((this.accountNumber==null && other.getAccountNumber()==null) || 
+             (this.accountNumber!=null &&
+              java.util.Arrays.equals(this.accountNumber, other.getAccountNumber()))) &&
+            ((this.actualTime==null && other.getActualTime()==null) || 
+             (this.actualTime!=null &&
+              java.util.Arrays.equals(this.actualTime, other.getActualTime()))) &&
+            ((this.address==null && other.getAddress()==null) || 
+             (this.address!=null &&
+              java.util.Arrays.equals(this.address, other.getAddress()))) &&
+            ((this.address1==null && other.getAddress1()==null) || 
+             (this.address1!=null &&
+              java.util.Arrays.equals(this.address1, other.getAddress1()))) &&
+            ((this.address2==null && other.getAddress2()==null) || 
+             (this.address2!=null &&
+              java.util.Arrays.equals(this.address2, other.getAddress2()))) &&
+            ((this.address3==null && other.getAddress3()==null) || 
+             (this.address3!=null &&
+              java.util.Arrays.equals(this.address3, other.getAddress3()))) &&
+            ((this.addressee==null && other.getAddressee()==null) || 
+             (this.addressee!=null &&
+              java.util.Arrays.equals(this.addressee, other.getAddressee()))) &&
+            ((this.addressInternalId==null && other.getAddressInternalId()==null) || 
+             (this.addressInternalId!=null &&
+              java.util.Arrays.equals(this.addressInternalId, other.getAddressInternalId()))) &&
+            ((this.addressLabel==null && other.getAddressLabel()==null) || 
+             (this.addressLabel!=null &&
+              java.util.Arrays.equals(this.addressLabel, other.getAddressLabel()))) &&
+            ((this.addressPhone==null && other.getAddressPhone()==null) || 
+             (this.addressPhone!=null &&
+              java.util.Arrays.equals(this.addressPhone, other.getAddressPhone()))) &&
+            ((this.allocatePayrollExpenses==null && other.getAllocatePayrollExpenses()==null) || 
+             (this.allocatePayrollExpenses!=null &&
+              java.util.Arrays.equals(this.allocatePayrollExpenses, other.getAllocatePayrollExpenses()))) &&
+            ((this.allowAllResourcesForTasks==null && other.getAllowAllResourcesForTasks()==null) || 
+             (this.allowAllResourcesForTasks!=null &&
+              java.util.Arrays.equals(this.allowAllResourcesForTasks, other.getAllowAllResourcesForTasks()))) &&
+            ((this.allowExpenses==null && other.getAllowExpenses()==null) || 
+             (this.allowExpenses!=null &&
+              java.util.Arrays.equals(this.allowExpenses, other.getAllowExpenses()))) &&
+            ((this.allowTime==null && other.getAllowTime()==null) || 
+             (this.allowTime!=null &&
+              java.util.Arrays.equals(this.allowTime, other.getAllowTime()))) &&
+            ((this.altContact==null && other.getAltContact()==null) || 
+             (this.altContact!=null &&
+              java.util.Arrays.equals(this.altContact, other.getAltContact()))) &&
+            ((this.altEmail==null && other.getAltEmail()==null) || 
+             (this.altEmail!=null &&
+              java.util.Arrays.equals(this.altEmail, other.getAltEmail()))) &&
+            ((this.altName==null && other.getAltName()==null) || 
+             (this.altName!=null &&
+              java.util.Arrays.equals(this.altName, other.getAltName()))) &&
+            ((this.altPhone==null && other.getAltPhone()==null) || 
+             (this.altPhone!=null &&
+              java.util.Arrays.equals(this.altPhone, other.getAltPhone()))) &&
+            ((this.attention==null && other.getAttention()==null) || 
+             (this.attention!=null &&
+              java.util.Arrays.equals(this.attention, other.getAttention()))) &&
+            ((this.billAddress1==null && other.getBillAddress1()==null) || 
+             (this.billAddress1!=null &&
+              java.util.Arrays.equals(this.billAddress1, other.getBillAddress1()))) &&
+            ((this.billAddress2==null && other.getBillAddress2()==null) || 
+             (this.billAddress2!=null &&
+              java.util.Arrays.equals(this.billAddress2, other.getBillAddress2()))) &&
+            ((this.billAddress3==null && other.getBillAddress3()==null) || 
+             (this.billAddress3!=null &&
+              java.util.Arrays.equals(this.billAddress3, other.getBillAddress3()))) &&
+            ((this.billAddressee==null && other.getBillAddressee()==null) || 
+             (this.billAddressee!=null &&
+              java.util.Arrays.equals(this.billAddressee, other.getBillAddressee()))) &&
+            ((this.billAttention==null && other.getBillAttention()==null) || 
+             (this.billAttention!=null &&
+              java.util.Arrays.equals(this.billAttention, other.getBillAttention()))) &&
+            ((this.billCity==null && other.getBillCity()==null) || 
+             (this.billCity!=null &&
+              java.util.Arrays.equals(this.billCity, other.getBillCity()))) &&
+            ((this.billCountry==null && other.getBillCountry()==null) || 
+             (this.billCountry!=null &&
+              java.util.Arrays.equals(this.billCountry, other.getBillCountry()))) &&
+            ((this.billCountryCode==null && other.getBillCountryCode()==null) || 
+             (this.billCountryCode!=null &&
+              java.util.Arrays.equals(this.billCountryCode, other.getBillCountryCode()))) &&
+            ((this.billingSchedule==null && other.getBillingSchedule()==null) || 
+             (this.billingSchedule!=null &&
+              java.util.Arrays.equals(this.billingSchedule, other.getBillingSchedule()))) &&
+            ((this.billPhone==null && other.getBillPhone()==null) || 
+             (this.billPhone!=null &&
+              java.util.Arrays.equals(this.billPhone, other.getBillPhone()))) &&
+            ((this.billState==null && other.getBillState()==null) || 
+             (this.billState!=null &&
+              java.util.Arrays.equals(this.billState, other.getBillState()))) &&
+            ((this.billZipCode==null && other.getBillZipCode()==null) || 
+             (this.billZipCode!=null &&
+              java.util.Arrays.equals(this.billZipCode, other.getBillZipCode()))) &&
+            ((this.calculatedEndDate==null && other.getCalculatedEndDate()==null) || 
+             (this.calculatedEndDate!=null &&
+              java.util.Arrays.equals(this.calculatedEndDate, other.getCalculatedEndDate()))) &&
+            ((this.calculatedEndDateBaseline==null && other.getCalculatedEndDateBaseline()==null) || 
+             (this.calculatedEndDateBaseline!=null &&
+              java.util.Arrays.equals(this.calculatedEndDateBaseline, other.getCalculatedEndDateBaseline()))) &&
+            ((this.category==null && other.getCategory()==null) || 
+             (this.category!=null &&
+              java.util.Arrays.equals(this.category, other.getCategory()))) &&
+            ((this.city==null && other.getCity()==null) || 
+             (this.city!=null &&
+              java.util.Arrays.equals(this.city, other.getCity()))) &&
+            ((this.comments==null && other.getComments()==null) || 
+             (this.comments!=null &&
+              java.util.Arrays.equals(this.comments, other.getComments()))) &&
+            ((this.companyName==null && other.getCompanyName()==null) || 
+             (this.companyName!=null &&
+              java.util.Arrays.equals(this.companyName, other.getCompanyName()))) &&
+            ((this.contact==null && other.getContact()==null) || 
+             (this.contact!=null &&
+              java.util.Arrays.equals(this.contact, other.getContact()))) &&
+            ((this.country==null && other.getCountry()==null) || 
+             (this.country!=null &&
+              java.util.Arrays.equals(this.country, other.getCountry()))) &&
+            ((this.countryCode==null && other.getCountryCode()==null) || 
+             (this.countryCode!=null &&
+              java.util.Arrays.equals(this.countryCode, other.getCountryCode()))) &&
+            ((this.customer==null && other.getCustomer()==null) || 
+             (this.customer!=null &&
+              java.util.Arrays.equals(this.customer, other.getCustomer()))) &&
+            ((this.dateCreated==null && other.getDateCreated()==null) || 
+             (this.dateCreated!=null &&
+              java.util.Arrays.equals(this.dateCreated, other.getDateCreated()))) &&
+            ((this.email==null && other.getEmail()==null) || 
+             (this.email!=null &&
+              java.util.Arrays.equals(this.email, other.getEmail()))) &&
+            ((this.endDate==null && other.getEndDate()==null) || 
+             (this.endDate!=null &&
+              java.util.Arrays.equals(this.endDate, other.getEndDate()))) &&
+            ((this.entityId==null && other.getEntityId()==null) || 
+             (this.entityId!=null &&
+              java.util.Arrays.equals(this.entityId, other.getEntityId()))) &&
+            ((this.entityNumber==null && other.getEntityNumber()==null) || 
+             (this.entityNumber!=null &&
+              java.util.Arrays.equals(this.entityNumber, other.getEntityNumber()))) &&
+            ((this.entityStatus==null && other.getEntityStatus()==null) || 
+             (this.entityStatus!=null &&
+              java.util.Arrays.equals(this.entityStatus, other.getEntityStatus()))) &&
+            ((this.estimatedCost==null && other.getEstimatedCost()==null) || 
+             (this.estimatedCost!=null &&
+              java.util.Arrays.equals(this.estimatedCost, other.getEstimatedCost()))) &&
+            ((this.estimatedGrossProfit==null && other.getEstimatedGrossProfit()==null) || 
+             (this.estimatedGrossProfit!=null &&
+              java.util.Arrays.equals(this.estimatedGrossProfit, other.getEstimatedGrossProfit()))) &&
+            ((this.estimatedGrossProfitPercent==null && other.getEstimatedGrossProfitPercent()==null) || 
+             (this.estimatedGrossProfitPercent!=null &&
+              java.util.Arrays.equals(this.estimatedGrossProfitPercent, other.getEstimatedGrossProfitPercent()))) &&
+            ((this.estimatedLaborCost==null && other.getEstimatedLaborCost()==null) || 
+             (this.estimatedLaborCost!=null &&
+              java.util.Arrays.equals(this.estimatedLaborCost, other.getEstimatedLaborCost()))) &&
+            ((this.estimatedLaborCostBaseline==null && other.getEstimatedLaborCostBaseline()==null) || 
+             (this.estimatedLaborCostBaseline!=null &&
+              java.util.Arrays.equals(this.estimatedLaborCostBaseline, other.getEstimatedLaborCostBaseline()))) &&
+            ((this.estimatedLaborRevenue==null && other.getEstimatedLaborRevenue()==null) || 
+             (this.estimatedLaborRevenue!=null &&
+              java.util.Arrays.equals(this.estimatedLaborRevenue, other.getEstimatedLaborRevenue()))) &&
+            ((this.estimatedRevenue==null && other.getEstimatedRevenue()==null) || 
+             (this.estimatedRevenue!=null &&
+              java.util.Arrays.equals(this.estimatedRevenue, other.getEstimatedRevenue()))) &&
+            ((this.estimatedTime==null && other.getEstimatedTime()==null) || 
+             (this.estimatedTime!=null &&
+              java.util.Arrays.equals(this.estimatedTime, other.getEstimatedTime()))) &&
+            ((this.estimatedTimeOverride==null && other.getEstimatedTimeOverride()==null) || 
+             (this.estimatedTimeOverride!=null &&
+              java.util.Arrays.equals(this.estimatedTimeOverride, other.getEstimatedTimeOverride()))) &&
+            ((this.estimatedTimeOverrideBaseline==null && other.getEstimatedTimeOverrideBaseline()==null) || 
+             (this.estimatedTimeOverrideBaseline!=null &&
+              java.util.Arrays.equals(this.estimatedTimeOverrideBaseline, other.getEstimatedTimeOverrideBaseline()))) &&
+            ((this.externalId==null && other.getExternalId()==null) || 
+             (this.externalId!=null &&
+              java.util.Arrays.equals(this.externalId, other.getExternalId()))) &&
+            ((this.fax==null && other.getFax()==null) || 
+             (this.fax!=null &&
+              java.util.Arrays.equals(this.fax, other.getFax()))) &&
+            ((this.globalSubscriptionStatus==null && other.getGlobalSubscriptionStatus()==null) || 
+             (this.globalSubscriptionStatus!=null &&
+              java.util.Arrays.equals(this.globalSubscriptionStatus, other.getGlobalSubscriptionStatus()))) &&
+            ((this.image==null && other.getImage()==null) || 
+             (this.image!=null &&
+              java.util.Arrays.equals(this.image, other.getImage()))) &&
+            ((this.includeCrmTasksInTotals==null && other.getIncludeCrmTasksInTotals()==null) || 
+             (this.includeCrmTasksInTotals!=null &&
+              java.util.Arrays.equals(this.includeCrmTasksInTotals, other.getIncludeCrmTasksInTotals()))) &&
+            ((this.internalId==null && other.getInternalId()==null) || 
+             (this.internalId!=null &&
+              java.util.Arrays.equals(this.internalId, other.getInternalId()))) &&
+            ((this.isDefaultBilling==null && other.getIsDefaultBilling()==null) || 
+             (this.isDefaultBilling!=null &&
+              java.util.Arrays.equals(this.isDefaultBilling, other.getIsDefaultBilling()))) &&
+            ((this.isDefaultShipping==null && other.getIsDefaultShipping()==null) || 
+             (this.isDefaultShipping!=null &&
+              java.util.Arrays.equals(this.isDefaultShipping, other.getIsDefaultShipping()))) &&
+            ((this.isExemptTime==null && other.getIsExemptTime()==null) || 
+             (this.isExemptTime!=null &&
+              java.util.Arrays.equals(this.isExemptTime, other.getIsExemptTime()))) &&
+            ((this.isInactive==null && other.getIsInactive()==null) || 
+             (this.isInactive!=null &&
+              java.util.Arrays.equals(this.isInactive, other.getIsInactive()))) &&
+            ((this.isProductiveTime==null && other.getIsProductiveTime()==null) || 
+             (this.isProductiveTime!=null &&
+              java.util.Arrays.equals(this.isProductiveTime, other.getIsProductiveTime()))) &&
+            ((this.isUtilizedTime==null && other.getIsUtilizedTime()==null) || 
+             (this.isUtilizedTime!=null &&
+              java.util.Arrays.equals(this.isUtilizedTime, other.getIsUtilizedTime()))) &&
+            ((this.jobBillingType==null && other.getJobBillingType()==null) || 
+             (this.jobBillingType!=null &&
+              java.util.Arrays.equals(this.jobBillingType, other.getJobBillingType()))) &&
+            ((this.jobItem==null && other.getJobItem()==null) || 
+             (this.jobItem!=null &&
+              java.util.Arrays.equals(this.jobItem, other.getJobItem()))) &&
+            ((this.jobPrice==null && other.getJobPrice()==null) || 
+             (this.jobPrice!=null &&
+              java.util.Arrays.equals(this.jobPrice, other.getJobPrice()))) &&
+            ((this.jobResource==null && other.getJobResource()==null) || 
+             (this.jobResource!=null &&
+              java.util.Arrays.equals(this.jobResource, other.getJobResource()))) &&
+            ((this.jobResourceRole==null && other.getJobResourceRole()==null) || 
+             (this.jobResourceRole!=null &&
+              java.util.Arrays.equals(this.jobResourceRole, other.getJobResourceRole()))) &&
+            ((this.language==null && other.getLanguage()==null) || 
+             (this.language!=null &&
+              java.util.Arrays.equals(this.language, other.getLanguage()))) &&
+            ((this.lastBaselineDate==null && other.getLastBaselineDate()==null) || 
+             (this.lastBaselineDate!=null &&
+              java.util.Arrays.equals(this.lastBaselineDate, other.getLastBaselineDate()))) &&
+            ((this.lastModifiedDate==null && other.getLastModifiedDate()==null) || 
+             (this.lastModifiedDate!=null &&
+              java.util.Arrays.equals(this.lastModifiedDate, other.getLastModifiedDate()))) &&
+            ((this.level==null && other.getLevel()==null) || 
+             (this.level!=null &&
+              java.util.Arrays.equals(this.level, other.getLevel()))) &&
+            ((this.limitTimeToAssignees==null && other.getLimitTimeToAssignees()==null) || 
+             (this.limitTimeToAssignees!=null &&
+              java.util.Arrays.equals(this.limitTimeToAssignees, other.getLimitTimeToAssignees()))) &&
+            ((this.materializeTime==null && other.getMaterializeTime()==null) || 
+             (this.materializeTime!=null &&
+              java.util.Arrays.equals(this.materializeTime, other.getMaterializeTime()))) &&
+            ((this.percentComplete==null && other.getPercentComplete()==null) || 
+             (this.percentComplete!=null &&
+              java.util.Arrays.equals(this.percentComplete, other.getPercentComplete()))) &&
+            ((this.percentTimeComplete==null && other.getPercentTimeComplete()==null) || 
+             (this.percentTimeComplete!=null &&
+              java.util.Arrays.equals(this.percentTimeComplete, other.getPercentTimeComplete()))) &&
+            ((this.permission==null && other.getPermission()==null) || 
+             (this.permission!=null &&
+              java.util.Arrays.equals(this.permission, other.getPermission()))) &&
+            ((this.phone==null && other.getPhone()==null) || 
+             (this.phone!=null &&
+              java.util.Arrays.equals(this.phone, other.getPhone()))) &&
+            ((this.phoneticName==null && other.getPhoneticName()==null) || 
+             (this.phoneticName!=null &&
+              java.util.Arrays.equals(this.phoneticName, other.getPhoneticName()))) &&
+            ((this.projectedEndDate==null && other.getProjectedEndDate()==null) || 
+             (this.projectedEndDate!=null &&
+              java.util.Arrays.equals(this.projectedEndDate, other.getProjectedEndDate()))) &&
+            ((this.projectedEndDateBaseline==null && other.getProjectedEndDateBaseline()==null) || 
+             (this.projectedEndDateBaseline!=null &&
+              java.util.Arrays.equals(this.projectedEndDateBaseline, other.getProjectedEndDateBaseline()))) &&
+            ((this.projectExpenseType==null && other.getProjectExpenseType()==null) || 
+             (this.projectExpenseType!=null &&
+              java.util.Arrays.equals(this.projectExpenseType, other.getProjectExpenseType()))) &&
+            ((this.revRecForecastRule==null && other.getRevRecForecastRule()==null) || 
+             (this.revRecForecastRule!=null &&
+              java.util.Arrays.equals(this.revRecForecastRule, other.getRevRecForecastRule()))) &&
+            ((this.shipAddress1==null && other.getShipAddress1()==null) || 
+             (this.shipAddress1!=null &&
+              java.util.Arrays.equals(this.shipAddress1, other.getShipAddress1()))) &&
+            ((this.shipAddress2==null && other.getShipAddress2()==null) || 
+             (this.shipAddress2!=null &&
+              java.util.Arrays.equals(this.shipAddress2, other.getShipAddress2()))) &&
+            ((this.shipAddress3==null && other.getShipAddress3()==null) || 
+             (this.shipAddress3!=null &&
+              java.util.Arrays.equals(this.shipAddress3, other.getShipAddress3()))) &&
+            ((this.shipAddressee==null && other.getShipAddressee()==null) || 
+             (this.shipAddressee!=null &&
+              java.util.Arrays.equals(this.shipAddressee, other.getShipAddressee()))) &&
+            ((this.shipAttention==null && other.getShipAttention()==null) || 
+             (this.shipAttention!=null &&
+              java.util.Arrays.equals(this.shipAttention, other.getShipAttention()))) &&
+            ((this.shipCity==null && other.getShipCity()==null) || 
+             (this.shipCity!=null &&
+              java.util.Arrays.equals(this.shipCity, other.getShipCity()))) &&
+            ((this.shipCountry==null && other.getShipCountry()==null) || 
+             (this.shipCountry!=null &&
+              java.util.Arrays.equals(this.shipCountry, other.getShipCountry()))) &&
+            ((this.shipCountryCode==null && other.getShipCountryCode()==null) || 
+             (this.shipCountryCode!=null &&
+              java.util.Arrays.equals(this.shipCountryCode, other.getShipCountryCode()))) &&
+            ((this.shipPhone==null && other.getShipPhone()==null) || 
+             (this.shipPhone!=null &&
+              java.util.Arrays.equals(this.shipPhone, other.getShipPhone()))) &&
+            ((this.shipState==null && other.getShipState()==null) || 
+             (this.shipState!=null &&
+              java.util.Arrays.equals(this.shipState, other.getShipState()))) &&
+            ((this.shipZip==null && other.getShipZip()==null) || 
+             (this.shipZip!=null &&
+              java.util.Arrays.equals(this.shipZip, other.getShipZip()))) &&
+            ((this.startDate==null && other.getStartDate()==null) || 
+             (this.startDate!=null &&
+              java.util.Arrays.equals(this.startDate, other.getStartDate()))) &&
+            ((this.startDateBaseline==null && other.getStartDateBaseline()==null) || 
+             (this.startDateBaseline!=null &&
+              java.util.Arrays.equals(this.startDateBaseline, other.getStartDateBaseline()))) &&
+            ((this.state==null && other.getState()==null) || 
+             (this.state!=null &&
+              java.util.Arrays.equals(this.state, other.getState()))) &&
+            ((this.subscription==null && other.getSubscription()==null) || 
+             (this.subscription!=null &&
+              java.util.Arrays.equals(this.subscription, other.getSubscription()))) &&
+            ((this.subscriptionDate==null && other.getSubscriptionDate()==null) || 
+             (this.subscriptionDate!=null &&
+              java.util.Arrays.equals(this.subscriptionDate, other.getSubscriptionDate()))) &&
+            ((this.subscriptionStatus==null && other.getSubscriptionStatus()==null) || 
+             (this.subscriptionStatus!=null &&
+              java.util.Arrays.equals(this.subscriptionStatus, other.getSubscriptionStatus()))) &&
+            ((this.subsidiary==null && other.getSubsidiary()==null) || 
+             (this.subsidiary!=null &&
+              java.util.Arrays.equals(this.subsidiary, other.getSubsidiary()))) &&
+            ((this.timeRemaining==null && other.getTimeRemaining()==null) || 
+             (this.timeRemaining!=null &&
+              java.util.Arrays.equals(this.timeRemaining, other.getTimeRemaining()))) &&
+            ((this.usePercentCompleteOverride==null && other.getUsePercentCompleteOverride()==null) || 
+             (this.usePercentCompleteOverride!=null &&
+              java.util.Arrays.equals(this.usePercentCompleteOverride, other.getUsePercentCompleteOverride()))) &&
+            ((this.zipCode==null && other.getZipCode()==null) || 
+             (this.zipCode!=null &&
+              java.util.Arrays.equals(this.zipCode, other.getZipCode()))) &&
+            ((this.customFieldList==null && other.getCustomFieldList()==null) || 
+             (this.customFieldList!=null &&
+              java.util.Arrays.equals(this.customFieldList, other.getCustomFieldList())));
+        __equalsCalc = null;
+        return _equals;
+    }
+
+    private boolean __hashCodeCalc = false;
+    public synchronized int hashCode() {
+        if (__hashCodeCalc) {
+            return 0;
+        }
+        __hashCodeCalc = true;
+        int _hashCode = super.hashCode();
+        if (getAccountNumber() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getAccountNumber());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getAccountNumber(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getActualTime() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getActualTime());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getActualTime(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getAddress() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getAddress());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getAddress(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getAddress1() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getAddress1());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getAddress1(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getAddress2() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getAddress2());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getAddress2(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getAddress3() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getAddress3());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getAddress3(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getAddressee() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getAddressee());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getAddressee(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getAddressInternalId() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getAddressInternalId());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getAddressInternalId(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getAddressLabel() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getAddressLabel());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getAddressLabel(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getAddressPhone() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getAddressPhone());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getAddressPhone(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getAllocatePayrollExpenses() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getAllocatePayrollExpenses());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getAllocatePayrollExpenses(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getAllowAllResourcesForTasks() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getAllowAllResourcesForTasks());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getAllowAllResourcesForTasks(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getAllowExpenses() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getAllowExpenses());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getAllowExpenses(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getAllowTime() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getAllowTime());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getAllowTime(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getAltContact() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getAltContact());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getAltContact(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getAltEmail() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getAltEmail());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getAltEmail(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getAltName() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getAltName());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getAltName(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getAltPhone() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getAltPhone());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getAltPhone(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getAttention() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getAttention());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getAttention(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getBillAddress1() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getBillAddress1());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getBillAddress1(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getBillAddress2() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getBillAddress2());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getBillAddress2(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getBillAddress3() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getBillAddress3());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getBillAddress3(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getBillAddressee() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getBillAddressee());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getBillAddressee(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getBillAttention() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getBillAttention());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getBillAttention(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getBillCity() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getBillCity());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getBillCity(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getBillCountry() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getBillCountry());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getBillCountry(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getBillCountryCode() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getBillCountryCode());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getBillCountryCode(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getBillingSchedule() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getBillingSchedule());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getBillingSchedule(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getBillPhone() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getBillPhone());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getBillPhone(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getBillState() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getBillState());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getBillState(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getBillZipCode() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getBillZipCode());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getBillZipCode(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getCalculatedEndDate() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getCalculatedEndDate());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getCalculatedEndDate(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getCalculatedEndDateBaseline() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getCalculatedEndDateBaseline());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getCalculatedEndDateBaseline(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getCategory() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getCategory());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getCategory(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getCity() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getCity());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getCity(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getComments() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getComments());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getComments(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getCompanyName() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getCompanyName());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getCompanyName(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getContact() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getContact());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getContact(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getCountry() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getCountry());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getCountry(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getCountryCode() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getCountryCode());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getCountryCode(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getCustomer() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getCustomer());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getCustomer(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getDateCreated() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getDateCreated());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getDateCreated(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getEmail() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getEmail());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getEmail(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getEndDate() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getEndDate());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getEndDate(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getEntityId() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getEntityId());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getEntityId(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getEntityNumber() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getEntityNumber());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getEntityNumber(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getEntityStatus() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getEntityStatus());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getEntityStatus(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getEstimatedCost() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getEstimatedCost());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getEstimatedCost(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getEstimatedGrossProfit() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getEstimatedGrossProfit());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getEstimatedGrossProfit(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getEstimatedGrossProfitPercent() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getEstimatedGrossProfitPercent());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getEstimatedGrossProfitPercent(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getEstimatedLaborCost() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getEstimatedLaborCost());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getEstimatedLaborCost(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getEstimatedLaborCostBaseline() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getEstimatedLaborCostBaseline());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getEstimatedLaborCostBaseline(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getEstimatedLaborRevenue() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getEstimatedLaborRevenue());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getEstimatedLaborRevenue(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getEstimatedRevenue() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getEstimatedRevenue());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getEstimatedRevenue(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getEstimatedTime() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getEstimatedTime());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getEstimatedTime(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getEstimatedTimeOverride() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getEstimatedTimeOverride());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getEstimatedTimeOverride(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getEstimatedTimeOverrideBaseline() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getEstimatedTimeOverrideBaseline());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getEstimatedTimeOverrideBaseline(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getExternalId() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getExternalId());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getExternalId(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getFax() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getFax());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getFax(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getGlobalSubscriptionStatus() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getGlobalSubscriptionStatus());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getGlobalSubscriptionStatus(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getImage() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getImage());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getImage(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getIncludeCrmTasksInTotals() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getIncludeCrmTasksInTotals());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getIncludeCrmTasksInTotals(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getInternalId() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getInternalId());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getInternalId(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getIsDefaultBilling() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getIsDefaultBilling());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getIsDefaultBilling(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getIsDefaultShipping() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getIsDefaultShipping());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getIsDefaultShipping(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getIsExemptTime() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getIsExemptTime());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getIsExemptTime(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getIsInactive() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getIsInactive());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getIsInactive(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getIsProductiveTime() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getIsProductiveTime());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getIsProductiveTime(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getIsUtilizedTime() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getIsUtilizedTime());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getIsUtilizedTime(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getJobBillingType() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getJobBillingType());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getJobBillingType(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getJobItem() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getJobItem());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getJobItem(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getJobPrice() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getJobPrice());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getJobPrice(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getJobResource() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getJobResource());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getJobResource(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getJobResourceRole() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getJobResourceRole());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getJobResourceRole(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getLanguage() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getLanguage());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getLanguage(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getLastBaselineDate() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getLastBaselineDate());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getLastBaselineDate(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getLastModifiedDate() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getLastModifiedDate());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getLastModifiedDate(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getLevel() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getLevel());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getLevel(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getLimitTimeToAssignees() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getLimitTimeToAssignees());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getLimitTimeToAssignees(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getMaterializeTime() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getMaterializeTime());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getMaterializeTime(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getPercentComplete() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getPercentComplete());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getPercentComplete(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getPercentTimeComplete() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getPercentTimeComplete());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getPercentTimeComplete(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getPermission() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getPermission());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getPermission(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getPhone() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getPhone());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getPhone(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getPhoneticName() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getPhoneticName());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getPhoneticName(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getProjectedEndDate() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getProjectedEndDate());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getProjectedEndDate(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getProjectedEndDateBaseline() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getProjectedEndDateBaseline());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getProjectedEndDateBaseline(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getProjectExpenseType() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getProjectExpenseType());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getProjectExpenseType(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getRevRecForecastRule() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getRevRecForecastRule());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getRevRecForecastRule(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getShipAddress1() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getShipAddress1());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getShipAddress1(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getShipAddress2() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getShipAddress2());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getShipAddress2(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getShipAddress3() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getShipAddress3());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getShipAddress3(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getShipAddressee() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getShipAddressee());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getShipAddressee(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getShipAttention() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getShipAttention());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getShipAttention(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getShipCity() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getShipCity());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getShipCity(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getShipCountry() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getShipCountry());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getShipCountry(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getShipCountryCode() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getShipCountryCode());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getShipCountryCode(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getShipPhone() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getShipPhone());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getShipPhone(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getShipState() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getShipState());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getShipState(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getShipZip() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getShipZip());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getShipZip(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getStartDate() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getStartDate());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getStartDate(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getStartDateBaseline() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getStartDateBaseline());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getStartDateBaseline(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getState() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getState());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getState(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getSubscription() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getSubscription());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getSubscription(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getSubscriptionDate() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getSubscriptionDate());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getSubscriptionDate(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getSubscriptionStatus() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getSubscriptionStatus());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getSubscriptionStatus(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getSubsidiary() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getSubsidiary());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getSubsidiary(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getTimeRemaining() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getTimeRemaining());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getTimeRemaining(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getUsePercentCompleteOverride() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getUsePercentCompleteOverride());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getUsePercentCompleteOverride(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getZipCode() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getZipCode());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getZipCode(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getCustomFieldList() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getCustomFieldList());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getCustomFieldList(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        __hashCodeCalc = false;
+        return _hashCode;
+    }
+
+    // Type metadata
+    private static org.apache.axis.description.TypeDesc typeDesc =
+        new org.apache.axis.description.TypeDesc(JobSearchRowBasic.class, true);
+
+    static {
+        typeDesc.setXmlType(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "JobSearchRowBasic"));
+        org.apache.axis.description.ElementDesc elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("accountNumber");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "accountNumber"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnStringField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("actualTime");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "actualTime"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnDoubleField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("address");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "address"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnStringField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("address1");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "address1"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnStringField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("address2");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "address2"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnStringField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("address3");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "address3"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnStringField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("addressee");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "addressee"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnStringField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("addressInternalId");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "addressInternalId"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnStringField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("addressLabel");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "addressLabel"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnStringField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("addressPhone");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "addressPhone"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnStringField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("allocatePayrollExpenses");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "allocatePayrollExpenses"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnBooleanField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("allowAllResourcesForTasks");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "allowAllResourcesForTasks"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnBooleanField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("allowExpenses");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "allowExpenses"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnBooleanField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("allowTime");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "allowTime"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnBooleanField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("altContact");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "altContact"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnStringField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("altEmail");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "altEmail"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnStringField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("altName");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "altName"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnStringField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("altPhone");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "altPhone"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnStringField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("attention");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "attention"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnStringField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("billAddress1");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "billAddress1"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnStringField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("billAddress2");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "billAddress2"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnStringField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("billAddress3");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "billAddress3"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnStringField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("billAddressee");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "billAddressee"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnStringField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("billAttention");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "billAttention"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnStringField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("billCity");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "billCity"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnStringField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("billCountry");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "billCountry"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnEnumSelectField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("billCountryCode");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "billCountryCode"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnStringField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("billingSchedule");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "billingSchedule"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnSelectField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("billPhone");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "billPhone"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnStringField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("billState");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "billState"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnStringField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("billZipCode");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "billZipCode"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnStringField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("calculatedEndDate");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "calculatedEndDate"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnDateField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("calculatedEndDateBaseline");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "calculatedEndDateBaseline"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnDateField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("category");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "category"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnSelectField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("city");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "city"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnStringField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("comments");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "comments"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnStringField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("companyName");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "companyName"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnStringField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("contact");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "contact"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnStringField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("country");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "country"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnEnumSelectField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("countryCode");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "countryCode"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnStringField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("customer");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "customer"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnSelectField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("dateCreated");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "dateCreated"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnDateField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("email");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "email"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnStringField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("endDate");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "endDate"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnDateField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("entityId");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "entityId"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnStringField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("entityNumber");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "entityNumber"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnLongField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("entityStatus");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "entityStatus"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnSelectField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("estimatedCost");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "estimatedCost"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnDoubleField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("estimatedGrossProfit");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "estimatedGrossProfit"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnDoubleField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("estimatedGrossProfitPercent");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "estimatedGrossProfitPercent"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnDoubleField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("estimatedLaborCost");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "estimatedLaborCost"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnDoubleField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("estimatedLaborCostBaseline");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "estimatedLaborCostBaseline"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnDoubleField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("estimatedLaborRevenue");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "estimatedLaborRevenue"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnDoubleField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("estimatedRevenue");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "estimatedRevenue"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnDoubleField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("estimatedTime");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "estimatedTime"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnDoubleField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("estimatedTimeOverride");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "estimatedTimeOverride"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnDoubleField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("estimatedTimeOverrideBaseline");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "estimatedTimeOverrideBaseline"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnDoubleField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("externalId");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "externalId"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnSelectField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("fax");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "fax"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnStringField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("globalSubscriptionStatus");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "globalSubscriptionStatus"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnEnumSelectField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("image");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "image"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnSelectField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("includeCrmTasksInTotals");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "includeCrmTasksInTotals"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnBooleanField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("internalId");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "internalId"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnSelectField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("isDefaultBilling");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "isDefaultBilling"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnBooleanField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("isDefaultShipping");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "isDefaultShipping"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnBooleanField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("isExemptTime");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "isExemptTime"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnBooleanField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("isInactive");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "isInactive"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnBooleanField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("isProductiveTime");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "isProductiveTime"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnBooleanField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("isUtilizedTime");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "isUtilizedTime"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnBooleanField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("jobBillingType");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "jobBillingType"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnEnumSelectField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("jobItem");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "jobItem"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnSelectField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("jobPrice");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "jobPrice"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnDoubleField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("jobResource");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "jobResource"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnSelectField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("jobResourceRole");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "jobResourceRole"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnSelectField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("language");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "language"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnEnumSelectField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("lastBaselineDate");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "lastBaselineDate"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnDateField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("lastModifiedDate");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "lastModifiedDate"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnDateField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("level");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "level"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnEnumSelectField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("limitTimeToAssignees");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "limitTimeToAssignees"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnBooleanField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("materializeTime");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "materializeTime"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnBooleanField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("percentComplete");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "percentComplete"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnDoubleField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("percentTimeComplete");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "percentTimeComplete"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnDoubleField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("permission");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "permission"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnEnumSelectField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("phone");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "phone"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnStringField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("phoneticName");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "phoneticName"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnStringField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("projectedEndDate");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "projectedEndDate"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnDateField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("projectedEndDateBaseline");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "projectedEndDateBaseline"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnDateField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("projectExpenseType");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "projectExpenseType"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnSelectField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("revRecForecastRule");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "revRecForecastRule"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnSelectField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("shipAddress1");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "shipAddress1"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnStringField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("shipAddress2");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "shipAddress2"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnStringField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("shipAddress3");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "shipAddress3"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnStringField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("shipAddressee");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "shipAddressee"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnStringField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("shipAttention");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "shipAttention"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnStringField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("shipCity");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "shipCity"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnStringField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("shipCountry");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "shipCountry"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnEnumSelectField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("shipCountryCode");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "shipCountryCode"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnStringField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("shipPhone");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "shipPhone"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnStringField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("shipState");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "shipState"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnStringField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("shipZip");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "shipZip"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnStringField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("startDate");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "startDate"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnDateField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("startDateBaseline");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "startDateBaseline"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnDateField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("state");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "state"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnStringField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("subscription");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "subscription"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnSelectField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("subscriptionDate");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "subscriptionDate"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnDateField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("subscriptionStatus");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "subscriptionStatus"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnBooleanField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("subsidiary");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "subsidiary"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnSelectField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("timeRemaining");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "timeRemaining"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnDoubleField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("usePercentCompleteOverride");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "usePercentCompleteOverride"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnBooleanField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("zipCode");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "zipCode"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnStringField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("customFieldList");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "customFieldList"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnCustomField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "customField"));
+        typeDesc.addFieldDesc(elemField);
+    }
+
+    /**
+     * Return type metadata object
+     */
+    public static org.apache.axis.description.TypeDesc getTypeDesc() {
+        return typeDesc;
+    }
+
+    /**
+     * Get Custom Serializer
+     */
+    public static org.apache.axis.encoding.Serializer getSerializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanSerializer(
+            _javaType, _xmlType, typeDesc);
+    }
+
+    /**
+     * Get Custom Deserializer
+     */
+    public static org.apache.axis.encoding.Deserializer getDeserializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanDeserializer(
+            _javaType, _xmlType, typeDesc);
     }
 
 }

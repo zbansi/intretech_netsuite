@@ -1,966 +1,1641 @@
+/**
+ * InboundShipmentSearchRowBasic.java
+ *
+ * This file was auto-generated from WSDL
+ * by the Apache Axis 1.4 Jul 28, 2010 (04:07:04 PDT) WSDL2Java emitter.
+ */
 
 package com.netsuite.webservices.platform.common_2018_2;
 
-import java.util.ArrayList;
-import java.util.List;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlType;
-import com.netsuite.webservices.platform.core_2018_2.SearchColumnCustomFieldList;
-import com.netsuite.webservices.platform.core_2018_2.SearchColumnDateField;
-import com.netsuite.webservices.platform.core_2018_2.SearchColumnDoubleField;
-import com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField;
-import com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField;
-import com.netsuite.webservices.platform.core_2018_2.SearchRowBasic;
+public class InboundShipmentSearchRowBasic  extends com.netsuite.webservices.platform.core_2018_2.SearchRowBasic  implements java.io.Serializable {
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnDateField[] actualDeliveryDate;
 
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnDateField[] actualShippingDate;
 
-/**
- * <p>InboundShipmentSearchRowBasic complex type的 Java 类。
- * 
- * <p>以下模式片段指定包含在此类中的预期内容。
- * 
- * <pre>
- * &lt;complexType name="InboundShipmentSearchRowBasic">
- *   &lt;complexContent>
- *     &lt;extension base="{urn:core_2018_2.platform.webservices.netsuite.com}SearchRowBasic">
- *       &lt;sequence>
- *         &lt;element name="actualDeliveryDate" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnDateField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="actualShippingDate" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnDateField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="billOfLading" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnStringField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="createdDate" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnDateField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="currency" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnSelectField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="description" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnStringField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="expectedDeliveryDate" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnDateField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="expectedRate" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnDoubleField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="expectedShippingDate" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnDateField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="externalDocumentNumber" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnStringField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="externalId" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnSelectField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="incoterm" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnSelectField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="internalId" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnSelectField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="item" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnSelectField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="memo" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnStringField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="poAmount" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnDoubleField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="poRate" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnDoubleField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="purchaseOrder" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnSelectField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="quantityBilled" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnDoubleField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="quantityExpected" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnDoubleField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="quantityReceived" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnDoubleField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="quantityRemaining" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnDoubleField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="receivingLocation" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnSelectField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="shipmentNumber" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnStringField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="status" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnStringField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="unit" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnSelectField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="vendor" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnSelectField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="vesselNumber" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnStringField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="customFieldList" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnCustomFieldList" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/extension>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
- */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "InboundShipmentSearchRowBasic", propOrder = {
-    "actualDeliveryDate",
-    "actualShippingDate",
-    "billOfLading",
-    "createdDate",
-    "currency",
-    "description",
-    "expectedDeliveryDate",
-    "expectedRate",
-    "expectedShippingDate",
-    "externalDocumentNumber",
-    "externalId",
-    "incoterm",
-    "internalId",
-    "item",
-    "memo",
-    "poAmount",
-    "poRate",
-    "purchaseOrder",
-    "quantityBilled",
-    "quantityExpected",
-    "quantityReceived",
-    "quantityRemaining",
-    "receivingLocation",
-    "shipmentNumber",
-    "status",
-    "unit",
-    "vendor",
-    "vesselNumber",
-    "customFieldList"
-})
-public class InboundShipmentSearchRowBasic
-    extends SearchRowBasic
-{
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] billOfLading;
 
-    protected List<SearchColumnDateField> actualDeliveryDate;
-    protected List<SearchColumnDateField> actualShippingDate;
-    protected List<SearchColumnStringField> billOfLading;
-    protected List<SearchColumnDateField> createdDate;
-    protected List<SearchColumnSelectField> currency;
-    protected List<SearchColumnStringField> description;
-    protected List<SearchColumnDateField> expectedDeliveryDate;
-    protected List<SearchColumnDoubleField> expectedRate;
-    protected List<SearchColumnDateField> expectedShippingDate;
-    protected List<SearchColumnStringField> externalDocumentNumber;
-    protected List<SearchColumnSelectField> externalId;
-    protected List<SearchColumnSelectField> incoterm;
-    protected List<SearchColumnSelectField> internalId;
-    protected List<SearchColumnSelectField> item;
-    protected List<SearchColumnStringField> memo;
-    protected List<SearchColumnDoubleField> poAmount;
-    protected List<SearchColumnDoubleField> poRate;
-    protected List<SearchColumnSelectField> purchaseOrder;
-    protected List<SearchColumnDoubleField> quantityBilled;
-    protected List<SearchColumnDoubleField> quantityExpected;
-    protected List<SearchColumnDoubleField> quantityReceived;
-    protected List<SearchColumnDoubleField> quantityRemaining;
-    protected List<SearchColumnSelectField> receivingLocation;
-    protected List<SearchColumnStringField> shipmentNumber;
-    protected List<SearchColumnStringField> status;
-    protected List<SearchColumnSelectField> unit;
-    protected List<SearchColumnSelectField> vendor;
-    protected List<SearchColumnStringField> vesselNumber;
-    protected SearchColumnCustomFieldList customFieldList;
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnDateField[] createdDate;
 
-    /**
-     * Gets the value of the actualDeliveryDate property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the actualDeliveryDate property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getActualDeliveryDate().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnDateField }
-     * 
-     * 
-     */
-    public List<SearchColumnDateField> getActualDeliveryDate() {
-        if (actualDeliveryDate == null) {
-            actualDeliveryDate = new ArrayList<SearchColumnDateField>();
-        }
-        return this.actualDeliveryDate;
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] currency;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] description;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnDateField[] expectedDeliveryDate;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnDoubleField[] expectedRate;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnDateField[] expectedShippingDate;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] externalDocumentNumber;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] externalId;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] incoterm;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] internalId;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] item;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] memo;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnDoubleField[] poAmount;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnDoubleField[] poRate;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] purchaseOrder;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnDoubleField[] quantityBilled;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnDoubleField[] quantityExpected;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnDoubleField[] quantityReceived;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnDoubleField[] quantityRemaining;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] receivingLocation;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] shipmentNumber;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] status;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] unit;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] vendor;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] vesselNumber;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnCustomField[] customFieldList;
+
+    public InboundShipmentSearchRowBasic() {
     }
 
-    /**
-     * Gets the value of the actualShippingDate property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the actualShippingDate property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getActualShippingDate().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnDateField }
-     * 
-     * 
-     */
-    public List<SearchColumnDateField> getActualShippingDate() {
-        if (actualShippingDate == null) {
-            actualShippingDate = new ArrayList<SearchColumnDateField>();
-        }
-        return this.actualShippingDate;
+    public InboundShipmentSearchRowBasic(
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnDateField[] actualDeliveryDate,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnDateField[] actualShippingDate,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] billOfLading,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnDateField[] createdDate,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] currency,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] description,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnDateField[] expectedDeliveryDate,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnDoubleField[] expectedRate,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnDateField[] expectedShippingDate,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] externalDocumentNumber,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] externalId,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] incoterm,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] internalId,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] item,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] memo,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnDoubleField[] poAmount,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnDoubleField[] poRate,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] purchaseOrder,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnDoubleField[] quantityBilled,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnDoubleField[] quantityExpected,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnDoubleField[] quantityReceived,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnDoubleField[] quantityRemaining,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] receivingLocation,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] shipmentNumber,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] status,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] unit,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] vendor,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] vesselNumber,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnCustomField[] customFieldList) {
+        this.actualDeliveryDate = actualDeliveryDate;
+        this.actualShippingDate = actualShippingDate;
+        this.billOfLading = billOfLading;
+        this.createdDate = createdDate;
+        this.currency = currency;
+        this.description = description;
+        this.expectedDeliveryDate = expectedDeliveryDate;
+        this.expectedRate = expectedRate;
+        this.expectedShippingDate = expectedShippingDate;
+        this.externalDocumentNumber = externalDocumentNumber;
+        this.externalId = externalId;
+        this.incoterm = incoterm;
+        this.internalId = internalId;
+        this.item = item;
+        this.memo = memo;
+        this.poAmount = poAmount;
+        this.poRate = poRate;
+        this.purchaseOrder = purchaseOrder;
+        this.quantityBilled = quantityBilled;
+        this.quantityExpected = quantityExpected;
+        this.quantityReceived = quantityReceived;
+        this.quantityRemaining = quantityRemaining;
+        this.receivingLocation = receivingLocation;
+        this.shipmentNumber = shipmentNumber;
+        this.status = status;
+        this.unit = unit;
+        this.vendor = vendor;
+        this.vesselNumber = vesselNumber;
+        this.customFieldList = customFieldList;
     }
 
-    /**
-     * Gets the value of the billOfLading property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the billOfLading property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getBillOfLading().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnStringField }
-     * 
-     * 
-     */
-    public List<SearchColumnStringField> getBillOfLading() {
-        if (billOfLading == null) {
-            billOfLading = new ArrayList<SearchColumnStringField>();
-        }
-        return this.billOfLading;
-    }
 
     /**
-     * Gets the value of the createdDate property.
+     * Gets the actualDeliveryDate value for this InboundShipmentSearchRowBasic.
      * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the createdDate property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getCreatedDate().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnDateField }
-     * 
-     * 
+     * @return actualDeliveryDate
      */
-    public List<SearchColumnDateField> getCreatedDate() {
-        if (createdDate == null) {
-            createdDate = new ArrayList<SearchColumnDateField>();
-        }
-        return this.createdDate;
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnDateField[] getActualDeliveryDate() {
+        return actualDeliveryDate;
     }
 
-    /**
-     * Gets the value of the currency property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the currency property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getCurrency().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnSelectField }
-     * 
-     * 
-     */
-    public List<SearchColumnSelectField> getCurrency() {
-        if (currency == null) {
-            currency = new ArrayList<SearchColumnSelectField>();
-        }
-        return this.currency;
-    }
 
     /**
-     * Gets the value of the description property.
+     * Sets the actualDeliveryDate value for this InboundShipmentSearchRowBasic.
      * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the description property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getDescription().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnStringField }
-     * 
-     * 
+     * @param actualDeliveryDate
      */
-    public List<SearchColumnStringField> getDescription() {
-        if (description == null) {
-            description = new ArrayList<SearchColumnStringField>();
-        }
-        return this.description;
+    public void setActualDeliveryDate(com.netsuite.webservices.platform.core_2018_2.SearchColumnDateField[] actualDeliveryDate) {
+        this.actualDeliveryDate = actualDeliveryDate;
     }
 
-    /**
-     * Gets the value of the expectedDeliveryDate property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the expectedDeliveryDate property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getExpectedDeliveryDate().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnDateField }
-     * 
-     * 
-     */
-    public List<SearchColumnDateField> getExpectedDeliveryDate() {
-        if (expectedDeliveryDate == null) {
-            expectedDeliveryDate = new ArrayList<SearchColumnDateField>();
-        }
-        return this.expectedDeliveryDate;
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnDateField getActualDeliveryDate(int i) {
+        return this.actualDeliveryDate[i];
     }
 
-    /**
-     * Gets the value of the expectedRate property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the expectedRate property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getExpectedRate().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnDoubleField }
-     * 
-     * 
-     */
-    public List<SearchColumnDoubleField> getExpectedRate() {
-        if (expectedRate == null) {
-            expectedRate = new ArrayList<SearchColumnDoubleField>();
-        }
-        return this.expectedRate;
+    public void setActualDeliveryDate(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnDateField _value) {
+        this.actualDeliveryDate[i] = _value;
     }
 
-    /**
-     * Gets the value of the expectedShippingDate property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the expectedShippingDate property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getExpectedShippingDate().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnDateField }
-     * 
-     * 
-     */
-    public List<SearchColumnDateField> getExpectedShippingDate() {
-        if (expectedShippingDate == null) {
-            expectedShippingDate = new ArrayList<SearchColumnDateField>();
-        }
-        return this.expectedShippingDate;
-    }
 
     /**
-     * Gets the value of the externalDocumentNumber property.
+     * Gets the actualShippingDate value for this InboundShipmentSearchRowBasic.
      * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the externalDocumentNumber property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getExternalDocumentNumber().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnStringField }
-     * 
-     * 
+     * @return actualShippingDate
      */
-    public List<SearchColumnStringField> getExternalDocumentNumber() {
-        if (externalDocumentNumber == null) {
-            externalDocumentNumber = new ArrayList<SearchColumnStringField>();
-        }
-        return this.externalDocumentNumber;
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnDateField[] getActualShippingDate() {
+        return actualShippingDate;
     }
 
-    /**
-     * Gets the value of the externalId property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the externalId property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getExternalId().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnSelectField }
-     * 
-     * 
-     */
-    public List<SearchColumnSelectField> getExternalId() {
-        if (externalId == null) {
-            externalId = new ArrayList<SearchColumnSelectField>();
-        }
-        return this.externalId;
-    }
 
     /**
-     * Gets the value of the incoterm property.
+     * Sets the actualShippingDate value for this InboundShipmentSearchRowBasic.
      * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the incoterm property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getIncoterm().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnSelectField }
-     * 
-     * 
+     * @param actualShippingDate
      */
-    public List<SearchColumnSelectField> getIncoterm() {
-        if (incoterm == null) {
-            incoterm = new ArrayList<SearchColumnSelectField>();
-        }
-        return this.incoterm;
+    public void setActualShippingDate(com.netsuite.webservices.platform.core_2018_2.SearchColumnDateField[] actualShippingDate) {
+        this.actualShippingDate = actualShippingDate;
     }
 
-    /**
-     * Gets the value of the internalId property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the internalId property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getInternalId().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnSelectField }
-     * 
-     * 
-     */
-    public List<SearchColumnSelectField> getInternalId() {
-        if (internalId == null) {
-            internalId = new ArrayList<SearchColumnSelectField>();
-        }
-        return this.internalId;
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnDateField getActualShippingDate(int i) {
+        return this.actualShippingDate[i];
     }
 
-    /**
-     * Gets the value of the item property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the item property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getItem().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnSelectField }
-     * 
-     * 
-     */
-    public List<SearchColumnSelectField> getItem() {
-        if (item == null) {
-            item = new ArrayList<SearchColumnSelectField>();
-        }
-        return this.item;
+    public void setActualShippingDate(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnDateField _value) {
+        this.actualShippingDate[i] = _value;
     }
 
-    /**
-     * Gets the value of the memo property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the memo property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getMemo().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnStringField }
-     * 
-     * 
-     */
-    public List<SearchColumnStringField> getMemo() {
-        if (memo == null) {
-            memo = new ArrayList<SearchColumnStringField>();
-        }
-        return this.memo;
-    }
 
     /**
-     * Gets the value of the poAmount property.
+     * Gets the billOfLading value for this InboundShipmentSearchRowBasic.
      * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the poAmount property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getPoAmount().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnDoubleField }
-     * 
-     * 
+     * @return billOfLading
      */
-    public List<SearchColumnDoubleField> getPoAmount() {
-        if (poAmount == null) {
-            poAmount = new ArrayList<SearchColumnDoubleField>();
-        }
-        return this.poAmount;
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] getBillOfLading() {
+        return billOfLading;
     }
 
-    /**
-     * Gets the value of the poRate property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the poRate property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getPoRate().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnDoubleField }
-     * 
-     * 
-     */
-    public List<SearchColumnDoubleField> getPoRate() {
-        if (poRate == null) {
-            poRate = new ArrayList<SearchColumnDoubleField>();
-        }
-        return this.poRate;
-    }
 
     /**
-     * Gets the value of the purchaseOrder property.
+     * Sets the billOfLading value for this InboundShipmentSearchRowBasic.
      * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the purchaseOrder property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getPurchaseOrder().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnSelectField }
-     * 
-     * 
+     * @param billOfLading
      */
-    public List<SearchColumnSelectField> getPurchaseOrder() {
-        if (purchaseOrder == null) {
-            purchaseOrder = new ArrayList<SearchColumnSelectField>();
-        }
-        return this.purchaseOrder;
+    public void setBillOfLading(com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] billOfLading) {
+        this.billOfLading = billOfLading;
     }
 
-    /**
-     * Gets the value of the quantityBilled property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the quantityBilled property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getQuantityBilled().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnDoubleField }
-     * 
-     * 
-     */
-    public List<SearchColumnDoubleField> getQuantityBilled() {
-        if (quantityBilled == null) {
-            quantityBilled = new ArrayList<SearchColumnDoubleField>();
-        }
-        return this.quantityBilled;
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField getBillOfLading(int i) {
+        return this.billOfLading[i];
     }
 
-    /**
-     * Gets the value of the quantityExpected property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the quantityExpected property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getQuantityExpected().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnDoubleField }
-     * 
-     * 
-     */
-    public List<SearchColumnDoubleField> getQuantityExpected() {
-        if (quantityExpected == null) {
-            quantityExpected = new ArrayList<SearchColumnDoubleField>();
-        }
-        return this.quantityExpected;
+    public void setBillOfLading(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField _value) {
+        this.billOfLading[i] = _value;
     }
 
-    /**
-     * Gets the value of the quantityReceived property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the quantityReceived property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getQuantityReceived().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnDoubleField }
-     * 
-     * 
-     */
-    public List<SearchColumnDoubleField> getQuantityReceived() {
-        if (quantityReceived == null) {
-            quantityReceived = new ArrayList<SearchColumnDoubleField>();
-        }
-        return this.quantityReceived;
-    }
 
     /**
-     * Gets the value of the quantityRemaining property.
+     * Gets the createdDate value for this InboundShipmentSearchRowBasic.
      * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the quantityRemaining property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getQuantityRemaining().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnDoubleField }
-     * 
-     * 
+     * @return createdDate
      */
-    public List<SearchColumnDoubleField> getQuantityRemaining() {
-        if (quantityRemaining == null) {
-            quantityRemaining = new ArrayList<SearchColumnDoubleField>();
-        }
-        return this.quantityRemaining;
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnDateField[] getCreatedDate() {
+        return createdDate;
     }
 
-    /**
-     * Gets the value of the receivingLocation property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the receivingLocation property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getReceivingLocation().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnSelectField }
-     * 
-     * 
-     */
-    public List<SearchColumnSelectField> getReceivingLocation() {
-        if (receivingLocation == null) {
-            receivingLocation = new ArrayList<SearchColumnSelectField>();
-        }
-        return this.receivingLocation;
-    }
 
     /**
-     * Gets the value of the shipmentNumber property.
+     * Sets the createdDate value for this InboundShipmentSearchRowBasic.
      * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the shipmentNumber property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getShipmentNumber().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnStringField }
-     * 
-     * 
+     * @param createdDate
      */
-    public List<SearchColumnStringField> getShipmentNumber() {
-        if (shipmentNumber == null) {
-            shipmentNumber = new ArrayList<SearchColumnStringField>();
-        }
-        return this.shipmentNumber;
+    public void setCreatedDate(com.netsuite.webservices.platform.core_2018_2.SearchColumnDateField[] createdDate) {
+        this.createdDate = createdDate;
     }
 
-    /**
-     * Gets the value of the status property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the status property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getStatus().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnStringField }
-     * 
-     * 
-     */
-    public List<SearchColumnStringField> getStatus() {
-        if (status == null) {
-            status = new ArrayList<SearchColumnStringField>();
-        }
-        return this.status;
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnDateField getCreatedDate(int i) {
+        return this.createdDate[i];
     }
 
-    /**
-     * Gets the value of the unit property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the unit property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getUnit().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnSelectField }
-     * 
-     * 
-     */
-    public List<SearchColumnSelectField> getUnit() {
-        if (unit == null) {
-            unit = new ArrayList<SearchColumnSelectField>();
-        }
-        return this.unit;
+    public void setCreatedDate(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnDateField _value) {
+        this.createdDate[i] = _value;
     }
 
-    /**
-     * Gets the value of the vendor property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the vendor property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getVendor().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnSelectField }
-     * 
-     * 
-     */
-    public List<SearchColumnSelectField> getVendor() {
-        if (vendor == null) {
-            vendor = new ArrayList<SearchColumnSelectField>();
-        }
-        return this.vendor;
-    }
 
     /**
-     * Gets the value of the vesselNumber property.
+     * Gets the currency value for this InboundShipmentSearchRowBasic.
      * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the vesselNumber property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getVesselNumber().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnStringField }
-     * 
-     * 
+     * @return currency
      */
-    public List<SearchColumnStringField> getVesselNumber() {
-        if (vesselNumber == null) {
-            vesselNumber = new ArrayList<SearchColumnStringField>();
-        }
-        return this.vesselNumber;
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] getCurrency() {
+        return currency;
     }
 
+
     /**
-     * 获取customFieldList属性的值。
+     * Sets the currency value for this InboundShipmentSearchRowBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchColumnCustomFieldList }
-     *     
+     * @param currency
      */
-    public SearchColumnCustomFieldList getCustomFieldList() {
+    public void setCurrency(com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] currency) {
+        this.currency = currency;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField getCurrency(int i) {
+        return this.currency[i];
+    }
+
+    public void setCurrency(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField _value) {
+        this.currency[i] = _value;
+    }
+
+
+    /**
+     * Gets the description value for this InboundShipmentSearchRowBasic.
+     * 
+     * @return description
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] getDescription() {
+        return description;
+    }
+
+
+    /**
+     * Sets the description value for this InboundShipmentSearchRowBasic.
+     * 
+     * @param description
+     */
+    public void setDescription(com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] description) {
+        this.description = description;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField getDescription(int i) {
+        return this.description[i];
+    }
+
+    public void setDescription(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField _value) {
+        this.description[i] = _value;
+    }
+
+
+    /**
+     * Gets the expectedDeliveryDate value for this InboundShipmentSearchRowBasic.
+     * 
+     * @return expectedDeliveryDate
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnDateField[] getExpectedDeliveryDate() {
+        return expectedDeliveryDate;
+    }
+
+
+    /**
+     * Sets the expectedDeliveryDate value for this InboundShipmentSearchRowBasic.
+     * 
+     * @param expectedDeliveryDate
+     */
+    public void setExpectedDeliveryDate(com.netsuite.webservices.platform.core_2018_2.SearchColumnDateField[] expectedDeliveryDate) {
+        this.expectedDeliveryDate = expectedDeliveryDate;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnDateField getExpectedDeliveryDate(int i) {
+        return this.expectedDeliveryDate[i];
+    }
+
+    public void setExpectedDeliveryDate(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnDateField _value) {
+        this.expectedDeliveryDate[i] = _value;
+    }
+
+
+    /**
+     * Gets the expectedRate value for this InboundShipmentSearchRowBasic.
+     * 
+     * @return expectedRate
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnDoubleField[] getExpectedRate() {
+        return expectedRate;
+    }
+
+
+    /**
+     * Sets the expectedRate value for this InboundShipmentSearchRowBasic.
+     * 
+     * @param expectedRate
+     */
+    public void setExpectedRate(com.netsuite.webservices.platform.core_2018_2.SearchColumnDoubleField[] expectedRate) {
+        this.expectedRate = expectedRate;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnDoubleField getExpectedRate(int i) {
+        return this.expectedRate[i];
+    }
+
+    public void setExpectedRate(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnDoubleField _value) {
+        this.expectedRate[i] = _value;
+    }
+
+
+    /**
+     * Gets the expectedShippingDate value for this InboundShipmentSearchRowBasic.
+     * 
+     * @return expectedShippingDate
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnDateField[] getExpectedShippingDate() {
+        return expectedShippingDate;
+    }
+
+
+    /**
+     * Sets the expectedShippingDate value for this InboundShipmentSearchRowBasic.
+     * 
+     * @param expectedShippingDate
+     */
+    public void setExpectedShippingDate(com.netsuite.webservices.platform.core_2018_2.SearchColumnDateField[] expectedShippingDate) {
+        this.expectedShippingDate = expectedShippingDate;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnDateField getExpectedShippingDate(int i) {
+        return this.expectedShippingDate[i];
+    }
+
+    public void setExpectedShippingDate(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnDateField _value) {
+        this.expectedShippingDate[i] = _value;
+    }
+
+
+    /**
+     * Gets the externalDocumentNumber value for this InboundShipmentSearchRowBasic.
+     * 
+     * @return externalDocumentNumber
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] getExternalDocumentNumber() {
+        return externalDocumentNumber;
+    }
+
+
+    /**
+     * Sets the externalDocumentNumber value for this InboundShipmentSearchRowBasic.
+     * 
+     * @param externalDocumentNumber
+     */
+    public void setExternalDocumentNumber(com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] externalDocumentNumber) {
+        this.externalDocumentNumber = externalDocumentNumber;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField getExternalDocumentNumber(int i) {
+        return this.externalDocumentNumber[i];
+    }
+
+    public void setExternalDocumentNumber(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField _value) {
+        this.externalDocumentNumber[i] = _value;
+    }
+
+
+    /**
+     * Gets the externalId value for this InboundShipmentSearchRowBasic.
+     * 
+     * @return externalId
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] getExternalId() {
+        return externalId;
+    }
+
+
+    /**
+     * Sets the externalId value for this InboundShipmentSearchRowBasic.
+     * 
+     * @param externalId
+     */
+    public void setExternalId(com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] externalId) {
+        this.externalId = externalId;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField getExternalId(int i) {
+        return this.externalId[i];
+    }
+
+    public void setExternalId(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField _value) {
+        this.externalId[i] = _value;
+    }
+
+
+    /**
+     * Gets the incoterm value for this InboundShipmentSearchRowBasic.
+     * 
+     * @return incoterm
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] getIncoterm() {
+        return incoterm;
+    }
+
+
+    /**
+     * Sets the incoterm value for this InboundShipmentSearchRowBasic.
+     * 
+     * @param incoterm
+     */
+    public void setIncoterm(com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] incoterm) {
+        this.incoterm = incoterm;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField getIncoterm(int i) {
+        return this.incoterm[i];
+    }
+
+    public void setIncoterm(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField _value) {
+        this.incoterm[i] = _value;
+    }
+
+
+    /**
+     * Gets the internalId value for this InboundShipmentSearchRowBasic.
+     * 
+     * @return internalId
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] getInternalId() {
+        return internalId;
+    }
+
+
+    /**
+     * Sets the internalId value for this InboundShipmentSearchRowBasic.
+     * 
+     * @param internalId
+     */
+    public void setInternalId(com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] internalId) {
+        this.internalId = internalId;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField getInternalId(int i) {
+        return this.internalId[i];
+    }
+
+    public void setInternalId(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField _value) {
+        this.internalId[i] = _value;
+    }
+
+
+    /**
+     * Gets the item value for this InboundShipmentSearchRowBasic.
+     * 
+     * @return item
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] getItem() {
+        return item;
+    }
+
+
+    /**
+     * Sets the item value for this InboundShipmentSearchRowBasic.
+     * 
+     * @param item
+     */
+    public void setItem(com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] item) {
+        this.item = item;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField getItem(int i) {
+        return this.item[i];
+    }
+
+    public void setItem(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField _value) {
+        this.item[i] = _value;
+    }
+
+
+    /**
+     * Gets the memo value for this InboundShipmentSearchRowBasic.
+     * 
+     * @return memo
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] getMemo() {
+        return memo;
+    }
+
+
+    /**
+     * Sets the memo value for this InboundShipmentSearchRowBasic.
+     * 
+     * @param memo
+     */
+    public void setMemo(com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] memo) {
+        this.memo = memo;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField getMemo(int i) {
+        return this.memo[i];
+    }
+
+    public void setMemo(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField _value) {
+        this.memo[i] = _value;
+    }
+
+
+    /**
+     * Gets the poAmount value for this InboundShipmentSearchRowBasic.
+     * 
+     * @return poAmount
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnDoubleField[] getPoAmount() {
+        return poAmount;
+    }
+
+
+    /**
+     * Sets the poAmount value for this InboundShipmentSearchRowBasic.
+     * 
+     * @param poAmount
+     */
+    public void setPoAmount(com.netsuite.webservices.platform.core_2018_2.SearchColumnDoubleField[] poAmount) {
+        this.poAmount = poAmount;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnDoubleField getPoAmount(int i) {
+        return this.poAmount[i];
+    }
+
+    public void setPoAmount(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnDoubleField _value) {
+        this.poAmount[i] = _value;
+    }
+
+
+    /**
+     * Gets the poRate value for this InboundShipmentSearchRowBasic.
+     * 
+     * @return poRate
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnDoubleField[] getPoRate() {
+        return poRate;
+    }
+
+
+    /**
+     * Sets the poRate value for this InboundShipmentSearchRowBasic.
+     * 
+     * @param poRate
+     */
+    public void setPoRate(com.netsuite.webservices.platform.core_2018_2.SearchColumnDoubleField[] poRate) {
+        this.poRate = poRate;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnDoubleField getPoRate(int i) {
+        return this.poRate[i];
+    }
+
+    public void setPoRate(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnDoubleField _value) {
+        this.poRate[i] = _value;
+    }
+
+
+    /**
+     * Gets the purchaseOrder value for this InboundShipmentSearchRowBasic.
+     * 
+     * @return purchaseOrder
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] getPurchaseOrder() {
+        return purchaseOrder;
+    }
+
+
+    /**
+     * Sets the purchaseOrder value for this InboundShipmentSearchRowBasic.
+     * 
+     * @param purchaseOrder
+     */
+    public void setPurchaseOrder(com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] purchaseOrder) {
+        this.purchaseOrder = purchaseOrder;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField getPurchaseOrder(int i) {
+        return this.purchaseOrder[i];
+    }
+
+    public void setPurchaseOrder(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField _value) {
+        this.purchaseOrder[i] = _value;
+    }
+
+
+    /**
+     * Gets the quantityBilled value for this InboundShipmentSearchRowBasic.
+     * 
+     * @return quantityBilled
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnDoubleField[] getQuantityBilled() {
+        return quantityBilled;
+    }
+
+
+    /**
+     * Sets the quantityBilled value for this InboundShipmentSearchRowBasic.
+     * 
+     * @param quantityBilled
+     */
+    public void setQuantityBilled(com.netsuite.webservices.platform.core_2018_2.SearchColumnDoubleField[] quantityBilled) {
+        this.quantityBilled = quantityBilled;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnDoubleField getQuantityBilled(int i) {
+        return this.quantityBilled[i];
+    }
+
+    public void setQuantityBilled(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnDoubleField _value) {
+        this.quantityBilled[i] = _value;
+    }
+
+
+    /**
+     * Gets the quantityExpected value for this InboundShipmentSearchRowBasic.
+     * 
+     * @return quantityExpected
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnDoubleField[] getQuantityExpected() {
+        return quantityExpected;
+    }
+
+
+    /**
+     * Sets the quantityExpected value for this InboundShipmentSearchRowBasic.
+     * 
+     * @param quantityExpected
+     */
+    public void setQuantityExpected(com.netsuite.webservices.platform.core_2018_2.SearchColumnDoubleField[] quantityExpected) {
+        this.quantityExpected = quantityExpected;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnDoubleField getQuantityExpected(int i) {
+        return this.quantityExpected[i];
+    }
+
+    public void setQuantityExpected(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnDoubleField _value) {
+        this.quantityExpected[i] = _value;
+    }
+
+
+    /**
+     * Gets the quantityReceived value for this InboundShipmentSearchRowBasic.
+     * 
+     * @return quantityReceived
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnDoubleField[] getQuantityReceived() {
+        return quantityReceived;
+    }
+
+
+    /**
+     * Sets the quantityReceived value for this InboundShipmentSearchRowBasic.
+     * 
+     * @param quantityReceived
+     */
+    public void setQuantityReceived(com.netsuite.webservices.platform.core_2018_2.SearchColumnDoubleField[] quantityReceived) {
+        this.quantityReceived = quantityReceived;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnDoubleField getQuantityReceived(int i) {
+        return this.quantityReceived[i];
+    }
+
+    public void setQuantityReceived(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnDoubleField _value) {
+        this.quantityReceived[i] = _value;
+    }
+
+
+    /**
+     * Gets the quantityRemaining value for this InboundShipmentSearchRowBasic.
+     * 
+     * @return quantityRemaining
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnDoubleField[] getQuantityRemaining() {
+        return quantityRemaining;
+    }
+
+
+    /**
+     * Sets the quantityRemaining value for this InboundShipmentSearchRowBasic.
+     * 
+     * @param quantityRemaining
+     */
+    public void setQuantityRemaining(com.netsuite.webservices.platform.core_2018_2.SearchColumnDoubleField[] quantityRemaining) {
+        this.quantityRemaining = quantityRemaining;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnDoubleField getQuantityRemaining(int i) {
+        return this.quantityRemaining[i];
+    }
+
+    public void setQuantityRemaining(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnDoubleField _value) {
+        this.quantityRemaining[i] = _value;
+    }
+
+
+    /**
+     * Gets the receivingLocation value for this InboundShipmentSearchRowBasic.
+     * 
+     * @return receivingLocation
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] getReceivingLocation() {
+        return receivingLocation;
+    }
+
+
+    /**
+     * Sets the receivingLocation value for this InboundShipmentSearchRowBasic.
+     * 
+     * @param receivingLocation
+     */
+    public void setReceivingLocation(com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] receivingLocation) {
+        this.receivingLocation = receivingLocation;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField getReceivingLocation(int i) {
+        return this.receivingLocation[i];
+    }
+
+    public void setReceivingLocation(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField _value) {
+        this.receivingLocation[i] = _value;
+    }
+
+
+    /**
+     * Gets the shipmentNumber value for this InboundShipmentSearchRowBasic.
+     * 
+     * @return shipmentNumber
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] getShipmentNumber() {
+        return shipmentNumber;
+    }
+
+
+    /**
+     * Sets the shipmentNumber value for this InboundShipmentSearchRowBasic.
+     * 
+     * @param shipmentNumber
+     */
+    public void setShipmentNumber(com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] shipmentNumber) {
+        this.shipmentNumber = shipmentNumber;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField getShipmentNumber(int i) {
+        return this.shipmentNumber[i];
+    }
+
+    public void setShipmentNumber(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField _value) {
+        this.shipmentNumber[i] = _value;
+    }
+
+
+    /**
+     * Gets the status value for this InboundShipmentSearchRowBasic.
+     * 
+     * @return status
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] getStatus() {
+        return status;
+    }
+
+
+    /**
+     * Sets the status value for this InboundShipmentSearchRowBasic.
+     * 
+     * @param status
+     */
+    public void setStatus(com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] status) {
+        this.status = status;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField getStatus(int i) {
+        return this.status[i];
+    }
+
+    public void setStatus(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField _value) {
+        this.status[i] = _value;
+    }
+
+
+    /**
+     * Gets the unit value for this InboundShipmentSearchRowBasic.
+     * 
+     * @return unit
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] getUnit() {
+        return unit;
+    }
+
+
+    /**
+     * Sets the unit value for this InboundShipmentSearchRowBasic.
+     * 
+     * @param unit
+     */
+    public void setUnit(com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] unit) {
+        this.unit = unit;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField getUnit(int i) {
+        return this.unit[i];
+    }
+
+    public void setUnit(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField _value) {
+        this.unit[i] = _value;
+    }
+
+
+    /**
+     * Gets the vendor value for this InboundShipmentSearchRowBasic.
+     * 
+     * @return vendor
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] getVendor() {
+        return vendor;
+    }
+
+
+    /**
+     * Sets the vendor value for this InboundShipmentSearchRowBasic.
+     * 
+     * @param vendor
+     */
+    public void setVendor(com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] vendor) {
+        this.vendor = vendor;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField getVendor(int i) {
+        return this.vendor[i];
+    }
+
+    public void setVendor(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField _value) {
+        this.vendor[i] = _value;
+    }
+
+
+    /**
+     * Gets the vesselNumber value for this InboundShipmentSearchRowBasic.
+     * 
+     * @return vesselNumber
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] getVesselNumber() {
+        return vesselNumber;
+    }
+
+
+    /**
+     * Sets the vesselNumber value for this InboundShipmentSearchRowBasic.
+     * 
+     * @param vesselNumber
+     */
+    public void setVesselNumber(com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] vesselNumber) {
+        this.vesselNumber = vesselNumber;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField getVesselNumber(int i) {
+        return this.vesselNumber[i];
+    }
+
+    public void setVesselNumber(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField _value) {
+        this.vesselNumber[i] = _value;
+    }
+
+
+    /**
+     * Gets the customFieldList value for this InboundShipmentSearchRowBasic.
+     * 
+     * @return customFieldList
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnCustomField[] getCustomFieldList() {
         return customFieldList;
     }
 
+
     /**
-     * 设置customFieldList属性的值。
+     * Sets the customFieldList value for this InboundShipmentSearchRowBasic.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchColumnCustomFieldList }
-     *     
+     * @param customFieldList
      */
-    public void setCustomFieldList(SearchColumnCustomFieldList value) {
-        this.customFieldList = value;
+    public void setCustomFieldList(com.netsuite.webservices.platform.core_2018_2.SearchColumnCustomField[] customFieldList) {
+        this.customFieldList = customFieldList;
+    }
+
+    private java.lang.Object __equalsCalc = null;
+    public synchronized boolean equals(java.lang.Object obj) {
+        if (!(obj instanceof InboundShipmentSearchRowBasic)) return false;
+        InboundShipmentSearchRowBasic other = (InboundShipmentSearchRowBasic) obj;
+        if (obj == null) return false;
+        if (this == obj) return true;
+        if (__equalsCalc != null) {
+            return (__equalsCalc == obj);
+        }
+        __equalsCalc = obj;
+        boolean _equals;
+        _equals = super.equals(obj) && 
+            ((this.actualDeliveryDate==null && other.getActualDeliveryDate()==null) || 
+             (this.actualDeliveryDate!=null &&
+              java.util.Arrays.equals(this.actualDeliveryDate, other.getActualDeliveryDate()))) &&
+            ((this.actualShippingDate==null && other.getActualShippingDate()==null) || 
+             (this.actualShippingDate!=null &&
+              java.util.Arrays.equals(this.actualShippingDate, other.getActualShippingDate()))) &&
+            ((this.billOfLading==null && other.getBillOfLading()==null) || 
+             (this.billOfLading!=null &&
+              java.util.Arrays.equals(this.billOfLading, other.getBillOfLading()))) &&
+            ((this.createdDate==null && other.getCreatedDate()==null) || 
+             (this.createdDate!=null &&
+              java.util.Arrays.equals(this.createdDate, other.getCreatedDate()))) &&
+            ((this.currency==null && other.getCurrency()==null) || 
+             (this.currency!=null &&
+              java.util.Arrays.equals(this.currency, other.getCurrency()))) &&
+            ((this.description==null && other.getDescription()==null) || 
+             (this.description!=null &&
+              java.util.Arrays.equals(this.description, other.getDescription()))) &&
+            ((this.expectedDeliveryDate==null && other.getExpectedDeliveryDate()==null) || 
+             (this.expectedDeliveryDate!=null &&
+              java.util.Arrays.equals(this.expectedDeliveryDate, other.getExpectedDeliveryDate()))) &&
+            ((this.expectedRate==null && other.getExpectedRate()==null) || 
+             (this.expectedRate!=null &&
+              java.util.Arrays.equals(this.expectedRate, other.getExpectedRate()))) &&
+            ((this.expectedShippingDate==null && other.getExpectedShippingDate()==null) || 
+             (this.expectedShippingDate!=null &&
+              java.util.Arrays.equals(this.expectedShippingDate, other.getExpectedShippingDate()))) &&
+            ((this.externalDocumentNumber==null && other.getExternalDocumentNumber()==null) || 
+             (this.externalDocumentNumber!=null &&
+              java.util.Arrays.equals(this.externalDocumentNumber, other.getExternalDocumentNumber()))) &&
+            ((this.externalId==null && other.getExternalId()==null) || 
+             (this.externalId!=null &&
+              java.util.Arrays.equals(this.externalId, other.getExternalId()))) &&
+            ((this.incoterm==null && other.getIncoterm()==null) || 
+             (this.incoterm!=null &&
+              java.util.Arrays.equals(this.incoterm, other.getIncoterm()))) &&
+            ((this.internalId==null && other.getInternalId()==null) || 
+             (this.internalId!=null &&
+              java.util.Arrays.equals(this.internalId, other.getInternalId()))) &&
+            ((this.item==null && other.getItem()==null) || 
+             (this.item!=null &&
+              java.util.Arrays.equals(this.item, other.getItem()))) &&
+            ((this.memo==null && other.getMemo()==null) || 
+             (this.memo!=null &&
+              java.util.Arrays.equals(this.memo, other.getMemo()))) &&
+            ((this.poAmount==null && other.getPoAmount()==null) || 
+             (this.poAmount!=null &&
+              java.util.Arrays.equals(this.poAmount, other.getPoAmount()))) &&
+            ((this.poRate==null && other.getPoRate()==null) || 
+             (this.poRate!=null &&
+              java.util.Arrays.equals(this.poRate, other.getPoRate()))) &&
+            ((this.purchaseOrder==null && other.getPurchaseOrder()==null) || 
+             (this.purchaseOrder!=null &&
+              java.util.Arrays.equals(this.purchaseOrder, other.getPurchaseOrder()))) &&
+            ((this.quantityBilled==null && other.getQuantityBilled()==null) || 
+             (this.quantityBilled!=null &&
+              java.util.Arrays.equals(this.quantityBilled, other.getQuantityBilled()))) &&
+            ((this.quantityExpected==null && other.getQuantityExpected()==null) || 
+             (this.quantityExpected!=null &&
+              java.util.Arrays.equals(this.quantityExpected, other.getQuantityExpected()))) &&
+            ((this.quantityReceived==null && other.getQuantityReceived()==null) || 
+             (this.quantityReceived!=null &&
+              java.util.Arrays.equals(this.quantityReceived, other.getQuantityReceived()))) &&
+            ((this.quantityRemaining==null && other.getQuantityRemaining()==null) || 
+             (this.quantityRemaining!=null &&
+              java.util.Arrays.equals(this.quantityRemaining, other.getQuantityRemaining()))) &&
+            ((this.receivingLocation==null && other.getReceivingLocation()==null) || 
+             (this.receivingLocation!=null &&
+              java.util.Arrays.equals(this.receivingLocation, other.getReceivingLocation()))) &&
+            ((this.shipmentNumber==null && other.getShipmentNumber()==null) || 
+             (this.shipmentNumber!=null &&
+              java.util.Arrays.equals(this.shipmentNumber, other.getShipmentNumber()))) &&
+            ((this.status==null && other.getStatus()==null) || 
+             (this.status!=null &&
+              java.util.Arrays.equals(this.status, other.getStatus()))) &&
+            ((this.unit==null && other.getUnit()==null) || 
+             (this.unit!=null &&
+              java.util.Arrays.equals(this.unit, other.getUnit()))) &&
+            ((this.vendor==null && other.getVendor()==null) || 
+             (this.vendor!=null &&
+              java.util.Arrays.equals(this.vendor, other.getVendor()))) &&
+            ((this.vesselNumber==null && other.getVesselNumber()==null) || 
+             (this.vesselNumber!=null &&
+              java.util.Arrays.equals(this.vesselNumber, other.getVesselNumber()))) &&
+            ((this.customFieldList==null && other.getCustomFieldList()==null) || 
+             (this.customFieldList!=null &&
+              java.util.Arrays.equals(this.customFieldList, other.getCustomFieldList())));
+        __equalsCalc = null;
+        return _equals;
+    }
+
+    private boolean __hashCodeCalc = false;
+    public synchronized int hashCode() {
+        if (__hashCodeCalc) {
+            return 0;
+        }
+        __hashCodeCalc = true;
+        int _hashCode = super.hashCode();
+        if (getActualDeliveryDate() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getActualDeliveryDate());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getActualDeliveryDate(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getActualShippingDate() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getActualShippingDate());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getActualShippingDate(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getBillOfLading() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getBillOfLading());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getBillOfLading(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getCreatedDate() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getCreatedDate());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getCreatedDate(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getCurrency() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getCurrency());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getCurrency(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getDescription() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getDescription());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getDescription(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getExpectedDeliveryDate() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getExpectedDeliveryDate());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getExpectedDeliveryDate(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getExpectedRate() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getExpectedRate());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getExpectedRate(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getExpectedShippingDate() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getExpectedShippingDate());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getExpectedShippingDate(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getExternalDocumentNumber() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getExternalDocumentNumber());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getExternalDocumentNumber(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getExternalId() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getExternalId());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getExternalId(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getIncoterm() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getIncoterm());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getIncoterm(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getInternalId() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getInternalId());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getInternalId(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getItem() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getItem());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getItem(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getMemo() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getMemo());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getMemo(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getPoAmount() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getPoAmount());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getPoAmount(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getPoRate() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getPoRate());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getPoRate(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getPurchaseOrder() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getPurchaseOrder());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getPurchaseOrder(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getQuantityBilled() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getQuantityBilled());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getQuantityBilled(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getQuantityExpected() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getQuantityExpected());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getQuantityExpected(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getQuantityReceived() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getQuantityReceived());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getQuantityReceived(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getQuantityRemaining() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getQuantityRemaining());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getQuantityRemaining(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getReceivingLocation() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getReceivingLocation());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getReceivingLocation(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getShipmentNumber() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getShipmentNumber());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getShipmentNumber(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getStatus() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getStatus());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getStatus(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getUnit() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getUnit());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getUnit(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getVendor() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getVendor());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getVendor(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getVesselNumber() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getVesselNumber());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getVesselNumber(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getCustomFieldList() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getCustomFieldList());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getCustomFieldList(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        __hashCodeCalc = false;
+        return _hashCode;
+    }
+
+    // Type metadata
+    private static org.apache.axis.description.TypeDesc typeDesc =
+        new org.apache.axis.description.TypeDesc(InboundShipmentSearchRowBasic.class, true);
+
+    static {
+        typeDesc.setXmlType(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "InboundShipmentSearchRowBasic"));
+        org.apache.axis.description.ElementDesc elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("actualDeliveryDate");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "actualDeliveryDate"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnDateField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("actualShippingDate");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "actualShippingDate"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnDateField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("billOfLading");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "billOfLading"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnStringField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("createdDate");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "createdDate"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnDateField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("currency");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "currency"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnSelectField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("description");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "description"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnStringField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("expectedDeliveryDate");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "expectedDeliveryDate"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnDateField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("expectedRate");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "expectedRate"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnDoubleField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("expectedShippingDate");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "expectedShippingDate"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnDateField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("externalDocumentNumber");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "externalDocumentNumber"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnStringField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("externalId");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "externalId"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnSelectField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("incoterm");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "incoterm"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnSelectField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("internalId");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "internalId"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnSelectField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("item");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "item"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnSelectField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("memo");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "memo"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnStringField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("poAmount");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "poAmount"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnDoubleField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("poRate");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "poRate"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnDoubleField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("purchaseOrder");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "purchaseOrder"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnSelectField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("quantityBilled");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "quantityBilled"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnDoubleField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("quantityExpected");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "quantityExpected"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnDoubleField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("quantityReceived");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "quantityReceived"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnDoubleField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("quantityRemaining");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "quantityRemaining"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnDoubleField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("receivingLocation");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "receivingLocation"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnSelectField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("shipmentNumber");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "shipmentNumber"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnStringField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("status");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "status"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnStringField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("unit");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "unit"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnSelectField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("vendor");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "vendor"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnSelectField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("vesselNumber");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "vesselNumber"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnStringField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("customFieldList");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "customFieldList"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnCustomField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "customField"));
+        typeDesc.addFieldDesc(elemField);
+    }
+
+    /**
+     * Return type metadata object
+     */
+    public static org.apache.axis.description.TypeDesc getTypeDesc() {
+        return typeDesc;
+    }
+
+    /**
+     * Get Custom Serializer
+     */
+    public static org.apache.axis.encoding.Serializer getSerializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanSerializer(
+            _javaType, _xmlType, typeDesc);
+    }
+
+    /**
+     * Get Custom Deserializer
+     */
+    public static org.apache.axis.encoding.Deserializer getDeserializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanDeserializer(
+            _javaType, _xmlType, typeDesc);
     }
 
 }

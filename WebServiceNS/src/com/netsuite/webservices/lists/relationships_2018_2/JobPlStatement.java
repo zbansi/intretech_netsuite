@@ -1,168 +1,268 @@
+/**
+ * JobPlStatement.java
+ *
+ * This file was auto-generated from WSDL
+ * by the Apache Axis 1.4 Jul 28, 2010 (04:07:04 PDT) WSDL2Java emitter.
+ */
 
 package com.netsuite.webservices.lists.relationships_2018_2;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlType;
+public class JobPlStatement  implements java.io.Serializable {
+    private java.lang.String costCategory;
 
+    private java.lang.Double revenue;
 
-/**
- * <p>JobPlStatement complex type的 Java 类。
- * 
- * <p>以下模式片段指定包含在此类中的预期内容。
- * 
- * <pre>
- * &lt;complexType name="JobPlStatement">
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element name="costCategory" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="revenue" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
- *         &lt;element name="cost" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
- *         &lt;element name="profit" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
- *         &lt;element name="margin" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
- */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "JobPlStatement", propOrder = {
-    "costCategory",
-    "revenue",
-    "cost",
-    "profit",
-    "margin"
-})
-public class JobPlStatement {
+    private java.lang.Double cost;
 
-    protected String costCategory;
-    protected Double revenue;
-    protected Double cost;
-    protected Double profit;
-    protected Double margin;
+    private java.lang.Double profit;
+
+    private java.lang.Double margin;
+
+    public JobPlStatement() {
+    }
+
+    public JobPlStatement(
+           java.lang.String costCategory,
+           java.lang.Double revenue,
+           java.lang.Double cost,
+           java.lang.Double profit,
+           java.lang.Double margin) {
+           this.costCategory = costCategory;
+           this.revenue = revenue;
+           this.cost = cost;
+           this.profit = profit;
+           this.margin = margin;
+    }
+
 
     /**
-     * 获取costCategory属性的值。
+     * Gets the costCategory value for this JobPlStatement.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @return costCategory
      */
-    public String getCostCategory() {
+    public java.lang.String getCostCategory() {
         return costCategory;
     }
 
-    /**
-     * 设置costCategory属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setCostCategory(String value) {
-        this.costCategory = value;
-    }
 
     /**
-     * 获取revenue属性的值。
+     * Sets the costCategory value for this JobPlStatement.
      * 
-     * @return
-     *     possible object is
-     *     {@link Double }
-     *     
+     * @param costCategory
      */
-    public Double getRevenue() {
+    public void setCostCategory(java.lang.String costCategory) {
+        this.costCategory = costCategory;
+    }
+
+
+    /**
+     * Gets the revenue value for this JobPlStatement.
+     * 
+     * @return revenue
+     */
+    public java.lang.Double getRevenue() {
         return revenue;
     }
 
-    /**
-     * 设置revenue属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Double }
-     *     
-     */
-    public void setRevenue(Double value) {
-        this.revenue = value;
-    }
 
     /**
-     * 获取cost属性的值。
+     * Sets the revenue value for this JobPlStatement.
      * 
-     * @return
-     *     possible object is
-     *     {@link Double }
-     *     
+     * @param revenue
      */
-    public Double getCost() {
+    public void setRevenue(java.lang.Double revenue) {
+        this.revenue = revenue;
+    }
+
+
+    /**
+     * Gets the cost value for this JobPlStatement.
+     * 
+     * @return cost
+     */
+    public java.lang.Double getCost() {
         return cost;
     }
 
-    /**
-     * 设置cost属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Double }
-     *     
-     */
-    public void setCost(Double value) {
-        this.cost = value;
-    }
 
     /**
-     * 获取profit属性的值。
+     * Sets the cost value for this JobPlStatement.
      * 
-     * @return
-     *     possible object is
-     *     {@link Double }
-     *     
+     * @param cost
      */
-    public Double getProfit() {
+    public void setCost(java.lang.Double cost) {
+        this.cost = cost;
+    }
+
+
+    /**
+     * Gets the profit value for this JobPlStatement.
+     * 
+     * @return profit
+     */
+    public java.lang.Double getProfit() {
         return profit;
     }
 
-    /**
-     * 设置profit属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Double }
-     *     
-     */
-    public void setProfit(Double value) {
-        this.profit = value;
-    }
 
     /**
-     * 获取margin属性的值。
+     * Sets the profit value for this JobPlStatement.
      * 
-     * @return
-     *     possible object is
-     *     {@link Double }
-     *     
+     * @param profit
      */
-    public Double getMargin() {
+    public void setProfit(java.lang.Double profit) {
+        this.profit = profit;
+    }
+
+
+    /**
+     * Gets the margin value for this JobPlStatement.
+     * 
+     * @return margin
+     */
+    public java.lang.Double getMargin() {
         return margin;
     }
 
+
     /**
-     * 设置margin属性的值。
+     * Sets the margin value for this JobPlStatement.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link Double }
-     *     
+     * @param margin
      */
-    public void setMargin(Double value) {
-        this.margin = value;
+    public void setMargin(java.lang.Double margin) {
+        this.margin = margin;
+    }
+
+    private java.lang.Object __equalsCalc = null;
+    public synchronized boolean equals(java.lang.Object obj) {
+        if (!(obj instanceof JobPlStatement)) return false;
+        JobPlStatement other = (JobPlStatement) obj;
+        if (obj == null) return false;
+        if (this == obj) return true;
+        if (__equalsCalc != null) {
+            return (__equalsCalc == obj);
+        }
+        __equalsCalc = obj;
+        boolean _equals;
+        _equals = true && 
+            ((this.costCategory==null && other.getCostCategory()==null) || 
+             (this.costCategory!=null &&
+              this.costCategory.equals(other.getCostCategory()))) &&
+            ((this.revenue==null && other.getRevenue()==null) || 
+             (this.revenue!=null &&
+              this.revenue.equals(other.getRevenue()))) &&
+            ((this.cost==null && other.getCost()==null) || 
+             (this.cost!=null &&
+              this.cost.equals(other.getCost()))) &&
+            ((this.profit==null && other.getProfit()==null) || 
+             (this.profit!=null &&
+              this.profit.equals(other.getProfit()))) &&
+            ((this.margin==null && other.getMargin()==null) || 
+             (this.margin!=null &&
+              this.margin.equals(other.getMargin())));
+        __equalsCalc = null;
+        return _equals;
+    }
+
+    private boolean __hashCodeCalc = false;
+    public synchronized int hashCode() {
+        if (__hashCodeCalc) {
+            return 0;
+        }
+        __hashCodeCalc = true;
+        int _hashCode = 1;
+        if (getCostCategory() != null) {
+            _hashCode += getCostCategory().hashCode();
+        }
+        if (getRevenue() != null) {
+            _hashCode += getRevenue().hashCode();
+        }
+        if (getCost() != null) {
+            _hashCode += getCost().hashCode();
+        }
+        if (getProfit() != null) {
+            _hashCode += getProfit().hashCode();
+        }
+        if (getMargin() != null) {
+            _hashCode += getMargin().hashCode();
+        }
+        __hashCodeCalc = false;
+        return _hashCode;
+    }
+
+    // Type metadata
+    private static org.apache.axis.description.TypeDesc typeDesc =
+        new org.apache.axis.description.TypeDesc(JobPlStatement.class, true);
+
+    static {
+        typeDesc.setXmlType(new javax.xml.namespace.QName("urn:relationships_2018_2.lists.webservices.netsuite.com", "JobPlStatement"));
+        org.apache.axis.description.ElementDesc elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("costCategory");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:relationships_2018_2.lists.webservices.netsuite.com", "costCategory"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("revenue");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:relationships_2018_2.lists.webservices.netsuite.com", "revenue"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "double"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("cost");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:relationships_2018_2.lists.webservices.netsuite.com", "cost"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "double"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("profit");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:relationships_2018_2.lists.webservices.netsuite.com", "profit"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "double"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("margin");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:relationships_2018_2.lists.webservices.netsuite.com", "margin"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "double"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+    }
+
+    /**
+     * Return type metadata object
+     */
+    public static org.apache.axis.description.TypeDesc getTypeDesc() {
+        return typeDesc;
+    }
+
+    /**
+     * Get Custom Serializer
+     */
+    public static org.apache.axis.encoding.Serializer getSerializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanSerializer(
+            _javaType, _xmlType, typeDesc);
+    }
+
+    /**
+     * Get Custom Deserializer
+     */
+    public static org.apache.axis.encoding.Deserializer getDeserializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanDeserializer(
+            _javaType, _xmlType, typeDesc);
     }
 
 }

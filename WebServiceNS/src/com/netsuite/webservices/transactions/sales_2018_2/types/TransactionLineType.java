@@ -1,126 +1,120 @@
+/**
+ * TransactionLineType.java
+ *
+ * This file was auto-generated from WSDL
+ * by the Apache Axis 1.4 Jul 28, 2010 (04:07:04 PDT) WSDL2Java emitter.
+ */
 
 package com.netsuite.webservices.transactions.sales_2018_2.types;
 
-import javax.xml.bind.annotation.XmlEnum;
-import javax.xml.bind.annotation.XmlEnumValue;
-import javax.xml.bind.annotation.XmlType;
+public class TransactionLineType implements java.io.Serializable {
+    private java.lang.String _value_;
+    private static java.util.HashMap _table_ = new java.util.HashMap();
 
-
-/**
- * <p>TransactionLineType的 Java 类。
- * 
- * <p>以下模式片段指定包含在此类中的预期内容。
- * <p>
- * <pre>
- * &lt;simpleType name="TransactionLineType">
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     &lt;enumeration value="_adjustedQuantity"/>
- *     &lt;enumeration value="_advanceToApplyAmount"/>
- *     &lt;enumeration value="_billExchangeRateVariance"/>
- *     &lt;enumeration value="_billPriceVariance"/>
- *     &lt;enumeration value="_billQuantityVariance"/>
- *     &lt;enumeration value="_countQuantity"/>
- *     &lt;enumeration value="_dropshipExpense"/>
- *     &lt;enumeration value="_gainLoss"/>
- *     &lt;enumeration value="_inTransit"/>
- *     &lt;enumeration value="_item"/>
- *     &lt;enumeration value="_materialOverhead"/>
- *     &lt;enumeration value="_nonReimbursuableExpenseOffset"/>
- *     &lt;enumeration value="_nonReimbursuableExpenseOriginal"/>
- *     &lt;enumeration value="_ownershipTransfer"/>
- *     &lt;enumeration value="_productionPriceVariance"/>
- *     &lt;enumeration value="_productionQuantityVariance"/>
- *     &lt;enumeration value="_purchasePriceVariance"/>
- *     &lt;enumeration value="_receiving"/>
- *     &lt;enumeration value="_routingItem"/>
- *     &lt;enumeration value="_routingWorkInProcess"/>
- *     &lt;enumeration value="_scrap"/>
- *     &lt;enumeration value="_shipping"/>
- *     &lt;enumeration value="_snapshotQuantity"/>
- *     &lt;enumeration value="_totalBillVariance"/>
- *     &lt;enumeration value="_unbuildVariance"/>
- *     &lt;enumeration value="_workInProcess"/>
- *     &lt;enumeration value="_workInProcessVariance"/>
- *   &lt;/restriction>
- * &lt;/simpleType>
- * </pre>
- * 
- */
-@XmlType(name = "TransactionLineType", namespace = "urn:types.sales_2018_2.transactions.webservices.netsuite.com")
-@XmlEnum
-public enum TransactionLineType {
-
-    @XmlEnumValue("_adjustedQuantity")
-    ADJUSTED_QUANTITY("_adjustedQuantity"),
-    @XmlEnumValue("_advanceToApplyAmount")
-    ADVANCE_TO_APPLY_AMOUNT("_advanceToApplyAmount"),
-    @XmlEnumValue("_billExchangeRateVariance")
-    BILL_EXCHANGE_RATE_VARIANCE("_billExchangeRateVariance"),
-    @XmlEnumValue("_billPriceVariance")
-    BILL_PRICE_VARIANCE("_billPriceVariance"),
-    @XmlEnumValue("_billQuantityVariance")
-    BILL_QUANTITY_VARIANCE("_billQuantityVariance"),
-    @XmlEnumValue("_countQuantity")
-    COUNT_QUANTITY("_countQuantity"),
-    @XmlEnumValue("_dropshipExpense")
-    DROPSHIP_EXPENSE("_dropshipExpense"),
-    @XmlEnumValue("_gainLoss")
-    GAIN_LOSS("_gainLoss"),
-    @XmlEnumValue("_inTransit")
-    IN_TRANSIT("_inTransit"),
-    @XmlEnumValue("_item")
-    ITEM("_item"),
-    @XmlEnumValue("_materialOverhead")
-    MATERIAL_OVERHEAD("_materialOverhead"),
-    @XmlEnumValue("_nonReimbursuableExpenseOffset")
-    NON_REIMBURSUABLE_EXPENSE_OFFSET("_nonReimbursuableExpenseOffset"),
-    @XmlEnumValue("_nonReimbursuableExpenseOriginal")
-    NON_REIMBURSUABLE_EXPENSE_ORIGINAL("_nonReimbursuableExpenseOriginal"),
-    @XmlEnumValue("_ownershipTransfer")
-    OWNERSHIP_TRANSFER("_ownershipTransfer"),
-    @XmlEnumValue("_productionPriceVariance")
-    PRODUCTION_PRICE_VARIANCE("_productionPriceVariance"),
-    @XmlEnumValue("_productionQuantityVariance")
-    PRODUCTION_QUANTITY_VARIANCE("_productionQuantityVariance"),
-    @XmlEnumValue("_purchasePriceVariance")
-    PURCHASE_PRICE_VARIANCE("_purchasePriceVariance"),
-    @XmlEnumValue("_receiving")
-    RECEIVING("_receiving"),
-    @XmlEnumValue("_routingItem")
-    ROUTING_ITEM("_routingItem"),
-    @XmlEnumValue("_routingWorkInProcess")
-    ROUTING_WORK_IN_PROCESS("_routingWorkInProcess"),
-    @XmlEnumValue("_scrap")
-    SCRAP("_scrap"),
-    @XmlEnumValue("_shipping")
-    SHIPPING("_shipping"),
-    @XmlEnumValue("_snapshotQuantity")
-    SNAPSHOT_QUANTITY("_snapshotQuantity"),
-    @XmlEnumValue("_totalBillVariance")
-    TOTAL_BILL_VARIANCE("_totalBillVariance"),
-    @XmlEnumValue("_unbuildVariance")
-    UNBUILD_VARIANCE("_unbuildVariance"),
-    @XmlEnumValue("_workInProcess")
-    WORK_IN_PROCESS("_workInProcess"),
-    @XmlEnumValue("_workInProcessVariance")
-    WORK_IN_PROCESS_VARIANCE("_workInProcessVariance");
-    private final String value;
-
-    TransactionLineType(String v) {
-        value = v;
+    // Constructor
+    protected TransactionLineType(java.lang.String value) {
+        _value_ = value;
+        _table_.put(_value_,this);
     }
 
-    public String value() {
-        return value;
+    public static final java.lang.String __adjustedQuantity = "_adjustedQuantity";
+    public static final java.lang.String __advanceToApplyAmount = "_advanceToApplyAmount";
+    public static final java.lang.String __billExchangeRateVariance = "_billExchangeRateVariance";
+    public static final java.lang.String __billPriceVariance = "_billPriceVariance";
+    public static final java.lang.String __billQuantityVariance = "_billQuantityVariance";
+    public static final java.lang.String __countQuantity = "_countQuantity";
+    public static final java.lang.String __dropshipExpense = "_dropshipExpense";
+    public static final java.lang.String __gainLoss = "_gainLoss";
+    public static final java.lang.String __inTransit = "_inTransit";
+    public static final java.lang.String __item = "_item";
+    public static final java.lang.String __materialOverhead = "_materialOverhead";
+    public static final java.lang.String __nonReimbursuableExpenseOffset = "_nonReimbursuableExpenseOffset";
+    public static final java.lang.String __nonReimbursuableExpenseOriginal = "_nonReimbursuableExpenseOriginal";
+    public static final java.lang.String __ownershipTransfer = "_ownershipTransfer";
+    public static final java.lang.String __productionPriceVariance = "_productionPriceVariance";
+    public static final java.lang.String __productionQuantityVariance = "_productionQuantityVariance";
+    public static final java.lang.String __purchasePriceVariance = "_purchasePriceVariance";
+    public static final java.lang.String __receiving = "_receiving";
+    public static final java.lang.String __routingItem = "_routingItem";
+    public static final java.lang.String __routingWorkInProcess = "_routingWorkInProcess";
+    public static final java.lang.String __scrap = "_scrap";
+    public static final java.lang.String __shipping = "_shipping";
+    public static final java.lang.String __snapshotQuantity = "_snapshotQuantity";
+    public static final java.lang.String __totalBillVariance = "_totalBillVariance";
+    public static final java.lang.String __unbuildVariance = "_unbuildVariance";
+    public static final java.lang.String __workInProcess = "_workInProcess";
+    public static final java.lang.String __workInProcessVariance = "_workInProcessVariance";
+    public static final TransactionLineType _adjustedQuantity = new TransactionLineType(__adjustedQuantity);
+    public static final TransactionLineType _advanceToApplyAmount = new TransactionLineType(__advanceToApplyAmount);
+    public static final TransactionLineType _billExchangeRateVariance = new TransactionLineType(__billExchangeRateVariance);
+    public static final TransactionLineType _billPriceVariance = new TransactionLineType(__billPriceVariance);
+    public static final TransactionLineType _billQuantityVariance = new TransactionLineType(__billQuantityVariance);
+    public static final TransactionLineType _countQuantity = new TransactionLineType(__countQuantity);
+    public static final TransactionLineType _dropshipExpense = new TransactionLineType(__dropshipExpense);
+    public static final TransactionLineType _gainLoss = new TransactionLineType(__gainLoss);
+    public static final TransactionLineType _inTransit = new TransactionLineType(__inTransit);
+    public static final TransactionLineType _item = new TransactionLineType(__item);
+    public static final TransactionLineType _materialOverhead = new TransactionLineType(__materialOverhead);
+    public static final TransactionLineType _nonReimbursuableExpenseOffset = new TransactionLineType(__nonReimbursuableExpenseOffset);
+    public static final TransactionLineType _nonReimbursuableExpenseOriginal = new TransactionLineType(__nonReimbursuableExpenseOriginal);
+    public static final TransactionLineType _ownershipTransfer = new TransactionLineType(__ownershipTransfer);
+    public static final TransactionLineType _productionPriceVariance = new TransactionLineType(__productionPriceVariance);
+    public static final TransactionLineType _productionQuantityVariance = new TransactionLineType(__productionQuantityVariance);
+    public static final TransactionLineType _purchasePriceVariance = new TransactionLineType(__purchasePriceVariance);
+    public static final TransactionLineType _receiving = new TransactionLineType(__receiving);
+    public static final TransactionLineType _routingItem = new TransactionLineType(__routingItem);
+    public static final TransactionLineType _routingWorkInProcess = new TransactionLineType(__routingWorkInProcess);
+    public static final TransactionLineType _scrap = new TransactionLineType(__scrap);
+    public static final TransactionLineType _shipping = new TransactionLineType(__shipping);
+    public static final TransactionLineType _snapshotQuantity = new TransactionLineType(__snapshotQuantity);
+    public static final TransactionLineType _totalBillVariance = new TransactionLineType(__totalBillVariance);
+    public static final TransactionLineType _unbuildVariance = new TransactionLineType(__unbuildVariance);
+    public static final TransactionLineType _workInProcess = new TransactionLineType(__workInProcess);
+    public static final TransactionLineType _workInProcessVariance = new TransactionLineType(__workInProcessVariance);
+    public java.lang.String getValue() { return _value_;}
+    public static TransactionLineType fromValue(java.lang.String value)
+          throws java.lang.IllegalArgumentException {
+        TransactionLineType enumeration = (TransactionLineType)
+            _table_.get(value);
+        if (enumeration==null) throw new java.lang.IllegalArgumentException();
+        return enumeration;
     }
+    public static TransactionLineType fromString(java.lang.String value)
+          throws java.lang.IllegalArgumentException {
+        return fromValue(value);
+    }
+    public boolean equals(java.lang.Object obj) {return (obj == this);}
+    public int hashCode() { return toString().hashCode();}
+    public java.lang.String toString() { return _value_;}
+    public java.lang.Object readResolve() throws java.io.ObjectStreamException { return fromValue(_value_);}
+    public static org.apache.axis.encoding.Serializer getSerializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new org.apache.axis.encoding.ser.EnumSerializer(
+            _javaType, _xmlType);
+    }
+    public static org.apache.axis.encoding.Deserializer getDeserializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new org.apache.axis.encoding.ser.EnumDeserializer(
+            _javaType, _xmlType);
+    }
+    // Type metadata
+    private static org.apache.axis.description.TypeDesc typeDesc =
+        new org.apache.axis.description.TypeDesc(TransactionLineType.class);
 
-    public static TransactionLineType fromValue(String v) {
-        for (TransactionLineType c: TransactionLineType.values()) {
-            if (c.value.equals(v)) {
-                return c;
-            }
-        }
-        throw new IllegalArgumentException(v);
+    static {
+        typeDesc.setXmlType(new javax.xml.namespace.QName("urn:types.sales_2018_2.transactions.webservices.netsuite.com", "TransactionLineType"));
+    }
+    /**
+     * Return type metadata object
+     */
+    public static org.apache.axis.description.TypeDesc getTypeDesc() {
+        return typeDesc;
     }
 
 }

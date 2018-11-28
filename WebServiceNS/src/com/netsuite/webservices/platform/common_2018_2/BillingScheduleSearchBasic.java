@@ -1,501 +1,775 @@
+/**
+ * BillingScheduleSearchBasic.java
+ *
+ * This file was auto-generated from WSDL
+ * by the Apache Axis 1.4 Jul 28, 2010 (04:07:04 PDT) WSDL2Java emitter.
+ */
 
 package com.netsuite.webservices.platform.common_2018_2;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlType;
-import com.netsuite.webservices.platform.core_2018_2.SearchBooleanField;
-import com.netsuite.webservices.platform.core_2018_2.SearchDoubleField;
-import com.netsuite.webservices.platform.core_2018_2.SearchEnumMultiSelectField;
-import com.netsuite.webservices.platform.core_2018_2.SearchLongField;
-import com.netsuite.webservices.platform.core_2018_2.SearchMultiSelectField;
-import com.netsuite.webservices.platform.core_2018_2.SearchRecordBasic;
-import com.netsuite.webservices.platform.core_2018_2.SearchStringField;
+public class BillingScheduleSearchBasic  extends com.netsuite.webservices.platform.core_2018_2.SearchRecordBasic  implements java.io.Serializable {
+    private com.netsuite.webservices.platform.core_2018_2.SearchBooleanField applyToSubtotal;
 
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef[] externalId;
 
-/**
- * <p>BillingScheduleSearchBasic complex type的 Java 类。
- * 
- * <p>以下模式片段指定包含在此类中的预期内容。
- * 
- * <pre>
- * &lt;complexType name="BillingScheduleSearchBasic">
- *   &lt;complexContent>
- *     &lt;extension base="{urn:core_2018_2.platform.webservices.netsuite.com}SearchRecordBasic">
- *       &lt;sequence>
- *         &lt;element name="applyToSubtotal" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchBooleanField" minOccurs="0"/>
- *         &lt;element name="externalId" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchMultiSelectField" minOccurs="0"/>
- *         &lt;element name="externalIdString" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchStringField" minOccurs="0"/>
- *         &lt;element name="frequency" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchEnumMultiSelectField" minOccurs="0"/>
- *         &lt;element name="inArrears" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchBooleanField" minOccurs="0"/>
- *         &lt;element name="initialAmount" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchDoubleField" minOccurs="0"/>
- *         &lt;element name="initialTerms" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchMultiSelectField" minOccurs="0"/>
- *         &lt;element name="internalId" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchMultiSelectField" minOccurs="0"/>
- *         &lt;element name="internalIdNumber" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchLongField" minOccurs="0"/>
- *         &lt;element name="isInactive" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchBooleanField" minOccurs="0"/>
- *         &lt;element name="isPublic" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchBooleanField" minOccurs="0"/>
- *         &lt;element name="name" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchStringField" minOccurs="0"/>
- *         &lt;element name="recurrenceCount" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchLongField" minOccurs="0"/>
- *         &lt;element name="recurrencePattern" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchEnumMultiSelectField" minOccurs="0"/>
- *         &lt;element name="recurrenceTerms" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchMultiSelectField" minOccurs="0"/>
- *         &lt;element name="repeatEvery" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchLongField" minOccurs="0"/>
- *         &lt;element name="type" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchEnumMultiSelectField" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/extension>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
- */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "BillingScheduleSearchBasic", propOrder = {
-    "applyToSubtotal",
-    "externalId",
-    "externalIdString",
-    "frequency",
-    "inArrears",
-    "initialAmount",
-    "initialTerms",
-    "internalId",
-    "internalIdNumber",
-    "isInactive",
-    "isPublic",
-    "name",
-    "recurrenceCount",
-    "recurrencePattern",
-    "recurrenceTerms",
-    "repeatEvery",
-    "type"
-})
-public class BillingScheduleSearchBasic
-    extends SearchRecordBasic
-{
+    private com.netsuite.webservices.platform.core_2018_2.SearchStringField externalIdString;
 
-    protected SearchBooleanField applyToSubtotal;
-    protected SearchMultiSelectField externalId;
-    protected SearchStringField externalIdString;
-    protected SearchEnumMultiSelectField frequency;
-    protected SearchBooleanField inArrears;
-    protected SearchDoubleField initialAmount;
-    protected SearchMultiSelectField initialTerms;
-    protected SearchMultiSelectField internalId;
-    protected SearchLongField internalIdNumber;
-    protected SearchBooleanField isInactive;
-    protected SearchBooleanField isPublic;
-    protected SearchStringField name;
-    protected SearchLongField recurrenceCount;
-    protected SearchEnumMultiSelectField recurrencePattern;
-    protected SearchMultiSelectField recurrenceTerms;
-    protected SearchLongField repeatEvery;
-    protected SearchEnumMultiSelectField type;
+    private java.lang.String[] frequency;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchBooleanField inArrears;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchDoubleField initialAmount;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef[] initialTerms;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef[] internalId;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchLongField internalIdNumber;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchBooleanField isInactive;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchBooleanField isPublic;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchStringField name;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchLongField recurrenceCount;
+
+    private java.lang.String[] recurrencePattern;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef[] recurrenceTerms;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchLongField repeatEvery;
+
+    private java.lang.String[] type;
+
+    public BillingScheduleSearchBasic() {
+    }
+
+    public BillingScheduleSearchBasic(
+           com.netsuite.webservices.platform.core_2018_2.SearchBooleanField applyToSubtotal,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef[] externalId,
+           com.netsuite.webservices.platform.core_2018_2.SearchStringField externalIdString,
+           java.lang.String[] frequency,
+           com.netsuite.webservices.platform.core_2018_2.SearchBooleanField inArrears,
+           com.netsuite.webservices.platform.core_2018_2.SearchDoubleField initialAmount,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef[] initialTerms,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef[] internalId,
+           com.netsuite.webservices.platform.core_2018_2.SearchLongField internalIdNumber,
+           com.netsuite.webservices.platform.core_2018_2.SearchBooleanField isInactive,
+           com.netsuite.webservices.platform.core_2018_2.SearchBooleanField isPublic,
+           com.netsuite.webservices.platform.core_2018_2.SearchStringField name,
+           com.netsuite.webservices.platform.core_2018_2.SearchLongField recurrenceCount,
+           java.lang.String[] recurrencePattern,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef[] recurrenceTerms,
+           com.netsuite.webservices.platform.core_2018_2.SearchLongField repeatEvery,
+           java.lang.String[] type) {
+        this.applyToSubtotal = applyToSubtotal;
+        this.externalId = externalId;
+        this.externalIdString = externalIdString;
+        this.frequency = frequency;
+        this.inArrears = inArrears;
+        this.initialAmount = initialAmount;
+        this.initialTerms = initialTerms;
+        this.internalId = internalId;
+        this.internalIdNumber = internalIdNumber;
+        this.isInactive = isInactive;
+        this.isPublic = isPublic;
+        this.name = name;
+        this.recurrenceCount = recurrenceCount;
+        this.recurrencePattern = recurrencePattern;
+        this.recurrenceTerms = recurrenceTerms;
+        this.repeatEvery = repeatEvery;
+        this.type = type;
+    }
+
 
     /**
-     * 获取applyToSubtotal属性的值。
+     * Gets the applyToSubtotal value for this BillingScheduleSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchBooleanField }
-     *     
+     * @return applyToSubtotal
      */
-    public SearchBooleanField getApplyToSubtotal() {
+    public com.netsuite.webservices.platform.core_2018_2.SearchBooleanField getApplyToSubtotal() {
         return applyToSubtotal;
     }
 
-    /**
-     * 设置applyToSubtotal属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchBooleanField }
-     *     
-     */
-    public void setApplyToSubtotal(SearchBooleanField value) {
-        this.applyToSubtotal = value;
-    }
 
     /**
-     * 获取externalId属性的值。
+     * Sets the applyToSubtotal value for this BillingScheduleSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchMultiSelectField }
-     *     
+     * @param applyToSubtotal
      */
-    public SearchMultiSelectField getExternalId() {
+    public void setApplyToSubtotal(com.netsuite.webservices.platform.core_2018_2.SearchBooleanField applyToSubtotal) {
+        this.applyToSubtotal = applyToSubtotal;
+    }
+
+
+    /**
+     * Gets the externalId value for this BillingScheduleSearchBasic.
+     * 
+     * @return externalId
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef[] getExternalId() {
         return externalId;
     }
 
-    /**
-     * 设置externalId属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchMultiSelectField }
-     *     
-     */
-    public void setExternalId(SearchMultiSelectField value) {
-        this.externalId = value;
-    }
 
     /**
-     * 获取externalIdString属性的值。
+     * Sets the externalId value for this BillingScheduleSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchStringField }
-     *     
+     * @param externalId
      */
-    public SearchStringField getExternalIdString() {
+    public void setExternalId(com.netsuite.webservices.platform.core_2018_2.RecordRef[] externalId) {
+        this.externalId = externalId;
+    }
+
+
+    /**
+     * Gets the externalIdString value for this BillingScheduleSearchBasic.
+     * 
+     * @return externalIdString
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchStringField getExternalIdString() {
         return externalIdString;
     }
 
-    /**
-     * 设置externalIdString属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchStringField }
-     *     
-     */
-    public void setExternalIdString(SearchStringField value) {
-        this.externalIdString = value;
-    }
 
     /**
-     * 获取frequency属性的值。
+     * Sets the externalIdString value for this BillingScheduleSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchEnumMultiSelectField }
-     *     
+     * @param externalIdString
      */
-    public SearchEnumMultiSelectField getFrequency() {
+    public void setExternalIdString(com.netsuite.webservices.platform.core_2018_2.SearchStringField externalIdString) {
+        this.externalIdString = externalIdString;
+    }
+
+
+    /**
+     * Gets the frequency value for this BillingScheduleSearchBasic.
+     * 
+     * @return frequency
+     */
+    public java.lang.String[] getFrequency() {
         return frequency;
     }
 
-    /**
-     * 设置frequency属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchEnumMultiSelectField }
-     *     
-     */
-    public void setFrequency(SearchEnumMultiSelectField value) {
-        this.frequency = value;
-    }
 
     /**
-     * 获取inArrears属性的值。
+     * Sets the frequency value for this BillingScheduleSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchBooleanField }
-     *     
+     * @param frequency
      */
-    public SearchBooleanField getInArrears() {
+    public void setFrequency(java.lang.String[] frequency) {
+        this.frequency = frequency;
+    }
+
+
+    /**
+     * Gets the inArrears value for this BillingScheduleSearchBasic.
+     * 
+     * @return inArrears
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchBooleanField getInArrears() {
         return inArrears;
     }
 
-    /**
-     * 设置inArrears属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchBooleanField }
-     *     
-     */
-    public void setInArrears(SearchBooleanField value) {
-        this.inArrears = value;
-    }
 
     /**
-     * 获取initialAmount属性的值。
+     * Sets the inArrears value for this BillingScheduleSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchDoubleField }
-     *     
+     * @param inArrears
      */
-    public SearchDoubleField getInitialAmount() {
+    public void setInArrears(com.netsuite.webservices.platform.core_2018_2.SearchBooleanField inArrears) {
+        this.inArrears = inArrears;
+    }
+
+
+    /**
+     * Gets the initialAmount value for this BillingScheduleSearchBasic.
+     * 
+     * @return initialAmount
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchDoubleField getInitialAmount() {
         return initialAmount;
     }
 
-    /**
-     * 设置initialAmount属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchDoubleField }
-     *     
-     */
-    public void setInitialAmount(SearchDoubleField value) {
-        this.initialAmount = value;
-    }
 
     /**
-     * 获取initialTerms属性的值。
+     * Sets the initialAmount value for this BillingScheduleSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchMultiSelectField }
-     *     
+     * @param initialAmount
      */
-    public SearchMultiSelectField getInitialTerms() {
+    public void setInitialAmount(com.netsuite.webservices.platform.core_2018_2.SearchDoubleField initialAmount) {
+        this.initialAmount = initialAmount;
+    }
+
+
+    /**
+     * Gets the initialTerms value for this BillingScheduleSearchBasic.
+     * 
+     * @return initialTerms
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef[] getInitialTerms() {
         return initialTerms;
     }
 
-    /**
-     * 设置initialTerms属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchMultiSelectField }
-     *     
-     */
-    public void setInitialTerms(SearchMultiSelectField value) {
-        this.initialTerms = value;
-    }
 
     /**
-     * 获取internalId属性的值。
+     * Sets the initialTerms value for this BillingScheduleSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchMultiSelectField }
-     *     
+     * @param initialTerms
      */
-    public SearchMultiSelectField getInternalId() {
+    public void setInitialTerms(com.netsuite.webservices.platform.core_2018_2.RecordRef[] initialTerms) {
+        this.initialTerms = initialTerms;
+    }
+
+
+    /**
+     * Gets the internalId value for this BillingScheduleSearchBasic.
+     * 
+     * @return internalId
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef[] getInternalId() {
         return internalId;
     }
 
-    /**
-     * 设置internalId属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchMultiSelectField }
-     *     
-     */
-    public void setInternalId(SearchMultiSelectField value) {
-        this.internalId = value;
-    }
 
     /**
-     * 获取internalIdNumber属性的值。
+     * Sets the internalId value for this BillingScheduleSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchLongField }
-     *     
+     * @param internalId
      */
-    public SearchLongField getInternalIdNumber() {
+    public void setInternalId(com.netsuite.webservices.platform.core_2018_2.RecordRef[] internalId) {
+        this.internalId = internalId;
+    }
+
+
+    /**
+     * Gets the internalIdNumber value for this BillingScheduleSearchBasic.
+     * 
+     * @return internalIdNumber
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchLongField getInternalIdNumber() {
         return internalIdNumber;
     }
 
-    /**
-     * 设置internalIdNumber属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchLongField }
-     *     
-     */
-    public void setInternalIdNumber(SearchLongField value) {
-        this.internalIdNumber = value;
-    }
 
     /**
-     * 获取isInactive属性的值。
+     * Sets the internalIdNumber value for this BillingScheduleSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchBooleanField }
-     *     
+     * @param internalIdNumber
      */
-    public SearchBooleanField getIsInactive() {
+    public void setInternalIdNumber(com.netsuite.webservices.platform.core_2018_2.SearchLongField internalIdNumber) {
+        this.internalIdNumber = internalIdNumber;
+    }
+
+
+    /**
+     * Gets the isInactive value for this BillingScheduleSearchBasic.
+     * 
+     * @return isInactive
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchBooleanField getIsInactive() {
         return isInactive;
     }
 
-    /**
-     * 设置isInactive属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchBooleanField }
-     *     
-     */
-    public void setIsInactive(SearchBooleanField value) {
-        this.isInactive = value;
-    }
 
     /**
-     * 获取isPublic属性的值。
+     * Sets the isInactive value for this BillingScheduleSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchBooleanField }
-     *     
+     * @param isInactive
      */
-    public SearchBooleanField getIsPublic() {
+    public void setIsInactive(com.netsuite.webservices.platform.core_2018_2.SearchBooleanField isInactive) {
+        this.isInactive = isInactive;
+    }
+
+
+    /**
+     * Gets the isPublic value for this BillingScheduleSearchBasic.
+     * 
+     * @return isPublic
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchBooleanField getIsPublic() {
         return isPublic;
     }
 
-    /**
-     * 设置isPublic属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchBooleanField }
-     *     
-     */
-    public void setIsPublic(SearchBooleanField value) {
-        this.isPublic = value;
-    }
 
     /**
-     * 获取name属性的值。
+     * Sets the isPublic value for this BillingScheduleSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchStringField }
-     *     
+     * @param isPublic
      */
-    public SearchStringField getName() {
+    public void setIsPublic(com.netsuite.webservices.platform.core_2018_2.SearchBooleanField isPublic) {
+        this.isPublic = isPublic;
+    }
+
+
+    /**
+     * Gets the name value for this BillingScheduleSearchBasic.
+     * 
+     * @return name
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchStringField getName() {
         return name;
     }
 
-    /**
-     * 设置name属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchStringField }
-     *     
-     */
-    public void setName(SearchStringField value) {
-        this.name = value;
-    }
 
     /**
-     * 获取recurrenceCount属性的值。
+     * Sets the name value for this BillingScheduleSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchLongField }
-     *     
+     * @param name
      */
-    public SearchLongField getRecurrenceCount() {
+    public void setName(com.netsuite.webservices.platform.core_2018_2.SearchStringField name) {
+        this.name = name;
+    }
+
+
+    /**
+     * Gets the recurrenceCount value for this BillingScheduleSearchBasic.
+     * 
+     * @return recurrenceCount
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchLongField getRecurrenceCount() {
         return recurrenceCount;
     }
 
-    /**
-     * 设置recurrenceCount属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchLongField }
-     *     
-     */
-    public void setRecurrenceCount(SearchLongField value) {
-        this.recurrenceCount = value;
-    }
 
     /**
-     * 获取recurrencePattern属性的值。
+     * Sets the recurrenceCount value for this BillingScheduleSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchEnumMultiSelectField }
-     *     
+     * @param recurrenceCount
      */
-    public SearchEnumMultiSelectField getRecurrencePattern() {
+    public void setRecurrenceCount(com.netsuite.webservices.platform.core_2018_2.SearchLongField recurrenceCount) {
+        this.recurrenceCount = recurrenceCount;
+    }
+
+
+    /**
+     * Gets the recurrencePattern value for this BillingScheduleSearchBasic.
+     * 
+     * @return recurrencePattern
+     */
+    public java.lang.String[] getRecurrencePattern() {
         return recurrencePattern;
     }
 
-    /**
-     * 设置recurrencePattern属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchEnumMultiSelectField }
-     *     
-     */
-    public void setRecurrencePattern(SearchEnumMultiSelectField value) {
-        this.recurrencePattern = value;
-    }
 
     /**
-     * 获取recurrenceTerms属性的值。
+     * Sets the recurrencePattern value for this BillingScheduleSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchMultiSelectField }
-     *     
+     * @param recurrencePattern
      */
-    public SearchMultiSelectField getRecurrenceTerms() {
+    public void setRecurrencePattern(java.lang.String[] recurrencePattern) {
+        this.recurrencePattern = recurrencePattern;
+    }
+
+
+    /**
+     * Gets the recurrenceTerms value for this BillingScheduleSearchBasic.
+     * 
+     * @return recurrenceTerms
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef[] getRecurrenceTerms() {
         return recurrenceTerms;
     }
 
-    /**
-     * 设置recurrenceTerms属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchMultiSelectField }
-     *     
-     */
-    public void setRecurrenceTerms(SearchMultiSelectField value) {
-        this.recurrenceTerms = value;
-    }
 
     /**
-     * 获取repeatEvery属性的值。
+     * Sets the recurrenceTerms value for this BillingScheduleSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchLongField }
-     *     
+     * @param recurrenceTerms
      */
-    public SearchLongField getRepeatEvery() {
+    public void setRecurrenceTerms(com.netsuite.webservices.platform.core_2018_2.RecordRef[] recurrenceTerms) {
+        this.recurrenceTerms = recurrenceTerms;
+    }
+
+
+    /**
+     * Gets the repeatEvery value for this BillingScheduleSearchBasic.
+     * 
+     * @return repeatEvery
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchLongField getRepeatEvery() {
         return repeatEvery;
     }
 
-    /**
-     * 设置repeatEvery属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchLongField }
-     *     
-     */
-    public void setRepeatEvery(SearchLongField value) {
-        this.repeatEvery = value;
-    }
 
     /**
-     * 获取type属性的值。
+     * Sets the repeatEvery value for this BillingScheduleSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchEnumMultiSelectField }
-     *     
+     * @param repeatEvery
      */
-    public SearchEnumMultiSelectField getType() {
+    public void setRepeatEvery(com.netsuite.webservices.platform.core_2018_2.SearchLongField repeatEvery) {
+        this.repeatEvery = repeatEvery;
+    }
+
+
+    /**
+     * Gets the type value for this BillingScheduleSearchBasic.
+     * 
+     * @return type
+     */
+    public java.lang.String[] getType() {
         return type;
     }
 
+
     /**
-     * 设置type属性的值。
+     * Sets the type value for this BillingScheduleSearchBasic.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchEnumMultiSelectField }
-     *     
+     * @param type
      */
-    public void setType(SearchEnumMultiSelectField value) {
-        this.type = value;
+    public void setType(java.lang.String[] type) {
+        this.type = type;
+    }
+
+    private java.lang.Object __equalsCalc = null;
+    public synchronized boolean equals(java.lang.Object obj) {
+        if (!(obj instanceof BillingScheduleSearchBasic)) return false;
+        BillingScheduleSearchBasic other = (BillingScheduleSearchBasic) obj;
+        if (obj == null) return false;
+        if (this == obj) return true;
+        if (__equalsCalc != null) {
+            return (__equalsCalc == obj);
+        }
+        __equalsCalc = obj;
+        boolean _equals;
+        _equals = super.equals(obj) && 
+            ((this.applyToSubtotal==null && other.getApplyToSubtotal()==null) || 
+             (this.applyToSubtotal!=null &&
+              this.applyToSubtotal.equals(other.getApplyToSubtotal()))) &&
+            ((this.externalId==null && other.getExternalId()==null) || 
+             (this.externalId!=null &&
+              java.util.Arrays.equals(this.externalId, other.getExternalId()))) &&
+            ((this.externalIdString==null && other.getExternalIdString()==null) || 
+             (this.externalIdString!=null &&
+              this.externalIdString.equals(other.getExternalIdString()))) &&
+            ((this.frequency==null && other.getFrequency()==null) || 
+             (this.frequency!=null &&
+              java.util.Arrays.equals(this.frequency, other.getFrequency()))) &&
+            ((this.inArrears==null && other.getInArrears()==null) || 
+             (this.inArrears!=null &&
+              this.inArrears.equals(other.getInArrears()))) &&
+            ((this.initialAmount==null && other.getInitialAmount()==null) || 
+             (this.initialAmount!=null &&
+              this.initialAmount.equals(other.getInitialAmount()))) &&
+            ((this.initialTerms==null && other.getInitialTerms()==null) || 
+             (this.initialTerms!=null &&
+              java.util.Arrays.equals(this.initialTerms, other.getInitialTerms()))) &&
+            ((this.internalId==null && other.getInternalId()==null) || 
+             (this.internalId!=null &&
+              java.util.Arrays.equals(this.internalId, other.getInternalId()))) &&
+            ((this.internalIdNumber==null && other.getInternalIdNumber()==null) || 
+             (this.internalIdNumber!=null &&
+              this.internalIdNumber.equals(other.getInternalIdNumber()))) &&
+            ((this.isInactive==null && other.getIsInactive()==null) || 
+             (this.isInactive!=null &&
+              this.isInactive.equals(other.getIsInactive()))) &&
+            ((this.isPublic==null && other.getIsPublic()==null) || 
+             (this.isPublic!=null &&
+              this.isPublic.equals(other.getIsPublic()))) &&
+            ((this.name==null && other.getName()==null) || 
+             (this.name!=null &&
+              this.name.equals(other.getName()))) &&
+            ((this.recurrenceCount==null && other.getRecurrenceCount()==null) || 
+             (this.recurrenceCount!=null &&
+              this.recurrenceCount.equals(other.getRecurrenceCount()))) &&
+            ((this.recurrencePattern==null && other.getRecurrencePattern()==null) || 
+             (this.recurrencePattern!=null &&
+              java.util.Arrays.equals(this.recurrencePattern, other.getRecurrencePattern()))) &&
+            ((this.recurrenceTerms==null && other.getRecurrenceTerms()==null) || 
+             (this.recurrenceTerms!=null &&
+              java.util.Arrays.equals(this.recurrenceTerms, other.getRecurrenceTerms()))) &&
+            ((this.repeatEvery==null && other.getRepeatEvery()==null) || 
+             (this.repeatEvery!=null &&
+              this.repeatEvery.equals(other.getRepeatEvery()))) &&
+            ((this.type==null && other.getType()==null) || 
+             (this.type!=null &&
+              java.util.Arrays.equals(this.type, other.getType())));
+        __equalsCalc = null;
+        return _equals;
+    }
+
+    private boolean __hashCodeCalc = false;
+    public synchronized int hashCode() {
+        if (__hashCodeCalc) {
+            return 0;
+        }
+        __hashCodeCalc = true;
+        int _hashCode = super.hashCode();
+        if (getApplyToSubtotal() != null) {
+            _hashCode += getApplyToSubtotal().hashCode();
+        }
+        if (getExternalId() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getExternalId());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getExternalId(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getExternalIdString() != null) {
+            _hashCode += getExternalIdString().hashCode();
+        }
+        if (getFrequency() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getFrequency());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getFrequency(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getInArrears() != null) {
+            _hashCode += getInArrears().hashCode();
+        }
+        if (getInitialAmount() != null) {
+            _hashCode += getInitialAmount().hashCode();
+        }
+        if (getInitialTerms() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getInitialTerms());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getInitialTerms(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getInternalId() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getInternalId());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getInternalId(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getInternalIdNumber() != null) {
+            _hashCode += getInternalIdNumber().hashCode();
+        }
+        if (getIsInactive() != null) {
+            _hashCode += getIsInactive().hashCode();
+        }
+        if (getIsPublic() != null) {
+            _hashCode += getIsPublic().hashCode();
+        }
+        if (getName() != null) {
+            _hashCode += getName().hashCode();
+        }
+        if (getRecurrenceCount() != null) {
+            _hashCode += getRecurrenceCount().hashCode();
+        }
+        if (getRecurrencePattern() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getRecurrencePattern());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getRecurrencePattern(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getRecurrenceTerms() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getRecurrenceTerms());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getRecurrenceTerms(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getRepeatEvery() != null) {
+            _hashCode += getRepeatEvery().hashCode();
+        }
+        if (getType() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getType());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getType(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        __hashCodeCalc = false;
+        return _hashCode;
+    }
+
+    // Type metadata
+    private static org.apache.axis.description.TypeDesc typeDesc =
+        new org.apache.axis.description.TypeDesc(BillingScheduleSearchBasic.class, true);
+
+    static {
+        typeDesc.setXmlType(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "BillingScheduleSearchBasic"));
+        org.apache.axis.description.ElementDesc elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("applyToSubtotal");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "applyToSubtotal"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchBooleanField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("externalId");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "externalId"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "searchValue"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("externalIdString");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "externalIdString"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchStringField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("frequency");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "frequency"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "searchValue"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("inArrears");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "inArrears"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchBooleanField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("initialAmount");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "initialAmount"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchDoubleField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("initialTerms");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "initialTerms"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "searchValue"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("internalId");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "internalId"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "searchValue"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("internalIdNumber");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "internalIdNumber"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchLongField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("isInactive");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "isInactive"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchBooleanField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("isPublic");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "isPublic"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchBooleanField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("name");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "name"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchStringField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("recurrenceCount");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "recurrenceCount"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchLongField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("recurrencePattern");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "recurrencePattern"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "searchValue"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("recurrenceTerms");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "recurrenceTerms"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "searchValue"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("repeatEvery");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "repeatEvery"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchLongField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("type");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "type"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "searchValue"));
+        typeDesc.addFieldDesc(elemField);
+    }
+
+    /**
+     * Return type metadata object
+     */
+    public static org.apache.axis.description.TypeDesc getTypeDesc() {
+        return typeDesc;
+    }
+
+    /**
+     * Get Custom Serializer
+     */
+    public static org.apache.axis.encoding.Serializer getSerializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanSerializer(
+            _javaType, _xmlType, typeDesc);
+    }
+
+    /**
+     * Get Custom Deserializer
+     */
+    public static org.apache.axis.encoding.Deserializer getDeserializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanDeserializer(
+            _javaType, _xmlType, typeDesc);
     }
 
 }

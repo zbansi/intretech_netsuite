@@ -1,132 +1,124 @@
+/**
+ * ItemFulfillmentPackageFedExAdmPackageTypeFedEx.java
+ *
+ * This file was auto-generated from WSDL
+ * by the Apache Axis 1.4 Jul 28, 2010 (04:07:04 PDT) WSDL2Java emitter.
+ */
 
 package com.netsuite.webservices.transactions.sales_2018_2.types;
 
-import javax.xml.bind.annotation.XmlEnum;
-import javax.xml.bind.annotation.XmlEnumValue;
-import javax.xml.bind.annotation.XmlType;
+public class ItemFulfillmentPackageFedExAdmPackageTypeFedEx implements java.io.Serializable {
+    private java.lang.String _value_;
+    private static java.util.HashMap _table_ = new java.util.HashMap();
 
-
-/**
- * <p>ItemFulfillmentPackageFedExAdmPackageTypeFedEx的 Java 类。
- * 
- * <p>以下模式片段指定包含在此类中的预期内容。
- * <p>
- * <pre>
- * &lt;simpleType name="ItemFulfillmentPackageFedExAdmPackageTypeFedEx">
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     &lt;enumeration value="_bag"/>
- *     &lt;enumeration value="_barrel"/>
- *     &lt;enumeration value="_basketOrHamper"/>
- *     &lt;enumeration value="_box"/>
- *     &lt;enumeration value="_bucket"/>
- *     &lt;enumeration value="_bundle"/>
- *     &lt;enumeration value="_cage"/>
- *     &lt;enumeration value="_carton"/>
- *     &lt;enumeration value="_case"/>
- *     &lt;enumeration value="_chest"/>
- *     &lt;enumeration value="_container"/>
- *     &lt;enumeration value="_crate"/>
- *     &lt;enumeration value="_cylinder"/>
- *     &lt;enumeration value="_drum"/>
- *     &lt;enumeration value="_envelope"/>
- *     &lt;enumeration value="_package"/>
- *     &lt;enumeration value="_pail"/>
- *     &lt;enumeration value="_pallet"/>
- *     &lt;enumeration value="_parcel"/>
- *     &lt;enumeration value="_pieces"/>
- *     &lt;enumeration value="_reel"/>
- *     &lt;enumeration value="_roll"/>
- *     &lt;enumeration value="_sack"/>
- *     &lt;enumeration value="_shrinkWrapped"/>
- *     &lt;enumeration value="_skid"/>
- *     &lt;enumeration value="_tank"/>
- *     &lt;enumeration value="_toteBin"/>
- *     &lt;enumeration value="_tube"/>
- *     &lt;enumeration value="_unit"/>
- *   &lt;/restriction>
- * &lt;/simpleType>
- * </pre>
- * 
- */
-@XmlType(name = "ItemFulfillmentPackageFedExAdmPackageTypeFedEx", namespace = "urn:types.sales_2018_2.transactions.webservices.netsuite.com")
-@XmlEnum
-public enum ItemFulfillmentPackageFedExAdmPackageTypeFedEx {
-
-    @XmlEnumValue("_bag")
-    BAG("_bag"),
-    @XmlEnumValue("_barrel")
-    BARREL("_barrel"),
-    @XmlEnumValue("_basketOrHamper")
-    BASKET_OR_HAMPER("_basketOrHamper"),
-    @XmlEnumValue("_box")
-    BOX("_box"),
-    @XmlEnumValue("_bucket")
-    BUCKET("_bucket"),
-    @XmlEnumValue("_bundle")
-    BUNDLE("_bundle"),
-    @XmlEnumValue("_cage")
-    CAGE("_cage"),
-    @XmlEnumValue("_carton")
-    CARTON("_carton"),
-    @XmlEnumValue("_case")
-    CASE("_case"),
-    @XmlEnumValue("_chest")
-    CHEST("_chest"),
-    @XmlEnumValue("_container")
-    CONTAINER("_container"),
-    @XmlEnumValue("_crate")
-    CRATE("_crate"),
-    @XmlEnumValue("_cylinder")
-    CYLINDER("_cylinder"),
-    @XmlEnumValue("_drum")
-    DRUM("_drum"),
-    @XmlEnumValue("_envelope")
-    ENVELOPE("_envelope"),
-    @XmlEnumValue("_package")
-    PACKAGE("_package"),
-    @XmlEnumValue("_pail")
-    PAIL("_pail"),
-    @XmlEnumValue("_pallet")
-    PALLET("_pallet"),
-    @XmlEnumValue("_parcel")
-    PARCEL("_parcel"),
-    @XmlEnumValue("_pieces")
-    PIECES("_pieces"),
-    @XmlEnumValue("_reel")
-    REEL("_reel"),
-    @XmlEnumValue("_roll")
-    ROLL("_roll"),
-    @XmlEnumValue("_sack")
-    SACK("_sack"),
-    @XmlEnumValue("_shrinkWrapped")
-    SHRINK_WRAPPED("_shrinkWrapped"),
-    @XmlEnumValue("_skid")
-    SKID("_skid"),
-    @XmlEnumValue("_tank")
-    TANK("_tank"),
-    @XmlEnumValue("_toteBin")
-    TOTE_BIN("_toteBin"),
-    @XmlEnumValue("_tube")
-    TUBE("_tube"),
-    @XmlEnumValue("_unit")
-    UNIT("_unit");
-    private final String value;
-
-    ItemFulfillmentPackageFedExAdmPackageTypeFedEx(String v) {
-        value = v;
+    // Constructor
+    protected ItemFulfillmentPackageFedExAdmPackageTypeFedEx(java.lang.String value) {
+        _value_ = value;
+        _table_.put(_value_,this);
     }
 
-    public String value() {
-        return value;
+    public static final java.lang.String __bag = "_bag";
+    public static final java.lang.String __barrel = "_barrel";
+    public static final java.lang.String __basketOrHamper = "_basketOrHamper";
+    public static final java.lang.String __box = "_box";
+    public static final java.lang.String __bucket = "_bucket";
+    public static final java.lang.String __bundle = "_bundle";
+    public static final java.lang.String __cage = "_cage";
+    public static final java.lang.String __carton = "_carton";
+    public static final java.lang.String __case = "_case";
+    public static final java.lang.String __chest = "_chest";
+    public static final java.lang.String __container = "_container";
+    public static final java.lang.String __crate = "_crate";
+    public static final java.lang.String __cylinder = "_cylinder";
+    public static final java.lang.String __drum = "_drum";
+    public static final java.lang.String __envelope = "_envelope";
+    public static final java.lang.String __package = "_package";
+    public static final java.lang.String __pail = "_pail";
+    public static final java.lang.String __pallet = "_pallet";
+    public static final java.lang.String __parcel = "_parcel";
+    public static final java.lang.String __pieces = "_pieces";
+    public static final java.lang.String __reel = "_reel";
+    public static final java.lang.String __roll = "_roll";
+    public static final java.lang.String __sack = "_sack";
+    public static final java.lang.String __shrinkWrapped = "_shrinkWrapped";
+    public static final java.lang.String __skid = "_skid";
+    public static final java.lang.String __tank = "_tank";
+    public static final java.lang.String __toteBin = "_toteBin";
+    public static final java.lang.String __tube = "_tube";
+    public static final java.lang.String __unit = "_unit";
+    public static final ItemFulfillmentPackageFedExAdmPackageTypeFedEx _bag = new ItemFulfillmentPackageFedExAdmPackageTypeFedEx(__bag);
+    public static final ItemFulfillmentPackageFedExAdmPackageTypeFedEx _barrel = new ItemFulfillmentPackageFedExAdmPackageTypeFedEx(__barrel);
+    public static final ItemFulfillmentPackageFedExAdmPackageTypeFedEx _basketOrHamper = new ItemFulfillmentPackageFedExAdmPackageTypeFedEx(__basketOrHamper);
+    public static final ItemFulfillmentPackageFedExAdmPackageTypeFedEx _box = new ItemFulfillmentPackageFedExAdmPackageTypeFedEx(__box);
+    public static final ItemFulfillmentPackageFedExAdmPackageTypeFedEx _bucket = new ItemFulfillmentPackageFedExAdmPackageTypeFedEx(__bucket);
+    public static final ItemFulfillmentPackageFedExAdmPackageTypeFedEx _bundle = new ItemFulfillmentPackageFedExAdmPackageTypeFedEx(__bundle);
+    public static final ItemFulfillmentPackageFedExAdmPackageTypeFedEx _cage = new ItemFulfillmentPackageFedExAdmPackageTypeFedEx(__cage);
+    public static final ItemFulfillmentPackageFedExAdmPackageTypeFedEx _carton = new ItemFulfillmentPackageFedExAdmPackageTypeFedEx(__carton);
+    public static final ItemFulfillmentPackageFedExAdmPackageTypeFedEx _case = new ItemFulfillmentPackageFedExAdmPackageTypeFedEx(__case);
+    public static final ItemFulfillmentPackageFedExAdmPackageTypeFedEx _chest = new ItemFulfillmentPackageFedExAdmPackageTypeFedEx(__chest);
+    public static final ItemFulfillmentPackageFedExAdmPackageTypeFedEx _container = new ItemFulfillmentPackageFedExAdmPackageTypeFedEx(__container);
+    public static final ItemFulfillmentPackageFedExAdmPackageTypeFedEx _crate = new ItemFulfillmentPackageFedExAdmPackageTypeFedEx(__crate);
+    public static final ItemFulfillmentPackageFedExAdmPackageTypeFedEx _cylinder = new ItemFulfillmentPackageFedExAdmPackageTypeFedEx(__cylinder);
+    public static final ItemFulfillmentPackageFedExAdmPackageTypeFedEx _drum = new ItemFulfillmentPackageFedExAdmPackageTypeFedEx(__drum);
+    public static final ItemFulfillmentPackageFedExAdmPackageTypeFedEx _envelope = new ItemFulfillmentPackageFedExAdmPackageTypeFedEx(__envelope);
+    public static final ItemFulfillmentPackageFedExAdmPackageTypeFedEx _package = new ItemFulfillmentPackageFedExAdmPackageTypeFedEx(__package);
+    public static final ItemFulfillmentPackageFedExAdmPackageTypeFedEx _pail = new ItemFulfillmentPackageFedExAdmPackageTypeFedEx(__pail);
+    public static final ItemFulfillmentPackageFedExAdmPackageTypeFedEx _pallet = new ItemFulfillmentPackageFedExAdmPackageTypeFedEx(__pallet);
+    public static final ItemFulfillmentPackageFedExAdmPackageTypeFedEx _parcel = new ItemFulfillmentPackageFedExAdmPackageTypeFedEx(__parcel);
+    public static final ItemFulfillmentPackageFedExAdmPackageTypeFedEx _pieces = new ItemFulfillmentPackageFedExAdmPackageTypeFedEx(__pieces);
+    public static final ItemFulfillmentPackageFedExAdmPackageTypeFedEx _reel = new ItemFulfillmentPackageFedExAdmPackageTypeFedEx(__reel);
+    public static final ItemFulfillmentPackageFedExAdmPackageTypeFedEx _roll = new ItemFulfillmentPackageFedExAdmPackageTypeFedEx(__roll);
+    public static final ItemFulfillmentPackageFedExAdmPackageTypeFedEx _sack = new ItemFulfillmentPackageFedExAdmPackageTypeFedEx(__sack);
+    public static final ItemFulfillmentPackageFedExAdmPackageTypeFedEx _shrinkWrapped = new ItemFulfillmentPackageFedExAdmPackageTypeFedEx(__shrinkWrapped);
+    public static final ItemFulfillmentPackageFedExAdmPackageTypeFedEx _skid = new ItemFulfillmentPackageFedExAdmPackageTypeFedEx(__skid);
+    public static final ItemFulfillmentPackageFedExAdmPackageTypeFedEx _tank = new ItemFulfillmentPackageFedExAdmPackageTypeFedEx(__tank);
+    public static final ItemFulfillmentPackageFedExAdmPackageTypeFedEx _toteBin = new ItemFulfillmentPackageFedExAdmPackageTypeFedEx(__toteBin);
+    public static final ItemFulfillmentPackageFedExAdmPackageTypeFedEx _tube = new ItemFulfillmentPackageFedExAdmPackageTypeFedEx(__tube);
+    public static final ItemFulfillmentPackageFedExAdmPackageTypeFedEx _unit = new ItemFulfillmentPackageFedExAdmPackageTypeFedEx(__unit);
+    public java.lang.String getValue() { return _value_;}
+    public static ItemFulfillmentPackageFedExAdmPackageTypeFedEx fromValue(java.lang.String value)
+          throws java.lang.IllegalArgumentException {
+        ItemFulfillmentPackageFedExAdmPackageTypeFedEx enumeration = (ItemFulfillmentPackageFedExAdmPackageTypeFedEx)
+            _table_.get(value);
+        if (enumeration==null) throw new java.lang.IllegalArgumentException();
+        return enumeration;
     }
+    public static ItemFulfillmentPackageFedExAdmPackageTypeFedEx fromString(java.lang.String value)
+          throws java.lang.IllegalArgumentException {
+        return fromValue(value);
+    }
+    public boolean equals(java.lang.Object obj) {return (obj == this);}
+    public int hashCode() { return toString().hashCode();}
+    public java.lang.String toString() { return _value_;}
+    public java.lang.Object readResolve() throws java.io.ObjectStreamException { return fromValue(_value_);}
+    public static org.apache.axis.encoding.Serializer getSerializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new org.apache.axis.encoding.ser.EnumSerializer(
+            _javaType, _xmlType);
+    }
+    public static org.apache.axis.encoding.Deserializer getDeserializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new org.apache.axis.encoding.ser.EnumDeserializer(
+            _javaType, _xmlType);
+    }
+    // Type metadata
+    private static org.apache.axis.description.TypeDesc typeDesc =
+        new org.apache.axis.description.TypeDesc(ItemFulfillmentPackageFedExAdmPackageTypeFedEx.class);
 
-    public static ItemFulfillmentPackageFedExAdmPackageTypeFedEx fromValue(String v) {
-        for (ItemFulfillmentPackageFedExAdmPackageTypeFedEx c: ItemFulfillmentPackageFedExAdmPackageTypeFedEx.values()) {
-            if (c.value.equals(v)) {
-                return c;
-            }
-        }
-        throw new IllegalArgumentException(v);
+    static {
+        typeDesc.setXmlType(new javax.xml.namespace.QName("urn:types.sales_2018_2.transactions.webservices.netsuite.com", "ItemFulfillmentPackageFedExAdmPackageTypeFedEx"));
+    }
+    /**
+     * Return type metadata object
+     */
+    public static org.apache.axis.description.TypeDesc getTypeDesc() {
+        return typeDesc;
     }
 
 }

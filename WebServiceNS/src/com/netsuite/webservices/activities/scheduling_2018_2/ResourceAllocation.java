@@ -1,506 +1,720 @@
+/**
+ * ResourceAllocation.java
+ *
+ * This file was auto-generated from WSDL
+ * by the Apache Axis 1.4 Jul 28, 2010 (04:07:04 PDT) WSDL2Java emitter.
+ */
 
 package com.netsuite.webservices.activities.scheduling_2018_2;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlAttribute;
-import javax.xml.bind.annotation.XmlSchemaType;
-import javax.xml.bind.annotation.XmlType;
-import javax.xml.datatype.XMLGregorianCalendar;
-import com.netsuite.webservices.activities.scheduling_2018_2.types.ResourceAllocationAllocationUnit;
-import com.netsuite.webservices.activities.scheduling_2018_2.types.ResourceAllocationApprovalStatus;
-import com.netsuite.webservices.platform.core_2018_2.CustomFieldList;
-import com.netsuite.webservices.platform.core_2018_2.Record;
-import com.netsuite.webservices.platform.core_2018_2.RecordRef;
+public class ResourceAllocation  extends com.netsuite.webservices.platform.core_2018_2.Record  implements java.io.Serializable {
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef requestedby;
 
+    private com.netsuite.webservices.activities.scheduling_2018_2.types.ResourceAllocationApprovalStatus approvalStatus;
 
-/**
- * <p>ResourceAllocation complex type的 Java 类。
- * 
- * <p>以下模式片段指定包含在此类中的预期内容。
- * 
- * <pre>
- * &lt;complexType name="ResourceAllocation">
- *   &lt;complexContent>
- *     &lt;extension base="{urn:core_2018_2.platform.webservices.netsuite.com}Record">
- *       &lt;sequence>
- *         &lt;element name="requestedby" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="approvalStatus" type="{urn:types.scheduling_2018_2.activities.webservices.netsuite.com}ResourceAllocationApprovalStatus" minOccurs="0"/>
- *         &lt;element name="nextApprover" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="allocationResource" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="project" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="notes" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="startDate" type="{http://www.w3.org/2001/XMLSchema}dateTime" minOccurs="0"/>
- *         &lt;element name="endDate" type="{http://www.w3.org/2001/XMLSchema}dateTime" minOccurs="0"/>
- *         &lt;element name="allocationAmount" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
- *         &lt;element name="allocationUnit" type="{urn:types.scheduling_2018_2.activities.webservices.netsuite.com}ResourceAllocationAllocationUnit" minOccurs="0"/>
- *         &lt;element name="numberHours" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
- *         &lt;element name="percentOfTime" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
- *         &lt;element name="allocationType" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="customForm" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="customFieldList" type="{urn:core_2018_2.platform.webservices.netsuite.com}CustomFieldList" minOccurs="0"/>
- *       &lt;/sequence>
- *       &lt;attribute name="internalId" type="{http://www.w3.org/2001/XMLSchema}string" />
- *       &lt;attribute name="externalId" type="{http://www.w3.org/2001/XMLSchema}string" />
- *     &lt;/extension>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
- */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "ResourceAllocation", propOrder = {
-    "requestedby",
-    "approvalStatus",
-    "nextApprover",
-    "allocationResource",
-    "project",
-    "notes",
-    "startDate",
-    "endDate",
-    "allocationAmount",
-    "allocationUnit",
-    "numberHours",
-    "percentOfTime",
-    "allocationType",
-    "customForm",
-    "customFieldList"
-})
-public class ResourceAllocation
-    extends Record
-{
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef nextApprover;
 
-    protected RecordRef requestedby;
-    @XmlSchemaType(name = "string")
-    protected ResourceAllocationApprovalStatus approvalStatus;
-    protected RecordRef nextApprover;
-    protected RecordRef allocationResource;
-    protected RecordRef project;
-    protected String notes;
-    @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar startDate;
-    @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar endDate;
-    protected Double allocationAmount;
-    @XmlSchemaType(name = "string")
-    protected ResourceAllocationAllocationUnit allocationUnit;
-    protected Double numberHours;
-    protected Double percentOfTime;
-    protected RecordRef allocationType;
-    protected RecordRef customForm;
-    protected CustomFieldList customFieldList;
-    @XmlAttribute(name = "internalId")
-    protected String internalId;
-    @XmlAttribute(name = "externalId")
-    protected String externalId;
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef allocationResource;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef project;
+
+    private java.lang.String notes;
+
+    private java.util.Calendar startDate;
+
+    private java.util.Calendar endDate;
+
+    private java.lang.Double allocationAmount;
+
+    private com.netsuite.webservices.activities.scheduling_2018_2.types.ResourceAllocationAllocationUnit allocationUnit;
+
+    private java.lang.Double numberHours;
+
+    private java.lang.Double percentOfTime;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef allocationType;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef customForm;
+
+    private com.netsuite.webservices.platform.core_2018_2.CustomFieldRef[] customFieldList;
+
+    private java.lang.String internalId;  // attribute
+
+    private java.lang.String externalId;  // attribute
+
+    public ResourceAllocation() {
+    }
+
+    public ResourceAllocation(
+           java.lang.String[] nullFieldList,
+           java.lang.String internalId,
+           java.lang.String externalId,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef requestedby,
+           com.netsuite.webservices.activities.scheduling_2018_2.types.ResourceAllocationApprovalStatus approvalStatus,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef nextApprover,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef allocationResource,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef project,
+           java.lang.String notes,
+           java.util.Calendar startDate,
+           java.util.Calendar endDate,
+           java.lang.Double allocationAmount,
+           com.netsuite.webservices.activities.scheduling_2018_2.types.ResourceAllocationAllocationUnit allocationUnit,
+           java.lang.Double numberHours,
+           java.lang.Double percentOfTime,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef allocationType,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef customForm,
+           com.netsuite.webservices.platform.core_2018_2.CustomFieldRef[] customFieldList) {
+        super(
+            nullFieldList);
+        this.internalId = internalId;
+        this.externalId = externalId;
+        this.requestedby = requestedby;
+        this.approvalStatus = approvalStatus;
+        this.nextApprover = nextApprover;
+        this.allocationResource = allocationResource;
+        this.project = project;
+        this.notes = notes;
+        this.startDate = startDate;
+        this.endDate = endDate;
+        this.allocationAmount = allocationAmount;
+        this.allocationUnit = allocationUnit;
+        this.numberHours = numberHours;
+        this.percentOfTime = percentOfTime;
+        this.allocationType = allocationType;
+        this.customForm = customForm;
+        this.customFieldList = customFieldList;
+    }
+
 
     /**
-     * 获取requestedby属性的值。
+     * Gets the requestedby value for this ResourceAllocation.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @return requestedby
      */
-    public RecordRef getRequestedby() {
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getRequestedby() {
         return requestedby;
     }
 
-    /**
-     * 设置requestedby属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setRequestedby(RecordRef value) {
-        this.requestedby = value;
-    }
 
     /**
-     * 获取approvalStatus属性的值。
+     * Sets the requestedby value for this ResourceAllocation.
      * 
-     * @return
-     *     possible object is
-     *     {@link ResourceAllocationApprovalStatus }
-     *     
+     * @param requestedby
      */
-    public ResourceAllocationApprovalStatus getApprovalStatus() {
+    public void setRequestedby(com.netsuite.webservices.platform.core_2018_2.RecordRef requestedby) {
+        this.requestedby = requestedby;
+    }
+
+
+    /**
+     * Gets the approvalStatus value for this ResourceAllocation.
+     * 
+     * @return approvalStatus
+     */
+    public com.netsuite.webservices.activities.scheduling_2018_2.types.ResourceAllocationApprovalStatus getApprovalStatus() {
         return approvalStatus;
     }
 
-    /**
-     * 设置approvalStatus属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link ResourceAllocationApprovalStatus }
-     *     
-     */
-    public void setApprovalStatus(ResourceAllocationApprovalStatus value) {
-        this.approvalStatus = value;
-    }
 
     /**
-     * 获取nextApprover属性的值。
+     * Sets the approvalStatus value for this ResourceAllocation.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param approvalStatus
      */
-    public RecordRef getNextApprover() {
+    public void setApprovalStatus(com.netsuite.webservices.activities.scheduling_2018_2.types.ResourceAllocationApprovalStatus approvalStatus) {
+        this.approvalStatus = approvalStatus;
+    }
+
+
+    /**
+     * Gets the nextApprover value for this ResourceAllocation.
+     * 
+     * @return nextApprover
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getNextApprover() {
         return nextApprover;
     }
 
-    /**
-     * 设置nextApprover属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setNextApprover(RecordRef value) {
-        this.nextApprover = value;
-    }
 
     /**
-     * 获取allocationResource属性的值。
+     * Sets the nextApprover value for this ResourceAllocation.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param nextApprover
      */
-    public RecordRef getAllocationResource() {
+    public void setNextApprover(com.netsuite.webservices.platform.core_2018_2.RecordRef nextApprover) {
+        this.nextApprover = nextApprover;
+    }
+
+
+    /**
+     * Gets the allocationResource value for this ResourceAllocation.
+     * 
+     * @return allocationResource
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getAllocationResource() {
         return allocationResource;
     }
 
-    /**
-     * 设置allocationResource属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setAllocationResource(RecordRef value) {
-        this.allocationResource = value;
-    }
 
     /**
-     * 获取project属性的值。
+     * Sets the allocationResource value for this ResourceAllocation.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param allocationResource
      */
-    public RecordRef getProject() {
+    public void setAllocationResource(com.netsuite.webservices.platform.core_2018_2.RecordRef allocationResource) {
+        this.allocationResource = allocationResource;
+    }
+
+
+    /**
+     * Gets the project value for this ResourceAllocation.
+     * 
+     * @return project
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getProject() {
         return project;
     }
 
-    /**
-     * 设置project属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setProject(RecordRef value) {
-        this.project = value;
-    }
 
     /**
-     * 获取notes属性的值。
+     * Sets the project value for this ResourceAllocation.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param project
      */
-    public String getNotes() {
+    public void setProject(com.netsuite.webservices.platform.core_2018_2.RecordRef project) {
+        this.project = project;
+    }
+
+
+    /**
+     * Gets the notes value for this ResourceAllocation.
+     * 
+     * @return notes
+     */
+    public java.lang.String getNotes() {
         return notes;
     }
 
-    /**
-     * 设置notes属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setNotes(String value) {
-        this.notes = value;
-    }
 
     /**
-     * 获取startDate属性的值。
+     * Sets the notes value for this ResourceAllocation.
      * 
-     * @return
-     *     possible object is
-     *     {@link XMLGregorianCalendar }
-     *     
+     * @param notes
      */
-    public XMLGregorianCalendar getStartDate() {
+    public void setNotes(java.lang.String notes) {
+        this.notes = notes;
+    }
+
+
+    /**
+     * Gets the startDate value for this ResourceAllocation.
+     * 
+     * @return startDate
+     */
+    public java.util.Calendar getStartDate() {
         return startDate;
     }
 
-    /**
-     * 设置startDate属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link XMLGregorianCalendar }
-     *     
-     */
-    public void setStartDate(XMLGregorianCalendar value) {
-        this.startDate = value;
-    }
 
     /**
-     * 获取endDate属性的值。
+     * Sets the startDate value for this ResourceAllocation.
      * 
-     * @return
-     *     possible object is
-     *     {@link XMLGregorianCalendar }
-     *     
+     * @param startDate
      */
-    public XMLGregorianCalendar getEndDate() {
+    public void setStartDate(java.util.Calendar startDate) {
+        this.startDate = startDate;
+    }
+
+
+    /**
+     * Gets the endDate value for this ResourceAllocation.
+     * 
+     * @return endDate
+     */
+    public java.util.Calendar getEndDate() {
         return endDate;
     }
 
-    /**
-     * 设置endDate属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link XMLGregorianCalendar }
-     *     
-     */
-    public void setEndDate(XMLGregorianCalendar value) {
-        this.endDate = value;
-    }
 
     /**
-     * 获取allocationAmount属性的值。
+     * Sets the endDate value for this ResourceAllocation.
      * 
-     * @return
-     *     possible object is
-     *     {@link Double }
-     *     
+     * @param endDate
      */
-    public Double getAllocationAmount() {
+    public void setEndDate(java.util.Calendar endDate) {
+        this.endDate = endDate;
+    }
+
+
+    /**
+     * Gets the allocationAmount value for this ResourceAllocation.
+     * 
+     * @return allocationAmount
+     */
+    public java.lang.Double getAllocationAmount() {
         return allocationAmount;
     }
 
-    /**
-     * 设置allocationAmount属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Double }
-     *     
-     */
-    public void setAllocationAmount(Double value) {
-        this.allocationAmount = value;
-    }
 
     /**
-     * 获取allocationUnit属性的值。
+     * Sets the allocationAmount value for this ResourceAllocation.
      * 
-     * @return
-     *     possible object is
-     *     {@link ResourceAllocationAllocationUnit }
-     *     
+     * @param allocationAmount
      */
-    public ResourceAllocationAllocationUnit getAllocationUnit() {
+    public void setAllocationAmount(java.lang.Double allocationAmount) {
+        this.allocationAmount = allocationAmount;
+    }
+
+
+    /**
+     * Gets the allocationUnit value for this ResourceAllocation.
+     * 
+     * @return allocationUnit
+     */
+    public com.netsuite.webservices.activities.scheduling_2018_2.types.ResourceAllocationAllocationUnit getAllocationUnit() {
         return allocationUnit;
     }
 
-    /**
-     * 设置allocationUnit属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link ResourceAllocationAllocationUnit }
-     *     
-     */
-    public void setAllocationUnit(ResourceAllocationAllocationUnit value) {
-        this.allocationUnit = value;
-    }
 
     /**
-     * 获取numberHours属性的值。
+     * Sets the allocationUnit value for this ResourceAllocation.
      * 
-     * @return
-     *     possible object is
-     *     {@link Double }
-     *     
+     * @param allocationUnit
      */
-    public Double getNumberHours() {
+    public void setAllocationUnit(com.netsuite.webservices.activities.scheduling_2018_2.types.ResourceAllocationAllocationUnit allocationUnit) {
+        this.allocationUnit = allocationUnit;
+    }
+
+
+    /**
+     * Gets the numberHours value for this ResourceAllocation.
+     * 
+     * @return numberHours
+     */
+    public java.lang.Double getNumberHours() {
         return numberHours;
     }
 
-    /**
-     * 设置numberHours属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Double }
-     *     
-     */
-    public void setNumberHours(Double value) {
-        this.numberHours = value;
-    }
 
     /**
-     * 获取percentOfTime属性的值。
+     * Sets the numberHours value for this ResourceAllocation.
      * 
-     * @return
-     *     possible object is
-     *     {@link Double }
-     *     
+     * @param numberHours
      */
-    public Double getPercentOfTime() {
+    public void setNumberHours(java.lang.Double numberHours) {
+        this.numberHours = numberHours;
+    }
+
+
+    /**
+     * Gets the percentOfTime value for this ResourceAllocation.
+     * 
+     * @return percentOfTime
+     */
+    public java.lang.Double getPercentOfTime() {
         return percentOfTime;
     }
 
-    /**
-     * 设置percentOfTime属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Double }
-     *     
-     */
-    public void setPercentOfTime(Double value) {
-        this.percentOfTime = value;
-    }
 
     /**
-     * 获取allocationType属性的值。
+     * Sets the percentOfTime value for this ResourceAllocation.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param percentOfTime
      */
-    public RecordRef getAllocationType() {
+    public void setPercentOfTime(java.lang.Double percentOfTime) {
+        this.percentOfTime = percentOfTime;
+    }
+
+
+    /**
+     * Gets the allocationType value for this ResourceAllocation.
+     * 
+     * @return allocationType
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getAllocationType() {
         return allocationType;
     }
 
-    /**
-     * 设置allocationType属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setAllocationType(RecordRef value) {
-        this.allocationType = value;
-    }
 
     /**
-     * 获取customForm属性的值。
+     * Sets the allocationType value for this ResourceAllocation.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param allocationType
      */
-    public RecordRef getCustomForm() {
+    public void setAllocationType(com.netsuite.webservices.platform.core_2018_2.RecordRef allocationType) {
+        this.allocationType = allocationType;
+    }
+
+
+    /**
+     * Gets the customForm value for this ResourceAllocation.
+     * 
+     * @return customForm
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getCustomForm() {
         return customForm;
     }
 
-    /**
-     * 设置customForm属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setCustomForm(RecordRef value) {
-        this.customForm = value;
-    }
 
     /**
-     * 获取customFieldList属性的值。
+     * Sets the customForm value for this ResourceAllocation.
      * 
-     * @return
-     *     possible object is
-     *     {@link CustomFieldList }
-     *     
+     * @param customForm
      */
-    public CustomFieldList getCustomFieldList() {
+    public void setCustomForm(com.netsuite.webservices.platform.core_2018_2.RecordRef customForm) {
+        this.customForm = customForm;
+    }
+
+
+    /**
+     * Gets the customFieldList value for this ResourceAllocation.
+     * 
+     * @return customFieldList
+     */
+    public com.netsuite.webservices.platform.core_2018_2.CustomFieldRef[] getCustomFieldList() {
         return customFieldList;
     }
 
-    /**
-     * 设置customFieldList属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link CustomFieldList }
-     *     
-     */
-    public void setCustomFieldList(CustomFieldList value) {
-        this.customFieldList = value;
-    }
 
     /**
-     * 获取internalId属性的值。
+     * Sets the customFieldList value for this ResourceAllocation.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param customFieldList
      */
-    public String getInternalId() {
+    public void setCustomFieldList(com.netsuite.webservices.platform.core_2018_2.CustomFieldRef[] customFieldList) {
+        this.customFieldList = customFieldList;
+    }
+
+
+    /**
+     * Gets the internalId value for this ResourceAllocation.
+     * 
+     * @return internalId
+     */
+    public java.lang.String getInternalId() {
         return internalId;
     }
 
-    /**
-     * 设置internalId属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setInternalId(String value) {
-        this.internalId = value;
-    }
 
     /**
-     * 获取externalId属性的值。
+     * Sets the internalId value for this ResourceAllocation.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param internalId
      */
-    public String getExternalId() {
+    public void setInternalId(java.lang.String internalId) {
+        this.internalId = internalId;
+    }
+
+
+    /**
+     * Gets the externalId value for this ResourceAllocation.
+     * 
+     * @return externalId
+     */
+    public java.lang.String getExternalId() {
         return externalId;
     }
 
+
     /**
-     * 设置externalId属性的值。
+     * Sets the externalId value for this ResourceAllocation.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     * @param externalId
      */
-    public void setExternalId(String value) {
-        this.externalId = value;
+    public void setExternalId(java.lang.String externalId) {
+        this.externalId = externalId;
+    }
+
+    private java.lang.Object __equalsCalc = null;
+    public synchronized boolean equals(java.lang.Object obj) {
+        if (!(obj instanceof ResourceAllocation)) return false;
+        ResourceAllocation other = (ResourceAllocation) obj;
+        if (obj == null) return false;
+        if (this == obj) return true;
+        if (__equalsCalc != null) {
+            return (__equalsCalc == obj);
+        }
+        __equalsCalc = obj;
+        boolean _equals;
+        _equals = super.equals(obj) && 
+            ((this.requestedby==null && other.getRequestedby()==null) || 
+             (this.requestedby!=null &&
+              this.requestedby.equals(other.getRequestedby()))) &&
+            ((this.approvalStatus==null && other.getApprovalStatus()==null) || 
+             (this.approvalStatus!=null &&
+              this.approvalStatus.equals(other.getApprovalStatus()))) &&
+            ((this.nextApprover==null && other.getNextApprover()==null) || 
+             (this.nextApprover!=null &&
+              this.nextApprover.equals(other.getNextApprover()))) &&
+            ((this.allocationResource==null && other.getAllocationResource()==null) || 
+             (this.allocationResource!=null &&
+              this.allocationResource.equals(other.getAllocationResource()))) &&
+            ((this.project==null && other.getProject()==null) || 
+             (this.project!=null &&
+              this.project.equals(other.getProject()))) &&
+            ((this.notes==null && other.getNotes()==null) || 
+             (this.notes!=null &&
+              this.notes.equals(other.getNotes()))) &&
+            ((this.startDate==null && other.getStartDate()==null) || 
+             (this.startDate!=null &&
+              this.startDate.equals(other.getStartDate()))) &&
+            ((this.endDate==null && other.getEndDate()==null) || 
+             (this.endDate!=null &&
+              this.endDate.equals(other.getEndDate()))) &&
+            ((this.allocationAmount==null && other.getAllocationAmount()==null) || 
+             (this.allocationAmount!=null &&
+              this.allocationAmount.equals(other.getAllocationAmount()))) &&
+            ((this.allocationUnit==null && other.getAllocationUnit()==null) || 
+             (this.allocationUnit!=null &&
+              this.allocationUnit.equals(other.getAllocationUnit()))) &&
+            ((this.numberHours==null && other.getNumberHours()==null) || 
+             (this.numberHours!=null &&
+              this.numberHours.equals(other.getNumberHours()))) &&
+            ((this.percentOfTime==null && other.getPercentOfTime()==null) || 
+             (this.percentOfTime!=null &&
+              this.percentOfTime.equals(other.getPercentOfTime()))) &&
+            ((this.allocationType==null && other.getAllocationType()==null) || 
+             (this.allocationType!=null &&
+              this.allocationType.equals(other.getAllocationType()))) &&
+            ((this.customForm==null && other.getCustomForm()==null) || 
+             (this.customForm!=null &&
+              this.customForm.equals(other.getCustomForm()))) &&
+            ((this.customFieldList==null && other.getCustomFieldList()==null) || 
+             (this.customFieldList!=null &&
+              java.util.Arrays.equals(this.customFieldList, other.getCustomFieldList()))) &&
+            ((this.internalId==null && other.getInternalId()==null) || 
+             (this.internalId!=null &&
+              this.internalId.equals(other.getInternalId()))) &&
+            ((this.externalId==null && other.getExternalId()==null) || 
+             (this.externalId!=null &&
+              this.externalId.equals(other.getExternalId())));
+        __equalsCalc = null;
+        return _equals;
+    }
+
+    private boolean __hashCodeCalc = false;
+    public synchronized int hashCode() {
+        if (__hashCodeCalc) {
+            return 0;
+        }
+        __hashCodeCalc = true;
+        int _hashCode = super.hashCode();
+        if (getRequestedby() != null) {
+            _hashCode += getRequestedby().hashCode();
+        }
+        if (getApprovalStatus() != null) {
+            _hashCode += getApprovalStatus().hashCode();
+        }
+        if (getNextApprover() != null) {
+            _hashCode += getNextApprover().hashCode();
+        }
+        if (getAllocationResource() != null) {
+            _hashCode += getAllocationResource().hashCode();
+        }
+        if (getProject() != null) {
+            _hashCode += getProject().hashCode();
+        }
+        if (getNotes() != null) {
+            _hashCode += getNotes().hashCode();
+        }
+        if (getStartDate() != null) {
+            _hashCode += getStartDate().hashCode();
+        }
+        if (getEndDate() != null) {
+            _hashCode += getEndDate().hashCode();
+        }
+        if (getAllocationAmount() != null) {
+            _hashCode += getAllocationAmount().hashCode();
+        }
+        if (getAllocationUnit() != null) {
+            _hashCode += getAllocationUnit().hashCode();
+        }
+        if (getNumberHours() != null) {
+            _hashCode += getNumberHours().hashCode();
+        }
+        if (getPercentOfTime() != null) {
+            _hashCode += getPercentOfTime().hashCode();
+        }
+        if (getAllocationType() != null) {
+            _hashCode += getAllocationType().hashCode();
+        }
+        if (getCustomForm() != null) {
+            _hashCode += getCustomForm().hashCode();
+        }
+        if (getCustomFieldList() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getCustomFieldList());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getCustomFieldList(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getInternalId() != null) {
+            _hashCode += getInternalId().hashCode();
+        }
+        if (getExternalId() != null) {
+            _hashCode += getExternalId().hashCode();
+        }
+        __hashCodeCalc = false;
+        return _hashCode;
+    }
+
+    // Type metadata
+    private static org.apache.axis.description.TypeDesc typeDesc =
+        new org.apache.axis.description.TypeDesc(ResourceAllocation.class, true);
+
+    static {
+        typeDesc.setXmlType(new javax.xml.namespace.QName("urn:scheduling_2018_2.activities.webservices.netsuite.com", "ResourceAllocation"));
+        org.apache.axis.description.AttributeDesc attrField = new org.apache.axis.description.AttributeDesc();
+        attrField.setFieldName("internalId");
+        attrField.setXmlName(new javax.xml.namespace.QName("", "internalId"));
+        attrField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        typeDesc.addFieldDesc(attrField);
+        attrField = new org.apache.axis.description.AttributeDesc();
+        attrField.setFieldName("externalId");
+        attrField.setXmlName(new javax.xml.namespace.QName("", "externalId"));
+        attrField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        typeDesc.addFieldDesc(attrField);
+        org.apache.axis.description.ElementDesc elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("requestedby");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:scheduling_2018_2.activities.webservices.netsuite.com", "requestedby"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("approvalStatus");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:scheduling_2018_2.activities.webservices.netsuite.com", "approvalStatus"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:types.scheduling_2018_2.activities.webservices.netsuite.com", "ResourceAllocationApprovalStatus"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("nextApprover");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:scheduling_2018_2.activities.webservices.netsuite.com", "nextApprover"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("allocationResource");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:scheduling_2018_2.activities.webservices.netsuite.com", "allocationResource"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("project");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:scheduling_2018_2.activities.webservices.netsuite.com", "project"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("notes");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:scheduling_2018_2.activities.webservices.netsuite.com", "notes"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("startDate");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:scheduling_2018_2.activities.webservices.netsuite.com", "startDate"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "dateTime"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("endDate");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:scheduling_2018_2.activities.webservices.netsuite.com", "endDate"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "dateTime"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("allocationAmount");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:scheduling_2018_2.activities.webservices.netsuite.com", "allocationAmount"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "double"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("allocationUnit");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:scheduling_2018_2.activities.webservices.netsuite.com", "allocationUnit"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:types.scheduling_2018_2.activities.webservices.netsuite.com", "ResourceAllocationAllocationUnit"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("numberHours");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:scheduling_2018_2.activities.webservices.netsuite.com", "numberHours"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "double"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("percentOfTime");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:scheduling_2018_2.activities.webservices.netsuite.com", "percentOfTime"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "double"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("allocationType");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:scheduling_2018_2.activities.webservices.netsuite.com", "allocationType"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("customForm");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:scheduling_2018_2.activities.webservices.netsuite.com", "customForm"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("customFieldList");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:scheduling_2018_2.activities.webservices.netsuite.com", "customFieldList"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "CustomFieldRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "customField"));
+        typeDesc.addFieldDesc(elemField);
+    }
+
+    /**
+     * Return type metadata object
+     */
+    public static org.apache.axis.description.TypeDesc getTypeDesc() {
+        return typeDesc;
+    }
+
+    /**
+     * Get Custom Serializer
+     */
+    public static org.apache.axis.encoding.Serializer getSerializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanSerializer(
+            _javaType, _xmlType, typeDesc);
+    }
+
+    /**
+     * Get Custom Deserializer
+     */
+    public static org.apache.axis.encoding.Deserializer getDeserializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanDeserializer(
+            _javaType, _xmlType, typeDesc);
     }
 
 }

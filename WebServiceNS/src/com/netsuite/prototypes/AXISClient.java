@@ -1,10 +1,10 @@
 package com.netsuite.prototypes;
 
-import com.netsuite.devtools.lists.employees.Employee;
-import com.netsuite.devtools.platform.NetSuitePortType;
-import com.netsuite.devtools.platform.NetSuiteServiceLocator;
-import com.netsuite.devtools.platform.core.RecordRef;
-import com.netsuite.devtools.platform.core.types.RecordType;
+import com.netsuite.webservices.lists.employees_2018_2.Employee;
+import com.netsuite.webservices.platform.core_2018_2.RecordRef;
+import com.netsuite.webservices.platform.core_2018_2.types.RecordType;
+import com.netsuite.webservices.platform_2018_2.NetSuitePortType;
+import com.netsuite.webservices.platform_2018_2.NetSuiteServiceLocator;
 
 /***
  * Example showing how to get web services domain pointing to the account's data
@@ -12,7 +12,7 @@ import com.netsuite.devtools.platform.core.types.RecordType;
  * getDataCenterUrls() was introduced in the 12.2 endpoint).
  ***/
 public class AXISClient {
-	private static final String ENDPOINT_VERSION = "NetSuitePort_2017_1";
+	private static final String ENDPOINT_VERSION = "NetSuitePort_2018_2";
 	private static final String ACCOUNT = "123456";
 	private static final String PASSWORD = "123456@netsuite.com";
 	private static final String EMAIL = "passwd";

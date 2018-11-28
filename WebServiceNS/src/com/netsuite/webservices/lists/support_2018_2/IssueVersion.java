@@ -1,115 +1,194 @@
+/**
+ * IssueVersion.java
+ *
+ * This file was auto-generated from WSDL
+ * by the Apache Axis 1.4 Jul 28, 2010 (04:07:04 PDT) WSDL2Java emitter.
+ */
 
 package com.netsuite.webservices.lists.support_2018_2;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlType;
-import com.netsuite.webservices.platform.core_2018_2.RecordRef;
+public class IssueVersion  implements java.io.Serializable {
+    private java.lang.Boolean primary;
 
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef version;
 
-/**
- * <p>IssueVersion complex type的 Java 类。
- * 
- * <p>以下模式片段指定包含在此类中的预期内容。
- * 
- * <pre>
- * &lt;complexType name="IssueVersion">
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element name="primary" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         &lt;element name="version" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="build" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
- */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "IssueVersion", propOrder = {
-    "primary",
-    "version",
-    "build"
-})
-public class IssueVersion {
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef build;
 
-    protected Boolean primary;
-    protected RecordRef version;
-    protected RecordRef build;
+    public IssueVersion() {
+    }
+
+    public IssueVersion(
+           java.lang.Boolean primary,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef version,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef build) {
+           this.primary = primary;
+           this.version = version;
+           this.build = build;
+    }
+
 
     /**
-     * 获取primary属性的值。
+     * Gets the primary value for this IssueVersion.
      * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
+     * @return primary
      */
-    public Boolean isPrimary() {
+    public java.lang.Boolean getPrimary() {
         return primary;
     }
 
-    /**
-     * 设置primary属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
-     */
-    public void setPrimary(Boolean value) {
-        this.primary = value;
-    }
 
     /**
-     * 获取version属性的值。
+     * Sets the primary value for this IssueVersion.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param primary
      */
-    public RecordRef getVersion() {
+    public void setPrimary(java.lang.Boolean primary) {
+        this.primary = primary;
+    }
+
+
+    /**
+     * Gets the version value for this IssueVersion.
+     * 
+     * @return version
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getVersion() {
         return version;
     }
 
-    /**
-     * 设置version属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setVersion(RecordRef value) {
-        this.version = value;
-    }
 
     /**
-     * 获取build属性的值。
+     * Sets the version value for this IssueVersion.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param version
      */
-    public RecordRef getBuild() {
+    public void setVersion(com.netsuite.webservices.platform.core_2018_2.RecordRef version) {
+        this.version = version;
+    }
+
+
+    /**
+     * Gets the build value for this IssueVersion.
+     * 
+     * @return build
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getBuild() {
         return build;
     }
 
+
     /**
-     * 设置build属性的值。
+     * Sets the build value for this IssueVersion.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
+     * @param build
      */
-    public void setBuild(RecordRef value) {
-        this.build = value;
+    public void setBuild(com.netsuite.webservices.platform.core_2018_2.RecordRef build) {
+        this.build = build;
+    }
+
+    private java.lang.Object __equalsCalc = null;
+    public synchronized boolean equals(java.lang.Object obj) {
+        if (!(obj instanceof IssueVersion)) return false;
+        IssueVersion other = (IssueVersion) obj;
+        if (obj == null) return false;
+        if (this == obj) return true;
+        if (__equalsCalc != null) {
+            return (__equalsCalc == obj);
+        }
+        __equalsCalc = obj;
+        boolean _equals;
+        _equals = true && 
+            ((this.primary==null && other.getPrimary()==null) || 
+             (this.primary!=null &&
+              this.primary.equals(other.getPrimary()))) &&
+            ((this.version==null && other.getVersion()==null) || 
+             (this.version!=null &&
+              this.version.equals(other.getVersion()))) &&
+            ((this.build==null && other.getBuild()==null) || 
+             (this.build!=null &&
+              this.build.equals(other.getBuild())));
+        __equalsCalc = null;
+        return _equals;
+    }
+
+    private boolean __hashCodeCalc = false;
+    public synchronized int hashCode() {
+        if (__hashCodeCalc) {
+            return 0;
+        }
+        __hashCodeCalc = true;
+        int _hashCode = 1;
+        if (getPrimary() != null) {
+            _hashCode += getPrimary().hashCode();
+        }
+        if (getVersion() != null) {
+            _hashCode += getVersion().hashCode();
+        }
+        if (getBuild() != null) {
+            _hashCode += getBuild().hashCode();
+        }
+        __hashCodeCalc = false;
+        return _hashCode;
+    }
+
+    // Type metadata
+    private static org.apache.axis.description.TypeDesc typeDesc =
+        new org.apache.axis.description.TypeDesc(IssueVersion.class, true);
+
+    static {
+        typeDesc.setXmlType(new javax.xml.namespace.QName("urn:support_2018_2.lists.webservices.netsuite.com", "IssueVersion"));
+        org.apache.axis.description.ElementDesc elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("primary");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:support_2018_2.lists.webservices.netsuite.com", "primary"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("version");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:support_2018_2.lists.webservices.netsuite.com", "version"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("build");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:support_2018_2.lists.webservices.netsuite.com", "build"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+    }
+
+    /**
+     * Return type metadata object
+     */
+    public static org.apache.axis.description.TypeDesc getTypeDesc() {
+        return typeDesc;
+    }
+
+    /**
+     * Get Custom Serializer
+     */
+    public static org.apache.axis.encoding.Serializer getSerializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanSerializer(
+            _javaType, _xmlType, typeDesc);
+    }
+
+    /**
+     * Get Custom Deserializer
+     */
+    public static org.apache.axis.encoding.Deserializer getDeserializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanDeserializer(
+            _javaType, _xmlType, typeDesc);
     }
 
 }

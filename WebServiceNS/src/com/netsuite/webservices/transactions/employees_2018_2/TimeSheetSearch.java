@@ -1,183 +1,285 @@
+/**
+ * TimeSheetSearch.java
+ *
+ * This file was auto-generated from WSDL
+ * by the Apache Axis 1.4 Jul 28, 2010 (04:07:04 PDT) WSDL2Java emitter.
+ */
 
 package com.netsuite.webservices.transactions.employees_2018_2;
 
-import java.util.ArrayList;
-import java.util.List;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlType;
-import com.netsuite.webservices.platform.common_2018_2.CustomSearchJoin;
-import com.netsuite.webservices.platform.common_2018_2.EmployeeSearchBasic;
-import com.netsuite.webservices.platform.common_2018_2.TimeBillSearchBasic;
-import com.netsuite.webservices.platform.common_2018_2.TimeEntrySearchBasic;
-import com.netsuite.webservices.platform.common_2018_2.TimeSheetSearchBasic;
-import com.netsuite.webservices.platform.core_2018_2.SearchRecord;
+public class TimeSheetSearch  extends com.netsuite.webservices.platform.core_2018_2.SearchRecord  implements java.io.Serializable {
+    private com.netsuite.webservices.platform.common_2018_2.TimeSheetSearchBasic basic;
 
+    private com.netsuite.webservices.platform.common_2018_2.EmployeeSearchBasic employeeJoin;
 
-/**
- * <p>TimeSheetSearch complex type的 Java 类。
- * 
- * <p>以下模式片段指定包含在此类中的预期内容。
- * 
- * <pre>
- * &lt;complexType name="TimeSheetSearch">
- *   &lt;complexContent>
- *     &lt;extension base="{urn:core_2018_2.platform.webservices.netsuite.com}SearchRecord">
- *       &lt;sequence>
- *         &lt;element name="basic" type="{urn:common_2018_2.platform.webservices.netsuite.com}TimeSheetSearchBasic" minOccurs="0"/>
- *         &lt;element name="employeeJoin" type="{urn:common_2018_2.platform.webservices.netsuite.com}EmployeeSearchBasic" minOccurs="0"/>
- *         &lt;element name="timeBillJoin" type="{urn:common_2018_2.platform.webservices.netsuite.com}TimeBillSearchBasic" minOccurs="0"/>
- *         &lt;element name="timeEntryJoin" type="{urn:common_2018_2.platform.webservices.netsuite.com}TimeEntrySearchBasic" minOccurs="0"/>
- *         &lt;element name="customSearchJoin" type="{urn:common_2018_2.platform.webservices.netsuite.com}CustomSearchJoin" maxOccurs="unbounded" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/extension>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
- */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "TimeSheetSearch", propOrder = {
-    "basic",
-    "employeeJoin",
-    "timeBillJoin",
-    "timeEntryJoin",
-    "customSearchJoin"
-})
-public class TimeSheetSearch
-    extends SearchRecord
-{
+    private com.netsuite.webservices.platform.common_2018_2.TimeBillSearchBasic timeBillJoin;
 
-    protected TimeSheetSearchBasic basic;
-    protected EmployeeSearchBasic employeeJoin;
-    protected TimeBillSearchBasic timeBillJoin;
-    protected TimeEntrySearchBasic timeEntryJoin;
-    protected List<CustomSearchJoin> customSearchJoin;
+    private com.netsuite.webservices.platform.common_2018_2.TimeEntrySearchBasic timeEntryJoin;
+
+    private com.netsuite.webservices.platform.common_2018_2.CustomSearchJoin[] customSearchJoin;
+
+    public TimeSheetSearch() {
+    }
+
+    public TimeSheetSearch(
+           com.netsuite.webservices.platform.common_2018_2.TimeSheetSearchBasic basic,
+           com.netsuite.webservices.platform.common_2018_2.EmployeeSearchBasic employeeJoin,
+           com.netsuite.webservices.platform.common_2018_2.TimeBillSearchBasic timeBillJoin,
+           com.netsuite.webservices.platform.common_2018_2.TimeEntrySearchBasic timeEntryJoin,
+           com.netsuite.webservices.platform.common_2018_2.CustomSearchJoin[] customSearchJoin) {
+        this.basic = basic;
+        this.employeeJoin = employeeJoin;
+        this.timeBillJoin = timeBillJoin;
+        this.timeEntryJoin = timeEntryJoin;
+        this.customSearchJoin = customSearchJoin;
+    }
+
 
     /**
-     * 获取basic属性的值。
+     * Gets the basic value for this TimeSheetSearch.
      * 
-     * @return
-     *     possible object is
-     *     {@link TimeSheetSearchBasic }
-     *     
+     * @return basic
      */
-    public TimeSheetSearchBasic getBasic() {
+    public com.netsuite.webservices.platform.common_2018_2.TimeSheetSearchBasic getBasic() {
         return basic;
     }
 
-    /**
-     * 设置basic属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link TimeSheetSearchBasic }
-     *     
-     */
-    public void setBasic(TimeSheetSearchBasic value) {
-        this.basic = value;
-    }
 
     /**
-     * 获取employeeJoin属性的值。
+     * Sets the basic value for this TimeSheetSearch.
      * 
-     * @return
-     *     possible object is
-     *     {@link EmployeeSearchBasic }
-     *     
+     * @param basic
      */
-    public EmployeeSearchBasic getEmployeeJoin() {
+    public void setBasic(com.netsuite.webservices.platform.common_2018_2.TimeSheetSearchBasic basic) {
+        this.basic = basic;
+    }
+
+
+    /**
+     * Gets the employeeJoin value for this TimeSheetSearch.
+     * 
+     * @return employeeJoin
+     */
+    public com.netsuite.webservices.platform.common_2018_2.EmployeeSearchBasic getEmployeeJoin() {
         return employeeJoin;
     }
 
-    /**
-     * 设置employeeJoin属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link EmployeeSearchBasic }
-     *     
-     */
-    public void setEmployeeJoin(EmployeeSearchBasic value) {
-        this.employeeJoin = value;
-    }
 
     /**
-     * 获取timeBillJoin属性的值。
+     * Sets the employeeJoin value for this TimeSheetSearch.
      * 
-     * @return
-     *     possible object is
-     *     {@link TimeBillSearchBasic }
-     *     
+     * @param employeeJoin
      */
-    public TimeBillSearchBasic getTimeBillJoin() {
+    public void setEmployeeJoin(com.netsuite.webservices.platform.common_2018_2.EmployeeSearchBasic employeeJoin) {
+        this.employeeJoin = employeeJoin;
+    }
+
+
+    /**
+     * Gets the timeBillJoin value for this TimeSheetSearch.
+     * 
+     * @return timeBillJoin
+     */
+    public com.netsuite.webservices.platform.common_2018_2.TimeBillSearchBasic getTimeBillJoin() {
         return timeBillJoin;
     }
 
-    /**
-     * 设置timeBillJoin属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link TimeBillSearchBasic }
-     *     
-     */
-    public void setTimeBillJoin(TimeBillSearchBasic value) {
-        this.timeBillJoin = value;
-    }
 
     /**
-     * 获取timeEntryJoin属性的值。
+     * Sets the timeBillJoin value for this TimeSheetSearch.
      * 
-     * @return
-     *     possible object is
-     *     {@link TimeEntrySearchBasic }
-     *     
+     * @param timeBillJoin
      */
-    public TimeEntrySearchBasic getTimeEntryJoin() {
+    public void setTimeBillJoin(com.netsuite.webservices.platform.common_2018_2.TimeBillSearchBasic timeBillJoin) {
+        this.timeBillJoin = timeBillJoin;
+    }
+
+
+    /**
+     * Gets the timeEntryJoin value for this TimeSheetSearch.
+     * 
+     * @return timeEntryJoin
+     */
+    public com.netsuite.webservices.platform.common_2018_2.TimeEntrySearchBasic getTimeEntryJoin() {
         return timeEntryJoin;
     }
 
+
     /**
-     * 设置timeEntryJoin属性的值。
+     * Sets the timeEntryJoin value for this TimeSheetSearch.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link TimeEntrySearchBasic }
-     *     
+     * @param timeEntryJoin
      */
-    public void setTimeEntryJoin(TimeEntrySearchBasic value) {
-        this.timeEntryJoin = value;
+    public void setTimeEntryJoin(com.netsuite.webservices.platform.common_2018_2.TimeEntrySearchBasic timeEntryJoin) {
+        this.timeEntryJoin = timeEntryJoin;
+    }
+
+
+    /**
+     * Gets the customSearchJoin value for this TimeSheetSearch.
+     * 
+     * @return customSearchJoin
+     */
+    public com.netsuite.webservices.platform.common_2018_2.CustomSearchJoin[] getCustomSearchJoin() {
+        return customSearchJoin;
+    }
+
+
+    /**
+     * Sets the customSearchJoin value for this TimeSheetSearch.
+     * 
+     * @param customSearchJoin
+     */
+    public void setCustomSearchJoin(com.netsuite.webservices.platform.common_2018_2.CustomSearchJoin[] customSearchJoin) {
+        this.customSearchJoin = customSearchJoin;
+    }
+
+    public com.netsuite.webservices.platform.common_2018_2.CustomSearchJoin getCustomSearchJoin(int i) {
+        return this.customSearchJoin[i];
+    }
+
+    public void setCustomSearchJoin(int i, com.netsuite.webservices.platform.common_2018_2.CustomSearchJoin _value) {
+        this.customSearchJoin[i] = _value;
+    }
+
+    private java.lang.Object __equalsCalc = null;
+    public synchronized boolean equals(java.lang.Object obj) {
+        if (!(obj instanceof TimeSheetSearch)) return false;
+        TimeSheetSearch other = (TimeSheetSearch) obj;
+        if (obj == null) return false;
+        if (this == obj) return true;
+        if (__equalsCalc != null) {
+            return (__equalsCalc == obj);
+        }
+        __equalsCalc = obj;
+        boolean _equals;
+        _equals = super.equals(obj) && 
+            ((this.basic==null && other.getBasic()==null) || 
+             (this.basic!=null &&
+              this.basic.equals(other.getBasic()))) &&
+            ((this.employeeJoin==null && other.getEmployeeJoin()==null) || 
+             (this.employeeJoin!=null &&
+              this.employeeJoin.equals(other.getEmployeeJoin()))) &&
+            ((this.timeBillJoin==null && other.getTimeBillJoin()==null) || 
+             (this.timeBillJoin!=null &&
+              this.timeBillJoin.equals(other.getTimeBillJoin()))) &&
+            ((this.timeEntryJoin==null && other.getTimeEntryJoin()==null) || 
+             (this.timeEntryJoin!=null &&
+              this.timeEntryJoin.equals(other.getTimeEntryJoin()))) &&
+            ((this.customSearchJoin==null && other.getCustomSearchJoin()==null) || 
+             (this.customSearchJoin!=null &&
+              java.util.Arrays.equals(this.customSearchJoin, other.getCustomSearchJoin())));
+        __equalsCalc = null;
+        return _equals;
+    }
+
+    private boolean __hashCodeCalc = false;
+    public synchronized int hashCode() {
+        if (__hashCodeCalc) {
+            return 0;
+        }
+        __hashCodeCalc = true;
+        int _hashCode = super.hashCode();
+        if (getBasic() != null) {
+            _hashCode += getBasic().hashCode();
+        }
+        if (getEmployeeJoin() != null) {
+            _hashCode += getEmployeeJoin().hashCode();
+        }
+        if (getTimeBillJoin() != null) {
+            _hashCode += getTimeBillJoin().hashCode();
+        }
+        if (getTimeEntryJoin() != null) {
+            _hashCode += getTimeEntryJoin().hashCode();
+        }
+        if (getCustomSearchJoin() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getCustomSearchJoin());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getCustomSearchJoin(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        __hashCodeCalc = false;
+        return _hashCode;
+    }
+
+    // Type metadata
+    private static org.apache.axis.description.TypeDesc typeDesc =
+        new org.apache.axis.description.TypeDesc(TimeSheetSearch.class, true);
+
+    static {
+        typeDesc.setXmlType(new javax.xml.namespace.QName("urn:employees_2018_2.transactions.webservices.netsuite.com", "TimeSheetSearch"));
+        org.apache.axis.description.ElementDesc elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("basic");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:employees_2018_2.transactions.webservices.netsuite.com", "basic"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "TimeSheetSearchBasic"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("employeeJoin");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:employees_2018_2.transactions.webservices.netsuite.com", "employeeJoin"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "EmployeeSearchBasic"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("timeBillJoin");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:employees_2018_2.transactions.webservices.netsuite.com", "timeBillJoin"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "TimeBillSearchBasic"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("timeEntryJoin");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:employees_2018_2.transactions.webservices.netsuite.com", "timeEntryJoin"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "TimeEntrySearchBasic"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("customSearchJoin");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:employees_2018_2.transactions.webservices.netsuite.com", "customSearchJoin"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "CustomSearchJoin"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
     }
 
     /**
-     * Gets the value of the customSearchJoin property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the customSearchJoin property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getCustomSearchJoin().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link CustomSearchJoin }
-     * 
-     * 
+     * Return type metadata object
      */
-    public List<CustomSearchJoin> getCustomSearchJoin() {
-        if (customSearchJoin == null) {
-            customSearchJoin = new ArrayList<CustomSearchJoin>();
-        }
-        return this.customSearchJoin;
+    public static org.apache.axis.description.TypeDesc getTypeDesc() {
+        return typeDesc;
+    }
+
+    /**
+     * Get Custom Serializer
+     */
+    public static org.apache.axis.encoding.Serializer getSerializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanSerializer(
+            _javaType, _xmlType, typeDesc);
+    }
+
+    /**
+     * Get Custom Deserializer
+     */
+    public static org.apache.axis.encoding.Deserializer getDeserializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanDeserializer(
+            _javaType, _xmlType, typeDesc);
     }
 
 }

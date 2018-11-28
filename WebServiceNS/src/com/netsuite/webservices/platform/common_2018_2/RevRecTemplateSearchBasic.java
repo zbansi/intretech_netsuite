@@ -1,473 +1,747 @@
+/**
+ * RevRecTemplateSearchBasic.java
+ *
+ * This file was auto-generated from WSDL
+ * by the Apache Axis 1.4 Jul 28, 2010 (04:07:04 PDT) WSDL2Java emitter.
+ */
 
 package com.netsuite.webservices.platform.common_2018_2;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlType;
-import com.netsuite.webservices.platform.core_2018_2.SearchBooleanField;
-import com.netsuite.webservices.platform.core_2018_2.SearchEnumMultiSelectField;
-import com.netsuite.webservices.platform.core_2018_2.SearchLongField;
-import com.netsuite.webservices.platform.core_2018_2.SearchMultiSelectField;
-import com.netsuite.webservices.platform.core_2018_2.SearchRecordBasic;
-import com.netsuite.webservices.platform.core_2018_2.SearchStringField;
+public class RevRecTemplateSearchBasic  extends com.netsuite.webservices.platform.core_2018_2.SearchRecordBasic  implements java.io.Serializable {
+    private java.lang.String[] amorMethod;
 
+    private com.netsuite.webservices.platform.core_2018_2.SearchLongField amorPeriod;
 
-/**
- * <p>RevRecTemplateSearchBasic complex type的 Java 类。
- * 
- * <p>以下模式片段指定包含在此类中的预期内容。
- * 
- * <pre>
- * &lt;complexType name="RevRecTemplateSearchBasic">
- *   &lt;complexContent>
- *     &lt;extension base="{urn:core_2018_2.platform.webservices.netsuite.com}SearchRecordBasic">
- *       &lt;sequence>
- *         &lt;element name="amorMethod" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchEnumMultiSelectField" minOccurs="0"/>
- *         &lt;element name="amorPeriod" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchLongField" minOccurs="0"/>
- *         &lt;element name="amorStartOffset" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchLongField" minOccurs="0"/>
- *         &lt;element name="amorTermSrc" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchEnumMultiSelectField" minOccurs="0"/>
- *         &lt;element name="amorType" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchEnumMultiSelectField" minOccurs="0"/>
- *         &lt;element name="contraAccount" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchMultiSelectField" minOccurs="0"/>
- *         &lt;element name="deferralAccount" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchMultiSelectField" minOccurs="0"/>
- *         &lt;element name="externalId" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchMultiSelectField" minOccurs="0"/>
- *         &lt;element name="externalIdString" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchStringField" minOccurs="0"/>
- *         &lt;element name="internalId" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchMultiSelectField" minOccurs="0"/>
- *         &lt;element name="internalIdNumber" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchLongField" minOccurs="0"/>
- *         &lt;element name="isInactive" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchBooleanField" minOccurs="0"/>
- *         &lt;element name="name" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchStringField" minOccurs="0"/>
- *         &lt;element name="periodOffset" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchLongField" minOccurs="0"/>
- *         &lt;element name="targetAccount" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchMultiSelectField" minOccurs="0"/>
- *         &lt;element name="useForeignAmounts" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchBooleanField" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/extension>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
- */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "RevRecTemplateSearchBasic", propOrder = {
-    "amorMethod",
-    "amorPeriod",
-    "amorStartOffset",
-    "amorTermSrc",
-    "amorType",
-    "contraAccount",
-    "deferralAccount",
-    "externalId",
-    "externalIdString",
-    "internalId",
-    "internalIdNumber",
-    "isInactive",
-    "name",
-    "periodOffset",
-    "targetAccount",
-    "useForeignAmounts"
-})
-public class RevRecTemplateSearchBasic
-    extends SearchRecordBasic
-{
+    private com.netsuite.webservices.platform.core_2018_2.SearchLongField amorStartOffset;
 
-    protected SearchEnumMultiSelectField amorMethod;
-    protected SearchLongField amorPeriod;
-    protected SearchLongField amorStartOffset;
-    protected SearchEnumMultiSelectField amorTermSrc;
-    protected SearchEnumMultiSelectField amorType;
-    protected SearchMultiSelectField contraAccount;
-    protected SearchMultiSelectField deferralAccount;
-    protected SearchMultiSelectField externalId;
-    protected SearchStringField externalIdString;
-    protected SearchMultiSelectField internalId;
-    protected SearchLongField internalIdNumber;
-    protected SearchBooleanField isInactive;
-    protected SearchStringField name;
-    protected SearchLongField periodOffset;
-    protected SearchMultiSelectField targetAccount;
-    protected SearchBooleanField useForeignAmounts;
+    private java.lang.String[] amorTermSrc;
+
+    private java.lang.String[] amorType;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef[] contraAccount;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef[] deferralAccount;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef[] externalId;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchStringField externalIdString;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef[] internalId;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchLongField internalIdNumber;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchBooleanField isInactive;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchStringField name;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchLongField periodOffset;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef[] targetAccount;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchBooleanField useForeignAmounts;
+
+    public RevRecTemplateSearchBasic() {
+    }
+
+    public RevRecTemplateSearchBasic(
+           java.lang.String[] amorMethod,
+           com.netsuite.webservices.platform.core_2018_2.SearchLongField amorPeriod,
+           com.netsuite.webservices.platform.core_2018_2.SearchLongField amorStartOffset,
+           java.lang.String[] amorTermSrc,
+           java.lang.String[] amorType,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef[] contraAccount,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef[] deferralAccount,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef[] externalId,
+           com.netsuite.webservices.platform.core_2018_2.SearchStringField externalIdString,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef[] internalId,
+           com.netsuite.webservices.platform.core_2018_2.SearchLongField internalIdNumber,
+           com.netsuite.webservices.platform.core_2018_2.SearchBooleanField isInactive,
+           com.netsuite.webservices.platform.core_2018_2.SearchStringField name,
+           com.netsuite.webservices.platform.core_2018_2.SearchLongField periodOffset,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef[] targetAccount,
+           com.netsuite.webservices.platform.core_2018_2.SearchBooleanField useForeignAmounts) {
+        this.amorMethod = amorMethod;
+        this.amorPeriod = amorPeriod;
+        this.amorStartOffset = amorStartOffset;
+        this.amorTermSrc = amorTermSrc;
+        this.amorType = amorType;
+        this.contraAccount = contraAccount;
+        this.deferralAccount = deferralAccount;
+        this.externalId = externalId;
+        this.externalIdString = externalIdString;
+        this.internalId = internalId;
+        this.internalIdNumber = internalIdNumber;
+        this.isInactive = isInactive;
+        this.name = name;
+        this.periodOffset = periodOffset;
+        this.targetAccount = targetAccount;
+        this.useForeignAmounts = useForeignAmounts;
+    }
+
 
     /**
-     * 获取amorMethod属性的值。
+     * Gets the amorMethod value for this RevRecTemplateSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchEnumMultiSelectField }
-     *     
+     * @return amorMethod
      */
-    public SearchEnumMultiSelectField getAmorMethod() {
+    public java.lang.String[] getAmorMethod() {
         return amorMethod;
     }
 
-    /**
-     * 设置amorMethod属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchEnumMultiSelectField }
-     *     
-     */
-    public void setAmorMethod(SearchEnumMultiSelectField value) {
-        this.amorMethod = value;
-    }
 
     /**
-     * 获取amorPeriod属性的值。
+     * Sets the amorMethod value for this RevRecTemplateSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchLongField }
-     *     
+     * @param amorMethod
      */
-    public SearchLongField getAmorPeriod() {
+    public void setAmorMethod(java.lang.String[] amorMethod) {
+        this.amorMethod = amorMethod;
+    }
+
+
+    /**
+     * Gets the amorPeriod value for this RevRecTemplateSearchBasic.
+     * 
+     * @return amorPeriod
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchLongField getAmorPeriod() {
         return amorPeriod;
     }
 
-    /**
-     * 设置amorPeriod属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchLongField }
-     *     
-     */
-    public void setAmorPeriod(SearchLongField value) {
-        this.amorPeriod = value;
-    }
 
     /**
-     * 获取amorStartOffset属性的值。
+     * Sets the amorPeriod value for this RevRecTemplateSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchLongField }
-     *     
+     * @param amorPeriod
      */
-    public SearchLongField getAmorStartOffset() {
+    public void setAmorPeriod(com.netsuite.webservices.platform.core_2018_2.SearchLongField amorPeriod) {
+        this.amorPeriod = amorPeriod;
+    }
+
+
+    /**
+     * Gets the amorStartOffset value for this RevRecTemplateSearchBasic.
+     * 
+     * @return amorStartOffset
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchLongField getAmorStartOffset() {
         return amorStartOffset;
     }
 
-    /**
-     * 设置amorStartOffset属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchLongField }
-     *     
-     */
-    public void setAmorStartOffset(SearchLongField value) {
-        this.amorStartOffset = value;
-    }
 
     /**
-     * 获取amorTermSrc属性的值。
+     * Sets the amorStartOffset value for this RevRecTemplateSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchEnumMultiSelectField }
-     *     
+     * @param amorStartOffset
      */
-    public SearchEnumMultiSelectField getAmorTermSrc() {
+    public void setAmorStartOffset(com.netsuite.webservices.platform.core_2018_2.SearchLongField amorStartOffset) {
+        this.amorStartOffset = amorStartOffset;
+    }
+
+
+    /**
+     * Gets the amorTermSrc value for this RevRecTemplateSearchBasic.
+     * 
+     * @return amorTermSrc
+     */
+    public java.lang.String[] getAmorTermSrc() {
         return amorTermSrc;
     }
 
-    /**
-     * 设置amorTermSrc属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchEnumMultiSelectField }
-     *     
-     */
-    public void setAmorTermSrc(SearchEnumMultiSelectField value) {
-        this.amorTermSrc = value;
-    }
 
     /**
-     * 获取amorType属性的值。
+     * Sets the amorTermSrc value for this RevRecTemplateSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchEnumMultiSelectField }
-     *     
+     * @param amorTermSrc
      */
-    public SearchEnumMultiSelectField getAmorType() {
+    public void setAmorTermSrc(java.lang.String[] amorTermSrc) {
+        this.amorTermSrc = amorTermSrc;
+    }
+
+
+    /**
+     * Gets the amorType value for this RevRecTemplateSearchBasic.
+     * 
+     * @return amorType
+     */
+    public java.lang.String[] getAmorType() {
         return amorType;
     }
 
-    /**
-     * 设置amorType属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchEnumMultiSelectField }
-     *     
-     */
-    public void setAmorType(SearchEnumMultiSelectField value) {
-        this.amorType = value;
-    }
 
     /**
-     * 获取contraAccount属性的值。
+     * Sets the amorType value for this RevRecTemplateSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchMultiSelectField }
-     *     
+     * @param amorType
      */
-    public SearchMultiSelectField getContraAccount() {
+    public void setAmorType(java.lang.String[] amorType) {
+        this.amorType = amorType;
+    }
+
+
+    /**
+     * Gets the contraAccount value for this RevRecTemplateSearchBasic.
+     * 
+     * @return contraAccount
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef[] getContraAccount() {
         return contraAccount;
     }
 
-    /**
-     * 设置contraAccount属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchMultiSelectField }
-     *     
-     */
-    public void setContraAccount(SearchMultiSelectField value) {
-        this.contraAccount = value;
-    }
 
     /**
-     * 获取deferralAccount属性的值。
+     * Sets the contraAccount value for this RevRecTemplateSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchMultiSelectField }
-     *     
+     * @param contraAccount
      */
-    public SearchMultiSelectField getDeferralAccount() {
+    public void setContraAccount(com.netsuite.webservices.platform.core_2018_2.RecordRef[] contraAccount) {
+        this.contraAccount = contraAccount;
+    }
+
+
+    /**
+     * Gets the deferralAccount value for this RevRecTemplateSearchBasic.
+     * 
+     * @return deferralAccount
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef[] getDeferralAccount() {
         return deferralAccount;
     }
 
-    /**
-     * 设置deferralAccount属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchMultiSelectField }
-     *     
-     */
-    public void setDeferralAccount(SearchMultiSelectField value) {
-        this.deferralAccount = value;
-    }
 
     /**
-     * 获取externalId属性的值。
+     * Sets the deferralAccount value for this RevRecTemplateSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchMultiSelectField }
-     *     
+     * @param deferralAccount
      */
-    public SearchMultiSelectField getExternalId() {
+    public void setDeferralAccount(com.netsuite.webservices.platform.core_2018_2.RecordRef[] deferralAccount) {
+        this.deferralAccount = deferralAccount;
+    }
+
+
+    /**
+     * Gets the externalId value for this RevRecTemplateSearchBasic.
+     * 
+     * @return externalId
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef[] getExternalId() {
         return externalId;
     }
 
-    /**
-     * 设置externalId属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchMultiSelectField }
-     *     
-     */
-    public void setExternalId(SearchMultiSelectField value) {
-        this.externalId = value;
-    }
 
     /**
-     * 获取externalIdString属性的值。
+     * Sets the externalId value for this RevRecTemplateSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchStringField }
-     *     
+     * @param externalId
      */
-    public SearchStringField getExternalIdString() {
+    public void setExternalId(com.netsuite.webservices.platform.core_2018_2.RecordRef[] externalId) {
+        this.externalId = externalId;
+    }
+
+
+    /**
+     * Gets the externalIdString value for this RevRecTemplateSearchBasic.
+     * 
+     * @return externalIdString
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchStringField getExternalIdString() {
         return externalIdString;
     }
 
-    /**
-     * 设置externalIdString属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchStringField }
-     *     
-     */
-    public void setExternalIdString(SearchStringField value) {
-        this.externalIdString = value;
-    }
 
     /**
-     * 获取internalId属性的值。
+     * Sets the externalIdString value for this RevRecTemplateSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchMultiSelectField }
-     *     
+     * @param externalIdString
      */
-    public SearchMultiSelectField getInternalId() {
+    public void setExternalIdString(com.netsuite.webservices.platform.core_2018_2.SearchStringField externalIdString) {
+        this.externalIdString = externalIdString;
+    }
+
+
+    /**
+     * Gets the internalId value for this RevRecTemplateSearchBasic.
+     * 
+     * @return internalId
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef[] getInternalId() {
         return internalId;
     }
 
-    /**
-     * 设置internalId属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchMultiSelectField }
-     *     
-     */
-    public void setInternalId(SearchMultiSelectField value) {
-        this.internalId = value;
-    }
 
     /**
-     * 获取internalIdNumber属性的值。
+     * Sets the internalId value for this RevRecTemplateSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchLongField }
-     *     
+     * @param internalId
      */
-    public SearchLongField getInternalIdNumber() {
+    public void setInternalId(com.netsuite.webservices.platform.core_2018_2.RecordRef[] internalId) {
+        this.internalId = internalId;
+    }
+
+
+    /**
+     * Gets the internalIdNumber value for this RevRecTemplateSearchBasic.
+     * 
+     * @return internalIdNumber
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchLongField getInternalIdNumber() {
         return internalIdNumber;
     }
 
-    /**
-     * 设置internalIdNumber属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchLongField }
-     *     
-     */
-    public void setInternalIdNumber(SearchLongField value) {
-        this.internalIdNumber = value;
-    }
 
     /**
-     * 获取isInactive属性的值。
+     * Sets the internalIdNumber value for this RevRecTemplateSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchBooleanField }
-     *     
+     * @param internalIdNumber
      */
-    public SearchBooleanField getIsInactive() {
+    public void setInternalIdNumber(com.netsuite.webservices.platform.core_2018_2.SearchLongField internalIdNumber) {
+        this.internalIdNumber = internalIdNumber;
+    }
+
+
+    /**
+     * Gets the isInactive value for this RevRecTemplateSearchBasic.
+     * 
+     * @return isInactive
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchBooleanField getIsInactive() {
         return isInactive;
     }
 
-    /**
-     * 设置isInactive属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchBooleanField }
-     *     
-     */
-    public void setIsInactive(SearchBooleanField value) {
-        this.isInactive = value;
-    }
 
     /**
-     * 获取name属性的值。
+     * Sets the isInactive value for this RevRecTemplateSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchStringField }
-     *     
+     * @param isInactive
      */
-    public SearchStringField getName() {
+    public void setIsInactive(com.netsuite.webservices.platform.core_2018_2.SearchBooleanField isInactive) {
+        this.isInactive = isInactive;
+    }
+
+
+    /**
+     * Gets the name value for this RevRecTemplateSearchBasic.
+     * 
+     * @return name
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchStringField getName() {
         return name;
     }
 
-    /**
-     * 设置name属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchStringField }
-     *     
-     */
-    public void setName(SearchStringField value) {
-        this.name = value;
-    }
 
     /**
-     * 获取periodOffset属性的值。
+     * Sets the name value for this RevRecTemplateSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchLongField }
-     *     
+     * @param name
      */
-    public SearchLongField getPeriodOffset() {
+    public void setName(com.netsuite.webservices.platform.core_2018_2.SearchStringField name) {
+        this.name = name;
+    }
+
+
+    /**
+     * Gets the periodOffset value for this RevRecTemplateSearchBasic.
+     * 
+     * @return periodOffset
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchLongField getPeriodOffset() {
         return periodOffset;
     }
 
-    /**
-     * 设置periodOffset属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchLongField }
-     *     
-     */
-    public void setPeriodOffset(SearchLongField value) {
-        this.periodOffset = value;
-    }
 
     /**
-     * 获取targetAccount属性的值。
+     * Sets the periodOffset value for this RevRecTemplateSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchMultiSelectField }
-     *     
+     * @param periodOffset
      */
-    public SearchMultiSelectField getTargetAccount() {
+    public void setPeriodOffset(com.netsuite.webservices.platform.core_2018_2.SearchLongField periodOffset) {
+        this.periodOffset = periodOffset;
+    }
+
+
+    /**
+     * Gets the targetAccount value for this RevRecTemplateSearchBasic.
+     * 
+     * @return targetAccount
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef[] getTargetAccount() {
         return targetAccount;
     }
 
-    /**
-     * 设置targetAccount属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchMultiSelectField }
-     *     
-     */
-    public void setTargetAccount(SearchMultiSelectField value) {
-        this.targetAccount = value;
-    }
 
     /**
-     * 获取useForeignAmounts属性的值。
+     * Sets the targetAccount value for this RevRecTemplateSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchBooleanField }
-     *     
+     * @param targetAccount
      */
-    public SearchBooleanField getUseForeignAmounts() {
+    public void setTargetAccount(com.netsuite.webservices.platform.core_2018_2.RecordRef[] targetAccount) {
+        this.targetAccount = targetAccount;
+    }
+
+
+    /**
+     * Gets the useForeignAmounts value for this RevRecTemplateSearchBasic.
+     * 
+     * @return useForeignAmounts
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchBooleanField getUseForeignAmounts() {
         return useForeignAmounts;
     }
 
+
     /**
-     * 设置useForeignAmounts属性的值。
+     * Sets the useForeignAmounts value for this RevRecTemplateSearchBasic.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchBooleanField }
-     *     
+     * @param useForeignAmounts
      */
-    public void setUseForeignAmounts(SearchBooleanField value) {
-        this.useForeignAmounts = value;
+    public void setUseForeignAmounts(com.netsuite.webservices.platform.core_2018_2.SearchBooleanField useForeignAmounts) {
+        this.useForeignAmounts = useForeignAmounts;
+    }
+
+    private java.lang.Object __equalsCalc = null;
+    public synchronized boolean equals(java.lang.Object obj) {
+        if (!(obj instanceof RevRecTemplateSearchBasic)) return false;
+        RevRecTemplateSearchBasic other = (RevRecTemplateSearchBasic) obj;
+        if (obj == null) return false;
+        if (this == obj) return true;
+        if (__equalsCalc != null) {
+            return (__equalsCalc == obj);
+        }
+        __equalsCalc = obj;
+        boolean _equals;
+        _equals = super.equals(obj) && 
+            ((this.amorMethod==null && other.getAmorMethod()==null) || 
+             (this.amorMethod!=null &&
+              java.util.Arrays.equals(this.amorMethod, other.getAmorMethod()))) &&
+            ((this.amorPeriod==null && other.getAmorPeriod()==null) || 
+             (this.amorPeriod!=null &&
+              this.amorPeriod.equals(other.getAmorPeriod()))) &&
+            ((this.amorStartOffset==null && other.getAmorStartOffset()==null) || 
+             (this.amorStartOffset!=null &&
+              this.amorStartOffset.equals(other.getAmorStartOffset()))) &&
+            ((this.amorTermSrc==null && other.getAmorTermSrc()==null) || 
+             (this.amorTermSrc!=null &&
+              java.util.Arrays.equals(this.amorTermSrc, other.getAmorTermSrc()))) &&
+            ((this.amorType==null && other.getAmorType()==null) || 
+             (this.amorType!=null &&
+              java.util.Arrays.equals(this.amorType, other.getAmorType()))) &&
+            ((this.contraAccount==null && other.getContraAccount()==null) || 
+             (this.contraAccount!=null &&
+              java.util.Arrays.equals(this.contraAccount, other.getContraAccount()))) &&
+            ((this.deferralAccount==null && other.getDeferralAccount()==null) || 
+             (this.deferralAccount!=null &&
+              java.util.Arrays.equals(this.deferralAccount, other.getDeferralAccount()))) &&
+            ((this.externalId==null && other.getExternalId()==null) || 
+             (this.externalId!=null &&
+              java.util.Arrays.equals(this.externalId, other.getExternalId()))) &&
+            ((this.externalIdString==null && other.getExternalIdString()==null) || 
+             (this.externalIdString!=null &&
+              this.externalIdString.equals(other.getExternalIdString()))) &&
+            ((this.internalId==null && other.getInternalId()==null) || 
+             (this.internalId!=null &&
+              java.util.Arrays.equals(this.internalId, other.getInternalId()))) &&
+            ((this.internalIdNumber==null && other.getInternalIdNumber()==null) || 
+             (this.internalIdNumber!=null &&
+              this.internalIdNumber.equals(other.getInternalIdNumber()))) &&
+            ((this.isInactive==null && other.getIsInactive()==null) || 
+             (this.isInactive!=null &&
+              this.isInactive.equals(other.getIsInactive()))) &&
+            ((this.name==null && other.getName()==null) || 
+             (this.name!=null &&
+              this.name.equals(other.getName()))) &&
+            ((this.periodOffset==null && other.getPeriodOffset()==null) || 
+             (this.periodOffset!=null &&
+              this.periodOffset.equals(other.getPeriodOffset()))) &&
+            ((this.targetAccount==null && other.getTargetAccount()==null) || 
+             (this.targetAccount!=null &&
+              java.util.Arrays.equals(this.targetAccount, other.getTargetAccount()))) &&
+            ((this.useForeignAmounts==null && other.getUseForeignAmounts()==null) || 
+             (this.useForeignAmounts!=null &&
+              this.useForeignAmounts.equals(other.getUseForeignAmounts())));
+        __equalsCalc = null;
+        return _equals;
+    }
+
+    private boolean __hashCodeCalc = false;
+    public synchronized int hashCode() {
+        if (__hashCodeCalc) {
+            return 0;
+        }
+        __hashCodeCalc = true;
+        int _hashCode = super.hashCode();
+        if (getAmorMethod() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getAmorMethod());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getAmorMethod(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getAmorPeriod() != null) {
+            _hashCode += getAmorPeriod().hashCode();
+        }
+        if (getAmorStartOffset() != null) {
+            _hashCode += getAmorStartOffset().hashCode();
+        }
+        if (getAmorTermSrc() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getAmorTermSrc());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getAmorTermSrc(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getAmorType() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getAmorType());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getAmorType(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getContraAccount() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getContraAccount());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getContraAccount(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getDeferralAccount() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getDeferralAccount());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getDeferralAccount(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getExternalId() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getExternalId());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getExternalId(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getExternalIdString() != null) {
+            _hashCode += getExternalIdString().hashCode();
+        }
+        if (getInternalId() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getInternalId());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getInternalId(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getInternalIdNumber() != null) {
+            _hashCode += getInternalIdNumber().hashCode();
+        }
+        if (getIsInactive() != null) {
+            _hashCode += getIsInactive().hashCode();
+        }
+        if (getName() != null) {
+            _hashCode += getName().hashCode();
+        }
+        if (getPeriodOffset() != null) {
+            _hashCode += getPeriodOffset().hashCode();
+        }
+        if (getTargetAccount() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getTargetAccount());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getTargetAccount(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getUseForeignAmounts() != null) {
+            _hashCode += getUseForeignAmounts().hashCode();
+        }
+        __hashCodeCalc = false;
+        return _hashCode;
+    }
+
+    // Type metadata
+    private static org.apache.axis.description.TypeDesc typeDesc =
+        new org.apache.axis.description.TypeDesc(RevRecTemplateSearchBasic.class, true);
+
+    static {
+        typeDesc.setXmlType(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "RevRecTemplateSearchBasic"));
+        org.apache.axis.description.ElementDesc elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("amorMethod");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "amorMethod"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "searchValue"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("amorPeriod");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "amorPeriod"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchLongField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("amorStartOffset");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "amorStartOffset"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchLongField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("amorTermSrc");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "amorTermSrc"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "searchValue"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("amorType");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "amorType"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "searchValue"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("contraAccount");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "contraAccount"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "searchValue"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("deferralAccount");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "deferralAccount"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "searchValue"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("externalId");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "externalId"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "searchValue"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("externalIdString");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "externalIdString"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchStringField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("internalId");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "internalId"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "searchValue"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("internalIdNumber");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "internalIdNumber"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchLongField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("isInactive");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "isInactive"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchBooleanField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("name");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "name"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchStringField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("periodOffset");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "periodOffset"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchLongField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("targetAccount");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "targetAccount"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "searchValue"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("useForeignAmounts");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "useForeignAmounts"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchBooleanField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+    }
+
+    /**
+     * Return type metadata object
+     */
+    public static org.apache.axis.description.TypeDesc getTypeDesc() {
+        return typeDesc;
+    }
+
+    /**
+     * Get Custom Serializer
+     */
+    public static org.apache.axis.encoding.Serializer getSerializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanSerializer(
+            _javaType, _xmlType, typeDesc);
+    }
+
+    /**
+     * Get Custom Deserializer
+     */
+    public static org.apache.axis.encoding.Deserializer getDeserializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanDeserializer(
+            _javaType, _xmlType, typeDesc);
     }
 
 }

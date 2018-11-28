@@ -1,452 +1,655 @@
+/**
+ * InboundShipment.java
+ *
+ * This file was auto-generated from WSDL
+ * by the Apache Axis 1.4 Jul 28, 2010 (04:07:04 PDT) WSDL2Java emitter.
+ */
 
 package com.netsuite.webservices.transactions.purchases_2018_2;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlAttribute;
-import javax.xml.bind.annotation.XmlSchemaType;
-import javax.xml.bind.annotation.XmlType;
-import javax.xml.datatype.XMLGregorianCalendar;
-import com.netsuite.webservices.platform.core_2018_2.CustomFieldList;
-import com.netsuite.webservices.platform.core_2018_2.Record;
-import com.netsuite.webservices.platform.core_2018_2.RecordRef;
-import com.netsuite.webservices.transactions.purchases_2018_2.types.InboundShipmentShipmentStatus;
+public class InboundShipment  extends com.netsuite.webservices.platform.core_2018_2.Record  implements java.io.Serializable {
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef customForm;
 
+    private java.lang.String shipmentNumber;
 
-/**
- * <p>InboundShipment complex type的 Java 类。
- * 
- * <p>以下模式片段指定包含在此类中的预期内容。
- * 
- * <pre>
- * &lt;complexType name="InboundShipment">
- *   &lt;complexContent>
- *     &lt;extension base="{urn:core_2018_2.platform.webservices.netsuite.com}Record">
- *       &lt;sequence>
- *         &lt;element name="customForm" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="shipmentNumber" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="externalDocumentNumber" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="shipmentStatus" type="{urn:types.purchases_2018_2.transactions.webservices.netsuite.com}InboundShipmentShipmentStatus" minOccurs="0"/>
- *         &lt;element name="expectedShippingDate" type="{http://www.w3.org/2001/XMLSchema}dateTime" minOccurs="0"/>
- *         &lt;element name="actualShippingDate" type="{http://www.w3.org/2001/XMLSchema}dateTime" minOccurs="0"/>
- *         &lt;element name="expectedDeliveryDate" type="{http://www.w3.org/2001/XMLSchema}dateTime" minOccurs="0"/>
- *         &lt;element name="actualDeliveryDate" type="{http://www.w3.org/2001/XMLSchema}dateTime" minOccurs="0"/>
- *         &lt;element name="shipmentMemo" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="vesselNumber" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="billOfLading" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="itemsList" type="{urn:purchases_2018_2.transactions.webservices.netsuite.com}InboundShipmentItemsList" minOccurs="0"/>
- *         &lt;element name="customFieldList" type="{urn:core_2018_2.platform.webservices.netsuite.com}CustomFieldList" minOccurs="0"/>
- *       &lt;/sequence>
- *       &lt;attribute name="internalId" type="{http://www.w3.org/2001/XMLSchema}string" />
- *       &lt;attribute name="externalId" type="{http://www.w3.org/2001/XMLSchema}string" />
- *     &lt;/extension>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
- */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "InboundShipment", propOrder = {
-    "customForm",
-    "shipmentNumber",
-    "externalDocumentNumber",
-    "shipmentStatus",
-    "expectedShippingDate",
-    "actualShippingDate",
-    "expectedDeliveryDate",
-    "actualDeliveryDate",
-    "shipmentMemo",
-    "vesselNumber",
-    "billOfLading",
-    "itemsList",
-    "customFieldList"
-})
-public class InboundShipment
-    extends Record
-{
+    private java.lang.String externalDocumentNumber;
 
-    protected RecordRef customForm;
-    protected String shipmentNumber;
-    protected String externalDocumentNumber;
-    @XmlSchemaType(name = "string")
-    protected InboundShipmentShipmentStatus shipmentStatus;
-    @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar expectedShippingDate;
-    @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar actualShippingDate;
-    @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar expectedDeliveryDate;
-    @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar actualDeliveryDate;
-    protected String shipmentMemo;
-    protected String vesselNumber;
-    protected String billOfLading;
-    protected InboundShipmentItemsList itemsList;
-    protected CustomFieldList customFieldList;
-    @XmlAttribute(name = "internalId")
-    protected String internalId;
-    @XmlAttribute(name = "externalId")
-    protected String externalId;
+    private com.netsuite.webservices.transactions.purchases_2018_2.types.InboundShipmentShipmentStatus shipmentStatus;
+
+    private java.util.Calendar expectedShippingDate;
+
+    private java.util.Calendar actualShippingDate;
+
+    private java.util.Calendar expectedDeliveryDate;
+
+    private java.util.Calendar actualDeliveryDate;
+
+    private java.lang.String shipmentMemo;
+
+    private java.lang.String vesselNumber;
+
+    private java.lang.String billOfLading;
+
+    private com.netsuite.webservices.transactions.purchases_2018_2.InboundShipmentItems[] itemsList;
+
+    private com.netsuite.webservices.platform.core_2018_2.CustomFieldRef[] customFieldList;
+
+    private java.lang.String internalId;  // attribute
+
+    private java.lang.String externalId;  // attribute
+
+    public InboundShipment() {
+    }
+
+    public InboundShipment(
+           java.lang.String[] nullFieldList,
+           java.lang.String internalId,
+           java.lang.String externalId,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef customForm,
+           java.lang.String shipmentNumber,
+           java.lang.String externalDocumentNumber,
+           com.netsuite.webservices.transactions.purchases_2018_2.types.InboundShipmentShipmentStatus shipmentStatus,
+           java.util.Calendar expectedShippingDate,
+           java.util.Calendar actualShippingDate,
+           java.util.Calendar expectedDeliveryDate,
+           java.util.Calendar actualDeliveryDate,
+           java.lang.String shipmentMemo,
+           java.lang.String vesselNumber,
+           java.lang.String billOfLading,
+           com.netsuite.webservices.transactions.purchases_2018_2.InboundShipmentItems[] itemsList,
+           com.netsuite.webservices.platform.core_2018_2.CustomFieldRef[] customFieldList) {
+        super(
+            nullFieldList);
+        this.internalId = internalId;
+        this.externalId = externalId;
+        this.customForm = customForm;
+        this.shipmentNumber = shipmentNumber;
+        this.externalDocumentNumber = externalDocumentNumber;
+        this.shipmentStatus = shipmentStatus;
+        this.expectedShippingDate = expectedShippingDate;
+        this.actualShippingDate = actualShippingDate;
+        this.expectedDeliveryDate = expectedDeliveryDate;
+        this.actualDeliveryDate = actualDeliveryDate;
+        this.shipmentMemo = shipmentMemo;
+        this.vesselNumber = vesselNumber;
+        this.billOfLading = billOfLading;
+        this.itemsList = itemsList;
+        this.customFieldList = customFieldList;
+    }
+
 
     /**
-     * 获取customForm属性的值。
+     * Gets the customForm value for this InboundShipment.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @return customForm
      */
-    public RecordRef getCustomForm() {
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getCustomForm() {
         return customForm;
     }
 
-    /**
-     * 设置customForm属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setCustomForm(RecordRef value) {
-        this.customForm = value;
-    }
 
     /**
-     * 获取shipmentNumber属性的值。
+     * Sets the customForm value for this InboundShipment.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param customForm
      */
-    public String getShipmentNumber() {
+    public void setCustomForm(com.netsuite.webservices.platform.core_2018_2.RecordRef customForm) {
+        this.customForm = customForm;
+    }
+
+
+    /**
+     * Gets the shipmentNumber value for this InboundShipment.
+     * 
+     * @return shipmentNumber
+     */
+    public java.lang.String getShipmentNumber() {
         return shipmentNumber;
     }
 
-    /**
-     * 设置shipmentNumber属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setShipmentNumber(String value) {
-        this.shipmentNumber = value;
-    }
 
     /**
-     * 获取externalDocumentNumber属性的值。
+     * Sets the shipmentNumber value for this InboundShipment.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param shipmentNumber
      */
-    public String getExternalDocumentNumber() {
+    public void setShipmentNumber(java.lang.String shipmentNumber) {
+        this.shipmentNumber = shipmentNumber;
+    }
+
+
+    /**
+     * Gets the externalDocumentNumber value for this InboundShipment.
+     * 
+     * @return externalDocumentNumber
+     */
+    public java.lang.String getExternalDocumentNumber() {
         return externalDocumentNumber;
     }
 
-    /**
-     * 设置externalDocumentNumber属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setExternalDocumentNumber(String value) {
-        this.externalDocumentNumber = value;
-    }
 
     /**
-     * 获取shipmentStatus属性的值。
+     * Sets the externalDocumentNumber value for this InboundShipment.
      * 
-     * @return
-     *     possible object is
-     *     {@link InboundShipmentShipmentStatus }
-     *     
+     * @param externalDocumentNumber
      */
-    public InboundShipmentShipmentStatus getShipmentStatus() {
+    public void setExternalDocumentNumber(java.lang.String externalDocumentNumber) {
+        this.externalDocumentNumber = externalDocumentNumber;
+    }
+
+
+    /**
+     * Gets the shipmentStatus value for this InboundShipment.
+     * 
+     * @return shipmentStatus
+     */
+    public com.netsuite.webservices.transactions.purchases_2018_2.types.InboundShipmentShipmentStatus getShipmentStatus() {
         return shipmentStatus;
     }
 
-    /**
-     * 设置shipmentStatus属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link InboundShipmentShipmentStatus }
-     *     
-     */
-    public void setShipmentStatus(InboundShipmentShipmentStatus value) {
-        this.shipmentStatus = value;
-    }
 
     /**
-     * 获取expectedShippingDate属性的值。
+     * Sets the shipmentStatus value for this InboundShipment.
      * 
-     * @return
-     *     possible object is
-     *     {@link XMLGregorianCalendar }
-     *     
+     * @param shipmentStatus
      */
-    public XMLGregorianCalendar getExpectedShippingDate() {
+    public void setShipmentStatus(com.netsuite.webservices.transactions.purchases_2018_2.types.InboundShipmentShipmentStatus shipmentStatus) {
+        this.shipmentStatus = shipmentStatus;
+    }
+
+
+    /**
+     * Gets the expectedShippingDate value for this InboundShipment.
+     * 
+     * @return expectedShippingDate
+     */
+    public java.util.Calendar getExpectedShippingDate() {
         return expectedShippingDate;
     }
 
-    /**
-     * 设置expectedShippingDate属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link XMLGregorianCalendar }
-     *     
-     */
-    public void setExpectedShippingDate(XMLGregorianCalendar value) {
-        this.expectedShippingDate = value;
-    }
 
     /**
-     * 获取actualShippingDate属性的值。
+     * Sets the expectedShippingDate value for this InboundShipment.
      * 
-     * @return
-     *     possible object is
-     *     {@link XMLGregorianCalendar }
-     *     
+     * @param expectedShippingDate
      */
-    public XMLGregorianCalendar getActualShippingDate() {
+    public void setExpectedShippingDate(java.util.Calendar expectedShippingDate) {
+        this.expectedShippingDate = expectedShippingDate;
+    }
+
+
+    /**
+     * Gets the actualShippingDate value for this InboundShipment.
+     * 
+     * @return actualShippingDate
+     */
+    public java.util.Calendar getActualShippingDate() {
         return actualShippingDate;
     }
 
-    /**
-     * 设置actualShippingDate属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link XMLGregorianCalendar }
-     *     
-     */
-    public void setActualShippingDate(XMLGregorianCalendar value) {
-        this.actualShippingDate = value;
-    }
 
     /**
-     * 获取expectedDeliveryDate属性的值。
+     * Sets the actualShippingDate value for this InboundShipment.
      * 
-     * @return
-     *     possible object is
-     *     {@link XMLGregorianCalendar }
-     *     
+     * @param actualShippingDate
      */
-    public XMLGregorianCalendar getExpectedDeliveryDate() {
+    public void setActualShippingDate(java.util.Calendar actualShippingDate) {
+        this.actualShippingDate = actualShippingDate;
+    }
+
+
+    /**
+     * Gets the expectedDeliveryDate value for this InboundShipment.
+     * 
+     * @return expectedDeliveryDate
+     */
+    public java.util.Calendar getExpectedDeliveryDate() {
         return expectedDeliveryDate;
     }
 
-    /**
-     * 设置expectedDeliveryDate属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link XMLGregorianCalendar }
-     *     
-     */
-    public void setExpectedDeliveryDate(XMLGregorianCalendar value) {
-        this.expectedDeliveryDate = value;
-    }
 
     /**
-     * 获取actualDeliveryDate属性的值。
+     * Sets the expectedDeliveryDate value for this InboundShipment.
      * 
-     * @return
-     *     possible object is
-     *     {@link XMLGregorianCalendar }
-     *     
+     * @param expectedDeliveryDate
      */
-    public XMLGregorianCalendar getActualDeliveryDate() {
+    public void setExpectedDeliveryDate(java.util.Calendar expectedDeliveryDate) {
+        this.expectedDeliveryDate = expectedDeliveryDate;
+    }
+
+
+    /**
+     * Gets the actualDeliveryDate value for this InboundShipment.
+     * 
+     * @return actualDeliveryDate
+     */
+    public java.util.Calendar getActualDeliveryDate() {
         return actualDeliveryDate;
     }
 
-    /**
-     * 设置actualDeliveryDate属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link XMLGregorianCalendar }
-     *     
-     */
-    public void setActualDeliveryDate(XMLGregorianCalendar value) {
-        this.actualDeliveryDate = value;
-    }
 
     /**
-     * 获取shipmentMemo属性的值。
+     * Sets the actualDeliveryDate value for this InboundShipment.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param actualDeliveryDate
      */
-    public String getShipmentMemo() {
+    public void setActualDeliveryDate(java.util.Calendar actualDeliveryDate) {
+        this.actualDeliveryDate = actualDeliveryDate;
+    }
+
+
+    /**
+     * Gets the shipmentMemo value for this InboundShipment.
+     * 
+     * @return shipmentMemo
+     */
+    public java.lang.String getShipmentMemo() {
         return shipmentMemo;
     }
 
-    /**
-     * 设置shipmentMemo属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setShipmentMemo(String value) {
-        this.shipmentMemo = value;
-    }
 
     /**
-     * 获取vesselNumber属性的值。
+     * Sets the shipmentMemo value for this InboundShipment.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param shipmentMemo
      */
-    public String getVesselNumber() {
+    public void setShipmentMemo(java.lang.String shipmentMemo) {
+        this.shipmentMemo = shipmentMemo;
+    }
+
+
+    /**
+     * Gets the vesselNumber value for this InboundShipment.
+     * 
+     * @return vesselNumber
+     */
+    public java.lang.String getVesselNumber() {
         return vesselNumber;
     }
 
-    /**
-     * 设置vesselNumber属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setVesselNumber(String value) {
-        this.vesselNumber = value;
-    }
 
     /**
-     * 获取billOfLading属性的值。
+     * Sets the vesselNumber value for this InboundShipment.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param vesselNumber
      */
-    public String getBillOfLading() {
+    public void setVesselNumber(java.lang.String vesselNumber) {
+        this.vesselNumber = vesselNumber;
+    }
+
+
+    /**
+     * Gets the billOfLading value for this InboundShipment.
+     * 
+     * @return billOfLading
+     */
+    public java.lang.String getBillOfLading() {
         return billOfLading;
     }
 
-    /**
-     * 设置billOfLading属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setBillOfLading(String value) {
-        this.billOfLading = value;
-    }
 
     /**
-     * 获取itemsList属性的值。
+     * Sets the billOfLading value for this InboundShipment.
      * 
-     * @return
-     *     possible object is
-     *     {@link InboundShipmentItemsList }
-     *     
+     * @param billOfLading
      */
-    public InboundShipmentItemsList getItemsList() {
+    public void setBillOfLading(java.lang.String billOfLading) {
+        this.billOfLading = billOfLading;
+    }
+
+
+    /**
+     * Gets the itemsList value for this InboundShipment.
+     * 
+     * @return itemsList
+     */
+    public com.netsuite.webservices.transactions.purchases_2018_2.InboundShipmentItems[] getItemsList() {
         return itemsList;
     }
 
-    /**
-     * 设置itemsList属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link InboundShipmentItemsList }
-     *     
-     */
-    public void setItemsList(InboundShipmentItemsList value) {
-        this.itemsList = value;
-    }
 
     /**
-     * 获取customFieldList属性的值。
+     * Sets the itemsList value for this InboundShipment.
      * 
-     * @return
-     *     possible object is
-     *     {@link CustomFieldList }
-     *     
+     * @param itemsList
      */
-    public CustomFieldList getCustomFieldList() {
+    public void setItemsList(com.netsuite.webservices.transactions.purchases_2018_2.InboundShipmentItems[] itemsList) {
+        this.itemsList = itemsList;
+    }
+
+
+    /**
+     * Gets the customFieldList value for this InboundShipment.
+     * 
+     * @return customFieldList
+     */
+    public com.netsuite.webservices.platform.core_2018_2.CustomFieldRef[] getCustomFieldList() {
         return customFieldList;
     }
 
-    /**
-     * 设置customFieldList属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link CustomFieldList }
-     *     
-     */
-    public void setCustomFieldList(CustomFieldList value) {
-        this.customFieldList = value;
-    }
 
     /**
-     * 获取internalId属性的值。
+     * Sets the customFieldList value for this InboundShipment.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param customFieldList
      */
-    public String getInternalId() {
+    public void setCustomFieldList(com.netsuite.webservices.platform.core_2018_2.CustomFieldRef[] customFieldList) {
+        this.customFieldList = customFieldList;
+    }
+
+
+    /**
+     * Gets the internalId value for this InboundShipment.
+     * 
+     * @return internalId
+     */
+    public java.lang.String getInternalId() {
         return internalId;
     }
 
-    /**
-     * 设置internalId属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setInternalId(String value) {
-        this.internalId = value;
-    }
 
     /**
-     * 获取externalId属性的值。
+     * Sets the internalId value for this InboundShipment.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param internalId
      */
-    public String getExternalId() {
+    public void setInternalId(java.lang.String internalId) {
+        this.internalId = internalId;
+    }
+
+
+    /**
+     * Gets the externalId value for this InboundShipment.
+     * 
+     * @return externalId
+     */
+    public java.lang.String getExternalId() {
         return externalId;
     }
 
+
     /**
-     * 设置externalId属性的值。
+     * Sets the externalId value for this InboundShipment.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     * @param externalId
      */
-    public void setExternalId(String value) {
-        this.externalId = value;
+    public void setExternalId(java.lang.String externalId) {
+        this.externalId = externalId;
+    }
+
+    private java.lang.Object __equalsCalc = null;
+    public synchronized boolean equals(java.lang.Object obj) {
+        if (!(obj instanceof InboundShipment)) return false;
+        InboundShipment other = (InboundShipment) obj;
+        if (obj == null) return false;
+        if (this == obj) return true;
+        if (__equalsCalc != null) {
+            return (__equalsCalc == obj);
+        }
+        __equalsCalc = obj;
+        boolean _equals;
+        _equals = super.equals(obj) && 
+            ((this.customForm==null && other.getCustomForm()==null) || 
+             (this.customForm!=null &&
+              this.customForm.equals(other.getCustomForm()))) &&
+            ((this.shipmentNumber==null && other.getShipmentNumber()==null) || 
+             (this.shipmentNumber!=null &&
+              this.shipmentNumber.equals(other.getShipmentNumber()))) &&
+            ((this.externalDocumentNumber==null && other.getExternalDocumentNumber()==null) || 
+             (this.externalDocumentNumber!=null &&
+              this.externalDocumentNumber.equals(other.getExternalDocumentNumber()))) &&
+            ((this.shipmentStatus==null && other.getShipmentStatus()==null) || 
+             (this.shipmentStatus!=null &&
+              this.shipmentStatus.equals(other.getShipmentStatus()))) &&
+            ((this.expectedShippingDate==null && other.getExpectedShippingDate()==null) || 
+             (this.expectedShippingDate!=null &&
+              this.expectedShippingDate.equals(other.getExpectedShippingDate()))) &&
+            ((this.actualShippingDate==null && other.getActualShippingDate()==null) || 
+             (this.actualShippingDate!=null &&
+              this.actualShippingDate.equals(other.getActualShippingDate()))) &&
+            ((this.expectedDeliveryDate==null && other.getExpectedDeliveryDate()==null) || 
+             (this.expectedDeliveryDate!=null &&
+              this.expectedDeliveryDate.equals(other.getExpectedDeliveryDate()))) &&
+            ((this.actualDeliveryDate==null && other.getActualDeliveryDate()==null) || 
+             (this.actualDeliveryDate!=null &&
+              this.actualDeliveryDate.equals(other.getActualDeliveryDate()))) &&
+            ((this.shipmentMemo==null && other.getShipmentMemo()==null) || 
+             (this.shipmentMemo!=null &&
+              this.shipmentMemo.equals(other.getShipmentMemo()))) &&
+            ((this.vesselNumber==null && other.getVesselNumber()==null) || 
+             (this.vesselNumber!=null &&
+              this.vesselNumber.equals(other.getVesselNumber()))) &&
+            ((this.billOfLading==null && other.getBillOfLading()==null) || 
+             (this.billOfLading!=null &&
+              this.billOfLading.equals(other.getBillOfLading()))) &&
+            ((this.itemsList==null && other.getItemsList()==null) || 
+             (this.itemsList!=null &&
+              java.util.Arrays.equals(this.itemsList, other.getItemsList()))) &&
+            ((this.customFieldList==null && other.getCustomFieldList()==null) || 
+             (this.customFieldList!=null &&
+              java.util.Arrays.equals(this.customFieldList, other.getCustomFieldList()))) &&
+            ((this.internalId==null && other.getInternalId()==null) || 
+             (this.internalId!=null &&
+              this.internalId.equals(other.getInternalId()))) &&
+            ((this.externalId==null && other.getExternalId()==null) || 
+             (this.externalId!=null &&
+              this.externalId.equals(other.getExternalId())));
+        __equalsCalc = null;
+        return _equals;
+    }
+
+    private boolean __hashCodeCalc = false;
+    public synchronized int hashCode() {
+        if (__hashCodeCalc) {
+            return 0;
+        }
+        __hashCodeCalc = true;
+        int _hashCode = super.hashCode();
+        if (getCustomForm() != null) {
+            _hashCode += getCustomForm().hashCode();
+        }
+        if (getShipmentNumber() != null) {
+            _hashCode += getShipmentNumber().hashCode();
+        }
+        if (getExternalDocumentNumber() != null) {
+            _hashCode += getExternalDocumentNumber().hashCode();
+        }
+        if (getShipmentStatus() != null) {
+            _hashCode += getShipmentStatus().hashCode();
+        }
+        if (getExpectedShippingDate() != null) {
+            _hashCode += getExpectedShippingDate().hashCode();
+        }
+        if (getActualShippingDate() != null) {
+            _hashCode += getActualShippingDate().hashCode();
+        }
+        if (getExpectedDeliveryDate() != null) {
+            _hashCode += getExpectedDeliveryDate().hashCode();
+        }
+        if (getActualDeliveryDate() != null) {
+            _hashCode += getActualDeliveryDate().hashCode();
+        }
+        if (getShipmentMemo() != null) {
+            _hashCode += getShipmentMemo().hashCode();
+        }
+        if (getVesselNumber() != null) {
+            _hashCode += getVesselNumber().hashCode();
+        }
+        if (getBillOfLading() != null) {
+            _hashCode += getBillOfLading().hashCode();
+        }
+        if (getItemsList() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getItemsList());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getItemsList(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getCustomFieldList() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getCustomFieldList());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getCustomFieldList(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getInternalId() != null) {
+            _hashCode += getInternalId().hashCode();
+        }
+        if (getExternalId() != null) {
+            _hashCode += getExternalId().hashCode();
+        }
+        __hashCodeCalc = false;
+        return _hashCode;
+    }
+
+    // Type metadata
+    private static org.apache.axis.description.TypeDesc typeDesc =
+        new org.apache.axis.description.TypeDesc(InboundShipment.class, true);
+
+    static {
+        typeDesc.setXmlType(new javax.xml.namespace.QName("urn:purchases_2018_2.transactions.webservices.netsuite.com", "InboundShipment"));
+        org.apache.axis.description.AttributeDesc attrField = new org.apache.axis.description.AttributeDesc();
+        attrField.setFieldName("internalId");
+        attrField.setXmlName(new javax.xml.namespace.QName("", "internalId"));
+        attrField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        typeDesc.addFieldDesc(attrField);
+        attrField = new org.apache.axis.description.AttributeDesc();
+        attrField.setFieldName("externalId");
+        attrField.setXmlName(new javax.xml.namespace.QName("", "externalId"));
+        attrField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        typeDesc.addFieldDesc(attrField);
+        org.apache.axis.description.ElementDesc elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("customForm");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:purchases_2018_2.transactions.webservices.netsuite.com", "customForm"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("shipmentNumber");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:purchases_2018_2.transactions.webservices.netsuite.com", "shipmentNumber"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("externalDocumentNumber");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:purchases_2018_2.transactions.webservices.netsuite.com", "externalDocumentNumber"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("shipmentStatus");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:purchases_2018_2.transactions.webservices.netsuite.com", "shipmentStatus"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:types.purchases_2018_2.transactions.webservices.netsuite.com", "InboundShipmentShipmentStatus"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("expectedShippingDate");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:purchases_2018_2.transactions.webservices.netsuite.com", "expectedShippingDate"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "dateTime"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("actualShippingDate");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:purchases_2018_2.transactions.webservices.netsuite.com", "actualShippingDate"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "dateTime"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("expectedDeliveryDate");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:purchases_2018_2.transactions.webservices.netsuite.com", "expectedDeliveryDate"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "dateTime"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("actualDeliveryDate");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:purchases_2018_2.transactions.webservices.netsuite.com", "actualDeliveryDate"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "dateTime"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("shipmentMemo");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:purchases_2018_2.transactions.webservices.netsuite.com", "shipmentMemo"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("vesselNumber");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:purchases_2018_2.transactions.webservices.netsuite.com", "vesselNumber"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("billOfLading");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:purchases_2018_2.transactions.webservices.netsuite.com", "billOfLading"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("itemsList");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:purchases_2018_2.transactions.webservices.netsuite.com", "itemsList"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:purchases_2018_2.transactions.webservices.netsuite.com", "InboundShipmentItems"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:purchases_2018_2.transactions.webservices.netsuite.com", "inboundShipmentItems"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("customFieldList");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:purchases_2018_2.transactions.webservices.netsuite.com", "customFieldList"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "CustomFieldRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "customField"));
+        typeDesc.addFieldDesc(elemField);
+    }
+
+    /**
+     * Return type metadata object
+     */
+    public static org.apache.axis.description.TypeDesc getTypeDesc() {
+        return typeDesc;
+    }
+
+    /**
+     * Get Custom Serializer
+     */
+    public static org.apache.axis.encoding.Serializer getSerializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanSerializer(
+            _javaType, _xmlType, typeDesc);
+    }
+
+    /**
+     * Get Custom Deserializer
+     */
+    public static org.apache.axis.encoding.Deserializer getDeserializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanDeserializer(
+            _javaType, _xmlType, typeDesc);
     }
 
 }

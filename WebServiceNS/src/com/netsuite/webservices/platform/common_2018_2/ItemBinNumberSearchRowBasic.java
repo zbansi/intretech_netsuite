@@ -1,168 +1,299 @@
+/**
+ * ItemBinNumberSearchRowBasic.java
+ *
+ * This file was auto-generated from WSDL
+ * by the Apache Axis 1.4 Jul 28, 2010 (04:07:04 PDT) WSDL2Java emitter.
+ */
 
 package com.netsuite.webservices.platform.common_2018_2;
 
-import java.util.ArrayList;
-import java.util.List;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlType;
-import com.netsuite.webservices.platform.core_2018_2.SearchColumnDoubleField;
-import com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField;
-import com.netsuite.webservices.platform.core_2018_2.SearchRowBasic;
+public class ItemBinNumberSearchRowBasic  extends com.netsuite.webservices.platform.core_2018_2.SearchRowBasic  implements java.io.Serializable {
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] binNumber;
 
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] location;
 
-/**
- * <p>ItemBinNumberSearchRowBasic complex type的 Java 类。
- * 
- * <p>以下模式片段指定包含在此类中的预期内容。
- * 
- * <pre>
- * &lt;complexType name="ItemBinNumberSearchRowBasic">
- *   &lt;complexContent>
- *     &lt;extension base="{urn:core_2018_2.platform.webservices.netsuite.com}SearchRowBasic">
- *       &lt;sequence>
- *         &lt;element name="binNumber" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnSelectField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="location" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnSelectField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="quantityAvailable" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnDoubleField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="quantityOnHand" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnDoubleField" maxOccurs="unbounded" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/extension>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
- */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "ItemBinNumberSearchRowBasic", propOrder = {
-    "binNumber",
-    "location",
-    "quantityAvailable",
-    "quantityOnHand"
-})
-public class ItemBinNumberSearchRowBasic
-    extends SearchRowBasic
-{
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnDoubleField[] quantityAvailable;
 
-    protected List<SearchColumnSelectField> binNumber;
-    protected List<SearchColumnSelectField> location;
-    protected List<SearchColumnDoubleField> quantityAvailable;
-    protected List<SearchColumnDoubleField> quantityOnHand;
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnDoubleField[] quantityOnHand;
+
+    public ItemBinNumberSearchRowBasic() {
+    }
+
+    public ItemBinNumberSearchRowBasic(
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] binNumber,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] location,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnDoubleField[] quantityAvailable,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnDoubleField[] quantityOnHand) {
+        this.binNumber = binNumber;
+        this.location = location;
+        this.quantityAvailable = quantityAvailable;
+        this.quantityOnHand = quantityOnHand;
+    }
+
 
     /**
-     * Gets the value of the binNumber property.
+     * Gets the binNumber value for this ItemBinNumberSearchRowBasic.
      * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the binNumber property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getBinNumber().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnSelectField }
-     * 
-     * 
+     * @return binNumber
      */
-    public List<SearchColumnSelectField> getBinNumber() {
-        if (binNumber == null) {
-            binNumber = new ArrayList<SearchColumnSelectField>();
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] getBinNumber() {
+        return binNumber;
+    }
+
+
+    /**
+     * Sets the binNumber value for this ItemBinNumberSearchRowBasic.
+     * 
+     * @param binNumber
+     */
+    public void setBinNumber(com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] binNumber) {
+        this.binNumber = binNumber;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField getBinNumber(int i) {
+        return this.binNumber[i];
+    }
+
+    public void setBinNumber(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField _value) {
+        this.binNumber[i] = _value;
+    }
+
+
+    /**
+     * Gets the location value for this ItemBinNumberSearchRowBasic.
+     * 
+     * @return location
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] getLocation() {
+        return location;
+    }
+
+
+    /**
+     * Sets the location value for this ItemBinNumberSearchRowBasic.
+     * 
+     * @param location
+     */
+    public void setLocation(com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] location) {
+        this.location = location;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField getLocation(int i) {
+        return this.location[i];
+    }
+
+    public void setLocation(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField _value) {
+        this.location[i] = _value;
+    }
+
+
+    /**
+     * Gets the quantityAvailable value for this ItemBinNumberSearchRowBasic.
+     * 
+     * @return quantityAvailable
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnDoubleField[] getQuantityAvailable() {
+        return quantityAvailable;
+    }
+
+
+    /**
+     * Sets the quantityAvailable value for this ItemBinNumberSearchRowBasic.
+     * 
+     * @param quantityAvailable
+     */
+    public void setQuantityAvailable(com.netsuite.webservices.platform.core_2018_2.SearchColumnDoubleField[] quantityAvailable) {
+        this.quantityAvailable = quantityAvailable;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnDoubleField getQuantityAvailable(int i) {
+        return this.quantityAvailable[i];
+    }
+
+    public void setQuantityAvailable(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnDoubleField _value) {
+        this.quantityAvailable[i] = _value;
+    }
+
+
+    /**
+     * Gets the quantityOnHand value for this ItemBinNumberSearchRowBasic.
+     * 
+     * @return quantityOnHand
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnDoubleField[] getQuantityOnHand() {
+        return quantityOnHand;
+    }
+
+
+    /**
+     * Sets the quantityOnHand value for this ItemBinNumberSearchRowBasic.
+     * 
+     * @param quantityOnHand
+     */
+    public void setQuantityOnHand(com.netsuite.webservices.platform.core_2018_2.SearchColumnDoubleField[] quantityOnHand) {
+        this.quantityOnHand = quantityOnHand;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnDoubleField getQuantityOnHand(int i) {
+        return this.quantityOnHand[i];
+    }
+
+    public void setQuantityOnHand(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnDoubleField _value) {
+        this.quantityOnHand[i] = _value;
+    }
+
+    private java.lang.Object __equalsCalc = null;
+    public synchronized boolean equals(java.lang.Object obj) {
+        if (!(obj instanceof ItemBinNumberSearchRowBasic)) return false;
+        ItemBinNumberSearchRowBasic other = (ItemBinNumberSearchRowBasic) obj;
+        if (obj == null) return false;
+        if (this == obj) return true;
+        if (__equalsCalc != null) {
+            return (__equalsCalc == obj);
         }
-        return this.binNumber;
+        __equalsCalc = obj;
+        boolean _equals;
+        _equals = super.equals(obj) && 
+            ((this.binNumber==null && other.getBinNumber()==null) || 
+             (this.binNumber!=null &&
+              java.util.Arrays.equals(this.binNumber, other.getBinNumber()))) &&
+            ((this.location==null && other.getLocation()==null) || 
+             (this.location!=null &&
+              java.util.Arrays.equals(this.location, other.getLocation()))) &&
+            ((this.quantityAvailable==null && other.getQuantityAvailable()==null) || 
+             (this.quantityAvailable!=null &&
+              java.util.Arrays.equals(this.quantityAvailable, other.getQuantityAvailable()))) &&
+            ((this.quantityOnHand==null && other.getQuantityOnHand()==null) || 
+             (this.quantityOnHand!=null &&
+              java.util.Arrays.equals(this.quantityOnHand, other.getQuantityOnHand())));
+        __equalsCalc = null;
+        return _equals;
+    }
+
+    private boolean __hashCodeCalc = false;
+    public synchronized int hashCode() {
+        if (__hashCodeCalc) {
+            return 0;
+        }
+        __hashCodeCalc = true;
+        int _hashCode = super.hashCode();
+        if (getBinNumber() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getBinNumber());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getBinNumber(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getLocation() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getLocation());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getLocation(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getQuantityAvailable() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getQuantityAvailable());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getQuantityAvailable(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getQuantityOnHand() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getQuantityOnHand());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getQuantityOnHand(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        __hashCodeCalc = false;
+        return _hashCode;
+    }
+
+    // Type metadata
+    private static org.apache.axis.description.TypeDesc typeDesc =
+        new org.apache.axis.description.TypeDesc(ItemBinNumberSearchRowBasic.class, true);
+
+    static {
+        typeDesc.setXmlType(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "ItemBinNumberSearchRowBasic"));
+        org.apache.axis.description.ElementDesc elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("binNumber");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "binNumber"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnSelectField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("location");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "location"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnSelectField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("quantityAvailable");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "quantityAvailable"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnDoubleField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("quantityOnHand");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "quantityOnHand"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnDoubleField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
     }
 
     /**
-     * Gets the value of the location property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the location property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getLocation().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnSelectField }
-     * 
-     * 
+     * Return type metadata object
      */
-    public List<SearchColumnSelectField> getLocation() {
-        if (location == null) {
-            location = new ArrayList<SearchColumnSelectField>();
-        }
-        return this.location;
+    public static org.apache.axis.description.TypeDesc getTypeDesc() {
+        return typeDesc;
     }
 
     /**
-     * Gets the value of the quantityAvailable property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the quantityAvailable property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getQuantityAvailable().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnDoubleField }
-     * 
-     * 
+     * Get Custom Serializer
      */
-    public List<SearchColumnDoubleField> getQuantityAvailable() {
-        if (quantityAvailable == null) {
-            quantityAvailable = new ArrayList<SearchColumnDoubleField>();
-        }
-        return this.quantityAvailable;
+    public static org.apache.axis.encoding.Serializer getSerializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanSerializer(
+            _javaType, _xmlType, typeDesc);
     }
 
     /**
-     * Gets the value of the quantityOnHand property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the quantityOnHand property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getQuantityOnHand().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnDoubleField }
-     * 
-     * 
+     * Get Custom Deserializer
      */
-    public List<SearchColumnDoubleField> getQuantityOnHand() {
-        if (quantityOnHand == null) {
-            quantityOnHand = new ArrayList<SearchColumnDoubleField>();
-        }
-        return this.quantityOnHand;
+    public static org.apache.axis.encoding.Deserializer getDeserializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanDeserializer(
+            _javaType, _xmlType, typeDesc);
     }
 
 }

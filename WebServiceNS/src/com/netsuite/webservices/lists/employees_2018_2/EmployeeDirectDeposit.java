@@ -1,360 +1,527 @@
+/**
+ * EmployeeDirectDeposit.java
+ *
+ * This file was auto-generated from WSDL
+ * by the Apache Axis 1.4 Jul 28, 2010 (04:07:04 PDT) WSDL2Java emitter.
+ */
 
 package com.netsuite.webservices.lists.employees_2018_2;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlSchemaType;
-import javax.xml.bind.annotation.XmlType;
-import com.netsuite.webservices.lists.employees_2018_2.types.EmployeeDirectDepositAccountStatus;
+public class EmployeeDirectDeposit  implements java.io.Serializable {
+    private java.lang.Long id;
 
+    private java.lang.Boolean netAccount;
 
-/**
- * <p>EmployeeDirectDeposit complex type的 Java 类。
- * 
- * <p>以下模式片段指定包含在此类中的预期内容。
- * 
- * <pre>
- * &lt;complexType name="EmployeeDirectDeposit">
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element name="id" type="{http://www.w3.org/2001/XMLSchema}long" minOccurs="0"/>
- *         &lt;element name="netAccount" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         &lt;element name="savingsAccount" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         &lt;element name="accountPrenoted" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         &lt;element name="accountStatus" type="{urn:types.employees_2018_2.lists.webservices.netsuite.com}EmployeeDirectDepositAccountStatus" minOccurs="0"/>
- *         &lt;element name="bankName" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="bankId" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="bankNumber" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="bankRoutingNumber" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="bankAccountNumber" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="amount" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
- *         &lt;element name="inactive" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
- */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "EmployeeDirectDeposit", propOrder = {
-    "id",
-    "netAccount",
-    "savingsAccount",
-    "accountPrenoted",
-    "accountStatus",
-    "bankName",
-    "bankId",
-    "bankNumber",
-    "bankRoutingNumber",
-    "bankAccountNumber",
-    "amount",
-    "inactive"
-})
-public class EmployeeDirectDeposit {
+    private java.lang.Boolean savingsAccount;
 
-    protected Long id;
-    protected Boolean netAccount;
-    protected Boolean savingsAccount;
-    protected Boolean accountPrenoted;
-    @XmlSchemaType(name = "string")
-    protected EmployeeDirectDepositAccountStatus accountStatus;
-    protected String bankName;
-    protected String bankId;
-    protected String bankNumber;
-    protected String bankRoutingNumber;
-    protected String bankAccountNumber;
-    protected Double amount;
-    protected Boolean inactive;
+    private java.lang.Boolean accountPrenoted;
+
+    private com.netsuite.webservices.lists.employees_2018_2.types.EmployeeDirectDepositAccountStatus accountStatus;
+
+    private java.lang.String bankName;
+
+    private java.lang.String bankId;
+
+    private java.lang.String bankNumber;
+
+    private java.lang.String bankRoutingNumber;
+
+    private java.lang.String bankAccountNumber;
+
+    private java.lang.Double amount;
+
+    private java.lang.Boolean inactive;
+
+    public EmployeeDirectDeposit() {
+    }
+
+    public EmployeeDirectDeposit(
+           java.lang.Long id,
+           java.lang.Boolean netAccount,
+           java.lang.Boolean savingsAccount,
+           java.lang.Boolean accountPrenoted,
+           com.netsuite.webservices.lists.employees_2018_2.types.EmployeeDirectDepositAccountStatus accountStatus,
+           java.lang.String bankName,
+           java.lang.String bankId,
+           java.lang.String bankNumber,
+           java.lang.String bankRoutingNumber,
+           java.lang.String bankAccountNumber,
+           java.lang.Double amount,
+           java.lang.Boolean inactive) {
+           this.id = id;
+           this.netAccount = netAccount;
+           this.savingsAccount = savingsAccount;
+           this.accountPrenoted = accountPrenoted;
+           this.accountStatus = accountStatus;
+           this.bankName = bankName;
+           this.bankId = bankId;
+           this.bankNumber = bankNumber;
+           this.bankRoutingNumber = bankRoutingNumber;
+           this.bankAccountNumber = bankAccountNumber;
+           this.amount = amount;
+           this.inactive = inactive;
+    }
+
 
     /**
-     * 获取id属性的值。
+     * Gets the id value for this EmployeeDirectDeposit.
      * 
-     * @return
-     *     possible object is
-     *     {@link Long }
-     *     
+     * @return id
      */
-    public Long getId() {
+    public java.lang.Long getId() {
         return id;
     }
 
-    /**
-     * 设置id属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Long }
-     *     
-     */
-    public void setId(Long value) {
-        this.id = value;
-    }
 
     /**
-     * 获取netAccount属性的值。
+     * Sets the id value for this EmployeeDirectDeposit.
      * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
+     * @param id
      */
-    public Boolean isNetAccount() {
+    public void setId(java.lang.Long id) {
+        this.id = id;
+    }
+
+
+    /**
+     * Gets the netAccount value for this EmployeeDirectDeposit.
+     * 
+     * @return netAccount
+     */
+    public java.lang.Boolean getNetAccount() {
         return netAccount;
     }
 
-    /**
-     * 设置netAccount属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
-     */
-    public void setNetAccount(Boolean value) {
-        this.netAccount = value;
-    }
 
     /**
-     * 获取savingsAccount属性的值。
+     * Sets the netAccount value for this EmployeeDirectDeposit.
      * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
+     * @param netAccount
      */
-    public Boolean isSavingsAccount() {
+    public void setNetAccount(java.lang.Boolean netAccount) {
+        this.netAccount = netAccount;
+    }
+
+
+    /**
+     * Gets the savingsAccount value for this EmployeeDirectDeposit.
+     * 
+     * @return savingsAccount
+     */
+    public java.lang.Boolean getSavingsAccount() {
         return savingsAccount;
     }
 
-    /**
-     * 设置savingsAccount属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
-     */
-    public void setSavingsAccount(Boolean value) {
-        this.savingsAccount = value;
-    }
 
     /**
-     * 获取accountPrenoted属性的值。
+     * Sets the savingsAccount value for this EmployeeDirectDeposit.
      * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
+     * @param savingsAccount
      */
-    public Boolean isAccountPrenoted() {
+    public void setSavingsAccount(java.lang.Boolean savingsAccount) {
+        this.savingsAccount = savingsAccount;
+    }
+
+
+    /**
+     * Gets the accountPrenoted value for this EmployeeDirectDeposit.
+     * 
+     * @return accountPrenoted
+     */
+    public java.lang.Boolean getAccountPrenoted() {
         return accountPrenoted;
     }
 
-    /**
-     * 设置accountPrenoted属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
-     */
-    public void setAccountPrenoted(Boolean value) {
-        this.accountPrenoted = value;
-    }
 
     /**
-     * 获取accountStatus属性的值。
+     * Sets the accountPrenoted value for this EmployeeDirectDeposit.
      * 
-     * @return
-     *     possible object is
-     *     {@link EmployeeDirectDepositAccountStatus }
-     *     
+     * @param accountPrenoted
      */
-    public EmployeeDirectDepositAccountStatus getAccountStatus() {
+    public void setAccountPrenoted(java.lang.Boolean accountPrenoted) {
+        this.accountPrenoted = accountPrenoted;
+    }
+
+
+    /**
+     * Gets the accountStatus value for this EmployeeDirectDeposit.
+     * 
+     * @return accountStatus
+     */
+    public com.netsuite.webservices.lists.employees_2018_2.types.EmployeeDirectDepositAccountStatus getAccountStatus() {
         return accountStatus;
     }
 
-    /**
-     * 设置accountStatus属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link EmployeeDirectDepositAccountStatus }
-     *     
-     */
-    public void setAccountStatus(EmployeeDirectDepositAccountStatus value) {
-        this.accountStatus = value;
-    }
 
     /**
-     * 获取bankName属性的值。
+     * Sets the accountStatus value for this EmployeeDirectDeposit.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param accountStatus
      */
-    public String getBankName() {
+    public void setAccountStatus(com.netsuite.webservices.lists.employees_2018_2.types.EmployeeDirectDepositAccountStatus accountStatus) {
+        this.accountStatus = accountStatus;
+    }
+
+
+    /**
+     * Gets the bankName value for this EmployeeDirectDeposit.
+     * 
+     * @return bankName
+     */
+    public java.lang.String getBankName() {
         return bankName;
     }
 
-    /**
-     * 设置bankName属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setBankName(String value) {
-        this.bankName = value;
-    }
 
     /**
-     * 获取bankId属性的值。
+     * Sets the bankName value for this EmployeeDirectDeposit.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param bankName
      */
-    public String getBankId() {
+    public void setBankName(java.lang.String bankName) {
+        this.bankName = bankName;
+    }
+
+
+    /**
+     * Gets the bankId value for this EmployeeDirectDeposit.
+     * 
+     * @return bankId
+     */
+    public java.lang.String getBankId() {
         return bankId;
     }
 
-    /**
-     * 设置bankId属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setBankId(String value) {
-        this.bankId = value;
-    }
 
     /**
-     * 获取bankNumber属性的值。
+     * Sets the bankId value for this EmployeeDirectDeposit.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param bankId
      */
-    public String getBankNumber() {
+    public void setBankId(java.lang.String bankId) {
+        this.bankId = bankId;
+    }
+
+
+    /**
+     * Gets the bankNumber value for this EmployeeDirectDeposit.
+     * 
+     * @return bankNumber
+     */
+    public java.lang.String getBankNumber() {
         return bankNumber;
     }
 
-    /**
-     * 设置bankNumber属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setBankNumber(String value) {
-        this.bankNumber = value;
-    }
 
     /**
-     * 获取bankRoutingNumber属性的值。
+     * Sets the bankNumber value for this EmployeeDirectDeposit.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param bankNumber
      */
-    public String getBankRoutingNumber() {
+    public void setBankNumber(java.lang.String bankNumber) {
+        this.bankNumber = bankNumber;
+    }
+
+
+    /**
+     * Gets the bankRoutingNumber value for this EmployeeDirectDeposit.
+     * 
+     * @return bankRoutingNumber
+     */
+    public java.lang.String getBankRoutingNumber() {
         return bankRoutingNumber;
     }
 
-    /**
-     * 设置bankRoutingNumber属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setBankRoutingNumber(String value) {
-        this.bankRoutingNumber = value;
-    }
 
     /**
-     * 获取bankAccountNumber属性的值。
+     * Sets the bankRoutingNumber value for this EmployeeDirectDeposit.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param bankRoutingNumber
      */
-    public String getBankAccountNumber() {
+    public void setBankRoutingNumber(java.lang.String bankRoutingNumber) {
+        this.bankRoutingNumber = bankRoutingNumber;
+    }
+
+
+    /**
+     * Gets the bankAccountNumber value for this EmployeeDirectDeposit.
+     * 
+     * @return bankAccountNumber
+     */
+    public java.lang.String getBankAccountNumber() {
         return bankAccountNumber;
     }
 
-    /**
-     * 设置bankAccountNumber属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setBankAccountNumber(String value) {
-        this.bankAccountNumber = value;
-    }
 
     /**
-     * 获取amount属性的值。
+     * Sets the bankAccountNumber value for this EmployeeDirectDeposit.
      * 
-     * @return
-     *     possible object is
-     *     {@link Double }
-     *     
+     * @param bankAccountNumber
      */
-    public Double getAmount() {
+    public void setBankAccountNumber(java.lang.String bankAccountNumber) {
+        this.bankAccountNumber = bankAccountNumber;
+    }
+
+
+    /**
+     * Gets the amount value for this EmployeeDirectDeposit.
+     * 
+     * @return amount
+     */
+    public java.lang.Double getAmount() {
         return amount;
     }
 
-    /**
-     * 设置amount属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Double }
-     *     
-     */
-    public void setAmount(Double value) {
-        this.amount = value;
-    }
 
     /**
-     * 获取inactive属性的值。
+     * Sets the amount value for this EmployeeDirectDeposit.
      * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
+     * @param amount
      */
-    public Boolean isInactive() {
+    public void setAmount(java.lang.Double amount) {
+        this.amount = amount;
+    }
+
+
+    /**
+     * Gets the inactive value for this EmployeeDirectDeposit.
+     * 
+     * @return inactive
+     */
+    public java.lang.Boolean getInactive() {
         return inactive;
     }
 
+
     /**
-     * 设置inactive属性的值。
+     * Sets the inactive value for this EmployeeDirectDeposit.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
+     * @param inactive
      */
-    public void setInactive(Boolean value) {
-        this.inactive = value;
+    public void setInactive(java.lang.Boolean inactive) {
+        this.inactive = inactive;
+    }
+
+    private java.lang.Object __equalsCalc = null;
+    public synchronized boolean equals(java.lang.Object obj) {
+        if (!(obj instanceof EmployeeDirectDeposit)) return false;
+        EmployeeDirectDeposit other = (EmployeeDirectDeposit) obj;
+        if (obj == null) return false;
+        if (this == obj) return true;
+        if (__equalsCalc != null) {
+            return (__equalsCalc == obj);
+        }
+        __equalsCalc = obj;
+        boolean _equals;
+        _equals = true && 
+            ((this.id==null && other.getId()==null) || 
+             (this.id!=null &&
+              this.id.equals(other.getId()))) &&
+            ((this.netAccount==null && other.getNetAccount()==null) || 
+             (this.netAccount!=null &&
+              this.netAccount.equals(other.getNetAccount()))) &&
+            ((this.savingsAccount==null && other.getSavingsAccount()==null) || 
+             (this.savingsAccount!=null &&
+              this.savingsAccount.equals(other.getSavingsAccount()))) &&
+            ((this.accountPrenoted==null && other.getAccountPrenoted()==null) || 
+             (this.accountPrenoted!=null &&
+              this.accountPrenoted.equals(other.getAccountPrenoted()))) &&
+            ((this.accountStatus==null && other.getAccountStatus()==null) || 
+             (this.accountStatus!=null &&
+              this.accountStatus.equals(other.getAccountStatus()))) &&
+            ((this.bankName==null && other.getBankName()==null) || 
+             (this.bankName!=null &&
+              this.bankName.equals(other.getBankName()))) &&
+            ((this.bankId==null && other.getBankId()==null) || 
+             (this.bankId!=null &&
+              this.bankId.equals(other.getBankId()))) &&
+            ((this.bankNumber==null && other.getBankNumber()==null) || 
+             (this.bankNumber!=null &&
+              this.bankNumber.equals(other.getBankNumber()))) &&
+            ((this.bankRoutingNumber==null && other.getBankRoutingNumber()==null) || 
+             (this.bankRoutingNumber!=null &&
+              this.bankRoutingNumber.equals(other.getBankRoutingNumber()))) &&
+            ((this.bankAccountNumber==null && other.getBankAccountNumber()==null) || 
+             (this.bankAccountNumber!=null &&
+              this.bankAccountNumber.equals(other.getBankAccountNumber()))) &&
+            ((this.amount==null && other.getAmount()==null) || 
+             (this.amount!=null &&
+              this.amount.equals(other.getAmount()))) &&
+            ((this.inactive==null && other.getInactive()==null) || 
+             (this.inactive!=null &&
+              this.inactive.equals(other.getInactive())));
+        __equalsCalc = null;
+        return _equals;
+    }
+
+    private boolean __hashCodeCalc = false;
+    public synchronized int hashCode() {
+        if (__hashCodeCalc) {
+            return 0;
+        }
+        __hashCodeCalc = true;
+        int _hashCode = 1;
+        if (getId() != null) {
+            _hashCode += getId().hashCode();
+        }
+        if (getNetAccount() != null) {
+            _hashCode += getNetAccount().hashCode();
+        }
+        if (getSavingsAccount() != null) {
+            _hashCode += getSavingsAccount().hashCode();
+        }
+        if (getAccountPrenoted() != null) {
+            _hashCode += getAccountPrenoted().hashCode();
+        }
+        if (getAccountStatus() != null) {
+            _hashCode += getAccountStatus().hashCode();
+        }
+        if (getBankName() != null) {
+            _hashCode += getBankName().hashCode();
+        }
+        if (getBankId() != null) {
+            _hashCode += getBankId().hashCode();
+        }
+        if (getBankNumber() != null) {
+            _hashCode += getBankNumber().hashCode();
+        }
+        if (getBankRoutingNumber() != null) {
+            _hashCode += getBankRoutingNumber().hashCode();
+        }
+        if (getBankAccountNumber() != null) {
+            _hashCode += getBankAccountNumber().hashCode();
+        }
+        if (getAmount() != null) {
+            _hashCode += getAmount().hashCode();
+        }
+        if (getInactive() != null) {
+            _hashCode += getInactive().hashCode();
+        }
+        __hashCodeCalc = false;
+        return _hashCode;
+    }
+
+    // Type metadata
+    private static org.apache.axis.description.TypeDesc typeDesc =
+        new org.apache.axis.description.TypeDesc(EmployeeDirectDeposit.class, true);
+
+    static {
+        typeDesc.setXmlType(new javax.xml.namespace.QName("urn:employees_2018_2.lists.webservices.netsuite.com", "EmployeeDirectDeposit"));
+        org.apache.axis.description.ElementDesc elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("id");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:employees_2018_2.lists.webservices.netsuite.com", "id"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "long"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("netAccount");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:employees_2018_2.lists.webservices.netsuite.com", "netAccount"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("savingsAccount");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:employees_2018_2.lists.webservices.netsuite.com", "savingsAccount"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("accountPrenoted");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:employees_2018_2.lists.webservices.netsuite.com", "accountPrenoted"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("accountStatus");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:employees_2018_2.lists.webservices.netsuite.com", "accountStatus"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:types.employees_2018_2.lists.webservices.netsuite.com", "EmployeeDirectDepositAccountStatus"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("bankName");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:employees_2018_2.lists.webservices.netsuite.com", "bankName"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("bankId");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:employees_2018_2.lists.webservices.netsuite.com", "bankId"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("bankNumber");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:employees_2018_2.lists.webservices.netsuite.com", "bankNumber"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("bankRoutingNumber");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:employees_2018_2.lists.webservices.netsuite.com", "bankRoutingNumber"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("bankAccountNumber");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:employees_2018_2.lists.webservices.netsuite.com", "bankAccountNumber"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("amount");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:employees_2018_2.lists.webservices.netsuite.com", "amount"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "double"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("inactive");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:employees_2018_2.lists.webservices.netsuite.com", "inactive"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+    }
+
+    /**
+     * Return type metadata object
+     */
+    public static org.apache.axis.description.TypeDesc getTypeDesc() {
+        return typeDesc;
+    }
+
+    /**
+     * Get Custom Serializer
+     */
+    public static org.apache.axis.encoding.Serializer getSerializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanSerializer(
+            _javaType, _xmlType, typeDesc);
+    }
+
+    /**
+     * Get Custom Deserializer
+     */
+    public static org.apache.axis.encoding.Deserializer getDeserializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanDeserializer(
+            _javaType, _xmlType, typeDesc);
     }
 
 }

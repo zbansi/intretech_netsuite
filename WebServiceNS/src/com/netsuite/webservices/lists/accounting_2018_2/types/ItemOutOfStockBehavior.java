@@ -1,60 +1,76 @@
+/**
+ * ItemOutOfStockBehavior.java
+ *
+ * This file was auto-generated from WSDL
+ * by the Apache Axis 1.4 Jul 28, 2010 (04:07:04 PDT) WSDL2Java emitter.
+ */
 
 package com.netsuite.webservices.lists.accounting_2018_2.types;
 
-import javax.xml.bind.annotation.XmlEnum;
-import javax.xml.bind.annotation.XmlEnumValue;
-import javax.xml.bind.annotation.XmlType;
+public class ItemOutOfStockBehavior implements java.io.Serializable {
+    private java.lang.String _value_;
+    private static java.util.HashMap _table_ = new java.util.HashMap();
 
-
-/**
- * <p>ItemOutOfStockBehavior的 Java 类。
- * 
- * <p>以下模式片段指定包含在此类中的预期内容。
- * <p>
- * <pre>
- * &lt;simpleType name="ItemOutOfStockBehavior">
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     &lt;enumeration value="_allowBackOrdersButDisplayOutOfStockMessage"/>
- *     &lt;enumeration value="_allowBackOrdersWithNoOutOfStockMessage"/>
- *     &lt;enumeration value="_default"/>
- *     &lt;enumeration value="_disallowBackOrdersButDisplayOutOfStockMessage"/>
- *     &lt;enumeration value="_removeItemWhenOutOfStock"/>
- *   &lt;/restriction>
- * &lt;/simpleType>
- * </pre>
- * 
- */
-@XmlType(name = "ItemOutOfStockBehavior", namespace = "urn:types.accounting_2018_2.lists.webservices.netsuite.com")
-@XmlEnum
-public enum ItemOutOfStockBehavior {
-
-    @XmlEnumValue("_allowBackOrdersButDisplayOutOfStockMessage")
-    ALLOW_BACK_ORDERS_BUT_DISPLAY_OUT_OF_STOCK_MESSAGE("_allowBackOrdersButDisplayOutOfStockMessage"),
-    @XmlEnumValue("_allowBackOrdersWithNoOutOfStockMessage")
-    ALLOW_BACK_ORDERS_WITH_NO_OUT_OF_STOCK_MESSAGE("_allowBackOrdersWithNoOutOfStockMessage"),
-    @XmlEnumValue("_default")
-    DEFAULT("_default"),
-    @XmlEnumValue("_disallowBackOrdersButDisplayOutOfStockMessage")
-    DISALLOW_BACK_ORDERS_BUT_DISPLAY_OUT_OF_STOCK_MESSAGE("_disallowBackOrdersButDisplayOutOfStockMessage"),
-    @XmlEnumValue("_removeItemWhenOutOfStock")
-    REMOVE_ITEM_WHEN_OUT_OF_STOCK("_removeItemWhenOutOfStock");
-    private final String value;
-
-    ItemOutOfStockBehavior(String v) {
-        value = v;
+    // Constructor
+    protected ItemOutOfStockBehavior(java.lang.String value) {
+        _value_ = value;
+        _table_.put(_value_,this);
     }
 
-    public String value() {
-        return value;
+    public static final java.lang.String __allowBackOrdersButDisplayOutOfStockMessage = "_allowBackOrdersButDisplayOutOfStockMessage";
+    public static final java.lang.String __allowBackOrdersWithNoOutOfStockMessage = "_allowBackOrdersWithNoOutOfStockMessage";
+    public static final java.lang.String __default = "_default";
+    public static final java.lang.String __disallowBackOrdersButDisplayOutOfStockMessage = "_disallowBackOrdersButDisplayOutOfStockMessage";
+    public static final java.lang.String __removeItemWhenOutOfStock = "_removeItemWhenOutOfStock";
+    public static final ItemOutOfStockBehavior _allowBackOrdersButDisplayOutOfStockMessage = new ItemOutOfStockBehavior(__allowBackOrdersButDisplayOutOfStockMessage);
+    public static final ItemOutOfStockBehavior _allowBackOrdersWithNoOutOfStockMessage = new ItemOutOfStockBehavior(__allowBackOrdersWithNoOutOfStockMessage);
+    public static final ItemOutOfStockBehavior _default = new ItemOutOfStockBehavior(__default);
+    public static final ItemOutOfStockBehavior _disallowBackOrdersButDisplayOutOfStockMessage = new ItemOutOfStockBehavior(__disallowBackOrdersButDisplayOutOfStockMessage);
+    public static final ItemOutOfStockBehavior _removeItemWhenOutOfStock = new ItemOutOfStockBehavior(__removeItemWhenOutOfStock);
+    public java.lang.String getValue() { return _value_;}
+    public static ItemOutOfStockBehavior fromValue(java.lang.String value)
+          throws java.lang.IllegalArgumentException {
+        ItemOutOfStockBehavior enumeration = (ItemOutOfStockBehavior)
+            _table_.get(value);
+        if (enumeration==null) throw new java.lang.IllegalArgumentException();
+        return enumeration;
     }
+    public static ItemOutOfStockBehavior fromString(java.lang.String value)
+          throws java.lang.IllegalArgumentException {
+        return fromValue(value);
+    }
+    public boolean equals(java.lang.Object obj) {return (obj == this);}
+    public int hashCode() { return toString().hashCode();}
+    public java.lang.String toString() { return _value_;}
+    public java.lang.Object readResolve() throws java.io.ObjectStreamException { return fromValue(_value_);}
+    public static org.apache.axis.encoding.Serializer getSerializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new org.apache.axis.encoding.ser.EnumSerializer(
+            _javaType, _xmlType);
+    }
+    public static org.apache.axis.encoding.Deserializer getDeserializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new org.apache.axis.encoding.ser.EnumDeserializer(
+            _javaType, _xmlType);
+    }
+    // Type metadata
+    private static org.apache.axis.description.TypeDesc typeDesc =
+        new org.apache.axis.description.TypeDesc(ItemOutOfStockBehavior.class);
 
-    public static ItemOutOfStockBehavior fromValue(String v) {
-        for (ItemOutOfStockBehavior c: ItemOutOfStockBehavior.values()) {
-            if (c.value.equals(v)) {
-                return c;
-            }
-        }
-        throw new IllegalArgumentException(v);
+    static {
+        typeDesc.setXmlType(new javax.xml.namespace.QName("urn:types.accounting_2018_2.lists.webservices.netsuite.com", "ItemOutOfStockBehavior"));
+    }
+    /**
+     * Return type metadata object
+     */
+    public static org.apache.axis.description.TypeDesc getTypeDesc() {
+        return typeDesc;
     }
 
 }

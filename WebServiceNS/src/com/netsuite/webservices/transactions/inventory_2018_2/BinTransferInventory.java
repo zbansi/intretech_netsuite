@@ -1,278 +1,416 @@
+/**
+ * BinTransferInventory.java
+ *
+ * This file was auto-generated from WSDL
+ * by the Apache Axis 1.4 Jul 28, 2010 (04:07:04 PDT) WSDL2Java emitter.
+ */
 
 package com.netsuite.webservices.transactions.inventory_2018_2;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlType;
-import com.netsuite.webservices.platform.common_2018_2.InventoryDetail;
-import com.netsuite.webservices.platform.core_2018_2.RecordRef;
+public class BinTransferInventory  implements java.io.Serializable {
+    private java.lang.Long line;
 
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef item;
 
-/**
- * <p>BinTransferInventory complex type的 Java 类。
- * 
- * <p>以下模式片段指定包含在此类中的预期内容。
- * 
- * <pre>
- * &lt;complexType name="BinTransferInventory">
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element name="line" type="{http://www.w3.org/2001/XMLSchema}long" minOccurs="0"/>
- *         &lt;element name="item" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="description" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="preferredBin" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="quantity" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
- *         &lt;element name="itemUnitsLabel" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="inventoryDetail" type="{urn:common_2018_2.platform.webservices.netsuite.com}InventoryDetail" minOccurs="0"/>
- *         &lt;element name="fromBins" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="toBins" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
- */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "BinTransferInventory", propOrder = {
-    "line",
-    "item",
-    "description",
-    "preferredBin",
-    "quantity",
-    "itemUnitsLabel",
-    "inventoryDetail",
-    "fromBins",
-    "toBins"
-})
-public class BinTransferInventory {
+    private java.lang.String description;
 
-    protected Long line;
-    protected RecordRef item;
-    protected String description;
-    protected String preferredBin;
-    protected Double quantity;
-    protected String itemUnitsLabel;
-    protected InventoryDetail inventoryDetail;
-    protected String fromBins;
-    protected String toBins;
+    private java.lang.String preferredBin;
+
+    private java.lang.Double quantity;
+
+    private java.lang.String itemUnitsLabel;
+
+    private com.netsuite.webservices.platform.common_2018_2.InventoryDetail inventoryDetail;
+
+    private java.lang.String fromBins;
+
+    private java.lang.String toBins;
+
+    public BinTransferInventory() {
+    }
+
+    public BinTransferInventory(
+           java.lang.Long line,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef item,
+           java.lang.String description,
+           java.lang.String preferredBin,
+           java.lang.Double quantity,
+           java.lang.String itemUnitsLabel,
+           com.netsuite.webservices.platform.common_2018_2.InventoryDetail inventoryDetail,
+           java.lang.String fromBins,
+           java.lang.String toBins) {
+           this.line = line;
+           this.item = item;
+           this.description = description;
+           this.preferredBin = preferredBin;
+           this.quantity = quantity;
+           this.itemUnitsLabel = itemUnitsLabel;
+           this.inventoryDetail = inventoryDetail;
+           this.fromBins = fromBins;
+           this.toBins = toBins;
+    }
+
 
     /**
-     * 获取line属性的值。
+     * Gets the line value for this BinTransferInventory.
      * 
-     * @return
-     *     possible object is
-     *     {@link Long }
-     *     
+     * @return line
      */
-    public Long getLine() {
+    public java.lang.Long getLine() {
         return line;
     }
 
-    /**
-     * 设置line属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Long }
-     *     
-     */
-    public void setLine(Long value) {
-        this.line = value;
-    }
 
     /**
-     * 获取item属性的值。
+     * Sets the line value for this BinTransferInventory.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param line
      */
-    public RecordRef getItem() {
+    public void setLine(java.lang.Long line) {
+        this.line = line;
+    }
+
+
+    /**
+     * Gets the item value for this BinTransferInventory.
+     * 
+     * @return item
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getItem() {
         return item;
     }
 
-    /**
-     * 设置item属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setItem(RecordRef value) {
-        this.item = value;
-    }
 
     /**
-     * 获取description属性的值。
+     * Sets the item value for this BinTransferInventory.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param item
      */
-    public String getDescription() {
+    public void setItem(com.netsuite.webservices.platform.core_2018_2.RecordRef item) {
+        this.item = item;
+    }
+
+
+    /**
+     * Gets the description value for this BinTransferInventory.
+     * 
+     * @return description
+     */
+    public java.lang.String getDescription() {
         return description;
     }
 
-    /**
-     * 设置description属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setDescription(String value) {
-        this.description = value;
-    }
 
     /**
-     * 获取preferredBin属性的值。
+     * Sets the description value for this BinTransferInventory.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param description
      */
-    public String getPreferredBin() {
+    public void setDescription(java.lang.String description) {
+        this.description = description;
+    }
+
+
+    /**
+     * Gets the preferredBin value for this BinTransferInventory.
+     * 
+     * @return preferredBin
+     */
+    public java.lang.String getPreferredBin() {
         return preferredBin;
     }
 
-    /**
-     * 设置preferredBin属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setPreferredBin(String value) {
-        this.preferredBin = value;
-    }
 
     /**
-     * 获取quantity属性的值。
+     * Sets the preferredBin value for this BinTransferInventory.
      * 
-     * @return
-     *     possible object is
-     *     {@link Double }
-     *     
+     * @param preferredBin
      */
-    public Double getQuantity() {
+    public void setPreferredBin(java.lang.String preferredBin) {
+        this.preferredBin = preferredBin;
+    }
+
+
+    /**
+     * Gets the quantity value for this BinTransferInventory.
+     * 
+     * @return quantity
+     */
+    public java.lang.Double getQuantity() {
         return quantity;
     }
 
-    /**
-     * 设置quantity属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Double }
-     *     
-     */
-    public void setQuantity(Double value) {
-        this.quantity = value;
-    }
 
     /**
-     * 获取itemUnitsLabel属性的值。
+     * Sets the quantity value for this BinTransferInventory.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param quantity
      */
-    public String getItemUnitsLabel() {
+    public void setQuantity(java.lang.Double quantity) {
+        this.quantity = quantity;
+    }
+
+
+    /**
+     * Gets the itemUnitsLabel value for this BinTransferInventory.
+     * 
+     * @return itemUnitsLabel
+     */
+    public java.lang.String getItemUnitsLabel() {
         return itemUnitsLabel;
     }
 
-    /**
-     * 设置itemUnitsLabel属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setItemUnitsLabel(String value) {
-        this.itemUnitsLabel = value;
-    }
 
     /**
-     * 获取inventoryDetail属性的值。
+     * Sets the itemUnitsLabel value for this BinTransferInventory.
      * 
-     * @return
-     *     possible object is
-     *     {@link InventoryDetail }
-     *     
+     * @param itemUnitsLabel
      */
-    public InventoryDetail getInventoryDetail() {
+    public void setItemUnitsLabel(java.lang.String itemUnitsLabel) {
+        this.itemUnitsLabel = itemUnitsLabel;
+    }
+
+
+    /**
+     * Gets the inventoryDetail value for this BinTransferInventory.
+     * 
+     * @return inventoryDetail
+     */
+    public com.netsuite.webservices.platform.common_2018_2.InventoryDetail getInventoryDetail() {
         return inventoryDetail;
     }
 
-    /**
-     * 设置inventoryDetail属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link InventoryDetail }
-     *     
-     */
-    public void setInventoryDetail(InventoryDetail value) {
-        this.inventoryDetail = value;
-    }
 
     /**
-     * 获取fromBins属性的值。
+     * Sets the inventoryDetail value for this BinTransferInventory.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param inventoryDetail
      */
-    public String getFromBins() {
+    public void setInventoryDetail(com.netsuite.webservices.platform.common_2018_2.InventoryDetail inventoryDetail) {
+        this.inventoryDetail = inventoryDetail;
+    }
+
+
+    /**
+     * Gets the fromBins value for this BinTransferInventory.
+     * 
+     * @return fromBins
+     */
+    public java.lang.String getFromBins() {
         return fromBins;
     }
 
-    /**
-     * 设置fromBins属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setFromBins(String value) {
-        this.fromBins = value;
-    }
 
     /**
-     * 获取toBins属性的值。
+     * Sets the fromBins value for this BinTransferInventory.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param fromBins
      */
-    public String getToBins() {
+    public void setFromBins(java.lang.String fromBins) {
+        this.fromBins = fromBins;
+    }
+
+
+    /**
+     * Gets the toBins value for this BinTransferInventory.
+     * 
+     * @return toBins
+     */
+    public java.lang.String getToBins() {
         return toBins;
     }
 
+
     /**
-     * 设置toBins属性的值。
+     * Sets the toBins value for this BinTransferInventory.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     * @param toBins
      */
-    public void setToBins(String value) {
-        this.toBins = value;
+    public void setToBins(java.lang.String toBins) {
+        this.toBins = toBins;
+    }
+
+    private java.lang.Object __equalsCalc = null;
+    public synchronized boolean equals(java.lang.Object obj) {
+        if (!(obj instanceof BinTransferInventory)) return false;
+        BinTransferInventory other = (BinTransferInventory) obj;
+        if (obj == null) return false;
+        if (this == obj) return true;
+        if (__equalsCalc != null) {
+            return (__equalsCalc == obj);
+        }
+        __equalsCalc = obj;
+        boolean _equals;
+        _equals = true && 
+            ((this.line==null && other.getLine()==null) || 
+             (this.line!=null &&
+              this.line.equals(other.getLine()))) &&
+            ((this.item==null && other.getItem()==null) || 
+             (this.item!=null &&
+              this.item.equals(other.getItem()))) &&
+            ((this.description==null && other.getDescription()==null) || 
+             (this.description!=null &&
+              this.description.equals(other.getDescription()))) &&
+            ((this.preferredBin==null && other.getPreferredBin()==null) || 
+             (this.preferredBin!=null &&
+              this.preferredBin.equals(other.getPreferredBin()))) &&
+            ((this.quantity==null && other.getQuantity()==null) || 
+             (this.quantity!=null &&
+              this.quantity.equals(other.getQuantity()))) &&
+            ((this.itemUnitsLabel==null && other.getItemUnitsLabel()==null) || 
+             (this.itemUnitsLabel!=null &&
+              this.itemUnitsLabel.equals(other.getItemUnitsLabel()))) &&
+            ((this.inventoryDetail==null && other.getInventoryDetail()==null) || 
+             (this.inventoryDetail!=null &&
+              this.inventoryDetail.equals(other.getInventoryDetail()))) &&
+            ((this.fromBins==null && other.getFromBins()==null) || 
+             (this.fromBins!=null &&
+              this.fromBins.equals(other.getFromBins()))) &&
+            ((this.toBins==null && other.getToBins()==null) || 
+             (this.toBins!=null &&
+              this.toBins.equals(other.getToBins())));
+        __equalsCalc = null;
+        return _equals;
+    }
+
+    private boolean __hashCodeCalc = false;
+    public synchronized int hashCode() {
+        if (__hashCodeCalc) {
+            return 0;
+        }
+        __hashCodeCalc = true;
+        int _hashCode = 1;
+        if (getLine() != null) {
+            _hashCode += getLine().hashCode();
+        }
+        if (getItem() != null) {
+            _hashCode += getItem().hashCode();
+        }
+        if (getDescription() != null) {
+            _hashCode += getDescription().hashCode();
+        }
+        if (getPreferredBin() != null) {
+            _hashCode += getPreferredBin().hashCode();
+        }
+        if (getQuantity() != null) {
+            _hashCode += getQuantity().hashCode();
+        }
+        if (getItemUnitsLabel() != null) {
+            _hashCode += getItemUnitsLabel().hashCode();
+        }
+        if (getInventoryDetail() != null) {
+            _hashCode += getInventoryDetail().hashCode();
+        }
+        if (getFromBins() != null) {
+            _hashCode += getFromBins().hashCode();
+        }
+        if (getToBins() != null) {
+            _hashCode += getToBins().hashCode();
+        }
+        __hashCodeCalc = false;
+        return _hashCode;
+    }
+
+    // Type metadata
+    private static org.apache.axis.description.TypeDesc typeDesc =
+        new org.apache.axis.description.TypeDesc(BinTransferInventory.class, true);
+
+    static {
+        typeDesc.setXmlType(new javax.xml.namespace.QName("urn:inventory_2018_2.transactions.webservices.netsuite.com", "BinTransferInventory"));
+        org.apache.axis.description.ElementDesc elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("line");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:inventory_2018_2.transactions.webservices.netsuite.com", "line"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "long"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("item");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:inventory_2018_2.transactions.webservices.netsuite.com", "item"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("description");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:inventory_2018_2.transactions.webservices.netsuite.com", "description"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("preferredBin");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:inventory_2018_2.transactions.webservices.netsuite.com", "preferredBin"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("quantity");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:inventory_2018_2.transactions.webservices.netsuite.com", "quantity"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "double"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("itemUnitsLabel");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:inventory_2018_2.transactions.webservices.netsuite.com", "itemUnitsLabel"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("inventoryDetail");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:inventory_2018_2.transactions.webservices.netsuite.com", "inventoryDetail"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "InventoryDetail"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("fromBins");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:inventory_2018_2.transactions.webservices.netsuite.com", "fromBins"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("toBins");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:inventory_2018_2.transactions.webservices.netsuite.com", "toBins"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+    }
+
+    /**
+     * Return type metadata object
+     */
+    public static org.apache.axis.description.TypeDesc getTypeDesc() {
+        return typeDesc;
+    }
+
+    /**
+     * Get Custom Serializer
+     */
+    public static org.apache.axis.encoding.Serializer getSerializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanSerializer(
+            _javaType, _xmlType, typeDesc);
+    }
+
+    /**
+     * Get Custom Deserializer
+     */
+    public static org.apache.axis.encoding.Deserializer getDeserializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanDeserializer(
+            _javaType, _xmlType, typeDesc);
     }
 
 }

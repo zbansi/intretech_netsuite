@@ -1,88 +1,157 @@
+/**
+ * CalendarEventResource.java
+ *
+ * This file was auto-generated from WSDL
+ * by the Apache Axis 1.4 Jul 28, 2010 (04:07:04 PDT) WSDL2Java emitter.
+ */
 
 package com.netsuite.webservices.activities.scheduling_2018_2;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlType;
-import com.netsuite.webservices.platform.core_2018_2.RecordRef;
+public class CalendarEventResource  implements java.io.Serializable {
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef resource;
 
+    private java.lang.String location;
 
-/**
- * <p>CalendarEventResource complex type的 Java 类。
- * 
- * <p>以下模式片段指定包含在此类中的预期内容。
- * 
- * <pre>
- * &lt;complexType name="CalendarEventResource">
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element name="resource" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="location" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
- */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "CalendarEventResource", propOrder = {
-    "resource",
-    "location"
-})
-public class CalendarEventResource {
+    public CalendarEventResource() {
+    }
 
-    protected RecordRef resource;
-    protected String location;
+    public CalendarEventResource(
+           com.netsuite.webservices.platform.core_2018_2.RecordRef resource,
+           java.lang.String location) {
+           this.resource = resource;
+           this.location = location;
+    }
+
 
     /**
-     * 获取resource属性的值。
+     * Gets the resource value for this CalendarEventResource.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @return resource
      */
-    public RecordRef getResource() {
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getResource() {
         return resource;
     }
 
-    /**
-     * 设置resource属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setResource(RecordRef value) {
-        this.resource = value;
-    }
 
     /**
-     * 获取location属性的值。
+     * Sets the resource value for this CalendarEventResource.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param resource
      */
-    public String getLocation() {
+    public void setResource(com.netsuite.webservices.platform.core_2018_2.RecordRef resource) {
+        this.resource = resource;
+    }
+
+
+    /**
+     * Gets the location value for this CalendarEventResource.
+     * 
+     * @return location
+     */
+    public java.lang.String getLocation() {
         return location;
     }
 
+
     /**
-     * 设置location属性的值。
+     * Sets the location value for this CalendarEventResource.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     * @param location
      */
-    public void setLocation(String value) {
-        this.location = value;
+    public void setLocation(java.lang.String location) {
+        this.location = location;
+    }
+
+    private java.lang.Object __equalsCalc = null;
+    public synchronized boolean equals(java.lang.Object obj) {
+        if (!(obj instanceof CalendarEventResource)) return false;
+        CalendarEventResource other = (CalendarEventResource) obj;
+        if (obj == null) return false;
+        if (this == obj) return true;
+        if (__equalsCalc != null) {
+            return (__equalsCalc == obj);
+        }
+        __equalsCalc = obj;
+        boolean _equals;
+        _equals = true && 
+            ((this.resource==null && other.getResource()==null) || 
+             (this.resource!=null &&
+              this.resource.equals(other.getResource()))) &&
+            ((this.location==null && other.getLocation()==null) || 
+             (this.location!=null &&
+              this.location.equals(other.getLocation())));
+        __equalsCalc = null;
+        return _equals;
+    }
+
+    private boolean __hashCodeCalc = false;
+    public synchronized int hashCode() {
+        if (__hashCodeCalc) {
+            return 0;
+        }
+        __hashCodeCalc = true;
+        int _hashCode = 1;
+        if (getResource() != null) {
+            _hashCode += getResource().hashCode();
+        }
+        if (getLocation() != null) {
+            _hashCode += getLocation().hashCode();
+        }
+        __hashCodeCalc = false;
+        return _hashCode;
+    }
+
+    // Type metadata
+    private static org.apache.axis.description.TypeDesc typeDesc =
+        new org.apache.axis.description.TypeDesc(CalendarEventResource.class, true);
+
+    static {
+        typeDesc.setXmlType(new javax.xml.namespace.QName("urn:scheduling_2018_2.activities.webservices.netsuite.com", "CalendarEventResource"));
+        org.apache.axis.description.ElementDesc elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("resource");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:scheduling_2018_2.activities.webservices.netsuite.com", "resource"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("location");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:scheduling_2018_2.activities.webservices.netsuite.com", "location"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+    }
+
+    /**
+     * Return type metadata object
+     */
+    public static org.apache.axis.description.TypeDesc getTypeDesc() {
+        return typeDesc;
+    }
+
+    /**
+     * Get Custom Serializer
+     */
+    public static org.apache.axis.encoding.Serializer getSerializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanSerializer(
+            _javaType, _xmlType, typeDesc);
+    }
+
+    /**
+     * Get Custom Deserializer
+     */
+    public static org.apache.axis.encoding.Deserializer getDeserializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanDeserializer(
+            _javaType, _xmlType, typeDesc);
     }
 
 }

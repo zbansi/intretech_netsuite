@@ -1,491 +1,839 @@
+/**
+ * PaycheckSearchRowBasic.java
+ *
+ * This file was auto-generated from WSDL
+ * by the Apache Axis 1.4 Jul 28, 2010 (04:07:04 PDT) WSDL2Java emitter.
+ */
 
 package com.netsuite.webservices.platform.common_2018_2;
 
-import java.util.ArrayList;
-import java.util.List;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlType;
-import com.netsuite.webservices.platform.core_2018_2.SearchColumnBooleanField;
-import com.netsuite.webservices.platform.core_2018_2.SearchColumnDateField;
-import com.netsuite.webservices.platform.core_2018_2.SearchColumnDoubleField;
-import com.netsuite.webservices.platform.core_2018_2.SearchColumnLongField;
-import com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField;
-import com.netsuite.webservices.platform.core_2018_2.SearchRowBasic;
+public class PaycheckSearchRowBasic  extends com.netsuite.webservices.platform.core_2018_2.SearchRowBasic  implements java.io.Serializable {
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] account;
 
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnDateField[] amendedDate;
 
-/**
- * <p>PaycheckSearchRowBasic complex type的 Java 类。
- * 
- * <p>以下模式片段指定包含在此类中的预期内容。
- * 
- * <pre>
- * &lt;complexType name="PaycheckSearchRowBasic">
- *   &lt;complexContent>
- *     &lt;extension base="{urn:core_2018_2.platform.webservices.netsuite.com}SearchRowBasic">
- *       &lt;sequence>
- *         &lt;element name="account" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnSelectField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="amendedDate" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnDateField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="amount" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnDoubleField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="batchNumber" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnLongField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="checkDate" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnDateField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="employee" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnSelectField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="externalId" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnSelectField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="hasGLImpact" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnBooleanField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="hours" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnDoubleField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="internalId" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnSelectField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="payrollItem" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnSelectField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="payrollItemType" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnSelectField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="subjectWages" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnDoubleField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="taxableWages" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnDoubleField" maxOccurs="unbounded" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/extension>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
- */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "PaycheckSearchRowBasic", propOrder = {
-    "account",
-    "amendedDate",
-    "amount",
-    "batchNumber",
-    "checkDate",
-    "employee",
-    "externalId",
-    "hasGLImpact",
-    "hours",
-    "internalId",
-    "payrollItem",
-    "payrollItemType",
-    "subjectWages",
-    "taxableWages"
-})
-public class PaycheckSearchRowBasic
-    extends SearchRowBasic
-{
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnDoubleField[] amount;
 
-    protected List<SearchColumnSelectField> account;
-    protected List<SearchColumnDateField> amendedDate;
-    protected List<SearchColumnDoubleField> amount;
-    protected List<SearchColumnLongField> batchNumber;
-    protected List<SearchColumnDateField> checkDate;
-    protected List<SearchColumnSelectField> employee;
-    protected List<SearchColumnSelectField> externalId;
-    protected List<SearchColumnBooleanField> hasGLImpact;
-    protected List<SearchColumnDoubleField> hours;
-    protected List<SearchColumnSelectField> internalId;
-    protected List<SearchColumnSelectField> payrollItem;
-    protected List<SearchColumnSelectField> payrollItemType;
-    protected List<SearchColumnDoubleField> subjectWages;
-    protected List<SearchColumnDoubleField> taxableWages;
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnLongField[] batchNumber;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnDateField[] checkDate;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] employee;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] externalId;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnBooleanField[] hasGLImpact;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnDoubleField[] hours;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] internalId;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] payrollItem;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] payrollItemType;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnDoubleField[] subjectWages;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnDoubleField[] taxableWages;
+
+    public PaycheckSearchRowBasic() {
+    }
+
+    public PaycheckSearchRowBasic(
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] account,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnDateField[] amendedDate,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnDoubleField[] amount,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnLongField[] batchNumber,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnDateField[] checkDate,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] employee,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] externalId,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnBooleanField[] hasGLImpact,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnDoubleField[] hours,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] internalId,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] payrollItem,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] payrollItemType,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnDoubleField[] subjectWages,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnDoubleField[] taxableWages) {
+        this.account = account;
+        this.amendedDate = amendedDate;
+        this.amount = amount;
+        this.batchNumber = batchNumber;
+        this.checkDate = checkDate;
+        this.employee = employee;
+        this.externalId = externalId;
+        this.hasGLImpact = hasGLImpact;
+        this.hours = hours;
+        this.internalId = internalId;
+        this.payrollItem = payrollItem;
+        this.payrollItemType = payrollItemType;
+        this.subjectWages = subjectWages;
+        this.taxableWages = taxableWages;
+    }
+
 
     /**
-     * Gets the value of the account property.
+     * Gets the account value for this PaycheckSearchRowBasic.
      * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the account property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getAccount().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnSelectField }
-     * 
-     * 
+     * @return account
      */
-    public List<SearchColumnSelectField> getAccount() {
-        if (account == null) {
-            account = new ArrayList<SearchColumnSelectField>();
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] getAccount() {
+        return account;
+    }
+
+
+    /**
+     * Sets the account value for this PaycheckSearchRowBasic.
+     * 
+     * @param account
+     */
+    public void setAccount(com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] account) {
+        this.account = account;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField getAccount(int i) {
+        return this.account[i];
+    }
+
+    public void setAccount(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField _value) {
+        this.account[i] = _value;
+    }
+
+
+    /**
+     * Gets the amendedDate value for this PaycheckSearchRowBasic.
+     * 
+     * @return amendedDate
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnDateField[] getAmendedDate() {
+        return amendedDate;
+    }
+
+
+    /**
+     * Sets the amendedDate value for this PaycheckSearchRowBasic.
+     * 
+     * @param amendedDate
+     */
+    public void setAmendedDate(com.netsuite.webservices.platform.core_2018_2.SearchColumnDateField[] amendedDate) {
+        this.amendedDate = amendedDate;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnDateField getAmendedDate(int i) {
+        return this.amendedDate[i];
+    }
+
+    public void setAmendedDate(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnDateField _value) {
+        this.amendedDate[i] = _value;
+    }
+
+
+    /**
+     * Gets the amount value for this PaycheckSearchRowBasic.
+     * 
+     * @return amount
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnDoubleField[] getAmount() {
+        return amount;
+    }
+
+
+    /**
+     * Sets the amount value for this PaycheckSearchRowBasic.
+     * 
+     * @param amount
+     */
+    public void setAmount(com.netsuite.webservices.platform.core_2018_2.SearchColumnDoubleField[] amount) {
+        this.amount = amount;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnDoubleField getAmount(int i) {
+        return this.amount[i];
+    }
+
+    public void setAmount(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnDoubleField _value) {
+        this.amount[i] = _value;
+    }
+
+
+    /**
+     * Gets the batchNumber value for this PaycheckSearchRowBasic.
+     * 
+     * @return batchNumber
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnLongField[] getBatchNumber() {
+        return batchNumber;
+    }
+
+
+    /**
+     * Sets the batchNumber value for this PaycheckSearchRowBasic.
+     * 
+     * @param batchNumber
+     */
+    public void setBatchNumber(com.netsuite.webservices.platform.core_2018_2.SearchColumnLongField[] batchNumber) {
+        this.batchNumber = batchNumber;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnLongField getBatchNumber(int i) {
+        return this.batchNumber[i];
+    }
+
+    public void setBatchNumber(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnLongField _value) {
+        this.batchNumber[i] = _value;
+    }
+
+
+    /**
+     * Gets the checkDate value for this PaycheckSearchRowBasic.
+     * 
+     * @return checkDate
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnDateField[] getCheckDate() {
+        return checkDate;
+    }
+
+
+    /**
+     * Sets the checkDate value for this PaycheckSearchRowBasic.
+     * 
+     * @param checkDate
+     */
+    public void setCheckDate(com.netsuite.webservices.platform.core_2018_2.SearchColumnDateField[] checkDate) {
+        this.checkDate = checkDate;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnDateField getCheckDate(int i) {
+        return this.checkDate[i];
+    }
+
+    public void setCheckDate(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnDateField _value) {
+        this.checkDate[i] = _value;
+    }
+
+
+    /**
+     * Gets the employee value for this PaycheckSearchRowBasic.
+     * 
+     * @return employee
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] getEmployee() {
+        return employee;
+    }
+
+
+    /**
+     * Sets the employee value for this PaycheckSearchRowBasic.
+     * 
+     * @param employee
+     */
+    public void setEmployee(com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] employee) {
+        this.employee = employee;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField getEmployee(int i) {
+        return this.employee[i];
+    }
+
+    public void setEmployee(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField _value) {
+        this.employee[i] = _value;
+    }
+
+
+    /**
+     * Gets the externalId value for this PaycheckSearchRowBasic.
+     * 
+     * @return externalId
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] getExternalId() {
+        return externalId;
+    }
+
+
+    /**
+     * Sets the externalId value for this PaycheckSearchRowBasic.
+     * 
+     * @param externalId
+     */
+    public void setExternalId(com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] externalId) {
+        this.externalId = externalId;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField getExternalId(int i) {
+        return this.externalId[i];
+    }
+
+    public void setExternalId(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField _value) {
+        this.externalId[i] = _value;
+    }
+
+
+    /**
+     * Gets the hasGLImpact value for this PaycheckSearchRowBasic.
+     * 
+     * @return hasGLImpact
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnBooleanField[] getHasGLImpact() {
+        return hasGLImpact;
+    }
+
+
+    /**
+     * Sets the hasGLImpact value for this PaycheckSearchRowBasic.
+     * 
+     * @param hasGLImpact
+     */
+    public void setHasGLImpact(com.netsuite.webservices.platform.core_2018_2.SearchColumnBooleanField[] hasGLImpact) {
+        this.hasGLImpact = hasGLImpact;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnBooleanField getHasGLImpact(int i) {
+        return this.hasGLImpact[i];
+    }
+
+    public void setHasGLImpact(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnBooleanField _value) {
+        this.hasGLImpact[i] = _value;
+    }
+
+
+    /**
+     * Gets the hours value for this PaycheckSearchRowBasic.
+     * 
+     * @return hours
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnDoubleField[] getHours() {
+        return hours;
+    }
+
+
+    /**
+     * Sets the hours value for this PaycheckSearchRowBasic.
+     * 
+     * @param hours
+     */
+    public void setHours(com.netsuite.webservices.platform.core_2018_2.SearchColumnDoubleField[] hours) {
+        this.hours = hours;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnDoubleField getHours(int i) {
+        return this.hours[i];
+    }
+
+    public void setHours(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnDoubleField _value) {
+        this.hours[i] = _value;
+    }
+
+
+    /**
+     * Gets the internalId value for this PaycheckSearchRowBasic.
+     * 
+     * @return internalId
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] getInternalId() {
+        return internalId;
+    }
+
+
+    /**
+     * Sets the internalId value for this PaycheckSearchRowBasic.
+     * 
+     * @param internalId
+     */
+    public void setInternalId(com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] internalId) {
+        this.internalId = internalId;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField getInternalId(int i) {
+        return this.internalId[i];
+    }
+
+    public void setInternalId(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField _value) {
+        this.internalId[i] = _value;
+    }
+
+
+    /**
+     * Gets the payrollItem value for this PaycheckSearchRowBasic.
+     * 
+     * @return payrollItem
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] getPayrollItem() {
+        return payrollItem;
+    }
+
+
+    /**
+     * Sets the payrollItem value for this PaycheckSearchRowBasic.
+     * 
+     * @param payrollItem
+     */
+    public void setPayrollItem(com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] payrollItem) {
+        this.payrollItem = payrollItem;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField getPayrollItem(int i) {
+        return this.payrollItem[i];
+    }
+
+    public void setPayrollItem(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField _value) {
+        this.payrollItem[i] = _value;
+    }
+
+
+    /**
+     * Gets the payrollItemType value for this PaycheckSearchRowBasic.
+     * 
+     * @return payrollItemType
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] getPayrollItemType() {
+        return payrollItemType;
+    }
+
+
+    /**
+     * Sets the payrollItemType value for this PaycheckSearchRowBasic.
+     * 
+     * @param payrollItemType
+     */
+    public void setPayrollItemType(com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] payrollItemType) {
+        this.payrollItemType = payrollItemType;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField getPayrollItemType(int i) {
+        return this.payrollItemType[i];
+    }
+
+    public void setPayrollItemType(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField _value) {
+        this.payrollItemType[i] = _value;
+    }
+
+
+    /**
+     * Gets the subjectWages value for this PaycheckSearchRowBasic.
+     * 
+     * @return subjectWages
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnDoubleField[] getSubjectWages() {
+        return subjectWages;
+    }
+
+
+    /**
+     * Sets the subjectWages value for this PaycheckSearchRowBasic.
+     * 
+     * @param subjectWages
+     */
+    public void setSubjectWages(com.netsuite.webservices.platform.core_2018_2.SearchColumnDoubleField[] subjectWages) {
+        this.subjectWages = subjectWages;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnDoubleField getSubjectWages(int i) {
+        return this.subjectWages[i];
+    }
+
+    public void setSubjectWages(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnDoubleField _value) {
+        this.subjectWages[i] = _value;
+    }
+
+
+    /**
+     * Gets the taxableWages value for this PaycheckSearchRowBasic.
+     * 
+     * @return taxableWages
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnDoubleField[] getTaxableWages() {
+        return taxableWages;
+    }
+
+
+    /**
+     * Sets the taxableWages value for this PaycheckSearchRowBasic.
+     * 
+     * @param taxableWages
+     */
+    public void setTaxableWages(com.netsuite.webservices.platform.core_2018_2.SearchColumnDoubleField[] taxableWages) {
+        this.taxableWages = taxableWages;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnDoubleField getTaxableWages(int i) {
+        return this.taxableWages[i];
+    }
+
+    public void setTaxableWages(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnDoubleField _value) {
+        this.taxableWages[i] = _value;
+    }
+
+    private java.lang.Object __equalsCalc = null;
+    public synchronized boolean equals(java.lang.Object obj) {
+        if (!(obj instanceof PaycheckSearchRowBasic)) return false;
+        PaycheckSearchRowBasic other = (PaycheckSearchRowBasic) obj;
+        if (obj == null) return false;
+        if (this == obj) return true;
+        if (__equalsCalc != null) {
+            return (__equalsCalc == obj);
         }
-        return this.account;
+        __equalsCalc = obj;
+        boolean _equals;
+        _equals = super.equals(obj) && 
+            ((this.account==null && other.getAccount()==null) || 
+             (this.account!=null &&
+              java.util.Arrays.equals(this.account, other.getAccount()))) &&
+            ((this.amendedDate==null && other.getAmendedDate()==null) || 
+             (this.amendedDate!=null &&
+              java.util.Arrays.equals(this.amendedDate, other.getAmendedDate()))) &&
+            ((this.amount==null && other.getAmount()==null) || 
+             (this.amount!=null &&
+              java.util.Arrays.equals(this.amount, other.getAmount()))) &&
+            ((this.batchNumber==null && other.getBatchNumber()==null) || 
+             (this.batchNumber!=null &&
+              java.util.Arrays.equals(this.batchNumber, other.getBatchNumber()))) &&
+            ((this.checkDate==null && other.getCheckDate()==null) || 
+             (this.checkDate!=null &&
+              java.util.Arrays.equals(this.checkDate, other.getCheckDate()))) &&
+            ((this.employee==null && other.getEmployee()==null) || 
+             (this.employee!=null &&
+              java.util.Arrays.equals(this.employee, other.getEmployee()))) &&
+            ((this.externalId==null && other.getExternalId()==null) || 
+             (this.externalId!=null &&
+              java.util.Arrays.equals(this.externalId, other.getExternalId()))) &&
+            ((this.hasGLImpact==null && other.getHasGLImpact()==null) || 
+             (this.hasGLImpact!=null &&
+              java.util.Arrays.equals(this.hasGLImpact, other.getHasGLImpact()))) &&
+            ((this.hours==null && other.getHours()==null) || 
+             (this.hours!=null &&
+              java.util.Arrays.equals(this.hours, other.getHours()))) &&
+            ((this.internalId==null && other.getInternalId()==null) || 
+             (this.internalId!=null &&
+              java.util.Arrays.equals(this.internalId, other.getInternalId()))) &&
+            ((this.payrollItem==null && other.getPayrollItem()==null) || 
+             (this.payrollItem!=null &&
+              java.util.Arrays.equals(this.payrollItem, other.getPayrollItem()))) &&
+            ((this.payrollItemType==null && other.getPayrollItemType()==null) || 
+             (this.payrollItemType!=null &&
+              java.util.Arrays.equals(this.payrollItemType, other.getPayrollItemType()))) &&
+            ((this.subjectWages==null && other.getSubjectWages()==null) || 
+             (this.subjectWages!=null &&
+              java.util.Arrays.equals(this.subjectWages, other.getSubjectWages()))) &&
+            ((this.taxableWages==null && other.getTaxableWages()==null) || 
+             (this.taxableWages!=null &&
+              java.util.Arrays.equals(this.taxableWages, other.getTaxableWages())));
+        __equalsCalc = null;
+        return _equals;
+    }
+
+    private boolean __hashCodeCalc = false;
+    public synchronized int hashCode() {
+        if (__hashCodeCalc) {
+            return 0;
+        }
+        __hashCodeCalc = true;
+        int _hashCode = super.hashCode();
+        if (getAccount() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getAccount());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getAccount(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getAmendedDate() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getAmendedDate());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getAmendedDate(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getAmount() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getAmount());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getAmount(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getBatchNumber() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getBatchNumber());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getBatchNumber(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getCheckDate() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getCheckDate());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getCheckDate(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getEmployee() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getEmployee());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getEmployee(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getExternalId() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getExternalId());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getExternalId(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getHasGLImpact() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getHasGLImpact());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getHasGLImpact(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getHours() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getHours());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getHours(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getInternalId() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getInternalId());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getInternalId(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getPayrollItem() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getPayrollItem());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getPayrollItem(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getPayrollItemType() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getPayrollItemType());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getPayrollItemType(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getSubjectWages() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getSubjectWages());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getSubjectWages(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getTaxableWages() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getTaxableWages());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getTaxableWages(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        __hashCodeCalc = false;
+        return _hashCode;
+    }
+
+    // Type metadata
+    private static org.apache.axis.description.TypeDesc typeDesc =
+        new org.apache.axis.description.TypeDesc(PaycheckSearchRowBasic.class, true);
+
+    static {
+        typeDesc.setXmlType(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "PaycheckSearchRowBasic"));
+        org.apache.axis.description.ElementDesc elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("account");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "account"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnSelectField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("amendedDate");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "amendedDate"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnDateField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("amount");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "amount"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnDoubleField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("batchNumber");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "batchNumber"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnLongField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("checkDate");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "checkDate"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnDateField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("employee");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "employee"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnSelectField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("externalId");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "externalId"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnSelectField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("hasGLImpact");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "hasGLImpact"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnBooleanField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("hours");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "hours"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnDoubleField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("internalId");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "internalId"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnSelectField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("payrollItem");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "payrollItem"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnSelectField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("payrollItemType");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "payrollItemType"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnSelectField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("subjectWages");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "subjectWages"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnDoubleField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("taxableWages");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "taxableWages"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnDoubleField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
     }
 
     /**
-     * Gets the value of the amendedDate property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the amendedDate property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getAmendedDate().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnDateField }
-     * 
-     * 
+     * Return type metadata object
      */
-    public List<SearchColumnDateField> getAmendedDate() {
-        if (amendedDate == null) {
-            amendedDate = new ArrayList<SearchColumnDateField>();
-        }
-        return this.amendedDate;
+    public static org.apache.axis.description.TypeDesc getTypeDesc() {
+        return typeDesc;
     }
 
     /**
-     * Gets the value of the amount property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the amount property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getAmount().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnDoubleField }
-     * 
-     * 
+     * Get Custom Serializer
      */
-    public List<SearchColumnDoubleField> getAmount() {
-        if (amount == null) {
-            amount = new ArrayList<SearchColumnDoubleField>();
-        }
-        return this.amount;
+    public static org.apache.axis.encoding.Serializer getSerializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanSerializer(
+            _javaType, _xmlType, typeDesc);
     }
 
     /**
-     * Gets the value of the batchNumber property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the batchNumber property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getBatchNumber().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnLongField }
-     * 
-     * 
+     * Get Custom Deserializer
      */
-    public List<SearchColumnLongField> getBatchNumber() {
-        if (batchNumber == null) {
-            batchNumber = new ArrayList<SearchColumnLongField>();
-        }
-        return this.batchNumber;
-    }
-
-    /**
-     * Gets the value of the checkDate property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the checkDate property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getCheckDate().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnDateField }
-     * 
-     * 
-     */
-    public List<SearchColumnDateField> getCheckDate() {
-        if (checkDate == null) {
-            checkDate = new ArrayList<SearchColumnDateField>();
-        }
-        return this.checkDate;
-    }
-
-    /**
-     * Gets the value of the employee property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the employee property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getEmployee().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnSelectField }
-     * 
-     * 
-     */
-    public List<SearchColumnSelectField> getEmployee() {
-        if (employee == null) {
-            employee = new ArrayList<SearchColumnSelectField>();
-        }
-        return this.employee;
-    }
-
-    /**
-     * Gets the value of the externalId property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the externalId property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getExternalId().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnSelectField }
-     * 
-     * 
-     */
-    public List<SearchColumnSelectField> getExternalId() {
-        if (externalId == null) {
-            externalId = new ArrayList<SearchColumnSelectField>();
-        }
-        return this.externalId;
-    }
-
-    /**
-     * Gets the value of the hasGLImpact property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the hasGLImpact property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getHasGLImpact().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnBooleanField }
-     * 
-     * 
-     */
-    public List<SearchColumnBooleanField> getHasGLImpact() {
-        if (hasGLImpact == null) {
-            hasGLImpact = new ArrayList<SearchColumnBooleanField>();
-        }
-        return this.hasGLImpact;
-    }
-
-    /**
-     * Gets the value of the hours property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the hours property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getHours().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnDoubleField }
-     * 
-     * 
-     */
-    public List<SearchColumnDoubleField> getHours() {
-        if (hours == null) {
-            hours = new ArrayList<SearchColumnDoubleField>();
-        }
-        return this.hours;
-    }
-
-    /**
-     * Gets the value of the internalId property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the internalId property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getInternalId().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnSelectField }
-     * 
-     * 
-     */
-    public List<SearchColumnSelectField> getInternalId() {
-        if (internalId == null) {
-            internalId = new ArrayList<SearchColumnSelectField>();
-        }
-        return this.internalId;
-    }
-
-    /**
-     * Gets the value of the payrollItem property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the payrollItem property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getPayrollItem().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnSelectField }
-     * 
-     * 
-     */
-    public List<SearchColumnSelectField> getPayrollItem() {
-        if (payrollItem == null) {
-            payrollItem = new ArrayList<SearchColumnSelectField>();
-        }
-        return this.payrollItem;
-    }
-
-    /**
-     * Gets the value of the payrollItemType property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the payrollItemType property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getPayrollItemType().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnSelectField }
-     * 
-     * 
-     */
-    public List<SearchColumnSelectField> getPayrollItemType() {
-        if (payrollItemType == null) {
-            payrollItemType = new ArrayList<SearchColumnSelectField>();
-        }
-        return this.payrollItemType;
-    }
-
-    /**
-     * Gets the value of the subjectWages property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the subjectWages property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getSubjectWages().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnDoubleField }
-     * 
-     * 
-     */
-    public List<SearchColumnDoubleField> getSubjectWages() {
-        if (subjectWages == null) {
-            subjectWages = new ArrayList<SearchColumnDoubleField>();
-        }
-        return this.subjectWages;
-    }
-
-    /**
-     * Gets the value of the taxableWages property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the taxableWages property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getTaxableWages().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnDoubleField }
-     * 
-     * 
-     */
-    public List<SearchColumnDoubleField> getTaxableWages() {
-        if (taxableWages == null) {
-            taxableWages = new ArrayList<SearchColumnDoubleField>();
-        }
-        return this.taxableWages;
+    public static org.apache.axis.encoding.Deserializer getDeserializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanDeserializer(
+            _javaType, _xmlType, typeDesc);
     }
 
 }

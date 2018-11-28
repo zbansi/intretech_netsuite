@@ -1,115 +1,194 @@
+/**
+ * CustomRecordTypeLinks.java
+ *
+ * This file was auto-generated from WSDL
+ * by the Apache Axis 1.4 Jul 28, 2010 (04:07:04 PDT) WSDL2Java emitter.
+ */
 
 package com.netsuite.webservices.setup.customization_2018_2;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlType;
-import com.netsuite.webservices.platform.core_2018_2.RecordRef;
+public class CustomRecordTypeLinks  implements java.io.Serializable {
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef linkCenter;
 
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef linkSection;
 
-/**
- * <p>CustomRecordTypeLinks complex type的 Java 类。
- * 
- * <p>以下模式片段指定包含在此类中的预期内容。
- * 
- * <pre>
- * &lt;complexType name="CustomRecordTypeLinks">
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element name="linkCenter" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="linkSection" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="linkLabel" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
- */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "CustomRecordTypeLinks", propOrder = {
-    "linkCenter",
-    "linkSection",
-    "linkLabel"
-})
-public class CustomRecordTypeLinks {
+    private java.lang.String linkLabel;
 
-    protected RecordRef linkCenter;
-    protected RecordRef linkSection;
-    protected String linkLabel;
+    public CustomRecordTypeLinks() {
+    }
+
+    public CustomRecordTypeLinks(
+           com.netsuite.webservices.platform.core_2018_2.RecordRef linkCenter,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef linkSection,
+           java.lang.String linkLabel) {
+           this.linkCenter = linkCenter;
+           this.linkSection = linkSection;
+           this.linkLabel = linkLabel;
+    }
+
 
     /**
-     * 获取linkCenter属性的值。
+     * Gets the linkCenter value for this CustomRecordTypeLinks.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @return linkCenter
      */
-    public RecordRef getLinkCenter() {
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getLinkCenter() {
         return linkCenter;
     }
 
-    /**
-     * 设置linkCenter属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setLinkCenter(RecordRef value) {
-        this.linkCenter = value;
-    }
 
     /**
-     * 获取linkSection属性的值。
+     * Sets the linkCenter value for this CustomRecordTypeLinks.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param linkCenter
      */
-    public RecordRef getLinkSection() {
+    public void setLinkCenter(com.netsuite.webservices.platform.core_2018_2.RecordRef linkCenter) {
+        this.linkCenter = linkCenter;
+    }
+
+
+    /**
+     * Gets the linkSection value for this CustomRecordTypeLinks.
+     * 
+     * @return linkSection
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getLinkSection() {
         return linkSection;
     }
 
-    /**
-     * 设置linkSection属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setLinkSection(RecordRef value) {
-        this.linkSection = value;
-    }
 
     /**
-     * 获取linkLabel属性的值。
+     * Sets the linkSection value for this CustomRecordTypeLinks.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param linkSection
      */
-    public String getLinkLabel() {
+    public void setLinkSection(com.netsuite.webservices.platform.core_2018_2.RecordRef linkSection) {
+        this.linkSection = linkSection;
+    }
+
+
+    /**
+     * Gets the linkLabel value for this CustomRecordTypeLinks.
+     * 
+     * @return linkLabel
+     */
+    public java.lang.String getLinkLabel() {
         return linkLabel;
     }
 
+
     /**
-     * 设置linkLabel属性的值。
+     * Sets the linkLabel value for this CustomRecordTypeLinks.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     * @param linkLabel
      */
-    public void setLinkLabel(String value) {
-        this.linkLabel = value;
+    public void setLinkLabel(java.lang.String linkLabel) {
+        this.linkLabel = linkLabel;
+    }
+
+    private java.lang.Object __equalsCalc = null;
+    public synchronized boolean equals(java.lang.Object obj) {
+        if (!(obj instanceof CustomRecordTypeLinks)) return false;
+        CustomRecordTypeLinks other = (CustomRecordTypeLinks) obj;
+        if (obj == null) return false;
+        if (this == obj) return true;
+        if (__equalsCalc != null) {
+            return (__equalsCalc == obj);
+        }
+        __equalsCalc = obj;
+        boolean _equals;
+        _equals = true && 
+            ((this.linkCenter==null && other.getLinkCenter()==null) || 
+             (this.linkCenter!=null &&
+              this.linkCenter.equals(other.getLinkCenter()))) &&
+            ((this.linkSection==null && other.getLinkSection()==null) || 
+             (this.linkSection!=null &&
+              this.linkSection.equals(other.getLinkSection()))) &&
+            ((this.linkLabel==null && other.getLinkLabel()==null) || 
+             (this.linkLabel!=null &&
+              this.linkLabel.equals(other.getLinkLabel())));
+        __equalsCalc = null;
+        return _equals;
+    }
+
+    private boolean __hashCodeCalc = false;
+    public synchronized int hashCode() {
+        if (__hashCodeCalc) {
+            return 0;
+        }
+        __hashCodeCalc = true;
+        int _hashCode = 1;
+        if (getLinkCenter() != null) {
+            _hashCode += getLinkCenter().hashCode();
+        }
+        if (getLinkSection() != null) {
+            _hashCode += getLinkSection().hashCode();
+        }
+        if (getLinkLabel() != null) {
+            _hashCode += getLinkLabel().hashCode();
+        }
+        __hashCodeCalc = false;
+        return _hashCode;
+    }
+
+    // Type metadata
+    private static org.apache.axis.description.TypeDesc typeDesc =
+        new org.apache.axis.description.TypeDesc(CustomRecordTypeLinks.class, true);
+
+    static {
+        typeDesc.setXmlType(new javax.xml.namespace.QName("urn:customization_2018_2.setup.webservices.netsuite.com", "CustomRecordTypeLinks"));
+        org.apache.axis.description.ElementDesc elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("linkCenter");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:customization_2018_2.setup.webservices.netsuite.com", "linkCenter"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("linkSection");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:customization_2018_2.setup.webservices.netsuite.com", "linkSection"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("linkLabel");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:customization_2018_2.setup.webservices.netsuite.com", "linkLabel"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+    }
+
+    /**
+     * Return type metadata object
+     */
+    public static org.apache.axis.description.TypeDesc getTypeDesc() {
+        return typeDesc;
+    }
+
+    /**
+     * Get Custom Serializer
+     */
+    public static org.apache.axis.encoding.Serializer getSerializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanSerializer(
+            _javaType, _xmlType, typeDesc);
+    }
+
+    /**
+     * Get Custom Deserializer
+     */
+    public static org.apache.axis.encoding.Deserializer getDeserializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanDeserializer(
+            _javaType, _xmlType, typeDesc);
     }
 
 }

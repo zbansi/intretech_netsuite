@@ -1,2181 +1,3059 @@
+/**
+ * Vendor.java
+ *
+ * This file was auto-generated from WSDL
+ * by the Apache Axis 1.4 Jul 28, 2010 (04:07:04 PDT) WSDL2Java emitter.
+ */
 
 package com.netsuite.webservices.lists.relationships_2018_2;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlAttribute;
-import javax.xml.bind.annotation.XmlSchemaType;
-import javax.xml.bind.annotation.XmlType;
-import javax.xml.datatype.XMLGregorianCalendar;
-import com.netsuite.webservices.lists.relationships_2018_2.types.EmailPreference;
-import com.netsuite.webservices.platform.common_2018_2.types.GlobalSubscriptionStatus;
-import com.netsuite.webservices.platform.core_2018_2.CustomFieldList;
-import com.netsuite.webservices.platform.core_2018_2.Record;
-import com.netsuite.webservices.platform.core_2018_2.RecordRef;
+public class Vendor  extends com.netsuite.webservices.platform.core_2018_2.Record  implements java.io.Serializable {
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef customForm;
 
+    private java.lang.String entityId;
 
-/**
- * <p>Vendor complex type的 Java 类。
- * 
- * <p>以下模式片段指定包含在此类中的预期内容。
- * 
- * <pre>
- * &lt;complexType name="Vendor">
- *   &lt;complexContent>
- *     &lt;extension base="{urn:core_2018_2.platform.webservices.netsuite.com}Record">
- *       &lt;sequence>
- *         &lt;element name="customForm" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="entityId" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="altName" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="isPerson" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         &lt;element name="phoneticName" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="salutation" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="firstName" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="middleName" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="lastName" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="companyName" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="phone" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="fax" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="email" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="url" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="defaultAddress" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="isInactive" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         &lt;element name="lastModifiedDate" type="{http://www.w3.org/2001/XMLSchema}dateTime" minOccurs="0"/>
- *         &lt;element name="dateCreated" type="{http://www.w3.org/2001/XMLSchema}dateTime" minOccurs="0"/>
- *         &lt;element name="category" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="title" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="printOnCheckAs" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="altPhone" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="homePhone" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="mobilePhone" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="altEmail" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="comments" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="globalSubscriptionStatus" type="{urn:types.common_2018_2.platform.webservices.netsuite.com}GlobalSubscriptionStatus" minOccurs="0"/>
- *         &lt;element name="image" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="emailPreference" type="{urn:types.relationships_2018_2.lists.webservices.netsuite.com}EmailPreference" minOccurs="0"/>
- *         &lt;element name="subsidiary" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="representingSubsidiary" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="accountNumber" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="legalName" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="vatRegNumber" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="expenseAccount" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="payablesAccount" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="terms" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="incoterm" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="creditLimit" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
- *         &lt;element name="balancePrimary" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
- *         &lt;element name="openingBalance" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
- *         &lt;element name="openingBalanceDate" type="{http://www.w3.org/2001/XMLSchema}dateTime" minOccurs="0"/>
- *         &lt;element name="openingBalanceAccount" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="balance" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
- *         &lt;element name="unbilledOrdersPrimary" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
- *         &lt;element name="bcn" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="unbilledOrders" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
- *         &lt;element name="currency" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="is1099Eligible" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         &lt;element name="isJobResourceVend" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         &lt;element name="laborCost" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
- *         &lt;element name="purchaseOrderQuantity" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
- *         &lt;element name="purchaseOrderAmount" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
- *         &lt;element name="purchaseOrderQuantityDiff" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
- *         &lt;element name="receiptQuantity" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
- *         &lt;element name="receiptAmount" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
- *         &lt;element name="receiptQuantityDiff" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
- *         &lt;element name="workCalendar" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="taxIdNum" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="taxItem" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="giveAccess" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         &lt;element name="sendEmail" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         &lt;element name="billPay" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         &lt;element name="isAccountant" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         &lt;element name="password" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="password2" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="requirePwdChange" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         &lt;element name="eligibleForCommission" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         &lt;element name="emailTransactions" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         &lt;element name="printTransactions" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         &lt;element name="faxTransactions" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         &lt;element name="pricingScheduleList" type="{urn:relationships_2018_2.lists.webservices.netsuite.com}VendorPricingScheduleList" minOccurs="0"/>
- *         &lt;element name="subscriptionsList" type="{urn:relationships_2018_2.lists.webservices.netsuite.com}SubscriptionsList" minOccurs="0"/>
- *         &lt;element name="addressbookList" type="{urn:relationships_2018_2.lists.webservices.netsuite.com}VendorAddressbookList" minOccurs="0"/>
- *         &lt;element name="currencyList" type="{urn:relationships_2018_2.lists.webservices.netsuite.com}VendorCurrencyList" minOccurs="0"/>
- *         &lt;element name="rolesList" type="{urn:relationships_2018_2.lists.webservices.netsuite.com}VendorRolesList" minOccurs="0"/>
- *         &lt;element name="customFieldList" type="{urn:core_2018_2.platform.webservices.netsuite.com}CustomFieldList" minOccurs="0"/>
- *       &lt;/sequence>
- *       &lt;attribute name="internalId" type="{http://www.w3.org/2001/XMLSchema}string" />
- *       &lt;attribute name="externalId" type="{http://www.w3.org/2001/XMLSchema}string" />
- *     &lt;/extension>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
- */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "Vendor", propOrder = {
-    "customForm",
-    "entityId",
-    "altName",
-    "isPerson",
-    "phoneticName",
-    "salutation",
-    "firstName",
-    "middleName",
-    "lastName",
-    "companyName",
-    "phone",
-    "fax",
-    "email",
-    "url",
-    "defaultAddress",
-    "isInactive",
-    "lastModifiedDate",
-    "dateCreated",
-    "category",
-    "title",
-    "printOnCheckAs",
-    "altPhone",
-    "homePhone",
-    "mobilePhone",
-    "altEmail",
-    "comments",
-    "globalSubscriptionStatus",
-    "image",
-    "emailPreference",
-    "subsidiary",
-    "representingSubsidiary",
-    "accountNumber",
-    "legalName",
-    "vatRegNumber",
-    "expenseAccount",
-    "payablesAccount",
-    "terms",
-    "incoterm",
-    "creditLimit",
-    "balancePrimary",
-    "openingBalance",
-    "openingBalanceDate",
-    "openingBalanceAccount",
-    "balance",
-    "unbilledOrdersPrimary",
-    "bcn",
-    "unbilledOrders",
-    "currency",
-    "is1099Eligible",
-    "isJobResourceVend",
-    "laborCost",
-    "purchaseOrderQuantity",
-    "purchaseOrderAmount",
-    "purchaseOrderQuantityDiff",
-    "receiptQuantity",
-    "receiptAmount",
-    "receiptQuantityDiff",
-    "workCalendar",
-    "taxIdNum",
-    "taxItem",
-    "giveAccess",
-    "sendEmail",
-    "billPay",
-    "isAccountant",
-    "password",
-    "password2",
-    "requirePwdChange",
-    "eligibleForCommission",
-    "emailTransactions",
-    "printTransactions",
-    "faxTransactions",
-    "pricingScheduleList",
-    "subscriptionsList",
-    "addressbookList",
-    "currencyList",
-    "rolesList",
-    "customFieldList"
-})
-public class Vendor
-    extends Record
-{
+    private java.lang.String altName;
 
-    protected RecordRef customForm;
-    protected String entityId;
-    protected String altName;
-    protected Boolean isPerson;
-    protected String phoneticName;
-    protected String salutation;
-    protected String firstName;
-    protected String middleName;
-    protected String lastName;
-    protected String companyName;
-    protected String phone;
-    protected String fax;
-    protected String email;
-    protected String url;
-    protected String defaultAddress;
-    protected Boolean isInactive;
-    @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar lastModifiedDate;
-    @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar dateCreated;
-    protected RecordRef category;
-    protected String title;
-    protected String printOnCheckAs;
-    protected String altPhone;
-    protected String homePhone;
-    protected String mobilePhone;
-    protected String altEmail;
-    protected String comments;
-    @XmlSchemaType(name = "string")
-    protected GlobalSubscriptionStatus globalSubscriptionStatus;
-    protected RecordRef image;
-    @XmlSchemaType(name = "string")
-    protected EmailPreference emailPreference;
-    protected RecordRef subsidiary;
-    protected RecordRef representingSubsidiary;
-    protected String accountNumber;
-    protected String legalName;
-    protected String vatRegNumber;
-    protected RecordRef expenseAccount;
-    protected RecordRef payablesAccount;
-    protected RecordRef terms;
-    protected RecordRef incoterm;
-    protected Double creditLimit;
-    protected Double balancePrimary;
-    protected Double openingBalance;
-    @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar openingBalanceDate;
-    protected RecordRef openingBalanceAccount;
-    protected Double balance;
-    protected Double unbilledOrdersPrimary;
-    protected String bcn;
-    protected Double unbilledOrders;
-    protected RecordRef currency;
-    protected Boolean is1099Eligible;
-    protected Boolean isJobResourceVend;
-    protected Double laborCost;
-    protected Double purchaseOrderQuantity;
-    protected Double purchaseOrderAmount;
-    protected Double purchaseOrderQuantityDiff;
-    protected Double receiptQuantity;
-    protected Double receiptAmount;
-    protected Double receiptQuantityDiff;
-    protected RecordRef workCalendar;
-    protected String taxIdNum;
-    protected RecordRef taxItem;
-    protected Boolean giveAccess;
-    protected Boolean sendEmail;
-    protected Boolean billPay;
-    protected Boolean isAccountant;
-    protected String password;
-    protected String password2;
-    protected Boolean requirePwdChange;
-    protected Boolean eligibleForCommission;
-    protected Boolean emailTransactions;
-    protected Boolean printTransactions;
-    protected Boolean faxTransactions;
-    protected VendorPricingScheduleList pricingScheduleList;
-    protected SubscriptionsList subscriptionsList;
-    protected VendorAddressbookList addressbookList;
-    protected VendorCurrencyList currencyList;
-    protected VendorRolesList rolesList;
-    protected CustomFieldList customFieldList;
-    @XmlAttribute(name = "internalId")
-    protected String internalId;
-    @XmlAttribute(name = "externalId")
-    protected String externalId;
+    private java.lang.Boolean isPerson;
+
+    private java.lang.String phoneticName;
+
+    private java.lang.String salutation;
+
+    private java.lang.String firstName;
+
+    private java.lang.String middleName;
+
+    private java.lang.String lastName;
+
+    private java.lang.String companyName;
+
+    private java.lang.String phone;
+
+    private java.lang.String fax;
+
+    private java.lang.String email;
+
+    private java.lang.String url;
+
+    private java.lang.String defaultAddress;
+
+    private java.lang.Boolean isInactive;
+
+    private java.util.Calendar lastModifiedDate;
+
+    private java.util.Calendar dateCreated;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef category;
+
+    private java.lang.String title;
+
+    private java.lang.String printOnCheckAs;
+
+    private java.lang.String altPhone;
+
+    private java.lang.String homePhone;
+
+    private java.lang.String mobilePhone;
+
+    private java.lang.String altEmail;
+
+    private java.lang.String comments;
+
+    private com.netsuite.webservices.platform.common_2018_2.types.GlobalSubscriptionStatus globalSubscriptionStatus;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef image;
+
+    private com.netsuite.webservices.lists.relationships_2018_2.types.EmailPreference emailPreference;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef subsidiary;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef representingSubsidiary;
+
+    private java.lang.String accountNumber;
+
+    private java.lang.String legalName;
+
+    private java.lang.String vatRegNumber;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef expenseAccount;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef payablesAccount;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef terms;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef incoterm;
+
+    private java.lang.Double creditLimit;
+
+    private java.lang.Double balancePrimary;
+
+    private java.lang.Double openingBalance;
+
+    private java.util.Calendar openingBalanceDate;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef openingBalanceAccount;
+
+    private java.lang.Double balance;
+
+    private java.lang.Double unbilledOrdersPrimary;
+
+    private java.lang.String bcn;
+
+    private java.lang.Double unbilledOrders;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef currency;
+
+    private java.lang.Boolean is1099Eligible;
+
+    private java.lang.Boolean isJobResourceVend;
+
+    private java.lang.Double laborCost;
+
+    private java.lang.Double purchaseOrderQuantity;
+
+    private java.lang.Double purchaseOrderAmount;
+
+    private java.lang.Double purchaseOrderQuantityDiff;
+
+    private java.lang.Double receiptQuantity;
+
+    private java.lang.Double receiptAmount;
+
+    private java.lang.Double receiptQuantityDiff;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef workCalendar;
+
+    private java.lang.String taxIdNum;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef taxItem;
+
+    private java.lang.Boolean giveAccess;
+
+    private java.lang.Boolean sendEmail;
+
+    private java.lang.Boolean billPay;
+
+    private java.lang.Boolean isAccountant;
+
+    private java.lang.String password;
+
+    private java.lang.String password2;
+
+    private java.lang.Boolean requirePwdChange;
+
+    private java.lang.Boolean eligibleForCommission;
+
+    private java.lang.Boolean emailTransactions;
+
+    private java.lang.Boolean printTransactions;
+
+    private java.lang.Boolean faxTransactions;
+
+    private com.netsuite.webservices.lists.relationships_2018_2.VendorPricingSchedule[] pricingScheduleList;
+
+    private com.netsuite.webservices.lists.relationships_2018_2.Subscriptions[] subscriptionsList;
+
+    private com.netsuite.webservices.lists.relationships_2018_2.VendorAddressbook[] addressbookList;
+
+    private com.netsuite.webservices.lists.relationships_2018_2.VendorCurrency[] currencyList;
+
+    private com.netsuite.webservices.lists.relationships_2018_2.VendorRoles[] rolesList;
+
+    private com.netsuite.webservices.platform.core_2018_2.CustomFieldRef[] customFieldList;
+
+    private java.lang.String internalId;  // attribute
+
+    private java.lang.String externalId;  // attribute
+
+    public Vendor() {
+    }
+
+    public Vendor(
+           java.lang.String[] nullFieldList,
+           java.lang.String internalId,
+           java.lang.String externalId,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef customForm,
+           java.lang.String entityId,
+           java.lang.String altName,
+           java.lang.Boolean isPerson,
+           java.lang.String phoneticName,
+           java.lang.String salutation,
+           java.lang.String firstName,
+           java.lang.String middleName,
+           java.lang.String lastName,
+           java.lang.String companyName,
+           java.lang.String phone,
+           java.lang.String fax,
+           java.lang.String email,
+           java.lang.String url,
+           java.lang.String defaultAddress,
+           java.lang.Boolean isInactive,
+           java.util.Calendar lastModifiedDate,
+           java.util.Calendar dateCreated,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef category,
+           java.lang.String title,
+           java.lang.String printOnCheckAs,
+           java.lang.String altPhone,
+           java.lang.String homePhone,
+           java.lang.String mobilePhone,
+           java.lang.String altEmail,
+           java.lang.String comments,
+           com.netsuite.webservices.platform.common_2018_2.types.GlobalSubscriptionStatus globalSubscriptionStatus,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef image,
+           com.netsuite.webservices.lists.relationships_2018_2.types.EmailPreference emailPreference,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef subsidiary,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef representingSubsidiary,
+           java.lang.String accountNumber,
+           java.lang.String legalName,
+           java.lang.String vatRegNumber,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef expenseAccount,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef payablesAccount,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef terms,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef incoterm,
+           java.lang.Double creditLimit,
+           java.lang.Double balancePrimary,
+           java.lang.Double openingBalance,
+           java.util.Calendar openingBalanceDate,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef openingBalanceAccount,
+           java.lang.Double balance,
+           java.lang.Double unbilledOrdersPrimary,
+           java.lang.String bcn,
+           java.lang.Double unbilledOrders,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef currency,
+           java.lang.Boolean is1099Eligible,
+           java.lang.Boolean isJobResourceVend,
+           java.lang.Double laborCost,
+           java.lang.Double purchaseOrderQuantity,
+           java.lang.Double purchaseOrderAmount,
+           java.lang.Double purchaseOrderQuantityDiff,
+           java.lang.Double receiptQuantity,
+           java.lang.Double receiptAmount,
+           java.lang.Double receiptQuantityDiff,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef workCalendar,
+           java.lang.String taxIdNum,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef taxItem,
+           java.lang.Boolean giveAccess,
+           java.lang.Boolean sendEmail,
+           java.lang.Boolean billPay,
+           java.lang.Boolean isAccountant,
+           java.lang.String password,
+           java.lang.String password2,
+           java.lang.Boolean requirePwdChange,
+           java.lang.Boolean eligibleForCommission,
+           java.lang.Boolean emailTransactions,
+           java.lang.Boolean printTransactions,
+           java.lang.Boolean faxTransactions,
+           com.netsuite.webservices.lists.relationships_2018_2.VendorPricingSchedule[] pricingScheduleList,
+           com.netsuite.webservices.lists.relationships_2018_2.Subscriptions[] subscriptionsList,
+           com.netsuite.webservices.lists.relationships_2018_2.VendorAddressbook[] addressbookList,
+           com.netsuite.webservices.lists.relationships_2018_2.VendorCurrency[] currencyList,
+           com.netsuite.webservices.lists.relationships_2018_2.VendorRoles[] rolesList,
+           com.netsuite.webservices.platform.core_2018_2.CustomFieldRef[] customFieldList) {
+        super(
+            nullFieldList);
+        this.internalId = internalId;
+        this.externalId = externalId;
+        this.customForm = customForm;
+        this.entityId = entityId;
+        this.altName = altName;
+        this.isPerson = isPerson;
+        this.phoneticName = phoneticName;
+        this.salutation = salutation;
+        this.firstName = firstName;
+        this.middleName = middleName;
+        this.lastName = lastName;
+        this.companyName = companyName;
+        this.phone = phone;
+        this.fax = fax;
+        this.email = email;
+        this.url = url;
+        this.defaultAddress = defaultAddress;
+        this.isInactive = isInactive;
+        this.lastModifiedDate = lastModifiedDate;
+        this.dateCreated = dateCreated;
+        this.category = category;
+        this.title = title;
+        this.printOnCheckAs = printOnCheckAs;
+        this.altPhone = altPhone;
+        this.homePhone = homePhone;
+        this.mobilePhone = mobilePhone;
+        this.altEmail = altEmail;
+        this.comments = comments;
+        this.globalSubscriptionStatus = globalSubscriptionStatus;
+        this.image = image;
+        this.emailPreference = emailPreference;
+        this.subsidiary = subsidiary;
+        this.representingSubsidiary = representingSubsidiary;
+        this.accountNumber = accountNumber;
+        this.legalName = legalName;
+        this.vatRegNumber = vatRegNumber;
+        this.expenseAccount = expenseAccount;
+        this.payablesAccount = payablesAccount;
+        this.terms = terms;
+        this.incoterm = incoterm;
+        this.creditLimit = creditLimit;
+        this.balancePrimary = balancePrimary;
+        this.openingBalance = openingBalance;
+        this.openingBalanceDate = openingBalanceDate;
+        this.openingBalanceAccount = openingBalanceAccount;
+        this.balance = balance;
+        this.unbilledOrdersPrimary = unbilledOrdersPrimary;
+        this.bcn = bcn;
+        this.unbilledOrders = unbilledOrders;
+        this.currency = currency;
+        this.is1099Eligible = is1099Eligible;
+        this.isJobResourceVend = isJobResourceVend;
+        this.laborCost = laborCost;
+        this.purchaseOrderQuantity = purchaseOrderQuantity;
+        this.purchaseOrderAmount = purchaseOrderAmount;
+        this.purchaseOrderQuantityDiff = purchaseOrderQuantityDiff;
+        this.receiptQuantity = receiptQuantity;
+        this.receiptAmount = receiptAmount;
+        this.receiptQuantityDiff = receiptQuantityDiff;
+        this.workCalendar = workCalendar;
+        this.taxIdNum = taxIdNum;
+        this.taxItem = taxItem;
+        this.giveAccess = giveAccess;
+        this.sendEmail = sendEmail;
+        this.billPay = billPay;
+        this.isAccountant = isAccountant;
+        this.password = password;
+        this.password2 = password2;
+        this.requirePwdChange = requirePwdChange;
+        this.eligibleForCommission = eligibleForCommission;
+        this.emailTransactions = emailTransactions;
+        this.printTransactions = printTransactions;
+        this.faxTransactions = faxTransactions;
+        this.pricingScheduleList = pricingScheduleList;
+        this.subscriptionsList = subscriptionsList;
+        this.addressbookList = addressbookList;
+        this.currencyList = currencyList;
+        this.rolesList = rolesList;
+        this.customFieldList = customFieldList;
+    }
+
 
     /**
-     * 获取customForm属性的值。
+     * Gets the customForm value for this Vendor.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @return customForm
      */
-    public RecordRef getCustomForm() {
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getCustomForm() {
         return customForm;
     }
 
-    /**
-     * 设置customForm属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setCustomForm(RecordRef value) {
-        this.customForm = value;
-    }
 
     /**
-     * 获取entityId属性的值。
+     * Sets the customForm value for this Vendor.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param customForm
      */
-    public String getEntityId() {
+    public void setCustomForm(com.netsuite.webservices.platform.core_2018_2.RecordRef customForm) {
+        this.customForm = customForm;
+    }
+
+
+    /**
+     * Gets the entityId value for this Vendor.
+     * 
+     * @return entityId
+     */
+    public java.lang.String getEntityId() {
         return entityId;
     }
 
-    /**
-     * 设置entityId属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setEntityId(String value) {
-        this.entityId = value;
-    }
 
     /**
-     * 获取altName属性的值。
+     * Sets the entityId value for this Vendor.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param entityId
      */
-    public String getAltName() {
+    public void setEntityId(java.lang.String entityId) {
+        this.entityId = entityId;
+    }
+
+
+    /**
+     * Gets the altName value for this Vendor.
+     * 
+     * @return altName
+     */
+    public java.lang.String getAltName() {
         return altName;
     }
 
-    /**
-     * 设置altName属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setAltName(String value) {
-        this.altName = value;
-    }
 
     /**
-     * 获取isPerson属性的值。
+     * Sets the altName value for this Vendor.
      * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
+     * @param altName
      */
-    public Boolean isIsPerson() {
+    public void setAltName(java.lang.String altName) {
+        this.altName = altName;
+    }
+
+
+    /**
+     * Gets the isPerson value for this Vendor.
+     * 
+     * @return isPerson
+     */
+    public java.lang.Boolean getIsPerson() {
         return isPerson;
     }
 
-    /**
-     * 设置isPerson属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
-     */
-    public void setIsPerson(Boolean value) {
-        this.isPerson = value;
-    }
 
     /**
-     * 获取phoneticName属性的值。
+     * Sets the isPerson value for this Vendor.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param isPerson
      */
-    public String getPhoneticName() {
+    public void setIsPerson(java.lang.Boolean isPerson) {
+        this.isPerson = isPerson;
+    }
+
+
+    /**
+     * Gets the phoneticName value for this Vendor.
+     * 
+     * @return phoneticName
+     */
+    public java.lang.String getPhoneticName() {
         return phoneticName;
     }
 
-    /**
-     * 设置phoneticName属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setPhoneticName(String value) {
-        this.phoneticName = value;
-    }
 
     /**
-     * 获取salutation属性的值。
+     * Sets the phoneticName value for this Vendor.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param phoneticName
      */
-    public String getSalutation() {
+    public void setPhoneticName(java.lang.String phoneticName) {
+        this.phoneticName = phoneticName;
+    }
+
+
+    /**
+     * Gets the salutation value for this Vendor.
+     * 
+     * @return salutation
+     */
+    public java.lang.String getSalutation() {
         return salutation;
     }
 
-    /**
-     * 设置salutation属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setSalutation(String value) {
-        this.salutation = value;
-    }
 
     /**
-     * 获取firstName属性的值。
+     * Sets the salutation value for this Vendor.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param salutation
      */
-    public String getFirstName() {
+    public void setSalutation(java.lang.String salutation) {
+        this.salutation = salutation;
+    }
+
+
+    /**
+     * Gets the firstName value for this Vendor.
+     * 
+     * @return firstName
+     */
+    public java.lang.String getFirstName() {
         return firstName;
     }
 
-    /**
-     * 设置firstName属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setFirstName(String value) {
-        this.firstName = value;
-    }
 
     /**
-     * 获取middleName属性的值。
+     * Sets the firstName value for this Vendor.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param firstName
      */
-    public String getMiddleName() {
+    public void setFirstName(java.lang.String firstName) {
+        this.firstName = firstName;
+    }
+
+
+    /**
+     * Gets the middleName value for this Vendor.
+     * 
+     * @return middleName
+     */
+    public java.lang.String getMiddleName() {
         return middleName;
     }
 
-    /**
-     * 设置middleName属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setMiddleName(String value) {
-        this.middleName = value;
-    }
 
     /**
-     * 获取lastName属性的值。
+     * Sets the middleName value for this Vendor.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param middleName
      */
-    public String getLastName() {
+    public void setMiddleName(java.lang.String middleName) {
+        this.middleName = middleName;
+    }
+
+
+    /**
+     * Gets the lastName value for this Vendor.
+     * 
+     * @return lastName
+     */
+    public java.lang.String getLastName() {
         return lastName;
     }
 
-    /**
-     * 设置lastName属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setLastName(String value) {
-        this.lastName = value;
-    }
 
     /**
-     * 获取companyName属性的值。
+     * Sets the lastName value for this Vendor.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param lastName
      */
-    public String getCompanyName() {
+    public void setLastName(java.lang.String lastName) {
+        this.lastName = lastName;
+    }
+
+
+    /**
+     * Gets the companyName value for this Vendor.
+     * 
+     * @return companyName
+     */
+    public java.lang.String getCompanyName() {
         return companyName;
     }
 
-    /**
-     * 设置companyName属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setCompanyName(String value) {
-        this.companyName = value;
-    }
 
     /**
-     * 获取phone属性的值。
+     * Sets the companyName value for this Vendor.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param companyName
      */
-    public String getPhone() {
+    public void setCompanyName(java.lang.String companyName) {
+        this.companyName = companyName;
+    }
+
+
+    /**
+     * Gets the phone value for this Vendor.
+     * 
+     * @return phone
+     */
+    public java.lang.String getPhone() {
         return phone;
     }
 
-    /**
-     * 设置phone属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setPhone(String value) {
-        this.phone = value;
-    }
 
     /**
-     * 获取fax属性的值。
+     * Sets the phone value for this Vendor.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param phone
      */
-    public String getFax() {
+    public void setPhone(java.lang.String phone) {
+        this.phone = phone;
+    }
+
+
+    /**
+     * Gets the fax value for this Vendor.
+     * 
+     * @return fax
+     */
+    public java.lang.String getFax() {
         return fax;
     }
 
-    /**
-     * 设置fax属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setFax(String value) {
-        this.fax = value;
-    }
 
     /**
-     * 获取email属性的值。
+     * Sets the fax value for this Vendor.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param fax
      */
-    public String getEmail() {
+    public void setFax(java.lang.String fax) {
+        this.fax = fax;
+    }
+
+
+    /**
+     * Gets the email value for this Vendor.
+     * 
+     * @return email
+     */
+    public java.lang.String getEmail() {
         return email;
     }
 
-    /**
-     * 设置email属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setEmail(String value) {
-        this.email = value;
-    }
 
     /**
-     * 获取url属性的值。
+     * Sets the email value for this Vendor.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param email
      */
-    public String getUrl() {
+    public void setEmail(java.lang.String email) {
+        this.email = email;
+    }
+
+
+    /**
+     * Gets the url value for this Vendor.
+     * 
+     * @return url
+     */
+    public java.lang.String getUrl() {
         return url;
     }
 
-    /**
-     * 设置url属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setUrl(String value) {
-        this.url = value;
-    }
 
     /**
-     * 获取defaultAddress属性的值。
+     * Sets the url value for this Vendor.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param url
      */
-    public String getDefaultAddress() {
+    public void setUrl(java.lang.String url) {
+        this.url = url;
+    }
+
+
+    /**
+     * Gets the defaultAddress value for this Vendor.
+     * 
+     * @return defaultAddress
+     */
+    public java.lang.String getDefaultAddress() {
         return defaultAddress;
     }
 
-    /**
-     * 设置defaultAddress属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setDefaultAddress(String value) {
-        this.defaultAddress = value;
-    }
 
     /**
-     * 获取isInactive属性的值。
+     * Sets the defaultAddress value for this Vendor.
      * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
+     * @param defaultAddress
      */
-    public Boolean isIsInactive() {
+    public void setDefaultAddress(java.lang.String defaultAddress) {
+        this.defaultAddress = defaultAddress;
+    }
+
+
+    /**
+     * Gets the isInactive value for this Vendor.
+     * 
+     * @return isInactive
+     */
+    public java.lang.Boolean getIsInactive() {
         return isInactive;
     }
 
-    /**
-     * 设置isInactive属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
-     */
-    public void setIsInactive(Boolean value) {
-        this.isInactive = value;
-    }
 
     /**
-     * 获取lastModifiedDate属性的值。
+     * Sets the isInactive value for this Vendor.
      * 
-     * @return
-     *     possible object is
-     *     {@link XMLGregorianCalendar }
-     *     
+     * @param isInactive
      */
-    public XMLGregorianCalendar getLastModifiedDate() {
+    public void setIsInactive(java.lang.Boolean isInactive) {
+        this.isInactive = isInactive;
+    }
+
+
+    /**
+     * Gets the lastModifiedDate value for this Vendor.
+     * 
+     * @return lastModifiedDate
+     */
+    public java.util.Calendar getLastModifiedDate() {
         return lastModifiedDate;
     }
 
-    /**
-     * 设置lastModifiedDate属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link XMLGregorianCalendar }
-     *     
-     */
-    public void setLastModifiedDate(XMLGregorianCalendar value) {
-        this.lastModifiedDate = value;
-    }
 
     /**
-     * 获取dateCreated属性的值。
+     * Sets the lastModifiedDate value for this Vendor.
      * 
-     * @return
-     *     possible object is
-     *     {@link XMLGregorianCalendar }
-     *     
+     * @param lastModifiedDate
      */
-    public XMLGregorianCalendar getDateCreated() {
+    public void setLastModifiedDate(java.util.Calendar lastModifiedDate) {
+        this.lastModifiedDate = lastModifiedDate;
+    }
+
+
+    /**
+     * Gets the dateCreated value for this Vendor.
+     * 
+     * @return dateCreated
+     */
+    public java.util.Calendar getDateCreated() {
         return dateCreated;
     }
 
-    /**
-     * 设置dateCreated属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link XMLGregorianCalendar }
-     *     
-     */
-    public void setDateCreated(XMLGregorianCalendar value) {
-        this.dateCreated = value;
-    }
 
     /**
-     * 获取category属性的值。
+     * Sets the dateCreated value for this Vendor.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param dateCreated
      */
-    public RecordRef getCategory() {
+    public void setDateCreated(java.util.Calendar dateCreated) {
+        this.dateCreated = dateCreated;
+    }
+
+
+    /**
+     * Gets the category value for this Vendor.
+     * 
+     * @return category
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getCategory() {
         return category;
     }
 
-    /**
-     * 设置category属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setCategory(RecordRef value) {
-        this.category = value;
-    }
 
     /**
-     * 获取title属性的值。
+     * Sets the category value for this Vendor.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param category
      */
-    public String getTitle() {
+    public void setCategory(com.netsuite.webservices.platform.core_2018_2.RecordRef category) {
+        this.category = category;
+    }
+
+
+    /**
+     * Gets the title value for this Vendor.
+     * 
+     * @return title
+     */
+    public java.lang.String getTitle() {
         return title;
     }
 
-    /**
-     * 设置title属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setTitle(String value) {
-        this.title = value;
-    }
 
     /**
-     * 获取printOnCheckAs属性的值。
+     * Sets the title value for this Vendor.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param title
      */
-    public String getPrintOnCheckAs() {
+    public void setTitle(java.lang.String title) {
+        this.title = title;
+    }
+
+
+    /**
+     * Gets the printOnCheckAs value for this Vendor.
+     * 
+     * @return printOnCheckAs
+     */
+    public java.lang.String getPrintOnCheckAs() {
         return printOnCheckAs;
     }
 
-    /**
-     * 设置printOnCheckAs属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setPrintOnCheckAs(String value) {
-        this.printOnCheckAs = value;
-    }
 
     /**
-     * 获取altPhone属性的值。
+     * Sets the printOnCheckAs value for this Vendor.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param printOnCheckAs
      */
-    public String getAltPhone() {
+    public void setPrintOnCheckAs(java.lang.String printOnCheckAs) {
+        this.printOnCheckAs = printOnCheckAs;
+    }
+
+
+    /**
+     * Gets the altPhone value for this Vendor.
+     * 
+     * @return altPhone
+     */
+    public java.lang.String getAltPhone() {
         return altPhone;
     }
 
-    /**
-     * 设置altPhone属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setAltPhone(String value) {
-        this.altPhone = value;
-    }
 
     /**
-     * 获取homePhone属性的值。
+     * Sets the altPhone value for this Vendor.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param altPhone
      */
-    public String getHomePhone() {
+    public void setAltPhone(java.lang.String altPhone) {
+        this.altPhone = altPhone;
+    }
+
+
+    /**
+     * Gets the homePhone value for this Vendor.
+     * 
+     * @return homePhone
+     */
+    public java.lang.String getHomePhone() {
         return homePhone;
     }
 
-    /**
-     * 设置homePhone属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setHomePhone(String value) {
-        this.homePhone = value;
-    }
 
     /**
-     * 获取mobilePhone属性的值。
+     * Sets the homePhone value for this Vendor.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param homePhone
      */
-    public String getMobilePhone() {
+    public void setHomePhone(java.lang.String homePhone) {
+        this.homePhone = homePhone;
+    }
+
+
+    /**
+     * Gets the mobilePhone value for this Vendor.
+     * 
+     * @return mobilePhone
+     */
+    public java.lang.String getMobilePhone() {
         return mobilePhone;
     }
 
-    /**
-     * 设置mobilePhone属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setMobilePhone(String value) {
-        this.mobilePhone = value;
-    }
 
     /**
-     * 获取altEmail属性的值。
+     * Sets the mobilePhone value for this Vendor.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param mobilePhone
      */
-    public String getAltEmail() {
+    public void setMobilePhone(java.lang.String mobilePhone) {
+        this.mobilePhone = mobilePhone;
+    }
+
+
+    /**
+     * Gets the altEmail value for this Vendor.
+     * 
+     * @return altEmail
+     */
+    public java.lang.String getAltEmail() {
         return altEmail;
     }
 
-    /**
-     * 设置altEmail属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setAltEmail(String value) {
-        this.altEmail = value;
-    }
 
     /**
-     * 获取comments属性的值。
+     * Sets the altEmail value for this Vendor.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param altEmail
      */
-    public String getComments() {
+    public void setAltEmail(java.lang.String altEmail) {
+        this.altEmail = altEmail;
+    }
+
+
+    /**
+     * Gets the comments value for this Vendor.
+     * 
+     * @return comments
+     */
+    public java.lang.String getComments() {
         return comments;
     }
 
-    /**
-     * 设置comments属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setComments(String value) {
-        this.comments = value;
-    }
 
     /**
-     * 获取globalSubscriptionStatus属性的值。
+     * Sets the comments value for this Vendor.
      * 
-     * @return
-     *     possible object is
-     *     {@link GlobalSubscriptionStatus }
-     *     
+     * @param comments
      */
-    public GlobalSubscriptionStatus getGlobalSubscriptionStatus() {
+    public void setComments(java.lang.String comments) {
+        this.comments = comments;
+    }
+
+
+    /**
+     * Gets the globalSubscriptionStatus value for this Vendor.
+     * 
+     * @return globalSubscriptionStatus
+     */
+    public com.netsuite.webservices.platform.common_2018_2.types.GlobalSubscriptionStatus getGlobalSubscriptionStatus() {
         return globalSubscriptionStatus;
     }
 
-    /**
-     * 设置globalSubscriptionStatus属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link GlobalSubscriptionStatus }
-     *     
-     */
-    public void setGlobalSubscriptionStatus(GlobalSubscriptionStatus value) {
-        this.globalSubscriptionStatus = value;
-    }
 
     /**
-     * 获取image属性的值。
+     * Sets the globalSubscriptionStatus value for this Vendor.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param globalSubscriptionStatus
      */
-    public RecordRef getImage() {
+    public void setGlobalSubscriptionStatus(com.netsuite.webservices.platform.common_2018_2.types.GlobalSubscriptionStatus globalSubscriptionStatus) {
+        this.globalSubscriptionStatus = globalSubscriptionStatus;
+    }
+
+
+    /**
+     * Gets the image value for this Vendor.
+     * 
+     * @return image
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getImage() {
         return image;
     }
 
-    /**
-     * 设置image属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setImage(RecordRef value) {
-        this.image = value;
-    }
 
     /**
-     * 获取emailPreference属性的值。
+     * Sets the image value for this Vendor.
      * 
-     * @return
-     *     possible object is
-     *     {@link EmailPreference }
-     *     
+     * @param image
      */
-    public EmailPreference getEmailPreference() {
+    public void setImage(com.netsuite.webservices.platform.core_2018_2.RecordRef image) {
+        this.image = image;
+    }
+
+
+    /**
+     * Gets the emailPreference value for this Vendor.
+     * 
+     * @return emailPreference
+     */
+    public com.netsuite.webservices.lists.relationships_2018_2.types.EmailPreference getEmailPreference() {
         return emailPreference;
     }
 
-    /**
-     * 设置emailPreference属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link EmailPreference }
-     *     
-     */
-    public void setEmailPreference(EmailPreference value) {
-        this.emailPreference = value;
-    }
 
     /**
-     * 获取subsidiary属性的值。
+     * Sets the emailPreference value for this Vendor.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param emailPreference
      */
-    public RecordRef getSubsidiary() {
+    public void setEmailPreference(com.netsuite.webservices.lists.relationships_2018_2.types.EmailPreference emailPreference) {
+        this.emailPreference = emailPreference;
+    }
+
+
+    /**
+     * Gets the subsidiary value for this Vendor.
+     * 
+     * @return subsidiary
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getSubsidiary() {
         return subsidiary;
     }
 
-    /**
-     * 设置subsidiary属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setSubsidiary(RecordRef value) {
-        this.subsidiary = value;
-    }
 
     /**
-     * 获取representingSubsidiary属性的值。
+     * Sets the subsidiary value for this Vendor.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param subsidiary
      */
-    public RecordRef getRepresentingSubsidiary() {
+    public void setSubsidiary(com.netsuite.webservices.platform.core_2018_2.RecordRef subsidiary) {
+        this.subsidiary = subsidiary;
+    }
+
+
+    /**
+     * Gets the representingSubsidiary value for this Vendor.
+     * 
+     * @return representingSubsidiary
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getRepresentingSubsidiary() {
         return representingSubsidiary;
     }
 
-    /**
-     * 设置representingSubsidiary属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setRepresentingSubsidiary(RecordRef value) {
-        this.representingSubsidiary = value;
-    }
 
     /**
-     * 获取accountNumber属性的值。
+     * Sets the representingSubsidiary value for this Vendor.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param representingSubsidiary
      */
-    public String getAccountNumber() {
+    public void setRepresentingSubsidiary(com.netsuite.webservices.platform.core_2018_2.RecordRef representingSubsidiary) {
+        this.representingSubsidiary = representingSubsidiary;
+    }
+
+
+    /**
+     * Gets the accountNumber value for this Vendor.
+     * 
+     * @return accountNumber
+     */
+    public java.lang.String getAccountNumber() {
         return accountNumber;
     }
 
-    /**
-     * 设置accountNumber属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setAccountNumber(String value) {
-        this.accountNumber = value;
-    }
 
     /**
-     * 获取legalName属性的值。
+     * Sets the accountNumber value for this Vendor.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param accountNumber
      */
-    public String getLegalName() {
+    public void setAccountNumber(java.lang.String accountNumber) {
+        this.accountNumber = accountNumber;
+    }
+
+
+    /**
+     * Gets the legalName value for this Vendor.
+     * 
+     * @return legalName
+     */
+    public java.lang.String getLegalName() {
         return legalName;
     }
 
-    /**
-     * 设置legalName属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setLegalName(String value) {
-        this.legalName = value;
-    }
 
     /**
-     * 获取vatRegNumber属性的值。
+     * Sets the legalName value for this Vendor.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param legalName
      */
-    public String getVatRegNumber() {
+    public void setLegalName(java.lang.String legalName) {
+        this.legalName = legalName;
+    }
+
+
+    /**
+     * Gets the vatRegNumber value for this Vendor.
+     * 
+     * @return vatRegNumber
+     */
+    public java.lang.String getVatRegNumber() {
         return vatRegNumber;
     }
 
-    /**
-     * 设置vatRegNumber属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setVatRegNumber(String value) {
-        this.vatRegNumber = value;
-    }
 
     /**
-     * 获取expenseAccount属性的值。
+     * Sets the vatRegNumber value for this Vendor.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param vatRegNumber
      */
-    public RecordRef getExpenseAccount() {
+    public void setVatRegNumber(java.lang.String vatRegNumber) {
+        this.vatRegNumber = vatRegNumber;
+    }
+
+
+    /**
+     * Gets the expenseAccount value for this Vendor.
+     * 
+     * @return expenseAccount
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getExpenseAccount() {
         return expenseAccount;
     }
 
-    /**
-     * 设置expenseAccount属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setExpenseAccount(RecordRef value) {
-        this.expenseAccount = value;
-    }
 
     /**
-     * 获取payablesAccount属性的值。
+     * Sets the expenseAccount value for this Vendor.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param expenseAccount
      */
-    public RecordRef getPayablesAccount() {
+    public void setExpenseAccount(com.netsuite.webservices.platform.core_2018_2.RecordRef expenseAccount) {
+        this.expenseAccount = expenseAccount;
+    }
+
+
+    /**
+     * Gets the payablesAccount value for this Vendor.
+     * 
+     * @return payablesAccount
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getPayablesAccount() {
         return payablesAccount;
     }
 
-    /**
-     * 设置payablesAccount属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setPayablesAccount(RecordRef value) {
-        this.payablesAccount = value;
-    }
 
     /**
-     * 获取terms属性的值。
+     * Sets the payablesAccount value for this Vendor.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param payablesAccount
      */
-    public RecordRef getTerms() {
+    public void setPayablesAccount(com.netsuite.webservices.platform.core_2018_2.RecordRef payablesAccount) {
+        this.payablesAccount = payablesAccount;
+    }
+
+
+    /**
+     * Gets the terms value for this Vendor.
+     * 
+     * @return terms
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getTerms() {
         return terms;
     }
 
-    /**
-     * 设置terms属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setTerms(RecordRef value) {
-        this.terms = value;
-    }
 
     /**
-     * 获取incoterm属性的值。
+     * Sets the terms value for this Vendor.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param terms
      */
-    public RecordRef getIncoterm() {
+    public void setTerms(com.netsuite.webservices.platform.core_2018_2.RecordRef terms) {
+        this.terms = terms;
+    }
+
+
+    /**
+     * Gets the incoterm value for this Vendor.
+     * 
+     * @return incoterm
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getIncoterm() {
         return incoterm;
     }
 
-    /**
-     * 设置incoterm属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setIncoterm(RecordRef value) {
-        this.incoterm = value;
-    }
 
     /**
-     * 获取creditLimit属性的值。
+     * Sets the incoterm value for this Vendor.
      * 
-     * @return
-     *     possible object is
-     *     {@link Double }
-     *     
+     * @param incoterm
      */
-    public Double getCreditLimit() {
+    public void setIncoterm(com.netsuite.webservices.platform.core_2018_2.RecordRef incoterm) {
+        this.incoterm = incoterm;
+    }
+
+
+    /**
+     * Gets the creditLimit value for this Vendor.
+     * 
+     * @return creditLimit
+     */
+    public java.lang.Double getCreditLimit() {
         return creditLimit;
     }
 
-    /**
-     * 设置creditLimit属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Double }
-     *     
-     */
-    public void setCreditLimit(Double value) {
-        this.creditLimit = value;
-    }
 
     /**
-     * 获取balancePrimary属性的值。
+     * Sets the creditLimit value for this Vendor.
      * 
-     * @return
-     *     possible object is
-     *     {@link Double }
-     *     
+     * @param creditLimit
      */
-    public Double getBalancePrimary() {
+    public void setCreditLimit(java.lang.Double creditLimit) {
+        this.creditLimit = creditLimit;
+    }
+
+
+    /**
+     * Gets the balancePrimary value for this Vendor.
+     * 
+     * @return balancePrimary
+     */
+    public java.lang.Double getBalancePrimary() {
         return balancePrimary;
     }
 
-    /**
-     * 设置balancePrimary属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Double }
-     *     
-     */
-    public void setBalancePrimary(Double value) {
-        this.balancePrimary = value;
-    }
 
     /**
-     * 获取openingBalance属性的值。
+     * Sets the balancePrimary value for this Vendor.
      * 
-     * @return
-     *     possible object is
-     *     {@link Double }
-     *     
+     * @param balancePrimary
      */
-    public Double getOpeningBalance() {
+    public void setBalancePrimary(java.lang.Double balancePrimary) {
+        this.balancePrimary = balancePrimary;
+    }
+
+
+    /**
+     * Gets the openingBalance value for this Vendor.
+     * 
+     * @return openingBalance
+     */
+    public java.lang.Double getOpeningBalance() {
         return openingBalance;
     }
 
-    /**
-     * 设置openingBalance属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Double }
-     *     
-     */
-    public void setOpeningBalance(Double value) {
-        this.openingBalance = value;
-    }
 
     /**
-     * 获取openingBalanceDate属性的值。
+     * Sets the openingBalance value for this Vendor.
      * 
-     * @return
-     *     possible object is
-     *     {@link XMLGregorianCalendar }
-     *     
+     * @param openingBalance
      */
-    public XMLGregorianCalendar getOpeningBalanceDate() {
+    public void setOpeningBalance(java.lang.Double openingBalance) {
+        this.openingBalance = openingBalance;
+    }
+
+
+    /**
+     * Gets the openingBalanceDate value for this Vendor.
+     * 
+     * @return openingBalanceDate
+     */
+    public java.util.Calendar getOpeningBalanceDate() {
         return openingBalanceDate;
     }
 
-    /**
-     * 设置openingBalanceDate属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link XMLGregorianCalendar }
-     *     
-     */
-    public void setOpeningBalanceDate(XMLGregorianCalendar value) {
-        this.openingBalanceDate = value;
-    }
 
     /**
-     * 获取openingBalanceAccount属性的值。
+     * Sets the openingBalanceDate value for this Vendor.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param openingBalanceDate
      */
-    public RecordRef getOpeningBalanceAccount() {
+    public void setOpeningBalanceDate(java.util.Calendar openingBalanceDate) {
+        this.openingBalanceDate = openingBalanceDate;
+    }
+
+
+    /**
+     * Gets the openingBalanceAccount value for this Vendor.
+     * 
+     * @return openingBalanceAccount
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getOpeningBalanceAccount() {
         return openingBalanceAccount;
     }
 
-    /**
-     * 设置openingBalanceAccount属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setOpeningBalanceAccount(RecordRef value) {
-        this.openingBalanceAccount = value;
-    }
 
     /**
-     * 获取balance属性的值。
+     * Sets the openingBalanceAccount value for this Vendor.
      * 
-     * @return
-     *     possible object is
-     *     {@link Double }
-     *     
+     * @param openingBalanceAccount
      */
-    public Double getBalance() {
+    public void setOpeningBalanceAccount(com.netsuite.webservices.platform.core_2018_2.RecordRef openingBalanceAccount) {
+        this.openingBalanceAccount = openingBalanceAccount;
+    }
+
+
+    /**
+     * Gets the balance value for this Vendor.
+     * 
+     * @return balance
+     */
+    public java.lang.Double getBalance() {
         return balance;
     }
 
-    /**
-     * 设置balance属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Double }
-     *     
-     */
-    public void setBalance(Double value) {
-        this.balance = value;
-    }
 
     /**
-     * 获取unbilledOrdersPrimary属性的值。
+     * Sets the balance value for this Vendor.
      * 
-     * @return
-     *     possible object is
-     *     {@link Double }
-     *     
+     * @param balance
      */
-    public Double getUnbilledOrdersPrimary() {
+    public void setBalance(java.lang.Double balance) {
+        this.balance = balance;
+    }
+
+
+    /**
+     * Gets the unbilledOrdersPrimary value for this Vendor.
+     * 
+     * @return unbilledOrdersPrimary
+     */
+    public java.lang.Double getUnbilledOrdersPrimary() {
         return unbilledOrdersPrimary;
     }
 
-    /**
-     * 设置unbilledOrdersPrimary属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Double }
-     *     
-     */
-    public void setUnbilledOrdersPrimary(Double value) {
-        this.unbilledOrdersPrimary = value;
-    }
 
     /**
-     * 获取bcn属性的值。
+     * Sets the unbilledOrdersPrimary value for this Vendor.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param unbilledOrdersPrimary
      */
-    public String getBcn() {
+    public void setUnbilledOrdersPrimary(java.lang.Double unbilledOrdersPrimary) {
+        this.unbilledOrdersPrimary = unbilledOrdersPrimary;
+    }
+
+
+    /**
+     * Gets the bcn value for this Vendor.
+     * 
+     * @return bcn
+     */
+    public java.lang.String getBcn() {
         return bcn;
     }
 
-    /**
-     * 设置bcn属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setBcn(String value) {
-        this.bcn = value;
-    }
 
     /**
-     * 获取unbilledOrders属性的值。
+     * Sets the bcn value for this Vendor.
      * 
-     * @return
-     *     possible object is
-     *     {@link Double }
-     *     
+     * @param bcn
      */
-    public Double getUnbilledOrders() {
+    public void setBcn(java.lang.String bcn) {
+        this.bcn = bcn;
+    }
+
+
+    /**
+     * Gets the unbilledOrders value for this Vendor.
+     * 
+     * @return unbilledOrders
+     */
+    public java.lang.Double getUnbilledOrders() {
         return unbilledOrders;
     }
 
-    /**
-     * 设置unbilledOrders属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Double }
-     *     
-     */
-    public void setUnbilledOrders(Double value) {
-        this.unbilledOrders = value;
-    }
 
     /**
-     * 获取currency属性的值。
+     * Sets the unbilledOrders value for this Vendor.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param unbilledOrders
      */
-    public RecordRef getCurrency() {
+    public void setUnbilledOrders(java.lang.Double unbilledOrders) {
+        this.unbilledOrders = unbilledOrders;
+    }
+
+
+    /**
+     * Gets the currency value for this Vendor.
+     * 
+     * @return currency
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getCurrency() {
         return currency;
     }
 
-    /**
-     * 设置currency属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setCurrency(RecordRef value) {
-        this.currency = value;
-    }
 
     /**
-     * 获取is1099Eligible属性的值。
+     * Sets the currency value for this Vendor.
      * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
+     * @param currency
      */
-    public Boolean isIs1099Eligible() {
+    public void setCurrency(com.netsuite.webservices.platform.core_2018_2.RecordRef currency) {
+        this.currency = currency;
+    }
+
+
+    /**
+     * Gets the is1099Eligible value for this Vendor.
+     * 
+     * @return is1099Eligible
+     */
+    public java.lang.Boolean getIs1099Eligible() {
         return is1099Eligible;
     }
 
-    /**
-     * 设置is1099Eligible属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
-     */
-    public void setIs1099Eligible(Boolean value) {
-        this.is1099Eligible = value;
-    }
 
     /**
-     * 获取isJobResourceVend属性的值。
+     * Sets the is1099Eligible value for this Vendor.
      * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
+     * @param is1099Eligible
      */
-    public Boolean isIsJobResourceVend() {
+    public void setIs1099Eligible(java.lang.Boolean is1099Eligible) {
+        this.is1099Eligible = is1099Eligible;
+    }
+
+
+    /**
+     * Gets the isJobResourceVend value for this Vendor.
+     * 
+     * @return isJobResourceVend
+     */
+    public java.lang.Boolean getIsJobResourceVend() {
         return isJobResourceVend;
     }
 
-    /**
-     * 设置isJobResourceVend属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
-     */
-    public void setIsJobResourceVend(Boolean value) {
-        this.isJobResourceVend = value;
-    }
 
     /**
-     * 获取laborCost属性的值。
+     * Sets the isJobResourceVend value for this Vendor.
      * 
-     * @return
-     *     possible object is
-     *     {@link Double }
-     *     
+     * @param isJobResourceVend
      */
-    public Double getLaborCost() {
+    public void setIsJobResourceVend(java.lang.Boolean isJobResourceVend) {
+        this.isJobResourceVend = isJobResourceVend;
+    }
+
+
+    /**
+     * Gets the laborCost value for this Vendor.
+     * 
+     * @return laborCost
+     */
+    public java.lang.Double getLaborCost() {
         return laborCost;
     }
 
-    /**
-     * 设置laborCost属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Double }
-     *     
-     */
-    public void setLaborCost(Double value) {
-        this.laborCost = value;
-    }
 
     /**
-     * 获取purchaseOrderQuantity属性的值。
+     * Sets the laborCost value for this Vendor.
      * 
-     * @return
-     *     possible object is
-     *     {@link Double }
-     *     
+     * @param laborCost
      */
-    public Double getPurchaseOrderQuantity() {
+    public void setLaborCost(java.lang.Double laborCost) {
+        this.laborCost = laborCost;
+    }
+
+
+    /**
+     * Gets the purchaseOrderQuantity value for this Vendor.
+     * 
+     * @return purchaseOrderQuantity
+     */
+    public java.lang.Double getPurchaseOrderQuantity() {
         return purchaseOrderQuantity;
     }
 
-    /**
-     * 设置purchaseOrderQuantity属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Double }
-     *     
-     */
-    public void setPurchaseOrderQuantity(Double value) {
-        this.purchaseOrderQuantity = value;
-    }
 
     /**
-     * 获取purchaseOrderAmount属性的值。
+     * Sets the purchaseOrderQuantity value for this Vendor.
      * 
-     * @return
-     *     possible object is
-     *     {@link Double }
-     *     
+     * @param purchaseOrderQuantity
      */
-    public Double getPurchaseOrderAmount() {
+    public void setPurchaseOrderQuantity(java.lang.Double purchaseOrderQuantity) {
+        this.purchaseOrderQuantity = purchaseOrderQuantity;
+    }
+
+
+    /**
+     * Gets the purchaseOrderAmount value for this Vendor.
+     * 
+     * @return purchaseOrderAmount
+     */
+    public java.lang.Double getPurchaseOrderAmount() {
         return purchaseOrderAmount;
     }
 
-    /**
-     * 设置purchaseOrderAmount属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Double }
-     *     
-     */
-    public void setPurchaseOrderAmount(Double value) {
-        this.purchaseOrderAmount = value;
-    }
 
     /**
-     * 获取purchaseOrderQuantityDiff属性的值。
+     * Sets the purchaseOrderAmount value for this Vendor.
      * 
-     * @return
-     *     possible object is
-     *     {@link Double }
-     *     
+     * @param purchaseOrderAmount
      */
-    public Double getPurchaseOrderQuantityDiff() {
+    public void setPurchaseOrderAmount(java.lang.Double purchaseOrderAmount) {
+        this.purchaseOrderAmount = purchaseOrderAmount;
+    }
+
+
+    /**
+     * Gets the purchaseOrderQuantityDiff value for this Vendor.
+     * 
+     * @return purchaseOrderQuantityDiff
+     */
+    public java.lang.Double getPurchaseOrderQuantityDiff() {
         return purchaseOrderQuantityDiff;
     }
 
-    /**
-     * 设置purchaseOrderQuantityDiff属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Double }
-     *     
-     */
-    public void setPurchaseOrderQuantityDiff(Double value) {
-        this.purchaseOrderQuantityDiff = value;
-    }
 
     /**
-     * 获取receiptQuantity属性的值。
+     * Sets the purchaseOrderQuantityDiff value for this Vendor.
      * 
-     * @return
-     *     possible object is
-     *     {@link Double }
-     *     
+     * @param purchaseOrderQuantityDiff
      */
-    public Double getReceiptQuantity() {
+    public void setPurchaseOrderQuantityDiff(java.lang.Double purchaseOrderQuantityDiff) {
+        this.purchaseOrderQuantityDiff = purchaseOrderQuantityDiff;
+    }
+
+
+    /**
+     * Gets the receiptQuantity value for this Vendor.
+     * 
+     * @return receiptQuantity
+     */
+    public java.lang.Double getReceiptQuantity() {
         return receiptQuantity;
     }
 
-    /**
-     * 设置receiptQuantity属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Double }
-     *     
-     */
-    public void setReceiptQuantity(Double value) {
-        this.receiptQuantity = value;
-    }
 
     /**
-     * 获取receiptAmount属性的值。
+     * Sets the receiptQuantity value for this Vendor.
      * 
-     * @return
-     *     possible object is
-     *     {@link Double }
-     *     
+     * @param receiptQuantity
      */
-    public Double getReceiptAmount() {
+    public void setReceiptQuantity(java.lang.Double receiptQuantity) {
+        this.receiptQuantity = receiptQuantity;
+    }
+
+
+    /**
+     * Gets the receiptAmount value for this Vendor.
+     * 
+     * @return receiptAmount
+     */
+    public java.lang.Double getReceiptAmount() {
         return receiptAmount;
     }
 
-    /**
-     * 设置receiptAmount属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Double }
-     *     
-     */
-    public void setReceiptAmount(Double value) {
-        this.receiptAmount = value;
-    }
 
     /**
-     * 获取receiptQuantityDiff属性的值。
+     * Sets the receiptAmount value for this Vendor.
      * 
-     * @return
-     *     possible object is
-     *     {@link Double }
-     *     
+     * @param receiptAmount
      */
-    public Double getReceiptQuantityDiff() {
+    public void setReceiptAmount(java.lang.Double receiptAmount) {
+        this.receiptAmount = receiptAmount;
+    }
+
+
+    /**
+     * Gets the receiptQuantityDiff value for this Vendor.
+     * 
+     * @return receiptQuantityDiff
+     */
+    public java.lang.Double getReceiptQuantityDiff() {
         return receiptQuantityDiff;
     }
 
-    /**
-     * 设置receiptQuantityDiff属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Double }
-     *     
-     */
-    public void setReceiptQuantityDiff(Double value) {
-        this.receiptQuantityDiff = value;
-    }
 
     /**
-     * 获取workCalendar属性的值。
+     * Sets the receiptQuantityDiff value for this Vendor.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param receiptQuantityDiff
      */
-    public RecordRef getWorkCalendar() {
+    public void setReceiptQuantityDiff(java.lang.Double receiptQuantityDiff) {
+        this.receiptQuantityDiff = receiptQuantityDiff;
+    }
+
+
+    /**
+     * Gets the workCalendar value for this Vendor.
+     * 
+     * @return workCalendar
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getWorkCalendar() {
         return workCalendar;
     }
 
-    /**
-     * 设置workCalendar属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setWorkCalendar(RecordRef value) {
-        this.workCalendar = value;
-    }
 
     /**
-     * 获取taxIdNum属性的值。
+     * Sets the workCalendar value for this Vendor.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param workCalendar
      */
-    public String getTaxIdNum() {
+    public void setWorkCalendar(com.netsuite.webservices.platform.core_2018_2.RecordRef workCalendar) {
+        this.workCalendar = workCalendar;
+    }
+
+
+    /**
+     * Gets the taxIdNum value for this Vendor.
+     * 
+     * @return taxIdNum
+     */
+    public java.lang.String getTaxIdNum() {
         return taxIdNum;
     }
 
-    /**
-     * 设置taxIdNum属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setTaxIdNum(String value) {
-        this.taxIdNum = value;
-    }
 
     /**
-     * 获取taxItem属性的值。
+     * Sets the taxIdNum value for this Vendor.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param taxIdNum
      */
-    public RecordRef getTaxItem() {
+    public void setTaxIdNum(java.lang.String taxIdNum) {
+        this.taxIdNum = taxIdNum;
+    }
+
+
+    /**
+     * Gets the taxItem value for this Vendor.
+     * 
+     * @return taxItem
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getTaxItem() {
         return taxItem;
     }
 
-    /**
-     * 设置taxItem属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setTaxItem(RecordRef value) {
-        this.taxItem = value;
-    }
 
     /**
-     * 获取giveAccess属性的值。
+     * Sets the taxItem value for this Vendor.
      * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
+     * @param taxItem
      */
-    public Boolean isGiveAccess() {
+    public void setTaxItem(com.netsuite.webservices.platform.core_2018_2.RecordRef taxItem) {
+        this.taxItem = taxItem;
+    }
+
+
+    /**
+     * Gets the giveAccess value for this Vendor.
+     * 
+     * @return giveAccess
+     */
+    public java.lang.Boolean getGiveAccess() {
         return giveAccess;
     }
 
-    /**
-     * 设置giveAccess属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
-     */
-    public void setGiveAccess(Boolean value) {
-        this.giveAccess = value;
-    }
 
     /**
-     * 获取sendEmail属性的值。
+     * Sets the giveAccess value for this Vendor.
      * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
+     * @param giveAccess
      */
-    public Boolean isSendEmail() {
+    public void setGiveAccess(java.lang.Boolean giveAccess) {
+        this.giveAccess = giveAccess;
+    }
+
+
+    /**
+     * Gets the sendEmail value for this Vendor.
+     * 
+     * @return sendEmail
+     */
+    public java.lang.Boolean getSendEmail() {
         return sendEmail;
     }
 
-    /**
-     * 设置sendEmail属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
-     */
-    public void setSendEmail(Boolean value) {
-        this.sendEmail = value;
-    }
 
     /**
-     * 获取billPay属性的值。
+     * Sets the sendEmail value for this Vendor.
      * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
+     * @param sendEmail
      */
-    public Boolean isBillPay() {
+    public void setSendEmail(java.lang.Boolean sendEmail) {
+        this.sendEmail = sendEmail;
+    }
+
+
+    /**
+     * Gets the billPay value for this Vendor.
+     * 
+     * @return billPay
+     */
+    public java.lang.Boolean getBillPay() {
         return billPay;
     }
 
-    /**
-     * 设置billPay属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
-     */
-    public void setBillPay(Boolean value) {
-        this.billPay = value;
-    }
 
     /**
-     * 获取isAccountant属性的值。
+     * Sets the billPay value for this Vendor.
      * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
+     * @param billPay
      */
-    public Boolean isIsAccountant() {
+    public void setBillPay(java.lang.Boolean billPay) {
+        this.billPay = billPay;
+    }
+
+
+    /**
+     * Gets the isAccountant value for this Vendor.
+     * 
+     * @return isAccountant
+     */
+    public java.lang.Boolean getIsAccountant() {
         return isAccountant;
     }
 
-    /**
-     * 设置isAccountant属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
-     */
-    public void setIsAccountant(Boolean value) {
-        this.isAccountant = value;
-    }
 
     /**
-     * 获取password属性的值。
+     * Sets the isAccountant value for this Vendor.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param isAccountant
      */
-    public String getPassword() {
+    public void setIsAccountant(java.lang.Boolean isAccountant) {
+        this.isAccountant = isAccountant;
+    }
+
+
+    /**
+     * Gets the password value for this Vendor.
+     * 
+     * @return password
+     */
+    public java.lang.String getPassword() {
         return password;
     }
 
-    /**
-     * 设置password属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setPassword(String value) {
-        this.password = value;
-    }
 
     /**
-     * 获取password2属性的值。
+     * Sets the password value for this Vendor.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param password
      */
-    public String getPassword2() {
+    public void setPassword(java.lang.String password) {
+        this.password = password;
+    }
+
+
+    /**
+     * Gets the password2 value for this Vendor.
+     * 
+     * @return password2
+     */
+    public java.lang.String getPassword2() {
         return password2;
     }
 
-    /**
-     * 设置password2属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setPassword2(String value) {
-        this.password2 = value;
-    }
 
     /**
-     * 获取requirePwdChange属性的值。
+     * Sets the password2 value for this Vendor.
      * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
+     * @param password2
      */
-    public Boolean isRequirePwdChange() {
+    public void setPassword2(java.lang.String password2) {
+        this.password2 = password2;
+    }
+
+
+    /**
+     * Gets the requirePwdChange value for this Vendor.
+     * 
+     * @return requirePwdChange
+     */
+    public java.lang.Boolean getRequirePwdChange() {
         return requirePwdChange;
     }
 
-    /**
-     * 设置requirePwdChange属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
-     */
-    public void setRequirePwdChange(Boolean value) {
-        this.requirePwdChange = value;
-    }
 
     /**
-     * 获取eligibleForCommission属性的值。
+     * Sets the requirePwdChange value for this Vendor.
      * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
+     * @param requirePwdChange
      */
-    public Boolean isEligibleForCommission() {
+    public void setRequirePwdChange(java.lang.Boolean requirePwdChange) {
+        this.requirePwdChange = requirePwdChange;
+    }
+
+
+    /**
+     * Gets the eligibleForCommission value for this Vendor.
+     * 
+     * @return eligibleForCommission
+     */
+    public java.lang.Boolean getEligibleForCommission() {
         return eligibleForCommission;
     }
 
-    /**
-     * 设置eligibleForCommission属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
-     */
-    public void setEligibleForCommission(Boolean value) {
-        this.eligibleForCommission = value;
-    }
 
     /**
-     * 获取emailTransactions属性的值。
+     * Sets the eligibleForCommission value for this Vendor.
      * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
+     * @param eligibleForCommission
      */
-    public Boolean isEmailTransactions() {
+    public void setEligibleForCommission(java.lang.Boolean eligibleForCommission) {
+        this.eligibleForCommission = eligibleForCommission;
+    }
+
+
+    /**
+     * Gets the emailTransactions value for this Vendor.
+     * 
+     * @return emailTransactions
+     */
+    public java.lang.Boolean getEmailTransactions() {
         return emailTransactions;
     }
 
-    /**
-     * 设置emailTransactions属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
-     */
-    public void setEmailTransactions(Boolean value) {
-        this.emailTransactions = value;
-    }
 
     /**
-     * 获取printTransactions属性的值。
+     * Sets the emailTransactions value for this Vendor.
      * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
+     * @param emailTransactions
      */
-    public Boolean isPrintTransactions() {
+    public void setEmailTransactions(java.lang.Boolean emailTransactions) {
+        this.emailTransactions = emailTransactions;
+    }
+
+
+    /**
+     * Gets the printTransactions value for this Vendor.
+     * 
+     * @return printTransactions
+     */
+    public java.lang.Boolean getPrintTransactions() {
         return printTransactions;
     }
 
-    /**
-     * 设置printTransactions属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
-     */
-    public void setPrintTransactions(Boolean value) {
-        this.printTransactions = value;
-    }
 
     /**
-     * 获取faxTransactions属性的值。
+     * Sets the printTransactions value for this Vendor.
      * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
+     * @param printTransactions
      */
-    public Boolean isFaxTransactions() {
+    public void setPrintTransactions(java.lang.Boolean printTransactions) {
+        this.printTransactions = printTransactions;
+    }
+
+
+    /**
+     * Gets the faxTransactions value for this Vendor.
+     * 
+     * @return faxTransactions
+     */
+    public java.lang.Boolean getFaxTransactions() {
         return faxTransactions;
     }
 
-    /**
-     * 设置faxTransactions属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
-     */
-    public void setFaxTransactions(Boolean value) {
-        this.faxTransactions = value;
-    }
 
     /**
-     * 获取pricingScheduleList属性的值。
+     * Sets the faxTransactions value for this Vendor.
      * 
-     * @return
-     *     possible object is
-     *     {@link VendorPricingScheduleList }
-     *     
+     * @param faxTransactions
      */
-    public VendorPricingScheduleList getPricingScheduleList() {
+    public void setFaxTransactions(java.lang.Boolean faxTransactions) {
+        this.faxTransactions = faxTransactions;
+    }
+
+
+    /**
+     * Gets the pricingScheduleList value for this Vendor.
+     * 
+     * @return pricingScheduleList
+     */
+    public com.netsuite.webservices.lists.relationships_2018_2.VendorPricingSchedule[] getPricingScheduleList() {
         return pricingScheduleList;
     }
 
-    /**
-     * 设置pricingScheduleList属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link VendorPricingScheduleList }
-     *     
-     */
-    public void setPricingScheduleList(VendorPricingScheduleList value) {
-        this.pricingScheduleList = value;
-    }
 
     /**
-     * 获取subscriptionsList属性的值。
+     * Sets the pricingScheduleList value for this Vendor.
      * 
-     * @return
-     *     possible object is
-     *     {@link SubscriptionsList }
-     *     
+     * @param pricingScheduleList
      */
-    public SubscriptionsList getSubscriptionsList() {
+    public void setPricingScheduleList(com.netsuite.webservices.lists.relationships_2018_2.VendorPricingSchedule[] pricingScheduleList) {
+        this.pricingScheduleList = pricingScheduleList;
+    }
+
+
+    /**
+     * Gets the subscriptionsList value for this Vendor.
+     * 
+     * @return subscriptionsList
+     */
+    public com.netsuite.webservices.lists.relationships_2018_2.Subscriptions[] getSubscriptionsList() {
         return subscriptionsList;
     }
 
-    /**
-     * 设置subscriptionsList属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SubscriptionsList }
-     *     
-     */
-    public void setSubscriptionsList(SubscriptionsList value) {
-        this.subscriptionsList = value;
-    }
 
     /**
-     * 获取addressbookList属性的值。
+     * Sets the subscriptionsList value for this Vendor.
      * 
-     * @return
-     *     possible object is
-     *     {@link VendorAddressbookList }
-     *     
+     * @param subscriptionsList
      */
-    public VendorAddressbookList getAddressbookList() {
+    public void setSubscriptionsList(com.netsuite.webservices.lists.relationships_2018_2.Subscriptions[] subscriptionsList) {
+        this.subscriptionsList = subscriptionsList;
+    }
+
+
+    /**
+     * Gets the addressbookList value for this Vendor.
+     * 
+     * @return addressbookList
+     */
+    public com.netsuite.webservices.lists.relationships_2018_2.VendorAddressbook[] getAddressbookList() {
         return addressbookList;
     }
 
-    /**
-     * 设置addressbookList属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link VendorAddressbookList }
-     *     
-     */
-    public void setAddressbookList(VendorAddressbookList value) {
-        this.addressbookList = value;
-    }
 
     /**
-     * 获取currencyList属性的值。
+     * Sets the addressbookList value for this Vendor.
      * 
-     * @return
-     *     possible object is
-     *     {@link VendorCurrencyList }
-     *     
+     * @param addressbookList
      */
-    public VendorCurrencyList getCurrencyList() {
+    public void setAddressbookList(com.netsuite.webservices.lists.relationships_2018_2.VendorAddressbook[] addressbookList) {
+        this.addressbookList = addressbookList;
+    }
+
+
+    /**
+     * Gets the currencyList value for this Vendor.
+     * 
+     * @return currencyList
+     */
+    public com.netsuite.webservices.lists.relationships_2018_2.VendorCurrency[] getCurrencyList() {
         return currencyList;
     }
 
-    /**
-     * 设置currencyList属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link VendorCurrencyList }
-     *     
-     */
-    public void setCurrencyList(VendorCurrencyList value) {
-        this.currencyList = value;
-    }
 
     /**
-     * 获取rolesList属性的值。
+     * Sets the currencyList value for this Vendor.
      * 
-     * @return
-     *     possible object is
-     *     {@link VendorRolesList }
-     *     
+     * @param currencyList
      */
-    public VendorRolesList getRolesList() {
+    public void setCurrencyList(com.netsuite.webservices.lists.relationships_2018_2.VendorCurrency[] currencyList) {
+        this.currencyList = currencyList;
+    }
+
+
+    /**
+     * Gets the rolesList value for this Vendor.
+     * 
+     * @return rolesList
+     */
+    public com.netsuite.webservices.lists.relationships_2018_2.VendorRoles[] getRolesList() {
         return rolesList;
     }
 
-    /**
-     * 设置rolesList属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link VendorRolesList }
-     *     
-     */
-    public void setRolesList(VendorRolesList value) {
-        this.rolesList = value;
-    }
 
     /**
-     * 获取customFieldList属性的值。
+     * Sets the rolesList value for this Vendor.
      * 
-     * @return
-     *     possible object is
-     *     {@link CustomFieldList }
-     *     
+     * @param rolesList
      */
-    public CustomFieldList getCustomFieldList() {
+    public void setRolesList(com.netsuite.webservices.lists.relationships_2018_2.VendorRoles[] rolesList) {
+        this.rolesList = rolesList;
+    }
+
+
+    /**
+     * Gets the customFieldList value for this Vendor.
+     * 
+     * @return customFieldList
+     */
+    public com.netsuite.webservices.platform.core_2018_2.CustomFieldRef[] getCustomFieldList() {
         return customFieldList;
     }
 
-    /**
-     * 设置customFieldList属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link CustomFieldList }
-     *     
-     */
-    public void setCustomFieldList(CustomFieldList value) {
-        this.customFieldList = value;
-    }
 
     /**
-     * 获取internalId属性的值。
+     * Sets the customFieldList value for this Vendor.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param customFieldList
      */
-    public String getInternalId() {
+    public void setCustomFieldList(com.netsuite.webservices.platform.core_2018_2.CustomFieldRef[] customFieldList) {
+        this.customFieldList = customFieldList;
+    }
+
+
+    /**
+     * Gets the internalId value for this Vendor.
+     * 
+     * @return internalId
+     */
+    public java.lang.String getInternalId() {
         return internalId;
     }
 
-    /**
-     * 设置internalId属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setInternalId(String value) {
-        this.internalId = value;
-    }
 
     /**
-     * 获取externalId属性的值。
+     * Sets the internalId value for this Vendor.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param internalId
      */
-    public String getExternalId() {
+    public void setInternalId(java.lang.String internalId) {
+        this.internalId = internalId;
+    }
+
+
+    /**
+     * Gets the externalId value for this Vendor.
+     * 
+     * @return externalId
+     */
+    public java.lang.String getExternalId() {
         return externalId;
     }
 
+
     /**
-     * 设置externalId属性的值。
+     * Sets the externalId value for this Vendor.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     * @param externalId
      */
-    public void setExternalId(String value) {
-        this.externalId = value;
+    public void setExternalId(java.lang.String externalId) {
+        this.externalId = externalId;
+    }
+
+    private java.lang.Object __equalsCalc = null;
+    public synchronized boolean equals(java.lang.Object obj) {
+        if (!(obj instanceof Vendor)) return false;
+        Vendor other = (Vendor) obj;
+        if (obj == null) return false;
+        if (this == obj) return true;
+        if (__equalsCalc != null) {
+            return (__equalsCalc == obj);
+        }
+        __equalsCalc = obj;
+        boolean _equals;
+        _equals = super.equals(obj) && 
+            ((this.customForm==null && other.getCustomForm()==null) || 
+             (this.customForm!=null &&
+              this.customForm.equals(other.getCustomForm()))) &&
+            ((this.entityId==null && other.getEntityId()==null) || 
+             (this.entityId!=null &&
+              this.entityId.equals(other.getEntityId()))) &&
+            ((this.altName==null && other.getAltName()==null) || 
+             (this.altName!=null &&
+              this.altName.equals(other.getAltName()))) &&
+            ((this.isPerson==null && other.getIsPerson()==null) || 
+             (this.isPerson!=null &&
+              this.isPerson.equals(other.getIsPerson()))) &&
+            ((this.phoneticName==null && other.getPhoneticName()==null) || 
+             (this.phoneticName!=null &&
+              this.phoneticName.equals(other.getPhoneticName()))) &&
+            ((this.salutation==null && other.getSalutation()==null) || 
+             (this.salutation!=null &&
+              this.salutation.equals(other.getSalutation()))) &&
+            ((this.firstName==null && other.getFirstName()==null) || 
+             (this.firstName!=null &&
+              this.firstName.equals(other.getFirstName()))) &&
+            ((this.middleName==null && other.getMiddleName()==null) || 
+             (this.middleName!=null &&
+              this.middleName.equals(other.getMiddleName()))) &&
+            ((this.lastName==null && other.getLastName()==null) || 
+             (this.lastName!=null &&
+              this.lastName.equals(other.getLastName()))) &&
+            ((this.companyName==null && other.getCompanyName()==null) || 
+             (this.companyName!=null &&
+              this.companyName.equals(other.getCompanyName()))) &&
+            ((this.phone==null && other.getPhone()==null) || 
+             (this.phone!=null &&
+              this.phone.equals(other.getPhone()))) &&
+            ((this.fax==null && other.getFax()==null) || 
+             (this.fax!=null &&
+              this.fax.equals(other.getFax()))) &&
+            ((this.email==null && other.getEmail()==null) || 
+             (this.email!=null &&
+              this.email.equals(other.getEmail()))) &&
+            ((this.url==null && other.getUrl()==null) || 
+             (this.url!=null &&
+              this.url.equals(other.getUrl()))) &&
+            ((this.defaultAddress==null && other.getDefaultAddress()==null) || 
+             (this.defaultAddress!=null &&
+              this.defaultAddress.equals(other.getDefaultAddress()))) &&
+            ((this.isInactive==null && other.getIsInactive()==null) || 
+             (this.isInactive!=null &&
+              this.isInactive.equals(other.getIsInactive()))) &&
+            ((this.lastModifiedDate==null && other.getLastModifiedDate()==null) || 
+             (this.lastModifiedDate!=null &&
+              this.lastModifiedDate.equals(other.getLastModifiedDate()))) &&
+            ((this.dateCreated==null && other.getDateCreated()==null) || 
+             (this.dateCreated!=null &&
+              this.dateCreated.equals(other.getDateCreated()))) &&
+            ((this.category==null && other.getCategory()==null) || 
+             (this.category!=null &&
+              this.category.equals(other.getCategory()))) &&
+            ((this.title==null && other.getTitle()==null) || 
+             (this.title!=null &&
+              this.title.equals(other.getTitle()))) &&
+            ((this.printOnCheckAs==null && other.getPrintOnCheckAs()==null) || 
+             (this.printOnCheckAs!=null &&
+              this.printOnCheckAs.equals(other.getPrintOnCheckAs()))) &&
+            ((this.altPhone==null && other.getAltPhone()==null) || 
+             (this.altPhone!=null &&
+              this.altPhone.equals(other.getAltPhone()))) &&
+            ((this.homePhone==null && other.getHomePhone()==null) || 
+             (this.homePhone!=null &&
+              this.homePhone.equals(other.getHomePhone()))) &&
+            ((this.mobilePhone==null && other.getMobilePhone()==null) || 
+             (this.mobilePhone!=null &&
+              this.mobilePhone.equals(other.getMobilePhone()))) &&
+            ((this.altEmail==null && other.getAltEmail()==null) || 
+             (this.altEmail!=null &&
+              this.altEmail.equals(other.getAltEmail()))) &&
+            ((this.comments==null && other.getComments()==null) || 
+             (this.comments!=null &&
+              this.comments.equals(other.getComments()))) &&
+            ((this.globalSubscriptionStatus==null && other.getGlobalSubscriptionStatus()==null) || 
+             (this.globalSubscriptionStatus!=null &&
+              this.globalSubscriptionStatus.equals(other.getGlobalSubscriptionStatus()))) &&
+            ((this.image==null && other.getImage()==null) || 
+             (this.image!=null &&
+              this.image.equals(other.getImage()))) &&
+            ((this.emailPreference==null && other.getEmailPreference()==null) || 
+             (this.emailPreference!=null &&
+              this.emailPreference.equals(other.getEmailPreference()))) &&
+            ((this.subsidiary==null && other.getSubsidiary()==null) || 
+             (this.subsidiary!=null &&
+              this.subsidiary.equals(other.getSubsidiary()))) &&
+            ((this.representingSubsidiary==null && other.getRepresentingSubsidiary()==null) || 
+             (this.representingSubsidiary!=null &&
+              this.representingSubsidiary.equals(other.getRepresentingSubsidiary()))) &&
+            ((this.accountNumber==null && other.getAccountNumber()==null) || 
+             (this.accountNumber!=null &&
+              this.accountNumber.equals(other.getAccountNumber()))) &&
+            ((this.legalName==null && other.getLegalName()==null) || 
+             (this.legalName!=null &&
+              this.legalName.equals(other.getLegalName()))) &&
+            ((this.vatRegNumber==null && other.getVatRegNumber()==null) || 
+             (this.vatRegNumber!=null &&
+              this.vatRegNumber.equals(other.getVatRegNumber()))) &&
+            ((this.expenseAccount==null && other.getExpenseAccount()==null) || 
+             (this.expenseAccount!=null &&
+              this.expenseAccount.equals(other.getExpenseAccount()))) &&
+            ((this.payablesAccount==null && other.getPayablesAccount()==null) || 
+             (this.payablesAccount!=null &&
+              this.payablesAccount.equals(other.getPayablesAccount()))) &&
+            ((this.terms==null && other.getTerms()==null) || 
+             (this.terms!=null &&
+              this.terms.equals(other.getTerms()))) &&
+            ((this.incoterm==null && other.getIncoterm()==null) || 
+             (this.incoterm!=null &&
+              this.incoterm.equals(other.getIncoterm()))) &&
+            ((this.creditLimit==null && other.getCreditLimit()==null) || 
+             (this.creditLimit!=null &&
+              this.creditLimit.equals(other.getCreditLimit()))) &&
+            ((this.balancePrimary==null && other.getBalancePrimary()==null) || 
+             (this.balancePrimary!=null &&
+              this.balancePrimary.equals(other.getBalancePrimary()))) &&
+            ((this.openingBalance==null && other.getOpeningBalance()==null) || 
+             (this.openingBalance!=null &&
+              this.openingBalance.equals(other.getOpeningBalance()))) &&
+            ((this.openingBalanceDate==null && other.getOpeningBalanceDate()==null) || 
+             (this.openingBalanceDate!=null &&
+              this.openingBalanceDate.equals(other.getOpeningBalanceDate()))) &&
+            ((this.openingBalanceAccount==null && other.getOpeningBalanceAccount()==null) || 
+             (this.openingBalanceAccount!=null &&
+              this.openingBalanceAccount.equals(other.getOpeningBalanceAccount()))) &&
+            ((this.balance==null && other.getBalance()==null) || 
+             (this.balance!=null &&
+              this.balance.equals(other.getBalance()))) &&
+            ((this.unbilledOrdersPrimary==null && other.getUnbilledOrdersPrimary()==null) || 
+             (this.unbilledOrdersPrimary!=null &&
+              this.unbilledOrdersPrimary.equals(other.getUnbilledOrdersPrimary()))) &&
+            ((this.bcn==null && other.getBcn()==null) || 
+             (this.bcn!=null &&
+              this.bcn.equals(other.getBcn()))) &&
+            ((this.unbilledOrders==null && other.getUnbilledOrders()==null) || 
+             (this.unbilledOrders!=null &&
+              this.unbilledOrders.equals(other.getUnbilledOrders()))) &&
+            ((this.currency==null && other.getCurrency()==null) || 
+             (this.currency!=null &&
+              this.currency.equals(other.getCurrency()))) &&
+            ((this.is1099Eligible==null && other.getIs1099Eligible()==null) || 
+             (this.is1099Eligible!=null &&
+              this.is1099Eligible.equals(other.getIs1099Eligible()))) &&
+            ((this.isJobResourceVend==null && other.getIsJobResourceVend()==null) || 
+             (this.isJobResourceVend!=null &&
+              this.isJobResourceVend.equals(other.getIsJobResourceVend()))) &&
+            ((this.laborCost==null && other.getLaborCost()==null) || 
+             (this.laborCost!=null &&
+              this.laborCost.equals(other.getLaborCost()))) &&
+            ((this.purchaseOrderQuantity==null && other.getPurchaseOrderQuantity()==null) || 
+             (this.purchaseOrderQuantity!=null &&
+              this.purchaseOrderQuantity.equals(other.getPurchaseOrderQuantity()))) &&
+            ((this.purchaseOrderAmount==null && other.getPurchaseOrderAmount()==null) || 
+             (this.purchaseOrderAmount!=null &&
+              this.purchaseOrderAmount.equals(other.getPurchaseOrderAmount()))) &&
+            ((this.purchaseOrderQuantityDiff==null && other.getPurchaseOrderQuantityDiff()==null) || 
+             (this.purchaseOrderQuantityDiff!=null &&
+              this.purchaseOrderQuantityDiff.equals(other.getPurchaseOrderQuantityDiff()))) &&
+            ((this.receiptQuantity==null && other.getReceiptQuantity()==null) || 
+             (this.receiptQuantity!=null &&
+              this.receiptQuantity.equals(other.getReceiptQuantity()))) &&
+            ((this.receiptAmount==null && other.getReceiptAmount()==null) || 
+             (this.receiptAmount!=null &&
+              this.receiptAmount.equals(other.getReceiptAmount()))) &&
+            ((this.receiptQuantityDiff==null && other.getReceiptQuantityDiff()==null) || 
+             (this.receiptQuantityDiff!=null &&
+              this.receiptQuantityDiff.equals(other.getReceiptQuantityDiff()))) &&
+            ((this.workCalendar==null && other.getWorkCalendar()==null) || 
+             (this.workCalendar!=null &&
+              this.workCalendar.equals(other.getWorkCalendar()))) &&
+            ((this.taxIdNum==null && other.getTaxIdNum()==null) || 
+             (this.taxIdNum!=null &&
+              this.taxIdNum.equals(other.getTaxIdNum()))) &&
+            ((this.taxItem==null && other.getTaxItem()==null) || 
+             (this.taxItem!=null &&
+              this.taxItem.equals(other.getTaxItem()))) &&
+            ((this.giveAccess==null && other.getGiveAccess()==null) || 
+             (this.giveAccess!=null &&
+              this.giveAccess.equals(other.getGiveAccess()))) &&
+            ((this.sendEmail==null && other.getSendEmail()==null) || 
+             (this.sendEmail!=null &&
+              this.sendEmail.equals(other.getSendEmail()))) &&
+            ((this.billPay==null && other.getBillPay()==null) || 
+             (this.billPay!=null &&
+              this.billPay.equals(other.getBillPay()))) &&
+            ((this.isAccountant==null && other.getIsAccountant()==null) || 
+             (this.isAccountant!=null &&
+              this.isAccountant.equals(other.getIsAccountant()))) &&
+            ((this.password==null && other.getPassword()==null) || 
+             (this.password!=null &&
+              this.password.equals(other.getPassword()))) &&
+            ((this.password2==null && other.getPassword2()==null) || 
+             (this.password2!=null &&
+              this.password2.equals(other.getPassword2()))) &&
+            ((this.requirePwdChange==null && other.getRequirePwdChange()==null) || 
+             (this.requirePwdChange!=null &&
+              this.requirePwdChange.equals(other.getRequirePwdChange()))) &&
+            ((this.eligibleForCommission==null && other.getEligibleForCommission()==null) || 
+             (this.eligibleForCommission!=null &&
+              this.eligibleForCommission.equals(other.getEligibleForCommission()))) &&
+            ((this.emailTransactions==null && other.getEmailTransactions()==null) || 
+             (this.emailTransactions!=null &&
+              this.emailTransactions.equals(other.getEmailTransactions()))) &&
+            ((this.printTransactions==null && other.getPrintTransactions()==null) || 
+             (this.printTransactions!=null &&
+              this.printTransactions.equals(other.getPrintTransactions()))) &&
+            ((this.faxTransactions==null && other.getFaxTransactions()==null) || 
+             (this.faxTransactions!=null &&
+              this.faxTransactions.equals(other.getFaxTransactions()))) &&
+            ((this.pricingScheduleList==null && other.getPricingScheduleList()==null) || 
+             (this.pricingScheduleList!=null &&
+              java.util.Arrays.equals(this.pricingScheduleList, other.getPricingScheduleList()))) &&
+            ((this.subscriptionsList==null && other.getSubscriptionsList()==null) || 
+             (this.subscriptionsList!=null &&
+              java.util.Arrays.equals(this.subscriptionsList, other.getSubscriptionsList()))) &&
+            ((this.addressbookList==null && other.getAddressbookList()==null) || 
+             (this.addressbookList!=null &&
+              java.util.Arrays.equals(this.addressbookList, other.getAddressbookList()))) &&
+            ((this.currencyList==null && other.getCurrencyList()==null) || 
+             (this.currencyList!=null &&
+              java.util.Arrays.equals(this.currencyList, other.getCurrencyList()))) &&
+            ((this.rolesList==null && other.getRolesList()==null) || 
+             (this.rolesList!=null &&
+              java.util.Arrays.equals(this.rolesList, other.getRolesList()))) &&
+            ((this.customFieldList==null && other.getCustomFieldList()==null) || 
+             (this.customFieldList!=null &&
+              java.util.Arrays.equals(this.customFieldList, other.getCustomFieldList()))) &&
+            ((this.internalId==null && other.getInternalId()==null) || 
+             (this.internalId!=null &&
+              this.internalId.equals(other.getInternalId()))) &&
+            ((this.externalId==null && other.getExternalId()==null) || 
+             (this.externalId!=null &&
+              this.externalId.equals(other.getExternalId())));
+        __equalsCalc = null;
+        return _equals;
+    }
+
+    private boolean __hashCodeCalc = false;
+    public synchronized int hashCode() {
+        if (__hashCodeCalc) {
+            return 0;
+        }
+        __hashCodeCalc = true;
+        int _hashCode = super.hashCode();
+        if (getCustomForm() != null) {
+            _hashCode += getCustomForm().hashCode();
+        }
+        if (getEntityId() != null) {
+            _hashCode += getEntityId().hashCode();
+        }
+        if (getAltName() != null) {
+            _hashCode += getAltName().hashCode();
+        }
+        if (getIsPerson() != null) {
+            _hashCode += getIsPerson().hashCode();
+        }
+        if (getPhoneticName() != null) {
+            _hashCode += getPhoneticName().hashCode();
+        }
+        if (getSalutation() != null) {
+            _hashCode += getSalutation().hashCode();
+        }
+        if (getFirstName() != null) {
+            _hashCode += getFirstName().hashCode();
+        }
+        if (getMiddleName() != null) {
+            _hashCode += getMiddleName().hashCode();
+        }
+        if (getLastName() != null) {
+            _hashCode += getLastName().hashCode();
+        }
+        if (getCompanyName() != null) {
+            _hashCode += getCompanyName().hashCode();
+        }
+        if (getPhone() != null) {
+            _hashCode += getPhone().hashCode();
+        }
+        if (getFax() != null) {
+            _hashCode += getFax().hashCode();
+        }
+        if (getEmail() != null) {
+            _hashCode += getEmail().hashCode();
+        }
+        if (getUrl() != null) {
+            _hashCode += getUrl().hashCode();
+        }
+        if (getDefaultAddress() != null) {
+            _hashCode += getDefaultAddress().hashCode();
+        }
+        if (getIsInactive() != null) {
+            _hashCode += getIsInactive().hashCode();
+        }
+        if (getLastModifiedDate() != null) {
+            _hashCode += getLastModifiedDate().hashCode();
+        }
+        if (getDateCreated() != null) {
+            _hashCode += getDateCreated().hashCode();
+        }
+        if (getCategory() != null) {
+            _hashCode += getCategory().hashCode();
+        }
+        if (getTitle() != null) {
+            _hashCode += getTitle().hashCode();
+        }
+        if (getPrintOnCheckAs() != null) {
+            _hashCode += getPrintOnCheckAs().hashCode();
+        }
+        if (getAltPhone() != null) {
+            _hashCode += getAltPhone().hashCode();
+        }
+        if (getHomePhone() != null) {
+            _hashCode += getHomePhone().hashCode();
+        }
+        if (getMobilePhone() != null) {
+            _hashCode += getMobilePhone().hashCode();
+        }
+        if (getAltEmail() != null) {
+            _hashCode += getAltEmail().hashCode();
+        }
+        if (getComments() != null) {
+            _hashCode += getComments().hashCode();
+        }
+        if (getGlobalSubscriptionStatus() != null) {
+            _hashCode += getGlobalSubscriptionStatus().hashCode();
+        }
+        if (getImage() != null) {
+            _hashCode += getImage().hashCode();
+        }
+        if (getEmailPreference() != null) {
+            _hashCode += getEmailPreference().hashCode();
+        }
+        if (getSubsidiary() != null) {
+            _hashCode += getSubsidiary().hashCode();
+        }
+        if (getRepresentingSubsidiary() != null) {
+            _hashCode += getRepresentingSubsidiary().hashCode();
+        }
+        if (getAccountNumber() != null) {
+            _hashCode += getAccountNumber().hashCode();
+        }
+        if (getLegalName() != null) {
+            _hashCode += getLegalName().hashCode();
+        }
+        if (getVatRegNumber() != null) {
+            _hashCode += getVatRegNumber().hashCode();
+        }
+        if (getExpenseAccount() != null) {
+            _hashCode += getExpenseAccount().hashCode();
+        }
+        if (getPayablesAccount() != null) {
+            _hashCode += getPayablesAccount().hashCode();
+        }
+        if (getTerms() != null) {
+            _hashCode += getTerms().hashCode();
+        }
+        if (getIncoterm() != null) {
+            _hashCode += getIncoterm().hashCode();
+        }
+        if (getCreditLimit() != null) {
+            _hashCode += getCreditLimit().hashCode();
+        }
+        if (getBalancePrimary() != null) {
+            _hashCode += getBalancePrimary().hashCode();
+        }
+        if (getOpeningBalance() != null) {
+            _hashCode += getOpeningBalance().hashCode();
+        }
+        if (getOpeningBalanceDate() != null) {
+            _hashCode += getOpeningBalanceDate().hashCode();
+        }
+        if (getOpeningBalanceAccount() != null) {
+            _hashCode += getOpeningBalanceAccount().hashCode();
+        }
+        if (getBalance() != null) {
+            _hashCode += getBalance().hashCode();
+        }
+        if (getUnbilledOrdersPrimary() != null) {
+            _hashCode += getUnbilledOrdersPrimary().hashCode();
+        }
+        if (getBcn() != null) {
+            _hashCode += getBcn().hashCode();
+        }
+        if (getUnbilledOrders() != null) {
+            _hashCode += getUnbilledOrders().hashCode();
+        }
+        if (getCurrency() != null) {
+            _hashCode += getCurrency().hashCode();
+        }
+        if (getIs1099Eligible() != null) {
+            _hashCode += getIs1099Eligible().hashCode();
+        }
+        if (getIsJobResourceVend() != null) {
+            _hashCode += getIsJobResourceVend().hashCode();
+        }
+        if (getLaborCost() != null) {
+            _hashCode += getLaborCost().hashCode();
+        }
+        if (getPurchaseOrderQuantity() != null) {
+            _hashCode += getPurchaseOrderQuantity().hashCode();
+        }
+        if (getPurchaseOrderAmount() != null) {
+            _hashCode += getPurchaseOrderAmount().hashCode();
+        }
+        if (getPurchaseOrderQuantityDiff() != null) {
+            _hashCode += getPurchaseOrderQuantityDiff().hashCode();
+        }
+        if (getReceiptQuantity() != null) {
+            _hashCode += getReceiptQuantity().hashCode();
+        }
+        if (getReceiptAmount() != null) {
+            _hashCode += getReceiptAmount().hashCode();
+        }
+        if (getReceiptQuantityDiff() != null) {
+            _hashCode += getReceiptQuantityDiff().hashCode();
+        }
+        if (getWorkCalendar() != null) {
+            _hashCode += getWorkCalendar().hashCode();
+        }
+        if (getTaxIdNum() != null) {
+            _hashCode += getTaxIdNum().hashCode();
+        }
+        if (getTaxItem() != null) {
+            _hashCode += getTaxItem().hashCode();
+        }
+        if (getGiveAccess() != null) {
+            _hashCode += getGiveAccess().hashCode();
+        }
+        if (getSendEmail() != null) {
+            _hashCode += getSendEmail().hashCode();
+        }
+        if (getBillPay() != null) {
+            _hashCode += getBillPay().hashCode();
+        }
+        if (getIsAccountant() != null) {
+            _hashCode += getIsAccountant().hashCode();
+        }
+        if (getPassword() != null) {
+            _hashCode += getPassword().hashCode();
+        }
+        if (getPassword2() != null) {
+            _hashCode += getPassword2().hashCode();
+        }
+        if (getRequirePwdChange() != null) {
+            _hashCode += getRequirePwdChange().hashCode();
+        }
+        if (getEligibleForCommission() != null) {
+            _hashCode += getEligibleForCommission().hashCode();
+        }
+        if (getEmailTransactions() != null) {
+            _hashCode += getEmailTransactions().hashCode();
+        }
+        if (getPrintTransactions() != null) {
+            _hashCode += getPrintTransactions().hashCode();
+        }
+        if (getFaxTransactions() != null) {
+            _hashCode += getFaxTransactions().hashCode();
+        }
+        if (getPricingScheduleList() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getPricingScheduleList());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getPricingScheduleList(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getSubscriptionsList() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getSubscriptionsList());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getSubscriptionsList(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getAddressbookList() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getAddressbookList());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getAddressbookList(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getCurrencyList() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getCurrencyList());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getCurrencyList(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getRolesList() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getRolesList());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getRolesList(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getCustomFieldList() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getCustomFieldList());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getCustomFieldList(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getInternalId() != null) {
+            _hashCode += getInternalId().hashCode();
+        }
+        if (getExternalId() != null) {
+            _hashCode += getExternalId().hashCode();
+        }
+        __hashCodeCalc = false;
+        return _hashCode;
+    }
+
+    // Type metadata
+    private static org.apache.axis.description.TypeDesc typeDesc =
+        new org.apache.axis.description.TypeDesc(Vendor.class, true);
+
+    static {
+        typeDesc.setXmlType(new javax.xml.namespace.QName("urn:relationships_2018_2.lists.webservices.netsuite.com", "Vendor"));
+        org.apache.axis.description.AttributeDesc attrField = new org.apache.axis.description.AttributeDesc();
+        attrField.setFieldName("internalId");
+        attrField.setXmlName(new javax.xml.namespace.QName("", "internalId"));
+        attrField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        typeDesc.addFieldDesc(attrField);
+        attrField = new org.apache.axis.description.AttributeDesc();
+        attrField.setFieldName("externalId");
+        attrField.setXmlName(new javax.xml.namespace.QName("", "externalId"));
+        attrField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        typeDesc.addFieldDesc(attrField);
+        org.apache.axis.description.ElementDesc elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("customForm");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:relationships_2018_2.lists.webservices.netsuite.com", "customForm"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("entityId");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:relationships_2018_2.lists.webservices.netsuite.com", "entityId"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("altName");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:relationships_2018_2.lists.webservices.netsuite.com", "altName"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("isPerson");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:relationships_2018_2.lists.webservices.netsuite.com", "isPerson"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("phoneticName");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:relationships_2018_2.lists.webservices.netsuite.com", "phoneticName"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("salutation");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:relationships_2018_2.lists.webservices.netsuite.com", "salutation"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("firstName");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:relationships_2018_2.lists.webservices.netsuite.com", "firstName"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("middleName");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:relationships_2018_2.lists.webservices.netsuite.com", "middleName"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("lastName");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:relationships_2018_2.lists.webservices.netsuite.com", "lastName"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("companyName");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:relationships_2018_2.lists.webservices.netsuite.com", "companyName"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("phone");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:relationships_2018_2.lists.webservices.netsuite.com", "phone"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("fax");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:relationships_2018_2.lists.webservices.netsuite.com", "fax"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("email");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:relationships_2018_2.lists.webservices.netsuite.com", "email"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("url");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:relationships_2018_2.lists.webservices.netsuite.com", "url"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("defaultAddress");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:relationships_2018_2.lists.webservices.netsuite.com", "defaultAddress"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("isInactive");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:relationships_2018_2.lists.webservices.netsuite.com", "isInactive"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("lastModifiedDate");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:relationships_2018_2.lists.webservices.netsuite.com", "lastModifiedDate"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "dateTime"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("dateCreated");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:relationships_2018_2.lists.webservices.netsuite.com", "dateCreated"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "dateTime"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("category");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:relationships_2018_2.lists.webservices.netsuite.com", "category"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("title");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:relationships_2018_2.lists.webservices.netsuite.com", "title"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("printOnCheckAs");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:relationships_2018_2.lists.webservices.netsuite.com", "printOnCheckAs"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("altPhone");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:relationships_2018_2.lists.webservices.netsuite.com", "altPhone"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("homePhone");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:relationships_2018_2.lists.webservices.netsuite.com", "homePhone"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("mobilePhone");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:relationships_2018_2.lists.webservices.netsuite.com", "mobilePhone"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("altEmail");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:relationships_2018_2.lists.webservices.netsuite.com", "altEmail"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("comments");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:relationships_2018_2.lists.webservices.netsuite.com", "comments"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("globalSubscriptionStatus");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:relationships_2018_2.lists.webservices.netsuite.com", "globalSubscriptionStatus"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:types.common_2018_2.platform.webservices.netsuite.com", "GlobalSubscriptionStatus"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("image");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:relationships_2018_2.lists.webservices.netsuite.com", "image"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("emailPreference");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:relationships_2018_2.lists.webservices.netsuite.com", "emailPreference"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:types.relationships_2018_2.lists.webservices.netsuite.com", "EmailPreference"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("subsidiary");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:relationships_2018_2.lists.webservices.netsuite.com", "subsidiary"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("representingSubsidiary");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:relationships_2018_2.lists.webservices.netsuite.com", "representingSubsidiary"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("accountNumber");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:relationships_2018_2.lists.webservices.netsuite.com", "accountNumber"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("legalName");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:relationships_2018_2.lists.webservices.netsuite.com", "legalName"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("vatRegNumber");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:relationships_2018_2.lists.webservices.netsuite.com", "vatRegNumber"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("expenseAccount");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:relationships_2018_2.lists.webservices.netsuite.com", "expenseAccount"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("payablesAccount");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:relationships_2018_2.lists.webservices.netsuite.com", "payablesAccount"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("terms");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:relationships_2018_2.lists.webservices.netsuite.com", "terms"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("incoterm");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:relationships_2018_2.lists.webservices.netsuite.com", "incoterm"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("creditLimit");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:relationships_2018_2.lists.webservices.netsuite.com", "creditLimit"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "double"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("balancePrimary");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:relationships_2018_2.lists.webservices.netsuite.com", "balancePrimary"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "double"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("openingBalance");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:relationships_2018_2.lists.webservices.netsuite.com", "openingBalance"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "double"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("openingBalanceDate");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:relationships_2018_2.lists.webservices.netsuite.com", "openingBalanceDate"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "dateTime"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("openingBalanceAccount");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:relationships_2018_2.lists.webservices.netsuite.com", "openingBalanceAccount"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("balance");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:relationships_2018_2.lists.webservices.netsuite.com", "balance"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "double"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("unbilledOrdersPrimary");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:relationships_2018_2.lists.webservices.netsuite.com", "unbilledOrdersPrimary"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "double"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("bcn");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:relationships_2018_2.lists.webservices.netsuite.com", "bcn"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("unbilledOrders");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:relationships_2018_2.lists.webservices.netsuite.com", "unbilledOrders"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "double"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("currency");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:relationships_2018_2.lists.webservices.netsuite.com", "currency"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("is1099Eligible");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:relationships_2018_2.lists.webservices.netsuite.com", "is1099Eligible"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("isJobResourceVend");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:relationships_2018_2.lists.webservices.netsuite.com", "isJobResourceVend"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("laborCost");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:relationships_2018_2.lists.webservices.netsuite.com", "laborCost"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "double"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("purchaseOrderQuantity");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:relationships_2018_2.lists.webservices.netsuite.com", "purchaseOrderQuantity"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "double"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("purchaseOrderAmount");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:relationships_2018_2.lists.webservices.netsuite.com", "purchaseOrderAmount"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "double"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("purchaseOrderQuantityDiff");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:relationships_2018_2.lists.webservices.netsuite.com", "purchaseOrderQuantityDiff"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "double"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("receiptQuantity");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:relationships_2018_2.lists.webservices.netsuite.com", "receiptQuantity"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "double"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("receiptAmount");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:relationships_2018_2.lists.webservices.netsuite.com", "receiptAmount"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "double"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("receiptQuantityDiff");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:relationships_2018_2.lists.webservices.netsuite.com", "receiptQuantityDiff"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "double"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("workCalendar");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:relationships_2018_2.lists.webservices.netsuite.com", "workCalendar"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("taxIdNum");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:relationships_2018_2.lists.webservices.netsuite.com", "taxIdNum"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("taxItem");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:relationships_2018_2.lists.webservices.netsuite.com", "taxItem"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("giveAccess");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:relationships_2018_2.lists.webservices.netsuite.com", "giveAccess"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("sendEmail");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:relationships_2018_2.lists.webservices.netsuite.com", "sendEmail"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("billPay");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:relationships_2018_2.lists.webservices.netsuite.com", "billPay"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("isAccountant");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:relationships_2018_2.lists.webservices.netsuite.com", "isAccountant"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("password");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:relationships_2018_2.lists.webservices.netsuite.com", "password"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("password2");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:relationships_2018_2.lists.webservices.netsuite.com", "password2"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("requirePwdChange");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:relationships_2018_2.lists.webservices.netsuite.com", "requirePwdChange"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("eligibleForCommission");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:relationships_2018_2.lists.webservices.netsuite.com", "eligibleForCommission"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("emailTransactions");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:relationships_2018_2.lists.webservices.netsuite.com", "emailTransactions"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("printTransactions");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:relationships_2018_2.lists.webservices.netsuite.com", "printTransactions"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("faxTransactions");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:relationships_2018_2.lists.webservices.netsuite.com", "faxTransactions"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("pricingScheduleList");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:relationships_2018_2.lists.webservices.netsuite.com", "pricingScheduleList"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:relationships_2018_2.lists.webservices.netsuite.com", "VendorPricingSchedule"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:relationships_2018_2.lists.webservices.netsuite.com", "pricingSchedule"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("subscriptionsList");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:relationships_2018_2.lists.webservices.netsuite.com", "subscriptionsList"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:relationships_2018_2.lists.webservices.netsuite.com", "Subscriptions"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:relationships_2018_2.lists.webservices.netsuite.com", "subscriptions"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("addressbookList");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:relationships_2018_2.lists.webservices.netsuite.com", "addressbookList"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:relationships_2018_2.lists.webservices.netsuite.com", "VendorAddressbook"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:relationships_2018_2.lists.webservices.netsuite.com", "addressbook"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("currencyList");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:relationships_2018_2.lists.webservices.netsuite.com", "currencyList"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:relationships_2018_2.lists.webservices.netsuite.com", "VendorCurrency"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:relationships_2018_2.lists.webservices.netsuite.com", "vendorCurrency"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("rolesList");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:relationships_2018_2.lists.webservices.netsuite.com", "rolesList"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:relationships_2018_2.lists.webservices.netsuite.com", "VendorRoles"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:relationships_2018_2.lists.webservices.netsuite.com", "roles"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("customFieldList");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:relationships_2018_2.lists.webservices.netsuite.com", "customFieldList"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "CustomFieldRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "customField"));
+        typeDesc.addFieldDesc(elemField);
+    }
+
+    /**
+     * Return type metadata object
+     */
+    public static org.apache.axis.description.TypeDesc getTypeDesc() {
+        return typeDesc;
+    }
+
+    /**
+     * Get Custom Serializer
+     */
+    public static org.apache.axis.encoding.Serializer getSerializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanSerializer(
+            _javaType, _xmlType, typeDesc);
+    }
+
+    /**
+     * Get Custom Deserializer
+     */
+    public static org.apache.axis.encoding.Deserializer getDeserializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanDeserializer(
+            _javaType, _xmlType, typeDesc);
     }
 
 }

@@ -1,54 +1,72 @@
+/**
+ * TaskStatus.java
+ *
+ * This file was auto-generated from WSDL
+ * by the Apache Axis 1.4 Jul 28, 2010 (04:07:04 PDT) WSDL2Java emitter.
+ */
 
 package com.netsuite.webservices.activities.scheduling_2018_2.types;
 
-import javax.xml.bind.annotation.XmlEnum;
-import javax.xml.bind.annotation.XmlEnumValue;
-import javax.xml.bind.annotation.XmlType;
+public class TaskStatus implements java.io.Serializable {
+    private java.lang.String _value_;
+    private static java.util.HashMap _table_ = new java.util.HashMap();
 
-
-/**
- * <p>TaskStatus的 Java 类。
- * 
- * <p>以下模式片段指定包含在此类中的预期内容。
- * <p>
- * <pre>
- * &lt;simpleType name="TaskStatus">
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     &lt;enumeration value="_completed"/>
- *     &lt;enumeration value="_inProgress"/>
- *     &lt;enumeration value="_notStarted"/>
- *   &lt;/restriction>
- * &lt;/simpleType>
- * </pre>
- * 
- */
-@XmlType(name = "TaskStatus", namespace = "urn:types.scheduling_2018_2.activities.webservices.netsuite.com")
-@XmlEnum
-public enum TaskStatus {
-
-    @XmlEnumValue("_completed")
-    COMPLETED("_completed"),
-    @XmlEnumValue("_inProgress")
-    IN_PROGRESS("_inProgress"),
-    @XmlEnumValue("_notStarted")
-    NOT_STARTED("_notStarted");
-    private final String value;
-
-    TaskStatus(String v) {
-        value = v;
+    // Constructor
+    protected TaskStatus(java.lang.String value) {
+        _value_ = value;
+        _table_.put(_value_,this);
     }
 
-    public String value() {
-        return value;
+    public static final java.lang.String __completed = "_completed";
+    public static final java.lang.String __inProgress = "_inProgress";
+    public static final java.lang.String __notStarted = "_notStarted";
+    public static final TaskStatus _completed = new TaskStatus(__completed);
+    public static final TaskStatus _inProgress = new TaskStatus(__inProgress);
+    public static final TaskStatus _notStarted = new TaskStatus(__notStarted);
+    public java.lang.String getValue() { return _value_;}
+    public static TaskStatus fromValue(java.lang.String value)
+          throws java.lang.IllegalArgumentException {
+        TaskStatus enumeration = (TaskStatus)
+            _table_.get(value);
+        if (enumeration==null) throw new java.lang.IllegalArgumentException();
+        return enumeration;
     }
+    public static TaskStatus fromString(java.lang.String value)
+          throws java.lang.IllegalArgumentException {
+        return fromValue(value);
+    }
+    public boolean equals(java.lang.Object obj) {return (obj == this);}
+    public int hashCode() { return toString().hashCode();}
+    public java.lang.String toString() { return _value_;}
+    public java.lang.Object readResolve() throws java.io.ObjectStreamException { return fromValue(_value_);}
+    public static org.apache.axis.encoding.Serializer getSerializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new org.apache.axis.encoding.ser.EnumSerializer(
+            _javaType, _xmlType);
+    }
+    public static org.apache.axis.encoding.Deserializer getDeserializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new org.apache.axis.encoding.ser.EnumDeserializer(
+            _javaType, _xmlType);
+    }
+    // Type metadata
+    private static org.apache.axis.description.TypeDesc typeDesc =
+        new org.apache.axis.description.TypeDesc(TaskStatus.class);
 
-    public static TaskStatus fromValue(String v) {
-        for (TaskStatus c: TaskStatus.values()) {
-            if (c.value.equals(v)) {
-                return c;
-            }
-        }
-        throw new IllegalArgumentException(v);
+    static {
+        typeDesc.setXmlType(new javax.xml.namespace.QName("urn:types.scheduling_2018_2.activities.webservices.netsuite.com", "TaskStatus"));
+    }
+    /**
+     * Return type metadata object
+     */
+    public static org.apache.axis.description.TypeDesc getTypeDesc() {
+        return typeDesc;
     }
 
 }

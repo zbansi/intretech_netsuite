@@ -1,2649 +1,3660 @@
+/**
+ * ItemFulfillment.java
+ *
+ * This file was auto-generated from WSDL
+ * by the Apache Axis 1.4 Jul 28, 2010 (04:07:04 PDT) WSDL2Java emitter.
+ */
 
 package com.netsuite.webservices.transactions.sales_2018_2;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlAttribute;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlSchemaType;
-import javax.xml.bind.annotation.XmlType;
-import javax.xml.datatype.XMLGregorianCalendar;
-import com.netsuite.webservices.platform.common_2018_2.AccountingBookDetailList;
-import com.netsuite.webservices.platform.common_2018_2.Address;
-import com.netsuite.webservices.platform.common_2018_2.types.Country;
-import com.netsuite.webservices.platform.core_2018_2.CustomFieldList;
-import com.netsuite.webservices.platform.core_2018_2.Record;
-import com.netsuite.webservices.platform.core_2018_2.RecordRef;
-import com.netsuite.webservices.transactions.sales_2018_2.types.ItemFulfillmentAccessibilityTypeFedEx;
-import com.netsuite.webservices.transactions.sales_2018_2.types.ItemFulfillmentAncillaryEndorsementFedEx;
-import com.netsuite.webservices.transactions.sales_2018_2.types.ItemFulfillmentB13AFilingOptionFedEx;
-import com.netsuite.webservices.transactions.sales_2018_2.types.ItemFulfillmentExportTypeUps;
-import com.netsuite.webservices.transactions.sales_2018_2.types.ItemFulfillmentHazmatTypeFedEx;
-import com.netsuite.webservices.transactions.sales_2018_2.types.ItemFulfillmentHomeDeliveryTypeFedEx;
-import com.netsuite.webservices.transactions.sales_2018_2.types.ItemFulfillmentLicenseExceptionUps;
-import com.netsuite.webservices.transactions.sales_2018_2.types.ItemFulfillmentMethodOfTransportUps;
-import com.netsuite.webservices.transactions.sales_2018_2.types.ItemFulfillmentShipStatus;
-import com.netsuite.webservices.transactions.sales_2018_2.types.ItemFulfillmentTermsOfSaleFedEx;
-import com.netsuite.webservices.transactions.sales_2018_2.types.ItemFulfillmentThirdPartyTypeFedEx;
-import com.netsuite.webservices.transactions.sales_2018_2.types.ItemFulfillmentThirdPartyTypeUps;
+public class ItemFulfillment  extends com.netsuite.webservices.platform.core_2018_2.Record  implements java.io.Serializable {
+    private java.util.Calendar createdDate;
 
+    private java.util.Calendar lastModifiedDate;
 
-/**
- * <p>ItemFulfillment complex type的 Java 类。
- * 
- * <p>以下模式片段指定包含在此类中的预期内容。
- * 
- * <pre>
- * &lt;complexType name="ItemFulfillment">
- *   &lt;complexContent>
- *     &lt;extension base="{urn:core_2018_2.platform.webservices.netsuite.com}Record">
- *       &lt;sequence>
- *         &lt;element name="createdDate" type="{http://www.w3.org/2001/XMLSchema}dateTime" minOccurs="0"/>
- *         &lt;element name="lastModifiedDate" type="{http://www.w3.org/2001/XMLSchema}dateTime" minOccurs="0"/>
- *         &lt;element name="customForm" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="postingPeriod" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="entity" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="createdFrom" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="requestedBy" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="createdFromShipGroup" type="{http://www.w3.org/2001/XMLSchema}long" minOccurs="0"/>
- *         &lt;element name="partner" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="shippingAddress" type="{urn:common_2018_2.platform.webservices.netsuite.com}Address" minOccurs="0"/>
- *         &lt;element name="pickedDate" type="{http://www.w3.org/2001/XMLSchema}dateTime" minOccurs="0"/>
- *         &lt;element name="packedDate" type="{http://www.w3.org/2001/XMLSchema}dateTime" minOccurs="0"/>
- *         &lt;element name="shippedDate" type="{http://www.w3.org/2001/XMLSchema}dateTime" minOccurs="0"/>
- *         &lt;element name="shipIsResidential" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         &lt;element name="shipAddressList" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="shipStatus" type="{urn:types.sales_2018_2.transactions.webservices.netsuite.com}ItemFulfillmentShipStatus" minOccurs="0"/>
- *         &lt;element name="saturdayDeliveryUps" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         &lt;element name="sendShipNotifyEmailUps" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         &lt;element name="sendBackupEmailUps" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         &lt;element name="shipNotifyEmailAddressUps" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="shipNotifyEmailAddress2Ups" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="backupEmailAddressUps" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="shipNotifyEmailMessageUps" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="thirdPartyAcctUps" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="thirdPartyZipcodeUps" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="thirdPartyCountryUps" type="{urn:types.common_2018_2.platform.webservices.netsuite.com}Country" minOccurs="0"/>
- *         &lt;element name="thirdPartyTypeUps" type="{urn:types.sales_2018_2.transactions.webservices.netsuite.com}ItemFulfillmentThirdPartyTypeUps" minOccurs="0"/>
- *         &lt;element name="partiesToTransactionUps" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         &lt;element name="exportTypeUps" type="{urn:types.sales_2018_2.transactions.webservices.netsuite.com}ItemFulfillmentExportTypeUps" minOccurs="0"/>
- *         &lt;element name="methodOfTransportUps" type="{urn:types.sales_2018_2.transactions.webservices.netsuite.com}ItemFulfillmentMethodOfTransportUps" minOccurs="0"/>
- *         &lt;element name="carrierIdUps" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="entryNumberUps" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="inbondCodeUps" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="isRoutedExportTransactionUps" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         &lt;element name="licenseNumberUps" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="licenseDateUps" type="{http://www.w3.org/2001/XMLSchema}dateTime" minOccurs="0"/>
- *         &lt;element name="licenseExceptionUps" type="{urn:types.sales_2018_2.transactions.webservices.netsuite.com}ItemFulfillmentLicenseExceptionUps" minOccurs="0"/>
- *         &lt;element name="eccNumberUps" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="recipientTaxIdUps" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="blanketStartDateUps" type="{http://www.w3.org/2001/XMLSchema}dateTime" minOccurs="0"/>
- *         &lt;element name="blanketEndDateUps" type="{http://www.w3.org/2001/XMLSchema}dateTime" minOccurs="0"/>
- *         &lt;element name="shipmentWeightUps" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
- *         &lt;element name="saturdayDeliveryFedEx" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         &lt;element name="saturdayPickupFedex" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         &lt;element name="sendShipNotifyEmailFedEx" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         &lt;element name="sendBackupEmailFedEx" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         &lt;element name="signatureHomeDeliveryFedEx" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         &lt;element name="shipNotifyEmailAddressFedEx" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="backupEmailAddressFedEx" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="shipDateFedEx" type="{http://www.w3.org/2001/XMLSchema}dateTime" minOccurs="0"/>
- *         &lt;element name="homeDeliveryTypeFedEx" type="{urn:types.sales_2018_2.transactions.webservices.netsuite.com}ItemFulfillmentHomeDeliveryTypeFedEx" minOccurs="0"/>
- *         &lt;element name="homeDeliveryDateFedEx" type="{http://www.w3.org/2001/XMLSchema}dateTime" minOccurs="0"/>
- *         &lt;element name="bookingConfirmationNumFedEx" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="intlExemptionNumFedEx" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="b13aFilingOptionFedEx" type="{urn:types.sales_2018_2.transactions.webservices.netsuite.com}ItemFulfillmentB13AFilingOptionFedEx" minOccurs="0"/>
- *         &lt;element name="b13aStatementDataFedEx" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="thirdPartyAcctFedEx" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="thirdPartyCountryFedEx" type="{urn:types.common_2018_2.platform.webservices.netsuite.com}Country" minOccurs="0"/>
- *         &lt;element name="thirdPartyTypeFedEx" type="{urn:types.sales_2018_2.transactions.webservices.netsuite.com}ItemFulfillmentThirdPartyTypeFedEx" minOccurs="0"/>
- *         &lt;element name="shipmentWeightFedEx" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
- *         &lt;element name="termsOfSaleFedEx" type="{urn:types.sales_2018_2.transactions.webservices.netsuite.com}ItemFulfillmentTermsOfSaleFedEx" minOccurs="0"/>
- *         &lt;element name="termsFreightChargeFedEx" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
- *         &lt;element name="termsInsuranceChargeFedEx" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
- *         &lt;element name="insideDeliveryFedEx" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         &lt;element name="insidePickupFedEx" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         &lt;element name="ancillaryEndorsementFedEx" type="{urn:types.sales_2018_2.transactions.webservices.netsuite.com}ItemFulfillmentAncillaryEndorsementFedEx" minOccurs="0"/>
- *         &lt;element name="holdAtLocationFedEx" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         &lt;element name="halPhoneFedEx" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="halAddr1FedEx" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="halAddr2FedEx" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="halAddr3FedEx" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="halCityFedEx" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="halZipFedEx" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="halStateFedEx" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="halCountryFedEx" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="hazmatTypeFedEx" type="{urn:types.sales_2018_2.transactions.webservices.netsuite.com}ItemFulfillmentHazmatTypeFedEx" minOccurs="0"/>
- *         &lt;element name="accessibilityTypeFedEx" type="{urn:types.sales_2018_2.transactions.webservices.netsuite.com}ItemFulfillmentAccessibilityTypeFedEx" minOccurs="0"/>
- *         &lt;element name="isCargoAircraftOnlyFedEx" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         &lt;element name="tranDate" type="{http://www.w3.org/2001/XMLSchema}dateTime" minOccurs="0"/>
- *         &lt;element name="tranId" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="shipMethod" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="generateIntegratedShipperLabel" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         &lt;element name="shippingCost" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
- *         &lt;element name="handlingCost" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
- *         &lt;element name="memo" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="transferLocation" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="packageList" type="{urn:sales_2018_2.transactions.webservices.netsuite.com}ItemFulfillmentPackageList" minOccurs="0"/>
- *         &lt;element name="packageUpsList" type="{urn:sales_2018_2.transactions.webservices.netsuite.com}ItemFulfillmentPackageUpsList" minOccurs="0"/>
- *         &lt;element name="packageUspsList" type="{urn:sales_2018_2.transactions.webservices.netsuite.com}ItemFulfillmentPackageUspsList" minOccurs="0"/>
- *         &lt;element name="packageFedExList" type="{urn:sales_2018_2.transactions.webservices.netsuite.com}ItemFulfillmentPackageFedExList" minOccurs="0"/>
- *         &lt;element name="itemList" type="{urn:sales_2018_2.transactions.webservices.netsuite.com}ItemFulfillmentItemList" minOccurs="0"/>
- *         &lt;element name="accountingBookDetailList" type="{urn:common_2018_2.platform.webservices.netsuite.com}AccountingBookDetailList" minOccurs="0"/>
- *         &lt;element name="customFieldList" type="{urn:core_2018_2.platform.webservices.netsuite.com}CustomFieldList" minOccurs="0"/>
- *       &lt;/sequence>
- *       &lt;attribute name="internalId" type="{http://www.w3.org/2001/XMLSchema}string" />
- *       &lt;attribute name="externalId" type="{http://www.w3.org/2001/XMLSchema}string" />
- *     &lt;/extension>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
- */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "ItemFulfillment", propOrder = {
-    "createdDate",
-    "lastModifiedDate",
-    "customForm",
-    "postingPeriod",
-    "entity",
-    "createdFrom",
-    "requestedBy",
-    "createdFromShipGroup",
-    "partner",
-    "shippingAddress",
-    "pickedDate",
-    "packedDate",
-    "shippedDate",
-    "shipIsResidential",
-    "shipAddressList",
-    "shipStatus",
-    "saturdayDeliveryUps",
-    "sendShipNotifyEmailUps",
-    "sendBackupEmailUps",
-    "shipNotifyEmailAddressUps",
-    "shipNotifyEmailAddress2Ups",
-    "backupEmailAddressUps",
-    "shipNotifyEmailMessageUps",
-    "thirdPartyAcctUps",
-    "thirdPartyZipcodeUps",
-    "thirdPartyCountryUps",
-    "thirdPartyTypeUps",
-    "partiesToTransactionUps",
-    "exportTypeUps",
-    "methodOfTransportUps",
-    "carrierIdUps",
-    "entryNumberUps",
-    "inbondCodeUps",
-    "isRoutedExportTransactionUps",
-    "licenseNumberUps",
-    "licenseDateUps",
-    "licenseExceptionUps",
-    "eccNumberUps",
-    "recipientTaxIdUps",
-    "blanketStartDateUps",
-    "blanketEndDateUps",
-    "shipmentWeightUps",
-    "saturdayDeliveryFedEx",
-    "saturdayPickupFedex",
-    "sendShipNotifyEmailFedEx",
-    "sendBackupEmailFedEx",
-    "signatureHomeDeliveryFedEx",
-    "shipNotifyEmailAddressFedEx",
-    "backupEmailAddressFedEx",
-    "shipDateFedEx",
-    "homeDeliveryTypeFedEx",
-    "homeDeliveryDateFedEx",
-    "bookingConfirmationNumFedEx",
-    "intlExemptionNumFedEx",
-    "b13AFilingOptionFedEx",
-    "b13AStatementDataFedEx",
-    "thirdPartyAcctFedEx",
-    "thirdPartyCountryFedEx",
-    "thirdPartyTypeFedEx",
-    "shipmentWeightFedEx",
-    "termsOfSaleFedEx",
-    "termsFreightChargeFedEx",
-    "termsInsuranceChargeFedEx",
-    "insideDeliveryFedEx",
-    "insidePickupFedEx",
-    "ancillaryEndorsementFedEx",
-    "holdAtLocationFedEx",
-    "halPhoneFedEx",
-    "halAddr1FedEx",
-    "halAddr2FedEx",
-    "halAddr3FedEx",
-    "halCityFedEx",
-    "halZipFedEx",
-    "halStateFedEx",
-    "halCountryFedEx",
-    "hazmatTypeFedEx",
-    "accessibilityTypeFedEx",
-    "isCargoAircraftOnlyFedEx",
-    "tranDate",
-    "tranId",
-    "shipMethod",
-    "generateIntegratedShipperLabel",
-    "shippingCost",
-    "handlingCost",
-    "memo",
-    "transferLocation",
-    "packageList",
-    "packageUpsList",
-    "packageUspsList",
-    "packageFedExList",
-    "itemList",
-    "accountingBookDetailList",
-    "customFieldList"
-})
-public class ItemFulfillment
-    extends Record
-{
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef customForm;
 
-    @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar createdDate;
-    @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar lastModifiedDate;
-    protected RecordRef customForm;
-    protected RecordRef postingPeriod;
-    protected RecordRef entity;
-    protected RecordRef createdFrom;
-    protected RecordRef requestedBy;
-    protected Long createdFromShipGroup;
-    protected RecordRef partner;
-    protected Address shippingAddress;
-    @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar pickedDate;
-    @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar packedDate;
-    @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar shippedDate;
-    protected Boolean shipIsResidential;
-    protected RecordRef shipAddressList;
-    @XmlSchemaType(name = "string")
-    protected ItemFulfillmentShipStatus shipStatus;
-    protected Boolean saturdayDeliveryUps;
-    protected Boolean sendShipNotifyEmailUps;
-    protected Boolean sendBackupEmailUps;
-    protected String shipNotifyEmailAddressUps;
-    protected String shipNotifyEmailAddress2Ups;
-    protected String backupEmailAddressUps;
-    protected String shipNotifyEmailMessageUps;
-    protected String thirdPartyAcctUps;
-    protected String thirdPartyZipcodeUps;
-    @XmlSchemaType(name = "string")
-    protected Country thirdPartyCountryUps;
-    @XmlSchemaType(name = "string")
-    protected ItemFulfillmentThirdPartyTypeUps thirdPartyTypeUps;
-    protected Boolean partiesToTransactionUps;
-    @XmlSchemaType(name = "string")
-    protected ItemFulfillmentExportTypeUps exportTypeUps;
-    @XmlSchemaType(name = "string")
-    protected ItemFulfillmentMethodOfTransportUps methodOfTransportUps;
-    protected String carrierIdUps;
-    protected String entryNumberUps;
-    protected String inbondCodeUps;
-    protected Boolean isRoutedExportTransactionUps;
-    protected String licenseNumberUps;
-    @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar licenseDateUps;
-    @XmlSchemaType(name = "string")
-    protected ItemFulfillmentLicenseExceptionUps licenseExceptionUps;
-    protected String eccNumberUps;
-    protected String recipientTaxIdUps;
-    @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar blanketStartDateUps;
-    @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar blanketEndDateUps;
-    protected Double shipmentWeightUps;
-    protected Boolean saturdayDeliveryFedEx;
-    protected Boolean saturdayPickupFedex;
-    protected Boolean sendShipNotifyEmailFedEx;
-    protected Boolean sendBackupEmailFedEx;
-    protected Boolean signatureHomeDeliveryFedEx;
-    protected String shipNotifyEmailAddressFedEx;
-    protected String backupEmailAddressFedEx;
-    @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar shipDateFedEx;
-    @XmlSchemaType(name = "string")
-    protected ItemFulfillmentHomeDeliveryTypeFedEx homeDeliveryTypeFedEx;
-    @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar homeDeliveryDateFedEx;
-    protected String bookingConfirmationNumFedEx;
-    protected String intlExemptionNumFedEx;
-    @XmlElement(name = "b13aFilingOptionFedEx")
-    @XmlSchemaType(name = "string")
-    protected ItemFulfillmentB13AFilingOptionFedEx b13AFilingOptionFedEx;
-    @XmlElement(name = "b13aStatementDataFedEx")
-    protected String b13AStatementDataFedEx;
-    protected String thirdPartyAcctFedEx;
-    @XmlSchemaType(name = "string")
-    protected Country thirdPartyCountryFedEx;
-    @XmlSchemaType(name = "string")
-    protected ItemFulfillmentThirdPartyTypeFedEx thirdPartyTypeFedEx;
-    protected Double shipmentWeightFedEx;
-    @XmlSchemaType(name = "string")
-    protected ItemFulfillmentTermsOfSaleFedEx termsOfSaleFedEx;
-    protected Double termsFreightChargeFedEx;
-    protected Double termsInsuranceChargeFedEx;
-    protected Boolean insideDeliveryFedEx;
-    protected Boolean insidePickupFedEx;
-    @XmlSchemaType(name = "string")
-    protected ItemFulfillmentAncillaryEndorsementFedEx ancillaryEndorsementFedEx;
-    protected Boolean holdAtLocationFedEx;
-    protected String halPhoneFedEx;
-    protected String halAddr1FedEx;
-    protected String halAddr2FedEx;
-    protected String halAddr3FedEx;
-    protected String halCityFedEx;
-    protected String halZipFedEx;
-    protected String halStateFedEx;
-    protected String halCountryFedEx;
-    @XmlSchemaType(name = "string")
-    protected ItemFulfillmentHazmatTypeFedEx hazmatTypeFedEx;
-    @XmlSchemaType(name = "string")
-    protected ItemFulfillmentAccessibilityTypeFedEx accessibilityTypeFedEx;
-    protected Boolean isCargoAircraftOnlyFedEx;
-    @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar tranDate;
-    protected String tranId;
-    protected RecordRef shipMethod;
-    protected Boolean generateIntegratedShipperLabel;
-    protected Double shippingCost;
-    protected Double handlingCost;
-    protected String memo;
-    protected RecordRef transferLocation;
-    protected ItemFulfillmentPackageList packageList;
-    protected ItemFulfillmentPackageUpsList packageUpsList;
-    protected ItemFulfillmentPackageUspsList packageUspsList;
-    protected ItemFulfillmentPackageFedExList packageFedExList;
-    protected ItemFulfillmentItemList itemList;
-    protected AccountingBookDetailList accountingBookDetailList;
-    protected CustomFieldList customFieldList;
-    @XmlAttribute(name = "internalId")
-    protected String internalId;
-    @XmlAttribute(name = "externalId")
-    protected String externalId;
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef postingPeriod;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef entity;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef createdFrom;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef requestedBy;
+
+    private java.lang.Long createdFromShipGroup;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef partner;
+
+    private com.netsuite.webservices.platform.common_2018_2.Address shippingAddress;
+
+    private java.util.Calendar pickedDate;
+
+    private java.util.Calendar packedDate;
+
+    private java.util.Calendar shippedDate;
+
+    private java.lang.Boolean shipIsResidential;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef shipAddressList;
+
+    private com.netsuite.webservices.transactions.sales_2018_2.types.ItemFulfillmentShipStatus shipStatus;
+
+    private java.lang.Boolean saturdayDeliveryUps;
+
+    private java.lang.Boolean sendShipNotifyEmailUps;
+
+    private java.lang.Boolean sendBackupEmailUps;
+
+    private java.lang.String shipNotifyEmailAddressUps;
+
+    private java.lang.String shipNotifyEmailAddress2Ups;
+
+    private java.lang.String backupEmailAddressUps;
+
+    private java.lang.String shipNotifyEmailMessageUps;
+
+    private java.lang.String thirdPartyAcctUps;
+
+    private java.lang.String thirdPartyZipcodeUps;
+
+    private com.netsuite.webservices.platform.common_2018_2.types.Country thirdPartyCountryUps;
+
+    private com.netsuite.webservices.transactions.sales_2018_2.types.ItemFulfillmentThirdPartyTypeUps thirdPartyTypeUps;
+
+    private java.lang.Boolean partiesToTransactionUps;
+
+    private com.netsuite.webservices.transactions.sales_2018_2.types.ItemFulfillmentExportTypeUps exportTypeUps;
+
+    private com.netsuite.webservices.transactions.sales_2018_2.types.ItemFulfillmentMethodOfTransportUps methodOfTransportUps;
+
+    private java.lang.String carrierIdUps;
+
+    private java.lang.String entryNumberUps;
+
+    private java.lang.String inbondCodeUps;
+
+    private java.lang.Boolean isRoutedExportTransactionUps;
+
+    private java.lang.String licenseNumberUps;
+
+    private java.util.Calendar licenseDateUps;
+
+    private com.netsuite.webservices.transactions.sales_2018_2.types.ItemFulfillmentLicenseExceptionUps licenseExceptionUps;
+
+    private java.lang.String eccNumberUps;
+
+    private java.lang.String recipientTaxIdUps;
+
+    private java.util.Calendar blanketStartDateUps;
+
+    private java.util.Calendar blanketEndDateUps;
+
+    private java.lang.Double shipmentWeightUps;
+
+    private java.lang.Boolean saturdayDeliveryFedEx;
+
+    private java.lang.Boolean saturdayPickupFedex;
+
+    private java.lang.Boolean sendShipNotifyEmailFedEx;
+
+    private java.lang.Boolean sendBackupEmailFedEx;
+
+    private java.lang.Boolean signatureHomeDeliveryFedEx;
+
+    private java.lang.String shipNotifyEmailAddressFedEx;
+
+    private java.lang.String backupEmailAddressFedEx;
+
+    private java.util.Calendar shipDateFedEx;
+
+    private com.netsuite.webservices.transactions.sales_2018_2.types.ItemFulfillmentHomeDeliveryTypeFedEx homeDeliveryTypeFedEx;
+
+    private java.util.Calendar homeDeliveryDateFedEx;
+
+    private java.lang.String bookingConfirmationNumFedEx;
+
+    private java.lang.String intlExemptionNumFedEx;
+
+    private com.netsuite.webservices.transactions.sales_2018_2.types.ItemFulfillmentB13AFilingOptionFedEx b13AFilingOptionFedEx;
+
+    private java.lang.String b13AStatementDataFedEx;
+
+    private java.lang.String thirdPartyAcctFedEx;
+
+    private com.netsuite.webservices.platform.common_2018_2.types.Country thirdPartyCountryFedEx;
+
+    private com.netsuite.webservices.transactions.sales_2018_2.types.ItemFulfillmentThirdPartyTypeFedEx thirdPartyTypeFedEx;
+
+    private java.lang.Double shipmentWeightFedEx;
+
+    private com.netsuite.webservices.transactions.sales_2018_2.types.ItemFulfillmentTermsOfSaleFedEx termsOfSaleFedEx;
+
+    private java.lang.Double termsFreightChargeFedEx;
+
+    private java.lang.Double termsInsuranceChargeFedEx;
+
+    private java.lang.Boolean insideDeliveryFedEx;
+
+    private java.lang.Boolean insidePickupFedEx;
+
+    private com.netsuite.webservices.transactions.sales_2018_2.types.ItemFulfillmentAncillaryEndorsementFedEx ancillaryEndorsementFedEx;
+
+    private java.lang.Boolean holdAtLocationFedEx;
+
+    private java.lang.String halPhoneFedEx;
+
+    private java.lang.String halAddr1FedEx;
+
+    private java.lang.String halAddr2FedEx;
+
+    private java.lang.String halAddr3FedEx;
+
+    private java.lang.String halCityFedEx;
+
+    private java.lang.String halZipFedEx;
+
+    private java.lang.String halStateFedEx;
+
+    private java.lang.String halCountryFedEx;
+
+    private com.netsuite.webservices.transactions.sales_2018_2.types.ItemFulfillmentHazmatTypeFedEx hazmatTypeFedEx;
+
+    private com.netsuite.webservices.transactions.sales_2018_2.types.ItemFulfillmentAccessibilityTypeFedEx accessibilityTypeFedEx;
+
+    private java.lang.Boolean isCargoAircraftOnlyFedEx;
+
+    private java.util.Calendar tranDate;
+
+    private java.lang.String tranId;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef shipMethod;
+
+    private java.lang.Boolean generateIntegratedShipperLabel;
+
+    private java.lang.Double shippingCost;
+
+    private java.lang.Double handlingCost;
+
+    private java.lang.String memo;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef transferLocation;
+
+    private com.netsuite.webservices.transactions.sales_2018_2.ItemFulfillmentPackage[] packageList;
+
+    private com.netsuite.webservices.transactions.sales_2018_2.ItemFulfillmentPackageUps[] packageUpsList;
+
+    private com.netsuite.webservices.transactions.sales_2018_2.ItemFulfillmentPackageUsps[] packageUspsList;
+
+    private com.netsuite.webservices.transactions.sales_2018_2.ItemFulfillmentPackageFedEx[] packageFedExList;
+
+    private com.netsuite.webservices.transactions.sales_2018_2.ItemFulfillmentItem[] itemList;
+
+    private com.netsuite.webservices.platform.common_2018_2.AccountingBookDetail[] accountingBookDetailList;
+
+    private com.netsuite.webservices.platform.core_2018_2.CustomFieldRef[] customFieldList;
+
+    private java.lang.String internalId;  // attribute
+
+    private java.lang.String externalId;  // attribute
+
+    public ItemFulfillment() {
+    }
+
+    public ItemFulfillment(
+           java.lang.String[] nullFieldList,
+           java.lang.String internalId,
+           java.lang.String externalId,
+           java.util.Calendar createdDate,
+           java.util.Calendar lastModifiedDate,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef customForm,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef postingPeriod,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef entity,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef createdFrom,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef requestedBy,
+           java.lang.Long createdFromShipGroup,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef partner,
+           com.netsuite.webservices.platform.common_2018_2.Address shippingAddress,
+           java.util.Calendar pickedDate,
+           java.util.Calendar packedDate,
+           java.util.Calendar shippedDate,
+           java.lang.Boolean shipIsResidential,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef shipAddressList,
+           com.netsuite.webservices.transactions.sales_2018_2.types.ItemFulfillmentShipStatus shipStatus,
+           java.lang.Boolean saturdayDeliveryUps,
+           java.lang.Boolean sendShipNotifyEmailUps,
+           java.lang.Boolean sendBackupEmailUps,
+           java.lang.String shipNotifyEmailAddressUps,
+           java.lang.String shipNotifyEmailAddress2Ups,
+           java.lang.String backupEmailAddressUps,
+           java.lang.String shipNotifyEmailMessageUps,
+           java.lang.String thirdPartyAcctUps,
+           java.lang.String thirdPartyZipcodeUps,
+           com.netsuite.webservices.platform.common_2018_2.types.Country thirdPartyCountryUps,
+           com.netsuite.webservices.transactions.sales_2018_2.types.ItemFulfillmentThirdPartyTypeUps thirdPartyTypeUps,
+           java.lang.Boolean partiesToTransactionUps,
+           com.netsuite.webservices.transactions.sales_2018_2.types.ItemFulfillmentExportTypeUps exportTypeUps,
+           com.netsuite.webservices.transactions.sales_2018_2.types.ItemFulfillmentMethodOfTransportUps methodOfTransportUps,
+           java.lang.String carrierIdUps,
+           java.lang.String entryNumberUps,
+           java.lang.String inbondCodeUps,
+           java.lang.Boolean isRoutedExportTransactionUps,
+           java.lang.String licenseNumberUps,
+           java.util.Calendar licenseDateUps,
+           com.netsuite.webservices.transactions.sales_2018_2.types.ItemFulfillmentLicenseExceptionUps licenseExceptionUps,
+           java.lang.String eccNumberUps,
+           java.lang.String recipientTaxIdUps,
+           java.util.Calendar blanketStartDateUps,
+           java.util.Calendar blanketEndDateUps,
+           java.lang.Double shipmentWeightUps,
+           java.lang.Boolean saturdayDeliveryFedEx,
+           java.lang.Boolean saturdayPickupFedex,
+           java.lang.Boolean sendShipNotifyEmailFedEx,
+           java.lang.Boolean sendBackupEmailFedEx,
+           java.lang.Boolean signatureHomeDeliveryFedEx,
+           java.lang.String shipNotifyEmailAddressFedEx,
+           java.lang.String backupEmailAddressFedEx,
+           java.util.Calendar shipDateFedEx,
+           com.netsuite.webservices.transactions.sales_2018_2.types.ItemFulfillmentHomeDeliveryTypeFedEx homeDeliveryTypeFedEx,
+           java.util.Calendar homeDeliveryDateFedEx,
+           java.lang.String bookingConfirmationNumFedEx,
+           java.lang.String intlExemptionNumFedEx,
+           com.netsuite.webservices.transactions.sales_2018_2.types.ItemFulfillmentB13AFilingOptionFedEx b13AFilingOptionFedEx,
+           java.lang.String b13AStatementDataFedEx,
+           java.lang.String thirdPartyAcctFedEx,
+           com.netsuite.webservices.platform.common_2018_2.types.Country thirdPartyCountryFedEx,
+           com.netsuite.webservices.transactions.sales_2018_2.types.ItemFulfillmentThirdPartyTypeFedEx thirdPartyTypeFedEx,
+           java.lang.Double shipmentWeightFedEx,
+           com.netsuite.webservices.transactions.sales_2018_2.types.ItemFulfillmentTermsOfSaleFedEx termsOfSaleFedEx,
+           java.lang.Double termsFreightChargeFedEx,
+           java.lang.Double termsInsuranceChargeFedEx,
+           java.lang.Boolean insideDeliveryFedEx,
+           java.lang.Boolean insidePickupFedEx,
+           com.netsuite.webservices.transactions.sales_2018_2.types.ItemFulfillmentAncillaryEndorsementFedEx ancillaryEndorsementFedEx,
+           java.lang.Boolean holdAtLocationFedEx,
+           java.lang.String halPhoneFedEx,
+           java.lang.String halAddr1FedEx,
+           java.lang.String halAddr2FedEx,
+           java.lang.String halAddr3FedEx,
+           java.lang.String halCityFedEx,
+           java.lang.String halZipFedEx,
+           java.lang.String halStateFedEx,
+           java.lang.String halCountryFedEx,
+           com.netsuite.webservices.transactions.sales_2018_2.types.ItemFulfillmentHazmatTypeFedEx hazmatTypeFedEx,
+           com.netsuite.webservices.transactions.sales_2018_2.types.ItemFulfillmentAccessibilityTypeFedEx accessibilityTypeFedEx,
+           java.lang.Boolean isCargoAircraftOnlyFedEx,
+           java.util.Calendar tranDate,
+           java.lang.String tranId,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef shipMethod,
+           java.lang.Boolean generateIntegratedShipperLabel,
+           java.lang.Double shippingCost,
+           java.lang.Double handlingCost,
+           java.lang.String memo,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef transferLocation,
+           com.netsuite.webservices.transactions.sales_2018_2.ItemFulfillmentPackage[] packageList,
+           com.netsuite.webservices.transactions.sales_2018_2.ItemFulfillmentPackageUps[] packageUpsList,
+           com.netsuite.webservices.transactions.sales_2018_2.ItemFulfillmentPackageUsps[] packageUspsList,
+           com.netsuite.webservices.transactions.sales_2018_2.ItemFulfillmentPackageFedEx[] packageFedExList,
+           com.netsuite.webservices.transactions.sales_2018_2.ItemFulfillmentItem[] itemList,
+           com.netsuite.webservices.platform.common_2018_2.AccountingBookDetail[] accountingBookDetailList,
+           com.netsuite.webservices.platform.core_2018_2.CustomFieldRef[] customFieldList) {
+        super(
+            nullFieldList);
+        this.internalId = internalId;
+        this.externalId = externalId;
+        this.createdDate = createdDate;
+        this.lastModifiedDate = lastModifiedDate;
+        this.customForm = customForm;
+        this.postingPeriod = postingPeriod;
+        this.entity = entity;
+        this.createdFrom = createdFrom;
+        this.requestedBy = requestedBy;
+        this.createdFromShipGroup = createdFromShipGroup;
+        this.partner = partner;
+        this.shippingAddress = shippingAddress;
+        this.pickedDate = pickedDate;
+        this.packedDate = packedDate;
+        this.shippedDate = shippedDate;
+        this.shipIsResidential = shipIsResidential;
+        this.shipAddressList = shipAddressList;
+        this.shipStatus = shipStatus;
+        this.saturdayDeliveryUps = saturdayDeliveryUps;
+        this.sendShipNotifyEmailUps = sendShipNotifyEmailUps;
+        this.sendBackupEmailUps = sendBackupEmailUps;
+        this.shipNotifyEmailAddressUps = shipNotifyEmailAddressUps;
+        this.shipNotifyEmailAddress2Ups = shipNotifyEmailAddress2Ups;
+        this.backupEmailAddressUps = backupEmailAddressUps;
+        this.shipNotifyEmailMessageUps = shipNotifyEmailMessageUps;
+        this.thirdPartyAcctUps = thirdPartyAcctUps;
+        this.thirdPartyZipcodeUps = thirdPartyZipcodeUps;
+        this.thirdPartyCountryUps = thirdPartyCountryUps;
+        this.thirdPartyTypeUps = thirdPartyTypeUps;
+        this.partiesToTransactionUps = partiesToTransactionUps;
+        this.exportTypeUps = exportTypeUps;
+        this.methodOfTransportUps = methodOfTransportUps;
+        this.carrierIdUps = carrierIdUps;
+        this.entryNumberUps = entryNumberUps;
+        this.inbondCodeUps = inbondCodeUps;
+        this.isRoutedExportTransactionUps = isRoutedExportTransactionUps;
+        this.licenseNumberUps = licenseNumberUps;
+        this.licenseDateUps = licenseDateUps;
+        this.licenseExceptionUps = licenseExceptionUps;
+        this.eccNumberUps = eccNumberUps;
+        this.recipientTaxIdUps = recipientTaxIdUps;
+        this.blanketStartDateUps = blanketStartDateUps;
+        this.blanketEndDateUps = blanketEndDateUps;
+        this.shipmentWeightUps = shipmentWeightUps;
+        this.saturdayDeliveryFedEx = saturdayDeliveryFedEx;
+        this.saturdayPickupFedex = saturdayPickupFedex;
+        this.sendShipNotifyEmailFedEx = sendShipNotifyEmailFedEx;
+        this.sendBackupEmailFedEx = sendBackupEmailFedEx;
+        this.signatureHomeDeliveryFedEx = signatureHomeDeliveryFedEx;
+        this.shipNotifyEmailAddressFedEx = shipNotifyEmailAddressFedEx;
+        this.backupEmailAddressFedEx = backupEmailAddressFedEx;
+        this.shipDateFedEx = shipDateFedEx;
+        this.homeDeliveryTypeFedEx = homeDeliveryTypeFedEx;
+        this.homeDeliveryDateFedEx = homeDeliveryDateFedEx;
+        this.bookingConfirmationNumFedEx = bookingConfirmationNumFedEx;
+        this.intlExemptionNumFedEx = intlExemptionNumFedEx;
+        this.b13AFilingOptionFedEx = b13AFilingOptionFedEx;
+        this.b13AStatementDataFedEx = b13AStatementDataFedEx;
+        this.thirdPartyAcctFedEx = thirdPartyAcctFedEx;
+        this.thirdPartyCountryFedEx = thirdPartyCountryFedEx;
+        this.thirdPartyTypeFedEx = thirdPartyTypeFedEx;
+        this.shipmentWeightFedEx = shipmentWeightFedEx;
+        this.termsOfSaleFedEx = termsOfSaleFedEx;
+        this.termsFreightChargeFedEx = termsFreightChargeFedEx;
+        this.termsInsuranceChargeFedEx = termsInsuranceChargeFedEx;
+        this.insideDeliveryFedEx = insideDeliveryFedEx;
+        this.insidePickupFedEx = insidePickupFedEx;
+        this.ancillaryEndorsementFedEx = ancillaryEndorsementFedEx;
+        this.holdAtLocationFedEx = holdAtLocationFedEx;
+        this.halPhoneFedEx = halPhoneFedEx;
+        this.halAddr1FedEx = halAddr1FedEx;
+        this.halAddr2FedEx = halAddr2FedEx;
+        this.halAddr3FedEx = halAddr3FedEx;
+        this.halCityFedEx = halCityFedEx;
+        this.halZipFedEx = halZipFedEx;
+        this.halStateFedEx = halStateFedEx;
+        this.halCountryFedEx = halCountryFedEx;
+        this.hazmatTypeFedEx = hazmatTypeFedEx;
+        this.accessibilityTypeFedEx = accessibilityTypeFedEx;
+        this.isCargoAircraftOnlyFedEx = isCargoAircraftOnlyFedEx;
+        this.tranDate = tranDate;
+        this.tranId = tranId;
+        this.shipMethod = shipMethod;
+        this.generateIntegratedShipperLabel = generateIntegratedShipperLabel;
+        this.shippingCost = shippingCost;
+        this.handlingCost = handlingCost;
+        this.memo = memo;
+        this.transferLocation = transferLocation;
+        this.packageList = packageList;
+        this.packageUpsList = packageUpsList;
+        this.packageUspsList = packageUspsList;
+        this.packageFedExList = packageFedExList;
+        this.itemList = itemList;
+        this.accountingBookDetailList = accountingBookDetailList;
+        this.customFieldList = customFieldList;
+    }
+
 
     /**
-     * 获取createdDate属性的值。
+     * Gets the createdDate value for this ItemFulfillment.
      * 
-     * @return
-     *     possible object is
-     *     {@link XMLGregorianCalendar }
-     *     
+     * @return createdDate
      */
-    public XMLGregorianCalendar getCreatedDate() {
+    public java.util.Calendar getCreatedDate() {
         return createdDate;
     }
 
-    /**
-     * 设置createdDate属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link XMLGregorianCalendar }
-     *     
-     */
-    public void setCreatedDate(XMLGregorianCalendar value) {
-        this.createdDate = value;
-    }
 
     /**
-     * 获取lastModifiedDate属性的值。
+     * Sets the createdDate value for this ItemFulfillment.
      * 
-     * @return
-     *     possible object is
-     *     {@link XMLGregorianCalendar }
-     *     
+     * @param createdDate
      */
-    public XMLGregorianCalendar getLastModifiedDate() {
+    public void setCreatedDate(java.util.Calendar createdDate) {
+        this.createdDate = createdDate;
+    }
+
+
+    /**
+     * Gets the lastModifiedDate value for this ItemFulfillment.
+     * 
+     * @return lastModifiedDate
+     */
+    public java.util.Calendar getLastModifiedDate() {
         return lastModifiedDate;
     }
 
-    /**
-     * 设置lastModifiedDate属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link XMLGregorianCalendar }
-     *     
-     */
-    public void setLastModifiedDate(XMLGregorianCalendar value) {
-        this.lastModifiedDate = value;
-    }
 
     /**
-     * 获取customForm属性的值。
+     * Sets the lastModifiedDate value for this ItemFulfillment.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param lastModifiedDate
      */
-    public RecordRef getCustomForm() {
+    public void setLastModifiedDate(java.util.Calendar lastModifiedDate) {
+        this.lastModifiedDate = lastModifiedDate;
+    }
+
+
+    /**
+     * Gets the customForm value for this ItemFulfillment.
+     * 
+     * @return customForm
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getCustomForm() {
         return customForm;
     }
 
-    /**
-     * 设置customForm属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setCustomForm(RecordRef value) {
-        this.customForm = value;
-    }
 
     /**
-     * 获取postingPeriod属性的值。
+     * Sets the customForm value for this ItemFulfillment.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param customForm
      */
-    public RecordRef getPostingPeriod() {
+    public void setCustomForm(com.netsuite.webservices.platform.core_2018_2.RecordRef customForm) {
+        this.customForm = customForm;
+    }
+
+
+    /**
+     * Gets the postingPeriod value for this ItemFulfillment.
+     * 
+     * @return postingPeriod
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getPostingPeriod() {
         return postingPeriod;
     }
 
-    /**
-     * 设置postingPeriod属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setPostingPeriod(RecordRef value) {
-        this.postingPeriod = value;
-    }
 
     /**
-     * 获取entity属性的值。
+     * Sets the postingPeriod value for this ItemFulfillment.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param postingPeriod
      */
-    public RecordRef getEntity() {
+    public void setPostingPeriod(com.netsuite.webservices.platform.core_2018_2.RecordRef postingPeriod) {
+        this.postingPeriod = postingPeriod;
+    }
+
+
+    /**
+     * Gets the entity value for this ItemFulfillment.
+     * 
+     * @return entity
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getEntity() {
         return entity;
     }
 
-    /**
-     * 设置entity属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setEntity(RecordRef value) {
-        this.entity = value;
-    }
 
     /**
-     * 获取createdFrom属性的值。
+     * Sets the entity value for this ItemFulfillment.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param entity
      */
-    public RecordRef getCreatedFrom() {
+    public void setEntity(com.netsuite.webservices.platform.core_2018_2.RecordRef entity) {
+        this.entity = entity;
+    }
+
+
+    /**
+     * Gets the createdFrom value for this ItemFulfillment.
+     * 
+     * @return createdFrom
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getCreatedFrom() {
         return createdFrom;
     }
 
-    /**
-     * 设置createdFrom属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setCreatedFrom(RecordRef value) {
-        this.createdFrom = value;
-    }
 
     /**
-     * 获取requestedBy属性的值。
+     * Sets the createdFrom value for this ItemFulfillment.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param createdFrom
      */
-    public RecordRef getRequestedBy() {
+    public void setCreatedFrom(com.netsuite.webservices.platform.core_2018_2.RecordRef createdFrom) {
+        this.createdFrom = createdFrom;
+    }
+
+
+    /**
+     * Gets the requestedBy value for this ItemFulfillment.
+     * 
+     * @return requestedBy
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getRequestedBy() {
         return requestedBy;
     }
 
-    /**
-     * 设置requestedBy属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setRequestedBy(RecordRef value) {
-        this.requestedBy = value;
-    }
 
     /**
-     * 获取createdFromShipGroup属性的值。
+     * Sets the requestedBy value for this ItemFulfillment.
      * 
-     * @return
-     *     possible object is
-     *     {@link Long }
-     *     
+     * @param requestedBy
      */
-    public Long getCreatedFromShipGroup() {
+    public void setRequestedBy(com.netsuite.webservices.platform.core_2018_2.RecordRef requestedBy) {
+        this.requestedBy = requestedBy;
+    }
+
+
+    /**
+     * Gets the createdFromShipGroup value for this ItemFulfillment.
+     * 
+     * @return createdFromShipGroup
+     */
+    public java.lang.Long getCreatedFromShipGroup() {
         return createdFromShipGroup;
     }
 
-    /**
-     * 设置createdFromShipGroup属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Long }
-     *     
-     */
-    public void setCreatedFromShipGroup(Long value) {
-        this.createdFromShipGroup = value;
-    }
 
     /**
-     * 获取partner属性的值。
+     * Sets the createdFromShipGroup value for this ItemFulfillment.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param createdFromShipGroup
      */
-    public RecordRef getPartner() {
+    public void setCreatedFromShipGroup(java.lang.Long createdFromShipGroup) {
+        this.createdFromShipGroup = createdFromShipGroup;
+    }
+
+
+    /**
+     * Gets the partner value for this ItemFulfillment.
+     * 
+     * @return partner
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getPartner() {
         return partner;
     }
 
-    /**
-     * 设置partner属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setPartner(RecordRef value) {
-        this.partner = value;
-    }
 
     /**
-     * 获取shippingAddress属性的值。
+     * Sets the partner value for this ItemFulfillment.
      * 
-     * @return
-     *     possible object is
-     *     {@link Address }
-     *     
+     * @param partner
      */
-    public Address getShippingAddress() {
+    public void setPartner(com.netsuite.webservices.platform.core_2018_2.RecordRef partner) {
+        this.partner = partner;
+    }
+
+
+    /**
+     * Gets the shippingAddress value for this ItemFulfillment.
+     * 
+     * @return shippingAddress
+     */
+    public com.netsuite.webservices.platform.common_2018_2.Address getShippingAddress() {
         return shippingAddress;
     }
 
-    /**
-     * 设置shippingAddress属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Address }
-     *     
-     */
-    public void setShippingAddress(Address value) {
-        this.shippingAddress = value;
-    }
 
     /**
-     * 获取pickedDate属性的值。
+     * Sets the shippingAddress value for this ItemFulfillment.
      * 
-     * @return
-     *     possible object is
-     *     {@link XMLGregorianCalendar }
-     *     
+     * @param shippingAddress
      */
-    public XMLGregorianCalendar getPickedDate() {
+    public void setShippingAddress(com.netsuite.webservices.platform.common_2018_2.Address shippingAddress) {
+        this.shippingAddress = shippingAddress;
+    }
+
+
+    /**
+     * Gets the pickedDate value for this ItemFulfillment.
+     * 
+     * @return pickedDate
+     */
+    public java.util.Calendar getPickedDate() {
         return pickedDate;
     }
 
-    /**
-     * 设置pickedDate属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link XMLGregorianCalendar }
-     *     
-     */
-    public void setPickedDate(XMLGregorianCalendar value) {
-        this.pickedDate = value;
-    }
 
     /**
-     * 获取packedDate属性的值。
+     * Sets the pickedDate value for this ItemFulfillment.
      * 
-     * @return
-     *     possible object is
-     *     {@link XMLGregorianCalendar }
-     *     
+     * @param pickedDate
      */
-    public XMLGregorianCalendar getPackedDate() {
+    public void setPickedDate(java.util.Calendar pickedDate) {
+        this.pickedDate = pickedDate;
+    }
+
+
+    /**
+     * Gets the packedDate value for this ItemFulfillment.
+     * 
+     * @return packedDate
+     */
+    public java.util.Calendar getPackedDate() {
         return packedDate;
     }
 
-    /**
-     * 设置packedDate属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link XMLGregorianCalendar }
-     *     
-     */
-    public void setPackedDate(XMLGregorianCalendar value) {
-        this.packedDate = value;
-    }
 
     /**
-     * 获取shippedDate属性的值。
+     * Sets the packedDate value for this ItemFulfillment.
      * 
-     * @return
-     *     possible object is
-     *     {@link XMLGregorianCalendar }
-     *     
+     * @param packedDate
      */
-    public XMLGregorianCalendar getShippedDate() {
+    public void setPackedDate(java.util.Calendar packedDate) {
+        this.packedDate = packedDate;
+    }
+
+
+    /**
+     * Gets the shippedDate value for this ItemFulfillment.
+     * 
+     * @return shippedDate
+     */
+    public java.util.Calendar getShippedDate() {
         return shippedDate;
     }
 
-    /**
-     * 设置shippedDate属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link XMLGregorianCalendar }
-     *     
-     */
-    public void setShippedDate(XMLGregorianCalendar value) {
-        this.shippedDate = value;
-    }
 
     /**
-     * 获取shipIsResidential属性的值。
+     * Sets the shippedDate value for this ItemFulfillment.
      * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
+     * @param shippedDate
      */
-    public Boolean isShipIsResidential() {
+    public void setShippedDate(java.util.Calendar shippedDate) {
+        this.shippedDate = shippedDate;
+    }
+
+
+    /**
+     * Gets the shipIsResidential value for this ItemFulfillment.
+     * 
+     * @return shipIsResidential
+     */
+    public java.lang.Boolean getShipIsResidential() {
         return shipIsResidential;
     }
 
-    /**
-     * 设置shipIsResidential属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
-     */
-    public void setShipIsResidential(Boolean value) {
-        this.shipIsResidential = value;
-    }
 
     /**
-     * 获取shipAddressList属性的值。
+     * Sets the shipIsResidential value for this ItemFulfillment.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param shipIsResidential
      */
-    public RecordRef getShipAddressList() {
+    public void setShipIsResidential(java.lang.Boolean shipIsResidential) {
+        this.shipIsResidential = shipIsResidential;
+    }
+
+
+    /**
+     * Gets the shipAddressList value for this ItemFulfillment.
+     * 
+     * @return shipAddressList
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getShipAddressList() {
         return shipAddressList;
     }
 
-    /**
-     * 设置shipAddressList属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setShipAddressList(RecordRef value) {
-        this.shipAddressList = value;
-    }
 
     /**
-     * 获取shipStatus属性的值。
+     * Sets the shipAddressList value for this ItemFulfillment.
      * 
-     * @return
-     *     possible object is
-     *     {@link ItemFulfillmentShipStatus }
-     *     
+     * @param shipAddressList
      */
-    public ItemFulfillmentShipStatus getShipStatus() {
+    public void setShipAddressList(com.netsuite.webservices.platform.core_2018_2.RecordRef shipAddressList) {
+        this.shipAddressList = shipAddressList;
+    }
+
+
+    /**
+     * Gets the shipStatus value for this ItemFulfillment.
+     * 
+     * @return shipStatus
+     */
+    public com.netsuite.webservices.transactions.sales_2018_2.types.ItemFulfillmentShipStatus getShipStatus() {
         return shipStatus;
     }
 
-    /**
-     * 设置shipStatus属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link ItemFulfillmentShipStatus }
-     *     
-     */
-    public void setShipStatus(ItemFulfillmentShipStatus value) {
-        this.shipStatus = value;
-    }
 
     /**
-     * 获取saturdayDeliveryUps属性的值。
+     * Sets the shipStatus value for this ItemFulfillment.
      * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
+     * @param shipStatus
      */
-    public Boolean isSaturdayDeliveryUps() {
+    public void setShipStatus(com.netsuite.webservices.transactions.sales_2018_2.types.ItemFulfillmentShipStatus shipStatus) {
+        this.shipStatus = shipStatus;
+    }
+
+
+    /**
+     * Gets the saturdayDeliveryUps value for this ItemFulfillment.
+     * 
+     * @return saturdayDeliveryUps
+     */
+    public java.lang.Boolean getSaturdayDeliveryUps() {
         return saturdayDeliveryUps;
     }
 
-    /**
-     * 设置saturdayDeliveryUps属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
-     */
-    public void setSaturdayDeliveryUps(Boolean value) {
-        this.saturdayDeliveryUps = value;
-    }
 
     /**
-     * 获取sendShipNotifyEmailUps属性的值。
+     * Sets the saturdayDeliveryUps value for this ItemFulfillment.
      * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
+     * @param saturdayDeliveryUps
      */
-    public Boolean isSendShipNotifyEmailUps() {
+    public void setSaturdayDeliveryUps(java.lang.Boolean saturdayDeliveryUps) {
+        this.saturdayDeliveryUps = saturdayDeliveryUps;
+    }
+
+
+    /**
+     * Gets the sendShipNotifyEmailUps value for this ItemFulfillment.
+     * 
+     * @return sendShipNotifyEmailUps
+     */
+    public java.lang.Boolean getSendShipNotifyEmailUps() {
         return sendShipNotifyEmailUps;
     }
 
-    /**
-     * 设置sendShipNotifyEmailUps属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
-     */
-    public void setSendShipNotifyEmailUps(Boolean value) {
-        this.sendShipNotifyEmailUps = value;
-    }
 
     /**
-     * 获取sendBackupEmailUps属性的值。
+     * Sets the sendShipNotifyEmailUps value for this ItemFulfillment.
      * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
+     * @param sendShipNotifyEmailUps
      */
-    public Boolean isSendBackupEmailUps() {
+    public void setSendShipNotifyEmailUps(java.lang.Boolean sendShipNotifyEmailUps) {
+        this.sendShipNotifyEmailUps = sendShipNotifyEmailUps;
+    }
+
+
+    /**
+     * Gets the sendBackupEmailUps value for this ItemFulfillment.
+     * 
+     * @return sendBackupEmailUps
+     */
+    public java.lang.Boolean getSendBackupEmailUps() {
         return sendBackupEmailUps;
     }
 
-    /**
-     * 设置sendBackupEmailUps属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
-     */
-    public void setSendBackupEmailUps(Boolean value) {
-        this.sendBackupEmailUps = value;
-    }
 
     /**
-     * 获取shipNotifyEmailAddressUps属性的值。
+     * Sets the sendBackupEmailUps value for this ItemFulfillment.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param sendBackupEmailUps
      */
-    public String getShipNotifyEmailAddressUps() {
+    public void setSendBackupEmailUps(java.lang.Boolean sendBackupEmailUps) {
+        this.sendBackupEmailUps = sendBackupEmailUps;
+    }
+
+
+    /**
+     * Gets the shipNotifyEmailAddressUps value for this ItemFulfillment.
+     * 
+     * @return shipNotifyEmailAddressUps
+     */
+    public java.lang.String getShipNotifyEmailAddressUps() {
         return shipNotifyEmailAddressUps;
     }
 
-    /**
-     * 设置shipNotifyEmailAddressUps属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setShipNotifyEmailAddressUps(String value) {
-        this.shipNotifyEmailAddressUps = value;
-    }
 
     /**
-     * 获取shipNotifyEmailAddress2Ups属性的值。
+     * Sets the shipNotifyEmailAddressUps value for this ItemFulfillment.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param shipNotifyEmailAddressUps
      */
-    public String getShipNotifyEmailAddress2Ups() {
+    public void setShipNotifyEmailAddressUps(java.lang.String shipNotifyEmailAddressUps) {
+        this.shipNotifyEmailAddressUps = shipNotifyEmailAddressUps;
+    }
+
+
+    /**
+     * Gets the shipNotifyEmailAddress2Ups value for this ItemFulfillment.
+     * 
+     * @return shipNotifyEmailAddress2Ups
+     */
+    public java.lang.String getShipNotifyEmailAddress2Ups() {
         return shipNotifyEmailAddress2Ups;
     }
 
-    /**
-     * 设置shipNotifyEmailAddress2Ups属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setShipNotifyEmailAddress2Ups(String value) {
-        this.shipNotifyEmailAddress2Ups = value;
-    }
 
     /**
-     * 获取backupEmailAddressUps属性的值。
+     * Sets the shipNotifyEmailAddress2Ups value for this ItemFulfillment.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param shipNotifyEmailAddress2Ups
      */
-    public String getBackupEmailAddressUps() {
+    public void setShipNotifyEmailAddress2Ups(java.lang.String shipNotifyEmailAddress2Ups) {
+        this.shipNotifyEmailAddress2Ups = shipNotifyEmailAddress2Ups;
+    }
+
+
+    /**
+     * Gets the backupEmailAddressUps value for this ItemFulfillment.
+     * 
+     * @return backupEmailAddressUps
+     */
+    public java.lang.String getBackupEmailAddressUps() {
         return backupEmailAddressUps;
     }
 
-    /**
-     * 设置backupEmailAddressUps属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setBackupEmailAddressUps(String value) {
-        this.backupEmailAddressUps = value;
-    }
 
     /**
-     * 获取shipNotifyEmailMessageUps属性的值。
+     * Sets the backupEmailAddressUps value for this ItemFulfillment.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param backupEmailAddressUps
      */
-    public String getShipNotifyEmailMessageUps() {
+    public void setBackupEmailAddressUps(java.lang.String backupEmailAddressUps) {
+        this.backupEmailAddressUps = backupEmailAddressUps;
+    }
+
+
+    /**
+     * Gets the shipNotifyEmailMessageUps value for this ItemFulfillment.
+     * 
+     * @return shipNotifyEmailMessageUps
+     */
+    public java.lang.String getShipNotifyEmailMessageUps() {
         return shipNotifyEmailMessageUps;
     }
 
-    /**
-     * 设置shipNotifyEmailMessageUps属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setShipNotifyEmailMessageUps(String value) {
-        this.shipNotifyEmailMessageUps = value;
-    }
 
     /**
-     * 获取thirdPartyAcctUps属性的值。
+     * Sets the shipNotifyEmailMessageUps value for this ItemFulfillment.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param shipNotifyEmailMessageUps
      */
-    public String getThirdPartyAcctUps() {
+    public void setShipNotifyEmailMessageUps(java.lang.String shipNotifyEmailMessageUps) {
+        this.shipNotifyEmailMessageUps = shipNotifyEmailMessageUps;
+    }
+
+
+    /**
+     * Gets the thirdPartyAcctUps value for this ItemFulfillment.
+     * 
+     * @return thirdPartyAcctUps
+     */
+    public java.lang.String getThirdPartyAcctUps() {
         return thirdPartyAcctUps;
     }
 
-    /**
-     * 设置thirdPartyAcctUps属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setThirdPartyAcctUps(String value) {
-        this.thirdPartyAcctUps = value;
-    }
 
     /**
-     * 获取thirdPartyZipcodeUps属性的值。
+     * Sets the thirdPartyAcctUps value for this ItemFulfillment.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param thirdPartyAcctUps
      */
-    public String getThirdPartyZipcodeUps() {
+    public void setThirdPartyAcctUps(java.lang.String thirdPartyAcctUps) {
+        this.thirdPartyAcctUps = thirdPartyAcctUps;
+    }
+
+
+    /**
+     * Gets the thirdPartyZipcodeUps value for this ItemFulfillment.
+     * 
+     * @return thirdPartyZipcodeUps
+     */
+    public java.lang.String getThirdPartyZipcodeUps() {
         return thirdPartyZipcodeUps;
     }
 
-    /**
-     * 设置thirdPartyZipcodeUps属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setThirdPartyZipcodeUps(String value) {
-        this.thirdPartyZipcodeUps = value;
-    }
 
     /**
-     * 获取thirdPartyCountryUps属性的值。
+     * Sets the thirdPartyZipcodeUps value for this ItemFulfillment.
      * 
-     * @return
-     *     possible object is
-     *     {@link Country }
-     *     
+     * @param thirdPartyZipcodeUps
      */
-    public Country getThirdPartyCountryUps() {
+    public void setThirdPartyZipcodeUps(java.lang.String thirdPartyZipcodeUps) {
+        this.thirdPartyZipcodeUps = thirdPartyZipcodeUps;
+    }
+
+
+    /**
+     * Gets the thirdPartyCountryUps value for this ItemFulfillment.
+     * 
+     * @return thirdPartyCountryUps
+     */
+    public com.netsuite.webservices.platform.common_2018_2.types.Country getThirdPartyCountryUps() {
         return thirdPartyCountryUps;
     }
 
-    /**
-     * 设置thirdPartyCountryUps属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Country }
-     *     
-     */
-    public void setThirdPartyCountryUps(Country value) {
-        this.thirdPartyCountryUps = value;
-    }
 
     /**
-     * 获取thirdPartyTypeUps属性的值。
+     * Sets the thirdPartyCountryUps value for this ItemFulfillment.
      * 
-     * @return
-     *     possible object is
-     *     {@link ItemFulfillmentThirdPartyTypeUps }
-     *     
+     * @param thirdPartyCountryUps
      */
-    public ItemFulfillmentThirdPartyTypeUps getThirdPartyTypeUps() {
+    public void setThirdPartyCountryUps(com.netsuite.webservices.platform.common_2018_2.types.Country thirdPartyCountryUps) {
+        this.thirdPartyCountryUps = thirdPartyCountryUps;
+    }
+
+
+    /**
+     * Gets the thirdPartyTypeUps value for this ItemFulfillment.
+     * 
+     * @return thirdPartyTypeUps
+     */
+    public com.netsuite.webservices.transactions.sales_2018_2.types.ItemFulfillmentThirdPartyTypeUps getThirdPartyTypeUps() {
         return thirdPartyTypeUps;
     }
 
-    /**
-     * 设置thirdPartyTypeUps属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link ItemFulfillmentThirdPartyTypeUps }
-     *     
-     */
-    public void setThirdPartyTypeUps(ItemFulfillmentThirdPartyTypeUps value) {
-        this.thirdPartyTypeUps = value;
-    }
 
     /**
-     * 获取partiesToTransactionUps属性的值。
+     * Sets the thirdPartyTypeUps value for this ItemFulfillment.
      * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
+     * @param thirdPartyTypeUps
      */
-    public Boolean isPartiesToTransactionUps() {
+    public void setThirdPartyTypeUps(com.netsuite.webservices.transactions.sales_2018_2.types.ItemFulfillmentThirdPartyTypeUps thirdPartyTypeUps) {
+        this.thirdPartyTypeUps = thirdPartyTypeUps;
+    }
+
+
+    /**
+     * Gets the partiesToTransactionUps value for this ItemFulfillment.
+     * 
+     * @return partiesToTransactionUps
+     */
+    public java.lang.Boolean getPartiesToTransactionUps() {
         return partiesToTransactionUps;
     }
 
-    /**
-     * 设置partiesToTransactionUps属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
-     */
-    public void setPartiesToTransactionUps(Boolean value) {
-        this.partiesToTransactionUps = value;
-    }
 
     /**
-     * 获取exportTypeUps属性的值。
+     * Sets the partiesToTransactionUps value for this ItemFulfillment.
      * 
-     * @return
-     *     possible object is
-     *     {@link ItemFulfillmentExportTypeUps }
-     *     
+     * @param partiesToTransactionUps
      */
-    public ItemFulfillmentExportTypeUps getExportTypeUps() {
+    public void setPartiesToTransactionUps(java.lang.Boolean partiesToTransactionUps) {
+        this.partiesToTransactionUps = partiesToTransactionUps;
+    }
+
+
+    /**
+     * Gets the exportTypeUps value for this ItemFulfillment.
+     * 
+     * @return exportTypeUps
+     */
+    public com.netsuite.webservices.transactions.sales_2018_2.types.ItemFulfillmentExportTypeUps getExportTypeUps() {
         return exportTypeUps;
     }
 
-    /**
-     * 设置exportTypeUps属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link ItemFulfillmentExportTypeUps }
-     *     
-     */
-    public void setExportTypeUps(ItemFulfillmentExportTypeUps value) {
-        this.exportTypeUps = value;
-    }
 
     /**
-     * 获取methodOfTransportUps属性的值。
+     * Sets the exportTypeUps value for this ItemFulfillment.
      * 
-     * @return
-     *     possible object is
-     *     {@link ItemFulfillmentMethodOfTransportUps }
-     *     
+     * @param exportTypeUps
      */
-    public ItemFulfillmentMethodOfTransportUps getMethodOfTransportUps() {
+    public void setExportTypeUps(com.netsuite.webservices.transactions.sales_2018_2.types.ItemFulfillmentExportTypeUps exportTypeUps) {
+        this.exportTypeUps = exportTypeUps;
+    }
+
+
+    /**
+     * Gets the methodOfTransportUps value for this ItemFulfillment.
+     * 
+     * @return methodOfTransportUps
+     */
+    public com.netsuite.webservices.transactions.sales_2018_2.types.ItemFulfillmentMethodOfTransportUps getMethodOfTransportUps() {
         return methodOfTransportUps;
     }
 
-    /**
-     * 设置methodOfTransportUps属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link ItemFulfillmentMethodOfTransportUps }
-     *     
-     */
-    public void setMethodOfTransportUps(ItemFulfillmentMethodOfTransportUps value) {
-        this.methodOfTransportUps = value;
-    }
 
     /**
-     * 获取carrierIdUps属性的值。
+     * Sets the methodOfTransportUps value for this ItemFulfillment.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param methodOfTransportUps
      */
-    public String getCarrierIdUps() {
+    public void setMethodOfTransportUps(com.netsuite.webservices.transactions.sales_2018_2.types.ItemFulfillmentMethodOfTransportUps methodOfTransportUps) {
+        this.methodOfTransportUps = methodOfTransportUps;
+    }
+
+
+    /**
+     * Gets the carrierIdUps value for this ItemFulfillment.
+     * 
+     * @return carrierIdUps
+     */
+    public java.lang.String getCarrierIdUps() {
         return carrierIdUps;
     }
 
-    /**
-     * 设置carrierIdUps属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setCarrierIdUps(String value) {
-        this.carrierIdUps = value;
-    }
 
     /**
-     * 获取entryNumberUps属性的值。
+     * Sets the carrierIdUps value for this ItemFulfillment.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param carrierIdUps
      */
-    public String getEntryNumberUps() {
+    public void setCarrierIdUps(java.lang.String carrierIdUps) {
+        this.carrierIdUps = carrierIdUps;
+    }
+
+
+    /**
+     * Gets the entryNumberUps value for this ItemFulfillment.
+     * 
+     * @return entryNumberUps
+     */
+    public java.lang.String getEntryNumberUps() {
         return entryNumberUps;
     }
 
-    /**
-     * 设置entryNumberUps属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setEntryNumberUps(String value) {
-        this.entryNumberUps = value;
-    }
 
     /**
-     * 获取inbondCodeUps属性的值。
+     * Sets the entryNumberUps value for this ItemFulfillment.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param entryNumberUps
      */
-    public String getInbondCodeUps() {
+    public void setEntryNumberUps(java.lang.String entryNumberUps) {
+        this.entryNumberUps = entryNumberUps;
+    }
+
+
+    /**
+     * Gets the inbondCodeUps value for this ItemFulfillment.
+     * 
+     * @return inbondCodeUps
+     */
+    public java.lang.String getInbondCodeUps() {
         return inbondCodeUps;
     }
 
-    /**
-     * 设置inbondCodeUps属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setInbondCodeUps(String value) {
-        this.inbondCodeUps = value;
-    }
 
     /**
-     * 获取isRoutedExportTransactionUps属性的值。
+     * Sets the inbondCodeUps value for this ItemFulfillment.
      * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
+     * @param inbondCodeUps
      */
-    public Boolean isIsRoutedExportTransactionUps() {
+    public void setInbondCodeUps(java.lang.String inbondCodeUps) {
+        this.inbondCodeUps = inbondCodeUps;
+    }
+
+
+    /**
+     * Gets the isRoutedExportTransactionUps value for this ItemFulfillment.
+     * 
+     * @return isRoutedExportTransactionUps
+     */
+    public java.lang.Boolean getIsRoutedExportTransactionUps() {
         return isRoutedExportTransactionUps;
     }
 
-    /**
-     * 设置isRoutedExportTransactionUps属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
-     */
-    public void setIsRoutedExportTransactionUps(Boolean value) {
-        this.isRoutedExportTransactionUps = value;
-    }
 
     /**
-     * 获取licenseNumberUps属性的值。
+     * Sets the isRoutedExportTransactionUps value for this ItemFulfillment.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param isRoutedExportTransactionUps
      */
-    public String getLicenseNumberUps() {
+    public void setIsRoutedExportTransactionUps(java.lang.Boolean isRoutedExportTransactionUps) {
+        this.isRoutedExportTransactionUps = isRoutedExportTransactionUps;
+    }
+
+
+    /**
+     * Gets the licenseNumberUps value for this ItemFulfillment.
+     * 
+     * @return licenseNumberUps
+     */
+    public java.lang.String getLicenseNumberUps() {
         return licenseNumberUps;
     }
 
-    /**
-     * 设置licenseNumberUps属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setLicenseNumberUps(String value) {
-        this.licenseNumberUps = value;
-    }
 
     /**
-     * 获取licenseDateUps属性的值。
+     * Sets the licenseNumberUps value for this ItemFulfillment.
      * 
-     * @return
-     *     possible object is
-     *     {@link XMLGregorianCalendar }
-     *     
+     * @param licenseNumberUps
      */
-    public XMLGregorianCalendar getLicenseDateUps() {
+    public void setLicenseNumberUps(java.lang.String licenseNumberUps) {
+        this.licenseNumberUps = licenseNumberUps;
+    }
+
+
+    /**
+     * Gets the licenseDateUps value for this ItemFulfillment.
+     * 
+     * @return licenseDateUps
+     */
+    public java.util.Calendar getLicenseDateUps() {
         return licenseDateUps;
     }
 
-    /**
-     * 设置licenseDateUps属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link XMLGregorianCalendar }
-     *     
-     */
-    public void setLicenseDateUps(XMLGregorianCalendar value) {
-        this.licenseDateUps = value;
-    }
 
     /**
-     * 获取licenseExceptionUps属性的值。
+     * Sets the licenseDateUps value for this ItemFulfillment.
      * 
-     * @return
-     *     possible object is
-     *     {@link ItemFulfillmentLicenseExceptionUps }
-     *     
+     * @param licenseDateUps
      */
-    public ItemFulfillmentLicenseExceptionUps getLicenseExceptionUps() {
+    public void setLicenseDateUps(java.util.Calendar licenseDateUps) {
+        this.licenseDateUps = licenseDateUps;
+    }
+
+
+    /**
+     * Gets the licenseExceptionUps value for this ItemFulfillment.
+     * 
+     * @return licenseExceptionUps
+     */
+    public com.netsuite.webservices.transactions.sales_2018_2.types.ItemFulfillmentLicenseExceptionUps getLicenseExceptionUps() {
         return licenseExceptionUps;
     }
 
-    /**
-     * 设置licenseExceptionUps属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link ItemFulfillmentLicenseExceptionUps }
-     *     
-     */
-    public void setLicenseExceptionUps(ItemFulfillmentLicenseExceptionUps value) {
-        this.licenseExceptionUps = value;
-    }
 
     /**
-     * 获取eccNumberUps属性的值。
+     * Sets the licenseExceptionUps value for this ItemFulfillment.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param licenseExceptionUps
      */
-    public String getEccNumberUps() {
+    public void setLicenseExceptionUps(com.netsuite.webservices.transactions.sales_2018_2.types.ItemFulfillmentLicenseExceptionUps licenseExceptionUps) {
+        this.licenseExceptionUps = licenseExceptionUps;
+    }
+
+
+    /**
+     * Gets the eccNumberUps value for this ItemFulfillment.
+     * 
+     * @return eccNumberUps
+     */
+    public java.lang.String getEccNumberUps() {
         return eccNumberUps;
     }
 
-    /**
-     * 设置eccNumberUps属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setEccNumberUps(String value) {
-        this.eccNumberUps = value;
-    }
 
     /**
-     * 获取recipientTaxIdUps属性的值。
+     * Sets the eccNumberUps value for this ItemFulfillment.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param eccNumberUps
      */
-    public String getRecipientTaxIdUps() {
+    public void setEccNumberUps(java.lang.String eccNumberUps) {
+        this.eccNumberUps = eccNumberUps;
+    }
+
+
+    /**
+     * Gets the recipientTaxIdUps value for this ItemFulfillment.
+     * 
+     * @return recipientTaxIdUps
+     */
+    public java.lang.String getRecipientTaxIdUps() {
         return recipientTaxIdUps;
     }
 
-    /**
-     * 设置recipientTaxIdUps属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setRecipientTaxIdUps(String value) {
-        this.recipientTaxIdUps = value;
-    }
 
     /**
-     * 获取blanketStartDateUps属性的值。
+     * Sets the recipientTaxIdUps value for this ItemFulfillment.
      * 
-     * @return
-     *     possible object is
-     *     {@link XMLGregorianCalendar }
-     *     
+     * @param recipientTaxIdUps
      */
-    public XMLGregorianCalendar getBlanketStartDateUps() {
+    public void setRecipientTaxIdUps(java.lang.String recipientTaxIdUps) {
+        this.recipientTaxIdUps = recipientTaxIdUps;
+    }
+
+
+    /**
+     * Gets the blanketStartDateUps value for this ItemFulfillment.
+     * 
+     * @return blanketStartDateUps
+     */
+    public java.util.Calendar getBlanketStartDateUps() {
         return blanketStartDateUps;
     }
 
-    /**
-     * 设置blanketStartDateUps属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link XMLGregorianCalendar }
-     *     
-     */
-    public void setBlanketStartDateUps(XMLGregorianCalendar value) {
-        this.blanketStartDateUps = value;
-    }
 
     /**
-     * 获取blanketEndDateUps属性的值。
+     * Sets the blanketStartDateUps value for this ItemFulfillment.
      * 
-     * @return
-     *     possible object is
-     *     {@link XMLGregorianCalendar }
-     *     
+     * @param blanketStartDateUps
      */
-    public XMLGregorianCalendar getBlanketEndDateUps() {
+    public void setBlanketStartDateUps(java.util.Calendar blanketStartDateUps) {
+        this.blanketStartDateUps = blanketStartDateUps;
+    }
+
+
+    /**
+     * Gets the blanketEndDateUps value for this ItemFulfillment.
+     * 
+     * @return blanketEndDateUps
+     */
+    public java.util.Calendar getBlanketEndDateUps() {
         return blanketEndDateUps;
     }
 
-    /**
-     * 设置blanketEndDateUps属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link XMLGregorianCalendar }
-     *     
-     */
-    public void setBlanketEndDateUps(XMLGregorianCalendar value) {
-        this.blanketEndDateUps = value;
-    }
 
     /**
-     * 获取shipmentWeightUps属性的值。
+     * Sets the blanketEndDateUps value for this ItemFulfillment.
      * 
-     * @return
-     *     possible object is
-     *     {@link Double }
-     *     
+     * @param blanketEndDateUps
      */
-    public Double getShipmentWeightUps() {
+    public void setBlanketEndDateUps(java.util.Calendar blanketEndDateUps) {
+        this.blanketEndDateUps = blanketEndDateUps;
+    }
+
+
+    /**
+     * Gets the shipmentWeightUps value for this ItemFulfillment.
+     * 
+     * @return shipmentWeightUps
+     */
+    public java.lang.Double getShipmentWeightUps() {
         return shipmentWeightUps;
     }
 
-    /**
-     * 设置shipmentWeightUps属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Double }
-     *     
-     */
-    public void setShipmentWeightUps(Double value) {
-        this.shipmentWeightUps = value;
-    }
 
     /**
-     * 获取saturdayDeliveryFedEx属性的值。
+     * Sets the shipmentWeightUps value for this ItemFulfillment.
      * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
+     * @param shipmentWeightUps
      */
-    public Boolean isSaturdayDeliveryFedEx() {
+    public void setShipmentWeightUps(java.lang.Double shipmentWeightUps) {
+        this.shipmentWeightUps = shipmentWeightUps;
+    }
+
+
+    /**
+     * Gets the saturdayDeliveryFedEx value for this ItemFulfillment.
+     * 
+     * @return saturdayDeliveryFedEx
+     */
+    public java.lang.Boolean getSaturdayDeliveryFedEx() {
         return saturdayDeliveryFedEx;
     }
 
-    /**
-     * 设置saturdayDeliveryFedEx属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
-     */
-    public void setSaturdayDeliveryFedEx(Boolean value) {
-        this.saturdayDeliveryFedEx = value;
-    }
 
     /**
-     * 获取saturdayPickupFedex属性的值。
+     * Sets the saturdayDeliveryFedEx value for this ItemFulfillment.
      * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
+     * @param saturdayDeliveryFedEx
      */
-    public Boolean isSaturdayPickupFedex() {
+    public void setSaturdayDeliveryFedEx(java.lang.Boolean saturdayDeliveryFedEx) {
+        this.saturdayDeliveryFedEx = saturdayDeliveryFedEx;
+    }
+
+
+    /**
+     * Gets the saturdayPickupFedex value for this ItemFulfillment.
+     * 
+     * @return saturdayPickupFedex
+     */
+    public java.lang.Boolean getSaturdayPickupFedex() {
         return saturdayPickupFedex;
     }
 
-    /**
-     * 设置saturdayPickupFedex属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
-     */
-    public void setSaturdayPickupFedex(Boolean value) {
-        this.saturdayPickupFedex = value;
-    }
 
     /**
-     * 获取sendShipNotifyEmailFedEx属性的值。
+     * Sets the saturdayPickupFedex value for this ItemFulfillment.
      * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
+     * @param saturdayPickupFedex
      */
-    public Boolean isSendShipNotifyEmailFedEx() {
+    public void setSaturdayPickupFedex(java.lang.Boolean saturdayPickupFedex) {
+        this.saturdayPickupFedex = saturdayPickupFedex;
+    }
+
+
+    /**
+     * Gets the sendShipNotifyEmailFedEx value for this ItemFulfillment.
+     * 
+     * @return sendShipNotifyEmailFedEx
+     */
+    public java.lang.Boolean getSendShipNotifyEmailFedEx() {
         return sendShipNotifyEmailFedEx;
     }
 
-    /**
-     * 设置sendShipNotifyEmailFedEx属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
-     */
-    public void setSendShipNotifyEmailFedEx(Boolean value) {
-        this.sendShipNotifyEmailFedEx = value;
-    }
 
     /**
-     * 获取sendBackupEmailFedEx属性的值。
+     * Sets the sendShipNotifyEmailFedEx value for this ItemFulfillment.
      * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
+     * @param sendShipNotifyEmailFedEx
      */
-    public Boolean isSendBackupEmailFedEx() {
+    public void setSendShipNotifyEmailFedEx(java.lang.Boolean sendShipNotifyEmailFedEx) {
+        this.sendShipNotifyEmailFedEx = sendShipNotifyEmailFedEx;
+    }
+
+
+    /**
+     * Gets the sendBackupEmailFedEx value for this ItemFulfillment.
+     * 
+     * @return sendBackupEmailFedEx
+     */
+    public java.lang.Boolean getSendBackupEmailFedEx() {
         return sendBackupEmailFedEx;
     }
 
-    /**
-     * 设置sendBackupEmailFedEx属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
-     */
-    public void setSendBackupEmailFedEx(Boolean value) {
-        this.sendBackupEmailFedEx = value;
-    }
 
     /**
-     * 获取signatureHomeDeliveryFedEx属性的值。
+     * Sets the sendBackupEmailFedEx value for this ItemFulfillment.
      * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
+     * @param sendBackupEmailFedEx
      */
-    public Boolean isSignatureHomeDeliveryFedEx() {
+    public void setSendBackupEmailFedEx(java.lang.Boolean sendBackupEmailFedEx) {
+        this.sendBackupEmailFedEx = sendBackupEmailFedEx;
+    }
+
+
+    /**
+     * Gets the signatureHomeDeliveryFedEx value for this ItemFulfillment.
+     * 
+     * @return signatureHomeDeliveryFedEx
+     */
+    public java.lang.Boolean getSignatureHomeDeliveryFedEx() {
         return signatureHomeDeliveryFedEx;
     }
 
-    /**
-     * 设置signatureHomeDeliveryFedEx属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
-     */
-    public void setSignatureHomeDeliveryFedEx(Boolean value) {
-        this.signatureHomeDeliveryFedEx = value;
-    }
 
     /**
-     * 获取shipNotifyEmailAddressFedEx属性的值。
+     * Sets the signatureHomeDeliveryFedEx value for this ItemFulfillment.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param signatureHomeDeliveryFedEx
      */
-    public String getShipNotifyEmailAddressFedEx() {
+    public void setSignatureHomeDeliveryFedEx(java.lang.Boolean signatureHomeDeliveryFedEx) {
+        this.signatureHomeDeliveryFedEx = signatureHomeDeliveryFedEx;
+    }
+
+
+    /**
+     * Gets the shipNotifyEmailAddressFedEx value for this ItemFulfillment.
+     * 
+     * @return shipNotifyEmailAddressFedEx
+     */
+    public java.lang.String getShipNotifyEmailAddressFedEx() {
         return shipNotifyEmailAddressFedEx;
     }
 
-    /**
-     * 设置shipNotifyEmailAddressFedEx属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setShipNotifyEmailAddressFedEx(String value) {
-        this.shipNotifyEmailAddressFedEx = value;
-    }
 
     /**
-     * 获取backupEmailAddressFedEx属性的值。
+     * Sets the shipNotifyEmailAddressFedEx value for this ItemFulfillment.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param shipNotifyEmailAddressFedEx
      */
-    public String getBackupEmailAddressFedEx() {
+    public void setShipNotifyEmailAddressFedEx(java.lang.String shipNotifyEmailAddressFedEx) {
+        this.shipNotifyEmailAddressFedEx = shipNotifyEmailAddressFedEx;
+    }
+
+
+    /**
+     * Gets the backupEmailAddressFedEx value for this ItemFulfillment.
+     * 
+     * @return backupEmailAddressFedEx
+     */
+    public java.lang.String getBackupEmailAddressFedEx() {
         return backupEmailAddressFedEx;
     }
 
-    /**
-     * 设置backupEmailAddressFedEx属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setBackupEmailAddressFedEx(String value) {
-        this.backupEmailAddressFedEx = value;
-    }
 
     /**
-     * 获取shipDateFedEx属性的值。
+     * Sets the backupEmailAddressFedEx value for this ItemFulfillment.
      * 
-     * @return
-     *     possible object is
-     *     {@link XMLGregorianCalendar }
-     *     
+     * @param backupEmailAddressFedEx
      */
-    public XMLGregorianCalendar getShipDateFedEx() {
+    public void setBackupEmailAddressFedEx(java.lang.String backupEmailAddressFedEx) {
+        this.backupEmailAddressFedEx = backupEmailAddressFedEx;
+    }
+
+
+    /**
+     * Gets the shipDateFedEx value for this ItemFulfillment.
+     * 
+     * @return shipDateFedEx
+     */
+    public java.util.Calendar getShipDateFedEx() {
         return shipDateFedEx;
     }
 
-    /**
-     * 设置shipDateFedEx属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link XMLGregorianCalendar }
-     *     
-     */
-    public void setShipDateFedEx(XMLGregorianCalendar value) {
-        this.shipDateFedEx = value;
-    }
 
     /**
-     * 获取homeDeliveryTypeFedEx属性的值。
+     * Sets the shipDateFedEx value for this ItemFulfillment.
      * 
-     * @return
-     *     possible object is
-     *     {@link ItemFulfillmentHomeDeliveryTypeFedEx }
-     *     
+     * @param shipDateFedEx
      */
-    public ItemFulfillmentHomeDeliveryTypeFedEx getHomeDeliveryTypeFedEx() {
+    public void setShipDateFedEx(java.util.Calendar shipDateFedEx) {
+        this.shipDateFedEx = shipDateFedEx;
+    }
+
+
+    /**
+     * Gets the homeDeliveryTypeFedEx value for this ItemFulfillment.
+     * 
+     * @return homeDeliveryTypeFedEx
+     */
+    public com.netsuite.webservices.transactions.sales_2018_2.types.ItemFulfillmentHomeDeliveryTypeFedEx getHomeDeliveryTypeFedEx() {
         return homeDeliveryTypeFedEx;
     }
 
-    /**
-     * 设置homeDeliveryTypeFedEx属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link ItemFulfillmentHomeDeliveryTypeFedEx }
-     *     
-     */
-    public void setHomeDeliveryTypeFedEx(ItemFulfillmentHomeDeliveryTypeFedEx value) {
-        this.homeDeliveryTypeFedEx = value;
-    }
 
     /**
-     * 获取homeDeliveryDateFedEx属性的值。
+     * Sets the homeDeliveryTypeFedEx value for this ItemFulfillment.
      * 
-     * @return
-     *     possible object is
-     *     {@link XMLGregorianCalendar }
-     *     
+     * @param homeDeliveryTypeFedEx
      */
-    public XMLGregorianCalendar getHomeDeliveryDateFedEx() {
+    public void setHomeDeliveryTypeFedEx(com.netsuite.webservices.transactions.sales_2018_2.types.ItemFulfillmentHomeDeliveryTypeFedEx homeDeliveryTypeFedEx) {
+        this.homeDeliveryTypeFedEx = homeDeliveryTypeFedEx;
+    }
+
+
+    /**
+     * Gets the homeDeliveryDateFedEx value for this ItemFulfillment.
+     * 
+     * @return homeDeliveryDateFedEx
+     */
+    public java.util.Calendar getHomeDeliveryDateFedEx() {
         return homeDeliveryDateFedEx;
     }
 
-    /**
-     * 设置homeDeliveryDateFedEx属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link XMLGregorianCalendar }
-     *     
-     */
-    public void setHomeDeliveryDateFedEx(XMLGregorianCalendar value) {
-        this.homeDeliveryDateFedEx = value;
-    }
 
     /**
-     * 获取bookingConfirmationNumFedEx属性的值。
+     * Sets the homeDeliveryDateFedEx value for this ItemFulfillment.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param homeDeliveryDateFedEx
      */
-    public String getBookingConfirmationNumFedEx() {
+    public void setHomeDeliveryDateFedEx(java.util.Calendar homeDeliveryDateFedEx) {
+        this.homeDeliveryDateFedEx = homeDeliveryDateFedEx;
+    }
+
+
+    /**
+     * Gets the bookingConfirmationNumFedEx value for this ItemFulfillment.
+     * 
+     * @return bookingConfirmationNumFedEx
+     */
+    public java.lang.String getBookingConfirmationNumFedEx() {
         return bookingConfirmationNumFedEx;
     }
 
-    /**
-     * 设置bookingConfirmationNumFedEx属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setBookingConfirmationNumFedEx(String value) {
-        this.bookingConfirmationNumFedEx = value;
-    }
 
     /**
-     * 获取intlExemptionNumFedEx属性的值。
+     * Sets the bookingConfirmationNumFedEx value for this ItemFulfillment.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param bookingConfirmationNumFedEx
      */
-    public String getIntlExemptionNumFedEx() {
+    public void setBookingConfirmationNumFedEx(java.lang.String bookingConfirmationNumFedEx) {
+        this.bookingConfirmationNumFedEx = bookingConfirmationNumFedEx;
+    }
+
+
+    /**
+     * Gets the intlExemptionNumFedEx value for this ItemFulfillment.
+     * 
+     * @return intlExemptionNumFedEx
+     */
+    public java.lang.String getIntlExemptionNumFedEx() {
         return intlExemptionNumFedEx;
     }
 
-    /**
-     * 设置intlExemptionNumFedEx属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setIntlExemptionNumFedEx(String value) {
-        this.intlExemptionNumFedEx = value;
-    }
 
     /**
-     * 获取b13AFilingOptionFedEx属性的值。
+     * Sets the intlExemptionNumFedEx value for this ItemFulfillment.
      * 
-     * @return
-     *     possible object is
-     *     {@link ItemFulfillmentB13AFilingOptionFedEx }
-     *     
+     * @param intlExemptionNumFedEx
      */
-    public ItemFulfillmentB13AFilingOptionFedEx getB13AFilingOptionFedEx() {
+    public void setIntlExemptionNumFedEx(java.lang.String intlExemptionNumFedEx) {
+        this.intlExemptionNumFedEx = intlExemptionNumFedEx;
+    }
+
+
+    /**
+     * Gets the b13AFilingOptionFedEx value for this ItemFulfillment.
+     * 
+     * @return b13AFilingOptionFedEx
+     */
+    public com.netsuite.webservices.transactions.sales_2018_2.types.ItemFulfillmentB13AFilingOptionFedEx getB13AFilingOptionFedEx() {
         return b13AFilingOptionFedEx;
     }
 
-    /**
-     * 设置b13AFilingOptionFedEx属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link ItemFulfillmentB13AFilingOptionFedEx }
-     *     
-     */
-    public void setB13AFilingOptionFedEx(ItemFulfillmentB13AFilingOptionFedEx value) {
-        this.b13AFilingOptionFedEx = value;
-    }
 
     /**
-     * 获取b13AStatementDataFedEx属性的值。
+     * Sets the b13AFilingOptionFedEx value for this ItemFulfillment.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param b13AFilingOptionFedEx
      */
-    public String getB13AStatementDataFedEx() {
+    public void setB13AFilingOptionFedEx(com.netsuite.webservices.transactions.sales_2018_2.types.ItemFulfillmentB13AFilingOptionFedEx b13AFilingOptionFedEx) {
+        this.b13AFilingOptionFedEx = b13AFilingOptionFedEx;
+    }
+
+
+    /**
+     * Gets the b13AStatementDataFedEx value for this ItemFulfillment.
+     * 
+     * @return b13AStatementDataFedEx
+     */
+    public java.lang.String getB13AStatementDataFedEx() {
         return b13AStatementDataFedEx;
     }
 
-    /**
-     * 设置b13AStatementDataFedEx属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setB13AStatementDataFedEx(String value) {
-        this.b13AStatementDataFedEx = value;
-    }
 
     /**
-     * 获取thirdPartyAcctFedEx属性的值。
+     * Sets the b13AStatementDataFedEx value for this ItemFulfillment.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param b13AStatementDataFedEx
      */
-    public String getThirdPartyAcctFedEx() {
+    public void setB13AStatementDataFedEx(java.lang.String b13AStatementDataFedEx) {
+        this.b13AStatementDataFedEx = b13AStatementDataFedEx;
+    }
+
+
+    /**
+     * Gets the thirdPartyAcctFedEx value for this ItemFulfillment.
+     * 
+     * @return thirdPartyAcctFedEx
+     */
+    public java.lang.String getThirdPartyAcctFedEx() {
         return thirdPartyAcctFedEx;
     }
 
-    /**
-     * 设置thirdPartyAcctFedEx属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setThirdPartyAcctFedEx(String value) {
-        this.thirdPartyAcctFedEx = value;
-    }
 
     /**
-     * 获取thirdPartyCountryFedEx属性的值。
+     * Sets the thirdPartyAcctFedEx value for this ItemFulfillment.
      * 
-     * @return
-     *     possible object is
-     *     {@link Country }
-     *     
+     * @param thirdPartyAcctFedEx
      */
-    public Country getThirdPartyCountryFedEx() {
+    public void setThirdPartyAcctFedEx(java.lang.String thirdPartyAcctFedEx) {
+        this.thirdPartyAcctFedEx = thirdPartyAcctFedEx;
+    }
+
+
+    /**
+     * Gets the thirdPartyCountryFedEx value for this ItemFulfillment.
+     * 
+     * @return thirdPartyCountryFedEx
+     */
+    public com.netsuite.webservices.platform.common_2018_2.types.Country getThirdPartyCountryFedEx() {
         return thirdPartyCountryFedEx;
     }
 
-    /**
-     * 设置thirdPartyCountryFedEx属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Country }
-     *     
-     */
-    public void setThirdPartyCountryFedEx(Country value) {
-        this.thirdPartyCountryFedEx = value;
-    }
 
     /**
-     * 获取thirdPartyTypeFedEx属性的值。
+     * Sets the thirdPartyCountryFedEx value for this ItemFulfillment.
      * 
-     * @return
-     *     possible object is
-     *     {@link ItemFulfillmentThirdPartyTypeFedEx }
-     *     
+     * @param thirdPartyCountryFedEx
      */
-    public ItemFulfillmentThirdPartyTypeFedEx getThirdPartyTypeFedEx() {
+    public void setThirdPartyCountryFedEx(com.netsuite.webservices.platform.common_2018_2.types.Country thirdPartyCountryFedEx) {
+        this.thirdPartyCountryFedEx = thirdPartyCountryFedEx;
+    }
+
+
+    /**
+     * Gets the thirdPartyTypeFedEx value for this ItemFulfillment.
+     * 
+     * @return thirdPartyTypeFedEx
+     */
+    public com.netsuite.webservices.transactions.sales_2018_2.types.ItemFulfillmentThirdPartyTypeFedEx getThirdPartyTypeFedEx() {
         return thirdPartyTypeFedEx;
     }
 
-    /**
-     * 设置thirdPartyTypeFedEx属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link ItemFulfillmentThirdPartyTypeFedEx }
-     *     
-     */
-    public void setThirdPartyTypeFedEx(ItemFulfillmentThirdPartyTypeFedEx value) {
-        this.thirdPartyTypeFedEx = value;
-    }
 
     /**
-     * 获取shipmentWeightFedEx属性的值。
+     * Sets the thirdPartyTypeFedEx value for this ItemFulfillment.
      * 
-     * @return
-     *     possible object is
-     *     {@link Double }
-     *     
+     * @param thirdPartyTypeFedEx
      */
-    public Double getShipmentWeightFedEx() {
+    public void setThirdPartyTypeFedEx(com.netsuite.webservices.transactions.sales_2018_2.types.ItemFulfillmentThirdPartyTypeFedEx thirdPartyTypeFedEx) {
+        this.thirdPartyTypeFedEx = thirdPartyTypeFedEx;
+    }
+
+
+    /**
+     * Gets the shipmentWeightFedEx value for this ItemFulfillment.
+     * 
+     * @return shipmentWeightFedEx
+     */
+    public java.lang.Double getShipmentWeightFedEx() {
         return shipmentWeightFedEx;
     }
 
-    /**
-     * 设置shipmentWeightFedEx属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Double }
-     *     
-     */
-    public void setShipmentWeightFedEx(Double value) {
-        this.shipmentWeightFedEx = value;
-    }
 
     /**
-     * 获取termsOfSaleFedEx属性的值。
+     * Sets the shipmentWeightFedEx value for this ItemFulfillment.
      * 
-     * @return
-     *     possible object is
-     *     {@link ItemFulfillmentTermsOfSaleFedEx }
-     *     
+     * @param shipmentWeightFedEx
      */
-    public ItemFulfillmentTermsOfSaleFedEx getTermsOfSaleFedEx() {
+    public void setShipmentWeightFedEx(java.lang.Double shipmentWeightFedEx) {
+        this.shipmentWeightFedEx = shipmentWeightFedEx;
+    }
+
+
+    /**
+     * Gets the termsOfSaleFedEx value for this ItemFulfillment.
+     * 
+     * @return termsOfSaleFedEx
+     */
+    public com.netsuite.webservices.transactions.sales_2018_2.types.ItemFulfillmentTermsOfSaleFedEx getTermsOfSaleFedEx() {
         return termsOfSaleFedEx;
     }
 
-    /**
-     * 设置termsOfSaleFedEx属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link ItemFulfillmentTermsOfSaleFedEx }
-     *     
-     */
-    public void setTermsOfSaleFedEx(ItemFulfillmentTermsOfSaleFedEx value) {
-        this.termsOfSaleFedEx = value;
-    }
 
     /**
-     * 获取termsFreightChargeFedEx属性的值。
+     * Sets the termsOfSaleFedEx value for this ItemFulfillment.
      * 
-     * @return
-     *     possible object is
-     *     {@link Double }
-     *     
+     * @param termsOfSaleFedEx
      */
-    public Double getTermsFreightChargeFedEx() {
+    public void setTermsOfSaleFedEx(com.netsuite.webservices.transactions.sales_2018_2.types.ItemFulfillmentTermsOfSaleFedEx termsOfSaleFedEx) {
+        this.termsOfSaleFedEx = termsOfSaleFedEx;
+    }
+
+
+    /**
+     * Gets the termsFreightChargeFedEx value for this ItemFulfillment.
+     * 
+     * @return termsFreightChargeFedEx
+     */
+    public java.lang.Double getTermsFreightChargeFedEx() {
         return termsFreightChargeFedEx;
     }
 
-    /**
-     * 设置termsFreightChargeFedEx属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Double }
-     *     
-     */
-    public void setTermsFreightChargeFedEx(Double value) {
-        this.termsFreightChargeFedEx = value;
-    }
 
     /**
-     * 获取termsInsuranceChargeFedEx属性的值。
+     * Sets the termsFreightChargeFedEx value for this ItemFulfillment.
      * 
-     * @return
-     *     possible object is
-     *     {@link Double }
-     *     
+     * @param termsFreightChargeFedEx
      */
-    public Double getTermsInsuranceChargeFedEx() {
+    public void setTermsFreightChargeFedEx(java.lang.Double termsFreightChargeFedEx) {
+        this.termsFreightChargeFedEx = termsFreightChargeFedEx;
+    }
+
+
+    /**
+     * Gets the termsInsuranceChargeFedEx value for this ItemFulfillment.
+     * 
+     * @return termsInsuranceChargeFedEx
+     */
+    public java.lang.Double getTermsInsuranceChargeFedEx() {
         return termsInsuranceChargeFedEx;
     }
 
-    /**
-     * 设置termsInsuranceChargeFedEx属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Double }
-     *     
-     */
-    public void setTermsInsuranceChargeFedEx(Double value) {
-        this.termsInsuranceChargeFedEx = value;
-    }
 
     /**
-     * 获取insideDeliveryFedEx属性的值。
+     * Sets the termsInsuranceChargeFedEx value for this ItemFulfillment.
      * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
+     * @param termsInsuranceChargeFedEx
      */
-    public Boolean isInsideDeliveryFedEx() {
+    public void setTermsInsuranceChargeFedEx(java.lang.Double termsInsuranceChargeFedEx) {
+        this.termsInsuranceChargeFedEx = termsInsuranceChargeFedEx;
+    }
+
+
+    /**
+     * Gets the insideDeliveryFedEx value for this ItemFulfillment.
+     * 
+     * @return insideDeliveryFedEx
+     */
+    public java.lang.Boolean getInsideDeliveryFedEx() {
         return insideDeliveryFedEx;
     }
 
-    /**
-     * 设置insideDeliveryFedEx属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
-     */
-    public void setInsideDeliveryFedEx(Boolean value) {
-        this.insideDeliveryFedEx = value;
-    }
 
     /**
-     * 获取insidePickupFedEx属性的值。
+     * Sets the insideDeliveryFedEx value for this ItemFulfillment.
      * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
+     * @param insideDeliveryFedEx
      */
-    public Boolean isInsidePickupFedEx() {
+    public void setInsideDeliveryFedEx(java.lang.Boolean insideDeliveryFedEx) {
+        this.insideDeliveryFedEx = insideDeliveryFedEx;
+    }
+
+
+    /**
+     * Gets the insidePickupFedEx value for this ItemFulfillment.
+     * 
+     * @return insidePickupFedEx
+     */
+    public java.lang.Boolean getInsidePickupFedEx() {
         return insidePickupFedEx;
     }
 
-    /**
-     * 设置insidePickupFedEx属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
-     */
-    public void setInsidePickupFedEx(Boolean value) {
-        this.insidePickupFedEx = value;
-    }
 
     /**
-     * 获取ancillaryEndorsementFedEx属性的值。
+     * Sets the insidePickupFedEx value for this ItemFulfillment.
      * 
-     * @return
-     *     possible object is
-     *     {@link ItemFulfillmentAncillaryEndorsementFedEx }
-     *     
+     * @param insidePickupFedEx
      */
-    public ItemFulfillmentAncillaryEndorsementFedEx getAncillaryEndorsementFedEx() {
+    public void setInsidePickupFedEx(java.lang.Boolean insidePickupFedEx) {
+        this.insidePickupFedEx = insidePickupFedEx;
+    }
+
+
+    /**
+     * Gets the ancillaryEndorsementFedEx value for this ItemFulfillment.
+     * 
+     * @return ancillaryEndorsementFedEx
+     */
+    public com.netsuite.webservices.transactions.sales_2018_2.types.ItemFulfillmentAncillaryEndorsementFedEx getAncillaryEndorsementFedEx() {
         return ancillaryEndorsementFedEx;
     }
 
-    /**
-     * 设置ancillaryEndorsementFedEx属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link ItemFulfillmentAncillaryEndorsementFedEx }
-     *     
-     */
-    public void setAncillaryEndorsementFedEx(ItemFulfillmentAncillaryEndorsementFedEx value) {
-        this.ancillaryEndorsementFedEx = value;
-    }
 
     /**
-     * 获取holdAtLocationFedEx属性的值。
+     * Sets the ancillaryEndorsementFedEx value for this ItemFulfillment.
      * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
+     * @param ancillaryEndorsementFedEx
      */
-    public Boolean isHoldAtLocationFedEx() {
+    public void setAncillaryEndorsementFedEx(com.netsuite.webservices.transactions.sales_2018_2.types.ItemFulfillmentAncillaryEndorsementFedEx ancillaryEndorsementFedEx) {
+        this.ancillaryEndorsementFedEx = ancillaryEndorsementFedEx;
+    }
+
+
+    /**
+     * Gets the holdAtLocationFedEx value for this ItemFulfillment.
+     * 
+     * @return holdAtLocationFedEx
+     */
+    public java.lang.Boolean getHoldAtLocationFedEx() {
         return holdAtLocationFedEx;
     }
 
-    /**
-     * 设置holdAtLocationFedEx属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
-     */
-    public void setHoldAtLocationFedEx(Boolean value) {
-        this.holdAtLocationFedEx = value;
-    }
 
     /**
-     * 获取halPhoneFedEx属性的值。
+     * Sets the holdAtLocationFedEx value for this ItemFulfillment.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param holdAtLocationFedEx
      */
-    public String getHalPhoneFedEx() {
+    public void setHoldAtLocationFedEx(java.lang.Boolean holdAtLocationFedEx) {
+        this.holdAtLocationFedEx = holdAtLocationFedEx;
+    }
+
+
+    /**
+     * Gets the halPhoneFedEx value for this ItemFulfillment.
+     * 
+     * @return halPhoneFedEx
+     */
+    public java.lang.String getHalPhoneFedEx() {
         return halPhoneFedEx;
     }
 
-    /**
-     * 设置halPhoneFedEx属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setHalPhoneFedEx(String value) {
-        this.halPhoneFedEx = value;
-    }
 
     /**
-     * 获取halAddr1FedEx属性的值。
+     * Sets the halPhoneFedEx value for this ItemFulfillment.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param halPhoneFedEx
      */
-    public String getHalAddr1FedEx() {
+    public void setHalPhoneFedEx(java.lang.String halPhoneFedEx) {
+        this.halPhoneFedEx = halPhoneFedEx;
+    }
+
+
+    /**
+     * Gets the halAddr1FedEx value for this ItemFulfillment.
+     * 
+     * @return halAddr1FedEx
+     */
+    public java.lang.String getHalAddr1FedEx() {
         return halAddr1FedEx;
     }
 
-    /**
-     * 设置halAddr1FedEx属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setHalAddr1FedEx(String value) {
-        this.halAddr1FedEx = value;
-    }
 
     /**
-     * 获取halAddr2FedEx属性的值。
+     * Sets the halAddr1FedEx value for this ItemFulfillment.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param halAddr1FedEx
      */
-    public String getHalAddr2FedEx() {
+    public void setHalAddr1FedEx(java.lang.String halAddr1FedEx) {
+        this.halAddr1FedEx = halAddr1FedEx;
+    }
+
+
+    /**
+     * Gets the halAddr2FedEx value for this ItemFulfillment.
+     * 
+     * @return halAddr2FedEx
+     */
+    public java.lang.String getHalAddr2FedEx() {
         return halAddr2FedEx;
     }
 
-    /**
-     * 设置halAddr2FedEx属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setHalAddr2FedEx(String value) {
-        this.halAddr2FedEx = value;
-    }
 
     /**
-     * 获取halAddr3FedEx属性的值。
+     * Sets the halAddr2FedEx value for this ItemFulfillment.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param halAddr2FedEx
      */
-    public String getHalAddr3FedEx() {
+    public void setHalAddr2FedEx(java.lang.String halAddr2FedEx) {
+        this.halAddr2FedEx = halAddr2FedEx;
+    }
+
+
+    /**
+     * Gets the halAddr3FedEx value for this ItemFulfillment.
+     * 
+     * @return halAddr3FedEx
+     */
+    public java.lang.String getHalAddr3FedEx() {
         return halAddr3FedEx;
     }
 
-    /**
-     * 设置halAddr3FedEx属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setHalAddr3FedEx(String value) {
-        this.halAddr3FedEx = value;
-    }
 
     /**
-     * 获取halCityFedEx属性的值。
+     * Sets the halAddr3FedEx value for this ItemFulfillment.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param halAddr3FedEx
      */
-    public String getHalCityFedEx() {
+    public void setHalAddr3FedEx(java.lang.String halAddr3FedEx) {
+        this.halAddr3FedEx = halAddr3FedEx;
+    }
+
+
+    /**
+     * Gets the halCityFedEx value for this ItemFulfillment.
+     * 
+     * @return halCityFedEx
+     */
+    public java.lang.String getHalCityFedEx() {
         return halCityFedEx;
     }
 
-    /**
-     * 设置halCityFedEx属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setHalCityFedEx(String value) {
-        this.halCityFedEx = value;
-    }
 
     /**
-     * 获取halZipFedEx属性的值。
+     * Sets the halCityFedEx value for this ItemFulfillment.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param halCityFedEx
      */
-    public String getHalZipFedEx() {
+    public void setHalCityFedEx(java.lang.String halCityFedEx) {
+        this.halCityFedEx = halCityFedEx;
+    }
+
+
+    /**
+     * Gets the halZipFedEx value for this ItemFulfillment.
+     * 
+     * @return halZipFedEx
+     */
+    public java.lang.String getHalZipFedEx() {
         return halZipFedEx;
     }
 
-    /**
-     * 设置halZipFedEx属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setHalZipFedEx(String value) {
-        this.halZipFedEx = value;
-    }
 
     /**
-     * 获取halStateFedEx属性的值。
+     * Sets the halZipFedEx value for this ItemFulfillment.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param halZipFedEx
      */
-    public String getHalStateFedEx() {
+    public void setHalZipFedEx(java.lang.String halZipFedEx) {
+        this.halZipFedEx = halZipFedEx;
+    }
+
+
+    /**
+     * Gets the halStateFedEx value for this ItemFulfillment.
+     * 
+     * @return halStateFedEx
+     */
+    public java.lang.String getHalStateFedEx() {
         return halStateFedEx;
     }
 
-    /**
-     * 设置halStateFedEx属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setHalStateFedEx(String value) {
-        this.halStateFedEx = value;
-    }
 
     /**
-     * 获取halCountryFedEx属性的值。
+     * Sets the halStateFedEx value for this ItemFulfillment.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param halStateFedEx
      */
-    public String getHalCountryFedEx() {
+    public void setHalStateFedEx(java.lang.String halStateFedEx) {
+        this.halStateFedEx = halStateFedEx;
+    }
+
+
+    /**
+     * Gets the halCountryFedEx value for this ItemFulfillment.
+     * 
+     * @return halCountryFedEx
+     */
+    public java.lang.String getHalCountryFedEx() {
         return halCountryFedEx;
     }
 
-    /**
-     * 设置halCountryFedEx属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setHalCountryFedEx(String value) {
-        this.halCountryFedEx = value;
-    }
 
     /**
-     * 获取hazmatTypeFedEx属性的值。
+     * Sets the halCountryFedEx value for this ItemFulfillment.
      * 
-     * @return
-     *     possible object is
-     *     {@link ItemFulfillmentHazmatTypeFedEx }
-     *     
+     * @param halCountryFedEx
      */
-    public ItemFulfillmentHazmatTypeFedEx getHazmatTypeFedEx() {
+    public void setHalCountryFedEx(java.lang.String halCountryFedEx) {
+        this.halCountryFedEx = halCountryFedEx;
+    }
+
+
+    /**
+     * Gets the hazmatTypeFedEx value for this ItemFulfillment.
+     * 
+     * @return hazmatTypeFedEx
+     */
+    public com.netsuite.webservices.transactions.sales_2018_2.types.ItemFulfillmentHazmatTypeFedEx getHazmatTypeFedEx() {
         return hazmatTypeFedEx;
     }
 
-    /**
-     * 设置hazmatTypeFedEx属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link ItemFulfillmentHazmatTypeFedEx }
-     *     
-     */
-    public void setHazmatTypeFedEx(ItemFulfillmentHazmatTypeFedEx value) {
-        this.hazmatTypeFedEx = value;
-    }
 
     /**
-     * 获取accessibilityTypeFedEx属性的值。
+     * Sets the hazmatTypeFedEx value for this ItemFulfillment.
      * 
-     * @return
-     *     possible object is
-     *     {@link ItemFulfillmentAccessibilityTypeFedEx }
-     *     
+     * @param hazmatTypeFedEx
      */
-    public ItemFulfillmentAccessibilityTypeFedEx getAccessibilityTypeFedEx() {
+    public void setHazmatTypeFedEx(com.netsuite.webservices.transactions.sales_2018_2.types.ItemFulfillmentHazmatTypeFedEx hazmatTypeFedEx) {
+        this.hazmatTypeFedEx = hazmatTypeFedEx;
+    }
+
+
+    /**
+     * Gets the accessibilityTypeFedEx value for this ItemFulfillment.
+     * 
+     * @return accessibilityTypeFedEx
+     */
+    public com.netsuite.webservices.transactions.sales_2018_2.types.ItemFulfillmentAccessibilityTypeFedEx getAccessibilityTypeFedEx() {
         return accessibilityTypeFedEx;
     }
 
-    /**
-     * 设置accessibilityTypeFedEx属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link ItemFulfillmentAccessibilityTypeFedEx }
-     *     
-     */
-    public void setAccessibilityTypeFedEx(ItemFulfillmentAccessibilityTypeFedEx value) {
-        this.accessibilityTypeFedEx = value;
-    }
 
     /**
-     * 获取isCargoAircraftOnlyFedEx属性的值。
+     * Sets the accessibilityTypeFedEx value for this ItemFulfillment.
      * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
+     * @param accessibilityTypeFedEx
      */
-    public Boolean isIsCargoAircraftOnlyFedEx() {
+    public void setAccessibilityTypeFedEx(com.netsuite.webservices.transactions.sales_2018_2.types.ItemFulfillmentAccessibilityTypeFedEx accessibilityTypeFedEx) {
+        this.accessibilityTypeFedEx = accessibilityTypeFedEx;
+    }
+
+
+    /**
+     * Gets the isCargoAircraftOnlyFedEx value for this ItemFulfillment.
+     * 
+     * @return isCargoAircraftOnlyFedEx
+     */
+    public java.lang.Boolean getIsCargoAircraftOnlyFedEx() {
         return isCargoAircraftOnlyFedEx;
     }
 
-    /**
-     * 设置isCargoAircraftOnlyFedEx属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
-     */
-    public void setIsCargoAircraftOnlyFedEx(Boolean value) {
-        this.isCargoAircraftOnlyFedEx = value;
-    }
 
     /**
-     * 获取tranDate属性的值。
+     * Sets the isCargoAircraftOnlyFedEx value for this ItemFulfillment.
      * 
-     * @return
-     *     possible object is
-     *     {@link XMLGregorianCalendar }
-     *     
+     * @param isCargoAircraftOnlyFedEx
      */
-    public XMLGregorianCalendar getTranDate() {
+    public void setIsCargoAircraftOnlyFedEx(java.lang.Boolean isCargoAircraftOnlyFedEx) {
+        this.isCargoAircraftOnlyFedEx = isCargoAircraftOnlyFedEx;
+    }
+
+
+    /**
+     * Gets the tranDate value for this ItemFulfillment.
+     * 
+     * @return tranDate
+     */
+    public java.util.Calendar getTranDate() {
         return tranDate;
     }
 
-    /**
-     * 设置tranDate属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link XMLGregorianCalendar }
-     *     
-     */
-    public void setTranDate(XMLGregorianCalendar value) {
-        this.tranDate = value;
-    }
 
     /**
-     * 获取tranId属性的值。
+     * Sets the tranDate value for this ItemFulfillment.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param tranDate
      */
-    public String getTranId() {
+    public void setTranDate(java.util.Calendar tranDate) {
+        this.tranDate = tranDate;
+    }
+
+
+    /**
+     * Gets the tranId value for this ItemFulfillment.
+     * 
+     * @return tranId
+     */
+    public java.lang.String getTranId() {
         return tranId;
     }
 
-    /**
-     * 设置tranId属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setTranId(String value) {
-        this.tranId = value;
-    }
 
     /**
-     * 获取shipMethod属性的值。
+     * Sets the tranId value for this ItemFulfillment.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param tranId
      */
-    public RecordRef getShipMethod() {
+    public void setTranId(java.lang.String tranId) {
+        this.tranId = tranId;
+    }
+
+
+    /**
+     * Gets the shipMethod value for this ItemFulfillment.
+     * 
+     * @return shipMethod
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getShipMethod() {
         return shipMethod;
     }
 
-    /**
-     * 设置shipMethod属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setShipMethod(RecordRef value) {
-        this.shipMethod = value;
-    }
 
     /**
-     * 获取generateIntegratedShipperLabel属性的值。
+     * Sets the shipMethod value for this ItemFulfillment.
      * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
+     * @param shipMethod
      */
-    public Boolean isGenerateIntegratedShipperLabel() {
+    public void setShipMethod(com.netsuite.webservices.platform.core_2018_2.RecordRef shipMethod) {
+        this.shipMethod = shipMethod;
+    }
+
+
+    /**
+     * Gets the generateIntegratedShipperLabel value for this ItemFulfillment.
+     * 
+     * @return generateIntegratedShipperLabel
+     */
+    public java.lang.Boolean getGenerateIntegratedShipperLabel() {
         return generateIntegratedShipperLabel;
     }
 
-    /**
-     * 设置generateIntegratedShipperLabel属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
-     */
-    public void setGenerateIntegratedShipperLabel(Boolean value) {
-        this.generateIntegratedShipperLabel = value;
-    }
 
     /**
-     * 获取shippingCost属性的值。
+     * Sets the generateIntegratedShipperLabel value for this ItemFulfillment.
      * 
-     * @return
-     *     possible object is
-     *     {@link Double }
-     *     
+     * @param generateIntegratedShipperLabel
      */
-    public Double getShippingCost() {
+    public void setGenerateIntegratedShipperLabel(java.lang.Boolean generateIntegratedShipperLabel) {
+        this.generateIntegratedShipperLabel = generateIntegratedShipperLabel;
+    }
+
+
+    /**
+     * Gets the shippingCost value for this ItemFulfillment.
+     * 
+     * @return shippingCost
+     */
+    public java.lang.Double getShippingCost() {
         return shippingCost;
     }
 
-    /**
-     * 设置shippingCost属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Double }
-     *     
-     */
-    public void setShippingCost(Double value) {
-        this.shippingCost = value;
-    }
 
     /**
-     * 获取handlingCost属性的值。
+     * Sets the shippingCost value for this ItemFulfillment.
      * 
-     * @return
-     *     possible object is
-     *     {@link Double }
-     *     
+     * @param shippingCost
      */
-    public Double getHandlingCost() {
+    public void setShippingCost(java.lang.Double shippingCost) {
+        this.shippingCost = shippingCost;
+    }
+
+
+    /**
+     * Gets the handlingCost value for this ItemFulfillment.
+     * 
+     * @return handlingCost
+     */
+    public java.lang.Double getHandlingCost() {
         return handlingCost;
     }
 
-    /**
-     * 设置handlingCost属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Double }
-     *     
-     */
-    public void setHandlingCost(Double value) {
-        this.handlingCost = value;
-    }
 
     /**
-     * 获取memo属性的值。
+     * Sets the handlingCost value for this ItemFulfillment.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param handlingCost
      */
-    public String getMemo() {
+    public void setHandlingCost(java.lang.Double handlingCost) {
+        this.handlingCost = handlingCost;
+    }
+
+
+    /**
+     * Gets the memo value for this ItemFulfillment.
+     * 
+     * @return memo
+     */
+    public java.lang.String getMemo() {
         return memo;
     }
 
-    /**
-     * 设置memo属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setMemo(String value) {
-        this.memo = value;
-    }
 
     /**
-     * 获取transferLocation属性的值。
+     * Sets the memo value for this ItemFulfillment.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param memo
      */
-    public RecordRef getTransferLocation() {
+    public void setMemo(java.lang.String memo) {
+        this.memo = memo;
+    }
+
+
+    /**
+     * Gets the transferLocation value for this ItemFulfillment.
+     * 
+     * @return transferLocation
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getTransferLocation() {
         return transferLocation;
     }
 
-    /**
-     * 设置transferLocation属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setTransferLocation(RecordRef value) {
-        this.transferLocation = value;
-    }
 
     /**
-     * 获取packageList属性的值。
+     * Sets the transferLocation value for this ItemFulfillment.
      * 
-     * @return
-     *     possible object is
-     *     {@link ItemFulfillmentPackageList }
-     *     
+     * @param transferLocation
      */
-    public ItemFulfillmentPackageList getPackageList() {
+    public void setTransferLocation(com.netsuite.webservices.platform.core_2018_2.RecordRef transferLocation) {
+        this.transferLocation = transferLocation;
+    }
+
+
+    /**
+     * Gets the packageList value for this ItemFulfillment.
+     * 
+     * @return packageList
+     */
+    public com.netsuite.webservices.transactions.sales_2018_2.ItemFulfillmentPackage[] getPackageList() {
         return packageList;
     }
 
-    /**
-     * 设置packageList属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link ItemFulfillmentPackageList }
-     *     
-     */
-    public void setPackageList(ItemFulfillmentPackageList value) {
-        this.packageList = value;
-    }
 
     /**
-     * 获取packageUpsList属性的值。
+     * Sets the packageList value for this ItemFulfillment.
      * 
-     * @return
-     *     possible object is
-     *     {@link ItemFulfillmentPackageUpsList }
-     *     
+     * @param packageList
      */
-    public ItemFulfillmentPackageUpsList getPackageUpsList() {
+    public void setPackageList(com.netsuite.webservices.transactions.sales_2018_2.ItemFulfillmentPackage[] packageList) {
+        this.packageList = packageList;
+    }
+
+
+    /**
+     * Gets the packageUpsList value for this ItemFulfillment.
+     * 
+     * @return packageUpsList
+     */
+    public com.netsuite.webservices.transactions.sales_2018_2.ItemFulfillmentPackageUps[] getPackageUpsList() {
         return packageUpsList;
     }
 
-    /**
-     * 设置packageUpsList属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link ItemFulfillmentPackageUpsList }
-     *     
-     */
-    public void setPackageUpsList(ItemFulfillmentPackageUpsList value) {
-        this.packageUpsList = value;
-    }
 
     /**
-     * 获取packageUspsList属性的值。
+     * Sets the packageUpsList value for this ItemFulfillment.
      * 
-     * @return
-     *     possible object is
-     *     {@link ItemFulfillmentPackageUspsList }
-     *     
+     * @param packageUpsList
      */
-    public ItemFulfillmentPackageUspsList getPackageUspsList() {
+    public void setPackageUpsList(com.netsuite.webservices.transactions.sales_2018_2.ItemFulfillmentPackageUps[] packageUpsList) {
+        this.packageUpsList = packageUpsList;
+    }
+
+
+    /**
+     * Gets the packageUspsList value for this ItemFulfillment.
+     * 
+     * @return packageUspsList
+     */
+    public com.netsuite.webservices.transactions.sales_2018_2.ItemFulfillmentPackageUsps[] getPackageUspsList() {
         return packageUspsList;
     }
 
-    /**
-     * 设置packageUspsList属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link ItemFulfillmentPackageUspsList }
-     *     
-     */
-    public void setPackageUspsList(ItemFulfillmentPackageUspsList value) {
-        this.packageUspsList = value;
-    }
 
     /**
-     * 获取packageFedExList属性的值。
+     * Sets the packageUspsList value for this ItemFulfillment.
      * 
-     * @return
-     *     possible object is
-     *     {@link ItemFulfillmentPackageFedExList }
-     *     
+     * @param packageUspsList
      */
-    public ItemFulfillmentPackageFedExList getPackageFedExList() {
+    public void setPackageUspsList(com.netsuite.webservices.transactions.sales_2018_2.ItemFulfillmentPackageUsps[] packageUspsList) {
+        this.packageUspsList = packageUspsList;
+    }
+
+
+    /**
+     * Gets the packageFedExList value for this ItemFulfillment.
+     * 
+     * @return packageFedExList
+     */
+    public com.netsuite.webservices.transactions.sales_2018_2.ItemFulfillmentPackageFedEx[] getPackageFedExList() {
         return packageFedExList;
     }
 
-    /**
-     * 设置packageFedExList属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link ItemFulfillmentPackageFedExList }
-     *     
-     */
-    public void setPackageFedExList(ItemFulfillmentPackageFedExList value) {
-        this.packageFedExList = value;
-    }
 
     /**
-     * 获取itemList属性的值。
+     * Sets the packageFedExList value for this ItemFulfillment.
      * 
-     * @return
-     *     possible object is
-     *     {@link ItemFulfillmentItemList }
-     *     
+     * @param packageFedExList
      */
-    public ItemFulfillmentItemList getItemList() {
+    public void setPackageFedExList(com.netsuite.webservices.transactions.sales_2018_2.ItemFulfillmentPackageFedEx[] packageFedExList) {
+        this.packageFedExList = packageFedExList;
+    }
+
+
+    /**
+     * Gets the itemList value for this ItemFulfillment.
+     * 
+     * @return itemList
+     */
+    public com.netsuite.webservices.transactions.sales_2018_2.ItemFulfillmentItem[] getItemList() {
         return itemList;
     }
 
-    /**
-     * 设置itemList属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link ItemFulfillmentItemList }
-     *     
-     */
-    public void setItemList(ItemFulfillmentItemList value) {
-        this.itemList = value;
-    }
 
     /**
-     * 获取accountingBookDetailList属性的值。
+     * Sets the itemList value for this ItemFulfillment.
      * 
-     * @return
-     *     possible object is
-     *     {@link AccountingBookDetailList }
-     *     
+     * @param itemList
      */
-    public AccountingBookDetailList getAccountingBookDetailList() {
+    public void setItemList(com.netsuite.webservices.transactions.sales_2018_2.ItemFulfillmentItem[] itemList) {
+        this.itemList = itemList;
+    }
+
+
+    /**
+     * Gets the accountingBookDetailList value for this ItemFulfillment.
+     * 
+     * @return accountingBookDetailList
+     */
+    public com.netsuite.webservices.platform.common_2018_2.AccountingBookDetail[] getAccountingBookDetailList() {
         return accountingBookDetailList;
     }
 
-    /**
-     * 设置accountingBookDetailList属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link AccountingBookDetailList }
-     *     
-     */
-    public void setAccountingBookDetailList(AccountingBookDetailList value) {
-        this.accountingBookDetailList = value;
-    }
 
     /**
-     * 获取customFieldList属性的值。
+     * Sets the accountingBookDetailList value for this ItemFulfillment.
      * 
-     * @return
-     *     possible object is
-     *     {@link CustomFieldList }
-     *     
+     * @param accountingBookDetailList
      */
-    public CustomFieldList getCustomFieldList() {
+    public void setAccountingBookDetailList(com.netsuite.webservices.platform.common_2018_2.AccountingBookDetail[] accountingBookDetailList) {
+        this.accountingBookDetailList = accountingBookDetailList;
+    }
+
+
+    /**
+     * Gets the customFieldList value for this ItemFulfillment.
+     * 
+     * @return customFieldList
+     */
+    public com.netsuite.webservices.platform.core_2018_2.CustomFieldRef[] getCustomFieldList() {
         return customFieldList;
     }
 
-    /**
-     * 设置customFieldList属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link CustomFieldList }
-     *     
-     */
-    public void setCustomFieldList(CustomFieldList value) {
-        this.customFieldList = value;
-    }
 
     /**
-     * 获取internalId属性的值。
+     * Sets the customFieldList value for this ItemFulfillment.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param customFieldList
      */
-    public String getInternalId() {
+    public void setCustomFieldList(com.netsuite.webservices.platform.core_2018_2.CustomFieldRef[] customFieldList) {
+        this.customFieldList = customFieldList;
+    }
+
+
+    /**
+     * Gets the internalId value for this ItemFulfillment.
+     * 
+     * @return internalId
+     */
+    public java.lang.String getInternalId() {
         return internalId;
     }
 
-    /**
-     * 设置internalId属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setInternalId(String value) {
-        this.internalId = value;
-    }
 
     /**
-     * 获取externalId属性的值。
+     * Sets the internalId value for this ItemFulfillment.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param internalId
      */
-    public String getExternalId() {
+    public void setInternalId(java.lang.String internalId) {
+        this.internalId = internalId;
+    }
+
+
+    /**
+     * Gets the externalId value for this ItemFulfillment.
+     * 
+     * @return externalId
+     */
+    public java.lang.String getExternalId() {
         return externalId;
     }
 
+
     /**
-     * 设置externalId属性的值。
+     * Sets the externalId value for this ItemFulfillment.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     * @param externalId
      */
-    public void setExternalId(String value) {
-        this.externalId = value;
+    public void setExternalId(java.lang.String externalId) {
+        this.externalId = externalId;
+    }
+
+    private java.lang.Object __equalsCalc = null;
+    public synchronized boolean equals(java.lang.Object obj) {
+        if (!(obj instanceof ItemFulfillment)) return false;
+        ItemFulfillment other = (ItemFulfillment) obj;
+        if (obj == null) return false;
+        if (this == obj) return true;
+        if (__equalsCalc != null) {
+            return (__equalsCalc == obj);
+        }
+        __equalsCalc = obj;
+        boolean _equals;
+        _equals = super.equals(obj) && 
+            ((this.createdDate==null && other.getCreatedDate()==null) || 
+             (this.createdDate!=null &&
+              this.createdDate.equals(other.getCreatedDate()))) &&
+            ((this.lastModifiedDate==null && other.getLastModifiedDate()==null) || 
+             (this.lastModifiedDate!=null &&
+              this.lastModifiedDate.equals(other.getLastModifiedDate()))) &&
+            ((this.customForm==null && other.getCustomForm()==null) || 
+             (this.customForm!=null &&
+              this.customForm.equals(other.getCustomForm()))) &&
+            ((this.postingPeriod==null && other.getPostingPeriod()==null) || 
+             (this.postingPeriod!=null &&
+              this.postingPeriod.equals(other.getPostingPeriod()))) &&
+            ((this.entity==null && other.getEntity()==null) || 
+             (this.entity!=null &&
+              this.entity.equals(other.getEntity()))) &&
+            ((this.createdFrom==null && other.getCreatedFrom()==null) || 
+             (this.createdFrom!=null &&
+              this.createdFrom.equals(other.getCreatedFrom()))) &&
+            ((this.requestedBy==null && other.getRequestedBy()==null) || 
+             (this.requestedBy!=null &&
+              this.requestedBy.equals(other.getRequestedBy()))) &&
+            ((this.createdFromShipGroup==null && other.getCreatedFromShipGroup()==null) || 
+             (this.createdFromShipGroup!=null &&
+              this.createdFromShipGroup.equals(other.getCreatedFromShipGroup()))) &&
+            ((this.partner==null && other.getPartner()==null) || 
+             (this.partner!=null &&
+              this.partner.equals(other.getPartner()))) &&
+            ((this.shippingAddress==null && other.getShippingAddress()==null) || 
+             (this.shippingAddress!=null &&
+              this.shippingAddress.equals(other.getShippingAddress()))) &&
+            ((this.pickedDate==null && other.getPickedDate()==null) || 
+             (this.pickedDate!=null &&
+              this.pickedDate.equals(other.getPickedDate()))) &&
+            ((this.packedDate==null && other.getPackedDate()==null) || 
+             (this.packedDate!=null &&
+              this.packedDate.equals(other.getPackedDate()))) &&
+            ((this.shippedDate==null && other.getShippedDate()==null) || 
+             (this.shippedDate!=null &&
+              this.shippedDate.equals(other.getShippedDate()))) &&
+            ((this.shipIsResidential==null && other.getShipIsResidential()==null) || 
+             (this.shipIsResidential!=null &&
+              this.shipIsResidential.equals(other.getShipIsResidential()))) &&
+            ((this.shipAddressList==null && other.getShipAddressList()==null) || 
+             (this.shipAddressList!=null &&
+              this.shipAddressList.equals(other.getShipAddressList()))) &&
+            ((this.shipStatus==null && other.getShipStatus()==null) || 
+             (this.shipStatus!=null &&
+              this.shipStatus.equals(other.getShipStatus()))) &&
+            ((this.saturdayDeliveryUps==null && other.getSaturdayDeliveryUps()==null) || 
+             (this.saturdayDeliveryUps!=null &&
+              this.saturdayDeliveryUps.equals(other.getSaturdayDeliveryUps()))) &&
+            ((this.sendShipNotifyEmailUps==null && other.getSendShipNotifyEmailUps()==null) || 
+             (this.sendShipNotifyEmailUps!=null &&
+              this.sendShipNotifyEmailUps.equals(other.getSendShipNotifyEmailUps()))) &&
+            ((this.sendBackupEmailUps==null && other.getSendBackupEmailUps()==null) || 
+             (this.sendBackupEmailUps!=null &&
+              this.sendBackupEmailUps.equals(other.getSendBackupEmailUps()))) &&
+            ((this.shipNotifyEmailAddressUps==null && other.getShipNotifyEmailAddressUps()==null) || 
+             (this.shipNotifyEmailAddressUps!=null &&
+              this.shipNotifyEmailAddressUps.equals(other.getShipNotifyEmailAddressUps()))) &&
+            ((this.shipNotifyEmailAddress2Ups==null && other.getShipNotifyEmailAddress2Ups()==null) || 
+             (this.shipNotifyEmailAddress2Ups!=null &&
+              this.shipNotifyEmailAddress2Ups.equals(other.getShipNotifyEmailAddress2Ups()))) &&
+            ((this.backupEmailAddressUps==null && other.getBackupEmailAddressUps()==null) || 
+             (this.backupEmailAddressUps!=null &&
+              this.backupEmailAddressUps.equals(other.getBackupEmailAddressUps()))) &&
+            ((this.shipNotifyEmailMessageUps==null && other.getShipNotifyEmailMessageUps()==null) || 
+             (this.shipNotifyEmailMessageUps!=null &&
+              this.shipNotifyEmailMessageUps.equals(other.getShipNotifyEmailMessageUps()))) &&
+            ((this.thirdPartyAcctUps==null && other.getThirdPartyAcctUps()==null) || 
+             (this.thirdPartyAcctUps!=null &&
+              this.thirdPartyAcctUps.equals(other.getThirdPartyAcctUps()))) &&
+            ((this.thirdPartyZipcodeUps==null && other.getThirdPartyZipcodeUps()==null) || 
+             (this.thirdPartyZipcodeUps!=null &&
+              this.thirdPartyZipcodeUps.equals(other.getThirdPartyZipcodeUps()))) &&
+            ((this.thirdPartyCountryUps==null && other.getThirdPartyCountryUps()==null) || 
+             (this.thirdPartyCountryUps!=null &&
+              this.thirdPartyCountryUps.equals(other.getThirdPartyCountryUps()))) &&
+            ((this.thirdPartyTypeUps==null && other.getThirdPartyTypeUps()==null) || 
+             (this.thirdPartyTypeUps!=null &&
+              this.thirdPartyTypeUps.equals(other.getThirdPartyTypeUps()))) &&
+            ((this.partiesToTransactionUps==null && other.getPartiesToTransactionUps()==null) || 
+             (this.partiesToTransactionUps!=null &&
+              this.partiesToTransactionUps.equals(other.getPartiesToTransactionUps()))) &&
+            ((this.exportTypeUps==null && other.getExportTypeUps()==null) || 
+             (this.exportTypeUps!=null &&
+              this.exportTypeUps.equals(other.getExportTypeUps()))) &&
+            ((this.methodOfTransportUps==null && other.getMethodOfTransportUps()==null) || 
+             (this.methodOfTransportUps!=null &&
+              this.methodOfTransportUps.equals(other.getMethodOfTransportUps()))) &&
+            ((this.carrierIdUps==null && other.getCarrierIdUps()==null) || 
+             (this.carrierIdUps!=null &&
+              this.carrierIdUps.equals(other.getCarrierIdUps()))) &&
+            ((this.entryNumberUps==null && other.getEntryNumberUps()==null) || 
+             (this.entryNumberUps!=null &&
+              this.entryNumberUps.equals(other.getEntryNumberUps()))) &&
+            ((this.inbondCodeUps==null && other.getInbondCodeUps()==null) || 
+             (this.inbondCodeUps!=null &&
+              this.inbondCodeUps.equals(other.getInbondCodeUps()))) &&
+            ((this.isRoutedExportTransactionUps==null && other.getIsRoutedExportTransactionUps()==null) || 
+             (this.isRoutedExportTransactionUps!=null &&
+              this.isRoutedExportTransactionUps.equals(other.getIsRoutedExportTransactionUps()))) &&
+            ((this.licenseNumberUps==null && other.getLicenseNumberUps()==null) || 
+             (this.licenseNumberUps!=null &&
+              this.licenseNumberUps.equals(other.getLicenseNumberUps()))) &&
+            ((this.licenseDateUps==null && other.getLicenseDateUps()==null) || 
+             (this.licenseDateUps!=null &&
+              this.licenseDateUps.equals(other.getLicenseDateUps()))) &&
+            ((this.licenseExceptionUps==null && other.getLicenseExceptionUps()==null) || 
+             (this.licenseExceptionUps!=null &&
+              this.licenseExceptionUps.equals(other.getLicenseExceptionUps()))) &&
+            ((this.eccNumberUps==null && other.getEccNumberUps()==null) || 
+             (this.eccNumberUps!=null &&
+              this.eccNumberUps.equals(other.getEccNumberUps()))) &&
+            ((this.recipientTaxIdUps==null && other.getRecipientTaxIdUps()==null) || 
+             (this.recipientTaxIdUps!=null &&
+              this.recipientTaxIdUps.equals(other.getRecipientTaxIdUps()))) &&
+            ((this.blanketStartDateUps==null && other.getBlanketStartDateUps()==null) || 
+             (this.blanketStartDateUps!=null &&
+              this.blanketStartDateUps.equals(other.getBlanketStartDateUps()))) &&
+            ((this.blanketEndDateUps==null && other.getBlanketEndDateUps()==null) || 
+             (this.blanketEndDateUps!=null &&
+              this.blanketEndDateUps.equals(other.getBlanketEndDateUps()))) &&
+            ((this.shipmentWeightUps==null && other.getShipmentWeightUps()==null) || 
+             (this.shipmentWeightUps!=null &&
+              this.shipmentWeightUps.equals(other.getShipmentWeightUps()))) &&
+            ((this.saturdayDeliveryFedEx==null && other.getSaturdayDeliveryFedEx()==null) || 
+             (this.saturdayDeliveryFedEx!=null &&
+              this.saturdayDeliveryFedEx.equals(other.getSaturdayDeliveryFedEx()))) &&
+            ((this.saturdayPickupFedex==null && other.getSaturdayPickupFedex()==null) || 
+             (this.saturdayPickupFedex!=null &&
+              this.saturdayPickupFedex.equals(other.getSaturdayPickupFedex()))) &&
+            ((this.sendShipNotifyEmailFedEx==null && other.getSendShipNotifyEmailFedEx()==null) || 
+             (this.sendShipNotifyEmailFedEx!=null &&
+              this.sendShipNotifyEmailFedEx.equals(other.getSendShipNotifyEmailFedEx()))) &&
+            ((this.sendBackupEmailFedEx==null && other.getSendBackupEmailFedEx()==null) || 
+             (this.sendBackupEmailFedEx!=null &&
+              this.sendBackupEmailFedEx.equals(other.getSendBackupEmailFedEx()))) &&
+            ((this.signatureHomeDeliveryFedEx==null && other.getSignatureHomeDeliveryFedEx()==null) || 
+             (this.signatureHomeDeliveryFedEx!=null &&
+              this.signatureHomeDeliveryFedEx.equals(other.getSignatureHomeDeliveryFedEx()))) &&
+            ((this.shipNotifyEmailAddressFedEx==null && other.getShipNotifyEmailAddressFedEx()==null) || 
+             (this.shipNotifyEmailAddressFedEx!=null &&
+              this.shipNotifyEmailAddressFedEx.equals(other.getShipNotifyEmailAddressFedEx()))) &&
+            ((this.backupEmailAddressFedEx==null && other.getBackupEmailAddressFedEx()==null) || 
+             (this.backupEmailAddressFedEx!=null &&
+              this.backupEmailAddressFedEx.equals(other.getBackupEmailAddressFedEx()))) &&
+            ((this.shipDateFedEx==null && other.getShipDateFedEx()==null) || 
+             (this.shipDateFedEx!=null &&
+              this.shipDateFedEx.equals(other.getShipDateFedEx()))) &&
+            ((this.homeDeliveryTypeFedEx==null && other.getHomeDeliveryTypeFedEx()==null) || 
+             (this.homeDeliveryTypeFedEx!=null &&
+              this.homeDeliveryTypeFedEx.equals(other.getHomeDeliveryTypeFedEx()))) &&
+            ((this.homeDeliveryDateFedEx==null && other.getHomeDeliveryDateFedEx()==null) || 
+             (this.homeDeliveryDateFedEx!=null &&
+              this.homeDeliveryDateFedEx.equals(other.getHomeDeliveryDateFedEx()))) &&
+            ((this.bookingConfirmationNumFedEx==null && other.getBookingConfirmationNumFedEx()==null) || 
+             (this.bookingConfirmationNumFedEx!=null &&
+              this.bookingConfirmationNumFedEx.equals(other.getBookingConfirmationNumFedEx()))) &&
+            ((this.intlExemptionNumFedEx==null && other.getIntlExemptionNumFedEx()==null) || 
+             (this.intlExemptionNumFedEx!=null &&
+              this.intlExemptionNumFedEx.equals(other.getIntlExemptionNumFedEx()))) &&
+            ((this.b13AFilingOptionFedEx==null && other.getB13AFilingOptionFedEx()==null) || 
+             (this.b13AFilingOptionFedEx!=null &&
+              this.b13AFilingOptionFedEx.equals(other.getB13AFilingOptionFedEx()))) &&
+            ((this.b13AStatementDataFedEx==null && other.getB13AStatementDataFedEx()==null) || 
+             (this.b13AStatementDataFedEx!=null &&
+              this.b13AStatementDataFedEx.equals(other.getB13AStatementDataFedEx()))) &&
+            ((this.thirdPartyAcctFedEx==null && other.getThirdPartyAcctFedEx()==null) || 
+             (this.thirdPartyAcctFedEx!=null &&
+              this.thirdPartyAcctFedEx.equals(other.getThirdPartyAcctFedEx()))) &&
+            ((this.thirdPartyCountryFedEx==null && other.getThirdPartyCountryFedEx()==null) || 
+             (this.thirdPartyCountryFedEx!=null &&
+              this.thirdPartyCountryFedEx.equals(other.getThirdPartyCountryFedEx()))) &&
+            ((this.thirdPartyTypeFedEx==null && other.getThirdPartyTypeFedEx()==null) || 
+             (this.thirdPartyTypeFedEx!=null &&
+              this.thirdPartyTypeFedEx.equals(other.getThirdPartyTypeFedEx()))) &&
+            ((this.shipmentWeightFedEx==null && other.getShipmentWeightFedEx()==null) || 
+             (this.shipmentWeightFedEx!=null &&
+              this.shipmentWeightFedEx.equals(other.getShipmentWeightFedEx()))) &&
+            ((this.termsOfSaleFedEx==null && other.getTermsOfSaleFedEx()==null) || 
+             (this.termsOfSaleFedEx!=null &&
+              this.termsOfSaleFedEx.equals(other.getTermsOfSaleFedEx()))) &&
+            ((this.termsFreightChargeFedEx==null && other.getTermsFreightChargeFedEx()==null) || 
+             (this.termsFreightChargeFedEx!=null &&
+              this.termsFreightChargeFedEx.equals(other.getTermsFreightChargeFedEx()))) &&
+            ((this.termsInsuranceChargeFedEx==null && other.getTermsInsuranceChargeFedEx()==null) || 
+             (this.termsInsuranceChargeFedEx!=null &&
+              this.termsInsuranceChargeFedEx.equals(other.getTermsInsuranceChargeFedEx()))) &&
+            ((this.insideDeliveryFedEx==null && other.getInsideDeliveryFedEx()==null) || 
+             (this.insideDeliveryFedEx!=null &&
+              this.insideDeliveryFedEx.equals(other.getInsideDeliveryFedEx()))) &&
+            ((this.insidePickupFedEx==null && other.getInsidePickupFedEx()==null) || 
+             (this.insidePickupFedEx!=null &&
+              this.insidePickupFedEx.equals(other.getInsidePickupFedEx()))) &&
+            ((this.ancillaryEndorsementFedEx==null && other.getAncillaryEndorsementFedEx()==null) || 
+             (this.ancillaryEndorsementFedEx!=null &&
+              this.ancillaryEndorsementFedEx.equals(other.getAncillaryEndorsementFedEx()))) &&
+            ((this.holdAtLocationFedEx==null && other.getHoldAtLocationFedEx()==null) || 
+             (this.holdAtLocationFedEx!=null &&
+              this.holdAtLocationFedEx.equals(other.getHoldAtLocationFedEx()))) &&
+            ((this.halPhoneFedEx==null && other.getHalPhoneFedEx()==null) || 
+             (this.halPhoneFedEx!=null &&
+              this.halPhoneFedEx.equals(other.getHalPhoneFedEx()))) &&
+            ((this.halAddr1FedEx==null && other.getHalAddr1FedEx()==null) || 
+             (this.halAddr1FedEx!=null &&
+              this.halAddr1FedEx.equals(other.getHalAddr1FedEx()))) &&
+            ((this.halAddr2FedEx==null && other.getHalAddr2FedEx()==null) || 
+             (this.halAddr2FedEx!=null &&
+              this.halAddr2FedEx.equals(other.getHalAddr2FedEx()))) &&
+            ((this.halAddr3FedEx==null && other.getHalAddr3FedEx()==null) || 
+             (this.halAddr3FedEx!=null &&
+              this.halAddr3FedEx.equals(other.getHalAddr3FedEx()))) &&
+            ((this.halCityFedEx==null && other.getHalCityFedEx()==null) || 
+             (this.halCityFedEx!=null &&
+              this.halCityFedEx.equals(other.getHalCityFedEx()))) &&
+            ((this.halZipFedEx==null && other.getHalZipFedEx()==null) || 
+             (this.halZipFedEx!=null &&
+              this.halZipFedEx.equals(other.getHalZipFedEx()))) &&
+            ((this.halStateFedEx==null && other.getHalStateFedEx()==null) || 
+             (this.halStateFedEx!=null &&
+              this.halStateFedEx.equals(other.getHalStateFedEx()))) &&
+            ((this.halCountryFedEx==null && other.getHalCountryFedEx()==null) || 
+             (this.halCountryFedEx!=null &&
+              this.halCountryFedEx.equals(other.getHalCountryFedEx()))) &&
+            ((this.hazmatTypeFedEx==null && other.getHazmatTypeFedEx()==null) || 
+             (this.hazmatTypeFedEx!=null &&
+              this.hazmatTypeFedEx.equals(other.getHazmatTypeFedEx()))) &&
+            ((this.accessibilityTypeFedEx==null && other.getAccessibilityTypeFedEx()==null) || 
+             (this.accessibilityTypeFedEx!=null &&
+              this.accessibilityTypeFedEx.equals(other.getAccessibilityTypeFedEx()))) &&
+            ((this.isCargoAircraftOnlyFedEx==null && other.getIsCargoAircraftOnlyFedEx()==null) || 
+             (this.isCargoAircraftOnlyFedEx!=null &&
+              this.isCargoAircraftOnlyFedEx.equals(other.getIsCargoAircraftOnlyFedEx()))) &&
+            ((this.tranDate==null && other.getTranDate()==null) || 
+             (this.tranDate!=null &&
+              this.tranDate.equals(other.getTranDate()))) &&
+            ((this.tranId==null && other.getTranId()==null) || 
+             (this.tranId!=null &&
+              this.tranId.equals(other.getTranId()))) &&
+            ((this.shipMethod==null && other.getShipMethod()==null) || 
+             (this.shipMethod!=null &&
+              this.shipMethod.equals(other.getShipMethod()))) &&
+            ((this.generateIntegratedShipperLabel==null && other.getGenerateIntegratedShipperLabel()==null) || 
+             (this.generateIntegratedShipperLabel!=null &&
+              this.generateIntegratedShipperLabel.equals(other.getGenerateIntegratedShipperLabel()))) &&
+            ((this.shippingCost==null && other.getShippingCost()==null) || 
+             (this.shippingCost!=null &&
+              this.shippingCost.equals(other.getShippingCost()))) &&
+            ((this.handlingCost==null && other.getHandlingCost()==null) || 
+             (this.handlingCost!=null &&
+              this.handlingCost.equals(other.getHandlingCost()))) &&
+            ((this.memo==null && other.getMemo()==null) || 
+             (this.memo!=null &&
+              this.memo.equals(other.getMemo()))) &&
+            ((this.transferLocation==null && other.getTransferLocation()==null) || 
+             (this.transferLocation!=null &&
+              this.transferLocation.equals(other.getTransferLocation()))) &&
+            ((this.packageList==null && other.getPackageList()==null) || 
+             (this.packageList!=null &&
+              java.util.Arrays.equals(this.packageList, other.getPackageList()))) &&
+            ((this.packageUpsList==null && other.getPackageUpsList()==null) || 
+             (this.packageUpsList!=null &&
+              java.util.Arrays.equals(this.packageUpsList, other.getPackageUpsList()))) &&
+            ((this.packageUspsList==null && other.getPackageUspsList()==null) || 
+             (this.packageUspsList!=null &&
+              java.util.Arrays.equals(this.packageUspsList, other.getPackageUspsList()))) &&
+            ((this.packageFedExList==null && other.getPackageFedExList()==null) || 
+             (this.packageFedExList!=null &&
+              java.util.Arrays.equals(this.packageFedExList, other.getPackageFedExList()))) &&
+            ((this.itemList==null && other.getItemList()==null) || 
+             (this.itemList!=null &&
+              java.util.Arrays.equals(this.itemList, other.getItemList()))) &&
+            ((this.accountingBookDetailList==null && other.getAccountingBookDetailList()==null) || 
+             (this.accountingBookDetailList!=null &&
+              java.util.Arrays.equals(this.accountingBookDetailList, other.getAccountingBookDetailList()))) &&
+            ((this.customFieldList==null && other.getCustomFieldList()==null) || 
+             (this.customFieldList!=null &&
+              java.util.Arrays.equals(this.customFieldList, other.getCustomFieldList()))) &&
+            ((this.internalId==null && other.getInternalId()==null) || 
+             (this.internalId!=null &&
+              this.internalId.equals(other.getInternalId()))) &&
+            ((this.externalId==null && other.getExternalId()==null) || 
+             (this.externalId!=null &&
+              this.externalId.equals(other.getExternalId())));
+        __equalsCalc = null;
+        return _equals;
+    }
+
+    private boolean __hashCodeCalc = false;
+    public synchronized int hashCode() {
+        if (__hashCodeCalc) {
+            return 0;
+        }
+        __hashCodeCalc = true;
+        int _hashCode = super.hashCode();
+        if (getCreatedDate() != null) {
+            _hashCode += getCreatedDate().hashCode();
+        }
+        if (getLastModifiedDate() != null) {
+            _hashCode += getLastModifiedDate().hashCode();
+        }
+        if (getCustomForm() != null) {
+            _hashCode += getCustomForm().hashCode();
+        }
+        if (getPostingPeriod() != null) {
+            _hashCode += getPostingPeriod().hashCode();
+        }
+        if (getEntity() != null) {
+            _hashCode += getEntity().hashCode();
+        }
+        if (getCreatedFrom() != null) {
+            _hashCode += getCreatedFrom().hashCode();
+        }
+        if (getRequestedBy() != null) {
+            _hashCode += getRequestedBy().hashCode();
+        }
+        if (getCreatedFromShipGroup() != null) {
+            _hashCode += getCreatedFromShipGroup().hashCode();
+        }
+        if (getPartner() != null) {
+            _hashCode += getPartner().hashCode();
+        }
+        if (getShippingAddress() != null) {
+            _hashCode += getShippingAddress().hashCode();
+        }
+        if (getPickedDate() != null) {
+            _hashCode += getPickedDate().hashCode();
+        }
+        if (getPackedDate() != null) {
+            _hashCode += getPackedDate().hashCode();
+        }
+        if (getShippedDate() != null) {
+            _hashCode += getShippedDate().hashCode();
+        }
+        if (getShipIsResidential() != null) {
+            _hashCode += getShipIsResidential().hashCode();
+        }
+        if (getShipAddressList() != null) {
+            _hashCode += getShipAddressList().hashCode();
+        }
+        if (getShipStatus() != null) {
+            _hashCode += getShipStatus().hashCode();
+        }
+        if (getSaturdayDeliveryUps() != null) {
+            _hashCode += getSaturdayDeliveryUps().hashCode();
+        }
+        if (getSendShipNotifyEmailUps() != null) {
+            _hashCode += getSendShipNotifyEmailUps().hashCode();
+        }
+        if (getSendBackupEmailUps() != null) {
+            _hashCode += getSendBackupEmailUps().hashCode();
+        }
+        if (getShipNotifyEmailAddressUps() != null) {
+            _hashCode += getShipNotifyEmailAddressUps().hashCode();
+        }
+        if (getShipNotifyEmailAddress2Ups() != null) {
+            _hashCode += getShipNotifyEmailAddress2Ups().hashCode();
+        }
+        if (getBackupEmailAddressUps() != null) {
+            _hashCode += getBackupEmailAddressUps().hashCode();
+        }
+        if (getShipNotifyEmailMessageUps() != null) {
+            _hashCode += getShipNotifyEmailMessageUps().hashCode();
+        }
+        if (getThirdPartyAcctUps() != null) {
+            _hashCode += getThirdPartyAcctUps().hashCode();
+        }
+        if (getThirdPartyZipcodeUps() != null) {
+            _hashCode += getThirdPartyZipcodeUps().hashCode();
+        }
+        if (getThirdPartyCountryUps() != null) {
+            _hashCode += getThirdPartyCountryUps().hashCode();
+        }
+        if (getThirdPartyTypeUps() != null) {
+            _hashCode += getThirdPartyTypeUps().hashCode();
+        }
+        if (getPartiesToTransactionUps() != null) {
+            _hashCode += getPartiesToTransactionUps().hashCode();
+        }
+        if (getExportTypeUps() != null) {
+            _hashCode += getExportTypeUps().hashCode();
+        }
+        if (getMethodOfTransportUps() != null) {
+            _hashCode += getMethodOfTransportUps().hashCode();
+        }
+        if (getCarrierIdUps() != null) {
+            _hashCode += getCarrierIdUps().hashCode();
+        }
+        if (getEntryNumberUps() != null) {
+            _hashCode += getEntryNumberUps().hashCode();
+        }
+        if (getInbondCodeUps() != null) {
+            _hashCode += getInbondCodeUps().hashCode();
+        }
+        if (getIsRoutedExportTransactionUps() != null) {
+            _hashCode += getIsRoutedExportTransactionUps().hashCode();
+        }
+        if (getLicenseNumberUps() != null) {
+            _hashCode += getLicenseNumberUps().hashCode();
+        }
+        if (getLicenseDateUps() != null) {
+            _hashCode += getLicenseDateUps().hashCode();
+        }
+        if (getLicenseExceptionUps() != null) {
+            _hashCode += getLicenseExceptionUps().hashCode();
+        }
+        if (getEccNumberUps() != null) {
+            _hashCode += getEccNumberUps().hashCode();
+        }
+        if (getRecipientTaxIdUps() != null) {
+            _hashCode += getRecipientTaxIdUps().hashCode();
+        }
+        if (getBlanketStartDateUps() != null) {
+            _hashCode += getBlanketStartDateUps().hashCode();
+        }
+        if (getBlanketEndDateUps() != null) {
+            _hashCode += getBlanketEndDateUps().hashCode();
+        }
+        if (getShipmentWeightUps() != null) {
+            _hashCode += getShipmentWeightUps().hashCode();
+        }
+        if (getSaturdayDeliveryFedEx() != null) {
+            _hashCode += getSaturdayDeliveryFedEx().hashCode();
+        }
+        if (getSaturdayPickupFedex() != null) {
+            _hashCode += getSaturdayPickupFedex().hashCode();
+        }
+        if (getSendShipNotifyEmailFedEx() != null) {
+            _hashCode += getSendShipNotifyEmailFedEx().hashCode();
+        }
+        if (getSendBackupEmailFedEx() != null) {
+            _hashCode += getSendBackupEmailFedEx().hashCode();
+        }
+        if (getSignatureHomeDeliveryFedEx() != null) {
+            _hashCode += getSignatureHomeDeliveryFedEx().hashCode();
+        }
+        if (getShipNotifyEmailAddressFedEx() != null) {
+            _hashCode += getShipNotifyEmailAddressFedEx().hashCode();
+        }
+        if (getBackupEmailAddressFedEx() != null) {
+            _hashCode += getBackupEmailAddressFedEx().hashCode();
+        }
+        if (getShipDateFedEx() != null) {
+            _hashCode += getShipDateFedEx().hashCode();
+        }
+        if (getHomeDeliveryTypeFedEx() != null) {
+            _hashCode += getHomeDeliveryTypeFedEx().hashCode();
+        }
+        if (getHomeDeliveryDateFedEx() != null) {
+            _hashCode += getHomeDeliveryDateFedEx().hashCode();
+        }
+        if (getBookingConfirmationNumFedEx() != null) {
+            _hashCode += getBookingConfirmationNumFedEx().hashCode();
+        }
+        if (getIntlExemptionNumFedEx() != null) {
+            _hashCode += getIntlExemptionNumFedEx().hashCode();
+        }
+        if (getB13AFilingOptionFedEx() != null) {
+            _hashCode += getB13AFilingOptionFedEx().hashCode();
+        }
+        if (getB13AStatementDataFedEx() != null) {
+            _hashCode += getB13AStatementDataFedEx().hashCode();
+        }
+        if (getThirdPartyAcctFedEx() != null) {
+            _hashCode += getThirdPartyAcctFedEx().hashCode();
+        }
+        if (getThirdPartyCountryFedEx() != null) {
+            _hashCode += getThirdPartyCountryFedEx().hashCode();
+        }
+        if (getThirdPartyTypeFedEx() != null) {
+            _hashCode += getThirdPartyTypeFedEx().hashCode();
+        }
+        if (getShipmentWeightFedEx() != null) {
+            _hashCode += getShipmentWeightFedEx().hashCode();
+        }
+        if (getTermsOfSaleFedEx() != null) {
+            _hashCode += getTermsOfSaleFedEx().hashCode();
+        }
+        if (getTermsFreightChargeFedEx() != null) {
+            _hashCode += getTermsFreightChargeFedEx().hashCode();
+        }
+        if (getTermsInsuranceChargeFedEx() != null) {
+            _hashCode += getTermsInsuranceChargeFedEx().hashCode();
+        }
+        if (getInsideDeliveryFedEx() != null) {
+            _hashCode += getInsideDeliveryFedEx().hashCode();
+        }
+        if (getInsidePickupFedEx() != null) {
+            _hashCode += getInsidePickupFedEx().hashCode();
+        }
+        if (getAncillaryEndorsementFedEx() != null) {
+            _hashCode += getAncillaryEndorsementFedEx().hashCode();
+        }
+        if (getHoldAtLocationFedEx() != null) {
+            _hashCode += getHoldAtLocationFedEx().hashCode();
+        }
+        if (getHalPhoneFedEx() != null) {
+            _hashCode += getHalPhoneFedEx().hashCode();
+        }
+        if (getHalAddr1FedEx() != null) {
+            _hashCode += getHalAddr1FedEx().hashCode();
+        }
+        if (getHalAddr2FedEx() != null) {
+            _hashCode += getHalAddr2FedEx().hashCode();
+        }
+        if (getHalAddr3FedEx() != null) {
+            _hashCode += getHalAddr3FedEx().hashCode();
+        }
+        if (getHalCityFedEx() != null) {
+            _hashCode += getHalCityFedEx().hashCode();
+        }
+        if (getHalZipFedEx() != null) {
+            _hashCode += getHalZipFedEx().hashCode();
+        }
+        if (getHalStateFedEx() != null) {
+            _hashCode += getHalStateFedEx().hashCode();
+        }
+        if (getHalCountryFedEx() != null) {
+            _hashCode += getHalCountryFedEx().hashCode();
+        }
+        if (getHazmatTypeFedEx() != null) {
+            _hashCode += getHazmatTypeFedEx().hashCode();
+        }
+        if (getAccessibilityTypeFedEx() != null) {
+            _hashCode += getAccessibilityTypeFedEx().hashCode();
+        }
+        if (getIsCargoAircraftOnlyFedEx() != null) {
+            _hashCode += getIsCargoAircraftOnlyFedEx().hashCode();
+        }
+        if (getTranDate() != null) {
+            _hashCode += getTranDate().hashCode();
+        }
+        if (getTranId() != null) {
+            _hashCode += getTranId().hashCode();
+        }
+        if (getShipMethod() != null) {
+            _hashCode += getShipMethod().hashCode();
+        }
+        if (getGenerateIntegratedShipperLabel() != null) {
+            _hashCode += getGenerateIntegratedShipperLabel().hashCode();
+        }
+        if (getShippingCost() != null) {
+            _hashCode += getShippingCost().hashCode();
+        }
+        if (getHandlingCost() != null) {
+            _hashCode += getHandlingCost().hashCode();
+        }
+        if (getMemo() != null) {
+            _hashCode += getMemo().hashCode();
+        }
+        if (getTransferLocation() != null) {
+            _hashCode += getTransferLocation().hashCode();
+        }
+        if (getPackageList() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getPackageList());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getPackageList(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getPackageUpsList() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getPackageUpsList());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getPackageUpsList(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getPackageUspsList() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getPackageUspsList());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getPackageUspsList(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getPackageFedExList() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getPackageFedExList());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getPackageFedExList(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getItemList() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getItemList());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getItemList(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getAccountingBookDetailList() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getAccountingBookDetailList());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getAccountingBookDetailList(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getCustomFieldList() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getCustomFieldList());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getCustomFieldList(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getInternalId() != null) {
+            _hashCode += getInternalId().hashCode();
+        }
+        if (getExternalId() != null) {
+            _hashCode += getExternalId().hashCode();
+        }
+        __hashCodeCalc = false;
+        return _hashCode;
+    }
+
+    // Type metadata
+    private static org.apache.axis.description.TypeDesc typeDesc =
+        new org.apache.axis.description.TypeDesc(ItemFulfillment.class, true);
+
+    static {
+        typeDesc.setXmlType(new javax.xml.namespace.QName("urn:sales_2018_2.transactions.webservices.netsuite.com", "ItemFulfillment"));
+        org.apache.axis.description.AttributeDesc attrField = new org.apache.axis.description.AttributeDesc();
+        attrField.setFieldName("internalId");
+        attrField.setXmlName(new javax.xml.namespace.QName("", "internalId"));
+        attrField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        typeDesc.addFieldDesc(attrField);
+        attrField = new org.apache.axis.description.AttributeDesc();
+        attrField.setFieldName("externalId");
+        attrField.setXmlName(new javax.xml.namespace.QName("", "externalId"));
+        attrField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        typeDesc.addFieldDesc(attrField);
+        org.apache.axis.description.ElementDesc elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("createdDate");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:sales_2018_2.transactions.webservices.netsuite.com", "createdDate"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "dateTime"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("lastModifiedDate");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:sales_2018_2.transactions.webservices.netsuite.com", "lastModifiedDate"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "dateTime"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("customForm");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:sales_2018_2.transactions.webservices.netsuite.com", "customForm"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("postingPeriod");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:sales_2018_2.transactions.webservices.netsuite.com", "postingPeriod"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("entity");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:sales_2018_2.transactions.webservices.netsuite.com", "entity"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("createdFrom");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:sales_2018_2.transactions.webservices.netsuite.com", "createdFrom"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("requestedBy");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:sales_2018_2.transactions.webservices.netsuite.com", "requestedBy"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("createdFromShipGroup");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:sales_2018_2.transactions.webservices.netsuite.com", "createdFromShipGroup"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "long"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("partner");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:sales_2018_2.transactions.webservices.netsuite.com", "partner"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("shippingAddress");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:sales_2018_2.transactions.webservices.netsuite.com", "shippingAddress"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "Address"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("pickedDate");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:sales_2018_2.transactions.webservices.netsuite.com", "pickedDate"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "dateTime"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("packedDate");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:sales_2018_2.transactions.webservices.netsuite.com", "packedDate"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "dateTime"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("shippedDate");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:sales_2018_2.transactions.webservices.netsuite.com", "shippedDate"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "dateTime"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("shipIsResidential");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:sales_2018_2.transactions.webservices.netsuite.com", "shipIsResidential"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("shipAddressList");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:sales_2018_2.transactions.webservices.netsuite.com", "shipAddressList"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("shipStatus");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:sales_2018_2.transactions.webservices.netsuite.com", "shipStatus"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:types.sales_2018_2.transactions.webservices.netsuite.com", "ItemFulfillmentShipStatus"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("saturdayDeliveryUps");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:sales_2018_2.transactions.webservices.netsuite.com", "saturdayDeliveryUps"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("sendShipNotifyEmailUps");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:sales_2018_2.transactions.webservices.netsuite.com", "sendShipNotifyEmailUps"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("sendBackupEmailUps");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:sales_2018_2.transactions.webservices.netsuite.com", "sendBackupEmailUps"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("shipNotifyEmailAddressUps");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:sales_2018_2.transactions.webservices.netsuite.com", "shipNotifyEmailAddressUps"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("shipNotifyEmailAddress2Ups");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:sales_2018_2.transactions.webservices.netsuite.com", "shipNotifyEmailAddress2Ups"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("backupEmailAddressUps");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:sales_2018_2.transactions.webservices.netsuite.com", "backupEmailAddressUps"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("shipNotifyEmailMessageUps");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:sales_2018_2.transactions.webservices.netsuite.com", "shipNotifyEmailMessageUps"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("thirdPartyAcctUps");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:sales_2018_2.transactions.webservices.netsuite.com", "thirdPartyAcctUps"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("thirdPartyZipcodeUps");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:sales_2018_2.transactions.webservices.netsuite.com", "thirdPartyZipcodeUps"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("thirdPartyCountryUps");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:sales_2018_2.transactions.webservices.netsuite.com", "thirdPartyCountryUps"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:types.common_2018_2.platform.webservices.netsuite.com", "Country"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("thirdPartyTypeUps");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:sales_2018_2.transactions.webservices.netsuite.com", "thirdPartyTypeUps"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:types.sales_2018_2.transactions.webservices.netsuite.com", "ItemFulfillmentThirdPartyTypeUps"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("partiesToTransactionUps");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:sales_2018_2.transactions.webservices.netsuite.com", "partiesToTransactionUps"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("exportTypeUps");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:sales_2018_2.transactions.webservices.netsuite.com", "exportTypeUps"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:types.sales_2018_2.transactions.webservices.netsuite.com", "ItemFulfillmentExportTypeUps"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("methodOfTransportUps");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:sales_2018_2.transactions.webservices.netsuite.com", "methodOfTransportUps"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:types.sales_2018_2.transactions.webservices.netsuite.com", "ItemFulfillmentMethodOfTransportUps"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("carrierIdUps");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:sales_2018_2.transactions.webservices.netsuite.com", "carrierIdUps"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("entryNumberUps");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:sales_2018_2.transactions.webservices.netsuite.com", "entryNumberUps"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("inbondCodeUps");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:sales_2018_2.transactions.webservices.netsuite.com", "inbondCodeUps"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("isRoutedExportTransactionUps");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:sales_2018_2.transactions.webservices.netsuite.com", "isRoutedExportTransactionUps"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("licenseNumberUps");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:sales_2018_2.transactions.webservices.netsuite.com", "licenseNumberUps"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("licenseDateUps");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:sales_2018_2.transactions.webservices.netsuite.com", "licenseDateUps"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "dateTime"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("licenseExceptionUps");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:sales_2018_2.transactions.webservices.netsuite.com", "licenseExceptionUps"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:types.sales_2018_2.transactions.webservices.netsuite.com", "ItemFulfillmentLicenseExceptionUps"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("eccNumberUps");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:sales_2018_2.transactions.webservices.netsuite.com", "eccNumberUps"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("recipientTaxIdUps");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:sales_2018_2.transactions.webservices.netsuite.com", "recipientTaxIdUps"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("blanketStartDateUps");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:sales_2018_2.transactions.webservices.netsuite.com", "blanketStartDateUps"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "dateTime"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("blanketEndDateUps");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:sales_2018_2.transactions.webservices.netsuite.com", "blanketEndDateUps"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "dateTime"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("shipmentWeightUps");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:sales_2018_2.transactions.webservices.netsuite.com", "shipmentWeightUps"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "double"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("saturdayDeliveryFedEx");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:sales_2018_2.transactions.webservices.netsuite.com", "saturdayDeliveryFedEx"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("saturdayPickupFedex");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:sales_2018_2.transactions.webservices.netsuite.com", "saturdayPickupFedex"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("sendShipNotifyEmailFedEx");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:sales_2018_2.transactions.webservices.netsuite.com", "sendShipNotifyEmailFedEx"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("sendBackupEmailFedEx");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:sales_2018_2.transactions.webservices.netsuite.com", "sendBackupEmailFedEx"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("signatureHomeDeliveryFedEx");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:sales_2018_2.transactions.webservices.netsuite.com", "signatureHomeDeliveryFedEx"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("shipNotifyEmailAddressFedEx");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:sales_2018_2.transactions.webservices.netsuite.com", "shipNotifyEmailAddressFedEx"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("backupEmailAddressFedEx");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:sales_2018_2.transactions.webservices.netsuite.com", "backupEmailAddressFedEx"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("shipDateFedEx");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:sales_2018_2.transactions.webservices.netsuite.com", "shipDateFedEx"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "dateTime"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("homeDeliveryTypeFedEx");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:sales_2018_2.transactions.webservices.netsuite.com", "homeDeliveryTypeFedEx"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:types.sales_2018_2.transactions.webservices.netsuite.com", "ItemFulfillmentHomeDeliveryTypeFedEx"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("homeDeliveryDateFedEx");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:sales_2018_2.transactions.webservices.netsuite.com", "homeDeliveryDateFedEx"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "dateTime"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("bookingConfirmationNumFedEx");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:sales_2018_2.transactions.webservices.netsuite.com", "bookingConfirmationNumFedEx"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("intlExemptionNumFedEx");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:sales_2018_2.transactions.webservices.netsuite.com", "intlExemptionNumFedEx"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("b13AFilingOptionFedEx");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:sales_2018_2.transactions.webservices.netsuite.com", "b13aFilingOptionFedEx"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:types.sales_2018_2.transactions.webservices.netsuite.com", "ItemFulfillmentB13AFilingOptionFedEx"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("b13AStatementDataFedEx");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:sales_2018_2.transactions.webservices.netsuite.com", "b13aStatementDataFedEx"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("thirdPartyAcctFedEx");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:sales_2018_2.transactions.webservices.netsuite.com", "thirdPartyAcctFedEx"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("thirdPartyCountryFedEx");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:sales_2018_2.transactions.webservices.netsuite.com", "thirdPartyCountryFedEx"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:types.common_2018_2.platform.webservices.netsuite.com", "Country"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("thirdPartyTypeFedEx");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:sales_2018_2.transactions.webservices.netsuite.com", "thirdPartyTypeFedEx"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:types.sales_2018_2.transactions.webservices.netsuite.com", "ItemFulfillmentThirdPartyTypeFedEx"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("shipmentWeightFedEx");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:sales_2018_2.transactions.webservices.netsuite.com", "shipmentWeightFedEx"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "double"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("termsOfSaleFedEx");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:sales_2018_2.transactions.webservices.netsuite.com", "termsOfSaleFedEx"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:types.sales_2018_2.transactions.webservices.netsuite.com", "ItemFulfillmentTermsOfSaleFedEx"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("termsFreightChargeFedEx");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:sales_2018_2.transactions.webservices.netsuite.com", "termsFreightChargeFedEx"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "double"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("termsInsuranceChargeFedEx");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:sales_2018_2.transactions.webservices.netsuite.com", "termsInsuranceChargeFedEx"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "double"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("insideDeliveryFedEx");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:sales_2018_2.transactions.webservices.netsuite.com", "insideDeliveryFedEx"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("insidePickupFedEx");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:sales_2018_2.transactions.webservices.netsuite.com", "insidePickupFedEx"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("ancillaryEndorsementFedEx");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:sales_2018_2.transactions.webservices.netsuite.com", "ancillaryEndorsementFedEx"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:types.sales_2018_2.transactions.webservices.netsuite.com", "ItemFulfillmentAncillaryEndorsementFedEx"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("holdAtLocationFedEx");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:sales_2018_2.transactions.webservices.netsuite.com", "holdAtLocationFedEx"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("halPhoneFedEx");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:sales_2018_2.transactions.webservices.netsuite.com", "halPhoneFedEx"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("halAddr1FedEx");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:sales_2018_2.transactions.webservices.netsuite.com", "halAddr1FedEx"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("halAddr2FedEx");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:sales_2018_2.transactions.webservices.netsuite.com", "halAddr2FedEx"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("halAddr3FedEx");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:sales_2018_2.transactions.webservices.netsuite.com", "halAddr3FedEx"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("halCityFedEx");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:sales_2018_2.transactions.webservices.netsuite.com", "halCityFedEx"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("halZipFedEx");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:sales_2018_2.transactions.webservices.netsuite.com", "halZipFedEx"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("halStateFedEx");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:sales_2018_2.transactions.webservices.netsuite.com", "halStateFedEx"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("halCountryFedEx");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:sales_2018_2.transactions.webservices.netsuite.com", "halCountryFedEx"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("hazmatTypeFedEx");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:sales_2018_2.transactions.webservices.netsuite.com", "hazmatTypeFedEx"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:types.sales_2018_2.transactions.webservices.netsuite.com", "ItemFulfillmentHazmatTypeFedEx"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("accessibilityTypeFedEx");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:sales_2018_2.transactions.webservices.netsuite.com", "accessibilityTypeFedEx"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:types.sales_2018_2.transactions.webservices.netsuite.com", "ItemFulfillmentAccessibilityTypeFedEx"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("isCargoAircraftOnlyFedEx");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:sales_2018_2.transactions.webservices.netsuite.com", "isCargoAircraftOnlyFedEx"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("tranDate");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:sales_2018_2.transactions.webservices.netsuite.com", "tranDate"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "dateTime"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("tranId");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:sales_2018_2.transactions.webservices.netsuite.com", "tranId"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("shipMethod");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:sales_2018_2.transactions.webservices.netsuite.com", "shipMethod"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("generateIntegratedShipperLabel");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:sales_2018_2.transactions.webservices.netsuite.com", "generateIntegratedShipperLabel"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("shippingCost");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:sales_2018_2.transactions.webservices.netsuite.com", "shippingCost"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "double"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("handlingCost");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:sales_2018_2.transactions.webservices.netsuite.com", "handlingCost"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "double"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("memo");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:sales_2018_2.transactions.webservices.netsuite.com", "memo"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("transferLocation");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:sales_2018_2.transactions.webservices.netsuite.com", "transferLocation"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("packageList");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:sales_2018_2.transactions.webservices.netsuite.com", "packageList"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:sales_2018_2.transactions.webservices.netsuite.com", "ItemFulfillmentPackage"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:sales_2018_2.transactions.webservices.netsuite.com", "package"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("packageUpsList");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:sales_2018_2.transactions.webservices.netsuite.com", "packageUpsList"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:sales_2018_2.transactions.webservices.netsuite.com", "ItemFulfillmentPackageUps"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:sales_2018_2.transactions.webservices.netsuite.com", "packageUps"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("packageUspsList");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:sales_2018_2.transactions.webservices.netsuite.com", "packageUspsList"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:sales_2018_2.transactions.webservices.netsuite.com", "ItemFulfillmentPackageUsps"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:sales_2018_2.transactions.webservices.netsuite.com", "packageUsps"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("packageFedExList");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:sales_2018_2.transactions.webservices.netsuite.com", "packageFedExList"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:sales_2018_2.transactions.webservices.netsuite.com", "ItemFulfillmentPackageFedEx"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:sales_2018_2.transactions.webservices.netsuite.com", "packageFedEx"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("itemList");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:sales_2018_2.transactions.webservices.netsuite.com", "itemList"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:sales_2018_2.transactions.webservices.netsuite.com", "ItemFulfillmentItem"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:sales_2018_2.transactions.webservices.netsuite.com", "item"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("accountingBookDetailList");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:sales_2018_2.transactions.webservices.netsuite.com", "accountingBookDetailList"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "AccountingBookDetail"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "accountingBookDetail"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("customFieldList");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:sales_2018_2.transactions.webservices.netsuite.com", "customFieldList"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "CustomFieldRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "customField"));
+        typeDesc.addFieldDesc(elemField);
+    }
+
+    /**
+     * Return type metadata object
+     */
+    public static org.apache.axis.description.TypeDesc getTypeDesc() {
+        return typeDesc;
+    }
+
+    /**
+     * Get Custom Serializer
+     */
+    public static org.apache.axis.encoding.Serializer getSerializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanSerializer(
+            _javaType, _xmlType, typeDesc);
+    }
+
+    /**
+     * Get Custom Deserializer
+     */
+    public static org.apache.axis.encoding.Deserializer getDeserializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanDeserializer(
+            _javaType, _xmlType, typeDesc);
     }
 
 }

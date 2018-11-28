@@ -1,89 +1,156 @@
+/**
+ * DeletionReason.java
+ *
+ * This file was auto-generated from WSDL
+ * by the Apache Axis 1.4 Jul 28, 2010 (04:07:04 PDT) WSDL2Java emitter.
+ */
 
 package com.netsuite.webservices.platform.core_2018_2;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlType;
+public class DeletionReason  implements java.io.Serializable {
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef deletionReasonCode;
 
+    private java.lang.String deletionReasonMemo;
 
-/**
- * <p>DeletionReason complex type的 Java 类。
- * 
- * <p>以下模式片段指定包含在此类中的预期内容。
- * 
- * <pre>
- * &lt;complexType name="DeletionReason">
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element name="deletionReasonCode" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef"/>
- *         &lt;element name="deletionReasonMemo" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
- */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "DeletionReason", propOrder = {
-    "deletionReasonCode",
-    "deletionReasonMemo"
-})
-public class DeletionReason {
+    public DeletionReason() {
+    }
 
-    @XmlElement(required = true)
-    protected RecordRef deletionReasonCode;
-    protected String deletionReasonMemo;
+    public DeletionReason(
+           com.netsuite.webservices.platform.core_2018_2.RecordRef deletionReasonCode,
+           java.lang.String deletionReasonMemo) {
+           this.deletionReasonCode = deletionReasonCode;
+           this.deletionReasonMemo = deletionReasonMemo;
+    }
+
 
     /**
-     * 获取deletionReasonCode属性的值。
+     * Gets the deletionReasonCode value for this DeletionReason.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @return deletionReasonCode
      */
-    public RecordRef getDeletionReasonCode() {
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getDeletionReasonCode() {
         return deletionReasonCode;
     }
 
-    /**
-     * 设置deletionReasonCode属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setDeletionReasonCode(RecordRef value) {
-        this.deletionReasonCode = value;
-    }
 
     /**
-     * 获取deletionReasonMemo属性的值。
+     * Sets the deletionReasonCode value for this DeletionReason.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param deletionReasonCode
      */
-    public String getDeletionReasonMemo() {
+    public void setDeletionReasonCode(com.netsuite.webservices.platform.core_2018_2.RecordRef deletionReasonCode) {
+        this.deletionReasonCode = deletionReasonCode;
+    }
+
+
+    /**
+     * Gets the deletionReasonMemo value for this DeletionReason.
+     * 
+     * @return deletionReasonMemo
+     */
+    public java.lang.String getDeletionReasonMemo() {
         return deletionReasonMemo;
     }
 
+
     /**
-     * 设置deletionReasonMemo属性的值。
+     * Sets the deletionReasonMemo value for this DeletionReason.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     * @param deletionReasonMemo
      */
-    public void setDeletionReasonMemo(String value) {
-        this.deletionReasonMemo = value;
+    public void setDeletionReasonMemo(java.lang.String deletionReasonMemo) {
+        this.deletionReasonMemo = deletionReasonMemo;
+    }
+
+    private java.lang.Object __equalsCalc = null;
+    public synchronized boolean equals(java.lang.Object obj) {
+        if (!(obj instanceof DeletionReason)) return false;
+        DeletionReason other = (DeletionReason) obj;
+        if (obj == null) return false;
+        if (this == obj) return true;
+        if (__equalsCalc != null) {
+            return (__equalsCalc == obj);
+        }
+        __equalsCalc = obj;
+        boolean _equals;
+        _equals = true && 
+            ((this.deletionReasonCode==null && other.getDeletionReasonCode()==null) || 
+             (this.deletionReasonCode!=null &&
+              this.deletionReasonCode.equals(other.getDeletionReasonCode()))) &&
+            ((this.deletionReasonMemo==null && other.getDeletionReasonMemo()==null) || 
+             (this.deletionReasonMemo!=null &&
+              this.deletionReasonMemo.equals(other.getDeletionReasonMemo())));
+        __equalsCalc = null;
+        return _equals;
+    }
+
+    private boolean __hashCodeCalc = false;
+    public synchronized int hashCode() {
+        if (__hashCodeCalc) {
+            return 0;
+        }
+        __hashCodeCalc = true;
+        int _hashCode = 1;
+        if (getDeletionReasonCode() != null) {
+            _hashCode += getDeletionReasonCode().hashCode();
+        }
+        if (getDeletionReasonMemo() != null) {
+            _hashCode += getDeletionReasonMemo().hashCode();
+        }
+        __hashCodeCalc = false;
+        return _hashCode;
+    }
+
+    // Type metadata
+    private static org.apache.axis.description.TypeDesc typeDesc =
+        new org.apache.axis.description.TypeDesc(DeletionReason.class, true);
+
+    static {
+        typeDesc.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "DeletionReason"));
+        org.apache.axis.description.ElementDesc elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("deletionReasonCode");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "deletionReasonCode"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("deletionReasonMemo");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "deletionReasonMemo"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+    }
+
+    /**
+     * Return type metadata object
+     */
+    public static org.apache.axis.description.TypeDesc getTypeDesc() {
+        return typeDesc;
+    }
+
+    /**
+     * Get Custom Serializer
+     */
+    public static org.apache.axis.encoding.Serializer getSerializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanSerializer(
+            _javaType, _xmlType, typeDesc);
+    }
+
+    /**
+     * Get Custom Deserializer
+     */
+    public static org.apache.axis.encoding.Deserializer getDeserializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanDeserializer(
+            _javaType, _xmlType, typeDesc);
     }
 
 }

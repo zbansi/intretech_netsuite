@@ -1,337 +1,499 @@
+/**
+ * CampaignDirectMail.java
+ *
+ * This file was auto-generated from WSDL
+ * by the Apache Axis 1.4 Jul 28, 2010 (04:07:04 PDT) WSDL2Java emitter.
+ */
 
 package com.netsuite.webservices.lists.marketing_2018_2;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlSchemaType;
-import javax.xml.bind.annotation.XmlType;
-import javax.xml.datatype.XMLGregorianCalendar;
-import com.netsuite.webservices.lists.marketing_2018_2.types.CampaignCampaignDirectMailStatus;
-import com.netsuite.webservices.platform.core_2018_2.CustomFieldList;
-import com.netsuite.webservices.platform.core_2018_2.RecordRef;
+public class CampaignDirectMail  implements java.io.Serializable {
+    private java.lang.String internalId;
 
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef campaignGroup;
 
-/**
- * <p>CampaignDirectMail complex type的 Java 类。
- * 
- * <p>以下模式片段指定包含在此类中的预期内容。
- * 
- * <pre>
- * &lt;complexType name="CampaignDirectMail">
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element name="internalId" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="campaignGroup" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="template" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="description" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="subscription" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="channel" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="cost" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
- *         &lt;element name="status" type="{urn:types.marketing_2018_2.lists.webservices.netsuite.com}CampaignCampaignDirectMailStatus" minOccurs="0"/>
- *         &lt;element name="dateScheduled" type="{http://www.w3.org/2001/XMLSchema}dateTime" minOccurs="0"/>
- *         &lt;element name="promoCode" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="customFieldList" type="{urn:core_2018_2.platform.webservices.netsuite.com}CustomFieldList" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
- */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "CampaignDirectMail", propOrder = {
-    "internalId",
-    "campaignGroup",
-    "template",
-    "description",
-    "subscription",
-    "channel",
-    "cost",
-    "status",
-    "dateScheduled",
-    "promoCode",
-    "customFieldList"
-})
-public class CampaignDirectMail {
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef template;
 
-    protected String internalId;
-    protected RecordRef campaignGroup;
-    protected RecordRef template;
-    protected String description;
-    protected RecordRef subscription;
-    protected RecordRef channel;
-    protected Double cost;
-    @XmlSchemaType(name = "string")
-    protected CampaignCampaignDirectMailStatus status;
-    @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar dateScheduled;
-    protected RecordRef promoCode;
-    protected CustomFieldList customFieldList;
+    private java.lang.String description;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef subscription;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef channel;
+
+    private java.lang.Double cost;
+
+    private com.netsuite.webservices.lists.marketing_2018_2.types.CampaignCampaignDirectMailStatus status;
+
+    private java.util.Calendar dateScheduled;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef promoCode;
+
+    private com.netsuite.webservices.platform.core_2018_2.CustomFieldRef[] customFieldList;
+
+    public CampaignDirectMail() {
+    }
+
+    public CampaignDirectMail(
+           java.lang.String internalId,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef campaignGroup,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef template,
+           java.lang.String description,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef subscription,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef channel,
+           java.lang.Double cost,
+           com.netsuite.webservices.lists.marketing_2018_2.types.CampaignCampaignDirectMailStatus status,
+           java.util.Calendar dateScheduled,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef promoCode,
+           com.netsuite.webservices.platform.core_2018_2.CustomFieldRef[] customFieldList) {
+           this.internalId = internalId;
+           this.campaignGroup = campaignGroup;
+           this.template = template;
+           this.description = description;
+           this.subscription = subscription;
+           this.channel = channel;
+           this.cost = cost;
+           this.status = status;
+           this.dateScheduled = dateScheduled;
+           this.promoCode = promoCode;
+           this.customFieldList = customFieldList;
+    }
+
 
     /**
-     * 获取internalId属性的值。
+     * Gets the internalId value for this CampaignDirectMail.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @return internalId
      */
-    public String getInternalId() {
+    public java.lang.String getInternalId() {
         return internalId;
     }
 
-    /**
-     * 设置internalId属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setInternalId(String value) {
-        this.internalId = value;
-    }
 
     /**
-     * 获取campaignGroup属性的值。
+     * Sets the internalId value for this CampaignDirectMail.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param internalId
      */
-    public RecordRef getCampaignGroup() {
+    public void setInternalId(java.lang.String internalId) {
+        this.internalId = internalId;
+    }
+
+
+    /**
+     * Gets the campaignGroup value for this CampaignDirectMail.
+     * 
+     * @return campaignGroup
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getCampaignGroup() {
         return campaignGroup;
     }
 
-    /**
-     * 设置campaignGroup属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setCampaignGroup(RecordRef value) {
-        this.campaignGroup = value;
-    }
 
     /**
-     * 获取template属性的值。
+     * Sets the campaignGroup value for this CampaignDirectMail.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param campaignGroup
      */
-    public RecordRef getTemplate() {
+    public void setCampaignGroup(com.netsuite.webservices.platform.core_2018_2.RecordRef campaignGroup) {
+        this.campaignGroup = campaignGroup;
+    }
+
+
+    /**
+     * Gets the template value for this CampaignDirectMail.
+     * 
+     * @return template
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getTemplate() {
         return template;
     }
 
-    /**
-     * 设置template属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setTemplate(RecordRef value) {
-        this.template = value;
-    }
 
     /**
-     * 获取description属性的值。
+     * Sets the template value for this CampaignDirectMail.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param template
      */
-    public String getDescription() {
+    public void setTemplate(com.netsuite.webservices.platform.core_2018_2.RecordRef template) {
+        this.template = template;
+    }
+
+
+    /**
+     * Gets the description value for this CampaignDirectMail.
+     * 
+     * @return description
+     */
+    public java.lang.String getDescription() {
         return description;
     }
 
-    /**
-     * 设置description属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setDescription(String value) {
-        this.description = value;
-    }
 
     /**
-     * 获取subscription属性的值。
+     * Sets the description value for this CampaignDirectMail.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param description
      */
-    public RecordRef getSubscription() {
+    public void setDescription(java.lang.String description) {
+        this.description = description;
+    }
+
+
+    /**
+     * Gets the subscription value for this CampaignDirectMail.
+     * 
+     * @return subscription
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getSubscription() {
         return subscription;
     }
 
-    /**
-     * 设置subscription属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setSubscription(RecordRef value) {
-        this.subscription = value;
-    }
 
     /**
-     * 获取channel属性的值。
+     * Sets the subscription value for this CampaignDirectMail.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param subscription
      */
-    public RecordRef getChannel() {
+    public void setSubscription(com.netsuite.webservices.platform.core_2018_2.RecordRef subscription) {
+        this.subscription = subscription;
+    }
+
+
+    /**
+     * Gets the channel value for this CampaignDirectMail.
+     * 
+     * @return channel
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getChannel() {
         return channel;
     }
 
-    /**
-     * 设置channel属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setChannel(RecordRef value) {
-        this.channel = value;
-    }
 
     /**
-     * 获取cost属性的值。
+     * Sets the channel value for this CampaignDirectMail.
      * 
-     * @return
-     *     possible object is
-     *     {@link Double }
-     *     
+     * @param channel
      */
-    public Double getCost() {
+    public void setChannel(com.netsuite.webservices.platform.core_2018_2.RecordRef channel) {
+        this.channel = channel;
+    }
+
+
+    /**
+     * Gets the cost value for this CampaignDirectMail.
+     * 
+     * @return cost
+     */
+    public java.lang.Double getCost() {
         return cost;
     }
 
-    /**
-     * 设置cost属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Double }
-     *     
-     */
-    public void setCost(Double value) {
-        this.cost = value;
-    }
 
     /**
-     * 获取status属性的值。
+     * Sets the cost value for this CampaignDirectMail.
      * 
-     * @return
-     *     possible object is
-     *     {@link CampaignCampaignDirectMailStatus }
-     *     
+     * @param cost
      */
-    public CampaignCampaignDirectMailStatus getStatus() {
+    public void setCost(java.lang.Double cost) {
+        this.cost = cost;
+    }
+
+
+    /**
+     * Gets the status value for this CampaignDirectMail.
+     * 
+     * @return status
+     */
+    public com.netsuite.webservices.lists.marketing_2018_2.types.CampaignCampaignDirectMailStatus getStatus() {
         return status;
     }
 
-    /**
-     * 设置status属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link CampaignCampaignDirectMailStatus }
-     *     
-     */
-    public void setStatus(CampaignCampaignDirectMailStatus value) {
-        this.status = value;
-    }
 
     /**
-     * 获取dateScheduled属性的值。
+     * Sets the status value for this CampaignDirectMail.
      * 
-     * @return
-     *     possible object is
-     *     {@link XMLGregorianCalendar }
-     *     
+     * @param status
      */
-    public XMLGregorianCalendar getDateScheduled() {
+    public void setStatus(com.netsuite.webservices.lists.marketing_2018_2.types.CampaignCampaignDirectMailStatus status) {
+        this.status = status;
+    }
+
+
+    /**
+     * Gets the dateScheduled value for this CampaignDirectMail.
+     * 
+     * @return dateScheduled
+     */
+    public java.util.Calendar getDateScheduled() {
         return dateScheduled;
     }
 
-    /**
-     * 设置dateScheduled属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link XMLGregorianCalendar }
-     *     
-     */
-    public void setDateScheduled(XMLGregorianCalendar value) {
-        this.dateScheduled = value;
-    }
 
     /**
-     * 获取promoCode属性的值。
+     * Sets the dateScheduled value for this CampaignDirectMail.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param dateScheduled
      */
-    public RecordRef getPromoCode() {
+    public void setDateScheduled(java.util.Calendar dateScheduled) {
+        this.dateScheduled = dateScheduled;
+    }
+
+
+    /**
+     * Gets the promoCode value for this CampaignDirectMail.
+     * 
+     * @return promoCode
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getPromoCode() {
         return promoCode;
     }
 
-    /**
-     * 设置promoCode属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setPromoCode(RecordRef value) {
-        this.promoCode = value;
-    }
 
     /**
-     * 获取customFieldList属性的值。
+     * Sets the promoCode value for this CampaignDirectMail.
      * 
-     * @return
-     *     possible object is
-     *     {@link CustomFieldList }
-     *     
+     * @param promoCode
      */
-    public CustomFieldList getCustomFieldList() {
+    public void setPromoCode(com.netsuite.webservices.platform.core_2018_2.RecordRef promoCode) {
+        this.promoCode = promoCode;
+    }
+
+
+    /**
+     * Gets the customFieldList value for this CampaignDirectMail.
+     * 
+     * @return customFieldList
+     */
+    public com.netsuite.webservices.platform.core_2018_2.CustomFieldRef[] getCustomFieldList() {
         return customFieldList;
     }
 
+
     /**
-     * 设置customFieldList属性的值。
+     * Sets the customFieldList value for this CampaignDirectMail.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link CustomFieldList }
-     *     
+     * @param customFieldList
      */
-    public void setCustomFieldList(CustomFieldList value) {
-        this.customFieldList = value;
+    public void setCustomFieldList(com.netsuite.webservices.platform.core_2018_2.CustomFieldRef[] customFieldList) {
+        this.customFieldList = customFieldList;
+    }
+
+    private java.lang.Object __equalsCalc = null;
+    public synchronized boolean equals(java.lang.Object obj) {
+        if (!(obj instanceof CampaignDirectMail)) return false;
+        CampaignDirectMail other = (CampaignDirectMail) obj;
+        if (obj == null) return false;
+        if (this == obj) return true;
+        if (__equalsCalc != null) {
+            return (__equalsCalc == obj);
+        }
+        __equalsCalc = obj;
+        boolean _equals;
+        _equals = true && 
+            ((this.internalId==null && other.getInternalId()==null) || 
+             (this.internalId!=null &&
+              this.internalId.equals(other.getInternalId()))) &&
+            ((this.campaignGroup==null && other.getCampaignGroup()==null) || 
+             (this.campaignGroup!=null &&
+              this.campaignGroup.equals(other.getCampaignGroup()))) &&
+            ((this.template==null && other.getTemplate()==null) || 
+             (this.template!=null &&
+              this.template.equals(other.getTemplate()))) &&
+            ((this.description==null && other.getDescription()==null) || 
+             (this.description!=null &&
+              this.description.equals(other.getDescription()))) &&
+            ((this.subscription==null && other.getSubscription()==null) || 
+             (this.subscription!=null &&
+              this.subscription.equals(other.getSubscription()))) &&
+            ((this.channel==null && other.getChannel()==null) || 
+             (this.channel!=null &&
+              this.channel.equals(other.getChannel()))) &&
+            ((this.cost==null && other.getCost()==null) || 
+             (this.cost!=null &&
+              this.cost.equals(other.getCost()))) &&
+            ((this.status==null && other.getStatus()==null) || 
+             (this.status!=null &&
+              this.status.equals(other.getStatus()))) &&
+            ((this.dateScheduled==null && other.getDateScheduled()==null) || 
+             (this.dateScheduled!=null &&
+              this.dateScheduled.equals(other.getDateScheduled()))) &&
+            ((this.promoCode==null && other.getPromoCode()==null) || 
+             (this.promoCode!=null &&
+              this.promoCode.equals(other.getPromoCode()))) &&
+            ((this.customFieldList==null && other.getCustomFieldList()==null) || 
+             (this.customFieldList!=null &&
+              java.util.Arrays.equals(this.customFieldList, other.getCustomFieldList())));
+        __equalsCalc = null;
+        return _equals;
+    }
+
+    private boolean __hashCodeCalc = false;
+    public synchronized int hashCode() {
+        if (__hashCodeCalc) {
+            return 0;
+        }
+        __hashCodeCalc = true;
+        int _hashCode = 1;
+        if (getInternalId() != null) {
+            _hashCode += getInternalId().hashCode();
+        }
+        if (getCampaignGroup() != null) {
+            _hashCode += getCampaignGroup().hashCode();
+        }
+        if (getTemplate() != null) {
+            _hashCode += getTemplate().hashCode();
+        }
+        if (getDescription() != null) {
+            _hashCode += getDescription().hashCode();
+        }
+        if (getSubscription() != null) {
+            _hashCode += getSubscription().hashCode();
+        }
+        if (getChannel() != null) {
+            _hashCode += getChannel().hashCode();
+        }
+        if (getCost() != null) {
+            _hashCode += getCost().hashCode();
+        }
+        if (getStatus() != null) {
+            _hashCode += getStatus().hashCode();
+        }
+        if (getDateScheduled() != null) {
+            _hashCode += getDateScheduled().hashCode();
+        }
+        if (getPromoCode() != null) {
+            _hashCode += getPromoCode().hashCode();
+        }
+        if (getCustomFieldList() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getCustomFieldList());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getCustomFieldList(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        __hashCodeCalc = false;
+        return _hashCode;
+    }
+
+    // Type metadata
+    private static org.apache.axis.description.TypeDesc typeDesc =
+        new org.apache.axis.description.TypeDesc(CampaignDirectMail.class, true);
+
+    static {
+        typeDesc.setXmlType(new javax.xml.namespace.QName("urn:marketing_2018_2.lists.webservices.netsuite.com", "CampaignDirectMail"));
+        org.apache.axis.description.ElementDesc elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("internalId");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:marketing_2018_2.lists.webservices.netsuite.com", "internalId"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("campaignGroup");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:marketing_2018_2.lists.webservices.netsuite.com", "campaignGroup"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("template");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:marketing_2018_2.lists.webservices.netsuite.com", "template"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("description");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:marketing_2018_2.lists.webservices.netsuite.com", "description"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("subscription");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:marketing_2018_2.lists.webservices.netsuite.com", "subscription"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("channel");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:marketing_2018_2.lists.webservices.netsuite.com", "channel"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("cost");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:marketing_2018_2.lists.webservices.netsuite.com", "cost"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "double"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("status");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:marketing_2018_2.lists.webservices.netsuite.com", "status"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:types.marketing_2018_2.lists.webservices.netsuite.com", "CampaignCampaignDirectMailStatus"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("dateScheduled");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:marketing_2018_2.lists.webservices.netsuite.com", "dateScheduled"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "dateTime"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("promoCode");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:marketing_2018_2.lists.webservices.netsuite.com", "promoCode"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("customFieldList");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:marketing_2018_2.lists.webservices.netsuite.com", "customFieldList"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "CustomFieldRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "customField"));
+        typeDesc.addFieldDesc(elemField);
+    }
+
+    /**
+     * Return type metadata object
+     */
+    public static org.apache.axis.description.TypeDesc getTypeDesc() {
+        return typeDesc;
+    }
+
+    /**
+     * Get Custom Serializer
+     */
+    public static org.apache.axis.encoding.Serializer getSerializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanSerializer(
+            _javaType, _xmlType, typeDesc);
+    }
+
+    /**
+     * Get Custom Deserializer
+     */
+    public static org.apache.axis.encoding.Deserializer getDeserializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanDeserializer(
+            _javaType, _xmlType, typeDesc);
     }
 
 }

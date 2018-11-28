@@ -1,51 +1,70 @@
+/**
+ * BillingScheduleRecurrencePattern.java
+ *
+ * This file was auto-generated from WSDL
+ * by the Apache Axis 1.4 Jul 28, 2010 (04:07:04 PDT) WSDL2Java emitter.
+ */
 
 package com.netsuite.webservices.lists.accounting_2018_2.types;
 
-import javax.xml.bind.annotation.XmlEnum;
-import javax.xml.bind.annotation.XmlEnumValue;
-import javax.xml.bind.annotation.XmlType;
+public class BillingScheduleRecurrencePattern implements java.io.Serializable {
+    private java.lang.String _value_;
+    private static java.util.HashMap _table_ = new java.util.HashMap();
 
-
-/**
- * <p>BillingScheduleRecurrencePattern的 Java 类。
- * 
- * <p>以下模式片段指定包含在此类中的预期内容。
- * <p>
- * <pre>
- * &lt;simpleType name="BillingScheduleRecurrencePattern">
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     &lt;enumeration value="_anniversaryBillDate"/>
- *     &lt;enumeration value="_fixedBillDate"/>
- *   &lt;/restriction>
- * &lt;/simpleType>
- * </pre>
- * 
- */
-@XmlType(name = "BillingScheduleRecurrencePattern", namespace = "urn:types.accounting_2018_2.lists.webservices.netsuite.com")
-@XmlEnum
-public enum BillingScheduleRecurrencePattern {
-
-    @XmlEnumValue("_anniversaryBillDate")
-    ANNIVERSARY_BILL_DATE("_anniversaryBillDate"),
-    @XmlEnumValue("_fixedBillDate")
-    FIXED_BILL_DATE("_fixedBillDate");
-    private final String value;
-
-    BillingScheduleRecurrencePattern(String v) {
-        value = v;
+    // Constructor
+    protected BillingScheduleRecurrencePattern(java.lang.String value) {
+        _value_ = value;
+        _table_.put(_value_,this);
     }
 
-    public String value() {
-        return value;
+    public static final java.lang.String __anniversaryBillDate = "_anniversaryBillDate";
+    public static final java.lang.String __fixedBillDate = "_fixedBillDate";
+    public static final BillingScheduleRecurrencePattern _anniversaryBillDate = new BillingScheduleRecurrencePattern(__anniversaryBillDate);
+    public static final BillingScheduleRecurrencePattern _fixedBillDate = new BillingScheduleRecurrencePattern(__fixedBillDate);
+    public java.lang.String getValue() { return _value_;}
+    public static BillingScheduleRecurrencePattern fromValue(java.lang.String value)
+          throws java.lang.IllegalArgumentException {
+        BillingScheduleRecurrencePattern enumeration = (BillingScheduleRecurrencePattern)
+            _table_.get(value);
+        if (enumeration==null) throw new java.lang.IllegalArgumentException();
+        return enumeration;
     }
+    public static BillingScheduleRecurrencePattern fromString(java.lang.String value)
+          throws java.lang.IllegalArgumentException {
+        return fromValue(value);
+    }
+    public boolean equals(java.lang.Object obj) {return (obj == this);}
+    public int hashCode() { return toString().hashCode();}
+    public java.lang.String toString() { return _value_;}
+    public java.lang.Object readResolve() throws java.io.ObjectStreamException { return fromValue(_value_);}
+    public static org.apache.axis.encoding.Serializer getSerializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new org.apache.axis.encoding.ser.EnumSerializer(
+            _javaType, _xmlType);
+    }
+    public static org.apache.axis.encoding.Deserializer getDeserializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new org.apache.axis.encoding.ser.EnumDeserializer(
+            _javaType, _xmlType);
+    }
+    // Type metadata
+    private static org.apache.axis.description.TypeDesc typeDesc =
+        new org.apache.axis.description.TypeDesc(BillingScheduleRecurrencePattern.class);
 
-    public static BillingScheduleRecurrencePattern fromValue(String v) {
-        for (BillingScheduleRecurrencePattern c: BillingScheduleRecurrencePattern.values()) {
-            if (c.value.equals(v)) {
-                return c;
-            }
-        }
-        throw new IllegalArgumentException(v);
+    static {
+        typeDesc.setXmlType(new javax.xml.namespace.QName("urn:types.accounting_2018_2.lists.webservices.netsuite.com", "BillingScheduleRecurrencePattern"));
+    }
+    /**
+     * Return type metadata object
+     */
+    public static org.apache.axis.description.TypeDesc getTypeDesc() {
+        return typeDesc;
     }
 
 }

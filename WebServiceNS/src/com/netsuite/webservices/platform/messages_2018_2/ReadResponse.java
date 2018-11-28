@@ -1,91 +1,164 @@
+/**
+ * ReadResponse.java
+ *
+ * This file was auto-generated from WSDL
+ * by the Apache Axis 1.4 Jul 28, 2010 (04:07:04 PDT) WSDL2Java emitter.
+ */
 
 package com.netsuite.webservices.platform.messages_2018_2;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlType;
-import com.netsuite.webservices.platform.core_2018_2.Record;
-import com.netsuite.webservices.platform.core_2018_2.Status;
+public class ReadResponse  implements java.io.Serializable {
+    private com.netsuite.webservices.platform.core_2018_2.StatusDetail[] status;
 
+    private com.netsuite.webservices.platform.core_2018_2.Record record;
 
-/**
- * <p>ReadResponse complex type的 Java 类。
- * 
- * <p>以下模式片段指定包含在此类中的预期内容。
- * 
- * <pre>
- * &lt;complexType name="ReadResponse">
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element ref="{urn:core_2018_2.platform.webservices.netsuite.com}status"/>
- *         &lt;element name="record" type="{urn:core_2018_2.platform.webservices.netsuite.com}Record" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
- */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "ReadResponse", propOrder = {
-    "status",
-    "record"
-})
-public class ReadResponse {
+    public ReadResponse() {
+    }
 
-    @XmlElement(namespace = "urn:core_2018_2.platform.webservices.netsuite.com", required = true)
-    protected Status status;
-    protected Record record;
+    public ReadResponse(
+           com.netsuite.webservices.platform.core_2018_2.StatusDetail[] status,
+           com.netsuite.webservices.platform.core_2018_2.Record record) {
+           this.status = status;
+           this.record = record;
+    }
+
 
     /**
-     * 获取status属性的值。
+     * Gets the status value for this ReadResponse.
      * 
-     * @return
-     *     possible object is
-     *     {@link Status }
-     *     
+     * @return status
      */
-    public Status getStatus() {
+    public com.netsuite.webservices.platform.core_2018_2.StatusDetail[] getStatus() {
         return status;
     }
 
-    /**
-     * 设置status属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Status }
-     *     
-     */
-    public void setStatus(Status value) {
-        this.status = value;
-    }
 
     /**
-     * 获取record属性的值。
+     * Sets the status value for this ReadResponse.
      * 
-     * @return
-     *     possible object is
-     *     {@link Record }
-     *     
+     * @param status
      */
-    public Record getRecord() {
+    public void setStatus(com.netsuite.webservices.platform.core_2018_2.StatusDetail[] status) {
+        this.status = status;
+    }
+
+
+    /**
+     * Gets the record value for this ReadResponse.
+     * 
+     * @return record
+     */
+    public com.netsuite.webservices.platform.core_2018_2.Record getRecord() {
         return record;
     }
 
+
     /**
-     * 设置record属性的值。
+     * Sets the record value for this ReadResponse.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link Record }
-     *     
+     * @param record
      */
-    public void setRecord(Record value) {
-        this.record = value;
+    public void setRecord(com.netsuite.webservices.platform.core_2018_2.Record record) {
+        this.record = record;
+    }
+
+    private java.lang.Object __equalsCalc = null;
+    public synchronized boolean equals(java.lang.Object obj) {
+        if (!(obj instanceof ReadResponse)) return false;
+        ReadResponse other = (ReadResponse) obj;
+        if (obj == null) return false;
+        if (this == obj) return true;
+        if (__equalsCalc != null) {
+            return (__equalsCalc == obj);
+        }
+        __equalsCalc = obj;
+        boolean _equals;
+        _equals = true && 
+            ((this.status==null && other.getStatus()==null) || 
+             (this.status!=null &&
+              java.util.Arrays.equals(this.status, other.getStatus()))) &&
+            ((this.record==null && other.getRecord()==null) || 
+             (this.record!=null &&
+              this.record.equals(other.getRecord())));
+        __equalsCalc = null;
+        return _equals;
+    }
+
+    private boolean __hashCodeCalc = false;
+    public synchronized int hashCode() {
+        if (__hashCodeCalc) {
+            return 0;
+        }
+        __hashCodeCalc = true;
+        int _hashCode = 1;
+        if (getStatus() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getStatus());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getStatus(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getRecord() != null) {
+            _hashCode += getRecord().hashCode();
+        }
+        __hashCodeCalc = false;
+        return _hashCode;
+    }
+
+    // Type metadata
+    private static org.apache.axis.description.TypeDesc typeDesc =
+        new org.apache.axis.description.TypeDesc(ReadResponse.class, true);
+
+    static {
+        typeDesc.setXmlType(new javax.xml.namespace.QName("urn:messages_2018_2.platform.webservices.netsuite.com", "ReadResponse"));
+        org.apache.axis.description.ElementDesc elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("status");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "status"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "Status"));
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("record");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:messages_2018_2.platform.webservices.netsuite.com", "record"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "Record"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+    }
+
+    /**
+     * Return type metadata object
+     */
+    public static org.apache.axis.description.TypeDesc getTypeDesc() {
+        return typeDesc;
+    }
+
+    /**
+     * Get Custom Serializer
+     */
+    public static org.apache.axis.encoding.Serializer getSerializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanSerializer(
+            _javaType, _xmlType, typeDesc);
+    }
+
+    /**
+     * Get Custom Deserializer
+     */
+    public static org.apache.axis.encoding.Deserializer getDeserializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanDeserializer(
+            _javaType, _xmlType, typeDesc);
     }
 
 }

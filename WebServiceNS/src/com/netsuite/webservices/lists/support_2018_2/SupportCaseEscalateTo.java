@@ -1,115 +1,194 @@
+/**
+ * SupportCaseEscalateTo.java
+ *
+ * This file was auto-generated from WSDL
+ * by the Apache Axis 1.4 Jul 28, 2010 (04:07:04 PDT) WSDL2Java emitter.
+ */
 
 package com.netsuite.webservices.lists.support_2018_2;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlType;
-import com.netsuite.webservices.platform.core_2018_2.RecordRef;
+public class SupportCaseEscalateTo  implements java.io.Serializable {
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef escalatee;
 
+    private java.lang.String email;
 
-/**
- * <p>SupportCaseEscalateTo complex type的 Java 类。
- * 
- * <p>以下模式片段指定包含在此类中的预期内容。
- * 
- * <pre>
- * &lt;complexType name="SupportCaseEscalateTo">
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element name="escalatee" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="email" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="phone" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
- */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "SupportCaseEscalateTo", propOrder = {
-    "escalatee",
-    "email",
-    "phone"
-})
-public class SupportCaseEscalateTo {
+    private java.lang.String phone;
 
-    protected RecordRef escalatee;
-    protected String email;
-    protected String phone;
+    public SupportCaseEscalateTo() {
+    }
+
+    public SupportCaseEscalateTo(
+           com.netsuite.webservices.platform.core_2018_2.RecordRef escalatee,
+           java.lang.String email,
+           java.lang.String phone) {
+           this.escalatee = escalatee;
+           this.email = email;
+           this.phone = phone;
+    }
+
 
     /**
-     * 获取escalatee属性的值。
+     * Gets the escalatee value for this SupportCaseEscalateTo.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @return escalatee
      */
-    public RecordRef getEscalatee() {
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getEscalatee() {
         return escalatee;
     }
 
-    /**
-     * 设置escalatee属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setEscalatee(RecordRef value) {
-        this.escalatee = value;
-    }
 
     /**
-     * 获取email属性的值。
+     * Sets the escalatee value for this SupportCaseEscalateTo.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param escalatee
      */
-    public String getEmail() {
+    public void setEscalatee(com.netsuite.webservices.platform.core_2018_2.RecordRef escalatee) {
+        this.escalatee = escalatee;
+    }
+
+
+    /**
+     * Gets the email value for this SupportCaseEscalateTo.
+     * 
+     * @return email
+     */
+    public java.lang.String getEmail() {
         return email;
     }
 
-    /**
-     * 设置email属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setEmail(String value) {
-        this.email = value;
-    }
 
     /**
-     * 获取phone属性的值。
+     * Sets the email value for this SupportCaseEscalateTo.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param email
      */
-    public String getPhone() {
+    public void setEmail(java.lang.String email) {
+        this.email = email;
+    }
+
+
+    /**
+     * Gets the phone value for this SupportCaseEscalateTo.
+     * 
+     * @return phone
+     */
+    public java.lang.String getPhone() {
         return phone;
     }
 
+
     /**
-     * 设置phone属性的值。
+     * Sets the phone value for this SupportCaseEscalateTo.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     * @param phone
      */
-    public void setPhone(String value) {
-        this.phone = value;
+    public void setPhone(java.lang.String phone) {
+        this.phone = phone;
+    }
+
+    private java.lang.Object __equalsCalc = null;
+    public synchronized boolean equals(java.lang.Object obj) {
+        if (!(obj instanceof SupportCaseEscalateTo)) return false;
+        SupportCaseEscalateTo other = (SupportCaseEscalateTo) obj;
+        if (obj == null) return false;
+        if (this == obj) return true;
+        if (__equalsCalc != null) {
+            return (__equalsCalc == obj);
+        }
+        __equalsCalc = obj;
+        boolean _equals;
+        _equals = true && 
+            ((this.escalatee==null && other.getEscalatee()==null) || 
+             (this.escalatee!=null &&
+              this.escalatee.equals(other.getEscalatee()))) &&
+            ((this.email==null && other.getEmail()==null) || 
+             (this.email!=null &&
+              this.email.equals(other.getEmail()))) &&
+            ((this.phone==null && other.getPhone()==null) || 
+             (this.phone!=null &&
+              this.phone.equals(other.getPhone())));
+        __equalsCalc = null;
+        return _equals;
+    }
+
+    private boolean __hashCodeCalc = false;
+    public synchronized int hashCode() {
+        if (__hashCodeCalc) {
+            return 0;
+        }
+        __hashCodeCalc = true;
+        int _hashCode = 1;
+        if (getEscalatee() != null) {
+            _hashCode += getEscalatee().hashCode();
+        }
+        if (getEmail() != null) {
+            _hashCode += getEmail().hashCode();
+        }
+        if (getPhone() != null) {
+            _hashCode += getPhone().hashCode();
+        }
+        __hashCodeCalc = false;
+        return _hashCode;
+    }
+
+    // Type metadata
+    private static org.apache.axis.description.TypeDesc typeDesc =
+        new org.apache.axis.description.TypeDesc(SupportCaseEscalateTo.class, true);
+
+    static {
+        typeDesc.setXmlType(new javax.xml.namespace.QName("urn:support_2018_2.lists.webservices.netsuite.com", "SupportCaseEscalateTo"));
+        org.apache.axis.description.ElementDesc elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("escalatee");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:support_2018_2.lists.webservices.netsuite.com", "escalatee"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("email");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:support_2018_2.lists.webservices.netsuite.com", "email"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("phone");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:support_2018_2.lists.webservices.netsuite.com", "phone"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+    }
+
+    /**
+     * Return type metadata object
+     */
+    public static org.apache.axis.description.TypeDesc getTypeDesc() {
+        return typeDesc;
+    }
+
+    /**
+     * Get Custom Serializer
+     */
+    public static org.apache.axis.encoding.Serializer getSerializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanSerializer(
+            _javaType, _xmlType, typeDesc);
+    }
+
+    /**
+     * Get Custom Deserializer
+     */
+    public static org.apache.axis.encoding.Deserializer getDeserializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanDeserializer(
+            _javaType, _xmlType, typeDesc);
     }
 
 }

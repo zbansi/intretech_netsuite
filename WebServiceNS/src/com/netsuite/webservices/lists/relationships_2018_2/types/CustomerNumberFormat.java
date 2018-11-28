@@ -1,63 +1,78 @@
+/**
+ * CustomerNumberFormat.java
+ *
+ * This file was auto-generated from WSDL
+ * by the Apache Axis 1.4 Jul 28, 2010 (04:07:04 PDT) WSDL2Java emitter.
+ */
 
 package com.netsuite.webservices.lists.relationships_2018_2.types;
 
-import javax.xml.bind.annotation.XmlEnum;
-import javax.xml.bind.annotation.XmlEnumValue;
-import javax.xml.bind.annotation.XmlType;
+public class CustomerNumberFormat implements java.io.Serializable {
+    private java.lang.String _value_;
+    private static java.util.HashMap _table_ = new java.util.HashMap();
 
-
-/**
- * <p>CustomerNumberFormat的 Java 类。
- * 
- * <p>以下模式片段指定包含在此类中的预期内容。
- * <p>
- * <pre>
- * &lt;simpleType name="CustomerNumberFormat">
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     &lt;enumeration value="_spaceAsDigitGroupSeparatorAndDecimalComma"/>
- *     &lt;enumeration value="_spaceAsDigitGroupSeparatorAndDecimalPoint"/>
- *     &lt;enumeration value="_commaAsDigitGroupSeparatorAndDecimalPoint"/>
- *     &lt;enumeration value="_pointAsDigitGroupSeparatorAndDecimalComma"/>
- *     &lt;enumeration value="_apostropheAsDigitGroupSeparatorAndDecimalComma"/>
- *     &lt;enumeration value="_apostropheAsDigitGroupSeparatorAndDecimalPoint"/>
- *   &lt;/restriction>
- * &lt;/simpleType>
- * </pre>
- * 
- */
-@XmlType(name = "CustomerNumberFormat", namespace = "urn:types.relationships_2018_2.lists.webservices.netsuite.com")
-@XmlEnum
-public enum CustomerNumberFormat {
-
-    @XmlEnumValue("_spaceAsDigitGroupSeparatorAndDecimalComma")
-    SPACE_AS_DIGIT_GROUP_SEPARATOR_AND_DECIMAL_COMMA("_spaceAsDigitGroupSeparatorAndDecimalComma"),
-    @XmlEnumValue("_spaceAsDigitGroupSeparatorAndDecimalPoint")
-    SPACE_AS_DIGIT_GROUP_SEPARATOR_AND_DECIMAL_POINT("_spaceAsDigitGroupSeparatorAndDecimalPoint"),
-    @XmlEnumValue("_commaAsDigitGroupSeparatorAndDecimalPoint")
-    COMMA_AS_DIGIT_GROUP_SEPARATOR_AND_DECIMAL_POINT("_commaAsDigitGroupSeparatorAndDecimalPoint"),
-    @XmlEnumValue("_pointAsDigitGroupSeparatorAndDecimalComma")
-    POINT_AS_DIGIT_GROUP_SEPARATOR_AND_DECIMAL_COMMA("_pointAsDigitGroupSeparatorAndDecimalComma"),
-    @XmlEnumValue("_apostropheAsDigitGroupSeparatorAndDecimalComma")
-    APOSTROPHE_AS_DIGIT_GROUP_SEPARATOR_AND_DECIMAL_COMMA("_apostropheAsDigitGroupSeparatorAndDecimalComma"),
-    @XmlEnumValue("_apostropheAsDigitGroupSeparatorAndDecimalPoint")
-    APOSTROPHE_AS_DIGIT_GROUP_SEPARATOR_AND_DECIMAL_POINT("_apostropheAsDigitGroupSeparatorAndDecimalPoint");
-    private final String value;
-
-    CustomerNumberFormat(String v) {
-        value = v;
+    // Constructor
+    protected CustomerNumberFormat(java.lang.String value) {
+        _value_ = value;
+        _table_.put(_value_,this);
     }
 
-    public String value() {
-        return value;
+    public static final java.lang.String __spaceAsDigitGroupSeparatorAndDecimalComma = "_spaceAsDigitGroupSeparatorAndDecimalComma";
+    public static final java.lang.String __spaceAsDigitGroupSeparatorAndDecimalPoint = "_spaceAsDigitGroupSeparatorAndDecimalPoint";
+    public static final java.lang.String __commaAsDigitGroupSeparatorAndDecimalPoint = "_commaAsDigitGroupSeparatorAndDecimalPoint";
+    public static final java.lang.String __pointAsDigitGroupSeparatorAndDecimalComma = "_pointAsDigitGroupSeparatorAndDecimalComma";
+    public static final java.lang.String __apostropheAsDigitGroupSeparatorAndDecimalComma = "_apostropheAsDigitGroupSeparatorAndDecimalComma";
+    public static final java.lang.String __apostropheAsDigitGroupSeparatorAndDecimalPoint = "_apostropheAsDigitGroupSeparatorAndDecimalPoint";
+    public static final CustomerNumberFormat _spaceAsDigitGroupSeparatorAndDecimalComma = new CustomerNumberFormat(__spaceAsDigitGroupSeparatorAndDecimalComma);
+    public static final CustomerNumberFormat _spaceAsDigitGroupSeparatorAndDecimalPoint = new CustomerNumberFormat(__spaceAsDigitGroupSeparatorAndDecimalPoint);
+    public static final CustomerNumberFormat _commaAsDigitGroupSeparatorAndDecimalPoint = new CustomerNumberFormat(__commaAsDigitGroupSeparatorAndDecimalPoint);
+    public static final CustomerNumberFormat _pointAsDigitGroupSeparatorAndDecimalComma = new CustomerNumberFormat(__pointAsDigitGroupSeparatorAndDecimalComma);
+    public static final CustomerNumberFormat _apostropheAsDigitGroupSeparatorAndDecimalComma = new CustomerNumberFormat(__apostropheAsDigitGroupSeparatorAndDecimalComma);
+    public static final CustomerNumberFormat _apostropheAsDigitGroupSeparatorAndDecimalPoint = new CustomerNumberFormat(__apostropheAsDigitGroupSeparatorAndDecimalPoint);
+    public java.lang.String getValue() { return _value_;}
+    public static CustomerNumberFormat fromValue(java.lang.String value)
+          throws java.lang.IllegalArgumentException {
+        CustomerNumberFormat enumeration = (CustomerNumberFormat)
+            _table_.get(value);
+        if (enumeration==null) throw new java.lang.IllegalArgumentException();
+        return enumeration;
     }
+    public static CustomerNumberFormat fromString(java.lang.String value)
+          throws java.lang.IllegalArgumentException {
+        return fromValue(value);
+    }
+    public boolean equals(java.lang.Object obj) {return (obj == this);}
+    public int hashCode() { return toString().hashCode();}
+    public java.lang.String toString() { return _value_;}
+    public java.lang.Object readResolve() throws java.io.ObjectStreamException { return fromValue(_value_);}
+    public static org.apache.axis.encoding.Serializer getSerializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new org.apache.axis.encoding.ser.EnumSerializer(
+            _javaType, _xmlType);
+    }
+    public static org.apache.axis.encoding.Deserializer getDeserializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new org.apache.axis.encoding.ser.EnumDeserializer(
+            _javaType, _xmlType);
+    }
+    // Type metadata
+    private static org.apache.axis.description.TypeDesc typeDesc =
+        new org.apache.axis.description.TypeDesc(CustomerNumberFormat.class);
 
-    public static CustomerNumberFormat fromValue(String v) {
-        for (CustomerNumberFormat c: CustomerNumberFormat.values()) {
-            if (c.value.equals(v)) {
-                return c;
-            }
-        }
-        throw new IllegalArgumentException(v);
+    static {
+        typeDesc.setXmlType(new javax.xml.namespace.QName("urn:types.relationships_2018_2.lists.webservices.netsuite.com", "CustomerNumberFormat"));
+    }
+    /**
+     * Return type metadata object
+     */
+    public static org.apache.axis.description.TypeDesc getTypeDesc() {
+        return typeDesc;
     }
 
 }

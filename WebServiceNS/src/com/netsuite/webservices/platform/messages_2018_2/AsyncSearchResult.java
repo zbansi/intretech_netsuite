@@ -1,65 +1,119 @@
+/**
+ * AsyncSearchResult.java
+ *
+ * This file was auto-generated from WSDL
+ * by the Apache Axis 1.4 Jul 28, 2010 (04:07:04 PDT) WSDL2Java emitter.
+ */
 
 package com.netsuite.webservices.platform.messages_2018_2;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlType;
-import com.netsuite.webservices.platform.core_2018_2.SearchResult;
+public class AsyncSearchResult  extends com.netsuite.webservices.platform.messages_2018_2.AsyncResult  implements java.io.Serializable {
+    private com.netsuite.webservices.platform.core_2018_2.SearchResult searchResult;
 
+    public AsyncSearchResult() {
+    }
 
-/**
- * <p>AsyncSearchResult complex type的 Java 类。
- * 
- * <p>以下模式片段指定包含在此类中的预期内容。
- * 
- * <pre>
- * &lt;complexType name="AsyncSearchResult">
- *   &lt;complexContent>
- *     &lt;extension base="{urn:messages_2018_2.platform.webservices.netsuite.com}AsyncResult">
- *       &lt;sequence>
- *         &lt;element ref="{urn:core_2018_2.platform.webservices.netsuite.com}searchResult"/>
- *       &lt;/sequence>
- *     &lt;/extension>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
- */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "AsyncSearchResult", propOrder = {
-    "searchResult"
-})
-public class AsyncSearchResult
-    extends AsyncResult
-{
+    public AsyncSearchResult(
+           com.netsuite.webservices.platform.core_2018_2.SearchResult searchResult) {
+        this.searchResult = searchResult;
+    }
 
-    @XmlElement(namespace = "urn:core_2018_2.platform.webservices.netsuite.com", required = true)
-    protected SearchResult searchResult;
 
     /**
-     * 获取searchResult属性的值。
+     * Gets the searchResult value for this AsyncSearchResult.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchResult }
-     *     
+     * @return searchResult
      */
-    public SearchResult getSearchResult() {
+    public com.netsuite.webservices.platform.core_2018_2.SearchResult getSearchResult() {
         return searchResult;
     }
 
+
     /**
-     * 设置searchResult属性的值。
+     * Sets the searchResult value for this AsyncSearchResult.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchResult }
-     *     
+     * @param searchResult
      */
-    public void setSearchResult(SearchResult value) {
-        this.searchResult = value;
+    public void setSearchResult(com.netsuite.webservices.platform.core_2018_2.SearchResult searchResult) {
+        this.searchResult = searchResult;
+    }
+
+    private java.lang.Object __equalsCalc = null;
+    public synchronized boolean equals(java.lang.Object obj) {
+        if (!(obj instanceof AsyncSearchResult)) return false;
+        AsyncSearchResult other = (AsyncSearchResult) obj;
+        if (obj == null) return false;
+        if (this == obj) return true;
+        if (__equalsCalc != null) {
+            return (__equalsCalc == obj);
+        }
+        __equalsCalc = obj;
+        boolean _equals;
+        _equals = super.equals(obj) && 
+            ((this.searchResult==null && other.getSearchResult()==null) || 
+             (this.searchResult!=null &&
+              this.searchResult.equals(other.getSearchResult())));
+        __equalsCalc = null;
+        return _equals;
+    }
+
+    private boolean __hashCodeCalc = false;
+    public synchronized int hashCode() {
+        if (__hashCodeCalc) {
+            return 0;
+        }
+        __hashCodeCalc = true;
+        int _hashCode = super.hashCode();
+        if (getSearchResult() != null) {
+            _hashCode += getSearchResult().hashCode();
+        }
+        __hashCodeCalc = false;
+        return _hashCode;
+    }
+
+    // Type metadata
+    private static org.apache.axis.description.TypeDesc typeDesc =
+        new org.apache.axis.description.TypeDesc(AsyncSearchResult.class, true);
+
+    static {
+        typeDesc.setXmlType(new javax.xml.namespace.QName("urn:messages_2018_2.platform.webservices.netsuite.com", "AsyncSearchResult"));
+        org.apache.axis.description.ElementDesc elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("searchResult");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "searchResult"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchResult"));
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+    }
+
+    /**
+     * Return type metadata object
+     */
+    public static org.apache.axis.description.TypeDesc getTypeDesc() {
+        return typeDesc;
+    }
+
+    /**
+     * Get Custom Serializer
+     */
+    public static org.apache.axis.encoding.Serializer getSerializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanSerializer(
+            _javaType, _xmlType, typeDesc);
+    }
+
+    /**
+     * Get Custom Deserializer
+     */
+    public static org.apache.axis.encoding.Deserializer getDeserializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanDeserializer(
+            _javaType, _xmlType, typeDesc);
     }
 
 }

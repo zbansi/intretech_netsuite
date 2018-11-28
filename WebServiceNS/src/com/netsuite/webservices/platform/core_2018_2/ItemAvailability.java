@@ -1,335 +1,489 @@
+/**
+ * ItemAvailability.java
+ *
+ * This file was auto-generated from WSDL
+ * by the Apache Axis 1.4 Jul 28, 2010 (04:07:04 PDT) WSDL2Java emitter.
+ */
 
 package com.netsuite.webservices.platform.core_2018_2;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlSchemaType;
-import javax.xml.bind.annotation.XmlType;
-import javax.xml.datatype.XMLGregorianCalendar;
+public class ItemAvailability  implements java.io.Serializable {
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef item;
 
+    private java.util.Calendar lastQtyAvailableChange;
 
-/**
- * <p>ItemAvailability complex type的 Java 类。
- * 
- * <p>以下模式片段指定包含在此类中的预期内容。
- * 
- * <pre>
- * &lt;complexType name="ItemAvailability">
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element name="item" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef"/>
- *         &lt;element name="lastQtyAvailableChange" type="{http://www.w3.org/2001/XMLSchema}dateTime" minOccurs="0"/>
- *         &lt;element name="locationId" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="quantityOnHand" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
- *         &lt;element name="onHandValueMli" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
- *         &lt;element name="reorderPoint" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
- *         &lt;element name="preferredStockLevel" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
- *         &lt;element name="quantityOnOrder" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
- *         &lt;element name="quantityCommitted" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
- *         &lt;element name="quantityBackOrdered" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
- *         &lt;element name="quantityAvailable" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
- */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "ItemAvailability", propOrder = {
-    "item",
-    "lastQtyAvailableChange",
-    "locationId",
-    "quantityOnHand",
-    "onHandValueMli",
-    "reorderPoint",
-    "preferredStockLevel",
-    "quantityOnOrder",
-    "quantityCommitted",
-    "quantityBackOrdered",
-    "quantityAvailable"
-})
-public class ItemAvailability {
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef locationId;
 
-    @XmlElement(required = true)
-    protected RecordRef item;
-    @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar lastQtyAvailableChange;
-    protected RecordRef locationId;
-    protected Double quantityOnHand;
-    protected Double onHandValueMli;
-    protected Double reorderPoint;
-    protected Double preferredStockLevel;
-    protected Double quantityOnOrder;
-    protected Double quantityCommitted;
-    protected Double quantityBackOrdered;
-    protected Double quantityAvailable;
+    private java.lang.Double quantityOnHand;
+
+    private java.lang.Double onHandValueMli;
+
+    private java.lang.Double reorderPoint;
+
+    private java.lang.Double preferredStockLevel;
+
+    private java.lang.Double quantityOnOrder;
+
+    private java.lang.Double quantityCommitted;
+
+    private java.lang.Double quantityBackOrdered;
+
+    private java.lang.Double quantityAvailable;
+
+    public ItemAvailability() {
+    }
+
+    public ItemAvailability(
+           com.netsuite.webservices.platform.core_2018_2.RecordRef item,
+           java.util.Calendar lastQtyAvailableChange,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef locationId,
+           java.lang.Double quantityOnHand,
+           java.lang.Double onHandValueMli,
+           java.lang.Double reorderPoint,
+           java.lang.Double preferredStockLevel,
+           java.lang.Double quantityOnOrder,
+           java.lang.Double quantityCommitted,
+           java.lang.Double quantityBackOrdered,
+           java.lang.Double quantityAvailable) {
+           this.item = item;
+           this.lastQtyAvailableChange = lastQtyAvailableChange;
+           this.locationId = locationId;
+           this.quantityOnHand = quantityOnHand;
+           this.onHandValueMli = onHandValueMli;
+           this.reorderPoint = reorderPoint;
+           this.preferredStockLevel = preferredStockLevel;
+           this.quantityOnOrder = quantityOnOrder;
+           this.quantityCommitted = quantityCommitted;
+           this.quantityBackOrdered = quantityBackOrdered;
+           this.quantityAvailable = quantityAvailable;
+    }
+
 
     /**
-     * 获取item属性的值。
+     * Gets the item value for this ItemAvailability.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @return item
      */
-    public RecordRef getItem() {
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getItem() {
         return item;
     }
 
-    /**
-     * 设置item属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setItem(RecordRef value) {
-        this.item = value;
-    }
 
     /**
-     * 获取lastQtyAvailableChange属性的值。
+     * Sets the item value for this ItemAvailability.
      * 
-     * @return
-     *     possible object is
-     *     {@link XMLGregorianCalendar }
-     *     
+     * @param item
      */
-    public XMLGregorianCalendar getLastQtyAvailableChange() {
+    public void setItem(com.netsuite.webservices.platform.core_2018_2.RecordRef item) {
+        this.item = item;
+    }
+
+
+    /**
+     * Gets the lastQtyAvailableChange value for this ItemAvailability.
+     * 
+     * @return lastQtyAvailableChange
+     */
+    public java.util.Calendar getLastQtyAvailableChange() {
         return lastQtyAvailableChange;
     }
 
-    /**
-     * 设置lastQtyAvailableChange属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link XMLGregorianCalendar }
-     *     
-     */
-    public void setLastQtyAvailableChange(XMLGregorianCalendar value) {
-        this.lastQtyAvailableChange = value;
-    }
 
     /**
-     * 获取locationId属性的值。
+     * Sets the lastQtyAvailableChange value for this ItemAvailability.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param lastQtyAvailableChange
      */
-    public RecordRef getLocationId() {
+    public void setLastQtyAvailableChange(java.util.Calendar lastQtyAvailableChange) {
+        this.lastQtyAvailableChange = lastQtyAvailableChange;
+    }
+
+
+    /**
+     * Gets the locationId value for this ItemAvailability.
+     * 
+     * @return locationId
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getLocationId() {
         return locationId;
     }
 
-    /**
-     * 设置locationId属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setLocationId(RecordRef value) {
-        this.locationId = value;
-    }
 
     /**
-     * 获取quantityOnHand属性的值。
+     * Sets the locationId value for this ItemAvailability.
      * 
-     * @return
-     *     possible object is
-     *     {@link Double }
-     *     
+     * @param locationId
      */
-    public Double getQuantityOnHand() {
+    public void setLocationId(com.netsuite.webservices.platform.core_2018_2.RecordRef locationId) {
+        this.locationId = locationId;
+    }
+
+
+    /**
+     * Gets the quantityOnHand value for this ItemAvailability.
+     * 
+     * @return quantityOnHand
+     */
+    public java.lang.Double getQuantityOnHand() {
         return quantityOnHand;
     }
 
-    /**
-     * 设置quantityOnHand属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Double }
-     *     
-     */
-    public void setQuantityOnHand(Double value) {
-        this.quantityOnHand = value;
-    }
 
     /**
-     * 获取onHandValueMli属性的值。
+     * Sets the quantityOnHand value for this ItemAvailability.
      * 
-     * @return
-     *     possible object is
-     *     {@link Double }
-     *     
+     * @param quantityOnHand
      */
-    public Double getOnHandValueMli() {
+    public void setQuantityOnHand(java.lang.Double quantityOnHand) {
+        this.quantityOnHand = quantityOnHand;
+    }
+
+
+    /**
+     * Gets the onHandValueMli value for this ItemAvailability.
+     * 
+     * @return onHandValueMli
+     */
+    public java.lang.Double getOnHandValueMli() {
         return onHandValueMli;
     }
 
-    /**
-     * 设置onHandValueMli属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Double }
-     *     
-     */
-    public void setOnHandValueMli(Double value) {
-        this.onHandValueMli = value;
-    }
 
     /**
-     * 获取reorderPoint属性的值。
+     * Sets the onHandValueMli value for this ItemAvailability.
      * 
-     * @return
-     *     possible object is
-     *     {@link Double }
-     *     
+     * @param onHandValueMli
      */
-    public Double getReorderPoint() {
+    public void setOnHandValueMli(java.lang.Double onHandValueMli) {
+        this.onHandValueMli = onHandValueMli;
+    }
+
+
+    /**
+     * Gets the reorderPoint value for this ItemAvailability.
+     * 
+     * @return reorderPoint
+     */
+    public java.lang.Double getReorderPoint() {
         return reorderPoint;
     }
 
-    /**
-     * 设置reorderPoint属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Double }
-     *     
-     */
-    public void setReorderPoint(Double value) {
-        this.reorderPoint = value;
-    }
 
     /**
-     * 获取preferredStockLevel属性的值。
+     * Sets the reorderPoint value for this ItemAvailability.
      * 
-     * @return
-     *     possible object is
-     *     {@link Double }
-     *     
+     * @param reorderPoint
      */
-    public Double getPreferredStockLevel() {
+    public void setReorderPoint(java.lang.Double reorderPoint) {
+        this.reorderPoint = reorderPoint;
+    }
+
+
+    /**
+     * Gets the preferredStockLevel value for this ItemAvailability.
+     * 
+     * @return preferredStockLevel
+     */
+    public java.lang.Double getPreferredStockLevel() {
         return preferredStockLevel;
     }
 
-    /**
-     * 设置preferredStockLevel属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Double }
-     *     
-     */
-    public void setPreferredStockLevel(Double value) {
-        this.preferredStockLevel = value;
-    }
 
     /**
-     * 获取quantityOnOrder属性的值。
+     * Sets the preferredStockLevel value for this ItemAvailability.
      * 
-     * @return
-     *     possible object is
-     *     {@link Double }
-     *     
+     * @param preferredStockLevel
      */
-    public Double getQuantityOnOrder() {
+    public void setPreferredStockLevel(java.lang.Double preferredStockLevel) {
+        this.preferredStockLevel = preferredStockLevel;
+    }
+
+
+    /**
+     * Gets the quantityOnOrder value for this ItemAvailability.
+     * 
+     * @return quantityOnOrder
+     */
+    public java.lang.Double getQuantityOnOrder() {
         return quantityOnOrder;
     }
 
-    /**
-     * 设置quantityOnOrder属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Double }
-     *     
-     */
-    public void setQuantityOnOrder(Double value) {
-        this.quantityOnOrder = value;
-    }
 
     /**
-     * 获取quantityCommitted属性的值。
+     * Sets the quantityOnOrder value for this ItemAvailability.
      * 
-     * @return
-     *     possible object is
-     *     {@link Double }
-     *     
+     * @param quantityOnOrder
      */
-    public Double getQuantityCommitted() {
+    public void setQuantityOnOrder(java.lang.Double quantityOnOrder) {
+        this.quantityOnOrder = quantityOnOrder;
+    }
+
+
+    /**
+     * Gets the quantityCommitted value for this ItemAvailability.
+     * 
+     * @return quantityCommitted
+     */
+    public java.lang.Double getQuantityCommitted() {
         return quantityCommitted;
     }
 
-    /**
-     * 设置quantityCommitted属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Double }
-     *     
-     */
-    public void setQuantityCommitted(Double value) {
-        this.quantityCommitted = value;
-    }
 
     /**
-     * 获取quantityBackOrdered属性的值。
+     * Sets the quantityCommitted value for this ItemAvailability.
      * 
-     * @return
-     *     possible object is
-     *     {@link Double }
-     *     
+     * @param quantityCommitted
      */
-    public Double getQuantityBackOrdered() {
+    public void setQuantityCommitted(java.lang.Double quantityCommitted) {
+        this.quantityCommitted = quantityCommitted;
+    }
+
+
+    /**
+     * Gets the quantityBackOrdered value for this ItemAvailability.
+     * 
+     * @return quantityBackOrdered
+     */
+    public java.lang.Double getQuantityBackOrdered() {
         return quantityBackOrdered;
     }
 
-    /**
-     * 设置quantityBackOrdered属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Double }
-     *     
-     */
-    public void setQuantityBackOrdered(Double value) {
-        this.quantityBackOrdered = value;
-    }
 
     /**
-     * 获取quantityAvailable属性的值。
+     * Sets the quantityBackOrdered value for this ItemAvailability.
      * 
-     * @return
-     *     possible object is
-     *     {@link Double }
-     *     
+     * @param quantityBackOrdered
      */
-    public Double getQuantityAvailable() {
+    public void setQuantityBackOrdered(java.lang.Double quantityBackOrdered) {
+        this.quantityBackOrdered = quantityBackOrdered;
+    }
+
+
+    /**
+     * Gets the quantityAvailable value for this ItemAvailability.
+     * 
+     * @return quantityAvailable
+     */
+    public java.lang.Double getQuantityAvailable() {
         return quantityAvailable;
     }
 
+
     /**
-     * 设置quantityAvailable属性的值。
+     * Sets the quantityAvailable value for this ItemAvailability.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link Double }
-     *     
+     * @param quantityAvailable
      */
-    public void setQuantityAvailable(Double value) {
-        this.quantityAvailable = value;
+    public void setQuantityAvailable(java.lang.Double quantityAvailable) {
+        this.quantityAvailable = quantityAvailable;
+    }
+
+    private java.lang.Object __equalsCalc = null;
+    public synchronized boolean equals(java.lang.Object obj) {
+        if (!(obj instanceof ItemAvailability)) return false;
+        ItemAvailability other = (ItemAvailability) obj;
+        if (obj == null) return false;
+        if (this == obj) return true;
+        if (__equalsCalc != null) {
+            return (__equalsCalc == obj);
+        }
+        __equalsCalc = obj;
+        boolean _equals;
+        _equals = true && 
+            ((this.item==null && other.getItem()==null) || 
+             (this.item!=null &&
+              this.item.equals(other.getItem()))) &&
+            ((this.lastQtyAvailableChange==null && other.getLastQtyAvailableChange()==null) || 
+             (this.lastQtyAvailableChange!=null &&
+              this.lastQtyAvailableChange.equals(other.getLastQtyAvailableChange()))) &&
+            ((this.locationId==null && other.getLocationId()==null) || 
+             (this.locationId!=null &&
+              this.locationId.equals(other.getLocationId()))) &&
+            ((this.quantityOnHand==null && other.getQuantityOnHand()==null) || 
+             (this.quantityOnHand!=null &&
+              this.quantityOnHand.equals(other.getQuantityOnHand()))) &&
+            ((this.onHandValueMli==null && other.getOnHandValueMli()==null) || 
+             (this.onHandValueMli!=null &&
+              this.onHandValueMli.equals(other.getOnHandValueMli()))) &&
+            ((this.reorderPoint==null && other.getReorderPoint()==null) || 
+             (this.reorderPoint!=null &&
+              this.reorderPoint.equals(other.getReorderPoint()))) &&
+            ((this.preferredStockLevel==null && other.getPreferredStockLevel()==null) || 
+             (this.preferredStockLevel!=null &&
+              this.preferredStockLevel.equals(other.getPreferredStockLevel()))) &&
+            ((this.quantityOnOrder==null && other.getQuantityOnOrder()==null) || 
+             (this.quantityOnOrder!=null &&
+              this.quantityOnOrder.equals(other.getQuantityOnOrder()))) &&
+            ((this.quantityCommitted==null && other.getQuantityCommitted()==null) || 
+             (this.quantityCommitted!=null &&
+              this.quantityCommitted.equals(other.getQuantityCommitted()))) &&
+            ((this.quantityBackOrdered==null && other.getQuantityBackOrdered()==null) || 
+             (this.quantityBackOrdered!=null &&
+              this.quantityBackOrdered.equals(other.getQuantityBackOrdered()))) &&
+            ((this.quantityAvailable==null && other.getQuantityAvailable()==null) || 
+             (this.quantityAvailable!=null &&
+              this.quantityAvailable.equals(other.getQuantityAvailable())));
+        __equalsCalc = null;
+        return _equals;
+    }
+
+    private boolean __hashCodeCalc = false;
+    public synchronized int hashCode() {
+        if (__hashCodeCalc) {
+            return 0;
+        }
+        __hashCodeCalc = true;
+        int _hashCode = 1;
+        if (getItem() != null) {
+            _hashCode += getItem().hashCode();
+        }
+        if (getLastQtyAvailableChange() != null) {
+            _hashCode += getLastQtyAvailableChange().hashCode();
+        }
+        if (getLocationId() != null) {
+            _hashCode += getLocationId().hashCode();
+        }
+        if (getQuantityOnHand() != null) {
+            _hashCode += getQuantityOnHand().hashCode();
+        }
+        if (getOnHandValueMli() != null) {
+            _hashCode += getOnHandValueMli().hashCode();
+        }
+        if (getReorderPoint() != null) {
+            _hashCode += getReorderPoint().hashCode();
+        }
+        if (getPreferredStockLevel() != null) {
+            _hashCode += getPreferredStockLevel().hashCode();
+        }
+        if (getQuantityOnOrder() != null) {
+            _hashCode += getQuantityOnOrder().hashCode();
+        }
+        if (getQuantityCommitted() != null) {
+            _hashCode += getQuantityCommitted().hashCode();
+        }
+        if (getQuantityBackOrdered() != null) {
+            _hashCode += getQuantityBackOrdered().hashCode();
+        }
+        if (getQuantityAvailable() != null) {
+            _hashCode += getQuantityAvailable().hashCode();
+        }
+        __hashCodeCalc = false;
+        return _hashCode;
+    }
+
+    // Type metadata
+    private static org.apache.axis.description.TypeDesc typeDesc =
+        new org.apache.axis.description.TypeDesc(ItemAvailability.class, true);
+
+    static {
+        typeDesc.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "ItemAvailability"));
+        org.apache.axis.description.ElementDesc elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("item");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "item"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("lastQtyAvailableChange");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "lastQtyAvailableChange"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "dateTime"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("locationId");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "locationId"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("quantityOnHand");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "quantityOnHand"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "double"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("onHandValueMli");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "onHandValueMli"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "double"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("reorderPoint");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "reorderPoint"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "double"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("preferredStockLevel");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "preferredStockLevel"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "double"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("quantityOnOrder");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "quantityOnOrder"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "double"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("quantityCommitted");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "quantityCommitted"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "double"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("quantityBackOrdered");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "quantityBackOrdered"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "double"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("quantityAvailable");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "quantityAvailable"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "double"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+    }
+
+    /**
+     * Return type metadata object
+     */
+    public static org.apache.axis.description.TypeDesc getTypeDesc() {
+        return typeDesc;
+    }
+
+    /**
+     * Get Custom Serializer
+     */
+    public static org.apache.axis.encoding.Serializer getSerializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanSerializer(
+            _javaType, _xmlType, typeDesc);
+    }
+
+    /**
+     * Get Custom Deserializer
+     */
+    public static org.apache.axis.encoding.Deserializer getDeserializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanDeserializer(
+            _javaType, _xmlType, typeDesc);
     }
 
 }

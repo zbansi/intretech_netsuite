@@ -1,415 +1,600 @@
+/**
+ * ConsolidatedExchangeRate.java
+ *
+ * This file was auto-generated from WSDL
+ * by the Apache Axis 1.4 Jul 28, 2010 (04:07:04 PDT) WSDL2Java emitter.
+ */
 
 package com.netsuite.webservices.lists.accounting_2018_2;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlAttribute;
-import javax.xml.bind.annotation.XmlType;
-import com.netsuite.webservices.platform.core_2018_2.Record;
+public class ConsolidatedExchangeRate  extends com.netsuite.webservices.platform.core_2018_2.Record  implements java.io.Serializable {
+    private java.lang.String postingPeriod;
 
+    private java.lang.String fromSubsidiary;
 
-/**
- * <p>ConsolidatedExchangeRate complex type的 Java 类。
- * 
- * <p>以下模式片段指定包含在此类中的预期内容。
- * 
- * <pre>
- * &lt;complexType name="ConsolidatedExchangeRate">
- *   &lt;complexContent>
- *     &lt;extension base="{urn:core_2018_2.platform.webservices.netsuite.com}Record">
- *       &lt;sequence>
- *         &lt;element name="postingPeriod" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="fromSubsidiary" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="fromCurrency" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="toSubsidiary" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="toCurrency" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="averageRate" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
- *         &lt;element name="currentRate" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
- *         &lt;element name="historicalRate" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
- *         &lt;element name="accountingBook" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="isPeriodClosed" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         &lt;element name="isDerived" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         &lt;element name="isEliminationSubsidiary" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *       &lt;/sequence>
- *       &lt;attribute name="internalId" type="{http://www.w3.org/2001/XMLSchema}string" />
- *       &lt;attribute name="externalId" type="{http://www.w3.org/2001/XMLSchema}string" />
- *     &lt;/extension>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
- */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "ConsolidatedExchangeRate", propOrder = {
-    "postingPeriod",
-    "fromSubsidiary",
-    "fromCurrency",
-    "toSubsidiary",
-    "toCurrency",
-    "averageRate",
-    "currentRate",
-    "historicalRate",
-    "accountingBook",
-    "isPeriodClosed",
-    "isDerived",
-    "isEliminationSubsidiary"
-})
-public class ConsolidatedExchangeRate
-    extends Record
-{
+    private java.lang.String fromCurrency;
 
-    protected String postingPeriod;
-    protected String fromSubsidiary;
-    protected String fromCurrency;
-    protected String toSubsidiary;
-    protected String toCurrency;
-    protected Double averageRate;
-    protected Double currentRate;
-    protected Double historicalRate;
-    protected String accountingBook;
-    protected Boolean isPeriodClosed;
-    protected Boolean isDerived;
-    protected Boolean isEliminationSubsidiary;
-    @XmlAttribute(name = "internalId")
-    protected String internalId;
-    @XmlAttribute(name = "externalId")
-    protected String externalId;
+    private java.lang.String toSubsidiary;
+
+    private java.lang.String toCurrency;
+
+    private java.lang.Double averageRate;
+
+    private java.lang.Double currentRate;
+
+    private java.lang.Double historicalRate;
+
+    private java.lang.String accountingBook;
+
+    private java.lang.Boolean isPeriodClosed;
+
+    private java.lang.Boolean isDerived;
+
+    private java.lang.Boolean isEliminationSubsidiary;
+
+    private java.lang.String internalId;  // attribute
+
+    private java.lang.String externalId;  // attribute
+
+    public ConsolidatedExchangeRate() {
+    }
+
+    public ConsolidatedExchangeRate(
+           java.lang.String[] nullFieldList,
+           java.lang.String internalId,
+           java.lang.String externalId,
+           java.lang.String postingPeriod,
+           java.lang.String fromSubsidiary,
+           java.lang.String fromCurrency,
+           java.lang.String toSubsidiary,
+           java.lang.String toCurrency,
+           java.lang.Double averageRate,
+           java.lang.Double currentRate,
+           java.lang.Double historicalRate,
+           java.lang.String accountingBook,
+           java.lang.Boolean isPeriodClosed,
+           java.lang.Boolean isDerived,
+           java.lang.Boolean isEliminationSubsidiary) {
+        super(
+            nullFieldList);
+        this.internalId = internalId;
+        this.externalId = externalId;
+        this.postingPeriod = postingPeriod;
+        this.fromSubsidiary = fromSubsidiary;
+        this.fromCurrency = fromCurrency;
+        this.toSubsidiary = toSubsidiary;
+        this.toCurrency = toCurrency;
+        this.averageRate = averageRate;
+        this.currentRate = currentRate;
+        this.historicalRate = historicalRate;
+        this.accountingBook = accountingBook;
+        this.isPeriodClosed = isPeriodClosed;
+        this.isDerived = isDerived;
+        this.isEliminationSubsidiary = isEliminationSubsidiary;
+    }
+
 
     /**
-     * 获取postingPeriod属性的值。
+     * Gets the postingPeriod value for this ConsolidatedExchangeRate.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @return postingPeriod
      */
-    public String getPostingPeriod() {
+    public java.lang.String getPostingPeriod() {
         return postingPeriod;
     }
 
-    /**
-     * 设置postingPeriod属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setPostingPeriod(String value) {
-        this.postingPeriod = value;
-    }
 
     /**
-     * 获取fromSubsidiary属性的值。
+     * Sets the postingPeriod value for this ConsolidatedExchangeRate.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param postingPeriod
      */
-    public String getFromSubsidiary() {
+    public void setPostingPeriod(java.lang.String postingPeriod) {
+        this.postingPeriod = postingPeriod;
+    }
+
+
+    /**
+     * Gets the fromSubsidiary value for this ConsolidatedExchangeRate.
+     * 
+     * @return fromSubsidiary
+     */
+    public java.lang.String getFromSubsidiary() {
         return fromSubsidiary;
     }
 
-    /**
-     * 设置fromSubsidiary属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setFromSubsidiary(String value) {
-        this.fromSubsidiary = value;
-    }
 
     /**
-     * 获取fromCurrency属性的值。
+     * Sets the fromSubsidiary value for this ConsolidatedExchangeRate.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param fromSubsidiary
      */
-    public String getFromCurrency() {
+    public void setFromSubsidiary(java.lang.String fromSubsidiary) {
+        this.fromSubsidiary = fromSubsidiary;
+    }
+
+
+    /**
+     * Gets the fromCurrency value for this ConsolidatedExchangeRate.
+     * 
+     * @return fromCurrency
+     */
+    public java.lang.String getFromCurrency() {
         return fromCurrency;
     }
 
-    /**
-     * 设置fromCurrency属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setFromCurrency(String value) {
-        this.fromCurrency = value;
-    }
 
     /**
-     * 获取toSubsidiary属性的值。
+     * Sets the fromCurrency value for this ConsolidatedExchangeRate.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param fromCurrency
      */
-    public String getToSubsidiary() {
+    public void setFromCurrency(java.lang.String fromCurrency) {
+        this.fromCurrency = fromCurrency;
+    }
+
+
+    /**
+     * Gets the toSubsidiary value for this ConsolidatedExchangeRate.
+     * 
+     * @return toSubsidiary
+     */
+    public java.lang.String getToSubsidiary() {
         return toSubsidiary;
     }
 
-    /**
-     * 设置toSubsidiary属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setToSubsidiary(String value) {
-        this.toSubsidiary = value;
-    }
 
     /**
-     * 获取toCurrency属性的值。
+     * Sets the toSubsidiary value for this ConsolidatedExchangeRate.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param toSubsidiary
      */
-    public String getToCurrency() {
+    public void setToSubsidiary(java.lang.String toSubsidiary) {
+        this.toSubsidiary = toSubsidiary;
+    }
+
+
+    /**
+     * Gets the toCurrency value for this ConsolidatedExchangeRate.
+     * 
+     * @return toCurrency
+     */
+    public java.lang.String getToCurrency() {
         return toCurrency;
     }
 
-    /**
-     * 设置toCurrency属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setToCurrency(String value) {
-        this.toCurrency = value;
-    }
 
     /**
-     * 获取averageRate属性的值。
+     * Sets the toCurrency value for this ConsolidatedExchangeRate.
      * 
-     * @return
-     *     possible object is
-     *     {@link Double }
-     *     
+     * @param toCurrency
      */
-    public Double getAverageRate() {
+    public void setToCurrency(java.lang.String toCurrency) {
+        this.toCurrency = toCurrency;
+    }
+
+
+    /**
+     * Gets the averageRate value for this ConsolidatedExchangeRate.
+     * 
+     * @return averageRate
+     */
+    public java.lang.Double getAverageRate() {
         return averageRate;
     }
 
-    /**
-     * 设置averageRate属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Double }
-     *     
-     */
-    public void setAverageRate(Double value) {
-        this.averageRate = value;
-    }
 
     /**
-     * 获取currentRate属性的值。
+     * Sets the averageRate value for this ConsolidatedExchangeRate.
      * 
-     * @return
-     *     possible object is
-     *     {@link Double }
-     *     
+     * @param averageRate
      */
-    public Double getCurrentRate() {
+    public void setAverageRate(java.lang.Double averageRate) {
+        this.averageRate = averageRate;
+    }
+
+
+    /**
+     * Gets the currentRate value for this ConsolidatedExchangeRate.
+     * 
+     * @return currentRate
+     */
+    public java.lang.Double getCurrentRate() {
         return currentRate;
     }
 
-    /**
-     * 设置currentRate属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Double }
-     *     
-     */
-    public void setCurrentRate(Double value) {
-        this.currentRate = value;
-    }
 
     /**
-     * 获取historicalRate属性的值。
+     * Sets the currentRate value for this ConsolidatedExchangeRate.
      * 
-     * @return
-     *     possible object is
-     *     {@link Double }
-     *     
+     * @param currentRate
      */
-    public Double getHistoricalRate() {
+    public void setCurrentRate(java.lang.Double currentRate) {
+        this.currentRate = currentRate;
+    }
+
+
+    /**
+     * Gets the historicalRate value for this ConsolidatedExchangeRate.
+     * 
+     * @return historicalRate
+     */
+    public java.lang.Double getHistoricalRate() {
         return historicalRate;
     }
 
-    /**
-     * 设置historicalRate属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Double }
-     *     
-     */
-    public void setHistoricalRate(Double value) {
-        this.historicalRate = value;
-    }
 
     /**
-     * 获取accountingBook属性的值。
+     * Sets the historicalRate value for this ConsolidatedExchangeRate.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param historicalRate
      */
-    public String getAccountingBook() {
+    public void setHistoricalRate(java.lang.Double historicalRate) {
+        this.historicalRate = historicalRate;
+    }
+
+
+    /**
+     * Gets the accountingBook value for this ConsolidatedExchangeRate.
+     * 
+     * @return accountingBook
+     */
+    public java.lang.String getAccountingBook() {
         return accountingBook;
     }
 
-    /**
-     * 设置accountingBook属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setAccountingBook(String value) {
-        this.accountingBook = value;
-    }
 
     /**
-     * 获取isPeriodClosed属性的值。
+     * Sets the accountingBook value for this ConsolidatedExchangeRate.
      * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
+     * @param accountingBook
      */
-    public Boolean isIsPeriodClosed() {
+    public void setAccountingBook(java.lang.String accountingBook) {
+        this.accountingBook = accountingBook;
+    }
+
+
+    /**
+     * Gets the isPeriodClosed value for this ConsolidatedExchangeRate.
+     * 
+     * @return isPeriodClosed
+     */
+    public java.lang.Boolean getIsPeriodClosed() {
         return isPeriodClosed;
     }
 
-    /**
-     * 设置isPeriodClosed属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
-     */
-    public void setIsPeriodClosed(Boolean value) {
-        this.isPeriodClosed = value;
-    }
 
     /**
-     * 获取isDerived属性的值。
+     * Sets the isPeriodClosed value for this ConsolidatedExchangeRate.
      * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
+     * @param isPeriodClosed
      */
-    public Boolean isIsDerived() {
+    public void setIsPeriodClosed(java.lang.Boolean isPeriodClosed) {
+        this.isPeriodClosed = isPeriodClosed;
+    }
+
+
+    /**
+     * Gets the isDerived value for this ConsolidatedExchangeRate.
+     * 
+     * @return isDerived
+     */
+    public java.lang.Boolean getIsDerived() {
         return isDerived;
     }
 
-    /**
-     * 设置isDerived属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
-     */
-    public void setIsDerived(Boolean value) {
-        this.isDerived = value;
-    }
 
     /**
-     * 获取isEliminationSubsidiary属性的值。
+     * Sets the isDerived value for this ConsolidatedExchangeRate.
      * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
+     * @param isDerived
      */
-    public Boolean isIsEliminationSubsidiary() {
+    public void setIsDerived(java.lang.Boolean isDerived) {
+        this.isDerived = isDerived;
+    }
+
+
+    /**
+     * Gets the isEliminationSubsidiary value for this ConsolidatedExchangeRate.
+     * 
+     * @return isEliminationSubsidiary
+     */
+    public java.lang.Boolean getIsEliminationSubsidiary() {
         return isEliminationSubsidiary;
     }
 
-    /**
-     * 设置isEliminationSubsidiary属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
-     */
-    public void setIsEliminationSubsidiary(Boolean value) {
-        this.isEliminationSubsidiary = value;
-    }
 
     /**
-     * 获取internalId属性的值。
+     * Sets the isEliminationSubsidiary value for this ConsolidatedExchangeRate.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param isEliminationSubsidiary
      */
-    public String getInternalId() {
+    public void setIsEliminationSubsidiary(java.lang.Boolean isEliminationSubsidiary) {
+        this.isEliminationSubsidiary = isEliminationSubsidiary;
+    }
+
+
+    /**
+     * Gets the internalId value for this ConsolidatedExchangeRate.
+     * 
+     * @return internalId
+     */
+    public java.lang.String getInternalId() {
         return internalId;
     }
 
-    /**
-     * 设置internalId属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setInternalId(String value) {
-        this.internalId = value;
-    }
 
     /**
-     * 获取externalId属性的值。
+     * Sets the internalId value for this ConsolidatedExchangeRate.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param internalId
      */
-    public String getExternalId() {
+    public void setInternalId(java.lang.String internalId) {
+        this.internalId = internalId;
+    }
+
+
+    /**
+     * Gets the externalId value for this ConsolidatedExchangeRate.
+     * 
+     * @return externalId
+     */
+    public java.lang.String getExternalId() {
         return externalId;
     }
 
+
     /**
-     * 设置externalId属性的值。
+     * Sets the externalId value for this ConsolidatedExchangeRate.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     * @param externalId
      */
-    public void setExternalId(String value) {
-        this.externalId = value;
+    public void setExternalId(java.lang.String externalId) {
+        this.externalId = externalId;
+    }
+
+    private java.lang.Object __equalsCalc = null;
+    public synchronized boolean equals(java.lang.Object obj) {
+        if (!(obj instanceof ConsolidatedExchangeRate)) return false;
+        ConsolidatedExchangeRate other = (ConsolidatedExchangeRate) obj;
+        if (obj == null) return false;
+        if (this == obj) return true;
+        if (__equalsCalc != null) {
+            return (__equalsCalc == obj);
+        }
+        __equalsCalc = obj;
+        boolean _equals;
+        _equals = super.equals(obj) && 
+            ((this.postingPeriod==null && other.getPostingPeriod()==null) || 
+             (this.postingPeriod!=null &&
+              this.postingPeriod.equals(other.getPostingPeriod()))) &&
+            ((this.fromSubsidiary==null && other.getFromSubsidiary()==null) || 
+             (this.fromSubsidiary!=null &&
+              this.fromSubsidiary.equals(other.getFromSubsidiary()))) &&
+            ((this.fromCurrency==null && other.getFromCurrency()==null) || 
+             (this.fromCurrency!=null &&
+              this.fromCurrency.equals(other.getFromCurrency()))) &&
+            ((this.toSubsidiary==null && other.getToSubsidiary()==null) || 
+             (this.toSubsidiary!=null &&
+              this.toSubsidiary.equals(other.getToSubsidiary()))) &&
+            ((this.toCurrency==null && other.getToCurrency()==null) || 
+             (this.toCurrency!=null &&
+              this.toCurrency.equals(other.getToCurrency()))) &&
+            ((this.averageRate==null && other.getAverageRate()==null) || 
+             (this.averageRate!=null &&
+              this.averageRate.equals(other.getAverageRate()))) &&
+            ((this.currentRate==null && other.getCurrentRate()==null) || 
+             (this.currentRate!=null &&
+              this.currentRate.equals(other.getCurrentRate()))) &&
+            ((this.historicalRate==null && other.getHistoricalRate()==null) || 
+             (this.historicalRate!=null &&
+              this.historicalRate.equals(other.getHistoricalRate()))) &&
+            ((this.accountingBook==null && other.getAccountingBook()==null) || 
+             (this.accountingBook!=null &&
+              this.accountingBook.equals(other.getAccountingBook()))) &&
+            ((this.isPeriodClosed==null && other.getIsPeriodClosed()==null) || 
+             (this.isPeriodClosed!=null &&
+              this.isPeriodClosed.equals(other.getIsPeriodClosed()))) &&
+            ((this.isDerived==null && other.getIsDerived()==null) || 
+             (this.isDerived!=null &&
+              this.isDerived.equals(other.getIsDerived()))) &&
+            ((this.isEliminationSubsidiary==null && other.getIsEliminationSubsidiary()==null) || 
+             (this.isEliminationSubsidiary!=null &&
+              this.isEliminationSubsidiary.equals(other.getIsEliminationSubsidiary()))) &&
+            ((this.internalId==null && other.getInternalId()==null) || 
+             (this.internalId!=null &&
+              this.internalId.equals(other.getInternalId()))) &&
+            ((this.externalId==null && other.getExternalId()==null) || 
+             (this.externalId!=null &&
+              this.externalId.equals(other.getExternalId())));
+        __equalsCalc = null;
+        return _equals;
+    }
+
+    private boolean __hashCodeCalc = false;
+    public synchronized int hashCode() {
+        if (__hashCodeCalc) {
+            return 0;
+        }
+        __hashCodeCalc = true;
+        int _hashCode = super.hashCode();
+        if (getPostingPeriod() != null) {
+            _hashCode += getPostingPeriod().hashCode();
+        }
+        if (getFromSubsidiary() != null) {
+            _hashCode += getFromSubsidiary().hashCode();
+        }
+        if (getFromCurrency() != null) {
+            _hashCode += getFromCurrency().hashCode();
+        }
+        if (getToSubsidiary() != null) {
+            _hashCode += getToSubsidiary().hashCode();
+        }
+        if (getToCurrency() != null) {
+            _hashCode += getToCurrency().hashCode();
+        }
+        if (getAverageRate() != null) {
+            _hashCode += getAverageRate().hashCode();
+        }
+        if (getCurrentRate() != null) {
+            _hashCode += getCurrentRate().hashCode();
+        }
+        if (getHistoricalRate() != null) {
+            _hashCode += getHistoricalRate().hashCode();
+        }
+        if (getAccountingBook() != null) {
+            _hashCode += getAccountingBook().hashCode();
+        }
+        if (getIsPeriodClosed() != null) {
+            _hashCode += getIsPeriodClosed().hashCode();
+        }
+        if (getIsDerived() != null) {
+            _hashCode += getIsDerived().hashCode();
+        }
+        if (getIsEliminationSubsidiary() != null) {
+            _hashCode += getIsEliminationSubsidiary().hashCode();
+        }
+        if (getInternalId() != null) {
+            _hashCode += getInternalId().hashCode();
+        }
+        if (getExternalId() != null) {
+            _hashCode += getExternalId().hashCode();
+        }
+        __hashCodeCalc = false;
+        return _hashCode;
+    }
+
+    // Type metadata
+    private static org.apache.axis.description.TypeDesc typeDesc =
+        new org.apache.axis.description.TypeDesc(ConsolidatedExchangeRate.class, true);
+
+    static {
+        typeDesc.setXmlType(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "ConsolidatedExchangeRate"));
+        org.apache.axis.description.AttributeDesc attrField = new org.apache.axis.description.AttributeDesc();
+        attrField.setFieldName("internalId");
+        attrField.setXmlName(new javax.xml.namespace.QName("", "internalId"));
+        attrField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        typeDesc.addFieldDesc(attrField);
+        attrField = new org.apache.axis.description.AttributeDesc();
+        attrField.setFieldName("externalId");
+        attrField.setXmlName(new javax.xml.namespace.QName("", "externalId"));
+        attrField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        typeDesc.addFieldDesc(attrField);
+        org.apache.axis.description.ElementDesc elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("postingPeriod");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "postingPeriod"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("fromSubsidiary");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "fromSubsidiary"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("fromCurrency");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "fromCurrency"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("toSubsidiary");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "toSubsidiary"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("toCurrency");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "toCurrency"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("averageRate");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "averageRate"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "double"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("currentRate");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "currentRate"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "double"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("historicalRate");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "historicalRate"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "double"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("accountingBook");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "accountingBook"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("isPeriodClosed");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "isPeriodClosed"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("isDerived");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "isDerived"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("isEliminationSubsidiary");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "isEliminationSubsidiary"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+    }
+
+    /**
+     * Return type metadata object
+     */
+    public static org.apache.axis.description.TypeDesc getTypeDesc() {
+        return typeDesc;
+    }
+
+    /**
+     * Get Custom Serializer
+     */
+    public static org.apache.axis.encoding.Serializer getSerializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanSerializer(
+            _javaType, _xmlType, typeDesc);
+    }
+
+    /**
+     * Get Custom Deserializer
+     */
+    public static org.apache.axis.encoding.Deserializer getDeserializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanDeserializer(
+            _javaType, _xmlType, typeDesc);
     }
 
 }

@@ -1,120 +1,116 @@
+/**
+ * InitializeType.java
+ *
+ * This file was auto-generated from WSDL
+ * by the Apache Axis 1.4 Jul 28, 2010 (04:07:04 PDT) WSDL2Java emitter.
+ */
 
 package com.netsuite.webservices.platform.core_2018_2.types;
 
-import javax.xml.bind.annotation.XmlEnum;
-import javax.xml.bind.annotation.XmlEnumValue;
-import javax.xml.bind.annotation.XmlType;
+public class InitializeType implements java.io.Serializable {
+    private java.lang.String _value_;
+    private static java.util.HashMap _table_ = new java.util.HashMap();
 
-
-/**
- * <p>InitializeType的 Java 类。
- * 
- * <p>以下模式片段指定包含在此类中的预期内容。
- * <p>
- * <pre>
- * &lt;simpleType name="InitializeType">
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     &lt;enumeration value="assemblyBuild"/>
- *     &lt;enumeration value="assemblyUnbuild"/>
- *     &lt;enumeration value="binWorksheet"/>
- *     &lt;enumeration value="cashRefund"/>
- *     &lt;enumeration value="cashSale"/>
- *     &lt;enumeration value="creditMemo"/>
- *     &lt;enumeration value="customerPayment"/>
- *     &lt;enumeration value="customerRefund"/>
- *     &lt;enumeration value="depositApplication"/>
- *     &lt;enumeration value="estimate"/>
- *     &lt;enumeration value="invoice"/>
- *     &lt;enumeration value="itemFulfillment"/>
- *     &lt;enumeration value="itemReceipt"/>
- *     &lt;enumeration value="inventoryTransfer"/>
- *     &lt;enumeration value="purchaseOrder"/>
- *     &lt;enumeration value="returnAuthorization"/>
- *     &lt;enumeration value="salesOrder"/>
- *     &lt;enumeration value="vendorBill"/>
- *     &lt;enumeration value="vendorCredit"/>
- *     &lt;enumeration value="vendorReturnAuthorization"/>
- *     &lt;enumeration value="vendorPayment"/>
- *     &lt;enumeration value="workOrder"/>
- *     &lt;enumeration value="workOrderIssue"/>
- *     &lt;enumeration value="workOrderCompletion"/>
- *     &lt;enumeration value="workOrderClose"/>
- *   &lt;/restriction>
- * &lt;/simpleType>
- * </pre>
- * 
- */
-@XmlType(name = "InitializeType", namespace = "urn:types.core_2018_2.platform.webservices.netsuite.com")
-@XmlEnum
-public enum InitializeType {
-
-    @XmlEnumValue("assemblyBuild")
-    ASSEMBLY_BUILD("assemblyBuild"),
-    @XmlEnumValue("assemblyUnbuild")
-    ASSEMBLY_UNBUILD("assemblyUnbuild"),
-    @XmlEnumValue("binWorksheet")
-    BIN_WORKSHEET("binWorksheet"),
-    @XmlEnumValue("cashRefund")
-    CASH_REFUND("cashRefund"),
-    @XmlEnumValue("cashSale")
-    CASH_SALE("cashSale"),
-    @XmlEnumValue("creditMemo")
-    CREDIT_MEMO("creditMemo"),
-    @XmlEnumValue("customerPayment")
-    CUSTOMER_PAYMENT("customerPayment"),
-    @XmlEnumValue("customerRefund")
-    CUSTOMER_REFUND("customerRefund"),
-    @XmlEnumValue("depositApplication")
-    DEPOSIT_APPLICATION("depositApplication"),
-    @XmlEnumValue("estimate")
-    ESTIMATE("estimate"),
-    @XmlEnumValue("invoice")
-    INVOICE("invoice"),
-    @XmlEnumValue("itemFulfillment")
-    ITEM_FULFILLMENT("itemFulfillment"),
-    @XmlEnumValue("itemReceipt")
-    ITEM_RECEIPT("itemReceipt"),
-    @XmlEnumValue("inventoryTransfer")
-    INVENTORY_TRANSFER("inventoryTransfer"),
-    @XmlEnumValue("purchaseOrder")
-    PURCHASE_ORDER("purchaseOrder"),
-    @XmlEnumValue("returnAuthorization")
-    RETURN_AUTHORIZATION("returnAuthorization"),
-    @XmlEnumValue("salesOrder")
-    SALES_ORDER("salesOrder"),
-    @XmlEnumValue("vendorBill")
-    VENDOR_BILL("vendorBill"),
-    @XmlEnumValue("vendorCredit")
-    VENDOR_CREDIT("vendorCredit"),
-    @XmlEnumValue("vendorReturnAuthorization")
-    VENDOR_RETURN_AUTHORIZATION("vendorReturnAuthorization"),
-    @XmlEnumValue("vendorPayment")
-    VENDOR_PAYMENT("vendorPayment"),
-    @XmlEnumValue("workOrder")
-    WORK_ORDER("workOrder"),
-    @XmlEnumValue("workOrderIssue")
-    WORK_ORDER_ISSUE("workOrderIssue"),
-    @XmlEnumValue("workOrderCompletion")
-    WORK_ORDER_COMPLETION("workOrderCompletion"),
-    @XmlEnumValue("workOrderClose")
-    WORK_ORDER_CLOSE("workOrderClose");
-    private final String value;
-
-    InitializeType(String v) {
-        value = v;
+    // Constructor
+    protected InitializeType(java.lang.String value) {
+        _value_ = value;
+        _table_.put(_value_,this);
     }
 
-    public String value() {
-        return value;
+    public static final java.lang.String _assemblyBuild = "assemblyBuild";
+    public static final java.lang.String _assemblyUnbuild = "assemblyUnbuild";
+    public static final java.lang.String _binWorksheet = "binWorksheet";
+    public static final java.lang.String _cashRefund = "cashRefund";
+    public static final java.lang.String _cashSale = "cashSale";
+    public static final java.lang.String _creditMemo = "creditMemo";
+    public static final java.lang.String _customerPayment = "customerPayment";
+    public static final java.lang.String _customerRefund = "customerRefund";
+    public static final java.lang.String _depositApplication = "depositApplication";
+    public static final java.lang.String _estimate = "estimate";
+    public static final java.lang.String _invoice = "invoice";
+    public static final java.lang.String _itemFulfillment = "itemFulfillment";
+    public static final java.lang.String _itemReceipt = "itemReceipt";
+    public static final java.lang.String _inventoryTransfer = "inventoryTransfer";
+    public static final java.lang.String _purchaseOrder = "purchaseOrder";
+    public static final java.lang.String _returnAuthorization = "returnAuthorization";
+    public static final java.lang.String _salesOrder = "salesOrder";
+    public static final java.lang.String _vendorBill = "vendorBill";
+    public static final java.lang.String _vendorCredit = "vendorCredit";
+    public static final java.lang.String _vendorReturnAuthorization = "vendorReturnAuthorization";
+    public static final java.lang.String _vendorPayment = "vendorPayment";
+    public static final java.lang.String _workOrder = "workOrder";
+    public static final java.lang.String _workOrderIssue = "workOrderIssue";
+    public static final java.lang.String _workOrderCompletion = "workOrderCompletion";
+    public static final java.lang.String _workOrderClose = "workOrderClose";
+    public static final InitializeType assemblyBuild = new InitializeType(_assemblyBuild);
+    public static final InitializeType assemblyUnbuild = new InitializeType(_assemblyUnbuild);
+    public static final InitializeType binWorksheet = new InitializeType(_binWorksheet);
+    public static final InitializeType cashRefund = new InitializeType(_cashRefund);
+    public static final InitializeType cashSale = new InitializeType(_cashSale);
+    public static final InitializeType creditMemo = new InitializeType(_creditMemo);
+    public static final InitializeType customerPayment = new InitializeType(_customerPayment);
+    public static final InitializeType customerRefund = new InitializeType(_customerRefund);
+    public static final InitializeType depositApplication = new InitializeType(_depositApplication);
+    public static final InitializeType estimate = new InitializeType(_estimate);
+    public static final InitializeType invoice = new InitializeType(_invoice);
+    public static final InitializeType itemFulfillment = new InitializeType(_itemFulfillment);
+    public static final InitializeType itemReceipt = new InitializeType(_itemReceipt);
+    public static final InitializeType inventoryTransfer = new InitializeType(_inventoryTransfer);
+    public static final InitializeType purchaseOrder = new InitializeType(_purchaseOrder);
+    public static final InitializeType returnAuthorization = new InitializeType(_returnAuthorization);
+    public static final InitializeType salesOrder = new InitializeType(_salesOrder);
+    public static final InitializeType vendorBill = new InitializeType(_vendorBill);
+    public static final InitializeType vendorCredit = new InitializeType(_vendorCredit);
+    public static final InitializeType vendorReturnAuthorization = new InitializeType(_vendorReturnAuthorization);
+    public static final InitializeType vendorPayment = new InitializeType(_vendorPayment);
+    public static final InitializeType workOrder = new InitializeType(_workOrder);
+    public static final InitializeType workOrderIssue = new InitializeType(_workOrderIssue);
+    public static final InitializeType workOrderCompletion = new InitializeType(_workOrderCompletion);
+    public static final InitializeType workOrderClose = new InitializeType(_workOrderClose);
+    public java.lang.String getValue() { return _value_;}
+    public static InitializeType fromValue(java.lang.String value)
+          throws java.lang.IllegalArgumentException {
+        InitializeType enumeration = (InitializeType)
+            _table_.get(value);
+        if (enumeration==null) throw new java.lang.IllegalArgumentException();
+        return enumeration;
     }
+    public static InitializeType fromString(java.lang.String value)
+          throws java.lang.IllegalArgumentException {
+        return fromValue(value);
+    }
+    public boolean equals(java.lang.Object obj) {return (obj == this);}
+    public int hashCode() { return toString().hashCode();}
+    public java.lang.String toString() { return _value_;}
+    public java.lang.Object readResolve() throws java.io.ObjectStreamException { return fromValue(_value_);}
+    public static org.apache.axis.encoding.Serializer getSerializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new org.apache.axis.encoding.ser.EnumSerializer(
+            _javaType, _xmlType);
+    }
+    public static org.apache.axis.encoding.Deserializer getDeserializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new org.apache.axis.encoding.ser.EnumDeserializer(
+            _javaType, _xmlType);
+    }
+    // Type metadata
+    private static org.apache.axis.description.TypeDesc typeDesc =
+        new org.apache.axis.description.TypeDesc(InitializeType.class);
 
-    public static InitializeType fromValue(String v) {
-        for (InitializeType c: InitializeType.values()) {
-            if (c.value.equals(v)) {
-                return c;
-            }
-        }
-        throw new IllegalArgumentException(v);
+    static {
+        typeDesc.setXmlType(new javax.xml.namespace.QName("urn:types.core_2018_2.platform.webservices.netsuite.com", "InitializeType"));
+    }
+    /**
+     * Return type metadata object
+     */
+    public static org.apache.axis.description.TypeDesc getTypeDesc() {
+        return typeDesc;
     }
 
 }

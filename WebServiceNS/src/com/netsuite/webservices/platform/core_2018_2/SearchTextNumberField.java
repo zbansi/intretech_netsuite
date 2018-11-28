@@ -1,116 +1,192 @@
+/**
+ * SearchTextNumberField.java
+ *
+ * This file was auto-generated from WSDL
+ * by the Apache Axis 1.4 Jul 28, 2010 (04:07:04 PDT) WSDL2Java emitter.
+ */
 
 package com.netsuite.webservices.platform.core_2018_2;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlAttribute;
-import javax.xml.bind.annotation.XmlType;
-import com.netsuite.webservices.platform.core_2018_2.types.SearchTextNumberFieldOperator;
+public class SearchTextNumberField  implements java.io.Serializable {
+    private java.lang.String searchValue;
 
+    private java.lang.String searchValue2;
 
-/**
- * <p>SearchTextNumberField complex type的 Java 类。
- * 
- * <p>以下模式片段指定包含在此类中的预期内容。
- * 
- * <pre>
- * &lt;complexType name="SearchTextNumberField">
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element name="searchValue" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="searchValue2" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *       &lt;/sequence>
- *       &lt;attribute name="operator" type="{urn:types.core_2018_2.platform.webservices.netsuite.com}SearchTextNumberFieldOperator" />
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
- */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "SearchTextNumberField", propOrder = {
-    "searchValue",
-    "searchValue2"
-})
-public class SearchTextNumberField {
+    private com.netsuite.webservices.platform.core_2018_2.types.SearchTextNumberFieldOperator operator;  // attribute
 
-    protected String searchValue;
-    protected String searchValue2;
-    @XmlAttribute(name = "operator")
-    protected SearchTextNumberFieldOperator operator;
+    public SearchTextNumberField() {
+    }
+
+    public SearchTextNumberField(
+           java.lang.String searchValue,
+           java.lang.String searchValue2,
+           com.netsuite.webservices.platform.core_2018_2.types.SearchTextNumberFieldOperator operator) {
+           this.searchValue = searchValue;
+           this.searchValue2 = searchValue2;
+           this.operator = operator;
+    }
+
 
     /**
-     * 获取searchValue属性的值。
+     * Gets the searchValue value for this SearchTextNumberField.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @return searchValue
      */
-    public String getSearchValue() {
+    public java.lang.String getSearchValue() {
         return searchValue;
     }
 
-    /**
-     * 设置searchValue属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setSearchValue(String value) {
-        this.searchValue = value;
-    }
 
     /**
-     * 获取searchValue2属性的值。
+     * Sets the searchValue value for this SearchTextNumberField.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param searchValue
      */
-    public String getSearchValue2() {
+    public void setSearchValue(java.lang.String searchValue) {
+        this.searchValue = searchValue;
+    }
+
+
+    /**
+     * Gets the searchValue2 value for this SearchTextNumberField.
+     * 
+     * @return searchValue2
+     */
+    public java.lang.String getSearchValue2() {
         return searchValue2;
     }
 
-    /**
-     * 设置searchValue2属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setSearchValue2(String value) {
-        this.searchValue2 = value;
-    }
 
     /**
-     * 获取operator属性的值。
+     * Sets the searchValue2 value for this SearchTextNumberField.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchTextNumberFieldOperator }
-     *     
+     * @param searchValue2
      */
-    public SearchTextNumberFieldOperator getOperator() {
+    public void setSearchValue2(java.lang.String searchValue2) {
+        this.searchValue2 = searchValue2;
+    }
+
+
+    /**
+     * Gets the operator value for this SearchTextNumberField.
+     * 
+     * @return operator
+     */
+    public com.netsuite.webservices.platform.core_2018_2.types.SearchTextNumberFieldOperator getOperator() {
         return operator;
     }
 
+
     /**
-     * 设置operator属性的值。
+     * Sets the operator value for this SearchTextNumberField.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchTextNumberFieldOperator }
-     *     
+     * @param operator
      */
-    public void setOperator(SearchTextNumberFieldOperator value) {
-        this.operator = value;
+    public void setOperator(com.netsuite.webservices.platform.core_2018_2.types.SearchTextNumberFieldOperator operator) {
+        this.operator = operator;
+    }
+
+    private java.lang.Object __equalsCalc = null;
+    public synchronized boolean equals(java.lang.Object obj) {
+        if (!(obj instanceof SearchTextNumberField)) return false;
+        SearchTextNumberField other = (SearchTextNumberField) obj;
+        if (obj == null) return false;
+        if (this == obj) return true;
+        if (__equalsCalc != null) {
+            return (__equalsCalc == obj);
+        }
+        __equalsCalc = obj;
+        boolean _equals;
+        _equals = true && 
+            ((this.searchValue==null && other.getSearchValue()==null) || 
+             (this.searchValue!=null &&
+              this.searchValue.equals(other.getSearchValue()))) &&
+            ((this.searchValue2==null && other.getSearchValue2()==null) || 
+             (this.searchValue2!=null &&
+              this.searchValue2.equals(other.getSearchValue2()))) &&
+            ((this.operator==null && other.getOperator()==null) || 
+             (this.operator!=null &&
+              this.operator.equals(other.getOperator())));
+        __equalsCalc = null;
+        return _equals;
+    }
+
+    private boolean __hashCodeCalc = false;
+    public synchronized int hashCode() {
+        if (__hashCodeCalc) {
+            return 0;
+        }
+        __hashCodeCalc = true;
+        int _hashCode = 1;
+        if (getSearchValue() != null) {
+            _hashCode += getSearchValue().hashCode();
+        }
+        if (getSearchValue2() != null) {
+            _hashCode += getSearchValue2().hashCode();
+        }
+        if (getOperator() != null) {
+            _hashCode += getOperator().hashCode();
+        }
+        __hashCodeCalc = false;
+        return _hashCode;
+    }
+
+    // Type metadata
+    private static org.apache.axis.description.TypeDesc typeDesc =
+        new org.apache.axis.description.TypeDesc(SearchTextNumberField.class, true);
+
+    static {
+        typeDesc.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchTextNumberField"));
+        org.apache.axis.description.AttributeDesc attrField = new org.apache.axis.description.AttributeDesc();
+        attrField.setFieldName("operator");
+        attrField.setXmlName(new javax.xml.namespace.QName("", "operator"));
+        attrField.setXmlType(new javax.xml.namespace.QName("urn:types.core_2018_2.platform.webservices.netsuite.com", "SearchTextNumberFieldOperator"));
+        typeDesc.addFieldDesc(attrField);
+        org.apache.axis.description.ElementDesc elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("searchValue");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "searchValue"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("searchValue2");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "searchValue2"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+    }
+
+    /**
+     * Return type metadata object
+     */
+    public static org.apache.axis.description.TypeDesc getTypeDesc() {
+        return typeDesc;
+    }
+
+    /**
+     * Get Custom Serializer
+     */
+    public static org.apache.axis.encoding.Serializer getSerializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanSerializer(
+            _javaType, _xmlType, typeDesc);
+    }
+
+    /**
+     * Get Custom Deserializer
+     */
+    public static org.apache.axis.encoding.Deserializer getDeserializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanDeserializer(
+            _javaType, _xmlType, typeDesc);
     }
 
 }

@@ -1,338 +1,489 @@
+/**
+ * Usage.java
+ *
+ * This file was auto-generated from WSDL
+ * by the Apache Axis 1.4 Jul 28, 2010 (04:07:04 PDT) WSDL2Java emitter.
+ */
 
 package com.netsuite.webservices.transactions.sales_2018_2;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlAttribute;
-import javax.xml.bind.annotation.XmlSchemaType;
-import javax.xml.bind.annotation.XmlType;
-import javax.xml.datatype.XMLGregorianCalendar;
-import com.netsuite.webservices.platform.core_2018_2.Record;
-import com.netsuite.webservices.platform.core_2018_2.RecordRef;
+public class Usage  extends com.netsuite.webservices.platform.core_2018_2.Record  implements java.io.Serializable {
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef customForm;
 
+    private java.lang.String memo;
 
-/**
- * <p>Usage complex type的 Java 类。
- * 
- * <p>以下模式片段指定包含在此类中的预期内容。
- * 
- * <pre>
- * &lt;complexType name="Usage">
- *   &lt;complexContent>
- *     &lt;extension base="{urn:core_2018_2.platform.webservices.netsuite.com}Record">
- *       &lt;sequence>
- *         &lt;element name="customForm" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="memo" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="item" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="subscriptionPlan" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="customer" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="usageSubscription" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="usageSubscriptionLine" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="usageQuantity" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
- *         &lt;element name="usageDate" type="{http://www.w3.org/2001/XMLSchema}dateTime" minOccurs="0"/>
- *       &lt;/sequence>
- *       &lt;attribute name="internalId" type="{http://www.w3.org/2001/XMLSchema}string" />
- *       &lt;attribute name="externalId" type="{http://www.w3.org/2001/XMLSchema}string" />
- *     &lt;/extension>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
- */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "Usage", propOrder = {
-    "customForm",
-    "memo",
-    "item",
-    "subscriptionPlan",
-    "customer",
-    "usageSubscription",
-    "usageSubscriptionLine",
-    "usageQuantity",
-    "usageDate"
-})
-public class Usage
-    extends Record
-{
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef item;
 
-    protected RecordRef customForm;
-    protected String memo;
-    protected RecordRef item;
-    protected RecordRef subscriptionPlan;
-    protected RecordRef customer;
-    protected RecordRef usageSubscription;
-    protected RecordRef usageSubscriptionLine;
-    protected Double usageQuantity;
-    @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar usageDate;
-    @XmlAttribute(name = "internalId")
-    protected String internalId;
-    @XmlAttribute(name = "externalId")
-    protected String externalId;
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef subscriptionPlan;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef customer;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef usageSubscription;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef usageSubscriptionLine;
+
+    private java.lang.Double usageQuantity;
+
+    private java.util.Calendar usageDate;
+
+    private java.lang.String internalId;  // attribute
+
+    private java.lang.String externalId;  // attribute
+
+    public Usage() {
+    }
+
+    public Usage(
+           java.lang.String[] nullFieldList,
+           java.lang.String internalId,
+           java.lang.String externalId,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef customForm,
+           java.lang.String memo,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef item,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef subscriptionPlan,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef customer,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef usageSubscription,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef usageSubscriptionLine,
+           java.lang.Double usageQuantity,
+           java.util.Calendar usageDate) {
+        super(
+            nullFieldList);
+        this.internalId = internalId;
+        this.externalId = externalId;
+        this.customForm = customForm;
+        this.memo = memo;
+        this.item = item;
+        this.subscriptionPlan = subscriptionPlan;
+        this.customer = customer;
+        this.usageSubscription = usageSubscription;
+        this.usageSubscriptionLine = usageSubscriptionLine;
+        this.usageQuantity = usageQuantity;
+        this.usageDate = usageDate;
+    }
+
 
     /**
-     * 获取customForm属性的值。
+     * Gets the customForm value for this Usage.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @return customForm
      */
-    public RecordRef getCustomForm() {
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getCustomForm() {
         return customForm;
     }
 
-    /**
-     * 设置customForm属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setCustomForm(RecordRef value) {
-        this.customForm = value;
-    }
 
     /**
-     * 获取memo属性的值。
+     * Sets the customForm value for this Usage.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param customForm
      */
-    public String getMemo() {
+    public void setCustomForm(com.netsuite.webservices.platform.core_2018_2.RecordRef customForm) {
+        this.customForm = customForm;
+    }
+
+
+    /**
+     * Gets the memo value for this Usage.
+     * 
+     * @return memo
+     */
+    public java.lang.String getMemo() {
         return memo;
     }
 
-    /**
-     * 设置memo属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setMemo(String value) {
-        this.memo = value;
-    }
 
     /**
-     * 获取item属性的值。
+     * Sets the memo value for this Usage.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param memo
      */
-    public RecordRef getItem() {
+    public void setMemo(java.lang.String memo) {
+        this.memo = memo;
+    }
+
+
+    /**
+     * Gets the item value for this Usage.
+     * 
+     * @return item
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getItem() {
         return item;
     }
 
-    /**
-     * 设置item属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setItem(RecordRef value) {
-        this.item = value;
-    }
 
     /**
-     * 获取subscriptionPlan属性的值。
+     * Sets the item value for this Usage.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param item
      */
-    public RecordRef getSubscriptionPlan() {
+    public void setItem(com.netsuite.webservices.platform.core_2018_2.RecordRef item) {
+        this.item = item;
+    }
+
+
+    /**
+     * Gets the subscriptionPlan value for this Usage.
+     * 
+     * @return subscriptionPlan
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getSubscriptionPlan() {
         return subscriptionPlan;
     }
 
-    /**
-     * 设置subscriptionPlan属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setSubscriptionPlan(RecordRef value) {
-        this.subscriptionPlan = value;
-    }
 
     /**
-     * 获取customer属性的值。
+     * Sets the subscriptionPlan value for this Usage.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param subscriptionPlan
      */
-    public RecordRef getCustomer() {
+    public void setSubscriptionPlan(com.netsuite.webservices.platform.core_2018_2.RecordRef subscriptionPlan) {
+        this.subscriptionPlan = subscriptionPlan;
+    }
+
+
+    /**
+     * Gets the customer value for this Usage.
+     * 
+     * @return customer
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getCustomer() {
         return customer;
     }
 
-    /**
-     * 设置customer属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setCustomer(RecordRef value) {
-        this.customer = value;
-    }
 
     /**
-     * 获取usageSubscription属性的值。
+     * Sets the customer value for this Usage.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param customer
      */
-    public RecordRef getUsageSubscription() {
+    public void setCustomer(com.netsuite.webservices.platform.core_2018_2.RecordRef customer) {
+        this.customer = customer;
+    }
+
+
+    /**
+     * Gets the usageSubscription value for this Usage.
+     * 
+     * @return usageSubscription
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getUsageSubscription() {
         return usageSubscription;
     }
 
-    /**
-     * 设置usageSubscription属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setUsageSubscription(RecordRef value) {
-        this.usageSubscription = value;
-    }
 
     /**
-     * 获取usageSubscriptionLine属性的值。
+     * Sets the usageSubscription value for this Usage.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param usageSubscription
      */
-    public RecordRef getUsageSubscriptionLine() {
+    public void setUsageSubscription(com.netsuite.webservices.platform.core_2018_2.RecordRef usageSubscription) {
+        this.usageSubscription = usageSubscription;
+    }
+
+
+    /**
+     * Gets the usageSubscriptionLine value for this Usage.
+     * 
+     * @return usageSubscriptionLine
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getUsageSubscriptionLine() {
         return usageSubscriptionLine;
     }
 
-    /**
-     * 设置usageSubscriptionLine属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setUsageSubscriptionLine(RecordRef value) {
-        this.usageSubscriptionLine = value;
-    }
 
     /**
-     * 获取usageQuantity属性的值。
+     * Sets the usageSubscriptionLine value for this Usage.
      * 
-     * @return
-     *     possible object is
-     *     {@link Double }
-     *     
+     * @param usageSubscriptionLine
      */
-    public Double getUsageQuantity() {
+    public void setUsageSubscriptionLine(com.netsuite.webservices.platform.core_2018_2.RecordRef usageSubscriptionLine) {
+        this.usageSubscriptionLine = usageSubscriptionLine;
+    }
+
+
+    /**
+     * Gets the usageQuantity value for this Usage.
+     * 
+     * @return usageQuantity
+     */
+    public java.lang.Double getUsageQuantity() {
         return usageQuantity;
     }
 
-    /**
-     * 设置usageQuantity属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Double }
-     *     
-     */
-    public void setUsageQuantity(Double value) {
-        this.usageQuantity = value;
-    }
 
     /**
-     * 获取usageDate属性的值。
+     * Sets the usageQuantity value for this Usage.
      * 
-     * @return
-     *     possible object is
-     *     {@link XMLGregorianCalendar }
-     *     
+     * @param usageQuantity
      */
-    public XMLGregorianCalendar getUsageDate() {
+    public void setUsageQuantity(java.lang.Double usageQuantity) {
+        this.usageQuantity = usageQuantity;
+    }
+
+
+    /**
+     * Gets the usageDate value for this Usage.
+     * 
+     * @return usageDate
+     */
+    public java.util.Calendar getUsageDate() {
         return usageDate;
     }
 
-    /**
-     * 设置usageDate属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link XMLGregorianCalendar }
-     *     
-     */
-    public void setUsageDate(XMLGregorianCalendar value) {
-        this.usageDate = value;
-    }
 
     /**
-     * 获取internalId属性的值。
+     * Sets the usageDate value for this Usage.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param usageDate
      */
-    public String getInternalId() {
+    public void setUsageDate(java.util.Calendar usageDate) {
+        this.usageDate = usageDate;
+    }
+
+
+    /**
+     * Gets the internalId value for this Usage.
+     * 
+     * @return internalId
+     */
+    public java.lang.String getInternalId() {
         return internalId;
     }
 
-    /**
-     * 设置internalId属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setInternalId(String value) {
-        this.internalId = value;
-    }
 
     /**
-     * 获取externalId属性的值。
+     * Sets the internalId value for this Usage.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param internalId
      */
-    public String getExternalId() {
+    public void setInternalId(java.lang.String internalId) {
+        this.internalId = internalId;
+    }
+
+
+    /**
+     * Gets the externalId value for this Usage.
+     * 
+     * @return externalId
+     */
+    public java.lang.String getExternalId() {
         return externalId;
     }
 
+
     /**
-     * 设置externalId属性的值。
+     * Sets the externalId value for this Usage.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     * @param externalId
      */
-    public void setExternalId(String value) {
-        this.externalId = value;
+    public void setExternalId(java.lang.String externalId) {
+        this.externalId = externalId;
+    }
+
+    private java.lang.Object __equalsCalc = null;
+    public synchronized boolean equals(java.lang.Object obj) {
+        if (!(obj instanceof Usage)) return false;
+        Usage other = (Usage) obj;
+        if (obj == null) return false;
+        if (this == obj) return true;
+        if (__equalsCalc != null) {
+            return (__equalsCalc == obj);
+        }
+        __equalsCalc = obj;
+        boolean _equals;
+        _equals = super.equals(obj) && 
+            ((this.customForm==null && other.getCustomForm()==null) || 
+             (this.customForm!=null &&
+              this.customForm.equals(other.getCustomForm()))) &&
+            ((this.memo==null && other.getMemo()==null) || 
+             (this.memo!=null &&
+              this.memo.equals(other.getMemo()))) &&
+            ((this.item==null && other.getItem()==null) || 
+             (this.item!=null &&
+              this.item.equals(other.getItem()))) &&
+            ((this.subscriptionPlan==null && other.getSubscriptionPlan()==null) || 
+             (this.subscriptionPlan!=null &&
+              this.subscriptionPlan.equals(other.getSubscriptionPlan()))) &&
+            ((this.customer==null && other.getCustomer()==null) || 
+             (this.customer!=null &&
+              this.customer.equals(other.getCustomer()))) &&
+            ((this.usageSubscription==null && other.getUsageSubscription()==null) || 
+             (this.usageSubscription!=null &&
+              this.usageSubscription.equals(other.getUsageSubscription()))) &&
+            ((this.usageSubscriptionLine==null && other.getUsageSubscriptionLine()==null) || 
+             (this.usageSubscriptionLine!=null &&
+              this.usageSubscriptionLine.equals(other.getUsageSubscriptionLine()))) &&
+            ((this.usageQuantity==null && other.getUsageQuantity()==null) || 
+             (this.usageQuantity!=null &&
+              this.usageQuantity.equals(other.getUsageQuantity()))) &&
+            ((this.usageDate==null && other.getUsageDate()==null) || 
+             (this.usageDate!=null &&
+              this.usageDate.equals(other.getUsageDate()))) &&
+            ((this.internalId==null && other.getInternalId()==null) || 
+             (this.internalId!=null &&
+              this.internalId.equals(other.getInternalId()))) &&
+            ((this.externalId==null && other.getExternalId()==null) || 
+             (this.externalId!=null &&
+              this.externalId.equals(other.getExternalId())));
+        __equalsCalc = null;
+        return _equals;
+    }
+
+    private boolean __hashCodeCalc = false;
+    public synchronized int hashCode() {
+        if (__hashCodeCalc) {
+            return 0;
+        }
+        __hashCodeCalc = true;
+        int _hashCode = super.hashCode();
+        if (getCustomForm() != null) {
+            _hashCode += getCustomForm().hashCode();
+        }
+        if (getMemo() != null) {
+            _hashCode += getMemo().hashCode();
+        }
+        if (getItem() != null) {
+            _hashCode += getItem().hashCode();
+        }
+        if (getSubscriptionPlan() != null) {
+            _hashCode += getSubscriptionPlan().hashCode();
+        }
+        if (getCustomer() != null) {
+            _hashCode += getCustomer().hashCode();
+        }
+        if (getUsageSubscription() != null) {
+            _hashCode += getUsageSubscription().hashCode();
+        }
+        if (getUsageSubscriptionLine() != null) {
+            _hashCode += getUsageSubscriptionLine().hashCode();
+        }
+        if (getUsageQuantity() != null) {
+            _hashCode += getUsageQuantity().hashCode();
+        }
+        if (getUsageDate() != null) {
+            _hashCode += getUsageDate().hashCode();
+        }
+        if (getInternalId() != null) {
+            _hashCode += getInternalId().hashCode();
+        }
+        if (getExternalId() != null) {
+            _hashCode += getExternalId().hashCode();
+        }
+        __hashCodeCalc = false;
+        return _hashCode;
+    }
+
+    // Type metadata
+    private static org.apache.axis.description.TypeDesc typeDesc =
+        new org.apache.axis.description.TypeDesc(Usage.class, true);
+
+    static {
+        typeDesc.setXmlType(new javax.xml.namespace.QName("urn:sales_2018_2.transactions.webservices.netsuite.com", "Usage"));
+        org.apache.axis.description.AttributeDesc attrField = new org.apache.axis.description.AttributeDesc();
+        attrField.setFieldName("internalId");
+        attrField.setXmlName(new javax.xml.namespace.QName("", "internalId"));
+        attrField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        typeDesc.addFieldDesc(attrField);
+        attrField = new org.apache.axis.description.AttributeDesc();
+        attrField.setFieldName("externalId");
+        attrField.setXmlName(new javax.xml.namespace.QName("", "externalId"));
+        attrField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        typeDesc.addFieldDesc(attrField);
+        org.apache.axis.description.ElementDesc elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("customForm");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:sales_2018_2.transactions.webservices.netsuite.com", "customForm"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("memo");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:sales_2018_2.transactions.webservices.netsuite.com", "memo"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("item");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:sales_2018_2.transactions.webservices.netsuite.com", "item"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("subscriptionPlan");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:sales_2018_2.transactions.webservices.netsuite.com", "subscriptionPlan"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("customer");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:sales_2018_2.transactions.webservices.netsuite.com", "customer"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("usageSubscription");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:sales_2018_2.transactions.webservices.netsuite.com", "usageSubscription"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("usageSubscriptionLine");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:sales_2018_2.transactions.webservices.netsuite.com", "usageSubscriptionLine"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("usageQuantity");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:sales_2018_2.transactions.webservices.netsuite.com", "usageQuantity"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "double"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("usageDate");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:sales_2018_2.transactions.webservices.netsuite.com", "usageDate"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "dateTime"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+    }
+
+    /**
+     * Return type metadata object
+     */
+    public static org.apache.axis.description.TypeDesc getTypeDesc() {
+        return typeDesc;
+    }
+
+    /**
+     * Get Custom Serializer
+     */
+    public static org.apache.axis.encoding.Serializer getSerializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanSerializer(
+            _javaType, _xmlType, typeDesc);
+    }
+
+    /**
+     * Get Custom Deserializer
+     */
+    public static org.apache.axis.encoding.Deserializer getDeserializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanDeserializer(
+            _javaType, _xmlType, typeDesc);
     }
 
 }

@@ -1,1180 +1,1708 @@
+/**
+ * Issue.java
+ *
+ * This file was auto-generated from WSDL
+ * by the Apache Axis 1.4 Jul 28, 2010 (04:07:04 PDT) WSDL2Java emitter.
+ */
 
 package com.netsuite.webservices.lists.support_2018_2;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlAttribute;
-import javax.xml.bind.annotation.XmlSchemaType;
-import javax.xml.bind.annotation.XmlType;
-import javax.xml.datatype.XMLGregorianCalendar;
-import com.netsuite.webservices.lists.support_2018_2.types.IssueTrackCode;
-import com.netsuite.webservices.platform.core_2018_2.CustomFieldList;
-import com.netsuite.webservices.platform.core_2018_2.Record;
-import com.netsuite.webservices.platform.core_2018_2.RecordRef;
-import com.netsuite.webservices.platform.core_2018_2.RecordRefList;
+public class Issue  extends com.netsuite.webservices.platform.core_2018_2.Record  implements java.io.Serializable {
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef customForm;
 
+    private java.lang.String issueNumber;
 
-/**
- * <p>Issue complex type的 Java 类。
- * 
- * <p>以下模式片段指定包含在此类中的预期内容。
- * 
- * <pre>
- * &lt;complexType name="Issue">
- *   &lt;complexContent>
- *     &lt;extension base="{urn:core_2018_2.platform.webservices.netsuite.com}Record">
- *       &lt;sequence>
- *         &lt;element name="customForm" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="issueNumber" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="createdDate" type="{http://www.w3.org/2001/XMLSchema}dateTime" minOccurs="0"/>
- *         &lt;element name="issueType" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="product" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="module" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="item" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="productTeam" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="source" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="reportedBy" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="reproduce" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="versionBroken" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="buildBroken" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="versionTarget" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="buildTarget" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="versionFixed" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="buildFixed" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="severity" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="priority" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="isShowStopper" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         &lt;element name="assigned" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="reviewer" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="isReviewed" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         &lt;element name="issueStatus" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="lastModifiedDate" type="{http://www.w3.org/2001/XMLSchema}dateTime" minOccurs="0"/>
- *         &lt;element name="issueTagsList" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRefList" minOccurs="0"/>
- *         &lt;element name="issueAbstract" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="newDetails" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="isOwner" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         &lt;element name="trackCode" type="{urn:types.support_2018_2.lists.webservices.netsuite.com}IssueTrackCode" minOccurs="0"/>
- *         &lt;element name="emailAssignee" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         &lt;element name="emailEmployeesList" type="{urn:support_2018_2.lists.webservices.netsuite.com}EmailEmployeesList" minOccurs="0"/>
- *         &lt;element name="emailCellsList" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRefList" minOccurs="0"/>
- *         &lt;element name="externalAbstract" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="externalDetails" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="brokenInVersionList" type="{urn:support_2018_2.lists.webservices.netsuite.com}IssueVersionList" minOccurs="0"/>
- *         &lt;element name="targetVersionList" type="{urn:support_2018_2.lists.webservices.netsuite.com}IssueVersionList" minOccurs="0"/>
- *         &lt;element name="fixedInVersionList" type="{urn:support_2018_2.lists.webservices.netsuite.com}IssueVersionList" minOccurs="0"/>
- *         &lt;element name="relatedIssuesList" type="{urn:support_2018_2.lists.webservices.netsuite.com}IssueRelatedIssuesList" minOccurs="0"/>
- *         &lt;element name="customFieldList" type="{urn:core_2018_2.platform.webservices.netsuite.com}CustomFieldList" minOccurs="0"/>
- *       &lt;/sequence>
- *       &lt;attribute name="internalId" type="{http://www.w3.org/2001/XMLSchema}string" />
- *       &lt;attribute name="externalId" type="{http://www.w3.org/2001/XMLSchema}string" />
- *     &lt;/extension>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
- */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "Issue", propOrder = {
-    "customForm",
-    "issueNumber",
-    "createdDate",
-    "issueType",
-    "product",
-    "module",
-    "item",
-    "productTeam",
-    "source",
-    "reportedBy",
-    "reproduce",
-    "versionBroken",
-    "buildBroken",
-    "versionTarget",
-    "buildTarget",
-    "versionFixed",
-    "buildFixed",
-    "severity",
-    "priority",
-    "isShowStopper",
-    "assigned",
-    "reviewer",
-    "isReviewed",
-    "issueStatus",
-    "lastModifiedDate",
-    "issueTagsList",
-    "issueAbstract",
-    "newDetails",
-    "isOwner",
-    "trackCode",
-    "emailAssignee",
-    "emailEmployeesList",
-    "emailCellsList",
-    "externalAbstract",
-    "externalDetails",
-    "brokenInVersionList",
-    "targetVersionList",
-    "fixedInVersionList",
-    "relatedIssuesList",
-    "customFieldList"
-})
-public class Issue
-    extends Record
-{
+    private java.util.Calendar createdDate;
 
-    protected RecordRef customForm;
-    protected String issueNumber;
-    @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar createdDate;
-    protected RecordRef issueType;
-    protected RecordRef product;
-    protected RecordRef module;
-    protected RecordRef item;
-    protected RecordRef productTeam;
-    protected RecordRef source;
-    protected RecordRef reportedBy;
-    protected RecordRef reproduce;
-    protected RecordRef versionBroken;
-    protected RecordRef buildBroken;
-    protected RecordRef versionTarget;
-    protected RecordRef buildTarget;
-    protected RecordRef versionFixed;
-    protected RecordRef buildFixed;
-    protected RecordRef severity;
-    protected RecordRef priority;
-    protected Boolean isShowStopper;
-    protected RecordRef assigned;
-    protected RecordRef reviewer;
-    protected Boolean isReviewed;
-    protected RecordRef issueStatus;
-    @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar lastModifiedDate;
-    protected RecordRefList issueTagsList;
-    protected String issueAbstract;
-    protected String newDetails;
-    protected Boolean isOwner;
-    @XmlSchemaType(name = "string")
-    protected IssueTrackCode trackCode;
-    protected Boolean emailAssignee;
-    protected EmailEmployeesList emailEmployeesList;
-    protected RecordRefList emailCellsList;
-    protected String externalAbstract;
-    protected String externalDetails;
-    protected IssueVersionList brokenInVersionList;
-    protected IssueVersionList targetVersionList;
-    protected IssueVersionList fixedInVersionList;
-    protected IssueRelatedIssuesList relatedIssuesList;
-    protected CustomFieldList customFieldList;
-    @XmlAttribute(name = "internalId")
-    protected String internalId;
-    @XmlAttribute(name = "externalId")
-    protected String externalId;
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef issueType;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef product;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef module;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef item;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef productTeam;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef source;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef reportedBy;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef reproduce;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef versionBroken;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef buildBroken;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef versionTarget;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef buildTarget;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef versionFixed;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef buildFixed;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef severity;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef priority;
+
+    private java.lang.Boolean isShowStopper;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef assigned;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef reviewer;
+
+    private java.lang.Boolean isReviewed;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef issueStatus;
+
+    private java.util.Calendar lastModifiedDate;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef[] issueTagsList;
+
+    private java.lang.String issueAbstract;
+
+    private java.lang.String newDetails;
+
+    private java.lang.Boolean isOwner;
+
+    private com.netsuite.webservices.lists.support_2018_2.types.IssueTrackCode trackCode;
+
+    private java.lang.Boolean emailAssignee;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef[] emailEmployeesList;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef[] emailCellsList;
+
+    private java.lang.String externalAbstract;
+
+    private java.lang.String externalDetails;
+
+    private com.netsuite.webservices.lists.support_2018_2.IssueVersion[] brokenInVersionList;
+
+    private com.netsuite.webservices.lists.support_2018_2.IssueVersion[] targetVersionList;
+
+    private com.netsuite.webservices.lists.support_2018_2.IssueVersion[] fixedInVersionList;
+
+    private com.netsuite.webservices.lists.support_2018_2.IssueRelatedIssues[] relatedIssuesList;
+
+    private com.netsuite.webservices.platform.core_2018_2.CustomFieldRef[] customFieldList;
+
+    private java.lang.String internalId;  // attribute
+
+    private java.lang.String externalId;  // attribute
+
+    public Issue() {
+    }
+
+    public Issue(
+           java.lang.String[] nullFieldList,
+           java.lang.String internalId,
+           java.lang.String externalId,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef customForm,
+           java.lang.String issueNumber,
+           java.util.Calendar createdDate,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef issueType,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef product,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef module,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef item,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef productTeam,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef source,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef reportedBy,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef reproduce,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef versionBroken,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef buildBroken,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef versionTarget,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef buildTarget,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef versionFixed,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef buildFixed,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef severity,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef priority,
+           java.lang.Boolean isShowStopper,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef assigned,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef reviewer,
+           java.lang.Boolean isReviewed,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef issueStatus,
+           java.util.Calendar lastModifiedDate,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef[] issueTagsList,
+           java.lang.String issueAbstract,
+           java.lang.String newDetails,
+           java.lang.Boolean isOwner,
+           com.netsuite.webservices.lists.support_2018_2.types.IssueTrackCode trackCode,
+           java.lang.Boolean emailAssignee,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef[] emailEmployeesList,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef[] emailCellsList,
+           java.lang.String externalAbstract,
+           java.lang.String externalDetails,
+           com.netsuite.webservices.lists.support_2018_2.IssueVersion[] brokenInVersionList,
+           com.netsuite.webservices.lists.support_2018_2.IssueVersion[] targetVersionList,
+           com.netsuite.webservices.lists.support_2018_2.IssueVersion[] fixedInVersionList,
+           com.netsuite.webservices.lists.support_2018_2.IssueRelatedIssues[] relatedIssuesList,
+           com.netsuite.webservices.platform.core_2018_2.CustomFieldRef[] customFieldList) {
+        super(
+            nullFieldList);
+        this.internalId = internalId;
+        this.externalId = externalId;
+        this.customForm = customForm;
+        this.issueNumber = issueNumber;
+        this.createdDate = createdDate;
+        this.issueType = issueType;
+        this.product = product;
+        this.module = module;
+        this.item = item;
+        this.productTeam = productTeam;
+        this.source = source;
+        this.reportedBy = reportedBy;
+        this.reproduce = reproduce;
+        this.versionBroken = versionBroken;
+        this.buildBroken = buildBroken;
+        this.versionTarget = versionTarget;
+        this.buildTarget = buildTarget;
+        this.versionFixed = versionFixed;
+        this.buildFixed = buildFixed;
+        this.severity = severity;
+        this.priority = priority;
+        this.isShowStopper = isShowStopper;
+        this.assigned = assigned;
+        this.reviewer = reviewer;
+        this.isReviewed = isReviewed;
+        this.issueStatus = issueStatus;
+        this.lastModifiedDate = lastModifiedDate;
+        this.issueTagsList = issueTagsList;
+        this.issueAbstract = issueAbstract;
+        this.newDetails = newDetails;
+        this.isOwner = isOwner;
+        this.trackCode = trackCode;
+        this.emailAssignee = emailAssignee;
+        this.emailEmployeesList = emailEmployeesList;
+        this.emailCellsList = emailCellsList;
+        this.externalAbstract = externalAbstract;
+        this.externalDetails = externalDetails;
+        this.brokenInVersionList = brokenInVersionList;
+        this.targetVersionList = targetVersionList;
+        this.fixedInVersionList = fixedInVersionList;
+        this.relatedIssuesList = relatedIssuesList;
+        this.customFieldList = customFieldList;
+    }
+
 
     /**
-     * 获取customForm属性的值。
+     * Gets the customForm value for this Issue.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @return customForm
      */
-    public RecordRef getCustomForm() {
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getCustomForm() {
         return customForm;
     }
 
-    /**
-     * 设置customForm属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setCustomForm(RecordRef value) {
-        this.customForm = value;
-    }
 
     /**
-     * 获取issueNumber属性的值。
+     * Sets the customForm value for this Issue.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param customForm
      */
-    public String getIssueNumber() {
+    public void setCustomForm(com.netsuite.webservices.platform.core_2018_2.RecordRef customForm) {
+        this.customForm = customForm;
+    }
+
+
+    /**
+     * Gets the issueNumber value for this Issue.
+     * 
+     * @return issueNumber
+     */
+    public java.lang.String getIssueNumber() {
         return issueNumber;
     }
 
-    /**
-     * 设置issueNumber属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setIssueNumber(String value) {
-        this.issueNumber = value;
-    }
 
     /**
-     * 获取createdDate属性的值。
+     * Sets the issueNumber value for this Issue.
      * 
-     * @return
-     *     possible object is
-     *     {@link XMLGregorianCalendar }
-     *     
+     * @param issueNumber
      */
-    public XMLGregorianCalendar getCreatedDate() {
+    public void setIssueNumber(java.lang.String issueNumber) {
+        this.issueNumber = issueNumber;
+    }
+
+
+    /**
+     * Gets the createdDate value for this Issue.
+     * 
+     * @return createdDate
+     */
+    public java.util.Calendar getCreatedDate() {
         return createdDate;
     }
 
-    /**
-     * 设置createdDate属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link XMLGregorianCalendar }
-     *     
-     */
-    public void setCreatedDate(XMLGregorianCalendar value) {
-        this.createdDate = value;
-    }
 
     /**
-     * 获取issueType属性的值。
+     * Sets the createdDate value for this Issue.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param createdDate
      */
-    public RecordRef getIssueType() {
+    public void setCreatedDate(java.util.Calendar createdDate) {
+        this.createdDate = createdDate;
+    }
+
+
+    /**
+     * Gets the issueType value for this Issue.
+     * 
+     * @return issueType
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getIssueType() {
         return issueType;
     }
 
-    /**
-     * 设置issueType属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setIssueType(RecordRef value) {
-        this.issueType = value;
-    }
 
     /**
-     * 获取product属性的值。
+     * Sets the issueType value for this Issue.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param issueType
      */
-    public RecordRef getProduct() {
+    public void setIssueType(com.netsuite.webservices.platform.core_2018_2.RecordRef issueType) {
+        this.issueType = issueType;
+    }
+
+
+    /**
+     * Gets the product value for this Issue.
+     * 
+     * @return product
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getProduct() {
         return product;
     }
 
-    /**
-     * 设置product属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setProduct(RecordRef value) {
-        this.product = value;
-    }
 
     /**
-     * 获取module属性的值。
+     * Sets the product value for this Issue.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param product
      */
-    public RecordRef getModule() {
+    public void setProduct(com.netsuite.webservices.platform.core_2018_2.RecordRef product) {
+        this.product = product;
+    }
+
+
+    /**
+     * Gets the module value for this Issue.
+     * 
+     * @return module
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getModule() {
         return module;
     }
 
-    /**
-     * 设置module属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setModule(RecordRef value) {
-        this.module = value;
-    }
 
     /**
-     * 获取item属性的值。
+     * Sets the module value for this Issue.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param module
      */
-    public RecordRef getItem() {
+    public void setModule(com.netsuite.webservices.platform.core_2018_2.RecordRef module) {
+        this.module = module;
+    }
+
+
+    /**
+     * Gets the item value for this Issue.
+     * 
+     * @return item
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getItem() {
         return item;
     }
 
-    /**
-     * 设置item属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setItem(RecordRef value) {
-        this.item = value;
-    }
 
     /**
-     * 获取productTeam属性的值。
+     * Sets the item value for this Issue.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param item
      */
-    public RecordRef getProductTeam() {
+    public void setItem(com.netsuite.webservices.platform.core_2018_2.RecordRef item) {
+        this.item = item;
+    }
+
+
+    /**
+     * Gets the productTeam value for this Issue.
+     * 
+     * @return productTeam
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getProductTeam() {
         return productTeam;
     }
 
-    /**
-     * 设置productTeam属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setProductTeam(RecordRef value) {
-        this.productTeam = value;
-    }
 
     /**
-     * 获取source属性的值。
+     * Sets the productTeam value for this Issue.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param productTeam
      */
-    public RecordRef getSource() {
+    public void setProductTeam(com.netsuite.webservices.platform.core_2018_2.RecordRef productTeam) {
+        this.productTeam = productTeam;
+    }
+
+
+    /**
+     * Gets the source value for this Issue.
+     * 
+     * @return source
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getSource() {
         return source;
     }
 
-    /**
-     * 设置source属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setSource(RecordRef value) {
-        this.source = value;
-    }
 
     /**
-     * 获取reportedBy属性的值。
+     * Sets the source value for this Issue.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param source
      */
-    public RecordRef getReportedBy() {
+    public void setSource(com.netsuite.webservices.platform.core_2018_2.RecordRef source) {
+        this.source = source;
+    }
+
+
+    /**
+     * Gets the reportedBy value for this Issue.
+     * 
+     * @return reportedBy
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getReportedBy() {
         return reportedBy;
     }
 
-    /**
-     * 设置reportedBy属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setReportedBy(RecordRef value) {
-        this.reportedBy = value;
-    }
 
     /**
-     * 获取reproduce属性的值。
+     * Sets the reportedBy value for this Issue.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param reportedBy
      */
-    public RecordRef getReproduce() {
+    public void setReportedBy(com.netsuite.webservices.platform.core_2018_2.RecordRef reportedBy) {
+        this.reportedBy = reportedBy;
+    }
+
+
+    /**
+     * Gets the reproduce value for this Issue.
+     * 
+     * @return reproduce
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getReproduce() {
         return reproduce;
     }
 
-    /**
-     * 设置reproduce属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setReproduce(RecordRef value) {
-        this.reproduce = value;
-    }
 
     /**
-     * 获取versionBroken属性的值。
+     * Sets the reproduce value for this Issue.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param reproduce
      */
-    public RecordRef getVersionBroken() {
+    public void setReproduce(com.netsuite.webservices.platform.core_2018_2.RecordRef reproduce) {
+        this.reproduce = reproduce;
+    }
+
+
+    /**
+     * Gets the versionBroken value for this Issue.
+     * 
+     * @return versionBroken
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getVersionBroken() {
         return versionBroken;
     }
 
-    /**
-     * 设置versionBroken属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setVersionBroken(RecordRef value) {
-        this.versionBroken = value;
-    }
 
     /**
-     * 获取buildBroken属性的值。
+     * Sets the versionBroken value for this Issue.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param versionBroken
      */
-    public RecordRef getBuildBroken() {
+    public void setVersionBroken(com.netsuite.webservices.platform.core_2018_2.RecordRef versionBroken) {
+        this.versionBroken = versionBroken;
+    }
+
+
+    /**
+     * Gets the buildBroken value for this Issue.
+     * 
+     * @return buildBroken
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getBuildBroken() {
         return buildBroken;
     }
 
-    /**
-     * 设置buildBroken属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setBuildBroken(RecordRef value) {
-        this.buildBroken = value;
-    }
 
     /**
-     * 获取versionTarget属性的值。
+     * Sets the buildBroken value for this Issue.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param buildBroken
      */
-    public RecordRef getVersionTarget() {
+    public void setBuildBroken(com.netsuite.webservices.platform.core_2018_2.RecordRef buildBroken) {
+        this.buildBroken = buildBroken;
+    }
+
+
+    /**
+     * Gets the versionTarget value for this Issue.
+     * 
+     * @return versionTarget
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getVersionTarget() {
         return versionTarget;
     }
 
-    /**
-     * 设置versionTarget属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setVersionTarget(RecordRef value) {
-        this.versionTarget = value;
-    }
 
     /**
-     * 获取buildTarget属性的值。
+     * Sets the versionTarget value for this Issue.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param versionTarget
      */
-    public RecordRef getBuildTarget() {
+    public void setVersionTarget(com.netsuite.webservices.platform.core_2018_2.RecordRef versionTarget) {
+        this.versionTarget = versionTarget;
+    }
+
+
+    /**
+     * Gets the buildTarget value for this Issue.
+     * 
+     * @return buildTarget
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getBuildTarget() {
         return buildTarget;
     }
 
-    /**
-     * 设置buildTarget属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setBuildTarget(RecordRef value) {
-        this.buildTarget = value;
-    }
 
     /**
-     * 获取versionFixed属性的值。
+     * Sets the buildTarget value for this Issue.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param buildTarget
      */
-    public RecordRef getVersionFixed() {
+    public void setBuildTarget(com.netsuite.webservices.platform.core_2018_2.RecordRef buildTarget) {
+        this.buildTarget = buildTarget;
+    }
+
+
+    /**
+     * Gets the versionFixed value for this Issue.
+     * 
+     * @return versionFixed
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getVersionFixed() {
         return versionFixed;
     }
 
-    /**
-     * 设置versionFixed属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setVersionFixed(RecordRef value) {
-        this.versionFixed = value;
-    }
 
     /**
-     * 获取buildFixed属性的值。
+     * Sets the versionFixed value for this Issue.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param versionFixed
      */
-    public RecordRef getBuildFixed() {
+    public void setVersionFixed(com.netsuite.webservices.platform.core_2018_2.RecordRef versionFixed) {
+        this.versionFixed = versionFixed;
+    }
+
+
+    /**
+     * Gets the buildFixed value for this Issue.
+     * 
+     * @return buildFixed
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getBuildFixed() {
         return buildFixed;
     }
 
-    /**
-     * 设置buildFixed属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setBuildFixed(RecordRef value) {
-        this.buildFixed = value;
-    }
 
     /**
-     * 获取severity属性的值。
+     * Sets the buildFixed value for this Issue.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param buildFixed
      */
-    public RecordRef getSeverity() {
+    public void setBuildFixed(com.netsuite.webservices.platform.core_2018_2.RecordRef buildFixed) {
+        this.buildFixed = buildFixed;
+    }
+
+
+    /**
+     * Gets the severity value for this Issue.
+     * 
+     * @return severity
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getSeverity() {
         return severity;
     }
 
-    /**
-     * 设置severity属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setSeverity(RecordRef value) {
-        this.severity = value;
-    }
 
     /**
-     * 获取priority属性的值。
+     * Sets the severity value for this Issue.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param severity
      */
-    public RecordRef getPriority() {
+    public void setSeverity(com.netsuite.webservices.platform.core_2018_2.RecordRef severity) {
+        this.severity = severity;
+    }
+
+
+    /**
+     * Gets the priority value for this Issue.
+     * 
+     * @return priority
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getPriority() {
         return priority;
     }
 
-    /**
-     * 设置priority属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setPriority(RecordRef value) {
-        this.priority = value;
-    }
 
     /**
-     * 获取isShowStopper属性的值。
+     * Sets the priority value for this Issue.
      * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
+     * @param priority
      */
-    public Boolean isIsShowStopper() {
+    public void setPriority(com.netsuite.webservices.platform.core_2018_2.RecordRef priority) {
+        this.priority = priority;
+    }
+
+
+    /**
+     * Gets the isShowStopper value for this Issue.
+     * 
+     * @return isShowStopper
+     */
+    public java.lang.Boolean getIsShowStopper() {
         return isShowStopper;
     }
 
-    /**
-     * 设置isShowStopper属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
-     */
-    public void setIsShowStopper(Boolean value) {
-        this.isShowStopper = value;
-    }
 
     /**
-     * 获取assigned属性的值。
+     * Sets the isShowStopper value for this Issue.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param isShowStopper
      */
-    public RecordRef getAssigned() {
+    public void setIsShowStopper(java.lang.Boolean isShowStopper) {
+        this.isShowStopper = isShowStopper;
+    }
+
+
+    /**
+     * Gets the assigned value for this Issue.
+     * 
+     * @return assigned
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getAssigned() {
         return assigned;
     }
 
-    /**
-     * 设置assigned属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setAssigned(RecordRef value) {
-        this.assigned = value;
-    }
 
     /**
-     * 获取reviewer属性的值。
+     * Sets the assigned value for this Issue.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param assigned
      */
-    public RecordRef getReviewer() {
+    public void setAssigned(com.netsuite.webservices.platform.core_2018_2.RecordRef assigned) {
+        this.assigned = assigned;
+    }
+
+
+    /**
+     * Gets the reviewer value for this Issue.
+     * 
+     * @return reviewer
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getReviewer() {
         return reviewer;
     }
 
-    /**
-     * 设置reviewer属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setReviewer(RecordRef value) {
-        this.reviewer = value;
-    }
 
     /**
-     * 获取isReviewed属性的值。
+     * Sets the reviewer value for this Issue.
      * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
+     * @param reviewer
      */
-    public Boolean isIsReviewed() {
+    public void setReviewer(com.netsuite.webservices.platform.core_2018_2.RecordRef reviewer) {
+        this.reviewer = reviewer;
+    }
+
+
+    /**
+     * Gets the isReviewed value for this Issue.
+     * 
+     * @return isReviewed
+     */
+    public java.lang.Boolean getIsReviewed() {
         return isReviewed;
     }
 
-    /**
-     * 设置isReviewed属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
-     */
-    public void setIsReviewed(Boolean value) {
-        this.isReviewed = value;
-    }
 
     /**
-     * 获取issueStatus属性的值。
+     * Sets the isReviewed value for this Issue.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param isReviewed
      */
-    public RecordRef getIssueStatus() {
+    public void setIsReviewed(java.lang.Boolean isReviewed) {
+        this.isReviewed = isReviewed;
+    }
+
+
+    /**
+     * Gets the issueStatus value for this Issue.
+     * 
+     * @return issueStatus
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getIssueStatus() {
         return issueStatus;
     }
 
-    /**
-     * 设置issueStatus属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setIssueStatus(RecordRef value) {
-        this.issueStatus = value;
-    }
 
     /**
-     * 获取lastModifiedDate属性的值。
+     * Sets the issueStatus value for this Issue.
      * 
-     * @return
-     *     possible object is
-     *     {@link XMLGregorianCalendar }
-     *     
+     * @param issueStatus
      */
-    public XMLGregorianCalendar getLastModifiedDate() {
+    public void setIssueStatus(com.netsuite.webservices.platform.core_2018_2.RecordRef issueStatus) {
+        this.issueStatus = issueStatus;
+    }
+
+
+    /**
+     * Gets the lastModifiedDate value for this Issue.
+     * 
+     * @return lastModifiedDate
+     */
+    public java.util.Calendar getLastModifiedDate() {
         return lastModifiedDate;
     }
 
-    /**
-     * 设置lastModifiedDate属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link XMLGregorianCalendar }
-     *     
-     */
-    public void setLastModifiedDate(XMLGregorianCalendar value) {
-        this.lastModifiedDate = value;
-    }
 
     /**
-     * 获取issueTagsList属性的值。
+     * Sets the lastModifiedDate value for this Issue.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRefList }
-     *     
+     * @param lastModifiedDate
      */
-    public RecordRefList getIssueTagsList() {
+    public void setLastModifiedDate(java.util.Calendar lastModifiedDate) {
+        this.lastModifiedDate = lastModifiedDate;
+    }
+
+
+    /**
+     * Gets the issueTagsList value for this Issue.
+     * 
+     * @return issueTagsList
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef[] getIssueTagsList() {
         return issueTagsList;
     }
 
-    /**
-     * 设置issueTagsList属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRefList }
-     *     
-     */
-    public void setIssueTagsList(RecordRefList value) {
-        this.issueTagsList = value;
-    }
 
     /**
-     * 获取issueAbstract属性的值。
+     * Sets the issueTagsList value for this Issue.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param issueTagsList
      */
-    public String getIssueAbstract() {
+    public void setIssueTagsList(com.netsuite.webservices.platform.core_2018_2.RecordRef[] issueTagsList) {
+        this.issueTagsList = issueTagsList;
+    }
+
+
+    /**
+     * Gets the issueAbstract value for this Issue.
+     * 
+     * @return issueAbstract
+     */
+    public java.lang.String getIssueAbstract() {
         return issueAbstract;
     }
 
-    /**
-     * 设置issueAbstract属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setIssueAbstract(String value) {
-        this.issueAbstract = value;
-    }
 
     /**
-     * 获取newDetails属性的值。
+     * Sets the issueAbstract value for this Issue.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param issueAbstract
      */
-    public String getNewDetails() {
+    public void setIssueAbstract(java.lang.String issueAbstract) {
+        this.issueAbstract = issueAbstract;
+    }
+
+
+    /**
+     * Gets the newDetails value for this Issue.
+     * 
+     * @return newDetails
+     */
+    public java.lang.String getNewDetails() {
         return newDetails;
     }
 
-    /**
-     * 设置newDetails属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setNewDetails(String value) {
-        this.newDetails = value;
-    }
 
     /**
-     * 获取isOwner属性的值。
+     * Sets the newDetails value for this Issue.
      * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
+     * @param newDetails
      */
-    public Boolean isIsOwner() {
+    public void setNewDetails(java.lang.String newDetails) {
+        this.newDetails = newDetails;
+    }
+
+
+    /**
+     * Gets the isOwner value for this Issue.
+     * 
+     * @return isOwner
+     */
+    public java.lang.Boolean getIsOwner() {
         return isOwner;
     }
 
-    /**
-     * 设置isOwner属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
-     */
-    public void setIsOwner(Boolean value) {
-        this.isOwner = value;
-    }
 
     /**
-     * 获取trackCode属性的值。
+     * Sets the isOwner value for this Issue.
      * 
-     * @return
-     *     possible object is
-     *     {@link IssueTrackCode }
-     *     
+     * @param isOwner
      */
-    public IssueTrackCode getTrackCode() {
+    public void setIsOwner(java.lang.Boolean isOwner) {
+        this.isOwner = isOwner;
+    }
+
+
+    /**
+     * Gets the trackCode value for this Issue.
+     * 
+     * @return trackCode
+     */
+    public com.netsuite.webservices.lists.support_2018_2.types.IssueTrackCode getTrackCode() {
         return trackCode;
     }
 
-    /**
-     * 设置trackCode属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link IssueTrackCode }
-     *     
-     */
-    public void setTrackCode(IssueTrackCode value) {
-        this.trackCode = value;
-    }
 
     /**
-     * 获取emailAssignee属性的值。
+     * Sets the trackCode value for this Issue.
      * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
+     * @param trackCode
      */
-    public Boolean isEmailAssignee() {
+    public void setTrackCode(com.netsuite.webservices.lists.support_2018_2.types.IssueTrackCode trackCode) {
+        this.trackCode = trackCode;
+    }
+
+
+    /**
+     * Gets the emailAssignee value for this Issue.
+     * 
+     * @return emailAssignee
+     */
+    public java.lang.Boolean getEmailAssignee() {
         return emailAssignee;
     }
 
-    /**
-     * 设置emailAssignee属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
-     */
-    public void setEmailAssignee(Boolean value) {
-        this.emailAssignee = value;
-    }
 
     /**
-     * 获取emailEmployeesList属性的值。
+     * Sets the emailAssignee value for this Issue.
      * 
-     * @return
-     *     possible object is
-     *     {@link EmailEmployeesList }
-     *     
+     * @param emailAssignee
      */
-    public EmailEmployeesList getEmailEmployeesList() {
+    public void setEmailAssignee(java.lang.Boolean emailAssignee) {
+        this.emailAssignee = emailAssignee;
+    }
+
+
+    /**
+     * Gets the emailEmployeesList value for this Issue.
+     * 
+     * @return emailEmployeesList
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef[] getEmailEmployeesList() {
         return emailEmployeesList;
     }
 
-    /**
-     * 设置emailEmployeesList属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link EmailEmployeesList }
-     *     
-     */
-    public void setEmailEmployeesList(EmailEmployeesList value) {
-        this.emailEmployeesList = value;
-    }
 
     /**
-     * 获取emailCellsList属性的值。
+     * Sets the emailEmployeesList value for this Issue.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRefList }
-     *     
+     * @param emailEmployeesList
      */
-    public RecordRefList getEmailCellsList() {
+    public void setEmailEmployeesList(com.netsuite.webservices.platform.core_2018_2.RecordRef[] emailEmployeesList) {
+        this.emailEmployeesList = emailEmployeesList;
+    }
+
+
+    /**
+     * Gets the emailCellsList value for this Issue.
+     * 
+     * @return emailCellsList
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef[] getEmailCellsList() {
         return emailCellsList;
     }
 
-    /**
-     * 设置emailCellsList属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRefList }
-     *     
-     */
-    public void setEmailCellsList(RecordRefList value) {
-        this.emailCellsList = value;
-    }
 
     /**
-     * 获取externalAbstract属性的值。
+     * Sets the emailCellsList value for this Issue.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param emailCellsList
      */
-    public String getExternalAbstract() {
+    public void setEmailCellsList(com.netsuite.webservices.platform.core_2018_2.RecordRef[] emailCellsList) {
+        this.emailCellsList = emailCellsList;
+    }
+
+
+    /**
+     * Gets the externalAbstract value for this Issue.
+     * 
+     * @return externalAbstract
+     */
+    public java.lang.String getExternalAbstract() {
         return externalAbstract;
     }
 
-    /**
-     * 设置externalAbstract属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setExternalAbstract(String value) {
-        this.externalAbstract = value;
-    }
 
     /**
-     * 获取externalDetails属性的值。
+     * Sets the externalAbstract value for this Issue.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param externalAbstract
      */
-    public String getExternalDetails() {
+    public void setExternalAbstract(java.lang.String externalAbstract) {
+        this.externalAbstract = externalAbstract;
+    }
+
+
+    /**
+     * Gets the externalDetails value for this Issue.
+     * 
+     * @return externalDetails
+     */
+    public java.lang.String getExternalDetails() {
         return externalDetails;
     }
 
-    /**
-     * 设置externalDetails属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setExternalDetails(String value) {
-        this.externalDetails = value;
-    }
 
     /**
-     * 获取brokenInVersionList属性的值。
+     * Sets the externalDetails value for this Issue.
      * 
-     * @return
-     *     possible object is
-     *     {@link IssueVersionList }
-     *     
+     * @param externalDetails
      */
-    public IssueVersionList getBrokenInVersionList() {
+    public void setExternalDetails(java.lang.String externalDetails) {
+        this.externalDetails = externalDetails;
+    }
+
+
+    /**
+     * Gets the brokenInVersionList value for this Issue.
+     * 
+     * @return brokenInVersionList
+     */
+    public com.netsuite.webservices.lists.support_2018_2.IssueVersion[] getBrokenInVersionList() {
         return brokenInVersionList;
     }
 
-    /**
-     * 设置brokenInVersionList属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link IssueVersionList }
-     *     
-     */
-    public void setBrokenInVersionList(IssueVersionList value) {
-        this.brokenInVersionList = value;
-    }
 
     /**
-     * 获取targetVersionList属性的值。
+     * Sets the brokenInVersionList value for this Issue.
      * 
-     * @return
-     *     possible object is
-     *     {@link IssueVersionList }
-     *     
+     * @param brokenInVersionList
      */
-    public IssueVersionList getTargetVersionList() {
+    public void setBrokenInVersionList(com.netsuite.webservices.lists.support_2018_2.IssueVersion[] brokenInVersionList) {
+        this.brokenInVersionList = brokenInVersionList;
+    }
+
+
+    /**
+     * Gets the targetVersionList value for this Issue.
+     * 
+     * @return targetVersionList
+     */
+    public com.netsuite.webservices.lists.support_2018_2.IssueVersion[] getTargetVersionList() {
         return targetVersionList;
     }
 
-    /**
-     * 设置targetVersionList属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link IssueVersionList }
-     *     
-     */
-    public void setTargetVersionList(IssueVersionList value) {
-        this.targetVersionList = value;
-    }
 
     /**
-     * 获取fixedInVersionList属性的值。
+     * Sets the targetVersionList value for this Issue.
      * 
-     * @return
-     *     possible object is
-     *     {@link IssueVersionList }
-     *     
+     * @param targetVersionList
      */
-    public IssueVersionList getFixedInVersionList() {
+    public void setTargetVersionList(com.netsuite.webservices.lists.support_2018_2.IssueVersion[] targetVersionList) {
+        this.targetVersionList = targetVersionList;
+    }
+
+
+    /**
+     * Gets the fixedInVersionList value for this Issue.
+     * 
+     * @return fixedInVersionList
+     */
+    public com.netsuite.webservices.lists.support_2018_2.IssueVersion[] getFixedInVersionList() {
         return fixedInVersionList;
     }
 
-    /**
-     * 设置fixedInVersionList属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link IssueVersionList }
-     *     
-     */
-    public void setFixedInVersionList(IssueVersionList value) {
-        this.fixedInVersionList = value;
-    }
 
     /**
-     * 获取relatedIssuesList属性的值。
+     * Sets the fixedInVersionList value for this Issue.
      * 
-     * @return
-     *     possible object is
-     *     {@link IssueRelatedIssuesList }
-     *     
+     * @param fixedInVersionList
      */
-    public IssueRelatedIssuesList getRelatedIssuesList() {
+    public void setFixedInVersionList(com.netsuite.webservices.lists.support_2018_2.IssueVersion[] fixedInVersionList) {
+        this.fixedInVersionList = fixedInVersionList;
+    }
+
+
+    /**
+     * Gets the relatedIssuesList value for this Issue.
+     * 
+     * @return relatedIssuesList
+     */
+    public com.netsuite.webservices.lists.support_2018_2.IssueRelatedIssues[] getRelatedIssuesList() {
         return relatedIssuesList;
     }
 
-    /**
-     * 设置relatedIssuesList属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link IssueRelatedIssuesList }
-     *     
-     */
-    public void setRelatedIssuesList(IssueRelatedIssuesList value) {
-        this.relatedIssuesList = value;
-    }
 
     /**
-     * 获取customFieldList属性的值。
+     * Sets the relatedIssuesList value for this Issue.
      * 
-     * @return
-     *     possible object is
-     *     {@link CustomFieldList }
-     *     
+     * @param relatedIssuesList
      */
-    public CustomFieldList getCustomFieldList() {
+    public void setRelatedIssuesList(com.netsuite.webservices.lists.support_2018_2.IssueRelatedIssues[] relatedIssuesList) {
+        this.relatedIssuesList = relatedIssuesList;
+    }
+
+
+    /**
+     * Gets the customFieldList value for this Issue.
+     * 
+     * @return customFieldList
+     */
+    public com.netsuite.webservices.platform.core_2018_2.CustomFieldRef[] getCustomFieldList() {
         return customFieldList;
     }
 
-    /**
-     * 设置customFieldList属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link CustomFieldList }
-     *     
-     */
-    public void setCustomFieldList(CustomFieldList value) {
-        this.customFieldList = value;
-    }
 
     /**
-     * 获取internalId属性的值。
+     * Sets the customFieldList value for this Issue.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param customFieldList
      */
-    public String getInternalId() {
+    public void setCustomFieldList(com.netsuite.webservices.platform.core_2018_2.CustomFieldRef[] customFieldList) {
+        this.customFieldList = customFieldList;
+    }
+
+
+    /**
+     * Gets the internalId value for this Issue.
+     * 
+     * @return internalId
+     */
+    public java.lang.String getInternalId() {
         return internalId;
     }
 
-    /**
-     * 设置internalId属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setInternalId(String value) {
-        this.internalId = value;
-    }
 
     /**
-     * 获取externalId属性的值。
+     * Sets the internalId value for this Issue.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param internalId
      */
-    public String getExternalId() {
+    public void setInternalId(java.lang.String internalId) {
+        this.internalId = internalId;
+    }
+
+
+    /**
+     * Gets the externalId value for this Issue.
+     * 
+     * @return externalId
+     */
+    public java.lang.String getExternalId() {
         return externalId;
     }
 
+
     /**
-     * 设置externalId属性的值。
+     * Sets the externalId value for this Issue.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     * @param externalId
      */
-    public void setExternalId(String value) {
-        this.externalId = value;
+    public void setExternalId(java.lang.String externalId) {
+        this.externalId = externalId;
+    }
+
+    private java.lang.Object __equalsCalc = null;
+    public synchronized boolean equals(java.lang.Object obj) {
+        if (!(obj instanceof Issue)) return false;
+        Issue other = (Issue) obj;
+        if (obj == null) return false;
+        if (this == obj) return true;
+        if (__equalsCalc != null) {
+            return (__equalsCalc == obj);
+        }
+        __equalsCalc = obj;
+        boolean _equals;
+        _equals = super.equals(obj) && 
+            ((this.customForm==null && other.getCustomForm()==null) || 
+             (this.customForm!=null &&
+              this.customForm.equals(other.getCustomForm()))) &&
+            ((this.issueNumber==null && other.getIssueNumber()==null) || 
+             (this.issueNumber!=null &&
+              this.issueNumber.equals(other.getIssueNumber()))) &&
+            ((this.createdDate==null && other.getCreatedDate()==null) || 
+             (this.createdDate!=null &&
+              this.createdDate.equals(other.getCreatedDate()))) &&
+            ((this.issueType==null && other.getIssueType()==null) || 
+             (this.issueType!=null &&
+              this.issueType.equals(other.getIssueType()))) &&
+            ((this.product==null && other.getProduct()==null) || 
+             (this.product!=null &&
+              this.product.equals(other.getProduct()))) &&
+            ((this.module==null && other.getModule()==null) || 
+             (this.module!=null &&
+              this.module.equals(other.getModule()))) &&
+            ((this.item==null && other.getItem()==null) || 
+             (this.item!=null &&
+              this.item.equals(other.getItem()))) &&
+            ((this.productTeam==null && other.getProductTeam()==null) || 
+             (this.productTeam!=null &&
+              this.productTeam.equals(other.getProductTeam()))) &&
+            ((this.source==null && other.getSource()==null) || 
+             (this.source!=null &&
+              this.source.equals(other.getSource()))) &&
+            ((this.reportedBy==null && other.getReportedBy()==null) || 
+             (this.reportedBy!=null &&
+              this.reportedBy.equals(other.getReportedBy()))) &&
+            ((this.reproduce==null && other.getReproduce()==null) || 
+             (this.reproduce!=null &&
+              this.reproduce.equals(other.getReproduce()))) &&
+            ((this.versionBroken==null && other.getVersionBroken()==null) || 
+             (this.versionBroken!=null &&
+              this.versionBroken.equals(other.getVersionBroken()))) &&
+            ((this.buildBroken==null && other.getBuildBroken()==null) || 
+             (this.buildBroken!=null &&
+              this.buildBroken.equals(other.getBuildBroken()))) &&
+            ((this.versionTarget==null && other.getVersionTarget()==null) || 
+             (this.versionTarget!=null &&
+              this.versionTarget.equals(other.getVersionTarget()))) &&
+            ((this.buildTarget==null && other.getBuildTarget()==null) || 
+             (this.buildTarget!=null &&
+              this.buildTarget.equals(other.getBuildTarget()))) &&
+            ((this.versionFixed==null && other.getVersionFixed()==null) || 
+             (this.versionFixed!=null &&
+              this.versionFixed.equals(other.getVersionFixed()))) &&
+            ((this.buildFixed==null && other.getBuildFixed()==null) || 
+             (this.buildFixed!=null &&
+              this.buildFixed.equals(other.getBuildFixed()))) &&
+            ((this.severity==null && other.getSeverity()==null) || 
+             (this.severity!=null &&
+              this.severity.equals(other.getSeverity()))) &&
+            ((this.priority==null && other.getPriority()==null) || 
+             (this.priority!=null &&
+              this.priority.equals(other.getPriority()))) &&
+            ((this.isShowStopper==null && other.getIsShowStopper()==null) || 
+             (this.isShowStopper!=null &&
+              this.isShowStopper.equals(other.getIsShowStopper()))) &&
+            ((this.assigned==null && other.getAssigned()==null) || 
+             (this.assigned!=null &&
+              this.assigned.equals(other.getAssigned()))) &&
+            ((this.reviewer==null && other.getReviewer()==null) || 
+             (this.reviewer!=null &&
+              this.reviewer.equals(other.getReviewer()))) &&
+            ((this.isReviewed==null && other.getIsReviewed()==null) || 
+             (this.isReviewed!=null &&
+              this.isReviewed.equals(other.getIsReviewed()))) &&
+            ((this.issueStatus==null && other.getIssueStatus()==null) || 
+             (this.issueStatus!=null &&
+              this.issueStatus.equals(other.getIssueStatus()))) &&
+            ((this.lastModifiedDate==null && other.getLastModifiedDate()==null) || 
+             (this.lastModifiedDate!=null &&
+              this.lastModifiedDate.equals(other.getLastModifiedDate()))) &&
+            ((this.issueTagsList==null && other.getIssueTagsList()==null) || 
+             (this.issueTagsList!=null &&
+              java.util.Arrays.equals(this.issueTagsList, other.getIssueTagsList()))) &&
+            ((this.issueAbstract==null && other.getIssueAbstract()==null) || 
+             (this.issueAbstract!=null &&
+              this.issueAbstract.equals(other.getIssueAbstract()))) &&
+            ((this.newDetails==null && other.getNewDetails()==null) || 
+             (this.newDetails!=null &&
+              this.newDetails.equals(other.getNewDetails()))) &&
+            ((this.isOwner==null && other.getIsOwner()==null) || 
+             (this.isOwner!=null &&
+              this.isOwner.equals(other.getIsOwner()))) &&
+            ((this.trackCode==null && other.getTrackCode()==null) || 
+             (this.trackCode!=null &&
+              this.trackCode.equals(other.getTrackCode()))) &&
+            ((this.emailAssignee==null && other.getEmailAssignee()==null) || 
+             (this.emailAssignee!=null &&
+              this.emailAssignee.equals(other.getEmailAssignee()))) &&
+            ((this.emailEmployeesList==null && other.getEmailEmployeesList()==null) || 
+             (this.emailEmployeesList!=null &&
+              java.util.Arrays.equals(this.emailEmployeesList, other.getEmailEmployeesList()))) &&
+            ((this.emailCellsList==null && other.getEmailCellsList()==null) || 
+             (this.emailCellsList!=null &&
+              java.util.Arrays.equals(this.emailCellsList, other.getEmailCellsList()))) &&
+            ((this.externalAbstract==null && other.getExternalAbstract()==null) || 
+             (this.externalAbstract!=null &&
+              this.externalAbstract.equals(other.getExternalAbstract()))) &&
+            ((this.externalDetails==null && other.getExternalDetails()==null) || 
+             (this.externalDetails!=null &&
+              this.externalDetails.equals(other.getExternalDetails()))) &&
+            ((this.brokenInVersionList==null && other.getBrokenInVersionList()==null) || 
+             (this.brokenInVersionList!=null &&
+              java.util.Arrays.equals(this.brokenInVersionList, other.getBrokenInVersionList()))) &&
+            ((this.targetVersionList==null && other.getTargetVersionList()==null) || 
+             (this.targetVersionList!=null &&
+              java.util.Arrays.equals(this.targetVersionList, other.getTargetVersionList()))) &&
+            ((this.fixedInVersionList==null && other.getFixedInVersionList()==null) || 
+             (this.fixedInVersionList!=null &&
+              java.util.Arrays.equals(this.fixedInVersionList, other.getFixedInVersionList()))) &&
+            ((this.relatedIssuesList==null && other.getRelatedIssuesList()==null) || 
+             (this.relatedIssuesList!=null &&
+              java.util.Arrays.equals(this.relatedIssuesList, other.getRelatedIssuesList()))) &&
+            ((this.customFieldList==null && other.getCustomFieldList()==null) || 
+             (this.customFieldList!=null &&
+              java.util.Arrays.equals(this.customFieldList, other.getCustomFieldList()))) &&
+            ((this.internalId==null && other.getInternalId()==null) || 
+             (this.internalId!=null &&
+              this.internalId.equals(other.getInternalId()))) &&
+            ((this.externalId==null && other.getExternalId()==null) || 
+             (this.externalId!=null &&
+              this.externalId.equals(other.getExternalId())));
+        __equalsCalc = null;
+        return _equals;
+    }
+
+    private boolean __hashCodeCalc = false;
+    public synchronized int hashCode() {
+        if (__hashCodeCalc) {
+            return 0;
+        }
+        __hashCodeCalc = true;
+        int _hashCode = super.hashCode();
+        if (getCustomForm() != null) {
+            _hashCode += getCustomForm().hashCode();
+        }
+        if (getIssueNumber() != null) {
+            _hashCode += getIssueNumber().hashCode();
+        }
+        if (getCreatedDate() != null) {
+            _hashCode += getCreatedDate().hashCode();
+        }
+        if (getIssueType() != null) {
+            _hashCode += getIssueType().hashCode();
+        }
+        if (getProduct() != null) {
+            _hashCode += getProduct().hashCode();
+        }
+        if (getModule() != null) {
+            _hashCode += getModule().hashCode();
+        }
+        if (getItem() != null) {
+            _hashCode += getItem().hashCode();
+        }
+        if (getProductTeam() != null) {
+            _hashCode += getProductTeam().hashCode();
+        }
+        if (getSource() != null) {
+            _hashCode += getSource().hashCode();
+        }
+        if (getReportedBy() != null) {
+            _hashCode += getReportedBy().hashCode();
+        }
+        if (getReproduce() != null) {
+            _hashCode += getReproduce().hashCode();
+        }
+        if (getVersionBroken() != null) {
+            _hashCode += getVersionBroken().hashCode();
+        }
+        if (getBuildBroken() != null) {
+            _hashCode += getBuildBroken().hashCode();
+        }
+        if (getVersionTarget() != null) {
+            _hashCode += getVersionTarget().hashCode();
+        }
+        if (getBuildTarget() != null) {
+            _hashCode += getBuildTarget().hashCode();
+        }
+        if (getVersionFixed() != null) {
+            _hashCode += getVersionFixed().hashCode();
+        }
+        if (getBuildFixed() != null) {
+            _hashCode += getBuildFixed().hashCode();
+        }
+        if (getSeverity() != null) {
+            _hashCode += getSeverity().hashCode();
+        }
+        if (getPriority() != null) {
+            _hashCode += getPriority().hashCode();
+        }
+        if (getIsShowStopper() != null) {
+            _hashCode += getIsShowStopper().hashCode();
+        }
+        if (getAssigned() != null) {
+            _hashCode += getAssigned().hashCode();
+        }
+        if (getReviewer() != null) {
+            _hashCode += getReviewer().hashCode();
+        }
+        if (getIsReviewed() != null) {
+            _hashCode += getIsReviewed().hashCode();
+        }
+        if (getIssueStatus() != null) {
+            _hashCode += getIssueStatus().hashCode();
+        }
+        if (getLastModifiedDate() != null) {
+            _hashCode += getLastModifiedDate().hashCode();
+        }
+        if (getIssueTagsList() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getIssueTagsList());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getIssueTagsList(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getIssueAbstract() != null) {
+            _hashCode += getIssueAbstract().hashCode();
+        }
+        if (getNewDetails() != null) {
+            _hashCode += getNewDetails().hashCode();
+        }
+        if (getIsOwner() != null) {
+            _hashCode += getIsOwner().hashCode();
+        }
+        if (getTrackCode() != null) {
+            _hashCode += getTrackCode().hashCode();
+        }
+        if (getEmailAssignee() != null) {
+            _hashCode += getEmailAssignee().hashCode();
+        }
+        if (getEmailEmployeesList() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getEmailEmployeesList());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getEmailEmployeesList(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getEmailCellsList() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getEmailCellsList());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getEmailCellsList(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getExternalAbstract() != null) {
+            _hashCode += getExternalAbstract().hashCode();
+        }
+        if (getExternalDetails() != null) {
+            _hashCode += getExternalDetails().hashCode();
+        }
+        if (getBrokenInVersionList() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getBrokenInVersionList());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getBrokenInVersionList(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getTargetVersionList() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getTargetVersionList());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getTargetVersionList(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getFixedInVersionList() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getFixedInVersionList());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getFixedInVersionList(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getRelatedIssuesList() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getRelatedIssuesList());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getRelatedIssuesList(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getCustomFieldList() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getCustomFieldList());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getCustomFieldList(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getInternalId() != null) {
+            _hashCode += getInternalId().hashCode();
+        }
+        if (getExternalId() != null) {
+            _hashCode += getExternalId().hashCode();
+        }
+        __hashCodeCalc = false;
+        return _hashCode;
+    }
+
+    // Type metadata
+    private static org.apache.axis.description.TypeDesc typeDesc =
+        new org.apache.axis.description.TypeDesc(Issue.class, true);
+
+    static {
+        typeDesc.setXmlType(new javax.xml.namespace.QName("urn:support_2018_2.lists.webservices.netsuite.com", "Issue"));
+        org.apache.axis.description.AttributeDesc attrField = new org.apache.axis.description.AttributeDesc();
+        attrField.setFieldName("internalId");
+        attrField.setXmlName(new javax.xml.namespace.QName("", "internalId"));
+        attrField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        typeDesc.addFieldDesc(attrField);
+        attrField = new org.apache.axis.description.AttributeDesc();
+        attrField.setFieldName("externalId");
+        attrField.setXmlName(new javax.xml.namespace.QName("", "externalId"));
+        attrField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        typeDesc.addFieldDesc(attrField);
+        org.apache.axis.description.ElementDesc elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("customForm");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:support_2018_2.lists.webservices.netsuite.com", "customForm"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("issueNumber");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:support_2018_2.lists.webservices.netsuite.com", "issueNumber"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("createdDate");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:support_2018_2.lists.webservices.netsuite.com", "createdDate"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "dateTime"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("issueType");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:support_2018_2.lists.webservices.netsuite.com", "issueType"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("product");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:support_2018_2.lists.webservices.netsuite.com", "product"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("module");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:support_2018_2.lists.webservices.netsuite.com", "module"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("item");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:support_2018_2.lists.webservices.netsuite.com", "item"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("productTeam");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:support_2018_2.lists.webservices.netsuite.com", "productTeam"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("source");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:support_2018_2.lists.webservices.netsuite.com", "source"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("reportedBy");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:support_2018_2.lists.webservices.netsuite.com", "reportedBy"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("reproduce");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:support_2018_2.lists.webservices.netsuite.com", "reproduce"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("versionBroken");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:support_2018_2.lists.webservices.netsuite.com", "versionBroken"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("buildBroken");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:support_2018_2.lists.webservices.netsuite.com", "buildBroken"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("versionTarget");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:support_2018_2.lists.webservices.netsuite.com", "versionTarget"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("buildTarget");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:support_2018_2.lists.webservices.netsuite.com", "buildTarget"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("versionFixed");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:support_2018_2.lists.webservices.netsuite.com", "versionFixed"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("buildFixed");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:support_2018_2.lists.webservices.netsuite.com", "buildFixed"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("severity");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:support_2018_2.lists.webservices.netsuite.com", "severity"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("priority");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:support_2018_2.lists.webservices.netsuite.com", "priority"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("isShowStopper");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:support_2018_2.lists.webservices.netsuite.com", "isShowStopper"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("assigned");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:support_2018_2.lists.webservices.netsuite.com", "assigned"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("reviewer");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:support_2018_2.lists.webservices.netsuite.com", "reviewer"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("isReviewed");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:support_2018_2.lists.webservices.netsuite.com", "isReviewed"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("issueStatus");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:support_2018_2.lists.webservices.netsuite.com", "issueStatus"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("lastModifiedDate");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:support_2018_2.lists.webservices.netsuite.com", "lastModifiedDate"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "dateTime"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("issueTagsList");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:support_2018_2.lists.webservices.netsuite.com", "issueTagsList"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "recordRef"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("issueAbstract");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:support_2018_2.lists.webservices.netsuite.com", "issueAbstract"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("newDetails");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:support_2018_2.lists.webservices.netsuite.com", "newDetails"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("isOwner");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:support_2018_2.lists.webservices.netsuite.com", "isOwner"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("trackCode");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:support_2018_2.lists.webservices.netsuite.com", "trackCode"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:types.support_2018_2.lists.webservices.netsuite.com", "IssueTrackCode"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("emailAssignee");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:support_2018_2.lists.webservices.netsuite.com", "emailAssignee"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("emailEmployeesList");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:support_2018_2.lists.webservices.netsuite.com", "emailEmployeesList"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:support_2018_2.lists.webservices.netsuite.com", "emailEmployees"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("emailCellsList");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:support_2018_2.lists.webservices.netsuite.com", "emailCellsList"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "recordRef"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("externalAbstract");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:support_2018_2.lists.webservices.netsuite.com", "externalAbstract"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("externalDetails");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:support_2018_2.lists.webservices.netsuite.com", "externalDetails"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("brokenInVersionList");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:support_2018_2.lists.webservices.netsuite.com", "brokenInVersionList"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:support_2018_2.lists.webservices.netsuite.com", "IssueVersion"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:support_2018_2.lists.webservices.netsuite.com", "issueVersion"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("targetVersionList");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:support_2018_2.lists.webservices.netsuite.com", "targetVersionList"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:support_2018_2.lists.webservices.netsuite.com", "IssueVersion"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:support_2018_2.lists.webservices.netsuite.com", "issueVersion"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("fixedInVersionList");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:support_2018_2.lists.webservices.netsuite.com", "fixedInVersionList"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:support_2018_2.lists.webservices.netsuite.com", "IssueVersion"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:support_2018_2.lists.webservices.netsuite.com", "issueVersion"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("relatedIssuesList");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:support_2018_2.lists.webservices.netsuite.com", "relatedIssuesList"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:support_2018_2.lists.webservices.netsuite.com", "IssueRelatedIssues"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:support_2018_2.lists.webservices.netsuite.com", "issueRelatedIssues"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("customFieldList");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:support_2018_2.lists.webservices.netsuite.com", "customFieldList"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "CustomFieldRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "customField"));
+        typeDesc.addFieldDesc(elemField);
+    }
+
+    /**
+     * Return type metadata object
+     */
+    public static org.apache.axis.description.TypeDesc getTypeDesc() {
+        return typeDesc;
+    }
+
+    /**
+     * Get Custom Serializer
+     */
+    public static org.apache.axis.encoding.Serializer getSerializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanSerializer(
+            _javaType, _xmlType, typeDesc);
+    }
+
+    /**
+     * Get Custom Deserializer
+     */
+    public static org.apache.axis.encoding.Deserializer getDeserializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanDeserializer(
+            _javaType, _xmlType, typeDesc);
     }
 
 }

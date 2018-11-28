@@ -1,168 +1,268 @@
+/**
+ * EmployeeEmergencyContact.java
+ *
+ * This file was auto-generated from WSDL
+ * by the Apache Axis 1.4 Jul 28, 2010 (04:07:04 PDT) WSDL2Java emitter.
+ */
 
 package com.netsuite.webservices.lists.employees_2018_2;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlType;
+public class EmployeeEmergencyContact  implements java.io.Serializable {
+    private java.lang.Long id;
 
+    private java.lang.String contact;
 
-/**
- * <p>EmployeeEmergencyContact complex type的 Java 类。
- * 
- * <p>以下模式片段指定包含在此类中的预期内容。
- * 
- * <pre>
- * &lt;complexType name="EmployeeEmergencyContact">
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element name="id" type="{http://www.w3.org/2001/XMLSchema}long" minOccurs="0"/>
- *         &lt;element name="contact" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="relationship" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="address" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="phone" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
- */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "EmployeeEmergencyContact", propOrder = {
-    "id",
-    "contact",
-    "relationship",
-    "address",
-    "phone"
-})
-public class EmployeeEmergencyContact {
+    private java.lang.String relationship;
 
-    protected Long id;
-    protected String contact;
-    protected String relationship;
-    protected String address;
-    protected String phone;
+    private java.lang.String address;
+
+    private java.lang.String phone;
+
+    public EmployeeEmergencyContact() {
+    }
+
+    public EmployeeEmergencyContact(
+           java.lang.Long id,
+           java.lang.String contact,
+           java.lang.String relationship,
+           java.lang.String address,
+           java.lang.String phone) {
+           this.id = id;
+           this.contact = contact;
+           this.relationship = relationship;
+           this.address = address;
+           this.phone = phone;
+    }
+
 
     /**
-     * 获取id属性的值。
+     * Gets the id value for this EmployeeEmergencyContact.
      * 
-     * @return
-     *     possible object is
-     *     {@link Long }
-     *     
+     * @return id
      */
-    public Long getId() {
+    public java.lang.Long getId() {
         return id;
     }
 
-    /**
-     * 设置id属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Long }
-     *     
-     */
-    public void setId(Long value) {
-        this.id = value;
-    }
 
     /**
-     * 获取contact属性的值。
+     * Sets the id value for this EmployeeEmergencyContact.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param id
      */
-    public String getContact() {
+    public void setId(java.lang.Long id) {
+        this.id = id;
+    }
+
+
+    /**
+     * Gets the contact value for this EmployeeEmergencyContact.
+     * 
+     * @return contact
+     */
+    public java.lang.String getContact() {
         return contact;
     }
 
-    /**
-     * 设置contact属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setContact(String value) {
-        this.contact = value;
-    }
 
     /**
-     * 获取relationship属性的值。
+     * Sets the contact value for this EmployeeEmergencyContact.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param contact
      */
-    public String getRelationship() {
+    public void setContact(java.lang.String contact) {
+        this.contact = contact;
+    }
+
+
+    /**
+     * Gets the relationship value for this EmployeeEmergencyContact.
+     * 
+     * @return relationship
+     */
+    public java.lang.String getRelationship() {
         return relationship;
     }
 
-    /**
-     * 设置relationship属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setRelationship(String value) {
-        this.relationship = value;
-    }
 
     /**
-     * 获取address属性的值。
+     * Sets the relationship value for this EmployeeEmergencyContact.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param relationship
      */
-    public String getAddress() {
+    public void setRelationship(java.lang.String relationship) {
+        this.relationship = relationship;
+    }
+
+
+    /**
+     * Gets the address value for this EmployeeEmergencyContact.
+     * 
+     * @return address
+     */
+    public java.lang.String getAddress() {
         return address;
     }
 
-    /**
-     * 设置address属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setAddress(String value) {
-        this.address = value;
-    }
 
     /**
-     * 获取phone属性的值。
+     * Sets the address value for this EmployeeEmergencyContact.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param address
      */
-    public String getPhone() {
+    public void setAddress(java.lang.String address) {
+        this.address = address;
+    }
+
+
+    /**
+     * Gets the phone value for this EmployeeEmergencyContact.
+     * 
+     * @return phone
+     */
+    public java.lang.String getPhone() {
         return phone;
     }
 
+
     /**
-     * 设置phone属性的值。
+     * Sets the phone value for this EmployeeEmergencyContact.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     * @param phone
      */
-    public void setPhone(String value) {
-        this.phone = value;
+    public void setPhone(java.lang.String phone) {
+        this.phone = phone;
+    }
+
+    private java.lang.Object __equalsCalc = null;
+    public synchronized boolean equals(java.lang.Object obj) {
+        if (!(obj instanceof EmployeeEmergencyContact)) return false;
+        EmployeeEmergencyContact other = (EmployeeEmergencyContact) obj;
+        if (obj == null) return false;
+        if (this == obj) return true;
+        if (__equalsCalc != null) {
+            return (__equalsCalc == obj);
+        }
+        __equalsCalc = obj;
+        boolean _equals;
+        _equals = true && 
+            ((this.id==null && other.getId()==null) || 
+             (this.id!=null &&
+              this.id.equals(other.getId()))) &&
+            ((this.contact==null && other.getContact()==null) || 
+             (this.contact!=null &&
+              this.contact.equals(other.getContact()))) &&
+            ((this.relationship==null && other.getRelationship()==null) || 
+             (this.relationship!=null &&
+              this.relationship.equals(other.getRelationship()))) &&
+            ((this.address==null && other.getAddress()==null) || 
+             (this.address!=null &&
+              this.address.equals(other.getAddress()))) &&
+            ((this.phone==null && other.getPhone()==null) || 
+             (this.phone!=null &&
+              this.phone.equals(other.getPhone())));
+        __equalsCalc = null;
+        return _equals;
+    }
+
+    private boolean __hashCodeCalc = false;
+    public synchronized int hashCode() {
+        if (__hashCodeCalc) {
+            return 0;
+        }
+        __hashCodeCalc = true;
+        int _hashCode = 1;
+        if (getId() != null) {
+            _hashCode += getId().hashCode();
+        }
+        if (getContact() != null) {
+            _hashCode += getContact().hashCode();
+        }
+        if (getRelationship() != null) {
+            _hashCode += getRelationship().hashCode();
+        }
+        if (getAddress() != null) {
+            _hashCode += getAddress().hashCode();
+        }
+        if (getPhone() != null) {
+            _hashCode += getPhone().hashCode();
+        }
+        __hashCodeCalc = false;
+        return _hashCode;
+    }
+
+    // Type metadata
+    private static org.apache.axis.description.TypeDesc typeDesc =
+        new org.apache.axis.description.TypeDesc(EmployeeEmergencyContact.class, true);
+
+    static {
+        typeDesc.setXmlType(new javax.xml.namespace.QName("urn:employees_2018_2.lists.webservices.netsuite.com", "EmployeeEmergencyContact"));
+        org.apache.axis.description.ElementDesc elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("id");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:employees_2018_2.lists.webservices.netsuite.com", "id"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "long"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("contact");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:employees_2018_2.lists.webservices.netsuite.com", "contact"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("relationship");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:employees_2018_2.lists.webservices.netsuite.com", "relationship"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("address");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:employees_2018_2.lists.webservices.netsuite.com", "address"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("phone");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:employees_2018_2.lists.webservices.netsuite.com", "phone"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+    }
+
+    /**
+     * Return type metadata object
+     */
+    public static org.apache.axis.description.TypeDesc getTypeDesc() {
+        return typeDesc;
+    }
+
+    /**
+     * Get Custom Serializer
+     */
+    public static org.apache.axis.encoding.Serializer getSerializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanSerializer(
+            _javaType, _xmlType, typeDesc);
+    }
+
+    /**
+     * Get Custom Deserializer
+     */
+    public static org.apache.axis.encoding.Deserializer getDeserializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanDeserializer(
+            _javaType, _xmlType, typeDesc);
     }
 
 }

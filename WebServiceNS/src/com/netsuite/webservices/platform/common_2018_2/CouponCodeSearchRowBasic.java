@@ -1,331 +1,569 @@
+/**
+ * CouponCodeSearchRowBasic.java
+ *
+ * This file was auto-generated from WSDL
+ * by the Apache Axis 1.4 Jul 28, 2010 (04:07:04 PDT) WSDL2Java emitter.
+ */
 
 package com.netsuite.webservices.platform.common_2018_2;
 
-import java.util.ArrayList;
-import java.util.List;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlType;
-import com.netsuite.webservices.platform.core_2018_2.SearchColumnBooleanField;
-import com.netsuite.webservices.platform.core_2018_2.SearchColumnDateField;
-import com.netsuite.webservices.platform.core_2018_2.SearchColumnLongField;
-import com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField;
-import com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField;
-import com.netsuite.webservices.platform.core_2018_2.SearchRowBasic;
+public class CouponCodeSearchRowBasic  extends com.netsuite.webservices.platform.core_2018_2.SearchRowBasic  implements java.io.Serializable {
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] code;
 
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnDateField[] dateSent;
 
-/**
- * <p>CouponCodeSearchRowBasic complex type的 Java 类。
- * 
- * <p>以下模式片段指定包含在此类中的预期内容。
- * 
- * <pre>
- * &lt;complexType name="CouponCodeSearchRowBasic">
- *   &lt;complexContent>
- *     &lt;extension base="{urn:core_2018_2.platform.webservices.netsuite.com}SearchRowBasic">
- *       &lt;sequence>
- *         &lt;element name="code" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnStringField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="dateSent" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnDateField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="externalId" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnSelectField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="id" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnLongField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="internalId" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnSelectField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="promotion" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnStringField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="recipient" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnStringField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="useCount" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnLongField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="used" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnBooleanField" maxOccurs="unbounded" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/extension>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
- */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "CouponCodeSearchRowBasic", propOrder = {
-    "code",
-    "dateSent",
-    "externalId",
-    "id",
-    "internalId",
-    "promotion",
-    "recipient",
-    "useCount",
-    "used"
-})
-public class CouponCodeSearchRowBasic
-    extends SearchRowBasic
-{
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] externalId;
 
-    protected List<SearchColumnStringField> code;
-    protected List<SearchColumnDateField> dateSent;
-    protected List<SearchColumnSelectField> externalId;
-    protected List<SearchColumnLongField> id;
-    protected List<SearchColumnSelectField> internalId;
-    protected List<SearchColumnStringField> promotion;
-    protected List<SearchColumnStringField> recipient;
-    protected List<SearchColumnLongField> useCount;
-    protected List<SearchColumnBooleanField> used;
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnLongField[] id;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] internalId;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] promotion;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] recipient;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnLongField[] useCount;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnBooleanField[] used;
+
+    public CouponCodeSearchRowBasic() {
+    }
+
+    public CouponCodeSearchRowBasic(
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] code,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnDateField[] dateSent,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] externalId,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnLongField[] id,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] internalId,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] promotion,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] recipient,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnLongField[] useCount,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnBooleanField[] used) {
+        this.code = code;
+        this.dateSent = dateSent;
+        this.externalId = externalId;
+        this.id = id;
+        this.internalId = internalId;
+        this.promotion = promotion;
+        this.recipient = recipient;
+        this.useCount = useCount;
+        this.used = used;
+    }
+
 
     /**
-     * Gets the value of the code property.
+     * Gets the code value for this CouponCodeSearchRowBasic.
      * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the code property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getCode().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnStringField }
-     * 
-     * 
+     * @return code
      */
-    public List<SearchColumnStringField> getCode() {
-        if (code == null) {
-            code = new ArrayList<SearchColumnStringField>();
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] getCode() {
+        return code;
+    }
+
+
+    /**
+     * Sets the code value for this CouponCodeSearchRowBasic.
+     * 
+     * @param code
+     */
+    public void setCode(com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] code) {
+        this.code = code;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField getCode(int i) {
+        return this.code[i];
+    }
+
+    public void setCode(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField _value) {
+        this.code[i] = _value;
+    }
+
+
+    /**
+     * Gets the dateSent value for this CouponCodeSearchRowBasic.
+     * 
+     * @return dateSent
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnDateField[] getDateSent() {
+        return dateSent;
+    }
+
+
+    /**
+     * Sets the dateSent value for this CouponCodeSearchRowBasic.
+     * 
+     * @param dateSent
+     */
+    public void setDateSent(com.netsuite.webservices.platform.core_2018_2.SearchColumnDateField[] dateSent) {
+        this.dateSent = dateSent;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnDateField getDateSent(int i) {
+        return this.dateSent[i];
+    }
+
+    public void setDateSent(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnDateField _value) {
+        this.dateSent[i] = _value;
+    }
+
+
+    /**
+     * Gets the externalId value for this CouponCodeSearchRowBasic.
+     * 
+     * @return externalId
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] getExternalId() {
+        return externalId;
+    }
+
+
+    /**
+     * Sets the externalId value for this CouponCodeSearchRowBasic.
+     * 
+     * @param externalId
+     */
+    public void setExternalId(com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] externalId) {
+        this.externalId = externalId;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField getExternalId(int i) {
+        return this.externalId[i];
+    }
+
+    public void setExternalId(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField _value) {
+        this.externalId[i] = _value;
+    }
+
+
+    /**
+     * Gets the id value for this CouponCodeSearchRowBasic.
+     * 
+     * @return id
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnLongField[] getId() {
+        return id;
+    }
+
+
+    /**
+     * Sets the id value for this CouponCodeSearchRowBasic.
+     * 
+     * @param id
+     */
+    public void setId(com.netsuite.webservices.platform.core_2018_2.SearchColumnLongField[] id) {
+        this.id = id;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnLongField getId(int i) {
+        return this.id[i];
+    }
+
+    public void setId(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnLongField _value) {
+        this.id[i] = _value;
+    }
+
+
+    /**
+     * Gets the internalId value for this CouponCodeSearchRowBasic.
+     * 
+     * @return internalId
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] getInternalId() {
+        return internalId;
+    }
+
+
+    /**
+     * Sets the internalId value for this CouponCodeSearchRowBasic.
+     * 
+     * @param internalId
+     */
+    public void setInternalId(com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] internalId) {
+        this.internalId = internalId;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField getInternalId(int i) {
+        return this.internalId[i];
+    }
+
+    public void setInternalId(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField _value) {
+        this.internalId[i] = _value;
+    }
+
+
+    /**
+     * Gets the promotion value for this CouponCodeSearchRowBasic.
+     * 
+     * @return promotion
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] getPromotion() {
+        return promotion;
+    }
+
+
+    /**
+     * Sets the promotion value for this CouponCodeSearchRowBasic.
+     * 
+     * @param promotion
+     */
+    public void setPromotion(com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] promotion) {
+        this.promotion = promotion;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField getPromotion(int i) {
+        return this.promotion[i];
+    }
+
+    public void setPromotion(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField _value) {
+        this.promotion[i] = _value;
+    }
+
+
+    /**
+     * Gets the recipient value for this CouponCodeSearchRowBasic.
+     * 
+     * @return recipient
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] getRecipient() {
+        return recipient;
+    }
+
+
+    /**
+     * Sets the recipient value for this CouponCodeSearchRowBasic.
+     * 
+     * @param recipient
+     */
+    public void setRecipient(com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] recipient) {
+        this.recipient = recipient;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField getRecipient(int i) {
+        return this.recipient[i];
+    }
+
+    public void setRecipient(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField _value) {
+        this.recipient[i] = _value;
+    }
+
+
+    /**
+     * Gets the useCount value for this CouponCodeSearchRowBasic.
+     * 
+     * @return useCount
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnLongField[] getUseCount() {
+        return useCount;
+    }
+
+
+    /**
+     * Sets the useCount value for this CouponCodeSearchRowBasic.
+     * 
+     * @param useCount
+     */
+    public void setUseCount(com.netsuite.webservices.platform.core_2018_2.SearchColumnLongField[] useCount) {
+        this.useCount = useCount;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnLongField getUseCount(int i) {
+        return this.useCount[i];
+    }
+
+    public void setUseCount(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnLongField _value) {
+        this.useCount[i] = _value;
+    }
+
+
+    /**
+     * Gets the used value for this CouponCodeSearchRowBasic.
+     * 
+     * @return used
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnBooleanField[] getUsed() {
+        return used;
+    }
+
+
+    /**
+     * Sets the used value for this CouponCodeSearchRowBasic.
+     * 
+     * @param used
+     */
+    public void setUsed(com.netsuite.webservices.platform.core_2018_2.SearchColumnBooleanField[] used) {
+        this.used = used;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnBooleanField getUsed(int i) {
+        return this.used[i];
+    }
+
+    public void setUsed(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnBooleanField _value) {
+        this.used[i] = _value;
+    }
+
+    private java.lang.Object __equalsCalc = null;
+    public synchronized boolean equals(java.lang.Object obj) {
+        if (!(obj instanceof CouponCodeSearchRowBasic)) return false;
+        CouponCodeSearchRowBasic other = (CouponCodeSearchRowBasic) obj;
+        if (obj == null) return false;
+        if (this == obj) return true;
+        if (__equalsCalc != null) {
+            return (__equalsCalc == obj);
         }
-        return this.code;
+        __equalsCalc = obj;
+        boolean _equals;
+        _equals = super.equals(obj) && 
+            ((this.code==null && other.getCode()==null) || 
+             (this.code!=null &&
+              java.util.Arrays.equals(this.code, other.getCode()))) &&
+            ((this.dateSent==null && other.getDateSent()==null) || 
+             (this.dateSent!=null &&
+              java.util.Arrays.equals(this.dateSent, other.getDateSent()))) &&
+            ((this.externalId==null && other.getExternalId()==null) || 
+             (this.externalId!=null &&
+              java.util.Arrays.equals(this.externalId, other.getExternalId()))) &&
+            ((this.id==null && other.getId()==null) || 
+             (this.id!=null &&
+              java.util.Arrays.equals(this.id, other.getId()))) &&
+            ((this.internalId==null && other.getInternalId()==null) || 
+             (this.internalId!=null &&
+              java.util.Arrays.equals(this.internalId, other.getInternalId()))) &&
+            ((this.promotion==null && other.getPromotion()==null) || 
+             (this.promotion!=null &&
+              java.util.Arrays.equals(this.promotion, other.getPromotion()))) &&
+            ((this.recipient==null && other.getRecipient()==null) || 
+             (this.recipient!=null &&
+              java.util.Arrays.equals(this.recipient, other.getRecipient()))) &&
+            ((this.useCount==null && other.getUseCount()==null) || 
+             (this.useCount!=null &&
+              java.util.Arrays.equals(this.useCount, other.getUseCount()))) &&
+            ((this.used==null && other.getUsed()==null) || 
+             (this.used!=null &&
+              java.util.Arrays.equals(this.used, other.getUsed())));
+        __equalsCalc = null;
+        return _equals;
+    }
+
+    private boolean __hashCodeCalc = false;
+    public synchronized int hashCode() {
+        if (__hashCodeCalc) {
+            return 0;
+        }
+        __hashCodeCalc = true;
+        int _hashCode = super.hashCode();
+        if (getCode() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getCode());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getCode(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getDateSent() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getDateSent());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getDateSent(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getExternalId() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getExternalId());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getExternalId(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getId() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getId());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getId(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getInternalId() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getInternalId());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getInternalId(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getPromotion() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getPromotion());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getPromotion(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getRecipient() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getRecipient());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getRecipient(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getUseCount() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getUseCount());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getUseCount(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getUsed() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getUsed());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getUsed(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        __hashCodeCalc = false;
+        return _hashCode;
+    }
+
+    // Type metadata
+    private static org.apache.axis.description.TypeDesc typeDesc =
+        new org.apache.axis.description.TypeDesc(CouponCodeSearchRowBasic.class, true);
+
+    static {
+        typeDesc.setXmlType(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "CouponCodeSearchRowBasic"));
+        org.apache.axis.description.ElementDesc elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("code");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "code"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnStringField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("dateSent");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "dateSent"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnDateField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("externalId");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "externalId"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnSelectField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("id");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "id"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnLongField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("internalId");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "internalId"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnSelectField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("promotion");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "promotion"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnStringField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("recipient");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "recipient"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnStringField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("useCount");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "useCount"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnLongField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("used");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "used"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnBooleanField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
     }
 
     /**
-     * Gets the value of the dateSent property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the dateSent property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getDateSent().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnDateField }
-     * 
-     * 
+     * Return type metadata object
      */
-    public List<SearchColumnDateField> getDateSent() {
-        if (dateSent == null) {
-            dateSent = new ArrayList<SearchColumnDateField>();
-        }
-        return this.dateSent;
+    public static org.apache.axis.description.TypeDesc getTypeDesc() {
+        return typeDesc;
     }
 
     /**
-     * Gets the value of the externalId property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the externalId property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getExternalId().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnSelectField }
-     * 
-     * 
+     * Get Custom Serializer
      */
-    public List<SearchColumnSelectField> getExternalId() {
-        if (externalId == null) {
-            externalId = new ArrayList<SearchColumnSelectField>();
-        }
-        return this.externalId;
+    public static org.apache.axis.encoding.Serializer getSerializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanSerializer(
+            _javaType, _xmlType, typeDesc);
     }
 
     /**
-     * Gets the value of the id property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the id property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getId().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnLongField }
-     * 
-     * 
+     * Get Custom Deserializer
      */
-    public List<SearchColumnLongField> getId() {
-        if (id == null) {
-            id = new ArrayList<SearchColumnLongField>();
-        }
-        return this.id;
-    }
-
-    /**
-     * Gets the value of the internalId property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the internalId property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getInternalId().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnSelectField }
-     * 
-     * 
-     */
-    public List<SearchColumnSelectField> getInternalId() {
-        if (internalId == null) {
-            internalId = new ArrayList<SearchColumnSelectField>();
-        }
-        return this.internalId;
-    }
-
-    /**
-     * Gets the value of the promotion property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the promotion property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getPromotion().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnStringField }
-     * 
-     * 
-     */
-    public List<SearchColumnStringField> getPromotion() {
-        if (promotion == null) {
-            promotion = new ArrayList<SearchColumnStringField>();
-        }
-        return this.promotion;
-    }
-
-    /**
-     * Gets the value of the recipient property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the recipient property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getRecipient().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnStringField }
-     * 
-     * 
-     */
-    public List<SearchColumnStringField> getRecipient() {
-        if (recipient == null) {
-            recipient = new ArrayList<SearchColumnStringField>();
-        }
-        return this.recipient;
-    }
-
-    /**
-     * Gets the value of the useCount property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the useCount property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getUseCount().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnLongField }
-     * 
-     * 
-     */
-    public List<SearchColumnLongField> getUseCount() {
-        if (useCount == null) {
-            useCount = new ArrayList<SearchColumnLongField>();
-        }
-        return this.useCount;
-    }
-
-    /**
-     * Gets the value of the used property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the used property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getUsed().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnBooleanField }
-     * 
-     * 
-     */
-    public List<SearchColumnBooleanField> getUsed() {
-        if (used == null) {
-            used = new ArrayList<SearchColumnBooleanField>();
-        }
-        return this.used;
+    public static org.apache.axis.encoding.Deserializer getDeserializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanDeserializer(
+            _javaType, _xmlType, typeDesc);
     }
 
 }

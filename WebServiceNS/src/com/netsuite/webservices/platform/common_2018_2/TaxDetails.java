@@ -1,277 +1,416 @@
+/**
+ * TaxDetails.java
+ *
+ * This file was auto-generated from WSDL
+ * by the Apache Axis 1.4 Jul 28, 2010 (04:07:04 PDT) WSDL2Java emitter.
+ */
 
 package com.netsuite.webservices.platform.common_2018_2;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlType;
-import com.netsuite.webservices.platform.core_2018_2.RecordRef;
+public class TaxDetails  implements java.io.Serializable {
+    private java.lang.String taxDetailsReference;
 
+    private java.lang.Double netAmount;
 
-/**
- * <p>TaxDetails complex type的 Java 类。
- * 
- * <p>以下模式片段指定包含在此类中的预期内容。
- * 
- * <pre>
- * &lt;complexType name="TaxDetails">
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element name="taxDetailsReference" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="netAmount" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
- *         &lt;element name="grossAmount" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
- *         &lt;element name="taxType" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="taxCode" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="taxBasis" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
- *         &lt;element name="taxRate" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
- *         &lt;element name="taxAmount" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
- *         &lt;element name="calcDetail" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
- */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "TaxDetails", propOrder = {
-    "taxDetailsReference",
-    "netAmount",
-    "grossAmount",
-    "taxType",
-    "taxCode",
-    "taxBasis",
-    "taxRate",
-    "taxAmount",
-    "calcDetail"
-})
-public class TaxDetails {
+    private java.lang.Double grossAmount;
 
-    protected String taxDetailsReference;
-    protected Double netAmount;
-    protected Double grossAmount;
-    protected RecordRef taxType;
-    protected RecordRef taxCode;
-    protected Double taxBasis;
-    protected Double taxRate;
-    protected Double taxAmount;
-    protected String calcDetail;
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef taxType;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef taxCode;
+
+    private java.lang.Double taxBasis;
+
+    private java.lang.Double taxRate;
+
+    private java.lang.Double taxAmount;
+
+    private java.lang.String calcDetail;
+
+    public TaxDetails() {
+    }
+
+    public TaxDetails(
+           java.lang.String taxDetailsReference,
+           java.lang.Double netAmount,
+           java.lang.Double grossAmount,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef taxType,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef taxCode,
+           java.lang.Double taxBasis,
+           java.lang.Double taxRate,
+           java.lang.Double taxAmount,
+           java.lang.String calcDetail) {
+           this.taxDetailsReference = taxDetailsReference;
+           this.netAmount = netAmount;
+           this.grossAmount = grossAmount;
+           this.taxType = taxType;
+           this.taxCode = taxCode;
+           this.taxBasis = taxBasis;
+           this.taxRate = taxRate;
+           this.taxAmount = taxAmount;
+           this.calcDetail = calcDetail;
+    }
+
 
     /**
-     * 获取taxDetailsReference属性的值。
+     * Gets the taxDetailsReference value for this TaxDetails.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @return taxDetailsReference
      */
-    public String getTaxDetailsReference() {
+    public java.lang.String getTaxDetailsReference() {
         return taxDetailsReference;
     }
 
-    /**
-     * 设置taxDetailsReference属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setTaxDetailsReference(String value) {
-        this.taxDetailsReference = value;
-    }
 
     /**
-     * 获取netAmount属性的值。
+     * Sets the taxDetailsReference value for this TaxDetails.
      * 
-     * @return
-     *     possible object is
-     *     {@link Double }
-     *     
+     * @param taxDetailsReference
      */
-    public Double getNetAmount() {
+    public void setTaxDetailsReference(java.lang.String taxDetailsReference) {
+        this.taxDetailsReference = taxDetailsReference;
+    }
+
+
+    /**
+     * Gets the netAmount value for this TaxDetails.
+     * 
+     * @return netAmount
+     */
+    public java.lang.Double getNetAmount() {
         return netAmount;
     }
 
-    /**
-     * 设置netAmount属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Double }
-     *     
-     */
-    public void setNetAmount(Double value) {
-        this.netAmount = value;
-    }
 
     /**
-     * 获取grossAmount属性的值。
+     * Sets the netAmount value for this TaxDetails.
      * 
-     * @return
-     *     possible object is
-     *     {@link Double }
-     *     
+     * @param netAmount
      */
-    public Double getGrossAmount() {
+    public void setNetAmount(java.lang.Double netAmount) {
+        this.netAmount = netAmount;
+    }
+
+
+    /**
+     * Gets the grossAmount value for this TaxDetails.
+     * 
+     * @return grossAmount
+     */
+    public java.lang.Double getGrossAmount() {
         return grossAmount;
     }
 
-    /**
-     * 设置grossAmount属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Double }
-     *     
-     */
-    public void setGrossAmount(Double value) {
-        this.grossAmount = value;
-    }
 
     /**
-     * 获取taxType属性的值。
+     * Sets the grossAmount value for this TaxDetails.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param grossAmount
      */
-    public RecordRef getTaxType() {
+    public void setGrossAmount(java.lang.Double grossAmount) {
+        this.grossAmount = grossAmount;
+    }
+
+
+    /**
+     * Gets the taxType value for this TaxDetails.
+     * 
+     * @return taxType
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getTaxType() {
         return taxType;
     }
 
-    /**
-     * 设置taxType属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setTaxType(RecordRef value) {
-        this.taxType = value;
-    }
 
     /**
-     * 获取taxCode属性的值。
+     * Sets the taxType value for this TaxDetails.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param taxType
      */
-    public RecordRef getTaxCode() {
+    public void setTaxType(com.netsuite.webservices.platform.core_2018_2.RecordRef taxType) {
+        this.taxType = taxType;
+    }
+
+
+    /**
+     * Gets the taxCode value for this TaxDetails.
+     * 
+     * @return taxCode
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getTaxCode() {
         return taxCode;
     }
 
-    /**
-     * 设置taxCode属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setTaxCode(RecordRef value) {
-        this.taxCode = value;
-    }
 
     /**
-     * 获取taxBasis属性的值。
+     * Sets the taxCode value for this TaxDetails.
      * 
-     * @return
-     *     possible object is
-     *     {@link Double }
-     *     
+     * @param taxCode
      */
-    public Double getTaxBasis() {
+    public void setTaxCode(com.netsuite.webservices.platform.core_2018_2.RecordRef taxCode) {
+        this.taxCode = taxCode;
+    }
+
+
+    /**
+     * Gets the taxBasis value for this TaxDetails.
+     * 
+     * @return taxBasis
+     */
+    public java.lang.Double getTaxBasis() {
         return taxBasis;
     }
 
-    /**
-     * 设置taxBasis属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Double }
-     *     
-     */
-    public void setTaxBasis(Double value) {
-        this.taxBasis = value;
-    }
 
     /**
-     * 获取taxRate属性的值。
+     * Sets the taxBasis value for this TaxDetails.
      * 
-     * @return
-     *     possible object is
-     *     {@link Double }
-     *     
+     * @param taxBasis
      */
-    public Double getTaxRate() {
+    public void setTaxBasis(java.lang.Double taxBasis) {
+        this.taxBasis = taxBasis;
+    }
+
+
+    /**
+     * Gets the taxRate value for this TaxDetails.
+     * 
+     * @return taxRate
+     */
+    public java.lang.Double getTaxRate() {
         return taxRate;
     }
 
-    /**
-     * 设置taxRate属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Double }
-     *     
-     */
-    public void setTaxRate(Double value) {
-        this.taxRate = value;
-    }
 
     /**
-     * 获取taxAmount属性的值。
+     * Sets the taxRate value for this TaxDetails.
      * 
-     * @return
-     *     possible object is
-     *     {@link Double }
-     *     
+     * @param taxRate
      */
-    public Double getTaxAmount() {
+    public void setTaxRate(java.lang.Double taxRate) {
+        this.taxRate = taxRate;
+    }
+
+
+    /**
+     * Gets the taxAmount value for this TaxDetails.
+     * 
+     * @return taxAmount
+     */
+    public java.lang.Double getTaxAmount() {
         return taxAmount;
     }
 
-    /**
-     * 设置taxAmount属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Double }
-     *     
-     */
-    public void setTaxAmount(Double value) {
-        this.taxAmount = value;
-    }
 
     /**
-     * 获取calcDetail属性的值。
+     * Sets the taxAmount value for this TaxDetails.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param taxAmount
      */
-    public String getCalcDetail() {
+    public void setTaxAmount(java.lang.Double taxAmount) {
+        this.taxAmount = taxAmount;
+    }
+
+
+    /**
+     * Gets the calcDetail value for this TaxDetails.
+     * 
+     * @return calcDetail
+     */
+    public java.lang.String getCalcDetail() {
         return calcDetail;
     }
 
+
     /**
-     * 设置calcDetail属性的值。
+     * Sets the calcDetail value for this TaxDetails.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     * @param calcDetail
      */
-    public void setCalcDetail(String value) {
-        this.calcDetail = value;
+    public void setCalcDetail(java.lang.String calcDetail) {
+        this.calcDetail = calcDetail;
+    }
+
+    private java.lang.Object __equalsCalc = null;
+    public synchronized boolean equals(java.lang.Object obj) {
+        if (!(obj instanceof TaxDetails)) return false;
+        TaxDetails other = (TaxDetails) obj;
+        if (obj == null) return false;
+        if (this == obj) return true;
+        if (__equalsCalc != null) {
+            return (__equalsCalc == obj);
+        }
+        __equalsCalc = obj;
+        boolean _equals;
+        _equals = true && 
+            ((this.taxDetailsReference==null && other.getTaxDetailsReference()==null) || 
+             (this.taxDetailsReference!=null &&
+              this.taxDetailsReference.equals(other.getTaxDetailsReference()))) &&
+            ((this.netAmount==null && other.getNetAmount()==null) || 
+             (this.netAmount!=null &&
+              this.netAmount.equals(other.getNetAmount()))) &&
+            ((this.grossAmount==null && other.getGrossAmount()==null) || 
+             (this.grossAmount!=null &&
+              this.grossAmount.equals(other.getGrossAmount()))) &&
+            ((this.taxType==null && other.getTaxType()==null) || 
+             (this.taxType!=null &&
+              this.taxType.equals(other.getTaxType()))) &&
+            ((this.taxCode==null && other.getTaxCode()==null) || 
+             (this.taxCode!=null &&
+              this.taxCode.equals(other.getTaxCode()))) &&
+            ((this.taxBasis==null && other.getTaxBasis()==null) || 
+             (this.taxBasis!=null &&
+              this.taxBasis.equals(other.getTaxBasis()))) &&
+            ((this.taxRate==null && other.getTaxRate()==null) || 
+             (this.taxRate!=null &&
+              this.taxRate.equals(other.getTaxRate()))) &&
+            ((this.taxAmount==null && other.getTaxAmount()==null) || 
+             (this.taxAmount!=null &&
+              this.taxAmount.equals(other.getTaxAmount()))) &&
+            ((this.calcDetail==null && other.getCalcDetail()==null) || 
+             (this.calcDetail!=null &&
+              this.calcDetail.equals(other.getCalcDetail())));
+        __equalsCalc = null;
+        return _equals;
+    }
+
+    private boolean __hashCodeCalc = false;
+    public synchronized int hashCode() {
+        if (__hashCodeCalc) {
+            return 0;
+        }
+        __hashCodeCalc = true;
+        int _hashCode = 1;
+        if (getTaxDetailsReference() != null) {
+            _hashCode += getTaxDetailsReference().hashCode();
+        }
+        if (getNetAmount() != null) {
+            _hashCode += getNetAmount().hashCode();
+        }
+        if (getGrossAmount() != null) {
+            _hashCode += getGrossAmount().hashCode();
+        }
+        if (getTaxType() != null) {
+            _hashCode += getTaxType().hashCode();
+        }
+        if (getTaxCode() != null) {
+            _hashCode += getTaxCode().hashCode();
+        }
+        if (getTaxBasis() != null) {
+            _hashCode += getTaxBasis().hashCode();
+        }
+        if (getTaxRate() != null) {
+            _hashCode += getTaxRate().hashCode();
+        }
+        if (getTaxAmount() != null) {
+            _hashCode += getTaxAmount().hashCode();
+        }
+        if (getCalcDetail() != null) {
+            _hashCode += getCalcDetail().hashCode();
+        }
+        __hashCodeCalc = false;
+        return _hashCode;
+    }
+
+    // Type metadata
+    private static org.apache.axis.description.TypeDesc typeDesc =
+        new org.apache.axis.description.TypeDesc(TaxDetails.class, true);
+
+    static {
+        typeDesc.setXmlType(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "TaxDetails"));
+        org.apache.axis.description.ElementDesc elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("taxDetailsReference");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "taxDetailsReference"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("netAmount");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "netAmount"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "double"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("grossAmount");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "grossAmount"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "double"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("taxType");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "taxType"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("taxCode");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "taxCode"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("taxBasis");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "taxBasis"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "double"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("taxRate");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "taxRate"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "double"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("taxAmount");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "taxAmount"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "double"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("calcDetail");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "calcDetail"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+    }
+
+    /**
+     * Return type metadata object
+     */
+    public static org.apache.axis.description.TypeDesc getTypeDesc() {
+        return typeDesc;
+    }
+
+    /**
+     * Get Custom Serializer
+     */
+    public static org.apache.axis.encoding.Serializer getSerializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanSerializer(
+            _javaType, _xmlType, typeDesc);
+    }
+
+    /**
+     * Get Custom Deserializer
+     */
+    public static org.apache.axis.encoding.Deserializer getDeserializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanDeserializer(
+            _javaType, _xmlType, typeDesc);
     }
 
 }

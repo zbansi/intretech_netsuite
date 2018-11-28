@@ -1,114 +1,112 @@
+/**
+ * InitializeRefType.java
+ *
+ * This file was auto-generated from WSDL
+ * by the Apache Axis 1.4 Jul 28, 2010 (04:07:04 PDT) WSDL2Java emitter.
+ */
 
 package com.netsuite.webservices.platform.core_2018_2.types;
 
-import javax.xml.bind.annotation.XmlEnum;
-import javax.xml.bind.annotation.XmlEnumValue;
-import javax.xml.bind.annotation.XmlType;
+public class InitializeRefType implements java.io.Serializable {
+    private java.lang.String _value_;
+    private static java.util.HashMap _table_ = new java.util.HashMap();
 
-
-/**
- * <p>InitializeRefType的 Java 类。
- * 
- * <p>以下模式片段指定包含在此类中的预期内容。
- * <p>
- * <pre>
- * &lt;simpleType name="InitializeRefType">
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     &lt;enumeration value="assemblyItem"/>
- *     &lt;enumeration value="assemblyBuild"/>
- *     &lt;enumeration value="cashSale"/>
- *     &lt;enumeration value="creditMemo"/>
- *     &lt;enumeration value="customer"/>
- *     &lt;enumeration value="customerDeposit"/>
- *     &lt;enumeration value="employee"/>
- *     &lt;enumeration value="estimate"/>
- *     &lt;enumeration value="interCompanyTransferOrder"/>
- *     &lt;enumeration value="invoice"/>
- *     &lt;enumeration value="location"/>
- *     &lt;enumeration value="lotNumberedAssemblyItem"/>
- *     &lt;enumeration value="opportunity"/>
- *     &lt;enumeration value="purchaseOrder"/>
- *     &lt;enumeration value="purchaseRequisition"/>
- *     &lt;enumeration value="returnAuthorization"/>
- *     &lt;enumeration value="salesOrder"/>
- *     &lt;enumeration value="serializedAssemblyItem"/>
- *     &lt;enumeration value="transferOrder"/>
- *     &lt;enumeration value="vendor"/>
- *     &lt;enumeration value="vendorBill"/>
- *     &lt;enumeration value="vendorReturnAuthorization"/>
- *     &lt;enumeration value="workOrder"/>
- *   &lt;/restriction>
- * &lt;/simpleType>
- * </pre>
- * 
- */
-@XmlType(name = "InitializeRefType", namespace = "urn:types.core_2018_2.platform.webservices.netsuite.com")
-@XmlEnum
-public enum InitializeRefType {
-
-    @XmlEnumValue("assemblyItem")
-    ASSEMBLY_ITEM("assemblyItem"),
-    @XmlEnumValue("assemblyBuild")
-    ASSEMBLY_BUILD("assemblyBuild"),
-    @XmlEnumValue("cashSale")
-    CASH_SALE("cashSale"),
-    @XmlEnumValue("creditMemo")
-    CREDIT_MEMO("creditMemo"),
-    @XmlEnumValue("customer")
-    CUSTOMER("customer"),
-    @XmlEnumValue("customerDeposit")
-    CUSTOMER_DEPOSIT("customerDeposit"),
-    @XmlEnumValue("employee")
-    EMPLOYEE("employee"),
-    @XmlEnumValue("estimate")
-    ESTIMATE("estimate"),
-    @XmlEnumValue("interCompanyTransferOrder")
-    INTER_COMPANY_TRANSFER_ORDER("interCompanyTransferOrder"),
-    @XmlEnumValue("invoice")
-    INVOICE("invoice"),
-    @XmlEnumValue("location")
-    LOCATION("location"),
-    @XmlEnumValue("lotNumberedAssemblyItem")
-    LOT_NUMBERED_ASSEMBLY_ITEM("lotNumberedAssemblyItem"),
-    @XmlEnumValue("opportunity")
-    OPPORTUNITY("opportunity"),
-    @XmlEnumValue("purchaseOrder")
-    PURCHASE_ORDER("purchaseOrder"),
-    @XmlEnumValue("purchaseRequisition")
-    PURCHASE_REQUISITION("purchaseRequisition"),
-    @XmlEnumValue("returnAuthorization")
-    RETURN_AUTHORIZATION("returnAuthorization"),
-    @XmlEnumValue("salesOrder")
-    SALES_ORDER("salesOrder"),
-    @XmlEnumValue("serializedAssemblyItem")
-    SERIALIZED_ASSEMBLY_ITEM("serializedAssemblyItem"),
-    @XmlEnumValue("transferOrder")
-    TRANSFER_ORDER("transferOrder"),
-    @XmlEnumValue("vendor")
-    VENDOR("vendor"),
-    @XmlEnumValue("vendorBill")
-    VENDOR_BILL("vendorBill"),
-    @XmlEnumValue("vendorReturnAuthorization")
-    VENDOR_RETURN_AUTHORIZATION("vendorReturnAuthorization"),
-    @XmlEnumValue("workOrder")
-    WORK_ORDER("workOrder");
-    private final String value;
-
-    InitializeRefType(String v) {
-        value = v;
+    // Constructor
+    protected InitializeRefType(java.lang.String value) {
+        _value_ = value;
+        _table_.put(_value_,this);
     }
 
-    public String value() {
-        return value;
+    public static final java.lang.String _assemblyItem = "assemblyItem";
+    public static final java.lang.String _assemblyBuild = "assemblyBuild";
+    public static final java.lang.String _cashSale = "cashSale";
+    public static final java.lang.String _creditMemo = "creditMemo";
+    public static final java.lang.String _customer = "customer";
+    public static final java.lang.String _customerDeposit = "customerDeposit";
+    public static final java.lang.String _employee = "employee";
+    public static final java.lang.String _estimate = "estimate";
+    public static final java.lang.String _interCompanyTransferOrder = "interCompanyTransferOrder";
+    public static final java.lang.String _invoice = "invoice";
+    public static final java.lang.String _location = "location";
+    public static final java.lang.String _lotNumberedAssemblyItem = "lotNumberedAssemblyItem";
+    public static final java.lang.String _opportunity = "opportunity";
+    public static final java.lang.String _purchaseOrder = "purchaseOrder";
+    public static final java.lang.String _purchaseRequisition = "purchaseRequisition";
+    public static final java.lang.String _returnAuthorization = "returnAuthorization";
+    public static final java.lang.String _salesOrder = "salesOrder";
+    public static final java.lang.String _serializedAssemblyItem = "serializedAssemblyItem";
+    public static final java.lang.String _transferOrder = "transferOrder";
+    public static final java.lang.String _vendor = "vendor";
+    public static final java.lang.String _vendorBill = "vendorBill";
+    public static final java.lang.String _vendorReturnAuthorization = "vendorReturnAuthorization";
+    public static final java.lang.String _workOrder = "workOrder";
+    public static final InitializeRefType assemblyItem = new InitializeRefType(_assemblyItem);
+    public static final InitializeRefType assemblyBuild = new InitializeRefType(_assemblyBuild);
+    public static final InitializeRefType cashSale = new InitializeRefType(_cashSale);
+    public static final InitializeRefType creditMemo = new InitializeRefType(_creditMemo);
+    public static final InitializeRefType customer = new InitializeRefType(_customer);
+    public static final InitializeRefType customerDeposit = new InitializeRefType(_customerDeposit);
+    public static final InitializeRefType employee = new InitializeRefType(_employee);
+    public static final InitializeRefType estimate = new InitializeRefType(_estimate);
+    public static final InitializeRefType interCompanyTransferOrder = new InitializeRefType(_interCompanyTransferOrder);
+    public static final InitializeRefType invoice = new InitializeRefType(_invoice);
+    public static final InitializeRefType location = new InitializeRefType(_location);
+    public static final InitializeRefType lotNumberedAssemblyItem = new InitializeRefType(_lotNumberedAssemblyItem);
+    public static final InitializeRefType opportunity = new InitializeRefType(_opportunity);
+    public static final InitializeRefType purchaseOrder = new InitializeRefType(_purchaseOrder);
+    public static final InitializeRefType purchaseRequisition = new InitializeRefType(_purchaseRequisition);
+    public static final InitializeRefType returnAuthorization = new InitializeRefType(_returnAuthorization);
+    public static final InitializeRefType salesOrder = new InitializeRefType(_salesOrder);
+    public static final InitializeRefType serializedAssemblyItem = new InitializeRefType(_serializedAssemblyItem);
+    public static final InitializeRefType transferOrder = new InitializeRefType(_transferOrder);
+    public static final InitializeRefType vendor = new InitializeRefType(_vendor);
+    public static final InitializeRefType vendorBill = new InitializeRefType(_vendorBill);
+    public static final InitializeRefType vendorReturnAuthorization = new InitializeRefType(_vendorReturnAuthorization);
+    public static final InitializeRefType workOrder = new InitializeRefType(_workOrder);
+    public java.lang.String getValue() { return _value_;}
+    public static InitializeRefType fromValue(java.lang.String value)
+          throws java.lang.IllegalArgumentException {
+        InitializeRefType enumeration = (InitializeRefType)
+            _table_.get(value);
+        if (enumeration==null) throw new java.lang.IllegalArgumentException();
+        return enumeration;
     }
+    public static InitializeRefType fromString(java.lang.String value)
+          throws java.lang.IllegalArgumentException {
+        return fromValue(value);
+    }
+    public boolean equals(java.lang.Object obj) {return (obj == this);}
+    public int hashCode() { return toString().hashCode();}
+    public java.lang.String toString() { return _value_;}
+    public java.lang.Object readResolve() throws java.io.ObjectStreamException { return fromValue(_value_);}
+    public static org.apache.axis.encoding.Serializer getSerializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new org.apache.axis.encoding.ser.EnumSerializer(
+            _javaType, _xmlType);
+    }
+    public static org.apache.axis.encoding.Deserializer getDeserializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new org.apache.axis.encoding.ser.EnumDeserializer(
+            _javaType, _xmlType);
+    }
+    // Type metadata
+    private static org.apache.axis.description.TypeDesc typeDesc =
+        new org.apache.axis.description.TypeDesc(InitializeRefType.class);
 
-    public static InitializeRefType fromValue(String v) {
-        for (InitializeRefType c: InitializeRefType.values()) {
-            if (c.value.equals(v)) {
-                return c;
-            }
-        }
-        throw new IllegalArgumentException(v);
+    static {
+        typeDesc.setXmlType(new javax.xml.namespace.QName("urn:types.core_2018_2.platform.webservices.netsuite.com", "InitializeRefType"));
+    }
+    /**
+     * Return type metadata object
+     */
+    public static org.apache.axis.description.TypeDesc getTypeDesc() {
+        return typeDesc;
     }
 
 }

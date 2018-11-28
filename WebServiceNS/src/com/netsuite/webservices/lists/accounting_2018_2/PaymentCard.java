@@ -1,615 +1,859 @@
+/**
+ * PaymentCard.java
+ *
+ * This file was auto-generated from WSDL
+ * by the Apache Axis 1.4 Jul 28, 2010 (04:07:04 PDT) WSDL2Java emitter.
+ */
 
 package com.netsuite.webservices.lists.accounting_2018_2;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlAttribute;
-import javax.xml.bind.annotation.XmlSchemaType;
-import javax.xml.bind.annotation.XmlType;
-import javax.xml.datatype.XMLGregorianCalendar;
-import com.netsuite.webservices.lists.accounting_2018_2.types.PaymentCardBrand;
-import com.netsuite.webservices.lists.accounting_2018_2.types.PaymentCardType;
-import com.netsuite.webservices.lists.accounting_2018_2.types.PaymentInstrumentState;
-import com.netsuite.webservices.platform.core_2018_2.Record;
-import com.netsuite.webservices.platform.core_2018_2.RecordRef;
+public class PaymentCard  extends com.netsuite.webservices.platform.core_2018_2.Record  implements java.io.Serializable {
+    private java.lang.String lastFourDigits;
 
+    private java.lang.String issuerIdNumber;
 
-/**
- * <p>PaymentCard complex type的 Java 类。
- * 
- * <p>以下模式片段指定包含在此类中的预期内容。
- * 
- * <pre>
- * &lt;complexType name="PaymentCard">
- *   &lt;complexContent>
- *     &lt;extension base="{urn:core_2018_2.platform.webservices.netsuite.com}Record">
- *       &lt;sequence>
- *         &lt;element name="lastFourDigits" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="issuerIdNumber" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="entity" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="mask" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="paymentMethod" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="memo" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="state" type="{urn:types.accounting_2018_2.lists.webservices.netsuite.com}PaymentInstrumentState" minOccurs="0"/>
- *         &lt;element name="isInactive" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         &lt;element name="preserveOnFile" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         &lt;element name="isDefault" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         &lt;element name="cardNumber" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="expirationDate" type="{http://www.w3.org/2001/XMLSchema}dateTime" minOccurs="0"/>
- *         &lt;element name="cardBrand" type="{urn:types.accounting_2018_2.lists.webservices.netsuite.com}PaymentCardBrand" minOccurs="0"/>
- *         &lt;element name="cardType" type="{urn:types.accounting_2018_2.lists.webservices.netsuite.com}PaymentCardType" minOccurs="0"/>
- *         &lt;element name="nameOnCard" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="street" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="zipCode" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="validFromDate" type="{http://www.w3.org/2001/XMLSchema}dateTime" minOccurs="0"/>
- *         &lt;element name="issueNumber" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *       &lt;/sequence>
- *       &lt;attribute name="internalId" type="{http://www.w3.org/2001/XMLSchema}string" />
- *       &lt;attribute name="externalId" type="{http://www.w3.org/2001/XMLSchema}string" />
- *     &lt;/extension>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
- */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "PaymentCard", propOrder = {
-    "lastFourDigits",
-    "issuerIdNumber",
-    "entity",
-    "mask",
-    "paymentMethod",
-    "memo",
-    "state",
-    "isInactive",
-    "preserveOnFile",
-    "isDefault",
-    "cardNumber",
-    "expirationDate",
-    "cardBrand",
-    "cardType",
-    "nameOnCard",
-    "street",
-    "zipCode",
-    "validFromDate",
-    "issueNumber"
-})
-public class PaymentCard
-    extends Record
-{
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef entity;
 
-    protected String lastFourDigits;
-    protected String issuerIdNumber;
-    protected RecordRef entity;
-    protected String mask;
-    protected RecordRef paymentMethod;
-    protected String memo;
-    @XmlSchemaType(name = "string")
-    protected PaymentInstrumentState state;
-    protected Boolean isInactive;
-    protected Boolean preserveOnFile;
-    protected Boolean isDefault;
-    protected String cardNumber;
-    @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar expirationDate;
-    @XmlSchemaType(name = "string")
-    protected PaymentCardBrand cardBrand;
-    @XmlSchemaType(name = "string")
-    protected PaymentCardType cardType;
-    protected String nameOnCard;
-    protected String street;
-    protected String zipCode;
-    @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar validFromDate;
-    protected String issueNumber;
-    @XmlAttribute(name = "internalId")
-    protected String internalId;
-    @XmlAttribute(name = "externalId")
-    protected String externalId;
+    private java.lang.String mask;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef paymentMethod;
+
+    private java.lang.String memo;
+
+    private com.netsuite.webservices.lists.accounting_2018_2.types.PaymentInstrumentState state;
+
+    private java.lang.Boolean isInactive;
+
+    private java.lang.Boolean preserveOnFile;
+
+    private java.lang.Boolean isDefault;
+
+    private java.lang.String cardNumber;
+
+    private java.util.Calendar expirationDate;
+
+    private com.netsuite.webservices.lists.accounting_2018_2.types.PaymentCardBrand cardBrand;
+
+    private com.netsuite.webservices.lists.accounting_2018_2.types.PaymentCardType cardType;
+
+    private java.lang.String nameOnCard;
+
+    private java.lang.String street;
+
+    private java.lang.String zipCode;
+
+    private java.util.Calendar validFromDate;
+
+    private java.lang.String issueNumber;
+
+    private java.lang.String internalId;  // attribute
+
+    private java.lang.String externalId;  // attribute
+
+    public PaymentCard() {
+    }
+
+    public PaymentCard(
+           java.lang.String[] nullFieldList,
+           java.lang.String internalId,
+           java.lang.String externalId,
+           java.lang.String lastFourDigits,
+           java.lang.String issuerIdNumber,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef entity,
+           java.lang.String mask,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef paymentMethod,
+           java.lang.String memo,
+           com.netsuite.webservices.lists.accounting_2018_2.types.PaymentInstrumentState state,
+           java.lang.Boolean isInactive,
+           java.lang.Boolean preserveOnFile,
+           java.lang.Boolean isDefault,
+           java.lang.String cardNumber,
+           java.util.Calendar expirationDate,
+           com.netsuite.webservices.lists.accounting_2018_2.types.PaymentCardBrand cardBrand,
+           com.netsuite.webservices.lists.accounting_2018_2.types.PaymentCardType cardType,
+           java.lang.String nameOnCard,
+           java.lang.String street,
+           java.lang.String zipCode,
+           java.util.Calendar validFromDate,
+           java.lang.String issueNumber) {
+        super(
+            nullFieldList);
+        this.internalId = internalId;
+        this.externalId = externalId;
+        this.lastFourDigits = lastFourDigits;
+        this.issuerIdNumber = issuerIdNumber;
+        this.entity = entity;
+        this.mask = mask;
+        this.paymentMethod = paymentMethod;
+        this.memo = memo;
+        this.state = state;
+        this.isInactive = isInactive;
+        this.preserveOnFile = preserveOnFile;
+        this.isDefault = isDefault;
+        this.cardNumber = cardNumber;
+        this.expirationDate = expirationDate;
+        this.cardBrand = cardBrand;
+        this.cardType = cardType;
+        this.nameOnCard = nameOnCard;
+        this.street = street;
+        this.zipCode = zipCode;
+        this.validFromDate = validFromDate;
+        this.issueNumber = issueNumber;
+    }
+
 
     /**
-     * 获取lastFourDigits属性的值。
+     * Gets the lastFourDigits value for this PaymentCard.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @return lastFourDigits
      */
-    public String getLastFourDigits() {
+    public java.lang.String getLastFourDigits() {
         return lastFourDigits;
     }
 
-    /**
-     * 设置lastFourDigits属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setLastFourDigits(String value) {
-        this.lastFourDigits = value;
-    }
 
     /**
-     * 获取issuerIdNumber属性的值。
+     * Sets the lastFourDigits value for this PaymentCard.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param lastFourDigits
      */
-    public String getIssuerIdNumber() {
+    public void setLastFourDigits(java.lang.String lastFourDigits) {
+        this.lastFourDigits = lastFourDigits;
+    }
+
+
+    /**
+     * Gets the issuerIdNumber value for this PaymentCard.
+     * 
+     * @return issuerIdNumber
+     */
+    public java.lang.String getIssuerIdNumber() {
         return issuerIdNumber;
     }
 
-    /**
-     * 设置issuerIdNumber属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setIssuerIdNumber(String value) {
-        this.issuerIdNumber = value;
-    }
 
     /**
-     * 获取entity属性的值。
+     * Sets the issuerIdNumber value for this PaymentCard.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param issuerIdNumber
      */
-    public RecordRef getEntity() {
+    public void setIssuerIdNumber(java.lang.String issuerIdNumber) {
+        this.issuerIdNumber = issuerIdNumber;
+    }
+
+
+    /**
+     * Gets the entity value for this PaymentCard.
+     * 
+     * @return entity
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getEntity() {
         return entity;
     }
 
-    /**
-     * 设置entity属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setEntity(RecordRef value) {
-        this.entity = value;
-    }
 
     /**
-     * 获取mask属性的值。
+     * Sets the entity value for this PaymentCard.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param entity
      */
-    public String getMask() {
+    public void setEntity(com.netsuite.webservices.platform.core_2018_2.RecordRef entity) {
+        this.entity = entity;
+    }
+
+
+    /**
+     * Gets the mask value for this PaymentCard.
+     * 
+     * @return mask
+     */
+    public java.lang.String getMask() {
         return mask;
     }
 
-    /**
-     * 设置mask属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setMask(String value) {
-        this.mask = value;
-    }
 
     /**
-     * 获取paymentMethod属性的值。
+     * Sets the mask value for this PaymentCard.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param mask
      */
-    public RecordRef getPaymentMethod() {
+    public void setMask(java.lang.String mask) {
+        this.mask = mask;
+    }
+
+
+    /**
+     * Gets the paymentMethod value for this PaymentCard.
+     * 
+     * @return paymentMethod
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getPaymentMethod() {
         return paymentMethod;
     }
 
-    /**
-     * 设置paymentMethod属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setPaymentMethod(RecordRef value) {
-        this.paymentMethod = value;
-    }
 
     /**
-     * 获取memo属性的值。
+     * Sets the paymentMethod value for this PaymentCard.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param paymentMethod
      */
-    public String getMemo() {
+    public void setPaymentMethod(com.netsuite.webservices.platform.core_2018_2.RecordRef paymentMethod) {
+        this.paymentMethod = paymentMethod;
+    }
+
+
+    /**
+     * Gets the memo value for this PaymentCard.
+     * 
+     * @return memo
+     */
+    public java.lang.String getMemo() {
         return memo;
     }
 
-    /**
-     * 设置memo属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setMemo(String value) {
-        this.memo = value;
-    }
 
     /**
-     * 获取state属性的值。
+     * Sets the memo value for this PaymentCard.
      * 
-     * @return
-     *     possible object is
-     *     {@link PaymentInstrumentState }
-     *     
+     * @param memo
      */
-    public PaymentInstrumentState getState() {
+    public void setMemo(java.lang.String memo) {
+        this.memo = memo;
+    }
+
+
+    /**
+     * Gets the state value for this PaymentCard.
+     * 
+     * @return state
+     */
+    public com.netsuite.webservices.lists.accounting_2018_2.types.PaymentInstrumentState getState() {
         return state;
     }
 
-    /**
-     * 设置state属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link PaymentInstrumentState }
-     *     
-     */
-    public void setState(PaymentInstrumentState value) {
-        this.state = value;
-    }
 
     /**
-     * 获取isInactive属性的值。
+     * Sets the state value for this PaymentCard.
      * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
+     * @param state
      */
-    public Boolean isIsInactive() {
+    public void setState(com.netsuite.webservices.lists.accounting_2018_2.types.PaymentInstrumentState state) {
+        this.state = state;
+    }
+
+
+    /**
+     * Gets the isInactive value for this PaymentCard.
+     * 
+     * @return isInactive
+     */
+    public java.lang.Boolean getIsInactive() {
         return isInactive;
     }
 
-    /**
-     * 设置isInactive属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
-     */
-    public void setIsInactive(Boolean value) {
-        this.isInactive = value;
-    }
 
     /**
-     * 获取preserveOnFile属性的值。
+     * Sets the isInactive value for this PaymentCard.
      * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
+     * @param isInactive
      */
-    public Boolean isPreserveOnFile() {
+    public void setIsInactive(java.lang.Boolean isInactive) {
+        this.isInactive = isInactive;
+    }
+
+
+    /**
+     * Gets the preserveOnFile value for this PaymentCard.
+     * 
+     * @return preserveOnFile
+     */
+    public java.lang.Boolean getPreserveOnFile() {
         return preserveOnFile;
     }
 
-    /**
-     * 设置preserveOnFile属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
-     */
-    public void setPreserveOnFile(Boolean value) {
-        this.preserveOnFile = value;
-    }
 
     /**
-     * 获取isDefault属性的值。
+     * Sets the preserveOnFile value for this PaymentCard.
      * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
+     * @param preserveOnFile
      */
-    public Boolean isIsDefault() {
+    public void setPreserveOnFile(java.lang.Boolean preserveOnFile) {
+        this.preserveOnFile = preserveOnFile;
+    }
+
+
+    /**
+     * Gets the isDefault value for this PaymentCard.
+     * 
+     * @return isDefault
+     */
+    public java.lang.Boolean getIsDefault() {
         return isDefault;
     }
 
-    /**
-     * 设置isDefault属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
-     */
-    public void setIsDefault(Boolean value) {
-        this.isDefault = value;
-    }
 
     /**
-     * 获取cardNumber属性的值。
+     * Sets the isDefault value for this PaymentCard.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param isDefault
      */
-    public String getCardNumber() {
+    public void setIsDefault(java.lang.Boolean isDefault) {
+        this.isDefault = isDefault;
+    }
+
+
+    /**
+     * Gets the cardNumber value for this PaymentCard.
+     * 
+     * @return cardNumber
+     */
+    public java.lang.String getCardNumber() {
         return cardNumber;
     }
 
-    /**
-     * 设置cardNumber属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setCardNumber(String value) {
-        this.cardNumber = value;
-    }
 
     /**
-     * 获取expirationDate属性的值。
+     * Sets the cardNumber value for this PaymentCard.
      * 
-     * @return
-     *     possible object is
-     *     {@link XMLGregorianCalendar }
-     *     
+     * @param cardNumber
      */
-    public XMLGregorianCalendar getExpirationDate() {
+    public void setCardNumber(java.lang.String cardNumber) {
+        this.cardNumber = cardNumber;
+    }
+
+
+    /**
+     * Gets the expirationDate value for this PaymentCard.
+     * 
+     * @return expirationDate
+     */
+    public java.util.Calendar getExpirationDate() {
         return expirationDate;
     }
 
-    /**
-     * 设置expirationDate属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link XMLGregorianCalendar }
-     *     
-     */
-    public void setExpirationDate(XMLGregorianCalendar value) {
-        this.expirationDate = value;
-    }
 
     /**
-     * 获取cardBrand属性的值。
+     * Sets the expirationDate value for this PaymentCard.
      * 
-     * @return
-     *     possible object is
-     *     {@link PaymentCardBrand }
-     *     
+     * @param expirationDate
      */
-    public PaymentCardBrand getCardBrand() {
+    public void setExpirationDate(java.util.Calendar expirationDate) {
+        this.expirationDate = expirationDate;
+    }
+
+
+    /**
+     * Gets the cardBrand value for this PaymentCard.
+     * 
+     * @return cardBrand
+     */
+    public com.netsuite.webservices.lists.accounting_2018_2.types.PaymentCardBrand getCardBrand() {
         return cardBrand;
     }
 
-    /**
-     * 设置cardBrand属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link PaymentCardBrand }
-     *     
-     */
-    public void setCardBrand(PaymentCardBrand value) {
-        this.cardBrand = value;
-    }
 
     /**
-     * 获取cardType属性的值。
+     * Sets the cardBrand value for this PaymentCard.
      * 
-     * @return
-     *     possible object is
-     *     {@link PaymentCardType }
-     *     
+     * @param cardBrand
      */
-    public PaymentCardType getCardType() {
+    public void setCardBrand(com.netsuite.webservices.lists.accounting_2018_2.types.PaymentCardBrand cardBrand) {
+        this.cardBrand = cardBrand;
+    }
+
+
+    /**
+     * Gets the cardType value for this PaymentCard.
+     * 
+     * @return cardType
+     */
+    public com.netsuite.webservices.lists.accounting_2018_2.types.PaymentCardType getCardType() {
         return cardType;
     }
 
-    /**
-     * 设置cardType属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link PaymentCardType }
-     *     
-     */
-    public void setCardType(PaymentCardType value) {
-        this.cardType = value;
-    }
 
     /**
-     * 获取nameOnCard属性的值。
+     * Sets the cardType value for this PaymentCard.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param cardType
      */
-    public String getNameOnCard() {
+    public void setCardType(com.netsuite.webservices.lists.accounting_2018_2.types.PaymentCardType cardType) {
+        this.cardType = cardType;
+    }
+
+
+    /**
+     * Gets the nameOnCard value for this PaymentCard.
+     * 
+     * @return nameOnCard
+     */
+    public java.lang.String getNameOnCard() {
         return nameOnCard;
     }
 
-    /**
-     * 设置nameOnCard属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setNameOnCard(String value) {
-        this.nameOnCard = value;
-    }
 
     /**
-     * 获取street属性的值。
+     * Sets the nameOnCard value for this PaymentCard.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param nameOnCard
      */
-    public String getStreet() {
+    public void setNameOnCard(java.lang.String nameOnCard) {
+        this.nameOnCard = nameOnCard;
+    }
+
+
+    /**
+     * Gets the street value for this PaymentCard.
+     * 
+     * @return street
+     */
+    public java.lang.String getStreet() {
         return street;
     }
 
-    /**
-     * 设置street属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setStreet(String value) {
-        this.street = value;
-    }
 
     /**
-     * 获取zipCode属性的值。
+     * Sets the street value for this PaymentCard.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param street
      */
-    public String getZipCode() {
+    public void setStreet(java.lang.String street) {
+        this.street = street;
+    }
+
+
+    /**
+     * Gets the zipCode value for this PaymentCard.
+     * 
+     * @return zipCode
+     */
+    public java.lang.String getZipCode() {
         return zipCode;
     }
 
-    /**
-     * 设置zipCode属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setZipCode(String value) {
-        this.zipCode = value;
-    }
 
     /**
-     * 获取validFromDate属性的值。
+     * Sets the zipCode value for this PaymentCard.
      * 
-     * @return
-     *     possible object is
-     *     {@link XMLGregorianCalendar }
-     *     
+     * @param zipCode
      */
-    public XMLGregorianCalendar getValidFromDate() {
+    public void setZipCode(java.lang.String zipCode) {
+        this.zipCode = zipCode;
+    }
+
+
+    /**
+     * Gets the validFromDate value for this PaymentCard.
+     * 
+     * @return validFromDate
+     */
+    public java.util.Calendar getValidFromDate() {
         return validFromDate;
     }
 
-    /**
-     * 设置validFromDate属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link XMLGregorianCalendar }
-     *     
-     */
-    public void setValidFromDate(XMLGregorianCalendar value) {
-        this.validFromDate = value;
-    }
 
     /**
-     * 获取issueNumber属性的值。
+     * Sets the validFromDate value for this PaymentCard.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param validFromDate
      */
-    public String getIssueNumber() {
+    public void setValidFromDate(java.util.Calendar validFromDate) {
+        this.validFromDate = validFromDate;
+    }
+
+
+    /**
+     * Gets the issueNumber value for this PaymentCard.
+     * 
+     * @return issueNumber
+     */
+    public java.lang.String getIssueNumber() {
         return issueNumber;
     }
 
-    /**
-     * 设置issueNumber属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setIssueNumber(String value) {
-        this.issueNumber = value;
-    }
 
     /**
-     * 获取internalId属性的值。
+     * Sets the issueNumber value for this PaymentCard.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param issueNumber
      */
-    public String getInternalId() {
+    public void setIssueNumber(java.lang.String issueNumber) {
+        this.issueNumber = issueNumber;
+    }
+
+
+    /**
+     * Gets the internalId value for this PaymentCard.
+     * 
+     * @return internalId
+     */
+    public java.lang.String getInternalId() {
         return internalId;
     }
 
-    /**
-     * 设置internalId属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setInternalId(String value) {
-        this.internalId = value;
-    }
 
     /**
-     * 获取externalId属性的值。
+     * Sets the internalId value for this PaymentCard.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param internalId
      */
-    public String getExternalId() {
+    public void setInternalId(java.lang.String internalId) {
+        this.internalId = internalId;
+    }
+
+
+    /**
+     * Gets the externalId value for this PaymentCard.
+     * 
+     * @return externalId
+     */
+    public java.lang.String getExternalId() {
         return externalId;
     }
 
+
     /**
-     * 设置externalId属性的值。
+     * Sets the externalId value for this PaymentCard.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     * @param externalId
      */
-    public void setExternalId(String value) {
-        this.externalId = value;
+    public void setExternalId(java.lang.String externalId) {
+        this.externalId = externalId;
+    }
+
+    private java.lang.Object __equalsCalc = null;
+    public synchronized boolean equals(java.lang.Object obj) {
+        if (!(obj instanceof PaymentCard)) return false;
+        PaymentCard other = (PaymentCard) obj;
+        if (obj == null) return false;
+        if (this == obj) return true;
+        if (__equalsCalc != null) {
+            return (__equalsCalc == obj);
+        }
+        __equalsCalc = obj;
+        boolean _equals;
+        _equals = super.equals(obj) && 
+            ((this.lastFourDigits==null && other.getLastFourDigits()==null) || 
+             (this.lastFourDigits!=null &&
+              this.lastFourDigits.equals(other.getLastFourDigits()))) &&
+            ((this.issuerIdNumber==null && other.getIssuerIdNumber()==null) || 
+             (this.issuerIdNumber!=null &&
+              this.issuerIdNumber.equals(other.getIssuerIdNumber()))) &&
+            ((this.entity==null && other.getEntity()==null) || 
+             (this.entity!=null &&
+              this.entity.equals(other.getEntity()))) &&
+            ((this.mask==null && other.getMask()==null) || 
+             (this.mask!=null &&
+              this.mask.equals(other.getMask()))) &&
+            ((this.paymentMethod==null && other.getPaymentMethod()==null) || 
+             (this.paymentMethod!=null &&
+              this.paymentMethod.equals(other.getPaymentMethod()))) &&
+            ((this.memo==null && other.getMemo()==null) || 
+             (this.memo!=null &&
+              this.memo.equals(other.getMemo()))) &&
+            ((this.state==null && other.getState()==null) || 
+             (this.state!=null &&
+              this.state.equals(other.getState()))) &&
+            ((this.isInactive==null && other.getIsInactive()==null) || 
+             (this.isInactive!=null &&
+              this.isInactive.equals(other.getIsInactive()))) &&
+            ((this.preserveOnFile==null && other.getPreserveOnFile()==null) || 
+             (this.preserveOnFile!=null &&
+              this.preserveOnFile.equals(other.getPreserveOnFile()))) &&
+            ((this.isDefault==null && other.getIsDefault()==null) || 
+             (this.isDefault!=null &&
+              this.isDefault.equals(other.getIsDefault()))) &&
+            ((this.cardNumber==null && other.getCardNumber()==null) || 
+             (this.cardNumber!=null &&
+              this.cardNumber.equals(other.getCardNumber()))) &&
+            ((this.expirationDate==null && other.getExpirationDate()==null) || 
+             (this.expirationDate!=null &&
+              this.expirationDate.equals(other.getExpirationDate()))) &&
+            ((this.cardBrand==null && other.getCardBrand()==null) || 
+             (this.cardBrand!=null &&
+              this.cardBrand.equals(other.getCardBrand()))) &&
+            ((this.cardType==null && other.getCardType()==null) || 
+             (this.cardType!=null &&
+              this.cardType.equals(other.getCardType()))) &&
+            ((this.nameOnCard==null && other.getNameOnCard()==null) || 
+             (this.nameOnCard!=null &&
+              this.nameOnCard.equals(other.getNameOnCard()))) &&
+            ((this.street==null && other.getStreet()==null) || 
+             (this.street!=null &&
+              this.street.equals(other.getStreet()))) &&
+            ((this.zipCode==null && other.getZipCode()==null) || 
+             (this.zipCode!=null &&
+              this.zipCode.equals(other.getZipCode()))) &&
+            ((this.validFromDate==null && other.getValidFromDate()==null) || 
+             (this.validFromDate!=null &&
+              this.validFromDate.equals(other.getValidFromDate()))) &&
+            ((this.issueNumber==null && other.getIssueNumber()==null) || 
+             (this.issueNumber!=null &&
+              this.issueNumber.equals(other.getIssueNumber()))) &&
+            ((this.internalId==null && other.getInternalId()==null) || 
+             (this.internalId!=null &&
+              this.internalId.equals(other.getInternalId()))) &&
+            ((this.externalId==null && other.getExternalId()==null) || 
+             (this.externalId!=null &&
+              this.externalId.equals(other.getExternalId())));
+        __equalsCalc = null;
+        return _equals;
+    }
+
+    private boolean __hashCodeCalc = false;
+    public synchronized int hashCode() {
+        if (__hashCodeCalc) {
+            return 0;
+        }
+        __hashCodeCalc = true;
+        int _hashCode = super.hashCode();
+        if (getLastFourDigits() != null) {
+            _hashCode += getLastFourDigits().hashCode();
+        }
+        if (getIssuerIdNumber() != null) {
+            _hashCode += getIssuerIdNumber().hashCode();
+        }
+        if (getEntity() != null) {
+            _hashCode += getEntity().hashCode();
+        }
+        if (getMask() != null) {
+            _hashCode += getMask().hashCode();
+        }
+        if (getPaymentMethod() != null) {
+            _hashCode += getPaymentMethod().hashCode();
+        }
+        if (getMemo() != null) {
+            _hashCode += getMemo().hashCode();
+        }
+        if (getState() != null) {
+            _hashCode += getState().hashCode();
+        }
+        if (getIsInactive() != null) {
+            _hashCode += getIsInactive().hashCode();
+        }
+        if (getPreserveOnFile() != null) {
+            _hashCode += getPreserveOnFile().hashCode();
+        }
+        if (getIsDefault() != null) {
+            _hashCode += getIsDefault().hashCode();
+        }
+        if (getCardNumber() != null) {
+            _hashCode += getCardNumber().hashCode();
+        }
+        if (getExpirationDate() != null) {
+            _hashCode += getExpirationDate().hashCode();
+        }
+        if (getCardBrand() != null) {
+            _hashCode += getCardBrand().hashCode();
+        }
+        if (getCardType() != null) {
+            _hashCode += getCardType().hashCode();
+        }
+        if (getNameOnCard() != null) {
+            _hashCode += getNameOnCard().hashCode();
+        }
+        if (getStreet() != null) {
+            _hashCode += getStreet().hashCode();
+        }
+        if (getZipCode() != null) {
+            _hashCode += getZipCode().hashCode();
+        }
+        if (getValidFromDate() != null) {
+            _hashCode += getValidFromDate().hashCode();
+        }
+        if (getIssueNumber() != null) {
+            _hashCode += getIssueNumber().hashCode();
+        }
+        if (getInternalId() != null) {
+            _hashCode += getInternalId().hashCode();
+        }
+        if (getExternalId() != null) {
+            _hashCode += getExternalId().hashCode();
+        }
+        __hashCodeCalc = false;
+        return _hashCode;
+    }
+
+    // Type metadata
+    private static org.apache.axis.description.TypeDesc typeDesc =
+        new org.apache.axis.description.TypeDesc(PaymentCard.class, true);
+
+    static {
+        typeDesc.setXmlType(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "PaymentCard"));
+        org.apache.axis.description.AttributeDesc attrField = new org.apache.axis.description.AttributeDesc();
+        attrField.setFieldName("internalId");
+        attrField.setXmlName(new javax.xml.namespace.QName("", "internalId"));
+        attrField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        typeDesc.addFieldDesc(attrField);
+        attrField = new org.apache.axis.description.AttributeDesc();
+        attrField.setFieldName("externalId");
+        attrField.setXmlName(new javax.xml.namespace.QName("", "externalId"));
+        attrField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        typeDesc.addFieldDesc(attrField);
+        org.apache.axis.description.ElementDesc elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("lastFourDigits");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "lastFourDigits"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("issuerIdNumber");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "issuerIdNumber"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("entity");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "entity"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("mask");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "mask"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("paymentMethod");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "paymentMethod"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("memo");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "memo"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("state");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "state"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:types.accounting_2018_2.lists.webservices.netsuite.com", "PaymentInstrumentState"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("isInactive");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "isInactive"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("preserveOnFile");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "preserveOnFile"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("isDefault");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "isDefault"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("cardNumber");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "cardNumber"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("expirationDate");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "expirationDate"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "dateTime"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("cardBrand");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "cardBrand"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:types.accounting_2018_2.lists.webservices.netsuite.com", "PaymentCardBrand"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("cardType");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "cardType"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:types.accounting_2018_2.lists.webservices.netsuite.com", "PaymentCardType"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("nameOnCard");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "nameOnCard"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("street");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "street"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("zipCode");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "zipCode"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("validFromDate");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "validFromDate"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "dateTime"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("issueNumber");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "issueNumber"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+    }
+
+    /**
+     * Return type metadata object
+     */
+    public static org.apache.axis.description.TypeDesc getTypeDesc() {
+        return typeDesc;
+    }
+
+    /**
+     * Get Custom Serializer
+     */
+    public static org.apache.axis.encoding.Serializer getSerializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanSerializer(
+            _javaType, _xmlType, typeDesc);
+    }
+
+    /**
+     * Get Custom Deserializer
+     */
+    public static org.apache.axis.encoding.Deserializer getDeserializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanDeserializer(
+            _javaType, _xmlType, typeDesc);
     }
 
 }

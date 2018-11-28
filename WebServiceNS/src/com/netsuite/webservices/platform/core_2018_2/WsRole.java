@@ -1,141 +1,231 @@
+/**
+ * WsRole.java
+ *
+ * This file was auto-generated from WSDL
+ * by the Apache Axis 1.4 Jul 28, 2010 (04:07:04 PDT) WSDL2Java emitter.
+ */
 
 package com.netsuite.webservices.platform.core_2018_2;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlType;
+public class WsRole  implements java.io.Serializable {
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef role;
 
+    private java.lang.Boolean isDefault;
 
-/**
- * <p>WsRole complex type的 Java 类。
- * 
- * <p>以下模式片段指定包含在此类中的预期内容。
- * 
- * <pre>
- * &lt;complexType name="WsRole">
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element name="role" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="isDefault" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         &lt;element name="isInactive" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         &lt;element name="isLoggedInRole" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
- */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "WsRole", propOrder = {
-    "role",
-    "isDefault",
-    "isInactive",
-    "isLoggedInRole"
-})
-public class WsRole {
+    private java.lang.Boolean isInactive;
 
-    protected RecordRef role;
-    protected Boolean isDefault;
-    protected Boolean isInactive;
-    protected Boolean isLoggedInRole;
+    private java.lang.Boolean isLoggedInRole;
+
+    public WsRole() {
+    }
+
+    public WsRole(
+           com.netsuite.webservices.platform.core_2018_2.RecordRef role,
+           java.lang.Boolean isDefault,
+           java.lang.Boolean isInactive,
+           java.lang.Boolean isLoggedInRole) {
+           this.role = role;
+           this.isDefault = isDefault;
+           this.isInactive = isInactive;
+           this.isLoggedInRole = isLoggedInRole;
+    }
+
 
     /**
-     * 获取role属性的值。
+     * Gets the role value for this WsRole.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @return role
      */
-    public RecordRef getRole() {
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getRole() {
         return role;
     }
 
-    /**
-     * 设置role属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setRole(RecordRef value) {
-        this.role = value;
-    }
 
     /**
-     * 获取isDefault属性的值。
+     * Sets the role value for this WsRole.
      * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
+     * @param role
      */
-    public Boolean isIsDefault() {
+    public void setRole(com.netsuite.webservices.platform.core_2018_2.RecordRef role) {
+        this.role = role;
+    }
+
+
+    /**
+     * Gets the isDefault value for this WsRole.
+     * 
+     * @return isDefault
+     */
+    public java.lang.Boolean getIsDefault() {
         return isDefault;
     }
 
-    /**
-     * 设置isDefault属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
-     */
-    public void setIsDefault(Boolean value) {
-        this.isDefault = value;
-    }
 
     /**
-     * 获取isInactive属性的值。
+     * Sets the isDefault value for this WsRole.
      * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
+     * @param isDefault
      */
-    public Boolean isIsInactive() {
+    public void setIsDefault(java.lang.Boolean isDefault) {
+        this.isDefault = isDefault;
+    }
+
+
+    /**
+     * Gets the isInactive value for this WsRole.
+     * 
+     * @return isInactive
+     */
+    public java.lang.Boolean getIsInactive() {
         return isInactive;
     }
 
-    /**
-     * 设置isInactive属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
-     */
-    public void setIsInactive(Boolean value) {
-        this.isInactive = value;
-    }
 
     /**
-     * 获取isLoggedInRole属性的值。
+     * Sets the isInactive value for this WsRole.
      * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
+     * @param isInactive
      */
-    public Boolean isIsLoggedInRole() {
+    public void setIsInactive(java.lang.Boolean isInactive) {
+        this.isInactive = isInactive;
+    }
+
+
+    /**
+     * Gets the isLoggedInRole value for this WsRole.
+     * 
+     * @return isLoggedInRole
+     */
+    public java.lang.Boolean getIsLoggedInRole() {
         return isLoggedInRole;
     }
 
+
     /**
-     * 设置isLoggedInRole属性的值。
+     * Sets the isLoggedInRole value for this WsRole.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
+     * @param isLoggedInRole
      */
-    public void setIsLoggedInRole(Boolean value) {
-        this.isLoggedInRole = value;
+    public void setIsLoggedInRole(java.lang.Boolean isLoggedInRole) {
+        this.isLoggedInRole = isLoggedInRole;
+    }
+
+    private java.lang.Object __equalsCalc = null;
+    public synchronized boolean equals(java.lang.Object obj) {
+        if (!(obj instanceof WsRole)) return false;
+        WsRole other = (WsRole) obj;
+        if (obj == null) return false;
+        if (this == obj) return true;
+        if (__equalsCalc != null) {
+            return (__equalsCalc == obj);
+        }
+        __equalsCalc = obj;
+        boolean _equals;
+        _equals = true && 
+            ((this.role==null && other.getRole()==null) || 
+             (this.role!=null &&
+              this.role.equals(other.getRole()))) &&
+            ((this.isDefault==null && other.getIsDefault()==null) || 
+             (this.isDefault!=null &&
+              this.isDefault.equals(other.getIsDefault()))) &&
+            ((this.isInactive==null && other.getIsInactive()==null) || 
+             (this.isInactive!=null &&
+              this.isInactive.equals(other.getIsInactive()))) &&
+            ((this.isLoggedInRole==null && other.getIsLoggedInRole()==null) || 
+             (this.isLoggedInRole!=null &&
+              this.isLoggedInRole.equals(other.getIsLoggedInRole())));
+        __equalsCalc = null;
+        return _equals;
+    }
+
+    private boolean __hashCodeCalc = false;
+    public synchronized int hashCode() {
+        if (__hashCodeCalc) {
+            return 0;
+        }
+        __hashCodeCalc = true;
+        int _hashCode = 1;
+        if (getRole() != null) {
+            _hashCode += getRole().hashCode();
+        }
+        if (getIsDefault() != null) {
+            _hashCode += getIsDefault().hashCode();
+        }
+        if (getIsInactive() != null) {
+            _hashCode += getIsInactive().hashCode();
+        }
+        if (getIsLoggedInRole() != null) {
+            _hashCode += getIsLoggedInRole().hashCode();
+        }
+        __hashCodeCalc = false;
+        return _hashCode;
+    }
+
+    // Type metadata
+    private static org.apache.axis.description.TypeDesc typeDesc =
+        new org.apache.axis.description.TypeDesc(WsRole.class, true);
+
+    static {
+        typeDesc.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "WsRole"));
+        org.apache.axis.description.ElementDesc elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("role");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "role"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("isDefault");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "isDefault"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("isInactive");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "isInactive"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("isLoggedInRole");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "isLoggedInRole"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+    }
+
+    /**
+     * Return type metadata object
+     */
+    public static org.apache.axis.description.TypeDesc getTypeDesc() {
+        return typeDesc;
+    }
+
+    /**
+     * Get Custom Serializer
+     */
+    public static org.apache.axis.encoding.Serializer getSerializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanSerializer(
+            _javaType, _xmlType, typeDesc);
+    }
+
+    /**
+     * Get Custom Deserializer
+     */
+    public static org.apache.axis.encoding.Deserializer getDeserializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanDeserializer(
+            _javaType, _xmlType, typeDesc);
     }
 
 }

@@ -1,69 +1,82 @@
+/**
+ * TextFileEncoding.java
+ *
+ * This file was auto-generated from WSDL
+ * by the Apache Axis 1.4 Jul 28, 2010 (04:07:04 PDT) WSDL2Java emitter.
+ */
 
 package com.netsuite.webservices.documents.filecabinet_2018_2.types;
 
-import javax.xml.bind.annotation.XmlEnum;
-import javax.xml.bind.annotation.XmlEnumValue;
-import javax.xml.bind.annotation.XmlType;
+public class TextFileEncoding implements java.io.Serializable {
+    private java.lang.String _value_;
+    private static java.util.HashMap _table_ = new java.util.HashMap();
 
-
-/**
- * <p>TextFileEncoding的 Java 类。
- * 
- * <p>以下模式片段指定包含在此类中的预期内容。
- * <p>
- * <pre>
- * &lt;simpleType name="TextFileEncoding">
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     &lt;enumeration value="_big5"/>
- *     &lt;enumeration value="_gb2312"/>
- *     &lt;enumeration value="_gb18030"/>
- *     &lt;enumeration value="_iso88591"/>
- *     &lt;enumeration value="_macRoman"/>
- *     &lt;enumeration value="_shiftJis"/>
- *     &lt;enumeration value="_utf8"/>
- *     &lt;enumeration value="_windows1252"/>
- *   &lt;/restriction>
- * &lt;/simpleType>
- * </pre>
- * 
- */
-@XmlType(name = "TextFileEncoding", namespace = "urn:types.filecabinet_2018_2.documents.webservices.netsuite.com")
-@XmlEnum
-public enum TextFileEncoding {
-
-    @XmlEnumValue("_big5")
-    BIG_5("_big5"),
-    @XmlEnumValue("_gb2312")
-    GB_2312("_gb2312"),
-    @XmlEnumValue("_gb18030")
-    GB_18030("_gb18030"),
-    @XmlEnumValue("_iso88591")
-    ISO_88591("_iso88591"),
-    @XmlEnumValue("_macRoman")
-    MAC_ROMAN("_macRoman"),
-    @XmlEnumValue("_shiftJis")
-    SHIFT_JIS("_shiftJis"),
-    @XmlEnumValue("_utf8")
-    UTF_8("_utf8"),
-    @XmlEnumValue("_windows1252")
-    WINDOWS_1252("_windows1252");
-    private final String value;
-
-    TextFileEncoding(String v) {
-        value = v;
+    // Constructor
+    protected TextFileEncoding(java.lang.String value) {
+        _value_ = value;
+        _table_.put(_value_,this);
     }
 
-    public String value() {
-        return value;
+    public static final java.lang.String __big5 = "_big5";
+    public static final java.lang.String __gb2312 = "_gb2312";
+    public static final java.lang.String __gb18030 = "_gb18030";
+    public static final java.lang.String __iso88591 = "_iso88591";
+    public static final java.lang.String __macRoman = "_macRoman";
+    public static final java.lang.String __shiftJis = "_shiftJis";
+    public static final java.lang.String __utf8 = "_utf8";
+    public static final java.lang.String __windows1252 = "_windows1252";
+    public static final TextFileEncoding _big5 = new TextFileEncoding(__big5);
+    public static final TextFileEncoding _gb2312 = new TextFileEncoding(__gb2312);
+    public static final TextFileEncoding _gb18030 = new TextFileEncoding(__gb18030);
+    public static final TextFileEncoding _iso88591 = new TextFileEncoding(__iso88591);
+    public static final TextFileEncoding _macRoman = new TextFileEncoding(__macRoman);
+    public static final TextFileEncoding _shiftJis = new TextFileEncoding(__shiftJis);
+    public static final TextFileEncoding _utf8 = new TextFileEncoding(__utf8);
+    public static final TextFileEncoding _windows1252 = new TextFileEncoding(__windows1252);
+    public java.lang.String getValue() { return _value_;}
+    public static TextFileEncoding fromValue(java.lang.String value)
+          throws java.lang.IllegalArgumentException {
+        TextFileEncoding enumeration = (TextFileEncoding)
+            _table_.get(value);
+        if (enumeration==null) throw new java.lang.IllegalArgumentException();
+        return enumeration;
     }
+    public static TextFileEncoding fromString(java.lang.String value)
+          throws java.lang.IllegalArgumentException {
+        return fromValue(value);
+    }
+    public boolean equals(java.lang.Object obj) {return (obj == this);}
+    public int hashCode() { return toString().hashCode();}
+    public java.lang.String toString() { return _value_;}
+    public java.lang.Object readResolve() throws java.io.ObjectStreamException { return fromValue(_value_);}
+    public static org.apache.axis.encoding.Serializer getSerializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new org.apache.axis.encoding.ser.EnumSerializer(
+            _javaType, _xmlType);
+    }
+    public static org.apache.axis.encoding.Deserializer getDeserializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new org.apache.axis.encoding.ser.EnumDeserializer(
+            _javaType, _xmlType);
+    }
+    // Type metadata
+    private static org.apache.axis.description.TypeDesc typeDesc =
+        new org.apache.axis.description.TypeDesc(TextFileEncoding.class);
 
-    public static TextFileEncoding fromValue(String v) {
-        for (TextFileEncoding c: TextFileEncoding.values()) {
-            if (c.value.equals(v)) {
-                return c;
-            }
-        }
-        throw new IllegalArgumentException(v);
+    static {
+        typeDesc.setXmlType(new javax.xml.namespace.QName("urn:types.filecabinet_2018_2.documents.webservices.netsuite.com", "TextFileEncoding"));
+    }
+    /**
+     * Return type metadata object
+     */
+    public static org.apache.axis.description.TypeDesc getTypeDesc() {
+        return typeDesc;
     }
 
 }

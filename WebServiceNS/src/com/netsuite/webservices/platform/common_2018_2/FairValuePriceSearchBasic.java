@@ -1,529 +1,821 @@
+/**
+ * FairValuePriceSearchBasic.java
+ *
+ * This file was auto-generated from WSDL
+ * by the Apache Axis 1.4 Jul 28, 2010 (04:07:04 PDT) WSDL2Java emitter.
+ */
 
 package com.netsuite.webservices.platform.common_2018_2;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlType;
-import com.netsuite.webservices.platform.core_2018_2.SearchBooleanField;
-import com.netsuite.webservices.platform.core_2018_2.SearchDateField;
-import com.netsuite.webservices.platform.core_2018_2.SearchDoubleField;
-import com.netsuite.webservices.platform.core_2018_2.SearchEnumMultiSelectField;
-import com.netsuite.webservices.platform.core_2018_2.SearchLongField;
-import com.netsuite.webservices.platform.core_2018_2.SearchMultiSelectField;
-import com.netsuite.webservices.platform.core_2018_2.SearchRecordBasic;
-import com.netsuite.webservices.platform.core_2018_2.SearchStringField;
+public class FairValuePriceSearchBasic  extends com.netsuite.webservices.platform.core_2018_2.SearchRecordBasic  implements java.io.Serializable {
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef[] currency;
 
+    private com.netsuite.webservices.platform.core_2018_2.SearchDateField endDate;
 
-/**
- * <p>FairValuePriceSearchBasic complex type的 Java 类。
- * 
- * <p>以下模式片段指定包含在此类中的预期内容。
- * 
- * <pre>
- * &lt;complexType name="FairValuePriceSearchBasic">
- *   &lt;complexContent>
- *     &lt;extension base="{urn:core_2018_2.platform.webservices.netsuite.com}SearchRecordBasic">
- *       &lt;sequence>
- *         &lt;element name="currency" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchMultiSelectField" minOccurs="0"/>
- *         &lt;element name="endDate" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchDateField" minOccurs="0"/>
- *         &lt;element name="externalId" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchMultiSelectField" minOccurs="0"/>
- *         &lt;element name="externalIdString" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchStringField" minOccurs="0"/>
- *         &lt;element name="fairValue" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchDoubleField" minOccurs="0"/>
- *         &lt;element name="fairValueFormula" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchMultiSelectField" minOccurs="0"/>
- *         &lt;element name="fairValueRangePolicy" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchEnumMultiSelectField" minOccurs="0"/>
- *         &lt;element name="highValue" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchDoubleField" minOccurs="0"/>
- *         &lt;element name="highValuePercent" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchDoubleField" minOccurs="0"/>
- *         &lt;element name="internalId" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchMultiSelectField" minOccurs="0"/>
- *         &lt;element name="internalIdNumber" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchLongField" minOccurs="0"/>
- *         &lt;element name="isVsoePrice" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchBooleanField" minOccurs="0"/>
- *         &lt;element name="item" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchMultiSelectField" minOccurs="0"/>
- *         &lt;element name="itemRevenueCategory" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchMultiSelectField" minOccurs="0"/>
- *         &lt;element name="lowValue" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchDoubleField" minOccurs="0"/>
- *         &lt;element name="lowValuePercent" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchDoubleField" minOccurs="0"/>
- *         &lt;element name="startDate" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchDateField" minOccurs="0"/>
- *         &lt;element name="unitsType" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchMultiSelectField" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/extension>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
- */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "FairValuePriceSearchBasic", propOrder = {
-    "currency",
-    "endDate",
-    "externalId",
-    "externalIdString",
-    "fairValue",
-    "fairValueFormula",
-    "fairValueRangePolicy",
-    "highValue",
-    "highValuePercent",
-    "internalId",
-    "internalIdNumber",
-    "isVsoePrice",
-    "item",
-    "itemRevenueCategory",
-    "lowValue",
-    "lowValuePercent",
-    "startDate",
-    "unitsType"
-})
-public class FairValuePriceSearchBasic
-    extends SearchRecordBasic
-{
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef[] externalId;
 
-    protected SearchMultiSelectField currency;
-    protected SearchDateField endDate;
-    protected SearchMultiSelectField externalId;
-    protected SearchStringField externalIdString;
-    protected SearchDoubleField fairValue;
-    protected SearchMultiSelectField fairValueFormula;
-    protected SearchEnumMultiSelectField fairValueRangePolicy;
-    protected SearchDoubleField highValue;
-    protected SearchDoubleField highValuePercent;
-    protected SearchMultiSelectField internalId;
-    protected SearchLongField internalIdNumber;
-    protected SearchBooleanField isVsoePrice;
-    protected SearchMultiSelectField item;
-    protected SearchMultiSelectField itemRevenueCategory;
-    protected SearchDoubleField lowValue;
-    protected SearchDoubleField lowValuePercent;
-    protected SearchDateField startDate;
-    protected SearchMultiSelectField unitsType;
+    private com.netsuite.webservices.platform.core_2018_2.SearchStringField externalIdString;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchDoubleField fairValue;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef[] fairValueFormula;
+
+    private java.lang.String[] fairValueRangePolicy;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchDoubleField highValue;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchDoubleField highValuePercent;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef[] internalId;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchLongField internalIdNumber;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchBooleanField isVsoePrice;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef[] item;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef[] itemRevenueCategory;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchDoubleField lowValue;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchDoubleField lowValuePercent;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchDateField startDate;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef[] unitsType;
+
+    public FairValuePriceSearchBasic() {
+    }
+
+    public FairValuePriceSearchBasic(
+           com.netsuite.webservices.platform.core_2018_2.RecordRef[] currency,
+           com.netsuite.webservices.platform.core_2018_2.SearchDateField endDate,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef[] externalId,
+           com.netsuite.webservices.platform.core_2018_2.SearchStringField externalIdString,
+           com.netsuite.webservices.platform.core_2018_2.SearchDoubleField fairValue,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef[] fairValueFormula,
+           java.lang.String[] fairValueRangePolicy,
+           com.netsuite.webservices.platform.core_2018_2.SearchDoubleField highValue,
+           com.netsuite.webservices.platform.core_2018_2.SearchDoubleField highValuePercent,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef[] internalId,
+           com.netsuite.webservices.platform.core_2018_2.SearchLongField internalIdNumber,
+           com.netsuite.webservices.platform.core_2018_2.SearchBooleanField isVsoePrice,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef[] item,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef[] itemRevenueCategory,
+           com.netsuite.webservices.platform.core_2018_2.SearchDoubleField lowValue,
+           com.netsuite.webservices.platform.core_2018_2.SearchDoubleField lowValuePercent,
+           com.netsuite.webservices.platform.core_2018_2.SearchDateField startDate,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef[] unitsType) {
+        this.currency = currency;
+        this.endDate = endDate;
+        this.externalId = externalId;
+        this.externalIdString = externalIdString;
+        this.fairValue = fairValue;
+        this.fairValueFormula = fairValueFormula;
+        this.fairValueRangePolicy = fairValueRangePolicy;
+        this.highValue = highValue;
+        this.highValuePercent = highValuePercent;
+        this.internalId = internalId;
+        this.internalIdNumber = internalIdNumber;
+        this.isVsoePrice = isVsoePrice;
+        this.item = item;
+        this.itemRevenueCategory = itemRevenueCategory;
+        this.lowValue = lowValue;
+        this.lowValuePercent = lowValuePercent;
+        this.startDate = startDate;
+        this.unitsType = unitsType;
+    }
+
 
     /**
-     * 获取currency属性的值。
+     * Gets the currency value for this FairValuePriceSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchMultiSelectField }
-     *     
+     * @return currency
      */
-    public SearchMultiSelectField getCurrency() {
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef[] getCurrency() {
         return currency;
     }
 
-    /**
-     * 设置currency属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchMultiSelectField }
-     *     
-     */
-    public void setCurrency(SearchMultiSelectField value) {
-        this.currency = value;
-    }
 
     /**
-     * 获取endDate属性的值。
+     * Sets the currency value for this FairValuePriceSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchDateField }
-     *     
+     * @param currency
      */
-    public SearchDateField getEndDate() {
+    public void setCurrency(com.netsuite.webservices.platform.core_2018_2.RecordRef[] currency) {
+        this.currency = currency;
+    }
+
+
+    /**
+     * Gets the endDate value for this FairValuePriceSearchBasic.
+     * 
+     * @return endDate
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchDateField getEndDate() {
         return endDate;
     }
 
-    /**
-     * 设置endDate属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchDateField }
-     *     
-     */
-    public void setEndDate(SearchDateField value) {
-        this.endDate = value;
-    }
 
     /**
-     * 获取externalId属性的值。
+     * Sets the endDate value for this FairValuePriceSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchMultiSelectField }
-     *     
+     * @param endDate
      */
-    public SearchMultiSelectField getExternalId() {
+    public void setEndDate(com.netsuite.webservices.platform.core_2018_2.SearchDateField endDate) {
+        this.endDate = endDate;
+    }
+
+
+    /**
+     * Gets the externalId value for this FairValuePriceSearchBasic.
+     * 
+     * @return externalId
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef[] getExternalId() {
         return externalId;
     }
 
-    /**
-     * 设置externalId属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchMultiSelectField }
-     *     
-     */
-    public void setExternalId(SearchMultiSelectField value) {
-        this.externalId = value;
-    }
 
     /**
-     * 获取externalIdString属性的值。
+     * Sets the externalId value for this FairValuePriceSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchStringField }
-     *     
+     * @param externalId
      */
-    public SearchStringField getExternalIdString() {
+    public void setExternalId(com.netsuite.webservices.platform.core_2018_2.RecordRef[] externalId) {
+        this.externalId = externalId;
+    }
+
+
+    /**
+     * Gets the externalIdString value for this FairValuePriceSearchBasic.
+     * 
+     * @return externalIdString
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchStringField getExternalIdString() {
         return externalIdString;
     }
 
-    /**
-     * 设置externalIdString属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchStringField }
-     *     
-     */
-    public void setExternalIdString(SearchStringField value) {
-        this.externalIdString = value;
-    }
 
     /**
-     * 获取fairValue属性的值。
+     * Sets the externalIdString value for this FairValuePriceSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchDoubleField }
-     *     
+     * @param externalIdString
      */
-    public SearchDoubleField getFairValue() {
+    public void setExternalIdString(com.netsuite.webservices.platform.core_2018_2.SearchStringField externalIdString) {
+        this.externalIdString = externalIdString;
+    }
+
+
+    /**
+     * Gets the fairValue value for this FairValuePriceSearchBasic.
+     * 
+     * @return fairValue
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchDoubleField getFairValue() {
         return fairValue;
     }
 
-    /**
-     * 设置fairValue属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchDoubleField }
-     *     
-     */
-    public void setFairValue(SearchDoubleField value) {
-        this.fairValue = value;
-    }
 
     /**
-     * 获取fairValueFormula属性的值。
+     * Sets the fairValue value for this FairValuePriceSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchMultiSelectField }
-     *     
+     * @param fairValue
      */
-    public SearchMultiSelectField getFairValueFormula() {
+    public void setFairValue(com.netsuite.webservices.platform.core_2018_2.SearchDoubleField fairValue) {
+        this.fairValue = fairValue;
+    }
+
+
+    /**
+     * Gets the fairValueFormula value for this FairValuePriceSearchBasic.
+     * 
+     * @return fairValueFormula
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef[] getFairValueFormula() {
         return fairValueFormula;
     }
 
-    /**
-     * 设置fairValueFormula属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchMultiSelectField }
-     *     
-     */
-    public void setFairValueFormula(SearchMultiSelectField value) {
-        this.fairValueFormula = value;
-    }
 
     /**
-     * 获取fairValueRangePolicy属性的值。
+     * Sets the fairValueFormula value for this FairValuePriceSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchEnumMultiSelectField }
-     *     
+     * @param fairValueFormula
      */
-    public SearchEnumMultiSelectField getFairValueRangePolicy() {
+    public void setFairValueFormula(com.netsuite.webservices.platform.core_2018_2.RecordRef[] fairValueFormula) {
+        this.fairValueFormula = fairValueFormula;
+    }
+
+
+    /**
+     * Gets the fairValueRangePolicy value for this FairValuePriceSearchBasic.
+     * 
+     * @return fairValueRangePolicy
+     */
+    public java.lang.String[] getFairValueRangePolicy() {
         return fairValueRangePolicy;
     }
 
-    /**
-     * 设置fairValueRangePolicy属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchEnumMultiSelectField }
-     *     
-     */
-    public void setFairValueRangePolicy(SearchEnumMultiSelectField value) {
-        this.fairValueRangePolicy = value;
-    }
 
     /**
-     * 获取highValue属性的值。
+     * Sets the fairValueRangePolicy value for this FairValuePriceSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchDoubleField }
-     *     
+     * @param fairValueRangePolicy
      */
-    public SearchDoubleField getHighValue() {
+    public void setFairValueRangePolicy(java.lang.String[] fairValueRangePolicy) {
+        this.fairValueRangePolicy = fairValueRangePolicy;
+    }
+
+
+    /**
+     * Gets the highValue value for this FairValuePriceSearchBasic.
+     * 
+     * @return highValue
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchDoubleField getHighValue() {
         return highValue;
     }
 
-    /**
-     * 设置highValue属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchDoubleField }
-     *     
-     */
-    public void setHighValue(SearchDoubleField value) {
-        this.highValue = value;
-    }
 
     /**
-     * 获取highValuePercent属性的值。
+     * Sets the highValue value for this FairValuePriceSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchDoubleField }
-     *     
+     * @param highValue
      */
-    public SearchDoubleField getHighValuePercent() {
+    public void setHighValue(com.netsuite.webservices.platform.core_2018_2.SearchDoubleField highValue) {
+        this.highValue = highValue;
+    }
+
+
+    /**
+     * Gets the highValuePercent value for this FairValuePriceSearchBasic.
+     * 
+     * @return highValuePercent
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchDoubleField getHighValuePercent() {
         return highValuePercent;
     }
 
-    /**
-     * 设置highValuePercent属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchDoubleField }
-     *     
-     */
-    public void setHighValuePercent(SearchDoubleField value) {
-        this.highValuePercent = value;
-    }
 
     /**
-     * 获取internalId属性的值。
+     * Sets the highValuePercent value for this FairValuePriceSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchMultiSelectField }
-     *     
+     * @param highValuePercent
      */
-    public SearchMultiSelectField getInternalId() {
+    public void setHighValuePercent(com.netsuite.webservices.platform.core_2018_2.SearchDoubleField highValuePercent) {
+        this.highValuePercent = highValuePercent;
+    }
+
+
+    /**
+     * Gets the internalId value for this FairValuePriceSearchBasic.
+     * 
+     * @return internalId
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef[] getInternalId() {
         return internalId;
     }
 
-    /**
-     * 设置internalId属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchMultiSelectField }
-     *     
-     */
-    public void setInternalId(SearchMultiSelectField value) {
-        this.internalId = value;
-    }
 
     /**
-     * 获取internalIdNumber属性的值。
+     * Sets the internalId value for this FairValuePriceSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchLongField }
-     *     
+     * @param internalId
      */
-    public SearchLongField getInternalIdNumber() {
+    public void setInternalId(com.netsuite.webservices.platform.core_2018_2.RecordRef[] internalId) {
+        this.internalId = internalId;
+    }
+
+
+    /**
+     * Gets the internalIdNumber value for this FairValuePriceSearchBasic.
+     * 
+     * @return internalIdNumber
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchLongField getInternalIdNumber() {
         return internalIdNumber;
     }
 
-    /**
-     * 设置internalIdNumber属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchLongField }
-     *     
-     */
-    public void setInternalIdNumber(SearchLongField value) {
-        this.internalIdNumber = value;
-    }
 
     /**
-     * 获取isVsoePrice属性的值。
+     * Sets the internalIdNumber value for this FairValuePriceSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchBooleanField }
-     *     
+     * @param internalIdNumber
      */
-    public SearchBooleanField getIsVsoePrice() {
+    public void setInternalIdNumber(com.netsuite.webservices.platform.core_2018_2.SearchLongField internalIdNumber) {
+        this.internalIdNumber = internalIdNumber;
+    }
+
+
+    /**
+     * Gets the isVsoePrice value for this FairValuePriceSearchBasic.
+     * 
+     * @return isVsoePrice
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchBooleanField getIsVsoePrice() {
         return isVsoePrice;
     }
 
-    /**
-     * 设置isVsoePrice属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchBooleanField }
-     *     
-     */
-    public void setIsVsoePrice(SearchBooleanField value) {
-        this.isVsoePrice = value;
-    }
 
     /**
-     * 获取item属性的值。
+     * Sets the isVsoePrice value for this FairValuePriceSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchMultiSelectField }
-     *     
+     * @param isVsoePrice
      */
-    public SearchMultiSelectField getItem() {
+    public void setIsVsoePrice(com.netsuite.webservices.platform.core_2018_2.SearchBooleanField isVsoePrice) {
+        this.isVsoePrice = isVsoePrice;
+    }
+
+
+    /**
+     * Gets the item value for this FairValuePriceSearchBasic.
+     * 
+     * @return item
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef[] getItem() {
         return item;
     }
 
-    /**
-     * 设置item属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchMultiSelectField }
-     *     
-     */
-    public void setItem(SearchMultiSelectField value) {
-        this.item = value;
-    }
 
     /**
-     * 获取itemRevenueCategory属性的值。
+     * Sets the item value for this FairValuePriceSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchMultiSelectField }
-     *     
+     * @param item
      */
-    public SearchMultiSelectField getItemRevenueCategory() {
+    public void setItem(com.netsuite.webservices.platform.core_2018_2.RecordRef[] item) {
+        this.item = item;
+    }
+
+
+    /**
+     * Gets the itemRevenueCategory value for this FairValuePriceSearchBasic.
+     * 
+     * @return itemRevenueCategory
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef[] getItemRevenueCategory() {
         return itemRevenueCategory;
     }
 
-    /**
-     * 设置itemRevenueCategory属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchMultiSelectField }
-     *     
-     */
-    public void setItemRevenueCategory(SearchMultiSelectField value) {
-        this.itemRevenueCategory = value;
-    }
 
     /**
-     * 获取lowValue属性的值。
+     * Sets the itemRevenueCategory value for this FairValuePriceSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchDoubleField }
-     *     
+     * @param itemRevenueCategory
      */
-    public SearchDoubleField getLowValue() {
+    public void setItemRevenueCategory(com.netsuite.webservices.platform.core_2018_2.RecordRef[] itemRevenueCategory) {
+        this.itemRevenueCategory = itemRevenueCategory;
+    }
+
+
+    /**
+     * Gets the lowValue value for this FairValuePriceSearchBasic.
+     * 
+     * @return lowValue
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchDoubleField getLowValue() {
         return lowValue;
     }
 
-    /**
-     * 设置lowValue属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchDoubleField }
-     *     
-     */
-    public void setLowValue(SearchDoubleField value) {
-        this.lowValue = value;
-    }
 
     /**
-     * 获取lowValuePercent属性的值。
+     * Sets the lowValue value for this FairValuePriceSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchDoubleField }
-     *     
+     * @param lowValue
      */
-    public SearchDoubleField getLowValuePercent() {
+    public void setLowValue(com.netsuite.webservices.platform.core_2018_2.SearchDoubleField lowValue) {
+        this.lowValue = lowValue;
+    }
+
+
+    /**
+     * Gets the lowValuePercent value for this FairValuePriceSearchBasic.
+     * 
+     * @return lowValuePercent
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchDoubleField getLowValuePercent() {
         return lowValuePercent;
     }
 
-    /**
-     * 设置lowValuePercent属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchDoubleField }
-     *     
-     */
-    public void setLowValuePercent(SearchDoubleField value) {
-        this.lowValuePercent = value;
-    }
 
     /**
-     * 获取startDate属性的值。
+     * Sets the lowValuePercent value for this FairValuePriceSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchDateField }
-     *     
+     * @param lowValuePercent
      */
-    public SearchDateField getStartDate() {
+    public void setLowValuePercent(com.netsuite.webservices.platform.core_2018_2.SearchDoubleField lowValuePercent) {
+        this.lowValuePercent = lowValuePercent;
+    }
+
+
+    /**
+     * Gets the startDate value for this FairValuePriceSearchBasic.
+     * 
+     * @return startDate
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchDateField getStartDate() {
         return startDate;
     }
 
-    /**
-     * 设置startDate属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchDateField }
-     *     
-     */
-    public void setStartDate(SearchDateField value) {
-        this.startDate = value;
-    }
 
     /**
-     * 获取unitsType属性的值。
+     * Sets the startDate value for this FairValuePriceSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchMultiSelectField }
-     *     
+     * @param startDate
      */
-    public SearchMultiSelectField getUnitsType() {
+    public void setStartDate(com.netsuite.webservices.platform.core_2018_2.SearchDateField startDate) {
+        this.startDate = startDate;
+    }
+
+
+    /**
+     * Gets the unitsType value for this FairValuePriceSearchBasic.
+     * 
+     * @return unitsType
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef[] getUnitsType() {
         return unitsType;
     }
 
+
     /**
-     * 设置unitsType属性的值。
+     * Sets the unitsType value for this FairValuePriceSearchBasic.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchMultiSelectField }
-     *     
+     * @param unitsType
      */
-    public void setUnitsType(SearchMultiSelectField value) {
-        this.unitsType = value;
+    public void setUnitsType(com.netsuite.webservices.platform.core_2018_2.RecordRef[] unitsType) {
+        this.unitsType = unitsType;
+    }
+
+    private java.lang.Object __equalsCalc = null;
+    public synchronized boolean equals(java.lang.Object obj) {
+        if (!(obj instanceof FairValuePriceSearchBasic)) return false;
+        FairValuePriceSearchBasic other = (FairValuePriceSearchBasic) obj;
+        if (obj == null) return false;
+        if (this == obj) return true;
+        if (__equalsCalc != null) {
+            return (__equalsCalc == obj);
+        }
+        __equalsCalc = obj;
+        boolean _equals;
+        _equals = super.equals(obj) && 
+            ((this.currency==null && other.getCurrency()==null) || 
+             (this.currency!=null &&
+              java.util.Arrays.equals(this.currency, other.getCurrency()))) &&
+            ((this.endDate==null && other.getEndDate()==null) || 
+             (this.endDate!=null &&
+              this.endDate.equals(other.getEndDate()))) &&
+            ((this.externalId==null && other.getExternalId()==null) || 
+             (this.externalId!=null &&
+              java.util.Arrays.equals(this.externalId, other.getExternalId()))) &&
+            ((this.externalIdString==null && other.getExternalIdString()==null) || 
+             (this.externalIdString!=null &&
+              this.externalIdString.equals(other.getExternalIdString()))) &&
+            ((this.fairValue==null && other.getFairValue()==null) || 
+             (this.fairValue!=null &&
+              this.fairValue.equals(other.getFairValue()))) &&
+            ((this.fairValueFormula==null && other.getFairValueFormula()==null) || 
+             (this.fairValueFormula!=null &&
+              java.util.Arrays.equals(this.fairValueFormula, other.getFairValueFormula()))) &&
+            ((this.fairValueRangePolicy==null && other.getFairValueRangePolicy()==null) || 
+             (this.fairValueRangePolicy!=null &&
+              java.util.Arrays.equals(this.fairValueRangePolicy, other.getFairValueRangePolicy()))) &&
+            ((this.highValue==null && other.getHighValue()==null) || 
+             (this.highValue!=null &&
+              this.highValue.equals(other.getHighValue()))) &&
+            ((this.highValuePercent==null && other.getHighValuePercent()==null) || 
+             (this.highValuePercent!=null &&
+              this.highValuePercent.equals(other.getHighValuePercent()))) &&
+            ((this.internalId==null && other.getInternalId()==null) || 
+             (this.internalId!=null &&
+              java.util.Arrays.equals(this.internalId, other.getInternalId()))) &&
+            ((this.internalIdNumber==null && other.getInternalIdNumber()==null) || 
+             (this.internalIdNumber!=null &&
+              this.internalIdNumber.equals(other.getInternalIdNumber()))) &&
+            ((this.isVsoePrice==null && other.getIsVsoePrice()==null) || 
+             (this.isVsoePrice!=null &&
+              this.isVsoePrice.equals(other.getIsVsoePrice()))) &&
+            ((this.item==null && other.getItem()==null) || 
+             (this.item!=null &&
+              java.util.Arrays.equals(this.item, other.getItem()))) &&
+            ((this.itemRevenueCategory==null && other.getItemRevenueCategory()==null) || 
+             (this.itemRevenueCategory!=null &&
+              java.util.Arrays.equals(this.itemRevenueCategory, other.getItemRevenueCategory()))) &&
+            ((this.lowValue==null && other.getLowValue()==null) || 
+             (this.lowValue!=null &&
+              this.lowValue.equals(other.getLowValue()))) &&
+            ((this.lowValuePercent==null && other.getLowValuePercent()==null) || 
+             (this.lowValuePercent!=null &&
+              this.lowValuePercent.equals(other.getLowValuePercent()))) &&
+            ((this.startDate==null && other.getStartDate()==null) || 
+             (this.startDate!=null &&
+              this.startDate.equals(other.getStartDate()))) &&
+            ((this.unitsType==null && other.getUnitsType()==null) || 
+             (this.unitsType!=null &&
+              java.util.Arrays.equals(this.unitsType, other.getUnitsType())));
+        __equalsCalc = null;
+        return _equals;
+    }
+
+    private boolean __hashCodeCalc = false;
+    public synchronized int hashCode() {
+        if (__hashCodeCalc) {
+            return 0;
+        }
+        __hashCodeCalc = true;
+        int _hashCode = super.hashCode();
+        if (getCurrency() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getCurrency());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getCurrency(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getEndDate() != null) {
+            _hashCode += getEndDate().hashCode();
+        }
+        if (getExternalId() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getExternalId());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getExternalId(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getExternalIdString() != null) {
+            _hashCode += getExternalIdString().hashCode();
+        }
+        if (getFairValue() != null) {
+            _hashCode += getFairValue().hashCode();
+        }
+        if (getFairValueFormula() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getFairValueFormula());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getFairValueFormula(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getFairValueRangePolicy() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getFairValueRangePolicy());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getFairValueRangePolicy(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getHighValue() != null) {
+            _hashCode += getHighValue().hashCode();
+        }
+        if (getHighValuePercent() != null) {
+            _hashCode += getHighValuePercent().hashCode();
+        }
+        if (getInternalId() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getInternalId());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getInternalId(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getInternalIdNumber() != null) {
+            _hashCode += getInternalIdNumber().hashCode();
+        }
+        if (getIsVsoePrice() != null) {
+            _hashCode += getIsVsoePrice().hashCode();
+        }
+        if (getItem() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getItem());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getItem(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getItemRevenueCategory() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getItemRevenueCategory());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getItemRevenueCategory(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getLowValue() != null) {
+            _hashCode += getLowValue().hashCode();
+        }
+        if (getLowValuePercent() != null) {
+            _hashCode += getLowValuePercent().hashCode();
+        }
+        if (getStartDate() != null) {
+            _hashCode += getStartDate().hashCode();
+        }
+        if (getUnitsType() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getUnitsType());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getUnitsType(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        __hashCodeCalc = false;
+        return _hashCode;
+    }
+
+    // Type metadata
+    private static org.apache.axis.description.TypeDesc typeDesc =
+        new org.apache.axis.description.TypeDesc(FairValuePriceSearchBasic.class, true);
+
+    static {
+        typeDesc.setXmlType(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "FairValuePriceSearchBasic"));
+        org.apache.axis.description.ElementDesc elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("currency");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "currency"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "searchValue"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("endDate");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "endDate"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchDateField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("externalId");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "externalId"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "searchValue"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("externalIdString");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "externalIdString"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchStringField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("fairValue");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "fairValue"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchDoubleField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("fairValueFormula");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "fairValueFormula"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "searchValue"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("fairValueRangePolicy");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "fairValueRangePolicy"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "searchValue"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("highValue");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "highValue"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchDoubleField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("highValuePercent");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "highValuePercent"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchDoubleField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("internalId");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "internalId"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "searchValue"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("internalIdNumber");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "internalIdNumber"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchLongField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("isVsoePrice");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "isVsoePrice"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchBooleanField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("item");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "item"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "searchValue"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("itemRevenueCategory");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "itemRevenueCategory"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "searchValue"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("lowValue");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "lowValue"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchDoubleField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("lowValuePercent");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "lowValuePercent"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchDoubleField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("startDate");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "startDate"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchDateField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("unitsType");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "unitsType"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "searchValue"));
+        typeDesc.addFieldDesc(elemField);
+    }
+
+    /**
+     * Return type metadata object
+     */
+    public static org.apache.axis.description.TypeDesc getTypeDesc() {
+        return typeDesc;
+    }
+
+    /**
+     * Get Custom Serializer
+     */
+    public static org.apache.axis.encoding.Serializer getSerializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanSerializer(
+            _javaType, _xmlType, typeDesc);
+    }
+
+    /**
+     * Get Custom Deserializer
+     */
+    public static org.apache.axis.encoding.Deserializer getDeserializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanDeserializer(
+            _javaType, _xmlType, typeDesc);
     }
 
 }

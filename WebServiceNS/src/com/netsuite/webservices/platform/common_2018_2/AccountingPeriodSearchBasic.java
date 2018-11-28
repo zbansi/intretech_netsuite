@@ -1,500 +1,730 @@
+/**
+ * AccountingPeriodSearchBasic.java
+ *
+ * This file was auto-generated from WSDL
+ * by the Apache Axis 1.4 Jul 28, 2010 (04:07:04 PDT) WSDL2Java emitter.
+ */
 
 package com.netsuite.webservices.platform.common_2018_2;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlType;
-import com.netsuite.webservices.platform.core_2018_2.SearchBooleanField;
-import com.netsuite.webservices.platform.core_2018_2.SearchDateField;
-import com.netsuite.webservices.platform.core_2018_2.SearchLongField;
-import com.netsuite.webservices.platform.core_2018_2.SearchMultiSelectField;
-import com.netsuite.webservices.platform.core_2018_2.SearchRecordBasic;
-import com.netsuite.webservices.platform.core_2018_2.SearchStringField;
+public class AccountingPeriodSearchBasic  extends com.netsuite.webservices.platform.core_2018_2.SearchRecordBasic  implements java.io.Serializable {
+    private com.netsuite.webservices.platform.core_2018_2.SearchBooleanField allLocked;
 
+    private com.netsuite.webservices.platform.core_2018_2.SearchBooleanField allowNonGlChanges;
 
-/**
- * <p>AccountingPeriodSearchBasic complex type的 Java 类。
- * 
- * <p>以下模式片段指定包含在此类中的预期内容。
- * 
- * <pre>
- * &lt;complexType name="AccountingPeriodSearchBasic">
- *   &lt;complexContent>
- *     &lt;extension base="{urn:core_2018_2.platform.webservices.netsuite.com}SearchRecordBasic">
- *       &lt;sequence>
- *         &lt;element name="allLocked" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchBooleanField" minOccurs="0"/>
- *         &lt;element name="allowNonGlChanges" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchBooleanField" minOccurs="0"/>
- *         &lt;element name="apLocked" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchBooleanField" minOccurs="0"/>
- *         &lt;element name="arLocked" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchBooleanField" minOccurs="0"/>
- *         &lt;element name="closed" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchBooleanField" minOccurs="0"/>
- *         &lt;element name="closedOnDate" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchDateField" minOccurs="0"/>
- *         &lt;element name="endDate" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchDateField" minOccurs="0"/>
- *         &lt;element name="internalId" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchMultiSelectField" minOccurs="0"/>
- *         &lt;element name="internalIdNumber" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchLongField" minOccurs="0"/>
- *         &lt;element name="isAdjust" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchBooleanField" minOccurs="0"/>
- *         &lt;element name="isInactive" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchBooleanField" minOccurs="0"/>
- *         &lt;element name="isQuarter" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchBooleanField" minOccurs="0"/>
- *         &lt;element name="isYear" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchBooleanField" minOccurs="0"/>
- *         &lt;element name="parent" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchMultiSelectField" minOccurs="0"/>
- *         &lt;element name="payrollLocked" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchBooleanField" minOccurs="0"/>
- *         &lt;element name="periodName" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchStringField" minOccurs="0"/>
- *         &lt;element name="startDate" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchDateField" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/extension>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
- */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "AccountingPeriodSearchBasic", propOrder = {
-    "allLocked",
-    "allowNonGlChanges",
-    "apLocked",
-    "arLocked",
-    "closed",
-    "closedOnDate",
-    "endDate",
-    "internalId",
-    "internalIdNumber",
-    "isAdjust",
-    "isInactive",
-    "isQuarter",
-    "isYear",
-    "parent",
-    "payrollLocked",
-    "periodName",
-    "startDate"
-})
-public class AccountingPeriodSearchBasic
-    extends SearchRecordBasic
-{
+    private com.netsuite.webservices.platform.core_2018_2.SearchBooleanField apLocked;
 
-    protected SearchBooleanField allLocked;
-    protected SearchBooleanField allowNonGlChanges;
-    protected SearchBooleanField apLocked;
-    protected SearchBooleanField arLocked;
-    protected SearchBooleanField closed;
-    protected SearchDateField closedOnDate;
-    protected SearchDateField endDate;
-    protected SearchMultiSelectField internalId;
-    protected SearchLongField internalIdNumber;
-    protected SearchBooleanField isAdjust;
-    protected SearchBooleanField isInactive;
-    protected SearchBooleanField isQuarter;
-    protected SearchBooleanField isYear;
-    protected SearchMultiSelectField parent;
-    protected SearchBooleanField payrollLocked;
-    protected SearchStringField periodName;
-    protected SearchDateField startDate;
+    private com.netsuite.webservices.platform.core_2018_2.SearchBooleanField arLocked;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchBooleanField closed;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchDateField closedOnDate;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchDateField endDate;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef[] internalId;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchLongField internalIdNumber;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchBooleanField isAdjust;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchBooleanField isInactive;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchBooleanField isQuarter;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchBooleanField isYear;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef[] parent;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchBooleanField payrollLocked;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchStringField periodName;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchDateField startDate;
+
+    public AccountingPeriodSearchBasic() {
+    }
+
+    public AccountingPeriodSearchBasic(
+           com.netsuite.webservices.platform.core_2018_2.SearchBooleanField allLocked,
+           com.netsuite.webservices.platform.core_2018_2.SearchBooleanField allowNonGlChanges,
+           com.netsuite.webservices.platform.core_2018_2.SearchBooleanField apLocked,
+           com.netsuite.webservices.platform.core_2018_2.SearchBooleanField arLocked,
+           com.netsuite.webservices.platform.core_2018_2.SearchBooleanField closed,
+           com.netsuite.webservices.platform.core_2018_2.SearchDateField closedOnDate,
+           com.netsuite.webservices.platform.core_2018_2.SearchDateField endDate,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef[] internalId,
+           com.netsuite.webservices.platform.core_2018_2.SearchLongField internalIdNumber,
+           com.netsuite.webservices.platform.core_2018_2.SearchBooleanField isAdjust,
+           com.netsuite.webservices.platform.core_2018_2.SearchBooleanField isInactive,
+           com.netsuite.webservices.platform.core_2018_2.SearchBooleanField isQuarter,
+           com.netsuite.webservices.platform.core_2018_2.SearchBooleanField isYear,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef[] parent,
+           com.netsuite.webservices.platform.core_2018_2.SearchBooleanField payrollLocked,
+           com.netsuite.webservices.platform.core_2018_2.SearchStringField periodName,
+           com.netsuite.webservices.platform.core_2018_2.SearchDateField startDate) {
+        this.allLocked = allLocked;
+        this.allowNonGlChanges = allowNonGlChanges;
+        this.apLocked = apLocked;
+        this.arLocked = arLocked;
+        this.closed = closed;
+        this.closedOnDate = closedOnDate;
+        this.endDate = endDate;
+        this.internalId = internalId;
+        this.internalIdNumber = internalIdNumber;
+        this.isAdjust = isAdjust;
+        this.isInactive = isInactive;
+        this.isQuarter = isQuarter;
+        this.isYear = isYear;
+        this.parent = parent;
+        this.payrollLocked = payrollLocked;
+        this.periodName = periodName;
+        this.startDate = startDate;
+    }
+
 
     /**
-     * 获取allLocked属性的值。
+     * Gets the allLocked value for this AccountingPeriodSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchBooleanField }
-     *     
+     * @return allLocked
      */
-    public SearchBooleanField getAllLocked() {
+    public com.netsuite.webservices.platform.core_2018_2.SearchBooleanField getAllLocked() {
         return allLocked;
     }
 
-    /**
-     * 设置allLocked属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchBooleanField }
-     *     
-     */
-    public void setAllLocked(SearchBooleanField value) {
-        this.allLocked = value;
-    }
 
     /**
-     * 获取allowNonGlChanges属性的值。
+     * Sets the allLocked value for this AccountingPeriodSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchBooleanField }
-     *     
+     * @param allLocked
      */
-    public SearchBooleanField getAllowNonGlChanges() {
+    public void setAllLocked(com.netsuite.webservices.platform.core_2018_2.SearchBooleanField allLocked) {
+        this.allLocked = allLocked;
+    }
+
+
+    /**
+     * Gets the allowNonGlChanges value for this AccountingPeriodSearchBasic.
+     * 
+     * @return allowNonGlChanges
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchBooleanField getAllowNonGlChanges() {
         return allowNonGlChanges;
     }
 
-    /**
-     * 设置allowNonGlChanges属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchBooleanField }
-     *     
-     */
-    public void setAllowNonGlChanges(SearchBooleanField value) {
-        this.allowNonGlChanges = value;
-    }
 
     /**
-     * 获取apLocked属性的值。
+     * Sets the allowNonGlChanges value for this AccountingPeriodSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchBooleanField }
-     *     
+     * @param allowNonGlChanges
      */
-    public SearchBooleanField getApLocked() {
+    public void setAllowNonGlChanges(com.netsuite.webservices.platform.core_2018_2.SearchBooleanField allowNonGlChanges) {
+        this.allowNonGlChanges = allowNonGlChanges;
+    }
+
+
+    /**
+     * Gets the apLocked value for this AccountingPeriodSearchBasic.
+     * 
+     * @return apLocked
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchBooleanField getApLocked() {
         return apLocked;
     }
 
-    /**
-     * 设置apLocked属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchBooleanField }
-     *     
-     */
-    public void setApLocked(SearchBooleanField value) {
-        this.apLocked = value;
-    }
 
     /**
-     * 获取arLocked属性的值。
+     * Sets the apLocked value for this AccountingPeriodSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchBooleanField }
-     *     
+     * @param apLocked
      */
-    public SearchBooleanField getArLocked() {
+    public void setApLocked(com.netsuite.webservices.platform.core_2018_2.SearchBooleanField apLocked) {
+        this.apLocked = apLocked;
+    }
+
+
+    /**
+     * Gets the arLocked value for this AccountingPeriodSearchBasic.
+     * 
+     * @return arLocked
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchBooleanField getArLocked() {
         return arLocked;
     }
 
-    /**
-     * 设置arLocked属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchBooleanField }
-     *     
-     */
-    public void setArLocked(SearchBooleanField value) {
-        this.arLocked = value;
-    }
 
     /**
-     * 获取closed属性的值。
+     * Sets the arLocked value for this AccountingPeriodSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchBooleanField }
-     *     
+     * @param arLocked
      */
-    public SearchBooleanField getClosed() {
+    public void setArLocked(com.netsuite.webservices.platform.core_2018_2.SearchBooleanField arLocked) {
+        this.arLocked = arLocked;
+    }
+
+
+    /**
+     * Gets the closed value for this AccountingPeriodSearchBasic.
+     * 
+     * @return closed
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchBooleanField getClosed() {
         return closed;
     }
 
-    /**
-     * 设置closed属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchBooleanField }
-     *     
-     */
-    public void setClosed(SearchBooleanField value) {
-        this.closed = value;
-    }
 
     /**
-     * 获取closedOnDate属性的值。
+     * Sets the closed value for this AccountingPeriodSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchDateField }
-     *     
+     * @param closed
      */
-    public SearchDateField getClosedOnDate() {
+    public void setClosed(com.netsuite.webservices.platform.core_2018_2.SearchBooleanField closed) {
+        this.closed = closed;
+    }
+
+
+    /**
+     * Gets the closedOnDate value for this AccountingPeriodSearchBasic.
+     * 
+     * @return closedOnDate
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchDateField getClosedOnDate() {
         return closedOnDate;
     }
 
-    /**
-     * 设置closedOnDate属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchDateField }
-     *     
-     */
-    public void setClosedOnDate(SearchDateField value) {
-        this.closedOnDate = value;
-    }
 
     /**
-     * 获取endDate属性的值。
+     * Sets the closedOnDate value for this AccountingPeriodSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchDateField }
-     *     
+     * @param closedOnDate
      */
-    public SearchDateField getEndDate() {
+    public void setClosedOnDate(com.netsuite.webservices.platform.core_2018_2.SearchDateField closedOnDate) {
+        this.closedOnDate = closedOnDate;
+    }
+
+
+    /**
+     * Gets the endDate value for this AccountingPeriodSearchBasic.
+     * 
+     * @return endDate
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchDateField getEndDate() {
         return endDate;
     }
 
-    /**
-     * 设置endDate属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchDateField }
-     *     
-     */
-    public void setEndDate(SearchDateField value) {
-        this.endDate = value;
-    }
 
     /**
-     * 获取internalId属性的值。
+     * Sets the endDate value for this AccountingPeriodSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchMultiSelectField }
-     *     
+     * @param endDate
      */
-    public SearchMultiSelectField getInternalId() {
+    public void setEndDate(com.netsuite.webservices.platform.core_2018_2.SearchDateField endDate) {
+        this.endDate = endDate;
+    }
+
+
+    /**
+     * Gets the internalId value for this AccountingPeriodSearchBasic.
+     * 
+     * @return internalId
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef[] getInternalId() {
         return internalId;
     }
 
-    /**
-     * 设置internalId属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchMultiSelectField }
-     *     
-     */
-    public void setInternalId(SearchMultiSelectField value) {
-        this.internalId = value;
-    }
 
     /**
-     * 获取internalIdNumber属性的值。
+     * Sets the internalId value for this AccountingPeriodSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchLongField }
-     *     
+     * @param internalId
      */
-    public SearchLongField getInternalIdNumber() {
+    public void setInternalId(com.netsuite.webservices.platform.core_2018_2.RecordRef[] internalId) {
+        this.internalId = internalId;
+    }
+
+
+    /**
+     * Gets the internalIdNumber value for this AccountingPeriodSearchBasic.
+     * 
+     * @return internalIdNumber
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchLongField getInternalIdNumber() {
         return internalIdNumber;
     }
 
-    /**
-     * 设置internalIdNumber属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchLongField }
-     *     
-     */
-    public void setInternalIdNumber(SearchLongField value) {
-        this.internalIdNumber = value;
-    }
 
     /**
-     * 获取isAdjust属性的值。
+     * Sets the internalIdNumber value for this AccountingPeriodSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchBooleanField }
-     *     
+     * @param internalIdNumber
      */
-    public SearchBooleanField getIsAdjust() {
+    public void setInternalIdNumber(com.netsuite.webservices.platform.core_2018_2.SearchLongField internalIdNumber) {
+        this.internalIdNumber = internalIdNumber;
+    }
+
+
+    /**
+     * Gets the isAdjust value for this AccountingPeriodSearchBasic.
+     * 
+     * @return isAdjust
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchBooleanField getIsAdjust() {
         return isAdjust;
     }
 
-    /**
-     * 设置isAdjust属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchBooleanField }
-     *     
-     */
-    public void setIsAdjust(SearchBooleanField value) {
-        this.isAdjust = value;
-    }
 
     /**
-     * 获取isInactive属性的值。
+     * Sets the isAdjust value for this AccountingPeriodSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchBooleanField }
-     *     
+     * @param isAdjust
      */
-    public SearchBooleanField getIsInactive() {
+    public void setIsAdjust(com.netsuite.webservices.platform.core_2018_2.SearchBooleanField isAdjust) {
+        this.isAdjust = isAdjust;
+    }
+
+
+    /**
+     * Gets the isInactive value for this AccountingPeriodSearchBasic.
+     * 
+     * @return isInactive
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchBooleanField getIsInactive() {
         return isInactive;
     }
 
-    /**
-     * 设置isInactive属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchBooleanField }
-     *     
-     */
-    public void setIsInactive(SearchBooleanField value) {
-        this.isInactive = value;
-    }
 
     /**
-     * 获取isQuarter属性的值。
+     * Sets the isInactive value for this AccountingPeriodSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchBooleanField }
-     *     
+     * @param isInactive
      */
-    public SearchBooleanField getIsQuarter() {
+    public void setIsInactive(com.netsuite.webservices.platform.core_2018_2.SearchBooleanField isInactive) {
+        this.isInactive = isInactive;
+    }
+
+
+    /**
+     * Gets the isQuarter value for this AccountingPeriodSearchBasic.
+     * 
+     * @return isQuarter
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchBooleanField getIsQuarter() {
         return isQuarter;
     }
 
-    /**
-     * 设置isQuarter属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchBooleanField }
-     *     
-     */
-    public void setIsQuarter(SearchBooleanField value) {
-        this.isQuarter = value;
-    }
 
     /**
-     * 获取isYear属性的值。
+     * Sets the isQuarter value for this AccountingPeriodSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchBooleanField }
-     *     
+     * @param isQuarter
      */
-    public SearchBooleanField getIsYear() {
+    public void setIsQuarter(com.netsuite.webservices.platform.core_2018_2.SearchBooleanField isQuarter) {
+        this.isQuarter = isQuarter;
+    }
+
+
+    /**
+     * Gets the isYear value for this AccountingPeriodSearchBasic.
+     * 
+     * @return isYear
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchBooleanField getIsYear() {
         return isYear;
     }
 
-    /**
-     * 设置isYear属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchBooleanField }
-     *     
-     */
-    public void setIsYear(SearchBooleanField value) {
-        this.isYear = value;
-    }
 
     /**
-     * 获取parent属性的值。
+     * Sets the isYear value for this AccountingPeriodSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchMultiSelectField }
-     *     
+     * @param isYear
      */
-    public SearchMultiSelectField getParent() {
+    public void setIsYear(com.netsuite.webservices.platform.core_2018_2.SearchBooleanField isYear) {
+        this.isYear = isYear;
+    }
+
+
+    /**
+     * Gets the parent value for this AccountingPeriodSearchBasic.
+     * 
+     * @return parent
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef[] getParent() {
         return parent;
     }
 
-    /**
-     * 设置parent属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchMultiSelectField }
-     *     
-     */
-    public void setParent(SearchMultiSelectField value) {
-        this.parent = value;
-    }
 
     /**
-     * 获取payrollLocked属性的值。
+     * Sets the parent value for this AccountingPeriodSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchBooleanField }
-     *     
+     * @param parent
      */
-    public SearchBooleanField getPayrollLocked() {
+    public void setParent(com.netsuite.webservices.platform.core_2018_2.RecordRef[] parent) {
+        this.parent = parent;
+    }
+
+
+    /**
+     * Gets the payrollLocked value for this AccountingPeriodSearchBasic.
+     * 
+     * @return payrollLocked
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchBooleanField getPayrollLocked() {
         return payrollLocked;
     }
 
-    /**
-     * 设置payrollLocked属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchBooleanField }
-     *     
-     */
-    public void setPayrollLocked(SearchBooleanField value) {
-        this.payrollLocked = value;
-    }
 
     /**
-     * 获取periodName属性的值。
+     * Sets the payrollLocked value for this AccountingPeriodSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchStringField }
-     *     
+     * @param payrollLocked
      */
-    public SearchStringField getPeriodName() {
+    public void setPayrollLocked(com.netsuite.webservices.platform.core_2018_2.SearchBooleanField payrollLocked) {
+        this.payrollLocked = payrollLocked;
+    }
+
+
+    /**
+     * Gets the periodName value for this AccountingPeriodSearchBasic.
+     * 
+     * @return periodName
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchStringField getPeriodName() {
         return periodName;
     }
 
-    /**
-     * 设置periodName属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchStringField }
-     *     
-     */
-    public void setPeriodName(SearchStringField value) {
-        this.periodName = value;
-    }
 
     /**
-     * 获取startDate属性的值。
+     * Sets the periodName value for this AccountingPeriodSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchDateField }
-     *     
+     * @param periodName
      */
-    public SearchDateField getStartDate() {
+    public void setPeriodName(com.netsuite.webservices.platform.core_2018_2.SearchStringField periodName) {
+        this.periodName = periodName;
+    }
+
+
+    /**
+     * Gets the startDate value for this AccountingPeriodSearchBasic.
+     * 
+     * @return startDate
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchDateField getStartDate() {
         return startDate;
     }
 
+
     /**
-     * 设置startDate属性的值。
+     * Sets the startDate value for this AccountingPeriodSearchBasic.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchDateField }
-     *     
+     * @param startDate
      */
-    public void setStartDate(SearchDateField value) {
-        this.startDate = value;
+    public void setStartDate(com.netsuite.webservices.platform.core_2018_2.SearchDateField startDate) {
+        this.startDate = startDate;
+    }
+
+    private java.lang.Object __equalsCalc = null;
+    public synchronized boolean equals(java.lang.Object obj) {
+        if (!(obj instanceof AccountingPeriodSearchBasic)) return false;
+        AccountingPeriodSearchBasic other = (AccountingPeriodSearchBasic) obj;
+        if (obj == null) return false;
+        if (this == obj) return true;
+        if (__equalsCalc != null) {
+            return (__equalsCalc == obj);
+        }
+        __equalsCalc = obj;
+        boolean _equals;
+        _equals = super.equals(obj) && 
+            ((this.allLocked==null && other.getAllLocked()==null) || 
+             (this.allLocked!=null &&
+              this.allLocked.equals(other.getAllLocked()))) &&
+            ((this.allowNonGlChanges==null && other.getAllowNonGlChanges()==null) || 
+             (this.allowNonGlChanges!=null &&
+              this.allowNonGlChanges.equals(other.getAllowNonGlChanges()))) &&
+            ((this.apLocked==null && other.getApLocked()==null) || 
+             (this.apLocked!=null &&
+              this.apLocked.equals(other.getApLocked()))) &&
+            ((this.arLocked==null && other.getArLocked()==null) || 
+             (this.arLocked!=null &&
+              this.arLocked.equals(other.getArLocked()))) &&
+            ((this.closed==null && other.getClosed()==null) || 
+             (this.closed!=null &&
+              this.closed.equals(other.getClosed()))) &&
+            ((this.closedOnDate==null && other.getClosedOnDate()==null) || 
+             (this.closedOnDate!=null &&
+              this.closedOnDate.equals(other.getClosedOnDate()))) &&
+            ((this.endDate==null && other.getEndDate()==null) || 
+             (this.endDate!=null &&
+              this.endDate.equals(other.getEndDate()))) &&
+            ((this.internalId==null && other.getInternalId()==null) || 
+             (this.internalId!=null &&
+              java.util.Arrays.equals(this.internalId, other.getInternalId()))) &&
+            ((this.internalIdNumber==null && other.getInternalIdNumber()==null) || 
+             (this.internalIdNumber!=null &&
+              this.internalIdNumber.equals(other.getInternalIdNumber()))) &&
+            ((this.isAdjust==null && other.getIsAdjust()==null) || 
+             (this.isAdjust!=null &&
+              this.isAdjust.equals(other.getIsAdjust()))) &&
+            ((this.isInactive==null && other.getIsInactive()==null) || 
+             (this.isInactive!=null &&
+              this.isInactive.equals(other.getIsInactive()))) &&
+            ((this.isQuarter==null && other.getIsQuarter()==null) || 
+             (this.isQuarter!=null &&
+              this.isQuarter.equals(other.getIsQuarter()))) &&
+            ((this.isYear==null && other.getIsYear()==null) || 
+             (this.isYear!=null &&
+              this.isYear.equals(other.getIsYear()))) &&
+            ((this.parent==null && other.getParent()==null) || 
+             (this.parent!=null &&
+              java.util.Arrays.equals(this.parent, other.getParent()))) &&
+            ((this.payrollLocked==null && other.getPayrollLocked()==null) || 
+             (this.payrollLocked!=null &&
+              this.payrollLocked.equals(other.getPayrollLocked()))) &&
+            ((this.periodName==null && other.getPeriodName()==null) || 
+             (this.periodName!=null &&
+              this.periodName.equals(other.getPeriodName()))) &&
+            ((this.startDate==null && other.getStartDate()==null) || 
+             (this.startDate!=null &&
+              this.startDate.equals(other.getStartDate())));
+        __equalsCalc = null;
+        return _equals;
+    }
+
+    private boolean __hashCodeCalc = false;
+    public synchronized int hashCode() {
+        if (__hashCodeCalc) {
+            return 0;
+        }
+        __hashCodeCalc = true;
+        int _hashCode = super.hashCode();
+        if (getAllLocked() != null) {
+            _hashCode += getAllLocked().hashCode();
+        }
+        if (getAllowNonGlChanges() != null) {
+            _hashCode += getAllowNonGlChanges().hashCode();
+        }
+        if (getApLocked() != null) {
+            _hashCode += getApLocked().hashCode();
+        }
+        if (getArLocked() != null) {
+            _hashCode += getArLocked().hashCode();
+        }
+        if (getClosed() != null) {
+            _hashCode += getClosed().hashCode();
+        }
+        if (getClosedOnDate() != null) {
+            _hashCode += getClosedOnDate().hashCode();
+        }
+        if (getEndDate() != null) {
+            _hashCode += getEndDate().hashCode();
+        }
+        if (getInternalId() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getInternalId());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getInternalId(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getInternalIdNumber() != null) {
+            _hashCode += getInternalIdNumber().hashCode();
+        }
+        if (getIsAdjust() != null) {
+            _hashCode += getIsAdjust().hashCode();
+        }
+        if (getIsInactive() != null) {
+            _hashCode += getIsInactive().hashCode();
+        }
+        if (getIsQuarter() != null) {
+            _hashCode += getIsQuarter().hashCode();
+        }
+        if (getIsYear() != null) {
+            _hashCode += getIsYear().hashCode();
+        }
+        if (getParent() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getParent());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getParent(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getPayrollLocked() != null) {
+            _hashCode += getPayrollLocked().hashCode();
+        }
+        if (getPeriodName() != null) {
+            _hashCode += getPeriodName().hashCode();
+        }
+        if (getStartDate() != null) {
+            _hashCode += getStartDate().hashCode();
+        }
+        __hashCodeCalc = false;
+        return _hashCode;
+    }
+
+    // Type metadata
+    private static org.apache.axis.description.TypeDesc typeDesc =
+        new org.apache.axis.description.TypeDesc(AccountingPeriodSearchBasic.class, true);
+
+    static {
+        typeDesc.setXmlType(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "AccountingPeriodSearchBasic"));
+        org.apache.axis.description.ElementDesc elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("allLocked");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "allLocked"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchBooleanField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("allowNonGlChanges");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "allowNonGlChanges"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchBooleanField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("apLocked");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "apLocked"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchBooleanField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("arLocked");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "arLocked"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchBooleanField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("closed");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "closed"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchBooleanField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("closedOnDate");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "closedOnDate"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchDateField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("endDate");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "endDate"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchDateField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("internalId");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "internalId"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "searchValue"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("internalIdNumber");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "internalIdNumber"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchLongField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("isAdjust");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "isAdjust"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchBooleanField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("isInactive");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "isInactive"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchBooleanField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("isQuarter");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "isQuarter"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchBooleanField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("isYear");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "isYear"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchBooleanField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("parent");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "parent"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "searchValue"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("payrollLocked");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "payrollLocked"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchBooleanField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("periodName");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "periodName"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchStringField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("startDate");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "startDate"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchDateField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+    }
+
+    /**
+     * Return type metadata object
+     */
+    public static org.apache.axis.description.TypeDesc getTypeDesc() {
+        return typeDesc;
+    }
+
+    /**
+     * Get Custom Serializer
+     */
+    public static org.apache.axis.encoding.Serializer getSerializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanSerializer(
+            _javaType, _xmlType, typeDesc);
+    }
+
+    /**
+     * Get Custom Deserializer
+     */
+    public static org.apache.axis.encoding.Deserializer getDeserializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanDeserializer(
+            _javaType, _xmlType, typeDesc);
     }
 
 }

@@ -1,169 +1,268 @@
+/**
+ * InventoryItemBinNumber.java
+ *
+ * This file was auto-generated from WSDL
+ * by the Apache Axis 1.4 Jul 28, 2010 (04:07:04 PDT) WSDL2Java emitter.
+ */
 
 package com.netsuite.webservices.lists.accounting_2018_2;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlType;
-import com.netsuite.webservices.platform.core_2018_2.RecordRef;
+public class InventoryItemBinNumber  implements java.io.Serializable {
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef binNumber;
 
+    private java.lang.String onHand;
 
-/**
- * <p>InventoryItemBinNumber complex type的 Java 类。
- * 
- * <p>以下模式片段指定包含在此类中的预期内容。
- * 
- * <pre>
- * &lt;complexType name="InventoryItemBinNumber">
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element name="binNumber" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="onHand" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="onHandAvail" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="location" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="preferredBin" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
- */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "InventoryItemBinNumber", propOrder = {
-    "binNumber",
-    "onHand",
-    "onHandAvail",
-    "location",
-    "preferredBin"
-})
-public class InventoryItemBinNumber {
+    private java.lang.String onHandAvail;
 
-    protected RecordRef binNumber;
-    protected String onHand;
-    protected String onHandAvail;
-    protected String location;
-    protected Boolean preferredBin;
+    private java.lang.String location;
+
+    private java.lang.Boolean preferredBin;
+
+    public InventoryItemBinNumber() {
+    }
+
+    public InventoryItemBinNumber(
+           com.netsuite.webservices.platform.core_2018_2.RecordRef binNumber,
+           java.lang.String onHand,
+           java.lang.String onHandAvail,
+           java.lang.String location,
+           java.lang.Boolean preferredBin) {
+           this.binNumber = binNumber;
+           this.onHand = onHand;
+           this.onHandAvail = onHandAvail;
+           this.location = location;
+           this.preferredBin = preferredBin;
+    }
+
 
     /**
-     * 获取binNumber属性的值。
+     * Gets the binNumber value for this InventoryItemBinNumber.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @return binNumber
      */
-    public RecordRef getBinNumber() {
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getBinNumber() {
         return binNumber;
     }
 
-    /**
-     * 设置binNumber属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setBinNumber(RecordRef value) {
-        this.binNumber = value;
-    }
 
     /**
-     * 获取onHand属性的值。
+     * Sets the binNumber value for this InventoryItemBinNumber.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param binNumber
      */
-    public String getOnHand() {
+    public void setBinNumber(com.netsuite.webservices.platform.core_2018_2.RecordRef binNumber) {
+        this.binNumber = binNumber;
+    }
+
+
+    /**
+     * Gets the onHand value for this InventoryItemBinNumber.
+     * 
+     * @return onHand
+     */
+    public java.lang.String getOnHand() {
         return onHand;
     }
 
-    /**
-     * 设置onHand属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setOnHand(String value) {
-        this.onHand = value;
-    }
 
     /**
-     * 获取onHandAvail属性的值。
+     * Sets the onHand value for this InventoryItemBinNumber.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param onHand
      */
-    public String getOnHandAvail() {
+    public void setOnHand(java.lang.String onHand) {
+        this.onHand = onHand;
+    }
+
+
+    /**
+     * Gets the onHandAvail value for this InventoryItemBinNumber.
+     * 
+     * @return onHandAvail
+     */
+    public java.lang.String getOnHandAvail() {
         return onHandAvail;
     }
 
-    /**
-     * 设置onHandAvail属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setOnHandAvail(String value) {
-        this.onHandAvail = value;
-    }
 
     /**
-     * 获取location属性的值。
+     * Sets the onHandAvail value for this InventoryItemBinNumber.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param onHandAvail
      */
-    public String getLocation() {
+    public void setOnHandAvail(java.lang.String onHandAvail) {
+        this.onHandAvail = onHandAvail;
+    }
+
+
+    /**
+     * Gets the location value for this InventoryItemBinNumber.
+     * 
+     * @return location
+     */
+    public java.lang.String getLocation() {
         return location;
     }
 
-    /**
-     * 设置location属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setLocation(String value) {
-        this.location = value;
-    }
 
     /**
-     * 获取preferredBin属性的值。
+     * Sets the location value for this InventoryItemBinNumber.
      * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
+     * @param location
      */
-    public Boolean isPreferredBin() {
+    public void setLocation(java.lang.String location) {
+        this.location = location;
+    }
+
+
+    /**
+     * Gets the preferredBin value for this InventoryItemBinNumber.
+     * 
+     * @return preferredBin
+     */
+    public java.lang.Boolean getPreferredBin() {
         return preferredBin;
     }
 
+
     /**
-     * 设置preferredBin属性的值。
+     * Sets the preferredBin value for this InventoryItemBinNumber.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
+     * @param preferredBin
      */
-    public void setPreferredBin(Boolean value) {
-        this.preferredBin = value;
+    public void setPreferredBin(java.lang.Boolean preferredBin) {
+        this.preferredBin = preferredBin;
+    }
+
+    private java.lang.Object __equalsCalc = null;
+    public synchronized boolean equals(java.lang.Object obj) {
+        if (!(obj instanceof InventoryItemBinNumber)) return false;
+        InventoryItemBinNumber other = (InventoryItemBinNumber) obj;
+        if (obj == null) return false;
+        if (this == obj) return true;
+        if (__equalsCalc != null) {
+            return (__equalsCalc == obj);
+        }
+        __equalsCalc = obj;
+        boolean _equals;
+        _equals = true && 
+            ((this.binNumber==null && other.getBinNumber()==null) || 
+             (this.binNumber!=null &&
+              this.binNumber.equals(other.getBinNumber()))) &&
+            ((this.onHand==null && other.getOnHand()==null) || 
+             (this.onHand!=null &&
+              this.onHand.equals(other.getOnHand()))) &&
+            ((this.onHandAvail==null && other.getOnHandAvail()==null) || 
+             (this.onHandAvail!=null &&
+              this.onHandAvail.equals(other.getOnHandAvail()))) &&
+            ((this.location==null && other.getLocation()==null) || 
+             (this.location!=null &&
+              this.location.equals(other.getLocation()))) &&
+            ((this.preferredBin==null && other.getPreferredBin()==null) || 
+             (this.preferredBin!=null &&
+              this.preferredBin.equals(other.getPreferredBin())));
+        __equalsCalc = null;
+        return _equals;
+    }
+
+    private boolean __hashCodeCalc = false;
+    public synchronized int hashCode() {
+        if (__hashCodeCalc) {
+            return 0;
+        }
+        __hashCodeCalc = true;
+        int _hashCode = 1;
+        if (getBinNumber() != null) {
+            _hashCode += getBinNumber().hashCode();
+        }
+        if (getOnHand() != null) {
+            _hashCode += getOnHand().hashCode();
+        }
+        if (getOnHandAvail() != null) {
+            _hashCode += getOnHandAvail().hashCode();
+        }
+        if (getLocation() != null) {
+            _hashCode += getLocation().hashCode();
+        }
+        if (getPreferredBin() != null) {
+            _hashCode += getPreferredBin().hashCode();
+        }
+        __hashCodeCalc = false;
+        return _hashCode;
+    }
+
+    // Type metadata
+    private static org.apache.axis.description.TypeDesc typeDesc =
+        new org.apache.axis.description.TypeDesc(InventoryItemBinNumber.class, true);
+
+    static {
+        typeDesc.setXmlType(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "InventoryItemBinNumber"));
+        org.apache.axis.description.ElementDesc elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("binNumber");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "binNumber"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("onHand");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "onHand"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("onHandAvail");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "onHandAvail"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("location");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "location"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("preferredBin");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "preferredBin"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+    }
+
+    /**
+     * Return type metadata object
+     */
+    public static org.apache.axis.description.TypeDesc getTypeDesc() {
+        return typeDesc;
+    }
+
+    /**
+     * Get Custom Serializer
+     */
+    public static org.apache.axis.encoding.Serializer getSerializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanSerializer(
+            _javaType, _xmlType, typeDesc);
+    }
+
+    /**
+     * Get Custom Deserializer
+     */
+    public static org.apache.axis.encoding.Deserializer getDeserializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanDeserializer(
+            _javaType, _xmlType, typeDesc);
     }
 
 }

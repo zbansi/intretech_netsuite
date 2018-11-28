@@ -1,69 +1,82 @@
+/**
+ * PurchaseOrderOrderStatus.java
+ *
+ * This file was auto-generated from WSDL
+ * by the Apache Axis 1.4 Jul 28, 2010 (04:07:04 PDT) WSDL2Java emitter.
+ */
 
 package com.netsuite.webservices.transactions.purchases_2018_2.types;
 
-import javax.xml.bind.annotation.XmlEnum;
-import javax.xml.bind.annotation.XmlEnumValue;
-import javax.xml.bind.annotation.XmlType;
+public class PurchaseOrderOrderStatus implements java.io.Serializable {
+    private java.lang.String _value_;
+    private static java.util.HashMap _table_ = new java.util.HashMap();
 
-
-/**
- * <p>PurchaseOrderOrderStatus的 Java 类。
- * 
- * <p>以下模式片段指定包含在此类中的预期内容。
- * <p>
- * <pre>
- * &lt;simpleType name="PurchaseOrderOrderStatus">
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     &lt;enumeration value="_closed"/>
- *     &lt;enumeration value="_fullyBilled"/>
- *     &lt;enumeration value="_partiallyReceived"/>
- *     &lt;enumeration value="_pendingBillingPartiallyReceived"/>
- *     &lt;enumeration value="_pendingBilling"/>
- *     &lt;enumeration value="_pendingReceipt"/>
- *     &lt;enumeration value="_pendingSupervisorApproval"/>
- *     &lt;enumeration value="_rejectedBySupervisor"/>
- *   &lt;/restriction>
- * &lt;/simpleType>
- * </pre>
- * 
- */
-@XmlType(name = "PurchaseOrderOrderStatus", namespace = "urn:types.purchases_2018_2.transactions.webservices.netsuite.com")
-@XmlEnum
-public enum PurchaseOrderOrderStatus {
-
-    @XmlEnumValue("_closed")
-    CLOSED("_closed"),
-    @XmlEnumValue("_fullyBilled")
-    FULLY_BILLED("_fullyBilled"),
-    @XmlEnumValue("_partiallyReceived")
-    PARTIALLY_RECEIVED("_partiallyReceived"),
-    @XmlEnumValue("_pendingBillingPartiallyReceived")
-    PENDING_BILLING_PARTIALLY_RECEIVED("_pendingBillingPartiallyReceived"),
-    @XmlEnumValue("_pendingBilling")
-    PENDING_BILLING("_pendingBilling"),
-    @XmlEnumValue("_pendingReceipt")
-    PENDING_RECEIPT("_pendingReceipt"),
-    @XmlEnumValue("_pendingSupervisorApproval")
-    PENDING_SUPERVISOR_APPROVAL("_pendingSupervisorApproval"),
-    @XmlEnumValue("_rejectedBySupervisor")
-    REJECTED_BY_SUPERVISOR("_rejectedBySupervisor");
-    private final String value;
-
-    PurchaseOrderOrderStatus(String v) {
-        value = v;
+    // Constructor
+    protected PurchaseOrderOrderStatus(java.lang.String value) {
+        _value_ = value;
+        _table_.put(_value_,this);
     }
 
-    public String value() {
-        return value;
+    public static final java.lang.String __closed = "_closed";
+    public static final java.lang.String __fullyBilled = "_fullyBilled";
+    public static final java.lang.String __partiallyReceived = "_partiallyReceived";
+    public static final java.lang.String __pendingBillingPartiallyReceived = "_pendingBillingPartiallyReceived";
+    public static final java.lang.String __pendingBilling = "_pendingBilling";
+    public static final java.lang.String __pendingReceipt = "_pendingReceipt";
+    public static final java.lang.String __pendingSupervisorApproval = "_pendingSupervisorApproval";
+    public static final java.lang.String __rejectedBySupervisor = "_rejectedBySupervisor";
+    public static final PurchaseOrderOrderStatus _closed = new PurchaseOrderOrderStatus(__closed);
+    public static final PurchaseOrderOrderStatus _fullyBilled = new PurchaseOrderOrderStatus(__fullyBilled);
+    public static final PurchaseOrderOrderStatus _partiallyReceived = new PurchaseOrderOrderStatus(__partiallyReceived);
+    public static final PurchaseOrderOrderStatus _pendingBillingPartiallyReceived = new PurchaseOrderOrderStatus(__pendingBillingPartiallyReceived);
+    public static final PurchaseOrderOrderStatus _pendingBilling = new PurchaseOrderOrderStatus(__pendingBilling);
+    public static final PurchaseOrderOrderStatus _pendingReceipt = new PurchaseOrderOrderStatus(__pendingReceipt);
+    public static final PurchaseOrderOrderStatus _pendingSupervisorApproval = new PurchaseOrderOrderStatus(__pendingSupervisorApproval);
+    public static final PurchaseOrderOrderStatus _rejectedBySupervisor = new PurchaseOrderOrderStatus(__rejectedBySupervisor);
+    public java.lang.String getValue() { return _value_;}
+    public static PurchaseOrderOrderStatus fromValue(java.lang.String value)
+          throws java.lang.IllegalArgumentException {
+        PurchaseOrderOrderStatus enumeration = (PurchaseOrderOrderStatus)
+            _table_.get(value);
+        if (enumeration==null) throw new java.lang.IllegalArgumentException();
+        return enumeration;
     }
+    public static PurchaseOrderOrderStatus fromString(java.lang.String value)
+          throws java.lang.IllegalArgumentException {
+        return fromValue(value);
+    }
+    public boolean equals(java.lang.Object obj) {return (obj == this);}
+    public int hashCode() { return toString().hashCode();}
+    public java.lang.String toString() { return _value_;}
+    public java.lang.Object readResolve() throws java.io.ObjectStreamException { return fromValue(_value_);}
+    public static org.apache.axis.encoding.Serializer getSerializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new org.apache.axis.encoding.ser.EnumSerializer(
+            _javaType, _xmlType);
+    }
+    public static org.apache.axis.encoding.Deserializer getDeserializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new org.apache.axis.encoding.ser.EnumDeserializer(
+            _javaType, _xmlType);
+    }
+    // Type metadata
+    private static org.apache.axis.description.TypeDesc typeDesc =
+        new org.apache.axis.description.TypeDesc(PurchaseOrderOrderStatus.class);
 
-    public static PurchaseOrderOrderStatus fromValue(String v) {
-        for (PurchaseOrderOrderStatus c: PurchaseOrderOrderStatus.values()) {
-            if (c.value.equals(v)) {
-                return c;
-            }
-        }
-        throw new IllegalArgumentException(v);
+    static {
+        typeDesc.setXmlType(new javax.xml.namespace.QName("urn:types.purchases_2018_2.transactions.webservices.netsuite.com", "PurchaseOrderOrderStatus"));
+    }
+    /**
+     * Return type metadata object
+     */
+    public static org.apache.axis.description.TypeDesc getTypeDesc() {
+        return typeDesc;
     }
 
 }

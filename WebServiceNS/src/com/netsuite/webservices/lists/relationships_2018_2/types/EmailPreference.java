@@ -1,54 +1,72 @@
+/**
+ * EmailPreference.java
+ *
+ * This file was auto-generated from WSDL
+ * by the Apache Axis 1.4 Jul 28, 2010 (04:07:04 PDT) WSDL2Java emitter.
+ */
 
 package com.netsuite.webservices.lists.relationships_2018_2.types;
 
-import javax.xml.bind.annotation.XmlEnum;
-import javax.xml.bind.annotation.XmlEnumValue;
-import javax.xml.bind.annotation.XmlType;
+public class EmailPreference implements java.io.Serializable {
+    private java.lang.String _value_;
+    private static java.util.HashMap _table_ = new java.util.HashMap();
 
-
-/**
- * <p>EmailPreference的 Java 类。
- * 
- * <p>以下模式片段指定包含在此类中的预期内容。
- * <p>
- * <pre>
- * &lt;simpleType name="EmailPreference">
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     &lt;enumeration value="_default"/>
- *     &lt;enumeration value="_hTML"/>
- *     &lt;enumeration value="_pDF"/>
- *   &lt;/restriction>
- * &lt;/simpleType>
- * </pre>
- * 
- */
-@XmlType(name = "EmailPreference", namespace = "urn:types.relationships_2018_2.lists.webservices.netsuite.com")
-@XmlEnum
-public enum EmailPreference {
-
-    @XmlEnumValue("_default")
-    DEFAULT("_default"),
-    @XmlEnumValue("_hTML")
-    H_TML("_hTML"),
-    @XmlEnumValue("_pDF")
-    P_DF("_pDF");
-    private final String value;
-
-    EmailPreference(String v) {
-        value = v;
+    // Constructor
+    protected EmailPreference(java.lang.String value) {
+        _value_ = value;
+        _table_.put(_value_,this);
     }
 
-    public String value() {
-        return value;
+    public static final java.lang.String __default = "_default";
+    public static final java.lang.String __hTML = "_hTML";
+    public static final java.lang.String __pDF = "_pDF";
+    public static final EmailPreference _default = new EmailPreference(__default);
+    public static final EmailPreference _hTML = new EmailPreference(__hTML);
+    public static final EmailPreference _pDF = new EmailPreference(__pDF);
+    public java.lang.String getValue() { return _value_;}
+    public static EmailPreference fromValue(java.lang.String value)
+          throws java.lang.IllegalArgumentException {
+        EmailPreference enumeration = (EmailPreference)
+            _table_.get(value);
+        if (enumeration==null) throw new java.lang.IllegalArgumentException();
+        return enumeration;
     }
+    public static EmailPreference fromString(java.lang.String value)
+          throws java.lang.IllegalArgumentException {
+        return fromValue(value);
+    }
+    public boolean equals(java.lang.Object obj) {return (obj == this);}
+    public int hashCode() { return toString().hashCode();}
+    public java.lang.String toString() { return _value_;}
+    public java.lang.Object readResolve() throws java.io.ObjectStreamException { return fromValue(_value_);}
+    public static org.apache.axis.encoding.Serializer getSerializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new org.apache.axis.encoding.ser.EnumSerializer(
+            _javaType, _xmlType);
+    }
+    public static org.apache.axis.encoding.Deserializer getDeserializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new org.apache.axis.encoding.ser.EnumDeserializer(
+            _javaType, _xmlType);
+    }
+    // Type metadata
+    private static org.apache.axis.description.TypeDesc typeDesc =
+        new org.apache.axis.description.TypeDesc(EmailPreference.class);
 
-    public static EmailPreference fromValue(String v) {
-        for (EmailPreference c: EmailPreference.values()) {
-            if (c.value.equals(v)) {
-                return c;
-            }
-        }
-        throw new IllegalArgumentException(v);
+    static {
+        typeDesc.setXmlType(new javax.xml.namespace.QName("urn:types.relationships_2018_2.lists.webservices.netsuite.com", "EmailPreference"));
+    }
+    /**
+     * Return type metadata object
+     */
+    public static org.apache.axis.description.TypeDesc getTypeDesc() {
+        return typeDesc;
     }
 
 }

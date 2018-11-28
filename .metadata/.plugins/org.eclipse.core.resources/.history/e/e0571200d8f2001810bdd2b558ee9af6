@@ -1,0 +1,32 @@
+package com.bansi.ws.nsclient;
+
+import com.netsuite.webservices.platform_2017_1.NetSuiteServiceLocator;
+
+import java.net.PasswordAuthentication;
+import java.security.Provider.Service;
+
+import com.netsuite.webservices.platform.core_2017_1.Passport;
+import com.netsuite.webservices.platform_2017_1.NetSuitePortType;
+
+public class NetSuiteClientTest {
+	public NetSuiteClientTest(String acct, String email, String passwd) throws Exception {
+	NetSuiteServiceLocator nsservice = new NetSuiteServiceLocator();
+	nsservice.setMaintainSession(true);
+	NetSuitePortType port = nsservice.getNetSuitePort();
+	Passport passport =  
+	
+	passport.setEmail( "username@netsuite.com" );
+	passport.setPassword( "mypassword" );
+	role.setid( "3" );
+	passport.setRole( role );
+	passport.setAccount( "TSTDRV96" );
+	Status status = port.login( passport ).getStatus();
+	
+	Customer cust = new Customer();
+	
+	cust.setEntityID( ¡°XYZ Inc¡± );
+	WriteResponse response = port.add( cust );
+	
+	port.logout();
+	}
+}

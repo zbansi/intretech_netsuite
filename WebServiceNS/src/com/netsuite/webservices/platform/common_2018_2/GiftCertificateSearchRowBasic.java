@@ -1,583 +1,993 @@
+/**
+ * GiftCertificateSearchRowBasic.java
+ *
+ * This file was auto-generated from WSDL
+ * by the Apache Axis 1.4 Jul 28, 2010 (04:07:04 PDT) WSDL2Java emitter.
+ */
 
 package com.netsuite.webservices.platform.common_2018_2;
 
-import java.util.ArrayList;
-import java.util.List;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlType;
-import com.netsuite.webservices.platform.core_2018_2.SearchColumnBooleanField;
-import com.netsuite.webservices.platform.core_2018_2.SearchColumnCustomFieldList;
-import com.netsuite.webservices.platform.core_2018_2.SearchColumnDateField;
-import com.netsuite.webservices.platform.core_2018_2.SearchColumnDoubleField;
-import com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField;
-import com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField;
-import com.netsuite.webservices.platform.core_2018_2.SearchRowBasic;
+public class GiftCertificateSearchRowBasic  extends com.netsuite.webservices.platform.core_2018_2.SearchRowBasic  implements java.io.Serializable {
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnDoubleField[] amountRemaining;
 
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnDoubleField[] amtAvailBilled;
 
-/**
- * <p>GiftCertificateSearchRowBasic complex type的 Java 类。
- * 
- * <p>以下模式片段指定包含在此类中的预期内容。
- * 
- * <pre>
- * &lt;complexType name="GiftCertificateSearchRowBasic">
- *   &lt;complexContent>
- *     &lt;extension base="{urn:core_2018_2.platform.webservices.netsuite.com}SearchRowBasic">
- *       &lt;sequence>
- *         &lt;element name="amountRemaining" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnDoubleField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="amtAvailBilled" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnDoubleField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="createdDate" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnDateField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="email" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnStringField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="expirationDate" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnDateField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="gcActive" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnBooleanField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="giftCertCode" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnStringField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="incomeAcct" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnStringField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="internalId" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnSelectField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="item" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnSelectField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="liabilityAcct" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnStringField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="message" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnStringField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="name" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnStringField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="originalAmount" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnDoubleField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="purchaseDate" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnDateField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="sender" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnStringField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="customFieldList" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnCustomFieldList" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/extension>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
- */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "GiftCertificateSearchRowBasic", propOrder = {
-    "amountRemaining",
-    "amtAvailBilled",
-    "createdDate",
-    "email",
-    "expirationDate",
-    "gcActive",
-    "giftCertCode",
-    "incomeAcct",
-    "internalId",
-    "item",
-    "liabilityAcct",
-    "message",
-    "name",
-    "originalAmount",
-    "purchaseDate",
-    "sender",
-    "customFieldList"
-})
-public class GiftCertificateSearchRowBasic
-    extends SearchRowBasic
-{
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnDateField[] createdDate;
 
-    protected List<SearchColumnDoubleField> amountRemaining;
-    protected List<SearchColumnDoubleField> amtAvailBilled;
-    protected List<SearchColumnDateField> createdDate;
-    protected List<SearchColumnStringField> email;
-    protected List<SearchColumnDateField> expirationDate;
-    protected List<SearchColumnBooleanField> gcActive;
-    protected List<SearchColumnStringField> giftCertCode;
-    protected List<SearchColumnStringField> incomeAcct;
-    protected List<SearchColumnSelectField> internalId;
-    protected List<SearchColumnSelectField> item;
-    protected List<SearchColumnStringField> liabilityAcct;
-    protected List<SearchColumnStringField> message;
-    protected List<SearchColumnStringField> name;
-    protected List<SearchColumnDoubleField> originalAmount;
-    protected List<SearchColumnDateField> purchaseDate;
-    protected List<SearchColumnStringField> sender;
-    protected SearchColumnCustomFieldList customFieldList;
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] email;
 
-    /**
-     * Gets the value of the amountRemaining property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the amountRemaining property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getAmountRemaining().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnDoubleField }
-     * 
-     * 
-     */
-    public List<SearchColumnDoubleField> getAmountRemaining() {
-        if (amountRemaining == null) {
-            amountRemaining = new ArrayList<SearchColumnDoubleField>();
-        }
-        return this.amountRemaining;
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnDateField[] expirationDate;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnBooleanField[] gcActive;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] giftCertCode;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] incomeAcct;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] internalId;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] item;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] liabilityAcct;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] message;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] name;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnDoubleField[] originalAmount;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnDateField[] purchaseDate;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] sender;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnCustomField[] customFieldList;
+
+    public GiftCertificateSearchRowBasic() {
     }
 
-    /**
-     * Gets the value of the amtAvailBilled property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the amtAvailBilled property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getAmtAvailBilled().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnDoubleField }
-     * 
-     * 
-     */
-    public List<SearchColumnDoubleField> getAmtAvailBilled() {
-        if (amtAvailBilled == null) {
-            amtAvailBilled = new ArrayList<SearchColumnDoubleField>();
-        }
-        return this.amtAvailBilled;
+    public GiftCertificateSearchRowBasic(
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnDoubleField[] amountRemaining,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnDoubleField[] amtAvailBilled,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnDateField[] createdDate,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] email,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnDateField[] expirationDate,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnBooleanField[] gcActive,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] giftCertCode,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] incomeAcct,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] internalId,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] item,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] liabilityAcct,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] message,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] name,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnDoubleField[] originalAmount,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnDateField[] purchaseDate,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] sender,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnCustomField[] customFieldList) {
+        this.amountRemaining = amountRemaining;
+        this.amtAvailBilled = amtAvailBilled;
+        this.createdDate = createdDate;
+        this.email = email;
+        this.expirationDate = expirationDate;
+        this.gcActive = gcActive;
+        this.giftCertCode = giftCertCode;
+        this.incomeAcct = incomeAcct;
+        this.internalId = internalId;
+        this.item = item;
+        this.liabilityAcct = liabilityAcct;
+        this.message = message;
+        this.name = name;
+        this.originalAmount = originalAmount;
+        this.purchaseDate = purchaseDate;
+        this.sender = sender;
+        this.customFieldList = customFieldList;
     }
 
-    /**
-     * Gets the value of the createdDate property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the createdDate property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getCreatedDate().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnDateField }
-     * 
-     * 
-     */
-    public List<SearchColumnDateField> getCreatedDate() {
-        if (createdDate == null) {
-            createdDate = new ArrayList<SearchColumnDateField>();
-        }
-        return this.createdDate;
-    }
 
     /**
-     * Gets the value of the email property.
+     * Gets the amountRemaining value for this GiftCertificateSearchRowBasic.
      * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the email property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getEmail().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnStringField }
-     * 
-     * 
+     * @return amountRemaining
      */
-    public List<SearchColumnStringField> getEmail() {
-        if (email == null) {
-            email = new ArrayList<SearchColumnStringField>();
-        }
-        return this.email;
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnDoubleField[] getAmountRemaining() {
+        return amountRemaining;
     }
 
-    /**
-     * Gets the value of the expirationDate property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the expirationDate property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getExpirationDate().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnDateField }
-     * 
-     * 
-     */
-    public List<SearchColumnDateField> getExpirationDate() {
-        if (expirationDate == null) {
-            expirationDate = new ArrayList<SearchColumnDateField>();
-        }
-        return this.expirationDate;
-    }
 
     /**
-     * Gets the value of the gcActive property.
+     * Sets the amountRemaining value for this GiftCertificateSearchRowBasic.
      * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the gcActive property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getGcActive().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnBooleanField }
-     * 
-     * 
+     * @param amountRemaining
      */
-    public List<SearchColumnBooleanField> getGcActive() {
-        if (gcActive == null) {
-            gcActive = new ArrayList<SearchColumnBooleanField>();
-        }
-        return this.gcActive;
+    public void setAmountRemaining(com.netsuite.webservices.platform.core_2018_2.SearchColumnDoubleField[] amountRemaining) {
+        this.amountRemaining = amountRemaining;
     }
 
-    /**
-     * Gets the value of the giftCertCode property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the giftCertCode property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getGiftCertCode().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnStringField }
-     * 
-     * 
-     */
-    public List<SearchColumnStringField> getGiftCertCode() {
-        if (giftCertCode == null) {
-            giftCertCode = new ArrayList<SearchColumnStringField>();
-        }
-        return this.giftCertCode;
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnDoubleField getAmountRemaining(int i) {
+        return this.amountRemaining[i];
     }
 
-    /**
-     * Gets the value of the incomeAcct property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the incomeAcct property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getIncomeAcct().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnStringField }
-     * 
-     * 
-     */
-    public List<SearchColumnStringField> getIncomeAcct() {
-        if (incomeAcct == null) {
-            incomeAcct = new ArrayList<SearchColumnStringField>();
-        }
-        return this.incomeAcct;
+    public void setAmountRemaining(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnDoubleField _value) {
+        this.amountRemaining[i] = _value;
     }
 
-    /**
-     * Gets the value of the internalId property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the internalId property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getInternalId().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnSelectField }
-     * 
-     * 
-     */
-    public List<SearchColumnSelectField> getInternalId() {
-        if (internalId == null) {
-            internalId = new ArrayList<SearchColumnSelectField>();
-        }
-        return this.internalId;
-    }
 
     /**
-     * Gets the value of the item property.
+     * Gets the amtAvailBilled value for this GiftCertificateSearchRowBasic.
      * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the item property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getItem().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnSelectField }
-     * 
-     * 
+     * @return amtAvailBilled
      */
-    public List<SearchColumnSelectField> getItem() {
-        if (item == null) {
-            item = new ArrayList<SearchColumnSelectField>();
-        }
-        return this.item;
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnDoubleField[] getAmtAvailBilled() {
+        return amtAvailBilled;
     }
 
-    /**
-     * Gets the value of the liabilityAcct property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the liabilityAcct property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getLiabilityAcct().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnStringField }
-     * 
-     * 
-     */
-    public List<SearchColumnStringField> getLiabilityAcct() {
-        if (liabilityAcct == null) {
-            liabilityAcct = new ArrayList<SearchColumnStringField>();
-        }
-        return this.liabilityAcct;
-    }
 
     /**
-     * Gets the value of the message property.
+     * Sets the amtAvailBilled value for this GiftCertificateSearchRowBasic.
      * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the message property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getMessage().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnStringField }
-     * 
-     * 
+     * @param amtAvailBilled
      */
-    public List<SearchColumnStringField> getMessage() {
-        if (message == null) {
-            message = new ArrayList<SearchColumnStringField>();
-        }
-        return this.message;
+    public void setAmtAvailBilled(com.netsuite.webservices.platform.core_2018_2.SearchColumnDoubleField[] amtAvailBilled) {
+        this.amtAvailBilled = amtAvailBilled;
     }
 
-    /**
-     * Gets the value of the name property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the name property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getName().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnStringField }
-     * 
-     * 
-     */
-    public List<SearchColumnStringField> getName() {
-        if (name == null) {
-            name = new ArrayList<SearchColumnStringField>();
-        }
-        return this.name;
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnDoubleField getAmtAvailBilled(int i) {
+        return this.amtAvailBilled[i];
     }
 
-    /**
-     * Gets the value of the originalAmount property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the originalAmount property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getOriginalAmount().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnDoubleField }
-     * 
-     * 
-     */
-    public List<SearchColumnDoubleField> getOriginalAmount() {
-        if (originalAmount == null) {
-            originalAmount = new ArrayList<SearchColumnDoubleField>();
-        }
-        return this.originalAmount;
+    public void setAmtAvailBilled(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnDoubleField _value) {
+        this.amtAvailBilled[i] = _value;
     }
 
-    /**
-     * Gets the value of the purchaseDate property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the purchaseDate property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getPurchaseDate().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnDateField }
-     * 
-     * 
-     */
-    public List<SearchColumnDateField> getPurchaseDate() {
-        if (purchaseDate == null) {
-            purchaseDate = new ArrayList<SearchColumnDateField>();
-        }
-        return this.purchaseDate;
-    }
 
     /**
-     * Gets the value of the sender property.
+     * Gets the createdDate value for this GiftCertificateSearchRowBasic.
      * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the sender property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getSender().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnStringField }
-     * 
-     * 
+     * @return createdDate
      */
-    public List<SearchColumnStringField> getSender() {
-        if (sender == null) {
-            sender = new ArrayList<SearchColumnStringField>();
-        }
-        return this.sender;
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnDateField[] getCreatedDate() {
+        return createdDate;
     }
 
+
     /**
-     * 获取customFieldList属性的值。
+     * Sets the createdDate value for this GiftCertificateSearchRowBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchColumnCustomFieldList }
-     *     
+     * @param createdDate
      */
-    public SearchColumnCustomFieldList getCustomFieldList() {
+    public void setCreatedDate(com.netsuite.webservices.platform.core_2018_2.SearchColumnDateField[] createdDate) {
+        this.createdDate = createdDate;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnDateField getCreatedDate(int i) {
+        return this.createdDate[i];
+    }
+
+    public void setCreatedDate(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnDateField _value) {
+        this.createdDate[i] = _value;
+    }
+
+
+    /**
+     * Gets the email value for this GiftCertificateSearchRowBasic.
+     * 
+     * @return email
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] getEmail() {
+        return email;
+    }
+
+
+    /**
+     * Sets the email value for this GiftCertificateSearchRowBasic.
+     * 
+     * @param email
+     */
+    public void setEmail(com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] email) {
+        this.email = email;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField getEmail(int i) {
+        return this.email[i];
+    }
+
+    public void setEmail(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField _value) {
+        this.email[i] = _value;
+    }
+
+
+    /**
+     * Gets the expirationDate value for this GiftCertificateSearchRowBasic.
+     * 
+     * @return expirationDate
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnDateField[] getExpirationDate() {
+        return expirationDate;
+    }
+
+
+    /**
+     * Sets the expirationDate value for this GiftCertificateSearchRowBasic.
+     * 
+     * @param expirationDate
+     */
+    public void setExpirationDate(com.netsuite.webservices.platform.core_2018_2.SearchColumnDateField[] expirationDate) {
+        this.expirationDate = expirationDate;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnDateField getExpirationDate(int i) {
+        return this.expirationDate[i];
+    }
+
+    public void setExpirationDate(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnDateField _value) {
+        this.expirationDate[i] = _value;
+    }
+
+
+    /**
+     * Gets the gcActive value for this GiftCertificateSearchRowBasic.
+     * 
+     * @return gcActive
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnBooleanField[] getGcActive() {
+        return gcActive;
+    }
+
+
+    /**
+     * Sets the gcActive value for this GiftCertificateSearchRowBasic.
+     * 
+     * @param gcActive
+     */
+    public void setGcActive(com.netsuite.webservices.platform.core_2018_2.SearchColumnBooleanField[] gcActive) {
+        this.gcActive = gcActive;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnBooleanField getGcActive(int i) {
+        return this.gcActive[i];
+    }
+
+    public void setGcActive(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnBooleanField _value) {
+        this.gcActive[i] = _value;
+    }
+
+
+    /**
+     * Gets the giftCertCode value for this GiftCertificateSearchRowBasic.
+     * 
+     * @return giftCertCode
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] getGiftCertCode() {
+        return giftCertCode;
+    }
+
+
+    /**
+     * Sets the giftCertCode value for this GiftCertificateSearchRowBasic.
+     * 
+     * @param giftCertCode
+     */
+    public void setGiftCertCode(com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] giftCertCode) {
+        this.giftCertCode = giftCertCode;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField getGiftCertCode(int i) {
+        return this.giftCertCode[i];
+    }
+
+    public void setGiftCertCode(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField _value) {
+        this.giftCertCode[i] = _value;
+    }
+
+
+    /**
+     * Gets the incomeAcct value for this GiftCertificateSearchRowBasic.
+     * 
+     * @return incomeAcct
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] getIncomeAcct() {
+        return incomeAcct;
+    }
+
+
+    /**
+     * Sets the incomeAcct value for this GiftCertificateSearchRowBasic.
+     * 
+     * @param incomeAcct
+     */
+    public void setIncomeAcct(com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] incomeAcct) {
+        this.incomeAcct = incomeAcct;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField getIncomeAcct(int i) {
+        return this.incomeAcct[i];
+    }
+
+    public void setIncomeAcct(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField _value) {
+        this.incomeAcct[i] = _value;
+    }
+
+
+    /**
+     * Gets the internalId value for this GiftCertificateSearchRowBasic.
+     * 
+     * @return internalId
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] getInternalId() {
+        return internalId;
+    }
+
+
+    /**
+     * Sets the internalId value for this GiftCertificateSearchRowBasic.
+     * 
+     * @param internalId
+     */
+    public void setInternalId(com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] internalId) {
+        this.internalId = internalId;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField getInternalId(int i) {
+        return this.internalId[i];
+    }
+
+    public void setInternalId(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField _value) {
+        this.internalId[i] = _value;
+    }
+
+
+    /**
+     * Gets the item value for this GiftCertificateSearchRowBasic.
+     * 
+     * @return item
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] getItem() {
+        return item;
+    }
+
+
+    /**
+     * Sets the item value for this GiftCertificateSearchRowBasic.
+     * 
+     * @param item
+     */
+    public void setItem(com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] item) {
+        this.item = item;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField getItem(int i) {
+        return this.item[i];
+    }
+
+    public void setItem(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField _value) {
+        this.item[i] = _value;
+    }
+
+
+    /**
+     * Gets the liabilityAcct value for this GiftCertificateSearchRowBasic.
+     * 
+     * @return liabilityAcct
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] getLiabilityAcct() {
+        return liabilityAcct;
+    }
+
+
+    /**
+     * Sets the liabilityAcct value for this GiftCertificateSearchRowBasic.
+     * 
+     * @param liabilityAcct
+     */
+    public void setLiabilityAcct(com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] liabilityAcct) {
+        this.liabilityAcct = liabilityAcct;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField getLiabilityAcct(int i) {
+        return this.liabilityAcct[i];
+    }
+
+    public void setLiabilityAcct(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField _value) {
+        this.liabilityAcct[i] = _value;
+    }
+
+
+    /**
+     * Gets the message value for this GiftCertificateSearchRowBasic.
+     * 
+     * @return message
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] getMessage() {
+        return message;
+    }
+
+
+    /**
+     * Sets the message value for this GiftCertificateSearchRowBasic.
+     * 
+     * @param message
+     */
+    public void setMessage(com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] message) {
+        this.message = message;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField getMessage(int i) {
+        return this.message[i];
+    }
+
+    public void setMessage(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField _value) {
+        this.message[i] = _value;
+    }
+
+
+    /**
+     * Gets the name value for this GiftCertificateSearchRowBasic.
+     * 
+     * @return name
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] getName() {
+        return name;
+    }
+
+
+    /**
+     * Sets the name value for this GiftCertificateSearchRowBasic.
+     * 
+     * @param name
+     */
+    public void setName(com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] name) {
+        this.name = name;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField getName(int i) {
+        return this.name[i];
+    }
+
+    public void setName(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField _value) {
+        this.name[i] = _value;
+    }
+
+
+    /**
+     * Gets the originalAmount value for this GiftCertificateSearchRowBasic.
+     * 
+     * @return originalAmount
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnDoubleField[] getOriginalAmount() {
+        return originalAmount;
+    }
+
+
+    /**
+     * Sets the originalAmount value for this GiftCertificateSearchRowBasic.
+     * 
+     * @param originalAmount
+     */
+    public void setOriginalAmount(com.netsuite.webservices.platform.core_2018_2.SearchColumnDoubleField[] originalAmount) {
+        this.originalAmount = originalAmount;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnDoubleField getOriginalAmount(int i) {
+        return this.originalAmount[i];
+    }
+
+    public void setOriginalAmount(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnDoubleField _value) {
+        this.originalAmount[i] = _value;
+    }
+
+
+    /**
+     * Gets the purchaseDate value for this GiftCertificateSearchRowBasic.
+     * 
+     * @return purchaseDate
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnDateField[] getPurchaseDate() {
+        return purchaseDate;
+    }
+
+
+    /**
+     * Sets the purchaseDate value for this GiftCertificateSearchRowBasic.
+     * 
+     * @param purchaseDate
+     */
+    public void setPurchaseDate(com.netsuite.webservices.platform.core_2018_2.SearchColumnDateField[] purchaseDate) {
+        this.purchaseDate = purchaseDate;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnDateField getPurchaseDate(int i) {
+        return this.purchaseDate[i];
+    }
+
+    public void setPurchaseDate(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnDateField _value) {
+        this.purchaseDate[i] = _value;
+    }
+
+
+    /**
+     * Gets the sender value for this GiftCertificateSearchRowBasic.
+     * 
+     * @return sender
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] getSender() {
+        return sender;
+    }
+
+
+    /**
+     * Sets the sender value for this GiftCertificateSearchRowBasic.
+     * 
+     * @param sender
+     */
+    public void setSender(com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] sender) {
+        this.sender = sender;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField getSender(int i) {
+        return this.sender[i];
+    }
+
+    public void setSender(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField _value) {
+        this.sender[i] = _value;
+    }
+
+
+    /**
+     * Gets the customFieldList value for this GiftCertificateSearchRowBasic.
+     * 
+     * @return customFieldList
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnCustomField[] getCustomFieldList() {
         return customFieldList;
     }
 
+
     /**
-     * 设置customFieldList属性的值。
+     * Sets the customFieldList value for this GiftCertificateSearchRowBasic.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchColumnCustomFieldList }
-     *     
+     * @param customFieldList
      */
-    public void setCustomFieldList(SearchColumnCustomFieldList value) {
-        this.customFieldList = value;
+    public void setCustomFieldList(com.netsuite.webservices.platform.core_2018_2.SearchColumnCustomField[] customFieldList) {
+        this.customFieldList = customFieldList;
+    }
+
+    private java.lang.Object __equalsCalc = null;
+    public synchronized boolean equals(java.lang.Object obj) {
+        if (!(obj instanceof GiftCertificateSearchRowBasic)) return false;
+        GiftCertificateSearchRowBasic other = (GiftCertificateSearchRowBasic) obj;
+        if (obj == null) return false;
+        if (this == obj) return true;
+        if (__equalsCalc != null) {
+            return (__equalsCalc == obj);
+        }
+        __equalsCalc = obj;
+        boolean _equals;
+        _equals = super.equals(obj) && 
+            ((this.amountRemaining==null && other.getAmountRemaining()==null) || 
+             (this.amountRemaining!=null &&
+              java.util.Arrays.equals(this.amountRemaining, other.getAmountRemaining()))) &&
+            ((this.amtAvailBilled==null && other.getAmtAvailBilled()==null) || 
+             (this.amtAvailBilled!=null &&
+              java.util.Arrays.equals(this.amtAvailBilled, other.getAmtAvailBilled()))) &&
+            ((this.createdDate==null && other.getCreatedDate()==null) || 
+             (this.createdDate!=null &&
+              java.util.Arrays.equals(this.createdDate, other.getCreatedDate()))) &&
+            ((this.email==null && other.getEmail()==null) || 
+             (this.email!=null &&
+              java.util.Arrays.equals(this.email, other.getEmail()))) &&
+            ((this.expirationDate==null && other.getExpirationDate()==null) || 
+             (this.expirationDate!=null &&
+              java.util.Arrays.equals(this.expirationDate, other.getExpirationDate()))) &&
+            ((this.gcActive==null && other.getGcActive()==null) || 
+             (this.gcActive!=null &&
+              java.util.Arrays.equals(this.gcActive, other.getGcActive()))) &&
+            ((this.giftCertCode==null && other.getGiftCertCode()==null) || 
+             (this.giftCertCode!=null &&
+              java.util.Arrays.equals(this.giftCertCode, other.getGiftCertCode()))) &&
+            ((this.incomeAcct==null && other.getIncomeAcct()==null) || 
+             (this.incomeAcct!=null &&
+              java.util.Arrays.equals(this.incomeAcct, other.getIncomeAcct()))) &&
+            ((this.internalId==null && other.getInternalId()==null) || 
+             (this.internalId!=null &&
+              java.util.Arrays.equals(this.internalId, other.getInternalId()))) &&
+            ((this.item==null && other.getItem()==null) || 
+             (this.item!=null &&
+              java.util.Arrays.equals(this.item, other.getItem()))) &&
+            ((this.liabilityAcct==null && other.getLiabilityAcct()==null) || 
+             (this.liabilityAcct!=null &&
+              java.util.Arrays.equals(this.liabilityAcct, other.getLiabilityAcct()))) &&
+            ((this.message==null && other.getMessage()==null) || 
+             (this.message!=null &&
+              java.util.Arrays.equals(this.message, other.getMessage()))) &&
+            ((this.name==null && other.getName()==null) || 
+             (this.name!=null &&
+              java.util.Arrays.equals(this.name, other.getName()))) &&
+            ((this.originalAmount==null && other.getOriginalAmount()==null) || 
+             (this.originalAmount!=null &&
+              java.util.Arrays.equals(this.originalAmount, other.getOriginalAmount()))) &&
+            ((this.purchaseDate==null && other.getPurchaseDate()==null) || 
+             (this.purchaseDate!=null &&
+              java.util.Arrays.equals(this.purchaseDate, other.getPurchaseDate()))) &&
+            ((this.sender==null && other.getSender()==null) || 
+             (this.sender!=null &&
+              java.util.Arrays.equals(this.sender, other.getSender()))) &&
+            ((this.customFieldList==null && other.getCustomFieldList()==null) || 
+             (this.customFieldList!=null &&
+              java.util.Arrays.equals(this.customFieldList, other.getCustomFieldList())));
+        __equalsCalc = null;
+        return _equals;
+    }
+
+    private boolean __hashCodeCalc = false;
+    public synchronized int hashCode() {
+        if (__hashCodeCalc) {
+            return 0;
+        }
+        __hashCodeCalc = true;
+        int _hashCode = super.hashCode();
+        if (getAmountRemaining() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getAmountRemaining());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getAmountRemaining(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getAmtAvailBilled() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getAmtAvailBilled());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getAmtAvailBilled(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getCreatedDate() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getCreatedDate());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getCreatedDate(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getEmail() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getEmail());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getEmail(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getExpirationDate() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getExpirationDate());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getExpirationDate(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getGcActive() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getGcActive());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getGcActive(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getGiftCertCode() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getGiftCertCode());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getGiftCertCode(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getIncomeAcct() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getIncomeAcct());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getIncomeAcct(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getInternalId() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getInternalId());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getInternalId(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getItem() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getItem());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getItem(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getLiabilityAcct() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getLiabilityAcct());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getLiabilityAcct(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getMessage() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getMessage());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getMessage(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getName() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getName());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getName(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getOriginalAmount() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getOriginalAmount());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getOriginalAmount(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getPurchaseDate() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getPurchaseDate());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getPurchaseDate(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getSender() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getSender());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getSender(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getCustomFieldList() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getCustomFieldList());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getCustomFieldList(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        __hashCodeCalc = false;
+        return _hashCode;
+    }
+
+    // Type metadata
+    private static org.apache.axis.description.TypeDesc typeDesc =
+        new org.apache.axis.description.TypeDesc(GiftCertificateSearchRowBasic.class, true);
+
+    static {
+        typeDesc.setXmlType(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "GiftCertificateSearchRowBasic"));
+        org.apache.axis.description.ElementDesc elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("amountRemaining");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "amountRemaining"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnDoubleField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("amtAvailBilled");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "amtAvailBilled"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnDoubleField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("createdDate");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "createdDate"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnDateField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("email");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "email"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnStringField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("expirationDate");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "expirationDate"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnDateField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("gcActive");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "gcActive"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnBooleanField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("giftCertCode");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "giftCertCode"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnStringField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("incomeAcct");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "incomeAcct"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnStringField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("internalId");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "internalId"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnSelectField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("item");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "item"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnSelectField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("liabilityAcct");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "liabilityAcct"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnStringField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("message");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "message"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnStringField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("name");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "name"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnStringField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("originalAmount");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "originalAmount"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnDoubleField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("purchaseDate");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "purchaseDate"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnDateField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("sender");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "sender"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnStringField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("customFieldList");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "customFieldList"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnCustomField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "customField"));
+        typeDesc.addFieldDesc(elemField);
+    }
+
+    /**
+     * Return type metadata object
+     */
+    public static org.apache.axis.description.TypeDesc getTypeDesc() {
+        return typeDesc;
+    }
+
+    /**
+     * Get Custom Serializer
+     */
+    public static org.apache.axis.encoding.Serializer getSerializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanSerializer(
+            _javaType, _xmlType, typeDesc);
+    }
+
+    /**
+     * Get Custom Deserializer
+     */
+    public static org.apache.axis.encoding.Deserializer getDeserializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanDeserializer(
+            _javaType, _xmlType, typeDesc);
     }
 
 }

@@ -1,361 +1,623 @@
+/**
+ * UnitsTypeSearchRowBasic.java
+ *
+ * This file was auto-generated from WSDL
+ * by the Apache Axis 1.4 Jul 28, 2010 (04:07:04 PDT) WSDL2Java emitter.
+ */
 
 package com.netsuite.webservices.platform.common_2018_2;
 
-import java.util.ArrayList;
-import java.util.List;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlType;
-import com.netsuite.webservices.platform.core_2018_2.SearchColumnBooleanField;
-import com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField;
-import com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField;
-import com.netsuite.webservices.platform.core_2018_2.SearchRowBasic;
+public class UnitsTypeSearchRowBasic  extends com.netsuite.webservices.platform.core_2018_2.SearchRowBasic  implements java.io.Serializable {
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] abbreviation;
 
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnBooleanField[] baseUnit;
 
-/**
- * <p>UnitsTypeSearchRowBasic complex type的 Java 类。
- * 
- * <p>以下模式片段指定包含在此类中的预期内容。
- * 
- * <pre>
- * &lt;complexType name="UnitsTypeSearchRowBasic">
- *   &lt;complexContent>
- *     &lt;extension base="{urn:core_2018_2.platform.webservices.netsuite.com}SearchRowBasic">
- *       &lt;sequence>
- *         &lt;element name="abbreviation" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnStringField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="baseUnit" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnBooleanField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="conversionRate" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnStringField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="externalId" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnSelectField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="internalId" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnSelectField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="isInActive" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnBooleanField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="name" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnStringField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="pluralAbbreviation" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnStringField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="pluralName" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnStringField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="unitName" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnStringField" maxOccurs="unbounded" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/extension>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
- */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "UnitsTypeSearchRowBasic", propOrder = {
-    "abbreviation",
-    "baseUnit",
-    "conversionRate",
-    "externalId",
-    "internalId",
-    "isInActive",
-    "name",
-    "pluralAbbreviation",
-    "pluralName",
-    "unitName"
-})
-public class UnitsTypeSearchRowBasic
-    extends SearchRowBasic
-{
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] conversionRate;
 
-    protected List<SearchColumnStringField> abbreviation;
-    protected List<SearchColumnBooleanField> baseUnit;
-    protected List<SearchColumnStringField> conversionRate;
-    protected List<SearchColumnSelectField> externalId;
-    protected List<SearchColumnSelectField> internalId;
-    protected List<SearchColumnBooleanField> isInActive;
-    protected List<SearchColumnStringField> name;
-    protected List<SearchColumnStringField> pluralAbbreviation;
-    protected List<SearchColumnStringField> pluralName;
-    protected List<SearchColumnStringField> unitName;
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] externalId;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] internalId;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnBooleanField[] isInActive;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] name;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] pluralAbbreviation;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] pluralName;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] unitName;
+
+    public UnitsTypeSearchRowBasic() {
+    }
+
+    public UnitsTypeSearchRowBasic(
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] abbreviation,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnBooleanField[] baseUnit,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] conversionRate,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] externalId,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] internalId,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnBooleanField[] isInActive,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] name,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] pluralAbbreviation,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] pluralName,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] unitName) {
+        this.abbreviation = abbreviation;
+        this.baseUnit = baseUnit;
+        this.conversionRate = conversionRate;
+        this.externalId = externalId;
+        this.internalId = internalId;
+        this.isInActive = isInActive;
+        this.name = name;
+        this.pluralAbbreviation = pluralAbbreviation;
+        this.pluralName = pluralName;
+        this.unitName = unitName;
+    }
+
 
     /**
-     * Gets the value of the abbreviation property.
+     * Gets the abbreviation value for this UnitsTypeSearchRowBasic.
      * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the abbreviation property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getAbbreviation().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnStringField }
-     * 
-     * 
+     * @return abbreviation
      */
-    public List<SearchColumnStringField> getAbbreviation() {
-        if (abbreviation == null) {
-            abbreviation = new ArrayList<SearchColumnStringField>();
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] getAbbreviation() {
+        return abbreviation;
+    }
+
+
+    /**
+     * Sets the abbreviation value for this UnitsTypeSearchRowBasic.
+     * 
+     * @param abbreviation
+     */
+    public void setAbbreviation(com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] abbreviation) {
+        this.abbreviation = abbreviation;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField getAbbreviation(int i) {
+        return this.abbreviation[i];
+    }
+
+    public void setAbbreviation(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField _value) {
+        this.abbreviation[i] = _value;
+    }
+
+
+    /**
+     * Gets the baseUnit value for this UnitsTypeSearchRowBasic.
+     * 
+     * @return baseUnit
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnBooleanField[] getBaseUnit() {
+        return baseUnit;
+    }
+
+
+    /**
+     * Sets the baseUnit value for this UnitsTypeSearchRowBasic.
+     * 
+     * @param baseUnit
+     */
+    public void setBaseUnit(com.netsuite.webservices.platform.core_2018_2.SearchColumnBooleanField[] baseUnit) {
+        this.baseUnit = baseUnit;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnBooleanField getBaseUnit(int i) {
+        return this.baseUnit[i];
+    }
+
+    public void setBaseUnit(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnBooleanField _value) {
+        this.baseUnit[i] = _value;
+    }
+
+
+    /**
+     * Gets the conversionRate value for this UnitsTypeSearchRowBasic.
+     * 
+     * @return conversionRate
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] getConversionRate() {
+        return conversionRate;
+    }
+
+
+    /**
+     * Sets the conversionRate value for this UnitsTypeSearchRowBasic.
+     * 
+     * @param conversionRate
+     */
+    public void setConversionRate(com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] conversionRate) {
+        this.conversionRate = conversionRate;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField getConversionRate(int i) {
+        return this.conversionRate[i];
+    }
+
+    public void setConversionRate(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField _value) {
+        this.conversionRate[i] = _value;
+    }
+
+
+    /**
+     * Gets the externalId value for this UnitsTypeSearchRowBasic.
+     * 
+     * @return externalId
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] getExternalId() {
+        return externalId;
+    }
+
+
+    /**
+     * Sets the externalId value for this UnitsTypeSearchRowBasic.
+     * 
+     * @param externalId
+     */
+    public void setExternalId(com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] externalId) {
+        this.externalId = externalId;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField getExternalId(int i) {
+        return this.externalId[i];
+    }
+
+    public void setExternalId(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField _value) {
+        this.externalId[i] = _value;
+    }
+
+
+    /**
+     * Gets the internalId value for this UnitsTypeSearchRowBasic.
+     * 
+     * @return internalId
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] getInternalId() {
+        return internalId;
+    }
+
+
+    /**
+     * Sets the internalId value for this UnitsTypeSearchRowBasic.
+     * 
+     * @param internalId
+     */
+    public void setInternalId(com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] internalId) {
+        this.internalId = internalId;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField getInternalId(int i) {
+        return this.internalId[i];
+    }
+
+    public void setInternalId(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField _value) {
+        this.internalId[i] = _value;
+    }
+
+
+    /**
+     * Gets the isInActive value for this UnitsTypeSearchRowBasic.
+     * 
+     * @return isInActive
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnBooleanField[] getIsInActive() {
+        return isInActive;
+    }
+
+
+    /**
+     * Sets the isInActive value for this UnitsTypeSearchRowBasic.
+     * 
+     * @param isInActive
+     */
+    public void setIsInActive(com.netsuite.webservices.platform.core_2018_2.SearchColumnBooleanField[] isInActive) {
+        this.isInActive = isInActive;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnBooleanField getIsInActive(int i) {
+        return this.isInActive[i];
+    }
+
+    public void setIsInActive(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnBooleanField _value) {
+        this.isInActive[i] = _value;
+    }
+
+
+    /**
+     * Gets the name value for this UnitsTypeSearchRowBasic.
+     * 
+     * @return name
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] getName() {
+        return name;
+    }
+
+
+    /**
+     * Sets the name value for this UnitsTypeSearchRowBasic.
+     * 
+     * @param name
+     */
+    public void setName(com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] name) {
+        this.name = name;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField getName(int i) {
+        return this.name[i];
+    }
+
+    public void setName(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField _value) {
+        this.name[i] = _value;
+    }
+
+
+    /**
+     * Gets the pluralAbbreviation value for this UnitsTypeSearchRowBasic.
+     * 
+     * @return pluralAbbreviation
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] getPluralAbbreviation() {
+        return pluralAbbreviation;
+    }
+
+
+    /**
+     * Sets the pluralAbbreviation value for this UnitsTypeSearchRowBasic.
+     * 
+     * @param pluralAbbreviation
+     */
+    public void setPluralAbbreviation(com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] pluralAbbreviation) {
+        this.pluralAbbreviation = pluralAbbreviation;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField getPluralAbbreviation(int i) {
+        return this.pluralAbbreviation[i];
+    }
+
+    public void setPluralAbbreviation(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField _value) {
+        this.pluralAbbreviation[i] = _value;
+    }
+
+
+    /**
+     * Gets the pluralName value for this UnitsTypeSearchRowBasic.
+     * 
+     * @return pluralName
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] getPluralName() {
+        return pluralName;
+    }
+
+
+    /**
+     * Sets the pluralName value for this UnitsTypeSearchRowBasic.
+     * 
+     * @param pluralName
+     */
+    public void setPluralName(com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] pluralName) {
+        this.pluralName = pluralName;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField getPluralName(int i) {
+        return this.pluralName[i];
+    }
+
+    public void setPluralName(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField _value) {
+        this.pluralName[i] = _value;
+    }
+
+
+    /**
+     * Gets the unitName value for this UnitsTypeSearchRowBasic.
+     * 
+     * @return unitName
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] getUnitName() {
+        return unitName;
+    }
+
+
+    /**
+     * Sets the unitName value for this UnitsTypeSearchRowBasic.
+     * 
+     * @param unitName
+     */
+    public void setUnitName(com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] unitName) {
+        this.unitName = unitName;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField getUnitName(int i) {
+        return this.unitName[i];
+    }
+
+    public void setUnitName(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField _value) {
+        this.unitName[i] = _value;
+    }
+
+    private java.lang.Object __equalsCalc = null;
+    public synchronized boolean equals(java.lang.Object obj) {
+        if (!(obj instanceof UnitsTypeSearchRowBasic)) return false;
+        UnitsTypeSearchRowBasic other = (UnitsTypeSearchRowBasic) obj;
+        if (obj == null) return false;
+        if (this == obj) return true;
+        if (__equalsCalc != null) {
+            return (__equalsCalc == obj);
         }
-        return this.abbreviation;
+        __equalsCalc = obj;
+        boolean _equals;
+        _equals = super.equals(obj) && 
+            ((this.abbreviation==null && other.getAbbreviation()==null) || 
+             (this.abbreviation!=null &&
+              java.util.Arrays.equals(this.abbreviation, other.getAbbreviation()))) &&
+            ((this.baseUnit==null && other.getBaseUnit()==null) || 
+             (this.baseUnit!=null &&
+              java.util.Arrays.equals(this.baseUnit, other.getBaseUnit()))) &&
+            ((this.conversionRate==null && other.getConversionRate()==null) || 
+             (this.conversionRate!=null &&
+              java.util.Arrays.equals(this.conversionRate, other.getConversionRate()))) &&
+            ((this.externalId==null && other.getExternalId()==null) || 
+             (this.externalId!=null &&
+              java.util.Arrays.equals(this.externalId, other.getExternalId()))) &&
+            ((this.internalId==null && other.getInternalId()==null) || 
+             (this.internalId!=null &&
+              java.util.Arrays.equals(this.internalId, other.getInternalId()))) &&
+            ((this.isInActive==null && other.getIsInActive()==null) || 
+             (this.isInActive!=null &&
+              java.util.Arrays.equals(this.isInActive, other.getIsInActive()))) &&
+            ((this.name==null && other.getName()==null) || 
+             (this.name!=null &&
+              java.util.Arrays.equals(this.name, other.getName()))) &&
+            ((this.pluralAbbreviation==null && other.getPluralAbbreviation()==null) || 
+             (this.pluralAbbreviation!=null &&
+              java.util.Arrays.equals(this.pluralAbbreviation, other.getPluralAbbreviation()))) &&
+            ((this.pluralName==null && other.getPluralName()==null) || 
+             (this.pluralName!=null &&
+              java.util.Arrays.equals(this.pluralName, other.getPluralName()))) &&
+            ((this.unitName==null && other.getUnitName()==null) || 
+             (this.unitName!=null &&
+              java.util.Arrays.equals(this.unitName, other.getUnitName())));
+        __equalsCalc = null;
+        return _equals;
+    }
+
+    private boolean __hashCodeCalc = false;
+    public synchronized int hashCode() {
+        if (__hashCodeCalc) {
+            return 0;
+        }
+        __hashCodeCalc = true;
+        int _hashCode = super.hashCode();
+        if (getAbbreviation() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getAbbreviation());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getAbbreviation(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getBaseUnit() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getBaseUnit());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getBaseUnit(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getConversionRate() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getConversionRate());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getConversionRate(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getExternalId() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getExternalId());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getExternalId(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getInternalId() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getInternalId());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getInternalId(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getIsInActive() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getIsInActive());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getIsInActive(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getName() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getName());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getName(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getPluralAbbreviation() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getPluralAbbreviation());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getPluralAbbreviation(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getPluralName() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getPluralName());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getPluralName(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getUnitName() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getUnitName());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getUnitName(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        __hashCodeCalc = false;
+        return _hashCode;
+    }
+
+    // Type metadata
+    private static org.apache.axis.description.TypeDesc typeDesc =
+        new org.apache.axis.description.TypeDesc(UnitsTypeSearchRowBasic.class, true);
+
+    static {
+        typeDesc.setXmlType(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "UnitsTypeSearchRowBasic"));
+        org.apache.axis.description.ElementDesc elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("abbreviation");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "abbreviation"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnStringField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("baseUnit");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "baseUnit"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnBooleanField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("conversionRate");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "conversionRate"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnStringField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("externalId");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "externalId"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnSelectField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("internalId");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "internalId"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnSelectField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("isInActive");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "isInActive"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnBooleanField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("name");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "name"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnStringField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("pluralAbbreviation");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "pluralAbbreviation"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnStringField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("pluralName");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "pluralName"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnStringField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("unitName");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "unitName"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnStringField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
     }
 
     /**
-     * Gets the value of the baseUnit property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the baseUnit property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getBaseUnit().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnBooleanField }
-     * 
-     * 
+     * Return type metadata object
      */
-    public List<SearchColumnBooleanField> getBaseUnit() {
-        if (baseUnit == null) {
-            baseUnit = new ArrayList<SearchColumnBooleanField>();
-        }
-        return this.baseUnit;
+    public static org.apache.axis.description.TypeDesc getTypeDesc() {
+        return typeDesc;
     }
 
     /**
-     * Gets the value of the conversionRate property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the conversionRate property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getConversionRate().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnStringField }
-     * 
-     * 
+     * Get Custom Serializer
      */
-    public List<SearchColumnStringField> getConversionRate() {
-        if (conversionRate == null) {
-            conversionRate = new ArrayList<SearchColumnStringField>();
-        }
-        return this.conversionRate;
+    public static org.apache.axis.encoding.Serializer getSerializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanSerializer(
+            _javaType, _xmlType, typeDesc);
     }
 
     /**
-     * Gets the value of the externalId property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the externalId property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getExternalId().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnSelectField }
-     * 
-     * 
+     * Get Custom Deserializer
      */
-    public List<SearchColumnSelectField> getExternalId() {
-        if (externalId == null) {
-            externalId = new ArrayList<SearchColumnSelectField>();
-        }
-        return this.externalId;
-    }
-
-    /**
-     * Gets the value of the internalId property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the internalId property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getInternalId().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnSelectField }
-     * 
-     * 
-     */
-    public List<SearchColumnSelectField> getInternalId() {
-        if (internalId == null) {
-            internalId = new ArrayList<SearchColumnSelectField>();
-        }
-        return this.internalId;
-    }
-
-    /**
-     * Gets the value of the isInActive property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the isInActive property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getIsInActive().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnBooleanField }
-     * 
-     * 
-     */
-    public List<SearchColumnBooleanField> getIsInActive() {
-        if (isInActive == null) {
-            isInActive = new ArrayList<SearchColumnBooleanField>();
-        }
-        return this.isInActive;
-    }
-
-    /**
-     * Gets the value of the name property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the name property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getName().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnStringField }
-     * 
-     * 
-     */
-    public List<SearchColumnStringField> getName() {
-        if (name == null) {
-            name = new ArrayList<SearchColumnStringField>();
-        }
-        return this.name;
-    }
-
-    /**
-     * Gets the value of the pluralAbbreviation property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the pluralAbbreviation property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getPluralAbbreviation().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnStringField }
-     * 
-     * 
-     */
-    public List<SearchColumnStringField> getPluralAbbreviation() {
-        if (pluralAbbreviation == null) {
-            pluralAbbreviation = new ArrayList<SearchColumnStringField>();
-        }
-        return this.pluralAbbreviation;
-    }
-
-    /**
-     * Gets the value of the pluralName property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the pluralName property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getPluralName().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnStringField }
-     * 
-     * 
-     */
-    public List<SearchColumnStringField> getPluralName() {
-        if (pluralName == null) {
-            pluralName = new ArrayList<SearchColumnStringField>();
-        }
-        return this.pluralName;
-    }
-
-    /**
-     * Gets the value of the unitName property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the unitName property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getUnitName().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnStringField }
-     * 
-     * 
-     */
-    public List<SearchColumnStringField> getUnitName() {
-        if (unitName == null) {
-            unitName = new ArrayList<SearchColumnStringField>();
-        }
-        return this.unitName;
+    public static org.apache.axis.encoding.Deserializer getDeserializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanDeserializer(
+            _javaType, _xmlType, typeDesc);
     }
 
 }

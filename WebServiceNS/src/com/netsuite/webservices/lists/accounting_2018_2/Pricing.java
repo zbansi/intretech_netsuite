@@ -1,142 +1,240 @@
+/**
+ * Pricing.java
+ *
+ * This file was auto-generated from WSDL
+ * by the Apache Axis 1.4 Jul 28, 2010 (04:07:04 PDT) WSDL2Java emitter.
+ */
 
 package com.netsuite.webservices.lists.accounting_2018_2;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlType;
-import com.netsuite.webservices.platform.core_2018_2.RecordRef;
+public class Pricing  implements java.io.Serializable {
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef currency;
 
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef priceLevel;
 
-/**
- * <p>Pricing complex type的 Java 类。
- * 
- * <p>以下模式片段指定包含在此类中的预期内容。
- * 
- * <pre>
- * &lt;complexType name="Pricing">
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element name="currency" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="priceLevel" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="discount" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
- *         &lt;element name="priceList" type="{urn:accounting_2018_2.lists.webservices.netsuite.com}PriceList" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
- */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "Pricing", propOrder = {
-    "currency",
-    "priceLevel",
-    "discount",
-    "priceList"
-})
-public class Pricing {
+    private java.lang.Double discount;
 
-    protected RecordRef currency;
-    protected RecordRef priceLevel;
-    protected Double discount;
-    protected PriceList priceList;
+    private com.netsuite.webservices.lists.accounting_2018_2.Price[] priceList;
+
+    public Pricing() {
+    }
+
+    public Pricing(
+           com.netsuite.webservices.platform.core_2018_2.RecordRef currency,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef priceLevel,
+           java.lang.Double discount,
+           com.netsuite.webservices.lists.accounting_2018_2.Price[] priceList) {
+           this.currency = currency;
+           this.priceLevel = priceLevel;
+           this.discount = discount;
+           this.priceList = priceList;
+    }
+
 
     /**
-     * 获取currency属性的值。
+     * Gets the currency value for this Pricing.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @return currency
      */
-    public RecordRef getCurrency() {
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getCurrency() {
         return currency;
     }
 
-    /**
-     * 设置currency属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setCurrency(RecordRef value) {
-        this.currency = value;
-    }
 
     /**
-     * 获取priceLevel属性的值。
+     * Sets the currency value for this Pricing.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param currency
      */
-    public RecordRef getPriceLevel() {
+    public void setCurrency(com.netsuite.webservices.platform.core_2018_2.RecordRef currency) {
+        this.currency = currency;
+    }
+
+
+    /**
+     * Gets the priceLevel value for this Pricing.
+     * 
+     * @return priceLevel
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getPriceLevel() {
         return priceLevel;
     }
 
-    /**
-     * 设置priceLevel属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setPriceLevel(RecordRef value) {
-        this.priceLevel = value;
-    }
 
     /**
-     * 获取discount属性的值。
+     * Sets the priceLevel value for this Pricing.
      * 
-     * @return
-     *     possible object is
-     *     {@link Double }
-     *     
+     * @param priceLevel
      */
-    public Double getDiscount() {
+    public void setPriceLevel(com.netsuite.webservices.platform.core_2018_2.RecordRef priceLevel) {
+        this.priceLevel = priceLevel;
+    }
+
+
+    /**
+     * Gets the discount value for this Pricing.
+     * 
+     * @return discount
+     */
+    public java.lang.Double getDiscount() {
         return discount;
     }
 
-    /**
-     * 设置discount属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Double }
-     *     
-     */
-    public void setDiscount(Double value) {
-        this.discount = value;
-    }
 
     /**
-     * 获取priceList属性的值。
+     * Sets the discount value for this Pricing.
      * 
-     * @return
-     *     possible object is
-     *     {@link PriceList }
-     *     
+     * @param discount
      */
-    public PriceList getPriceList() {
+    public void setDiscount(java.lang.Double discount) {
+        this.discount = discount;
+    }
+
+
+    /**
+     * Gets the priceList value for this Pricing.
+     * 
+     * @return priceList
+     */
+    public com.netsuite.webservices.lists.accounting_2018_2.Price[] getPriceList() {
         return priceList;
     }
 
+
     /**
-     * 设置priceList属性的值。
+     * Sets the priceList value for this Pricing.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link PriceList }
-     *     
+     * @param priceList
      */
-    public void setPriceList(PriceList value) {
-        this.priceList = value;
+    public void setPriceList(com.netsuite.webservices.lists.accounting_2018_2.Price[] priceList) {
+        this.priceList = priceList;
+    }
+
+    private java.lang.Object __equalsCalc = null;
+    public synchronized boolean equals(java.lang.Object obj) {
+        if (!(obj instanceof Pricing)) return false;
+        Pricing other = (Pricing) obj;
+        if (obj == null) return false;
+        if (this == obj) return true;
+        if (__equalsCalc != null) {
+            return (__equalsCalc == obj);
+        }
+        __equalsCalc = obj;
+        boolean _equals;
+        _equals = true && 
+            ((this.currency==null && other.getCurrency()==null) || 
+             (this.currency!=null &&
+              this.currency.equals(other.getCurrency()))) &&
+            ((this.priceLevel==null && other.getPriceLevel()==null) || 
+             (this.priceLevel!=null &&
+              this.priceLevel.equals(other.getPriceLevel()))) &&
+            ((this.discount==null && other.getDiscount()==null) || 
+             (this.discount!=null &&
+              this.discount.equals(other.getDiscount()))) &&
+            ((this.priceList==null && other.getPriceList()==null) || 
+             (this.priceList!=null &&
+              java.util.Arrays.equals(this.priceList, other.getPriceList())));
+        __equalsCalc = null;
+        return _equals;
+    }
+
+    private boolean __hashCodeCalc = false;
+    public synchronized int hashCode() {
+        if (__hashCodeCalc) {
+            return 0;
+        }
+        __hashCodeCalc = true;
+        int _hashCode = 1;
+        if (getCurrency() != null) {
+            _hashCode += getCurrency().hashCode();
+        }
+        if (getPriceLevel() != null) {
+            _hashCode += getPriceLevel().hashCode();
+        }
+        if (getDiscount() != null) {
+            _hashCode += getDiscount().hashCode();
+        }
+        if (getPriceList() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getPriceList());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getPriceList(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        __hashCodeCalc = false;
+        return _hashCode;
+    }
+
+    // Type metadata
+    private static org.apache.axis.description.TypeDesc typeDesc =
+        new org.apache.axis.description.TypeDesc(Pricing.class, true);
+
+    static {
+        typeDesc.setXmlType(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "Pricing"));
+        org.apache.axis.description.ElementDesc elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("currency");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "currency"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("priceLevel");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "priceLevel"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("discount");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "discount"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "double"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("priceList");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "priceList"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "Price"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "price"));
+        typeDesc.addFieldDesc(elemField);
+    }
+
+    /**
+     * Return type metadata object
+     */
+    public static org.apache.axis.description.TypeDesc getTypeDesc() {
+        return typeDesc;
+    }
+
+    /**
+     * Get Custom Serializer
+     */
+    public static org.apache.axis.encoding.Serializer getSerializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanSerializer(
+            _javaType, _xmlType, typeDesc);
+    }
+
+    /**
+     * Get Custom Deserializer
+     */
+    public static org.apache.axis.encoding.Deserializer getDeserializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanDeserializer(
+            _javaType, _xmlType, typeDesc);
     }
 
 }

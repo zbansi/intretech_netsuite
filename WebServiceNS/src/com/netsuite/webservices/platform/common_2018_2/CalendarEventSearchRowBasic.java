@@ -1,870 +1,1479 @@
+/**
+ * CalendarEventSearchRowBasic.java
+ *
+ * This file was auto-generated from WSDL
+ * by the Apache Axis 1.4 Jul 28, 2010 (04:07:04 PDT) WSDL2Java emitter.
+ */
 
 package com.netsuite.webservices.platform.common_2018_2;
 
-import java.util.ArrayList;
-import java.util.List;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlType;
-import com.netsuite.webservices.platform.core_2018_2.SearchColumnCustomFieldList;
-import com.netsuite.webservices.platform.core_2018_2.SearchColumnDateField;
-import com.netsuite.webservices.platform.core_2018_2.SearchColumnEnumSelectField;
-import com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField;
-import com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField;
-import com.netsuite.webservices.platform.core_2018_2.SearchRowBasic;
+public class CalendarEventSearchRowBasic  extends com.netsuite.webservices.platform.core_2018_2.SearchRowBasic  implements java.io.Serializable {
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnEnumSelectField[] accessLevel;
 
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] attendee;
 
-/**
- * <p>CalendarEventSearchRowBasic complex type的 Java 类。
- * 
- * <p>以下模式片段指定包含在此类中的预期内容。
- * 
- * <pre>
- * &lt;complexType name="CalendarEventSearchRowBasic">
- *   &lt;complexContent>
- *     &lt;extension base="{urn:core_2018_2.platform.webservices.netsuite.com}SearchRowBasic">
- *       &lt;sequence>
- *         &lt;element name="accessLevel" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnEnumSelectField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="attendee" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnSelectField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="company" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnSelectField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="completedDate" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnDateField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="contact" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnSelectField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="createdDate" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnDateField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="endTime" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnStringField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="externalId" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnSelectField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="instanceEnd" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnDateField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="instanceStart" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnDateField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="internalId" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnSelectField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="lastModifiedDate" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnDateField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="location" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnStringField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="markdone" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnStringField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="message" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnStringField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="organizer" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnSelectField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="owner" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnSelectField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="recurrence" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnStringField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="resource" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnSelectField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="response" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnEnumSelectField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="startDate" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnStringField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="startTime" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnStringField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="status" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnEnumSelectField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="title" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnStringField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="transaction" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnSelectField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="customFieldList" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnCustomFieldList" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/extension>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
- */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "CalendarEventSearchRowBasic", propOrder = {
-    "accessLevel",
-    "attendee",
-    "company",
-    "completedDate",
-    "contact",
-    "createdDate",
-    "endTime",
-    "externalId",
-    "instanceEnd",
-    "instanceStart",
-    "internalId",
-    "lastModifiedDate",
-    "location",
-    "markdone",
-    "message",
-    "organizer",
-    "owner",
-    "recurrence",
-    "resource",
-    "response",
-    "startDate",
-    "startTime",
-    "status",
-    "title",
-    "transaction",
-    "customFieldList"
-})
-public class CalendarEventSearchRowBasic
-    extends SearchRowBasic
-{
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] company;
 
-    protected List<SearchColumnEnumSelectField> accessLevel;
-    protected List<SearchColumnSelectField> attendee;
-    protected List<SearchColumnSelectField> company;
-    protected List<SearchColumnDateField> completedDate;
-    protected List<SearchColumnSelectField> contact;
-    protected List<SearchColumnDateField> createdDate;
-    protected List<SearchColumnStringField> endTime;
-    protected List<SearchColumnSelectField> externalId;
-    protected List<SearchColumnDateField> instanceEnd;
-    protected List<SearchColumnDateField> instanceStart;
-    protected List<SearchColumnSelectField> internalId;
-    protected List<SearchColumnDateField> lastModifiedDate;
-    protected List<SearchColumnStringField> location;
-    protected List<SearchColumnStringField> markdone;
-    protected List<SearchColumnStringField> message;
-    protected List<SearchColumnSelectField> organizer;
-    protected List<SearchColumnSelectField> owner;
-    protected List<SearchColumnStringField> recurrence;
-    protected List<SearchColumnSelectField> resource;
-    protected List<SearchColumnEnumSelectField> response;
-    protected List<SearchColumnStringField> startDate;
-    protected List<SearchColumnStringField> startTime;
-    protected List<SearchColumnEnumSelectField> status;
-    protected List<SearchColumnStringField> title;
-    protected List<SearchColumnSelectField> transaction;
-    protected SearchColumnCustomFieldList customFieldList;
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnDateField[] completedDate;
 
-    /**
-     * Gets the value of the accessLevel property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the accessLevel property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getAccessLevel().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnEnumSelectField }
-     * 
-     * 
-     */
-    public List<SearchColumnEnumSelectField> getAccessLevel() {
-        if (accessLevel == null) {
-            accessLevel = new ArrayList<SearchColumnEnumSelectField>();
-        }
-        return this.accessLevel;
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] contact;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnDateField[] createdDate;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] endTime;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] externalId;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnDateField[] instanceEnd;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnDateField[] instanceStart;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] internalId;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnDateField[] lastModifiedDate;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] location;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] markdone;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] message;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] organizer;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] owner;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] recurrence;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] resource;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnEnumSelectField[] response;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] startDate;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] startTime;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnEnumSelectField[] status;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] title;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] transaction;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnCustomField[] customFieldList;
+
+    public CalendarEventSearchRowBasic() {
     }
 
-    /**
-     * Gets the value of the attendee property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the attendee property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getAttendee().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnSelectField }
-     * 
-     * 
-     */
-    public List<SearchColumnSelectField> getAttendee() {
-        if (attendee == null) {
-            attendee = new ArrayList<SearchColumnSelectField>();
-        }
-        return this.attendee;
+    public CalendarEventSearchRowBasic(
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnEnumSelectField[] accessLevel,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] attendee,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] company,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnDateField[] completedDate,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] contact,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnDateField[] createdDate,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] endTime,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] externalId,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnDateField[] instanceEnd,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnDateField[] instanceStart,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] internalId,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnDateField[] lastModifiedDate,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] location,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] markdone,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] message,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] organizer,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] owner,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] recurrence,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] resource,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnEnumSelectField[] response,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] startDate,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] startTime,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnEnumSelectField[] status,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] title,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] transaction,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnCustomField[] customFieldList) {
+        this.accessLevel = accessLevel;
+        this.attendee = attendee;
+        this.company = company;
+        this.completedDate = completedDate;
+        this.contact = contact;
+        this.createdDate = createdDate;
+        this.endTime = endTime;
+        this.externalId = externalId;
+        this.instanceEnd = instanceEnd;
+        this.instanceStart = instanceStart;
+        this.internalId = internalId;
+        this.lastModifiedDate = lastModifiedDate;
+        this.location = location;
+        this.markdone = markdone;
+        this.message = message;
+        this.organizer = organizer;
+        this.owner = owner;
+        this.recurrence = recurrence;
+        this.resource = resource;
+        this.response = response;
+        this.startDate = startDate;
+        this.startTime = startTime;
+        this.status = status;
+        this.title = title;
+        this.transaction = transaction;
+        this.customFieldList = customFieldList;
     }
 
-    /**
-     * Gets the value of the company property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the company property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getCompany().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnSelectField }
-     * 
-     * 
-     */
-    public List<SearchColumnSelectField> getCompany() {
-        if (company == null) {
-            company = new ArrayList<SearchColumnSelectField>();
-        }
-        return this.company;
-    }
 
     /**
-     * Gets the value of the completedDate property.
+     * Gets the accessLevel value for this CalendarEventSearchRowBasic.
      * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the completedDate property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getCompletedDate().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnDateField }
-     * 
-     * 
+     * @return accessLevel
      */
-    public List<SearchColumnDateField> getCompletedDate() {
-        if (completedDate == null) {
-            completedDate = new ArrayList<SearchColumnDateField>();
-        }
-        return this.completedDate;
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnEnumSelectField[] getAccessLevel() {
+        return accessLevel;
     }
 
-    /**
-     * Gets the value of the contact property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the contact property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getContact().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnSelectField }
-     * 
-     * 
-     */
-    public List<SearchColumnSelectField> getContact() {
-        if (contact == null) {
-            contact = new ArrayList<SearchColumnSelectField>();
-        }
-        return this.contact;
-    }
 
     /**
-     * Gets the value of the createdDate property.
+     * Sets the accessLevel value for this CalendarEventSearchRowBasic.
      * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the createdDate property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getCreatedDate().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnDateField }
-     * 
-     * 
+     * @param accessLevel
      */
-    public List<SearchColumnDateField> getCreatedDate() {
-        if (createdDate == null) {
-            createdDate = new ArrayList<SearchColumnDateField>();
-        }
-        return this.createdDate;
+    public void setAccessLevel(com.netsuite.webservices.platform.core_2018_2.SearchColumnEnumSelectField[] accessLevel) {
+        this.accessLevel = accessLevel;
     }
 
-    /**
-     * Gets the value of the endTime property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the endTime property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getEndTime().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnStringField }
-     * 
-     * 
-     */
-    public List<SearchColumnStringField> getEndTime() {
-        if (endTime == null) {
-            endTime = new ArrayList<SearchColumnStringField>();
-        }
-        return this.endTime;
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnEnumSelectField getAccessLevel(int i) {
+        return this.accessLevel[i];
     }
 
-    /**
-     * Gets the value of the externalId property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the externalId property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getExternalId().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnSelectField }
-     * 
-     * 
-     */
-    public List<SearchColumnSelectField> getExternalId() {
-        if (externalId == null) {
-            externalId = new ArrayList<SearchColumnSelectField>();
-        }
-        return this.externalId;
+    public void setAccessLevel(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnEnumSelectField _value) {
+        this.accessLevel[i] = _value;
     }
 
-    /**
-     * Gets the value of the instanceEnd property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the instanceEnd property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getInstanceEnd().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnDateField }
-     * 
-     * 
-     */
-    public List<SearchColumnDateField> getInstanceEnd() {
-        if (instanceEnd == null) {
-            instanceEnd = new ArrayList<SearchColumnDateField>();
-        }
-        return this.instanceEnd;
-    }
 
     /**
-     * Gets the value of the instanceStart property.
+     * Gets the attendee value for this CalendarEventSearchRowBasic.
      * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the instanceStart property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getInstanceStart().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnDateField }
-     * 
-     * 
+     * @return attendee
      */
-    public List<SearchColumnDateField> getInstanceStart() {
-        if (instanceStart == null) {
-            instanceStart = new ArrayList<SearchColumnDateField>();
-        }
-        return this.instanceStart;
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] getAttendee() {
+        return attendee;
     }
 
-    /**
-     * Gets the value of the internalId property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the internalId property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getInternalId().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnSelectField }
-     * 
-     * 
-     */
-    public List<SearchColumnSelectField> getInternalId() {
-        if (internalId == null) {
-            internalId = new ArrayList<SearchColumnSelectField>();
-        }
-        return this.internalId;
-    }
 
     /**
-     * Gets the value of the lastModifiedDate property.
+     * Sets the attendee value for this CalendarEventSearchRowBasic.
      * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the lastModifiedDate property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getLastModifiedDate().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnDateField }
-     * 
-     * 
+     * @param attendee
      */
-    public List<SearchColumnDateField> getLastModifiedDate() {
-        if (lastModifiedDate == null) {
-            lastModifiedDate = new ArrayList<SearchColumnDateField>();
-        }
-        return this.lastModifiedDate;
+    public void setAttendee(com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] attendee) {
+        this.attendee = attendee;
     }
 
-    /**
-     * Gets the value of the location property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the location property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getLocation().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnStringField }
-     * 
-     * 
-     */
-    public List<SearchColumnStringField> getLocation() {
-        if (location == null) {
-            location = new ArrayList<SearchColumnStringField>();
-        }
-        return this.location;
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField getAttendee(int i) {
+        return this.attendee[i];
     }
 
-    /**
-     * Gets the value of the markdone property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the markdone property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getMarkdone().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnStringField }
-     * 
-     * 
-     */
-    public List<SearchColumnStringField> getMarkdone() {
-        if (markdone == null) {
-            markdone = new ArrayList<SearchColumnStringField>();
-        }
-        return this.markdone;
+    public void setAttendee(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField _value) {
+        this.attendee[i] = _value;
     }
 
-    /**
-     * Gets the value of the message property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the message property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getMessage().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnStringField }
-     * 
-     * 
-     */
-    public List<SearchColumnStringField> getMessage() {
-        if (message == null) {
-            message = new ArrayList<SearchColumnStringField>();
-        }
-        return this.message;
-    }
 
     /**
-     * Gets the value of the organizer property.
+     * Gets the company value for this CalendarEventSearchRowBasic.
      * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the organizer property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getOrganizer().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnSelectField }
-     * 
-     * 
+     * @return company
      */
-    public List<SearchColumnSelectField> getOrganizer() {
-        if (organizer == null) {
-            organizer = new ArrayList<SearchColumnSelectField>();
-        }
-        return this.organizer;
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] getCompany() {
+        return company;
     }
 
-    /**
-     * Gets the value of the owner property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the owner property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getOwner().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnSelectField }
-     * 
-     * 
-     */
-    public List<SearchColumnSelectField> getOwner() {
-        if (owner == null) {
-            owner = new ArrayList<SearchColumnSelectField>();
-        }
-        return this.owner;
-    }
 
     /**
-     * Gets the value of the recurrence property.
+     * Sets the company value for this CalendarEventSearchRowBasic.
      * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the recurrence property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getRecurrence().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnStringField }
-     * 
-     * 
+     * @param company
      */
-    public List<SearchColumnStringField> getRecurrence() {
-        if (recurrence == null) {
-            recurrence = new ArrayList<SearchColumnStringField>();
-        }
-        return this.recurrence;
+    public void setCompany(com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] company) {
+        this.company = company;
     }
 
-    /**
-     * Gets the value of the resource property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the resource property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getResource().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnSelectField }
-     * 
-     * 
-     */
-    public List<SearchColumnSelectField> getResource() {
-        if (resource == null) {
-            resource = new ArrayList<SearchColumnSelectField>();
-        }
-        return this.resource;
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField getCompany(int i) {
+        return this.company[i];
     }
 
-    /**
-     * Gets the value of the response property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the response property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getResponse().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnEnumSelectField }
-     * 
-     * 
-     */
-    public List<SearchColumnEnumSelectField> getResponse() {
-        if (response == null) {
-            response = new ArrayList<SearchColumnEnumSelectField>();
-        }
-        return this.response;
+    public void setCompany(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField _value) {
+        this.company[i] = _value;
     }
 
-    /**
-     * Gets the value of the startDate property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the startDate property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getStartDate().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnStringField }
-     * 
-     * 
-     */
-    public List<SearchColumnStringField> getStartDate() {
-        if (startDate == null) {
-            startDate = new ArrayList<SearchColumnStringField>();
-        }
-        return this.startDate;
-    }
 
     /**
-     * Gets the value of the startTime property.
+     * Gets the completedDate value for this CalendarEventSearchRowBasic.
      * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the startTime property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getStartTime().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnStringField }
-     * 
-     * 
+     * @return completedDate
      */
-    public List<SearchColumnStringField> getStartTime() {
-        if (startTime == null) {
-            startTime = new ArrayList<SearchColumnStringField>();
-        }
-        return this.startTime;
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnDateField[] getCompletedDate() {
+        return completedDate;
     }
 
-    /**
-     * Gets the value of the status property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the status property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getStatus().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnEnumSelectField }
-     * 
-     * 
-     */
-    public List<SearchColumnEnumSelectField> getStatus() {
-        if (status == null) {
-            status = new ArrayList<SearchColumnEnumSelectField>();
-        }
-        return this.status;
-    }
 
     /**
-     * Gets the value of the title property.
+     * Sets the completedDate value for this CalendarEventSearchRowBasic.
      * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the title property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getTitle().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnStringField }
-     * 
-     * 
+     * @param completedDate
      */
-    public List<SearchColumnStringField> getTitle() {
-        if (title == null) {
-            title = new ArrayList<SearchColumnStringField>();
-        }
-        return this.title;
+    public void setCompletedDate(com.netsuite.webservices.platform.core_2018_2.SearchColumnDateField[] completedDate) {
+        this.completedDate = completedDate;
     }
 
-    /**
-     * Gets the value of the transaction property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the transaction property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getTransaction().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnSelectField }
-     * 
-     * 
-     */
-    public List<SearchColumnSelectField> getTransaction() {
-        if (transaction == null) {
-            transaction = new ArrayList<SearchColumnSelectField>();
-        }
-        return this.transaction;
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnDateField getCompletedDate(int i) {
+        return this.completedDate[i];
     }
 
+    public void setCompletedDate(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnDateField _value) {
+        this.completedDate[i] = _value;
+    }
+
+
     /**
-     * 获取customFieldList属性的值。
+     * Gets the contact value for this CalendarEventSearchRowBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchColumnCustomFieldList }
-     *     
+     * @return contact
      */
-    public SearchColumnCustomFieldList getCustomFieldList() {
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] getContact() {
+        return contact;
+    }
+
+
+    /**
+     * Sets the contact value for this CalendarEventSearchRowBasic.
+     * 
+     * @param contact
+     */
+    public void setContact(com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] contact) {
+        this.contact = contact;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField getContact(int i) {
+        return this.contact[i];
+    }
+
+    public void setContact(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField _value) {
+        this.contact[i] = _value;
+    }
+
+
+    /**
+     * Gets the createdDate value for this CalendarEventSearchRowBasic.
+     * 
+     * @return createdDate
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnDateField[] getCreatedDate() {
+        return createdDate;
+    }
+
+
+    /**
+     * Sets the createdDate value for this CalendarEventSearchRowBasic.
+     * 
+     * @param createdDate
+     */
+    public void setCreatedDate(com.netsuite.webservices.platform.core_2018_2.SearchColumnDateField[] createdDate) {
+        this.createdDate = createdDate;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnDateField getCreatedDate(int i) {
+        return this.createdDate[i];
+    }
+
+    public void setCreatedDate(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnDateField _value) {
+        this.createdDate[i] = _value;
+    }
+
+
+    /**
+     * Gets the endTime value for this CalendarEventSearchRowBasic.
+     * 
+     * @return endTime
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] getEndTime() {
+        return endTime;
+    }
+
+
+    /**
+     * Sets the endTime value for this CalendarEventSearchRowBasic.
+     * 
+     * @param endTime
+     */
+    public void setEndTime(com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] endTime) {
+        this.endTime = endTime;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField getEndTime(int i) {
+        return this.endTime[i];
+    }
+
+    public void setEndTime(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField _value) {
+        this.endTime[i] = _value;
+    }
+
+
+    /**
+     * Gets the externalId value for this CalendarEventSearchRowBasic.
+     * 
+     * @return externalId
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] getExternalId() {
+        return externalId;
+    }
+
+
+    /**
+     * Sets the externalId value for this CalendarEventSearchRowBasic.
+     * 
+     * @param externalId
+     */
+    public void setExternalId(com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] externalId) {
+        this.externalId = externalId;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField getExternalId(int i) {
+        return this.externalId[i];
+    }
+
+    public void setExternalId(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField _value) {
+        this.externalId[i] = _value;
+    }
+
+
+    /**
+     * Gets the instanceEnd value for this CalendarEventSearchRowBasic.
+     * 
+     * @return instanceEnd
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnDateField[] getInstanceEnd() {
+        return instanceEnd;
+    }
+
+
+    /**
+     * Sets the instanceEnd value for this CalendarEventSearchRowBasic.
+     * 
+     * @param instanceEnd
+     */
+    public void setInstanceEnd(com.netsuite.webservices.platform.core_2018_2.SearchColumnDateField[] instanceEnd) {
+        this.instanceEnd = instanceEnd;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnDateField getInstanceEnd(int i) {
+        return this.instanceEnd[i];
+    }
+
+    public void setInstanceEnd(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnDateField _value) {
+        this.instanceEnd[i] = _value;
+    }
+
+
+    /**
+     * Gets the instanceStart value for this CalendarEventSearchRowBasic.
+     * 
+     * @return instanceStart
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnDateField[] getInstanceStart() {
+        return instanceStart;
+    }
+
+
+    /**
+     * Sets the instanceStart value for this CalendarEventSearchRowBasic.
+     * 
+     * @param instanceStart
+     */
+    public void setInstanceStart(com.netsuite.webservices.platform.core_2018_2.SearchColumnDateField[] instanceStart) {
+        this.instanceStart = instanceStart;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnDateField getInstanceStart(int i) {
+        return this.instanceStart[i];
+    }
+
+    public void setInstanceStart(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnDateField _value) {
+        this.instanceStart[i] = _value;
+    }
+
+
+    /**
+     * Gets the internalId value for this CalendarEventSearchRowBasic.
+     * 
+     * @return internalId
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] getInternalId() {
+        return internalId;
+    }
+
+
+    /**
+     * Sets the internalId value for this CalendarEventSearchRowBasic.
+     * 
+     * @param internalId
+     */
+    public void setInternalId(com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] internalId) {
+        this.internalId = internalId;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField getInternalId(int i) {
+        return this.internalId[i];
+    }
+
+    public void setInternalId(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField _value) {
+        this.internalId[i] = _value;
+    }
+
+
+    /**
+     * Gets the lastModifiedDate value for this CalendarEventSearchRowBasic.
+     * 
+     * @return lastModifiedDate
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnDateField[] getLastModifiedDate() {
+        return lastModifiedDate;
+    }
+
+
+    /**
+     * Sets the lastModifiedDate value for this CalendarEventSearchRowBasic.
+     * 
+     * @param lastModifiedDate
+     */
+    public void setLastModifiedDate(com.netsuite.webservices.platform.core_2018_2.SearchColumnDateField[] lastModifiedDate) {
+        this.lastModifiedDate = lastModifiedDate;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnDateField getLastModifiedDate(int i) {
+        return this.lastModifiedDate[i];
+    }
+
+    public void setLastModifiedDate(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnDateField _value) {
+        this.lastModifiedDate[i] = _value;
+    }
+
+
+    /**
+     * Gets the location value for this CalendarEventSearchRowBasic.
+     * 
+     * @return location
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] getLocation() {
+        return location;
+    }
+
+
+    /**
+     * Sets the location value for this CalendarEventSearchRowBasic.
+     * 
+     * @param location
+     */
+    public void setLocation(com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] location) {
+        this.location = location;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField getLocation(int i) {
+        return this.location[i];
+    }
+
+    public void setLocation(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField _value) {
+        this.location[i] = _value;
+    }
+
+
+    /**
+     * Gets the markdone value for this CalendarEventSearchRowBasic.
+     * 
+     * @return markdone
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] getMarkdone() {
+        return markdone;
+    }
+
+
+    /**
+     * Sets the markdone value for this CalendarEventSearchRowBasic.
+     * 
+     * @param markdone
+     */
+    public void setMarkdone(com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] markdone) {
+        this.markdone = markdone;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField getMarkdone(int i) {
+        return this.markdone[i];
+    }
+
+    public void setMarkdone(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField _value) {
+        this.markdone[i] = _value;
+    }
+
+
+    /**
+     * Gets the message value for this CalendarEventSearchRowBasic.
+     * 
+     * @return message
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] getMessage() {
+        return message;
+    }
+
+
+    /**
+     * Sets the message value for this CalendarEventSearchRowBasic.
+     * 
+     * @param message
+     */
+    public void setMessage(com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] message) {
+        this.message = message;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField getMessage(int i) {
+        return this.message[i];
+    }
+
+    public void setMessage(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField _value) {
+        this.message[i] = _value;
+    }
+
+
+    /**
+     * Gets the organizer value for this CalendarEventSearchRowBasic.
+     * 
+     * @return organizer
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] getOrganizer() {
+        return organizer;
+    }
+
+
+    /**
+     * Sets the organizer value for this CalendarEventSearchRowBasic.
+     * 
+     * @param organizer
+     */
+    public void setOrganizer(com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] organizer) {
+        this.organizer = organizer;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField getOrganizer(int i) {
+        return this.organizer[i];
+    }
+
+    public void setOrganizer(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField _value) {
+        this.organizer[i] = _value;
+    }
+
+
+    /**
+     * Gets the owner value for this CalendarEventSearchRowBasic.
+     * 
+     * @return owner
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] getOwner() {
+        return owner;
+    }
+
+
+    /**
+     * Sets the owner value for this CalendarEventSearchRowBasic.
+     * 
+     * @param owner
+     */
+    public void setOwner(com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] owner) {
+        this.owner = owner;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField getOwner(int i) {
+        return this.owner[i];
+    }
+
+    public void setOwner(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField _value) {
+        this.owner[i] = _value;
+    }
+
+
+    /**
+     * Gets the recurrence value for this CalendarEventSearchRowBasic.
+     * 
+     * @return recurrence
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] getRecurrence() {
+        return recurrence;
+    }
+
+
+    /**
+     * Sets the recurrence value for this CalendarEventSearchRowBasic.
+     * 
+     * @param recurrence
+     */
+    public void setRecurrence(com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] recurrence) {
+        this.recurrence = recurrence;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField getRecurrence(int i) {
+        return this.recurrence[i];
+    }
+
+    public void setRecurrence(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField _value) {
+        this.recurrence[i] = _value;
+    }
+
+
+    /**
+     * Gets the resource value for this CalendarEventSearchRowBasic.
+     * 
+     * @return resource
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] getResource() {
+        return resource;
+    }
+
+
+    /**
+     * Sets the resource value for this CalendarEventSearchRowBasic.
+     * 
+     * @param resource
+     */
+    public void setResource(com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] resource) {
+        this.resource = resource;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField getResource(int i) {
+        return this.resource[i];
+    }
+
+    public void setResource(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField _value) {
+        this.resource[i] = _value;
+    }
+
+
+    /**
+     * Gets the response value for this CalendarEventSearchRowBasic.
+     * 
+     * @return response
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnEnumSelectField[] getResponse() {
+        return response;
+    }
+
+
+    /**
+     * Sets the response value for this CalendarEventSearchRowBasic.
+     * 
+     * @param response
+     */
+    public void setResponse(com.netsuite.webservices.platform.core_2018_2.SearchColumnEnumSelectField[] response) {
+        this.response = response;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnEnumSelectField getResponse(int i) {
+        return this.response[i];
+    }
+
+    public void setResponse(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnEnumSelectField _value) {
+        this.response[i] = _value;
+    }
+
+
+    /**
+     * Gets the startDate value for this CalendarEventSearchRowBasic.
+     * 
+     * @return startDate
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] getStartDate() {
+        return startDate;
+    }
+
+
+    /**
+     * Sets the startDate value for this CalendarEventSearchRowBasic.
+     * 
+     * @param startDate
+     */
+    public void setStartDate(com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] startDate) {
+        this.startDate = startDate;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField getStartDate(int i) {
+        return this.startDate[i];
+    }
+
+    public void setStartDate(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField _value) {
+        this.startDate[i] = _value;
+    }
+
+
+    /**
+     * Gets the startTime value for this CalendarEventSearchRowBasic.
+     * 
+     * @return startTime
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] getStartTime() {
+        return startTime;
+    }
+
+
+    /**
+     * Sets the startTime value for this CalendarEventSearchRowBasic.
+     * 
+     * @param startTime
+     */
+    public void setStartTime(com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] startTime) {
+        this.startTime = startTime;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField getStartTime(int i) {
+        return this.startTime[i];
+    }
+
+    public void setStartTime(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField _value) {
+        this.startTime[i] = _value;
+    }
+
+
+    /**
+     * Gets the status value for this CalendarEventSearchRowBasic.
+     * 
+     * @return status
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnEnumSelectField[] getStatus() {
+        return status;
+    }
+
+
+    /**
+     * Sets the status value for this CalendarEventSearchRowBasic.
+     * 
+     * @param status
+     */
+    public void setStatus(com.netsuite.webservices.platform.core_2018_2.SearchColumnEnumSelectField[] status) {
+        this.status = status;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnEnumSelectField getStatus(int i) {
+        return this.status[i];
+    }
+
+    public void setStatus(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnEnumSelectField _value) {
+        this.status[i] = _value;
+    }
+
+
+    /**
+     * Gets the title value for this CalendarEventSearchRowBasic.
+     * 
+     * @return title
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] getTitle() {
+        return title;
+    }
+
+
+    /**
+     * Sets the title value for this CalendarEventSearchRowBasic.
+     * 
+     * @param title
+     */
+    public void setTitle(com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] title) {
+        this.title = title;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField getTitle(int i) {
+        return this.title[i];
+    }
+
+    public void setTitle(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField _value) {
+        this.title[i] = _value;
+    }
+
+
+    /**
+     * Gets the transaction value for this CalendarEventSearchRowBasic.
+     * 
+     * @return transaction
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] getTransaction() {
+        return transaction;
+    }
+
+
+    /**
+     * Sets the transaction value for this CalendarEventSearchRowBasic.
+     * 
+     * @param transaction
+     */
+    public void setTransaction(com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] transaction) {
+        this.transaction = transaction;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField getTransaction(int i) {
+        return this.transaction[i];
+    }
+
+    public void setTransaction(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField _value) {
+        this.transaction[i] = _value;
+    }
+
+
+    /**
+     * Gets the customFieldList value for this CalendarEventSearchRowBasic.
+     * 
+     * @return customFieldList
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnCustomField[] getCustomFieldList() {
         return customFieldList;
     }
 
+
     /**
-     * 设置customFieldList属性的值。
+     * Sets the customFieldList value for this CalendarEventSearchRowBasic.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchColumnCustomFieldList }
-     *     
+     * @param customFieldList
      */
-    public void setCustomFieldList(SearchColumnCustomFieldList value) {
-        this.customFieldList = value;
+    public void setCustomFieldList(com.netsuite.webservices.platform.core_2018_2.SearchColumnCustomField[] customFieldList) {
+        this.customFieldList = customFieldList;
+    }
+
+    private java.lang.Object __equalsCalc = null;
+    public synchronized boolean equals(java.lang.Object obj) {
+        if (!(obj instanceof CalendarEventSearchRowBasic)) return false;
+        CalendarEventSearchRowBasic other = (CalendarEventSearchRowBasic) obj;
+        if (obj == null) return false;
+        if (this == obj) return true;
+        if (__equalsCalc != null) {
+            return (__equalsCalc == obj);
+        }
+        __equalsCalc = obj;
+        boolean _equals;
+        _equals = super.equals(obj) && 
+            ((this.accessLevel==null && other.getAccessLevel()==null) || 
+             (this.accessLevel!=null &&
+              java.util.Arrays.equals(this.accessLevel, other.getAccessLevel()))) &&
+            ((this.attendee==null && other.getAttendee()==null) || 
+             (this.attendee!=null &&
+              java.util.Arrays.equals(this.attendee, other.getAttendee()))) &&
+            ((this.company==null && other.getCompany()==null) || 
+             (this.company!=null &&
+              java.util.Arrays.equals(this.company, other.getCompany()))) &&
+            ((this.completedDate==null && other.getCompletedDate()==null) || 
+             (this.completedDate!=null &&
+              java.util.Arrays.equals(this.completedDate, other.getCompletedDate()))) &&
+            ((this.contact==null && other.getContact()==null) || 
+             (this.contact!=null &&
+              java.util.Arrays.equals(this.contact, other.getContact()))) &&
+            ((this.createdDate==null && other.getCreatedDate()==null) || 
+             (this.createdDate!=null &&
+              java.util.Arrays.equals(this.createdDate, other.getCreatedDate()))) &&
+            ((this.endTime==null && other.getEndTime()==null) || 
+             (this.endTime!=null &&
+              java.util.Arrays.equals(this.endTime, other.getEndTime()))) &&
+            ((this.externalId==null && other.getExternalId()==null) || 
+             (this.externalId!=null &&
+              java.util.Arrays.equals(this.externalId, other.getExternalId()))) &&
+            ((this.instanceEnd==null && other.getInstanceEnd()==null) || 
+             (this.instanceEnd!=null &&
+              java.util.Arrays.equals(this.instanceEnd, other.getInstanceEnd()))) &&
+            ((this.instanceStart==null && other.getInstanceStart()==null) || 
+             (this.instanceStart!=null &&
+              java.util.Arrays.equals(this.instanceStart, other.getInstanceStart()))) &&
+            ((this.internalId==null && other.getInternalId()==null) || 
+             (this.internalId!=null &&
+              java.util.Arrays.equals(this.internalId, other.getInternalId()))) &&
+            ((this.lastModifiedDate==null && other.getLastModifiedDate()==null) || 
+             (this.lastModifiedDate!=null &&
+              java.util.Arrays.equals(this.lastModifiedDate, other.getLastModifiedDate()))) &&
+            ((this.location==null && other.getLocation()==null) || 
+             (this.location!=null &&
+              java.util.Arrays.equals(this.location, other.getLocation()))) &&
+            ((this.markdone==null && other.getMarkdone()==null) || 
+             (this.markdone!=null &&
+              java.util.Arrays.equals(this.markdone, other.getMarkdone()))) &&
+            ((this.message==null && other.getMessage()==null) || 
+             (this.message!=null &&
+              java.util.Arrays.equals(this.message, other.getMessage()))) &&
+            ((this.organizer==null && other.getOrganizer()==null) || 
+             (this.organizer!=null &&
+              java.util.Arrays.equals(this.organizer, other.getOrganizer()))) &&
+            ((this.owner==null && other.getOwner()==null) || 
+             (this.owner!=null &&
+              java.util.Arrays.equals(this.owner, other.getOwner()))) &&
+            ((this.recurrence==null && other.getRecurrence()==null) || 
+             (this.recurrence!=null &&
+              java.util.Arrays.equals(this.recurrence, other.getRecurrence()))) &&
+            ((this.resource==null && other.getResource()==null) || 
+             (this.resource!=null &&
+              java.util.Arrays.equals(this.resource, other.getResource()))) &&
+            ((this.response==null && other.getResponse()==null) || 
+             (this.response!=null &&
+              java.util.Arrays.equals(this.response, other.getResponse()))) &&
+            ((this.startDate==null && other.getStartDate()==null) || 
+             (this.startDate!=null &&
+              java.util.Arrays.equals(this.startDate, other.getStartDate()))) &&
+            ((this.startTime==null && other.getStartTime()==null) || 
+             (this.startTime!=null &&
+              java.util.Arrays.equals(this.startTime, other.getStartTime()))) &&
+            ((this.status==null && other.getStatus()==null) || 
+             (this.status!=null &&
+              java.util.Arrays.equals(this.status, other.getStatus()))) &&
+            ((this.title==null && other.getTitle()==null) || 
+             (this.title!=null &&
+              java.util.Arrays.equals(this.title, other.getTitle()))) &&
+            ((this.transaction==null && other.getTransaction()==null) || 
+             (this.transaction!=null &&
+              java.util.Arrays.equals(this.transaction, other.getTransaction()))) &&
+            ((this.customFieldList==null && other.getCustomFieldList()==null) || 
+             (this.customFieldList!=null &&
+              java.util.Arrays.equals(this.customFieldList, other.getCustomFieldList())));
+        __equalsCalc = null;
+        return _equals;
+    }
+
+    private boolean __hashCodeCalc = false;
+    public synchronized int hashCode() {
+        if (__hashCodeCalc) {
+            return 0;
+        }
+        __hashCodeCalc = true;
+        int _hashCode = super.hashCode();
+        if (getAccessLevel() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getAccessLevel());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getAccessLevel(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getAttendee() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getAttendee());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getAttendee(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getCompany() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getCompany());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getCompany(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getCompletedDate() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getCompletedDate());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getCompletedDate(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getContact() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getContact());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getContact(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getCreatedDate() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getCreatedDate());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getCreatedDate(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getEndTime() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getEndTime());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getEndTime(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getExternalId() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getExternalId());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getExternalId(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getInstanceEnd() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getInstanceEnd());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getInstanceEnd(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getInstanceStart() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getInstanceStart());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getInstanceStart(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getInternalId() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getInternalId());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getInternalId(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getLastModifiedDate() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getLastModifiedDate());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getLastModifiedDate(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getLocation() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getLocation());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getLocation(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getMarkdone() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getMarkdone());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getMarkdone(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getMessage() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getMessage());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getMessage(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getOrganizer() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getOrganizer());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getOrganizer(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getOwner() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getOwner());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getOwner(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getRecurrence() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getRecurrence());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getRecurrence(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getResource() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getResource());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getResource(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getResponse() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getResponse());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getResponse(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getStartDate() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getStartDate());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getStartDate(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getStartTime() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getStartTime());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getStartTime(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getStatus() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getStatus());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getStatus(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getTitle() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getTitle());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getTitle(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getTransaction() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getTransaction());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getTransaction(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getCustomFieldList() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getCustomFieldList());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getCustomFieldList(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        __hashCodeCalc = false;
+        return _hashCode;
+    }
+
+    // Type metadata
+    private static org.apache.axis.description.TypeDesc typeDesc =
+        new org.apache.axis.description.TypeDesc(CalendarEventSearchRowBasic.class, true);
+
+    static {
+        typeDesc.setXmlType(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "CalendarEventSearchRowBasic"));
+        org.apache.axis.description.ElementDesc elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("accessLevel");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "accessLevel"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnEnumSelectField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("attendee");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "attendee"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnSelectField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("company");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "company"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnSelectField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("completedDate");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "completedDate"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnDateField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("contact");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "contact"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnSelectField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("createdDate");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "createdDate"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnDateField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("endTime");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "endTime"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnStringField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("externalId");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "externalId"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnSelectField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("instanceEnd");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "instanceEnd"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnDateField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("instanceStart");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "instanceStart"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnDateField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("internalId");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "internalId"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnSelectField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("lastModifiedDate");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "lastModifiedDate"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnDateField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("location");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "location"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnStringField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("markdone");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "markdone"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnStringField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("message");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "message"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnStringField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("organizer");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "organizer"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnSelectField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("owner");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "owner"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnSelectField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("recurrence");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "recurrence"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnStringField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("resource");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "resource"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnSelectField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("response");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "response"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnEnumSelectField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("startDate");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "startDate"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnStringField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("startTime");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "startTime"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnStringField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("status");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "status"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnEnumSelectField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("title");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "title"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnStringField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("transaction");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "transaction"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnSelectField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("customFieldList");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "customFieldList"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnCustomField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "customField"));
+        typeDesc.addFieldDesc(elemField);
+    }
+
+    /**
+     * Return type metadata object
+     */
+    public static org.apache.axis.description.TypeDesc getTypeDesc() {
+        return typeDesc;
+    }
+
+    /**
+     * Get Custom Serializer
+     */
+    public static org.apache.axis.encoding.Serializer getSerializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanSerializer(
+            _javaType, _xmlType, typeDesc);
+    }
+
+    /**
+     * Get Custom Deserializer
+     */
+    public static org.apache.axis.encoding.Deserializer getDeserializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanDeserializer(
+            _javaType, _xmlType, typeDesc);
     }
 
 }

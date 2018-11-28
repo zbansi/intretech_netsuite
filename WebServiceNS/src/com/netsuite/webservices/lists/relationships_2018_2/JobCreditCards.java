@@ -1,281 +1,416 @@
+/**
+ * JobCreditCards.java
+ *
+ * This file was auto-generated from WSDL
+ * by the Apache Axis 1.4 Jul 28, 2010 (04:07:04 PDT) WSDL2Java emitter.
+ */
 
 package com.netsuite.webservices.lists.relationships_2018_2;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlSchemaType;
-import javax.xml.bind.annotation.XmlType;
-import javax.xml.datatype.XMLGregorianCalendar;
-import com.netsuite.webservices.platform.core_2018_2.RecordRef;
+public class JobCreditCards  implements java.io.Serializable {
+    private java.lang.String internalId;
 
+    private java.lang.String ccNumber;
 
-/**
- * <p>JobCreditCards complex type的 Java 类。
- * 
- * <p>以下模式片段指定包含在此类中的预期内容。
- * 
- * <pre>
- * &lt;complexType name="JobCreditCards">
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element name="internalId" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="ccNumber" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="ccExpireDate" type="{http://www.w3.org/2001/XMLSchema}dateTime" minOccurs="0"/>
- *         &lt;element name="ccName" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="paymentMethod" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="ccMemo" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="ccDefault" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         &lt;element name="debitCardIssueNo" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="validFrom" type="{http://www.w3.org/2001/XMLSchema}dateTime" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
- */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "JobCreditCards", propOrder = {
-    "internalId",
-    "ccNumber",
-    "ccExpireDate",
-    "ccName",
-    "paymentMethod",
-    "ccMemo",
-    "ccDefault",
-    "debitCardIssueNo",
-    "validFrom"
-})
-public class JobCreditCards {
+    private java.util.Calendar ccExpireDate;
 
-    protected String internalId;
-    protected String ccNumber;
-    @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar ccExpireDate;
-    protected String ccName;
-    protected RecordRef paymentMethod;
-    protected String ccMemo;
-    protected Boolean ccDefault;
-    protected String debitCardIssueNo;
-    @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar validFrom;
+    private java.lang.String ccName;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef paymentMethod;
+
+    private java.lang.String ccMemo;
+
+    private java.lang.Boolean ccDefault;
+
+    private java.lang.String debitCardIssueNo;
+
+    private java.util.Calendar validFrom;
+
+    public JobCreditCards() {
+    }
+
+    public JobCreditCards(
+           java.lang.String internalId,
+           java.lang.String ccNumber,
+           java.util.Calendar ccExpireDate,
+           java.lang.String ccName,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef paymentMethod,
+           java.lang.String ccMemo,
+           java.lang.Boolean ccDefault,
+           java.lang.String debitCardIssueNo,
+           java.util.Calendar validFrom) {
+           this.internalId = internalId;
+           this.ccNumber = ccNumber;
+           this.ccExpireDate = ccExpireDate;
+           this.ccName = ccName;
+           this.paymentMethod = paymentMethod;
+           this.ccMemo = ccMemo;
+           this.ccDefault = ccDefault;
+           this.debitCardIssueNo = debitCardIssueNo;
+           this.validFrom = validFrom;
+    }
+
 
     /**
-     * 获取internalId属性的值。
+     * Gets the internalId value for this JobCreditCards.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @return internalId
      */
-    public String getInternalId() {
+    public java.lang.String getInternalId() {
         return internalId;
     }
 
-    /**
-     * 设置internalId属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setInternalId(String value) {
-        this.internalId = value;
-    }
 
     /**
-     * 获取ccNumber属性的值。
+     * Sets the internalId value for this JobCreditCards.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param internalId
      */
-    public String getCcNumber() {
+    public void setInternalId(java.lang.String internalId) {
+        this.internalId = internalId;
+    }
+
+
+    /**
+     * Gets the ccNumber value for this JobCreditCards.
+     * 
+     * @return ccNumber
+     */
+    public java.lang.String getCcNumber() {
         return ccNumber;
     }
 
-    /**
-     * 设置ccNumber属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setCcNumber(String value) {
-        this.ccNumber = value;
-    }
 
     /**
-     * 获取ccExpireDate属性的值。
+     * Sets the ccNumber value for this JobCreditCards.
      * 
-     * @return
-     *     possible object is
-     *     {@link XMLGregorianCalendar }
-     *     
+     * @param ccNumber
      */
-    public XMLGregorianCalendar getCcExpireDate() {
+    public void setCcNumber(java.lang.String ccNumber) {
+        this.ccNumber = ccNumber;
+    }
+
+
+    /**
+     * Gets the ccExpireDate value for this JobCreditCards.
+     * 
+     * @return ccExpireDate
+     */
+    public java.util.Calendar getCcExpireDate() {
         return ccExpireDate;
     }
 
-    /**
-     * 设置ccExpireDate属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link XMLGregorianCalendar }
-     *     
-     */
-    public void setCcExpireDate(XMLGregorianCalendar value) {
-        this.ccExpireDate = value;
-    }
 
     /**
-     * 获取ccName属性的值。
+     * Sets the ccExpireDate value for this JobCreditCards.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param ccExpireDate
      */
-    public String getCcName() {
+    public void setCcExpireDate(java.util.Calendar ccExpireDate) {
+        this.ccExpireDate = ccExpireDate;
+    }
+
+
+    /**
+     * Gets the ccName value for this JobCreditCards.
+     * 
+     * @return ccName
+     */
+    public java.lang.String getCcName() {
         return ccName;
     }
 
-    /**
-     * 设置ccName属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setCcName(String value) {
-        this.ccName = value;
-    }
 
     /**
-     * 获取paymentMethod属性的值。
+     * Sets the ccName value for this JobCreditCards.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param ccName
      */
-    public RecordRef getPaymentMethod() {
+    public void setCcName(java.lang.String ccName) {
+        this.ccName = ccName;
+    }
+
+
+    /**
+     * Gets the paymentMethod value for this JobCreditCards.
+     * 
+     * @return paymentMethod
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getPaymentMethod() {
         return paymentMethod;
     }
 
-    /**
-     * 设置paymentMethod属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setPaymentMethod(RecordRef value) {
-        this.paymentMethod = value;
-    }
 
     /**
-     * 获取ccMemo属性的值。
+     * Sets the paymentMethod value for this JobCreditCards.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param paymentMethod
      */
-    public String getCcMemo() {
+    public void setPaymentMethod(com.netsuite.webservices.platform.core_2018_2.RecordRef paymentMethod) {
+        this.paymentMethod = paymentMethod;
+    }
+
+
+    /**
+     * Gets the ccMemo value for this JobCreditCards.
+     * 
+     * @return ccMemo
+     */
+    public java.lang.String getCcMemo() {
         return ccMemo;
     }
 
-    /**
-     * 设置ccMemo属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setCcMemo(String value) {
-        this.ccMemo = value;
-    }
 
     /**
-     * 获取ccDefault属性的值。
+     * Sets the ccMemo value for this JobCreditCards.
      * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
+     * @param ccMemo
      */
-    public Boolean isCcDefault() {
+    public void setCcMemo(java.lang.String ccMemo) {
+        this.ccMemo = ccMemo;
+    }
+
+
+    /**
+     * Gets the ccDefault value for this JobCreditCards.
+     * 
+     * @return ccDefault
+     */
+    public java.lang.Boolean getCcDefault() {
         return ccDefault;
     }
 
-    /**
-     * 设置ccDefault属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
-     */
-    public void setCcDefault(Boolean value) {
-        this.ccDefault = value;
-    }
 
     /**
-     * 获取debitCardIssueNo属性的值。
+     * Sets the ccDefault value for this JobCreditCards.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param ccDefault
      */
-    public String getDebitCardIssueNo() {
+    public void setCcDefault(java.lang.Boolean ccDefault) {
+        this.ccDefault = ccDefault;
+    }
+
+
+    /**
+     * Gets the debitCardIssueNo value for this JobCreditCards.
+     * 
+     * @return debitCardIssueNo
+     */
+    public java.lang.String getDebitCardIssueNo() {
         return debitCardIssueNo;
     }
 
-    /**
-     * 设置debitCardIssueNo属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setDebitCardIssueNo(String value) {
-        this.debitCardIssueNo = value;
-    }
 
     /**
-     * 获取validFrom属性的值。
+     * Sets the debitCardIssueNo value for this JobCreditCards.
      * 
-     * @return
-     *     possible object is
-     *     {@link XMLGregorianCalendar }
-     *     
+     * @param debitCardIssueNo
      */
-    public XMLGregorianCalendar getValidFrom() {
+    public void setDebitCardIssueNo(java.lang.String debitCardIssueNo) {
+        this.debitCardIssueNo = debitCardIssueNo;
+    }
+
+
+    /**
+     * Gets the validFrom value for this JobCreditCards.
+     * 
+     * @return validFrom
+     */
+    public java.util.Calendar getValidFrom() {
         return validFrom;
     }
 
+
     /**
-     * 设置validFrom属性的值。
+     * Sets the validFrom value for this JobCreditCards.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link XMLGregorianCalendar }
-     *     
+     * @param validFrom
      */
-    public void setValidFrom(XMLGregorianCalendar value) {
-        this.validFrom = value;
+    public void setValidFrom(java.util.Calendar validFrom) {
+        this.validFrom = validFrom;
+    }
+
+    private java.lang.Object __equalsCalc = null;
+    public synchronized boolean equals(java.lang.Object obj) {
+        if (!(obj instanceof JobCreditCards)) return false;
+        JobCreditCards other = (JobCreditCards) obj;
+        if (obj == null) return false;
+        if (this == obj) return true;
+        if (__equalsCalc != null) {
+            return (__equalsCalc == obj);
+        }
+        __equalsCalc = obj;
+        boolean _equals;
+        _equals = true && 
+            ((this.internalId==null && other.getInternalId()==null) || 
+             (this.internalId!=null &&
+              this.internalId.equals(other.getInternalId()))) &&
+            ((this.ccNumber==null && other.getCcNumber()==null) || 
+             (this.ccNumber!=null &&
+              this.ccNumber.equals(other.getCcNumber()))) &&
+            ((this.ccExpireDate==null && other.getCcExpireDate()==null) || 
+             (this.ccExpireDate!=null &&
+              this.ccExpireDate.equals(other.getCcExpireDate()))) &&
+            ((this.ccName==null && other.getCcName()==null) || 
+             (this.ccName!=null &&
+              this.ccName.equals(other.getCcName()))) &&
+            ((this.paymentMethod==null && other.getPaymentMethod()==null) || 
+             (this.paymentMethod!=null &&
+              this.paymentMethod.equals(other.getPaymentMethod()))) &&
+            ((this.ccMemo==null && other.getCcMemo()==null) || 
+             (this.ccMemo!=null &&
+              this.ccMemo.equals(other.getCcMemo()))) &&
+            ((this.ccDefault==null && other.getCcDefault()==null) || 
+             (this.ccDefault!=null &&
+              this.ccDefault.equals(other.getCcDefault()))) &&
+            ((this.debitCardIssueNo==null && other.getDebitCardIssueNo()==null) || 
+             (this.debitCardIssueNo!=null &&
+              this.debitCardIssueNo.equals(other.getDebitCardIssueNo()))) &&
+            ((this.validFrom==null && other.getValidFrom()==null) || 
+             (this.validFrom!=null &&
+              this.validFrom.equals(other.getValidFrom())));
+        __equalsCalc = null;
+        return _equals;
+    }
+
+    private boolean __hashCodeCalc = false;
+    public synchronized int hashCode() {
+        if (__hashCodeCalc) {
+            return 0;
+        }
+        __hashCodeCalc = true;
+        int _hashCode = 1;
+        if (getInternalId() != null) {
+            _hashCode += getInternalId().hashCode();
+        }
+        if (getCcNumber() != null) {
+            _hashCode += getCcNumber().hashCode();
+        }
+        if (getCcExpireDate() != null) {
+            _hashCode += getCcExpireDate().hashCode();
+        }
+        if (getCcName() != null) {
+            _hashCode += getCcName().hashCode();
+        }
+        if (getPaymentMethod() != null) {
+            _hashCode += getPaymentMethod().hashCode();
+        }
+        if (getCcMemo() != null) {
+            _hashCode += getCcMemo().hashCode();
+        }
+        if (getCcDefault() != null) {
+            _hashCode += getCcDefault().hashCode();
+        }
+        if (getDebitCardIssueNo() != null) {
+            _hashCode += getDebitCardIssueNo().hashCode();
+        }
+        if (getValidFrom() != null) {
+            _hashCode += getValidFrom().hashCode();
+        }
+        __hashCodeCalc = false;
+        return _hashCode;
+    }
+
+    // Type metadata
+    private static org.apache.axis.description.TypeDesc typeDesc =
+        new org.apache.axis.description.TypeDesc(JobCreditCards.class, true);
+
+    static {
+        typeDesc.setXmlType(new javax.xml.namespace.QName("urn:relationships_2018_2.lists.webservices.netsuite.com", "JobCreditCards"));
+        org.apache.axis.description.ElementDesc elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("internalId");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:relationships_2018_2.lists.webservices.netsuite.com", "internalId"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("ccNumber");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:relationships_2018_2.lists.webservices.netsuite.com", "ccNumber"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("ccExpireDate");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:relationships_2018_2.lists.webservices.netsuite.com", "ccExpireDate"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "dateTime"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("ccName");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:relationships_2018_2.lists.webservices.netsuite.com", "ccName"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("paymentMethod");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:relationships_2018_2.lists.webservices.netsuite.com", "paymentMethod"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("ccMemo");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:relationships_2018_2.lists.webservices.netsuite.com", "ccMemo"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("ccDefault");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:relationships_2018_2.lists.webservices.netsuite.com", "ccDefault"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("debitCardIssueNo");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:relationships_2018_2.lists.webservices.netsuite.com", "debitCardIssueNo"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("validFrom");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:relationships_2018_2.lists.webservices.netsuite.com", "validFrom"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "dateTime"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+    }
+
+    /**
+     * Return type metadata object
+     */
+    public static org.apache.axis.description.TypeDesc getTypeDesc() {
+        return typeDesc;
+    }
+
+    /**
+     * Get Custom Serializer
+     */
+    public static org.apache.axis.encoding.Serializer getSerializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanSerializer(
+            _javaType, _xmlType, typeDesc);
+    }
+
+    /**
+     * Get Custom Deserializer
+     */
+    public static org.apache.axis.encoding.Deserializer getDeserializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanDeserializer(
+            _javaType, _xmlType, typeDesc);
     }
 
 }

@@ -1,199 +1,302 @@
+/**
+ * BudgetExchangeRate.java
+ *
+ * This file was auto-generated from WSDL
+ * by the Apache Axis 1.4 Jul 28, 2010 (04:07:04 PDT) WSDL2Java emitter.
+ */
 
 package com.netsuite.webservices.platform.core_2018_2;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlType;
+public class BudgetExchangeRate  implements java.io.Serializable {
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef period;
 
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef fromSubsidiary;
 
-/**
- * <p>BudgetExchangeRate complex type的 Java 类。
- * 
- * <p>以下模式片段指定包含在此类中的预期内容。
- * 
- * <pre>
- * &lt;complexType name="BudgetExchangeRate">
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element name="period" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef"/>
- *         &lt;element name="fromSubsidiary" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef"/>
- *         &lt;element name="toSubsidiary" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef"/>
- *         &lt;element name="currentRate" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
- *         &lt;element name="averageRate" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
- *         &lt;element name="historicalRate" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
- */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "BudgetExchangeRate", propOrder = {
-    "period",
-    "fromSubsidiary",
-    "toSubsidiary",
-    "currentRate",
-    "averageRate",
-    "historicalRate"
-})
-public class BudgetExchangeRate {
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef toSubsidiary;
 
-    @XmlElement(required = true)
-    protected RecordRef period;
-    @XmlElement(required = true)
-    protected RecordRef fromSubsidiary;
-    @XmlElement(required = true)
-    protected RecordRef toSubsidiary;
-    protected Double currentRate;
-    protected Double averageRate;
-    protected Double historicalRate;
+    private java.lang.Double currentRate;
+
+    private java.lang.Double averageRate;
+
+    private java.lang.Double historicalRate;
+
+    public BudgetExchangeRate() {
+    }
+
+    public BudgetExchangeRate(
+           com.netsuite.webservices.platform.core_2018_2.RecordRef period,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef fromSubsidiary,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef toSubsidiary,
+           java.lang.Double currentRate,
+           java.lang.Double averageRate,
+           java.lang.Double historicalRate) {
+           this.period = period;
+           this.fromSubsidiary = fromSubsidiary;
+           this.toSubsidiary = toSubsidiary;
+           this.currentRate = currentRate;
+           this.averageRate = averageRate;
+           this.historicalRate = historicalRate;
+    }
+
 
     /**
-     * 获取period属性的值。
+     * Gets the period value for this BudgetExchangeRate.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @return period
      */
-    public RecordRef getPeriod() {
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getPeriod() {
         return period;
     }
 
-    /**
-     * 设置period属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setPeriod(RecordRef value) {
-        this.period = value;
-    }
 
     /**
-     * 获取fromSubsidiary属性的值。
+     * Sets the period value for this BudgetExchangeRate.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param period
      */
-    public RecordRef getFromSubsidiary() {
+    public void setPeriod(com.netsuite.webservices.platform.core_2018_2.RecordRef period) {
+        this.period = period;
+    }
+
+
+    /**
+     * Gets the fromSubsidiary value for this BudgetExchangeRate.
+     * 
+     * @return fromSubsidiary
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getFromSubsidiary() {
         return fromSubsidiary;
     }
 
-    /**
-     * 设置fromSubsidiary属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setFromSubsidiary(RecordRef value) {
-        this.fromSubsidiary = value;
-    }
 
     /**
-     * 获取toSubsidiary属性的值。
+     * Sets the fromSubsidiary value for this BudgetExchangeRate.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param fromSubsidiary
      */
-    public RecordRef getToSubsidiary() {
+    public void setFromSubsidiary(com.netsuite.webservices.platform.core_2018_2.RecordRef fromSubsidiary) {
+        this.fromSubsidiary = fromSubsidiary;
+    }
+
+
+    /**
+     * Gets the toSubsidiary value for this BudgetExchangeRate.
+     * 
+     * @return toSubsidiary
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getToSubsidiary() {
         return toSubsidiary;
     }
 
-    /**
-     * 设置toSubsidiary属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setToSubsidiary(RecordRef value) {
-        this.toSubsidiary = value;
-    }
 
     /**
-     * 获取currentRate属性的值。
+     * Sets the toSubsidiary value for this BudgetExchangeRate.
      * 
-     * @return
-     *     possible object is
-     *     {@link Double }
-     *     
+     * @param toSubsidiary
      */
-    public Double getCurrentRate() {
+    public void setToSubsidiary(com.netsuite.webservices.platform.core_2018_2.RecordRef toSubsidiary) {
+        this.toSubsidiary = toSubsidiary;
+    }
+
+
+    /**
+     * Gets the currentRate value for this BudgetExchangeRate.
+     * 
+     * @return currentRate
+     */
+    public java.lang.Double getCurrentRate() {
         return currentRate;
     }
 
-    /**
-     * 设置currentRate属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Double }
-     *     
-     */
-    public void setCurrentRate(Double value) {
-        this.currentRate = value;
-    }
 
     /**
-     * 获取averageRate属性的值。
+     * Sets the currentRate value for this BudgetExchangeRate.
      * 
-     * @return
-     *     possible object is
-     *     {@link Double }
-     *     
+     * @param currentRate
      */
-    public Double getAverageRate() {
+    public void setCurrentRate(java.lang.Double currentRate) {
+        this.currentRate = currentRate;
+    }
+
+
+    /**
+     * Gets the averageRate value for this BudgetExchangeRate.
+     * 
+     * @return averageRate
+     */
+    public java.lang.Double getAverageRate() {
         return averageRate;
     }
 
-    /**
-     * 设置averageRate属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Double }
-     *     
-     */
-    public void setAverageRate(Double value) {
-        this.averageRate = value;
-    }
 
     /**
-     * 获取historicalRate属性的值。
+     * Sets the averageRate value for this BudgetExchangeRate.
      * 
-     * @return
-     *     possible object is
-     *     {@link Double }
-     *     
+     * @param averageRate
      */
-    public Double getHistoricalRate() {
+    public void setAverageRate(java.lang.Double averageRate) {
+        this.averageRate = averageRate;
+    }
+
+
+    /**
+     * Gets the historicalRate value for this BudgetExchangeRate.
+     * 
+     * @return historicalRate
+     */
+    public java.lang.Double getHistoricalRate() {
         return historicalRate;
     }
 
+
     /**
-     * 设置historicalRate属性的值。
+     * Sets the historicalRate value for this BudgetExchangeRate.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link Double }
-     *     
+     * @param historicalRate
      */
-    public void setHistoricalRate(Double value) {
-        this.historicalRate = value;
+    public void setHistoricalRate(java.lang.Double historicalRate) {
+        this.historicalRate = historicalRate;
+    }
+
+    private java.lang.Object __equalsCalc = null;
+    public synchronized boolean equals(java.lang.Object obj) {
+        if (!(obj instanceof BudgetExchangeRate)) return false;
+        BudgetExchangeRate other = (BudgetExchangeRate) obj;
+        if (obj == null) return false;
+        if (this == obj) return true;
+        if (__equalsCalc != null) {
+            return (__equalsCalc == obj);
+        }
+        __equalsCalc = obj;
+        boolean _equals;
+        _equals = true && 
+            ((this.period==null && other.getPeriod()==null) || 
+             (this.period!=null &&
+              this.period.equals(other.getPeriod()))) &&
+            ((this.fromSubsidiary==null && other.getFromSubsidiary()==null) || 
+             (this.fromSubsidiary!=null &&
+              this.fromSubsidiary.equals(other.getFromSubsidiary()))) &&
+            ((this.toSubsidiary==null && other.getToSubsidiary()==null) || 
+             (this.toSubsidiary!=null &&
+              this.toSubsidiary.equals(other.getToSubsidiary()))) &&
+            ((this.currentRate==null && other.getCurrentRate()==null) || 
+             (this.currentRate!=null &&
+              this.currentRate.equals(other.getCurrentRate()))) &&
+            ((this.averageRate==null && other.getAverageRate()==null) || 
+             (this.averageRate!=null &&
+              this.averageRate.equals(other.getAverageRate()))) &&
+            ((this.historicalRate==null && other.getHistoricalRate()==null) || 
+             (this.historicalRate!=null &&
+              this.historicalRate.equals(other.getHistoricalRate())));
+        __equalsCalc = null;
+        return _equals;
+    }
+
+    private boolean __hashCodeCalc = false;
+    public synchronized int hashCode() {
+        if (__hashCodeCalc) {
+            return 0;
+        }
+        __hashCodeCalc = true;
+        int _hashCode = 1;
+        if (getPeriod() != null) {
+            _hashCode += getPeriod().hashCode();
+        }
+        if (getFromSubsidiary() != null) {
+            _hashCode += getFromSubsidiary().hashCode();
+        }
+        if (getToSubsidiary() != null) {
+            _hashCode += getToSubsidiary().hashCode();
+        }
+        if (getCurrentRate() != null) {
+            _hashCode += getCurrentRate().hashCode();
+        }
+        if (getAverageRate() != null) {
+            _hashCode += getAverageRate().hashCode();
+        }
+        if (getHistoricalRate() != null) {
+            _hashCode += getHistoricalRate().hashCode();
+        }
+        __hashCodeCalc = false;
+        return _hashCode;
+    }
+
+    // Type metadata
+    private static org.apache.axis.description.TypeDesc typeDesc =
+        new org.apache.axis.description.TypeDesc(BudgetExchangeRate.class, true);
+
+    static {
+        typeDesc.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "BudgetExchangeRate"));
+        org.apache.axis.description.ElementDesc elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("period");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "period"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("fromSubsidiary");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "fromSubsidiary"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("toSubsidiary");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "toSubsidiary"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("currentRate");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "currentRate"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "double"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("averageRate");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "averageRate"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "double"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("historicalRate");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "historicalRate"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "double"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+    }
+
+    /**
+     * Return type metadata object
+     */
+    public static org.apache.axis.description.TypeDesc getTypeDesc() {
+        return typeDesc;
+    }
+
+    /**
+     * Get Custom Serializer
+     */
+    public static org.apache.axis.encoding.Serializer getSerializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanSerializer(
+            _javaType, _xmlType, typeDesc);
+    }
+
+    /**
+     * Get Custom Deserializer
+     */
+    public static org.apache.axis.encoding.Deserializer getDeserializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanDeserializer(
+            _javaType, _xmlType, typeDesc);
     }
 
 }

@@ -1,114 +1,194 @@
+/**
+ * CustomRecordTypeOnlineForms.java
+ *
+ * This file was auto-generated from WSDL
+ * by the Apache Axis 1.4 Jul 28, 2010 (04:07:04 PDT) WSDL2Java emitter.
+ */
 
 package com.netsuite.webservices.setup.customization_2018_2;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlType;
+public class CustomRecordTypeOnlineForms  implements java.io.Serializable {
+    private java.lang.String onlineFormName;
 
+    private java.lang.String isOnline;
 
-/**
- * <p>CustomRecordTypeOnlineForms complex type的 Java 类。
- * 
- * <p>以下模式片段指定包含在此类中的预期内容。
- * 
- * <pre>
- * &lt;complexType name="CustomRecordTypeOnlineForms">
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element name="onlineFormName" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="isOnline" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="templateName" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
- */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "CustomRecordTypeOnlineForms", propOrder = {
-    "onlineFormName",
-    "isOnline",
-    "templateName"
-})
-public class CustomRecordTypeOnlineForms {
+    private java.lang.String templateName;
 
-    protected String onlineFormName;
-    protected String isOnline;
-    protected String templateName;
+    public CustomRecordTypeOnlineForms() {
+    }
+
+    public CustomRecordTypeOnlineForms(
+           java.lang.String onlineFormName,
+           java.lang.String isOnline,
+           java.lang.String templateName) {
+           this.onlineFormName = onlineFormName;
+           this.isOnline = isOnline;
+           this.templateName = templateName;
+    }
+
 
     /**
-     * 获取onlineFormName属性的值。
+     * Gets the onlineFormName value for this CustomRecordTypeOnlineForms.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @return onlineFormName
      */
-    public String getOnlineFormName() {
+    public java.lang.String getOnlineFormName() {
         return onlineFormName;
     }
 
-    /**
-     * 设置onlineFormName属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setOnlineFormName(String value) {
-        this.onlineFormName = value;
-    }
 
     /**
-     * 获取isOnline属性的值。
+     * Sets the onlineFormName value for this CustomRecordTypeOnlineForms.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param onlineFormName
      */
-    public String getIsOnline() {
+    public void setOnlineFormName(java.lang.String onlineFormName) {
+        this.onlineFormName = onlineFormName;
+    }
+
+
+    /**
+     * Gets the isOnline value for this CustomRecordTypeOnlineForms.
+     * 
+     * @return isOnline
+     */
+    public java.lang.String getIsOnline() {
         return isOnline;
     }
 
-    /**
-     * 设置isOnline属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setIsOnline(String value) {
-        this.isOnline = value;
-    }
 
     /**
-     * 获取templateName属性的值。
+     * Sets the isOnline value for this CustomRecordTypeOnlineForms.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param isOnline
      */
-    public String getTemplateName() {
+    public void setIsOnline(java.lang.String isOnline) {
+        this.isOnline = isOnline;
+    }
+
+
+    /**
+     * Gets the templateName value for this CustomRecordTypeOnlineForms.
+     * 
+     * @return templateName
+     */
+    public java.lang.String getTemplateName() {
         return templateName;
     }
 
+
     /**
-     * 设置templateName属性的值。
+     * Sets the templateName value for this CustomRecordTypeOnlineForms.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     * @param templateName
      */
-    public void setTemplateName(String value) {
-        this.templateName = value;
+    public void setTemplateName(java.lang.String templateName) {
+        this.templateName = templateName;
+    }
+
+    private java.lang.Object __equalsCalc = null;
+    public synchronized boolean equals(java.lang.Object obj) {
+        if (!(obj instanceof CustomRecordTypeOnlineForms)) return false;
+        CustomRecordTypeOnlineForms other = (CustomRecordTypeOnlineForms) obj;
+        if (obj == null) return false;
+        if (this == obj) return true;
+        if (__equalsCalc != null) {
+            return (__equalsCalc == obj);
+        }
+        __equalsCalc = obj;
+        boolean _equals;
+        _equals = true && 
+            ((this.onlineFormName==null && other.getOnlineFormName()==null) || 
+             (this.onlineFormName!=null &&
+              this.onlineFormName.equals(other.getOnlineFormName()))) &&
+            ((this.isOnline==null && other.getIsOnline()==null) || 
+             (this.isOnline!=null &&
+              this.isOnline.equals(other.getIsOnline()))) &&
+            ((this.templateName==null && other.getTemplateName()==null) || 
+             (this.templateName!=null &&
+              this.templateName.equals(other.getTemplateName())));
+        __equalsCalc = null;
+        return _equals;
+    }
+
+    private boolean __hashCodeCalc = false;
+    public synchronized int hashCode() {
+        if (__hashCodeCalc) {
+            return 0;
+        }
+        __hashCodeCalc = true;
+        int _hashCode = 1;
+        if (getOnlineFormName() != null) {
+            _hashCode += getOnlineFormName().hashCode();
+        }
+        if (getIsOnline() != null) {
+            _hashCode += getIsOnline().hashCode();
+        }
+        if (getTemplateName() != null) {
+            _hashCode += getTemplateName().hashCode();
+        }
+        __hashCodeCalc = false;
+        return _hashCode;
+    }
+
+    // Type metadata
+    private static org.apache.axis.description.TypeDesc typeDesc =
+        new org.apache.axis.description.TypeDesc(CustomRecordTypeOnlineForms.class, true);
+
+    static {
+        typeDesc.setXmlType(new javax.xml.namespace.QName("urn:customization_2018_2.setup.webservices.netsuite.com", "CustomRecordTypeOnlineForms"));
+        org.apache.axis.description.ElementDesc elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("onlineFormName");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:customization_2018_2.setup.webservices.netsuite.com", "onlineFormName"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("isOnline");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:customization_2018_2.setup.webservices.netsuite.com", "isOnline"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("templateName");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:customization_2018_2.setup.webservices.netsuite.com", "templateName"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+    }
+
+    /**
+     * Return type metadata object
+     */
+    public static org.apache.axis.description.TypeDesc getTypeDesc() {
+        return typeDesc;
+    }
+
+    /**
+     * Get Custom Serializer
+     */
+    public static org.apache.axis.encoding.Serializer getSerializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanSerializer(
+            _javaType, _xmlType, typeDesc);
+    }
+
+    /**
+     * Get Custom Deserializer
+     */
+    public static org.apache.axis.encoding.Deserializer getDeserializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanDeserializer(
+            _javaType, _xmlType, typeDesc);
     }
 
 }

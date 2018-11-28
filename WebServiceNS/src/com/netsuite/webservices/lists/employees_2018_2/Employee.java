@@ -1,2827 +1,3973 @@
+/**
+ * Employee.java
+ *
+ * This file was auto-generated from WSDL
+ * by the Apache Axis 1.4 Jul 28, 2010 (04:07:04 PDT) WSDL2Java emitter.
+ */
 
 package com.netsuite.webservices.lists.employees_2018_2;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlAttribute;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlSchemaType;
-import javax.xml.bind.annotation.XmlType;
-import javax.xml.datatype.XMLGregorianCalendar;
-import com.netsuite.webservices.lists.employees_2018_2.types.EmployeeBaseWageType;
-import com.netsuite.webservices.lists.employees_2018_2.types.EmployeeCommissionPaymentPreference;
-import com.netsuite.webservices.lists.employees_2018_2.types.EmployeeCompensationCurrency;
-import com.netsuite.webservices.lists.employees_2018_2.types.EmployeePayFrequency;
-import com.netsuite.webservices.lists.employees_2018_2.types.EmployeeTerminationCategory;
-import com.netsuite.webservices.lists.employees_2018_2.types.EmployeeTerminationRegretted;
-import com.netsuite.webservices.lists.employees_2018_2.types.EmployeeUseTimeData;
-import com.netsuite.webservices.lists.employees_2018_2.types.EmployeeWorkAssignment;
-import com.netsuite.webservices.lists.employees_2018_2.types.Gender;
-import com.netsuite.webservices.platform.common_2018_2.types.GlobalSubscriptionStatus;
-import com.netsuite.webservices.platform.core_2018_2.CustomFieldList;
-import com.netsuite.webservices.platform.core_2018_2.Record;
-import com.netsuite.webservices.platform.core_2018_2.RecordRef;
+public class Employee  extends com.netsuite.webservices.platform.core_2018_2.Record  implements java.io.Serializable {
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef customForm;
 
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef template;
 
-/**
- * <p>Employee complex type的 Java 类。
- * 
- * <p>以下模式片段指定包含在此类中的预期内容。
- * 
- * <pre>
- * &lt;complexType name="Employee">
- *   &lt;complexContent>
- *     &lt;extension base="{urn:core_2018_2.platform.webservices.netsuite.com}Record">
- *       &lt;sequence>
- *         &lt;element name="customForm" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="template" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="entityId" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="salutation" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="firstName" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="middleName" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="lastName" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="altName" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="phone" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="fax" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="email" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="defaultAddress" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="isInactive" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         &lt;element name="phoneticName" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="lastModifiedDate" type="{http://www.w3.org/2001/XMLSchema}dateTime" minOccurs="0"/>
- *         &lt;element name="dateCreated" type="{http://www.w3.org/2001/XMLSchema}dateTime" minOccurs="0"/>
- *         &lt;element name="initials" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="officePhone" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="homePhone" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="mobilePhone" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="department" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="class" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="location" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="subsidiary" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="billingClass" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="accountNumber" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="compensationCurrency" type="{urn:types.employees_2018_2.lists.webservices.netsuite.com}EmployeeCompensationCurrency" minOccurs="0"/>
- *         &lt;element name="baseWageType" type="{urn:types.employees_2018_2.lists.webservices.netsuite.com}EmployeeBaseWageType" minOccurs="0"/>
- *         &lt;element name="baseWage" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
- *         &lt;element name="comments" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="globalSubscriptionStatus" type="{urn:types.common_2018_2.platform.webservices.netsuite.com}GlobalSubscriptionStatus" minOccurs="0"/>
- *         &lt;element name="image" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="payFrequency" type="{urn:types.employees_2018_2.lists.webservices.netsuite.com}EmployeePayFrequency" minOccurs="0"/>
- *         &lt;element name="lastPaidDate" type="{http://www.w3.org/2001/XMLSchema}dateTime" minOccurs="0"/>
- *         &lt;element name="currency" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="useTimeData" type="{urn:types.employees_2018_2.lists.webservices.netsuite.com}EmployeeUseTimeData" minOccurs="0"/>
- *         &lt;element name="usePerquest" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         &lt;element name="workplace" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="adpId" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="directDeposit" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         &lt;element name="expenseLimit" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
- *         &lt;element name="purchaseOrderLimit" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
- *         &lt;element name="purchaseOrderApprovalLimit" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
- *         &lt;element name="socialSecurityNumber" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="supervisor" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="approver" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="approvalLimit" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
- *         &lt;element name="timeApprover" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="employeeType" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="isSalesRep" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         &lt;element name="salesRole" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="isSupportRep" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         &lt;element name="isJobResource" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         &lt;element name="laborCost" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
- *         &lt;element name="birthDate" type="{http://www.w3.org/2001/XMLSchema}dateTime" minOccurs="0"/>
- *         &lt;element name="hireDate" type="{http://www.w3.org/2001/XMLSchema}dateTime" minOccurs="0"/>
- *         &lt;element name="releaseDate" type="{http://www.w3.org/2001/XMLSchema}dateTime" minOccurs="0"/>
- *         &lt;element name="terminationDetails" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="terminationReason" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="terminationRegretted" type="{urn:types.employees_2018_2.lists.webservices.netsuite.com}EmployeeTerminationRegretted" minOccurs="0"/>
- *         &lt;element name="terminationCategory" type="{urn:types.employees_2018_2.lists.webservices.netsuite.com}EmployeeTerminationCategory" minOccurs="0"/>
- *         &lt;element name="timeOffPlan" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="lastReviewDate" type="{http://www.w3.org/2001/XMLSchema}dateTime" minOccurs="0"/>
- *         &lt;element name="nextReviewDate" type="{http://www.w3.org/2001/XMLSchema}dateTime" minOccurs="0"/>
- *         &lt;element name="title" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="employeeStatus" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="jobDescription" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="workAssignment" type="{urn:types.employees_2018_2.lists.webservices.netsuite.com}EmployeeWorkAssignment" minOccurs="0"/>
- *         &lt;element name="job" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="maritalStatus" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="ethnicity" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="gender" type="{urn:types.employees_2018_2.lists.webservices.netsuite.com}Gender" minOccurs="0"/>
- *         &lt;element name="purchaseOrderApprover" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="workCalendar" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="giveAccess" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         &lt;element name="concurrentWebServicesUser" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         &lt;element name="sendEmail" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         &lt;element name="hasOfflineAccess" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         &lt;element name="password" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="password2" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="requirePwdChange" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         &lt;element name="inheritIPRules" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         &lt;element name="IPAddressRule" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="startDateTimeOffCalc" type="{http://www.w3.org/2001/XMLSchema}dateTime" minOccurs="0"/>
- *         &lt;element name="commissionPaymentPreference" type="{urn:types.employees_2018_2.lists.webservices.netsuite.com}EmployeeCommissionPaymentPreference" minOccurs="0"/>
- *         &lt;element name="billPay" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         &lt;element name="eligibleForCommission" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         &lt;element name="subscriptionsList" type="{urn:employees_2018_2.lists.webservices.netsuite.com}EmployeeSubscriptionsList" minOccurs="0"/>
- *         &lt;element name="ratesList" type="{urn:employees_2018_2.lists.webservices.netsuite.com}EmployeeRatesList" minOccurs="0"/>
- *         &lt;element name="addressbookList" type="{urn:employees_2018_2.lists.webservices.netsuite.com}EmployeeAddressbookList" minOccurs="0"/>
- *         &lt;element name="rolesList" type="{urn:employees_2018_2.lists.webservices.netsuite.com}EmployeeRolesList" minOccurs="0"/>
- *         &lt;element name="hrEducationList" type="{urn:employees_2018_2.lists.webservices.netsuite.com}EmployeeHrEducationList" minOccurs="0"/>
- *         &lt;element name="accruedTimeList" type="{urn:employees_2018_2.lists.webservices.netsuite.com}EmployeeAccruedTimeList" minOccurs="0"/>
- *         &lt;element name="directDepositList" type="{urn:employees_2018_2.lists.webservices.netsuite.com}EmployeeDirectDepositList" minOccurs="0"/>
- *         &lt;element name="companyContributionList" type="{urn:employees_2018_2.lists.webservices.netsuite.com}EmployeeCompanyContributionList" minOccurs="0"/>
- *         &lt;element name="earningList" type="{urn:employees_2018_2.lists.webservices.netsuite.com}EmployeeEarningList" minOccurs="0"/>
- *         &lt;element name="emergencyContactList" type="{urn:employees_2018_2.lists.webservices.netsuite.com}EmployeeEmergencyContactList" minOccurs="0"/>
- *         &lt;element name="hcmPositionList" type="{urn:employees_2018_2.lists.webservices.netsuite.com}EmployeeHcmPositionList" minOccurs="0"/>
- *         &lt;element name="deductionList" type="{urn:employees_2018_2.lists.webservices.netsuite.com}EmployeeDeductionList" minOccurs="0"/>
- *         &lt;element name="customFieldList" type="{urn:core_2018_2.platform.webservices.netsuite.com}CustomFieldList" minOccurs="0"/>
- *       &lt;/sequence>
- *       &lt;attribute name="internalId" type="{http://www.w3.org/2001/XMLSchema}string" />
- *       &lt;attribute name="externalId" type="{http://www.w3.org/2001/XMLSchema}string" />
- *     &lt;/extension>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
- */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "Employee", propOrder = {
-    "customForm",
-    "template",
-    "entityId",
-    "salutation",
-    "firstName",
-    "middleName",
-    "lastName",
-    "altName",
-    "phone",
-    "fax",
-    "email",
-    "defaultAddress",
-    "isInactive",
-    "phoneticName",
-    "lastModifiedDate",
-    "dateCreated",
-    "initials",
-    "officePhone",
-    "homePhone",
-    "mobilePhone",
-    "department",
-    "clazz",
-    "location",
-    "subsidiary",
-    "billingClass",
-    "accountNumber",
-    "compensationCurrency",
-    "baseWageType",
-    "baseWage",
-    "comments",
-    "globalSubscriptionStatus",
-    "image",
-    "payFrequency",
-    "lastPaidDate",
-    "currency",
-    "useTimeData",
-    "usePerquest",
-    "workplace",
-    "adpId",
-    "directDeposit",
-    "expenseLimit",
-    "purchaseOrderLimit",
-    "purchaseOrderApprovalLimit",
-    "socialSecurityNumber",
-    "supervisor",
-    "approver",
-    "approvalLimit",
-    "timeApprover",
-    "employeeType",
-    "isSalesRep",
-    "salesRole",
-    "isSupportRep",
-    "isJobResource",
-    "laborCost",
-    "birthDate",
-    "hireDate",
-    "releaseDate",
-    "terminationDetails",
-    "terminationReason",
-    "terminationRegretted",
-    "terminationCategory",
-    "timeOffPlan",
-    "lastReviewDate",
-    "nextReviewDate",
-    "title",
-    "employeeStatus",
-    "jobDescription",
-    "workAssignment",
-    "job",
-    "maritalStatus",
-    "ethnicity",
-    "gender",
-    "purchaseOrderApprover",
-    "workCalendar",
-    "giveAccess",
-    "concurrentWebServicesUser",
-    "sendEmail",
-    "hasOfflineAccess",
-    "password",
-    "password2",
-    "requirePwdChange",
-    "inheritIPRules",
-    "ipAddressRule",
-    "startDateTimeOffCalc",
-    "commissionPaymentPreference",
-    "billPay",
-    "eligibleForCommission",
-    "subscriptionsList",
-    "ratesList",
-    "addressbookList",
-    "rolesList",
-    "hrEducationList",
-    "accruedTimeList",
-    "directDepositList",
-    "companyContributionList",
-    "earningList",
-    "emergencyContactList",
-    "hcmPositionList",
-    "deductionList",
-    "customFieldList"
-})
-public class Employee
-    extends Record
-{
+    private java.lang.String entityId;
 
-    protected RecordRef customForm;
-    protected RecordRef template;
-    protected String entityId;
-    protected String salutation;
-    protected String firstName;
-    protected String middleName;
-    protected String lastName;
-    protected String altName;
-    protected String phone;
-    protected String fax;
-    protected String email;
-    protected String defaultAddress;
-    protected Boolean isInactive;
-    protected String phoneticName;
-    @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar lastModifiedDate;
-    @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar dateCreated;
-    protected String initials;
-    protected String officePhone;
-    protected String homePhone;
-    protected String mobilePhone;
-    protected RecordRef department;
-    @XmlElement(name = "class")
-    protected RecordRef clazz;
-    protected RecordRef location;
-    protected RecordRef subsidiary;
-    protected RecordRef billingClass;
-    protected String accountNumber;
-    @XmlSchemaType(name = "string")
-    protected EmployeeCompensationCurrency compensationCurrency;
-    @XmlSchemaType(name = "string")
-    protected EmployeeBaseWageType baseWageType;
-    protected Double baseWage;
-    protected String comments;
-    @XmlSchemaType(name = "string")
-    protected GlobalSubscriptionStatus globalSubscriptionStatus;
-    protected RecordRef image;
-    @XmlSchemaType(name = "string")
-    protected EmployeePayFrequency payFrequency;
-    @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar lastPaidDate;
-    protected RecordRef currency;
-    @XmlSchemaType(name = "string")
-    protected EmployeeUseTimeData useTimeData;
-    protected Boolean usePerquest;
-    protected RecordRef workplace;
-    protected String adpId;
-    protected Boolean directDeposit;
-    protected Double expenseLimit;
-    protected Double purchaseOrderLimit;
-    protected Double purchaseOrderApprovalLimit;
-    protected String socialSecurityNumber;
-    protected RecordRef supervisor;
-    protected RecordRef approver;
-    protected Double approvalLimit;
-    protected RecordRef timeApprover;
-    protected RecordRef employeeType;
-    protected Boolean isSalesRep;
-    protected RecordRef salesRole;
-    protected Boolean isSupportRep;
-    protected Boolean isJobResource;
-    protected Double laborCost;
-    @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar birthDate;
-    @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar hireDate;
-    @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar releaseDate;
-    protected String terminationDetails;
-    protected RecordRef terminationReason;
-    @XmlSchemaType(name = "string")
-    protected EmployeeTerminationRegretted terminationRegretted;
-    @XmlSchemaType(name = "string")
-    protected EmployeeTerminationCategory terminationCategory;
-    protected RecordRef timeOffPlan;
-    @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar lastReviewDate;
-    @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar nextReviewDate;
-    protected String title;
-    protected RecordRef employeeStatus;
-    protected String jobDescription;
-    @XmlSchemaType(name = "string")
-    protected EmployeeWorkAssignment workAssignment;
-    protected RecordRef job;
-    protected RecordRef maritalStatus;
-    protected RecordRef ethnicity;
-    @XmlSchemaType(name = "string")
-    protected Gender gender;
-    protected RecordRef purchaseOrderApprover;
-    protected RecordRef workCalendar;
-    protected Boolean giveAccess;
-    protected Boolean concurrentWebServicesUser;
-    protected Boolean sendEmail;
-    protected Boolean hasOfflineAccess;
-    protected String password;
-    protected String password2;
-    protected Boolean requirePwdChange;
-    protected Boolean inheritIPRules;
-    @XmlElement(name = "IPAddressRule")
-    protected String ipAddressRule;
-    @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar startDateTimeOffCalc;
-    @XmlSchemaType(name = "string")
-    protected EmployeeCommissionPaymentPreference commissionPaymentPreference;
-    protected Boolean billPay;
-    protected Boolean eligibleForCommission;
-    protected EmployeeSubscriptionsList subscriptionsList;
-    protected EmployeeRatesList ratesList;
-    protected EmployeeAddressbookList addressbookList;
-    protected EmployeeRolesList rolesList;
-    protected EmployeeHrEducationList hrEducationList;
-    protected EmployeeAccruedTimeList accruedTimeList;
-    protected EmployeeDirectDepositList directDepositList;
-    protected EmployeeCompanyContributionList companyContributionList;
-    protected EmployeeEarningList earningList;
-    protected EmployeeEmergencyContactList emergencyContactList;
-    protected EmployeeHcmPositionList hcmPositionList;
-    protected EmployeeDeductionList deductionList;
-    protected CustomFieldList customFieldList;
-    @XmlAttribute(name = "internalId")
-    protected String internalId;
-    @XmlAttribute(name = "externalId")
-    protected String externalId;
+    private java.lang.String salutation;
+
+    private java.lang.String firstName;
+
+    private java.lang.String middleName;
+
+    private java.lang.String lastName;
+
+    private java.lang.String altName;
+
+    private java.lang.String phone;
+
+    private java.lang.String fax;
+
+    private java.lang.String email;
+
+    private java.lang.String defaultAddress;
+
+    private java.lang.Boolean isInactive;
+
+    private java.lang.String phoneticName;
+
+    private java.util.Calendar lastModifiedDate;
+
+    private java.util.Calendar dateCreated;
+
+    private java.lang.String initials;
+
+    private java.lang.String officePhone;
+
+    private java.lang.String homePhone;
+
+    private java.lang.String mobilePhone;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef department;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef _class;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef location;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef subsidiary;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef billingClass;
+
+    private java.lang.String accountNumber;
+
+    private com.netsuite.webservices.lists.employees_2018_2.types.EmployeeCompensationCurrency compensationCurrency;
+
+    private com.netsuite.webservices.lists.employees_2018_2.types.EmployeeBaseWageType baseWageType;
+
+    private java.lang.Double baseWage;
+
+    private java.lang.String comments;
+
+    private com.netsuite.webservices.platform.common_2018_2.types.GlobalSubscriptionStatus globalSubscriptionStatus;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef image;
+
+    private com.netsuite.webservices.lists.employees_2018_2.types.EmployeePayFrequency payFrequency;
+
+    private java.util.Calendar lastPaidDate;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef currency;
+
+    private com.netsuite.webservices.lists.employees_2018_2.types.EmployeeUseTimeData useTimeData;
+
+    private java.lang.Boolean usePerquest;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef workplace;
+
+    private java.lang.String adpId;
+
+    private java.lang.Boolean directDeposit;
+
+    private java.lang.Double expenseLimit;
+
+    private java.lang.Double purchaseOrderLimit;
+
+    private java.lang.Double purchaseOrderApprovalLimit;
+
+    private java.lang.String socialSecurityNumber;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef supervisor;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef approver;
+
+    private java.lang.Double approvalLimit;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef timeApprover;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef employeeType;
+
+    private java.lang.Boolean isSalesRep;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef salesRole;
+
+    private java.lang.Boolean isSupportRep;
+
+    private java.lang.Boolean isJobResource;
+
+    private java.lang.Double laborCost;
+
+    private java.util.Calendar birthDate;
+
+    private java.util.Calendar hireDate;
+
+    private java.util.Calendar releaseDate;
+
+    private java.lang.String terminationDetails;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef terminationReason;
+
+    private com.netsuite.webservices.lists.employees_2018_2.types.EmployeeTerminationRegretted terminationRegretted;
+
+    private com.netsuite.webservices.lists.employees_2018_2.types.EmployeeTerminationCategory terminationCategory;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef timeOffPlan;
+
+    private java.util.Calendar lastReviewDate;
+
+    private java.util.Calendar nextReviewDate;
+
+    private java.lang.String title;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef employeeStatus;
+
+    private java.lang.String jobDescription;
+
+    private com.netsuite.webservices.lists.employees_2018_2.types.EmployeeWorkAssignment workAssignment;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef job;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef maritalStatus;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef ethnicity;
+
+    private com.netsuite.webservices.lists.employees_2018_2.types.Gender gender;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef purchaseOrderApprover;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef workCalendar;
+
+    private java.lang.Boolean giveAccess;
+
+    private java.lang.Boolean concurrentWebServicesUser;
+
+    private java.lang.Boolean sendEmail;
+
+    private java.lang.Boolean hasOfflineAccess;
+
+    private java.lang.String password;
+
+    private java.lang.String password2;
+
+    private java.lang.Boolean requirePwdChange;
+
+    private java.lang.Boolean inheritIPRules;
+
+    private java.lang.String IPAddressRule;
+
+    private java.util.Calendar startDateTimeOffCalc;
+
+    private com.netsuite.webservices.lists.employees_2018_2.types.EmployeeCommissionPaymentPreference commissionPaymentPreference;
+
+    private java.lang.Boolean billPay;
+
+    private java.lang.Boolean eligibleForCommission;
+
+    private com.netsuite.webservices.lists.employees_2018_2.EmployeeSubscriptions[] subscriptionsList;
+
+    private com.netsuite.webservices.lists.employees_2018_2.EmployeeRates[] ratesList;
+
+    private com.netsuite.webservices.lists.employees_2018_2.EmployeeAddressbook[] addressbookList;
+
+    private com.netsuite.webservices.lists.employees_2018_2.EmployeeRoles[] rolesList;
+
+    private com.netsuite.webservices.lists.employees_2018_2.EmployeeHrEducation[] hrEducationList;
+
+    private com.netsuite.webservices.lists.employees_2018_2.EmployeeAccruedTime[] accruedTimeList;
+
+    private com.netsuite.webservices.lists.employees_2018_2.EmployeeDirectDeposit[] directDepositList;
+
+    private com.netsuite.webservices.lists.employees_2018_2.EmployeeCompanyContribution[] companyContributionList;
+
+    private com.netsuite.webservices.lists.employees_2018_2.EmployeeEarning[] earningList;
+
+    private com.netsuite.webservices.lists.employees_2018_2.EmployeeEmergencyContact[] emergencyContactList;
+
+    private com.netsuite.webservices.lists.employees_2018_2.EmployeeHcmPosition[] hcmPositionList;
+
+    private com.netsuite.webservices.lists.employees_2018_2.EmployeeDeduction[] deductionList;
+
+    private com.netsuite.webservices.platform.core_2018_2.CustomFieldRef[] customFieldList;
+
+    private java.lang.String internalId;  // attribute
+
+    private java.lang.String externalId;  // attribute
+
+    public Employee() {
+    }
+
+    public Employee(
+           java.lang.String[] nullFieldList,
+           java.lang.String internalId,
+           java.lang.String externalId,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef customForm,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef template,
+           java.lang.String entityId,
+           java.lang.String salutation,
+           java.lang.String firstName,
+           java.lang.String middleName,
+           java.lang.String lastName,
+           java.lang.String altName,
+           java.lang.String phone,
+           java.lang.String fax,
+           java.lang.String email,
+           java.lang.String defaultAddress,
+           java.lang.Boolean isInactive,
+           java.lang.String phoneticName,
+           java.util.Calendar lastModifiedDate,
+           java.util.Calendar dateCreated,
+           java.lang.String initials,
+           java.lang.String officePhone,
+           java.lang.String homePhone,
+           java.lang.String mobilePhone,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef department,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef _class,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef location,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef subsidiary,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef billingClass,
+           java.lang.String accountNumber,
+           com.netsuite.webservices.lists.employees_2018_2.types.EmployeeCompensationCurrency compensationCurrency,
+           com.netsuite.webservices.lists.employees_2018_2.types.EmployeeBaseWageType baseWageType,
+           java.lang.Double baseWage,
+           java.lang.String comments,
+           com.netsuite.webservices.platform.common_2018_2.types.GlobalSubscriptionStatus globalSubscriptionStatus,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef image,
+           com.netsuite.webservices.lists.employees_2018_2.types.EmployeePayFrequency payFrequency,
+           java.util.Calendar lastPaidDate,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef currency,
+           com.netsuite.webservices.lists.employees_2018_2.types.EmployeeUseTimeData useTimeData,
+           java.lang.Boolean usePerquest,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef workplace,
+           java.lang.String adpId,
+           java.lang.Boolean directDeposit,
+           java.lang.Double expenseLimit,
+           java.lang.Double purchaseOrderLimit,
+           java.lang.Double purchaseOrderApprovalLimit,
+           java.lang.String socialSecurityNumber,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef supervisor,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef approver,
+           java.lang.Double approvalLimit,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef timeApprover,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef employeeType,
+           java.lang.Boolean isSalesRep,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef salesRole,
+           java.lang.Boolean isSupportRep,
+           java.lang.Boolean isJobResource,
+           java.lang.Double laborCost,
+           java.util.Calendar birthDate,
+           java.util.Calendar hireDate,
+           java.util.Calendar releaseDate,
+           java.lang.String terminationDetails,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef terminationReason,
+           com.netsuite.webservices.lists.employees_2018_2.types.EmployeeTerminationRegretted terminationRegretted,
+           com.netsuite.webservices.lists.employees_2018_2.types.EmployeeTerminationCategory terminationCategory,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef timeOffPlan,
+           java.util.Calendar lastReviewDate,
+           java.util.Calendar nextReviewDate,
+           java.lang.String title,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef employeeStatus,
+           java.lang.String jobDescription,
+           com.netsuite.webservices.lists.employees_2018_2.types.EmployeeWorkAssignment workAssignment,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef job,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef maritalStatus,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef ethnicity,
+           com.netsuite.webservices.lists.employees_2018_2.types.Gender gender,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef purchaseOrderApprover,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef workCalendar,
+           java.lang.Boolean giveAccess,
+           java.lang.Boolean concurrentWebServicesUser,
+           java.lang.Boolean sendEmail,
+           java.lang.Boolean hasOfflineAccess,
+           java.lang.String password,
+           java.lang.String password2,
+           java.lang.Boolean requirePwdChange,
+           java.lang.Boolean inheritIPRules,
+           java.lang.String IPAddressRule,
+           java.util.Calendar startDateTimeOffCalc,
+           com.netsuite.webservices.lists.employees_2018_2.types.EmployeeCommissionPaymentPreference commissionPaymentPreference,
+           java.lang.Boolean billPay,
+           java.lang.Boolean eligibleForCommission,
+           com.netsuite.webservices.lists.employees_2018_2.EmployeeSubscriptions[] subscriptionsList,
+           com.netsuite.webservices.lists.employees_2018_2.EmployeeRates[] ratesList,
+           com.netsuite.webservices.lists.employees_2018_2.EmployeeAddressbook[] addressbookList,
+           com.netsuite.webservices.lists.employees_2018_2.EmployeeRoles[] rolesList,
+           com.netsuite.webservices.lists.employees_2018_2.EmployeeHrEducation[] hrEducationList,
+           com.netsuite.webservices.lists.employees_2018_2.EmployeeAccruedTime[] accruedTimeList,
+           com.netsuite.webservices.lists.employees_2018_2.EmployeeDirectDeposit[] directDepositList,
+           com.netsuite.webservices.lists.employees_2018_2.EmployeeCompanyContribution[] companyContributionList,
+           com.netsuite.webservices.lists.employees_2018_2.EmployeeEarning[] earningList,
+           com.netsuite.webservices.lists.employees_2018_2.EmployeeEmergencyContact[] emergencyContactList,
+           com.netsuite.webservices.lists.employees_2018_2.EmployeeHcmPosition[] hcmPositionList,
+           com.netsuite.webservices.lists.employees_2018_2.EmployeeDeduction[] deductionList,
+           com.netsuite.webservices.platform.core_2018_2.CustomFieldRef[] customFieldList) {
+        super(
+            nullFieldList);
+        this.internalId = internalId;
+        this.externalId = externalId;
+        this.customForm = customForm;
+        this.template = template;
+        this.entityId = entityId;
+        this.salutation = salutation;
+        this.firstName = firstName;
+        this.middleName = middleName;
+        this.lastName = lastName;
+        this.altName = altName;
+        this.phone = phone;
+        this.fax = fax;
+        this.email = email;
+        this.defaultAddress = defaultAddress;
+        this.isInactive = isInactive;
+        this.phoneticName = phoneticName;
+        this.lastModifiedDate = lastModifiedDate;
+        this.dateCreated = dateCreated;
+        this.initials = initials;
+        this.officePhone = officePhone;
+        this.homePhone = homePhone;
+        this.mobilePhone = mobilePhone;
+        this.department = department;
+        this._class = _class;
+        this.location = location;
+        this.subsidiary = subsidiary;
+        this.billingClass = billingClass;
+        this.accountNumber = accountNumber;
+        this.compensationCurrency = compensationCurrency;
+        this.baseWageType = baseWageType;
+        this.baseWage = baseWage;
+        this.comments = comments;
+        this.globalSubscriptionStatus = globalSubscriptionStatus;
+        this.image = image;
+        this.payFrequency = payFrequency;
+        this.lastPaidDate = lastPaidDate;
+        this.currency = currency;
+        this.useTimeData = useTimeData;
+        this.usePerquest = usePerquest;
+        this.workplace = workplace;
+        this.adpId = adpId;
+        this.directDeposit = directDeposit;
+        this.expenseLimit = expenseLimit;
+        this.purchaseOrderLimit = purchaseOrderLimit;
+        this.purchaseOrderApprovalLimit = purchaseOrderApprovalLimit;
+        this.socialSecurityNumber = socialSecurityNumber;
+        this.supervisor = supervisor;
+        this.approver = approver;
+        this.approvalLimit = approvalLimit;
+        this.timeApprover = timeApprover;
+        this.employeeType = employeeType;
+        this.isSalesRep = isSalesRep;
+        this.salesRole = salesRole;
+        this.isSupportRep = isSupportRep;
+        this.isJobResource = isJobResource;
+        this.laborCost = laborCost;
+        this.birthDate = birthDate;
+        this.hireDate = hireDate;
+        this.releaseDate = releaseDate;
+        this.terminationDetails = terminationDetails;
+        this.terminationReason = terminationReason;
+        this.terminationRegretted = terminationRegretted;
+        this.terminationCategory = terminationCategory;
+        this.timeOffPlan = timeOffPlan;
+        this.lastReviewDate = lastReviewDate;
+        this.nextReviewDate = nextReviewDate;
+        this.title = title;
+        this.employeeStatus = employeeStatus;
+        this.jobDescription = jobDescription;
+        this.workAssignment = workAssignment;
+        this.job = job;
+        this.maritalStatus = maritalStatus;
+        this.ethnicity = ethnicity;
+        this.gender = gender;
+        this.purchaseOrderApprover = purchaseOrderApprover;
+        this.workCalendar = workCalendar;
+        this.giveAccess = giveAccess;
+        this.concurrentWebServicesUser = concurrentWebServicesUser;
+        this.sendEmail = sendEmail;
+        this.hasOfflineAccess = hasOfflineAccess;
+        this.password = password;
+        this.password2 = password2;
+        this.requirePwdChange = requirePwdChange;
+        this.inheritIPRules = inheritIPRules;
+        this.IPAddressRule = IPAddressRule;
+        this.startDateTimeOffCalc = startDateTimeOffCalc;
+        this.commissionPaymentPreference = commissionPaymentPreference;
+        this.billPay = billPay;
+        this.eligibleForCommission = eligibleForCommission;
+        this.subscriptionsList = subscriptionsList;
+        this.ratesList = ratesList;
+        this.addressbookList = addressbookList;
+        this.rolesList = rolesList;
+        this.hrEducationList = hrEducationList;
+        this.accruedTimeList = accruedTimeList;
+        this.directDepositList = directDepositList;
+        this.companyContributionList = companyContributionList;
+        this.earningList = earningList;
+        this.emergencyContactList = emergencyContactList;
+        this.hcmPositionList = hcmPositionList;
+        this.deductionList = deductionList;
+        this.customFieldList = customFieldList;
+    }
+
 
     /**
-     * 获取customForm属性的值。
+     * Gets the customForm value for this Employee.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @return customForm
      */
-    public RecordRef getCustomForm() {
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getCustomForm() {
         return customForm;
     }
 
-    /**
-     * 设置customForm属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setCustomForm(RecordRef value) {
-        this.customForm = value;
-    }
 
     /**
-     * 获取template属性的值。
+     * Sets the customForm value for this Employee.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param customForm
      */
-    public RecordRef getTemplate() {
+    public void setCustomForm(com.netsuite.webservices.platform.core_2018_2.RecordRef customForm) {
+        this.customForm = customForm;
+    }
+
+
+    /**
+     * Gets the template value for this Employee.
+     * 
+     * @return template
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getTemplate() {
         return template;
     }
 
-    /**
-     * 设置template属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setTemplate(RecordRef value) {
-        this.template = value;
-    }
 
     /**
-     * 获取entityId属性的值。
+     * Sets the template value for this Employee.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param template
      */
-    public String getEntityId() {
+    public void setTemplate(com.netsuite.webservices.platform.core_2018_2.RecordRef template) {
+        this.template = template;
+    }
+
+
+    /**
+     * Gets the entityId value for this Employee.
+     * 
+     * @return entityId
+     */
+    public java.lang.String getEntityId() {
         return entityId;
     }
 
-    /**
-     * 设置entityId属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setEntityId(String value) {
-        this.entityId = value;
-    }
 
     /**
-     * 获取salutation属性的值。
+     * Sets the entityId value for this Employee.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param entityId
      */
-    public String getSalutation() {
+    public void setEntityId(java.lang.String entityId) {
+        this.entityId = entityId;
+    }
+
+
+    /**
+     * Gets the salutation value for this Employee.
+     * 
+     * @return salutation
+     */
+    public java.lang.String getSalutation() {
         return salutation;
     }
 
-    /**
-     * 设置salutation属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setSalutation(String value) {
-        this.salutation = value;
-    }
 
     /**
-     * 获取firstName属性的值。
+     * Sets the salutation value for this Employee.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param salutation
      */
-    public String getFirstName() {
+    public void setSalutation(java.lang.String salutation) {
+        this.salutation = salutation;
+    }
+
+
+    /**
+     * Gets the firstName value for this Employee.
+     * 
+     * @return firstName
+     */
+    public java.lang.String getFirstName() {
         return firstName;
     }
 
-    /**
-     * 设置firstName属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setFirstName(String value) {
-        this.firstName = value;
-    }
 
     /**
-     * 获取middleName属性的值。
+     * Sets the firstName value for this Employee.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param firstName
      */
-    public String getMiddleName() {
+    public void setFirstName(java.lang.String firstName) {
+        this.firstName = firstName;
+    }
+
+
+    /**
+     * Gets the middleName value for this Employee.
+     * 
+     * @return middleName
+     */
+    public java.lang.String getMiddleName() {
         return middleName;
     }
 
-    /**
-     * 设置middleName属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setMiddleName(String value) {
-        this.middleName = value;
-    }
 
     /**
-     * 获取lastName属性的值。
+     * Sets the middleName value for this Employee.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param middleName
      */
-    public String getLastName() {
+    public void setMiddleName(java.lang.String middleName) {
+        this.middleName = middleName;
+    }
+
+
+    /**
+     * Gets the lastName value for this Employee.
+     * 
+     * @return lastName
+     */
+    public java.lang.String getLastName() {
         return lastName;
     }
 
-    /**
-     * 设置lastName属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setLastName(String value) {
-        this.lastName = value;
-    }
 
     /**
-     * 获取altName属性的值。
+     * Sets the lastName value for this Employee.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param lastName
      */
-    public String getAltName() {
+    public void setLastName(java.lang.String lastName) {
+        this.lastName = lastName;
+    }
+
+
+    /**
+     * Gets the altName value for this Employee.
+     * 
+     * @return altName
+     */
+    public java.lang.String getAltName() {
         return altName;
     }
 
-    /**
-     * 设置altName属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setAltName(String value) {
-        this.altName = value;
-    }
 
     /**
-     * 获取phone属性的值。
+     * Sets the altName value for this Employee.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param altName
      */
-    public String getPhone() {
+    public void setAltName(java.lang.String altName) {
+        this.altName = altName;
+    }
+
+
+    /**
+     * Gets the phone value for this Employee.
+     * 
+     * @return phone
+     */
+    public java.lang.String getPhone() {
         return phone;
     }
 
-    /**
-     * 设置phone属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setPhone(String value) {
-        this.phone = value;
-    }
 
     /**
-     * 获取fax属性的值。
+     * Sets the phone value for this Employee.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param phone
      */
-    public String getFax() {
+    public void setPhone(java.lang.String phone) {
+        this.phone = phone;
+    }
+
+
+    /**
+     * Gets the fax value for this Employee.
+     * 
+     * @return fax
+     */
+    public java.lang.String getFax() {
         return fax;
     }
 
-    /**
-     * 设置fax属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setFax(String value) {
-        this.fax = value;
-    }
 
     /**
-     * 获取email属性的值。
+     * Sets the fax value for this Employee.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param fax
      */
-    public String getEmail() {
+    public void setFax(java.lang.String fax) {
+        this.fax = fax;
+    }
+
+
+    /**
+     * Gets the email value for this Employee.
+     * 
+     * @return email
+     */
+    public java.lang.String getEmail() {
         return email;
     }
 
-    /**
-     * 设置email属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setEmail(String value) {
-        this.email = value;
-    }
 
     /**
-     * 获取defaultAddress属性的值。
+     * Sets the email value for this Employee.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param email
      */
-    public String getDefaultAddress() {
+    public void setEmail(java.lang.String email) {
+        this.email = email;
+    }
+
+
+    /**
+     * Gets the defaultAddress value for this Employee.
+     * 
+     * @return defaultAddress
+     */
+    public java.lang.String getDefaultAddress() {
         return defaultAddress;
     }
 
-    /**
-     * 设置defaultAddress属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setDefaultAddress(String value) {
-        this.defaultAddress = value;
-    }
 
     /**
-     * 获取isInactive属性的值。
+     * Sets the defaultAddress value for this Employee.
      * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
+     * @param defaultAddress
      */
-    public Boolean isIsInactive() {
+    public void setDefaultAddress(java.lang.String defaultAddress) {
+        this.defaultAddress = defaultAddress;
+    }
+
+
+    /**
+     * Gets the isInactive value for this Employee.
+     * 
+     * @return isInactive
+     */
+    public java.lang.Boolean getIsInactive() {
         return isInactive;
     }
 
-    /**
-     * 设置isInactive属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
-     */
-    public void setIsInactive(Boolean value) {
-        this.isInactive = value;
-    }
 
     /**
-     * 获取phoneticName属性的值。
+     * Sets the isInactive value for this Employee.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param isInactive
      */
-    public String getPhoneticName() {
+    public void setIsInactive(java.lang.Boolean isInactive) {
+        this.isInactive = isInactive;
+    }
+
+
+    /**
+     * Gets the phoneticName value for this Employee.
+     * 
+     * @return phoneticName
+     */
+    public java.lang.String getPhoneticName() {
         return phoneticName;
     }
 
-    /**
-     * 设置phoneticName属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setPhoneticName(String value) {
-        this.phoneticName = value;
-    }
 
     /**
-     * 获取lastModifiedDate属性的值。
+     * Sets the phoneticName value for this Employee.
      * 
-     * @return
-     *     possible object is
-     *     {@link XMLGregorianCalendar }
-     *     
+     * @param phoneticName
      */
-    public XMLGregorianCalendar getLastModifiedDate() {
+    public void setPhoneticName(java.lang.String phoneticName) {
+        this.phoneticName = phoneticName;
+    }
+
+
+    /**
+     * Gets the lastModifiedDate value for this Employee.
+     * 
+     * @return lastModifiedDate
+     */
+    public java.util.Calendar getLastModifiedDate() {
         return lastModifiedDate;
     }
 
-    /**
-     * 设置lastModifiedDate属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link XMLGregorianCalendar }
-     *     
-     */
-    public void setLastModifiedDate(XMLGregorianCalendar value) {
-        this.lastModifiedDate = value;
-    }
 
     /**
-     * 获取dateCreated属性的值。
+     * Sets the lastModifiedDate value for this Employee.
      * 
-     * @return
-     *     possible object is
-     *     {@link XMLGregorianCalendar }
-     *     
+     * @param lastModifiedDate
      */
-    public XMLGregorianCalendar getDateCreated() {
+    public void setLastModifiedDate(java.util.Calendar lastModifiedDate) {
+        this.lastModifiedDate = lastModifiedDate;
+    }
+
+
+    /**
+     * Gets the dateCreated value for this Employee.
+     * 
+     * @return dateCreated
+     */
+    public java.util.Calendar getDateCreated() {
         return dateCreated;
     }
 
-    /**
-     * 设置dateCreated属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link XMLGregorianCalendar }
-     *     
-     */
-    public void setDateCreated(XMLGregorianCalendar value) {
-        this.dateCreated = value;
-    }
 
     /**
-     * 获取initials属性的值。
+     * Sets the dateCreated value for this Employee.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param dateCreated
      */
-    public String getInitials() {
+    public void setDateCreated(java.util.Calendar dateCreated) {
+        this.dateCreated = dateCreated;
+    }
+
+
+    /**
+     * Gets the initials value for this Employee.
+     * 
+     * @return initials
+     */
+    public java.lang.String getInitials() {
         return initials;
     }
 
-    /**
-     * 设置initials属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setInitials(String value) {
-        this.initials = value;
-    }
 
     /**
-     * 获取officePhone属性的值。
+     * Sets the initials value for this Employee.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param initials
      */
-    public String getOfficePhone() {
+    public void setInitials(java.lang.String initials) {
+        this.initials = initials;
+    }
+
+
+    /**
+     * Gets the officePhone value for this Employee.
+     * 
+     * @return officePhone
+     */
+    public java.lang.String getOfficePhone() {
         return officePhone;
     }
 
-    /**
-     * 设置officePhone属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setOfficePhone(String value) {
-        this.officePhone = value;
-    }
 
     /**
-     * 获取homePhone属性的值。
+     * Sets the officePhone value for this Employee.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param officePhone
      */
-    public String getHomePhone() {
+    public void setOfficePhone(java.lang.String officePhone) {
+        this.officePhone = officePhone;
+    }
+
+
+    /**
+     * Gets the homePhone value for this Employee.
+     * 
+     * @return homePhone
+     */
+    public java.lang.String getHomePhone() {
         return homePhone;
     }
 
-    /**
-     * 设置homePhone属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setHomePhone(String value) {
-        this.homePhone = value;
-    }
 
     /**
-     * 获取mobilePhone属性的值。
+     * Sets the homePhone value for this Employee.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param homePhone
      */
-    public String getMobilePhone() {
+    public void setHomePhone(java.lang.String homePhone) {
+        this.homePhone = homePhone;
+    }
+
+
+    /**
+     * Gets the mobilePhone value for this Employee.
+     * 
+     * @return mobilePhone
+     */
+    public java.lang.String getMobilePhone() {
         return mobilePhone;
     }
 
-    /**
-     * 设置mobilePhone属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setMobilePhone(String value) {
-        this.mobilePhone = value;
-    }
 
     /**
-     * 获取department属性的值。
+     * Sets the mobilePhone value for this Employee.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param mobilePhone
      */
-    public RecordRef getDepartment() {
+    public void setMobilePhone(java.lang.String mobilePhone) {
+        this.mobilePhone = mobilePhone;
+    }
+
+
+    /**
+     * Gets the department value for this Employee.
+     * 
+     * @return department
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getDepartment() {
         return department;
     }
 
-    /**
-     * 设置department属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setDepartment(RecordRef value) {
-        this.department = value;
-    }
 
     /**
-     * 获取clazz属性的值。
+     * Sets the department value for this Employee.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param department
      */
-    public RecordRef getClazz() {
-        return clazz;
+    public void setDepartment(com.netsuite.webservices.platform.core_2018_2.RecordRef department) {
+        this.department = department;
     }
 
-    /**
-     * 设置clazz属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setClazz(RecordRef value) {
-        this.clazz = value;
-    }
 
     /**
-     * 获取location属性的值。
+     * Gets the _class value for this Employee.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @return _class
      */
-    public RecordRef getLocation() {
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef get_class() {
+        return _class;
+    }
+
+
+    /**
+     * Sets the _class value for this Employee.
+     * 
+     * @param _class
+     */
+    public void set_class(com.netsuite.webservices.platform.core_2018_2.RecordRef _class) {
+        this._class = _class;
+    }
+
+
+    /**
+     * Gets the location value for this Employee.
+     * 
+     * @return location
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getLocation() {
         return location;
     }
 
-    /**
-     * 设置location属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setLocation(RecordRef value) {
-        this.location = value;
-    }
 
     /**
-     * 获取subsidiary属性的值。
+     * Sets the location value for this Employee.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param location
      */
-    public RecordRef getSubsidiary() {
+    public void setLocation(com.netsuite.webservices.platform.core_2018_2.RecordRef location) {
+        this.location = location;
+    }
+
+
+    /**
+     * Gets the subsidiary value for this Employee.
+     * 
+     * @return subsidiary
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getSubsidiary() {
         return subsidiary;
     }
 
-    /**
-     * 设置subsidiary属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setSubsidiary(RecordRef value) {
-        this.subsidiary = value;
-    }
 
     /**
-     * 获取billingClass属性的值。
+     * Sets the subsidiary value for this Employee.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param subsidiary
      */
-    public RecordRef getBillingClass() {
+    public void setSubsidiary(com.netsuite.webservices.platform.core_2018_2.RecordRef subsidiary) {
+        this.subsidiary = subsidiary;
+    }
+
+
+    /**
+     * Gets the billingClass value for this Employee.
+     * 
+     * @return billingClass
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getBillingClass() {
         return billingClass;
     }
 
-    /**
-     * 设置billingClass属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setBillingClass(RecordRef value) {
-        this.billingClass = value;
-    }
 
     /**
-     * 获取accountNumber属性的值。
+     * Sets the billingClass value for this Employee.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param billingClass
      */
-    public String getAccountNumber() {
+    public void setBillingClass(com.netsuite.webservices.platform.core_2018_2.RecordRef billingClass) {
+        this.billingClass = billingClass;
+    }
+
+
+    /**
+     * Gets the accountNumber value for this Employee.
+     * 
+     * @return accountNumber
+     */
+    public java.lang.String getAccountNumber() {
         return accountNumber;
     }
 
-    /**
-     * 设置accountNumber属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setAccountNumber(String value) {
-        this.accountNumber = value;
-    }
 
     /**
-     * 获取compensationCurrency属性的值。
+     * Sets the accountNumber value for this Employee.
      * 
-     * @return
-     *     possible object is
-     *     {@link EmployeeCompensationCurrency }
-     *     
+     * @param accountNumber
      */
-    public EmployeeCompensationCurrency getCompensationCurrency() {
+    public void setAccountNumber(java.lang.String accountNumber) {
+        this.accountNumber = accountNumber;
+    }
+
+
+    /**
+     * Gets the compensationCurrency value for this Employee.
+     * 
+     * @return compensationCurrency
+     */
+    public com.netsuite.webservices.lists.employees_2018_2.types.EmployeeCompensationCurrency getCompensationCurrency() {
         return compensationCurrency;
     }
 
-    /**
-     * 设置compensationCurrency属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link EmployeeCompensationCurrency }
-     *     
-     */
-    public void setCompensationCurrency(EmployeeCompensationCurrency value) {
-        this.compensationCurrency = value;
-    }
 
     /**
-     * 获取baseWageType属性的值。
+     * Sets the compensationCurrency value for this Employee.
      * 
-     * @return
-     *     possible object is
-     *     {@link EmployeeBaseWageType }
-     *     
+     * @param compensationCurrency
      */
-    public EmployeeBaseWageType getBaseWageType() {
+    public void setCompensationCurrency(com.netsuite.webservices.lists.employees_2018_2.types.EmployeeCompensationCurrency compensationCurrency) {
+        this.compensationCurrency = compensationCurrency;
+    }
+
+
+    /**
+     * Gets the baseWageType value for this Employee.
+     * 
+     * @return baseWageType
+     */
+    public com.netsuite.webservices.lists.employees_2018_2.types.EmployeeBaseWageType getBaseWageType() {
         return baseWageType;
     }
 
-    /**
-     * 设置baseWageType属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link EmployeeBaseWageType }
-     *     
-     */
-    public void setBaseWageType(EmployeeBaseWageType value) {
-        this.baseWageType = value;
-    }
 
     /**
-     * 获取baseWage属性的值。
+     * Sets the baseWageType value for this Employee.
      * 
-     * @return
-     *     possible object is
-     *     {@link Double }
-     *     
+     * @param baseWageType
      */
-    public Double getBaseWage() {
+    public void setBaseWageType(com.netsuite.webservices.lists.employees_2018_2.types.EmployeeBaseWageType baseWageType) {
+        this.baseWageType = baseWageType;
+    }
+
+
+    /**
+     * Gets the baseWage value for this Employee.
+     * 
+     * @return baseWage
+     */
+    public java.lang.Double getBaseWage() {
         return baseWage;
     }
 
-    /**
-     * 设置baseWage属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Double }
-     *     
-     */
-    public void setBaseWage(Double value) {
-        this.baseWage = value;
-    }
 
     /**
-     * 获取comments属性的值。
+     * Sets the baseWage value for this Employee.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param baseWage
      */
-    public String getComments() {
+    public void setBaseWage(java.lang.Double baseWage) {
+        this.baseWage = baseWage;
+    }
+
+
+    /**
+     * Gets the comments value for this Employee.
+     * 
+     * @return comments
+     */
+    public java.lang.String getComments() {
         return comments;
     }
 
-    /**
-     * 设置comments属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setComments(String value) {
-        this.comments = value;
-    }
 
     /**
-     * 获取globalSubscriptionStatus属性的值。
+     * Sets the comments value for this Employee.
      * 
-     * @return
-     *     possible object is
-     *     {@link GlobalSubscriptionStatus }
-     *     
+     * @param comments
      */
-    public GlobalSubscriptionStatus getGlobalSubscriptionStatus() {
+    public void setComments(java.lang.String comments) {
+        this.comments = comments;
+    }
+
+
+    /**
+     * Gets the globalSubscriptionStatus value for this Employee.
+     * 
+     * @return globalSubscriptionStatus
+     */
+    public com.netsuite.webservices.platform.common_2018_2.types.GlobalSubscriptionStatus getGlobalSubscriptionStatus() {
         return globalSubscriptionStatus;
     }
 
-    /**
-     * 设置globalSubscriptionStatus属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link GlobalSubscriptionStatus }
-     *     
-     */
-    public void setGlobalSubscriptionStatus(GlobalSubscriptionStatus value) {
-        this.globalSubscriptionStatus = value;
-    }
 
     /**
-     * 获取image属性的值。
+     * Sets the globalSubscriptionStatus value for this Employee.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param globalSubscriptionStatus
      */
-    public RecordRef getImage() {
+    public void setGlobalSubscriptionStatus(com.netsuite.webservices.platform.common_2018_2.types.GlobalSubscriptionStatus globalSubscriptionStatus) {
+        this.globalSubscriptionStatus = globalSubscriptionStatus;
+    }
+
+
+    /**
+     * Gets the image value for this Employee.
+     * 
+     * @return image
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getImage() {
         return image;
     }
 
-    /**
-     * 设置image属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setImage(RecordRef value) {
-        this.image = value;
-    }
 
     /**
-     * 获取payFrequency属性的值。
+     * Sets the image value for this Employee.
      * 
-     * @return
-     *     possible object is
-     *     {@link EmployeePayFrequency }
-     *     
+     * @param image
      */
-    public EmployeePayFrequency getPayFrequency() {
+    public void setImage(com.netsuite.webservices.platform.core_2018_2.RecordRef image) {
+        this.image = image;
+    }
+
+
+    /**
+     * Gets the payFrequency value for this Employee.
+     * 
+     * @return payFrequency
+     */
+    public com.netsuite.webservices.lists.employees_2018_2.types.EmployeePayFrequency getPayFrequency() {
         return payFrequency;
     }
 
-    /**
-     * 设置payFrequency属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link EmployeePayFrequency }
-     *     
-     */
-    public void setPayFrequency(EmployeePayFrequency value) {
-        this.payFrequency = value;
-    }
 
     /**
-     * 获取lastPaidDate属性的值。
+     * Sets the payFrequency value for this Employee.
      * 
-     * @return
-     *     possible object is
-     *     {@link XMLGregorianCalendar }
-     *     
+     * @param payFrequency
      */
-    public XMLGregorianCalendar getLastPaidDate() {
+    public void setPayFrequency(com.netsuite.webservices.lists.employees_2018_2.types.EmployeePayFrequency payFrequency) {
+        this.payFrequency = payFrequency;
+    }
+
+
+    /**
+     * Gets the lastPaidDate value for this Employee.
+     * 
+     * @return lastPaidDate
+     */
+    public java.util.Calendar getLastPaidDate() {
         return lastPaidDate;
     }
 
-    /**
-     * 设置lastPaidDate属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link XMLGregorianCalendar }
-     *     
-     */
-    public void setLastPaidDate(XMLGregorianCalendar value) {
-        this.lastPaidDate = value;
-    }
 
     /**
-     * 获取currency属性的值。
+     * Sets the lastPaidDate value for this Employee.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param lastPaidDate
      */
-    public RecordRef getCurrency() {
+    public void setLastPaidDate(java.util.Calendar lastPaidDate) {
+        this.lastPaidDate = lastPaidDate;
+    }
+
+
+    /**
+     * Gets the currency value for this Employee.
+     * 
+     * @return currency
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getCurrency() {
         return currency;
     }
 
-    /**
-     * 设置currency属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setCurrency(RecordRef value) {
-        this.currency = value;
-    }
 
     /**
-     * 获取useTimeData属性的值。
+     * Sets the currency value for this Employee.
      * 
-     * @return
-     *     possible object is
-     *     {@link EmployeeUseTimeData }
-     *     
+     * @param currency
      */
-    public EmployeeUseTimeData getUseTimeData() {
+    public void setCurrency(com.netsuite.webservices.platform.core_2018_2.RecordRef currency) {
+        this.currency = currency;
+    }
+
+
+    /**
+     * Gets the useTimeData value for this Employee.
+     * 
+     * @return useTimeData
+     */
+    public com.netsuite.webservices.lists.employees_2018_2.types.EmployeeUseTimeData getUseTimeData() {
         return useTimeData;
     }
 
-    /**
-     * 设置useTimeData属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link EmployeeUseTimeData }
-     *     
-     */
-    public void setUseTimeData(EmployeeUseTimeData value) {
-        this.useTimeData = value;
-    }
 
     /**
-     * 获取usePerquest属性的值。
+     * Sets the useTimeData value for this Employee.
      * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
+     * @param useTimeData
      */
-    public Boolean isUsePerquest() {
+    public void setUseTimeData(com.netsuite.webservices.lists.employees_2018_2.types.EmployeeUseTimeData useTimeData) {
+        this.useTimeData = useTimeData;
+    }
+
+
+    /**
+     * Gets the usePerquest value for this Employee.
+     * 
+     * @return usePerquest
+     */
+    public java.lang.Boolean getUsePerquest() {
         return usePerquest;
     }
 
-    /**
-     * 设置usePerquest属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
-     */
-    public void setUsePerquest(Boolean value) {
-        this.usePerquest = value;
-    }
 
     /**
-     * 获取workplace属性的值。
+     * Sets the usePerquest value for this Employee.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param usePerquest
      */
-    public RecordRef getWorkplace() {
+    public void setUsePerquest(java.lang.Boolean usePerquest) {
+        this.usePerquest = usePerquest;
+    }
+
+
+    /**
+     * Gets the workplace value for this Employee.
+     * 
+     * @return workplace
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getWorkplace() {
         return workplace;
     }
 
-    /**
-     * 设置workplace属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setWorkplace(RecordRef value) {
-        this.workplace = value;
-    }
 
     /**
-     * 获取adpId属性的值。
+     * Sets the workplace value for this Employee.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param workplace
      */
-    public String getAdpId() {
+    public void setWorkplace(com.netsuite.webservices.platform.core_2018_2.RecordRef workplace) {
+        this.workplace = workplace;
+    }
+
+
+    /**
+     * Gets the adpId value for this Employee.
+     * 
+     * @return adpId
+     */
+    public java.lang.String getAdpId() {
         return adpId;
     }
 
-    /**
-     * 设置adpId属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setAdpId(String value) {
-        this.adpId = value;
-    }
 
     /**
-     * 获取directDeposit属性的值。
+     * Sets the adpId value for this Employee.
      * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
+     * @param adpId
      */
-    public Boolean isDirectDeposit() {
+    public void setAdpId(java.lang.String adpId) {
+        this.adpId = adpId;
+    }
+
+
+    /**
+     * Gets the directDeposit value for this Employee.
+     * 
+     * @return directDeposit
+     */
+    public java.lang.Boolean getDirectDeposit() {
         return directDeposit;
     }
 
-    /**
-     * 设置directDeposit属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
-     */
-    public void setDirectDeposit(Boolean value) {
-        this.directDeposit = value;
-    }
 
     /**
-     * 获取expenseLimit属性的值。
+     * Sets the directDeposit value for this Employee.
      * 
-     * @return
-     *     possible object is
-     *     {@link Double }
-     *     
+     * @param directDeposit
      */
-    public Double getExpenseLimit() {
+    public void setDirectDeposit(java.lang.Boolean directDeposit) {
+        this.directDeposit = directDeposit;
+    }
+
+
+    /**
+     * Gets the expenseLimit value for this Employee.
+     * 
+     * @return expenseLimit
+     */
+    public java.lang.Double getExpenseLimit() {
         return expenseLimit;
     }
 
-    /**
-     * 设置expenseLimit属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Double }
-     *     
-     */
-    public void setExpenseLimit(Double value) {
-        this.expenseLimit = value;
-    }
 
     /**
-     * 获取purchaseOrderLimit属性的值。
+     * Sets the expenseLimit value for this Employee.
      * 
-     * @return
-     *     possible object is
-     *     {@link Double }
-     *     
+     * @param expenseLimit
      */
-    public Double getPurchaseOrderLimit() {
+    public void setExpenseLimit(java.lang.Double expenseLimit) {
+        this.expenseLimit = expenseLimit;
+    }
+
+
+    /**
+     * Gets the purchaseOrderLimit value for this Employee.
+     * 
+     * @return purchaseOrderLimit
+     */
+    public java.lang.Double getPurchaseOrderLimit() {
         return purchaseOrderLimit;
     }
 
-    /**
-     * 设置purchaseOrderLimit属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Double }
-     *     
-     */
-    public void setPurchaseOrderLimit(Double value) {
-        this.purchaseOrderLimit = value;
-    }
 
     /**
-     * 获取purchaseOrderApprovalLimit属性的值。
+     * Sets the purchaseOrderLimit value for this Employee.
      * 
-     * @return
-     *     possible object is
-     *     {@link Double }
-     *     
+     * @param purchaseOrderLimit
      */
-    public Double getPurchaseOrderApprovalLimit() {
+    public void setPurchaseOrderLimit(java.lang.Double purchaseOrderLimit) {
+        this.purchaseOrderLimit = purchaseOrderLimit;
+    }
+
+
+    /**
+     * Gets the purchaseOrderApprovalLimit value for this Employee.
+     * 
+     * @return purchaseOrderApprovalLimit
+     */
+    public java.lang.Double getPurchaseOrderApprovalLimit() {
         return purchaseOrderApprovalLimit;
     }
 
-    /**
-     * 设置purchaseOrderApprovalLimit属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Double }
-     *     
-     */
-    public void setPurchaseOrderApprovalLimit(Double value) {
-        this.purchaseOrderApprovalLimit = value;
-    }
 
     /**
-     * 获取socialSecurityNumber属性的值。
+     * Sets the purchaseOrderApprovalLimit value for this Employee.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param purchaseOrderApprovalLimit
      */
-    public String getSocialSecurityNumber() {
+    public void setPurchaseOrderApprovalLimit(java.lang.Double purchaseOrderApprovalLimit) {
+        this.purchaseOrderApprovalLimit = purchaseOrderApprovalLimit;
+    }
+
+
+    /**
+     * Gets the socialSecurityNumber value for this Employee.
+     * 
+     * @return socialSecurityNumber
+     */
+    public java.lang.String getSocialSecurityNumber() {
         return socialSecurityNumber;
     }
 
-    /**
-     * 设置socialSecurityNumber属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setSocialSecurityNumber(String value) {
-        this.socialSecurityNumber = value;
-    }
 
     /**
-     * 获取supervisor属性的值。
+     * Sets the socialSecurityNumber value for this Employee.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param socialSecurityNumber
      */
-    public RecordRef getSupervisor() {
+    public void setSocialSecurityNumber(java.lang.String socialSecurityNumber) {
+        this.socialSecurityNumber = socialSecurityNumber;
+    }
+
+
+    /**
+     * Gets the supervisor value for this Employee.
+     * 
+     * @return supervisor
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getSupervisor() {
         return supervisor;
     }
 
-    /**
-     * 设置supervisor属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setSupervisor(RecordRef value) {
-        this.supervisor = value;
-    }
 
     /**
-     * 获取approver属性的值。
+     * Sets the supervisor value for this Employee.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param supervisor
      */
-    public RecordRef getApprover() {
+    public void setSupervisor(com.netsuite.webservices.platform.core_2018_2.RecordRef supervisor) {
+        this.supervisor = supervisor;
+    }
+
+
+    /**
+     * Gets the approver value for this Employee.
+     * 
+     * @return approver
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getApprover() {
         return approver;
     }
 
-    /**
-     * 设置approver属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setApprover(RecordRef value) {
-        this.approver = value;
-    }
 
     /**
-     * 获取approvalLimit属性的值。
+     * Sets the approver value for this Employee.
      * 
-     * @return
-     *     possible object is
-     *     {@link Double }
-     *     
+     * @param approver
      */
-    public Double getApprovalLimit() {
+    public void setApprover(com.netsuite.webservices.platform.core_2018_2.RecordRef approver) {
+        this.approver = approver;
+    }
+
+
+    /**
+     * Gets the approvalLimit value for this Employee.
+     * 
+     * @return approvalLimit
+     */
+    public java.lang.Double getApprovalLimit() {
         return approvalLimit;
     }
 
-    /**
-     * 设置approvalLimit属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Double }
-     *     
-     */
-    public void setApprovalLimit(Double value) {
-        this.approvalLimit = value;
-    }
 
     /**
-     * 获取timeApprover属性的值。
+     * Sets the approvalLimit value for this Employee.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param approvalLimit
      */
-    public RecordRef getTimeApprover() {
+    public void setApprovalLimit(java.lang.Double approvalLimit) {
+        this.approvalLimit = approvalLimit;
+    }
+
+
+    /**
+     * Gets the timeApprover value for this Employee.
+     * 
+     * @return timeApprover
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getTimeApprover() {
         return timeApprover;
     }
 
-    /**
-     * 设置timeApprover属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setTimeApprover(RecordRef value) {
-        this.timeApprover = value;
-    }
 
     /**
-     * 获取employeeType属性的值。
+     * Sets the timeApprover value for this Employee.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param timeApprover
      */
-    public RecordRef getEmployeeType() {
+    public void setTimeApprover(com.netsuite.webservices.platform.core_2018_2.RecordRef timeApprover) {
+        this.timeApprover = timeApprover;
+    }
+
+
+    /**
+     * Gets the employeeType value for this Employee.
+     * 
+     * @return employeeType
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getEmployeeType() {
         return employeeType;
     }
 
-    /**
-     * 设置employeeType属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setEmployeeType(RecordRef value) {
-        this.employeeType = value;
-    }
 
     /**
-     * 获取isSalesRep属性的值。
+     * Sets the employeeType value for this Employee.
      * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
+     * @param employeeType
      */
-    public Boolean isIsSalesRep() {
+    public void setEmployeeType(com.netsuite.webservices.platform.core_2018_2.RecordRef employeeType) {
+        this.employeeType = employeeType;
+    }
+
+
+    /**
+     * Gets the isSalesRep value for this Employee.
+     * 
+     * @return isSalesRep
+     */
+    public java.lang.Boolean getIsSalesRep() {
         return isSalesRep;
     }
 
-    /**
-     * 设置isSalesRep属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
-     */
-    public void setIsSalesRep(Boolean value) {
-        this.isSalesRep = value;
-    }
 
     /**
-     * 获取salesRole属性的值。
+     * Sets the isSalesRep value for this Employee.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param isSalesRep
      */
-    public RecordRef getSalesRole() {
+    public void setIsSalesRep(java.lang.Boolean isSalesRep) {
+        this.isSalesRep = isSalesRep;
+    }
+
+
+    /**
+     * Gets the salesRole value for this Employee.
+     * 
+     * @return salesRole
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getSalesRole() {
         return salesRole;
     }
 
-    /**
-     * 设置salesRole属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setSalesRole(RecordRef value) {
-        this.salesRole = value;
-    }
 
     /**
-     * 获取isSupportRep属性的值。
+     * Sets the salesRole value for this Employee.
      * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
+     * @param salesRole
      */
-    public Boolean isIsSupportRep() {
+    public void setSalesRole(com.netsuite.webservices.platform.core_2018_2.RecordRef salesRole) {
+        this.salesRole = salesRole;
+    }
+
+
+    /**
+     * Gets the isSupportRep value for this Employee.
+     * 
+     * @return isSupportRep
+     */
+    public java.lang.Boolean getIsSupportRep() {
         return isSupportRep;
     }
 
-    /**
-     * 设置isSupportRep属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
-     */
-    public void setIsSupportRep(Boolean value) {
-        this.isSupportRep = value;
-    }
 
     /**
-     * 获取isJobResource属性的值。
+     * Sets the isSupportRep value for this Employee.
      * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
+     * @param isSupportRep
      */
-    public Boolean isIsJobResource() {
+    public void setIsSupportRep(java.lang.Boolean isSupportRep) {
+        this.isSupportRep = isSupportRep;
+    }
+
+
+    /**
+     * Gets the isJobResource value for this Employee.
+     * 
+     * @return isJobResource
+     */
+    public java.lang.Boolean getIsJobResource() {
         return isJobResource;
     }
 
-    /**
-     * 设置isJobResource属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
-     */
-    public void setIsJobResource(Boolean value) {
-        this.isJobResource = value;
-    }
 
     /**
-     * 获取laborCost属性的值。
+     * Sets the isJobResource value for this Employee.
      * 
-     * @return
-     *     possible object is
-     *     {@link Double }
-     *     
+     * @param isJobResource
      */
-    public Double getLaborCost() {
+    public void setIsJobResource(java.lang.Boolean isJobResource) {
+        this.isJobResource = isJobResource;
+    }
+
+
+    /**
+     * Gets the laborCost value for this Employee.
+     * 
+     * @return laborCost
+     */
+    public java.lang.Double getLaborCost() {
         return laborCost;
     }
 
-    /**
-     * 设置laborCost属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Double }
-     *     
-     */
-    public void setLaborCost(Double value) {
-        this.laborCost = value;
-    }
 
     /**
-     * 获取birthDate属性的值。
+     * Sets the laborCost value for this Employee.
      * 
-     * @return
-     *     possible object is
-     *     {@link XMLGregorianCalendar }
-     *     
+     * @param laborCost
      */
-    public XMLGregorianCalendar getBirthDate() {
+    public void setLaborCost(java.lang.Double laborCost) {
+        this.laborCost = laborCost;
+    }
+
+
+    /**
+     * Gets the birthDate value for this Employee.
+     * 
+     * @return birthDate
+     */
+    public java.util.Calendar getBirthDate() {
         return birthDate;
     }
 
-    /**
-     * 设置birthDate属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link XMLGregorianCalendar }
-     *     
-     */
-    public void setBirthDate(XMLGregorianCalendar value) {
-        this.birthDate = value;
-    }
 
     /**
-     * 获取hireDate属性的值。
+     * Sets the birthDate value for this Employee.
      * 
-     * @return
-     *     possible object is
-     *     {@link XMLGregorianCalendar }
-     *     
+     * @param birthDate
      */
-    public XMLGregorianCalendar getHireDate() {
+    public void setBirthDate(java.util.Calendar birthDate) {
+        this.birthDate = birthDate;
+    }
+
+
+    /**
+     * Gets the hireDate value for this Employee.
+     * 
+     * @return hireDate
+     */
+    public java.util.Calendar getHireDate() {
         return hireDate;
     }
 
-    /**
-     * 设置hireDate属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link XMLGregorianCalendar }
-     *     
-     */
-    public void setHireDate(XMLGregorianCalendar value) {
-        this.hireDate = value;
-    }
 
     /**
-     * 获取releaseDate属性的值。
+     * Sets the hireDate value for this Employee.
      * 
-     * @return
-     *     possible object is
-     *     {@link XMLGregorianCalendar }
-     *     
+     * @param hireDate
      */
-    public XMLGregorianCalendar getReleaseDate() {
+    public void setHireDate(java.util.Calendar hireDate) {
+        this.hireDate = hireDate;
+    }
+
+
+    /**
+     * Gets the releaseDate value for this Employee.
+     * 
+     * @return releaseDate
+     */
+    public java.util.Calendar getReleaseDate() {
         return releaseDate;
     }
 
-    /**
-     * 设置releaseDate属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link XMLGregorianCalendar }
-     *     
-     */
-    public void setReleaseDate(XMLGregorianCalendar value) {
-        this.releaseDate = value;
-    }
 
     /**
-     * 获取terminationDetails属性的值。
+     * Sets the releaseDate value for this Employee.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param releaseDate
      */
-    public String getTerminationDetails() {
+    public void setReleaseDate(java.util.Calendar releaseDate) {
+        this.releaseDate = releaseDate;
+    }
+
+
+    /**
+     * Gets the terminationDetails value for this Employee.
+     * 
+     * @return terminationDetails
+     */
+    public java.lang.String getTerminationDetails() {
         return terminationDetails;
     }
 
-    /**
-     * 设置terminationDetails属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setTerminationDetails(String value) {
-        this.terminationDetails = value;
-    }
 
     /**
-     * 获取terminationReason属性的值。
+     * Sets the terminationDetails value for this Employee.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param terminationDetails
      */
-    public RecordRef getTerminationReason() {
+    public void setTerminationDetails(java.lang.String terminationDetails) {
+        this.terminationDetails = terminationDetails;
+    }
+
+
+    /**
+     * Gets the terminationReason value for this Employee.
+     * 
+     * @return terminationReason
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getTerminationReason() {
         return terminationReason;
     }
 
-    /**
-     * 设置terminationReason属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setTerminationReason(RecordRef value) {
-        this.terminationReason = value;
-    }
 
     /**
-     * 获取terminationRegretted属性的值。
+     * Sets the terminationReason value for this Employee.
      * 
-     * @return
-     *     possible object is
-     *     {@link EmployeeTerminationRegretted }
-     *     
+     * @param terminationReason
      */
-    public EmployeeTerminationRegretted getTerminationRegretted() {
+    public void setTerminationReason(com.netsuite.webservices.platform.core_2018_2.RecordRef terminationReason) {
+        this.terminationReason = terminationReason;
+    }
+
+
+    /**
+     * Gets the terminationRegretted value for this Employee.
+     * 
+     * @return terminationRegretted
+     */
+    public com.netsuite.webservices.lists.employees_2018_2.types.EmployeeTerminationRegretted getTerminationRegretted() {
         return terminationRegretted;
     }
 
-    /**
-     * 设置terminationRegretted属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link EmployeeTerminationRegretted }
-     *     
-     */
-    public void setTerminationRegretted(EmployeeTerminationRegretted value) {
-        this.terminationRegretted = value;
-    }
 
     /**
-     * 获取terminationCategory属性的值。
+     * Sets the terminationRegretted value for this Employee.
      * 
-     * @return
-     *     possible object is
-     *     {@link EmployeeTerminationCategory }
-     *     
+     * @param terminationRegretted
      */
-    public EmployeeTerminationCategory getTerminationCategory() {
+    public void setTerminationRegretted(com.netsuite.webservices.lists.employees_2018_2.types.EmployeeTerminationRegretted terminationRegretted) {
+        this.terminationRegretted = terminationRegretted;
+    }
+
+
+    /**
+     * Gets the terminationCategory value for this Employee.
+     * 
+     * @return terminationCategory
+     */
+    public com.netsuite.webservices.lists.employees_2018_2.types.EmployeeTerminationCategory getTerminationCategory() {
         return terminationCategory;
     }
 
-    /**
-     * 设置terminationCategory属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link EmployeeTerminationCategory }
-     *     
-     */
-    public void setTerminationCategory(EmployeeTerminationCategory value) {
-        this.terminationCategory = value;
-    }
 
     /**
-     * 获取timeOffPlan属性的值。
+     * Sets the terminationCategory value for this Employee.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param terminationCategory
      */
-    public RecordRef getTimeOffPlan() {
+    public void setTerminationCategory(com.netsuite.webservices.lists.employees_2018_2.types.EmployeeTerminationCategory terminationCategory) {
+        this.terminationCategory = terminationCategory;
+    }
+
+
+    /**
+     * Gets the timeOffPlan value for this Employee.
+     * 
+     * @return timeOffPlan
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getTimeOffPlan() {
         return timeOffPlan;
     }
 
-    /**
-     * 设置timeOffPlan属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setTimeOffPlan(RecordRef value) {
-        this.timeOffPlan = value;
-    }
 
     /**
-     * 获取lastReviewDate属性的值。
+     * Sets the timeOffPlan value for this Employee.
      * 
-     * @return
-     *     possible object is
-     *     {@link XMLGregorianCalendar }
-     *     
+     * @param timeOffPlan
      */
-    public XMLGregorianCalendar getLastReviewDate() {
+    public void setTimeOffPlan(com.netsuite.webservices.platform.core_2018_2.RecordRef timeOffPlan) {
+        this.timeOffPlan = timeOffPlan;
+    }
+
+
+    /**
+     * Gets the lastReviewDate value for this Employee.
+     * 
+     * @return lastReviewDate
+     */
+    public java.util.Calendar getLastReviewDate() {
         return lastReviewDate;
     }
 
-    /**
-     * 设置lastReviewDate属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link XMLGregorianCalendar }
-     *     
-     */
-    public void setLastReviewDate(XMLGregorianCalendar value) {
-        this.lastReviewDate = value;
-    }
 
     /**
-     * 获取nextReviewDate属性的值。
+     * Sets the lastReviewDate value for this Employee.
      * 
-     * @return
-     *     possible object is
-     *     {@link XMLGregorianCalendar }
-     *     
+     * @param lastReviewDate
      */
-    public XMLGregorianCalendar getNextReviewDate() {
+    public void setLastReviewDate(java.util.Calendar lastReviewDate) {
+        this.lastReviewDate = lastReviewDate;
+    }
+
+
+    /**
+     * Gets the nextReviewDate value for this Employee.
+     * 
+     * @return nextReviewDate
+     */
+    public java.util.Calendar getNextReviewDate() {
         return nextReviewDate;
     }
 
-    /**
-     * 设置nextReviewDate属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link XMLGregorianCalendar }
-     *     
-     */
-    public void setNextReviewDate(XMLGregorianCalendar value) {
-        this.nextReviewDate = value;
-    }
 
     /**
-     * 获取title属性的值。
+     * Sets the nextReviewDate value for this Employee.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param nextReviewDate
      */
-    public String getTitle() {
+    public void setNextReviewDate(java.util.Calendar nextReviewDate) {
+        this.nextReviewDate = nextReviewDate;
+    }
+
+
+    /**
+     * Gets the title value for this Employee.
+     * 
+     * @return title
+     */
+    public java.lang.String getTitle() {
         return title;
     }
 
-    /**
-     * 设置title属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setTitle(String value) {
-        this.title = value;
-    }
 
     /**
-     * 获取employeeStatus属性的值。
+     * Sets the title value for this Employee.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param title
      */
-    public RecordRef getEmployeeStatus() {
+    public void setTitle(java.lang.String title) {
+        this.title = title;
+    }
+
+
+    /**
+     * Gets the employeeStatus value for this Employee.
+     * 
+     * @return employeeStatus
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getEmployeeStatus() {
         return employeeStatus;
     }
 
-    /**
-     * 设置employeeStatus属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setEmployeeStatus(RecordRef value) {
-        this.employeeStatus = value;
-    }
 
     /**
-     * 获取jobDescription属性的值。
+     * Sets the employeeStatus value for this Employee.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param employeeStatus
      */
-    public String getJobDescription() {
+    public void setEmployeeStatus(com.netsuite.webservices.platform.core_2018_2.RecordRef employeeStatus) {
+        this.employeeStatus = employeeStatus;
+    }
+
+
+    /**
+     * Gets the jobDescription value for this Employee.
+     * 
+     * @return jobDescription
+     */
+    public java.lang.String getJobDescription() {
         return jobDescription;
     }
 
-    /**
-     * 设置jobDescription属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setJobDescription(String value) {
-        this.jobDescription = value;
-    }
 
     /**
-     * 获取workAssignment属性的值。
+     * Sets the jobDescription value for this Employee.
      * 
-     * @return
-     *     possible object is
-     *     {@link EmployeeWorkAssignment }
-     *     
+     * @param jobDescription
      */
-    public EmployeeWorkAssignment getWorkAssignment() {
+    public void setJobDescription(java.lang.String jobDescription) {
+        this.jobDescription = jobDescription;
+    }
+
+
+    /**
+     * Gets the workAssignment value for this Employee.
+     * 
+     * @return workAssignment
+     */
+    public com.netsuite.webservices.lists.employees_2018_2.types.EmployeeWorkAssignment getWorkAssignment() {
         return workAssignment;
     }
 
-    /**
-     * 设置workAssignment属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link EmployeeWorkAssignment }
-     *     
-     */
-    public void setWorkAssignment(EmployeeWorkAssignment value) {
-        this.workAssignment = value;
-    }
 
     /**
-     * 获取job属性的值。
+     * Sets the workAssignment value for this Employee.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param workAssignment
      */
-    public RecordRef getJob() {
+    public void setWorkAssignment(com.netsuite.webservices.lists.employees_2018_2.types.EmployeeWorkAssignment workAssignment) {
+        this.workAssignment = workAssignment;
+    }
+
+
+    /**
+     * Gets the job value for this Employee.
+     * 
+     * @return job
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getJob() {
         return job;
     }
 
-    /**
-     * 设置job属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setJob(RecordRef value) {
-        this.job = value;
-    }
 
     /**
-     * 获取maritalStatus属性的值。
+     * Sets the job value for this Employee.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param job
      */
-    public RecordRef getMaritalStatus() {
+    public void setJob(com.netsuite.webservices.platform.core_2018_2.RecordRef job) {
+        this.job = job;
+    }
+
+
+    /**
+     * Gets the maritalStatus value for this Employee.
+     * 
+     * @return maritalStatus
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getMaritalStatus() {
         return maritalStatus;
     }
 
-    /**
-     * 设置maritalStatus属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setMaritalStatus(RecordRef value) {
-        this.maritalStatus = value;
-    }
 
     /**
-     * 获取ethnicity属性的值。
+     * Sets the maritalStatus value for this Employee.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param maritalStatus
      */
-    public RecordRef getEthnicity() {
+    public void setMaritalStatus(com.netsuite.webservices.platform.core_2018_2.RecordRef maritalStatus) {
+        this.maritalStatus = maritalStatus;
+    }
+
+
+    /**
+     * Gets the ethnicity value for this Employee.
+     * 
+     * @return ethnicity
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getEthnicity() {
         return ethnicity;
     }
 
-    /**
-     * 设置ethnicity属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setEthnicity(RecordRef value) {
-        this.ethnicity = value;
-    }
 
     /**
-     * 获取gender属性的值。
+     * Sets the ethnicity value for this Employee.
      * 
-     * @return
-     *     possible object is
-     *     {@link Gender }
-     *     
+     * @param ethnicity
      */
-    public Gender getGender() {
+    public void setEthnicity(com.netsuite.webservices.platform.core_2018_2.RecordRef ethnicity) {
+        this.ethnicity = ethnicity;
+    }
+
+
+    /**
+     * Gets the gender value for this Employee.
+     * 
+     * @return gender
+     */
+    public com.netsuite.webservices.lists.employees_2018_2.types.Gender getGender() {
         return gender;
     }
 
-    /**
-     * 设置gender属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Gender }
-     *     
-     */
-    public void setGender(Gender value) {
-        this.gender = value;
-    }
 
     /**
-     * 获取purchaseOrderApprover属性的值。
+     * Sets the gender value for this Employee.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param gender
      */
-    public RecordRef getPurchaseOrderApprover() {
+    public void setGender(com.netsuite.webservices.lists.employees_2018_2.types.Gender gender) {
+        this.gender = gender;
+    }
+
+
+    /**
+     * Gets the purchaseOrderApprover value for this Employee.
+     * 
+     * @return purchaseOrderApprover
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getPurchaseOrderApprover() {
         return purchaseOrderApprover;
     }
 
-    /**
-     * 设置purchaseOrderApprover属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setPurchaseOrderApprover(RecordRef value) {
-        this.purchaseOrderApprover = value;
-    }
 
     /**
-     * 获取workCalendar属性的值。
+     * Sets the purchaseOrderApprover value for this Employee.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param purchaseOrderApprover
      */
-    public RecordRef getWorkCalendar() {
+    public void setPurchaseOrderApprover(com.netsuite.webservices.platform.core_2018_2.RecordRef purchaseOrderApprover) {
+        this.purchaseOrderApprover = purchaseOrderApprover;
+    }
+
+
+    /**
+     * Gets the workCalendar value for this Employee.
+     * 
+     * @return workCalendar
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getWorkCalendar() {
         return workCalendar;
     }
 
-    /**
-     * 设置workCalendar属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setWorkCalendar(RecordRef value) {
-        this.workCalendar = value;
-    }
 
     /**
-     * 获取giveAccess属性的值。
+     * Sets the workCalendar value for this Employee.
      * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
+     * @param workCalendar
      */
-    public Boolean isGiveAccess() {
+    public void setWorkCalendar(com.netsuite.webservices.platform.core_2018_2.RecordRef workCalendar) {
+        this.workCalendar = workCalendar;
+    }
+
+
+    /**
+     * Gets the giveAccess value for this Employee.
+     * 
+     * @return giveAccess
+     */
+    public java.lang.Boolean getGiveAccess() {
         return giveAccess;
     }
 
-    /**
-     * 设置giveAccess属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
-     */
-    public void setGiveAccess(Boolean value) {
-        this.giveAccess = value;
-    }
 
     /**
-     * 获取concurrentWebServicesUser属性的值。
+     * Sets the giveAccess value for this Employee.
      * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
+     * @param giveAccess
      */
-    public Boolean isConcurrentWebServicesUser() {
+    public void setGiveAccess(java.lang.Boolean giveAccess) {
+        this.giveAccess = giveAccess;
+    }
+
+
+    /**
+     * Gets the concurrentWebServicesUser value for this Employee.
+     * 
+     * @return concurrentWebServicesUser
+     */
+    public java.lang.Boolean getConcurrentWebServicesUser() {
         return concurrentWebServicesUser;
     }
 
-    /**
-     * 设置concurrentWebServicesUser属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
-     */
-    public void setConcurrentWebServicesUser(Boolean value) {
-        this.concurrentWebServicesUser = value;
-    }
 
     /**
-     * 获取sendEmail属性的值。
+     * Sets the concurrentWebServicesUser value for this Employee.
      * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
+     * @param concurrentWebServicesUser
      */
-    public Boolean isSendEmail() {
+    public void setConcurrentWebServicesUser(java.lang.Boolean concurrentWebServicesUser) {
+        this.concurrentWebServicesUser = concurrentWebServicesUser;
+    }
+
+
+    /**
+     * Gets the sendEmail value for this Employee.
+     * 
+     * @return sendEmail
+     */
+    public java.lang.Boolean getSendEmail() {
         return sendEmail;
     }
 
-    /**
-     * 设置sendEmail属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
-     */
-    public void setSendEmail(Boolean value) {
-        this.sendEmail = value;
-    }
 
     /**
-     * 获取hasOfflineAccess属性的值。
+     * Sets the sendEmail value for this Employee.
      * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
+     * @param sendEmail
      */
-    public Boolean isHasOfflineAccess() {
+    public void setSendEmail(java.lang.Boolean sendEmail) {
+        this.sendEmail = sendEmail;
+    }
+
+
+    /**
+     * Gets the hasOfflineAccess value for this Employee.
+     * 
+     * @return hasOfflineAccess
+     */
+    public java.lang.Boolean getHasOfflineAccess() {
         return hasOfflineAccess;
     }
 
-    /**
-     * 设置hasOfflineAccess属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
-     */
-    public void setHasOfflineAccess(Boolean value) {
-        this.hasOfflineAccess = value;
-    }
 
     /**
-     * 获取password属性的值。
+     * Sets the hasOfflineAccess value for this Employee.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param hasOfflineAccess
      */
-    public String getPassword() {
+    public void setHasOfflineAccess(java.lang.Boolean hasOfflineAccess) {
+        this.hasOfflineAccess = hasOfflineAccess;
+    }
+
+
+    /**
+     * Gets the password value for this Employee.
+     * 
+     * @return password
+     */
+    public java.lang.String getPassword() {
         return password;
     }
 
-    /**
-     * 设置password属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setPassword(String value) {
-        this.password = value;
-    }
 
     /**
-     * 获取password2属性的值。
+     * Sets the password value for this Employee.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param password
      */
-    public String getPassword2() {
+    public void setPassword(java.lang.String password) {
+        this.password = password;
+    }
+
+
+    /**
+     * Gets the password2 value for this Employee.
+     * 
+     * @return password2
+     */
+    public java.lang.String getPassword2() {
         return password2;
     }
 
-    /**
-     * 设置password2属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setPassword2(String value) {
-        this.password2 = value;
-    }
 
     /**
-     * 获取requirePwdChange属性的值。
+     * Sets the password2 value for this Employee.
      * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
+     * @param password2
      */
-    public Boolean isRequirePwdChange() {
+    public void setPassword2(java.lang.String password2) {
+        this.password2 = password2;
+    }
+
+
+    /**
+     * Gets the requirePwdChange value for this Employee.
+     * 
+     * @return requirePwdChange
+     */
+    public java.lang.Boolean getRequirePwdChange() {
         return requirePwdChange;
     }
 
-    /**
-     * 设置requirePwdChange属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
-     */
-    public void setRequirePwdChange(Boolean value) {
-        this.requirePwdChange = value;
-    }
 
     /**
-     * 获取inheritIPRules属性的值。
+     * Sets the requirePwdChange value for this Employee.
      * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
+     * @param requirePwdChange
      */
-    public Boolean isInheritIPRules() {
+    public void setRequirePwdChange(java.lang.Boolean requirePwdChange) {
+        this.requirePwdChange = requirePwdChange;
+    }
+
+
+    /**
+     * Gets the inheritIPRules value for this Employee.
+     * 
+     * @return inheritIPRules
+     */
+    public java.lang.Boolean getInheritIPRules() {
         return inheritIPRules;
     }
 
-    /**
-     * 设置inheritIPRules属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
-     */
-    public void setInheritIPRules(Boolean value) {
-        this.inheritIPRules = value;
-    }
 
     /**
-     * 获取ipAddressRule属性的值。
+     * Sets the inheritIPRules value for this Employee.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param inheritIPRules
      */
-    public String getIPAddressRule() {
-        return ipAddressRule;
+    public void setInheritIPRules(java.lang.Boolean inheritIPRules) {
+        this.inheritIPRules = inheritIPRules;
     }
 
-    /**
-     * 设置ipAddressRule属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setIPAddressRule(String value) {
-        this.ipAddressRule = value;
-    }
 
     /**
-     * 获取startDateTimeOffCalc属性的值。
+     * Gets the IPAddressRule value for this Employee.
      * 
-     * @return
-     *     possible object is
-     *     {@link XMLGregorianCalendar }
-     *     
+     * @return IPAddressRule
      */
-    public XMLGregorianCalendar getStartDateTimeOffCalc() {
+    public java.lang.String getIPAddressRule() {
+        return IPAddressRule;
+    }
+
+
+    /**
+     * Sets the IPAddressRule value for this Employee.
+     * 
+     * @param IPAddressRule
+     */
+    public void setIPAddressRule(java.lang.String IPAddressRule) {
+        this.IPAddressRule = IPAddressRule;
+    }
+
+
+    /**
+     * Gets the startDateTimeOffCalc value for this Employee.
+     * 
+     * @return startDateTimeOffCalc
+     */
+    public java.util.Calendar getStartDateTimeOffCalc() {
         return startDateTimeOffCalc;
     }
 
-    /**
-     * 设置startDateTimeOffCalc属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link XMLGregorianCalendar }
-     *     
-     */
-    public void setStartDateTimeOffCalc(XMLGregorianCalendar value) {
-        this.startDateTimeOffCalc = value;
-    }
 
     /**
-     * 获取commissionPaymentPreference属性的值。
+     * Sets the startDateTimeOffCalc value for this Employee.
      * 
-     * @return
-     *     possible object is
-     *     {@link EmployeeCommissionPaymentPreference }
-     *     
+     * @param startDateTimeOffCalc
      */
-    public EmployeeCommissionPaymentPreference getCommissionPaymentPreference() {
+    public void setStartDateTimeOffCalc(java.util.Calendar startDateTimeOffCalc) {
+        this.startDateTimeOffCalc = startDateTimeOffCalc;
+    }
+
+
+    /**
+     * Gets the commissionPaymentPreference value for this Employee.
+     * 
+     * @return commissionPaymentPreference
+     */
+    public com.netsuite.webservices.lists.employees_2018_2.types.EmployeeCommissionPaymentPreference getCommissionPaymentPreference() {
         return commissionPaymentPreference;
     }
 
-    /**
-     * 设置commissionPaymentPreference属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link EmployeeCommissionPaymentPreference }
-     *     
-     */
-    public void setCommissionPaymentPreference(EmployeeCommissionPaymentPreference value) {
-        this.commissionPaymentPreference = value;
-    }
 
     /**
-     * 获取billPay属性的值。
+     * Sets the commissionPaymentPreference value for this Employee.
      * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
+     * @param commissionPaymentPreference
      */
-    public Boolean isBillPay() {
+    public void setCommissionPaymentPreference(com.netsuite.webservices.lists.employees_2018_2.types.EmployeeCommissionPaymentPreference commissionPaymentPreference) {
+        this.commissionPaymentPreference = commissionPaymentPreference;
+    }
+
+
+    /**
+     * Gets the billPay value for this Employee.
+     * 
+     * @return billPay
+     */
+    public java.lang.Boolean getBillPay() {
         return billPay;
     }
 
-    /**
-     * 设置billPay属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
-     */
-    public void setBillPay(Boolean value) {
-        this.billPay = value;
-    }
 
     /**
-     * 获取eligibleForCommission属性的值。
+     * Sets the billPay value for this Employee.
      * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
+     * @param billPay
      */
-    public Boolean isEligibleForCommission() {
+    public void setBillPay(java.lang.Boolean billPay) {
+        this.billPay = billPay;
+    }
+
+
+    /**
+     * Gets the eligibleForCommission value for this Employee.
+     * 
+     * @return eligibleForCommission
+     */
+    public java.lang.Boolean getEligibleForCommission() {
         return eligibleForCommission;
     }
 
-    /**
-     * 设置eligibleForCommission属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
-     */
-    public void setEligibleForCommission(Boolean value) {
-        this.eligibleForCommission = value;
-    }
 
     /**
-     * 获取subscriptionsList属性的值。
+     * Sets the eligibleForCommission value for this Employee.
      * 
-     * @return
-     *     possible object is
-     *     {@link EmployeeSubscriptionsList }
-     *     
+     * @param eligibleForCommission
      */
-    public EmployeeSubscriptionsList getSubscriptionsList() {
+    public void setEligibleForCommission(java.lang.Boolean eligibleForCommission) {
+        this.eligibleForCommission = eligibleForCommission;
+    }
+
+
+    /**
+     * Gets the subscriptionsList value for this Employee.
+     * 
+     * @return subscriptionsList
+     */
+    public com.netsuite.webservices.lists.employees_2018_2.EmployeeSubscriptions[] getSubscriptionsList() {
         return subscriptionsList;
     }
 
-    /**
-     * 设置subscriptionsList属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link EmployeeSubscriptionsList }
-     *     
-     */
-    public void setSubscriptionsList(EmployeeSubscriptionsList value) {
-        this.subscriptionsList = value;
-    }
 
     /**
-     * 获取ratesList属性的值。
+     * Sets the subscriptionsList value for this Employee.
      * 
-     * @return
-     *     possible object is
-     *     {@link EmployeeRatesList }
-     *     
+     * @param subscriptionsList
      */
-    public EmployeeRatesList getRatesList() {
+    public void setSubscriptionsList(com.netsuite.webservices.lists.employees_2018_2.EmployeeSubscriptions[] subscriptionsList) {
+        this.subscriptionsList = subscriptionsList;
+    }
+
+
+    /**
+     * Gets the ratesList value for this Employee.
+     * 
+     * @return ratesList
+     */
+    public com.netsuite.webservices.lists.employees_2018_2.EmployeeRates[] getRatesList() {
         return ratesList;
     }
 
-    /**
-     * 设置ratesList属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link EmployeeRatesList }
-     *     
-     */
-    public void setRatesList(EmployeeRatesList value) {
-        this.ratesList = value;
-    }
 
     /**
-     * 获取addressbookList属性的值。
+     * Sets the ratesList value for this Employee.
      * 
-     * @return
-     *     possible object is
-     *     {@link EmployeeAddressbookList }
-     *     
+     * @param ratesList
      */
-    public EmployeeAddressbookList getAddressbookList() {
+    public void setRatesList(com.netsuite.webservices.lists.employees_2018_2.EmployeeRates[] ratesList) {
+        this.ratesList = ratesList;
+    }
+
+
+    /**
+     * Gets the addressbookList value for this Employee.
+     * 
+     * @return addressbookList
+     */
+    public com.netsuite.webservices.lists.employees_2018_2.EmployeeAddressbook[] getAddressbookList() {
         return addressbookList;
     }
 
-    /**
-     * 设置addressbookList属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link EmployeeAddressbookList }
-     *     
-     */
-    public void setAddressbookList(EmployeeAddressbookList value) {
-        this.addressbookList = value;
-    }
 
     /**
-     * 获取rolesList属性的值。
+     * Sets the addressbookList value for this Employee.
      * 
-     * @return
-     *     possible object is
-     *     {@link EmployeeRolesList }
-     *     
+     * @param addressbookList
      */
-    public EmployeeRolesList getRolesList() {
+    public void setAddressbookList(com.netsuite.webservices.lists.employees_2018_2.EmployeeAddressbook[] addressbookList) {
+        this.addressbookList = addressbookList;
+    }
+
+
+    /**
+     * Gets the rolesList value for this Employee.
+     * 
+     * @return rolesList
+     */
+    public com.netsuite.webservices.lists.employees_2018_2.EmployeeRoles[] getRolesList() {
         return rolesList;
     }
 
-    /**
-     * 设置rolesList属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link EmployeeRolesList }
-     *     
-     */
-    public void setRolesList(EmployeeRolesList value) {
-        this.rolesList = value;
-    }
 
     /**
-     * 获取hrEducationList属性的值。
+     * Sets the rolesList value for this Employee.
      * 
-     * @return
-     *     possible object is
-     *     {@link EmployeeHrEducationList }
-     *     
+     * @param rolesList
      */
-    public EmployeeHrEducationList getHrEducationList() {
+    public void setRolesList(com.netsuite.webservices.lists.employees_2018_2.EmployeeRoles[] rolesList) {
+        this.rolesList = rolesList;
+    }
+
+
+    /**
+     * Gets the hrEducationList value for this Employee.
+     * 
+     * @return hrEducationList
+     */
+    public com.netsuite.webservices.lists.employees_2018_2.EmployeeHrEducation[] getHrEducationList() {
         return hrEducationList;
     }
 
-    /**
-     * 设置hrEducationList属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link EmployeeHrEducationList }
-     *     
-     */
-    public void setHrEducationList(EmployeeHrEducationList value) {
-        this.hrEducationList = value;
-    }
 
     /**
-     * 获取accruedTimeList属性的值。
+     * Sets the hrEducationList value for this Employee.
      * 
-     * @return
-     *     possible object is
-     *     {@link EmployeeAccruedTimeList }
-     *     
+     * @param hrEducationList
      */
-    public EmployeeAccruedTimeList getAccruedTimeList() {
+    public void setHrEducationList(com.netsuite.webservices.lists.employees_2018_2.EmployeeHrEducation[] hrEducationList) {
+        this.hrEducationList = hrEducationList;
+    }
+
+
+    /**
+     * Gets the accruedTimeList value for this Employee.
+     * 
+     * @return accruedTimeList
+     */
+    public com.netsuite.webservices.lists.employees_2018_2.EmployeeAccruedTime[] getAccruedTimeList() {
         return accruedTimeList;
     }
 
-    /**
-     * 设置accruedTimeList属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link EmployeeAccruedTimeList }
-     *     
-     */
-    public void setAccruedTimeList(EmployeeAccruedTimeList value) {
-        this.accruedTimeList = value;
-    }
 
     /**
-     * 获取directDepositList属性的值。
+     * Sets the accruedTimeList value for this Employee.
      * 
-     * @return
-     *     possible object is
-     *     {@link EmployeeDirectDepositList }
-     *     
+     * @param accruedTimeList
      */
-    public EmployeeDirectDepositList getDirectDepositList() {
+    public void setAccruedTimeList(com.netsuite.webservices.lists.employees_2018_2.EmployeeAccruedTime[] accruedTimeList) {
+        this.accruedTimeList = accruedTimeList;
+    }
+
+
+    /**
+     * Gets the directDepositList value for this Employee.
+     * 
+     * @return directDepositList
+     */
+    public com.netsuite.webservices.lists.employees_2018_2.EmployeeDirectDeposit[] getDirectDepositList() {
         return directDepositList;
     }
 
-    /**
-     * 设置directDepositList属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link EmployeeDirectDepositList }
-     *     
-     */
-    public void setDirectDepositList(EmployeeDirectDepositList value) {
-        this.directDepositList = value;
-    }
 
     /**
-     * 获取companyContributionList属性的值。
+     * Sets the directDepositList value for this Employee.
      * 
-     * @return
-     *     possible object is
-     *     {@link EmployeeCompanyContributionList }
-     *     
+     * @param directDepositList
      */
-    public EmployeeCompanyContributionList getCompanyContributionList() {
+    public void setDirectDepositList(com.netsuite.webservices.lists.employees_2018_2.EmployeeDirectDeposit[] directDepositList) {
+        this.directDepositList = directDepositList;
+    }
+
+
+    /**
+     * Gets the companyContributionList value for this Employee.
+     * 
+     * @return companyContributionList
+     */
+    public com.netsuite.webservices.lists.employees_2018_2.EmployeeCompanyContribution[] getCompanyContributionList() {
         return companyContributionList;
     }
 
-    /**
-     * 设置companyContributionList属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link EmployeeCompanyContributionList }
-     *     
-     */
-    public void setCompanyContributionList(EmployeeCompanyContributionList value) {
-        this.companyContributionList = value;
-    }
 
     /**
-     * 获取earningList属性的值。
+     * Sets the companyContributionList value for this Employee.
      * 
-     * @return
-     *     possible object is
-     *     {@link EmployeeEarningList }
-     *     
+     * @param companyContributionList
      */
-    public EmployeeEarningList getEarningList() {
+    public void setCompanyContributionList(com.netsuite.webservices.lists.employees_2018_2.EmployeeCompanyContribution[] companyContributionList) {
+        this.companyContributionList = companyContributionList;
+    }
+
+
+    /**
+     * Gets the earningList value for this Employee.
+     * 
+     * @return earningList
+     */
+    public com.netsuite.webservices.lists.employees_2018_2.EmployeeEarning[] getEarningList() {
         return earningList;
     }
 
-    /**
-     * 设置earningList属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link EmployeeEarningList }
-     *     
-     */
-    public void setEarningList(EmployeeEarningList value) {
-        this.earningList = value;
-    }
 
     /**
-     * 获取emergencyContactList属性的值。
+     * Sets the earningList value for this Employee.
      * 
-     * @return
-     *     possible object is
-     *     {@link EmployeeEmergencyContactList }
-     *     
+     * @param earningList
      */
-    public EmployeeEmergencyContactList getEmergencyContactList() {
+    public void setEarningList(com.netsuite.webservices.lists.employees_2018_2.EmployeeEarning[] earningList) {
+        this.earningList = earningList;
+    }
+
+
+    /**
+     * Gets the emergencyContactList value for this Employee.
+     * 
+     * @return emergencyContactList
+     */
+    public com.netsuite.webservices.lists.employees_2018_2.EmployeeEmergencyContact[] getEmergencyContactList() {
         return emergencyContactList;
     }
 
-    /**
-     * 设置emergencyContactList属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link EmployeeEmergencyContactList }
-     *     
-     */
-    public void setEmergencyContactList(EmployeeEmergencyContactList value) {
-        this.emergencyContactList = value;
-    }
 
     /**
-     * 获取hcmPositionList属性的值。
+     * Sets the emergencyContactList value for this Employee.
      * 
-     * @return
-     *     possible object is
-     *     {@link EmployeeHcmPositionList }
-     *     
+     * @param emergencyContactList
      */
-    public EmployeeHcmPositionList getHcmPositionList() {
+    public void setEmergencyContactList(com.netsuite.webservices.lists.employees_2018_2.EmployeeEmergencyContact[] emergencyContactList) {
+        this.emergencyContactList = emergencyContactList;
+    }
+
+
+    /**
+     * Gets the hcmPositionList value for this Employee.
+     * 
+     * @return hcmPositionList
+     */
+    public com.netsuite.webservices.lists.employees_2018_2.EmployeeHcmPosition[] getHcmPositionList() {
         return hcmPositionList;
     }
 
-    /**
-     * 设置hcmPositionList属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link EmployeeHcmPositionList }
-     *     
-     */
-    public void setHcmPositionList(EmployeeHcmPositionList value) {
-        this.hcmPositionList = value;
-    }
 
     /**
-     * 获取deductionList属性的值。
+     * Sets the hcmPositionList value for this Employee.
      * 
-     * @return
-     *     possible object is
-     *     {@link EmployeeDeductionList }
-     *     
+     * @param hcmPositionList
      */
-    public EmployeeDeductionList getDeductionList() {
+    public void setHcmPositionList(com.netsuite.webservices.lists.employees_2018_2.EmployeeHcmPosition[] hcmPositionList) {
+        this.hcmPositionList = hcmPositionList;
+    }
+
+
+    /**
+     * Gets the deductionList value for this Employee.
+     * 
+     * @return deductionList
+     */
+    public com.netsuite.webservices.lists.employees_2018_2.EmployeeDeduction[] getDeductionList() {
         return deductionList;
     }
 
-    /**
-     * 设置deductionList属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link EmployeeDeductionList }
-     *     
-     */
-    public void setDeductionList(EmployeeDeductionList value) {
-        this.deductionList = value;
-    }
 
     /**
-     * 获取customFieldList属性的值。
+     * Sets the deductionList value for this Employee.
      * 
-     * @return
-     *     possible object is
-     *     {@link CustomFieldList }
-     *     
+     * @param deductionList
      */
-    public CustomFieldList getCustomFieldList() {
+    public void setDeductionList(com.netsuite.webservices.lists.employees_2018_2.EmployeeDeduction[] deductionList) {
+        this.deductionList = deductionList;
+    }
+
+
+    /**
+     * Gets the customFieldList value for this Employee.
+     * 
+     * @return customFieldList
+     */
+    public com.netsuite.webservices.platform.core_2018_2.CustomFieldRef[] getCustomFieldList() {
         return customFieldList;
     }
 
-    /**
-     * 设置customFieldList属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link CustomFieldList }
-     *     
-     */
-    public void setCustomFieldList(CustomFieldList value) {
-        this.customFieldList = value;
-    }
 
     /**
-     * 获取internalId属性的值。
+     * Sets the customFieldList value for this Employee.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param customFieldList
      */
-    public String getInternalId() {
+    public void setCustomFieldList(com.netsuite.webservices.platform.core_2018_2.CustomFieldRef[] customFieldList) {
+        this.customFieldList = customFieldList;
+    }
+
+
+    /**
+     * Gets the internalId value for this Employee.
+     * 
+     * @return internalId
+     */
+    public java.lang.String getInternalId() {
         return internalId;
     }
 
-    /**
-     * 设置internalId属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setInternalId(String value) {
-        this.internalId = value;
-    }
 
     /**
-     * 获取externalId属性的值。
+     * Sets the internalId value for this Employee.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param internalId
      */
-    public String getExternalId() {
+    public void setInternalId(java.lang.String internalId) {
+        this.internalId = internalId;
+    }
+
+
+    /**
+     * Gets the externalId value for this Employee.
+     * 
+     * @return externalId
+     */
+    public java.lang.String getExternalId() {
         return externalId;
     }
 
+
     /**
-     * 设置externalId属性的值。
+     * Sets the externalId value for this Employee.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     * @param externalId
      */
-    public void setExternalId(String value) {
-        this.externalId = value;
+    public void setExternalId(java.lang.String externalId) {
+        this.externalId = externalId;
+    }
+
+    private java.lang.Object __equalsCalc = null;
+    public synchronized boolean equals(java.lang.Object obj) {
+        if (!(obj instanceof Employee)) return false;
+        Employee other = (Employee) obj;
+        if (obj == null) return false;
+        if (this == obj) return true;
+        if (__equalsCalc != null) {
+            return (__equalsCalc == obj);
+        }
+        __equalsCalc = obj;
+        boolean _equals;
+        _equals = super.equals(obj) && 
+            ((this.customForm==null && other.getCustomForm()==null) || 
+             (this.customForm!=null &&
+              this.customForm.equals(other.getCustomForm()))) &&
+            ((this.template==null && other.getTemplate()==null) || 
+             (this.template!=null &&
+              this.template.equals(other.getTemplate()))) &&
+            ((this.entityId==null && other.getEntityId()==null) || 
+             (this.entityId!=null &&
+              this.entityId.equals(other.getEntityId()))) &&
+            ((this.salutation==null && other.getSalutation()==null) || 
+             (this.salutation!=null &&
+              this.salutation.equals(other.getSalutation()))) &&
+            ((this.firstName==null && other.getFirstName()==null) || 
+             (this.firstName!=null &&
+              this.firstName.equals(other.getFirstName()))) &&
+            ((this.middleName==null && other.getMiddleName()==null) || 
+             (this.middleName!=null &&
+              this.middleName.equals(other.getMiddleName()))) &&
+            ((this.lastName==null && other.getLastName()==null) || 
+             (this.lastName!=null &&
+              this.lastName.equals(other.getLastName()))) &&
+            ((this.altName==null && other.getAltName()==null) || 
+             (this.altName!=null &&
+              this.altName.equals(other.getAltName()))) &&
+            ((this.phone==null && other.getPhone()==null) || 
+             (this.phone!=null &&
+              this.phone.equals(other.getPhone()))) &&
+            ((this.fax==null && other.getFax()==null) || 
+             (this.fax!=null &&
+              this.fax.equals(other.getFax()))) &&
+            ((this.email==null && other.getEmail()==null) || 
+             (this.email!=null &&
+              this.email.equals(other.getEmail()))) &&
+            ((this.defaultAddress==null && other.getDefaultAddress()==null) || 
+             (this.defaultAddress!=null &&
+              this.defaultAddress.equals(other.getDefaultAddress()))) &&
+            ((this.isInactive==null && other.getIsInactive()==null) || 
+             (this.isInactive!=null &&
+              this.isInactive.equals(other.getIsInactive()))) &&
+            ((this.phoneticName==null && other.getPhoneticName()==null) || 
+             (this.phoneticName!=null &&
+              this.phoneticName.equals(other.getPhoneticName()))) &&
+            ((this.lastModifiedDate==null && other.getLastModifiedDate()==null) || 
+             (this.lastModifiedDate!=null &&
+              this.lastModifiedDate.equals(other.getLastModifiedDate()))) &&
+            ((this.dateCreated==null && other.getDateCreated()==null) || 
+             (this.dateCreated!=null &&
+              this.dateCreated.equals(other.getDateCreated()))) &&
+            ((this.initials==null && other.getInitials()==null) || 
+             (this.initials!=null &&
+              this.initials.equals(other.getInitials()))) &&
+            ((this.officePhone==null && other.getOfficePhone()==null) || 
+             (this.officePhone!=null &&
+              this.officePhone.equals(other.getOfficePhone()))) &&
+            ((this.homePhone==null && other.getHomePhone()==null) || 
+             (this.homePhone!=null &&
+              this.homePhone.equals(other.getHomePhone()))) &&
+            ((this.mobilePhone==null && other.getMobilePhone()==null) || 
+             (this.mobilePhone!=null &&
+              this.mobilePhone.equals(other.getMobilePhone()))) &&
+            ((this.department==null && other.getDepartment()==null) || 
+             (this.department!=null &&
+              this.department.equals(other.getDepartment()))) &&
+            ((this._class==null && other.get_class()==null) || 
+             (this._class!=null &&
+              this._class.equals(other.get_class()))) &&
+            ((this.location==null && other.getLocation()==null) || 
+             (this.location!=null &&
+              this.location.equals(other.getLocation()))) &&
+            ((this.subsidiary==null && other.getSubsidiary()==null) || 
+             (this.subsidiary!=null &&
+              this.subsidiary.equals(other.getSubsidiary()))) &&
+            ((this.billingClass==null && other.getBillingClass()==null) || 
+             (this.billingClass!=null &&
+              this.billingClass.equals(other.getBillingClass()))) &&
+            ((this.accountNumber==null && other.getAccountNumber()==null) || 
+             (this.accountNumber!=null &&
+              this.accountNumber.equals(other.getAccountNumber()))) &&
+            ((this.compensationCurrency==null && other.getCompensationCurrency()==null) || 
+             (this.compensationCurrency!=null &&
+              this.compensationCurrency.equals(other.getCompensationCurrency()))) &&
+            ((this.baseWageType==null && other.getBaseWageType()==null) || 
+             (this.baseWageType!=null &&
+              this.baseWageType.equals(other.getBaseWageType()))) &&
+            ((this.baseWage==null && other.getBaseWage()==null) || 
+             (this.baseWage!=null &&
+              this.baseWage.equals(other.getBaseWage()))) &&
+            ((this.comments==null && other.getComments()==null) || 
+             (this.comments!=null &&
+              this.comments.equals(other.getComments()))) &&
+            ((this.globalSubscriptionStatus==null && other.getGlobalSubscriptionStatus()==null) || 
+             (this.globalSubscriptionStatus!=null &&
+              this.globalSubscriptionStatus.equals(other.getGlobalSubscriptionStatus()))) &&
+            ((this.image==null && other.getImage()==null) || 
+             (this.image!=null &&
+              this.image.equals(other.getImage()))) &&
+            ((this.payFrequency==null && other.getPayFrequency()==null) || 
+             (this.payFrequency!=null &&
+              this.payFrequency.equals(other.getPayFrequency()))) &&
+            ((this.lastPaidDate==null && other.getLastPaidDate()==null) || 
+             (this.lastPaidDate!=null &&
+              this.lastPaidDate.equals(other.getLastPaidDate()))) &&
+            ((this.currency==null && other.getCurrency()==null) || 
+             (this.currency!=null &&
+              this.currency.equals(other.getCurrency()))) &&
+            ((this.useTimeData==null && other.getUseTimeData()==null) || 
+             (this.useTimeData!=null &&
+              this.useTimeData.equals(other.getUseTimeData()))) &&
+            ((this.usePerquest==null && other.getUsePerquest()==null) || 
+             (this.usePerquest!=null &&
+              this.usePerquest.equals(other.getUsePerquest()))) &&
+            ((this.workplace==null && other.getWorkplace()==null) || 
+             (this.workplace!=null &&
+              this.workplace.equals(other.getWorkplace()))) &&
+            ((this.adpId==null && other.getAdpId()==null) || 
+             (this.adpId!=null &&
+              this.adpId.equals(other.getAdpId()))) &&
+            ((this.directDeposit==null && other.getDirectDeposit()==null) || 
+             (this.directDeposit!=null &&
+              this.directDeposit.equals(other.getDirectDeposit()))) &&
+            ((this.expenseLimit==null && other.getExpenseLimit()==null) || 
+             (this.expenseLimit!=null &&
+              this.expenseLimit.equals(other.getExpenseLimit()))) &&
+            ((this.purchaseOrderLimit==null && other.getPurchaseOrderLimit()==null) || 
+             (this.purchaseOrderLimit!=null &&
+              this.purchaseOrderLimit.equals(other.getPurchaseOrderLimit()))) &&
+            ((this.purchaseOrderApprovalLimit==null && other.getPurchaseOrderApprovalLimit()==null) || 
+             (this.purchaseOrderApprovalLimit!=null &&
+              this.purchaseOrderApprovalLimit.equals(other.getPurchaseOrderApprovalLimit()))) &&
+            ((this.socialSecurityNumber==null && other.getSocialSecurityNumber()==null) || 
+             (this.socialSecurityNumber!=null &&
+              this.socialSecurityNumber.equals(other.getSocialSecurityNumber()))) &&
+            ((this.supervisor==null && other.getSupervisor()==null) || 
+             (this.supervisor!=null &&
+              this.supervisor.equals(other.getSupervisor()))) &&
+            ((this.approver==null && other.getApprover()==null) || 
+             (this.approver!=null &&
+              this.approver.equals(other.getApprover()))) &&
+            ((this.approvalLimit==null && other.getApprovalLimit()==null) || 
+             (this.approvalLimit!=null &&
+              this.approvalLimit.equals(other.getApprovalLimit()))) &&
+            ((this.timeApprover==null && other.getTimeApprover()==null) || 
+             (this.timeApprover!=null &&
+              this.timeApprover.equals(other.getTimeApprover()))) &&
+            ((this.employeeType==null && other.getEmployeeType()==null) || 
+             (this.employeeType!=null &&
+              this.employeeType.equals(other.getEmployeeType()))) &&
+            ((this.isSalesRep==null && other.getIsSalesRep()==null) || 
+             (this.isSalesRep!=null &&
+              this.isSalesRep.equals(other.getIsSalesRep()))) &&
+            ((this.salesRole==null && other.getSalesRole()==null) || 
+             (this.salesRole!=null &&
+              this.salesRole.equals(other.getSalesRole()))) &&
+            ((this.isSupportRep==null && other.getIsSupportRep()==null) || 
+             (this.isSupportRep!=null &&
+              this.isSupportRep.equals(other.getIsSupportRep()))) &&
+            ((this.isJobResource==null && other.getIsJobResource()==null) || 
+             (this.isJobResource!=null &&
+              this.isJobResource.equals(other.getIsJobResource()))) &&
+            ((this.laborCost==null && other.getLaborCost()==null) || 
+             (this.laborCost!=null &&
+              this.laborCost.equals(other.getLaborCost()))) &&
+            ((this.birthDate==null && other.getBirthDate()==null) || 
+             (this.birthDate!=null &&
+              this.birthDate.equals(other.getBirthDate()))) &&
+            ((this.hireDate==null && other.getHireDate()==null) || 
+             (this.hireDate!=null &&
+              this.hireDate.equals(other.getHireDate()))) &&
+            ((this.releaseDate==null && other.getReleaseDate()==null) || 
+             (this.releaseDate!=null &&
+              this.releaseDate.equals(other.getReleaseDate()))) &&
+            ((this.terminationDetails==null && other.getTerminationDetails()==null) || 
+             (this.terminationDetails!=null &&
+              this.terminationDetails.equals(other.getTerminationDetails()))) &&
+            ((this.terminationReason==null && other.getTerminationReason()==null) || 
+             (this.terminationReason!=null &&
+              this.terminationReason.equals(other.getTerminationReason()))) &&
+            ((this.terminationRegretted==null && other.getTerminationRegretted()==null) || 
+             (this.terminationRegretted!=null &&
+              this.terminationRegretted.equals(other.getTerminationRegretted()))) &&
+            ((this.terminationCategory==null && other.getTerminationCategory()==null) || 
+             (this.terminationCategory!=null &&
+              this.terminationCategory.equals(other.getTerminationCategory()))) &&
+            ((this.timeOffPlan==null && other.getTimeOffPlan()==null) || 
+             (this.timeOffPlan!=null &&
+              this.timeOffPlan.equals(other.getTimeOffPlan()))) &&
+            ((this.lastReviewDate==null && other.getLastReviewDate()==null) || 
+             (this.lastReviewDate!=null &&
+              this.lastReviewDate.equals(other.getLastReviewDate()))) &&
+            ((this.nextReviewDate==null && other.getNextReviewDate()==null) || 
+             (this.nextReviewDate!=null &&
+              this.nextReviewDate.equals(other.getNextReviewDate()))) &&
+            ((this.title==null && other.getTitle()==null) || 
+             (this.title!=null &&
+              this.title.equals(other.getTitle()))) &&
+            ((this.employeeStatus==null && other.getEmployeeStatus()==null) || 
+             (this.employeeStatus!=null &&
+              this.employeeStatus.equals(other.getEmployeeStatus()))) &&
+            ((this.jobDescription==null && other.getJobDescription()==null) || 
+             (this.jobDescription!=null &&
+              this.jobDescription.equals(other.getJobDescription()))) &&
+            ((this.workAssignment==null && other.getWorkAssignment()==null) || 
+             (this.workAssignment!=null &&
+              this.workAssignment.equals(other.getWorkAssignment()))) &&
+            ((this.job==null && other.getJob()==null) || 
+             (this.job!=null &&
+              this.job.equals(other.getJob()))) &&
+            ((this.maritalStatus==null && other.getMaritalStatus()==null) || 
+             (this.maritalStatus!=null &&
+              this.maritalStatus.equals(other.getMaritalStatus()))) &&
+            ((this.ethnicity==null && other.getEthnicity()==null) || 
+             (this.ethnicity!=null &&
+              this.ethnicity.equals(other.getEthnicity()))) &&
+            ((this.gender==null && other.getGender()==null) || 
+             (this.gender!=null &&
+              this.gender.equals(other.getGender()))) &&
+            ((this.purchaseOrderApprover==null && other.getPurchaseOrderApprover()==null) || 
+             (this.purchaseOrderApprover!=null &&
+              this.purchaseOrderApprover.equals(other.getPurchaseOrderApprover()))) &&
+            ((this.workCalendar==null && other.getWorkCalendar()==null) || 
+             (this.workCalendar!=null &&
+              this.workCalendar.equals(other.getWorkCalendar()))) &&
+            ((this.giveAccess==null && other.getGiveAccess()==null) || 
+             (this.giveAccess!=null &&
+              this.giveAccess.equals(other.getGiveAccess()))) &&
+            ((this.concurrentWebServicesUser==null && other.getConcurrentWebServicesUser()==null) || 
+             (this.concurrentWebServicesUser!=null &&
+              this.concurrentWebServicesUser.equals(other.getConcurrentWebServicesUser()))) &&
+            ((this.sendEmail==null && other.getSendEmail()==null) || 
+             (this.sendEmail!=null &&
+              this.sendEmail.equals(other.getSendEmail()))) &&
+            ((this.hasOfflineAccess==null && other.getHasOfflineAccess()==null) || 
+             (this.hasOfflineAccess!=null &&
+              this.hasOfflineAccess.equals(other.getHasOfflineAccess()))) &&
+            ((this.password==null && other.getPassword()==null) || 
+             (this.password!=null &&
+              this.password.equals(other.getPassword()))) &&
+            ((this.password2==null && other.getPassword2()==null) || 
+             (this.password2!=null &&
+              this.password2.equals(other.getPassword2()))) &&
+            ((this.requirePwdChange==null && other.getRequirePwdChange()==null) || 
+             (this.requirePwdChange!=null &&
+              this.requirePwdChange.equals(other.getRequirePwdChange()))) &&
+            ((this.inheritIPRules==null && other.getInheritIPRules()==null) || 
+             (this.inheritIPRules!=null &&
+              this.inheritIPRules.equals(other.getInheritIPRules()))) &&
+            ((this.IPAddressRule==null && other.getIPAddressRule()==null) || 
+             (this.IPAddressRule!=null &&
+              this.IPAddressRule.equals(other.getIPAddressRule()))) &&
+            ((this.startDateTimeOffCalc==null && other.getStartDateTimeOffCalc()==null) || 
+             (this.startDateTimeOffCalc!=null &&
+              this.startDateTimeOffCalc.equals(other.getStartDateTimeOffCalc()))) &&
+            ((this.commissionPaymentPreference==null && other.getCommissionPaymentPreference()==null) || 
+             (this.commissionPaymentPreference!=null &&
+              this.commissionPaymentPreference.equals(other.getCommissionPaymentPreference()))) &&
+            ((this.billPay==null && other.getBillPay()==null) || 
+             (this.billPay!=null &&
+              this.billPay.equals(other.getBillPay()))) &&
+            ((this.eligibleForCommission==null && other.getEligibleForCommission()==null) || 
+             (this.eligibleForCommission!=null &&
+              this.eligibleForCommission.equals(other.getEligibleForCommission()))) &&
+            ((this.subscriptionsList==null && other.getSubscriptionsList()==null) || 
+             (this.subscriptionsList!=null &&
+              java.util.Arrays.equals(this.subscriptionsList, other.getSubscriptionsList()))) &&
+            ((this.ratesList==null && other.getRatesList()==null) || 
+             (this.ratesList!=null &&
+              java.util.Arrays.equals(this.ratesList, other.getRatesList()))) &&
+            ((this.addressbookList==null && other.getAddressbookList()==null) || 
+             (this.addressbookList!=null &&
+              java.util.Arrays.equals(this.addressbookList, other.getAddressbookList()))) &&
+            ((this.rolesList==null && other.getRolesList()==null) || 
+             (this.rolesList!=null &&
+              java.util.Arrays.equals(this.rolesList, other.getRolesList()))) &&
+            ((this.hrEducationList==null && other.getHrEducationList()==null) || 
+             (this.hrEducationList!=null &&
+              java.util.Arrays.equals(this.hrEducationList, other.getHrEducationList()))) &&
+            ((this.accruedTimeList==null && other.getAccruedTimeList()==null) || 
+             (this.accruedTimeList!=null &&
+              java.util.Arrays.equals(this.accruedTimeList, other.getAccruedTimeList()))) &&
+            ((this.directDepositList==null && other.getDirectDepositList()==null) || 
+             (this.directDepositList!=null &&
+              java.util.Arrays.equals(this.directDepositList, other.getDirectDepositList()))) &&
+            ((this.companyContributionList==null && other.getCompanyContributionList()==null) || 
+             (this.companyContributionList!=null &&
+              java.util.Arrays.equals(this.companyContributionList, other.getCompanyContributionList()))) &&
+            ((this.earningList==null && other.getEarningList()==null) || 
+             (this.earningList!=null &&
+              java.util.Arrays.equals(this.earningList, other.getEarningList()))) &&
+            ((this.emergencyContactList==null && other.getEmergencyContactList()==null) || 
+             (this.emergencyContactList!=null &&
+              java.util.Arrays.equals(this.emergencyContactList, other.getEmergencyContactList()))) &&
+            ((this.hcmPositionList==null && other.getHcmPositionList()==null) || 
+             (this.hcmPositionList!=null &&
+              java.util.Arrays.equals(this.hcmPositionList, other.getHcmPositionList()))) &&
+            ((this.deductionList==null && other.getDeductionList()==null) || 
+             (this.deductionList!=null &&
+              java.util.Arrays.equals(this.deductionList, other.getDeductionList()))) &&
+            ((this.customFieldList==null && other.getCustomFieldList()==null) || 
+             (this.customFieldList!=null &&
+              java.util.Arrays.equals(this.customFieldList, other.getCustomFieldList()))) &&
+            ((this.internalId==null && other.getInternalId()==null) || 
+             (this.internalId!=null &&
+              this.internalId.equals(other.getInternalId()))) &&
+            ((this.externalId==null && other.getExternalId()==null) || 
+             (this.externalId!=null &&
+              this.externalId.equals(other.getExternalId())));
+        __equalsCalc = null;
+        return _equals;
+    }
+
+    private boolean __hashCodeCalc = false;
+    public synchronized int hashCode() {
+        if (__hashCodeCalc) {
+            return 0;
+        }
+        __hashCodeCalc = true;
+        int _hashCode = super.hashCode();
+        if (getCustomForm() != null) {
+            _hashCode += getCustomForm().hashCode();
+        }
+        if (getTemplate() != null) {
+            _hashCode += getTemplate().hashCode();
+        }
+        if (getEntityId() != null) {
+            _hashCode += getEntityId().hashCode();
+        }
+        if (getSalutation() != null) {
+            _hashCode += getSalutation().hashCode();
+        }
+        if (getFirstName() != null) {
+            _hashCode += getFirstName().hashCode();
+        }
+        if (getMiddleName() != null) {
+            _hashCode += getMiddleName().hashCode();
+        }
+        if (getLastName() != null) {
+            _hashCode += getLastName().hashCode();
+        }
+        if (getAltName() != null) {
+            _hashCode += getAltName().hashCode();
+        }
+        if (getPhone() != null) {
+            _hashCode += getPhone().hashCode();
+        }
+        if (getFax() != null) {
+            _hashCode += getFax().hashCode();
+        }
+        if (getEmail() != null) {
+            _hashCode += getEmail().hashCode();
+        }
+        if (getDefaultAddress() != null) {
+            _hashCode += getDefaultAddress().hashCode();
+        }
+        if (getIsInactive() != null) {
+            _hashCode += getIsInactive().hashCode();
+        }
+        if (getPhoneticName() != null) {
+            _hashCode += getPhoneticName().hashCode();
+        }
+        if (getLastModifiedDate() != null) {
+            _hashCode += getLastModifiedDate().hashCode();
+        }
+        if (getDateCreated() != null) {
+            _hashCode += getDateCreated().hashCode();
+        }
+        if (getInitials() != null) {
+            _hashCode += getInitials().hashCode();
+        }
+        if (getOfficePhone() != null) {
+            _hashCode += getOfficePhone().hashCode();
+        }
+        if (getHomePhone() != null) {
+            _hashCode += getHomePhone().hashCode();
+        }
+        if (getMobilePhone() != null) {
+            _hashCode += getMobilePhone().hashCode();
+        }
+        if (getDepartment() != null) {
+            _hashCode += getDepartment().hashCode();
+        }
+        if (get_class() != null) {
+            _hashCode += get_class().hashCode();
+        }
+        if (getLocation() != null) {
+            _hashCode += getLocation().hashCode();
+        }
+        if (getSubsidiary() != null) {
+            _hashCode += getSubsidiary().hashCode();
+        }
+        if (getBillingClass() != null) {
+            _hashCode += getBillingClass().hashCode();
+        }
+        if (getAccountNumber() != null) {
+            _hashCode += getAccountNumber().hashCode();
+        }
+        if (getCompensationCurrency() != null) {
+            _hashCode += getCompensationCurrency().hashCode();
+        }
+        if (getBaseWageType() != null) {
+            _hashCode += getBaseWageType().hashCode();
+        }
+        if (getBaseWage() != null) {
+            _hashCode += getBaseWage().hashCode();
+        }
+        if (getComments() != null) {
+            _hashCode += getComments().hashCode();
+        }
+        if (getGlobalSubscriptionStatus() != null) {
+            _hashCode += getGlobalSubscriptionStatus().hashCode();
+        }
+        if (getImage() != null) {
+            _hashCode += getImage().hashCode();
+        }
+        if (getPayFrequency() != null) {
+            _hashCode += getPayFrequency().hashCode();
+        }
+        if (getLastPaidDate() != null) {
+            _hashCode += getLastPaidDate().hashCode();
+        }
+        if (getCurrency() != null) {
+            _hashCode += getCurrency().hashCode();
+        }
+        if (getUseTimeData() != null) {
+            _hashCode += getUseTimeData().hashCode();
+        }
+        if (getUsePerquest() != null) {
+            _hashCode += getUsePerquest().hashCode();
+        }
+        if (getWorkplace() != null) {
+            _hashCode += getWorkplace().hashCode();
+        }
+        if (getAdpId() != null) {
+            _hashCode += getAdpId().hashCode();
+        }
+        if (getDirectDeposit() != null) {
+            _hashCode += getDirectDeposit().hashCode();
+        }
+        if (getExpenseLimit() != null) {
+            _hashCode += getExpenseLimit().hashCode();
+        }
+        if (getPurchaseOrderLimit() != null) {
+            _hashCode += getPurchaseOrderLimit().hashCode();
+        }
+        if (getPurchaseOrderApprovalLimit() != null) {
+            _hashCode += getPurchaseOrderApprovalLimit().hashCode();
+        }
+        if (getSocialSecurityNumber() != null) {
+            _hashCode += getSocialSecurityNumber().hashCode();
+        }
+        if (getSupervisor() != null) {
+            _hashCode += getSupervisor().hashCode();
+        }
+        if (getApprover() != null) {
+            _hashCode += getApprover().hashCode();
+        }
+        if (getApprovalLimit() != null) {
+            _hashCode += getApprovalLimit().hashCode();
+        }
+        if (getTimeApprover() != null) {
+            _hashCode += getTimeApprover().hashCode();
+        }
+        if (getEmployeeType() != null) {
+            _hashCode += getEmployeeType().hashCode();
+        }
+        if (getIsSalesRep() != null) {
+            _hashCode += getIsSalesRep().hashCode();
+        }
+        if (getSalesRole() != null) {
+            _hashCode += getSalesRole().hashCode();
+        }
+        if (getIsSupportRep() != null) {
+            _hashCode += getIsSupportRep().hashCode();
+        }
+        if (getIsJobResource() != null) {
+            _hashCode += getIsJobResource().hashCode();
+        }
+        if (getLaborCost() != null) {
+            _hashCode += getLaborCost().hashCode();
+        }
+        if (getBirthDate() != null) {
+            _hashCode += getBirthDate().hashCode();
+        }
+        if (getHireDate() != null) {
+            _hashCode += getHireDate().hashCode();
+        }
+        if (getReleaseDate() != null) {
+            _hashCode += getReleaseDate().hashCode();
+        }
+        if (getTerminationDetails() != null) {
+            _hashCode += getTerminationDetails().hashCode();
+        }
+        if (getTerminationReason() != null) {
+            _hashCode += getTerminationReason().hashCode();
+        }
+        if (getTerminationRegretted() != null) {
+            _hashCode += getTerminationRegretted().hashCode();
+        }
+        if (getTerminationCategory() != null) {
+            _hashCode += getTerminationCategory().hashCode();
+        }
+        if (getTimeOffPlan() != null) {
+            _hashCode += getTimeOffPlan().hashCode();
+        }
+        if (getLastReviewDate() != null) {
+            _hashCode += getLastReviewDate().hashCode();
+        }
+        if (getNextReviewDate() != null) {
+            _hashCode += getNextReviewDate().hashCode();
+        }
+        if (getTitle() != null) {
+            _hashCode += getTitle().hashCode();
+        }
+        if (getEmployeeStatus() != null) {
+            _hashCode += getEmployeeStatus().hashCode();
+        }
+        if (getJobDescription() != null) {
+            _hashCode += getJobDescription().hashCode();
+        }
+        if (getWorkAssignment() != null) {
+            _hashCode += getWorkAssignment().hashCode();
+        }
+        if (getJob() != null) {
+            _hashCode += getJob().hashCode();
+        }
+        if (getMaritalStatus() != null) {
+            _hashCode += getMaritalStatus().hashCode();
+        }
+        if (getEthnicity() != null) {
+            _hashCode += getEthnicity().hashCode();
+        }
+        if (getGender() != null) {
+            _hashCode += getGender().hashCode();
+        }
+        if (getPurchaseOrderApprover() != null) {
+            _hashCode += getPurchaseOrderApprover().hashCode();
+        }
+        if (getWorkCalendar() != null) {
+            _hashCode += getWorkCalendar().hashCode();
+        }
+        if (getGiveAccess() != null) {
+            _hashCode += getGiveAccess().hashCode();
+        }
+        if (getConcurrentWebServicesUser() != null) {
+            _hashCode += getConcurrentWebServicesUser().hashCode();
+        }
+        if (getSendEmail() != null) {
+            _hashCode += getSendEmail().hashCode();
+        }
+        if (getHasOfflineAccess() != null) {
+            _hashCode += getHasOfflineAccess().hashCode();
+        }
+        if (getPassword() != null) {
+            _hashCode += getPassword().hashCode();
+        }
+        if (getPassword2() != null) {
+            _hashCode += getPassword2().hashCode();
+        }
+        if (getRequirePwdChange() != null) {
+            _hashCode += getRequirePwdChange().hashCode();
+        }
+        if (getInheritIPRules() != null) {
+            _hashCode += getInheritIPRules().hashCode();
+        }
+        if (getIPAddressRule() != null) {
+            _hashCode += getIPAddressRule().hashCode();
+        }
+        if (getStartDateTimeOffCalc() != null) {
+            _hashCode += getStartDateTimeOffCalc().hashCode();
+        }
+        if (getCommissionPaymentPreference() != null) {
+            _hashCode += getCommissionPaymentPreference().hashCode();
+        }
+        if (getBillPay() != null) {
+            _hashCode += getBillPay().hashCode();
+        }
+        if (getEligibleForCommission() != null) {
+            _hashCode += getEligibleForCommission().hashCode();
+        }
+        if (getSubscriptionsList() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getSubscriptionsList());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getSubscriptionsList(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getRatesList() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getRatesList());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getRatesList(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getAddressbookList() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getAddressbookList());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getAddressbookList(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getRolesList() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getRolesList());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getRolesList(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getHrEducationList() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getHrEducationList());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getHrEducationList(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getAccruedTimeList() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getAccruedTimeList());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getAccruedTimeList(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getDirectDepositList() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getDirectDepositList());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getDirectDepositList(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getCompanyContributionList() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getCompanyContributionList());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getCompanyContributionList(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getEarningList() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getEarningList());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getEarningList(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getEmergencyContactList() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getEmergencyContactList());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getEmergencyContactList(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getHcmPositionList() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getHcmPositionList());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getHcmPositionList(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getDeductionList() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getDeductionList());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getDeductionList(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getCustomFieldList() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getCustomFieldList());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getCustomFieldList(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getInternalId() != null) {
+            _hashCode += getInternalId().hashCode();
+        }
+        if (getExternalId() != null) {
+            _hashCode += getExternalId().hashCode();
+        }
+        __hashCodeCalc = false;
+        return _hashCode;
+    }
+
+    // Type metadata
+    private static org.apache.axis.description.TypeDesc typeDesc =
+        new org.apache.axis.description.TypeDesc(Employee.class, true);
+
+    static {
+        typeDesc.setXmlType(new javax.xml.namespace.QName("urn:employees_2018_2.lists.webservices.netsuite.com", "Employee"));
+        org.apache.axis.description.AttributeDesc attrField = new org.apache.axis.description.AttributeDesc();
+        attrField.setFieldName("internalId");
+        attrField.setXmlName(new javax.xml.namespace.QName("", "internalId"));
+        attrField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        typeDesc.addFieldDesc(attrField);
+        attrField = new org.apache.axis.description.AttributeDesc();
+        attrField.setFieldName("externalId");
+        attrField.setXmlName(new javax.xml.namespace.QName("", "externalId"));
+        attrField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        typeDesc.addFieldDesc(attrField);
+        org.apache.axis.description.ElementDesc elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("customForm");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:employees_2018_2.lists.webservices.netsuite.com", "customForm"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("template");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:employees_2018_2.lists.webservices.netsuite.com", "template"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("entityId");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:employees_2018_2.lists.webservices.netsuite.com", "entityId"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("salutation");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:employees_2018_2.lists.webservices.netsuite.com", "salutation"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("firstName");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:employees_2018_2.lists.webservices.netsuite.com", "firstName"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("middleName");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:employees_2018_2.lists.webservices.netsuite.com", "middleName"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("lastName");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:employees_2018_2.lists.webservices.netsuite.com", "lastName"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("altName");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:employees_2018_2.lists.webservices.netsuite.com", "altName"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("phone");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:employees_2018_2.lists.webservices.netsuite.com", "phone"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("fax");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:employees_2018_2.lists.webservices.netsuite.com", "fax"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("email");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:employees_2018_2.lists.webservices.netsuite.com", "email"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("defaultAddress");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:employees_2018_2.lists.webservices.netsuite.com", "defaultAddress"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("isInactive");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:employees_2018_2.lists.webservices.netsuite.com", "isInactive"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("phoneticName");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:employees_2018_2.lists.webservices.netsuite.com", "phoneticName"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("lastModifiedDate");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:employees_2018_2.lists.webservices.netsuite.com", "lastModifiedDate"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "dateTime"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("dateCreated");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:employees_2018_2.lists.webservices.netsuite.com", "dateCreated"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "dateTime"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("initials");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:employees_2018_2.lists.webservices.netsuite.com", "initials"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("officePhone");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:employees_2018_2.lists.webservices.netsuite.com", "officePhone"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("homePhone");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:employees_2018_2.lists.webservices.netsuite.com", "homePhone"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("mobilePhone");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:employees_2018_2.lists.webservices.netsuite.com", "mobilePhone"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("department");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:employees_2018_2.lists.webservices.netsuite.com", "department"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("_class");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:employees_2018_2.lists.webservices.netsuite.com", "class"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("location");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:employees_2018_2.lists.webservices.netsuite.com", "location"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("subsidiary");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:employees_2018_2.lists.webservices.netsuite.com", "subsidiary"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("billingClass");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:employees_2018_2.lists.webservices.netsuite.com", "billingClass"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("accountNumber");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:employees_2018_2.lists.webservices.netsuite.com", "accountNumber"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("compensationCurrency");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:employees_2018_2.lists.webservices.netsuite.com", "compensationCurrency"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:types.employees_2018_2.lists.webservices.netsuite.com", "EmployeeCompensationCurrency"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("baseWageType");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:employees_2018_2.lists.webservices.netsuite.com", "baseWageType"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:types.employees_2018_2.lists.webservices.netsuite.com", "EmployeeBaseWageType"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("baseWage");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:employees_2018_2.lists.webservices.netsuite.com", "baseWage"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "double"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("comments");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:employees_2018_2.lists.webservices.netsuite.com", "comments"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("globalSubscriptionStatus");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:employees_2018_2.lists.webservices.netsuite.com", "globalSubscriptionStatus"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:types.common_2018_2.platform.webservices.netsuite.com", "GlobalSubscriptionStatus"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("image");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:employees_2018_2.lists.webservices.netsuite.com", "image"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("payFrequency");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:employees_2018_2.lists.webservices.netsuite.com", "payFrequency"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:types.employees_2018_2.lists.webservices.netsuite.com", "EmployeePayFrequency"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("lastPaidDate");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:employees_2018_2.lists.webservices.netsuite.com", "lastPaidDate"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "dateTime"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("currency");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:employees_2018_2.lists.webservices.netsuite.com", "currency"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("useTimeData");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:employees_2018_2.lists.webservices.netsuite.com", "useTimeData"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:types.employees_2018_2.lists.webservices.netsuite.com", "EmployeeUseTimeData"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("usePerquest");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:employees_2018_2.lists.webservices.netsuite.com", "usePerquest"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("workplace");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:employees_2018_2.lists.webservices.netsuite.com", "workplace"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("adpId");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:employees_2018_2.lists.webservices.netsuite.com", "adpId"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("directDeposit");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:employees_2018_2.lists.webservices.netsuite.com", "directDeposit"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("expenseLimit");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:employees_2018_2.lists.webservices.netsuite.com", "expenseLimit"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "double"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("purchaseOrderLimit");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:employees_2018_2.lists.webservices.netsuite.com", "purchaseOrderLimit"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "double"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("purchaseOrderApprovalLimit");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:employees_2018_2.lists.webservices.netsuite.com", "purchaseOrderApprovalLimit"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "double"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("socialSecurityNumber");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:employees_2018_2.lists.webservices.netsuite.com", "socialSecurityNumber"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("supervisor");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:employees_2018_2.lists.webservices.netsuite.com", "supervisor"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("approver");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:employees_2018_2.lists.webservices.netsuite.com", "approver"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("approvalLimit");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:employees_2018_2.lists.webservices.netsuite.com", "approvalLimit"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "double"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("timeApprover");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:employees_2018_2.lists.webservices.netsuite.com", "timeApprover"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("employeeType");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:employees_2018_2.lists.webservices.netsuite.com", "employeeType"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("isSalesRep");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:employees_2018_2.lists.webservices.netsuite.com", "isSalesRep"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("salesRole");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:employees_2018_2.lists.webservices.netsuite.com", "salesRole"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("isSupportRep");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:employees_2018_2.lists.webservices.netsuite.com", "isSupportRep"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("isJobResource");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:employees_2018_2.lists.webservices.netsuite.com", "isJobResource"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("laborCost");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:employees_2018_2.lists.webservices.netsuite.com", "laborCost"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "double"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("birthDate");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:employees_2018_2.lists.webservices.netsuite.com", "birthDate"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "dateTime"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("hireDate");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:employees_2018_2.lists.webservices.netsuite.com", "hireDate"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "dateTime"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("releaseDate");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:employees_2018_2.lists.webservices.netsuite.com", "releaseDate"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "dateTime"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("terminationDetails");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:employees_2018_2.lists.webservices.netsuite.com", "terminationDetails"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("terminationReason");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:employees_2018_2.lists.webservices.netsuite.com", "terminationReason"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("terminationRegretted");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:employees_2018_2.lists.webservices.netsuite.com", "terminationRegretted"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:types.employees_2018_2.lists.webservices.netsuite.com", "EmployeeTerminationRegretted"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("terminationCategory");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:employees_2018_2.lists.webservices.netsuite.com", "terminationCategory"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:types.employees_2018_2.lists.webservices.netsuite.com", "EmployeeTerminationCategory"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("timeOffPlan");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:employees_2018_2.lists.webservices.netsuite.com", "timeOffPlan"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("lastReviewDate");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:employees_2018_2.lists.webservices.netsuite.com", "lastReviewDate"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "dateTime"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("nextReviewDate");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:employees_2018_2.lists.webservices.netsuite.com", "nextReviewDate"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "dateTime"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("title");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:employees_2018_2.lists.webservices.netsuite.com", "title"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("employeeStatus");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:employees_2018_2.lists.webservices.netsuite.com", "employeeStatus"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("jobDescription");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:employees_2018_2.lists.webservices.netsuite.com", "jobDescription"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("workAssignment");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:employees_2018_2.lists.webservices.netsuite.com", "workAssignment"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:types.employees_2018_2.lists.webservices.netsuite.com", "EmployeeWorkAssignment"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("job");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:employees_2018_2.lists.webservices.netsuite.com", "job"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("maritalStatus");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:employees_2018_2.lists.webservices.netsuite.com", "maritalStatus"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("ethnicity");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:employees_2018_2.lists.webservices.netsuite.com", "ethnicity"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("gender");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:employees_2018_2.lists.webservices.netsuite.com", "gender"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:types.employees_2018_2.lists.webservices.netsuite.com", "Gender"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("purchaseOrderApprover");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:employees_2018_2.lists.webservices.netsuite.com", "purchaseOrderApprover"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("workCalendar");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:employees_2018_2.lists.webservices.netsuite.com", "workCalendar"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("giveAccess");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:employees_2018_2.lists.webservices.netsuite.com", "giveAccess"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("concurrentWebServicesUser");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:employees_2018_2.lists.webservices.netsuite.com", "concurrentWebServicesUser"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("sendEmail");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:employees_2018_2.lists.webservices.netsuite.com", "sendEmail"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("hasOfflineAccess");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:employees_2018_2.lists.webservices.netsuite.com", "hasOfflineAccess"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("password");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:employees_2018_2.lists.webservices.netsuite.com", "password"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("password2");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:employees_2018_2.lists.webservices.netsuite.com", "password2"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("requirePwdChange");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:employees_2018_2.lists.webservices.netsuite.com", "requirePwdChange"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("inheritIPRules");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:employees_2018_2.lists.webservices.netsuite.com", "inheritIPRules"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("IPAddressRule");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:employees_2018_2.lists.webservices.netsuite.com", "IPAddressRule"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("startDateTimeOffCalc");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:employees_2018_2.lists.webservices.netsuite.com", "startDateTimeOffCalc"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "dateTime"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("commissionPaymentPreference");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:employees_2018_2.lists.webservices.netsuite.com", "commissionPaymentPreference"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:types.employees_2018_2.lists.webservices.netsuite.com", "EmployeeCommissionPaymentPreference"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("billPay");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:employees_2018_2.lists.webservices.netsuite.com", "billPay"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("eligibleForCommission");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:employees_2018_2.lists.webservices.netsuite.com", "eligibleForCommission"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("subscriptionsList");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:employees_2018_2.lists.webservices.netsuite.com", "subscriptionsList"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:employees_2018_2.lists.webservices.netsuite.com", "EmployeeSubscriptions"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:employees_2018_2.lists.webservices.netsuite.com", "subscriptions"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("ratesList");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:employees_2018_2.lists.webservices.netsuite.com", "ratesList"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:employees_2018_2.lists.webservices.netsuite.com", "EmployeeRates"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:employees_2018_2.lists.webservices.netsuite.com", "employeeRates"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("addressbookList");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:employees_2018_2.lists.webservices.netsuite.com", "addressbookList"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:employees_2018_2.lists.webservices.netsuite.com", "EmployeeAddressbook"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:employees_2018_2.lists.webservices.netsuite.com", "addressbook"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("rolesList");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:employees_2018_2.lists.webservices.netsuite.com", "rolesList"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:employees_2018_2.lists.webservices.netsuite.com", "EmployeeRoles"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:employees_2018_2.lists.webservices.netsuite.com", "roles"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("hrEducationList");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:employees_2018_2.lists.webservices.netsuite.com", "hrEducationList"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:employees_2018_2.lists.webservices.netsuite.com", "EmployeeHrEducation"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:employees_2018_2.lists.webservices.netsuite.com", "employeeHrEducation"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("accruedTimeList");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:employees_2018_2.lists.webservices.netsuite.com", "accruedTimeList"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:employees_2018_2.lists.webservices.netsuite.com", "EmployeeAccruedTime"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:employees_2018_2.lists.webservices.netsuite.com", "employeeAccruedTime"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("directDepositList");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:employees_2018_2.lists.webservices.netsuite.com", "directDepositList"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:employees_2018_2.lists.webservices.netsuite.com", "EmployeeDirectDeposit"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:employees_2018_2.lists.webservices.netsuite.com", "employeeDirectDeposit"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("companyContributionList");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:employees_2018_2.lists.webservices.netsuite.com", "companyContributionList"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:employees_2018_2.lists.webservices.netsuite.com", "EmployeeCompanyContribution"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:employees_2018_2.lists.webservices.netsuite.com", "employeeCompanyContribution"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("earningList");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:employees_2018_2.lists.webservices.netsuite.com", "earningList"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:employees_2018_2.lists.webservices.netsuite.com", "EmployeeEarning"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:employees_2018_2.lists.webservices.netsuite.com", "employeeEarning"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("emergencyContactList");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:employees_2018_2.lists.webservices.netsuite.com", "emergencyContactList"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:employees_2018_2.lists.webservices.netsuite.com", "EmployeeEmergencyContact"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:employees_2018_2.lists.webservices.netsuite.com", "employeeEmergencyContact"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("hcmPositionList");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:employees_2018_2.lists.webservices.netsuite.com", "hcmPositionList"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:employees_2018_2.lists.webservices.netsuite.com", "EmployeeHcmPosition"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:employees_2018_2.lists.webservices.netsuite.com", "employeeHcmPosition"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("deductionList");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:employees_2018_2.lists.webservices.netsuite.com", "deductionList"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:employees_2018_2.lists.webservices.netsuite.com", "EmployeeDeduction"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:employees_2018_2.lists.webservices.netsuite.com", "employeeDeduction"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("customFieldList");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:employees_2018_2.lists.webservices.netsuite.com", "customFieldList"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "CustomFieldRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "customField"));
+        typeDesc.addFieldDesc(elemField);
+    }
+
+    /**
+     * Return type metadata object
+     */
+    public static org.apache.axis.description.TypeDesc getTypeDesc() {
+        return typeDesc;
+    }
+
+    /**
+     * Get Custom Serializer
+     */
+    public static org.apache.axis.encoding.Serializer getSerializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanSerializer(
+            _javaType, _xmlType, typeDesc);
+    }
+
+    /**
+     * Get Custom Deserializer
+     */
+    public static org.apache.axis.encoding.Deserializer getDeserializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanDeserializer(
+            _javaType, _xmlType, typeDesc);
     }
 
 }

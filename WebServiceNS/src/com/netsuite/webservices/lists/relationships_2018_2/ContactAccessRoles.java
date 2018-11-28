@@ -1,223 +1,342 @@
+/**
+ * ContactAccessRoles.java
+ *
+ * This file was auto-generated from WSDL
+ * by the Apache Axis 1.4 Jul 28, 2010 (04:07:04 PDT) WSDL2Java emitter.
+ */
 
 package com.netsuite.webservices.lists.relationships_2018_2;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlType;
-import com.netsuite.webservices.platform.core_2018_2.RecordRef;
+public class ContactAccessRoles  implements java.io.Serializable {
+    private java.lang.Boolean giveAccess;
 
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef contact;
 
-/**
- * <p>ContactAccessRoles complex type的 Java 类。
- * 
- * <p>以下模式片段指定包含在此类中的预期内容。
- * 
- * <pre>
- * &lt;complexType name="ContactAccessRoles">
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element name="giveAccess" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         &lt;element name="contact" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="email" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="role" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="password" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="password2" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="sendEmail" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
- */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "ContactAccessRoles", propOrder = {
-    "giveAccess",
-    "contact",
-    "email",
-    "role",
-    "password",
-    "password2",
-    "sendEmail"
-})
-public class ContactAccessRoles {
+    private java.lang.String email;
 
-    protected Boolean giveAccess;
-    protected RecordRef contact;
-    protected String email;
-    protected RecordRef role;
-    protected String password;
-    protected String password2;
-    protected Boolean sendEmail;
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef role;
+
+    private java.lang.String password;
+
+    private java.lang.String password2;
+
+    private java.lang.Boolean sendEmail;
+
+    public ContactAccessRoles() {
+    }
+
+    public ContactAccessRoles(
+           java.lang.Boolean giveAccess,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef contact,
+           java.lang.String email,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef role,
+           java.lang.String password,
+           java.lang.String password2,
+           java.lang.Boolean sendEmail) {
+           this.giveAccess = giveAccess;
+           this.contact = contact;
+           this.email = email;
+           this.role = role;
+           this.password = password;
+           this.password2 = password2;
+           this.sendEmail = sendEmail;
+    }
+
 
     /**
-     * 获取giveAccess属性的值。
+     * Gets the giveAccess value for this ContactAccessRoles.
      * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
+     * @return giveAccess
      */
-    public Boolean isGiveAccess() {
+    public java.lang.Boolean getGiveAccess() {
         return giveAccess;
     }
 
-    /**
-     * 设置giveAccess属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
-     */
-    public void setGiveAccess(Boolean value) {
-        this.giveAccess = value;
-    }
 
     /**
-     * 获取contact属性的值。
+     * Sets the giveAccess value for this ContactAccessRoles.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param giveAccess
      */
-    public RecordRef getContact() {
+    public void setGiveAccess(java.lang.Boolean giveAccess) {
+        this.giveAccess = giveAccess;
+    }
+
+
+    /**
+     * Gets the contact value for this ContactAccessRoles.
+     * 
+     * @return contact
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getContact() {
         return contact;
     }
 
-    /**
-     * 设置contact属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setContact(RecordRef value) {
-        this.contact = value;
-    }
 
     /**
-     * 获取email属性的值。
+     * Sets the contact value for this ContactAccessRoles.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param contact
      */
-    public String getEmail() {
+    public void setContact(com.netsuite.webservices.platform.core_2018_2.RecordRef contact) {
+        this.contact = contact;
+    }
+
+
+    /**
+     * Gets the email value for this ContactAccessRoles.
+     * 
+     * @return email
+     */
+    public java.lang.String getEmail() {
         return email;
     }
 
-    /**
-     * 设置email属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setEmail(String value) {
-        this.email = value;
-    }
 
     /**
-     * 获取role属性的值。
+     * Sets the email value for this ContactAccessRoles.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param email
      */
-    public RecordRef getRole() {
+    public void setEmail(java.lang.String email) {
+        this.email = email;
+    }
+
+
+    /**
+     * Gets the role value for this ContactAccessRoles.
+     * 
+     * @return role
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getRole() {
         return role;
     }
 
-    /**
-     * 设置role属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setRole(RecordRef value) {
-        this.role = value;
-    }
 
     /**
-     * 获取password属性的值。
+     * Sets the role value for this ContactAccessRoles.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param role
      */
-    public String getPassword() {
+    public void setRole(com.netsuite.webservices.platform.core_2018_2.RecordRef role) {
+        this.role = role;
+    }
+
+
+    /**
+     * Gets the password value for this ContactAccessRoles.
+     * 
+     * @return password
+     */
+    public java.lang.String getPassword() {
         return password;
     }
 
-    /**
-     * 设置password属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setPassword(String value) {
-        this.password = value;
-    }
 
     /**
-     * 获取password2属性的值。
+     * Sets the password value for this ContactAccessRoles.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param password
      */
-    public String getPassword2() {
+    public void setPassword(java.lang.String password) {
+        this.password = password;
+    }
+
+
+    /**
+     * Gets the password2 value for this ContactAccessRoles.
+     * 
+     * @return password2
+     */
+    public java.lang.String getPassword2() {
         return password2;
     }
 
-    /**
-     * 设置password2属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setPassword2(String value) {
-        this.password2 = value;
-    }
 
     /**
-     * 获取sendEmail属性的值。
+     * Sets the password2 value for this ContactAccessRoles.
      * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
+     * @param password2
      */
-    public Boolean isSendEmail() {
+    public void setPassword2(java.lang.String password2) {
+        this.password2 = password2;
+    }
+
+
+    /**
+     * Gets the sendEmail value for this ContactAccessRoles.
+     * 
+     * @return sendEmail
+     */
+    public java.lang.Boolean getSendEmail() {
         return sendEmail;
     }
 
+
     /**
-     * 设置sendEmail属性的值。
+     * Sets the sendEmail value for this ContactAccessRoles.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
+     * @param sendEmail
      */
-    public void setSendEmail(Boolean value) {
-        this.sendEmail = value;
+    public void setSendEmail(java.lang.Boolean sendEmail) {
+        this.sendEmail = sendEmail;
+    }
+
+    private java.lang.Object __equalsCalc = null;
+    public synchronized boolean equals(java.lang.Object obj) {
+        if (!(obj instanceof ContactAccessRoles)) return false;
+        ContactAccessRoles other = (ContactAccessRoles) obj;
+        if (obj == null) return false;
+        if (this == obj) return true;
+        if (__equalsCalc != null) {
+            return (__equalsCalc == obj);
+        }
+        __equalsCalc = obj;
+        boolean _equals;
+        _equals = true && 
+            ((this.giveAccess==null && other.getGiveAccess()==null) || 
+             (this.giveAccess!=null &&
+              this.giveAccess.equals(other.getGiveAccess()))) &&
+            ((this.contact==null && other.getContact()==null) || 
+             (this.contact!=null &&
+              this.contact.equals(other.getContact()))) &&
+            ((this.email==null && other.getEmail()==null) || 
+             (this.email!=null &&
+              this.email.equals(other.getEmail()))) &&
+            ((this.role==null && other.getRole()==null) || 
+             (this.role!=null &&
+              this.role.equals(other.getRole()))) &&
+            ((this.password==null && other.getPassword()==null) || 
+             (this.password!=null &&
+              this.password.equals(other.getPassword()))) &&
+            ((this.password2==null && other.getPassword2()==null) || 
+             (this.password2!=null &&
+              this.password2.equals(other.getPassword2()))) &&
+            ((this.sendEmail==null && other.getSendEmail()==null) || 
+             (this.sendEmail!=null &&
+              this.sendEmail.equals(other.getSendEmail())));
+        __equalsCalc = null;
+        return _equals;
+    }
+
+    private boolean __hashCodeCalc = false;
+    public synchronized int hashCode() {
+        if (__hashCodeCalc) {
+            return 0;
+        }
+        __hashCodeCalc = true;
+        int _hashCode = 1;
+        if (getGiveAccess() != null) {
+            _hashCode += getGiveAccess().hashCode();
+        }
+        if (getContact() != null) {
+            _hashCode += getContact().hashCode();
+        }
+        if (getEmail() != null) {
+            _hashCode += getEmail().hashCode();
+        }
+        if (getRole() != null) {
+            _hashCode += getRole().hashCode();
+        }
+        if (getPassword() != null) {
+            _hashCode += getPassword().hashCode();
+        }
+        if (getPassword2() != null) {
+            _hashCode += getPassword2().hashCode();
+        }
+        if (getSendEmail() != null) {
+            _hashCode += getSendEmail().hashCode();
+        }
+        __hashCodeCalc = false;
+        return _hashCode;
+    }
+
+    // Type metadata
+    private static org.apache.axis.description.TypeDesc typeDesc =
+        new org.apache.axis.description.TypeDesc(ContactAccessRoles.class, true);
+
+    static {
+        typeDesc.setXmlType(new javax.xml.namespace.QName("urn:relationships_2018_2.lists.webservices.netsuite.com", "ContactAccessRoles"));
+        org.apache.axis.description.ElementDesc elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("giveAccess");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:relationships_2018_2.lists.webservices.netsuite.com", "giveAccess"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("contact");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:relationships_2018_2.lists.webservices.netsuite.com", "contact"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("email");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:relationships_2018_2.lists.webservices.netsuite.com", "email"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("role");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:relationships_2018_2.lists.webservices.netsuite.com", "role"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("password");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:relationships_2018_2.lists.webservices.netsuite.com", "password"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("password2");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:relationships_2018_2.lists.webservices.netsuite.com", "password2"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("sendEmail");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:relationships_2018_2.lists.webservices.netsuite.com", "sendEmail"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+    }
+
+    /**
+     * Return type metadata object
+     */
+    public static org.apache.axis.description.TypeDesc getTypeDesc() {
+        return typeDesc;
+    }
+
+    /**
+     * Get Custom Serializer
+     */
+    public static org.apache.axis.encoding.Serializer getSerializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanSerializer(
+            _javaType, _xmlType, typeDesc);
+    }
+
+    /**
+     * Get Custom Deserializer
+     */
+    public static org.apache.axis.encoding.Deserializer getDeserializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanDeserializer(
+            _javaType, _xmlType, typeDesc);
     }
 
 }

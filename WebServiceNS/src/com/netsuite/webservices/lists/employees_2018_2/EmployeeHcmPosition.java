@@ -1,277 +1,416 @@
+/**
+ * EmployeeHcmPosition.java
+ *
+ * This file was auto-generated from WSDL
+ * by the Apache Axis 1.4 Jul 28, 2010 (04:07:04 PDT) WSDL2Java emitter.
+ */
 
 package com.netsuite.webservices.lists.employees_2018_2;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlType;
-import com.netsuite.webservices.platform.core_2018_2.RecordRef;
+public class EmployeeHcmPosition  implements java.io.Serializable {
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef position;
 
+    private java.lang.Boolean primaryPosition;
 
-/**
- * <p>EmployeeHcmPosition complex type的 Java 类。
- * 
- * <p>以下模式片段指定包含在此类中的预期内容。
- * 
- * <pre>
- * &lt;complexType name="EmployeeHcmPosition">
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element name="position" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="primaryPosition" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         &lt;element name="positionId" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="positionAllocation" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
- *         &lt;element name="fullTimeEquivalent" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
- *         &lt;element name="employmentCategory" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="reportsTo" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="subsidiary" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="location" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
- */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "EmployeeHcmPosition", propOrder = {
-    "position",
-    "primaryPosition",
-    "positionId",
-    "positionAllocation",
-    "fullTimeEquivalent",
-    "employmentCategory",
-    "reportsTo",
-    "subsidiary",
-    "location"
-})
-public class EmployeeHcmPosition {
+    private java.lang.String positionId;
 
-    protected RecordRef position;
-    protected Boolean primaryPosition;
-    protected String positionId;
-    protected Double positionAllocation;
-    protected Double fullTimeEquivalent;
-    protected RecordRef employmentCategory;
-    protected RecordRef reportsTo;
-    protected RecordRef subsidiary;
-    protected RecordRef location;
+    private java.lang.Double positionAllocation;
+
+    private java.lang.Double fullTimeEquivalent;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef employmentCategory;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef reportsTo;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef subsidiary;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef location;
+
+    public EmployeeHcmPosition() {
+    }
+
+    public EmployeeHcmPosition(
+           com.netsuite.webservices.platform.core_2018_2.RecordRef position,
+           java.lang.Boolean primaryPosition,
+           java.lang.String positionId,
+           java.lang.Double positionAllocation,
+           java.lang.Double fullTimeEquivalent,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef employmentCategory,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef reportsTo,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef subsidiary,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef location) {
+           this.position = position;
+           this.primaryPosition = primaryPosition;
+           this.positionId = positionId;
+           this.positionAllocation = positionAllocation;
+           this.fullTimeEquivalent = fullTimeEquivalent;
+           this.employmentCategory = employmentCategory;
+           this.reportsTo = reportsTo;
+           this.subsidiary = subsidiary;
+           this.location = location;
+    }
+
 
     /**
-     * 获取position属性的值。
+     * Gets the position value for this EmployeeHcmPosition.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @return position
      */
-    public RecordRef getPosition() {
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getPosition() {
         return position;
     }
 
-    /**
-     * 设置position属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setPosition(RecordRef value) {
-        this.position = value;
-    }
 
     /**
-     * 获取primaryPosition属性的值。
+     * Sets the position value for this EmployeeHcmPosition.
      * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
+     * @param position
      */
-    public Boolean isPrimaryPosition() {
+    public void setPosition(com.netsuite.webservices.platform.core_2018_2.RecordRef position) {
+        this.position = position;
+    }
+
+
+    /**
+     * Gets the primaryPosition value for this EmployeeHcmPosition.
+     * 
+     * @return primaryPosition
+     */
+    public java.lang.Boolean getPrimaryPosition() {
         return primaryPosition;
     }
 
-    /**
-     * 设置primaryPosition属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
-     */
-    public void setPrimaryPosition(Boolean value) {
-        this.primaryPosition = value;
-    }
 
     /**
-     * 获取positionId属性的值。
+     * Sets the primaryPosition value for this EmployeeHcmPosition.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param primaryPosition
      */
-    public String getPositionId() {
+    public void setPrimaryPosition(java.lang.Boolean primaryPosition) {
+        this.primaryPosition = primaryPosition;
+    }
+
+
+    /**
+     * Gets the positionId value for this EmployeeHcmPosition.
+     * 
+     * @return positionId
+     */
+    public java.lang.String getPositionId() {
         return positionId;
     }
 
-    /**
-     * 设置positionId属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setPositionId(String value) {
-        this.positionId = value;
-    }
 
     /**
-     * 获取positionAllocation属性的值。
+     * Sets the positionId value for this EmployeeHcmPosition.
      * 
-     * @return
-     *     possible object is
-     *     {@link Double }
-     *     
+     * @param positionId
      */
-    public Double getPositionAllocation() {
+    public void setPositionId(java.lang.String positionId) {
+        this.positionId = positionId;
+    }
+
+
+    /**
+     * Gets the positionAllocation value for this EmployeeHcmPosition.
+     * 
+     * @return positionAllocation
+     */
+    public java.lang.Double getPositionAllocation() {
         return positionAllocation;
     }
 
-    /**
-     * 设置positionAllocation属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Double }
-     *     
-     */
-    public void setPositionAllocation(Double value) {
-        this.positionAllocation = value;
-    }
 
     /**
-     * 获取fullTimeEquivalent属性的值。
+     * Sets the positionAllocation value for this EmployeeHcmPosition.
      * 
-     * @return
-     *     possible object is
-     *     {@link Double }
-     *     
+     * @param positionAllocation
      */
-    public Double getFullTimeEquivalent() {
+    public void setPositionAllocation(java.lang.Double positionAllocation) {
+        this.positionAllocation = positionAllocation;
+    }
+
+
+    /**
+     * Gets the fullTimeEquivalent value for this EmployeeHcmPosition.
+     * 
+     * @return fullTimeEquivalent
+     */
+    public java.lang.Double getFullTimeEquivalent() {
         return fullTimeEquivalent;
     }
 
-    /**
-     * 设置fullTimeEquivalent属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Double }
-     *     
-     */
-    public void setFullTimeEquivalent(Double value) {
-        this.fullTimeEquivalent = value;
-    }
 
     /**
-     * 获取employmentCategory属性的值。
+     * Sets the fullTimeEquivalent value for this EmployeeHcmPosition.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param fullTimeEquivalent
      */
-    public RecordRef getEmploymentCategory() {
+    public void setFullTimeEquivalent(java.lang.Double fullTimeEquivalent) {
+        this.fullTimeEquivalent = fullTimeEquivalent;
+    }
+
+
+    /**
+     * Gets the employmentCategory value for this EmployeeHcmPosition.
+     * 
+     * @return employmentCategory
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getEmploymentCategory() {
         return employmentCategory;
     }
 
-    /**
-     * 设置employmentCategory属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setEmploymentCategory(RecordRef value) {
-        this.employmentCategory = value;
-    }
 
     /**
-     * 获取reportsTo属性的值。
+     * Sets the employmentCategory value for this EmployeeHcmPosition.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param employmentCategory
      */
-    public RecordRef getReportsTo() {
+    public void setEmploymentCategory(com.netsuite.webservices.platform.core_2018_2.RecordRef employmentCategory) {
+        this.employmentCategory = employmentCategory;
+    }
+
+
+    /**
+     * Gets the reportsTo value for this EmployeeHcmPosition.
+     * 
+     * @return reportsTo
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getReportsTo() {
         return reportsTo;
     }
 
-    /**
-     * 设置reportsTo属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setReportsTo(RecordRef value) {
-        this.reportsTo = value;
-    }
 
     /**
-     * 获取subsidiary属性的值。
+     * Sets the reportsTo value for this EmployeeHcmPosition.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param reportsTo
      */
-    public RecordRef getSubsidiary() {
+    public void setReportsTo(com.netsuite.webservices.platform.core_2018_2.RecordRef reportsTo) {
+        this.reportsTo = reportsTo;
+    }
+
+
+    /**
+     * Gets the subsidiary value for this EmployeeHcmPosition.
+     * 
+     * @return subsidiary
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getSubsidiary() {
         return subsidiary;
     }
 
-    /**
-     * 设置subsidiary属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setSubsidiary(RecordRef value) {
-        this.subsidiary = value;
-    }
 
     /**
-     * 获取location属性的值。
+     * Sets the subsidiary value for this EmployeeHcmPosition.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param subsidiary
      */
-    public RecordRef getLocation() {
+    public void setSubsidiary(com.netsuite.webservices.platform.core_2018_2.RecordRef subsidiary) {
+        this.subsidiary = subsidiary;
+    }
+
+
+    /**
+     * Gets the location value for this EmployeeHcmPosition.
+     * 
+     * @return location
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getLocation() {
         return location;
     }
 
+
     /**
-     * 设置location属性的值。
+     * Sets the location value for this EmployeeHcmPosition.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
+     * @param location
      */
-    public void setLocation(RecordRef value) {
-        this.location = value;
+    public void setLocation(com.netsuite.webservices.platform.core_2018_2.RecordRef location) {
+        this.location = location;
+    }
+
+    private java.lang.Object __equalsCalc = null;
+    public synchronized boolean equals(java.lang.Object obj) {
+        if (!(obj instanceof EmployeeHcmPosition)) return false;
+        EmployeeHcmPosition other = (EmployeeHcmPosition) obj;
+        if (obj == null) return false;
+        if (this == obj) return true;
+        if (__equalsCalc != null) {
+            return (__equalsCalc == obj);
+        }
+        __equalsCalc = obj;
+        boolean _equals;
+        _equals = true && 
+            ((this.position==null && other.getPosition()==null) || 
+             (this.position!=null &&
+              this.position.equals(other.getPosition()))) &&
+            ((this.primaryPosition==null && other.getPrimaryPosition()==null) || 
+             (this.primaryPosition!=null &&
+              this.primaryPosition.equals(other.getPrimaryPosition()))) &&
+            ((this.positionId==null && other.getPositionId()==null) || 
+             (this.positionId!=null &&
+              this.positionId.equals(other.getPositionId()))) &&
+            ((this.positionAllocation==null && other.getPositionAllocation()==null) || 
+             (this.positionAllocation!=null &&
+              this.positionAllocation.equals(other.getPositionAllocation()))) &&
+            ((this.fullTimeEquivalent==null && other.getFullTimeEquivalent()==null) || 
+             (this.fullTimeEquivalent!=null &&
+              this.fullTimeEquivalent.equals(other.getFullTimeEquivalent()))) &&
+            ((this.employmentCategory==null && other.getEmploymentCategory()==null) || 
+             (this.employmentCategory!=null &&
+              this.employmentCategory.equals(other.getEmploymentCategory()))) &&
+            ((this.reportsTo==null && other.getReportsTo()==null) || 
+             (this.reportsTo!=null &&
+              this.reportsTo.equals(other.getReportsTo()))) &&
+            ((this.subsidiary==null && other.getSubsidiary()==null) || 
+             (this.subsidiary!=null &&
+              this.subsidiary.equals(other.getSubsidiary()))) &&
+            ((this.location==null && other.getLocation()==null) || 
+             (this.location!=null &&
+              this.location.equals(other.getLocation())));
+        __equalsCalc = null;
+        return _equals;
+    }
+
+    private boolean __hashCodeCalc = false;
+    public synchronized int hashCode() {
+        if (__hashCodeCalc) {
+            return 0;
+        }
+        __hashCodeCalc = true;
+        int _hashCode = 1;
+        if (getPosition() != null) {
+            _hashCode += getPosition().hashCode();
+        }
+        if (getPrimaryPosition() != null) {
+            _hashCode += getPrimaryPosition().hashCode();
+        }
+        if (getPositionId() != null) {
+            _hashCode += getPositionId().hashCode();
+        }
+        if (getPositionAllocation() != null) {
+            _hashCode += getPositionAllocation().hashCode();
+        }
+        if (getFullTimeEquivalent() != null) {
+            _hashCode += getFullTimeEquivalent().hashCode();
+        }
+        if (getEmploymentCategory() != null) {
+            _hashCode += getEmploymentCategory().hashCode();
+        }
+        if (getReportsTo() != null) {
+            _hashCode += getReportsTo().hashCode();
+        }
+        if (getSubsidiary() != null) {
+            _hashCode += getSubsidiary().hashCode();
+        }
+        if (getLocation() != null) {
+            _hashCode += getLocation().hashCode();
+        }
+        __hashCodeCalc = false;
+        return _hashCode;
+    }
+
+    // Type metadata
+    private static org.apache.axis.description.TypeDesc typeDesc =
+        new org.apache.axis.description.TypeDesc(EmployeeHcmPosition.class, true);
+
+    static {
+        typeDesc.setXmlType(new javax.xml.namespace.QName("urn:employees_2018_2.lists.webservices.netsuite.com", "EmployeeHcmPosition"));
+        org.apache.axis.description.ElementDesc elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("position");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:employees_2018_2.lists.webservices.netsuite.com", "position"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("primaryPosition");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:employees_2018_2.lists.webservices.netsuite.com", "primaryPosition"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("positionId");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:employees_2018_2.lists.webservices.netsuite.com", "positionId"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("positionAllocation");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:employees_2018_2.lists.webservices.netsuite.com", "positionAllocation"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "double"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("fullTimeEquivalent");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:employees_2018_2.lists.webservices.netsuite.com", "fullTimeEquivalent"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "double"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("employmentCategory");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:employees_2018_2.lists.webservices.netsuite.com", "employmentCategory"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("reportsTo");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:employees_2018_2.lists.webservices.netsuite.com", "reportsTo"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("subsidiary");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:employees_2018_2.lists.webservices.netsuite.com", "subsidiary"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("location");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:employees_2018_2.lists.webservices.netsuite.com", "location"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+    }
+
+    /**
+     * Return type metadata object
+     */
+    public static org.apache.axis.description.TypeDesc getTypeDesc() {
+        return typeDesc;
+    }
+
+    /**
+     * Get Custom Serializer
+     */
+    public static org.apache.axis.encoding.Serializer getSerializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanSerializer(
+            _javaType, _xmlType, typeDesc);
+    }
+
+    /**
+     * Get Custom Deserializer
+     */
+    public static org.apache.axis.encoding.Deserializer getDeserializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanDeserializer(
+            _javaType, _xmlType, typeDesc);
     }
 
 }

@@ -1,546 +1,400 @@
+/**
+ * SearchDate.java
+ *
+ * This file was auto-generated from WSDL
+ * by the Apache Axis 1.4 Jul 28, 2010 (04:07:04 PDT) WSDL2Java emitter.
+ */
 
 package com.netsuite.webservices.platform.core_2018_2.types;
 
-import javax.xml.bind.annotation.XmlEnum;
-import javax.xml.bind.annotation.XmlEnumValue;
-import javax.xml.bind.annotation.XmlType;
+public class SearchDate implements java.io.Serializable {
+    private java.lang.String _value_;
+    private static java.util.HashMap _table_ = new java.util.HashMap();
 
-
-/**
- * <p>SearchDate的 Java 类。
- * 
- * <p>以下模式片段指定包含在此类中的预期内容。
- * <p>
- * <pre>
- * &lt;simpleType name="SearchDate">
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     &lt;enumeration value="fiscalHalfBeforeLast"/>
- *     &lt;enumeration value="fiscalHalfBeforeLastToDate"/>
- *     &lt;enumeration value="fiscalQuarterBeforeLast"/>
- *     &lt;enumeration value="fiscalQuarterBeforeLastToDate"/>
- *     &lt;enumeration value="fiscalYearBeforeLast"/>
- *     &lt;enumeration value="fiscalYearBeforeLastToDate"/>
- *     &lt;enumeration value="fiveDaysAgo"/>
- *     &lt;enumeration value="fiveDaysFromNow"/>
- *     &lt;enumeration value="fourDaysAgo"/>
- *     &lt;enumeration value="fourDaysFromNow"/>
- *     &lt;enumeration value="fourWeeksStartingThisWeek"/>
- *     &lt;enumeration value="lastBusinessWeek"/>
- *     &lt;enumeration value="lastFiscalHalf"/>
- *     &lt;enumeration value="lastFiscalHalfOneFiscalYearAgo"/>
- *     &lt;enumeration value="lastFiscalHalfToDate"/>
- *     &lt;enumeration value="lastFiscalQuarter"/>
- *     &lt;enumeration value="lastFiscalQuarterOneFiscalYearAgo"/>
- *     &lt;enumeration value="lastFiscalQuarterToDate"/>
- *     &lt;enumeration value="lastFiscalQuarterTwoFiscalYearsAgo"/>
- *     &lt;enumeration value="lastFiscalYear"/>
- *     &lt;enumeration value="lastFiscalYearToDate"/>
- *     &lt;enumeration value="lastMonth"/>
- *     &lt;enumeration value="lastMonthOneFiscalQuarterAgo"/>
- *     &lt;enumeration value="lastMonthOneFiscalYearAgo"/>
- *     &lt;enumeration value="lastMonthToDate"/>
- *     &lt;enumeration value="lastMonthTwoFiscalQuartersAgo"/>
- *     &lt;enumeration value="lastMonthTwoFiscalYearsAgo"/>
- *     &lt;enumeration value="lastRollingHalf"/>
- *     &lt;enumeration value="lastRollingQuarter"/>
- *     &lt;enumeration value="lastRollingYear"/>
- *     &lt;enumeration value="lastWeek"/>
- *     &lt;enumeration value="lastWeekToDate"/>
- *     &lt;enumeration value="monthAfterNext"/>
- *     &lt;enumeration value="monthAfterNextToDate"/>
- *     &lt;enumeration value="monthBeforeLast"/>
- *     &lt;enumeration value="monthBeforeLastToDate"/>
- *     &lt;enumeration value="nextBusinessWeek"/>
- *     &lt;enumeration value="nextFiscalHalf"/>
- *     &lt;enumeration value="nextFiscalQuarter"/>
- *     &lt;enumeration value="nextFiscalYear"/>
- *     &lt;enumeration value="nextFourWeeks"/>
- *     &lt;enumeration value="nextMonth"/>
- *     &lt;enumeration value="nextOneHalf"/>
- *     &lt;enumeration value="nextOneMonth"/>
- *     &lt;enumeration value="nextOneQuarter"/>
- *     &lt;enumeration value="nextOneWeek"/>
- *     &lt;enumeration value="nextOneYear"/>
- *     &lt;enumeration value="nextWeek"/>
- *     &lt;enumeration value="ninetyDaysAgo"/>
- *     &lt;enumeration value="ninetyDaysFromNow"/>
- *     &lt;enumeration value="oneYearBeforeLast"/>
- *     &lt;enumeration value="previousFiscalQuartersLastFiscalYear"/>
- *     &lt;enumeration value="previousFiscalQuartersThisFiscalYear"/>
- *     &lt;enumeration value="previousMonthsLastFiscalHalf"/>
- *     &lt;enumeration value="previousMonthsLastFiscalQuarter"/>
- *     &lt;enumeration value="previousMonthsLastFiscalYear"/>
- *     &lt;enumeration value="previousMonthsSameFiscalHalfLastFiscalYear"/>
- *     &lt;enumeration value="previousMonthsSameFiscalQuarterLastFiscalYear"/>
- *     &lt;enumeration value="previousMonthsThisFiscalHalf"/>
- *     &lt;enumeration value="previousMonthsThisFiscalQuarter"/>
- *     &lt;enumeration value="previousMonthsThisFiscalYear"/>
- *     &lt;enumeration value="previousOneDay"/>
- *     &lt;enumeration value="previousOneHalf"/>
- *     &lt;enumeration value="previousOneMonth"/>
- *     &lt;enumeration value="previousOneQuarter"/>
- *     &lt;enumeration value="previousOneWeek"/>
- *     &lt;enumeration value="previousOneYear"/>
- *     &lt;enumeration value="previousRollingHalf"/>
- *     &lt;enumeration value="previousRollingQuarter"/>
- *     &lt;enumeration value="previousRollingYear"/>
- *     &lt;enumeration value="sameDayFiscalQuarterBeforeLast"/>
- *     &lt;enumeration value="sameDayFiscalYearBeforeLast"/>
- *     &lt;enumeration value="sameDayLastFiscalQuarter"/>
- *     &lt;enumeration value="sameDayLastFiscalYear"/>
- *     &lt;enumeration value="sameDayLastMonth"/>
- *     &lt;enumeration value="sameDayLastWeek"/>
- *     &lt;enumeration value="sameDayMonthBeforeLast"/>
- *     &lt;enumeration value="sameDayWeekBeforeLast"/>
- *     &lt;enumeration value="sameFiscalHalfLastFiscalYear"/>
- *     &lt;enumeration value="sameFiscalHalfLastFiscalYearToDate"/>
- *     &lt;enumeration value="sameFiscalQuarterFiscalYearBeforeLast"/>
- *     &lt;enumeration value="sameFiscalQuarterLastFiscalYear"/>
- *     &lt;enumeration value="sameFiscalQuarterLastFiscalYearToDate"/>
- *     &lt;enumeration value="sameMonthFiscalQuarterBeforeLast"/>
- *     &lt;enumeration value="sameMonthFiscalYearBeforeLast"/>
- *     &lt;enumeration value="sameMonthLastFiscalQuarter"/>
- *     &lt;enumeration value="sameMonthLastFiscalQuarterToDate"/>
- *     &lt;enumeration value="sameMonthLastFiscalYear"/>
- *     &lt;enumeration value="sameMonthLastFiscalYearToDate"/>
- *     &lt;enumeration value="sameWeekFiscalYearBeforeLast"/>
- *     &lt;enumeration value="sameWeekLastFiscalYear"/>
- *     &lt;enumeration value="sixtyDaysAgo"/>
- *     &lt;enumeration value="sixtyDaysFromNow"/>
- *     &lt;enumeration value="startOfFiscalHalfBeforeLast"/>
- *     &lt;enumeration value="startOfFiscalQuarterBeforeLast"/>
- *     &lt;enumeration value="startOfFiscalYearBeforeLast"/>
- *     &lt;enumeration value="startOfLastBusinessWeek"/>
- *     &lt;enumeration value="startOfLastFiscalHalf"/>
- *     &lt;enumeration value="startOfLastFiscalHalfOneFiscalYearAgo"/>
- *     &lt;enumeration value="startOfLastFiscalQuarter"/>
- *     &lt;enumeration value="startOfLastFiscalQuarterOneFiscalYearAgo"/>
- *     &lt;enumeration value="startOfLastFiscalYear"/>
- *     &lt;enumeration value="startOfLastMonth"/>
- *     &lt;enumeration value="startOfLastMonthOneFiscalQuarterAgo"/>
- *     &lt;enumeration value="startOfLastMonthOneFiscalYearAgo"/>
- *     &lt;enumeration value="startOfLastRollingHalf"/>
- *     &lt;enumeration value="startOfLastRollingQuarter"/>
- *     &lt;enumeration value="startOfLastRollingYear"/>
- *     &lt;enumeration value="startOfLastWeek"/>
- *     &lt;enumeration value="startOfMonthBeforeLast"/>
- *     &lt;enumeration value="startOfNextBusinessWeek"/>
- *     &lt;enumeration value="startOfNextFiscalHalf"/>
- *     &lt;enumeration value="startOfNextFiscalQuarter"/>
- *     &lt;enumeration value="startOfNextFiscalYear"/>
- *     &lt;enumeration value="startOfNextMonth"/>
- *     &lt;enumeration value="startOfNextWeek"/>
- *     &lt;enumeration value="startOfPreviousRollingHalf"/>
- *     &lt;enumeration value="startOfPreviousRollingQuarter"/>
- *     &lt;enumeration value="startOfPreviousRollingYear"/>
- *     &lt;enumeration value="startOfSameFiscalHalfLastFiscalYear"/>
- *     &lt;enumeration value="startOfSameFiscalQuarterLastFiscalYear"/>
- *     &lt;enumeration value="startOfSameMonthLastFiscalQuarter"/>
- *     &lt;enumeration value="startOfSameMonthLastFiscalYear"/>
- *     &lt;enumeration value="startOfThisBusinessWeek"/>
- *     &lt;enumeration value="startOfThisFiscalHalf"/>
- *     &lt;enumeration value="startOfThisFiscalQuarter"/>
- *     &lt;enumeration value="startOfThisFiscalYear"/>
- *     &lt;enumeration value="startOfThisMonth"/>
- *     &lt;enumeration value="startOfThisWeek"/>
- *     &lt;enumeration value="startOfThisYear"/>
- *     &lt;enumeration value="startOfWeekBeforeLast"/>
- *     &lt;enumeration value="tenDaysAgo"/>
- *     &lt;enumeration value="tenDaysFromNow"/>
- *     &lt;enumeration value="thirtyDaysAgo"/>
- *     &lt;enumeration value="thirtyDaysFromNow"/>
- *     &lt;enumeration value="thisBusinessWeek"/>
- *     &lt;enumeration value="thisFiscalHalf"/>
- *     &lt;enumeration value="thisFiscalHalfToDate"/>
- *     &lt;enumeration value="thisFiscalQuarter"/>
- *     &lt;enumeration value="thisFiscalQuarterToDate"/>
- *     &lt;enumeration value="thisFiscalYear"/>
- *     &lt;enumeration value="thisFiscalYearToDate"/>
- *     &lt;enumeration value="thisMonth"/>
- *     &lt;enumeration value="thisMonthToDate"/>
- *     &lt;enumeration value="thisRollingHalf"/>
- *     &lt;enumeration value="thisRollingQuarter"/>
- *     &lt;enumeration value="thisRollingYear"/>
- *     &lt;enumeration value="thisWeek"/>
- *     &lt;enumeration value="thisWeekToDate"/>
- *     &lt;enumeration value="thisYear"/>
- *     &lt;enumeration value="threeDaysAgo"/>
- *     &lt;enumeration value="threeDaysFromNow"/>
- *     &lt;enumeration value="threeFiscalQuartersAgo"/>
- *     &lt;enumeration value="threeFiscalQuartersAgoToDate"/>
- *     &lt;enumeration value="threeFiscalYearsAgo"/>
- *     &lt;enumeration value="threeFiscalYearsAgoToDate"/>
- *     &lt;enumeration value="threeMonthsAgo"/>
- *     &lt;enumeration value="threeMonthsAgoToDate"/>
- *     &lt;enumeration value="today"/>
- *     &lt;enumeration value="tomorrow"/>
- *     &lt;enumeration value="twoDaysAgo"/>
- *     &lt;enumeration value="twoDaysFromNow"/>
- *     &lt;enumeration value="weekAfterNext"/>
- *     &lt;enumeration value="weekAfterNextToDate"/>
- *     &lt;enumeration value="weekBeforeLast"/>
- *     &lt;enumeration value="weekBeforeLastToDate"/>
- *     &lt;enumeration value="yesterday"/>
- *   &lt;/restriction>
- * &lt;/simpleType>
- * </pre>
- * 
- */
-@XmlType(name = "SearchDate", namespace = "urn:types.core_2018_2.platform.webservices.netsuite.com")
-@XmlEnum
-public enum SearchDate {
-
-    @XmlEnumValue("fiscalHalfBeforeLast")
-    FISCAL_HALF_BEFORE_LAST("fiscalHalfBeforeLast"),
-    @XmlEnumValue("fiscalHalfBeforeLastToDate")
-    FISCAL_HALF_BEFORE_LAST_TO_DATE("fiscalHalfBeforeLastToDate"),
-    @XmlEnumValue("fiscalQuarterBeforeLast")
-    FISCAL_QUARTER_BEFORE_LAST("fiscalQuarterBeforeLast"),
-    @XmlEnumValue("fiscalQuarterBeforeLastToDate")
-    FISCAL_QUARTER_BEFORE_LAST_TO_DATE("fiscalQuarterBeforeLastToDate"),
-    @XmlEnumValue("fiscalYearBeforeLast")
-    FISCAL_YEAR_BEFORE_LAST("fiscalYearBeforeLast"),
-    @XmlEnumValue("fiscalYearBeforeLastToDate")
-    FISCAL_YEAR_BEFORE_LAST_TO_DATE("fiscalYearBeforeLastToDate"),
-    @XmlEnumValue("fiveDaysAgo")
-    FIVE_DAYS_AGO("fiveDaysAgo"),
-    @XmlEnumValue("fiveDaysFromNow")
-    FIVE_DAYS_FROM_NOW("fiveDaysFromNow"),
-    @XmlEnumValue("fourDaysAgo")
-    FOUR_DAYS_AGO("fourDaysAgo"),
-    @XmlEnumValue("fourDaysFromNow")
-    FOUR_DAYS_FROM_NOW("fourDaysFromNow"),
-    @XmlEnumValue("fourWeeksStartingThisWeek")
-    FOUR_WEEKS_STARTING_THIS_WEEK("fourWeeksStartingThisWeek"),
-    @XmlEnumValue("lastBusinessWeek")
-    LAST_BUSINESS_WEEK("lastBusinessWeek"),
-    @XmlEnumValue("lastFiscalHalf")
-    LAST_FISCAL_HALF("lastFiscalHalf"),
-    @XmlEnumValue("lastFiscalHalfOneFiscalYearAgo")
-    LAST_FISCAL_HALF_ONE_FISCAL_YEAR_AGO("lastFiscalHalfOneFiscalYearAgo"),
-    @XmlEnumValue("lastFiscalHalfToDate")
-    LAST_FISCAL_HALF_TO_DATE("lastFiscalHalfToDate"),
-    @XmlEnumValue("lastFiscalQuarter")
-    LAST_FISCAL_QUARTER("lastFiscalQuarter"),
-    @XmlEnumValue("lastFiscalQuarterOneFiscalYearAgo")
-    LAST_FISCAL_QUARTER_ONE_FISCAL_YEAR_AGO("lastFiscalQuarterOneFiscalYearAgo"),
-    @XmlEnumValue("lastFiscalQuarterToDate")
-    LAST_FISCAL_QUARTER_TO_DATE("lastFiscalQuarterToDate"),
-    @XmlEnumValue("lastFiscalQuarterTwoFiscalYearsAgo")
-    LAST_FISCAL_QUARTER_TWO_FISCAL_YEARS_AGO("lastFiscalQuarterTwoFiscalYearsAgo"),
-    @XmlEnumValue("lastFiscalYear")
-    LAST_FISCAL_YEAR("lastFiscalYear"),
-    @XmlEnumValue("lastFiscalYearToDate")
-    LAST_FISCAL_YEAR_TO_DATE("lastFiscalYearToDate"),
-    @XmlEnumValue("lastMonth")
-    LAST_MONTH("lastMonth"),
-    @XmlEnumValue("lastMonthOneFiscalQuarterAgo")
-    LAST_MONTH_ONE_FISCAL_QUARTER_AGO("lastMonthOneFiscalQuarterAgo"),
-    @XmlEnumValue("lastMonthOneFiscalYearAgo")
-    LAST_MONTH_ONE_FISCAL_YEAR_AGO("lastMonthOneFiscalYearAgo"),
-    @XmlEnumValue("lastMonthToDate")
-    LAST_MONTH_TO_DATE("lastMonthToDate"),
-    @XmlEnumValue("lastMonthTwoFiscalQuartersAgo")
-    LAST_MONTH_TWO_FISCAL_QUARTERS_AGO("lastMonthTwoFiscalQuartersAgo"),
-    @XmlEnumValue("lastMonthTwoFiscalYearsAgo")
-    LAST_MONTH_TWO_FISCAL_YEARS_AGO("lastMonthTwoFiscalYearsAgo"),
-    @XmlEnumValue("lastRollingHalf")
-    LAST_ROLLING_HALF("lastRollingHalf"),
-    @XmlEnumValue("lastRollingQuarter")
-    LAST_ROLLING_QUARTER("lastRollingQuarter"),
-    @XmlEnumValue("lastRollingYear")
-    LAST_ROLLING_YEAR("lastRollingYear"),
-    @XmlEnumValue("lastWeek")
-    LAST_WEEK("lastWeek"),
-    @XmlEnumValue("lastWeekToDate")
-    LAST_WEEK_TO_DATE("lastWeekToDate"),
-    @XmlEnumValue("monthAfterNext")
-    MONTH_AFTER_NEXT("monthAfterNext"),
-    @XmlEnumValue("monthAfterNextToDate")
-    MONTH_AFTER_NEXT_TO_DATE("monthAfterNextToDate"),
-    @XmlEnumValue("monthBeforeLast")
-    MONTH_BEFORE_LAST("monthBeforeLast"),
-    @XmlEnumValue("monthBeforeLastToDate")
-    MONTH_BEFORE_LAST_TO_DATE("monthBeforeLastToDate"),
-    @XmlEnumValue("nextBusinessWeek")
-    NEXT_BUSINESS_WEEK("nextBusinessWeek"),
-    @XmlEnumValue("nextFiscalHalf")
-    NEXT_FISCAL_HALF("nextFiscalHalf"),
-    @XmlEnumValue("nextFiscalQuarter")
-    NEXT_FISCAL_QUARTER("nextFiscalQuarter"),
-    @XmlEnumValue("nextFiscalYear")
-    NEXT_FISCAL_YEAR("nextFiscalYear"),
-    @XmlEnumValue("nextFourWeeks")
-    NEXT_FOUR_WEEKS("nextFourWeeks"),
-    @XmlEnumValue("nextMonth")
-    NEXT_MONTH("nextMonth"),
-    @XmlEnumValue("nextOneHalf")
-    NEXT_ONE_HALF("nextOneHalf"),
-    @XmlEnumValue("nextOneMonth")
-    NEXT_ONE_MONTH("nextOneMonth"),
-    @XmlEnumValue("nextOneQuarter")
-    NEXT_ONE_QUARTER("nextOneQuarter"),
-    @XmlEnumValue("nextOneWeek")
-    NEXT_ONE_WEEK("nextOneWeek"),
-    @XmlEnumValue("nextOneYear")
-    NEXT_ONE_YEAR("nextOneYear"),
-    @XmlEnumValue("nextWeek")
-    NEXT_WEEK("nextWeek"),
-    @XmlEnumValue("ninetyDaysAgo")
-    NINETY_DAYS_AGO("ninetyDaysAgo"),
-    @XmlEnumValue("ninetyDaysFromNow")
-    NINETY_DAYS_FROM_NOW("ninetyDaysFromNow"),
-    @XmlEnumValue("oneYearBeforeLast")
-    ONE_YEAR_BEFORE_LAST("oneYearBeforeLast"),
-    @XmlEnumValue("previousFiscalQuartersLastFiscalYear")
-    PREVIOUS_FISCAL_QUARTERS_LAST_FISCAL_YEAR("previousFiscalQuartersLastFiscalYear"),
-    @XmlEnumValue("previousFiscalQuartersThisFiscalYear")
-    PREVIOUS_FISCAL_QUARTERS_THIS_FISCAL_YEAR("previousFiscalQuartersThisFiscalYear"),
-    @XmlEnumValue("previousMonthsLastFiscalHalf")
-    PREVIOUS_MONTHS_LAST_FISCAL_HALF("previousMonthsLastFiscalHalf"),
-    @XmlEnumValue("previousMonthsLastFiscalQuarter")
-    PREVIOUS_MONTHS_LAST_FISCAL_QUARTER("previousMonthsLastFiscalQuarter"),
-    @XmlEnumValue("previousMonthsLastFiscalYear")
-    PREVIOUS_MONTHS_LAST_FISCAL_YEAR("previousMonthsLastFiscalYear"),
-    @XmlEnumValue("previousMonthsSameFiscalHalfLastFiscalYear")
-    PREVIOUS_MONTHS_SAME_FISCAL_HALF_LAST_FISCAL_YEAR("previousMonthsSameFiscalHalfLastFiscalYear"),
-    @XmlEnumValue("previousMonthsSameFiscalQuarterLastFiscalYear")
-    PREVIOUS_MONTHS_SAME_FISCAL_QUARTER_LAST_FISCAL_YEAR("previousMonthsSameFiscalQuarterLastFiscalYear"),
-    @XmlEnumValue("previousMonthsThisFiscalHalf")
-    PREVIOUS_MONTHS_THIS_FISCAL_HALF("previousMonthsThisFiscalHalf"),
-    @XmlEnumValue("previousMonthsThisFiscalQuarter")
-    PREVIOUS_MONTHS_THIS_FISCAL_QUARTER("previousMonthsThisFiscalQuarter"),
-    @XmlEnumValue("previousMonthsThisFiscalYear")
-    PREVIOUS_MONTHS_THIS_FISCAL_YEAR("previousMonthsThisFiscalYear"),
-    @XmlEnumValue("previousOneDay")
-    PREVIOUS_ONE_DAY("previousOneDay"),
-    @XmlEnumValue("previousOneHalf")
-    PREVIOUS_ONE_HALF("previousOneHalf"),
-    @XmlEnumValue("previousOneMonth")
-    PREVIOUS_ONE_MONTH("previousOneMonth"),
-    @XmlEnumValue("previousOneQuarter")
-    PREVIOUS_ONE_QUARTER("previousOneQuarter"),
-    @XmlEnumValue("previousOneWeek")
-    PREVIOUS_ONE_WEEK("previousOneWeek"),
-    @XmlEnumValue("previousOneYear")
-    PREVIOUS_ONE_YEAR("previousOneYear"),
-    @XmlEnumValue("previousRollingHalf")
-    PREVIOUS_ROLLING_HALF("previousRollingHalf"),
-    @XmlEnumValue("previousRollingQuarter")
-    PREVIOUS_ROLLING_QUARTER("previousRollingQuarter"),
-    @XmlEnumValue("previousRollingYear")
-    PREVIOUS_ROLLING_YEAR("previousRollingYear"),
-    @XmlEnumValue("sameDayFiscalQuarterBeforeLast")
-    SAME_DAY_FISCAL_QUARTER_BEFORE_LAST("sameDayFiscalQuarterBeforeLast"),
-    @XmlEnumValue("sameDayFiscalYearBeforeLast")
-    SAME_DAY_FISCAL_YEAR_BEFORE_LAST("sameDayFiscalYearBeforeLast"),
-    @XmlEnumValue("sameDayLastFiscalQuarter")
-    SAME_DAY_LAST_FISCAL_QUARTER("sameDayLastFiscalQuarter"),
-    @XmlEnumValue("sameDayLastFiscalYear")
-    SAME_DAY_LAST_FISCAL_YEAR("sameDayLastFiscalYear"),
-    @XmlEnumValue("sameDayLastMonth")
-    SAME_DAY_LAST_MONTH("sameDayLastMonth"),
-    @XmlEnumValue("sameDayLastWeek")
-    SAME_DAY_LAST_WEEK("sameDayLastWeek"),
-    @XmlEnumValue("sameDayMonthBeforeLast")
-    SAME_DAY_MONTH_BEFORE_LAST("sameDayMonthBeforeLast"),
-    @XmlEnumValue("sameDayWeekBeforeLast")
-    SAME_DAY_WEEK_BEFORE_LAST("sameDayWeekBeforeLast"),
-    @XmlEnumValue("sameFiscalHalfLastFiscalYear")
-    SAME_FISCAL_HALF_LAST_FISCAL_YEAR("sameFiscalHalfLastFiscalYear"),
-    @XmlEnumValue("sameFiscalHalfLastFiscalYearToDate")
-    SAME_FISCAL_HALF_LAST_FISCAL_YEAR_TO_DATE("sameFiscalHalfLastFiscalYearToDate"),
-    @XmlEnumValue("sameFiscalQuarterFiscalYearBeforeLast")
-    SAME_FISCAL_QUARTER_FISCAL_YEAR_BEFORE_LAST("sameFiscalQuarterFiscalYearBeforeLast"),
-    @XmlEnumValue("sameFiscalQuarterLastFiscalYear")
-    SAME_FISCAL_QUARTER_LAST_FISCAL_YEAR("sameFiscalQuarterLastFiscalYear"),
-    @XmlEnumValue("sameFiscalQuarterLastFiscalYearToDate")
-    SAME_FISCAL_QUARTER_LAST_FISCAL_YEAR_TO_DATE("sameFiscalQuarterLastFiscalYearToDate"),
-    @XmlEnumValue("sameMonthFiscalQuarterBeforeLast")
-    SAME_MONTH_FISCAL_QUARTER_BEFORE_LAST("sameMonthFiscalQuarterBeforeLast"),
-    @XmlEnumValue("sameMonthFiscalYearBeforeLast")
-    SAME_MONTH_FISCAL_YEAR_BEFORE_LAST("sameMonthFiscalYearBeforeLast"),
-    @XmlEnumValue("sameMonthLastFiscalQuarter")
-    SAME_MONTH_LAST_FISCAL_QUARTER("sameMonthLastFiscalQuarter"),
-    @XmlEnumValue("sameMonthLastFiscalQuarterToDate")
-    SAME_MONTH_LAST_FISCAL_QUARTER_TO_DATE("sameMonthLastFiscalQuarterToDate"),
-    @XmlEnumValue("sameMonthLastFiscalYear")
-    SAME_MONTH_LAST_FISCAL_YEAR("sameMonthLastFiscalYear"),
-    @XmlEnumValue("sameMonthLastFiscalYearToDate")
-    SAME_MONTH_LAST_FISCAL_YEAR_TO_DATE("sameMonthLastFiscalYearToDate"),
-    @XmlEnumValue("sameWeekFiscalYearBeforeLast")
-    SAME_WEEK_FISCAL_YEAR_BEFORE_LAST("sameWeekFiscalYearBeforeLast"),
-    @XmlEnumValue("sameWeekLastFiscalYear")
-    SAME_WEEK_LAST_FISCAL_YEAR("sameWeekLastFiscalYear"),
-    @XmlEnumValue("sixtyDaysAgo")
-    SIXTY_DAYS_AGO("sixtyDaysAgo"),
-    @XmlEnumValue("sixtyDaysFromNow")
-    SIXTY_DAYS_FROM_NOW("sixtyDaysFromNow"),
-    @XmlEnumValue("startOfFiscalHalfBeforeLast")
-    START_OF_FISCAL_HALF_BEFORE_LAST("startOfFiscalHalfBeforeLast"),
-    @XmlEnumValue("startOfFiscalQuarterBeforeLast")
-    START_OF_FISCAL_QUARTER_BEFORE_LAST("startOfFiscalQuarterBeforeLast"),
-    @XmlEnumValue("startOfFiscalYearBeforeLast")
-    START_OF_FISCAL_YEAR_BEFORE_LAST("startOfFiscalYearBeforeLast"),
-    @XmlEnumValue("startOfLastBusinessWeek")
-    START_OF_LAST_BUSINESS_WEEK("startOfLastBusinessWeek"),
-    @XmlEnumValue("startOfLastFiscalHalf")
-    START_OF_LAST_FISCAL_HALF("startOfLastFiscalHalf"),
-    @XmlEnumValue("startOfLastFiscalHalfOneFiscalYearAgo")
-    START_OF_LAST_FISCAL_HALF_ONE_FISCAL_YEAR_AGO("startOfLastFiscalHalfOneFiscalYearAgo"),
-    @XmlEnumValue("startOfLastFiscalQuarter")
-    START_OF_LAST_FISCAL_QUARTER("startOfLastFiscalQuarter"),
-    @XmlEnumValue("startOfLastFiscalQuarterOneFiscalYearAgo")
-    START_OF_LAST_FISCAL_QUARTER_ONE_FISCAL_YEAR_AGO("startOfLastFiscalQuarterOneFiscalYearAgo"),
-    @XmlEnumValue("startOfLastFiscalYear")
-    START_OF_LAST_FISCAL_YEAR("startOfLastFiscalYear"),
-    @XmlEnumValue("startOfLastMonth")
-    START_OF_LAST_MONTH("startOfLastMonth"),
-    @XmlEnumValue("startOfLastMonthOneFiscalQuarterAgo")
-    START_OF_LAST_MONTH_ONE_FISCAL_QUARTER_AGO("startOfLastMonthOneFiscalQuarterAgo"),
-    @XmlEnumValue("startOfLastMonthOneFiscalYearAgo")
-    START_OF_LAST_MONTH_ONE_FISCAL_YEAR_AGO("startOfLastMonthOneFiscalYearAgo"),
-    @XmlEnumValue("startOfLastRollingHalf")
-    START_OF_LAST_ROLLING_HALF("startOfLastRollingHalf"),
-    @XmlEnumValue("startOfLastRollingQuarter")
-    START_OF_LAST_ROLLING_QUARTER("startOfLastRollingQuarter"),
-    @XmlEnumValue("startOfLastRollingYear")
-    START_OF_LAST_ROLLING_YEAR("startOfLastRollingYear"),
-    @XmlEnumValue("startOfLastWeek")
-    START_OF_LAST_WEEK("startOfLastWeek"),
-    @XmlEnumValue("startOfMonthBeforeLast")
-    START_OF_MONTH_BEFORE_LAST("startOfMonthBeforeLast"),
-    @XmlEnumValue("startOfNextBusinessWeek")
-    START_OF_NEXT_BUSINESS_WEEK("startOfNextBusinessWeek"),
-    @XmlEnumValue("startOfNextFiscalHalf")
-    START_OF_NEXT_FISCAL_HALF("startOfNextFiscalHalf"),
-    @XmlEnumValue("startOfNextFiscalQuarter")
-    START_OF_NEXT_FISCAL_QUARTER("startOfNextFiscalQuarter"),
-    @XmlEnumValue("startOfNextFiscalYear")
-    START_OF_NEXT_FISCAL_YEAR("startOfNextFiscalYear"),
-    @XmlEnumValue("startOfNextMonth")
-    START_OF_NEXT_MONTH("startOfNextMonth"),
-    @XmlEnumValue("startOfNextWeek")
-    START_OF_NEXT_WEEK("startOfNextWeek"),
-    @XmlEnumValue("startOfPreviousRollingHalf")
-    START_OF_PREVIOUS_ROLLING_HALF("startOfPreviousRollingHalf"),
-    @XmlEnumValue("startOfPreviousRollingQuarter")
-    START_OF_PREVIOUS_ROLLING_QUARTER("startOfPreviousRollingQuarter"),
-    @XmlEnumValue("startOfPreviousRollingYear")
-    START_OF_PREVIOUS_ROLLING_YEAR("startOfPreviousRollingYear"),
-    @XmlEnumValue("startOfSameFiscalHalfLastFiscalYear")
-    START_OF_SAME_FISCAL_HALF_LAST_FISCAL_YEAR("startOfSameFiscalHalfLastFiscalYear"),
-    @XmlEnumValue("startOfSameFiscalQuarterLastFiscalYear")
-    START_OF_SAME_FISCAL_QUARTER_LAST_FISCAL_YEAR("startOfSameFiscalQuarterLastFiscalYear"),
-    @XmlEnumValue("startOfSameMonthLastFiscalQuarter")
-    START_OF_SAME_MONTH_LAST_FISCAL_QUARTER("startOfSameMonthLastFiscalQuarter"),
-    @XmlEnumValue("startOfSameMonthLastFiscalYear")
-    START_OF_SAME_MONTH_LAST_FISCAL_YEAR("startOfSameMonthLastFiscalYear"),
-    @XmlEnumValue("startOfThisBusinessWeek")
-    START_OF_THIS_BUSINESS_WEEK("startOfThisBusinessWeek"),
-    @XmlEnumValue("startOfThisFiscalHalf")
-    START_OF_THIS_FISCAL_HALF("startOfThisFiscalHalf"),
-    @XmlEnumValue("startOfThisFiscalQuarter")
-    START_OF_THIS_FISCAL_QUARTER("startOfThisFiscalQuarter"),
-    @XmlEnumValue("startOfThisFiscalYear")
-    START_OF_THIS_FISCAL_YEAR("startOfThisFiscalYear"),
-    @XmlEnumValue("startOfThisMonth")
-    START_OF_THIS_MONTH("startOfThisMonth"),
-    @XmlEnumValue("startOfThisWeek")
-    START_OF_THIS_WEEK("startOfThisWeek"),
-    @XmlEnumValue("startOfThisYear")
-    START_OF_THIS_YEAR("startOfThisYear"),
-    @XmlEnumValue("startOfWeekBeforeLast")
-    START_OF_WEEK_BEFORE_LAST("startOfWeekBeforeLast"),
-    @XmlEnumValue("tenDaysAgo")
-    TEN_DAYS_AGO("tenDaysAgo"),
-    @XmlEnumValue("tenDaysFromNow")
-    TEN_DAYS_FROM_NOW("tenDaysFromNow"),
-    @XmlEnumValue("thirtyDaysAgo")
-    THIRTY_DAYS_AGO("thirtyDaysAgo"),
-    @XmlEnumValue("thirtyDaysFromNow")
-    THIRTY_DAYS_FROM_NOW("thirtyDaysFromNow"),
-    @XmlEnumValue("thisBusinessWeek")
-    THIS_BUSINESS_WEEK("thisBusinessWeek"),
-    @XmlEnumValue("thisFiscalHalf")
-    THIS_FISCAL_HALF("thisFiscalHalf"),
-    @XmlEnumValue("thisFiscalHalfToDate")
-    THIS_FISCAL_HALF_TO_DATE("thisFiscalHalfToDate"),
-    @XmlEnumValue("thisFiscalQuarter")
-    THIS_FISCAL_QUARTER("thisFiscalQuarter"),
-    @XmlEnumValue("thisFiscalQuarterToDate")
-    THIS_FISCAL_QUARTER_TO_DATE("thisFiscalQuarterToDate"),
-    @XmlEnumValue("thisFiscalYear")
-    THIS_FISCAL_YEAR("thisFiscalYear"),
-    @XmlEnumValue("thisFiscalYearToDate")
-    THIS_FISCAL_YEAR_TO_DATE("thisFiscalYearToDate"),
-    @XmlEnumValue("thisMonth")
-    THIS_MONTH("thisMonth"),
-    @XmlEnumValue("thisMonthToDate")
-    THIS_MONTH_TO_DATE("thisMonthToDate"),
-    @XmlEnumValue("thisRollingHalf")
-    THIS_ROLLING_HALF("thisRollingHalf"),
-    @XmlEnumValue("thisRollingQuarter")
-    THIS_ROLLING_QUARTER("thisRollingQuarter"),
-    @XmlEnumValue("thisRollingYear")
-    THIS_ROLLING_YEAR("thisRollingYear"),
-    @XmlEnumValue("thisWeek")
-    THIS_WEEK("thisWeek"),
-    @XmlEnumValue("thisWeekToDate")
-    THIS_WEEK_TO_DATE("thisWeekToDate"),
-    @XmlEnumValue("thisYear")
-    THIS_YEAR("thisYear"),
-    @XmlEnumValue("threeDaysAgo")
-    THREE_DAYS_AGO("threeDaysAgo"),
-    @XmlEnumValue("threeDaysFromNow")
-    THREE_DAYS_FROM_NOW("threeDaysFromNow"),
-    @XmlEnumValue("threeFiscalQuartersAgo")
-    THREE_FISCAL_QUARTERS_AGO("threeFiscalQuartersAgo"),
-    @XmlEnumValue("threeFiscalQuartersAgoToDate")
-    THREE_FISCAL_QUARTERS_AGO_TO_DATE("threeFiscalQuartersAgoToDate"),
-    @XmlEnumValue("threeFiscalYearsAgo")
-    THREE_FISCAL_YEARS_AGO("threeFiscalYearsAgo"),
-    @XmlEnumValue("threeFiscalYearsAgoToDate")
-    THREE_FISCAL_YEARS_AGO_TO_DATE("threeFiscalYearsAgoToDate"),
-    @XmlEnumValue("threeMonthsAgo")
-    THREE_MONTHS_AGO("threeMonthsAgo"),
-    @XmlEnumValue("threeMonthsAgoToDate")
-    THREE_MONTHS_AGO_TO_DATE("threeMonthsAgoToDate"),
-    @XmlEnumValue("today")
-    TODAY("today"),
-    @XmlEnumValue("tomorrow")
-    TOMORROW("tomorrow"),
-    @XmlEnumValue("twoDaysAgo")
-    TWO_DAYS_AGO("twoDaysAgo"),
-    @XmlEnumValue("twoDaysFromNow")
-    TWO_DAYS_FROM_NOW("twoDaysFromNow"),
-    @XmlEnumValue("weekAfterNext")
-    WEEK_AFTER_NEXT("weekAfterNext"),
-    @XmlEnumValue("weekAfterNextToDate")
-    WEEK_AFTER_NEXT_TO_DATE("weekAfterNextToDate"),
-    @XmlEnumValue("weekBeforeLast")
-    WEEK_BEFORE_LAST("weekBeforeLast"),
-    @XmlEnumValue("weekBeforeLastToDate")
-    WEEK_BEFORE_LAST_TO_DATE("weekBeforeLastToDate"),
-    @XmlEnumValue("yesterday")
-    YESTERDAY("yesterday");
-    private final String value;
-
-    SearchDate(String v) {
-        value = v;
+    // Constructor
+    protected SearchDate(java.lang.String value) {
+        _value_ = value;
+        _table_.put(_value_,this);
     }
 
-    public String value() {
-        return value;
+    public static final java.lang.String _fiscalHalfBeforeLast = "fiscalHalfBeforeLast";
+    public static final java.lang.String _fiscalHalfBeforeLastToDate = "fiscalHalfBeforeLastToDate";
+    public static final java.lang.String _fiscalQuarterBeforeLast = "fiscalQuarterBeforeLast";
+    public static final java.lang.String _fiscalQuarterBeforeLastToDate = "fiscalQuarterBeforeLastToDate";
+    public static final java.lang.String _fiscalYearBeforeLast = "fiscalYearBeforeLast";
+    public static final java.lang.String _fiscalYearBeforeLastToDate = "fiscalYearBeforeLastToDate";
+    public static final java.lang.String _fiveDaysAgo = "fiveDaysAgo";
+    public static final java.lang.String _fiveDaysFromNow = "fiveDaysFromNow";
+    public static final java.lang.String _fourDaysAgo = "fourDaysAgo";
+    public static final java.lang.String _fourDaysFromNow = "fourDaysFromNow";
+    public static final java.lang.String _fourWeeksStartingThisWeek = "fourWeeksStartingThisWeek";
+    public static final java.lang.String _lastBusinessWeek = "lastBusinessWeek";
+    public static final java.lang.String _lastFiscalHalf = "lastFiscalHalf";
+    public static final java.lang.String _lastFiscalHalfOneFiscalYearAgo = "lastFiscalHalfOneFiscalYearAgo";
+    public static final java.lang.String _lastFiscalHalfToDate = "lastFiscalHalfToDate";
+    public static final java.lang.String _lastFiscalQuarter = "lastFiscalQuarter";
+    public static final java.lang.String _lastFiscalQuarterOneFiscalYearAgo = "lastFiscalQuarterOneFiscalYearAgo";
+    public static final java.lang.String _lastFiscalQuarterToDate = "lastFiscalQuarterToDate";
+    public static final java.lang.String _lastFiscalQuarterTwoFiscalYearsAgo = "lastFiscalQuarterTwoFiscalYearsAgo";
+    public static final java.lang.String _lastFiscalYear = "lastFiscalYear";
+    public static final java.lang.String _lastFiscalYearToDate = "lastFiscalYearToDate";
+    public static final java.lang.String _lastMonth = "lastMonth";
+    public static final java.lang.String _lastMonthOneFiscalQuarterAgo = "lastMonthOneFiscalQuarterAgo";
+    public static final java.lang.String _lastMonthOneFiscalYearAgo = "lastMonthOneFiscalYearAgo";
+    public static final java.lang.String _lastMonthToDate = "lastMonthToDate";
+    public static final java.lang.String _lastMonthTwoFiscalQuartersAgo = "lastMonthTwoFiscalQuartersAgo";
+    public static final java.lang.String _lastMonthTwoFiscalYearsAgo = "lastMonthTwoFiscalYearsAgo";
+    public static final java.lang.String _lastRollingHalf = "lastRollingHalf";
+    public static final java.lang.String _lastRollingQuarter = "lastRollingQuarter";
+    public static final java.lang.String _lastRollingYear = "lastRollingYear";
+    public static final java.lang.String _lastWeek = "lastWeek";
+    public static final java.lang.String _lastWeekToDate = "lastWeekToDate";
+    public static final java.lang.String _monthAfterNext = "monthAfterNext";
+    public static final java.lang.String _monthAfterNextToDate = "monthAfterNextToDate";
+    public static final java.lang.String _monthBeforeLast = "monthBeforeLast";
+    public static final java.lang.String _monthBeforeLastToDate = "monthBeforeLastToDate";
+    public static final java.lang.String _nextBusinessWeek = "nextBusinessWeek";
+    public static final java.lang.String _nextFiscalHalf = "nextFiscalHalf";
+    public static final java.lang.String _nextFiscalQuarter = "nextFiscalQuarter";
+    public static final java.lang.String _nextFiscalYear = "nextFiscalYear";
+    public static final java.lang.String _nextFourWeeks = "nextFourWeeks";
+    public static final java.lang.String _nextMonth = "nextMonth";
+    public static final java.lang.String _nextOneHalf = "nextOneHalf";
+    public static final java.lang.String _nextOneMonth = "nextOneMonth";
+    public static final java.lang.String _nextOneQuarter = "nextOneQuarter";
+    public static final java.lang.String _nextOneWeek = "nextOneWeek";
+    public static final java.lang.String _nextOneYear = "nextOneYear";
+    public static final java.lang.String _nextWeek = "nextWeek";
+    public static final java.lang.String _ninetyDaysAgo = "ninetyDaysAgo";
+    public static final java.lang.String _ninetyDaysFromNow = "ninetyDaysFromNow";
+    public static final java.lang.String _oneYearBeforeLast = "oneYearBeforeLast";
+    public static final java.lang.String _previousFiscalQuartersLastFiscalYear = "previousFiscalQuartersLastFiscalYear";
+    public static final java.lang.String _previousFiscalQuartersThisFiscalYear = "previousFiscalQuartersThisFiscalYear";
+    public static final java.lang.String _previousMonthsLastFiscalHalf = "previousMonthsLastFiscalHalf";
+    public static final java.lang.String _previousMonthsLastFiscalQuarter = "previousMonthsLastFiscalQuarter";
+    public static final java.lang.String _previousMonthsLastFiscalYear = "previousMonthsLastFiscalYear";
+    public static final java.lang.String _previousMonthsSameFiscalHalfLastFiscalYear = "previousMonthsSameFiscalHalfLastFiscalYear";
+    public static final java.lang.String _previousMonthsSameFiscalQuarterLastFiscalYear = "previousMonthsSameFiscalQuarterLastFiscalYear";
+    public static final java.lang.String _previousMonthsThisFiscalHalf = "previousMonthsThisFiscalHalf";
+    public static final java.lang.String _previousMonthsThisFiscalQuarter = "previousMonthsThisFiscalQuarter";
+    public static final java.lang.String _previousMonthsThisFiscalYear = "previousMonthsThisFiscalYear";
+    public static final java.lang.String _previousOneDay = "previousOneDay";
+    public static final java.lang.String _previousOneHalf = "previousOneHalf";
+    public static final java.lang.String _previousOneMonth = "previousOneMonth";
+    public static final java.lang.String _previousOneQuarter = "previousOneQuarter";
+    public static final java.lang.String _previousOneWeek = "previousOneWeek";
+    public static final java.lang.String _previousOneYear = "previousOneYear";
+    public static final java.lang.String _previousRollingHalf = "previousRollingHalf";
+    public static final java.lang.String _previousRollingQuarter = "previousRollingQuarter";
+    public static final java.lang.String _previousRollingYear = "previousRollingYear";
+    public static final java.lang.String _sameDayFiscalQuarterBeforeLast = "sameDayFiscalQuarterBeforeLast";
+    public static final java.lang.String _sameDayFiscalYearBeforeLast = "sameDayFiscalYearBeforeLast";
+    public static final java.lang.String _sameDayLastFiscalQuarter = "sameDayLastFiscalQuarter";
+    public static final java.lang.String _sameDayLastFiscalYear = "sameDayLastFiscalYear";
+    public static final java.lang.String _sameDayLastMonth = "sameDayLastMonth";
+    public static final java.lang.String _sameDayLastWeek = "sameDayLastWeek";
+    public static final java.lang.String _sameDayMonthBeforeLast = "sameDayMonthBeforeLast";
+    public static final java.lang.String _sameDayWeekBeforeLast = "sameDayWeekBeforeLast";
+    public static final java.lang.String _sameFiscalHalfLastFiscalYear = "sameFiscalHalfLastFiscalYear";
+    public static final java.lang.String _sameFiscalHalfLastFiscalYearToDate = "sameFiscalHalfLastFiscalYearToDate";
+    public static final java.lang.String _sameFiscalQuarterFiscalYearBeforeLast = "sameFiscalQuarterFiscalYearBeforeLast";
+    public static final java.lang.String _sameFiscalQuarterLastFiscalYear = "sameFiscalQuarterLastFiscalYear";
+    public static final java.lang.String _sameFiscalQuarterLastFiscalYearToDate = "sameFiscalQuarterLastFiscalYearToDate";
+    public static final java.lang.String _sameMonthFiscalQuarterBeforeLast = "sameMonthFiscalQuarterBeforeLast";
+    public static final java.lang.String _sameMonthFiscalYearBeforeLast = "sameMonthFiscalYearBeforeLast";
+    public static final java.lang.String _sameMonthLastFiscalQuarter = "sameMonthLastFiscalQuarter";
+    public static final java.lang.String _sameMonthLastFiscalQuarterToDate = "sameMonthLastFiscalQuarterToDate";
+    public static final java.lang.String _sameMonthLastFiscalYear = "sameMonthLastFiscalYear";
+    public static final java.lang.String _sameMonthLastFiscalYearToDate = "sameMonthLastFiscalYearToDate";
+    public static final java.lang.String _sameWeekFiscalYearBeforeLast = "sameWeekFiscalYearBeforeLast";
+    public static final java.lang.String _sameWeekLastFiscalYear = "sameWeekLastFiscalYear";
+    public static final java.lang.String _sixtyDaysAgo = "sixtyDaysAgo";
+    public static final java.lang.String _sixtyDaysFromNow = "sixtyDaysFromNow";
+    public static final java.lang.String _startOfFiscalHalfBeforeLast = "startOfFiscalHalfBeforeLast";
+    public static final java.lang.String _startOfFiscalQuarterBeforeLast = "startOfFiscalQuarterBeforeLast";
+    public static final java.lang.String _startOfFiscalYearBeforeLast = "startOfFiscalYearBeforeLast";
+    public static final java.lang.String _startOfLastBusinessWeek = "startOfLastBusinessWeek";
+    public static final java.lang.String _startOfLastFiscalHalf = "startOfLastFiscalHalf";
+    public static final java.lang.String _startOfLastFiscalHalfOneFiscalYearAgo = "startOfLastFiscalHalfOneFiscalYearAgo";
+    public static final java.lang.String _startOfLastFiscalQuarter = "startOfLastFiscalQuarter";
+    public static final java.lang.String _startOfLastFiscalQuarterOneFiscalYearAgo = "startOfLastFiscalQuarterOneFiscalYearAgo";
+    public static final java.lang.String _startOfLastFiscalYear = "startOfLastFiscalYear";
+    public static final java.lang.String _startOfLastMonth = "startOfLastMonth";
+    public static final java.lang.String _startOfLastMonthOneFiscalQuarterAgo = "startOfLastMonthOneFiscalQuarterAgo";
+    public static final java.lang.String _startOfLastMonthOneFiscalYearAgo = "startOfLastMonthOneFiscalYearAgo";
+    public static final java.lang.String _startOfLastRollingHalf = "startOfLastRollingHalf";
+    public static final java.lang.String _startOfLastRollingQuarter = "startOfLastRollingQuarter";
+    public static final java.lang.String _startOfLastRollingYear = "startOfLastRollingYear";
+    public static final java.lang.String _startOfLastWeek = "startOfLastWeek";
+    public static final java.lang.String _startOfMonthBeforeLast = "startOfMonthBeforeLast";
+    public static final java.lang.String _startOfNextBusinessWeek = "startOfNextBusinessWeek";
+    public static final java.lang.String _startOfNextFiscalHalf = "startOfNextFiscalHalf";
+    public static final java.lang.String _startOfNextFiscalQuarter = "startOfNextFiscalQuarter";
+    public static final java.lang.String _startOfNextFiscalYear = "startOfNextFiscalYear";
+    public static final java.lang.String _startOfNextMonth = "startOfNextMonth";
+    public static final java.lang.String _startOfNextWeek = "startOfNextWeek";
+    public static final java.lang.String _startOfPreviousRollingHalf = "startOfPreviousRollingHalf";
+    public static final java.lang.String _startOfPreviousRollingQuarter = "startOfPreviousRollingQuarter";
+    public static final java.lang.String _startOfPreviousRollingYear = "startOfPreviousRollingYear";
+    public static final java.lang.String _startOfSameFiscalHalfLastFiscalYear = "startOfSameFiscalHalfLastFiscalYear";
+    public static final java.lang.String _startOfSameFiscalQuarterLastFiscalYear = "startOfSameFiscalQuarterLastFiscalYear";
+    public static final java.lang.String _startOfSameMonthLastFiscalQuarter = "startOfSameMonthLastFiscalQuarter";
+    public static final java.lang.String _startOfSameMonthLastFiscalYear = "startOfSameMonthLastFiscalYear";
+    public static final java.lang.String _startOfThisBusinessWeek = "startOfThisBusinessWeek";
+    public static final java.lang.String _startOfThisFiscalHalf = "startOfThisFiscalHalf";
+    public static final java.lang.String _startOfThisFiscalQuarter = "startOfThisFiscalQuarter";
+    public static final java.lang.String _startOfThisFiscalYear = "startOfThisFiscalYear";
+    public static final java.lang.String _startOfThisMonth = "startOfThisMonth";
+    public static final java.lang.String _startOfThisWeek = "startOfThisWeek";
+    public static final java.lang.String _startOfThisYear = "startOfThisYear";
+    public static final java.lang.String _startOfWeekBeforeLast = "startOfWeekBeforeLast";
+    public static final java.lang.String _tenDaysAgo = "tenDaysAgo";
+    public static final java.lang.String _tenDaysFromNow = "tenDaysFromNow";
+    public static final java.lang.String _thirtyDaysAgo = "thirtyDaysAgo";
+    public static final java.lang.String _thirtyDaysFromNow = "thirtyDaysFromNow";
+    public static final java.lang.String _thisBusinessWeek = "thisBusinessWeek";
+    public static final java.lang.String _thisFiscalHalf = "thisFiscalHalf";
+    public static final java.lang.String _thisFiscalHalfToDate = "thisFiscalHalfToDate";
+    public static final java.lang.String _thisFiscalQuarter = "thisFiscalQuarter";
+    public static final java.lang.String _thisFiscalQuarterToDate = "thisFiscalQuarterToDate";
+    public static final java.lang.String _thisFiscalYear = "thisFiscalYear";
+    public static final java.lang.String _thisFiscalYearToDate = "thisFiscalYearToDate";
+    public static final java.lang.String _thisMonth = "thisMonth";
+    public static final java.lang.String _thisMonthToDate = "thisMonthToDate";
+    public static final java.lang.String _thisRollingHalf = "thisRollingHalf";
+    public static final java.lang.String _thisRollingQuarter = "thisRollingQuarter";
+    public static final java.lang.String _thisRollingYear = "thisRollingYear";
+    public static final java.lang.String _thisWeek = "thisWeek";
+    public static final java.lang.String _thisWeekToDate = "thisWeekToDate";
+    public static final java.lang.String _thisYear = "thisYear";
+    public static final java.lang.String _threeDaysAgo = "threeDaysAgo";
+    public static final java.lang.String _threeDaysFromNow = "threeDaysFromNow";
+    public static final java.lang.String _threeFiscalQuartersAgo = "threeFiscalQuartersAgo";
+    public static final java.lang.String _threeFiscalQuartersAgoToDate = "threeFiscalQuartersAgoToDate";
+    public static final java.lang.String _threeFiscalYearsAgo = "threeFiscalYearsAgo";
+    public static final java.lang.String _threeFiscalYearsAgoToDate = "threeFiscalYearsAgoToDate";
+    public static final java.lang.String _threeMonthsAgo = "threeMonthsAgo";
+    public static final java.lang.String _threeMonthsAgoToDate = "threeMonthsAgoToDate";
+    public static final java.lang.String _today = "today";
+    public static final java.lang.String _tomorrow = "tomorrow";
+    public static final java.lang.String _twoDaysAgo = "twoDaysAgo";
+    public static final java.lang.String _twoDaysFromNow = "twoDaysFromNow";
+    public static final java.lang.String _weekAfterNext = "weekAfterNext";
+    public static final java.lang.String _weekAfterNextToDate = "weekAfterNextToDate";
+    public static final java.lang.String _weekBeforeLast = "weekBeforeLast";
+    public static final java.lang.String _weekBeforeLastToDate = "weekBeforeLastToDate";
+    public static final java.lang.String _yesterday = "yesterday";
+    public static final SearchDate fiscalHalfBeforeLast = new SearchDate(_fiscalHalfBeforeLast);
+    public static final SearchDate fiscalHalfBeforeLastToDate = new SearchDate(_fiscalHalfBeforeLastToDate);
+    public static final SearchDate fiscalQuarterBeforeLast = new SearchDate(_fiscalQuarterBeforeLast);
+    public static final SearchDate fiscalQuarterBeforeLastToDate = new SearchDate(_fiscalQuarterBeforeLastToDate);
+    public static final SearchDate fiscalYearBeforeLast = new SearchDate(_fiscalYearBeforeLast);
+    public static final SearchDate fiscalYearBeforeLastToDate = new SearchDate(_fiscalYearBeforeLastToDate);
+    public static final SearchDate fiveDaysAgo = new SearchDate(_fiveDaysAgo);
+    public static final SearchDate fiveDaysFromNow = new SearchDate(_fiveDaysFromNow);
+    public static final SearchDate fourDaysAgo = new SearchDate(_fourDaysAgo);
+    public static final SearchDate fourDaysFromNow = new SearchDate(_fourDaysFromNow);
+    public static final SearchDate fourWeeksStartingThisWeek = new SearchDate(_fourWeeksStartingThisWeek);
+    public static final SearchDate lastBusinessWeek = new SearchDate(_lastBusinessWeek);
+    public static final SearchDate lastFiscalHalf = new SearchDate(_lastFiscalHalf);
+    public static final SearchDate lastFiscalHalfOneFiscalYearAgo = new SearchDate(_lastFiscalHalfOneFiscalYearAgo);
+    public static final SearchDate lastFiscalHalfToDate = new SearchDate(_lastFiscalHalfToDate);
+    public static final SearchDate lastFiscalQuarter = new SearchDate(_lastFiscalQuarter);
+    public static final SearchDate lastFiscalQuarterOneFiscalYearAgo = new SearchDate(_lastFiscalQuarterOneFiscalYearAgo);
+    public static final SearchDate lastFiscalQuarterToDate = new SearchDate(_lastFiscalQuarterToDate);
+    public static final SearchDate lastFiscalQuarterTwoFiscalYearsAgo = new SearchDate(_lastFiscalQuarterTwoFiscalYearsAgo);
+    public static final SearchDate lastFiscalYear = new SearchDate(_lastFiscalYear);
+    public static final SearchDate lastFiscalYearToDate = new SearchDate(_lastFiscalYearToDate);
+    public static final SearchDate lastMonth = new SearchDate(_lastMonth);
+    public static final SearchDate lastMonthOneFiscalQuarterAgo = new SearchDate(_lastMonthOneFiscalQuarterAgo);
+    public static final SearchDate lastMonthOneFiscalYearAgo = new SearchDate(_lastMonthOneFiscalYearAgo);
+    public static final SearchDate lastMonthToDate = new SearchDate(_lastMonthToDate);
+    public static final SearchDate lastMonthTwoFiscalQuartersAgo = new SearchDate(_lastMonthTwoFiscalQuartersAgo);
+    public static final SearchDate lastMonthTwoFiscalYearsAgo = new SearchDate(_lastMonthTwoFiscalYearsAgo);
+    public static final SearchDate lastRollingHalf = new SearchDate(_lastRollingHalf);
+    public static final SearchDate lastRollingQuarter = new SearchDate(_lastRollingQuarter);
+    public static final SearchDate lastRollingYear = new SearchDate(_lastRollingYear);
+    public static final SearchDate lastWeek = new SearchDate(_lastWeek);
+    public static final SearchDate lastWeekToDate = new SearchDate(_lastWeekToDate);
+    public static final SearchDate monthAfterNext = new SearchDate(_monthAfterNext);
+    public static final SearchDate monthAfterNextToDate = new SearchDate(_monthAfterNextToDate);
+    public static final SearchDate monthBeforeLast = new SearchDate(_monthBeforeLast);
+    public static final SearchDate monthBeforeLastToDate = new SearchDate(_monthBeforeLastToDate);
+    public static final SearchDate nextBusinessWeek = new SearchDate(_nextBusinessWeek);
+    public static final SearchDate nextFiscalHalf = new SearchDate(_nextFiscalHalf);
+    public static final SearchDate nextFiscalQuarter = new SearchDate(_nextFiscalQuarter);
+    public static final SearchDate nextFiscalYear = new SearchDate(_nextFiscalYear);
+    public static final SearchDate nextFourWeeks = new SearchDate(_nextFourWeeks);
+    public static final SearchDate nextMonth = new SearchDate(_nextMonth);
+    public static final SearchDate nextOneHalf = new SearchDate(_nextOneHalf);
+    public static final SearchDate nextOneMonth = new SearchDate(_nextOneMonth);
+    public static final SearchDate nextOneQuarter = new SearchDate(_nextOneQuarter);
+    public static final SearchDate nextOneWeek = new SearchDate(_nextOneWeek);
+    public static final SearchDate nextOneYear = new SearchDate(_nextOneYear);
+    public static final SearchDate nextWeek = new SearchDate(_nextWeek);
+    public static final SearchDate ninetyDaysAgo = new SearchDate(_ninetyDaysAgo);
+    public static final SearchDate ninetyDaysFromNow = new SearchDate(_ninetyDaysFromNow);
+    public static final SearchDate oneYearBeforeLast = new SearchDate(_oneYearBeforeLast);
+    public static final SearchDate previousFiscalQuartersLastFiscalYear = new SearchDate(_previousFiscalQuartersLastFiscalYear);
+    public static final SearchDate previousFiscalQuartersThisFiscalYear = new SearchDate(_previousFiscalQuartersThisFiscalYear);
+    public static final SearchDate previousMonthsLastFiscalHalf = new SearchDate(_previousMonthsLastFiscalHalf);
+    public static final SearchDate previousMonthsLastFiscalQuarter = new SearchDate(_previousMonthsLastFiscalQuarter);
+    public static final SearchDate previousMonthsLastFiscalYear = new SearchDate(_previousMonthsLastFiscalYear);
+    public static final SearchDate previousMonthsSameFiscalHalfLastFiscalYear = new SearchDate(_previousMonthsSameFiscalHalfLastFiscalYear);
+    public static final SearchDate previousMonthsSameFiscalQuarterLastFiscalYear = new SearchDate(_previousMonthsSameFiscalQuarterLastFiscalYear);
+    public static final SearchDate previousMonthsThisFiscalHalf = new SearchDate(_previousMonthsThisFiscalHalf);
+    public static final SearchDate previousMonthsThisFiscalQuarter = new SearchDate(_previousMonthsThisFiscalQuarter);
+    public static final SearchDate previousMonthsThisFiscalYear = new SearchDate(_previousMonthsThisFiscalYear);
+    public static final SearchDate previousOneDay = new SearchDate(_previousOneDay);
+    public static final SearchDate previousOneHalf = new SearchDate(_previousOneHalf);
+    public static final SearchDate previousOneMonth = new SearchDate(_previousOneMonth);
+    public static final SearchDate previousOneQuarter = new SearchDate(_previousOneQuarter);
+    public static final SearchDate previousOneWeek = new SearchDate(_previousOneWeek);
+    public static final SearchDate previousOneYear = new SearchDate(_previousOneYear);
+    public static final SearchDate previousRollingHalf = new SearchDate(_previousRollingHalf);
+    public static final SearchDate previousRollingQuarter = new SearchDate(_previousRollingQuarter);
+    public static final SearchDate previousRollingYear = new SearchDate(_previousRollingYear);
+    public static final SearchDate sameDayFiscalQuarterBeforeLast = new SearchDate(_sameDayFiscalQuarterBeforeLast);
+    public static final SearchDate sameDayFiscalYearBeforeLast = new SearchDate(_sameDayFiscalYearBeforeLast);
+    public static final SearchDate sameDayLastFiscalQuarter = new SearchDate(_sameDayLastFiscalQuarter);
+    public static final SearchDate sameDayLastFiscalYear = new SearchDate(_sameDayLastFiscalYear);
+    public static final SearchDate sameDayLastMonth = new SearchDate(_sameDayLastMonth);
+    public static final SearchDate sameDayLastWeek = new SearchDate(_sameDayLastWeek);
+    public static final SearchDate sameDayMonthBeforeLast = new SearchDate(_sameDayMonthBeforeLast);
+    public static final SearchDate sameDayWeekBeforeLast = new SearchDate(_sameDayWeekBeforeLast);
+    public static final SearchDate sameFiscalHalfLastFiscalYear = new SearchDate(_sameFiscalHalfLastFiscalYear);
+    public static final SearchDate sameFiscalHalfLastFiscalYearToDate = new SearchDate(_sameFiscalHalfLastFiscalYearToDate);
+    public static final SearchDate sameFiscalQuarterFiscalYearBeforeLast = new SearchDate(_sameFiscalQuarterFiscalYearBeforeLast);
+    public static final SearchDate sameFiscalQuarterLastFiscalYear = new SearchDate(_sameFiscalQuarterLastFiscalYear);
+    public static final SearchDate sameFiscalQuarterLastFiscalYearToDate = new SearchDate(_sameFiscalQuarterLastFiscalYearToDate);
+    public static final SearchDate sameMonthFiscalQuarterBeforeLast = new SearchDate(_sameMonthFiscalQuarterBeforeLast);
+    public static final SearchDate sameMonthFiscalYearBeforeLast = new SearchDate(_sameMonthFiscalYearBeforeLast);
+    public static final SearchDate sameMonthLastFiscalQuarter = new SearchDate(_sameMonthLastFiscalQuarter);
+    public static final SearchDate sameMonthLastFiscalQuarterToDate = new SearchDate(_sameMonthLastFiscalQuarterToDate);
+    public static final SearchDate sameMonthLastFiscalYear = new SearchDate(_sameMonthLastFiscalYear);
+    public static final SearchDate sameMonthLastFiscalYearToDate = new SearchDate(_sameMonthLastFiscalYearToDate);
+    public static final SearchDate sameWeekFiscalYearBeforeLast = new SearchDate(_sameWeekFiscalYearBeforeLast);
+    public static final SearchDate sameWeekLastFiscalYear = new SearchDate(_sameWeekLastFiscalYear);
+    public static final SearchDate sixtyDaysAgo = new SearchDate(_sixtyDaysAgo);
+    public static final SearchDate sixtyDaysFromNow = new SearchDate(_sixtyDaysFromNow);
+    public static final SearchDate startOfFiscalHalfBeforeLast = new SearchDate(_startOfFiscalHalfBeforeLast);
+    public static final SearchDate startOfFiscalQuarterBeforeLast = new SearchDate(_startOfFiscalQuarterBeforeLast);
+    public static final SearchDate startOfFiscalYearBeforeLast = new SearchDate(_startOfFiscalYearBeforeLast);
+    public static final SearchDate startOfLastBusinessWeek = new SearchDate(_startOfLastBusinessWeek);
+    public static final SearchDate startOfLastFiscalHalf = new SearchDate(_startOfLastFiscalHalf);
+    public static final SearchDate startOfLastFiscalHalfOneFiscalYearAgo = new SearchDate(_startOfLastFiscalHalfOneFiscalYearAgo);
+    public static final SearchDate startOfLastFiscalQuarter = new SearchDate(_startOfLastFiscalQuarter);
+    public static final SearchDate startOfLastFiscalQuarterOneFiscalYearAgo = new SearchDate(_startOfLastFiscalQuarterOneFiscalYearAgo);
+    public static final SearchDate startOfLastFiscalYear = new SearchDate(_startOfLastFiscalYear);
+    public static final SearchDate startOfLastMonth = new SearchDate(_startOfLastMonth);
+    public static final SearchDate startOfLastMonthOneFiscalQuarterAgo = new SearchDate(_startOfLastMonthOneFiscalQuarterAgo);
+    public static final SearchDate startOfLastMonthOneFiscalYearAgo = new SearchDate(_startOfLastMonthOneFiscalYearAgo);
+    public static final SearchDate startOfLastRollingHalf = new SearchDate(_startOfLastRollingHalf);
+    public static final SearchDate startOfLastRollingQuarter = new SearchDate(_startOfLastRollingQuarter);
+    public static final SearchDate startOfLastRollingYear = new SearchDate(_startOfLastRollingYear);
+    public static final SearchDate startOfLastWeek = new SearchDate(_startOfLastWeek);
+    public static final SearchDate startOfMonthBeforeLast = new SearchDate(_startOfMonthBeforeLast);
+    public static final SearchDate startOfNextBusinessWeek = new SearchDate(_startOfNextBusinessWeek);
+    public static final SearchDate startOfNextFiscalHalf = new SearchDate(_startOfNextFiscalHalf);
+    public static final SearchDate startOfNextFiscalQuarter = new SearchDate(_startOfNextFiscalQuarter);
+    public static final SearchDate startOfNextFiscalYear = new SearchDate(_startOfNextFiscalYear);
+    public static final SearchDate startOfNextMonth = new SearchDate(_startOfNextMonth);
+    public static final SearchDate startOfNextWeek = new SearchDate(_startOfNextWeek);
+    public static final SearchDate startOfPreviousRollingHalf = new SearchDate(_startOfPreviousRollingHalf);
+    public static final SearchDate startOfPreviousRollingQuarter = new SearchDate(_startOfPreviousRollingQuarter);
+    public static final SearchDate startOfPreviousRollingYear = new SearchDate(_startOfPreviousRollingYear);
+    public static final SearchDate startOfSameFiscalHalfLastFiscalYear = new SearchDate(_startOfSameFiscalHalfLastFiscalYear);
+    public static final SearchDate startOfSameFiscalQuarterLastFiscalYear = new SearchDate(_startOfSameFiscalQuarterLastFiscalYear);
+    public static final SearchDate startOfSameMonthLastFiscalQuarter = new SearchDate(_startOfSameMonthLastFiscalQuarter);
+    public static final SearchDate startOfSameMonthLastFiscalYear = new SearchDate(_startOfSameMonthLastFiscalYear);
+    public static final SearchDate startOfThisBusinessWeek = new SearchDate(_startOfThisBusinessWeek);
+    public static final SearchDate startOfThisFiscalHalf = new SearchDate(_startOfThisFiscalHalf);
+    public static final SearchDate startOfThisFiscalQuarter = new SearchDate(_startOfThisFiscalQuarter);
+    public static final SearchDate startOfThisFiscalYear = new SearchDate(_startOfThisFiscalYear);
+    public static final SearchDate startOfThisMonth = new SearchDate(_startOfThisMonth);
+    public static final SearchDate startOfThisWeek = new SearchDate(_startOfThisWeek);
+    public static final SearchDate startOfThisYear = new SearchDate(_startOfThisYear);
+    public static final SearchDate startOfWeekBeforeLast = new SearchDate(_startOfWeekBeforeLast);
+    public static final SearchDate tenDaysAgo = new SearchDate(_tenDaysAgo);
+    public static final SearchDate tenDaysFromNow = new SearchDate(_tenDaysFromNow);
+    public static final SearchDate thirtyDaysAgo = new SearchDate(_thirtyDaysAgo);
+    public static final SearchDate thirtyDaysFromNow = new SearchDate(_thirtyDaysFromNow);
+    public static final SearchDate thisBusinessWeek = new SearchDate(_thisBusinessWeek);
+    public static final SearchDate thisFiscalHalf = new SearchDate(_thisFiscalHalf);
+    public static final SearchDate thisFiscalHalfToDate = new SearchDate(_thisFiscalHalfToDate);
+    public static final SearchDate thisFiscalQuarter = new SearchDate(_thisFiscalQuarter);
+    public static final SearchDate thisFiscalQuarterToDate = new SearchDate(_thisFiscalQuarterToDate);
+    public static final SearchDate thisFiscalYear = new SearchDate(_thisFiscalYear);
+    public static final SearchDate thisFiscalYearToDate = new SearchDate(_thisFiscalYearToDate);
+    public static final SearchDate thisMonth = new SearchDate(_thisMonth);
+    public static final SearchDate thisMonthToDate = new SearchDate(_thisMonthToDate);
+    public static final SearchDate thisRollingHalf = new SearchDate(_thisRollingHalf);
+    public static final SearchDate thisRollingQuarter = new SearchDate(_thisRollingQuarter);
+    public static final SearchDate thisRollingYear = new SearchDate(_thisRollingYear);
+    public static final SearchDate thisWeek = new SearchDate(_thisWeek);
+    public static final SearchDate thisWeekToDate = new SearchDate(_thisWeekToDate);
+    public static final SearchDate thisYear = new SearchDate(_thisYear);
+    public static final SearchDate threeDaysAgo = new SearchDate(_threeDaysAgo);
+    public static final SearchDate threeDaysFromNow = new SearchDate(_threeDaysFromNow);
+    public static final SearchDate threeFiscalQuartersAgo = new SearchDate(_threeFiscalQuartersAgo);
+    public static final SearchDate threeFiscalQuartersAgoToDate = new SearchDate(_threeFiscalQuartersAgoToDate);
+    public static final SearchDate threeFiscalYearsAgo = new SearchDate(_threeFiscalYearsAgo);
+    public static final SearchDate threeFiscalYearsAgoToDate = new SearchDate(_threeFiscalYearsAgoToDate);
+    public static final SearchDate threeMonthsAgo = new SearchDate(_threeMonthsAgo);
+    public static final SearchDate threeMonthsAgoToDate = new SearchDate(_threeMonthsAgoToDate);
+    public static final SearchDate today = new SearchDate(_today);
+    public static final SearchDate tomorrow = new SearchDate(_tomorrow);
+    public static final SearchDate twoDaysAgo = new SearchDate(_twoDaysAgo);
+    public static final SearchDate twoDaysFromNow = new SearchDate(_twoDaysFromNow);
+    public static final SearchDate weekAfterNext = new SearchDate(_weekAfterNext);
+    public static final SearchDate weekAfterNextToDate = new SearchDate(_weekAfterNextToDate);
+    public static final SearchDate weekBeforeLast = new SearchDate(_weekBeforeLast);
+    public static final SearchDate weekBeforeLastToDate = new SearchDate(_weekBeforeLastToDate);
+    public static final SearchDate yesterday = new SearchDate(_yesterday);
+    public java.lang.String getValue() { return _value_;}
+    public static SearchDate fromValue(java.lang.String value)
+          throws java.lang.IllegalArgumentException {
+        SearchDate enumeration = (SearchDate)
+            _table_.get(value);
+        if (enumeration==null) throw new java.lang.IllegalArgumentException();
+        return enumeration;
     }
+    public static SearchDate fromString(java.lang.String value)
+          throws java.lang.IllegalArgumentException {
+        return fromValue(value);
+    }
+    public boolean equals(java.lang.Object obj) {return (obj == this);}
+    public int hashCode() { return toString().hashCode();}
+    public java.lang.String toString() { return _value_;}
+    public java.lang.Object readResolve() throws java.io.ObjectStreamException { return fromValue(_value_);}
+    public static org.apache.axis.encoding.Serializer getSerializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new org.apache.axis.encoding.ser.EnumSerializer(
+            _javaType, _xmlType);
+    }
+    public static org.apache.axis.encoding.Deserializer getDeserializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new org.apache.axis.encoding.ser.EnumDeserializer(
+            _javaType, _xmlType);
+    }
+    // Type metadata
+    private static org.apache.axis.description.TypeDesc typeDesc =
+        new org.apache.axis.description.TypeDesc(SearchDate.class);
 
-    public static SearchDate fromValue(String v) {
-        for (SearchDate c: SearchDate.values()) {
-            if (c.value.equals(v)) {
-                return c;
-            }
-        }
-        throw new IllegalArgumentException(v);
+    static {
+        typeDesc.setXmlType(new javax.xml.namespace.QName("urn:types.core_2018_2.platform.webservices.netsuite.com", "SearchDate"));
+    }
+    /**
+     * Return type metadata object
+     */
+    public static org.apache.axis.description.TypeDesc getTypeDesc() {
+        return typeDesc;
     }
 
 }

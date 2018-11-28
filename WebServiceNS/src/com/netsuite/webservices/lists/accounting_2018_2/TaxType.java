@@ -1,364 +1,544 @@
+/**
+ * TaxType.java
+ *
+ * This file was auto-generated from WSDL
+ * by the Apache Axis 1.4 Jul 28, 2010 (04:07:04 PDT) WSDL2Java emitter.
+ */
 
 package com.netsuite.webservices.lists.accounting_2018_2;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlAttribute;
-import javax.xml.bind.annotation.XmlSchemaType;
-import javax.xml.bind.annotation.XmlType;
-import com.netsuite.webservices.platform.common_2018_2.types.Country;
-import com.netsuite.webservices.platform.core_2018_2.Record;
+public class TaxType  extends com.netsuite.webservices.platform.core_2018_2.Record  implements java.io.Serializable {
+    private java.lang.String name;
 
+    private java.lang.String description;
 
-/**
- * <p>TaxType complex type的 Java 类。
- * 
- * <p>以下模式片段指定包含在此类中的预期内容。
- * 
- * <pre>
- * &lt;complexType name="TaxType">
- *   &lt;complexContent>
- *     &lt;extension base="{urn:core_2018_2.platform.webservices.netsuite.com}Record">
- *       &lt;sequence>
- *         &lt;element name="name" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="description" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="doesNotAddToTotal" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         &lt;element name="postToItemCost" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         &lt;element name="taxInNetAmount" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         &lt;element name="reverseCharge" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         &lt;element name="isInactive" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         &lt;element name="nexusAccountsList" type="{urn:accounting_2018_2.lists.webservices.netsuite.com}TaxTypeNexusAccountsList" minOccurs="0"/>
- *         &lt;element name="nexusesTaxList" type="{urn:accounting_2018_2.lists.webservices.netsuite.com}TaxTypeNexusesTaxList" minOccurs="0"/>
- *         &lt;element name="country" type="{urn:types.common_2018_2.platform.webservices.netsuite.com}Country" minOccurs="0"/>
- *       &lt;/sequence>
- *       &lt;attribute name="internalId" type="{http://www.w3.org/2001/XMLSchema}string" />
- *       &lt;attribute name="externalId" type="{http://www.w3.org/2001/XMLSchema}string" />
- *     &lt;/extension>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
- */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "TaxType", propOrder = {
-    "name",
-    "description",
-    "doesNotAddToTotal",
-    "postToItemCost",
-    "taxInNetAmount",
-    "reverseCharge",
-    "isInactive",
-    "nexusAccountsList",
-    "nexusesTaxList",
-    "country"
-})
-public class TaxType
-    extends Record
-{
+    private java.lang.Boolean doesNotAddToTotal;
 
-    protected String name;
-    protected String description;
-    protected Boolean doesNotAddToTotal;
-    protected Boolean postToItemCost;
-    protected Boolean taxInNetAmount;
-    protected Boolean reverseCharge;
-    protected Boolean isInactive;
-    protected TaxTypeNexusAccountsList nexusAccountsList;
-    protected TaxTypeNexusesTaxList nexusesTaxList;
-    @XmlSchemaType(name = "string")
-    protected Country country;
-    @XmlAttribute(name = "internalId")
-    protected String internalId;
-    @XmlAttribute(name = "externalId")
-    protected String externalId;
+    private java.lang.Boolean postToItemCost;
+
+    private java.lang.Boolean taxInNetAmount;
+
+    private java.lang.Boolean reverseCharge;
+
+    private java.lang.Boolean isInactive;
+
+    private com.netsuite.webservices.lists.accounting_2018_2.TaxTypeNexusAccounts[] nexusAccountsList;
+
+    private com.netsuite.webservices.lists.accounting_2018_2.TaxTypeNexusesTax[] nexusesTaxList;
+
+    private com.netsuite.webservices.platform.common_2018_2.types.Country country;
+
+    private java.lang.String internalId;  // attribute
+
+    private java.lang.String externalId;  // attribute
+
+    public TaxType() {
+    }
+
+    public TaxType(
+           java.lang.String[] nullFieldList,
+           java.lang.String internalId,
+           java.lang.String externalId,
+           java.lang.String name,
+           java.lang.String description,
+           java.lang.Boolean doesNotAddToTotal,
+           java.lang.Boolean postToItemCost,
+           java.lang.Boolean taxInNetAmount,
+           java.lang.Boolean reverseCharge,
+           java.lang.Boolean isInactive,
+           com.netsuite.webservices.lists.accounting_2018_2.TaxTypeNexusAccounts[] nexusAccountsList,
+           com.netsuite.webservices.lists.accounting_2018_2.TaxTypeNexusesTax[] nexusesTaxList,
+           com.netsuite.webservices.platform.common_2018_2.types.Country country) {
+        super(
+            nullFieldList);
+        this.internalId = internalId;
+        this.externalId = externalId;
+        this.name = name;
+        this.description = description;
+        this.doesNotAddToTotal = doesNotAddToTotal;
+        this.postToItemCost = postToItemCost;
+        this.taxInNetAmount = taxInNetAmount;
+        this.reverseCharge = reverseCharge;
+        this.isInactive = isInactive;
+        this.nexusAccountsList = nexusAccountsList;
+        this.nexusesTaxList = nexusesTaxList;
+        this.country = country;
+    }
+
 
     /**
-     * 获取name属性的值。
+     * Gets the name value for this TaxType.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @return name
      */
-    public String getName() {
+    public java.lang.String getName() {
         return name;
     }
 
-    /**
-     * 设置name属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setName(String value) {
-        this.name = value;
-    }
 
     /**
-     * 获取description属性的值。
+     * Sets the name value for this TaxType.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param name
      */
-    public String getDescription() {
+    public void setName(java.lang.String name) {
+        this.name = name;
+    }
+
+
+    /**
+     * Gets the description value for this TaxType.
+     * 
+     * @return description
+     */
+    public java.lang.String getDescription() {
         return description;
     }
 
-    /**
-     * 设置description属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setDescription(String value) {
-        this.description = value;
-    }
 
     /**
-     * 获取doesNotAddToTotal属性的值。
+     * Sets the description value for this TaxType.
      * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
+     * @param description
      */
-    public Boolean isDoesNotAddToTotal() {
+    public void setDescription(java.lang.String description) {
+        this.description = description;
+    }
+
+
+    /**
+     * Gets the doesNotAddToTotal value for this TaxType.
+     * 
+     * @return doesNotAddToTotal
+     */
+    public java.lang.Boolean getDoesNotAddToTotal() {
         return doesNotAddToTotal;
     }
 
-    /**
-     * 设置doesNotAddToTotal属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
-     */
-    public void setDoesNotAddToTotal(Boolean value) {
-        this.doesNotAddToTotal = value;
-    }
 
     /**
-     * 获取postToItemCost属性的值。
+     * Sets the doesNotAddToTotal value for this TaxType.
      * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
+     * @param doesNotAddToTotal
      */
-    public Boolean isPostToItemCost() {
+    public void setDoesNotAddToTotal(java.lang.Boolean doesNotAddToTotal) {
+        this.doesNotAddToTotal = doesNotAddToTotal;
+    }
+
+
+    /**
+     * Gets the postToItemCost value for this TaxType.
+     * 
+     * @return postToItemCost
+     */
+    public java.lang.Boolean getPostToItemCost() {
         return postToItemCost;
     }
 
-    /**
-     * 设置postToItemCost属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
-     */
-    public void setPostToItemCost(Boolean value) {
-        this.postToItemCost = value;
-    }
 
     /**
-     * 获取taxInNetAmount属性的值。
+     * Sets the postToItemCost value for this TaxType.
      * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
+     * @param postToItemCost
      */
-    public Boolean isTaxInNetAmount() {
+    public void setPostToItemCost(java.lang.Boolean postToItemCost) {
+        this.postToItemCost = postToItemCost;
+    }
+
+
+    /**
+     * Gets the taxInNetAmount value for this TaxType.
+     * 
+     * @return taxInNetAmount
+     */
+    public java.lang.Boolean getTaxInNetAmount() {
         return taxInNetAmount;
     }
 
-    /**
-     * 设置taxInNetAmount属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
-     */
-    public void setTaxInNetAmount(Boolean value) {
-        this.taxInNetAmount = value;
-    }
 
     /**
-     * 获取reverseCharge属性的值。
+     * Sets the taxInNetAmount value for this TaxType.
      * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
+     * @param taxInNetAmount
      */
-    public Boolean isReverseCharge() {
+    public void setTaxInNetAmount(java.lang.Boolean taxInNetAmount) {
+        this.taxInNetAmount = taxInNetAmount;
+    }
+
+
+    /**
+     * Gets the reverseCharge value for this TaxType.
+     * 
+     * @return reverseCharge
+     */
+    public java.lang.Boolean getReverseCharge() {
         return reverseCharge;
     }
 
-    /**
-     * 设置reverseCharge属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
-     */
-    public void setReverseCharge(Boolean value) {
-        this.reverseCharge = value;
-    }
 
     /**
-     * 获取isInactive属性的值。
+     * Sets the reverseCharge value for this TaxType.
      * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
+     * @param reverseCharge
      */
-    public Boolean isIsInactive() {
+    public void setReverseCharge(java.lang.Boolean reverseCharge) {
+        this.reverseCharge = reverseCharge;
+    }
+
+
+    /**
+     * Gets the isInactive value for this TaxType.
+     * 
+     * @return isInactive
+     */
+    public java.lang.Boolean getIsInactive() {
         return isInactive;
     }
 
-    /**
-     * 设置isInactive属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
-     */
-    public void setIsInactive(Boolean value) {
-        this.isInactive = value;
-    }
 
     /**
-     * 获取nexusAccountsList属性的值。
+     * Sets the isInactive value for this TaxType.
      * 
-     * @return
-     *     possible object is
-     *     {@link TaxTypeNexusAccountsList }
-     *     
+     * @param isInactive
      */
-    public TaxTypeNexusAccountsList getNexusAccountsList() {
+    public void setIsInactive(java.lang.Boolean isInactive) {
+        this.isInactive = isInactive;
+    }
+
+
+    /**
+     * Gets the nexusAccountsList value for this TaxType.
+     * 
+     * @return nexusAccountsList
+     */
+    public com.netsuite.webservices.lists.accounting_2018_2.TaxTypeNexusAccounts[] getNexusAccountsList() {
         return nexusAccountsList;
     }
 
-    /**
-     * 设置nexusAccountsList属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link TaxTypeNexusAccountsList }
-     *     
-     */
-    public void setNexusAccountsList(TaxTypeNexusAccountsList value) {
-        this.nexusAccountsList = value;
-    }
 
     /**
-     * 获取nexusesTaxList属性的值。
+     * Sets the nexusAccountsList value for this TaxType.
      * 
-     * @return
-     *     possible object is
-     *     {@link TaxTypeNexusesTaxList }
-     *     
+     * @param nexusAccountsList
      */
-    public TaxTypeNexusesTaxList getNexusesTaxList() {
+    public void setNexusAccountsList(com.netsuite.webservices.lists.accounting_2018_2.TaxTypeNexusAccounts[] nexusAccountsList) {
+        this.nexusAccountsList = nexusAccountsList;
+    }
+
+
+    /**
+     * Gets the nexusesTaxList value for this TaxType.
+     * 
+     * @return nexusesTaxList
+     */
+    public com.netsuite.webservices.lists.accounting_2018_2.TaxTypeNexusesTax[] getNexusesTaxList() {
         return nexusesTaxList;
     }
 
-    /**
-     * 设置nexusesTaxList属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link TaxTypeNexusesTaxList }
-     *     
-     */
-    public void setNexusesTaxList(TaxTypeNexusesTaxList value) {
-        this.nexusesTaxList = value;
-    }
 
     /**
-     * 获取country属性的值。
+     * Sets the nexusesTaxList value for this TaxType.
      * 
-     * @return
-     *     possible object is
-     *     {@link Country }
-     *     
+     * @param nexusesTaxList
      */
-    public Country getCountry() {
+    public void setNexusesTaxList(com.netsuite.webservices.lists.accounting_2018_2.TaxTypeNexusesTax[] nexusesTaxList) {
+        this.nexusesTaxList = nexusesTaxList;
+    }
+
+
+    /**
+     * Gets the country value for this TaxType.
+     * 
+     * @return country
+     */
+    public com.netsuite.webservices.platform.common_2018_2.types.Country getCountry() {
         return country;
     }
 
-    /**
-     * 设置country属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Country }
-     *     
-     */
-    public void setCountry(Country value) {
-        this.country = value;
-    }
 
     /**
-     * 获取internalId属性的值。
+     * Sets the country value for this TaxType.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param country
      */
-    public String getInternalId() {
+    public void setCountry(com.netsuite.webservices.platform.common_2018_2.types.Country country) {
+        this.country = country;
+    }
+
+
+    /**
+     * Gets the internalId value for this TaxType.
+     * 
+     * @return internalId
+     */
+    public java.lang.String getInternalId() {
         return internalId;
     }
 
-    /**
-     * 设置internalId属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setInternalId(String value) {
-        this.internalId = value;
-    }
 
     /**
-     * 获取externalId属性的值。
+     * Sets the internalId value for this TaxType.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param internalId
      */
-    public String getExternalId() {
+    public void setInternalId(java.lang.String internalId) {
+        this.internalId = internalId;
+    }
+
+
+    /**
+     * Gets the externalId value for this TaxType.
+     * 
+     * @return externalId
+     */
+    public java.lang.String getExternalId() {
         return externalId;
     }
 
+
     /**
-     * 设置externalId属性的值。
+     * Sets the externalId value for this TaxType.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     * @param externalId
      */
-    public void setExternalId(String value) {
-        this.externalId = value;
+    public void setExternalId(java.lang.String externalId) {
+        this.externalId = externalId;
+    }
+
+    private java.lang.Object __equalsCalc = null;
+    public synchronized boolean equals(java.lang.Object obj) {
+        if (!(obj instanceof TaxType)) return false;
+        TaxType other = (TaxType) obj;
+        if (obj == null) return false;
+        if (this == obj) return true;
+        if (__equalsCalc != null) {
+            return (__equalsCalc == obj);
+        }
+        __equalsCalc = obj;
+        boolean _equals;
+        _equals = super.equals(obj) && 
+            ((this.name==null && other.getName()==null) || 
+             (this.name!=null &&
+              this.name.equals(other.getName()))) &&
+            ((this.description==null && other.getDescription()==null) || 
+             (this.description!=null &&
+              this.description.equals(other.getDescription()))) &&
+            ((this.doesNotAddToTotal==null && other.getDoesNotAddToTotal()==null) || 
+             (this.doesNotAddToTotal!=null &&
+              this.doesNotAddToTotal.equals(other.getDoesNotAddToTotal()))) &&
+            ((this.postToItemCost==null && other.getPostToItemCost()==null) || 
+             (this.postToItemCost!=null &&
+              this.postToItemCost.equals(other.getPostToItemCost()))) &&
+            ((this.taxInNetAmount==null && other.getTaxInNetAmount()==null) || 
+             (this.taxInNetAmount!=null &&
+              this.taxInNetAmount.equals(other.getTaxInNetAmount()))) &&
+            ((this.reverseCharge==null && other.getReverseCharge()==null) || 
+             (this.reverseCharge!=null &&
+              this.reverseCharge.equals(other.getReverseCharge()))) &&
+            ((this.isInactive==null && other.getIsInactive()==null) || 
+             (this.isInactive!=null &&
+              this.isInactive.equals(other.getIsInactive()))) &&
+            ((this.nexusAccountsList==null && other.getNexusAccountsList()==null) || 
+             (this.nexusAccountsList!=null &&
+              java.util.Arrays.equals(this.nexusAccountsList, other.getNexusAccountsList()))) &&
+            ((this.nexusesTaxList==null && other.getNexusesTaxList()==null) || 
+             (this.nexusesTaxList!=null &&
+              java.util.Arrays.equals(this.nexusesTaxList, other.getNexusesTaxList()))) &&
+            ((this.country==null && other.getCountry()==null) || 
+             (this.country!=null &&
+              this.country.equals(other.getCountry()))) &&
+            ((this.internalId==null && other.getInternalId()==null) || 
+             (this.internalId!=null &&
+              this.internalId.equals(other.getInternalId()))) &&
+            ((this.externalId==null && other.getExternalId()==null) || 
+             (this.externalId!=null &&
+              this.externalId.equals(other.getExternalId())));
+        __equalsCalc = null;
+        return _equals;
+    }
+
+    private boolean __hashCodeCalc = false;
+    public synchronized int hashCode() {
+        if (__hashCodeCalc) {
+            return 0;
+        }
+        __hashCodeCalc = true;
+        int _hashCode = super.hashCode();
+        if (getName() != null) {
+            _hashCode += getName().hashCode();
+        }
+        if (getDescription() != null) {
+            _hashCode += getDescription().hashCode();
+        }
+        if (getDoesNotAddToTotal() != null) {
+            _hashCode += getDoesNotAddToTotal().hashCode();
+        }
+        if (getPostToItemCost() != null) {
+            _hashCode += getPostToItemCost().hashCode();
+        }
+        if (getTaxInNetAmount() != null) {
+            _hashCode += getTaxInNetAmount().hashCode();
+        }
+        if (getReverseCharge() != null) {
+            _hashCode += getReverseCharge().hashCode();
+        }
+        if (getIsInactive() != null) {
+            _hashCode += getIsInactive().hashCode();
+        }
+        if (getNexusAccountsList() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getNexusAccountsList());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getNexusAccountsList(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getNexusesTaxList() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getNexusesTaxList());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getNexusesTaxList(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getCountry() != null) {
+            _hashCode += getCountry().hashCode();
+        }
+        if (getInternalId() != null) {
+            _hashCode += getInternalId().hashCode();
+        }
+        if (getExternalId() != null) {
+            _hashCode += getExternalId().hashCode();
+        }
+        __hashCodeCalc = false;
+        return _hashCode;
+    }
+
+    // Type metadata
+    private static org.apache.axis.description.TypeDesc typeDesc =
+        new org.apache.axis.description.TypeDesc(TaxType.class, true);
+
+    static {
+        typeDesc.setXmlType(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "TaxType"));
+        org.apache.axis.description.AttributeDesc attrField = new org.apache.axis.description.AttributeDesc();
+        attrField.setFieldName("internalId");
+        attrField.setXmlName(new javax.xml.namespace.QName("", "internalId"));
+        attrField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        typeDesc.addFieldDesc(attrField);
+        attrField = new org.apache.axis.description.AttributeDesc();
+        attrField.setFieldName("externalId");
+        attrField.setXmlName(new javax.xml.namespace.QName("", "externalId"));
+        attrField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        typeDesc.addFieldDesc(attrField);
+        org.apache.axis.description.ElementDesc elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("name");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "name"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("description");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "description"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("doesNotAddToTotal");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "doesNotAddToTotal"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("postToItemCost");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "postToItemCost"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("taxInNetAmount");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "taxInNetAmount"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("reverseCharge");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "reverseCharge"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("isInactive");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "isInactive"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("nexusAccountsList");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "nexusAccountsList"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "TaxTypeNexusAccounts"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "taxTypeNexusAccounts"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("nexusesTaxList");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "nexusesTaxList"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "TaxTypeNexusesTax"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "nexusesTax"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("country");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "country"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:types.common_2018_2.platform.webservices.netsuite.com", "Country"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+    }
+
+    /**
+     * Return type metadata object
+     */
+    public static org.apache.axis.description.TypeDesc getTypeDesc() {
+        return typeDesc;
+    }
+
+    /**
+     * Get Custom Serializer
+     */
+    public static org.apache.axis.encoding.Serializer getSerializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanSerializer(
+            _javaType, _xmlType, typeDesc);
+    }
+
+    /**
+     * Get Custom Deserializer
+     */
+    public static org.apache.axis.encoding.Deserializer getDeserializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanDeserializer(
+            _javaType, _xmlType, typeDesc);
     }
 
 }

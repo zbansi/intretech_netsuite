@@ -1,145 +1,231 @@
+/**
+ * CustomerDownload.java
+ *
+ * This file was auto-generated from WSDL
+ * by the Apache Axis 1.4 Jul 28, 2010 (04:07:04 PDT) WSDL2Java emitter.
+ */
 
 package com.netsuite.webservices.lists.relationships_2018_2;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlSchemaType;
-import javax.xml.bind.annotation.XmlType;
-import javax.xml.datatype.XMLGregorianCalendar;
-import com.netsuite.webservices.platform.core_2018_2.RecordRef;
+public class CustomerDownload  implements java.io.Serializable {
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef file;
 
+    private java.lang.String licenseCode;
 
-/**
- * <p>CustomerDownload complex type的 Java 类。
- * 
- * <p>以下模式片段指定包含在此类中的预期内容。
- * 
- * <pre>
- * &lt;complexType name="CustomerDownload">
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element name="file" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="licenseCode" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="remainingDownloads" type="{http://www.w3.org/2001/XMLSchema}long" minOccurs="0"/>
- *         &lt;element name="expiration" type="{http://www.w3.org/2001/XMLSchema}dateTime" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
- */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "CustomerDownload", propOrder = {
-    "file",
-    "licenseCode",
-    "remainingDownloads",
-    "expiration"
-})
-public class CustomerDownload {
+    private java.lang.Long remainingDownloads;
 
-    protected RecordRef file;
-    protected String licenseCode;
-    protected Long remainingDownloads;
-    @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar expiration;
+    private java.util.Calendar expiration;
+
+    public CustomerDownload() {
+    }
+
+    public CustomerDownload(
+           com.netsuite.webservices.platform.core_2018_2.RecordRef file,
+           java.lang.String licenseCode,
+           java.lang.Long remainingDownloads,
+           java.util.Calendar expiration) {
+           this.file = file;
+           this.licenseCode = licenseCode;
+           this.remainingDownloads = remainingDownloads;
+           this.expiration = expiration;
+    }
+
 
     /**
-     * 获取file属性的值。
+     * Gets the file value for this CustomerDownload.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @return file
      */
-    public RecordRef getFile() {
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getFile() {
         return file;
     }
 
-    /**
-     * 设置file属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setFile(RecordRef value) {
-        this.file = value;
-    }
 
     /**
-     * 获取licenseCode属性的值。
+     * Sets the file value for this CustomerDownload.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param file
      */
-    public String getLicenseCode() {
+    public void setFile(com.netsuite.webservices.platform.core_2018_2.RecordRef file) {
+        this.file = file;
+    }
+
+
+    /**
+     * Gets the licenseCode value for this CustomerDownload.
+     * 
+     * @return licenseCode
+     */
+    public java.lang.String getLicenseCode() {
         return licenseCode;
     }
 
-    /**
-     * 设置licenseCode属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setLicenseCode(String value) {
-        this.licenseCode = value;
-    }
 
     /**
-     * 获取remainingDownloads属性的值。
+     * Sets the licenseCode value for this CustomerDownload.
      * 
-     * @return
-     *     possible object is
-     *     {@link Long }
-     *     
+     * @param licenseCode
      */
-    public Long getRemainingDownloads() {
+    public void setLicenseCode(java.lang.String licenseCode) {
+        this.licenseCode = licenseCode;
+    }
+
+
+    /**
+     * Gets the remainingDownloads value for this CustomerDownload.
+     * 
+     * @return remainingDownloads
+     */
+    public java.lang.Long getRemainingDownloads() {
         return remainingDownloads;
     }
 
-    /**
-     * 设置remainingDownloads属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Long }
-     *     
-     */
-    public void setRemainingDownloads(Long value) {
-        this.remainingDownloads = value;
-    }
 
     /**
-     * 获取expiration属性的值。
+     * Sets the remainingDownloads value for this CustomerDownload.
      * 
-     * @return
-     *     possible object is
-     *     {@link XMLGregorianCalendar }
-     *     
+     * @param remainingDownloads
      */
-    public XMLGregorianCalendar getExpiration() {
+    public void setRemainingDownloads(java.lang.Long remainingDownloads) {
+        this.remainingDownloads = remainingDownloads;
+    }
+
+
+    /**
+     * Gets the expiration value for this CustomerDownload.
+     * 
+     * @return expiration
+     */
+    public java.util.Calendar getExpiration() {
         return expiration;
     }
 
+
     /**
-     * 设置expiration属性的值。
+     * Sets the expiration value for this CustomerDownload.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link XMLGregorianCalendar }
-     *     
+     * @param expiration
      */
-    public void setExpiration(XMLGregorianCalendar value) {
-        this.expiration = value;
+    public void setExpiration(java.util.Calendar expiration) {
+        this.expiration = expiration;
+    }
+
+    private java.lang.Object __equalsCalc = null;
+    public synchronized boolean equals(java.lang.Object obj) {
+        if (!(obj instanceof CustomerDownload)) return false;
+        CustomerDownload other = (CustomerDownload) obj;
+        if (obj == null) return false;
+        if (this == obj) return true;
+        if (__equalsCalc != null) {
+            return (__equalsCalc == obj);
+        }
+        __equalsCalc = obj;
+        boolean _equals;
+        _equals = true && 
+            ((this.file==null && other.getFile()==null) || 
+             (this.file!=null &&
+              this.file.equals(other.getFile()))) &&
+            ((this.licenseCode==null && other.getLicenseCode()==null) || 
+             (this.licenseCode!=null &&
+              this.licenseCode.equals(other.getLicenseCode()))) &&
+            ((this.remainingDownloads==null && other.getRemainingDownloads()==null) || 
+             (this.remainingDownloads!=null &&
+              this.remainingDownloads.equals(other.getRemainingDownloads()))) &&
+            ((this.expiration==null && other.getExpiration()==null) || 
+             (this.expiration!=null &&
+              this.expiration.equals(other.getExpiration())));
+        __equalsCalc = null;
+        return _equals;
+    }
+
+    private boolean __hashCodeCalc = false;
+    public synchronized int hashCode() {
+        if (__hashCodeCalc) {
+            return 0;
+        }
+        __hashCodeCalc = true;
+        int _hashCode = 1;
+        if (getFile() != null) {
+            _hashCode += getFile().hashCode();
+        }
+        if (getLicenseCode() != null) {
+            _hashCode += getLicenseCode().hashCode();
+        }
+        if (getRemainingDownloads() != null) {
+            _hashCode += getRemainingDownloads().hashCode();
+        }
+        if (getExpiration() != null) {
+            _hashCode += getExpiration().hashCode();
+        }
+        __hashCodeCalc = false;
+        return _hashCode;
+    }
+
+    // Type metadata
+    private static org.apache.axis.description.TypeDesc typeDesc =
+        new org.apache.axis.description.TypeDesc(CustomerDownload.class, true);
+
+    static {
+        typeDesc.setXmlType(new javax.xml.namespace.QName("urn:relationships_2018_2.lists.webservices.netsuite.com", "CustomerDownload"));
+        org.apache.axis.description.ElementDesc elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("file");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:relationships_2018_2.lists.webservices.netsuite.com", "file"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("licenseCode");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:relationships_2018_2.lists.webservices.netsuite.com", "licenseCode"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("remainingDownloads");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:relationships_2018_2.lists.webservices.netsuite.com", "remainingDownloads"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "long"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("expiration");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:relationships_2018_2.lists.webservices.netsuite.com", "expiration"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "dateTime"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+    }
+
+    /**
+     * Return type metadata object
+     */
+    public static org.apache.axis.description.TypeDesc getTypeDesc() {
+        return typeDesc;
+    }
+
+    /**
+     * Get Custom Serializer
+     */
+    public static org.apache.axis.encoding.Serializer getSerializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanSerializer(
+            _javaType, _xmlType, typeDesc);
+    }
+
+    /**
+     * Get Custom Deserializer
+     */
+    public static org.apache.axis.encoding.Deserializer getDeserializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanDeserializer(
+            _javaType, _xmlType, typeDesc);
     }
 
 }

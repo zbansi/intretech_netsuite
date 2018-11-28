@@ -1,1205 +1,1755 @@
+/**
+ * LocationSearchBasic.java
+ *
+ * This file was auto-generated from WSDL
+ * by the Apache Axis 1.4 Jul 28, 2010 (04:07:04 PDT) WSDL2Java emitter.
+ */
 
 package com.netsuite.webservices.platform.common_2018_2;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlType;
-import com.netsuite.webservices.platform.core_2018_2.SearchBooleanField;
-import com.netsuite.webservices.platform.core_2018_2.SearchCustomFieldList;
-import com.netsuite.webservices.platform.core_2018_2.SearchDateField;
-import com.netsuite.webservices.platform.core_2018_2.SearchDoubleField;
-import com.netsuite.webservices.platform.core_2018_2.SearchEnumMultiSelectField;
-import com.netsuite.webservices.platform.core_2018_2.SearchLongField;
-import com.netsuite.webservices.platform.core_2018_2.SearchMultiSelectField;
-import com.netsuite.webservices.platform.core_2018_2.SearchRecordBasic;
-import com.netsuite.webservices.platform.core_2018_2.SearchStringField;
+public class LocationSearchBasic  extends com.netsuite.webservices.platform.core_2018_2.SearchRecordBasic  implements java.io.Serializable {
+    private com.netsuite.webservices.platform.core_2018_2.SearchStringField address;
 
+    private com.netsuite.webservices.platform.core_2018_2.SearchBooleanField allowStorePickup;
 
-/**
- * <p>LocationSearchBasic complex type的 Java 类。
- * 
- * <p>以下模式片段指定包含在此类中的预期内容。
- * 
- * <pre>
- * &lt;complexType name="LocationSearchBasic">
- *   &lt;complexContent>
- *     &lt;extension base="{urn:core_2018_2.platform.webservices.netsuite.com}SearchRecordBasic">
- *       &lt;sequence>
- *         &lt;element name="address" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchStringField" minOccurs="0"/>
- *         &lt;element name="allowStorePickup" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchBooleanField" minOccurs="0"/>
- *         &lt;element name="autoAssignmentRegionSetting" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchEnumMultiSelectField" minOccurs="0"/>
- *         &lt;element name="bufferStock" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchLongField" minOccurs="0"/>
- *         &lt;element name="city" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchStringField" minOccurs="0"/>
- *         &lt;element name="country" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchEnumMultiSelectField" minOccurs="0"/>
- *         &lt;element name="county" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchStringField" minOccurs="0"/>
- *         &lt;element name="dailyShippingCapacity" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchLongField" minOccurs="0"/>
- *         &lt;element name="endTime" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchDateField" minOccurs="0"/>
- *         &lt;element name="externalId" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchMultiSelectField" minOccurs="0"/>
- *         &lt;element name="externalIdString" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchStringField" minOccurs="0"/>
- *         &lt;element name="geolocationMethod" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchEnumMultiSelectField" minOccurs="0"/>
- *         &lt;element name="internalId" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchMultiSelectField" minOccurs="0"/>
- *         &lt;element name="internalIdNumber" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchLongField" minOccurs="0"/>
- *         &lt;element name="isFriday" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchBooleanField" minOccurs="0"/>
- *         &lt;element name="isInactive" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchBooleanField" minOccurs="0"/>
- *         &lt;element name="isMonday" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchBooleanField" minOccurs="0"/>
- *         &lt;element name="isOffice" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchBooleanField" minOccurs="0"/>
- *         &lt;element name="isSaturday" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchBooleanField" minOccurs="0"/>
- *         &lt;element name="isSunday" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchBooleanField" minOccurs="0"/>
- *         &lt;element name="isThursday" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchBooleanField" minOccurs="0"/>
- *         &lt;element name="isTuesday" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchBooleanField" minOccurs="0"/>
- *         &lt;element name="isWednesday" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchBooleanField" minOccurs="0"/>
- *         &lt;element name="latitude" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchDoubleField" minOccurs="0"/>
- *         &lt;element name="locationType" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchEnumMultiSelectField" minOccurs="0"/>
- *         &lt;element name="longitude" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchDoubleField" minOccurs="0"/>
- *         &lt;element name="makeInventoryAvailable" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchBooleanField" minOccurs="0"/>
- *         &lt;element name="makeInventoryAvailableStore" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchBooleanField" minOccurs="0"/>
- *         &lt;element name="name" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchStringField" minOccurs="0"/>
- *         &lt;element name="nameNoHierarchy" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchStringField" minOccurs="0"/>
- *         &lt;element name="nextPickupCutOffTime" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchDateField" minOccurs="0"/>
- *         &lt;element name="phone" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchStringField" minOccurs="0"/>
- *         &lt;element name="sameDayPickupCutOffTime" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchDateField" minOccurs="0"/>
- *         &lt;element name="startTime" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchDateField" minOccurs="0"/>
- *         &lt;element name="state" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchStringField" minOccurs="0"/>
- *         &lt;element name="storePickupBufferStock" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchDoubleField" minOccurs="0"/>
- *         &lt;element name="subsidiary" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchMultiSelectField" minOccurs="0"/>
- *         &lt;element name="timeZone" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchEnumMultiSelectField" minOccurs="0"/>
- *         &lt;element name="totalShippingCapacity" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchLongField" minOccurs="0"/>
- *         &lt;element name="tranprefix" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchStringField" minOccurs="0"/>
- *         &lt;element name="usesBins" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchBooleanField" minOccurs="0"/>
- *         &lt;element name="zip" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchStringField" minOccurs="0"/>
- *         &lt;element name="customFieldList" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchCustomFieldList" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/extension>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
- */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "LocationSearchBasic", propOrder = {
-    "address",
-    "allowStorePickup",
-    "autoAssignmentRegionSetting",
-    "bufferStock",
-    "city",
-    "country",
-    "county",
-    "dailyShippingCapacity",
-    "endTime",
-    "externalId",
-    "externalIdString",
-    "geolocationMethod",
-    "internalId",
-    "internalIdNumber",
-    "isFriday",
-    "isInactive",
-    "isMonday",
-    "isOffice",
-    "isSaturday",
-    "isSunday",
-    "isThursday",
-    "isTuesday",
-    "isWednesday",
-    "latitude",
-    "locationType",
-    "longitude",
-    "makeInventoryAvailable",
-    "makeInventoryAvailableStore",
-    "name",
-    "nameNoHierarchy",
-    "nextPickupCutOffTime",
-    "phone",
-    "sameDayPickupCutOffTime",
-    "startTime",
-    "state",
-    "storePickupBufferStock",
-    "subsidiary",
-    "timeZone",
-    "totalShippingCapacity",
-    "tranprefix",
-    "usesBins",
-    "zip",
-    "customFieldList"
-})
-public class LocationSearchBasic
-    extends SearchRecordBasic
-{
+    private java.lang.String[] autoAssignmentRegionSetting;
 
-    protected SearchStringField address;
-    protected SearchBooleanField allowStorePickup;
-    protected SearchEnumMultiSelectField autoAssignmentRegionSetting;
-    protected SearchLongField bufferStock;
-    protected SearchStringField city;
-    protected SearchEnumMultiSelectField country;
-    protected SearchStringField county;
-    protected SearchLongField dailyShippingCapacity;
-    protected SearchDateField endTime;
-    protected SearchMultiSelectField externalId;
-    protected SearchStringField externalIdString;
-    protected SearchEnumMultiSelectField geolocationMethod;
-    protected SearchMultiSelectField internalId;
-    protected SearchLongField internalIdNumber;
-    protected SearchBooleanField isFriday;
-    protected SearchBooleanField isInactive;
-    protected SearchBooleanField isMonday;
-    protected SearchBooleanField isOffice;
-    protected SearchBooleanField isSaturday;
-    protected SearchBooleanField isSunday;
-    protected SearchBooleanField isThursday;
-    protected SearchBooleanField isTuesday;
-    protected SearchBooleanField isWednesday;
-    protected SearchDoubleField latitude;
-    protected SearchEnumMultiSelectField locationType;
-    protected SearchDoubleField longitude;
-    protected SearchBooleanField makeInventoryAvailable;
-    protected SearchBooleanField makeInventoryAvailableStore;
-    protected SearchStringField name;
-    protected SearchStringField nameNoHierarchy;
-    protected SearchDateField nextPickupCutOffTime;
-    protected SearchStringField phone;
-    protected SearchDateField sameDayPickupCutOffTime;
-    protected SearchDateField startTime;
-    protected SearchStringField state;
-    protected SearchDoubleField storePickupBufferStock;
-    protected SearchMultiSelectField subsidiary;
-    protected SearchEnumMultiSelectField timeZone;
-    protected SearchLongField totalShippingCapacity;
-    protected SearchStringField tranprefix;
-    protected SearchBooleanField usesBins;
-    protected SearchStringField zip;
-    protected SearchCustomFieldList customFieldList;
+    private com.netsuite.webservices.platform.core_2018_2.SearchLongField bufferStock;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchStringField city;
+
+    private java.lang.String[] country;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchStringField county;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchLongField dailyShippingCapacity;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchDateField endTime;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef[] externalId;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchStringField externalIdString;
+
+    private java.lang.String[] geolocationMethod;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef[] internalId;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchLongField internalIdNumber;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchBooleanField isFriday;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchBooleanField isInactive;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchBooleanField isMonday;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchBooleanField isOffice;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchBooleanField isSaturday;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchBooleanField isSunday;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchBooleanField isThursday;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchBooleanField isTuesday;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchBooleanField isWednesday;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchDoubleField latitude;
+
+    private java.lang.String[] locationType;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchDoubleField longitude;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchBooleanField makeInventoryAvailable;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchBooleanField makeInventoryAvailableStore;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchStringField name;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchStringField nameNoHierarchy;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchDateField nextPickupCutOffTime;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchStringField phone;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchDateField sameDayPickupCutOffTime;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchDateField startTime;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchStringField state;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchDoubleField storePickupBufferStock;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef[] subsidiary;
+
+    private java.lang.String[] timeZone;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchLongField totalShippingCapacity;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchStringField tranprefix;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchBooleanField usesBins;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchStringField zip;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchCustomField[] customFieldList;
+
+    public LocationSearchBasic() {
+    }
+
+    public LocationSearchBasic(
+           com.netsuite.webservices.platform.core_2018_2.SearchStringField address,
+           com.netsuite.webservices.platform.core_2018_2.SearchBooleanField allowStorePickup,
+           java.lang.String[] autoAssignmentRegionSetting,
+           com.netsuite.webservices.platform.core_2018_2.SearchLongField bufferStock,
+           com.netsuite.webservices.platform.core_2018_2.SearchStringField city,
+           java.lang.String[] country,
+           com.netsuite.webservices.platform.core_2018_2.SearchStringField county,
+           com.netsuite.webservices.platform.core_2018_2.SearchLongField dailyShippingCapacity,
+           com.netsuite.webservices.platform.core_2018_2.SearchDateField endTime,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef[] externalId,
+           com.netsuite.webservices.platform.core_2018_2.SearchStringField externalIdString,
+           java.lang.String[] geolocationMethod,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef[] internalId,
+           com.netsuite.webservices.platform.core_2018_2.SearchLongField internalIdNumber,
+           com.netsuite.webservices.platform.core_2018_2.SearchBooleanField isFriday,
+           com.netsuite.webservices.platform.core_2018_2.SearchBooleanField isInactive,
+           com.netsuite.webservices.platform.core_2018_2.SearchBooleanField isMonday,
+           com.netsuite.webservices.platform.core_2018_2.SearchBooleanField isOffice,
+           com.netsuite.webservices.platform.core_2018_2.SearchBooleanField isSaturday,
+           com.netsuite.webservices.platform.core_2018_2.SearchBooleanField isSunday,
+           com.netsuite.webservices.platform.core_2018_2.SearchBooleanField isThursday,
+           com.netsuite.webservices.platform.core_2018_2.SearchBooleanField isTuesday,
+           com.netsuite.webservices.platform.core_2018_2.SearchBooleanField isWednesday,
+           com.netsuite.webservices.platform.core_2018_2.SearchDoubleField latitude,
+           java.lang.String[] locationType,
+           com.netsuite.webservices.platform.core_2018_2.SearchDoubleField longitude,
+           com.netsuite.webservices.platform.core_2018_2.SearchBooleanField makeInventoryAvailable,
+           com.netsuite.webservices.platform.core_2018_2.SearchBooleanField makeInventoryAvailableStore,
+           com.netsuite.webservices.platform.core_2018_2.SearchStringField name,
+           com.netsuite.webservices.platform.core_2018_2.SearchStringField nameNoHierarchy,
+           com.netsuite.webservices.platform.core_2018_2.SearchDateField nextPickupCutOffTime,
+           com.netsuite.webservices.platform.core_2018_2.SearchStringField phone,
+           com.netsuite.webservices.platform.core_2018_2.SearchDateField sameDayPickupCutOffTime,
+           com.netsuite.webservices.platform.core_2018_2.SearchDateField startTime,
+           com.netsuite.webservices.platform.core_2018_2.SearchStringField state,
+           com.netsuite.webservices.platform.core_2018_2.SearchDoubleField storePickupBufferStock,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef[] subsidiary,
+           java.lang.String[] timeZone,
+           com.netsuite.webservices.platform.core_2018_2.SearchLongField totalShippingCapacity,
+           com.netsuite.webservices.platform.core_2018_2.SearchStringField tranprefix,
+           com.netsuite.webservices.platform.core_2018_2.SearchBooleanField usesBins,
+           com.netsuite.webservices.platform.core_2018_2.SearchStringField zip,
+           com.netsuite.webservices.platform.core_2018_2.SearchCustomField[] customFieldList) {
+        this.address = address;
+        this.allowStorePickup = allowStorePickup;
+        this.autoAssignmentRegionSetting = autoAssignmentRegionSetting;
+        this.bufferStock = bufferStock;
+        this.city = city;
+        this.country = country;
+        this.county = county;
+        this.dailyShippingCapacity = dailyShippingCapacity;
+        this.endTime = endTime;
+        this.externalId = externalId;
+        this.externalIdString = externalIdString;
+        this.geolocationMethod = geolocationMethod;
+        this.internalId = internalId;
+        this.internalIdNumber = internalIdNumber;
+        this.isFriday = isFriday;
+        this.isInactive = isInactive;
+        this.isMonday = isMonday;
+        this.isOffice = isOffice;
+        this.isSaturday = isSaturday;
+        this.isSunday = isSunday;
+        this.isThursday = isThursday;
+        this.isTuesday = isTuesday;
+        this.isWednesday = isWednesday;
+        this.latitude = latitude;
+        this.locationType = locationType;
+        this.longitude = longitude;
+        this.makeInventoryAvailable = makeInventoryAvailable;
+        this.makeInventoryAvailableStore = makeInventoryAvailableStore;
+        this.name = name;
+        this.nameNoHierarchy = nameNoHierarchy;
+        this.nextPickupCutOffTime = nextPickupCutOffTime;
+        this.phone = phone;
+        this.sameDayPickupCutOffTime = sameDayPickupCutOffTime;
+        this.startTime = startTime;
+        this.state = state;
+        this.storePickupBufferStock = storePickupBufferStock;
+        this.subsidiary = subsidiary;
+        this.timeZone = timeZone;
+        this.totalShippingCapacity = totalShippingCapacity;
+        this.tranprefix = tranprefix;
+        this.usesBins = usesBins;
+        this.zip = zip;
+        this.customFieldList = customFieldList;
+    }
+
 
     /**
-     * 获取address属性的值。
+     * Gets the address value for this LocationSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchStringField }
-     *     
+     * @return address
      */
-    public SearchStringField getAddress() {
+    public com.netsuite.webservices.platform.core_2018_2.SearchStringField getAddress() {
         return address;
     }
 
-    /**
-     * 设置address属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchStringField }
-     *     
-     */
-    public void setAddress(SearchStringField value) {
-        this.address = value;
-    }
 
     /**
-     * 获取allowStorePickup属性的值。
+     * Sets the address value for this LocationSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchBooleanField }
-     *     
+     * @param address
      */
-    public SearchBooleanField getAllowStorePickup() {
+    public void setAddress(com.netsuite.webservices.platform.core_2018_2.SearchStringField address) {
+        this.address = address;
+    }
+
+
+    /**
+     * Gets the allowStorePickup value for this LocationSearchBasic.
+     * 
+     * @return allowStorePickup
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchBooleanField getAllowStorePickup() {
         return allowStorePickup;
     }
 
-    /**
-     * 设置allowStorePickup属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchBooleanField }
-     *     
-     */
-    public void setAllowStorePickup(SearchBooleanField value) {
-        this.allowStorePickup = value;
-    }
 
     /**
-     * 获取autoAssignmentRegionSetting属性的值。
+     * Sets the allowStorePickup value for this LocationSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchEnumMultiSelectField }
-     *     
+     * @param allowStorePickup
      */
-    public SearchEnumMultiSelectField getAutoAssignmentRegionSetting() {
+    public void setAllowStorePickup(com.netsuite.webservices.platform.core_2018_2.SearchBooleanField allowStorePickup) {
+        this.allowStorePickup = allowStorePickup;
+    }
+
+
+    /**
+     * Gets the autoAssignmentRegionSetting value for this LocationSearchBasic.
+     * 
+     * @return autoAssignmentRegionSetting
+     */
+    public java.lang.String[] getAutoAssignmentRegionSetting() {
         return autoAssignmentRegionSetting;
     }
 
-    /**
-     * 设置autoAssignmentRegionSetting属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchEnumMultiSelectField }
-     *     
-     */
-    public void setAutoAssignmentRegionSetting(SearchEnumMultiSelectField value) {
-        this.autoAssignmentRegionSetting = value;
-    }
 
     /**
-     * 获取bufferStock属性的值。
+     * Sets the autoAssignmentRegionSetting value for this LocationSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchLongField }
-     *     
+     * @param autoAssignmentRegionSetting
      */
-    public SearchLongField getBufferStock() {
+    public void setAutoAssignmentRegionSetting(java.lang.String[] autoAssignmentRegionSetting) {
+        this.autoAssignmentRegionSetting = autoAssignmentRegionSetting;
+    }
+
+
+    /**
+     * Gets the bufferStock value for this LocationSearchBasic.
+     * 
+     * @return bufferStock
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchLongField getBufferStock() {
         return bufferStock;
     }
 
-    /**
-     * 设置bufferStock属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchLongField }
-     *     
-     */
-    public void setBufferStock(SearchLongField value) {
-        this.bufferStock = value;
-    }
 
     /**
-     * 获取city属性的值。
+     * Sets the bufferStock value for this LocationSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchStringField }
-     *     
+     * @param bufferStock
      */
-    public SearchStringField getCity() {
+    public void setBufferStock(com.netsuite.webservices.platform.core_2018_2.SearchLongField bufferStock) {
+        this.bufferStock = bufferStock;
+    }
+
+
+    /**
+     * Gets the city value for this LocationSearchBasic.
+     * 
+     * @return city
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchStringField getCity() {
         return city;
     }
 
-    /**
-     * 设置city属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchStringField }
-     *     
-     */
-    public void setCity(SearchStringField value) {
-        this.city = value;
-    }
 
     /**
-     * 获取country属性的值。
+     * Sets the city value for this LocationSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchEnumMultiSelectField }
-     *     
+     * @param city
      */
-    public SearchEnumMultiSelectField getCountry() {
+    public void setCity(com.netsuite.webservices.platform.core_2018_2.SearchStringField city) {
+        this.city = city;
+    }
+
+
+    /**
+     * Gets the country value for this LocationSearchBasic.
+     * 
+     * @return country
+     */
+    public java.lang.String[] getCountry() {
         return country;
     }
 
-    /**
-     * 设置country属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchEnumMultiSelectField }
-     *     
-     */
-    public void setCountry(SearchEnumMultiSelectField value) {
-        this.country = value;
-    }
 
     /**
-     * 获取county属性的值。
+     * Sets the country value for this LocationSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchStringField }
-     *     
+     * @param country
      */
-    public SearchStringField getCounty() {
+    public void setCountry(java.lang.String[] country) {
+        this.country = country;
+    }
+
+
+    /**
+     * Gets the county value for this LocationSearchBasic.
+     * 
+     * @return county
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchStringField getCounty() {
         return county;
     }
 
-    /**
-     * 设置county属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchStringField }
-     *     
-     */
-    public void setCounty(SearchStringField value) {
-        this.county = value;
-    }
 
     /**
-     * 获取dailyShippingCapacity属性的值。
+     * Sets the county value for this LocationSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchLongField }
-     *     
+     * @param county
      */
-    public SearchLongField getDailyShippingCapacity() {
+    public void setCounty(com.netsuite.webservices.platform.core_2018_2.SearchStringField county) {
+        this.county = county;
+    }
+
+
+    /**
+     * Gets the dailyShippingCapacity value for this LocationSearchBasic.
+     * 
+     * @return dailyShippingCapacity
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchLongField getDailyShippingCapacity() {
         return dailyShippingCapacity;
     }
 
-    /**
-     * 设置dailyShippingCapacity属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchLongField }
-     *     
-     */
-    public void setDailyShippingCapacity(SearchLongField value) {
-        this.dailyShippingCapacity = value;
-    }
 
     /**
-     * 获取endTime属性的值。
+     * Sets the dailyShippingCapacity value for this LocationSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchDateField }
-     *     
+     * @param dailyShippingCapacity
      */
-    public SearchDateField getEndTime() {
+    public void setDailyShippingCapacity(com.netsuite.webservices.platform.core_2018_2.SearchLongField dailyShippingCapacity) {
+        this.dailyShippingCapacity = dailyShippingCapacity;
+    }
+
+
+    /**
+     * Gets the endTime value for this LocationSearchBasic.
+     * 
+     * @return endTime
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchDateField getEndTime() {
         return endTime;
     }
 
-    /**
-     * 设置endTime属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchDateField }
-     *     
-     */
-    public void setEndTime(SearchDateField value) {
-        this.endTime = value;
-    }
 
     /**
-     * 获取externalId属性的值。
+     * Sets the endTime value for this LocationSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchMultiSelectField }
-     *     
+     * @param endTime
      */
-    public SearchMultiSelectField getExternalId() {
+    public void setEndTime(com.netsuite.webservices.platform.core_2018_2.SearchDateField endTime) {
+        this.endTime = endTime;
+    }
+
+
+    /**
+     * Gets the externalId value for this LocationSearchBasic.
+     * 
+     * @return externalId
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef[] getExternalId() {
         return externalId;
     }
 
-    /**
-     * 设置externalId属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchMultiSelectField }
-     *     
-     */
-    public void setExternalId(SearchMultiSelectField value) {
-        this.externalId = value;
-    }
 
     /**
-     * 获取externalIdString属性的值。
+     * Sets the externalId value for this LocationSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchStringField }
-     *     
+     * @param externalId
      */
-    public SearchStringField getExternalIdString() {
+    public void setExternalId(com.netsuite.webservices.platform.core_2018_2.RecordRef[] externalId) {
+        this.externalId = externalId;
+    }
+
+
+    /**
+     * Gets the externalIdString value for this LocationSearchBasic.
+     * 
+     * @return externalIdString
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchStringField getExternalIdString() {
         return externalIdString;
     }
 
-    /**
-     * 设置externalIdString属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchStringField }
-     *     
-     */
-    public void setExternalIdString(SearchStringField value) {
-        this.externalIdString = value;
-    }
 
     /**
-     * 获取geolocationMethod属性的值。
+     * Sets the externalIdString value for this LocationSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchEnumMultiSelectField }
-     *     
+     * @param externalIdString
      */
-    public SearchEnumMultiSelectField getGeolocationMethod() {
+    public void setExternalIdString(com.netsuite.webservices.platform.core_2018_2.SearchStringField externalIdString) {
+        this.externalIdString = externalIdString;
+    }
+
+
+    /**
+     * Gets the geolocationMethod value for this LocationSearchBasic.
+     * 
+     * @return geolocationMethod
+     */
+    public java.lang.String[] getGeolocationMethod() {
         return geolocationMethod;
     }
 
-    /**
-     * 设置geolocationMethod属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchEnumMultiSelectField }
-     *     
-     */
-    public void setGeolocationMethod(SearchEnumMultiSelectField value) {
-        this.geolocationMethod = value;
-    }
 
     /**
-     * 获取internalId属性的值。
+     * Sets the geolocationMethod value for this LocationSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchMultiSelectField }
-     *     
+     * @param geolocationMethod
      */
-    public SearchMultiSelectField getInternalId() {
+    public void setGeolocationMethod(java.lang.String[] geolocationMethod) {
+        this.geolocationMethod = geolocationMethod;
+    }
+
+
+    /**
+     * Gets the internalId value for this LocationSearchBasic.
+     * 
+     * @return internalId
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef[] getInternalId() {
         return internalId;
     }
 
-    /**
-     * 设置internalId属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchMultiSelectField }
-     *     
-     */
-    public void setInternalId(SearchMultiSelectField value) {
-        this.internalId = value;
-    }
 
     /**
-     * 获取internalIdNumber属性的值。
+     * Sets the internalId value for this LocationSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchLongField }
-     *     
+     * @param internalId
      */
-    public SearchLongField getInternalIdNumber() {
+    public void setInternalId(com.netsuite.webservices.platform.core_2018_2.RecordRef[] internalId) {
+        this.internalId = internalId;
+    }
+
+
+    /**
+     * Gets the internalIdNumber value for this LocationSearchBasic.
+     * 
+     * @return internalIdNumber
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchLongField getInternalIdNumber() {
         return internalIdNumber;
     }
 
-    /**
-     * 设置internalIdNumber属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchLongField }
-     *     
-     */
-    public void setInternalIdNumber(SearchLongField value) {
-        this.internalIdNumber = value;
-    }
 
     /**
-     * 获取isFriday属性的值。
+     * Sets the internalIdNumber value for this LocationSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchBooleanField }
-     *     
+     * @param internalIdNumber
      */
-    public SearchBooleanField getIsFriday() {
+    public void setInternalIdNumber(com.netsuite.webservices.platform.core_2018_2.SearchLongField internalIdNumber) {
+        this.internalIdNumber = internalIdNumber;
+    }
+
+
+    /**
+     * Gets the isFriday value for this LocationSearchBasic.
+     * 
+     * @return isFriday
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchBooleanField getIsFriday() {
         return isFriday;
     }
 
-    /**
-     * 设置isFriday属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchBooleanField }
-     *     
-     */
-    public void setIsFriday(SearchBooleanField value) {
-        this.isFriday = value;
-    }
 
     /**
-     * 获取isInactive属性的值。
+     * Sets the isFriday value for this LocationSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchBooleanField }
-     *     
+     * @param isFriday
      */
-    public SearchBooleanField getIsInactive() {
+    public void setIsFriday(com.netsuite.webservices.platform.core_2018_2.SearchBooleanField isFriday) {
+        this.isFriday = isFriday;
+    }
+
+
+    /**
+     * Gets the isInactive value for this LocationSearchBasic.
+     * 
+     * @return isInactive
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchBooleanField getIsInactive() {
         return isInactive;
     }
 
-    /**
-     * 设置isInactive属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchBooleanField }
-     *     
-     */
-    public void setIsInactive(SearchBooleanField value) {
-        this.isInactive = value;
-    }
 
     /**
-     * 获取isMonday属性的值。
+     * Sets the isInactive value for this LocationSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchBooleanField }
-     *     
+     * @param isInactive
      */
-    public SearchBooleanField getIsMonday() {
+    public void setIsInactive(com.netsuite.webservices.platform.core_2018_2.SearchBooleanField isInactive) {
+        this.isInactive = isInactive;
+    }
+
+
+    /**
+     * Gets the isMonday value for this LocationSearchBasic.
+     * 
+     * @return isMonday
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchBooleanField getIsMonday() {
         return isMonday;
     }
 
-    /**
-     * 设置isMonday属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchBooleanField }
-     *     
-     */
-    public void setIsMonday(SearchBooleanField value) {
-        this.isMonday = value;
-    }
 
     /**
-     * 获取isOffice属性的值。
+     * Sets the isMonday value for this LocationSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchBooleanField }
-     *     
+     * @param isMonday
      */
-    public SearchBooleanField getIsOffice() {
+    public void setIsMonday(com.netsuite.webservices.platform.core_2018_2.SearchBooleanField isMonday) {
+        this.isMonday = isMonday;
+    }
+
+
+    /**
+     * Gets the isOffice value for this LocationSearchBasic.
+     * 
+     * @return isOffice
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchBooleanField getIsOffice() {
         return isOffice;
     }
 
-    /**
-     * 设置isOffice属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchBooleanField }
-     *     
-     */
-    public void setIsOffice(SearchBooleanField value) {
-        this.isOffice = value;
-    }
 
     /**
-     * 获取isSaturday属性的值。
+     * Sets the isOffice value for this LocationSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchBooleanField }
-     *     
+     * @param isOffice
      */
-    public SearchBooleanField getIsSaturday() {
+    public void setIsOffice(com.netsuite.webservices.platform.core_2018_2.SearchBooleanField isOffice) {
+        this.isOffice = isOffice;
+    }
+
+
+    /**
+     * Gets the isSaturday value for this LocationSearchBasic.
+     * 
+     * @return isSaturday
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchBooleanField getIsSaturday() {
         return isSaturday;
     }
 
-    /**
-     * 设置isSaturday属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchBooleanField }
-     *     
-     */
-    public void setIsSaturday(SearchBooleanField value) {
-        this.isSaturday = value;
-    }
 
     /**
-     * 获取isSunday属性的值。
+     * Sets the isSaturday value for this LocationSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchBooleanField }
-     *     
+     * @param isSaturday
      */
-    public SearchBooleanField getIsSunday() {
+    public void setIsSaturday(com.netsuite.webservices.platform.core_2018_2.SearchBooleanField isSaturday) {
+        this.isSaturday = isSaturday;
+    }
+
+
+    /**
+     * Gets the isSunday value for this LocationSearchBasic.
+     * 
+     * @return isSunday
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchBooleanField getIsSunday() {
         return isSunday;
     }
 
-    /**
-     * 设置isSunday属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchBooleanField }
-     *     
-     */
-    public void setIsSunday(SearchBooleanField value) {
-        this.isSunday = value;
-    }
 
     /**
-     * 获取isThursday属性的值。
+     * Sets the isSunday value for this LocationSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchBooleanField }
-     *     
+     * @param isSunday
      */
-    public SearchBooleanField getIsThursday() {
+    public void setIsSunday(com.netsuite.webservices.platform.core_2018_2.SearchBooleanField isSunday) {
+        this.isSunday = isSunday;
+    }
+
+
+    /**
+     * Gets the isThursday value for this LocationSearchBasic.
+     * 
+     * @return isThursday
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchBooleanField getIsThursday() {
         return isThursday;
     }
 
-    /**
-     * 设置isThursday属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchBooleanField }
-     *     
-     */
-    public void setIsThursday(SearchBooleanField value) {
-        this.isThursday = value;
-    }
 
     /**
-     * 获取isTuesday属性的值。
+     * Sets the isThursday value for this LocationSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchBooleanField }
-     *     
+     * @param isThursday
      */
-    public SearchBooleanField getIsTuesday() {
+    public void setIsThursday(com.netsuite.webservices.platform.core_2018_2.SearchBooleanField isThursday) {
+        this.isThursday = isThursday;
+    }
+
+
+    /**
+     * Gets the isTuesday value for this LocationSearchBasic.
+     * 
+     * @return isTuesday
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchBooleanField getIsTuesday() {
         return isTuesday;
     }
 
-    /**
-     * 设置isTuesday属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchBooleanField }
-     *     
-     */
-    public void setIsTuesday(SearchBooleanField value) {
-        this.isTuesday = value;
-    }
 
     /**
-     * 获取isWednesday属性的值。
+     * Sets the isTuesday value for this LocationSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchBooleanField }
-     *     
+     * @param isTuesday
      */
-    public SearchBooleanField getIsWednesday() {
+    public void setIsTuesday(com.netsuite.webservices.platform.core_2018_2.SearchBooleanField isTuesday) {
+        this.isTuesday = isTuesday;
+    }
+
+
+    /**
+     * Gets the isWednesday value for this LocationSearchBasic.
+     * 
+     * @return isWednesday
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchBooleanField getIsWednesday() {
         return isWednesday;
     }
 
-    /**
-     * 设置isWednesday属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchBooleanField }
-     *     
-     */
-    public void setIsWednesday(SearchBooleanField value) {
-        this.isWednesday = value;
-    }
 
     /**
-     * 获取latitude属性的值。
+     * Sets the isWednesday value for this LocationSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchDoubleField }
-     *     
+     * @param isWednesday
      */
-    public SearchDoubleField getLatitude() {
+    public void setIsWednesday(com.netsuite.webservices.platform.core_2018_2.SearchBooleanField isWednesday) {
+        this.isWednesday = isWednesday;
+    }
+
+
+    /**
+     * Gets the latitude value for this LocationSearchBasic.
+     * 
+     * @return latitude
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchDoubleField getLatitude() {
         return latitude;
     }
 
-    /**
-     * 设置latitude属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchDoubleField }
-     *     
-     */
-    public void setLatitude(SearchDoubleField value) {
-        this.latitude = value;
-    }
 
     /**
-     * 获取locationType属性的值。
+     * Sets the latitude value for this LocationSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchEnumMultiSelectField }
-     *     
+     * @param latitude
      */
-    public SearchEnumMultiSelectField getLocationType() {
+    public void setLatitude(com.netsuite.webservices.platform.core_2018_2.SearchDoubleField latitude) {
+        this.latitude = latitude;
+    }
+
+
+    /**
+     * Gets the locationType value for this LocationSearchBasic.
+     * 
+     * @return locationType
+     */
+    public java.lang.String[] getLocationType() {
         return locationType;
     }
 
-    /**
-     * 设置locationType属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchEnumMultiSelectField }
-     *     
-     */
-    public void setLocationType(SearchEnumMultiSelectField value) {
-        this.locationType = value;
-    }
 
     /**
-     * 获取longitude属性的值。
+     * Sets the locationType value for this LocationSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchDoubleField }
-     *     
+     * @param locationType
      */
-    public SearchDoubleField getLongitude() {
+    public void setLocationType(java.lang.String[] locationType) {
+        this.locationType = locationType;
+    }
+
+
+    /**
+     * Gets the longitude value for this LocationSearchBasic.
+     * 
+     * @return longitude
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchDoubleField getLongitude() {
         return longitude;
     }
 
-    /**
-     * 设置longitude属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchDoubleField }
-     *     
-     */
-    public void setLongitude(SearchDoubleField value) {
-        this.longitude = value;
-    }
 
     /**
-     * 获取makeInventoryAvailable属性的值。
+     * Sets the longitude value for this LocationSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchBooleanField }
-     *     
+     * @param longitude
      */
-    public SearchBooleanField getMakeInventoryAvailable() {
+    public void setLongitude(com.netsuite.webservices.platform.core_2018_2.SearchDoubleField longitude) {
+        this.longitude = longitude;
+    }
+
+
+    /**
+     * Gets the makeInventoryAvailable value for this LocationSearchBasic.
+     * 
+     * @return makeInventoryAvailable
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchBooleanField getMakeInventoryAvailable() {
         return makeInventoryAvailable;
     }
 
-    /**
-     * 设置makeInventoryAvailable属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchBooleanField }
-     *     
-     */
-    public void setMakeInventoryAvailable(SearchBooleanField value) {
-        this.makeInventoryAvailable = value;
-    }
 
     /**
-     * 获取makeInventoryAvailableStore属性的值。
+     * Sets the makeInventoryAvailable value for this LocationSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchBooleanField }
-     *     
+     * @param makeInventoryAvailable
      */
-    public SearchBooleanField getMakeInventoryAvailableStore() {
+    public void setMakeInventoryAvailable(com.netsuite.webservices.platform.core_2018_2.SearchBooleanField makeInventoryAvailable) {
+        this.makeInventoryAvailable = makeInventoryAvailable;
+    }
+
+
+    /**
+     * Gets the makeInventoryAvailableStore value for this LocationSearchBasic.
+     * 
+     * @return makeInventoryAvailableStore
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchBooleanField getMakeInventoryAvailableStore() {
         return makeInventoryAvailableStore;
     }
 
-    /**
-     * 设置makeInventoryAvailableStore属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchBooleanField }
-     *     
-     */
-    public void setMakeInventoryAvailableStore(SearchBooleanField value) {
-        this.makeInventoryAvailableStore = value;
-    }
 
     /**
-     * 获取name属性的值。
+     * Sets the makeInventoryAvailableStore value for this LocationSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchStringField }
-     *     
+     * @param makeInventoryAvailableStore
      */
-    public SearchStringField getName() {
+    public void setMakeInventoryAvailableStore(com.netsuite.webservices.platform.core_2018_2.SearchBooleanField makeInventoryAvailableStore) {
+        this.makeInventoryAvailableStore = makeInventoryAvailableStore;
+    }
+
+
+    /**
+     * Gets the name value for this LocationSearchBasic.
+     * 
+     * @return name
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchStringField getName() {
         return name;
     }
 
-    /**
-     * 设置name属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchStringField }
-     *     
-     */
-    public void setName(SearchStringField value) {
-        this.name = value;
-    }
 
     /**
-     * 获取nameNoHierarchy属性的值。
+     * Sets the name value for this LocationSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchStringField }
-     *     
+     * @param name
      */
-    public SearchStringField getNameNoHierarchy() {
+    public void setName(com.netsuite.webservices.platform.core_2018_2.SearchStringField name) {
+        this.name = name;
+    }
+
+
+    /**
+     * Gets the nameNoHierarchy value for this LocationSearchBasic.
+     * 
+     * @return nameNoHierarchy
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchStringField getNameNoHierarchy() {
         return nameNoHierarchy;
     }
 
-    /**
-     * 设置nameNoHierarchy属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchStringField }
-     *     
-     */
-    public void setNameNoHierarchy(SearchStringField value) {
-        this.nameNoHierarchy = value;
-    }
 
     /**
-     * 获取nextPickupCutOffTime属性的值。
+     * Sets the nameNoHierarchy value for this LocationSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchDateField }
-     *     
+     * @param nameNoHierarchy
      */
-    public SearchDateField getNextPickupCutOffTime() {
+    public void setNameNoHierarchy(com.netsuite.webservices.platform.core_2018_2.SearchStringField nameNoHierarchy) {
+        this.nameNoHierarchy = nameNoHierarchy;
+    }
+
+
+    /**
+     * Gets the nextPickupCutOffTime value for this LocationSearchBasic.
+     * 
+     * @return nextPickupCutOffTime
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchDateField getNextPickupCutOffTime() {
         return nextPickupCutOffTime;
     }
 
-    /**
-     * 设置nextPickupCutOffTime属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchDateField }
-     *     
-     */
-    public void setNextPickupCutOffTime(SearchDateField value) {
-        this.nextPickupCutOffTime = value;
-    }
 
     /**
-     * 获取phone属性的值。
+     * Sets the nextPickupCutOffTime value for this LocationSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchStringField }
-     *     
+     * @param nextPickupCutOffTime
      */
-    public SearchStringField getPhone() {
+    public void setNextPickupCutOffTime(com.netsuite.webservices.platform.core_2018_2.SearchDateField nextPickupCutOffTime) {
+        this.nextPickupCutOffTime = nextPickupCutOffTime;
+    }
+
+
+    /**
+     * Gets the phone value for this LocationSearchBasic.
+     * 
+     * @return phone
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchStringField getPhone() {
         return phone;
     }
 
-    /**
-     * 设置phone属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchStringField }
-     *     
-     */
-    public void setPhone(SearchStringField value) {
-        this.phone = value;
-    }
 
     /**
-     * 获取sameDayPickupCutOffTime属性的值。
+     * Sets the phone value for this LocationSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchDateField }
-     *     
+     * @param phone
      */
-    public SearchDateField getSameDayPickupCutOffTime() {
+    public void setPhone(com.netsuite.webservices.platform.core_2018_2.SearchStringField phone) {
+        this.phone = phone;
+    }
+
+
+    /**
+     * Gets the sameDayPickupCutOffTime value for this LocationSearchBasic.
+     * 
+     * @return sameDayPickupCutOffTime
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchDateField getSameDayPickupCutOffTime() {
         return sameDayPickupCutOffTime;
     }
 
-    /**
-     * 设置sameDayPickupCutOffTime属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchDateField }
-     *     
-     */
-    public void setSameDayPickupCutOffTime(SearchDateField value) {
-        this.sameDayPickupCutOffTime = value;
-    }
 
     /**
-     * 获取startTime属性的值。
+     * Sets the sameDayPickupCutOffTime value for this LocationSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchDateField }
-     *     
+     * @param sameDayPickupCutOffTime
      */
-    public SearchDateField getStartTime() {
+    public void setSameDayPickupCutOffTime(com.netsuite.webservices.platform.core_2018_2.SearchDateField sameDayPickupCutOffTime) {
+        this.sameDayPickupCutOffTime = sameDayPickupCutOffTime;
+    }
+
+
+    /**
+     * Gets the startTime value for this LocationSearchBasic.
+     * 
+     * @return startTime
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchDateField getStartTime() {
         return startTime;
     }
 
-    /**
-     * 设置startTime属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchDateField }
-     *     
-     */
-    public void setStartTime(SearchDateField value) {
-        this.startTime = value;
-    }
 
     /**
-     * 获取state属性的值。
+     * Sets the startTime value for this LocationSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchStringField }
-     *     
+     * @param startTime
      */
-    public SearchStringField getState() {
+    public void setStartTime(com.netsuite.webservices.platform.core_2018_2.SearchDateField startTime) {
+        this.startTime = startTime;
+    }
+
+
+    /**
+     * Gets the state value for this LocationSearchBasic.
+     * 
+     * @return state
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchStringField getState() {
         return state;
     }
 
-    /**
-     * 设置state属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchStringField }
-     *     
-     */
-    public void setState(SearchStringField value) {
-        this.state = value;
-    }
 
     /**
-     * 获取storePickupBufferStock属性的值。
+     * Sets the state value for this LocationSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchDoubleField }
-     *     
+     * @param state
      */
-    public SearchDoubleField getStorePickupBufferStock() {
+    public void setState(com.netsuite.webservices.platform.core_2018_2.SearchStringField state) {
+        this.state = state;
+    }
+
+
+    /**
+     * Gets the storePickupBufferStock value for this LocationSearchBasic.
+     * 
+     * @return storePickupBufferStock
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchDoubleField getStorePickupBufferStock() {
         return storePickupBufferStock;
     }
 
-    /**
-     * 设置storePickupBufferStock属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchDoubleField }
-     *     
-     */
-    public void setStorePickupBufferStock(SearchDoubleField value) {
-        this.storePickupBufferStock = value;
-    }
 
     /**
-     * 获取subsidiary属性的值。
+     * Sets the storePickupBufferStock value for this LocationSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchMultiSelectField }
-     *     
+     * @param storePickupBufferStock
      */
-    public SearchMultiSelectField getSubsidiary() {
+    public void setStorePickupBufferStock(com.netsuite.webservices.platform.core_2018_2.SearchDoubleField storePickupBufferStock) {
+        this.storePickupBufferStock = storePickupBufferStock;
+    }
+
+
+    /**
+     * Gets the subsidiary value for this LocationSearchBasic.
+     * 
+     * @return subsidiary
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef[] getSubsidiary() {
         return subsidiary;
     }
 
-    /**
-     * 设置subsidiary属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchMultiSelectField }
-     *     
-     */
-    public void setSubsidiary(SearchMultiSelectField value) {
-        this.subsidiary = value;
-    }
 
     /**
-     * 获取timeZone属性的值。
+     * Sets the subsidiary value for this LocationSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchEnumMultiSelectField }
-     *     
+     * @param subsidiary
      */
-    public SearchEnumMultiSelectField getTimeZone() {
+    public void setSubsidiary(com.netsuite.webservices.platform.core_2018_2.RecordRef[] subsidiary) {
+        this.subsidiary = subsidiary;
+    }
+
+
+    /**
+     * Gets the timeZone value for this LocationSearchBasic.
+     * 
+     * @return timeZone
+     */
+    public java.lang.String[] getTimeZone() {
         return timeZone;
     }
 
-    /**
-     * 设置timeZone属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchEnumMultiSelectField }
-     *     
-     */
-    public void setTimeZone(SearchEnumMultiSelectField value) {
-        this.timeZone = value;
-    }
 
     /**
-     * 获取totalShippingCapacity属性的值。
+     * Sets the timeZone value for this LocationSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchLongField }
-     *     
+     * @param timeZone
      */
-    public SearchLongField getTotalShippingCapacity() {
+    public void setTimeZone(java.lang.String[] timeZone) {
+        this.timeZone = timeZone;
+    }
+
+
+    /**
+     * Gets the totalShippingCapacity value for this LocationSearchBasic.
+     * 
+     * @return totalShippingCapacity
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchLongField getTotalShippingCapacity() {
         return totalShippingCapacity;
     }
 
-    /**
-     * 设置totalShippingCapacity属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchLongField }
-     *     
-     */
-    public void setTotalShippingCapacity(SearchLongField value) {
-        this.totalShippingCapacity = value;
-    }
 
     /**
-     * 获取tranprefix属性的值。
+     * Sets the totalShippingCapacity value for this LocationSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchStringField }
-     *     
+     * @param totalShippingCapacity
      */
-    public SearchStringField getTranprefix() {
+    public void setTotalShippingCapacity(com.netsuite.webservices.platform.core_2018_2.SearchLongField totalShippingCapacity) {
+        this.totalShippingCapacity = totalShippingCapacity;
+    }
+
+
+    /**
+     * Gets the tranprefix value for this LocationSearchBasic.
+     * 
+     * @return tranprefix
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchStringField getTranprefix() {
         return tranprefix;
     }
 
-    /**
-     * 设置tranprefix属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchStringField }
-     *     
-     */
-    public void setTranprefix(SearchStringField value) {
-        this.tranprefix = value;
-    }
 
     /**
-     * 获取usesBins属性的值。
+     * Sets the tranprefix value for this LocationSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchBooleanField }
-     *     
+     * @param tranprefix
      */
-    public SearchBooleanField getUsesBins() {
+    public void setTranprefix(com.netsuite.webservices.platform.core_2018_2.SearchStringField tranprefix) {
+        this.tranprefix = tranprefix;
+    }
+
+
+    /**
+     * Gets the usesBins value for this LocationSearchBasic.
+     * 
+     * @return usesBins
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchBooleanField getUsesBins() {
         return usesBins;
     }
 
-    /**
-     * 设置usesBins属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchBooleanField }
-     *     
-     */
-    public void setUsesBins(SearchBooleanField value) {
-        this.usesBins = value;
-    }
 
     /**
-     * 获取zip属性的值。
+     * Sets the usesBins value for this LocationSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchStringField }
-     *     
+     * @param usesBins
      */
-    public SearchStringField getZip() {
+    public void setUsesBins(com.netsuite.webservices.platform.core_2018_2.SearchBooleanField usesBins) {
+        this.usesBins = usesBins;
+    }
+
+
+    /**
+     * Gets the zip value for this LocationSearchBasic.
+     * 
+     * @return zip
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchStringField getZip() {
         return zip;
     }
 
-    /**
-     * 设置zip属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchStringField }
-     *     
-     */
-    public void setZip(SearchStringField value) {
-        this.zip = value;
-    }
 
     /**
-     * 获取customFieldList属性的值。
+     * Sets the zip value for this LocationSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchCustomFieldList }
-     *     
+     * @param zip
      */
-    public SearchCustomFieldList getCustomFieldList() {
+    public void setZip(com.netsuite.webservices.platform.core_2018_2.SearchStringField zip) {
+        this.zip = zip;
+    }
+
+
+    /**
+     * Gets the customFieldList value for this LocationSearchBasic.
+     * 
+     * @return customFieldList
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchCustomField[] getCustomFieldList() {
         return customFieldList;
     }
 
+
     /**
-     * 设置customFieldList属性的值。
+     * Sets the customFieldList value for this LocationSearchBasic.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchCustomFieldList }
-     *     
+     * @param customFieldList
      */
-    public void setCustomFieldList(SearchCustomFieldList value) {
-        this.customFieldList = value;
+    public void setCustomFieldList(com.netsuite.webservices.platform.core_2018_2.SearchCustomField[] customFieldList) {
+        this.customFieldList = customFieldList;
+    }
+
+    private java.lang.Object __equalsCalc = null;
+    public synchronized boolean equals(java.lang.Object obj) {
+        if (!(obj instanceof LocationSearchBasic)) return false;
+        LocationSearchBasic other = (LocationSearchBasic) obj;
+        if (obj == null) return false;
+        if (this == obj) return true;
+        if (__equalsCalc != null) {
+            return (__equalsCalc == obj);
+        }
+        __equalsCalc = obj;
+        boolean _equals;
+        _equals = super.equals(obj) && 
+            ((this.address==null && other.getAddress()==null) || 
+             (this.address!=null &&
+              this.address.equals(other.getAddress()))) &&
+            ((this.allowStorePickup==null && other.getAllowStorePickup()==null) || 
+             (this.allowStorePickup!=null &&
+              this.allowStorePickup.equals(other.getAllowStorePickup()))) &&
+            ((this.autoAssignmentRegionSetting==null && other.getAutoAssignmentRegionSetting()==null) || 
+             (this.autoAssignmentRegionSetting!=null &&
+              java.util.Arrays.equals(this.autoAssignmentRegionSetting, other.getAutoAssignmentRegionSetting()))) &&
+            ((this.bufferStock==null && other.getBufferStock()==null) || 
+             (this.bufferStock!=null &&
+              this.bufferStock.equals(other.getBufferStock()))) &&
+            ((this.city==null && other.getCity()==null) || 
+             (this.city!=null &&
+              this.city.equals(other.getCity()))) &&
+            ((this.country==null && other.getCountry()==null) || 
+             (this.country!=null &&
+              java.util.Arrays.equals(this.country, other.getCountry()))) &&
+            ((this.county==null && other.getCounty()==null) || 
+             (this.county!=null &&
+              this.county.equals(other.getCounty()))) &&
+            ((this.dailyShippingCapacity==null && other.getDailyShippingCapacity()==null) || 
+             (this.dailyShippingCapacity!=null &&
+              this.dailyShippingCapacity.equals(other.getDailyShippingCapacity()))) &&
+            ((this.endTime==null && other.getEndTime()==null) || 
+             (this.endTime!=null &&
+              this.endTime.equals(other.getEndTime()))) &&
+            ((this.externalId==null && other.getExternalId()==null) || 
+             (this.externalId!=null &&
+              java.util.Arrays.equals(this.externalId, other.getExternalId()))) &&
+            ((this.externalIdString==null && other.getExternalIdString()==null) || 
+             (this.externalIdString!=null &&
+              this.externalIdString.equals(other.getExternalIdString()))) &&
+            ((this.geolocationMethod==null && other.getGeolocationMethod()==null) || 
+             (this.geolocationMethod!=null &&
+              java.util.Arrays.equals(this.geolocationMethod, other.getGeolocationMethod()))) &&
+            ((this.internalId==null && other.getInternalId()==null) || 
+             (this.internalId!=null &&
+              java.util.Arrays.equals(this.internalId, other.getInternalId()))) &&
+            ((this.internalIdNumber==null && other.getInternalIdNumber()==null) || 
+             (this.internalIdNumber!=null &&
+              this.internalIdNumber.equals(other.getInternalIdNumber()))) &&
+            ((this.isFriday==null && other.getIsFriday()==null) || 
+             (this.isFriday!=null &&
+              this.isFriday.equals(other.getIsFriday()))) &&
+            ((this.isInactive==null && other.getIsInactive()==null) || 
+             (this.isInactive!=null &&
+              this.isInactive.equals(other.getIsInactive()))) &&
+            ((this.isMonday==null && other.getIsMonday()==null) || 
+             (this.isMonday!=null &&
+              this.isMonday.equals(other.getIsMonday()))) &&
+            ((this.isOffice==null && other.getIsOffice()==null) || 
+             (this.isOffice!=null &&
+              this.isOffice.equals(other.getIsOffice()))) &&
+            ((this.isSaturday==null && other.getIsSaturday()==null) || 
+             (this.isSaturday!=null &&
+              this.isSaturday.equals(other.getIsSaturday()))) &&
+            ((this.isSunday==null && other.getIsSunday()==null) || 
+             (this.isSunday!=null &&
+              this.isSunday.equals(other.getIsSunday()))) &&
+            ((this.isThursday==null && other.getIsThursday()==null) || 
+             (this.isThursday!=null &&
+              this.isThursday.equals(other.getIsThursday()))) &&
+            ((this.isTuesday==null && other.getIsTuesday()==null) || 
+             (this.isTuesday!=null &&
+              this.isTuesday.equals(other.getIsTuesday()))) &&
+            ((this.isWednesday==null && other.getIsWednesday()==null) || 
+             (this.isWednesday!=null &&
+              this.isWednesday.equals(other.getIsWednesday()))) &&
+            ((this.latitude==null && other.getLatitude()==null) || 
+             (this.latitude!=null &&
+              this.latitude.equals(other.getLatitude()))) &&
+            ((this.locationType==null && other.getLocationType()==null) || 
+             (this.locationType!=null &&
+              java.util.Arrays.equals(this.locationType, other.getLocationType()))) &&
+            ((this.longitude==null && other.getLongitude()==null) || 
+             (this.longitude!=null &&
+              this.longitude.equals(other.getLongitude()))) &&
+            ((this.makeInventoryAvailable==null && other.getMakeInventoryAvailable()==null) || 
+             (this.makeInventoryAvailable!=null &&
+              this.makeInventoryAvailable.equals(other.getMakeInventoryAvailable()))) &&
+            ((this.makeInventoryAvailableStore==null && other.getMakeInventoryAvailableStore()==null) || 
+             (this.makeInventoryAvailableStore!=null &&
+              this.makeInventoryAvailableStore.equals(other.getMakeInventoryAvailableStore()))) &&
+            ((this.name==null && other.getName()==null) || 
+             (this.name!=null &&
+              this.name.equals(other.getName()))) &&
+            ((this.nameNoHierarchy==null && other.getNameNoHierarchy()==null) || 
+             (this.nameNoHierarchy!=null &&
+              this.nameNoHierarchy.equals(other.getNameNoHierarchy()))) &&
+            ((this.nextPickupCutOffTime==null && other.getNextPickupCutOffTime()==null) || 
+             (this.nextPickupCutOffTime!=null &&
+              this.nextPickupCutOffTime.equals(other.getNextPickupCutOffTime()))) &&
+            ((this.phone==null && other.getPhone()==null) || 
+             (this.phone!=null &&
+              this.phone.equals(other.getPhone()))) &&
+            ((this.sameDayPickupCutOffTime==null && other.getSameDayPickupCutOffTime()==null) || 
+             (this.sameDayPickupCutOffTime!=null &&
+              this.sameDayPickupCutOffTime.equals(other.getSameDayPickupCutOffTime()))) &&
+            ((this.startTime==null && other.getStartTime()==null) || 
+             (this.startTime!=null &&
+              this.startTime.equals(other.getStartTime()))) &&
+            ((this.state==null && other.getState()==null) || 
+             (this.state!=null &&
+              this.state.equals(other.getState()))) &&
+            ((this.storePickupBufferStock==null && other.getStorePickupBufferStock()==null) || 
+             (this.storePickupBufferStock!=null &&
+              this.storePickupBufferStock.equals(other.getStorePickupBufferStock()))) &&
+            ((this.subsidiary==null && other.getSubsidiary()==null) || 
+             (this.subsidiary!=null &&
+              java.util.Arrays.equals(this.subsidiary, other.getSubsidiary()))) &&
+            ((this.timeZone==null && other.getTimeZone()==null) || 
+             (this.timeZone!=null &&
+              java.util.Arrays.equals(this.timeZone, other.getTimeZone()))) &&
+            ((this.totalShippingCapacity==null && other.getTotalShippingCapacity()==null) || 
+             (this.totalShippingCapacity!=null &&
+              this.totalShippingCapacity.equals(other.getTotalShippingCapacity()))) &&
+            ((this.tranprefix==null && other.getTranprefix()==null) || 
+             (this.tranprefix!=null &&
+              this.tranprefix.equals(other.getTranprefix()))) &&
+            ((this.usesBins==null && other.getUsesBins()==null) || 
+             (this.usesBins!=null &&
+              this.usesBins.equals(other.getUsesBins()))) &&
+            ((this.zip==null && other.getZip()==null) || 
+             (this.zip!=null &&
+              this.zip.equals(other.getZip()))) &&
+            ((this.customFieldList==null && other.getCustomFieldList()==null) || 
+             (this.customFieldList!=null &&
+              java.util.Arrays.equals(this.customFieldList, other.getCustomFieldList())));
+        __equalsCalc = null;
+        return _equals;
+    }
+
+    private boolean __hashCodeCalc = false;
+    public synchronized int hashCode() {
+        if (__hashCodeCalc) {
+            return 0;
+        }
+        __hashCodeCalc = true;
+        int _hashCode = super.hashCode();
+        if (getAddress() != null) {
+            _hashCode += getAddress().hashCode();
+        }
+        if (getAllowStorePickup() != null) {
+            _hashCode += getAllowStorePickup().hashCode();
+        }
+        if (getAutoAssignmentRegionSetting() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getAutoAssignmentRegionSetting());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getAutoAssignmentRegionSetting(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getBufferStock() != null) {
+            _hashCode += getBufferStock().hashCode();
+        }
+        if (getCity() != null) {
+            _hashCode += getCity().hashCode();
+        }
+        if (getCountry() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getCountry());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getCountry(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getCounty() != null) {
+            _hashCode += getCounty().hashCode();
+        }
+        if (getDailyShippingCapacity() != null) {
+            _hashCode += getDailyShippingCapacity().hashCode();
+        }
+        if (getEndTime() != null) {
+            _hashCode += getEndTime().hashCode();
+        }
+        if (getExternalId() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getExternalId());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getExternalId(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getExternalIdString() != null) {
+            _hashCode += getExternalIdString().hashCode();
+        }
+        if (getGeolocationMethod() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getGeolocationMethod());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getGeolocationMethod(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getInternalId() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getInternalId());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getInternalId(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getInternalIdNumber() != null) {
+            _hashCode += getInternalIdNumber().hashCode();
+        }
+        if (getIsFriday() != null) {
+            _hashCode += getIsFriday().hashCode();
+        }
+        if (getIsInactive() != null) {
+            _hashCode += getIsInactive().hashCode();
+        }
+        if (getIsMonday() != null) {
+            _hashCode += getIsMonday().hashCode();
+        }
+        if (getIsOffice() != null) {
+            _hashCode += getIsOffice().hashCode();
+        }
+        if (getIsSaturday() != null) {
+            _hashCode += getIsSaturday().hashCode();
+        }
+        if (getIsSunday() != null) {
+            _hashCode += getIsSunday().hashCode();
+        }
+        if (getIsThursday() != null) {
+            _hashCode += getIsThursday().hashCode();
+        }
+        if (getIsTuesday() != null) {
+            _hashCode += getIsTuesday().hashCode();
+        }
+        if (getIsWednesday() != null) {
+            _hashCode += getIsWednesday().hashCode();
+        }
+        if (getLatitude() != null) {
+            _hashCode += getLatitude().hashCode();
+        }
+        if (getLocationType() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getLocationType());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getLocationType(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getLongitude() != null) {
+            _hashCode += getLongitude().hashCode();
+        }
+        if (getMakeInventoryAvailable() != null) {
+            _hashCode += getMakeInventoryAvailable().hashCode();
+        }
+        if (getMakeInventoryAvailableStore() != null) {
+            _hashCode += getMakeInventoryAvailableStore().hashCode();
+        }
+        if (getName() != null) {
+            _hashCode += getName().hashCode();
+        }
+        if (getNameNoHierarchy() != null) {
+            _hashCode += getNameNoHierarchy().hashCode();
+        }
+        if (getNextPickupCutOffTime() != null) {
+            _hashCode += getNextPickupCutOffTime().hashCode();
+        }
+        if (getPhone() != null) {
+            _hashCode += getPhone().hashCode();
+        }
+        if (getSameDayPickupCutOffTime() != null) {
+            _hashCode += getSameDayPickupCutOffTime().hashCode();
+        }
+        if (getStartTime() != null) {
+            _hashCode += getStartTime().hashCode();
+        }
+        if (getState() != null) {
+            _hashCode += getState().hashCode();
+        }
+        if (getStorePickupBufferStock() != null) {
+            _hashCode += getStorePickupBufferStock().hashCode();
+        }
+        if (getSubsidiary() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getSubsidiary());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getSubsidiary(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getTimeZone() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getTimeZone());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getTimeZone(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getTotalShippingCapacity() != null) {
+            _hashCode += getTotalShippingCapacity().hashCode();
+        }
+        if (getTranprefix() != null) {
+            _hashCode += getTranprefix().hashCode();
+        }
+        if (getUsesBins() != null) {
+            _hashCode += getUsesBins().hashCode();
+        }
+        if (getZip() != null) {
+            _hashCode += getZip().hashCode();
+        }
+        if (getCustomFieldList() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getCustomFieldList());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getCustomFieldList(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        __hashCodeCalc = false;
+        return _hashCode;
+    }
+
+    // Type metadata
+    private static org.apache.axis.description.TypeDesc typeDesc =
+        new org.apache.axis.description.TypeDesc(LocationSearchBasic.class, true);
+
+    static {
+        typeDesc.setXmlType(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "LocationSearchBasic"));
+        org.apache.axis.description.ElementDesc elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("address");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "address"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchStringField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("allowStorePickup");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "allowStorePickup"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchBooleanField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("autoAssignmentRegionSetting");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "autoAssignmentRegionSetting"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "searchValue"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("bufferStock");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "bufferStock"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchLongField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("city");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "city"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchStringField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("country");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "country"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "searchValue"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("county");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "county"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchStringField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("dailyShippingCapacity");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "dailyShippingCapacity"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchLongField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("endTime");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "endTime"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchDateField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("externalId");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "externalId"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "searchValue"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("externalIdString");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "externalIdString"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchStringField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("geolocationMethod");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "geolocationMethod"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "searchValue"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("internalId");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "internalId"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "searchValue"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("internalIdNumber");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "internalIdNumber"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchLongField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("isFriday");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "isFriday"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchBooleanField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("isInactive");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "isInactive"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchBooleanField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("isMonday");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "isMonday"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchBooleanField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("isOffice");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "isOffice"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchBooleanField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("isSaturday");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "isSaturday"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchBooleanField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("isSunday");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "isSunday"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchBooleanField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("isThursday");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "isThursday"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchBooleanField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("isTuesday");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "isTuesday"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchBooleanField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("isWednesday");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "isWednesday"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchBooleanField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("latitude");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "latitude"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchDoubleField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("locationType");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "locationType"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "searchValue"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("longitude");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "longitude"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchDoubleField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("makeInventoryAvailable");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "makeInventoryAvailable"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchBooleanField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("makeInventoryAvailableStore");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "makeInventoryAvailableStore"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchBooleanField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("name");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "name"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchStringField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("nameNoHierarchy");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "nameNoHierarchy"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchStringField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("nextPickupCutOffTime");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "nextPickupCutOffTime"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchDateField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("phone");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "phone"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchStringField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("sameDayPickupCutOffTime");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "sameDayPickupCutOffTime"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchDateField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("startTime");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "startTime"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchDateField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("state");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "state"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchStringField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("storePickupBufferStock");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "storePickupBufferStock"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchDoubleField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("subsidiary");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "subsidiary"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "searchValue"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("timeZone");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "timeZone"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "searchValue"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("totalShippingCapacity");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "totalShippingCapacity"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchLongField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("tranprefix");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "tranprefix"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchStringField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("usesBins");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "usesBins"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchBooleanField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("zip");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "zip"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchStringField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("customFieldList");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "customFieldList"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchCustomField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "customField"));
+        typeDesc.addFieldDesc(elemField);
+    }
+
+    /**
+     * Return type metadata object
+     */
+    public static org.apache.axis.description.TypeDesc getTypeDesc() {
+        return typeDesc;
+    }
+
+    /**
+     * Get Custom Serializer
+     */
+    public static org.apache.axis.encoding.Serializer getSerializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanSerializer(
+            _javaType, _xmlType, typeDesc);
+    }
+
+    /**
+     * Get Custom Deserializer
+     */
+    public static org.apache.axis.encoding.Deserializer getDeserializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanDeserializer(
+            _javaType, _xmlType, typeDesc);
     }
 
 }
