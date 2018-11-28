@@ -1,1751 +1,2485 @@
+/**
+ * GiftCertificateItem.java
+ *
+ * This file was auto-generated from WSDL
+ * by the Apache Axis 1.4 Jul 28, 2010 (04:07:04 PDT) WSDL2Java emitter.
+ */
 
 package com.netsuite.webservices.lists.accounting_2018_2;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlAttribute;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlSchemaType;
-import javax.xml.bind.annotation.XmlType;
-import javax.xml.datatype.XMLGregorianCalendar;
-import com.netsuite.webservices.lists.accounting_2018_2.types.ItemOutOfStockBehavior;
-import com.netsuite.webservices.platform.common_2018_2.types.ItemCostEstimateType;
-import com.netsuite.webservices.platform.core_2018_2.CustomFieldList;
-import com.netsuite.webservices.platform.core_2018_2.Record;
-import com.netsuite.webservices.platform.core_2018_2.RecordRef;
-import com.netsuite.webservices.platform.core_2018_2.RecordRefList;
+public class GiftCertificateItem  extends com.netsuite.webservices.platform.core_2018_2.Record  implements java.io.Serializable {
+    private java.util.Calendar createdDate;
 
+    private java.util.Calendar lastModifiedDate;
 
-/**
- * <p>GiftCertificateItem complex type的 Java 类。
- * 
- * <p>以下模式片段指定包含在此类中的预期内容。
- * 
- * <pre>
- * &lt;complexType name="GiftCertificateItem">
- *   &lt;complexContent>
- *     &lt;extension base="{urn:core_2018_2.platform.webservices.netsuite.com}Record">
- *       &lt;sequence>
- *         &lt;element name="createdDate" type="{http://www.w3.org/2001/XMLSchema}dateTime" minOccurs="0"/>
- *         &lt;element name="lastModifiedDate" type="{http://www.w3.org/2001/XMLSchema}dateTime" minOccurs="0"/>
- *         &lt;element name="customForm" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="itemId" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="upcCode" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="displayName" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="includeChildren" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         &lt;element name="parent" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="isOnline" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         &lt;element name="isGcoCompliant" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         &lt;element name="offerSupport" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         &lt;element name="isInactive" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         &lt;element name="availableToPartners" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         &lt;element name="department" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="class" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="location" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="subsidiaryList" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRefList" minOccurs="0"/>
- *         &lt;element name="salesDescription" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="incomeAccount" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="liabilityAccount" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="daysBeforeExpiration" type="{http://www.w3.org/2001/XMLSchema}long" minOccurs="0"/>
- *         &lt;element name="isTaxable" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         &lt;element name="rate" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
- *         &lt;element name="urlComponent" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="salesTaxCode" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="pricesIncludeTax" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         &lt;element name="taxSchedule" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="costEstimate" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
- *         &lt;element name="costEstimateType" type="{urn:types.common_2018_2.platform.webservices.netsuite.com}ItemCostEstimateType" minOccurs="0"/>
- *         &lt;element name="billingSchedule" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="issueProduct" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="isFulfillable" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         &lt;element name="storeDisplayName" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="storeDisplayThumbnail" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="storeDisplayImage" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="storeDescription" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="storeDetailedDescription" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="storeItemTemplate" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="pageTitle" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="metaTagHtml" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="excludeFromSitemap" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         &lt;element name="sitemapPriority" type="{urn:types.common_2018_2.platform.webservices.netsuite.com}SitemapPriority" minOccurs="0"/>
- *         &lt;element name="searchKeywords" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="isDonationItem" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         &lt;element name="showDefaultDonationAmount" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         &lt;element name="maxDonationAmount" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
- *         &lt;element name="dontShowPrice" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         &lt;element name="noPriceMessage" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="outOfStockMessage" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="onSpecial" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         &lt;element name="outOfStockBehavior" type="{urn:types.accounting_2018_2.lists.webservices.netsuite.com}ItemOutOfStockBehavior" minOccurs="0"/>
- *         &lt;element name="specialsDescription" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="featuredDescription" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="relatedItemsDescription" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="pricingMatrix" type="{urn:accounting_2018_2.lists.webservices.netsuite.com}PricingMatrix" minOccurs="0"/>
- *         &lt;element name="authCodesList" type="{urn:accounting_2018_2.lists.webservices.netsuite.com}GiftCertificateItemAuthCodesList" minOccurs="0"/>
- *         &lt;element name="siteCategoryList" type="{urn:accounting_2018_2.lists.webservices.netsuite.com}SiteCategoryList" minOccurs="0"/>
- *         &lt;element name="translationsList" type="{urn:accounting_2018_2.lists.webservices.netsuite.com}TranslationList" minOccurs="0"/>
- *         &lt;element name="itemOptionsList" type="{urn:accounting_2018_2.lists.webservices.netsuite.com}ItemOptionsList" minOccurs="0"/>
- *         &lt;element name="presentationItemList" type="{urn:accounting_2018_2.lists.webservices.netsuite.com}PresentationItemList" minOccurs="0"/>
- *         &lt;element name="customFieldList" type="{urn:core_2018_2.platform.webservices.netsuite.com}CustomFieldList" minOccurs="0"/>
- *       &lt;/sequence>
- *       &lt;attribute name="internalId" type="{http://www.w3.org/2001/XMLSchema}string" />
- *       &lt;attribute name="externalId" type="{http://www.w3.org/2001/XMLSchema}string" />
- *     &lt;/extension>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
- */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "GiftCertificateItem", propOrder = {
-    "createdDate",
-    "lastModifiedDate",
-    "customForm",
-    "itemId",
-    "upcCode",
-    "displayName",
-    "includeChildren",
-    "parent",
-    "isOnline",
-    "isGcoCompliant",
-    "offerSupport",
-    "isInactive",
-    "availableToPartners",
-    "department",
-    "clazz",
-    "location",
-    "subsidiaryList",
-    "salesDescription",
-    "incomeAccount",
-    "liabilityAccount",
-    "daysBeforeExpiration",
-    "isTaxable",
-    "rate",
-    "urlComponent",
-    "salesTaxCode",
-    "pricesIncludeTax",
-    "taxSchedule",
-    "costEstimate",
-    "costEstimateType",
-    "billingSchedule",
-    "issueProduct",
-    "isFulfillable",
-    "storeDisplayName",
-    "storeDisplayThumbnail",
-    "storeDisplayImage",
-    "storeDescription",
-    "storeDetailedDescription",
-    "storeItemTemplate",
-    "pageTitle",
-    "metaTagHtml",
-    "excludeFromSitemap",
-    "sitemapPriority",
-    "searchKeywords",
-    "isDonationItem",
-    "showDefaultDonationAmount",
-    "maxDonationAmount",
-    "dontShowPrice",
-    "noPriceMessage",
-    "outOfStockMessage",
-    "onSpecial",
-    "outOfStockBehavior",
-    "specialsDescription",
-    "featuredDescription",
-    "relatedItemsDescription",
-    "pricingMatrix",
-    "authCodesList",
-    "siteCategoryList",
-    "translationsList",
-    "itemOptionsList",
-    "presentationItemList",
-    "customFieldList"
-})
-public class GiftCertificateItem
-    extends Record
-{
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef customForm;
 
-    @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar createdDate;
-    @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar lastModifiedDate;
-    protected RecordRef customForm;
-    protected String itemId;
-    protected String upcCode;
-    protected String displayName;
-    protected Boolean includeChildren;
-    protected RecordRef parent;
-    protected Boolean isOnline;
-    protected Boolean isGcoCompliant;
-    protected Boolean offerSupport;
-    protected Boolean isInactive;
-    protected Boolean availableToPartners;
-    protected RecordRef department;
-    @XmlElement(name = "class")
-    protected RecordRef clazz;
-    protected RecordRef location;
-    protected RecordRefList subsidiaryList;
-    protected String salesDescription;
-    protected RecordRef incomeAccount;
-    protected RecordRef liabilityAccount;
-    protected Long daysBeforeExpiration;
-    protected Boolean isTaxable;
-    protected Double rate;
-    protected String urlComponent;
-    protected RecordRef salesTaxCode;
-    protected Boolean pricesIncludeTax;
-    protected RecordRef taxSchedule;
-    protected Double costEstimate;
-    @XmlSchemaType(name = "string")
-    protected ItemCostEstimateType costEstimateType;
-    protected RecordRef billingSchedule;
-    protected RecordRef issueProduct;
-    protected Boolean isFulfillable;
-    protected String storeDisplayName;
-    protected RecordRef storeDisplayThumbnail;
-    protected RecordRef storeDisplayImage;
-    protected String storeDescription;
-    protected String storeDetailedDescription;
-    protected RecordRef storeItemTemplate;
-    protected String pageTitle;
-    protected String metaTagHtml;
-    protected Boolean excludeFromSitemap;
-    protected String sitemapPriority;
-    protected String searchKeywords;
-    protected Boolean isDonationItem;
-    protected Boolean showDefaultDonationAmount;
-    protected Double maxDonationAmount;
-    protected Boolean dontShowPrice;
-    protected String noPriceMessage;
-    protected String outOfStockMessage;
-    protected Boolean onSpecial;
-    @XmlSchemaType(name = "string")
-    protected ItemOutOfStockBehavior outOfStockBehavior;
-    protected String specialsDescription;
-    protected String featuredDescription;
-    protected String relatedItemsDescription;
-    protected PricingMatrix pricingMatrix;
-    protected GiftCertificateItemAuthCodesList authCodesList;
-    protected SiteCategoryList siteCategoryList;
-    protected TranslationList translationsList;
-    protected ItemOptionsList itemOptionsList;
-    protected PresentationItemList presentationItemList;
-    protected CustomFieldList customFieldList;
-    @XmlAttribute(name = "internalId")
-    protected String internalId;
-    @XmlAttribute(name = "externalId")
-    protected String externalId;
+    private java.lang.String itemId;
+
+    private java.lang.String upcCode;
+
+    private java.lang.String displayName;
+
+    private java.lang.Boolean includeChildren;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef parent;
+
+    private java.lang.Boolean isOnline;
+
+    private java.lang.Boolean isGcoCompliant;
+
+    private java.lang.Boolean offerSupport;
+
+    private java.lang.Boolean isInactive;
+
+    private java.lang.Boolean availableToPartners;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef department;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef _class;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef location;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef[] subsidiaryList;
+
+    private java.lang.String salesDescription;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef incomeAccount;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef liabilityAccount;
+
+    private java.lang.Long daysBeforeExpiration;
+
+    private java.lang.Boolean isTaxable;
+
+    private java.lang.Double rate;
+
+    private java.lang.String urlComponent;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef salesTaxCode;
+
+    private java.lang.Boolean pricesIncludeTax;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef taxSchedule;
+
+    private java.lang.Double costEstimate;
+
+    private com.netsuite.webservices.platform.common_2018_2.types.ItemCostEstimateType costEstimateType;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef billingSchedule;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef issueProduct;
+
+    private java.lang.Boolean isFulfillable;
+
+    private java.lang.String storeDisplayName;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef storeDisplayThumbnail;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef storeDisplayImage;
+
+    private java.lang.String storeDescription;
+
+    private java.lang.String storeDetailedDescription;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef storeItemTemplate;
+
+    private java.lang.String pageTitle;
+
+    private java.lang.String metaTagHtml;
+
+    private java.lang.Boolean excludeFromSitemap;
+
+    private com.netsuite.webservices.platform.common_2018_2.types.SitemapPriority sitemapPriority;
+
+    private java.lang.String searchKeywords;
+
+    private java.lang.Boolean isDonationItem;
+
+    private java.lang.Boolean showDefaultDonationAmount;
+
+    private java.lang.Double maxDonationAmount;
+
+    private java.lang.Boolean dontShowPrice;
+
+    private java.lang.String noPriceMessage;
+
+    private java.lang.String outOfStockMessage;
+
+    private java.lang.Boolean onSpecial;
+
+    private com.netsuite.webservices.lists.accounting_2018_2.types.ItemOutOfStockBehavior outOfStockBehavior;
+
+    private java.lang.String specialsDescription;
+
+    private java.lang.String featuredDescription;
+
+    private java.lang.String relatedItemsDescription;
+
+    private com.netsuite.webservices.lists.accounting_2018_2.Pricing[] pricingMatrix;
+
+    private com.netsuite.webservices.lists.accounting_2018_2.GiftCertificateItemAuthCodes[] authCodesList;
+
+    private com.netsuite.webservices.lists.accounting_2018_2.SiteCategory[] siteCategoryList;
+
+    private com.netsuite.webservices.lists.accounting_2018_2.Translation[] translationsList;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef[] itemOptionsList;
+
+    private com.netsuite.webservices.platform.common_2018_2.PresentationItem[] presentationItemList;
+
+    private com.netsuite.webservices.platform.core_2018_2.CustomFieldRef[] customFieldList;
+
+    private java.lang.String internalId;  // attribute
+
+    private java.lang.String externalId;  // attribute
+
+    public GiftCertificateItem() {
+    }
+
+    public GiftCertificateItem(
+           java.lang.String[] nullFieldList,
+           java.lang.String internalId,
+           java.lang.String externalId,
+           java.util.Calendar createdDate,
+           java.util.Calendar lastModifiedDate,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef customForm,
+           java.lang.String itemId,
+           java.lang.String upcCode,
+           java.lang.String displayName,
+           java.lang.Boolean includeChildren,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef parent,
+           java.lang.Boolean isOnline,
+           java.lang.Boolean isGcoCompliant,
+           java.lang.Boolean offerSupport,
+           java.lang.Boolean isInactive,
+           java.lang.Boolean availableToPartners,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef department,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef _class,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef location,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef[] subsidiaryList,
+           java.lang.String salesDescription,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef incomeAccount,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef liabilityAccount,
+           java.lang.Long daysBeforeExpiration,
+           java.lang.Boolean isTaxable,
+           java.lang.Double rate,
+           java.lang.String urlComponent,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef salesTaxCode,
+           java.lang.Boolean pricesIncludeTax,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef taxSchedule,
+           java.lang.Double costEstimate,
+           com.netsuite.webservices.platform.common_2018_2.types.ItemCostEstimateType costEstimateType,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef billingSchedule,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef issueProduct,
+           java.lang.Boolean isFulfillable,
+           java.lang.String storeDisplayName,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef storeDisplayThumbnail,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef storeDisplayImage,
+           java.lang.String storeDescription,
+           java.lang.String storeDetailedDescription,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef storeItemTemplate,
+           java.lang.String pageTitle,
+           java.lang.String metaTagHtml,
+           java.lang.Boolean excludeFromSitemap,
+           com.netsuite.webservices.platform.common_2018_2.types.SitemapPriority sitemapPriority,
+           java.lang.String searchKeywords,
+           java.lang.Boolean isDonationItem,
+           java.lang.Boolean showDefaultDonationAmount,
+           java.lang.Double maxDonationAmount,
+           java.lang.Boolean dontShowPrice,
+           java.lang.String noPriceMessage,
+           java.lang.String outOfStockMessage,
+           java.lang.Boolean onSpecial,
+           com.netsuite.webservices.lists.accounting_2018_2.types.ItemOutOfStockBehavior outOfStockBehavior,
+           java.lang.String specialsDescription,
+           java.lang.String featuredDescription,
+           java.lang.String relatedItemsDescription,
+           com.netsuite.webservices.lists.accounting_2018_2.Pricing[] pricingMatrix,
+           com.netsuite.webservices.lists.accounting_2018_2.GiftCertificateItemAuthCodes[] authCodesList,
+           com.netsuite.webservices.lists.accounting_2018_2.SiteCategory[] siteCategoryList,
+           com.netsuite.webservices.lists.accounting_2018_2.Translation[] translationsList,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef[] itemOptionsList,
+           com.netsuite.webservices.platform.common_2018_2.PresentationItem[] presentationItemList,
+           com.netsuite.webservices.platform.core_2018_2.CustomFieldRef[] customFieldList) {
+        super(
+            nullFieldList);
+        this.internalId = internalId;
+        this.externalId = externalId;
+        this.createdDate = createdDate;
+        this.lastModifiedDate = lastModifiedDate;
+        this.customForm = customForm;
+        this.itemId = itemId;
+        this.upcCode = upcCode;
+        this.displayName = displayName;
+        this.includeChildren = includeChildren;
+        this.parent = parent;
+        this.isOnline = isOnline;
+        this.isGcoCompliant = isGcoCompliant;
+        this.offerSupport = offerSupport;
+        this.isInactive = isInactive;
+        this.availableToPartners = availableToPartners;
+        this.department = department;
+        this._class = _class;
+        this.location = location;
+        this.subsidiaryList = subsidiaryList;
+        this.salesDescription = salesDescription;
+        this.incomeAccount = incomeAccount;
+        this.liabilityAccount = liabilityAccount;
+        this.daysBeforeExpiration = daysBeforeExpiration;
+        this.isTaxable = isTaxable;
+        this.rate = rate;
+        this.urlComponent = urlComponent;
+        this.salesTaxCode = salesTaxCode;
+        this.pricesIncludeTax = pricesIncludeTax;
+        this.taxSchedule = taxSchedule;
+        this.costEstimate = costEstimate;
+        this.costEstimateType = costEstimateType;
+        this.billingSchedule = billingSchedule;
+        this.issueProduct = issueProduct;
+        this.isFulfillable = isFulfillable;
+        this.storeDisplayName = storeDisplayName;
+        this.storeDisplayThumbnail = storeDisplayThumbnail;
+        this.storeDisplayImage = storeDisplayImage;
+        this.storeDescription = storeDescription;
+        this.storeDetailedDescription = storeDetailedDescription;
+        this.storeItemTemplate = storeItemTemplate;
+        this.pageTitle = pageTitle;
+        this.metaTagHtml = metaTagHtml;
+        this.excludeFromSitemap = excludeFromSitemap;
+        this.sitemapPriority = sitemapPriority;
+        this.searchKeywords = searchKeywords;
+        this.isDonationItem = isDonationItem;
+        this.showDefaultDonationAmount = showDefaultDonationAmount;
+        this.maxDonationAmount = maxDonationAmount;
+        this.dontShowPrice = dontShowPrice;
+        this.noPriceMessage = noPriceMessage;
+        this.outOfStockMessage = outOfStockMessage;
+        this.onSpecial = onSpecial;
+        this.outOfStockBehavior = outOfStockBehavior;
+        this.specialsDescription = specialsDescription;
+        this.featuredDescription = featuredDescription;
+        this.relatedItemsDescription = relatedItemsDescription;
+        this.pricingMatrix = pricingMatrix;
+        this.authCodesList = authCodesList;
+        this.siteCategoryList = siteCategoryList;
+        this.translationsList = translationsList;
+        this.itemOptionsList = itemOptionsList;
+        this.presentationItemList = presentationItemList;
+        this.customFieldList = customFieldList;
+    }
+
 
     /**
-     * 获取createdDate属性的值。
+     * Gets the createdDate value for this GiftCertificateItem.
      * 
-     * @return
-     *     possible object is
-     *     {@link XMLGregorianCalendar }
-     *     
+     * @return createdDate
      */
-    public XMLGregorianCalendar getCreatedDate() {
+    public java.util.Calendar getCreatedDate() {
         return createdDate;
     }
 
-    /**
-     * 设置createdDate属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link XMLGregorianCalendar }
-     *     
-     */
-    public void setCreatedDate(XMLGregorianCalendar value) {
-        this.createdDate = value;
-    }
 
     /**
-     * 获取lastModifiedDate属性的值。
+     * Sets the createdDate value for this GiftCertificateItem.
      * 
-     * @return
-     *     possible object is
-     *     {@link XMLGregorianCalendar }
-     *     
+     * @param createdDate
      */
-    public XMLGregorianCalendar getLastModifiedDate() {
+    public void setCreatedDate(java.util.Calendar createdDate) {
+        this.createdDate = createdDate;
+    }
+
+
+    /**
+     * Gets the lastModifiedDate value for this GiftCertificateItem.
+     * 
+     * @return lastModifiedDate
+     */
+    public java.util.Calendar getLastModifiedDate() {
         return lastModifiedDate;
     }
 
-    /**
-     * 设置lastModifiedDate属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link XMLGregorianCalendar }
-     *     
-     */
-    public void setLastModifiedDate(XMLGregorianCalendar value) {
-        this.lastModifiedDate = value;
-    }
 
     /**
-     * 获取customForm属性的值。
+     * Sets the lastModifiedDate value for this GiftCertificateItem.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param lastModifiedDate
      */
-    public RecordRef getCustomForm() {
+    public void setLastModifiedDate(java.util.Calendar lastModifiedDate) {
+        this.lastModifiedDate = lastModifiedDate;
+    }
+
+
+    /**
+     * Gets the customForm value for this GiftCertificateItem.
+     * 
+     * @return customForm
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getCustomForm() {
         return customForm;
     }
 
-    /**
-     * 设置customForm属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setCustomForm(RecordRef value) {
-        this.customForm = value;
-    }
 
     /**
-     * 获取itemId属性的值。
+     * Sets the customForm value for this GiftCertificateItem.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param customForm
      */
-    public String getItemId() {
+    public void setCustomForm(com.netsuite.webservices.platform.core_2018_2.RecordRef customForm) {
+        this.customForm = customForm;
+    }
+
+
+    /**
+     * Gets the itemId value for this GiftCertificateItem.
+     * 
+     * @return itemId
+     */
+    public java.lang.String getItemId() {
         return itemId;
     }
 
-    /**
-     * 设置itemId属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setItemId(String value) {
-        this.itemId = value;
-    }
 
     /**
-     * 获取upcCode属性的值。
+     * Sets the itemId value for this GiftCertificateItem.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param itemId
      */
-    public String getUpcCode() {
+    public void setItemId(java.lang.String itemId) {
+        this.itemId = itemId;
+    }
+
+
+    /**
+     * Gets the upcCode value for this GiftCertificateItem.
+     * 
+     * @return upcCode
+     */
+    public java.lang.String getUpcCode() {
         return upcCode;
     }
 
-    /**
-     * 设置upcCode属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setUpcCode(String value) {
-        this.upcCode = value;
-    }
 
     /**
-     * 获取displayName属性的值。
+     * Sets the upcCode value for this GiftCertificateItem.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param upcCode
      */
-    public String getDisplayName() {
+    public void setUpcCode(java.lang.String upcCode) {
+        this.upcCode = upcCode;
+    }
+
+
+    /**
+     * Gets the displayName value for this GiftCertificateItem.
+     * 
+     * @return displayName
+     */
+    public java.lang.String getDisplayName() {
         return displayName;
     }
 
-    /**
-     * 设置displayName属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setDisplayName(String value) {
-        this.displayName = value;
-    }
 
     /**
-     * 获取includeChildren属性的值。
+     * Sets the displayName value for this GiftCertificateItem.
      * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
+     * @param displayName
      */
-    public Boolean isIncludeChildren() {
+    public void setDisplayName(java.lang.String displayName) {
+        this.displayName = displayName;
+    }
+
+
+    /**
+     * Gets the includeChildren value for this GiftCertificateItem.
+     * 
+     * @return includeChildren
+     */
+    public java.lang.Boolean getIncludeChildren() {
         return includeChildren;
     }
 
-    /**
-     * 设置includeChildren属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
-     */
-    public void setIncludeChildren(Boolean value) {
-        this.includeChildren = value;
-    }
 
     /**
-     * 获取parent属性的值。
+     * Sets the includeChildren value for this GiftCertificateItem.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param includeChildren
      */
-    public RecordRef getParent() {
+    public void setIncludeChildren(java.lang.Boolean includeChildren) {
+        this.includeChildren = includeChildren;
+    }
+
+
+    /**
+     * Gets the parent value for this GiftCertificateItem.
+     * 
+     * @return parent
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getParent() {
         return parent;
     }
 
-    /**
-     * 设置parent属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setParent(RecordRef value) {
-        this.parent = value;
-    }
 
     /**
-     * 获取isOnline属性的值。
+     * Sets the parent value for this GiftCertificateItem.
      * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
+     * @param parent
      */
-    public Boolean isIsOnline() {
+    public void setParent(com.netsuite.webservices.platform.core_2018_2.RecordRef parent) {
+        this.parent = parent;
+    }
+
+
+    /**
+     * Gets the isOnline value for this GiftCertificateItem.
+     * 
+     * @return isOnline
+     */
+    public java.lang.Boolean getIsOnline() {
         return isOnline;
     }
 
-    /**
-     * 设置isOnline属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
-     */
-    public void setIsOnline(Boolean value) {
-        this.isOnline = value;
-    }
 
     /**
-     * 获取isGcoCompliant属性的值。
+     * Sets the isOnline value for this GiftCertificateItem.
      * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
+     * @param isOnline
      */
-    public Boolean isIsGcoCompliant() {
+    public void setIsOnline(java.lang.Boolean isOnline) {
+        this.isOnline = isOnline;
+    }
+
+
+    /**
+     * Gets the isGcoCompliant value for this GiftCertificateItem.
+     * 
+     * @return isGcoCompliant
+     */
+    public java.lang.Boolean getIsGcoCompliant() {
         return isGcoCompliant;
     }
 
-    /**
-     * 设置isGcoCompliant属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
-     */
-    public void setIsGcoCompliant(Boolean value) {
-        this.isGcoCompliant = value;
-    }
 
     /**
-     * 获取offerSupport属性的值。
+     * Sets the isGcoCompliant value for this GiftCertificateItem.
      * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
+     * @param isGcoCompliant
      */
-    public Boolean isOfferSupport() {
+    public void setIsGcoCompliant(java.lang.Boolean isGcoCompliant) {
+        this.isGcoCompliant = isGcoCompliant;
+    }
+
+
+    /**
+     * Gets the offerSupport value for this GiftCertificateItem.
+     * 
+     * @return offerSupport
+     */
+    public java.lang.Boolean getOfferSupport() {
         return offerSupport;
     }
 
-    /**
-     * 设置offerSupport属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
-     */
-    public void setOfferSupport(Boolean value) {
-        this.offerSupport = value;
-    }
 
     /**
-     * 获取isInactive属性的值。
+     * Sets the offerSupport value for this GiftCertificateItem.
      * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
+     * @param offerSupport
      */
-    public Boolean isIsInactive() {
+    public void setOfferSupport(java.lang.Boolean offerSupport) {
+        this.offerSupport = offerSupport;
+    }
+
+
+    /**
+     * Gets the isInactive value for this GiftCertificateItem.
+     * 
+     * @return isInactive
+     */
+    public java.lang.Boolean getIsInactive() {
         return isInactive;
     }
 
-    /**
-     * 设置isInactive属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
-     */
-    public void setIsInactive(Boolean value) {
-        this.isInactive = value;
-    }
 
     /**
-     * 获取availableToPartners属性的值。
+     * Sets the isInactive value for this GiftCertificateItem.
      * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
+     * @param isInactive
      */
-    public Boolean isAvailableToPartners() {
+    public void setIsInactive(java.lang.Boolean isInactive) {
+        this.isInactive = isInactive;
+    }
+
+
+    /**
+     * Gets the availableToPartners value for this GiftCertificateItem.
+     * 
+     * @return availableToPartners
+     */
+    public java.lang.Boolean getAvailableToPartners() {
         return availableToPartners;
     }
 
-    /**
-     * 设置availableToPartners属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
-     */
-    public void setAvailableToPartners(Boolean value) {
-        this.availableToPartners = value;
-    }
 
     /**
-     * 获取department属性的值。
+     * Sets the availableToPartners value for this GiftCertificateItem.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param availableToPartners
      */
-    public RecordRef getDepartment() {
+    public void setAvailableToPartners(java.lang.Boolean availableToPartners) {
+        this.availableToPartners = availableToPartners;
+    }
+
+
+    /**
+     * Gets the department value for this GiftCertificateItem.
+     * 
+     * @return department
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getDepartment() {
         return department;
     }
 
-    /**
-     * 设置department属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setDepartment(RecordRef value) {
-        this.department = value;
-    }
 
     /**
-     * 获取clazz属性的值。
+     * Sets the department value for this GiftCertificateItem.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param department
      */
-    public RecordRef getClazz() {
-        return clazz;
+    public void setDepartment(com.netsuite.webservices.platform.core_2018_2.RecordRef department) {
+        this.department = department;
     }
 
-    /**
-     * 设置clazz属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setClazz(RecordRef value) {
-        this.clazz = value;
-    }
 
     /**
-     * 获取location属性的值。
+     * Gets the _class value for this GiftCertificateItem.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @return _class
      */
-    public RecordRef getLocation() {
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef get_class() {
+        return _class;
+    }
+
+
+    /**
+     * Sets the _class value for this GiftCertificateItem.
+     * 
+     * @param _class
+     */
+    public void set_class(com.netsuite.webservices.platform.core_2018_2.RecordRef _class) {
+        this._class = _class;
+    }
+
+
+    /**
+     * Gets the location value for this GiftCertificateItem.
+     * 
+     * @return location
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getLocation() {
         return location;
     }
 
-    /**
-     * 设置location属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setLocation(RecordRef value) {
-        this.location = value;
-    }
 
     /**
-     * 获取subsidiaryList属性的值。
+     * Sets the location value for this GiftCertificateItem.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRefList }
-     *     
+     * @param location
      */
-    public RecordRefList getSubsidiaryList() {
+    public void setLocation(com.netsuite.webservices.platform.core_2018_2.RecordRef location) {
+        this.location = location;
+    }
+
+
+    /**
+     * Gets the subsidiaryList value for this GiftCertificateItem.
+     * 
+     * @return subsidiaryList
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef[] getSubsidiaryList() {
         return subsidiaryList;
     }
 
-    /**
-     * 设置subsidiaryList属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRefList }
-     *     
-     */
-    public void setSubsidiaryList(RecordRefList value) {
-        this.subsidiaryList = value;
-    }
 
     /**
-     * 获取salesDescription属性的值。
+     * Sets the subsidiaryList value for this GiftCertificateItem.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param subsidiaryList
      */
-    public String getSalesDescription() {
+    public void setSubsidiaryList(com.netsuite.webservices.platform.core_2018_2.RecordRef[] subsidiaryList) {
+        this.subsidiaryList = subsidiaryList;
+    }
+
+
+    /**
+     * Gets the salesDescription value for this GiftCertificateItem.
+     * 
+     * @return salesDescription
+     */
+    public java.lang.String getSalesDescription() {
         return salesDescription;
     }
 
-    /**
-     * 设置salesDescription属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setSalesDescription(String value) {
-        this.salesDescription = value;
-    }
 
     /**
-     * 获取incomeAccount属性的值。
+     * Sets the salesDescription value for this GiftCertificateItem.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param salesDescription
      */
-    public RecordRef getIncomeAccount() {
+    public void setSalesDescription(java.lang.String salesDescription) {
+        this.salesDescription = salesDescription;
+    }
+
+
+    /**
+     * Gets the incomeAccount value for this GiftCertificateItem.
+     * 
+     * @return incomeAccount
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getIncomeAccount() {
         return incomeAccount;
     }
 
-    /**
-     * 设置incomeAccount属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setIncomeAccount(RecordRef value) {
-        this.incomeAccount = value;
-    }
 
     /**
-     * 获取liabilityAccount属性的值。
+     * Sets the incomeAccount value for this GiftCertificateItem.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param incomeAccount
      */
-    public RecordRef getLiabilityAccount() {
+    public void setIncomeAccount(com.netsuite.webservices.platform.core_2018_2.RecordRef incomeAccount) {
+        this.incomeAccount = incomeAccount;
+    }
+
+
+    /**
+     * Gets the liabilityAccount value for this GiftCertificateItem.
+     * 
+     * @return liabilityAccount
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getLiabilityAccount() {
         return liabilityAccount;
     }
 
-    /**
-     * 设置liabilityAccount属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setLiabilityAccount(RecordRef value) {
-        this.liabilityAccount = value;
-    }
 
     /**
-     * 获取daysBeforeExpiration属性的值。
+     * Sets the liabilityAccount value for this GiftCertificateItem.
      * 
-     * @return
-     *     possible object is
-     *     {@link Long }
-     *     
+     * @param liabilityAccount
      */
-    public Long getDaysBeforeExpiration() {
+    public void setLiabilityAccount(com.netsuite.webservices.platform.core_2018_2.RecordRef liabilityAccount) {
+        this.liabilityAccount = liabilityAccount;
+    }
+
+
+    /**
+     * Gets the daysBeforeExpiration value for this GiftCertificateItem.
+     * 
+     * @return daysBeforeExpiration
+     */
+    public java.lang.Long getDaysBeforeExpiration() {
         return daysBeforeExpiration;
     }
 
-    /**
-     * 设置daysBeforeExpiration属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Long }
-     *     
-     */
-    public void setDaysBeforeExpiration(Long value) {
-        this.daysBeforeExpiration = value;
-    }
 
     /**
-     * 获取isTaxable属性的值。
+     * Sets the daysBeforeExpiration value for this GiftCertificateItem.
      * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
+     * @param daysBeforeExpiration
      */
-    public Boolean isIsTaxable() {
+    public void setDaysBeforeExpiration(java.lang.Long daysBeforeExpiration) {
+        this.daysBeforeExpiration = daysBeforeExpiration;
+    }
+
+
+    /**
+     * Gets the isTaxable value for this GiftCertificateItem.
+     * 
+     * @return isTaxable
+     */
+    public java.lang.Boolean getIsTaxable() {
         return isTaxable;
     }
 
-    /**
-     * 设置isTaxable属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
-     */
-    public void setIsTaxable(Boolean value) {
-        this.isTaxable = value;
-    }
 
     /**
-     * 获取rate属性的值。
+     * Sets the isTaxable value for this GiftCertificateItem.
      * 
-     * @return
-     *     possible object is
-     *     {@link Double }
-     *     
+     * @param isTaxable
      */
-    public Double getRate() {
+    public void setIsTaxable(java.lang.Boolean isTaxable) {
+        this.isTaxable = isTaxable;
+    }
+
+
+    /**
+     * Gets the rate value for this GiftCertificateItem.
+     * 
+     * @return rate
+     */
+    public java.lang.Double getRate() {
         return rate;
     }
 
-    /**
-     * 设置rate属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Double }
-     *     
-     */
-    public void setRate(Double value) {
-        this.rate = value;
-    }
 
     /**
-     * 获取urlComponent属性的值。
+     * Sets the rate value for this GiftCertificateItem.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param rate
      */
-    public String getUrlComponent() {
+    public void setRate(java.lang.Double rate) {
+        this.rate = rate;
+    }
+
+
+    /**
+     * Gets the urlComponent value for this GiftCertificateItem.
+     * 
+     * @return urlComponent
+     */
+    public java.lang.String getUrlComponent() {
         return urlComponent;
     }
 
-    /**
-     * 设置urlComponent属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setUrlComponent(String value) {
-        this.urlComponent = value;
-    }
 
     /**
-     * 获取salesTaxCode属性的值。
+     * Sets the urlComponent value for this GiftCertificateItem.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param urlComponent
      */
-    public RecordRef getSalesTaxCode() {
+    public void setUrlComponent(java.lang.String urlComponent) {
+        this.urlComponent = urlComponent;
+    }
+
+
+    /**
+     * Gets the salesTaxCode value for this GiftCertificateItem.
+     * 
+     * @return salesTaxCode
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getSalesTaxCode() {
         return salesTaxCode;
     }
 
-    /**
-     * 设置salesTaxCode属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setSalesTaxCode(RecordRef value) {
-        this.salesTaxCode = value;
-    }
 
     /**
-     * 获取pricesIncludeTax属性的值。
+     * Sets the salesTaxCode value for this GiftCertificateItem.
      * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
+     * @param salesTaxCode
      */
-    public Boolean isPricesIncludeTax() {
+    public void setSalesTaxCode(com.netsuite.webservices.platform.core_2018_2.RecordRef salesTaxCode) {
+        this.salesTaxCode = salesTaxCode;
+    }
+
+
+    /**
+     * Gets the pricesIncludeTax value for this GiftCertificateItem.
+     * 
+     * @return pricesIncludeTax
+     */
+    public java.lang.Boolean getPricesIncludeTax() {
         return pricesIncludeTax;
     }
 
-    /**
-     * 设置pricesIncludeTax属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
-     */
-    public void setPricesIncludeTax(Boolean value) {
-        this.pricesIncludeTax = value;
-    }
 
     /**
-     * 获取taxSchedule属性的值。
+     * Sets the pricesIncludeTax value for this GiftCertificateItem.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param pricesIncludeTax
      */
-    public RecordRef getTaxSchedule() {
+    public void setPricesIncludeTax(java.lang.Boolean pricesIncludeTax) {
+        this.pricesIncludeTax = pricesIncludeTax;
+    }
+
+
+    /**
+     * Gets the taxSchedule value for this GiftCertificateItem.
+     * 
+     * @return taxSchedule
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getTaxSchedule() {
         return taxSchedule;
     }
 
-    /**
-     * 设置taxSchedule属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setTaxSchedule(RecordRef value) {
-        this.taxSchedule = value;
-    }
 
     /**
-     * 获取costEstimate属性的值。
+     * Sets the taxSchedule value for this GiftCertificateItem.
      * 
-     * @return
-     *     possible object is
-     *     {@link Double }
-     *     
+     * @param taxSchedule
      */
-    public Double getCostEstimate() {
+    public void setTaxSchedule(com.netsuite.webservices.platform.core_2018_2.RecordRef taxSchedule) {
+        this.taxSchedule = taxSchedule;
+    }
+
+
+    /**
+     * Gets the costEstimate value for this GiftCertificateItem.
+     * 
+     * @return costEstimate
+     */
+    public java.lang.Double getCostEstimate() {
         return costEstimate;
     }
 
-    /**
-     * 设置costEstimate属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Double }
-     *     
-     */
-    public void setCostEstimate(Double value) {
-        this.costEstimate = value;
-    }
 
     /**
-     * 获取costEstimateType属性的值。
+     * Sets the costEstimate value for this GiftCertificateItem.
      * 
-     * @return
-     *     possible object is
-     *     {@link ItemCostEstimateType }
-     *     
+     * @param costEstimate
      */
-    public ItemCostEstimateType getCostEstimateType() {
+    public void setCostEstimate(java.lang.Double costEstimate) {
+        this.costEstimate = costEstimate;
+    }
+
+
+    /**
+     * Gets the costEstimateType value for this GiftCertificateItem.
+     * 
+     * @return costEstimateType
+     */
+    public com.netsuite.webservices.platform.common_2018_2.types.ItemCostEstimateType getCostEstimateType() {
         return costEstimateType;
     }
 
-    /**
-     * 设置costEstimateType属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link ItemCostEstimateType }
-     *     
-     */
-    public void setCostEstimateType(ItemCostEstimateType value) {
-        this.costEstimateType = value;
-    }
 
     /**
-     * 获取billingSchedule属性的值。
+     * Sets the costEstimateType value for this GiftCertificateItem.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param costEstimateType
      */
-    public RecordRef getBillingSchedule() {
+    public void setCostEstimateType(com.netsuite.webservices.platform.common_2018_2.types.ItemCostEstimateType costEstimateType) {
+        this.costEstimateType = costEstimateType;
+    }
+
+
+    /**
+     * Gets the billingSchedule value for this GiftCertificateItem.
+     * 
+     * @return billingSchedule
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getBillingSchedule() {
         return billingSchedule;
     }
 
-    /**
-     * 设置billingSchedule属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setBillingSchedule(RecordRef value) {
-        this.billingSchedule = value;
-    }
 
     /**
-     * 获取issueProduct属性的值。
+     * Sets the billingSchedule value for this GiftCertificateItem.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param billingSchedule
      */
-    public RecordRef getIssueProduct() {
+    public void setBillingSchedule(com.netsuite.webservices.platform.core_2018_2.RecordRef billingSchedule) {
+        this.billingSchedule = billingSchedule;
+    }
+
+
+    /**
+     * Gets the issueProduct value for this GiftCertificateItem.
+     * 
+     * @return issueProduct
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getIssueProduct() {
         return issueProduct;
     }
 
-    /**
-     * 设置issueProduct属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setIssueProduct(RecordRef value) {
-        this.issueProduct = value;
-    }
 
     /**
-     * 获取isFulfillable属性的值。
+     * Sets the issueProduct value for this GiftCertificateItem.
      * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
+     * @param issueProduct
      */
-    public Boolean isIsFulfillable() {
+    public void setIssueProduct(com.netsuite.webservices.platform.core_2018_2.RecordRef issueProduct) {
+        this.issueProduct = issueProduct;
+    }
+
+
+    /**
+     * Gets the isFulfillable value for this GiftCertificateItem.
+     * 
+     * @return isFulfillable
+     */
+    public java.lang.Boolean getIsFulfillable() {
         return isFulfillable;
     }
 
-    /**
-     * 设置isFulfillable属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
-     */
-    public void setIsFulfillable(Boolean value) {
-        this.isFulfillable = value;
-    }
 
     /**
-     * 获取storeDisplayName属性的值。
+     * Sets the isFulfillable value for this GiftCertificateItem.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param isFulfillable
      */
-    public String getStoreDisplayName() {
+    public void setIsFulfillable(java.lang.Boolean isFulfillable) {
+        this.isFulfillable = isFulfillable;
+    }
+
+
+    /**
+     * Gets the storeDisplayName value for this GiftCertificateItem.
+     * 
+     * @return storeDisplayName
+     */
+    public java.lang.String getStoreDisplayName() {
         return storeDisplayName;
     }
 
-    /**
-     * 设置storeDisplayName属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setStoreDisplayName(String value) {
-        this.storeDisplayName = value;
-    }
 
     /**
-     * 获取storeDisplayThumbnail属性的值。
+     * Sets the storeDisplayName value for this GiftCertificateItem.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param storeDisplayName
      */
-    public RecordRef getStoreDisplayThumbnail() {
+    public void setStoreDisplayName(java.lang.String storeDisplayName) {
+        this.storeDisplayName = storeDisplayName;
+    }
+
+
+    /**
+     * Gets the storeDisplayThumbnail value for this GiftCertificateItem.
+     * 
+     * @return storeDisplayThumbnail
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getStoreDisplayThumbnail() {
         return storeDisplayThumbnail;
     }
 
-    /**
-     * 设置storeDisplayThumbnail属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setStoreDisplayThumbnail(RecordRef value) {
-        this.storeDisplayThumbnail = value;
-    }
 
     /**
-     * 获取storeDisplayImage属性的值。
+     * Sets the storeDisplayThumbnail value for this GiftCertificateItem.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param storeDisplayThumbnail
      */
-    public RecordRef getStoreDisplayImage() {
+    public void setStoreDisplayThumbnail(com.netsuite.webservices.platform.core_2018_2.RecordRef storeDisplayThumbnail) {
+        this.storeDisplayThumbnail = storeDisplayThumbnail;
+    }
+
+
+    /**
+     * Gets the storeDisplayImage value for this GiftCertificateItem.
+     * 
+     * @return storeDisplayImage
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getStoreDisplayImage() {
         return storeDisplayImage;
     }
 
-    /**
-     * 设置storeDisplayImage属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setStoreDisplayImage(RecordRef value) {
-        this.storeDisplayImage = value;
-    }
 
     /**
-     * 获取storeDescription属性的值。
+     * Sets the storeDisplayImage value for this GiftCertificateItem.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param storeDisplayImage
      */
-    public String getStoreDescription() {
+    public void setStoreDisplayImage(com.netsuite.webservices.platform.core_2018_2.RecordRef storeDisplayImage) {
+        this.storeDisplayImage = storeDisplayImage;
+    }
+
+
+    /**
+     * Gets the storeDescription value for this GiftCertificateItem.
+     * 
+     * @return storeDescription
+     */
+    public java.lang.String getStoreDescription() {
         return storeDescription;
     }
 
-    /**
-     * 设置storeDescription属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setStoreDescription(String value) {
-        this.storeDescription = value;
-    }
 
     /**
-     * 获取storeDetailedDescription属性的值。
+     * Sets the storeDescription value for this GiftCertificateItem.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param storeDescription
      */
-    public String getStoreDetailedDescription() {
+    public void setStoreDescription(java.lang.String storeDescription) {
+        this.storeDescription = storeDescription;
+    }
+
+
+    /**
+     * Gets the storeDetailedDescription value for this GiftCertificateItem.
+     * 
+     * @return storeDetailedDescription
+     */
+    public java.lang.String getStoreDetailedDescription() {
         return storeDetailedDescription;
     }
 
-    /**
-     * 设置storeDetailedDescription属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setStoreDetailedDescription(String value) {
-        this.storeDetailedDescription = value;
-    }
 
     /**
-     * 获取storeItemTemplate属性的值。
+     * Sets the storeDetailedDescription value for this GiftCertificateItem.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param storeDetailedDescription
      */
-    public RecordRef getStoreItemTemplate() {
+    public void setStoreDetailedDescription(java.lang.String storeDetailedDescription) {
+        this.storeDetailedDescription = storeDetailedDescription;
+    }
+
+
+    /**
+     * Gets the storeItemTemplate value for this GiftCertificateItem.
+     * 
+     * @return storeItemTemplate
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getStoreItemTemplate() {
         return storeItemTemplate;
     }
 
-    /**
-     * 设置storeItemTemplate属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setStoreItemTemplate(RecordRef value) {
-        this.storeItemTemplate = value;
-    }
 
     /**
-     * 获取pageTitle属性的值。
+     * Sets the storeItemTemplate value for this GiftCertificateItem.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param storeItemTemplate
      */
-    public String getPageTitle() {
+    public void setStoreItemTemplate(com.netsuite.webservices.platform.core_2018_2.RecordRef storeItemTemplate) {
+        this.storeItemTemplate = storeItemTemplate;
+    }
+
+
+    /**
+     * Gets the pageTitle value for this GiftCertificateItem.
+     * 
+     * @return pageTitle
+     */
+    public java.lang.String getPageTitle() {
         return pageTitle;
     }
 
-    /**
-     * 设置pageTitle属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setPageTitle(String value) {
-        this.pageTitle = value;
-    }
 
     /**
-     * 获取metaTagHtml属性的值。
+     * Sets the pageTitle value for this GiftCertificateItem.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param pageTitle
      */
-    public String getMetaTagHtml() {
+    public void setPageTitle(java.lang.String pageTitle) {
+        this.pageTitle = pageTitle;
+    }
+
+
+    /**
+     * Gets the metaTagHtml value for this GiftCertificateItem.
+     * 
+     * @return metaTagHtml
+     */
+    public java.lang.String getMetaTagHtml() {
         return metaTagHtml;
     }
 
-    /**
-     * 设置metaTagHtml属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setMetaTagHtml(String value) {
-        this.metaTagHtml = value;
-    }
 
     /**
-     * 获取excludeFromSitemap属性的值。
+     * Sets the metaTagHtml value for this GiftCertificateItem.
      * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
+     * @param metaTagHtml
      */
-    public Boolean isExcludeFromSitemap() {
+    public void setMetaTagHtml(java.lang.String metaTagHtml) {
+        this.metaTagHtml = metaTagHtml;
+    }
+
+
+    /**
+     * Gets the excludeFromSitemap value for this GiftCertificateItem.
+     * 
+     * @return excludeFromSitemap
+     */
+    public java.lang.Boolean getExcludeFromSitemap() {
         return excludeFromSitemap;
     }
 
-    /**
-     * 设置excludeFromSitemap属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
-     */
-    public void setExcludeFromSitemap(Boolean value) {
-        this.excludeFromSitemap = value;
-    }
 
     /**
-     * 获取sitemapPriority属性的值。
+     * Sets the excludeFromSitemap value for this GiftCertificateItem.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param excludeFromSitemap
      */
-    public String getSitemapPriority() {
+    public void setExcludeFromSitemap(java.lang.Boolean excludeFromSitemap) {
+        this.excludeFromSitemap = excludeFromSitemap;
+    }
+
+
+    /**
+     * Gets the sitemapPriority value for this GiftCertificateItem.
+     * 
+     * @return sitemapPriority
+     */
+    public com.netsuite.webservices.platform.common_2018_2.types.SitemapPriority getSitemapPriority() {
         return sitemapPriority;
     }
 
-    /**
-     * 设置sitemapPriority属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setSitemapPriority(String value) {
-        this.sitemapPriority = value;
-    }
 
     /**
-     * 获取searchKeywords属性的值。
+     * Sets the sitemapPriority value for this GiftCertificateItem.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param sitemapPriority
      */
-    public String getSearchKeywords() {
+    public void setSitemapPriority(com.netsuite.webservices.platform.common_2018_2.types.SitemapPriority sitemapPriority) {
+        this.sitemapPriority = sitemapPriority;
+    }
+
+
+    /**
+     * Gets the searchKeywords value for this GiftCertificateItem.
+     * 
+     * @return searchKeywords
+     */
+    public java.lang.String getSearchKeywords() {
         return searchKeywords;
     }
 
-    /**
-     * 设置searchKeywords属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setSearchKeywords(String value) {
-        this.searchKeywords = value;
-    }
 
     /**
-     * 获取isDonationItem属性的值。
+     * Sets the searchKeywords value for this GiftCertificateItem.
      * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
+     * @param searchKeywords
      */
-    public Boolean isIsDonationItem() {
+    public void setSearchKeywords(java.lang.String searchKeywords) {
+        this.searchKeywords = searchKeywords;
+    }
+
+
+    /**
+     * Gets the isDonationItem value for this GiftCertificateItem.
+     * 
+     * @return isDonationItem
+     */
+    public java.lang.Boolean getIsDonationItem() {
         return isDonationItem;
     }
 
-    /**
-     * 设置isDonationItem属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
-     */
-    public void setIsDonationItem(Boolean value) {
-        this.isDonationItem = value;
-    }
 
     /**
-     * 获取showDefaultDonationAmount属性的值。
+     * Sets the isDonationItem value for this GiftCertificateItem.
      * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
+     * @param isDonationItem
      */
-    public Boolean isShowDefaultDonationAmount() {
+    public void setIsDonationItem(java.lang.Boolean isDonationItem) {
+        this.isDonationItem = isDonationItem;
+    }
+
+
+    /**
+     * Gets the showDefaultDonationAmount value for this GiftCertificateItem.
+     * 
+     * @return showDefaultDonationAmount
+     */
+    public java.lang.Boolean getShowDefaultDonationAmount() {
         return showDefaultDonationAmount;
     }
 
-    /**
-     * 设置showDefaultDonationAmount属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
-     */
-    public void setShowDefaultDonationAmount(Boolean value) {
-        this.showDefaultDonationAmount = value;
-    }
 
     /**
-     * 获取maxDonationAmount属性的值。
+     * Sets the showDefaultDonationAmount value for this GiftCertificateItem.
      * 
-     * @return
-     *     possible object is
-     *     {@link Double }
-     *     
+     * @param showDefaultDonationAmount
      */
-    public Double getMaxDonationAmount() {
+    public void setShowDefaultDonationAmount(java.lang.Boolean showDefaultDonationAmount) {
+        this.showDefaultDonationAmount = showDefaultDonationAmount;
+    }
+
+
+    /**
+     * Gets the maxDonationAmount value for this GiftCertificateItem.
+     * 
+     * @return maxDonationAmount
+     */
+    public java.lang.Double getMaxDonationAmount() {
         return maxDonationAmount;
     }
 
-    /**
-     * 设置maxDonationAmount属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Double }
-     *     
-     */
-    public void setMaxDonationAmount(Double value) {
-        this.maxDonationAmount = value;
-    }
 
     /**
-     * 获取dontShowPrice属性的值。
+     * Sets the maxDonationAmount value for this GiftCertificateItem.
      * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
+     * @param maxDonationAmount
      */
-    public Boolean isDontShowPrice() {
+    public void setMaxDonationAmount(java.lang.Double maxDonationAmount) {
+        this.maxDonationAmount = maxDonationAmount;
+    }
+
+
+    /**
+     * Gets the dontShowPrice value for this GiftCertificateItem.
+     * 
+     * @return dontShowPrice
+     */
+    public java.lang.Boolean getDontShowPrice() {
         return dontShowPrice;
     }
 
-    /**
-     * 设置dontShowPrice属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
-     */
-    public void setDontShowPrice(Boolean value) {
-        this.dontShowPrice = value;
-    }
 
     /**
-     * 获取noPriceMessage属性的值。
+     * Sets the dontShowPrice value for this GiftCertificateItem.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param dontShowPrice
      */
-    public String getNoPriceMessage() {
+    public void setDontShowPrice(java.lang.Boolean dontShowPrice) {
+        this.dontShowPrice = dontShowPrice;
+    }
+
+
+    /**
+     * Gets the noPriceMessage value for this GiftCertificateItem.
+     * 
+     * @return noPriceMessage
+     */
+    public java.lang.String getNoPriceMessage() {
         return noPriceMessage;
     }
 
-    /**
-     * 设置noPriceMessage属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setNoPriceMessage(String value) {
-        this.noPriceMessage = value;
-    }
 
     /**
-     * 获取outOfStockMessage属性的值。
+     * Sets the noPriceMessage value for this GiftCertificateItem.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param noPriceMessage
      */
-    public String getOutOfStockMessage() {
+    public void setNoPriceMessage(java.lang.String noPriceMessage) {
+        this.noPriceMessage = noPriceMessage;
+    }
+
+
+    /**
+     * Gets the outOfStockMessage value for this GiftCertificateItem.
+     * 
+     * @return outOfStockMessage
+     */
+    public java.lang.String getOutOfStockMessage() {
         return outOfStockMessage;
     }
 
-    /**
-     * 设置outOfStockMessage属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setOutOfStockMessage(String value) {
-        this.outOfStockMessage = value;
-    }
 
     /**
-     * 获取onSpecial属性的值。
+     * Sets the outOfStockMessage value for this GiftCertificateItem.
      * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
+     * @param outOfStockMessage
      */
-    public Boolean isOnSpecial() {
+    public void setOutOfStockMessage(java.lang.String outOfStockMessage) {
+        this.outOfStockMessage = outOfStockMessage;
+    }
+
+
+    /**
+     * Gets the onSpecial value for this GiftCertificateItem.
+     * 
+     * @return onSpecial
+     */
+    public java.lang.Boolean getOnSpecial() {
         return onSpecial;
     }
 
-    /**
-     * 设置onSpecial属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
-     */
-    public void setOnSpecial(Boolean value) {
-        this.onSpecial = value;
-    }
 
     /**
-     * 获取outOfStockBehavior属性的值。
+     * Sets the onSpecial value for this GiftCertificateItem.
      * 
-     * @return
-     *     possible object is
-     *     {@link ItemOutOfStockBehavior }
-     *     
+     * @param onSpecial
      */
-    public ItemOutOfStockBehavior getOutOfStockBehavior() {
+    public void setOnSpecial(java.lang.Boolean onSpecial) {
+        this.onSpecial = onSpecial;
+    }
+
+
+    /**
+     * Gets the outOfStockBehavior value for this GiftCertificateItem.
+     * 
+     * @return outOfStockBehavior
+     */
+    public com.netsuite.webservices.lists.accounting_2018_2.types.ItemOutOfStockBehavior getOutOfStockBehavior() {
         return outOfStockBehavior;
     }
 
-    /**
-     * 设置outOfStockBehavior属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link ItemOutOfStockBehavior }
-     *     
-     */
-    public void setOutOfStockBehavior(ItemOutOfStockBehavior value) {
-        this.outOfStockBehavior = value;
-    }
 
     /**
-     * 获取specialsDescription属性的值。
+     * Sets the outOfStockBehavior value for this GiftCertificateItem.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param outOfStockBehavior
      */
-    public String getSpecialsDescription() {
+    public void setOutOfStockBehavior(com.netsuite.webservices.lists.accounting_2018_2.types.ItemOutOfStockBehavior outOfStockBehavior) {
+        this.outOfStockBehavior = outOfStockBehavior;
+    }
+
+
+    /**
+     * Gets the specialsDescription value for this GiftCertificateItem.
+     * 
+     * @return specialsDescription
+     */
+    public java.lang.String getSpecialsDescription() {
         return specialsDescription;
     }
 
-    /**
-     * 设置specialsDescription属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setSpecialsDescription(String value) {
-        this.specialsDescription = value;
-    }
 
     /**
-     * 获取featuredDescription属性的值。
+     * Sets the specialsDescription value for this GiftCertificateItem.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param specialsDescription
      */
-    public String getFeaturedDescription() {
+    public void setSpecialsDescription(java.lang.String specialsDescription) {
+        this.specialsDescription = specialsDescription;
+    }
+
+
+    /**
+     * Gets the featuredDescription value for this GiftCertificateItem.
+     * 
+     * @return featuredDescription
+     */
+    public java.lang.String getFeaturedDescription() {
         return featuredDescription;
     }
 
-    /**
-     * 设置featuredDescription属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setFeaturedDescription(String value) {
-        this.featuredDescription = value;
-    }
 
     /**
-     * 获取relatedItemsDescription属性的值。
+     * Sets the featuredDescription value for this GiftCertificateItem.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param featuredDescription
      */
-    public String getRelatedItemsDescription() {
+    public void setFeaturedDescription(java.lang.String featuredDescription) {
+        this.featuredDescription = featuredDescription;
+    }
+
+
+    /**
+     * Gets the relatedItemsDescription value for this GiftCertificateItem.
+     * 
+     * @return relatedItemsDescription
+     */
+    public java.lang.String getRelatedItemsDescription() {
         return relatedItemsDescription;
     }
 
-    /**
-     * 设置relatedItemsDescription属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setRelatedItemsDescription(String value) {
-        this.relatedItemsDescription = value;
-    }
 
     /**
-     * 获取pricingMatrix属性的值。
+     * Sets the relatedItemsDescription value for this GiftCertificateItem.
      * 
-     * @return
-     *     possible object is
-     *     {@link PricingMatrix }
-     *     
+     * @param relatedItemsDescription
      */
-    public PricingMatrix getPricingMatrix() {
+    public void setRelatedItemsDescription(java.lang.String relatedItemsDescription) {
+        this.relatedItemsDescription = relatedItemsDescription;
+    }
+
+
+    /**
+     * Gets the pricingMatrix value for this GiftCertificateItem.
+     * 
+     * @return pricingMatrix
+     */
+    public com.netsuite.webservices.lists.accounting_2018_2.Pricing[] getPricingMatrix() {
         return pricingMatrix;
     }
 
-    /**
-     * 设置pricingMatrix属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link PricingMatrix }
-     *     
-     */
-    public void setPricingMatrix(PricingMatrix value) {
-        this.pricingMatrix = value;
-    }
 
     /**
-     * 获取authCodesList属性的值。
+     * Sets the pricingMatrix value for this GiftCertificateItem.
      * 
-     * @return
-     *     possible object is
-     *     {@link GiftCertificateItemAuthCodesList }
-     *     
+     * @param pricingMatrix
      */
-    public GiftCertificateItemAuthCodesList getAuthCodesList() {
+    public void setPricingMatrix(com.netsuite.webservices.lists.accounting_2018_2.Pricing[] pricingMatrix) {
+        this.pricingMatrix = pricingMatrix;
+    }
+
+
+    /**
+     * Gets the authCodesList value for this GiftCertificateItem.
+     * 
+     * @return authCodesList
+     */
+    public com.netsuite.webservices.lists.accounting_2018_2.GiftCertificateItemAuthCodes[] getAuthCodesList() {
         return authCodesList;
     }
 
-    /**
-     * 设置authCodesList属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link GiftCertificateItemAuthCodesList }
-     *     
-     */
-    public void setAuthCodesList(GiftCertificateItemAuthCodesList value) {
-        this.authCodesList = value;
-    }
 
     /**
-     * 获取siteCategoryList属性的值。
+     * Sets the authCodesList value for this GiftCertificateItem.
      * 
-     * @return
-     *     possible object is
-     *     {@link SiteCategoryList }
-     *     
+     * @param authCodesList
      */
-    public SiteCategoryList getSiteCategoryList() {
+    public void setAuthCodesList(com.netsuite.webservices.lists.accounting_2018_2.GiftCertificateItemAuthCodes[] authCodesList) {
+        this.authCodesList = authCodesList;
+    }
+
+
+    /**
+     * Gets the siteCategoryList value for this GiftCertificateItem.
+     * 
+     * @return siteCategoryList
+     */
+    public com.netsuite.webservices.lists.accounting_2018_2.SiteCategory[] getSiteCategoryList() {
         return siteCategoryList;
     }
 
-    /**
-     * 设置siteCategoryList属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SiteCategoryList }
-     *     
-     */
-    public void setSiteCategoryList(SiteCategoryList value) {
-        this.siteCategoryList = value;
-    }
 
     /**
-     * 获取translationsList属性的值。
+     * Sets the siteCategoryList value for this GiftCertificateItem.
      * 
-     * @return
-     *     possible object is
-     *     {@link TranslationList }
-     *     
+     * @param siteCategoryList
      */
-    public TranslationList getTranslationsList() {
+    public void setSiteCategoryList(com.netsuite.webservices.lists.accounting_2018_2.SiteCategory[] siteCategoryList) {
+        this.siteCategoryList = siteCategoryList;
+    }
+
+
+    /**
+     * Gets the translationsList value for this GiftCertificateItem.
+     * 
+     * @return translationsList
+     */
+    public com.netsuite.webservices.lists.accounting_2018_2.Translation[] getTranslationsList() {
         return translationsList;
     }
 
-    /**
-     * 设置translationsList属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link TranslationList }
-     *     
-     */
-    public void setTranslationsList(TranslationList value) {
-        this.translationsList = value;
-    }
 
     /**
-     * 获取itemOptionsList属性的值。
+     * Sets the translationsList value for this GiftCertificateItem.
      * 
-     * @return
-     *     possible object is
-     *     {@link ItemOptionsList }
-     *     
+     * @param translationsList
      */
-    public ItemOptionsList getItemOptionsList() {
+    public void setTranslationsList(com.netsuite.webservices.lists.accounting_2018_2.Translation[] translationsList) {
+        this.translationsList = translationsList;
+    }
+
+
+    /**
+     * Gets the itemOptionsList value for this GiftCertificateItem.
+     * 
+     * @return itemOptionsList
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef[] getItemOptionsList() {
         return itemOptionsList;
     }
 
-    /**
-     * 设置itemOptionsList属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link ItemOptionsList }
-     *     
-     */
-    public void setItemOptionsList(ItemOptionsList value) {
-        this.itemOptionsList = value;
-    }
 
     /**
-     * 获取presentationItemList属性的值。
+     * Sets the itemOptionsList value for this GiftCertificateItem.
      * 
-     * @return
-     *     possible object is
-     *     {@link PresentationItemList }
-     *     
+     * @param itemOptionsList
      */
-    public PresentationItemList getPresentationItemList() {
+    public void setItemOptionsList(com.netsuite.webservices.platform.core_2018_2.RecordRef[] itemOptionsList) {
+        this.itemOptionsList = itemOptionsList;
+    }
+
+
+    /**
+     * Gets the presentationItemList value for this GiftCertificateItem.
+     * 
+     * @return presentationItemList
+     */
+    public com.netsuite.webservices.platform.common_2018_2.PresentationItem[] getPresentationItemList() {
         return presentationItemList;
     }
 
-    /**
-     * 设置presentationItemList属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link PresentationItemList }
-     *     
-     */
-    public void setPresentationItemList(PresentationItemList value) {
-        this.presentationItemList = value;
-    }
 
     /**
-     * 获取customFieldList属性的值。
+     * Sets the presentationItemList value for this GiftCertificateItem.
      * 
-     * @return
-     *     possible object is
-     *     {@link CustomFieldList }
-     *     
+     * @param presentationItemList
      */
-    public CustomFieldList getCustomFieldList() {
+    public void setPresentationItemList(com.netsuite.webservices.platform.common_2018_2.PresentationItem[] presentationItemList) {
+        this.presentationItemList = presentationItemList;
+    }
+
+
+    /**
+     * Gets the customFieldList value for this GiftCertificateItem.
+     * 
+     * @return customFieldList
+     */
+    public com.netsuite.webservices.platform.core_2018_2.CustomFieldRef[] getCustomFieldList() {
         return customFieldList;
     }
 
-    /**
-     * 设置customFieldList属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link CustomFieldList }
-     *     
-     */
-    public void setCustomFieldList(CustomFieldList value) {
-        this.customFieldList = value;
-    }
 
     /**
-     * 获取internalId属性的值。
+     * Sets the customFieldList value for this GiftCertificateItem.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param customFieldList
      */
-    public String getInternalId() {
+    public void setCustomFieldList(com.netsuite.webservices.platform.core_2018_2.CustomFieldRef[] customFieldList) {
+        this.customFieldList = customFieldList;
+    }
+
+
+    /**
+     * Gets the internalId value for this GiftCertificateItem.
+     * 
+     * @return internalId
+     */
+    public java.lang.String getInternalId() {
         return internalId;
     }
 
-    /**
-     * 设置internalId属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setInternalId(String value) {
-        this.internalId = value;
-    }
 
     /**
-     * 获取externalId属性的值。
+     * Sets the internalId value for this GiftCertificateItem.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param internalId
      */
-    public String getExternalId() {
+    public void setInternalId(java.lang.String internalId) {
+        this.internalId = internalId;
+    }
+
+
+    /**
+     * Gets the externalId value for this GiftCertificateItem.
+     * 
+     * @return externalId
+     */
+    public java.lang.String getExternalId() {
         return externalId;
     }
 
+
     /**
-     * 设置externalId属性的值。
+     * Sets the externalId value for this GiftCertificateItem.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     * @param externalId
      */
-    public void setExternalId(String value) {
-        this.externalId = value;
+    public void setExternalId(java.lang.String externalId) {
+        this.externalId = externalId;
+    }
+
+    private java.lang.Object __equalsCalc = null;
+    public synchronized boolean equals(java.lang.Object obj) {
+        if (!(obj instanceof GiftCertificateItem)) return false;
+        GiftCertificateItem other = (GiftCertificateItem) obj;
+        if (obj == null) return false;
+        if (this == obj) return true;
+        if (__equalsCalc != null) {
+            return (__equalsCalc == obj);
+        }
+        __equalsCalc = obj;
+        boolean _equals;
+        _equals = super.equals(obj) && 
+            ((this.createdDate==null && other.getCreatedDate()==null) || 
+             (this.createdDate!=null &&
+              this.createdDate.equals(other.getCreatedDate()))) &&
+            ((this.lastModifiedDate==null && other.getLastModifiedDate()==null) || 
+             (this.lastModifiedDate!=null &&
+              this.lastModifiedDate.equals(other.getLastModifiedDate()))) &&
+            ((this.customForm==null && other.getCustomForm()==null) || 
+             (this.customForm!=null &&
+              this.customForm.equals(other.getCustomForm()))) &&
+            ((this.itemId==null && other.getItemId()==null) || 
+             (this.itemId!=null &&
+              this.itemId.equals(other.getItemId()))) &&
+            ((this.upcCode==null && other.getUpcCode()==null) || 
+             (this.upcCode!=null &&
+              this.upcCode.equals(other.getUpcCode()))) &&
+            ((this.displayName==null && other.getDisplayName()==null) || 
+             (this.displayName!=null &&
+              this.displayName.equals(other.getDisplayName()))) &&
+            ((this.includeChildren==null && other.getIncludeChildren()==null) || 
+             (this.includeChildren!=null &&
+              this.includeChildren.equals(other.getIncludeChildren()))) &&
+            ((this.parent==null && other.getParent()==null) || 
+             (this.parent!=null &&
+              this.parent.equals(other.getParent()))) &&
+            ((this.isOnline==null && other.getIsOnline()==null) || 
+             (this.isOnline!=null &&
+              this.isOnline.equals(other.getIsOnline()))) &&
+            ((this.isGcoCompliant==null && other.getIsGcoCompliant()==null) || 
+             (this.isGcoCompliant!=null &&
+              this.isGcoCompliant.equals(other.getIsGcoCompliant()))) &&
+            ((this.offerSupport==null && other.getOfferSupport()==null) || 
+             (this.offerSupport!=null &&
+              this.offerSupport.equals(other.getOfferSupport()))) &&
+            ((this.isInactive==null && other.getIsInactive()==null) || 
+             (this.isInactive!=null &&
+              this.isInactive.equals(other.getIsInactive()))) &&
+            ((this.availableToPartners==null && other.getAvailableToPartners()==null) || 
+             (this.availableToPartners!=null &&
+              this.availableToPartners.equals(other.getAvailableToPartners()))) &&
+            ((this.department==null && other.getDepartment()==null) || 
+             (this.department!=null &&
+              this.department.equals(other.getDepartment()))) &&
+            ((this._class==null && other.get_class()==null) || 
+             (this._class!=null &&
+              this._class.equals(other.get_class()))) &&
+            ((this.location==null && other.getLocation()==null) || 
+             (this.location!=null &&
+              this.location.equals(other.getLocation()))) &&
+            ((this.subsidiaryList==null && other.getSubsidiaryList()==null) || 
+             (this.subsidiaryList!=null &&
+              java.util.Arrays.equals(this.subsidiaryList, other.getSubsidiaryList()))) &&
+            ((this.salesDescription==null && other.getSalesDescription()==null) || 
+             (this.salesDescription!=null &&
+              this.salesDescription.equals(other.getSalesDescription()))) &&
+            ((this.incomeAccount==null && other.getIncomeAccount()==null) || 
+             (this.incomeAccount!=null &&
+              this.incomeAccount.equals(other.getIncomeAccount()))) &&
+            ((this.liabilityAccount==null && other.getLiabilityAccount()==null) || 
+             (this.liabilityAccount!=null &&
+              this.liabilityAccount.equals(other.getLiabilityAccount()))) &&
+            ((this.daysBeforeExpiration==null && other.getDaysBeforeExpiration()==null) || 
+             (this.daysBeforeExpiration!=null &&
+              this.daysBeforeExpiration.equals(other.getDaysBeforeExpiration()))) &&
+            ((this.isTaxable==null && other.getIsTaxable()==null) || 
+             (this.isTaxable!=null &&
+              this.isTaxable.equals(other.getIsTaxable()))) &&
+            ((this.rate==null && other.getRate()==null) || 
+             (this.rate!=null &&
+              this.rate.equals(other.getRate()))) &&
+            ((this.urlComponent==null && other.getUrlComponent()==null) || 
+             (this.urlComponent!=null &&
+              this.urlComponent.equals(other.getUrlComponent()))) &&
+            ((this.salesTaxCode==null && other.getSalesTaxCode()==null) || 
+             (this.salesTaxCode!=null &&
+              this.salesTaxCode.equals(other.getSalesTaxCode()))) &&
+            ((this.pricesIncludeTax==null && other.getPricesIncludeTax()==null) || 
+             (this.pricesIncludeTax!=null &&
+              this.pricesIncludeTax.equals(other.getPricesIncludeTax()))) &&
+            ((this.taxSchedule==null && other.getTaxSchedule()==null) || 
+             (this.taxSchedule!=null &&
+              this.taxSchedule.equals(other.getTaxSchedule()))) &&
+            ((this.costEstimate==null && other.getCostEstimate()==null) || 
+             (this.costEstimate!=null &&
+              this.costEstimate.equals(other.getCostEstimate()))) &&
+            ((this.costEstimateType==null && other.getCostEstimateType()==null) || 
+             (this.costEstimateType!=null &&
+              this.costEstimateType.equals(other.getCostEstimateType()))) &&
+            ((this.billingSchedule==null && other.getBillingSchedule()==null) || 
+             (this.billingSchedule!=null &&
+              this.billingSchedule.equals(other.getBillingSchedule()))) &&
+            ((this.issueProduct==null && other.getIssueProduct()==null) || 
+             (this.issueProduct!=null &&
+              this.issueProduct.equals(other.getIssueProduct()))) &&
+            ((this.isFulfillable==null && other.getIsFulfillable()==null) || 
+             (this.isFulfillable!=null &&
+              this.isFulfillable.equals(other.getIsFulfillable()))) &&
+            ((this.storeDisplayName==null && other.getStoreDisplayName()==null) || 
+             (this.storeDisplayName!=null &&
+              this.storeDisplayName.equals(other.getStoreDisplayName()))) &&
+            ((this.storeDisplayThumbnail==null && other.getStoreDisplayThumbnail()==null) || 
+             (this.storeDisplayThumbnail!=null &&
+              this.storeDisplayThumbnail.equals(other.getStoreDisplayThumbnail()))) &&
+            ((this.storeDisplayImage==null && other.getStoreDisplayImage()==null) || 
+             (this.storeDisplayImage!=null &&
+              this.storeDisplayImage.equals(other.getStoreDisplayImage()))) &&
+            ((this.storeDescription==null && other.getStoreDescription()==null) || 
+             (this.storeDescription!=null &&
+              this.storeDescription.equals(other.getStoreDescription()))) &&
+            ((this.storeDetailedDescription==null && other.getStoreDetailedDescription()==null) || 
+             (this.storeDetailedDescription!=null &&
+              this.storeDetailedDescription.equals(other.getStoreDetailedDescription()))) &&
+            ((this.storeItemTemplate==null && other.getStoreItemTemplate()==null) || 
+             (this.storeItemTemplate!=null &&
+              this.storeItemTemplate.equals(other.getStoreItemTemplate()))) &&
+            ((this.pageTitle==null && other.getPageTitle()==null) || 
+             (this.pageTitle!=null &&
+              this.pageTitle.equals(other.getPageTitle()))) &&
+            ((this.metaTagHtml==null && other.getMetaTagHtml()==null) || 
+             (this.metaTagHtml!=null &&
+              this.metaTagHtml.equals(other.getMetaTagHtml()))) &&
+            ((this.excludeFromSitemap==null && other.getExcludeFromSitemap()==null) || 
+             (this.excludeFromSitemap!=null &&
+              this.excludeFromSitemap.equals(other.getExcludeFromSitemap()))) &&
+            ((this.sitemapPriority==null && other.getSitemapPriority()==null) || 
+             (this.sitemapPriority!=null &&
+              this.sitemapPriority.equals(other.getSitemapPriority()))) &&
+            ((this.searchKeywords==null && other.getSearchKeywords()==null) || 
+             (this.searchKeywords!=null &&
+              this.searchKeywords.equals(other.getSearchKeywords()))) &&
+            ((this.isDonationItem==null && other.getIsDonationItem()==null) || 
+             (this.isDonationItem!=null &&
+              this.isDonationItem.equals(other.getIsDonationItem()))) &&
+            ((this.showDefaultDonationAmount==null && other.getShowDefaultDonationAmount()==null) || 
+             (this.showDefaultDonationAmount!=null &&
+              this.showDefaultDonationAmount.equals(other.getShowDefaultDonationAmount()))) &&
+            ((this.maxDonationAmount==null && other.getMaxDonationAmount()==null) || 
+             (this.maxDonationAmount!=null &&
+              this.maxDonationAmount.equals(other.getMaxDonationAmount()))) &&
+            ((this.dontShowPrice==null && other.getDontShowPrice()==null) || 
+             (this.dontShowPrice!=null &&
+              this.dontShowPrice.equals(other.getDontShowPrice()))) &&
+            ((this.noPriceMessage==null && other.getNoPriceMessage()==null) || 
+             (this.noPriceMessage!=null &&
+              this.noPriceMessage.equals(other.getNoPriceMessage()))) &&
+            ((this.outOfStockMessage==null && other.getOutOfStockMessage()==null) || 
+             (this.outOfStockMessage!=null &&
+              this.outOfStockMessage.equals(other.getOutOfStockMessage()))) &&
+            ((this.onSpecial==null && other.getOnSpecial()==null) || 
+             (this.onSpecial!=null &&
+              this.onSpecial.equals(other.getOnSpecial()))) &&
+            ((this.outOfStockBehavior==null && other.getOutOfStockBehavior()==null) || 
+             (this.outOfStockBehavior!=null &&
+              this.outOfStockBehavior.equals(other.getOutOfStockBehavior()))) &&
+            ((this.specialsDescription==null && other.getSpecialsDescription()==null) || 
+             (this.specialsDescription!=null &&
+              this.specialsDescription.equals(other.getSpecialsDescription()))) &&
+            ((this.featuredDescription==null && other.getFeaturedDescription()==null) || 
+             (this.featuredDescription!=null &&
+              this.featuredDescription.equals(other.getFeaturedDescription()))) &&
+            ((this.relatedItemsDescription==null && other.getRelatedItemsDescription()==null) || 
+             (this.relatedItemsDescription!=null &&
+              this.relatedItemsDescription.equals(other.getRelatedItemsDescription()))) &&
+            ((this.pricingMatrix==null && other.getPricingMatrix()==null) || 
+             (this.pricingMatrix!=null &&
+              java.util.Arrays.equals(this.pricingMatrix, other.getPricingMatrix()))) &&
+            ((this.authCodesList==null && other.getAuthCodesList()==null) || 
+             (this.authCodesList!=null &&
+              java.util.Arrays.equals(this.authCodesList, other.getAuthCodesList()))) &&
+            ((this.siteCategoryList==null && other.getSiteCategoryList()==null) || 
+             (this.siteCategoryList!=null &&
+              java.util.Arrays.equals(this.siteCategoryList, other.getSiteCategoryList()))) &&
+            ((this.translationsList==null && other.getTranslationsList()==null) || 
+             (this.translationsList!=null &&
+              java.util.Arrays.equals(this.translationsList, other.getTranslationsList()))) &&
+            ((this.itemOptionsList==null && other.getItemOptionsList()==null) || 
+             (this.itemOptionsList!=null &&
+              java.util.Arrays.equals(this.itemOptionsList, other.getItemOptionsList()))) &&
+            ((this.presentationItemList==null && other.getPresentationItemList()==null) || 
+             (this.presentationItemList!=null &&
+              java.util.Arrays.equals(this.presentationItemList, other.getPresentationItemList()))) &&
+            ((this.customFieldList==null && other.getCustomFieldList()==null) || 
+             (this.customFieldList!=null &&
+              java.util.Arrays.equals(this.customFieldList, other.getCustomFieldList()))) &&
+            ((this.internalId==null && other.getInternalId()==null) || 
+             (this.internalId!=null &&
+              this.internalId.equals(other.getInternalId()))) &&
+            ((this.externalId==null && other.getExternalId()==null) || 
+             (this.externalId!=null &&
+              this.externalId.equals(other.getExternalId())));
+        __equalsCalc = null;
+        return _equals;
+    }
+
+    private boolean __hashCodeCalc = false;
+    public synchronized int hashCode() {
+        if (__hashCodeCalc) {
+            return 0;
+        }
+        __hashCodeCalc = true;
+        int _hashCode = super.hashCode();
+        if (getCreatedDate() != null) {
+            _hashCode += getCreatedDate().hashCode();
+        }
+        if (getLastModifiedDate() != null) {
+            _hashCode += getLastModifiedDate().hashCode();
+        }
+        if (getCustomForm() != null) {
+            _hashCode += getCustomForm().hashCode();
+        }
+        if (getItemId() != null) {
+            _hashCode += getItemId().hashCode();
+        }
+        if (getUpcCode() != null) {
+            _hashCode += getUpcCode().hashCode();
+        }
+        if (getDisplayName() != null) {
+            _hashCode += getDisplayName().hashCode();
+        }
+        if (getIncludeChildren() != null) {
+            _hashCode += getIncludeChildren().hashCode();
+        }
+        if (getParent() != null) {
+            _hashCode += getParent().hashCode();
+        }
+        if (getIsOnline() != null) {
+            _hashCode += getIsOnline().hashCode();
+        }
+        if (getIsGcoCompliant() != null) {
+            _hashCode += getIsGcoCompliant().hashCode();
+        }
+        if (getOfferSupport() != null) {
+            _hashCode += getOfferSupport().hashCode();
+        }
+        if (getIsInactive() != null) {
+            _hashCode += getIsInactive().hashCode();
+        }
+        if (getAvailableToPartners() != null) {
+            _hashCode += getAvailableToPartners().hashCode();
+        }
+        if (getDepartment() != null) {
+            _hashCode += getDepartment().hashCode();
+        }
+        if (get_class() != null) {
+            _hashCode += get_class().hashCode();
+        }
+        if (getLocation() != null) {
+            _hashCode += getLocation().hashCode();
+        }
+        if (getSubsidiaryList() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getSubsidiaryList());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getSubsidiaryList(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getSalesDescription() != null) {
+            _hashCode += getSalesDescription().hashCode();
+        }
+        if (getIncomeAccount() != null) {
+            _hashCode += getIncomeAccount().hashCode();
+        }
+        if (getLiabilityAccount() != null) {
+            _hashCode += getLiabilityAccount().hashCode();
+        }
+        if (getDaysBeforeExpiration() != null) {
+            _hashCode += getDaysBeforeExpiration().hashCode();
+        }
+        if (getIsTaxable() != null) {
+            _hashCode += getIsTaxable().hashCode();
+        }
+        if (getRate() != null) {
+            _hashCode += getRate().hashCode();
+        }
+        if (getUrlComponent() != null) {
+            _hashCode += getUrlComponent().hashCode();
+        }
+        if (getSalesTaxCode() != null) {
+            _hashCode += getSalesTaxCode().hashCode();
+        }
+        if (getPricesIncludeTax() != null) {
+            _hashCode += getPricesIncludeTax().hashCode();
+        }
+        if (getTaxSchedule() != null) {
+            _hashCode += getTaxSchedule().hashCode();
+        }
+        if (getCostEstimate() != null) {
+            _hashCode += getCostEstimate().hashCode();
+        }
+        if (getCostEstimateType() != null) {
+            _hashCode += getCostEstimateType().hashCode();
+        }
+        if (getBillingSchedule() != null) {
+            _hashCode += getBillingSchedule().hashCode();
+        }
+        if (getIssueProduct() != null) {
+            _hashCode += getIssueProduct().hashCode();
+        }
+        if (getIsFulfillable() != null) {
+            _hashCode += getIsFulfillable().hashCode();
+        }
+        if (getStoreDisplayName() != null) {
+            _hashCode += getStoreDisplayName().hashCode();
+        }
+        if (getStoreDisplayThumbnail() != null) {
+            _hashCode += getStoreDisplayThumbnail().hashCode();
+        }
+        if (getStoreDisplayImage() != null) {
+            _hashCode += getStoreDisplayImage().hashCode();
+        }
+        if (getStoreDescription() != null) {
+            _hashCode += getStoreDescription().hashCode();
+        }
+        if (getStoreDetailedDescription() != null) {
+            _hashCode += getStoreDetailedDescription().hashCode();
+        }
+        if (getStoreItemTemplate() != null) {
+            _hashCode += getStoreItemTemplate().hashCode();
+        }
+        if (getPageTitle() != null) {
+            _hashCode += getPageTitle().hashCode();
+        }
+        if (getMetaTagHtml() != null) {
+            _hashCode += getMetaTagHtml().hashCode();
+        }
+        if (getExcludeFromSitemap() != null) {
+            _hashCode += getExcludeFromSitemap().hashCode();
+        }
+        if (getSitemapPriority() != null) {
+            _hashCode += getSitemapPriority().hashCode();
+        }
+        if (getSearchKeywords() != null) {
+            _hashCode += getSearchKeywords().hashCode();
+        }
+        if (getIsDonationItem() != null) {
+            _hashCode += getIsDonationItem().hashCode();
+        }
+        if (getShowDefaultDonationAmount() != null) {
+            _hashCode += getShowDefaultDonationAmount().hashCode();
+        }
+        if (getMaxDonationAmount() != null) {
+            _hashCode += getMaxDonationAmount().hashCode();
+        }
+        if (getDontShowPrice() != null) {
+            _hashCode += getDontShowPrice().hashCode();
+        }
+        if (getNoPriceMessage() != null) {
+            _hashCode += getNoPriceMessage().hashCode();
+        }
+        if (getOutOfStockMessage() != null) {
+            _hashCode += getOutOfStockMessage().hashCode();
+        }
+        if (getOnSpecial() != null) {
+            _hashCode += getOnSpecial().hashCode();
+        }
+        if (getOutOfStockBehavior() != null) {
+            _hashCode += getOutOfStockBehavior().hashCode();
+        }
+        if (getSpecialsDescription() != null) {
+            _hashCode += getSpecialsDescription().hashCode();
+        }
+        if (getFeaturedDescription() != null) {
+            _hashCode += getFeaturedDescription().hashCode();
+        }
+        if (getRelatedItemsDescription() != null) {
+            _hashCode += getRelatedItemsDescription().hashCode();
+        }
+        if (getPricingMatrix() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getPricingMatrix());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getPricingMatrix(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getAuthCodesList() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getAuthCodesList());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getAuthCodesList(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getSiteCategoryList() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getSiteCategoryList());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getSiteCategoryList(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getTranslationsList() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getTranslationsList());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getTranslationsList(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getItemOptionsList() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getItemOptionsList());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getItemOptionsList(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getPresentationItemList() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getPresentationItemList());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getPresentationItemList(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getCustomFieldList() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getCustomFieldList());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getCustomFieldList(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getInternalId() != null) {
+            _hashCode += getInternalId().hashCode();
+        }
+        if (getExternalId() != null) {
+            _hashCode += getExternalId().hashCode();
+        }
+        __hashCodeCalc = false;
+        return _hashCode;
+    }
+
+    // Type metadata
+    private static org.apache.axis.description.TypeDesc typeDesc =
+        new org.apache.axis.description.TypeDesc(GiftCertificateItem.class, true);
+
+    static {
+        typeDesc.setXmlType(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "GiftCertificateItem"));
+        org.apache.axis.description.AttributeDesc attrField = new org.apache.axis.description.AttributeDesc();
+        attrField.setFieldName("internalId");
+        attrField.setXmlName(new javax.xml.namespace.QName("", "internalId"));
+        attrField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        typeDesc.addFieldDesc(attrField);
+        attrField = new org.apache.axis.description.AttributeDesc();
+        attrField.setFieldName("externalId");
+        attrField.setXmlName(new javax.xml.namespace.QName("", "externalId"));
+        attrField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        typeDesc.addFieldDesc(attrField);
+        org.apache.axis.description.ElementDesc elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("createdDate");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "createdDate"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "dateTime"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("lastModifiedDate");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "lastModifiedDate"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "dateTime"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("customForm");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "customForm"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("itemId");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "itemId"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("upcCode");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "upcCode"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("displayName");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "displayName"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("includeChildren");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "includeChildren"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("parent");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "parent"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("isOnline");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "isOnline"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("isGcoCompliant");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "isGcoCompliant"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("offerSupport");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "offerSupport"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("isInactive");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "isInactive"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("availableToPartners");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "availableToPartners"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("department");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "department"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("_class");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "class"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("location");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "location"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("subsidiaryList");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "subsidiaryList"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "recordRef"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("salesDescription");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "salesDescription"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("incomeAccount");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "incomeAccount"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("liabilityAccount");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "liabilityAccount"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("daysBeforeExpiration");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "daysBeforeExpiration"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "long"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("isTaxable");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "isTaxable"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("rate");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "rate"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "double"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("urlComponent");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "urlComponent"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("salesTaxCode");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "salesTaxCode"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("pricesIncludeTax");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "pricesIncludeTax"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("taxSchedule");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "taxSchedule"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("costEstimate");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "costEstimate"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "double"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("costEstimateType");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "costEstimateType"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:types.common_2018_2.platform.webservices.netsuite.com", "ItemCostEstimateType"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("billingSchedule");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "billingSchedule"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("issueProduct");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "issueProduct"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("isFulfillable");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "isFulfillable"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("storeDisplayName");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "storeDisplayName"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("storeDisplayThumbnail");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "storeDisplayThumbnail"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("storeDisplayImage");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "storeDisplayImage"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("storeDescription");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "storeDescription"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("storeDetailedDescription");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "storeDetailedDescription"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("storeItemTemplate");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "storeItemTemplate"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("pageTitle");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "pageTitle"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("metaTagHtml");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "metaTagHtml"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("excludeFromSitemap");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "excludeFromSitemap"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("sitemapPriority");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "sitemapPriority"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:types.common_2018_2.platform.webservices.netsuite.com", "SitemapPriority"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("searchKeywords");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "searchKeywords"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("isDonationItem");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "isDonationItem"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("showDefaultDonationAmount");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "showDefaultDonationAmount"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("maxDonationAmount");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "maxDonationAmount"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "double"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("dontShowPrice");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "dontShowPrice"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("noPriceMessage");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "noPriceMessage"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("outOfStockMessage");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "outOfStockMessage"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("onSpecial");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "onSpecial"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("outOfStockBehavior");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "outOfStockBehavior"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:types.accounting_2018_2.lists.webservices.netsuite.com", "ItemOutOfStockBehavior"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("specialsDescription");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "specialsDescription"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("featuredDescription");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "featuredDescription"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("relatedItemsDescription");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "relatedItemsDescription"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("pricingMatrix");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "pricingMatrix"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "Pricing"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "pricing"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("authCodesList");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "authCodesList"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "GiftCertificateItemAuthCodes"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "authCodes"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("siteCategoryList");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "siteCategoryList"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "SiteCategory"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "siteCategory"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("translationsList");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "translationsList"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "Translation"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "translation"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("itemOptionsList");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "itemOptionsList"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "itemOptions"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("presentationItemList");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "presentationItemList"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "PresentationItem"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "presentationItem"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("customFieldList");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "customFieldList"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "CustomFieldRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "customField"));
+        typeDesc.addFieldDesc(elemField);
+    }
+
+    /**
+     * Return type metadata object
+     */
+    public static org.apache.axis.description.TypeDesc getTypeDesc() {
+        return typeDesc;
+    }
+
+    /**
+     * Get Custom Serializer
+     */
+    public static org.apache.axis.encoding.Serializer getSerializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanSerializer(
+            _javaType, _xmlType, typeDesc);
+    }
+
+    /**
+     * Get Custom Deserializer
+     */
+    public static org.apache.axis.encoding.Deserializer getDeserializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanDeserializer(
+            _javaType, _xmlType, typeDesc);
     }
 
 }

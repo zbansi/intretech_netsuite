@@ -1,255 +1,415 @@
+/**
+ * TaxDetailSearchBasic.java
+ *
+ * This file was auto-generated from WSDL
+ * by the Apache Axis 1.4 Jul 28, 2010 (04:07:04 PDT) WSDL2Java emitter.
+ */
 
 package com.netsuite.webservices.platform.common_2018_2;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlType;
-import com.netsuite.webservices.platform.core_2018_2.SearchDoubleField;
-import com.netsuite.webservices.platform.core_2018_2.SearchLongField;
-import com.netsuite.webservices.platform.core_2018_2.SearchMultiSelectField;
-import com.netsuite.webservices.platform.core_2018_2.SearchRecordBasic;
+public class TaxDetailSearchBasic  extends com.netsuite.webservices.platform.core_2018_2.SearchRecordBasic  implements java.io.Serializable {
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef[] account;
 
+    private com.netsuite.webservices.platform.core_2018_2.SearchLongField lineNumber;
 
-/**
- * <p>TaxDetailSearchBasic complex type的 Java 类。
- * 
- * <p>以下模式片段指定包含在此类中的预期内容。
- * 
- * <pre>
- * &lt;complexType name="TaxDetailSearchBasic">
- *   &lt;complexContent>
- *     &lt;extension base="{urn:core_2018_2.platform.webservices.netsuite.com}SearchRecordBasic">
- *       &lt;sequence>
- *         &lt;element name="account" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchMultiSelectField" minOccurs="0"/>
- *         &lt;element name="lineNumber" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchLongField" minOccurs="0"/>
- *         &lt;element name="taxAmount" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchDoubleField" minOccurs="0"/>
- *         &lt;element name="taxBasis" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchDoubleField" minOccurs="0"/>
- *         &lt;element name="taxCode" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchMultiSelectField" minOccurs="0"/>
- *         &lt;element name="taxRate" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchDoubleField" minOccurs="0"/>
- *         &lt;element name="taxType" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchMultiSelectField" minOccurs="0"/>
- *         &lt;element name="tranId" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchMultiSelectField" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/extension>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
- */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "TaxDetailSearchBasic", propOrder = {
-    "account",
-    "lineNumber",
-    "taxAmount",
-    "taxBasis",
-    "taxCode",
-    "taxRate",
-    "taxType",
-    "tranId"
-})
-public class TaxDetailSearchBasic
-    extends SearchRecordBasic
-{
+    private com.netsuite.webservices.platform.core_2018_2.SearchDoubleField taxAmount;
 
-    protected SearchMultiSelectField account;
-    protected SearchLongField lineNumber;
-    protected SearchDoubleField taxAmount;
-    protected SearchDoubleField taxBasis;
-    protected SearchMultiSelectField taxCode;
-    protected SearchDoubleField taxRate;
-    protected SearchMultiSelectField taxType;
-    protected SearchMultiSelectField tranId;
+    private com.netsuite.webservices.platform.core_2018_2.SearchDoubleField taxBasis;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef[] taxCode;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchDoubleField taxRate;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef[] taxType;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef[] tranId;
+
+    public TaxDetailSearchBasic() {
+    }
+
+    public TaxDetailSearchBasic(
+           com.netsuite.webservices.platform.core_2018_2.RecordRef[] account,
+           com.netsuite.webservices.platform.core_2018_2.SearchLongField lineNumber,
+           com.netsuite.webservices.platform.core_2018_2.SearchDoubleField taxAmount,
+           com.netsuite.webservices.platform.core_2018_2.SearchDoubleField taxBasis,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef[] taxCode,
+           com.netsuite.webservices.platform.core_2018_2.SearchDoubleField taxRate,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef[] taxType,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef[] tranId) {
+        this.account = account;
+        this.lineNumber = lineNumber;
+        this.taxAmount = taxAmount;
+        this.taxBasis = taxBasis;
+        this.taxCode = taxCode;
+        this.taxRate = taxRate;
+        this.taxType = taxType;
+        this.tranId = tranId;
+    }
+
 
     /**
-     * 获取account属性的值。
+     * Gets the account value for this TaxDetailSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchMultiSelectField }
-     *     
+     * @return account
      */
-    public SearchMultiSelectField getAccount() {
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef[] getAccount() {
         return account;
     }
 
-    /**
-     * 设置account属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchMultiSelectField }
-     *     
-     */
-    public void setAccount(SearchMultiSelectField value) {
-        this.account = value;
-    }
 
     /**
-     * 获取lineNumber属性的值。
+     * Sets the account value for this TaxDetailSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchLongField }
-     *     
+     * @param account
      */
-    public SearchLongField getLineNumber() {
+    public void setAccount(com.netsuite.webservices.platform.core_2018_2.RecordRef[] account) {
+        this.account = account;
+    }
+
+
+    /**
+     * Gets the lineNumber value for this TaxDetailSearchBasic.
+     * 
+     * @return lineNumber
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchLongField getLineNumber() {
         return lineNumber;
     }
 
-    /**
-     * 设置lineNumber属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchLongField }
-     *     
-     */
-    public void setLineNumber(SearchLongField value) {
-        this.lineNumber = value;
-    }
 
     /**
-     * 获取taxAmount属性的值。
+     * Sets the lineNumber value for this TaxDetailSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchDoubleField }
-     *     
+     * @param lineNumber
      */
-    public SearchDoubleField getTaxAmount() {
+    public void setLineNumber(com.netsuite.webservices.platform.core_2018_2.SearchLongField lineNumber) {
+        this.lineNumber = lineNumber;
+    }
+
+
+    /**
+     * Gets the taxAmount value for this TaxDetailSearchBasic.
+     * 
+     * @return taxAmount
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchDoubleField getTaxAmount() {
         return taxAmount;
     }
 
-    /**
-     * 设置taxAmount属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchDoubleField }
-     *     
-     */
-    public void setTaxAmount(SearchDoubleField value) {
-        this.taxAmount = value;
-    }
 
     /**
-     * 获取taxBasis属性的值。
+     * Sets the taxAmount value for this TaxDetailSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchDoubleField }
-     *     
+     * @param taxAmount
      */
-    public SearchDoubleField getTaxBasis() {
+    public void setTaxAmount(com.netsuite.webservices.platform.core_2018_2.SearchDoubleField taxAmount) {
+        this.taxAmount = taxAmount;
+    }
+
+
+    /**
+     * Gets the taxBasis value for this TaxDetailSearchBasic.
+     * 
+     * @return taxBasis
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchDoubleField getTaxBasis() {
         return taxBasis;
     }
 
-    /**
-     * 设置taxBasis属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchDoubleField }
-     *     
-     */
-    public void setTaxBasis(SearchDoubleField value) {
-        this.taxBasis = value;
-    }
 
     /**
-     * 获取taxCode属性的值。
+     * Sets the taxBasis value for this TaxDetailSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchMultiSelectField }
-     *     
+     * @param taxBasis
      */
-    public SearchMultiSelectField getTaxCode() {
+    public void setTaxBasis(com.netsuite.webservices.platform.core_2018_2.SearchDoubleField taxBasis) {
+        this.taxBasis = taxBasis;
+    }
+
+
+    /**
+     * Gets the taxCode value for this TaxDetailSearchBasic.
+     * 
+     * @return taxCode
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef[] getTaxCode() {
         return taxCode;
     }
 
-    /**
-     * 设置taxCode属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchMultiSelectField }
-     *     
-     */
-    public void setTaxCode(SearchMultiSelectField value) {
-        this.taxCode = value;
-    }
 
     /**
-     * 获取taxRate属性的值。
+     * Sets the taxCode value for this TaxDetailSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchDoubleField }
-     *     
+     * @param taxCode
      */
-    public SearchDoubleField getTaxRate() {
+    public void setTaxCode(com.netsuite.webservices.platform.core_2018_2.RecordRef[] taxCode) {
+        this.taxCode = taxCode;
+    }
+
+
+    /**
+     * Gets the taxRate value for this TaxDetailSearchBasic.
+     * 
+     * @return taxRate
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchDoubleField getTaxRate() {
         return taxRate;
     }
 
-    /**
-     * 设置taxRate属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchDoubleField }
-     *     
-     */
-    public void setTaxRate(SearchDoubleField value) {
-        this.taxRate = value;
-    }
 
     /**
-     * 获取taxType属性的值。
+     * Sets the taxRate value for this TaxDetailSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchMultiSelectField }
-     *     
+     * @param taxRate
      */
-    public SearchMultiSelectField getTaxType() {
+    public void setTaxRate(com.netsuite.webservices.platform.core_2018_2.SearchDoubleField taxRate) {
+        this.taxRate = taxRate;
+    }
+
+
+    /**
+     * Gets the taxType value for this TaxDetailSearchBasic.
+     * 
+     * @return taxType
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef[] getTaxType() {
         return taxType;
     }
 
-    /**
-     * 设置taxType属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchMultiSelectField }
-     *     
-     */
-    public void setTaxType(SearchMultiSelectField value) {
-        this.taxType = value;
-    }
 
     /**
-     * 获取tranId属性的值。
+     * Sets the taxType value for this TaxDetailSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchMultiSelectField }
-     *     
+     * @param taxType
      */
-    public SearchMultiSelectField getTranId() {
+    public void setTaxType(com.netsuite.webservices.platform.core_2018_2.RecordRef[] taxType) {
+        this.taxType = taxType;
+    }
+
+
+    /**
+     * Gets the tranId value for this TaxDetailSearchBasic.
+     * 
+     * @return tranId
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef[] getTranId() {
         return tranId;
     }
 
+
     /**
-     * 设置tranId属性的值。
+     * Sets the tranId value for this TaxDetailSearchBasic.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchMultiSelectField }
-     *     
+     * @param tranId
      */
-    public void setTranId(SearchMultiSelectField value) {
-        this.tranId = value;
+    public void setTranId(com.netsuite.webservices.platform.core_2018_2.RecordRef[] tranId) {
+        this.tranId = tranId;
+    }
+
+    private java.lang.Object __equalsCalc = null;
+    public synchronized boolean equals(java.lang.Object obj) {
+        if (!(obj instanceof TaxDetailSearchBasic)) return false;
+        TaxDetailSearchBasic other = (TaxDetailSearchBasic) obj;
+        if (obj == null) return false;
+        if (this == obj) return true;
+        if (__equalsCalc != null) {
+            return (__equalsCalc == obj);
+        }
+        __equalsCalc = obj;
+        boolean _equals;
+        _equals = super.equals(obj) && 
+            ((this.account==null && other.getAccount()==null) || 
+             (this.account!=null &&
+              java.util.Arrays.equals(this.account, other.getAccount()))) &&
+            ((this.lineNumber==null && other.getLineNumber()==null) || 
+             (this.lineNumber!=null &&
+              this.lineNumber.equals(other.getLineNumber()))) &&
+            ((this.taxAmount==null && other.getTaxAmount()==null) || 
+             (this.taxAmount!=null &&
+              this.taxAmount.equals(other.getTaxAmount()))) &&
+            ((this.taxBasis==null && other.getTaxBasis()==null) || 
+             (this.taxBasis!=null &&
+              this.taxBasis.equals(other.getTaxBasis()))) &&
+            ((this.taxCode==null && other.getTaxCode()==null) || 
+             (this.taxCode!=null &&
+              java.util.Arrays.equals(this.taxCode, other.getTaxCode()))) &&
+            ((this.taxRate==null && other.getTaxRate()==null) || 
+             (this.taxRate!=null &&
+              this.taxRate.equals(other.getTaxRate()))) &&
+            ((this.taxType==null && other.getTaxType()==null) || 
+             (this.taxType!=null &&
+              java.util.Arrays.equals(this.taxType, other.getTaxType()))) &&
+            ((this.tranId==null && other.getTranId()==null) || 
+             (this.tranId!=null &&
+              java.util.Arrays.equals(this.tranId, other.getTranId())));
+        __equalsCalc = null;
+        return _equals;
+    }
+
+    private boolean __hashCodeCalc = false;
+    public synchronized int hashCode() {
+        if (__hashCodeCalc) {
+            return 0;
+        }
+        __hashCodeCalc = true;
+        int _hashCode = super.hashCode();
+        if (getAccount() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getAccount());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getAccount(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getLineNumber() != null) {
+            _hashCode += getLineNumber().hashCode();
+        }
+        if (getTaxAmount() != null) {
+            _hashCode += getTaxAmount().hashCode();
+        }
+        if (getTaxBasis() != null) {
+            _hashCode += getTaxBasis().hashCode();
+        }
+        if (getTaxCode() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getTaxCode());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getTaxCode(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getTaxRate() != null) {
+            _hashCode += getTaxRate().hashCode();
+        }
+        if (getTaxType() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getTaxType());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getTaxType(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getTranId() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getTranId());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getTranId(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        __hashCodeCalc = false;
+        return _hashCode;
+    }
+
+    // Type metadata
+    private static org.apache.axis.description.TypeDesc typeDesc =
+        new org.apache.axis.description.TypeDesc(TaxDetailSearchBasic.class, true);
+
+    static {
+        typeDesc.setXmlType(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "TaxDetailSearchBasic"));
+        org.apache.axis.description.ElementDesc elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("account");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "account"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "searchValue"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("lineNumber");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "lineNumber"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchLongField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("taxAmount");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "taxAmount"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchDoubleField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("taxBasis");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "taxBasis"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchDoubleField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("taxCode");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "taxCode"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "searchValue"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("taxRate");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "taxRate"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchDoubleField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("taxType");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "taxType"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "searchValue"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("tranId");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "tranId"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "searchValue"));
+        typeDesc.addFieldDesc(elemField);
+    }
+
+    /**
+     * Return type metadata object
+     */
+    public static org.apache.axis.description.TypeDesc getTypeDesc() {
+        return typeDesc;
+    }
+
+    /**
+     * Get Custom Serializer
+     */
+    public static org.apache.axis.encoding.Serializer getSerializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanSerializer(
+            _javaType, _xmlType, typeDesc);
+    }
+
+    /**
+     * Get Custom Deserializer
+     */
+    public static org.apache.axis.encoding.Deserializer getDeserializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanDeserializer(
+            _javaType, _xmlType, typeDesc);
     }
 
 }

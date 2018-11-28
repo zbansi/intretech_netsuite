@@ -1,69 +1,82 @@
+/**
+ * TransactionPaymentEventType.java
+ *
+ * This file was auto-generated from WSDL
+ * by the Apache Axis 1.4 Jul 28, 2010 (04:07:04 PDT) WSDL2Java emitter.
+ */
 
 package com.netsuite.webservices.transactions.sales_2018_2.types;
 
-import javax.xml.bind.annotation.XmlEnum;
-import javax.xml.bind.annotation.XmlEnumValue;
-import javax.xml.bind.annotation.XmlType;
+public class TransactionPaymentEventType implements java.io.Serializable {
+    private java.lang.String _value_;
+    private static java.util.HashMap _table_ = new java.util.HashMap();
 
-
-/**
- * <p>TransactionPaymentEventType的 Java 类。
- * 
- * <p>以下模式片段指定包含在此类中的预期内容。
- * <p>
- * <pre>
- * &lt;simpleType name="TransactionPaymentEventType">
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     &lt;enumeration value="_authorizationRequest"/>
- *     &lt;enumeration value="_captureRequest"/>
- *     &lt;enumeration value="_creditRequest"/>
- *     &lt;enumeration value="_overrideHold"/>
- *     &lt;enumeration value="_refreshRequest"/>
- *     &lt;enumeration value="_refundRequest"/>
- *     &lt;enumeration value="_saleRequest"/>
- *     &lt;enumeration value="_voidRequest"/>
- *   &lt;/restriction>
- * &lt;/simpleType>
- * </pre>
- * 
- */
-@XmlType(name = "TransactionPaymentEventType", namespace = "urn:types.sales_2018_2.transactions.webservices.netsuite.com")
-@XmlEnum
-public enum TransactionPaymentEventType {
-
-    @XmlEnumValue("_authorizationRequest")
-    AUTHORIZATION_REQUEST("_authorizationRequest"),
-    @XmlEnumValue("_captureRequest")
-    CAPTURE_REQUEST("_captureRequest"),
-    @XmlEnumValue("_creditRequest")
-    CREDIT_REQUEST("_creditRequest"),
-    @XmlEnumValue("_overrideHold")
-    OVERRIDE_HOLD("_overrideHold"),
-    @XmlEnumValue("_refreshRequest")
-    REFRESH_REQUEST("_refreshRequest"),
-    @XmlEnumValue("_refundRequest")
-    REFUND_REQUEST("_refundRequest"),
-    @XmlEnumValue("_saleRequest")
-    SALE_REQUEST("_saleRequest"),
-    @XmlEnumValue("_voidRequest")
-    VOID_REQUEST("_voidRequest");
-    private final String value;
-
-    TransactionPaymentEventType(String v) {
-        value = v;
+    // Constructor
+    protected TransactionPaymentEventType(java.lang.String value) {
+        _value_ = value;
+        _table_.put(_value_,this);
     }
 
-    public String value() {
-        return value;
+    public static final java.lang.String __authorizationRequest = "_authorizationRequest";
+    public static final java.lang.String __captureRequest = "_captureRequest";
+    public static final java.lang.String __creditRequest = "_creditRequest";
+    public static final java.lang.String __overrideHold = "_overrideHold";
+    public static final java.lang.String __refreshRequest = "_refreshRequest";
+    public static final java.lang.String __refundRequest = "_refundRequest";
+    public static final java.lang.String __saleRequest = "_saleRequest";
+    public static final java.lang.String __voidRequest = "_voidRequest";
+    public static final TransactionPaymentEventType _authorizationRequest = new TransactionPaymentEventType(__authorizationRequest);
+    public static final TransactionPaymentEventType _captureRequest = new TransactionPaymentEventType(__captureRequest);
+    public static final TransactionPaymentEventType _creditRequest = new TransactionPaymentEventType(__creditRequest);
+    public static final TransactionPaymentEventType _overrideHold = new TransactionPaymentEventType(__overrideHold);
+    public static final TransactionPaymentEventType _refreshRequest = new TransactionPaymentEventType(__refreshRequest);
+    public static final TransactionPaymentEventType _refundRequest = new TransactionPaymentEventType(__refundRequest);
+    public static final TransactionPaymentEventType _saleRequest = new TransactionPaymentEventType(__saleRequest);
+    public static final TransactionPaymentEventType _voidRequest = new TransactionPaymentEventType(__voidRequest);
+    public java.lang.String getValue() { return _value_;}
+    public static TransactionPaymentEventType fromValue(java.lang.String value)
+          throws java.lang.IllegalArgumentException {
+        TransactionPaymentEventType enumeration = (TransactionPaymentEventType)
+            _table_.get(value);
+        if (enumeration==null) throw new java.lang.IllegalArgumentException();
+        return enumeration;
     }
+    public static TransactionPaymentEventType fromString(java.lang.String value)
+          throws java.lang.IllegalArgumentException {
+        return fromValue(value);
+    }
+    public boolean equals(java.lang.Object obj) {return (obj == this);}
+    public int hashCode() { return toString().hashCode();}
+    public java.lang.String toString() { return _value_;}
+    public java.lang.Object readResolve() throws java.io.ObjectStreamException { return fromValue(_value_);}
+    public static org.apache.axis.encoding.Serializer getSerializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new org.apache.axis.encoding.ser.EnumSerializer(
+            _javaType, _xmlType);
+    }
+    public static org.apache.axis.encoding.Deserializer getDeserializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new org.apache.axis.encoding.ser.EnumDeserializer(
+            _javaType, _xmlType);
+    }
+    // Type metadata
+    private static org.apache.axis.description.TypeDesc typeDesc =
+        new org.apache.axis.description.TypeDesc(TransactionPaymentEventType.class);
 
-    public static TransactionPaymentEventType fromValue(String v) {
-        for (TransactionPaymentEventType c: TransactionPaymentEventType.values()) {
-            if (c.value.equals(v)) {
-                return c;
-            }
-        }
-        throw new IllegalArgumentException(v);
+    static {
+        typeDesc.setXmlType(new javax.xml.namespace.QName("urn:types.sales_2018_2.transactions.webservices.netsuite.com", "TransactionPaymentEventType"));
+    }
+    /**
+     * Return type metadata object
+     */
+    public static org.apache.axis.description.TypeDesc getTypeDesc() {
+        return typeDesc;
     }
 
 }

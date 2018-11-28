@@ -1,115 +1,194 @@
+/**
+ * JobResources.java
+ *
+ * This file was auto-generated from WSDL
+ * by the Apache Axis 1.4 Jul 28, 2010 (04:07:04 PDT) WSDL2Java emitter.
+ */
 
 package com.netsuite.webservices.lists.relationships_2018_2;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlType;
-import com.netsuite.webservices.platform.core_2018_2.RecordRef;
+public class JobResources  implements java.io.Serializable {
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef jobResource;
 
+    private java.lang.String email;
 
-/**
- * <p>JobResources complex type的 Java 类。
- * 
- * <p>以下模式片段指定包含在此类中的预期内容。
- * 
- * <pre>
- * &lt;complexType name="JobResources">
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element name="jobResource" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="email" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="role" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
- */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "JobResources", propOrder = {
-    "jobResource",
-    "email",
-    "role"
-})
-public class JobResources {
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef role;
 
-    protected RecordRef jobResource;
-    protected String email;
-    protected RecordRef role;
+    public JobResources() {
+    }
+
+    public JobResources(
+           com.netsuite.webservices.platform.core_2018_2.RecordRef jobResource,
+           java.lang.String email,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef role) {
+           this.jobResource = jobResource;
+           this.email = email;
+           this.role = role;
+    }
+
 
     /**
-     * 获取jobResource属性的值。
+     * Gets the jobResource value for this JobResources.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @return jobResource
      */
-    public RecordRef getJobResource() {
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getJobResource() {
         return jobResource;
     }
 
-    /**
-     * 设置jobResource属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setJobResource(RecordRef value) {
-        this.jobResource = value;
-    }
 
     /**
-     * 获取email属性的值。
+     * Sets the jobResource value for this JobResources.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param jobResource
      */
-    public String getEmail() {
+    public void setJobResource(com.netsuite.webservices.platform.core_2018_2.RecordRef jobResource) {
+        this.jobResource = jobResource;
+    }
+
+
+    /**
+     * Gets the email value for this JobResources.
+     * 
+     * @return email
+     */
+    public java.lang.String getEmail() {
         return email;
     }
 
-    /**
-     * 设置email属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setEmail(String value) {
-        this.email = value;
-    }
 
     /**
-     * 获取role属性的值。
+     * Sets the email value for this JobResources.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param email
      */
-    public RecordRef getRole() {
+    public void setEmail(java.lang.String email) {
+        this.email = email;
+    }
+
+
+    /**
+     * Gets the role value for this JobResources.
+     * 
+     * @return role
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getRole() {
         return role;
     }
 
+
     /**
-     * 设置role属性的值。
+     * Sets the role value for this JobResources.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
+     * @param role
      */
-    public void setRole(RecordRef value) {
-        this.role = value;
+    public void setRole(com.netsuite.webservices.platform.core_2018_2.RecordRef role) {
+        this.role = role;
+    }
+
+    private java.lang.Object __equalsCalc = null;
+    public synchronized boolean equals(java.lang.Object obj) {
+        if (!(obj instanceof JobResources)) return false;
+        JobResources other = (JobResources) obj;
+        if (obj == null) return false;
+        if (this == obj) return true;
+        if (__equalsCalc != null) {
+            return (__equalsCalc == obj);
+        }
+        __equalsCalc = obj;
+        boolean _equals;
+        _equals = true && 
+            ((this.jobResource==null && other.getJobResource()==null) || 
+             (this.jobResource!=null &&
+              this.jobResource.equals(other.getJobResource()))) &&
+            ((this.email==null && other.getEmail()==null) || 
+             (this.email!=null &&
+              this.email.equals(other.getEmail()))) &&
+            ((this.role==null && other.getRole()==null) || 
+             (this.role!=null &&
+              this.role.equals(other.getRole())));
+        __equalsCalc = null;
+        return _equals;
+    }
+
+    private boolean __hashCodeCalc = false;
+    public synchronized int hashCode() {
+        if (__hashCodeCalc) {
+            return 0;
+        }
+        __hashCodeCalc = true;
+        int _hashCode = 1;
+        if (getJobResource() != null) {
+            _hashCode += getJobResource().hashCode();
+        }
+        if (getEmail() != null) {
+            _hashCode += getEmail().hashCode();
+        }
+        if (getRole() != null) {
+            _hashCode += getRole().hashCode();
+        }
+        __hashCodeCalc = false;
+        return _hashCode;
+    }
+
+    // Type metadata
+    private static org.apache.axis.description.TypeDesc typeDesc =
+        new org.apache.axis.description.TypeDesc(JobResources.class, true);
+
+    static {
+        typeDesc.setXmlType(new javax.xml.namespace.QName("urn:relationships_2018_2.lists.webservices.netsuite.com", "JobResources"));
+        org.apache.axis.description.ElementDesc elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("jobResource");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:relationships_2018_2.lists.webservices.netsuite.com", "jobResource"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("email");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:relationships_2018_2.lists.webservices.netsuite.com", "email"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("role");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:relationships_2018_2.lists.webservices.netsuite.com", "role"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+    }
+
+    /**
+     * Return type metadata object
+     */
+    public static org.apache.axis.description.TypeDesc getTypeDesc() {
+        return typeDesc;
+    }
+
+    /**
+     * Get Custom Serializer
+     */
+    public static org.apache.axis.encoding.Serializer getSerializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanSerializer(
+            _javaType, _xmlType, typeDesc);
+    }
+
+    /**
+     * Get Custom Deserializer
+     */
+    public static org.apache.axis.encoding.Deserializer getDeserializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanDeserializer(
+            _javaType, _xmlType, typeDesc);
     }
 
 }

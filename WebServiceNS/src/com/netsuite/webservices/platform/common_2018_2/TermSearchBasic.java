@@ -1,446 +1,656 @@
+/**
+ * TermSearchBasic.java
+ *
+ * This file was auto-generated from WSDL
+ * by the Apache Axis 1.4 Jul 28, 2010 (04:07:04 PDT) WSDL2Java emitter.
+ */
 
 package com.netsuite.webservices.platform.common_2018_2;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlType;
-import com.netsuite.webservices.platform.core_2018_2.SearchBooleanField;
-import com.netsuite.webservices.platform.core_2018_2.SearchDoubleField;
-import com.netsuite.webservices.platform.core_2018_2.SearchLongField;
-import com.netsuite.webservices.platform.core_2018_2.SearchMultiSelectField;
-import com.netsuite.webservices.platform.core_2018_2.SearchRecordBasic;
-import com.netsuite.webservices.platform.core_2018_2.SearchStringField;
+public class TermSearchBasic  extends com.netsuite.webservices.platform.core_2018_2.SearchRecordBasic  implements java.io.Serializable {
+    private com.netsuite.webservices.platform.core_2018_2.SearchBooleanField dateDriven;
 
+    private com.netsuite.webservices.platform.core_2018_2.SearchLongField dayDiscountExpires;
 
-/**
- * <p>TermSearchBasic complex type的 Java 类。
- * 
- * <p>以下模式片段指定包含在此类中的预期内容。
- * 
- * <pre>
- * &lt;complexType name="TermSearchBasic">
- *   &lt;complexContent>
- *     &lt;extension base="{urn:core_2018_2.platform.webservices.netsuite.com}SearchRecordBasic">
- *       &lt;sequence>
- *         &lt;element name="dateDriven" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchBooleanField" minOccurs="0"/>
- *         &lt;element name="dayDiscountExpires" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchLongField" minOccurs="0"/>
- *         &lt;element name="dayOfMonthNetDue" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchLongField" minOccurs="0"/>
- *         &lt;element name="daysUntilExpiry" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchLongField" minOccurs="0"/>
- *         &lt;element name="daysUntilNetDue" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchLongField" minOccurs="0"/>
- *         &lt;element name="discountPercent" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchDoubleField" minOccurs="0"/>
- *         &lt;element name="discountPercentDateDriven" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchDoubleField" minOccurs="0"/>
- *         &lt;element name="dueNextMonthIfWithinDays" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchLongField" minOccurs="0"/>
- *         &lt;element name="externalId" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchMultiSelectField" minOccurs="0"/>
- *         &lt;element name="externalIdString" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchStringField" minOccurs="0"/>
- *         &lt;element name="internalId" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchMultiSelectField" minOccurs="0"/>
- *         &lt;element name="internalIdNumber" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchLongField" minOccurs="0"/>
- *         &lt;element name="isInactive" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchBooleanField" minOccurs="0"/>
- *         &lt;element name="name" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchStringField" minOccurs="0"/>
- *         &lt;element name="preferred" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchBooleanField" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/extension>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
- */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "TermSearchBasic", propOrder = {
-    "dateDriven",
-    "dayDiscountExpires",
-    "dayOfMonthNetDue",
-    "daysUntilExpiry",
-    "daysUntilNetDue",
-    "discountPercent",
-    "discountPercentDateDriven",
-    "dueNextMonthIfWithinDays",
-    "externalId",
-    "externalIdString",
-    "internalId",
-    "internalIdNumber",
-    "isInactive",
-    "name",
-    "preferred"
-})
-public class TermSearchBasic
-    extends SearchRecordBasic
-{
+    private com.netsuite.webservices.platform.core_2018_2.SearchLongField dayOfMonthNetDue;
 
-    protected SearchBooleanField dateDriven;
-    protected SearchLongField dayDiscountExpires;
-    protected SearchLongField dayOfMonthNetDue;
-    protected SearchLongField daysUntilExpiry;
-    protected SearchLongField daysUntilNetDue;
-    protected SearchDoubleField discountPercent;
-    protected SearchDoubleField discountPercentDateDriven;
-    protected SearchLongField dueNextMonthIfWithinDays;
-    protected SearchMultiSelectField externalId;
-    protected SearchStringField externalIdString;
-    protected SearchMultiSelectField internalId;
-    protected SearchLongField internalIdNumber;
-    protected SearchBooleanField isInactive;
-    protected SearchStringField name;
-    protected SearchBooleanField preferred;
+    private com.netsuite.webservices.platform.core_2018_2.SearchLongField daysUntilExpiry;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchLongField daysUntilNetDue;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchDoubleField discountPercent;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchDoubleField discountPercentDateDriven;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchLongField dueNextMonthIfWithinDays;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef[] externalId;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchStringField externalIdString;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef[] internalId;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchLongField internalIdNumber;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchBooleanField isInactive;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchStringField name;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchBooleanField preferred;
+
+    public TermSearchBasic() {
+    }
+
+    public TermSearchBasic(
+           com.netsuite.webservices.platform.core_2018_2.SearchBooleanField dateDriven,
+           com.netsuite.webservices.platform.core_2018_2.SearchLongField dayDiscountExpires,
+           com.netsuite.webservices.platform.core_2018_2.SearchLongField dayOfMonthNetDue,
+           com.netsuite.webservices.platform.core_2018_2.SearchLongField daysUntilExpiry,
+           com.netsuite.webservices.platform.core_2018_2.SearchLongField daysUntilNetDue,
+           com.netsuite.webservices.platform.core_2018_2.SearchDoubleField discountPercent,
+           com.netsuite.webservices.platform.core_2018_2.SearchDoubleField discountPercentDateDriven,
+           com.netsuite.webservices.platform.core_2018_2.SearchLongField dueNextMonthIfWithinDays,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef[] externalId,
+           com.netsuite.webservices.platform.core_2018_2.SearchStringField externalIdString,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef[] internalId,
+           com.netsuite.webservices.platform.core_2018_2.SearchLongField internalIdNumber,
+           com.netsuite.webservices.platform.core_2018_2.SearchBooleanField isInactive,
+           com.netsuite.webservices.platform.core_2018_2.SearchStringField name,
+           com.netsuite.webservices.platform.core_2018_2.SearchBooleanField preferred) {
+        this.dateDriven = dateDriven;
+        this.dayDiscountExpires = dayDiscountExpires;
+        this.dayOfMonthNetDue = dayOfMonthNetDue;
+        this.daysUntilExpiry = daysUntilExpiry;
+        this.daysUntilNetDue = daysUntilNetDue;
+        this.discountPercent = discountPercent;
+        this.discountPercentDateDriven = discountPercentDateDriven;
+        this.dueNextMonthIfWithinDays = dueNextMonthIfWithinDays;
+        this.externalId = externalId;
+        this.externalIdString = externalIdString;
+        this.internalId = internalId;
+        this.internalIdNumber = internalIdNumber;
+        this.isInactive = isInactive;
+        this.name = name;
+        this.preferred = preferred;
+    }
+
 
     /**
-     * 获取dateDriven属性的值。
+     * Gets the dateDriven value for this TermSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchBooleanField }
-     *     
+     * @return dateDriven
      */
-    public SearchBooleanField getDateDriven() {
+    public com.netsuite.webservices.platform.core_2018_2.SearchBooleanField getDateDriven() {
         return dateDriven;
     }
 
-    /**
-     * 设置dateDriven属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchBooleanField }
-     *     
-     */
-    public void setDateDriven(SearchBooleanField value) {
-        this.dateDriven = value;
-    }
 
     /**
-     * 获取dayDiscountExpires属性的值。
+     * Sets the dateDriven value for this TermSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchLongField }
-     *     
+     * @param dateDriven
      */
-    public SearchLongField getDayDiscountExpires() {
+    public void setDateDriven(com.netsuite.webservices.platform.core_2018_2.SearchBooleanField dateDriven) {
+        this.dateDriven = dateDriven;
+    }
+
+
+    /**
+     * Gets the dayDiscountExpires value for this TermSearchBasic.
+     * 
+     * @return dayDiscountExpires
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchLongField getDayDiscountExpires() {
         return dayDiscountExpires;
     }
 
-    /**
-     * 设置dayDiscountExpires属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchLongField }
-     *     
-     */
-    public void setDayDiscountExpires(SearchLongField value) {
-        this.dayDiscountExpires = value;
-    }
 
     /**
-     * 获取dayOfMonthNetDue属性的值。
+     * Sets the dayDiscountExpires value for this TermSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchLongField }
-     *     
+     * @param dayDiscountExpires
      */
-    public SearchLongField getDayOfMonthNetDue() {
+    public void setDayDiscountExpires(com.netsuite.webservices.platform.core_2018_2.SearchLongField dayDiscountExpires) {
+        this.dayDiscountExpires = dayDiscountExpires;
+    }
+
+
+    /**
+     * Gets the dayOfMonthNetDue value for this TermSearchBasic.
+     * 
+     * @return dayOfMonthNetDue
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchLongField getDayOfMonthNetDue() {
         return dayOfMonthNetDue;
     }
 
-    /**
-     * 设置dayOfMonthNetDue属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchLongField }
-     *     
-     */
-    public void setDayOfMonthNetDue(SearchLongField value) {
-        this.dayOfMonthNetDue = value;
-    }
 
     /**
-     * 获取daysUntilExpiry属性的值。
+     * Sets the dayOfMonthNetDue value for this TermSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchLongField }
-     *     
+     * @param dayOfMonthNetDue
      */
-    public SearchLongField getDaysUntilExpiry() {
+    public void setDayOfMonthNetDue(com.netsuite.webservices.platform.core_2018_2.SearchLongField dayOfMonthNetDue) {
+        this.dayOfMonthNetDue = dayOfMonthNetDue;
+    }
+
+
+    /**
+     * Gets the daysUntilExpiry value for this TermSearchBasic.
+     * 
+     * @return daysUntilExpiry
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchLongField getDaysUntilExpiry() {
         return daysUntilExpiry;
     }
 
-    /**
-     * 设置daysUntilExpiry属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchLongField }
-     *     
-     */
-    public void setDaysUntilExpiry(SearchLongField value) {
-        this.daysUntilExpiry = value;
-    }
 
     /**
-     * 获取daysUntilNetDue属性的值。
+     * Sets the daysUntilExpiry value for this TermSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchLongField }
-     *     
+     * @param daysUntilExpiry
      */
-    public SearchLongField getDaysUntilNetDue() {
+    public void setDaysUntilExpiry(com.netsuite.webservices.platform.core_2018_2.SearchLongField daysUntilExpiry) {
+        this.daysUntilExpiry = daysUntilExpiry;
+    }
+
+
+    /**
+     * Gets the daysUntilNetDue value for this TermSearchBasic.
+     * 
+     * @return daysUntilNetDue
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchLongField getDaysUntilNetDue() {
         return daysUntilNetDue;
     }
 
-    /**
-     * 设置daysUntilNetDue属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchLongField }
-     *     
-     */
-    public void setDaysUntilNetDue(SearchLongField value) {
-        this.daysUntilNetDue = value;
-    }
 
     /**
-     * 获取discountPercent属性的值。
+     * Sets the daysUntilNetDue value for this TermSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchDoubleField }
-     *     
+     * @param daysUntilNetDue
      */
-    public SearchDoubleField getDiscountPercent() {
+    public void setDaysUntilNetDue(com.netsuite.webservices.platform.core_2018_2.SearchLongField daysUntilNetDue) {
+        this.daysUntilNetDue = daysUntilNetDue;
+    }
+
+
+    /**
+     * Gets the discountPercent value for this TermSearchBasic.
+     * 
+     * @return discountPercent
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchDoubleField getDiscountPercent() {
         return discountPercent;
     }
 
-    /**
-     * 设置discountPercent属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchDoubleField }
-     *     
-     */
-    public void setDiscountPercent(SearchDoubleField value) {
-        this.discountPercent = value;
-    }
 
     /**
-     * 获取discountPercentDateDriven属性的值。
+     * Sets the discountPercent value for this TermSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchDoubleField }
-     *     
+     * @param discountPercent
      */
-    public SearchDoubleField getDiscountPercentDateDriven() {
+    public void setDiscountPercent(com.netsuite.webservices.platform.core_2018_2.SearchDoubleField discountPercent) {
+        this.discountPercent = discountPercent;
+    }
+
+
+    /**
+     * Gets the discountPercentDateDriven value for this TermSearchBasic.
+     * 
+     * @return discountPercentDateDriven
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchDoubleField getDiscountPercentDateDriven() {
         return discountPercentDateDriven;
     }
 
-    /**
-     * 设置discountPercentDateDriven属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchDoubleField }
-     *     
-     */
-    public void setDiscountPercentDateDriven(SearchDoubleField value) {
-        this.discountPercentDateDriven = value;
-    }
 
     /**
-     * 获取dueNextMonthIfWithinDays属性的值。
+     * Sets the discountPercentDateDriven value for this TermSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchLongField }
-     *     
+     * @param discountPercentDateDriven
      */
-    public SearchLongField getDueNextMonthIfWithinDays() {
+    public void setDiscountPercentDateDriven(com.netsuite.webservices.platform.core_2018_2.SearchDoubleField discountPercentDateDriven) {
+        this.discountPercentDateDriven = discountPercentDateDriven;
+    }
+
+
+    /**
+     * Gets the dueNextMonthIfWithinDays value for this TermSearchBasic.
+     * 
+     * @return dueNextMonthIfWithinDays
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchLongField getDueNextMonthIfWithinDays() {
         return dueNextMonthIfWithinDays;
     }
 
-    /**
-     * 设置dueNextMonthIfWithinDays属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchLongField }
-     *     
-     */
-    public void setDueNextMonthIfWithinDays(SearchLongField value) {
-        this.dueNextMonthIfWithinDays = value;
-    }
 
     /**
-     * 获取externalId属性的值。
+     * Sets the dueNextMonthIfWithinDays value for this TermSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchMultiSelectField }
-     *     
+     * @param dueNextMonthIfWithinDays
      */
-    public SearchMultiSelectField getExternalId() {
+    public void setDueNextMonthIfWithinDays(com.netsuite.webservices.platform.core_2018_2.SearchLongField dueNextMonthIfWithinDays) {
+        this.dueNextMonthIfWithinDays = dueNextMonthIfWithinDays;
+    }
+
+
+    /**
+     * Gets the externalId value for this TermSearchBasic.
+     * 
+     * @return externalId
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef[] getExternalId() {
         return externalId;
     }
 
-    /**
-     * 设置externalId属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchMultiSelectField }
-     *     
-     */
-    public void setExternalId(SearchMultiSelectField value) {
-        this.externalId = value;
-    }
 
     /**
-     * 获取externalIdString属性的值。
+     * Sets the externalId value for this TermSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchStringField }
-     *     
+     * @param externalId
      */
-    public SearchStringField getExternalIdString() {
+    public void setExternalId(com.netsuite.webservices.platform.core_2018_2.RecordRef[] externalId) {
+        this.externalId = externalId;
+    }
+
+
+    /**
+     * Gets the externalIdString value for this TermSearchBasic.
+     * 
+     * @return externalIdString
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchStringField getExternalIdString() {
         return externalIdString;
     }
 
-    /**
-     * 设置externalIdString属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchStringField }
-     *     
-     */
-    public void setExternalIdString(SearchStringField value) {
-        this.externalIdString = value;
-    }
 
     /**
-     * 获取internalId属性的值。
+     * Sets the externalIdString value for this TermSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchMultiSelectField }
-     *     
+     * @param externalIdString
      */
-    public SearchMultiSelectField getInternalId() {
+    public void setExternalIdString(com.netsuite.webservices.platform.core_2018_2.SearchStringField externalIdString) {
+        this.externalIdString = externalIdString;
+    }
+
+
+    /**
+     * Gets the internalId value for this TermSearchBasic.
+     * 
+     * @return internalId
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef[] getInternalId() {
         return internalId;
     }
 
-    /**
-     * 设置internalId属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchMultiSelectField }
-     *     
-     */
-    public void setInternalId(SearchMultiSelectField value) {
-        this.internalId = value;
-    }
 
     /**
-     * 获取internalIdNumber属性的值。
+     * Sets the internalId value for this TermSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchLongField }
-     *     
+     * @param internalId
      */
-    public SearchLongField getInternalIdNumber() {
+    public void setInternalId(com.netsuite.webservices.platform.core_2018_2.RecordRef[] internalId) {
+        this.internalId = internalId;
+    }
+
+
+    /**
+     * Gets the internalIdNumber value for this TermSearchBasic.
+     * 
+     * @return internalIdNumber
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchLongField getInternalIdNumber() {
         return internalIdNumber;
     }
 
-    /**
-     * 设置internalIdNumber属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchLongField }
-     *     
-     */
-    public void setInternalIdNumber(SearchLongField value) {
-        this.internalIdNumber = value;
-    }
 
     /**
-     * 获取isInactive属性的值。
+     * Sets the internalIdNumber value for this TermSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchBooleanField }
-     *     
+     * @param internalIdNumber
      */
-    public SearchBooleanField getIsInactive() {
+    public void setInternalIdNumber(com.netsuite.webservices.platform.core_2018_2.SearchLongField internalIdNumber) {
+        this.internalIdNumber = internalIdNumber;
+    }
+
+
+    /**
+     * Gets the isInactive value for this TermSearchBasic.
+     * 
+     * @return isInactive
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchBooleanField getIsInactive() {
         return isInactive;
     }
 
-    /**
-     * 设置isInactive属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchBooleanField }
-     *     
-     */
-    public void setIsInactive(SearchBooleanField value) {
-        this.isInactive = value;
-    }
 
     /**
-     * 获取name属性的值。
+     * Sets the isInactive value for this TermSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchStringField }
-     *     
+     * @param isInactive
      */
-    public SearchStringField getName() {
+    public void setIsInactive(com.netsuite.webservices.platform.core_2018_2.SearchBooleanField isInactive) {
+        this.isInactive = isInactive;
+    }
+
+
+    /**
+     * Gets the name value for this TermSearchBasic.
+     * 
+     * @return name
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchStringField getName() {
         return name;
     }
 
-    /**
-     * 设置name属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchStringField }
-     *     
-     */
-    public void setName(SearchStringField value) {
-        this.name = value;
-    }
 
     /**
-     * 获取preferred属性的值。
+     * Sets the name value for this TermSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchBooleanField }
-     *     
+     * @param name
      */
-    public SearchBooleanField getPreferred() {
+    public void setName(com.netsuite.webservices.platform.core_2018_2.SearchStringField name) {
+        this.name = name;
+    }
+
+
+    /**
+     * Gets the preferred value for this TermSearchBasic.
+     * 
+     * @return preferred
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchBooleanField getPreferred() {
         return preferred;
     }
 
+
     /**
-     * 设置preferred属性的值。
+     * Sets the preferred value for this TermSearchBasic.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchBooleanField }
-     *     
+     * @param preferred
      */
-    public void setPreferred(SearchBooleanField value) {
-        this.preferred = value;
+    public void setPreferred(com.netsuite.webservices.platform.core_2018_2.SearchBooleanField preferred) {
+        this.preferred = preferred;
+    }
+
+    private java.lang.Object __equalsCalc = null;
+    public synchronized boolean equals(java.lang.Object obj) {
+        if (!(obj instanceof TermSearchBasic)) return false;
+        TermSearchBasic other = (TermSearchBasic) obj;
+        if (obj == null) return false;
+        if (this == obj) return true;
+        if (__equalsCalc != null) {
+            return (__equalsCalc == obj);
+        }
+        __equalsCalc = obj;
+        boolean _equals;
+        _equals = super.equals(obj) && 
+            ((this.dateDriven==null && other.getDateDriven()==null) || 
+             (this.dateDriven!=null &&
+              this.dateDriven.equals(other.getDateDriven()))) &&
+            ((this.dayDiscountExpires==null && other.getDayDiscountExpires()==null) || 
+             (this.dayDiscountExpires!=null &&
+              this.dayDiscountExpires.equals(other.getDayDiscountExpires()))) &&
+            ((this.dayOfMonthNetDue==null && other.getDayOfMonthNetDue()==null) || 
+             (this.dayOfMonthNetDue!=null &&
+              this.dayOfMonthNetDue.equals(other.getDayOfMonthNetDue()))) &&
+            ((this.daysUntilExpiry==null && other.getDaysUntilExpiry()==null) || 
+             (this.daysUntilExpiry!=null &&
+              this.daysUntilExpiry.equals(other.getDaysUntilExpiry()))) &&
+            ((this.daysUntilNetDue==null && other.getDaysUntilNetDue()==null) || 
+             (this.daysUntilNetDue!=null &&
+              this.daysUntilNetDue.equals(other.getDaysUntilNetDue()))) &&
+            ((this.discountPercent==null && other.getDiscountPercent()==null) || 
+             (this.discountPercent!=null &&
+              this.discountPercent.equals(other.getDiscountPercent()))) &&
+            ((this.discountPercentDateDriven==null && other.getDiscountPercentDateDriven()==null) || 
+             (this.discountPercentDateDriven!=null &&
+              this.discountPercentDateDriven.equals(other.getDiscountPercentDateDriven()))) &&
+            ((this.dueNextMonthIfWithinDays==null && other.getDueNextMonthIfWithinDays()==null) || 
+             (this.dueNextMonthIfWithinDays!=null &&
+              this.dueNextMonthIfWithinDays.equals(other.getDueNextMonthIfWithinDays()))) &&
+            ((this.externalId==null && other.getExternalId()==null) || 
+             (this.externalId!=null &&
+              java.util.Arrays.equals(this.externalId, other.getExternalId()))) &&
+            ((this.externalIdString==null && other.getExternalIdString()==null) || 
+             (this.externalIdString!=null &&
+              this.externalIdString.equals(other.getExternalIdString()))) &&
+            ((this.internalId==null && other.getInternalId()==null) || 
+             (this.internalId!=null &&
+              java.util.Arrays.equals(this.internalId, other.getInternalId()))) &&
+            ((this.internalIdNumber==null && other.getInternalIdNumber()==null) || 
+             (this.internalIdNumber!=null &&
+              this.internalIdNumber.equals(other.getInternalIdNumber()))) &&
+            ((this.isInactive==null && other.getIsInactive()==null) || 
+             (this.isInactive!=null &&
+              this.isInactive.equals(other.getIsInactive()))) &&
+            ((this.name==null && other.getName()==null) || 
+             (this.name!=null &&
+              this.name.equals(other.getName()))) &&
+            ((this.preferred==null && other.getPreferred()==null) || 
+             (this.preferred!=null &&
+              this.preferred.equals(other.getPreferred())));
+        __equalsCalc = null;
+        return _equals;
+    }
+
+    private boolean __hashCodeCalc = false;
+    public synchronized int hashCode() {
+        if (__hashCodeCalc) {
+            return 0;
+        }
+        __hashCodeCalc = true;
+        int _hashCode = super.hashCode();
+        if (getDateDriven() != null) {
+            _hashCode += getDateDriven().hashCode();
+        }
+        if (getDayDiscountExpires() != null) {
+            _hashCode += getDayDiscountExpires().hashCode();
+        }
+        if (getDayOfMonthNetDue() != null) {
+            _hashCode += getDayOfMonthNetDue().hashCode();
+        }
+        if (getDaysUntilExpiry() != null) {
+            _hashCode += getDaysUntilExpiry().hashCode();
+        }
+        if (getDaysUntilNetDue() != null) {
+            _hashCode += getDaysUntilNetDue().hashCode();
+        }
+        if (getDiscountPercent() != null) {
+            _hashCode += getDiscountPercent().hashCode();
+        }
+        if (getDiscountPercentDateDriven() != null) {
+            _hashCode += getDiscountPercentDateDriven().hashCode();
+        }
+        if (getDueNextMonthIfWithinDays() != null) {
+            _hashCode += getDueNextMonthIfWithinDays().hashCode();
+        }
+        if (getExternalId() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getExternalId());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getExternalId(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getExternalIdString() != null) {
+            _hashCode += getExternalIdString().hashCode();
+        }
+        if (getInternalId() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getInternalId());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getInternalId(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getInternalIdNumber() != null) {
+            _hashCode += getInternalIdNumber().hashCode();
+        }
+        if (getIsInactive() != null) {
+            _hashCode += getIsInactive().hashCode();
+        }
+        if (getName() != null) {
+            _hashCode += getName().hashCode();
+        }
+        if (getPreferred() != null) {
+            _hashCode += getPreferred().hashCode();
+        }
+        __hashCodeCalc = false;
+        return _hashCode;
+    }
+
+    // Type metadata
+    private static org.apache.axis.description.TypeDesc typeDesc =
+        new org.apache.axis.description.TypeDesc(TermSearchBasic.class, true);
+
+    static {
+        typeDesc.setXmlType(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "TermSearchBasic"));
+        org.apache.axis.description.ElementDesc elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("dateDriven");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "dateDriven"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchBooleanField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("dayDiscountExpires");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "dayDiscountExpires"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchLongField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("dayOfMonthNetDue");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "dayOfMonthNetDue"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchLongField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("daysUntilExpiry");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "daysUntilExpiry"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchLongField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("daysUntilNetDue");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "daysUntilNetDue"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchLongField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("discountPercent");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "discountPercent"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchDoubleField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("discountPercentDateDriven");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "discountPercentDateDriven"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchDoubleField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("dueNextMonthIfWithinDays");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "dueNextMonthIfWithinDays"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchLongField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("externalId");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "externalId"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "searchValue"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("externalIdString");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "externalIdString"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchStringField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("internalId");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "internalId"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "searchValue"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("internalIdNumber");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "internalIdNumber"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchLongField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("isInactive");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "isInactive"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchBooleanField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("name");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "name"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchStringField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("preferred");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "preferred"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchBooleanField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+    }
+
+    /**
+     * Return type metadata object
+     */
+    public static org.apache.axis.description.TypeDesc getTypeDesc() {
+        return typeDesc;
+    }
+
+    /**
+     * Get Custom Serializer
+     */
+    public static org.apache.axis.encoding.Serializer getSerializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanSerializer(
+            _javaType, _xmlType, typeDesc);
+    }
+
+    /**
+     * Get Custom Deserializer
+     */
+    public static org.apache.axis.encoding.Deserializer getDeserializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanDeserializer(
+            _javaType, _xmlType, typeDesc);
     }
 
 }

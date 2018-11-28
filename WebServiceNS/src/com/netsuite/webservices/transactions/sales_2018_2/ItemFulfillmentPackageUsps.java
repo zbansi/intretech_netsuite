@@ -1,362 +1,527 @@
+/**
+ * ItemFulfillmentPackageUsps.java
+ *
+ * This file was auto-generated from WSDL
+ * by the Apache Axis 1.4 Jul 28, 2010 (04:07:04 PDT) WSDL2Java emitter.
+ */
 
 package com.netsuite.webservices.transactions.sales_2018_2;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlSchemaType;
-import javax.xml.bind.annotation.XmlType;
-import com.netsuite.webservices.transactions.sales_2018_2.types.ItemFulfillmentPackageUspsDeliveryConfUsps;
-import com.netsuite.webservices.transactions.sales_2018_2.types.ItemFulfillmentPackageUspsPackagingUsps;
+public class ItemFulfillmentPackageUsps  implements java.io.Serializable {
+    private java.lang.Double packageWeightUsps;
 
+    private java.lang.String packageDescrUsps;
 
-/**
- * <p>ItemFulfillmentPackageUsps complex type的 Java 类。
- * 
- * <p>以下模式片段指定包含在此类中的预期内容。
- * 
- * <pre>
- * &lt;complexType name="ItemFulfillmentPackageUsps">
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element name="packageWeightUsps" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
- *         &lt;element name="packageDescrUsps" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="packageTrackingNumberUsps" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="packagingUsps" type="{urn:types.sales_2018_2.transactions.webservices.netsuite.com}ItemFulfillmentPackageUspsPackagingUsps" minOccurs="0"/>
- *         &lt;element name="useInsuredValueUsps" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         &lt;element name="insuredValueUsps" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
- *         &lt;element name="reference1Usps" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="reference2Usps" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="packageLengthUsps" type="{http://www.w3.org/2001/XMLSchema}long" minOccurs="0"/>
- *         &lt;element name="packageWidthUsps" type="{http://www.w3.org/2001/XMLSchema}long" minOccurs="0"/>
- *         &lt;element name="packageHeightUsps" type="{http://www.w3.org/2001/XMLSchema}long" minOccurs="0"/>
- *         &lt;element name="deliveryConfUsps" type="{urn:types.sales_2018_2.transactions.webservices.netsuite.com}ItemFulfillmentPackageUspsDeliveryConfUsps" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
- */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "ItemFulfillmentPackageUsps", propOrder = {
-    "packageWeightUsps",
-    "packageDescrUsps",
-    "packageTrackingNumberUsps",
-    "packagingUsps",
-    "useInsuredValueUsps",
-    "insuredValueUsps",
-    "reference1Usps",
-    "reference2Usps",
-    "packageLengthUsps",
-    "packageWidthUsps",
-    "packageHeightUsps",
-    "deliveryConfUsps"
-})
-public class ItemFulfillmentPackageUsps {
+    private java.lang.String packageTrackingNumberUsps;
 
-    protected Double packageWeightUsps;
-    protected String packageDescrUsps;
-    protected String packageTrackingNumberUsps;
-    @XmlSchemaType(name = "string")
-    protected ItemFulfillmentPackageUspsPackagingUsps packagingUsps;
-    protected Boolean useInsuredValueUsps;
-    protected Double insuredValueUsps;
-    protected String reference1Usps;
-    protected String reference2Usps;
-    protected Long packageLengthUsps;
-    protected Long packageWidthUsps;
-    protected Long packageHeightUsps;
-    @XmlSchemaType(name = "string")
-    protected ItemFulfillmentPackageUspsDeliveryConfUsps deliveryConfUsps;
+    private com.netsuite.webservices.transactions.sales_2018_2.types.ItemFulfillmentPackageUspsPackagingUsps packagingUsps;
+
+    private java.lang.Boolean useInsuredValueUsps;
+
+    private java.lang.Double insuredValueUsps;
+
+    private java.lang.String reference1Usps;
+
+    private java.lang.String reference2Usps;
+
+    private java.lang.Long packageLengthUsps;
+
+    private java.lang.Long packageWidthUsps;
+
+    private java.lang.Long packageHeightUsps;
+
+    private com.netsuite.webservices.transactions.sales_2018_2.types.ItemFulfillmentPackageUspsDeliveryConfUsps deliveryConfUsps;
+
+    public ItemFulfillmentPackageUsps() {
+    }
+
+    public ItemFulfillmentPackageUsps(
+           java.lang.Double packageWeightUsps,
+           java.lang.String packageDescrUsps,
+           java.lang.String packageTrackingNumberUsps,
+           com.netsuite.webservices.transactions.sales_2018_2.types.ItemFulfillmentPackageUspsPackagingUsps packagingUsps,
+           java.lang.Boolean useInsuredValueUsps,
+           java.lang.Double insuredValueUsps,
+           java.lang.String reference1Usps,
+           java.lang.String reference2Usps,
+           java.lang.Long packageLengthUsps,
+           java.lang.Long packageWidthUsps,
+           java.lang.Long packageHeightUsps,
+           com.netsuite.webservices.transactions.sales_2018_2.types.ItemFulfillmentPackageUspsDeliveryConfUsps deliveryConfUsps) {
+           this.packageWeightUsps = packageWeightUsps;
+           this.packageDescrUsps = packageDescrUsps;
+           this.packageTrackingNumberUsps = packageTrackingNumberUsps;
+           this.packagingUsps = packagingUsps;
+           this.useInsuredValueUsps = useInsuredValueUsps;
+           this.insuredValueUsps = insuredValueUsps;
+           this.reference1Usps = reference1Usps;
+           this.reference2Usps = reference2Usps;
+           this.packageLengthUsps = packageLengthUsps;
+           this.packageWidthUsps = packageWidthUsps;
+           this.packageHeightUsps = packageHeightUsps;
+           this.deliveryConfUsps = deliveryConfUsps;
+    }
+
 
     /**
-     * 获取packageWeightUsps属性的值。
+     * Gets the packageWeightUsps value for this ItemFulfillmentPackageUsps.
      * 
-     * @return
-     *     possible object is
-     *     {@link Double }
-     *     
+     * @return packageWeightUsps
      */
-    public Double getPackageWeightUsps() {
+    public java.lang.Double getPackageWeightUsps() {
         return packageWeightUsps;
     }
 
-    /**
-     * 设置packageWeightUsps属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Double }
-     *     
-     */
-    public void setPackageWeightUsps(Double value) {
-        this.packageWeightUsps = value;
-    }
 
     /**
-     * 获取packageDescrUsps属性的值。
+     * Sets the packageWeightUsps value for this ItemFulfillmentPackageUsps.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param packageWeightUsps
      */
-    public String getPackageDescrUsps() {
+    public void setPackageWeightUsps(java.lang.Double packageWeightUsps) {
+        this.packageWeightUsps = packageWeightUsps;
+    }
+
+
+    /**
+     * Gets the packageDescrUsps value for this ItemFulfillmentPackageUsps.
+     * 
+     * @return packageDescrUsps
+     */
+    public java.lang.String getPackageDescrUsps() {
         return packageDescrUsps;
     }
 
-    /**
-     * 设置packageDescrUsps属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setPackageDescrUsps(String value) {
-        this.packageDescrUsps = value;
-    }
 
     /**
-     * 获取packageTrackingNumberUsps属性的值。
+     * Sets the packageDescrUsps value for this ItemFulfillmentPackageUsps.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param packageDescrUsps
      */
-    public String getPackageTrackingNumberUsps() {
+    public void setPackageDescrUsps(java.lang.String packageDescrUsps) {
+        this.packageDescrUsps = packageDescrUsps;
+    }
+
+
+    /**
+     * Gets the packageTrackingNumberUsps value for this ItemFulfillmentPackageUsps.
+     * 
+     * @return packageTrackingNumberUsps
+     */
+    public java.lang.String getPackageTrackingNumberUsps() {
         return packageTrackingNumberUsps;
     }
 
-    /**
-     * 设置packageTrackingNumberUsps属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setPackageTrackingNumberUsps(String value) {
-        this.packageTrackingNumberUsps = value;
-    }
 
     /**
-     * 获取packagingUsps属性的值。
+     * Sets the packageTrackingNumberUsps value for this ItemFulfillmentPackageUsps.
      * 
-     * @return
-     *     possible object is
-     *     {@link ItemFulfillmentPackageUspsPackagingUsps }
-     *     
+     * @param packageTrackingNumberUsps
      */
-    public ItemFulfillmentPackageUspsPackagingUsps getPackagingUsps() {
+    public void setPackageTrackingNumberUsps(java.lang.String packageTrackingNumberUsps) {
+        this.packageTrackingNumberUsps = packageTrackingNumberUsps;
+    }
+
+
+    /**
+     * Gets the packagingUsps value for this ItemFulfillmentPackageUsps.
+     * 
+     * @return packagingUsps
+     */
+    public com.netsuite.webservices.transactions.sales_2018_2.types.ItemFulfillmentPackageUspsPackagingUsps getPackagingUsps() {
         return packagingUsps;
     }
 
-    /**
-     * 设置packagingUsps属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link ItemFulfillmentPackageUspsPackagingUsps }
-     *     
-     */
-    public void setPackagingUsps(ItemFulfillmentPackageUspsPackagingUsps value) {
-        this.packagingUsps = value;
-    }
 
     /**
-     * 获取useInsuredValueUsps属性的值。
+     * Sets the packagingUsps value for this ItemFulfillmentPackageUsps.
      * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
+     * @param packagingUsps
      */
-    public Boolean isUseInsuredValueUsps() {
+    public void setPackagingUsps(com.netsuite.webservices.transactions.sales_2018_2.types.ItemFulfillmentPackageUspsPackagingUsps packagingUsps) {
+        this.packagingUsps = packagingUsps;
+    }
+
+
+    /**
+     * Gets the useInsuredValueUsps value for this ItemFulfillmentPackageUsps.
+     * 
+     * @return useInsuredValueUsps
+     */
+    public java.lang.Boolean getUseInsuredValueUsps() {
         return useInsuredValueUsps;
     }
 
-    /**
-     * 设置useInsuredValueUsps属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
-     */
-    public void setUseInsuredValueUsps(Boolean value) {
-        this.useInsuredValueUsps = value;
-    }
 
     /**
-     * 获取insuredValueUsps属性的值。
+     * Sets the useInsuredValueUsps value for this ItemFulfillmentPackageUsps.
      * 
-     * @return
-     *     possible object is
-     *     {@link Double }
-     *     
+     * @param useInsuredValueUsps
      */
-    public Double getInsuredValueUsps() {
+    public void setUseInsuredValueUsps(java.lang.Boolean useInsuredValueUsps) {
+        this.useInsuredValueUsps = useInsuredValueUsps;
+    }
+
+
+    /**
+     * Gets the insuredValueUsps value for this ItemFulfillmentPackageUsps.
+     * 
+     * @return insuredValueUsps
+     */
+    public java.lang.Double getInsuredValueUsps() {
         return insuredValueUsps;
     }
 
-    /**
-     * 设置insuredValueUsps属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Double }
-     *     
-     */
-    public void setInsuredValueUsps(Double value) {
-        this.insuredValueUsps = value;
-    }
 
     /**
-     * 获取reference1Usps属性的值。
+     * Sets the insuredValueUsps value for this ItemFulfillmentPackageUsps.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param insuredValueUsps
      */
-    public String getReference1Usps() {
+    public void setInsuredValueUsps(java.lang.Double insuredValueUsps) {
+        this.insuredValueUsps = insuredValueUsps;
+    }
+
+
+    /**
+     * Gets the reference1Usps value for this ItemFulfillmentPackageUsps.
+     * 
+     * @return reference1Usps
+     */
+    public java.lang.String getReference1Usps() {
         return reference1Usps;
     }
 
-    /**
-     * 设置reference1Usps属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setReference1Usps(String value) {
-        this.reference1Usps = value;
-    }
 
     /**
-     * 获取reference2Usps属性的值。
+     * Sets the reference1Usps value for this ItemFulfillmentPackageUsps.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param reference1Usps
      */
-    public String getReference2Usps() {
+    public void setReference1Usps(java.lang.String reference1Usps) {
+        this.reference1Usps = reference1Usps;
+    }
+
+
+    /**
+     * Gets the reference2Usps value for this ItemFulfillmentPackageUsps.
+     * 
+     * @return reference2Usps
+     */
+    public java.lang.String getReference2Usps() {
         return reference2Usps;
     }
 
-    /**
-     * 设置reference2Usps属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setReference2Usps(String value) {
-        this.reference2Usps = value;
-    }
 
     /**
-     * 获取packageLengthUsps属性的值。
+     * Sets the reference2Usps value for this ItemFulfillmentPackageUsps.
      * 
-     * @return
-     *     possible object is
-     *     {@link Long }
-     *     
+     * @param reference2Usps
      */
-    public Long getPackageLengthUsps() {
+    public void setReference2Usps(java.lang.String reference2Usps) {
+        this.reference2Usps = reference2Usps;
+    }
+
+
+    /**
+     * Gets the packageLengthUsps value for this ItemFulfillmentPackageUsps.
+     * 
+     * @return packageLengthUsps
+     */
+    public java.lang.Long getPackageLengthUsps() {
         return packageLengthUsps;
     }
 
-    /**
-     * 设置packageLengthUsps属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Long }
-     *     
-     */
-    public void setPackageLengthUsps(Long value) {
-        this.packageLengthUsps = value;
-    }
 
     /**
-     * 获取packageWidthUsps属性的值。
+     * Sets the packageLengthUsps value for this ItemFulfillmentPackageUsps.
      * 
-     * @return
-     *     possible object is
-     *     {@link Long }
-     *     
+     * @param packageLengthUsps
      */
-    public Long getPackageWidthUsps() {
+    public void setPackageLengthUsps(java.lang.Long packageLengthUsps) {
+        this.packageLengthUsps = packageLengthUsps;
+    }
+
+
+    /**
+     * Gets the packageWidthUsps value for this ItemFulfillmentPackageUsps.
+     * 
+     * @return packageWidthUsps
+     */
+    public java.lang.Long getPackageWidthUsps() {
         return packageWidthUsps;
     }
 
-    /**
-     * 设置packageWidthUsps属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Long }
-     *     
-     */
-    public void setPackageWidthUsps(Long value) {
-        this.packageWidthUsps = value;
-    }
 
     /**
-     * 获取packageHeightUsps属性的值。
+     * Sets the packageWidthUsps value for this ItemFulfillmentPackageUsps.
      * 
-     * @return
-     *     possible object is
-     *     {@link Long }
-     *     
+     * @param packageWidthUsps
      */
-    public Long getPackageHeightUsps() {
+    public void setPackageWidthUsps(java.lang.Long packageWidthUsps) {
+        this.packageWidthUsps = packageWidthUsps;
+    }
+
+
+    /**
+     * Gets the packageHeightUsps value for this ItemFulfillmentPackageUsps.
+     * 
+     * @return packageHeightUsps
+     */
+    public java.lang.Long getPackageHeightUsps() {
         return packageHeightUsps;
     }
 
-    /**
-     * 设置packageHeightUsps属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Long }
-     *     
-     */
-    public void setPackageHeightUsps(Long value) {
-        this.packageHeightUsps = value;
-    }
 
     /**
-     * 获取deliveryConfUsps属性的值。
+     * Sets the packageHeightUsps value for this ItemFulfillmentPackageUsps.
      * 
-     * @return
-     *     possible object is
-     *     {@link ItemFulfillmentPackageUspsDeliveryConfUsps }
-     *     
+     * @param packageHeightUsps
      */
-    public ItemFulfillmentPackageUspsDeliveryConfUsps getDeliveryConfUsps() {
+    public void setPackageHeightUsps(java.lang.Long packageHeightUsps) {
+        this.packageHeightUsps = packageHeightUsps;
+    }
+
+
+    /**
+     * Gets the deliveryConfUsps value for this ItemFulfillmentPackageUsps.
+     * 
+     * @return deliveryConfUsps
+     */
+    public com.netsuite.webservices.transactions.sales_2018_2.types.ItemFulfillmentPackageUspsDeliveryConfUsps getDeliveryConfUsps() {
         return deliveryConfUsps;
     }
 
+
     /**
-     * 设置deliveryConfUsps属性的值。
+     * Sets the deliveryConfUsps value for this ItemFulfillmentPackageUsps.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link ItemFulfillmentPackageUspsDeliveryConfUsps }
-     *     
+     * @param deliveryConfUsps
      */
-    public void setDeliveryConfUsps(ItemFulfillmentPackageUspsDeliveryConfUsps value) {
-        this.deliveryConfUsps = value;
+    public void setDeliveryConfUsps(com.netsuite.webservices.transactions.sales_2018_2.types.ItemFulfillmentPackageUspsDeliveryConfUsps deliveryConfUsps) {
+        this.deliveryConfUsps = deliveryConfUsps;
+    }
+
+    private java.lang.Object __equalsCalc = null;
+    public synchronized boolean equals(java.lang.Object obj) {
+        if (!(obj instanceof ItemFulfillmentPackageUsps)) return false;
+        ItemFulfillmentPackageUsps other = (ItemFulfillmentPackageUsps) obj;
+        if (obj == null) return false;
+        if (this == obj) return true;
+        if (__equalsCalc != null) {
+            return (__equalsCalc == obj);
+        }
+        __equalsCalc = obj;
+        boolean _equals;
+        _equals = true && 
+            ((this.packageWeightUsps==null && other.getPackageWeightUsps()==null) || 
+             (this.packageWeightUsps!=null &&
+              this.packageWeightUsps.equals(other.getPackageWeightUsps()))) &&
+            ((this.packageDescrUsps==null && other.getPackageDescrUsps()==null) || 
+             (this.packageDescrUsps!=null &&
+              this.packageDescrUsps.equals(other.getPackageDescrUsps()))) &&
+            ((this.packageTrackingNumberUsps==null && other.getPackageTrackingNumberUsps()==null) || 
+             (this.packageTrackingNumberUsps!=null &&
+              this.packageTrackingNumberUsps.equals(other.getPackageTrackingNumberUsps()))) &&
+            ((this.packagingUsps==null && other.getPackagingUsps()==null) || 
+             (this.packagingUsps!=null &&
+              this.packagingUsps.equals(other.getPackagingUsps()))) &&
+            ((this.useInsuredValueUsps==null && other.getUseInsuredValueUsps()==null) || 
+             (this.useInsuredValueUsps!=null &&
+              this.useInsuredValueUsps.equals(other.getUseInsuredValueUsps()))) &&
+            ((this.insuredValueUsps==null && other.getInsuredValueUsps()==null) || 
+             (this.insuredValueUsps!=null &&
+              this.insuredValueUsps.equals(other.getInsuredValueUsps()))) &&
+            ((this.reference1Usps==null && other.getReference1Usps()==null) || 
+             (this.reference1Usps!=null &&
+              this.reference1Usps.equals(other.getReference1Usps()))) &&
+            ((this.reference2Usps==null && other.getReference2Usps()==null) || 
+             (this.reference2Usps!=null &&
+              this.reference2Usps.equals(other.getReference2Usps()))) &&
+            ((this.packageLengthUsps==null && other.getPackageLengthUsps()==null) || 
+             (this.packageLengthUsps!=null &&
+              this.packageLengthUsps.equals(other.getPackageLengthUsps()))) &&
+            ((this.packageWidthUsps==null && other.getPackageWidthUsps()==null) || 
+             (this.packageWidthUsps!=null &&
+              this.packageWidthUsps.equals(other.getPackageWidthUsps()))) &&
+            ((this.packageHeightUsps==null && other.getPackageHeightUsps()==null) || 
+             (this.packageHeightUsps!=null &&
+              this.packageHeightUsps.equals(other.getPackageHeightUsps()))) &&
+            ((this.deliveryConfUsps==null && other.getDeliveryConfUsps()==null) || 
+             (this.deliveryConfUsps!=null &&
+              this.deliveryConfUsps.equals(other.getDeliveryConfUsps())));
+        __equalsCalc = null;
+        return _equals;
+    }
+
+    private boolean __hashCodeCalc = false;
+    public synchronized int hashCode() {
+        if (__hashCodeCalc) {
+            return 0;
+        }
+        __hashCodeCalc = true;
+        int _hashCode = 1;
+        if (getPackageWeightUsps() != null) {
+            _hashCode += getPackageWeightUsps().hashCode();
+        }
+        if (getPackageDescrUsps() != null) {
+            _hashCode += getPackageDescrUsps().hashCode();
+        }
+        if (getPackageTrackingNumberUsps() != null) {
+            _hashCode += getPackageTrackingNumberUsps().hashCode();
+        }
+        if (getPackagingUsps() != null) {
+            _hashCode += getPackagingUsps().hashCode();
+        }
+        if (getUseInsuredValueUsps() != null) {
+            _hashCode += getUseInsuredValueUsps().hashCode();
+        }
+        if (getInsuredValueUsps() != null) {
+            _hashCode += getInsuredValueUsps().hashCode();
+        }
+        if (getReference1Usps() != null) {
+            _hashCode += getReference1Usps().hashCode();
+        }
+        if (getReference2Usps() != null) {
+            _hashCode += getReference2Usps().hashCode();
+        }
+        if (getPackageLengthUsps() != null) {
+            _hashCode += getPackageLengthUsps().hashCode();
+        }
+        if (getPackageWidthUsps() != null) {
+            _hashCode += getPackageWidthUsps().hashCode();
+        }
+        if (getPackageHeightUsps() != null) {
+            _hashCode += getPackageHeightUsps().hashCode();
+        }
+        if (getDeliveryConfUsps() != null) {
+            _hashCode += getDeliveryConfUsps().hashCode();
+        }
+        __hashCodeCalc = false;
+        return _hashCode;
+    }
+
+    // Type metadata
+    private static org.apache.axis.description.TypeDesc typeDesc =
+        new org.apache.axis.description.TypeDesc(ItemFulfillmentPackageUsps.class, true);
+
+    static {
+        typeDesc.setXmlType(new javax.xml.namespace.QName("urn:sales_2018_2.transactions.webservices.netsuite.com", "ItemFulfillmentPackageUsps"));
+        org.apache.axis.description.ElementDesc elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("packageWeightUsps");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:sales_2018_2.transactions.webservices.netsuite.com", "packageWeightUsps"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "double"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("packageDescrUsps");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:sales_2018_2.transactions.webservices.netsuite.com", "packageDescrUsps"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("packageTrackingNumberUsps");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:sales_2018_2.transactions.webservices.netsuite.com", "packageTrackingNumberUsps"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("packagingUsps");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:sales_2018_2.transactions.webservices.netsuite.com", "packagingUsps"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:types.sales_2018_2.transactions.webservices.netsuite.com", "ItemFulfillmentPackageUspsPackagingUsps"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("useInsuredValueUsps");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:sales_2018_2.transactions.webservices.netsuite.com", "useInsuredValueUsps"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("insuredValueUsps");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:sales_2018_2.transactions.webservices.netsuite.com", "insuredValueUsps"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "double"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("reference1Usps");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:sales_2018_2.transactions.webservices.netsuite.com", "reference1Usps"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("reference2Usps");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:sales_2018_2.transactions.webservices.netsuite.com", "reference2Usps"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("packageLengthUsps");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:sales_2018_2.transactions.webservices.netsuite.com", "packageLengthUsps"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "long"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("packageWidthUsps");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:sales_2018_2.transactions.webservices.netsuite.com", "packageWidthUsps"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "long"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("packageHeightUsps");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:sales_2018_2.transactions.webservices.netsuite.com", "packageHeightUsps"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "long"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("deliveryConfUsps");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:sales_2018_2.transactions.webservices.netsuite.com", "deliveryConfUsps"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:types.sales_2018_2.transactions.webservices.netsuite.com", "ItemFulfillmentPackageUspsDeliveryConfUsps"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+    }
+
+    /**
+     * Return type metadata object
+     */
+    public static org.apache.axis.description.TypeDesc getTypeDesc() {
+        return typeDesc;
+    }
+
+    /**
+     * Get Custom Serializer
+     */
+    public static org.apache.axis.encoding.Serializer getSerializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanSerializer(
+            _javaType, _xmlType, typeDesc);
+    }
+
+    /**
+     * Get Custom Deserializer
+     */
+    public static org.apache.axis.encoding.Deserializer getDeserializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanDeserializer(
+            _javaType, _xmlType, typeDesc);
     }
 
 }

@@ -1,126 +1,120 @@
+/**
+ * CampaignResponse.java
+ *
+ * This file was auto-generated from WSDL
+ * by the Apache Axis 1.4 Jul 28, 2010 (04:07:04 PDT) WSDL2Java emitter.
+ */
 
 package com.netsuite.webservices.lists.marketing_2018_2.types;
 
-import javax.xml.bind.annotation.XmlEnum;
-import javax.xml.bind.annotation.XmlEnumValue;
-import javax.xml.bind.annotation.XmlType;
+public class CampaignResponse implements java.io.Serializable {
+    private java.lang.String _value_;
+    private static java.util.HashMap _table_ = new java.util.HashMap();
 
-
-/**
- * <p>CampaignResponse的 Java 类。
- * 
- * <p>以下模式片段指定包含在此类中的预期内容。
- * <p>
- * <pre>
- * &lt;simpleType name="CampaignResponse">
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     &lt;enumeration value="_clickedThrough"/>
- *     &lt;enumeration value="_failedDeliveryFailure"/>
- *     &lt;enumeration value="_failedInvalidAddress"/>
- *     &lt;enumeration value="_failedOther"/>
- *     &lt;enumeration value="_failedSpam"/>
- *     &lt;enumeration value="_failedTemplateError"/>
- *     &lt;enumeration value="_failedUnexpectedError"/>
- *     &lt;enumeration value="_invalidSenderAddress"/>
- *     &lt;enumeration value="_mailboxDisabled"/>
- *     &lt;enumeration value="_mailboxIsFull"/>
- *     &lt;enumeration value="_mailboxNotAcceptingMessages"/>
- *     &lt;enumeration value="_mailProtocolIssues"/>
- *     &lt;enumeration value="_mediaError"/>
- *     &lt;enumeration value="_messageExceedsSizeLengthLimits"/>
- *     &lt;enumeration value="_networkServerIssues"/>
- *     &lt;enumeration value="_opened"/>
- *     &lt;enumeration value="_purchased"/>
- *     &lt;enumeration value="_queued"/>
- *     &lt;enumeration value="_received"/>
- *     &lt;enumeration value="_responded"/>
- *     &lt;enumeration value="_securityIssues"/>
- *     &lt;enumeration value="_sent"/>
- *     &lt;enumeration value="_skippedDueToPreviousHardBounce"/>
- *     &lt;enumeration value="_subscribed"/>
- *     &lt;enumeration value="_tooManyRecipients"/>
- *     &lt;enumeration value="_unsubscribed"/>
- *     &lt;enumeration value="_unsubscribedByFeedbackLoop"/>
- *   &lt;/restriction>
- * &lt;/simpleType>
- * </pre>
- * 
- */
-@XmlType(name = "CampaignResponse", namespace = "urn:types.marketing_2018_2.lists.webservices.netsuite.com")
-@XmlEnum
-public enum CampaignResponse {
-
-    @XmlEnumValue("_clickedThrough")
-    CLICKED_THROUGH("_clickedThrough"),
-    @XmlEnumValue("_failedDeliveryFailure")
-    FAILED_DELIVERY_FAILURE("_failedDeliveryFailure"),
-    @XmlEnumValue("_failedInvalidAddress")
-    FAILED_INVALID_ADDRESS("_failedInvalidAddress"),
-    @XmlEnumValue("_failedOther")
-    FAILED_OTHER("_failedOther"),
-    @XmlEnumValue("_failedSpam")
-    FAILED_SPAM("_failedSpam"),
-    @XmlEnumValue("_failedTemplateError")
-    FAILED_TEMPLATE_ERROR("_failedTemplateError"),
-    @XmlEnumValue("_failedUnexpectedError")
-    FAILED_UNEXPECTED_ERROR("_failedUnexpectedError"),
-    @XmlEnumValue("_invalidSenderAddress")
-    INVALID_SENDER_ADDRESS("_invalidSenderAddress"),
-    @XmlEnumValue("_mailboxDisabled")
-    MAILBOX_DISABLED("_mailboxDisabled"),
-    @XmlEnumValue("_mailboxIsFull")
-    MAILBOX_IS_FULL("_mailboxIsFull"),
-    @XmlEnumValue("_mailboxNotAcceptingMessages")
-    MAILBOX_NOT_ACCEPTING_MESSAGES("_mailboxNotAcceptingMessages"),
-    @XmlEnumValue("_mailProtocolIssues")
-    MAIL_PROTOCOL_ISSUES("_mailProtocolIssues"),
-    @XmlEnumValue("_mediaError")
-    MEDIA_ERROR("_mediaError"),
-    @XmlEnumValue("_messageExceedsSizeLengthLimits")
-    MESSAGE_EXCEEDS_SIZE_LENGTH_LIMITS("_messageExceedsSizeLengthLimits"),
-    @XmlEnumValue("_networkServerIssues")
-    NETWORK_SERVER_ISSUES("_networkServerIssues"),
-    @XmlEnumValue("_opened")
-    OPENED("_opened"),
-    @XmlEnumValue("_purchased")
-    PURCHASED("_purchased"),
-    @XmlEnumValue("_queued")
-    QUEUED("_queued"),
-    @XmlEnumValue("_received")
-    RECEIVED("_received"),
-    @XmlEnumValue("_responded")
-    RESPONDED("_responded"),
-    @XmlEnumValue("_securityIssues")
-    SECURITY_ISSUES("_securityIssues"),
-    @XmlEnumValue("_sent")
-    SENT("_sent"),
-    @XmlEnumValue("_skippedDueToPreviousHardBounce")
-    SKIPPED_DUE_TO_PREVIOUS_HARD_BOUNCE("_skippedDueToPreviousHardBounce"),
-    @XmlEnumValue("_subscribed")
-    SUBSCRIBED("_subscribed"),
-    @XmlEnumValue("_tooManyRecipients")
-    TOO_MANY_RECIPIENTS("_tooManyRecipients"),
-    @XmlEnumValue("_unsubscribed")
-    UNSUBSCRIBED("_unsubscribed"),
-    @XmlEnumValue("_unsubscribedByFeedbackLoop")
-    UNSUBSCRIBED_BY_FEEDBACK_LOOP("_unsubscribedByFeedbackLoop");
-    private final String value;
-
-    CampaignResponse(String v) {
-        value = v;
+    // Constructor
+    protected CampaignResponse(java.lang.String value) {
+        _value_ = value;
+        _table_.put(_value_,this);
     }
 
-    public String value() {
-        return value;
+    public static final java.lang.String __clickedThrough = "_clickedThrough";
+    public static final java.lang.String __failedDeliveryFailure = "_failedDeliveryFailure";
+    public static final java.lang.String __failedInvalidAddress = "_failedInvalidAddress";
+    public static final java.lang.String __failedOther = "_failedOther";
+    public static final java.lang.String __failedSpam = "_failedSpam";
+    public static final java.lang.String __failedTemplateError = "_failedTemplateError";
+    public static final java.lang.String __failedUnexpectedError = "_failedUnexpectedError";
+    public static final java.lang.String __invalidSenderAddress = "_invalidSenderAddress";
+    public static final java.lang.String __mailboxDisabled = "_mailboxDisabled";
+    public static final java.lang.String __mailboxIsFull = "_mailboxIsFull";
+    public static final java.lang.String __mailboxNotAcceptingMessages = "_mailboxNotAcceptingMessages";
+    public static final java.lang.String __mailProtocolIssues = "_mailProtocolIssues";
+    public static final java.lang.String __mediaError = "_mediaError";
+    public static final java.lang.String __messageExceedsSizeLengthLimits = "_messageExceedsSizeLengthLimits";
+    public static final java.lang.String __networkServerIssues = "_networkServerIssues";
+    public static final java.lang.String __opened = "_opened";
+    public static final java.lang.String __purchased = "_purchased";
+    public static final java.lang.String __queued = "_queued";
+    public static final java.lang.String __received = "_received";
+    public static final java.lang.String __responded = "_responded";
+    public static final java.lang.String __securityIssues = "_securityIssues";
+    public static final java.lang.String __sent = "_sent";
+    public static final java.lang.String __skippedDueToPreviousHardBounce = "_skippedDueToPreviousHardBounce";
+    public static final java.lang.String __subscribed = "_subscribed";
+    public static final java.lang.String __tooManyRecipients = "_tooManyRecipients";
+    public static final java.lang.String __unsubscribed = "_unsubscribed";
+    public static final java.lang.String __unsubscribedByFeedbackLoop = "_unsubscribedByFeedbackLoop";
+    public static final CampaignResponse _clickedThrough = new CampaignResponse(__clickedThrough);
+    public static final CampaignResponse _failedDeliveryFailure = new CampaignResponse(__failedDeliveryFailure);
+    public static final CampaignResponse _failedInvalidAddress = new CampaignResponse(__failedInvalidAddress);
+    public static final CampaignResponse _failedOther = new CampaignResponse(__failedOther);
+    public static final CampaignResponse _failedSpam = new CampaignResponse(__failedSpam);
+    public static final CampaignResponse _failedTemplateError = new CampaignResponse(__failedTemplateError);
+    public static final CampaignResponse _failedUnexpectedError = new CampaignResponse(__failedUnexpectedError);
+    public static final CampaignResponse _invalidSenderAddress = new CampaignResponse(__invalidSenderAddress);
+    public static final CampaignResponse _mailboxDisabled = new CampaignResponse(__mailboxDisabled);
+    public static final CampaignResponse _mailboxIsFull = new CampaignResponse(__mailboxIsFull);
+    public static final CampaignResponse _mailboxNotAcceptingMessages = new CampaignResponse(__mailboxNotAcceptingMessages);
+    public static final CampaignResponse _mailProtocolIssues = new CampaignResponse(__mailProtocolIssues);
+    public static final CampaignResponse _mediaError = new CampaignResponse(__mediaError);
+    public static final CampaignResponse _messageExceedsSizeLengthLimits = new CampaignResponse(__messageExceedsSizeLengthLimits);
+    public static final CampaignResponse _networkServerIssues = new CampaignResponse(__networkServerIssues);
+    public static final CampaignResponse _opened = new CampaignResponse(__opened);
+    public static final CampaignResponse _purchased = new CampaignResponse(__purchased);
+    public static final CampaignResponse _queued = new CampaignResponse(__queued);
+    public static final CampaignResponse _received = new CampaignResponse(__received);
+    public static final CampaignResponse _responded = new CampaignResponse(__responded);
+    public static final CampaignResponse _securityIssues = new CampaignResponse(__securityIssues);
+    public static final CampaignResponse _sent = new CampaignResponse(__sent);
+    public static final CampaignResponse _skippedDueToPreviousHardBounce = new CampaignResponse(__skippedDueToPreviousHardBounce);
+    public static final CampaignResponse _subscribed = new CampaignResponse(__subscribed);
+    public static final CampaignResponse _tooManyRecipients = new CampaignResponse(__tooManyRecipients);
+    public static final CampaignResponse _unsubscribed = new CampaignResponse(__unsubscribed);
+    public static final CampaignResponse _unsubscribedByFeedbackLoop = new CampaignResponse(__unsubscribedByFeedbackLoop);
+    public java.lang.String getValue() { return _value_;}
+    public static CampaignResponse fromValue(java.lang.String value)
+          throws java.lang.IllegalArgumentException {
+        CampaignResponse enumeration = (CampaignResponse)
+            _table_.get(value);
+        if (enumeration==null) throw new java.lang.IllegalArgumentException();
+        return enumeration;
     }
+    public static CampaignResponse fromString(java.lang.String value)
+          throws java.lang.IllegalArgumentException {
+        return fromValue(value);
+    }
+    public boolean equals(java.lang.Object obj) {return (obj == this);}
+    public int hashCode() { return toString().hashCode();}
+    public java.lang.String toString() { return _value_;}
+    public java.lang.Object readResolve() throws java.io.ObjectStreamException { return fromValue(_value_);}
+    public static org.apache.axis.encoding.Serializer getSerializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new org.apache.axis.encoding.ser.EnumSerializer(
+            _javaType, _xmlType);
+    }
+    public static org.apache.axis.encoding.Deserializer getDeserializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new org.apache.axis.encoding.ser.EnumDeserializer(
+            _javaType, _xmlType);
+    }
+    // Type metadata
+    private static org.apache.axis.description.TypeDesc typeDesc =
+        new org.apache.axis.description.TypeDesc(CampaignResponse.class);
 
-    public static CampaignResponse fromValue(String v) {
-        for (CampaignResponse c: CampaignResponse.values()) {
-            if (c.value.equals(v)) {
-                return c;
-            }
-        }
-        throw new IllegalArgumentException(v);
+    static {
+        typeDesc.setXmlType(new javax.xml.namespace.QName("urn:types.marketing_2018_2.lists.webservices.netsuite.com", "CampaignResponse"));
+    }
+    /**
+     * Return type metadata object
+     */
+    public static org.apache.axis.description.TypeDesc getTypeDesc() {
+        return typeDesc;
     }
 
 }

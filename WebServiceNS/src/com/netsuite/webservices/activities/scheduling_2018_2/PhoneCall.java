@@ -1,808 +1,1145 @@
+/**
+ * PhoneCall.java
+ *
+ * This file was auto-generated from WSDL
+ * by the Apache Axis 1.4 Jul 28, 2010 (04:07:04 PDT) WSDL2Java emitter.
+ */
 
 package com.netsuite.webservices.activities.scheduling_2018_2;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlAttribute;
-import javax.xml.bind.annotation.XmlSchemaType;
-import javax.xml.bind.annotation.XmlType;
-import javax.xml.datatype.XMLGregorianCalendar;
-import com.netsuite.webservices.activities.scheduling_2018_2.types.PhoneCallPriority;
-import com.netsuite.webservices.activities.scheduling_2018_2.types.PhoneCallReminderType;
-import com.netsuite.webservices.activities.scheduling_2018_2.types.PhoneCallStatus;
-import com.netsuite.webservices.platform.core_2018_2.CustomFieldList;
-import com.netsuite.webservices.platform.core_2018_2.Record;
-import com.netsuite.webservices.platform.core_2018_2.RecordRef;
+public class PhoneCall  extends com.netsuite.webservices.platform.core_2018_2.Record  implements java.io.Serializable {
+    private java.lang.String message;
 
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef company;
 
-/**
- * <p>PhoneCall complex type的 Java 类。
- * 
- * <p>以下模式片段指定包含在此类中的预期内容。
- * 
- * <pre>
- * &lt;complexType name="PhoneCall">
- *   &lt;complexContent>
- *     &lt;extension base="{urn:core_2018_2.platform.webservices.netsuite.com}Record">
- *       &lt;sequence>
- *         &lt;element name="message" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="company" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="contact" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="supportCase" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="transaction" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="milestone" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="customForm" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="title" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="owner" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="assigned" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="sendEmail" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         &lt;element name="startDate" type="{http://www.w3.org/2001/XMLSchema}dateTime" minOccurs="0"/>
- *         &lt;element name="endDate" type="{http://www.w3.org/2001/XMLSchema}dateTime" minOccurs="0"/>
- *         &lt;element name="timedEvent" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         &lt;element name="completedDate" type="{http://www.w3.org/2001/XMLSchema}dateTime" minOccurs="0"/>
- *         &lt;element name="phone" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="status" type="{urn:types.scheduling_2018_2.activities.webservices.netsuite.com}PhoneCallStatus" minOccurs="0"/>
- *         &lt;element name="priority" type="{urn:types.scheduling_2018_2.activities.webservices.netsuite.com}PhoneCallPriority" minOccurs="0"/>
- *         &lt;element name="accessLevel" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         &lt;element name="reminderType" type="{urn:types.scheduling_2018_2.activities.webservices.netsuite.com}PhoneCallReminderType" minOccurs="0"/>
- *         &lt;element name="reminderMinutes" type="{urn:types.scheduling_2018_2.activities.webservices.netsuite.com}PhoneCallReminderMinutes" minOccurs="0"/>
- *         &lt;element name="createdDate" type="{http://www.w3.org/2001/XMLSchema}dateTime" minOccurs="0"/>
- *         &lt;element name="lastModifiedDate" type="{http://www.w3.org/2001/XMLSchema}dateTime" minOccurs="0"/>
- *         &lt;element name="contactList" type="{urn:scheduling_2018_2.activities.webservices.netsuite.com}PhoneCallContactList" minOccurs="0"/>
- *         &lt;element name="timeItemList" type="{urn:scheduling_2018_2.activities.webservices.netsuite.com}PhoneCallTimeItemList" minOccurs="0"/>
- *         &lt;element name="customFieldList" type="{urn:core_2018_2.platform.webservices.netsuite.com}CustomFieldList" minOccurs="0"/>
- *       &lt;/sequence>
- *       &lt;attribute name="internalId" type="{http://www.w3.org/2001/XMLSchema}string" />
- *       &lt;attribute name="externalId" type="{http://www.w3.org/2001/XMLSchema}string" />
- *     &lt;/extension>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
- */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "PhoneCall", propOrder = {
-    "message",
-    "company",
-    "contact",
-    "supportCase",
-    "transaction",
-    "milestone",
-    "customForm",
-    "title",
-    "owner",
-    "assigned",
-    "sendEmail",
-    "startDate",
-    "endDate",
-    "timedEvent",
-    "completedDate",
-    "phone",
-    "status",
-    "priority",
-    "accessLevel",
-    "reminderType",
-    "reminderMinutes",
-    "createdDate",
-    "lastModifiedDate",
-    "contactList",
-    "timeItemList",
-    "customFieldList"
-})
-public class PhoneCall
-    extends Record
-{
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef contact;
 
-    protected String message;
-    protected RecordRef company;
-    protected RecordRef contact;
-    protected RecordRef supportCase;
-    protected RecordRef transaction;
-    protected RecordRef milestone;
-    protected RecordRef customForm;
-    protected String title;
-    protected RecordRef owner;
-    protected RecordRef assigned;
-    protected Boolean sendEmail;
-    @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar startDate;
-    @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar endDate;
-    protected Boolean timedEvent;
-    @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar completedDate;
-    protected String phone;
-    @XmlSchemaType(name = "string")
-    protected PhoneCallStatus status;
-    @XmlSchemaType(name = "string")
-    protected PhoneCallPriority priority;
-    protected Boolean accessLevel;
-    @XmlSchemaType(name = "string")
-    protected PhoneCallReminderType reminderType;
-    protected String reminderMinutes;
-    @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar createdDate;
-    @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar lastModifiedDate;
-    protected PhoneCallContactList contactList;
-    protected PhoneCallTimeItemList timeItemList;
-    protected CustomFieldList customFieldList;
-    @XmlAttribute(name = "internalId")
-    protected String internalId;
-    @XmlAttribute(name = "externalId")
-    protected String externalId;
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef supportCase;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef transaction;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef milestone;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef customForm;
+
+    private java.lang.String title;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef owner;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef assigned;
+
+    private java.lang.Boolean sendEmail;
+
+    private java.util.Calendar startDate;
+
+    private java.util.Calendar endDate;
+
+    private java.lang.Boolean timedEvent;
+
+    private java.util.Calendar completedDate;
+
+    private java.lang.String phone;
+
+    private com.netsuite.webservices.activities.scheduling_2018_2.types.PhoneCallStatus status;
+
+    private com.netsuite.webservices.activities.scheduling_2018_2.types.PhoneCallPriority priority;
+
+    private java.lang.Boolean accessLevel;
+
+    private com.netsuite.webservices.activities.scheduling_2018_2.types.PhoneCallReminderType reminderType;
+
+    private com.netsuite.webservices.activities.scheduling_2018_2.types.PhoneCallReminderMinutes reminderMinutes;
+
+    private java.util.Calendar createdDate;
+
+    private java.util.Calendar lastModifiedDate;
+
+    private com.netsuite.webservices.activities.scheduling_2018_2.PhoneCallContact[] contactList;
+
+    private com.netsuite.webservices.platform.common_2018_2.TimeItem[] timeItemList;
+
+    private com.netsuite.webservices.platform.core_2018_2.CustomFieldRef[] customFieldList;
+
+    private java.lang.String internalId;  // attribute
+
+    private java.lang.String externalId;  // attribute
+
+    public PhoneCall() {
+    }
+
+    public PhoneCall(
+           java.lang.String[] nullFieldList,
+           java.lang.String internalId,
+           java.lang.String externalId,
+           java.lang.String message,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef company,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef contact,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef supportCase,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef transaction,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef milestone,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef customForm,
+           java.lang.String title,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef owner,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef assigned,
+           java.lang.Boolean sendEmail,
+           java.util.Calendar startDate,
+           java.util.Calendar endDate,
+           java.lang.Boolean timedEvent,
+           java.util.Calendar completedDate,
+           java.lang.String phone,
+           com.netsuite.webservices.activities.scheduling_2018_2.types.PhoneCallStatus status,
+           com.netsuite.webservices.activities.scheduling_2018_2.types.PhoneCallPriority priority,
+           java.lang.Boolean accessLevel,
+           com.netsuite.webservices.activities.scheduling_2018_2.types.PhoneCallReminderType reminderType,
+           com.netsuite.webservices.activities.scheduling_2018_2.types.PhoneCallReminderMinutes reminderMinutes,
+           java.util.Calendar createdDate,
+           java.util.Calendar lastModifiedDate,
+           com.netsuite.webservices.activities.scheduling_2018_2.PhoneCallContact[] contactList,
+           com.netsuite.webservices.platform.common_2018_2.TimeItem[] timeItemList,
+           com.netsuite.webservices.platform.core_2018_2.CustomFieldRef[] customFieldList) {
+        super(
+            nullFieldList);
+        this.internalId = internalId;
+        this.externalId = externalId;
+        this.message = message;
+        this.company = company;
+        this.contact = contact;
+        this.supportCase = supportCase;
+        this.transaction = transaction;
+        this.milestone = milestone;
+        this.customForm = customForm;
+        this.title = title;
+        this.owner = owner;
+        this.assigned = assigned;
+        this.sendEmail = sendEmail;
+        this.startDate = startDate;
+        this.endDate = endDate;
+        this.timedEvent = timedEvent;
+        this.completedDate = completedDate;
+        this.phone = phone;
+        this.status = status;
+        this.priority = priority;
+        this.accessLevel = accessLevel;
+        this.reminderType = reminderType;
+        this.reminderMinutes = reminderMinutes;
+        this.createdDate = createdDate;
+        this.lastModifiedDate = lastModifiedDate;
+        this.contactList = contactList;
+        this.timeItemList = timeItemList;
+        this.customFieldList = customFieldList;
+    }
+
 
     /**
-     * 获取message属性的值。
+     * Gets the message value for this PhoneCall.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @return message
      */
-    public String getMessage() {
+    public java.lang.String getMessage() {
         return message;
     }
 
-    /**
-     * 设置message属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setMessage(String value) {
-        this.message = value;
-    }
 
     /**
-     * 获取company属性的值。
+     * Sets the message value for this PhoneCall.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param message
      */
-    public RecordRef getCompany() {
+    public void setMessage(java.lang.String message) {
+        this.message = message;
+    }
+
+
+    /**
+     * Gets the company value for this PhoneCall.
+     * 
+     * @return company
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getCompany() {
         return company;
     }
 
-    /**
-     * 设置company属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setCompany(RecordRef value) {
-        this.company = value;
-    }
 
     /**
-     * 获取contact属性的值。
+     * Sets the company value for this PhoneCall.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param company
      */
-    public RecordRef getContact() {
+    public void setCompany(com.netsuite.webservices.platform.core_2018_2.RecordRef company) {
+        this.company = company;
+    }
+
+
+    /**
+     * Gets the contact value for this PhoneCall.
+     * 
+     * @return contact
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getContact() {
         return contact;
     }
 
-    /**
-     * 设置contact属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setContact(RecordRef value) {
-        this.contact = value;
-    }
 
     /**
-     * 获取supportCase属性的值。
+     * Sets the contact value for this PhoneCall.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param contact
      */
-    public RecordRef getSupportCase() {
+    public void setContact(com.netsuite.webservices.platform.core_2018_2.RecordRef contact) {
+        this.contact = contact;
+    }
+
+
+    /**
+     * Gets the supportCase value for this PhoneCall.
+     * 
+     * @return supportCase
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getSupportCase() {
         return supportCase;
     }
 
-    /**
-     * 设置supportCase属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setSupportCase(RecordRef value) {
-        this.supportCase = value;
-    }
 
     /**
-     * 获取transaction属性的值。
+     * Sets the supportCase value for this PhoneCall.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param supportCase
      */
-    public RecordRef getTransaction() {
+    public void setSupportCase(com.netsuite.webservices.platform.core_2018_2.RecordRef supportCase) {
+        this.supportCase = supportCase;
+    }
+
+
+    /**
+     * Gets the transaction value for this PhoneCall.
+     * 
+     * @return transaction
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getTransaction() {
         return transaction;
     }
 
-    /**
-     * 设置transaction属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setTransaction(RecordRef value) {
-        this.transaction = value;
-    }
 
     /**
-     * 获取milestone属性的值。
+     * Sets the transaction value for this PhoneCall.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param transaction
      */
-    public RecordRef getMilestone() {
+    public void setTransaction(com.netsuite.webservices.platform.core_2018_2.RecordRef transaction) {
+        this.transaction = transaction;
+    }
+
+
+    /**
+     * Gets the milestone value for this PhoneCall.
+     * 
+     * @return milestone
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getMilestone() {
         return milestone;
     }
 
-    /**
-     * 设置milestone属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setMilestone(RecordRef value) {
-        this.milestone = value;
-    }
 
     /**
-     * 获取customForm属性的值。
+     * Sets the milestone value for this PhoneCall.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param milestone
      */
-    public RecordRef getCustomForm() {
+    public void setMilestone(com.netsuite.webservices.platform.core_2018_2.RecordRef milestone) {
+        this.milestone = milestone;
+    }
+
+
+    /**
+     * Gets the customForm value for this PhoneCall.
+     * 
+     * @return customForm
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getCustomForm() {
         return customForm;
     }
 
-    /**
-     * 设置customForm属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setCustomForm(RecordRef value) {
-        this.customForm = value;
-    }
 
     /**
-     * 获取title属性的值。
+     * Sets the customForm value for this PhoneCall.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param customForm
      */
-    public String getTitle() {
+    public void setCustomForm(com.netsuite.webservices.platform.core_2018_2.RecordRef customForm) {
+        this.customForm = customForm;
+    }
+
+
+    /**
+     * Gets the title value for this PhoneCall.
+     * 
+     * @return title
+     */
+    public java.lang.String getTitle() {
         return title;
     }
 
-    /**
-     * 设置title属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setTitle(String value) {
-        this.title = value;
-    }
 
     /**
-     * 获取owner属性的值。
+     * Sets the title value for this PhoneCall.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param title
      */
-    public RecordRef getOwner() {
+    public void setTitle(java.lang.String title) {
+        this.title = title;
+    }
+
+
+    /**
+     * Gets the owner value for this PhoneCall.
+     * 
+     * @return owner
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getOwner() {
         return owner;
     }
 
-    /**
-     * 设置owner属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setOwner(RecordRef value) {
-        this.owner = value;
-    }
 
     /**
-     * 获取assigned属性的值。
+     * Sets the owner value for this PhoneCall.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param owner
      */
-    public RecordRef getAssigned() {
+    public void setOwner(com.netsuite.webservices.platform.core_2018_2.RecordRef owner) {
+        this.owner = owner;
+    }
+
+
+    /**
+     * Gets the assigned value for this PhoneCall.
+     * 
+     * @return assigned
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getAssigned() {
         return assigned;
     }
 
-    /**
-     * 设置assigned属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setAssigned(RecordRef value) {
-        this.assigned = value;
-    }
 
     /**
-     * 获取sendEmail属性的值。
+     * Sets the assigned value for this PhoneCall.
      * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
+     * @param assigned
      */
-    public Boolean isSendEmail() {
+    public void setAssigned(com.netsuite.webservices.platform.core_2018_2.RecordRef assigned) {
+        this.assigned = assigned;
+    }
+
+
+    /**
+     * Gets the sendEmail value for this PhoneCall.
+     * 
+     * @return sendEmail
+     */
+    public java.lang.Boolean getSendEmail() {
         return sendEmail;
     }
 
-    /**
-     * 设置sendEmail属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
-     */
-    public void setSendEmail(Boolean value) {
-        this.sendEmail = value;
-    }
 
     /**
-     * 获取startDate属性的值。
+     * Sets the sendEmail value for this PhoneCall.
      * 
-     * @return
-     *     possible object is
-     *     {@link XMLGregorianCalendar }
-     *     
+     * @param sendEmail
      */
-    public XMLGregorianCalendar getStartDate() {
+    public void setSendEmail(java.lang.Boolean sendEmail) {
+        this.sendEmail = sendEmail;
+    }
+
+
+    /**
+     * Gets the startDate value for this PhoneCall.
+     * 
+     * @return startDate
+     */
+    public java.util.Calendar getStartDate() {
         return startDate;
     }
 
-    /**
-     * 设置startDate属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link XMLGregorianCalendar }
-     *     
-     */
-    public void setStartDate(XMLGregorianCalendar value) {
-        this.startDate = value;
-    }
 
     /**
-     * 获取endDate属性的值。
+     * Sets the startDate value for this PhoneCall.
      * 
-     * @return
-     *     possible object is
-     *     {@link XMLGregorianCalendar }
-     *     
+     * @param startDate
      */
-    public XMLGregorianCalendar getEndDate() {
+    public void setStartDate(java.util.Calendar startDate) {
+        this.startDate = startDate;
+    }
+
+
+    /**
+     * Gets the endDate value for this PhoneCall.
+     * 
+     * @return endDate
+     */
+    public java.util.Calendar getEndDate() {
         return endDate;
     }
 
-    /**
-     * 设置endDate属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link XMLGregorianCalendar }
-     *     
-     */
-    public void setEndDate(XMLGregorianCalendar value) {
-        this.endDate = value;
-    }
 
     /**
-     * 获取timedEvent属性的值。
+     * Sets the endDate value for this PhoneCall.
      * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
+     * @param endDate
      */
-    public Boolean isTimedEvent() {
+    public void setEndDate(java.util.Calendar endDate) {
+        this.endDate = endDate;
+    }
+
+
+    /**
+     * Gets the timedEvent value for this PhoneCall.
+     * 
+     * @return timedEvent
+     */
+    public java.lang.Boolean getTimedEvent() {
         return timedEvent;
     }
 
-    /**
-     * 设置timedEvent属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
-     */
-    public void setTimedEvent(Boolean value) {
-        this.timedEvent = value;
-    }
 
     /**
-     * 获取completedDate属性的值。
+     * Sets the timedEvent value for this PhoneCall.
      * 
-     * @return
-     *     possible object is
-     *     {@link XMLGregorianCalendar }
-     *     
+     * @param timedEvent
      */
-    public XMLGregorianCalendar getCompletedDate() {
+    public void setTimedEvent(java.lang.Boolean timedEvent) {
+        this.timedEvent = timedEvent;
+    }
+
+
+    /**
+     * Gets the completedDate value for this PhoneCall.
+     * 
+     * @return completedDate
+     */
+    public java.util.Calendar getCompletedDate() {
         return completedDate;
     }
 
-    /**
-     * 设置completedDate属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link XMLGregorianCalendar }
-     *     
-     */
-    public void setCompletedDate(XMLGregorianCalendar value) {
-        this.completedDate = value;
-    }
 
     /**
-     * 获取phone属性的值。
+     * Sets the completedDate value for this PhoneCall.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param completedDate
      */
-    public String getPhone() {
+    public void setCompletedDate(java.util.Calendar completedDate) {
+        this.completedDate = completedDate;
+    }
+
+
+    /**
+     * Gets the phone value for this PhoneCall.
+     * 
+     * @return phone
+     */
+    public java.lang.String getPhone() {
         return phone;
     }
 
-    /**
-     * 设置phone属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setPhone(String value) {
-        this.phone = value;
-    }
 
     /**
-     * 获取status属性的值。
+     * Sets the phone value for this PhoneCall.
      * 
-     * @return
-     *     possible object is
-     *     {@link PhoneCallStatus }
-     *     
+     * @param phone
      */
-    public PhoneCallStatus getStatus() {
+    public void setPhone(java.lang.String phone) {
+        this.phone = phone;
+    }
+
+
+    /**
+     * Gets the status value for this PhoneCall.
+     * 
+     * @return status
+     */
+    public com.netsuite.webservices.activities.scheduling_2018_2.types.PhoneCallStatus getStatus() {
         return status;
     }
 
-    /**
-     * 设置status属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link PhoneCallStatus }
-     *     
-     */
-    public void setStatus(PhoneCallStatus value) {
-        this.status = value;
-    }
 
     /**
-     * 获取priority属性的值。
+     * Sets the status value for this PhoneCall.
      * 
-     * @return
-     *     possible object is
-     *     {@link PhoneCallPriority }
-     *     
+     * @param status
      */
-    public PhoneCallPriority getPriority() {
+    public void setStatus(com.netsuite.webservices.activities.scheduling_2018_2.types.PhoneCallStatus status) {
+        this.status = status;
+    }
+
+
+    /**
+     * Gets the priority value for this PhoneCall.
+     * 
+     * @return priority
+     */
+    public com.netsuite.webservices.activities.scheduling_2018_2.types.PhoneCallPriority getPriority() {
         return priority;
     }
 
-    /**
-     * 设置priority属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link PhoneCallPriority }
-     *     
-     */
-    public void setPriority(PhoneCallPriority value) {
-        this.priority = value;
-    }
 
     /**
-     * 获取accessLevel属性的值。
+     * Sets the priority value for this PhoneCall.
      * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
+     * @param priority
      */
-    public Boolean isAccessLevel() {
+    public void setPriority(com.netsuite.webservices.activities.scheduling_2018_2.types.PhoneCallPriority priority) {
+        this.priority = priority;
+    }
+
+
+    /**
+     * Gets the accessLevel value for this PhoneCall.
+     * 
+     * @return accessLevel
+     */
+    public java.lang.Boolean getAccessLevel() {
         return accessLevel;
     }
 
-    /**
-     * 设置accessLevel属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
-     */
-    public void setAccessLevel(Boolean value) {
-        this.accessLevel = value;
-    }
 
     /**
-     * 获取reminderType属性的值。
+     * Sets the accessLevel value for this PhoneCall.
      * 
-     * @return
-     *     possible object is
-     *     {@link PhoneCallReminderType }
-     *     
+     * @param accessLevel
      */
-    public PhoneCallReminderType getReminderType() {
+    public void setAccessLevel(java.lang.Boolean accessLevel) {
+        this.accessLevel = accessLevel;
+    }
+
+
+    /**
+     * Gets the reminderType value for this PhoneCall.
+     * 
+     * @return reminderType
+     */
+    public com.netsuite.webservices.activities.scheduling_2018_2.types.PhoneCallReminderType getReminderType() {
         return reminderType;
     }
 
-    /**
-     * 设置reminderType属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link PhoneCallReminderType }
-     *     
-     */
-    public void setReminderType(PhoneCallReminderType value) {
-        this.reminderType = value;
-    }
 
     /**
-     * 获取reminderMinutes属性的值。
+     * Sets the reminderType value for this PhoneCall.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param reminderType
      */
-    public String getReminderMinutes() {
+    public void setReminderType(com.netsuite.webservices.activities.scheduling_2018_2.types.PhoneCallReminderType reminderType) {
+        this.reminderType = reminderType;
+    }
+
+
+    /**
+     * Gets the reminderMinutes value for this PhoneCall.
+     * 
+     * @return reminderMinutes
+     */
+    public com.netsuite.webservices.activities.scheduling_2018_2.types.PhoneCallReminderMinutes getReminderMinutes() {
         return reminderMinutes;
     }
 
-    /**
-     * 设置reminderMinutes属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setReminderMinutes(String value) {
-        this.reminderMinutes = value;
-    }
 
     /**
-     * 获取createdDate属性的值。
+     * Sets the reminderMinutes value for this PhoneCall.
      * 
-     * @return
-     *     possible object is
-     *     {@link XMLGregorianCalendar }
-     *     
+     * @param reminderMinutes
      */
-    public XMLGregorianCalendar getCreatedDate() {
+    public void setReminderMinutes(com.netsuite.webservices.activities.scheduling_2018_2.types.PhoneCallReminderMinutes reminderMinutes) {
+        this.reminderMinutes = reminderMinutes;
+    }
+
+
+    /**
+     * Gets the createdDate value for this PhoneCall.
+     * 
+     * @return createdDate
+     */
+    public java.util.Calendar getCreatedDate() {
         return createdDate;
     }
 
-    /**
-     * 设置createdDate属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link XMLGregorianCalendar }
-     *     
-     */
-    public void setCreatedDate(XMLGregorianCalendar value) {
-        this.createdDate = value;
-    }
 
     /**
-     * 获取lastModifiedDate属性的值。
+     * Sets the createdDate value for this PhoneCall.
      * 
-     * @return
-     *     possible object is
-     *     {@link XMLGregorianCalendar }
-     *     
+     * @param createdDate
      */
-    public XMLGregorianCalendar getLastModifiedDate() {
+    public void setCreatedDate(java.util.Calendar createdDate) {
+        this.createdDate = createdDate;
+    }
+
+
+    /**
+     * Gets the lastModifiedDate value for this PhoneCall.
+     * 
+     * @return lastModifiedDate
+     */
+    public java.util.Calendar getLastModifiedDate() {
         return lastModifiedDate;
     }
 
-    /**
-     * 设置lastModifiedDate属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link XMLGregorianCalendar }
-     *     
-     */
-    public void setLastModifiedDate(XMLGregorianCalendar value) {
-        this.lastModifiedDate = value;
-    }
 
     /**
-     * 获取contactList属性的值。
+     * Sets the lastModifiedDate value for this PhoneCall.
      * 
-     * @return
-     *     possible object is
-     *     {@link PhoneCallContactList }
-     *     
+     * @param lastModifiedDate
      */
-    public PhoneCallContactList getContactList() {
+    public void setLastModifiedDate(java.util.Calendar lastModifiedDate) {
+        this.lastModifiedDate = lastModifiedDate;
+    }
+
+
+    /**
+     * Gets the contactList value for this PhoneCall.
+     * 
+     * @return contactList
+     */
+    public com.netsuite.webservices.activities.scheduling_2018_2.PhoneCallContact[] getContactList() {
         return contactList;
     }
 
-    /**
-     * 设置contactList属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link PhoneCallContactList }
-     *     
-     */
-    public void setContactList(PhoneCallContactList value) {
-        this.contactList = value;
-    }
 
     /**
-     * 获取timeItemList属性的值。
+     * Sets the contactList value for this PhoneCall.
      * 
-     * @return
-     *     possible object is
-     *     {@link PhoneCallTimeItemList }
-     *     
+     * @param contactList
      */
-    public PhoneCallTimeItemList getTimeItemList() {
+    public void setContactList(com.netsuite.webservices.activities.scheduling_2018_2.PhoneCallContact[] contactList) {
+        this.contactList = contactList;
+    }
+
+
+    /**
+     * Gets the timeItemList value for this PhoneCall.
+     * 
+     * @return timeItemList
+     */
+    public com.netsuite.webservices.platform.common_2018_2.TimeItem[] getTimeItemList() {
         return timeItemList;
     }
 
-    /**
-     * 设置timeItemList属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link PhoneCallTimeItemList }
-     *     
-     */
-    public void setTimeItemList(PhoneCallTimeItemList value) {
-        this.timeItemList = value;
-    }
 
     /**
-     * 获取customFieldList属性的值。
+     * Sets the timeItemList value for this PhoneCall.
      * 
-     * @return
-     *     possible object is
-     *     {@link CustomFieldList }
-     *     
+     * @param timeItemList
      */
-    public CustomFieldList getCustomFieldList() {
+    public void setTimeItemList(com.netsuite.webservices.platform.common_2018_2.TimeItem[] timeItemList) {
+        this.timeItemList = timeItemList;
+    }
+
+
+    /**
+     * Gets the customFieldList value for this PhoneCall.
+     * 
+     * @return customFieldList
+     */
+    public com.netsuite.webservices.platform.core_2018_2.CustomFieldRef[] getCustomFieldList() {
         return customFieldList;
     }
 
-    /**
-     * 设置customFieldList属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link CustomFieldList }
-     *     
-     */
-    public void setCustomFieldList(CustomFieldList value) {
-        this.customFieldList = value;
-    }
 
     /**
-     * 获取internalId属性的值。
+     * Sets the customFieldList value for this PhoneCall.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param customFieldList
      */
-    public String getInternalId() {
+    public void setCustomFieldList(com.netsuite.webservices.platform.core_2018_2.CustomFieldRef[] customFieldList) {
+        this.customFieldList = customFieldList;
+    }
+
+
+    /**
+     * Gets the internalId value for this PhoneCall.
+     * 
+     * @return internalId
+     */
+    public java.lang.String getInternalId() {
         return internalId;
     }
 
-    /**
-     * 设置internalId属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setInternalId(String value) {
-        this.internalId = value;
-    }
 
     /**
-     * 获取externalId属性的值。
+     * Sets the internalId value for this PhoneCall.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param internalId
      */
-    public String getExternalId() {
+    public void setInternalId(java.lang.String internalId) {
+        this.internalId = internalId;
+    }
+
+
+    /**
+     * Gets the externalId value for this PhoneCall.
+     * 
+     * @return externalId
+     */
+    public java.lang.String getExternalId() {
         return externalId;
     }
 
+
     /**
-     * 设置externalId属性的值。
+     * Sets the externalId value for this PhoneCall.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     * @param externalId
      */
-    public void setExternalId(String value) {
-        this.externalId = value;
+    public void setExternalId(java.lang.String externalId) {
+        this.externalId = externalId;
+    }
+
+    private java.lang.Object __equalsCalc = null;
+    public synchronized boolean equals(java.lang.Object obj) {
+        if (!(obj instanceof PhoneCall)) return false;
+        PhoneCall other = (PhoneCall) obj;
+        if (obj == null) return false;
+        if (this == obj) return true;
+        if (__equalsCalc != null) {
+            return (__equalsCalc == obj);
+        }
+        __equalsCalc = obj;
+        boolean _equals;
+        _equals = super.equals(obj) && 
+            ((this.message==null && other.getMessage()==null) || 
+             (this.message!=null &&
+              this.message.equals(other.getMessage()))) &&
+            ((this.company==null && other.getCompany()==null) || 
+             (this.company!=null &&
+              this.company.equals(other.getCompany()))) &&
+            ((this.contact==null && other.getContact()==null) || 
+             (this.contact!=null &&
+              this.contact.equals(other.getContact()))) &&
+            ((this.supportCase==null && other.getSupportCase()==null) || 
+             (this.supportCase!=null &&
+              this.supportCase.equals(other.getSupportCase()))) &&
+            ((this.transaction==null && other.getTransaction()==null) || 
+             (this.transaction!=null &&
+              this.transaction.equals(other.getTransaction()))) &&
+            ((this.milestone==null && other.getMilestone()==null) || 
+             (this.milestone!=null &&
+              this.milestone.equals(other.getMilestone()))) &&
+            ((this.customForm==null && other.getCustomForm()==null) || 
+             (this.customForm!=null &&
+              this.customForm.equals(other.getCustomForm()))) &&
+            ((this.title==null && other.getTitle()==null) || 
+             (this.title!=null &&
+              this.title.equals(other.getTitle()))) &&
+            ((this.owner==null && other.getOwner()==null) || 
+             (this.owner!=null &&
+              this.owner.equals(other.getOwner()))) &&
+            ((this.assigned==null && other.getAssigned()==null) || 
+             (this.assigned!=null &&
+              this.assigned.equals(other.getAssigned()))) &&
+            ((this.sendEmail==null && other.getSendEmail()==null) || 
+             (this.sendEmail!=null &&
+              this.sendEmail.equals(other.getSendEmail()))) &&
+            ((this.startDate==null && other.getStartDate()==null) || 
+             (this.startDate!=null &&
+              this.startDate.equals(other.getStartDate()))) &&
+            ((this.endDate==null && other.getEndDate()==null) || 
+             (this.endDate!=null &&
+              this.endDate.equals(other.getEndDate()))) &&
+            ((this.timedEvent==null && other.getTimedEvent()==null) || 
+             (this.timedEvent!=null &&
+              this.timedEvent.equals(other.getTimedEvent()))) &&
+            ((this.completedDate==null && other.getCompletedDate()==null) || 
+             (this.completedDate!=null &&
+              this.completedDate.equals(other.getCompletedDate()))) &&
+            ((this.phone==null && other.getPhone()==null) || 
+             (this.phone!=null &&
+              this.phone.equals(other.getPhone()))) &&
+            ((this.status==null && other.getStatus()==null) || 
+             (this.status!=null &&
+              this.status.equals(other.getStatus()))) &&
+            ((this.priority==null && other.getPriority()==null) || 
+             (this.priority!=null &&
+              this.priority.equals(other.getPriority()))) &&
+            ((this.accessLevel==null && other.getAccessLevel()==null) || 
+             (this.accessLevel!=null &&
+              this.accessLevel.equals(other.getAccessLevel()))) &&
+            ((this.reminderType==null && other.getReminderType()==null) || 
+             (this.reminderType!=null &&
+              this.reminderType.equals(other.getReminderType()))) &&
+            ((this.reminderMinutes==null && other.getReminderMinutes()==null) || 
+             (this.reminderMinutes!=null &&
+              this.reminderMinutes.equals(other.getReminderMinutes()))) &&
+            ((this.createdDate==null && other.getCreatedDate()==null) || 
+             (this.createdDate!=null &&
+              this.createdDate.equals(other.getCreatedDate()))) &&
+            ((this.lastModifiedDate==null && other.getLastModifiedDate()==null) || 
+             (this.lastModifiedDate!=null &&
+              this.lastModifiedDate.equals(other.getLastModifiedDate()))) &&
+            ((this.contactList==null && other.getContactList()==null) || 
+             (this.contactList!=null &&
+              java.util.Arrays.equals(this.contactList, other.getContactList()))) &&
+            ((this.timeItemList==null && other.getTimeItemList()==null) || 
+             (this.timeItemList!=null &&
+              java.util.Arrays.equals(this.timeItemList, other.getTimeItemList()))) &&
+            ((this.customFieldList==null && other.getCustomFieldList()==null) || 
+             (this.customFieldList!=null &&
+              java.util.Arrays.equals(this.customFieldList, other.getCustomFieldList()))) &&
+            ((this.internalId==null && other.getInternalId()==null) || 
+             (this.internalId!=null &&
+              this.internalId.equals(other.getInternalId()))) &&
+            ((this.externalId==null && other.getExternalId()==null) || 
+             (this.externalId!=null &&
+              this.externalId.equals(other.getExternalId())));
+        __equalsCalc = null;
+        return _equals;
+    }
+
+    private boolean __hashCodeCalc = false;
+    public synchronized int hashCode() {
+        if (__hashCodeCalc) {
+            return 0;
+        }
+        __hashCodeCalc = true;
+        int _hashCode = super.hashCode();
+        if (getMessage() != null) {
+            _hashCode += getMessage().hashCode();
+        }
+        if (getCompany() != null) {
+            _hashCode += getCompany().hashCode();
+        }
+        if (getContact() != null) {
+            _hashCode += getContact().hashCode();
+        }
+        if (getSupportCase() != null) {
+            _hashCode += getSupportCase().hashCode();
+        }
+        if (getTransaction() != null) {
+            _hashCode += getTransaction().hashCode();
+        }
+        if (getMilestone() != null) {
+            _hashCode += getMilestone().hashCode();
+        }
+        if (getCustomForm() != null) {
+            _hashCode += getCustomForm().hashCode();
+        }
+        if (getTitle() != null) {
+            _hashCode += getTitle().hashCode();
+        }
+        if (getOwner() != null) {
+            _hashCode += getOwner().hashCode();
+        }
+        if (getAssigned() != null) {
+            _hashCode += getAssigned().hashCode();
+        }
+        if (getSendEmail() != null) {
+            _hashCode += getSendEmail().hashCode();
+        }
+        if (getStartDate() != null) {
+            _hashCode += getStartDate().hashCode();
+        }
+        if (getEndDate() != null) {
+            _hashCode += getEndDate().hashCode();
+        }
+        if (getTimedEvent() != null) {
+            _hashCode += getTimedEvent().hashCode();
+        }
+        if (getCompletedDate() != null) {
+            _hashCode += getCompletedDate().hashCode();
+        }
+        if (getPhone() != null) {
+            _hashCode += getPhone().hashCode();
+        }
+        if (getStatus() != null) {
+            _hashCode += getStatus().hashCode();
+        }
+        if (getPriority() != null) {
+            _hashCode += getPriority().hashCode();
+        }
+        if (getAccessLevel() != null) {
+            _hashCode += getAccessLevel().hashCode();
+        }
+        if (getReminderType() != null) {
+            _hashCode += getReminderType().hashCode();
+        }
+        if (getReminderMinutes() != null) {
+            _hashCode += getReminderMinutes().hashCode();
+        }
+        if (getCreatedDate() != null) {
+            _hashCode += getCreatedDate().hashCode();
+        }
+        if (getLastModifiedDate() != null) {
+            _hashCode += getLastModifiedDate().hashCode();
+        }
+        if (getContactList() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getContactList());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getContactList(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getTimeItemList() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getTimeItemList());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getTimeItemList(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getCustomFieldList() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getCustomFieldList());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getCustomFieldList(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getInternalId() != null) {
+            _hashCode += getInternalId().hashCode();
+        }
+        if (getExternalId() != null) {
+            _hashCode += getExternalId().hashCode();
+        }
+        __hashCodeCalc = false;
+        return _hashCode;
+    }
+
+    // Type metadata
+    private static org.apache.axis.description.TypeDesc typeDesc =
+        new org.apache.axis.description.TypeDesc(PhoneCall.class, true);
+
+    static {
+        typeDesc.setXmlType(new javax.xml.namespace.QName("urn:scheduling_2018_2.activities.webservices.netsuite.com", "PhoneCall"));
+        org.apache.axis.description.AttributeDesc attrField = new org.apache.axis.description.AttributeDesc();
+        attrField.setFieldName("internalId");
+        attrField.setXmlName(new javax.xml.namespace.QName("", "internalId"));
+        attrField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        typeDesc.addFieldDesc(attrField);
+        attrField = new org.apache.axis.description.AttributeDesc();
+        attrField.setFieldName("externalId");
+        attrField.setXmlName(new javax.xml.namespace.QName("", "externalId"));
+        attrField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        typeDesc.addFieldDesc(attrField);
+        org.apache.axis.description.ElementDesc elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("message");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:scheduling_2018_2.activities.webservices.netsuite.com", "message"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("company");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:scheduling_2018_2.activities.webservices.netsuite.com", "company"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("contact");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:scheduling_2018_2.activities.webservices.netsuite.com", "contact"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("supportCase");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:scheduling_2018_2.activities.webservices.netsuite.com", "supportCase"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("transaction");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:scheduling_2018_2.activities.webservices.netsuite.com", "transaction"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("milestone");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:scheduling_2018_2.activities.webservices.netsuite.com", "milestone"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("customForm");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:scheduling_2018_2.activities.webservices.netsuite.com", "customForm"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("title");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:scheduling_2018_2.activities.webservices.netsuite.com", "title"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("owner");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:scheduling_2018_2.activities.webservices.netsuite.com", "owner"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("assigned");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:scheduling_2018_2.activities.webservices.netsuite.com", "assigned"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("sendEmail");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:scheduling_2018_2.activities.webservices.netsuite.com", "sendEmail"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("startDate");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:scheduling_2018_2.activities.webservices.netsuite.com", "startDate"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "dateTime"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("endDate");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:scheduling_2018_2.activities.webservices.netsuite.com", "endDate"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "dateTime"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("timedEvent");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:scheduling_2018_2.activities.webservices.netsuite.com", "timedEvent"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("completedDate");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:scheduling_2018_2.activities.webservices.netsuite.com", "completedDate"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "dateTime"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("phone");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:scheduling_2018_2.activities.webservices.netsuite.com", "phone"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("status");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:scheduling_2018_2.activities.webservices.netsuite.com", "status"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:types.scheduling_2018_2.activities.webservices.netsuite.com", "PhoneCallStatus"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("priority");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:scheduling_2018_2.activities.webservices.netsuite.com", "priority"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:types.scheduling_2018_2.activities.webservices.netsuite.com", "PhoneCallPriority"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("accessLevel");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:scheduling_2018_2.activities.webservices.netsuite.com", "accessLevel"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("reminderType");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:scheduling_2018_2.activities.webservices.netsuite.com", "reminderType"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:types.scheduling_2018_2.activities.webservices.netsuite.com", "PhoneCallReminderType"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("reminderMinutes");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:scheduling_2018_2.activities.webservices.netsuite.com", "reminderMinutes"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:types.scheduling_2018_2.activities.webservices.netsuite.com", "PhoneCallReminderMinutes"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("createdDate");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:scheduling_2018_2.activities.webservices.netsuite.com", "createdDate"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "dateTime"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("lastModifiedDate");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:scheduling_2018_2.activities.webservices.netsuite.com", "lastModifiedDate"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "dateTime"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("contactList");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:scheduling_2018_2.activities.webservices.netsuite.com", "contactList"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:scheduling_2018_2.activities.webservices.netsuite.com", "PhoneCallContact"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:scheduling_2018_2.activities.webservices.netsuite.com", "contact"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("timeItemList");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:scheduling_2018_2.activities.webservices.netsuite.com", "timeItemList"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "TimeItem"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:scheduling_2018_2.activities.webservices.netsuite.com", "timeItem"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("customFieldList");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:scheduling_2018_2.activities.webservices.netsuite.com", "customFieldList"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "CustomFieldRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "customField"));
+        typeDesc.addFieldDesc(elemField);
+    }
+
+    /**
+     * Return type metadata object
+     */
+    public static org.apache.axis.description.TypeDesc getTypeDesc() {
+        return typeDesc;
+    }
+
+    /**
+     * Get Custom Serializer
+     */
+    public static org.apache.axis.encoding.Serializer getSerializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanSerializer(
+            _javaType, _xmlType, typeDesc);
+    }
+
+    /**
+     * Get Custom Deserializer
+     */
+    public static org.apache.axis.encoding.Deserializer getDeserializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanDeserializer(
+            _javaType, _xmlType, typeDesc);
     }
 
 }

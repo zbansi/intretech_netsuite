@@ -1,528 +1,812 @@
+/**
+ * EntityGroupSearchBasic.java
+ *
+ * This file was auto-generated from WSDL
+ * by the Apache Axis 1.4 Jul 28, 2010 (04:07:04 PDT) WSDL2Java emitter.
+ */
 
 package com.netsuite.webservices.platform.common_2018_2;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlType;
-import com.netsuite.webservices.platform.core_2018_2.SearchBooleanField;
-import com.netsuite.webservices.platform.core_2018_2.SearchCustomFieldList;
-import com.netsuite.webservices.platform.core_2018_2.SearchDateField;
-import com.netsuite.webservices.platform.core_2018_2.SearchLongField;
-import com.netsuite.webservices.platform.core_2018_2.SearchMultiSelectField;
-import com.netsuite.webservices.platform.core_2018_2.SearchRecordBasic;
-import com.netsuite.webservices.platform.core_2018_2.SearchStringField;
+public class EntityGroupSearchBasic  extends com.netsuite.webservices.platform.core_2018_2.SearchRecordBasic  implements java.io.Serializable {
+    private com.netsuite.webservices.platform.core_2018_2.SearchStringField email;
 
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef[] externalId;
 
-/**
- * <p>EntityGroupSearchBasic complex type的 Java 类。
- * 
- * <p>以下模式片段指定包含在此类中的预期内容。
- * 
- * <pre>
- * &lt;complexType name="EntityGroupSearchBasic">
- *   &lt;complexContent>
- *     &lt;extension base="{urn:core_2018_2.platform.webservices.netsuite.com}SearchRecordBasic">
- *       &lt;sequence>
- *         &lt;element name="email" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchStringField" minOccurs="0"/>
- *         &lt;element name="externalId" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchMultiSelectField" minOccurs="0"/>
- *         &lt;element name="externalIdString" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchStringField" minOccurs="0"/>
- *         &lt;element name="groupName" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchStringField" minOccurs="0"/>
- *         &lt;element name="groupOwner" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchMultiSelectField" minOccurs="0"/>
- *         &lt;element name="groupType" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchMultiSelectField" minOccurs="0"/>
- *         &lt;element name="internalId" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchMultiSelectField" minOccurs="0"/>
- *         &lt;element name="internalIdNumber" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchLongField" minOccurs="0"/>
- *         &lt;element name="isDynamic" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchBooleanField" minOccurs="0"/>
- *         &lt;element name="isInactive" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchBooleanField" minOccurs="0"/>
- *         &lt;element name="isManufacturingWorkCenter" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchBooleanField" minOccurs="0"/>
- *         &lt;element name="isPrivate" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchBooleanField" minOccurs="0"/>
- *         &lt;element name="laborResources" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchLongField" minOccurs="0"/>
- *         &lt;element name="lastModifiedDate" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchDateField" minOccurs="0"/>
- *         &lt;element name="machineResources" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchLongField" minOccurs="0"/>
- *         &lt;element name="subsidiary" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchMultiSelectField" minOccurs="0"/>
- *         &lt;element name="workCalendar" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchMultiSelectField" minOccurs="0"/>
- *         &lt;element name="customFieldList" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchCustomFieldList" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/extension>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
- */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "EntityGroupSearchBasic", propOrder = {
-    "email",
-    "externalId",
-    "externalIdString",
-    "groupName",
-    "groupOwner",
-    "groupType",
-    "internalId",
-    "internalIdNumber",
-    "isDynamic",
-    "isInactive",
-    "isManufacturingWorkCenter",
-    "isPrivate",
-    "laborResources",
-    "lastModifiedDate",
-    "machineResources",
-    "subsidiary",
-    "workCalendar",
-    "customFieldList"
-})
-public class EntityGroupSearchBasic
-    extends SearchRecordBasic
-{
+    private com.netsuite.webservices.platform.core_2018_2.SearchStringField externalIdString;
 
-    protected SearchStringField email;
-    protected SearchMultiSelectField externalId;
-    protected SearchStringField externalIdString;
-    protected SearchStringField groupName;
-    protected SearchMultiSelectField groupOwner;
-    protected SearchMultiSelectField groupType;
-    protected SearchMultiSelectField internalId;
-    protected SearchLongField internalIdNumber;
-    protected SearchBooleanField isDynamic;
-    protected SearchBooleanField isInactive;
-    protected SearchBooleanField isManufacturingWorkCenter;
-    protected SearchBooleanField isPrivate;
-    protected SearchLongField laborResources;
-    protected SearchDateField lastModifiedDate;
-    protected SearchLongField machineResources;
-    protected SearchMultiSelectField subsidiary;
-    protected SearchMultiSelectField workCalendar;
-    protected SearchCustomFieldList customFieldList;
+    private com.netsuite.webservices.platform.core_2018_2.SearchStringField groupName;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef[] groupOwner;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef[] groupType;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef[] internalId;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchLongField internalIdNumber;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchBooleanField isDynamic;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchBooleanField isInactive;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchBooleanField isManufacturingWorkCenter;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchBooleanField isPrivate;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchLongField laborResources;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchDateField lastModifiedDate;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchLongField machineResources;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef[] subsidiary;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef[] workCalendar;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchCustomField[] customFieldList;
+
+    public EntityGroupSearchBasic() {
+    }
+
+    public EntityGroupSearchBasic(
+           com.netsuite.webservices.platform.core_2018_2.SearchStringField email,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef[] externalId,
+           com.netsuite.webservices.platform.core_2018_2.SearchStringField externalIdString,
+           com.netsuite.webservices.platform.core_2018_2.SearchStringField groupName,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef[] groupOwner,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef[] groupType,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef[] internalId,
+           com.netsuite.webservices.platform.core_2018_2.SearchLongField internalIdNumber,
+           com.netsuite.webservices.platform.core_2018_2.SearchBooleanField isDynamic,
+           com.netsuite.webservices.platform.core_2018_2.SearchBooleanField isInactive,
+           com.netsuite.webservices.platform.core_2018_2.SearchBooleanField isManufacturingWorkCenter,
+           com.netsuite.webservices.platform.core_2018_2.SearchBooleanField isPrivate,
+           com.netsuite.webservices.platform.core_2018_2.SearchLongField laborResources,
+           com.netsuite.webservices.platform.core_2018_2.SearchDateField lastModifiedDate,
+           com.netsuite.webservices.platform.core_2018_2.SearchLongField machineResources,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef[] subsidiary,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef[] workCalendar,
+           com.netsuite.webservices.platform.core_2018_2.SearchCustomField[] customFieldList) {
+        this.email = email;
+        this.externalId = externalId;
+        this.externalIdString = externalIdString;
+        this.groupName = groupName;
+        this.groupOwner = groupOwner;
+        this.groupType = groupType;
+        this.internalId = internalId;
+        this.internalIdNumber = internalIdNumber;
+        this.isDynamic = isDynamic;
+        this.isInactive = isInactive;
+        this.isManufacturingWorkCenter = isManufacturingWorkCenter;
+        this.isPrivate = isPrivate;
+        this.laborResources = laborResources;
+        this.lastModifiedDate = lastModifiedDate;
+        this.machineResources = machineResources;
+        this.subsidiary = subsidiary;
+        this.workCalendar = workCalendar;
+        this.customFieldList = customFieldList;
+    }
+
 
     /**
-     * 获取email属性的值。
+     * Gets the email value for this EntityGroupSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchStringField }
-     *     
+     * @return email
      */
-    public SearchStringField getEmail() {
+    public com.netsuite.webservices.platform.core_2018_2.SearchStringField getEmail() {
         return email;
     }
 
-    /**
-     * 设置email属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchStringField }
-     *     
-     */
-    public void setEmail(SearchStringField value) {
-        this.email = value;
-    }
 
     /**
-     * 获取externalId属性的值。
+     * Sets the email value for this EntityGroupSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchMultiSelectField }
-     *     
+     * @param email
      */
-    public SearchMultiSelectField getExternalId() {
+    public void setEmail(com.netsuite.webservices.platform.core_2018_2.SearchStringField email) {
+        this.email = email;
+    }
+
+
+    /**
+     * Gets the externalId value for this EntityGroupSearchBasic.
+     * 
+     * @return externalId
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef[] getExternalId() {
         return externalId;
     }
 
-    /**
-     * 设置externalId属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchMultiSelectField }
-     *     
-     */
-    public void setExternalId(SearchMultiSelectField value) {
-        this.externalId = value;
-    }
 
     /**
-     * 获取externalIdString属性的值。
+     * Sets the externalId value for this EntityGroupSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchStringField }
-     *     
+     * @param externalId
      */
-    public SearchStringField getExternalIdString() {
+    public void setExternalId(com.netsuite.webservices.platform.core_2018_2.RecordRef[] externalId) {
+        this.externalId = externalId;
+    }
+
+
+    /**
+     * Gets the externalIdString value for this EntityGroupSearchBasic.
+     * 
+     * @return externalIdString
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchStringField getExternalIdString() {
         return externalIdString;
     }
 
-    /**
-     * 设置externalIdString属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchStringField }
-     *     
-     */
-    public void setExternalIdString(SearchStringField value) {
-        this.externalIdString = value;
-    }
 
     /**
-     * 获取groupName属性的值。
+     * Sets the externalIdString value for this EntityGroupSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchStringField }
-     *     
+     * @param externalIdString
      */
-    public SearchStringField getGroupName() {
+    public void setExternalIdString(com.netsuite.webservices.platform.core_2018_2.SearchStringField externalIdString) {
+        this.externalIdString = externalIdString;
+    }
+
+
+    /**
+     * Gets the groupName value for this EntityGroupSearchBasic.
+     * 
+     * @return groupName
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchStringField getGroupName() {
         return groupName;
     }
 
-    /**
-     * 设置groupName属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchStringField }
-     *     
-     */
-    public void setGroupName(SearchStringField value) {
-        this.groupName = value;
-    }
 
     /**
-     * 获取groupOwner属性的值。
+     * Sets the groupName value for this EntityGroupSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchMultiSelectField }
-     *     
+     * @param groupName
      */
-    public SearchMultiSelectField getGroupOwner() {
+    public void setGroupName(com.netsuite.webservices.platform.core_2018_2.SearchStringField groupName) {
+        this.groupName = groupName;
+    }
+
+
+    /**
+     * Gets the groupOwner value for this EntityGroupSearchBasic.
+     * 
+     * @return groupOwner
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef[] getGroupOwner() {
         return groupOwner;
     }
 
-    /**
-     * 设置groupOwner属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchMultiSelectField }
-     *     
-     */
-    public void setGroupOwner(SearchMultiSelectField value) {
-        this.groupOwner = value;
-    }
 
     /**
-     * 获取groupType属性的值。
+     * Sets the groupOwner value for this EntityGroupSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchMultiSelectField }
-     *     
+     * @param groupOwner
      */
-    public SearchMultiSelectField getGroupType() {
+    public void setGroupOwner(com.netsuite.webservices.platform.core_2018_2.RecordRef[] groupOwner) {
+        this.groupOwner = groupOwner;
+    }
+
+
+    /**
+     * Gets the groupType value for this EntityGroupSearchBasic.
+     * 
+     * @return groupType
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef[] getGroupType() {
         return groupType;
     }
 
-    /**
-     * 设置groupType属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchMultiSelectField }
-     *     
-     */
-    public void setGroupType(SearchMultiSelectField value) {
-        this.groupType = value;
-    }
 
     /**
-     * 获取internalId属性的值。
+     * Sets the groupType value for this EntityGroupSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchMultiSelectField }
-     *     
+     * @param groupType
      */
-    public SearchMultiSelectField getInternalId() {
+    public void setGroupType(com.netsuite.webservices.platform.core_2018_2.RecordRef[] groupType) {
+        this.groupType = groupType;
+    }
+
+
+    /**
+     * Gets the internalId value for this EntityGroupSearchBasic.
+     * 
+     * @return internalId
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef[] getInternalId() {
         return internalId;
     }
 
-    /**
-     * 设置internalId属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchMultiSelectField }
-     *     
-     */
-    public void setInternalId(SearchMultiSelectField value) {
-        this.internalId = value;
-    }
 
     /**
-     * 获取internalIdNumber属性的值。
+     * Sets the internalId value for this EntityGroupSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchLongField }
-     *     
+     * @param internalId
      */
-    public SearchLongField getInternalIdNumber() {
+    public void setInternalId(com.netsuite.webservices.platform.core_2018_2.RecordRef[] internalId) {
+        this.internalId = internalId;
+    }
+
+
+    /**
+     * Gets the internalIdNumber value for this EntityGroupSearchBasic.
+     * 
+     * @return internalIdNumber
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchLongField getInternalIdNumber() {
         return internalIdNumber;
     }
 
-    /**
-     * 设置internalIdNumber属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchLongField }
-     *     
-     */
-    public void setInternalIdNumber(SearchLongField value) {
-        this.internalIdNumber = value;
-    }
 
     /**
-     * 获取isDynamic属性的值。
+     * Sets the internalIdNumber value for this EntityGroupSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchBooleanField }
-     *     
+     * @param internalIdNumber
      */
-    public SearchBooleanField getIsDynamic() {
+    public void setInternalIdNumber(com.netsuite.webservices.platform.core_2018_2.SearchLongField internalIdNumber) {
+        this.internalIdNumber = internalIdNumber;
+    }
+
+
+    /**
+     * Gets the isDynamic value for this EntityGroupSearchBasic.
+     * 
+     * @return isDynamic
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchBooleanField getIsDynamic() {
         return isDynamic;
     }
 
-    /**
-     * 设置isDynamic属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchBooleanField }
-     *     
-     */
-    public void setIsDynamic(SearchBooleanField value) {
-        this.isDynamic = value;
-    }
 
     /**
-     * 获取isInactive属性的值。
+     * Sets the isDynamic value for this EntityGroupSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchBooleanField }
-     *     
+     * @param isDynamic
      */
-    public SearchBooleanField getIsInactive() {
+    public void setIsDynamic(com.netsuite.webservices.platform.core_2018_2.SearchBooleanField isDynamic) {
+        this.isDynamic = isDynamic;
+    }
+
+
+    /**
+     * Gets the isInactive value for this EntityGroupSearchBasic.
+     * 
+     * @return isInactive
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchBooleanField getIsInactive() {
         return isInactive;
     }
 
-    /**
-     * 设置isInactive属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchBooleanField }
-     *     
-     */
-    public void setIsInactive(SearchBooleanField value) {
-        this.isInactive = value;
-    }
 
     /**
-     * 获取isManufacturingWorkCenter属性的值。
+     * Sets the isInactive value for this EntityGroupSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchBooleanField }
-     *     
+     * @param isInactive
      */
-    public SearchBooleanField getIsManufacturingWorkCenter() {
+    public void setIsInactive(com.netsuite.webservices.platform.core_2018_2.SearchBooleanField isInactive) {
+        this.isInactive = isInactive;
+    }
+
+
+    /**
+     * Gets the isManufacturingWorkCenter value for this EntityGroupSearchBasic.
+     * 
+     * @return isManufacturingWorkCenter
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchBooleanField getIsManufacturingWorkCenter() {
         return isManufacturingWorkCenter;
     }
 
-    /**
-     * 设置isManufacturingWorkCenter属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchBooleanField }
-     *     
-     */
-    public void setIsManufacturingWorkCenter(SearchBooleanField value) {
-        this.isManufacturingWorkCenter = value;
-    }
 
     /**
-     * 获取isPrivate属性的值。
+     * Sets the isManufacturingWorkCenter value for this EntityGroupSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchBooleanField }
-     *     
+     * @param isManufacturingWorkCenter
      */
-    public SearchBooleanField getIsPrivate() {
+    public void setIsManufacturingWorkCenter(com.netsuite.webservices.platform.core_2018_2.SearchBooleanField isManufacturingWorkCenter) {
+        this.isManufacturingWorkCenter = isManufacturingWorkCenter;
+    }
+
+
+    /**
+     * Gets the isPrivate value for this EntityGroupSearchBasic.
+     * 
+     * @return isPrivate
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchBooleanField getIsPrivate() {
         return isPrivate;
     }
 
-    /**
-     * 设置isPrivate属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchBooleanField }
-     *     
-     */
-    public void setIsPrivate(SearchBooleanField value) {
-        this.isPrivate = value;
-    }
 
     /**
-     * 获取laborResources属性的值。
+     * Sets the isPrivate value for this EntityGroupSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchLongField }
-     *     
+     * @param isPrivate
      */
-    public SearchLongField getLaborResources() {
+    public void setIsPrivate(com.netsuite.webservices.platform.core_2018_2.SearchBooleanField isPrivate) {
+        this.isPrivate = isPrivate;
+    }
+
+
+    /**
+     * Gets the laborResources value for this EntityGroupSearchBasic.
+     * 
+     * @return laborResources
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchLongField getLaborResources() {
         return laborResources;
     }
 
-    /**
-     * 设置laborResources属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchLongField }
-     *     
-     */
-    public void setLaborResources(SearchLongField value) {
-        this.laborResources = value;
-    }
 
     /**
-     * 获取lastModifiedDate属性的值。
+     * Sets the laborResources value for this EntityGroupSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchDateField }
-     *     
+     * @param laborResources
      */
-    public SearchDateField getLastModifiedDate() {
+    public void setLaborResources(com.netsuite.webservices.platform.core_2018_2.SearchLongField laborResources) {
+        this.laborResources = laborResources;
+    }
+
+
+    /**
+     * Gets the lastModifiedDate value for this EntityGroupSearchBasic.
+     * 
+     * @return lastModifiedDate
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchDateField getLastModifiedDate() {
         return lastModifiedDate;
     }
 
-    /**
-     * 设置lastModifiedDate属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchDateField }
-     *     
-     */
-    public void setLastModifiedDate(SearchDateField value) {
-        this.lastModifiedDate = value;
-    }
 
     /**
-     * 获取machineResources属性的值。
+     * Sets the lastModifiedDate value for this EntityGroupSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchLongField }
-     *     
+     * @param lastModifiedDate
      */
-    public SearchLongField getMachineResources() {
+    public void setLastModifiedDate(com.netsuite.webservices.platform.core_2018_2.SearchDateField lastModifiedDate) {
+        this.lastModifiedDate = lastModifiedDate;
+    }
+
+
+    /**
+     * Gets the machineResources value for this EntityGroupSearchBasic.
+     * 
+     * @return machineResources
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchLongField getMachineResources() {
         return machineResources;
     }
 
-    /**
-     * 设置machineResources属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchLongField }
-     *     
-     */
-    public void setMachineResources(SearchLongField value) {
-        this.machineResources = value;
-    }
 
     /**
-     * 获取subsidiary属性的值。
+     * Sets the machineResources value for this EntityGroupSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchMultiSelectField }
-     *     
+     * @param machineResources
      */
-    public SearchMultiSelectField getSubsidiary() {
+    public void setMachineResources(com.netsuite.webservices.platform.core_2018_2.SearchLongField machineResources) {
+        this.machineResources = machineResources;
+    }
+
+
+    /**
+     * Gets the subsidiary value for this EntityGroupSearchBasic.
+     * 
+     * @return subsidiary
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef[] getSubsidiary() {
         return subsidiary;
     }
 
-    /**
-     * 设置subsidiary属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchMultiSelectField }
-     *     
-     */
-    public void setSubsidiary(SearchMultiSelectField value) {
-        this.subsidiary = value;
-    }
 
     /**
-     * 获取workCalendar属性的值。
+     * Sets the subsidiary value for this EntityGroupSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchMultiSelectField }
-     *     
+     * @param subsidiary
      */
-    public SearchMultiSelectField getWorkCalendar() {
+    public void setSubsidiary(com.netsuite.webservices.platform.core_2018_2.RecordRef[] subsidiary) {
+        this.subsidiary = subsidiary;
+    }
+
+
+    /**
+     * Gets the workCalendar value for this EntityGroupSearchBasic.
+     * 
+     * @return workCalendar
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef[] getWorkCalendar() {
         return workCalendar;
     }
 
-    /**
-     * 设置workCalendar属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchMultiSelectField }
-     *     
-     */
-    public void setWorkCalendar(SearchMultiSelectField value) {
-        this.workCalendar = value;
-    }
 
     /**
-     * 获取customFieldList属性的值。
+     * Sets the workCalendar value for this EntityGroupSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchCustomFieldList }
-     *     
+     * @param workCalendar
      */
-    public SearchCustomFieldList getCustomFieldList() {
+    public void setWorkCalendar(com.netsuite.webservices.platform.core_2018_2.RecordRef[] workCalendar) {
+        this.workCalendar = workCalendar;
+    }
+
+
+    /**
+     * Gets the customFieldList value for this EntityGroupSearchBasic.
+     * 
+     * @return customFieldList
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchCustomField[] getCustomFieldList() {
         return customFieldList;
     }
 
+
     /**
-     * 设置customFieldList属性的值。
+     * Sets the customFieldList value for this EntityGroupSearchBasic.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchCustomFieldList }
-     *     
+     * @param customFieldList
      */
-    public void setCustomFieldList(SearchCustomFieldList value) {
-        this.customFieldList = value;
+    public void setCustomFieldList(com.netsuite.webservices.platform.core_2018_2.SearchCustomField[] customFieldList) {
+        this.customFieldList = customFieldList;
+    }
+
+    private java.lang.Object __equalsCalc = null;
+    public synchronized boolean equals(java.lang.Object obj) {
+        if (!(obj instanceof EntityGroupSearchBasic)) return false;
+        EntityGroupSearchBasic other = (EntityGroupSearchBasic) obj;
+        if (obj == null) return false;
+        if (this == obj) return true;
+        if (__equalsCalc != null) {
+            return (__equalsCalc == obj);
+        }
+        __equalsCalc = obj;
+        boolean _equals;
+        _equals = super.equals(obj) && 
+            ((this.email==null && other.getEmail()==null) || 
+             (this.email!=null &&
+              this.email.equals(other.getEmail()))) &&
+            ((this.externalId==null && other.getExternalId()==null) || 
+             (this.externalId!=null &&
+              java.util.Arrays.equals(this.externalId, other.getExternalId()))) &&
+            ((this.externalIdString==null && other.getExternalIdString()==null) || 
+             (this.externalIdString!=null &&
+              this.externalIdString.equals(other.getExternalIdString()))) &&
+            ((this.groupName==null && other.getGroupName()==null) || 
+             (this.groupName!=null &&
+              this.groupName.equals(other.getGroupName()))) &&
+            ((this.groupOwner==null && other.getGroupOwner()==null) || 
+             (this.groupOwner!=null &&
+              java.util.Arrays.equals(this.groupOwner, other.getGroupOwner()))) &&
+            ((this.groupType==null && other.getGroupType()==null) || 
+             (this.groupType!=null &&
+              java.util.Arrays.equals(this.groupType, other.getGroupType()))) &&
+            ((this.internalId==null && other.getInternalId()==null) || 
+             (this.internalId!=null &&
+              java.util.Arrays.equals(this.internalId, other.getInternalId()))) &&
+            ((this.internalIdNumber==null && other.getInternalIdNumber()==null) || 
+             (this.internalIdNumber!=null &&
+              this.internalIdNumber.equals(other.getInternalIdNumber()))) &&
+            ((this.isDynamic==null && other.getIsDynamic()==null) || 
+             (this.isDynamic!=null &&
+              this.isDynamic.equals(other.getIsDynamic()))) &&
+            ((this.isInactive==null && other.getIsInactive()==null) || 
+             (this.isInactive!=null &&
+              this.isInactive.equals(other.getIsInactive()))) &&
+            ((this.isManufacturingWorkCenter==null && other.getIsManufacturingWorkCenter()==null) || 
+             (this.isManufacturingWorkCenter!=null &&
+              this.isManufacturingWorkCenter.equals(other.getIsManufacturingWorkCenter()))) &&
+            ((this.isPrivate==null && other.getIsPrivate()==null) || 
+             (this.isPrivate!=null &&
+              this.isPrivate.equals(other.getIsPrivate()))) &&
+            ((this.laborResources==null && other.getLaborResources()==null) || 
+             (this.laborResources!=null &&
+              this.laborResources.equals(other.getLaborResources()))) &&
+            ((this.lastModifiedDate==null && other.getLastModifiedDate()==null) || 
+             (this.lastModifiedDate!=null &&
+              this.lastModifiedDate.equals(other.getLastModifiedDate()))) &&
+            ((this.machineResources==null && other.getMachineResources()==null) || 
+             (this.machineResources!=null &&
+              this.machineResources.equals(other.getMachineResources()))) &&
+            ((this.subsidiary==null && other.getSubsidiary()==null) || 
+             (this.subsidiary!=null &&
+              java.util.Arrays.equals(this.subsidiary, other.getSubsidiary()))) &&
+            ((this.workCalendar==null && other.getWorkCalendar()==null) || 
+             (this.workCalendar!=null &&
+              java.util.Arrays.equals(this.workCalendar, other.getWorkCalendar()))) &&
+            ((this.customFieldList==null && other.getCustomFieldList()==null) || 
+             (this.customFieldList!=null &&
+              java.util.Arrays.equals(this.customFieldList, other.getCustomFieldList())));
+        __equalsCalc = null;
+        return _equals;
+    }
+
+    private boolean __hashCodeCalc = false;
+    public synchronized int hashCode() {
+        if (__hashCodeCalc) {
+            return 0;
+        }
+        __hashCodeCalc = true;
+        int _hashCode = super.hashCode();
+        if (getEmail() != null) {
+            _hashCode += getEmail().hashCode();
+        }
+        if (getExternalId() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getExternalId());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getExternalId(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getExternalIdString() != null) {
+            _hashCode += getExternalIdString().hashCode();
+        }
+        if (getGroupName() != null) {
+            _hashCode += getGroupName().hashCode();
+        }
+        if (getGroupOwner() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getGroupOwner());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getGroupOwner(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getGroupType() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getGroupType());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getGroupType(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getInternalId() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getInternalId());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getInternalId(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getInternalIdNumber() != null) {
+            _hashCode += getInternalIdNumber().hashCode();
+        }
+        if (getIsDynamic() != null) {
+            _hashCode += getIsDynamic().hashCode();
+        }
+        if (getIsInactive() != null) {
+            _hashCode += getIsInactive().hashCode();
+        }
+        if (getIsManufacturingWorkCenter() != null) {
+            _hashCode += getIsManufacturingWorkCenter().hashCode();
+        }
+        if (getIsPrivate() != null) {
+            _hashCode += getIsPrivate().hashCode();
+        }
+        if (getLaborResources() != null) {
+            _hashCode += getLaborResources().hashCode();
+        }
+        if (getLastModifiedDate() != null) {
+            _hashCode += getLastModifiedDate().hashCode();
+        }
+        if (getMachineResources() != null) {
+            _hashCode += getMachineResources().hashCode();
+        }
+        if (getSubsidiary() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getSubsidiary());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getSubsidiary(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getWorkCalendar() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getWorkCalendar());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getWorkCalendar(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getCustomFieldList() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getCustomFieldList());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getCustomFieldList(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        __hashCodeCalc = false;
+        return _hashCode;
+    }
+
+    // Type metadata
+    private static org.apache.axis.description.TypeDesc typeDesc =
+        new org.apache.axis.description.TypeDesc(EntityGroupSearchBasic.class, true);
+
+    static {
+        typeDesc.setXmlType(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "EntityGroupSearchBasic"));
+        org.apache.axis.description.ElementDesc elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("email");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "email"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchStringField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("externalId");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "externalId"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "searchValue"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("externalIdString");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "externalIdString"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchStringField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("groupName");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "groupName"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchStringField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("groupOwner");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "groupOwner"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "searchValue"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("groupType");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "groupType"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "searchValue"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("internalId");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "internalId"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "searchValue"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("internalIdNumber");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "internalIdNumber"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchLongField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("isDynamic");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "isDynamic"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchBooleanField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("isInactive");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "isInactive"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchBooleanField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("isManufacturingWorkCenter");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "isManufacturingWorkCenter"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchBooleanField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("isPrivate");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "isPrivate"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchBooleanField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("laborResources");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "laborResources"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchLongField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("lastModifiedDate");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "lastModifiedDate"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchDateField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("machineResources");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "machineResources"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchLongField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("subsidiary");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "subsidiary"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "searchValue"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("workCalendar");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "workCalendar"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "searchValue"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("customFieldList");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "customFieldList"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchCustomField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "customField"));
+        typeDesc.addFieldDesc(elemField);
+    }
+
+    /**
+     * Return type metadata object
+     */
+    public static org.apache.axis.description.TypeDesc getTypeDesc() {
+        return typeDesc;
+    }
+
+    /**
+     * Get Custom Serializer
+     */
+    public static org.apache.axis.encoding.Serializer getSerializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanSerializer(
+            _javaType, _xmlType, typeDesc);
+    }
+
+    /**
+     * Get Custom Deserializer
+     */
+    public static org.apache.axis.encoding.Deserializer getDeserializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanDeserializer(
+            _javaType, _xmlType, typeDesc);
     }
 
 }

@@ -1,686 +1,989 @@
+/**
+ * ItemFulfillmentItem.java
+ *
+ * This file was auto-generated from WSDL
+ * by the Apache Axis 1.4 Jul 28, 2010 (04:07:04 PDT) WSDL2Java emitter.
+ */
 
 package com.netsuite.webservices.transactions.sales_2018_2;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlType;
-import com.netsuite.webservices.platform.common_2018_2.InventoryDetail;
-import com.netsuite.webservices.platform.core_2018_2.CustomFieldList;
-import com.netsuite.webservices.platform.core_2018_2.RecordRef;
+public class ItemFulfillmentItem  implements java.io.Serializable {
+    private java.lang.String jobName;
 
+    private java.lang.Boolean itemReceive;
 
-/**
- * <p>ItemFulfillmentItem complex type的 Java 类。
- * 
- * <p>以下模式片段指定包含在此类中的预期内容。
- * 
- * <pre>
- * &lt;complexType name="ItemFulfillmentItem">
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element name="jobName" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="itemReceive" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         &lt;element name="itemName" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="description" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="department" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="class" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="location" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="onHand" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
- *         &lt;element name="quantity" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
- *         &lt;element name="unitsDisplay" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="createPo" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="inventoryDetail" type="{urn:common_2018_2.platform.webservices.netsuite.com}InventoryDetail" minOccurs="0"/>
- *         &lt;element name="binNumbers" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="serialNumbers" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="poNum" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="item" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="orderLine" type="{http://www.w3.org/2001/XMLSchema}long" minOccurs="0"/>
- *         &lt;element name="quantityRemaining" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
- *         &lt;element name="options" type="{urn:core_2018_2.platform.webservices.netsuite.com}CustomFieldList" minOccurs="0"/>
- *         &lt;element name="shipGroup" type="{http://www.w3.org/2001/XMLSchema}long" minOccurs="0"/>
- *         &lt;element name="itemIsFulfilled" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         &lt;element name="shipAddress" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="shipMethod" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="customFieldList" type="{urn:core_2018_2.platform.webservices.netsuite.com}CustomFieldList" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
- */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "ItemFulfillmentItem", propOrder = {
-    "jobName",
-    "itemReceive",
-    "itemName",
-    "description",
-    "department",
-    "clazz",
-    "location",
-    "onHand",
-    "quantity",
-    "unitsDisplay",
-    "createPo",
-    "inventoryDetail",
-    "binNumbers",
-    "serialNumbers",
-    "poNum",
-    "item",
-    "orderLine",
-    "quantityRemaining",
-    "options",
-    "shipGroup",
-    "itemIsFulfilled",
-    "shipAddress",
-    "shipMethod",
-    "customFieldList"
-})
-public class ItemFulfillmentItem {
+    private java.lang.String itemName;
 
-    protected String jobName;
-    protected Boolean itemReceive;
-    protected String itemName;
-    protected String description;
-    protected RecordRef department;
-    @XmlElement(name = "class")
-    protected RecordRef clazz;
-    protected RecordRef location;
-    protected Double onHand;
-    protected Double quantity;
-    protected String unitsDisplay;
-    protected String createPo;
-    protected InventoryDetail inventoryDetail;
-    protected String binNumbers;
-    protected String serialNumbers;
-    protected String poNum;
-    protected RecordRef item;
-    protected Long orderLine;
-    protected Double quantityRemaining;
-    protected CustomFieldList options;
-    protected Long shipGroup;
-    protected Boolean itemIsFulfilled;
-    protected RecordRef shipAddress;
-    protected RecordRef shipMethod;
-    protected CustomFieldList customFieldList;
+    private java.lang.String description;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef department;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef _class;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef location;
+
+    private java.lang.Double onHand;
+
+    private java.lang.Double quantity;
+
+    private java.lang.String unitsDisplay;
+
+    private java.lang.String createPo;
+
+    private com.netsuite.webservices.platform.common_2018_2.InventoryDetail inventoryDetail;
+
+    private java.lang.String binNumbers;
+
+    private java.lang.String serialNumbers;
+
+    private java.lang.String poNum;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef item;
+
+    private java.lang.Long orderLine;
+
+    private java.lang.Double quantityRemaining;
+
+    private com.netsuite.webservices.platform.core_2018_2.CustomFieldRef[] options;
+
+    private java.lang.Long shipGroup;
+
+    private java.lang.Boolean itemIsFulfilled;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef shipAddress;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef shipMethod;
+
+    private com.netsuite.webservices.platform.core_2018_2.CustomFieldRef[] customFieldList;
+
+    public ItemFulfillmentItem() {
+    }
+
+    public ItemFulfillmentItem(
+           java.lang.String jobName,
+           java.lang.Boolean itemReceive,
+           java.lang.String itemName,
+           java.lang.String description,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef department,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef _class,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef location,
+           java.lang.Double onHand,
+           java.lang.Double quantity,
+           java.lang.String unitsDisplay,
+           java.lang.String createPo,
+           com.netsuite.webservices.platform.common_2018_2.InventoryDetail inventoryDetail,
+           java.lang.String binNumbers,
+           java.lang.String serialNumbers,
+           java.lang.String poNum,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef item,
+           java.lang.Long orderLine,
+           java.lang.Double quantityRemaining,
+           com.netsuite.webservices.platform.core_2018_2.CustomFieldRef[] options,
+           java.lang.Long shipGroup,
+           java.lang.Boolean itemIsFulfilled,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef shipAddress,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef shipMethod,
+           com.netsuite.webservices.platform.core_2018_2.CustomFieldRef[] customFieldList) {
+           this.jobName = jobName;
+           this.itemReceive = itemReceive;
+           this.itemName = itemName;
+           this.description = description;
+           this.department = department;
+           this._class = _class;
+           this.location = location;
+           this.onHand = onHand;
+           this.quantity = quantity;
+           this.unitsDisplay = unitsDisplay;
+           this.createPo = createPo;
+           this.inventoryDetail = inventoryDetail;
+           this.binNumbers = binNumbers;
+           this.serialNumbers = serialNumbers;
+           this.poNum = poNum;
+           this.item = item;
+           this.orderLine = orderLine;
+           this.quantityRemaining = quantityRemaining;
+           this.options = options;
+           this.shipGroup = shipGroup;
+           this.itemIsFulfilled = itemIsFulfilled;
+           this.shipAddress = shipAddress;
+           this.shipMethod = shipMethod;
+           this.customFieldList = customFieldList;
+    }
+
 
     /**
-     * 获取jobName属性的值。
+     * Gets the jobName value for this ItemFulfillmentItem.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @return jobName
      */
-    public String getJobName() {
+    public java.lang.String getJobName() {
         return jobName;
     }
 
-    /**
-     * 设置jobName属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setJobName(String value) {
-        this.jobName = value;
-    }
 
     /**
-     * 获取itemReceive属性的值。
+     * Sets the jobName value for this ItemFulfillmentItem.
      * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
+     * @param jobName
      */
-    public Boolean isItemReceive() {
+    public void setJobName(java.lang.String jobName) {
+        this.jobName = jobName;
+    }
+
+
+    /**
+     * Gets the itemReceive value for this ItemFulfillmentItem.
+     * 
+     * @return itemReceive
+     */
+    public java.lang.Boolean getItemReceive() {
         return itemReceive;
     }
 
-    /**
-     * 设置itemReceive属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
-     */
-    public void setItemReceive(Boolean value) {
-        this.itemReceive = value;
-    }
 
     /**
-     * 获取itemName属性的值。
+     * Sets the itemReceive value for this ItemFulfillmentItem.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param itemReceive
      */
-    public String getItemName() {
+    public void setItemReceive(java.lang.Boolean itemReceive) {
+        this.itemReceive = itemReceive;
+    }
+
+
+    /**
+     * Gets the itemName value for this ItemFulfillmentItem.
+     * 
+     * @return itemName
+     */
+    public java.lang.String getItemName() {
         return itemName;
     }
 
-    /**
-     * 设置itemName属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setItemName(String value) {
-        this.itemName = value;
-    }
 
     /**
-     * 获取description属性的值。
+     * Sets the itemName value for this ItemFulfillmentItem.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param itemName
      */
-    public String getDescription() {
+    public void setItemName(java.lang.String itemName) {
+        this.itemName = itemName;
+    }
+
+
+    /**
+     * Gets the description value for this ItemFulfillmentItem.
+     * 
+     * @return description
+     */
+    public java.lang.String getDescription() {
         return description;
     }
 
-    /**
-     * 设置description属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setDescription(String value) {
-        this.description = value;
-    }
 
     /**
-     * 获取department属性的值。
+     * Sets the description value for this ItemFulfillmentItem.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param description
      */
-    public RecordRef getDepartment() {
+    public void setDescription(java.lang.String description) {
+        this.description = description;
+    }
+
+
+    /**
+     * Gets the department value for this ItemFulfillmentItem.
+     * 
+     * @return department
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getDepartment() {
         return department;
     }
 
-    /**
-     * 设置department属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setDepartment(RecordRef value) {
-        this.department = value;
-    }
 
     /**
-     * 获取clazz属性的值。
+     * Sets the department value for this ItemFulfillmentItem.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param department
      */
-    public RecordRef getClazz() {
-        return clazz;
+    public void setDepartment(com.netsuite.webservices.platform.core_2018_2.RecordRef department) {
+        this.department = department;
     }
 
-    /**
-     * 设置clazz属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setClazz(RecordRef value) {
-        this.clazz = value;
-    }
 
     /**
-     * 获取location属性的值。
+     * Gets the _class value for this ItemFulfillmentItem.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @return _class
      */
-    public RecordRef getLocation() {
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef get_class() {
+        return _class;
+    }
+
+
+    /**
+     * Sets the _class value for this ItemFulfillmentItem.
+     * 
+     * @param _class
+     */
+    public void set_class(com.netsuite.webservices.platform.core_2018_2.RecordRef _class) {
+        this._class = _class;
+    }
+
+
+    /**
+     * Gets the location value for this ItemFulfillmentItem.
+     * 
+     * @return location
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getLocation() {
         return location;
     }
 
-    /**
-     * 设置location属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setLocation(RecordRef value) {
-        this.location = value;
-    }
 
     /**
-     * 获取onHand属性的值。
+     * Sets the location value for this ItemFulfillmentItem.
      * 
-     * @return
-     *     possible object is
-     *     {@link Double }
-     *     
+     * @param location
      */
-    public Double getOnHand() {
+    public void setLocation(com.netsuite.webservices.platform.core_2018_2.RecordRef location) {
+        this.location = location;
+    }
+
+
+    /**
+     * Gets the onHand value for this ItemFulfillmentItem.
+     * 
+     * @return onHand
+     */
+    public java.lang.Double getOnHand() {
         return onHand;
     }
 
-    /**
-     * 设置onHand属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Double }
-     *     
-     */
-    public void setOnHand(Double value) {
-        this.onHand = value;
-    }
 
     /**
-     * 获取quantity属性的值。
+     * Sets the onHand value for this ItemFulfillmentItem.
      * 
-     * @return
-     *     possible object is
-     *     {@link Double }
-     *     
+     * @param onHand
      */
-    public Double getQuantity() {
+    public void setOnHand(java.lang.Double onHand) {
+        this.onHand = onHand;
+    }
+
+
+    /**
+     * Gets the quantity value for this ItemFulfillmentItem.
+     * 
+     * @return quantity
+     */
+    public java.lang.Double getQuantity() {
         return quantity;
     }
 
-    /**
-     * 设置quantity属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Double }
-     *     
-     */
-    public void setQuantity(Double value) {
-        this.quantity = value;
-    }
 
     /**
-     * 获取unitsDisplay属性的值。
+     * Sets the quantity value for this ItemFulfillmentItem.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param quantity
      */
-    public String getUnitsDisplay() {
+    public void setQuantity(java.lang.Double quantity) {
+        this.quantity = quantity;
+    }
+
+
+    /**
+     * Gets the unitsDisplay value for this ItemFulfillmentItem.
+     * 
+     * @return unitsDisplay
+     */
+    public java.lang.String getUnitsDisplay() {
         return unitsDisplay;
     }
 
-    /**
-     * 设置unitsDisplay属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setUnitsDisplay(String value) {
-        this.unitsDisplay = value;
-    }
 
     /**
-     * 获取createPo属性的值。
+     * Sets the unitsDisplay value for this ItemFulfillmentItem.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param unitsDisplay
      */
-    public String getCreatePo() {
+    public void setUnitsDisplay(java.lang.String unitsDisplay) {
+        this.unitsDisplay = unitsDisplay;
+    }
+
+
+    /**
+     * Gets the createPo value for this ItemFulfillmentItem.
+     * 
+     * @return createPo
+     */
+    public java.lang.String getCreatePo() {
         return createPo;
     }
 
-    /**
-     * 设置createPo属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setCreatePo(String value) {
-        this.createPo = value;
-    }
 
     /**
-     * 获取inventoryDetail属性的值。
+     * Sets the createPo value for this ItemFulfillmentItem.
      * 
-     * @return
-     *     possible object is
-     *     {@link InventoryDetail }
-     *     
+     * @param createPo
      */
-    public InventoryDetail getInventoryDetail() {
+    public void setCreatePo(java.lang.String createPo) {
+        this.createPo = createPo;
+    }
+
+
+    /**
+     * Gets the inventoryDetail value for this ItemFulfillmentItem.
+     * 
+     * @return inventoryDetail
+     */
+    public com.netsuite.webservices.platform.common_2018_2.InventoryDetail getInventoryDetail() {
         return inventoryDetail;
     }
 
-    /**
-     * 设置inventoryDetail属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link InventoryDetail }
-     *     
-     */
-    public void setInventoryDetail(InventoryDetail value) {
-        this.inventoryDetail = value;
-    }
 
     /**
-     * 获取binNumbers属性的值。
+     * Sets the inventoryDetail value for this ItemFulfillmentItem.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param inventoryDetail
      */
-    public String getBinNumbers() {
+    public void setInventoryDetail(com.netsuite.webservices.platform.common_2018_2.InventoryDetail inventoryDetail) {
+        this.inventoryDetail = inventoryDetail;
+    }
+
+
+    /**
+     * Gets the binNumbers value for this ItemFulfillmentItem.
+     * 
+     * @return binNumbers
+     */
+    public java.lang.String getBinNumbers() {
         return binNumbers;
     }
 
-    /**
-     * 设置binNumbers属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setBinNumbers(String value) {
-        this.binNumbers = value;
-    }
 
     /**
-     * 获取serialNumbers属性的值。
+     * Sets the binNumbers value for this ItemFulfillmentItem.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param binNumbers
      */
-    public String getSerialNumbers() {
+    public void setBinNumbers(java.lang.String binNumbers) {
+        this.binNumbers = binNumbers;
+    }
+
+
+    /**
+     * Gets the serialNumbers value for this ItemFulfillmentItem.
+     * 
+     * @return serialNumbers
+     */
+    public java.lang.String getSerialNumbers() {
         return serialNumbers;
     }
 
-    /**
-     * 设置serialNumbers属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setSerialNumbers(String value) {
-        this.serialNumbers = value;
-    }
 
     /**
-     * 获取poNum属性的值。
+     * Sets the serialNumbers value for this ItemFulfillmentItem.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param serialNumbers
      */
-    public String getPoNum() {
+    public void setSerialNumbers(java.lang.String serialNumbers) {
+        this.serialNumbers = serialNumbers;
+    }
+
+
+    /**
+     * Gets the poNum value for this ItemFulfillmentItem.
+     * 
+     * @return poNum
+     */
+    public java.lang.String getPoNum() {
         return poNum;
     }
 
-    /**
-     * 设置poNum属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setPoNum(String value) {
-        this.poNum = value;
-    }
 
     /**
-     * 获取item属性的值。
+     * Sets the poNum value for this ItemFulfillmentItem.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param poNum
      */
-    public RecordRef getItem() {
+    public void setPoNum(java.lang.String poNum) {
+        this.poNum = poNum;
+    }
+
+
+    /**
+     * Gets the item value for this ItemFulfillmentItem.
+     * 
+     * @return item
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getItem() {
         return item;
     }
 
-    /**
-     * 设置item属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setItem(RecordRef value) {
-        this.item = value;
-    }
 
     /**
-     * 获取orderLine属性的值。
+     * Sets the item value for this ItemFulfillmentItem.
      * 
-     * @return
-     *     possible object is
-     *     {@link Long }
-     *     
+     * @param item
      */
-    public Long getOrderLine() {
+    public void setItem(com.netsuite.webservices.platform.core_2018_2.RecordRef item) {
+        this.item = item;
+    }
+
+
+    /**
+     * Gets the orderLine value for this ItemFulfillmentItem.
+     * 
+     * @return orderLine
+     */
+    public java.lang.Long getOrderLine() {
         return orderLine;
     }
 
-    /**
-     * 设置orderLine属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Long }
-     *     
-     */
-    public void setOrderLine(Long value) {
-        this.orderLine = value;
-    }
 
     /**
-     * 获取quantityRemaining属性的值。
+     * Sets the orderLine value for this ItemFulfillmentItem.
      * 
-     * @return
-     *     possible object is
-     *     {@link Double }
-     *     
+     * @param orderLine
      */
-    public Double getQuantityRemaining() {
+    public void setOrderLine(java.lang.Long orderLine) {
+        this.orderLine = orderLine;
+    }
+
+
+    /**
+     * Gets the quantityRemaining value for this ItemFulfillmentItem.
+     * 
+     * @return quantityRemaining
+     */
+    public java.lang.Double getQuantityRemaining() {
         return quantityRemaining;
     }
 
-    /**
-     * 设置quantityRemaining属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Double }
-     *     
-     */
-    public void setQuantityRemaining(Double value) {
-        this.quantityRemaining = value;
-    }
 
     /**
-     * 获取options属性的值。
+     * Sets the quantityRemaining value for this ItemFulfillmentItem.
      * 
-     * @return
-     *     possible object is
-     *     {@link CustomFieldList }
-     *     
+     * @param quantityRemaining
      */
-    public CustomFieldList getOptions() {
+    public void setQuantityRemaining(java.lang.Double quantityRemaining) {
+        this.quantityRemaining = quantityRemaining;
+    }
+
+
+    /**
+     * Gets the options value for this ItemFulfillmentItem.
+     * 
+     * @return options
+     */
+    public com.netsuite.webservices.platform.core_2018_2.CustomFieldRef[] getOptions() {
         return options;
     }
 
-    /**
-     * 设置options属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link CustomFieldList }
-     *     
-     */
-    public void setOptions(CustomFieldList value) {
-        this.options = value;
-    }
 
     /**
-     * 获取shipGroup属性的值。
+     * Sets the options value for this ItemFulfillmentItem.
      * 
-     * @return
-     *     possible object is
-     *     {@link Long }
-     *     
+     * @param options
      */
-    public Long getShipGroup() {
+    public void setOptions(com.netsuite.webservices.platform.core_2018_2.CustomFieldRef[] options) {
+        this.options = options;
+    }
+
+
+    /**
+     * Gets the shipGroup value for this ItemFulfillmentItem.
+     * 
+     * @return shipGroup
+     */
+    public java.lang.Long getShipGroup() {
         return shipGroup;
     }
 
-    /**
-     * 设置shipGroup属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Long }
-     *     
-     */
-    public void setShipGroup(Long value) {
-        this.shipGroup = value;
-    }
 
     /**
-     * 获取itemIsFulfilled属性的值。
+     * Sets the shipGroup value for this ItemFulfillmentItem.
      * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
+     * @param shipGroup
      */
-    public Boolean isItemIsFulfilled() {
+    public void setShipGroup(java.lang.Long shipGroup) {
+        this.shipGroup = shipGroup;
+    }
+
+
+    /**
+     * Gets the itemIsFulfilled value for this ItemFulfillmentItem.
+     * 
+     * @return itemIsFulfilled
+     */
+    public java.lang.Boolean getItemIsFulfilled() {
         return itemIsFulfilled;
     }
 
-    /**
-     * 设置itemIsFulfilled属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
-     */
-    public void setItemIsFulfilled(Boolean value) {
-        this.itemIsFulfilled = value;
-    }
 
     /**
-     * 获取shipAddress属性的值。
+     * Sets the itemIsFulfilled value for this ItemFulfillmentItem.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param itemIsFulfilled
      */
-    public RecordRef getShipAddress() {
+    public void setItemIsFulfilled(java.lang.Boolean itemIsFulfilled) {
+        this.itemIsFulfilled = itemIsFulfilled;
+    }
+
+
+    /**
+     * Gets the shipAddress value for this ItemFulfillmentItem.
+     * 
+     * @return shipAddress
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getShipAddress() {
         return shipAddress;
     }
 
-    /**
-     * 设置shipAddress属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setShipAddress(RecordRef value) {
-        this.shipAddress = value;
-    }
 
     /**
-     * 获取shipMethod属性的值。
+     * Sets the shipAddress value for this ItemFulfillmentItem.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param shipAddress
      */
-    public RecordRef getShipMethod() {
+    public void setShipAddress(com.netsuite.webservices.platform.core_2018_2.RecordRef shipAddress) {
+        this.shipAddress = shipAddress;
+    }
+
+
+    /**
+     * Gets the shipMethod value for this ItemFulfillmentItem.
+     * 
+     * @return shipMethod
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getShipMethod() {
         return shipMethod;
     }
 
-    /**
-     * 设置shipMethod属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setShipMethod(RecordRef value) {
-        this.shipMethod = value;
-    }
 
     /**
-     * 获取customFieldList属性的值。
+     * Sets the shipMethod value for this ItemFulfillmentItem.
      * 
-     * @return
-     *     possible object is
-     *     {@link CustomFieldList }
-     *     
+     * @param shipMethod
      */
-    public CustomFieldList getCustomFieldList() {
+    public void setShipMethod(com.netsuite.webservices.platform.core_2018_2.RecordRef shipMethod) {
+        this.shipMethod = shipMethod;
+    }
+
+
+    /**
+     * Gets the customFieldList value for this ItemFulfillmentItem.
+     * 
+     * @return customFieldList
+     */
+    public com.netsuite.webservices.platform.core_2018_2.CustomFieldRef[] getCustomFieldList() {
         return customFieldList;
     }
 
+
     /**
-     * 设置customFieldList属性的值。
+     * Sets the customFieldList value for this ItemFulfillmentItem.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link CustomFieldList }
-     *     
+     * @param customFieldList
      */
-    public void setCustomFieldList(CustomFieldList value) {
-        this.customFieldList = value;
+    public void setCustomFieldList(com.netsuite.webservices.platform.core_2018_2.CustomFieldRef[] customFieldList) {
+        this.customFieldList = customFieldList;
+    }
+
+    private java.lang.Object __equalsCalc = null;
+    public synchronized boolean equals(java.lang.Object obj) {
+        if (!(obj instanceof ItemFulfillmentItem)) return false;
+        ItemFulfillmentItem other = (ItemFulfillmentItem) obj;
+        if (obj == null) return false;
+        if (this == obj) return true;
+        if (__equalsCalc != null) {
+            return (__equalsCalc == obj);
+        }
+        __equalsCalc = obj;
+        boolean _equals;
+        _equals = true && 
+            ((this.jobName==null && other.getJobName()==null) || 
+             (this.jobName!=null &&
+              this.jobName.equals(other.getJobName()))) &&
+            ((this.itemReceive==null && other.getItemReceive()==null) || 
+             (this.itemReceive!=null &&
+              this.itemReceive.equals(other.getItemReceive()))) &&
+            ((this.itemName==null && other.getItemName()==null) || 
+             (this.itemName!=null &&
+              this.itemName.equals(other.getItemName()))) &&
+            ((this.description==null && other.getDescription()==null) || 
+             (this.description!=null &&
+              this.description.equals(other.getDescription()))) &&
+            ((this.department==null && other.getDepartment()==null) || 
+             (this.department!=null &&
+              this.department.equals(other.getDepartment()))) &&
+            ((this._class==null && other.get_class()==null) || 
+             (this._class!=null &&
+              this._class.equals(other.get_class()))) &&
+            ((this.location==null && other.getLocation()==null) || 
+             (this.location!=null &&
+              this.location.equals(other.getLocation()))) &&
+            ((this.onHand==null && other.getOnHand()==null) || 
+             (this.onHand!=null &&
+              this.onHand.equals(other.getOnHand()))) &&
+            ((this.quantity==null && other.getQuantity()==null) || 
+             (this.quantity!=null &&
+              this.quantity.equals(other.getQuantity()))) &&
+            ((this.unitsDisplay==null && other.getUnitsDisplay()==null) || 
+             (this.unitsDisplay!=null &&
+              this.unitsDisplay.equals(other.getUnitsDisplay()))) &&
+            ((this.createPo==null && other.getCreatePo()==null) || 
+             (this.createPo!=null &&
+              this.createPo.equals(other.getCreatePo()))) &&
+            ((this.inventoryDetail==null && other.getInventoryDetail()==null) || 
+             (this.inventoryDetail!=null &&
+              this.inventoryDetail.equals(other.getInventoryDetail()))) &&
+            ((this.binNumbers==null && other.getBinNumbers()==null) || 
+             (this.binNumbers!=null &&
+              this.binNumbers.equals(other.getBinNumbers()))) &&
+            ((this.serialNumbers==null && other.getSerialNumbers()==null) || 
+             (this.serialNumbers!=null &&
+              this.serialNumbers.equals(other.getSerialNumbers()))) &&
+            ((this.poNum==null && other.getPoNum()==null) || 
+             (this.poNum!=null &&
+              this.poNum.equals(other.getPoNum()))) &&
+            ((this.item==null && other.getItem()==null) || 
+             (this.item!=null &&
+              this.item.equals(other.getItem()))) &&
+            ((this.orderLine==null && other.getOrderLine()==null) || 
+             (this.orderLine!=null &&
+              this.orderLine.equals(other.getOrderLine()))) &&
+            ((this.quantityRemaining==null && other.getQuantityRemaining()==null) || 
+             (this.quantityRemaining!=null &&
+              this.quantityRemaining.equals(other.getQuantityRemaining()))) &&
+            ((this.options==null && other.getOptions()==null) || 
+             (this.options!=null &&
+              java.util.Arrays.equals(this.options, other.getOptions()))) &&
+            ((this.shipGroup==null && other.getShipGroup()==null) || 
+             (this.shipGroup!=null &&
+              this.shipGroup.equals(other.getShipGroup()))) &&
+            ((this.itemIsFulfilled==null && other.getItemIsFulfilled()==null) || 
+             (this.itemIsFulfilled!=null &&
+              this.itemIsFulfilled.equals(other.getItemIsFulfilled()))) &&
+            ((this.shipAddress==null && other.getShipAddress()==null) || 
+             (this.shipAddress!=null &&
+              this.shipAddress.equals(other.getShipAddress()))) &&
+            ((this.shipMethod==null && other.getShipMethod()==null) || 
+             (this.shipMethod!=null &&
+              this.shipMethod.equals(other.getShipMethod()))) &&
+            ((this.customFieldList==null && other.getCustomFieldList()==null) || 
+             (this.customFieldList!=null &&
+              java.util.Arrays.equals(this.customFieldList, other.getCustomFieldList())));
+        __equalsCalc = null;
+        return _equals;
+    }
+
+    private boolean __hashCodeCalc = false;
+    public synchronized int hashCode() {
+        if (__hashCodeCalc) {
+            return 0;
+        }
+        __hashCodeCalc = true;
+        int _hashCode = 1;
+        if (getJobName() != null) {
+            _hashCode += getJobName().hashCode();
+        }
+        if (getItemReceive() != null) {
+            _hashCode += getItemReceive().hashCode();
+        }
+        if (getItemName() != null) {
+            _hashCode += getItemName().hashCode();
+        }
+        if (getDescription() != null) {
+            _hashCode += getDescription().hashCode();
+        }
+        if (getDepartment() != null) {
+            _hashCode += getDepartment().hashCode();
+        }
+        if (get_class() != null) {
+            _hashCode += get_class().hashCode();
+        }
+        if (getLocation() != null) {
+            _hashCode += getLocation().hashCode();
+        }
+        if (getOnHand() != null) {
+            _hashCode += getOnHand().hashCode();
+        }
+        if (getQuantity() != null) {
+            _hashCode += getQuantity().hashCode();
+        }
+        if (getUnitsDisplay() != null) {
+            _hashCode += getUnitsDisplay().hashCode();
+        }
+        if (getCreatePo() != null) {
+            _hashCode += getCreatePo().hashCode();
+        }
+        if (getInventoryDetail() != null) {
+            _hashCode += getInventoryDetail().hashCode();
+        }
+        if (getBinNumbers() != null) {
+            _hashCode += getBinNumbers().hashCode();
+        }
+        if (getSerialNumbers() != null) {
+            _hashCode += getSerialNumbers().hashCode();
+        }
+        if (getPoNum() != null) {
+            _hashCode += getPoNum().hashCode();
+        }
+        if (getItem() != null) {
+            _hashCode += getItem().hashCode();
+        }
+        if (getOrderLine() != null) {
+            _hashCode += getOrderLine().hashCode();
+        }
+        if (getQuantityRemaining() != null) {
+            _hashCode += getQuantityRemaining().hashCode();
+        }
+        if (getOptions() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getOptions());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getOptions(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getShipGroup() != null) {
+            _hashCode += getShipGroup().hashCode();
+        }
+        if (getItemIsFulfilled() != null) {
+            _hashCode += getItemIsFulfilled().hashCode();
+        }
+        if (getShipAddress() != null) {
+            _hashCode += getShipAddress().hashCode();
+        }
+        if (getShipMethod() != null) {
+            _hashCode += getShipMethod().hashCode();
+        }
+        if (getCustomFieldList() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getCustomFieldList());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getCustomFieldList(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        __hashCodeCalc = false;
+        return _hashCode;
+    }
+
+    // Type metadata
+    private static org.apache.axis.description.TypeDesc typeDesc =
+        new org.apache.axis.description.TypeDesc(ItemFulfillmentItem.class, true);
+
+    static {
+        typeDesc.setXmlType(new javax.xml.namespace.QName("urn:sales_2018_2.transactions.webservices.netsuite.com", "ItemFulfillmentItem"));
+        org.apache.axis.description.ElementDesc elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("jobName");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:sales_2018_2.transactions.webservices.netsuite.com", "jobName"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("itemReceive");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:sales_2018_2.transactions.webservices.netsuite.com", "itemReceive"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("itemName");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:sales_2018_2.transactions.webservices.netsuite.com", "itemName"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("description");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:sales_2018_2.transactions.webservices.netsuite.com", "description"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("department");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:sales_2018_2.transactions.webservices.netsuite.com", "department"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("_class");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:sales_2018_2.transactions.webservices.netsuite.com", "class"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("location");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:sales_2018_2.transactions.webservices.netsuite.com", "location"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("onHand");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:sales_2018_2.transactions.webservices.netsuite.com", "onHand"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "double"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("quantity");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:sales_2018_2.transactions.webservices.netsuite.com", "quantity"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "double"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("unitsDisplay");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:sales_2018_2.transactions.webservices.netsuite.com", "unitsDisplay"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("createPo");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:sales_2018_2.transactions.webservices.netsuite.com", "createPo"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("inventoryDetail");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:sales_2018_2.transactions.webservices.netsuite.com", "inventoryDetail"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "InventoryDetail"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("binNumbers");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:sales_2018_2.transactions.webservices.netsuite.com", "binNumbers"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("serialNumbers");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:sales_2018_2.transactions.webservices.netsuite.com", "serialNumbers"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("poNum");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:sales_2018_2.transactions.webservices.netsuite.com", "poNum"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("item");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:sales_2018_2.transactions.webservices.netsuite.com", "item"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("orderLine");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:sales_2018_2.transactions.webservices.netsuite.com", "orderLine"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "long"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("quantityRemaining");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:sales_2018_2.transactions.webservices.netsuite.com", "quantityRemaining"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "double"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("options");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:sales_2018_2.transactions.webservices.netsuite.com", "options"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "CustomFieldRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "customField"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("shipGroup");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:sales_2018_2.transactions.webservices.netsuite.com", "shipGroup"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "long"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("itemIsFulfilled");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:sales_2018_2.transactions.webservices.netsuite.com", "itemIsFulfilled"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("shipAddress");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:sales_2018_2.transactions.webservices.netsuite.com", "shipAddress"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("shipMethod");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:sales_2018_2.transactions.webservices.netsuite.com", "shipMethod"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("customFieldList");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:sales_2018_2.transactions.webservices.netsuite.com", "customFieldList"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "CustomFieldRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "customField"));
+        typeDesc.addFieldDesc(elemField);
+    }
+
+    /**
+     * Return type metadata object
+     */
+    public static org.apache.axis.description.TypeDesc getTypeDesc() {
+        return typeDesc;
+    }
+
+    /**
+     * Get Custom Serializer
+     */
+    public static org.apache.axis.encoding.Serializer getSerializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanSerializer(
+            _javaType, _xmlType, typeDesc);
+    }
+
+    /**
+     * Get Custom Deserializer
+     */
+    public static org.apache.axis.encoding.Deserializer getDeserializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanDeserializer(
+            _javaType, _xmlType, typeDesc);
     }
 
 }

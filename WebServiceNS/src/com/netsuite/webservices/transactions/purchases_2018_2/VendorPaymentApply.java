@@ -1,415 +1,601 @@
+/**
+ * VendorPaymentApply.java
+ *
+ * This file was auto-generated from WSDL
+ * by the Apache Axis 1.4 Jul 28, 2010 (04:07:04 PDT) WSDL2Java emitter.
+ */
 
 package com.netsuite.webservices.transactions.purchases_2018_2;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlSchemaType;
-import javax.xml.bind.annotation.XmlType;
-import javax.xml.datatype.XMLGregorianCalendar;
+public class VendorPaymentApply  implements java.io.Serializable {
+    private java.lang.Boolean apply;
 
+    private java.lang.Long doc;
 
-/**
- * <p>VendorPaymentApply complex type的 Java 类。
- * 
- * <p>以下模式片段指定包含在此类中的预期内容。
- * 
- * <pre>
- * &lt;complexType name="VendorPaymentApply">
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element name="apply" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         &lt;element name="doc" type="{http://www.w3.org/2001/XMLSchema}long" minOccurs="0"/>
- *         &lt;element name="line" type="{http://www.w3.org/2001/XMLSchema}long" minOccurs="0"/>
- *         &lt;element name="job" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="applyDate" type="{http://www.w3.org/2001/XMLSchema}dateTime" minOccurs="0"/>
- *         &lt;element name="type" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="refNum" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="total" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
- *         &lt;element name="due" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
- *         &lt;element name="currency" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="discDate" type="{http://www.w3.org/2001/XMLSchema}dateTime" minOccurs="0"/>
- *         &lt;element name="discAmt" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
- *         &lt;element name="disc" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
- *         &lt;element name="amount" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
- */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "VendorPaymentApply", propOrder = {
-    "apply",
-    "doc",
-    "line",
-    "job",
-    "applyDate",
-    "type",
-    "refNum",
-    "total",
-    "due",
-    "currency",
-    "discDate",
-    "discAmt",
-    "disc",
-    "amount"
-})
-public class VendorPaymentApply {
+    private java.lang.Long line;
 
-    protected Boolean apply;
-    protected Long doc;
-    protected Long line;
-    protected String job;
-    @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar applyDate;
-    protected String type;
-    protected String refNum;
-    protected Double total;
-    protected Double due;
-    protected String currency;
-    @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar discDate;
-    protected Double discAmt;
-    protected Double disc;
-    protected Double amount;
+    private java.lang.String job;
+
+    private java.util.Calendar applyDate;
+
+    private java.lang.String type;
+
+    private java.lang.String refNum;
+
+    private java.lang.Double total;
+
+    private java.lang.Double due;
+
+    private java.lang.String currency;
+
+    private java.util.Calendar discDate;
+
+    private java.lang.Double discAmt;
+
+    private java.lang.Double disc;
+
+    private java.lang.Double amount;
+
+    public VendorPaymentApply() {
+    }
+
+    public VendorPaymentApply(
+           java.lang.Boolean apply,
+           java.lang.Long doc,
+           java.lang.Long line,
+           java.lang.String job,
+           java.util.Calendar applyDate,
+           java.lang.String type,
+           java.lang.String refNum,
+           java.lang.Double total,
+           java.lang.Double due,
+           java.lang.String currency,
+           java.util.Calendar discDate,
+           java.lang.Double discAmt,
+           java.lang.Double disc,
+           java.lang.Double amount) {
+           this.apply = apply;
+           this.doc = doc;
+           this.line = line;
+           this.job = job;
+           this.applyDate = applyDate;
+           this.type = type;
+           this.refNum = refNum;
+           this.total = total;
+           this.due = due;
+           this.currency = currency;
+           this.discDate = discDate;
+           this.discAmt = discAmt;
+           this.disc = disc;
+           this.amount = amount;
+    }
+
 
     /**
-     * 获取apply属性的值。
+     * Gets the apply value for this VendorPaymentApply.
      * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
+     * @return apply
      */
-    public Boolean isApply() {
+    public java.lang.Boolean getApply() {
         return apply;
     }
 
-    /**
-     * 设置apply属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
-     */
-    public void setApply(Boolean value) {
-        this.apply = value;
-    }
 
     /**
-     * 获取doc属性的值。
+     * Sets the apply value for this VendorPaymentApply.
      * 
-     * @return
-     *     possible object is
-     *     {@link Long }
-     *     
+     * @param apply
      */
-    public Long getDoc() {
+    public void setApply(java.lang.Boolean apply) {
+        this.apply = apply;
+    }
+
+
+    /**
+     * Gets the doc value for this VendorPaymentApply.
+     * 
+     * @return doc
+     */
+    public java.lang.Long getDoc() {
         return doc;
     }
 
-    /**
-     * 设置doc属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Long }
-     *     
-     */
-    public void setDoc(Long value) {
-        this.doc = value;
-    }
 
     /**
-     * 获取line属性的值。
+     * Sets the doc value for this VendorPaymentApply.
      * 
-     * @return
-     *     possible object is
-     *     {@link Long }
-     *     
+     * @param doc
      */
-    public Long getLine() {
+    public void setDoc(java.lang.Long doc) {
+        this.doc = doc;
+    }
+
+
+    /**
+     * Gets the line value for this VendorPaymentApply.
+     * 
+     * @return line
+     */
+    public java.lang.Long getLine() {
         return line;
     }
 
-    /**
-     * 设置line属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Long }
-     *     
-     */
-    public void setLine(Long value) {
-        this.line = value;
-    }
 
     /**
-     * 获取job属性的值。
+     * Sets the line value for this VendorPaymentApply.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param line
      */
-    public String getJob() {
+    public void setLine(java.lang.Long line) {
+        this.line = line;
+    }
+
+
+    /**
+     * Gets the job value for this VendorPaymentApply.
+     * 
+     * @return job
+     */
+    public java.lang.String getJob() {
         return job;
     }
 
-    /**
-     * 设置job属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setJob(String value) {
-        this.job = value;
-    }
 
     /**
-     * 获取applyDate属性的值。
+     * Sets the job value for this VendorPaymentApply.
      * 
-     * @return
-     *     possible object is
-     *     {@link XMLGregorianCalendar }
-     *     
+     * @param job
      */
-    public XMLGregorianCalendar getApplyDate() {
+    public void setJob(java.lang.String job) {
+        this.job = job;
+    }
+
+
+    /**
+     * Gets the applyDate value for this VendorPaymentApply.
+     * 
+     * @return applyDate
+     */
+    public java.util.Calendar getApplyDate() {
         return applyDate;
     }
 
-    /**
-     * 设置applyDate属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link XMLGregorianCalendar }
-     *     
-     */
-    public void setApplyDate(XMLGregorianCalendar value) {
-        this.applyDate = value;
-    }
 
     /**
-     * 获取type属性的值。
+     * Sets the applyDate value for this VendorPaymentApply.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param applyDate
      */
-    public String getType() {
+    public void setApplyDate(java.util.Calendar applyDate) {
+        this.applyDate = applyDate;
+    }
+
+
+    /**
+     * Gets the type value for this VendorPaymentApply.
+     * 
+     * @return type
+     */
+    public java.lang.String getType() {
         return type;
     }
 
-    /**
-     * 设置type属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setType(String value) {
-        this.type = value;
-    }
 
     /**
-     * 获取refNum属性的值。
+     * Sets the type value for this VendorPaymentApply.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param type
      */
-    public String getRefNum() {
+    public void setType(java.lang.String type) {
+        this.type = type;
+    }
+
+
+    /**
+     * Gets the refNum value for this VendorPaymentApply.
+     * 
+     * @return refNum
+     */
+    public java.lang.String getRefNum() {
         return refNum;
     }
 
-    /**
-     * 设置refNum属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setRefNum(String value) {
-        this.refNum = value;
-    }
 
     /**
-     * 获取total属性的值。
+     * Sets the refNum value for this VendorPaymentApply.
      * 
-     * @return
-     *     possible object is
-     *     {@link Double }
-     *     
+     * @param refNum
      */
-    public Double getTotal() {
+    public void setRefNum(java.lang.String refNum) {
+        this.refNum = refNum;
+    }
+
+
+    /**
+     * Gets the total value for this VendorPaymentApply.
+     * 
+     * @return total
+     */
+    public java.lang.Double getTotal() {
         return total;
     }
 
-    /**
-     * 设置total属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Double }
-     *     
-     */
-    public void setTotal(Double value) {
-        this.total = value;
-    }
 
     /**
-     * 获取due属性的值。
+     * Sets the total value for this VendorPaymentApply.
      * 
-     * @return
-     *     possible object is
-     *     {@link Double }
-     *     
+     * @param total
      */
-    public Double getDue() {
+    public void setTotal(java.lang.Double total) {
+        this.total = total;
+    }
+
+
+    /**
+     * Gets the due value for this VendorPaymentApply.
+     * 
+     * @return due
+     */
+    public java.lang.Double getDue() {
         return due;
     }
 
-    /**
-     * 设置due属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Double }
-     *     
-     */
-    public void setDue(Double value) {
-        this.due = value;
-    }
 
     /**
-     * 获取currency属性的值。
+     * Sets the due value for this VendorPaymentApply.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param due
      */
-    public String getCurrency() {
+    public void setDue(java.lang.Double due) {
+        this.due = due;
+    }
+
+
+    /**
+     * Gets the currency value for this VendorPaymentApply.
+     * 
+     * @return currency
+     */
+    public java.lang.String getCurrency() {
         return currency;
     }
 
-    /**
-     * 设置currency属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setCurrency(String value) {
-        this.currency = value;
-    }
 
     /**
-     * 获取discDate属性的值。
+     * Sets the currency value for this VendorPaymentApply.
      * 
-     * @return
-     *     possible object is
-     *     {@link XMLGregorianCalendar }
-     *     
+     * @param currency
      */
-    public XMLGregorianCalendar getDiscDate() {
+    public void setCurrency(java.lang.String currency) {
+        this.currency = currency;
+    }
+
+
+    /**
+     * Gets the discDate value for this VendorPaymentApply.
+     * 
+     * @return discDate
+     */
+    public java.util.Calendar getDiscDate() {
         return discDate;
     }
 
-    /**
-     * 设置discDate属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link XMLGregorianCalendar }
-     *     
-     */
-    public void setDiscDate(XMLGregorianCalendar value) {
-        this.discDate = value;
-    }
 
     /**
-     * 获取discAmt属性的值。
+     * Sets the discDate value for this VendorPaymentApply.
      * 
-     * @return
-     *     possible object is
-     *     {@link Double }
-     *     
+     * @param discDate
      */
-    public Double getDiscAmt() {
+    public void setDiscDate(java.util.Calendar discDate) {
+        this.discDate = discDate;
+    }
+
+
+    /**
+     * Gets the discAmt value for this VendorPaymentApply.
+     * 
+     * @return discAmt
+     */
+    public java.lang.Double getDiscAmt() {
         return discAmt;
     }
 
-    /**
-     * 设置discAmt属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Double }
-     *     
-     */
-    public void setDiscAmt(Double value) {
-        this.discAmt = value;
-    }
 
     /**
-     * 获取disc属性的值。
+     * Sets the discAmt value for this VendorPaymentApply.
      * 
-     * @return
-     *     possible object is
-     *     {@link Double }
-     *     
+     * @param discAmt
      */
-    public Double getDisc() {
+    public void setDiscAmt(java.lang.Double discAmt) {
+        this.discAmt = discAmt;
+    }
+
+
+    /**
+     * Gets the disc value for this VendorPaymentApply.
+     * 
+     * @return disc
+     */
+    public java.lang.Double getDisc() {
         return disc;
     }
 
-    /**
-     * 设置disc属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Double }
-     *     
-     */
-    public void setDisc(Double value) {
-        this.disc = value;
-    }
 
     /**
-     * 获取amount属性的值。
+     * Sets the disc value for this VendorPaymentApply.
      * 
-     * @return
-     *     possible object is
-     *     {@link Double }
-     *     
+     * @param disc
      */
-    public Double getAmount() {
+    public void setDisc(java.lang.Double disc) {
+        this.disc = disc;
+    }
+
+
+    /**
+     * Gets the amount value for this VendorPaymentApply.
+     * 
+     * @return amount
+     */
+    public java.lang.Double getAmount() {
         return amount;
     }
 
+
     /**
-     * 设置amount属性的值。
+     * Sets the amount value for this VendorPaymentApply.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link Double }
-     *     
+     * @param amount
      */
-    public void setAmount(Double value) {
-        this.amount = value;
+    public void setAmount(java.lang.Double amount) {
+        this.amount = amount;
+    }
+
+    private java.lang.Object __equalsCalc = null;
+    public synchronized boolean equals(java.lang.Object obj) {
+        if (!(obj instanceof VendorPaymentApply)) return false;
+        VendorPaymentApply other = (VendorPaymentApply) obj;
+        if (obj == null) return false;
+        if (this == obj) return true;
+        if (__equalsCalc != null) {
+            return (__equalsCalc == obj);
+        }
+        __equalsCalc = obj;
+        boolean _equals;
+        _equals = true && 
+            ((this.apply==null && other.getApply()==null) || 
+             (this.apply!=null &&
+              this.apply.equals(other.getApply()))) &&
+            ((this.doc==null && other.getDoc()==null) || 
+             (this.doc!=null &&
+              this.doc.equals(other.getDoc()))) &&
+            ((this.line==null && other.getLine()==null) || 
+             (this.line!=null &&
+              this.line.equals(other.getLine()))) &&
+            ((this.job==null && other.getJob()==null) || 
+             (this.job!=null &&
+              this.job.equals(other.getJob()))) &&
+            ((this.applyDate==null && other.getApplyDate()==null) || 
+             (this.applyDate!=null &&
+              this.applyDate.equals(other.getApplyDate()))) &&
+            ((this.type==null && other.getType()==null) || 
+             (this.type!=null &&
+              this.type.equals(other.getType()))) &&
+            ((this.refNum==null && other.getRefNum()==null) || 
+             (this.refNum!=null &&
+              this.refNum.equals(other.getRefNum()))) &&
+            ((this.total==null && other.getTotal()==null) || 
+             (this.total!=null &&
+              this.total.equals(other.getTotal()))) &&
+            ((this.due==null && other.getDue()==null) || 
+             (this.due!=null &&
+              this.due.equals(other.getDue()))) &&
+            ((this.currency==null && other.getCurrency()==null) || 
+             (this.currency!=null &&
+              this.currency.equals(other.getCurrency()))) &&
+            ((this.discDate==null && other.getDiscDate()==null) || 
+             (this.discDate!=null &&
+              this.discDate.equals(other.getDiscDate()))) &&
+            ((this.discAmt==null && other.getDiscAmt()==null) || 
+             (this.discAmt!=null &&
+              this.discAmt.equals(other.getDiscAmt()))) &&
+            ((this.disc==null && other.getDisc()==null) || 
+             (this.disc!=null &&
+              this.disc.equals(other.getDisc()))) &&
+            ((this.amount==null && other.getAmount()==null) || 
+             (this.amount!=null &&
+              this.amount.equals(other.getAmount())));
+        __equalsCalc = null;
+        return _equals;
+    }
+
+    private boolean __hashCodeCalc = false;
+    public synchronized int hashCode() {
+        if (__hashCodeCalc) {
+            return 0;
+        }
+        __hashCodeCalc = true;
+        int _hashCode = 1;
+        if (getApply() != null) {
+            _hashCode += getApply().hashCode();
+        }
+        if (getDoc() != null) {
+            _hashCode += getDoc().hashCode();
+        }
+        if (getLine() != null) {
+            _hashCode += getLine().hashCode();
+        }
+        if (getJob() != null) {
+            _hashCode += getJob().hashCode();
+        }
+        if (getApplyDate() != null) {
+            _hashCode += getApplyDate().hashCode();
+        }
+        if (getType() != null) {
+            _hashCode += getType().hashCode();
+        }
+        if (getRefNum() != null) {
+            _hashCode += getRefNum().hashCode();
+        }
+        if (getTotal() != null) {
+            _hashCode += getTotal().hashCode();
+        }
+        if (getDue() != null) {
+            _hashCode += getDue().hashCode();
+        }
+        if (getCurrency() != null) {
+            _hashCode += getCurrency().hashCode();
+        }
+        if (getDiscDate() != null) {
+            _hashCode += getDiscDate().hashCode();
+        }
+        if (getDiscAmt() != null) {
+            _hashCode += getDiscAmt().hashCode();
+        }
+        if (getDisc() != null) {
+            _hashCode += getDisc().hashCode();
+        }
+        if (getAmount() != null) {
+            _hashCode += getAmount().hashCode();
+        }
+        __hashCodeCalc = false;
+        return _hashCode;
+    }
+
+    // Type metadata
+    private static org.apache.axis.description.TypeDesc typeDesc =
+        new org.apache.axis.description.TypeDesc(VendorPaymentApply.class, true);
+
+    static {
+        typeDesc.setXmlType(new javax.xml.namespace.QName("urn:purchases_2018_2.transactions.webservices.netsuite.com", "VendorPaymentApply"));
+        org.apache.axis.description.ElementDesc elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("apply");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:purchases_2018_2.transactions.webservices.netsuite.com", "apply"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("doc");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:purchases_2018_2.transactions.webservices.netsuite.com", "doc"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "long"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("line");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:purchases_2018_2.transactions.webservices.netsuite.com", "line"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "long"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("job");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:purchases_2018_2.transactions.webservices.netsuite.com", "job"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("applyDate");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:purchases_2018_2.transactions.webservices.netsuite.com", "applyDate"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "dateTime"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("type");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:purchases_2018_2.transactions.webservices.netsuite.com", "type"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("refNum");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:purchases_2018_2.transactions.webservices.netsuite.com", "refNum"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("total");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:purchases_2018_2.transactions.webservices.netsuite.com", "total"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "double"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("due");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:purchases_2018_2.transactions.webservices.netsuite.com", "due"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "double"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("currency");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:purchases_2018_2.transactions.webservices.netsuite.com", "currency"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("discDate");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:purchases_2018_2.transactions.webservices.netsuite.com", "discDate"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "dateTime"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("discAmt");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:purchases_2018_2.transactions.webservices.netsuite.com", "discAmt"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "double"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("disc");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:purchases_2018_2.transactions.webservices.netsuite.com", "disc"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "double"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("amount");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:purchases_2018_2.transactions.webservices.netsuite.com", "amount"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "double"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+    }
+
+    /**
+     * Return type metadata object
+     */
+    public static org.apache.axis.description.TypeDesc getTypeDesc() {
+        return typeDesc;
+    }
+
+    /**
+     * Get Custom Serializer
+     */
+    public static org.apache.axis.encoding.Serializer getSerializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanSerializer(
+            _javaType, _xmlType, typeDesc);
+    }
+
+    /**
+     * Get Custom Deserializer
+     */
+    public static org.apache.axis.encoding.Deserializer getDeserializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanDeserializer(
+            _javaType, _xmlType, typeDesc);
     }
 
 }

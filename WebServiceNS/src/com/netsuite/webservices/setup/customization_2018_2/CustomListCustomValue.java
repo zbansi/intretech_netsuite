@@ -1,168 +1,277 @@
+/**
+ * CustomListCustomValue.java
+ *
+ * This file was auto-generated from WSDL
+ * by the Apache Axis 1.4 Jul 28, 2010 (04:07:04 PDT) WSDL2Java emitter.
+ */
 
 package com.netsuite.webservices.setup.customization_2018_2;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlType;
+public class CustomListCustomValue  implements java.io.Serializable {
+    private java.lang.String value;
 
+    private java.lang.String abbreviation;
 
-/**
- * <p>CustomListCustomValue complex type的 Java 类。
- * 
- * <p>以下模式片段指定包含在此类中的预期内容。
- * 
- * <pre>
- * &lt;complexType name="CustomListCustomValue">
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element name="value" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="abbreviation" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="isInactive" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         &lt;element name="valueId" type="{http://www.w3.org/2001/XMLSchema}long" minOccurs="0"/>
- *         &lt;element name="valueLanguageValueList" type="{urn:customization_2018_2.setup.webservices.netsuite.com}LanguageValueList" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
- */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "CustomListCustomValue", propOrder = {
-    "value",
-    "abbreviation",
-    "isInactive",
-    "valueId",
-    "valueLanguageValueList"
-})
-public class CustomListCustomValue {
+    private java.lang.Boolean isInactive;
 
-    protected String value;
-    protected String abbreviation;
-    protected Boolean isInactive;
-    protected Long valueId;
-    protected LanguageValueList valueLanguageValueList;
+    private java.lang.Long valueId;
+
+    private com.netsuite.webservices.setup.customization_2018_2.LanguageValue[] valueLanguageValueList;
+
+    public CustomListCustomValue() {
+    }
+
+    public CustomListCustomValue(
+           java.lang.String value,
+           java.lang.String abbreviation,
+           java.lang.Boolean isInactive,
+           java.lang.Long valueId,
+           com.netsuite.webservices.setup.customization_2018_2.LanguageValue[] valueLanguageValueList) {
+           this.value = value;
+           this.abbreviation = abbreviation;
+           this.isInactive = isInactive;
+           this.valueId = valueId;
+           this.valueLanguageValueList = valueLanguageValueList;
+    }
+
 
     /**
-     * 获取value属性的值。
+     * Gets the value value for this CustomListCustomValue.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @return value
      */
-    public String getValue() {
+    public java.lang.String getValue() {
         return value;
     }
 
+
     /**
-     * 设置value属性的值。
+     * Sets the value value for this CustomListCustomValue.
      * 
      * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
      */
-    public void setValue(String value) {
+    public void setValue(java.lang.String value) {
         this.value = value;
     }
 
+
     /**
-     * 获取abbreviation属性的值。
+     * Gets the abbreviation value for this CustomListCustomValue.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @return abbreviation
      */
-    public String getAbbreviation() {
+    public java.lang.String getAbbreviation() {
         return abbreviation;
     }
 
-    /**
-     * 设置abbreviation属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setAbbreviation(String value) {
-        this.abbreviation = value;
-    }
 
     /**
-     * 获取isInactive属性的值。
+     * Sets the abbreviation value for this CustomListCustomValue.
      * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
+     * @param abbreviation
      */
-    public Boolean isIsInactive() {
+    public void setAbbreviation(java.lang.String abbreviation) {
+        this.abbreviation = abbreviation;
+    }
+
+
+    /**
+     * Gets the isInactive value for this CustomListCustomValue.
+     * 
+     * @return isInactive
+     */
+    public java.lang.Boolean getIsInactive() {
         return isInactive;
     }
 
-    /**
-     * 设置isInactive属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
-     */
-    public void setIsInactive(Boolean value) {
-        this.isInactive = value;
-    }
 
     /**
-     * 获取valueId属性的值。
+     * Sets the isInactive value for this CustomListCustomValue.
      * 
-     * @return
-     *     possible object is
-     *     {@link Long }
-     *     
+     * @param isInactive
      */
-    public Long getValueId() {
+    public void setIsInactive(java.lang.Boolean isInactive) {
+        this.isInactive = isInactive;
+    }
+
+
+    /**
+     * Gets the valueId value for this CustomListCustomValue.
+     * 
+     * @return valueId
+     */
+    public java.lang.Long getValueId() {
         return valueId;
     }
 
-    /**
-     * 设置valueId属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Long }
-     *     
-     */
-    public void setValueId(Long value) {
-        this.valueId = value;
-    }
 
     /**
-     * 获取valueLanguageValueList属性的值。
+     * Sets the valueId value for this CustomListCustomValue.
      * 
-     * @return
-     *     possible object is
-     *     {@link LanguageValueList }
-     *     
+     * @param valueId
      */
-    public LanguageValueList getValueLanguageValueList() {
+    public void setValueId(java.lang.Long valueId) {
+        this.valueId = valueId;
+    }
+
+
+    /**
+     * Gets the valueLanguageValueList value for this CustomListCustomValue.
+     * 
+     * @return valueLanguageValueList
+     */
+    public com.netsuite.webservices.setup.customization_2018_2.LanguageValue[] getValueLanguageValueList() {
         return valueLanguageValueList;
     }
 
+
     /**
-     * 设置valueLanguageValueList属性的值。
+     * Sets the valueLanguageValueList value for this CustomListCustomValue.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link LanguageValueList }
-     *     
+     * @param valueLanguageValueList
      */
-    public void setValueLanguageValueList(LanguageValueList value) {
-        this.valueLanguageValueList = value;
+    public void setValueLanguageValueList(com.netsuite.webservices.setup.customization_2018_2.LanguageValue[] valueLanguageValueList) {
+        this.valueLanguageValueList = valueLanguageValueList;
+    }
+
+    private java.lang.Object __equalsCalc = null;
+    public synchronized boolean equals(java.lang.Object obj) {
+        if (!(obj instanceof CustomListCustomValue)) return false;
+        CustomListCustomValue other = (CustomListCustomValue) obj;
+        if (obj == null) return false;
+        if (this == obj) return true;
+        if (__equalsCalc != null) {
+            return (__equalsCalc == obj);
+        }
+        __equalsCalc = obj;
+        boolean _equals;
+        _equals = true && 
+            ((this.value==null && other.getValue()==null) || 
+             (this.value!=null &&
+              this.value.equals(other.getValue()))) &&
+            ((this.abbreviation==null && other.getAbbreviation()==null) || 
+             (this.abbreviation!=null &&
+              this.abbreviation.equals(other.getAbbreviation()))) &&
+            ((this.isInactive==null && other.getIsInactive()==null) || 
+             (this.isInactive!=null &&
+              this.isInactive.equals(other.getIsInactive()))) &&
+            ((this.valueId==null && other.getValueId()==null) || 
+             (this.valueId!=null &&
+              this.valueId.equals(other.getValueId()))) &&
+            ((this.valueLanguageValueList==null && other.getValueLanguageValueList()==null) || 
+             (this.valueLanguageValueList!=null &&
+              java.util.Arrays.equals(this.valueLanguageValueList, other.getValueLanguageValueList())));
+        __equalsCalc = null;
+        return _equals;
+    }
+
+    private boolean __hashCodeCalc = false;
+    public synchronized int hashCode() {
+        if (__hashCodeCalc) {
+            return 0;
+        }
+        __hashCodeCalc = true;
+        int _hashCode = 1;
+        if (getValue() != null) {
+            _hashCode += getValue().hashCode();
+        }
+        if (getAbbreviation() != null) {
+            _hashCode += getAbbreviation().hashCode();
+        }
+        if (getIsInactive() != null) {
+            _hashCode += getIsInactive().hashCode();
+        }
+        if (getValueId() != null) {
+            _hashCode += getValueId().hashCode();
+        }
+        if (getValueLanguageValueList() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getValueLanguageValueList());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getValueLanguageValueList(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        __hashCodeCalc = false;
+        return _hashCode;
+    }
+
+    // Type metadata
+    private static org.apache.axis.description.TypeDesc typeDesc =
+        new org.apache.axis.description.TypeDesc(CustomListCustomValue.class, true);
+
+    static {
+        typeDesc.setXmlType(new javax.xml.namespace.QName("urn:customization_2018_2.setup.webservices.netsuite.com", "CustomListCustomValue"));
+        org.apache.axis.description.ElementDesc elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("value");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:customization_2018_2.setup.webservices.netsuite.com", "value"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("abbreviation");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:customization_2018_2.setup.webservices.netsuite.com", "abbreviation"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("isInactive");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:customization_2018_2.setup.webservices.netsuite.com", "isInactive"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("valueId");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:customization_2018_2.setup.webservices.netsuite.com", "valueId"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "long"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("valueLanguageValueList");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:customization_2018_2.setup.webservices.netsuite.com", "valueLanguageValueList"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:customization_2018_2.setup.webservices.netsuite.com", "LanguageValue"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:customization_2018_2.setup.webservices.netsuite.com", "languageValue"));
+        typeDesc.addFieldDesc(elemField);
+    }
+
+    /**
+     * Return type metadata object
+     */
+    public static org.apache.axis.description.TypeDesc getTypeDesc() {
+        return typeDesc;
+    }
+
+    /**
+     * Get Custom Serializer
+     */
+    public static org.apache.axis.encoding.Serializer getSerializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanSerializer(
+            _javaType, _xmlType, typeDesc);
+    }
+
+    /**
+     * Get Custom Deserializer
+     */
+    public static org.apache.axis.encoding.Deserializer getDeserializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanDeserializer(
+            _javaType, _xmlType, typeDesc);
     }
 
 }

@@ -1,417 +1,618 @@
+/**
+ * PaymentMethod.java
+ *
+ * This file was auto-generated from WSDL
+ * by the Apache Axis 1.4 Jul 28, 2010 (04:07:04 PDT) WSDL2Java emitter.
+ */
 
 package com.netsuite.webservices.lists.accounting_2018_2;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlAttribute;
-import javax.xml.bind.annotation.XmlType;
-import com.netsuite.webservices.platform.core_2018_2.Record;
-import com.netsuite.webservices.platform.core_2018_2.RecordRef;
-import com.netsuite.webservices.platform.core_2018_2.RecordRefList;
+public class PaymentMethod  extends com.netsuite.webservices.platform.core_2018_2.Record  implements java.io.Serializable {
+    private java.lang.String name;
 
+    private java.lang.Boolean creditCard;
 
-/**
- * <p>PaymentMethod complex type的 Java 类。
- * 
- * <p>以下模式片段指定包含在此类中的预期内容。
- * 
- * <pre>
- * &lt;complexType name="PaymentMethod">
- *   &lt;complexContent>
- *     &lt;extension base="{urn:core_2018_2.platform.webservices.netsuite.com}Record">
- *       &lt;sequence>
- *         &lt;element name="name" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="creditCard" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         &lt;element name="undepFunds" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         &lt;element name="account" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="isInactive" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         &lt;element name="isOnline" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         &lt;element name="visualsList" type="{urn:accounting_2018_2.lists.webservices.netsuite.com}PaymentMethodVisualsList" minOccurs="0"/>
- *         &lt;element name="isDebitCard" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         &lt;element name="merchantAccountsList" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRefList" minOccurs="0"/>
- *         &lt;element name="payPalEmailAddress" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="expressCheckoutArrangement" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="useExpressCheckout" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *       &lt;/sequence>
- *       &lt;attribute name="internalId" type="{http://www.w3.org/2001/XMLSchema}string" />
- *       &lt;attribute name="externalId" type="{http://www.w3.org/2001/XMLSchema}string" />
- *     &lt;/extension>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
- */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "PaymentMethod", propOrder = {
-    "name",
-    "creditCard",
-    "undepFunds",
-    "account",
-    "isInactive",
-    "isOnline",
-    "visualsList",
-    "isDebitCard",
-    "merchantAccountsList",
-    "payPalEmailAddress",
-    "expressCheckoutArrangement",
-    "useExpressCheckout"
-})
-public class PaymentMethod
-    extends Record
-{
+    private java.lang.Boolean undepFunds;
 
-    protected String name;
-    protected Boolean creditCard;
-    protected Boolean undepFunds;
-    protected RecordRef account;
-    protected Boolean isInactive;
-    protected Boolean isOnline;
-    protected PaymentMethodVisualsList visualsList;
-    protected Boolean isDebitCard;
-    protected RecordRefList merchantAccountsList;
-    protected String payPalEmailAddress;
-    protected String expressCheckoutArrangement;
-    protected Boolean useExpressCheckout;
-    @XmlAttribute(name = "internalId")
-    protected String internalId;
-    @XmlAttribute(name = "externalId")
-    protected String externalId;
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef account;
+
+    private java.lang.Boolean isInactive;
+
+    private java.lang.Boolean isOnline;
+
+    private com.netsuite.webservices.lists.accounting_2018_2.PaymentMethodVisuals[] visualsList;
+
+    private java.lang.Boolean isDebitCard;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef[] merchantAccountsList;
+
+    private java.lang.String payPalEmailAddress;
+
+    private java.lang.String expressCheckoutArrangement;
+
+    private java.lang.Boolean useExpressCheckout;
+
+    private java.lang.String internalId;  // attribute
+
+    private java.lang.String externalId;  // attribute
+
+    public PaymentMethod() {
+    }
+
+    public PaymentMethod(
+           java.lang.String[] nullFieldList,
+           java.lang.String internalId,
+           java.lang.String externalId,
+           java.lang.String name,
+           java.lang.Boolean creditCard,
+           java.lang.Boolean undepFunds,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef account,
+           java.lang.Boolean isInactive,
+           java.lang.Boolean isOnline,
+           com.netsuite.webservices.lists.accounting_2018_2.PaymentMethodVisuals[] visualsList,
+           java.lang.Boolean isDebitCard,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef[] merchantAccountsList,
+           java.lang.String payPalEmailAddress,
+           java.lang.String expressCheckoutArrangement,
+           java.lang.Boolean useExpressCheckout) {
+        super(
+            nullFieldList);
+        this.internalId = internalId;
+        this.externalId = externalId;
+        this.name = name;
+        this.creditCard = creditCard;
+        this.undepFunds = undepFunds;
+        this.account = account;
+        this.isInactive = isInactive;
+        this.isOnline = isOnline;
+        this.visualsList = visualsList;
+        this.isDebitCard = isDebitCard;
+        this.merchantAccountsList = merchantAccountsList;
+        this.payPalEmailAddress = payPalEmailAddress;
+        this.expressCheckoutArrangement = expressCheckoutArrangement;
+        this.useExpressCheckout = useExpressCheckout;
+    }
+
 
     /**
-     * 获取name属性的值。
+     * Gets the name value for this PaymentMethod.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @return name
      */
-    public String getName() {
+    public java.lang.String getName() {
         return name;
     }
 
-    /**
-     * 设置name属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setName(String value) {
-        this.name = value;
-    }
 
     /**
-     * 获取creditCard属性的值。
+     * Sets the name value for this PaymentMethod.
      * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
+     * @param name
      */
-    public Boolean isCreditCard() {
+    public void setName(java.lang.String name) {
+        this.name = name;
+    }
+
+
+    /**
+     * Gets the creditCard value for this PaymentMethod.
+     * 
+     * @return creditCard
+     */
+    public java.lang.Boolean getCreditCard() {
         return creditCard;
     }
 
-    /**
-     * 设置creditCard属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
-     */
-    public void setCreditCard(Boolean value) {
-        this.creditCard = value;
-    }
 
     /**
-     * 获取undepFunds属性的值。
+     * Sets the creditCard value for this PaymentMethod.
      * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
+     * @param creditCard
      */
-    public Boolean isUndepFunds() {
+    public void setCreditCard(java.lang.Boolean creditCard) {
+        this.creditCard = creditCard;
+    }
+
+
+    /**
+     * Gets the undepFunds value for this PaymentMethod.
+     * 
+     * @return undepFunds
+     */
+    public java.lang.Boolean getUndepFunds() {
         return undepFunds;
     }
 
-    /**
-     * 设置undepFunds属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
-     */
-    public void setUndepFunds(Boolean value) {
-        this.undepFunds = value;
-    }
 
     /**
-     * 获取account属性的值。
+     * Sets the undepFunds value for this PaymentMethod.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param undepFunds
      */
-    public RecordRef getAccount() {
+    public void setUndepFunds(java.lang.Boolean undepFunds) {
+        this.undepFunds = undepFunds;
+    }
+
+
+    /**
+     * Gets the account value for this PaymentMethod.
+     * 
+     * @return account
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getAccount() {
         return account;
     }
 
-    /**
-     * 设置account属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setAccount(RecordRef value) {
-        this.account = value;
-    }
 
     /**
-     * 获取isInactive属性的值。
+     * Sets the account value for this PaymentMethod.
      * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
+     * @param account
      */
-    public Boolean isIsInactive() {
+    public void setAccount(com.netsuite.webservices.platform.core_2018_2.RecordRef account) {
+        this.account = account;
+    }
+
+
+    /**
+     * Gets the isInactive value for this PaymentMethod.
+     * 
+     * @return isInactive
+     */
+    public java.lang.Boolean getIsInactive() {
         return isInactive;
     }
 
-    /**
-     * 设置isInactive属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
-     */
-    public void setIsInactive(Boolean value) {
-        this.isInactive = value;
-    }
 
     /**
-     * 获取isOnline属性的值。
+     * Sets the isInactive value for this PaymentMethod.
      * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
+     * @param isInactive
      */
-    public Boolean isIsOnline() {
+    public void setIsInactive(java.lang.Boolean isInactive) {
+        this.isInactive = isInactive;
+    }
+
+
+    /**
+     * Gets the isOnline value for this PaymentMethod.
+     * 
+     * @return isOnline
+     */
+    public java.lang.Boolean getIsOnline() {
         return isOnline;
     }
 
-    /**
-     * 设置isOnline属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
-     */
-    public void setIsOnline(Boolean value) {
-        this.isOnline = value;
-    }
 
     /**
-     * 获取visualsList属性的值。
+     * Sets the isOnline value for this PaymentMethod.
      * 
-     * @return
-     *     possible object is
-     *     {@link PaymentMethodVisualsList }
-     *     
+     * @param isOnline
      */
-    public PaymentMethodVisualsList getVisualsList() {
+    public void setIsOnline(java.lang.Boolean isOnline) {
+        this.isOnline = isOnline;
+    }
+
+
+    /**
+     * Gets the visualsList value for this PaymentMethod.
+     * 
+     * @return visualsList
+     */
+    public com.netsuite.webservices.lists.accounting_2018_2.PaymentMethodVisuals[] getVisualsList() {
         return visualsList;
     }
 
-    /**
-     * 设置visualsList属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link PaymentMethodVisualsList }
-     *     
-     */
-    public void setVisualsList(PaymentMethodVisualsList value) {
-        this.visualsList = value;
-    }
 
     /**
-     * 获取isDebitCard属性的值。
+     * Sets the visualsList value for this PaymentMethod.
      * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
+     * @param visualsList
      */
-    public Boolean isIsDebitCard() {
+    public void setVisualsList(com.netsuite.webservices.lists.accounting_2018_2.PaymentMethodVisuals[] visualsList) {
+        this.visualsList = visualsList;
+    }
+
+
+    /**
+     * Gets the isDebitCard value for this PaymentMethod.
+     * 
+     * @return isDebitCard
+     */
+    public java.lang.Boolean getIsDebitCard() {
         return isDebitCard;
     }
 
-    /**
-     * 设置isDebitCard属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
-     */
-    public void setIsDebitCard(Boolean value) {
-        this.isDebitCard = value;
-    }
 
     /**
-     * 获取merchantAccountsList属性的值。
+     * Sets the isDebitCard value for this PaymentMethod.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRefList }
-     *     
+     * @param isDebitCard
      */
-    public RecordRefList getMerchantAccountsList() {
+    public void setIsDebitCard(java.lang.Boolean isDebitCard) {
+        this.isDebitCard = isDebitCard;
+    }
+
+
+    /**
+     * Gets the merchantAccountsList value for this PaymentMethod.
+     * 
+     * @return merchantAccountsList
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef[] getMerchantAccountsList() {
         return merchantAccountsList;
     }
 
-    /**
-     * 设置merchantAccountsList属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRefList }
-     *     
-     */
-    public void setMerchantAccountsList(RecordRefList value) {
-        this.merchantAccountsList = value;
-    }
 
     /**
-     * 获取payPalEmailAddress属性的值。
+     * Sets the merchantAccountsList value for this PaymentMethod.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param merchantAccountsList
      */
-    public String getPayPalEmailAddress() {
+    public void setMerchantAccountsList(com.netsuite.webservices.platform.core_2018_2.RecordRef[] merchantAccountsList) {
+        this.merchantAccountsList = merchantAccountsList;
+    }
+
+
+    /**
+     * Gets the payPalEmailAddress value for this PaymentMethod.
+     * 
+     * @return payPalEmailAddress
+     */
+    public java.lang.String getPayPalEmailAddress() {
         return payPalEmailAddress;
     }
 
-    /**
-     * 设置payPalEmailAddress属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setPayPalEmailAddress(String value) {
-        this.payPalEmailAddress = value;
-    }
 
     /**
-     * 获取expressCheckoutArrangement属性的值。
+     * Sets the payPalEmailAddress value for this PaymentMethod.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param payPalEmailAddress
      */
-    public String getExpressCheckoutArrangement() {
+    public void setPayPalEmailAddress(java.lang.String payPalEmailAddress) {
+        this.payPalEmailAddress = payPalEmailAddress;
+    }
+
+
+    /**
+     * Gets the expressCheckoutArrangement value for this PaymentMethod.
+     * 
+     * @return expressCheckoutArrangement
+     */
+    public java.lang.String getExpressCheckoutArrangement() {
         return expressCheckoutArrangement;
     }
 
-    /**
-     * 设置expressCheckoutArrangement属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setExpressCheckoutArrangement(String value) {
-        this.expressCheckoutArrangement = value;
-    }
 
     /**
-     * 获取useExpressCheckout属性的值。
+     * Sets the expressCheckoutArrangement value for this PaymentMethod.
      * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
+     * @param expressCheckoutArrangement
      */
-    public Boolean isUseExpressCheckout() {
+    public void setExpressCheckoutArrangement(java.lang.String expressCheckoutArrangement) {
+        this.expressCheckoutArrangement = expressCheckoutArrangement;
+    }
+
+
+    /**
+     * Gets the useExpressCheckout value for this PaymentMethod.
+     * 
+     * @return useExpressCheckout
+     */
+    public java.lang.Boolean getUseExpressCheckout() {
         return useExpressCheckout;
     }
 
-    /**
-     * 设置useExpressCheckout属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
-     */
-    public void setUseExpressCheckout(Boolean value) {
-        this.useExpressCheckout = value;
-    }
 
     /**
-     * 获取internalId属性的值。
+     * Sets the useExpressCheckout value for this PaymentMethod.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param useExpressCheckout
      */
-    public String getInternalId() {
+    public void setUseExpressCheckout(java.lang.Boolean useExpressCheckout) {
+        this.useExpressCheckout = useExpressCheckout;
+    }
+
+
+    /**
+     * Gets the internalId value for this PaymentMethod.
+     * 
+     * @return internalId
+     */
+    public java.lang.String getInternalId() {
         return internalId;
     }
 
-    /**
-     * 设置internalId属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setInternalId(String value) {
-        this.internalId = value;
-    }
 
     /**
-     * 获取externalId属性的值。
+     * Sets the internalId value for this PaymentMethod.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param internalId
      */
-    public String getExternalId() {
+    public void setInternalId(java.lang.String internalId) {
+        this.internalId = internalId;
+    }
+
+
+    /**
+     * Gets the externalId value for this PaymentMethod.
+     * 
+     * @return externalId
+     */
+    public java.lang.String getExternalId() {
         return externalId;
     }
 
+
     /**
-     * 设置externalId属性的值。
+     * Sets the externalId value for this PaymentMethod.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     * @param externalId
      */
-    public void setExternalId(String value) {
-        this.externalId = value;
+    public void setExternalId(java.lang.String externalId) {
+        this.externalId = externalId;
+    }
+
+    private java.lang.Object __equalsCalc = null;
+    public synchronized boolean equals(java.lang.Object obj) {
+        if (!(obj instanceof PaymentMethod)) return false;
+        PaymentMethod other = (PaymentMethod) obj;
+        if (obj == null) return false;
+        if (this == obj) return true;
+        if (__equalsCalc != null) {
+            return (__equalsCalc == obj);
+        }
+        __equalsCalc = obj;
+        boolean _equals;
+        _equals = super.equals(obj) && 
+            ((this.name==null && other.getName()==null) || 
+             (this.name!=null &&
+              this.name.equals(other.getName()))) &&
+            ((this.creditCard==null && other.getCreditCard()==null) || 
+             (this.creditCard!=null &&
+              this.creditCard.equals(other.getCreditCard()))) &&
+            ((this.undepFunds==null && other.getUndepFunds()==null) || 
+             (this.undepFunds!=null &&
+              this.undepFunds.equals(other.getUndepFunds()))) &&
+            ((this.account==null && other.getAccount()==null) || 
+             (this.account!=null &&
+              this.account.equals(other.getAccount()))) &&
+            ((this.isInactive==null && other.getIsInactive()==null) || 
+             (this.isInactive!=null &&
+              this.isInactive.equals(other.getIsInactive()))) &&
+            ((this.isOnline==null && other.getIsOnline()==null) || 
+             (this.isOnline!=null &&
+              this.isOnline.equals(other.getIsOnline()))) &&
+            ((this.visualsList==null && other.getVisualsList()==null) || 
+             (this.visualsList!=null &&
+              java.util.Arrays.equals(this.visualsList, other.getVisualsList()))) &&
+            ((this.isDebitCard==null && other.getIsDebitCard()==null) || 
+             (this.isDebitCard!=null &&
+              this.isDebitCard.equals(other.getIsDebitCard()))) &&
+            ((this.merchantAccountsList==null && other.getMerchantAccountsList()==null) || 
+             (this.merchantAccountsList!=null &&
+              java.util.Arrays.equals(this.merchantAccountsList, other.getMerchantAccountsList()))) &&
+            ((this.payPalEmailAddress==null && other.getPayPalEmailAddress()==null) || 
+             (this.payPalEmailAddress!=null &&
+              this.payPalEmailAddress.equals(other.getPayPalEmailAddress()))) &&
+            ((this.expressCheckoutArrangement==null && other.getExpressCheckoutArrangement()==null) || 
+             (this.expressCheckoutArrangement!=null &&
+              this.expressCheckoutArrangement.equals(other.getExpressCheckoutArrangement()))) &&
+            ((this.useExpressCheckout==null && other.getUseExpressCheckout()==null) || 
+             (this.useExpressCheckout!=null &&
+              this.useExpressCheckout.equals(other.getUseExpressCheckout()))) &&
+            ((this.internalId==null && other.getInternalId()==null) || 
+             (this.internalId!=null &&
+              this.internalId.equals(other.getInternalId()))) &&
+            ((this.externalId==null && other.getExternalId()==null) || 
+             (this.externalId!=null &&
+              this.externalId.equals(other.getExternalId())));
+        __equalsCalc = null;
+        return _equals;
+    }
+
+    private boolean __hashCodeCalc = false;
+    public synchronized int hashCode() {
+        if (__hashCodeCalc) {
+            return 0;
+        }
+        __hashCodeCalc = true;
+        int _hashCode = super.hashCode();
+        if (getName() != null) {
+            _hashCode += getName().hashCode();
+        }
+        if (getCreditCard() != null) {
+            _hashCode += getCreditCard().hashCode();
+        }
+        if (getUndepFunds() != null) {
+            _hashCode += getUndepFunds().hashCode();
+        }
+        if (getAccount() != null) {
+            _hashCode += getAccount().hashCode();
+        }
+        if (getIsInactive() != null) {
+            _hashCode += getIsInactive().hashCode();
+        }
+        if (getIsOnline() != null) {
+            _hashCode += getIsOnline().hashCode();
+        }
+        if (getVisualsList() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getVisualsList());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getVisualsList(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getIsDebitCard() != null) {
+            _hashCode += getIsDebitCard().hashCode();
+        }
+        if (getMerchantAccountsList() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getMerchantAccountsList());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getMerchantAccountsList(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getPayPalEmailAddress() != null) {
+            _hashCode += getPayPalEmailAddress().hashCode();
+        }
+        if (getExpressCheckoutArrangement() != null) {
+            _hashCode += getExpressCheckoutArrangement().hashCode();
+        }
+        if (getUseExpressCheckout() != null) {
+            _hashCode += getUseExpressCheckout().hashCode();
+        }
+        if (getInternalId() != null) {
+            _hashCode += getInternalId().hashCode();
+        }
+        if (getExternalId() != null) {
+            _hashCode += getExternalId().hashCode();
+        }
+        __hashCodeCalc = false;
+        return _hashCode;
+    }
+
+    // Type metadata
+    private static org.apache.axis.description.TypeDesc typeDesc =
+        new org.apache.axis.description.TypeDesc(PaymentMethod.class, true);
+
+    static {
+        typeDesc.setXmlType(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "PaymentMethod"));
+        org.apache.axis.description.AttributeDesc attrField = new org.apache.axis.description.AttributeDesc();
+        attrField.setFieldName("internalId");
+        attrField.setXmlName(new javax.xml.namespace.QName("", "internalId"));
+        attrField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        typeDesc.addFieldDesc(attrField);
+        attrField = new org.apache.axis.description.AttributeDesc();
+        attrField.setFieldName("externalId");
+        attrField.setXmlName(new javax.xml.namespace.QName("", "externalId"));
+        attrField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        typeDesc.addFieldDesc(attrField);
+        org.apache.axis.description.ElementDesc elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("name");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "name"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("creditCard");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "creditCard"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("undepFunds");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "undepFunds"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("account");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "account"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("isInactive");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "isInactive"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("isOnline");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "isOnline"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("visualsList");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "visualsList"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "PaymentMethodVisuals"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "paymentMethodVisuals"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("isDebitCard");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "isDebitCard"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("merchantAccountsList");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "merchantAccountsList"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "recordRef"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("payPalEmailAddress");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "payPalEmailAddress"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("expressCheckoutArrangement");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "expressCheckoutArrangement"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("useExpressCheckout");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "useExpressCheckout"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+    }
+
+    /**
+     * Return type metadata object
+     */
+    public static org.apache.axis.description.TypeDesc getTypeDesc() {
+        return typeDesc;
+    }
+
+    /**
+     * Get Custom Serializer
+     */
+    public static org.apache.axis.encoding.Serializer getSerializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanSerializer(
+            _javaType, _xmlType, typeDesc);
+    }
+
+    /**
+     * Get Custom Deserializer
+     */
+    public static org.apache.axis.encoding.Deserializer getDeserializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanDeserializer(
+            _javaType, _xmlType, typeDesc);
     }
 
 }

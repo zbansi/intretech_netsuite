@@ -1,481 +1,675 @@
+/**
+ * MessageSearch.java
+ *
+ * This file was auto-generated from WSDL
+ * by the Apache Axis 1.4 Jul 28, 2010 (04:07:04 PDT) WSDL2Java emitter.
+ */
 
 package com.netsuite.webservices.general.communication_2018_2;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlType;
-import com.netsuite.webservices.platform.common_2018_2.CampaignSearchBasic;
-import com.netsuite.webservices.platform.common_2018_2.ContactSearchBasic;
-import com.netsuite.webservices.platform.common_2018_2.CustomerSearchBasic;
-import com.netsuite.webservices.platform.common_2018_2.EmployeeSearchBasic;
-import com.netsuite.webservices.platform.common_2018_2.EntitySearchBasic;
-import com.netsuite.webservices.platform.common_2018_2.FileSearchBasic;
-import com.netsuite.webservices.platform.common_2018_2.MessageSearchBasic;
-import com.netsuite.webservices.platform.common_2018_2.OpportunitySearchBasic;
-import com.netsuite.webservices.platform.common_2018_2.OriginatingLeadSearchBasic;
-import com.netsuite.webservices.platform.common_2018_2.PartnerSearchBasic;
-import com.netsuite.webservices.platform.common_2018_2.SupportCaseSearchBasic;
-import com.netsuite.webservices.platform.common_2018_2.TransactionSearchBasic;
-import com.netsuite.webservices.platform.common_2018_2.VendorSearchBasic;
-import com.netsuite.webservices.platform.core_2018_2.SearchRecord;
+public class MessageSearch  extends com.netsuite.webservices.platform.core_2018_2.SearchRecord  implements java.io.Serializable {
+    private com.netsuite.webservices.platform.common_2018_2.MessageSearchBasic basic;
 
+    private com.netsuite.webservices.platform.common_2018_2.FileSearchBasic attachmentsJoin;
 
-/**
- * <p>MessageSearch complex type的 Java 类。
- * 
- * <p>以下模式片段指定包含在此类中的预期内容。
- * 
- * <pre>
- * &lt;complexType name="MessageSearch">
- *   &lt;complexContent>
- *     &lt;extension base="{urn:core_2018_2.platform.webservices.netsuite.com}SearchRecord">
- *       &lt;sequence>
- *         &lt;element name="basic" type="{urn:common_2018_2.platform.webservices.netsuite.com}MessageSearchBasic" minOccurs="0"/>
- *         &lt;element name="attachmentsJoin" type="{urn:common_2018_2.platform.webservices.netsuite.com}FileSearchBasic" minOccurs="0"/>
- *         &lt;element name="authorJoin" type="{urn:common_2018_2.platform.webservices.netsuite.com}EntitySearchBasic" minOccurs="0"/>
- *         &lt;element name="campaignJoin" type="{urn:common_2018_2.platform.webservices.netsuite.com}CampaignSearchBasic" minOccurs="0"/>
- *         &lt;element name="caseJoin" type="{urn:common_2018_2.platform.webservices.netsuite.com}SupportCaseSearchBasic" minOccurs="0"/>
- *         &lt;element name="contactJoin" type="{urn:common_2018_2.platform.webservices.netsuite.com}ContactSearchBasic" minOccurs="0"/>
- *         &lt;element name="customerJoin" type="{urn:common_2018_2.platform.webservices.netsuite.com}CustomerSearchBasic" minOccurs="0"/>
- *         &lt;element name="employeeJoin" type="{urn:common_2018_2.platform.webservices.netsuite.com}EmployeeSearchBasic" minOccurs="0"/>
- *         &lt;element name="entityJoin" type="{urn:common_2018_2.platform.webservices.netsuite.com}EntitySearchBasic" minOccurs="0"/>
- *         &lt;element name="opportunityJoin" type="{urn:common_2018_2.platform.webservices.netsuite.com}OpportunitySearchBasic" minOccurs="0"/>
- *         &lt;element name="originatingLeadJoin" type="{urn:common_2018_2.platform.webservices.netsuite.com}OriginatingLeadSearchBasic" minOccurs="0"/>
- *         &lt;element name="partnerJoin" type="{urn:common_2018_2.platform.webservices.netsuite.com}PartnerSearchBasic" minOccurs="0"/>
- *         &lt;element name="recipientJoin" type="{urn:common_2018_2.platform.webservices.netsuite.com}EntitySearchBasic" minOccurs="0"/>
- *         &lt;element name="transactionJoin" type="{urn:common_2018_2.platform.webservices.netsuite.com}TransactionSearchBasic" minOccurs="0"/>
- *         &lt;element name="userJoin" type="{urn:common_2018_2.platform.webservices.netsuite.com}EmployeeSearchBasic" minOccurs="0"/>
- *         &lt;element name="vendorJoin" type="{urn:common_2018_2.platform.webservices.netsuite.com}VendorSearchBasic" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/extension>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
- */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "MessageSearch", propOrder = {
-    "basic",
-    "attachmentsJoin",
-    "authorJoin",
-    "campaignJoin",
-    "caseJoin",
-    "contactJoin",
-    "customerJoin",
-    "employeeJoin",
-    "entityJoin",
-    "opportunityJoin",
-    "originatingLeadJoin",
-    "partnerJoin",
-    "recipientJoin",
-    "transactionJoin",
-    "userJoin",
-    "vendorJoin"
-})
-public class MessageSearch
-    extends SearchRecord
-{
+    private com.netsuite.webservices.platform.common_2018_2.EntitySearchBasic authorJoin;
 
-    protected MessageSearchBasic basic;
-    protected FileSearchBasic attachmentsJoin;
-    protected EntitySearchBasic authorJoin;
-    protected CampaignSearchBasic campaignJoin;
-    protected SupportCaseSearchBasic caseJoin;
-    protected ContactSearchBasic contactJoin;
-    protected CustomerSearchBasic customerJoin;
-    protected EmployeeSearchBasic employeeJoin;
-    protected EntitySearchBasic entityJoin;
-    protected OpportunitySearchBasic opportunityJoin;
-    protected OriginatingLeadSearchBasic originatingLeadJoin;
-    protected PartnerSearchBasic partnerJoin;
-    protected EntitySearchBasic recipientJoin;
-    protected TransactionSearchBasic transactionJoin;
-    protected EmployeeSearchBasic userJoin;
-    protected VendorSearchBasic vendorJoin;
+    private com.netsuite.webservices.platform.common_2018_2.CampaignSearchBasic campaignJoin;
+
+    private com.netsuite.webservices.platform.common_2018_2.SupportCaseSearchBasic caseJoin;
+
+    private com.netsuite.webservices.platform.common_2018_2.ContactSearchBasic contactJoin;
+
+    private com.netsuite.webservices.platform.common_2018_2.CustomerSearchBasic customerJoin;
+
+    private com.netsuite.webservices.platform.common_2018_2.EmployeeSearchBasic employeeJoin;
+
+    private com.netsuite.webservices.platform.common_2018_2.EntitySearchBasic entityJoin;
+
+    private com.netsuite.webservices.platform.common_2018_2.OpportunitySearchBasic opportunityJoin;
+
+    private com.netsuite.webservices.platform.common_2018_2.OriginatingLeadSearchBasic originatingLeadJoin;
+
+    private com.netsuite.webservices.platform.common_2018_2.PartnerSearchBasic partnerJoin;
+
+    private com.netsuite.webservices.platform.common_2018_2.EntitySearchBasic recipientJoin;
+
+    private com.netsuite.webservices.platform.common_2018_2.TransactionSearchBasic transactionJoin;
+
+    private com.netsuite.webservices.platform.common_2018_2.EmployeeSearchBasic userJoin;
+
+    private com.netsuite.webservices.platform.common_2018_2.VendorSearchBasic vendorJoin;
+
+    public MessageSearch() {
+    }
+
+    public MessageSearch(
+           com.netsuite.webservices.platform.common_2018_2.MessageSearchBasic basic,
+           com.netsuite.webservices.platform.common_2018_2.FileSearchBasic attachmentsJoin,
+           com.netsuite.webservices.platform.common_2018_2.EntitySearchBasic authorJoin,
+           com.netsuite.webservices.platform.common_2018_2.CampaignSearchBasic campaignJoin,
+           com.netsuite.webservices.platform.common_2018_2.SupportCaseSearchBasic caseJoin,
+           com.netsuite.webservices.platform.common_2018_2.ContactSearchBasic contactJoin,
+           com.netsuite.webservices.platform.common_2018_2.CustomerSearchBasic customerJoin,
+           com.netsuite.webservices.platform.common_2018_2.EmployeeSearchBasic employeeJoin,
+           com.netsuite.webservices.platform.common_2018_2.EntitySearchBasic entityJoin,
+           com.netsuite.webservices.platform.common_2018_2.OpportunitySearchBasic opportunityJoin,
+           com.netsuite.webservices.platform.common_2018_2.OriginatingLeadSearchBasic originatingLeadJoin,
+           com.netsuite.webservices.platform.common_2018_2.PartnerSearchBasic partnerJoin,
+           com.netsuite.webservices.platform.common_2018_2.EntitySearchBasic recipientJoin,
+           com.netsuite.webservices.platform.common_2018_2.TransactionSearchBasic transactionJoin,
+           com.netsuite.webservices.platform.common_2018_2.EmployeeSearchBasic userJoin,
+           com.netsuite.webservices.platform.common_2018_2.VendorSearchBasic vendorJoin) {
+        this.basic = basic;
+        this.attachmentsJoin = attachmentsJoin;
+        this.authorJoin = authorJoin;
+        this.campaignJoin = campaignJoin;
+        this.caseJoin = caseJoin;
+        this.contactJoin = contactJoin;
+        this.customerJoin = customerJoin;
+        this.employeeJoin = employeeJoin;
+        this.entityJoin = entityJoin;
+        this.opportunityJoin = opportunityJoin;
+        this.originatingLeadJoin = originatingLeadJoin;
+        this.partnerJoin = partnerJoin;
+        this.recipientJoin = recipientJoin;
+        this.transactionJoin = transactionJoin;
+        this.userJoin = userJoin;
+        this.vendorJoin = vendorJoin;
+    }
+
 
     /**
-     * 获取basic属性的值。
+     * Gets the basic value for this MessageSearch.
      * 
-     * @return
-     *     possible object is
-     *     {@link MessageSearchBasic }
-     *     
+     * @return basic
      */
-    public MessageSearchBasic getBasic() {
+    public com.netsuite.webservices.platform.common_2018_2.MessageSearchBasic getBasic() {
         return basic;
     }
 
-    /**
-     * 设置basic属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link MessageSearchBasic }
-     *     
-     */
-    public void setBasic(MessageSearchBasic value) {
-        this.basic = value;
-    }
 
     /**
-     * 获取attachmentsJoin属性的值。
+     * Sets the basic value for this MessageSearch.
      * 
-     * @return
-     *     possible object is
-     *     {@link FileSearchBasic }
-     *     
+     * @param basic
      */
-    public FileSearchBasic getAttachmentsJoin() {
+    public void setBasic(com.netsuite.webservices.platform.common_2018_2.MessageSearchBasic basic) {
+        this.basic = basic;
+    }
+
+
+    /**
+     * Gets the attachmentsJoin value for this MessageSearch.
+     * 
+     * @return attachmentsJoin
+     */
+    public com.netsuite.webservices.platform.common_2018_2.FileSearchBasic getAttachmentsJoin() {
         return attachmentsJoin;
     }
 
-    /**
-     * 设置attachmentsJoin属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link FileSearchBasic }
-     *     
-     */
-    public void setAttachmentsJoin(FileSearchBasic value) {
-        this.attachmentsJoin = value;
-    }
 
     /**
-     * 获取authorJoin属性的值。
+     * Sets the attachmentsJoin value for this MessageSearch.
      * 
-     * @return
-     *     possible object is
-     *     {@link EntitySearchBasic }
-     *     
+     * @param attachmentsJoin
      */
-    public EntitySearchBasic getAuthorJoin() {
+    public void setAttachmentsJoin(com.netsuite.webservices.platform.common_2018_2.FileSearchBasic attachmentsJoin) {
+        this.attachmentsJoin = attachmentsJoin;
+    }
+
+
+    /**
+     * Gets the authorJoin value for this MessageSearch.
+     * 
+     * @return authorJoin
+     */
+    public com.netsuite.webservices.platform.common_2018_2.EntitySearchBasic getAuthorJoin() {
         return authorJoin;
     }
 
-    /**
-     * 设置authorJoin属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link EntitySearchBasic }
-     *     
-     */
-    public void setAuthorJoin(EntitySearchBasic value) {
-        this.authorJoin = value;
-    }
 
     /**
-     * 获取campaignJoin属性的值。
+     * Sets the authorJoin value for this MessageSearch.
      * 
-     * @return
-     *     possible object is
-     *     {@link CampaignSearchBasic }
-     *     
+     * @param authorJoin
      */
-    public CampaignSearchBasic getCampaignJoin() {
+    public void setAuthorJoin(com.netsuite.webservices.platform.common_2018_2.EntitySearchBasic authorJoin) {
+        this.authorJoin = authorJoin;
+    }
+
+
+    /**
+     * Gets the campaignJoin value for this MessageSearch.
+     * 
+     * @return campaignJoin
+     */
+    public com.netsuite.webservices.platform.common_2018_2.CampaignSearchBasic getCampaignJoin() {
         return campaignJoin;
     }
 
-    /**
-     * 设置campaignJoin属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link CampaignSearchBasic }
-     *     
-     */
-    public void setCampaignJoin(CampaignSearchBasic value) {
-        this.campaignJoin = value;
-    }
 
     /**
-     * 获取caseJoin属性的值。
+     * Sets the campaignJoin value for this MessageSearch.
      * 
-     * @return
-     *     possible object is
-     *     {@link SupportCaseSearchBasic }
-     *     
+     * @param campaignJoin
      */
-    public SupportCaseSearchBasic getCaseJoin() {
+    public void setCampaignJoin(com.netsuite.webservices.platform.common_2018_2.CampaignSearchBasic campaignJoin) {
+        this.campaignJoin = campaignJoin;
+    }
+
+
+    /**
+     * Gets the caseJoin value for this MessageSearch.
+     * 
+     * @return caseJoin
+     */
+    public com.netsuite.webservices.platform.common_2018_2.SupportCaseSearchBasic getCaseJoin() {
         return caseJoin;
     }
 
-    /**
-     * 设置caseJoin属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SupportCaseSearchBasic }
-     *     
-     */
-    public void setCaseJoin(SupportCaseSearchBasic value) {
-        this.caseJoin = value;
-    }
 
     /**
-     * 获取contactJoin属性的值。
+     * Sets the caseJoin value for this MessageSearch.
      * 
-     * @return
-     *     possible object is
-     *     {@link ContactSearchBasic }
-     *     
+     * @param caseJoin
      */
-    public ContactSearchBasic getContactJoin() {
+    public void setCaseJoin(com.netsuite.webservices.platform.common_2018_2.SupportCaseSearchBasic caseJoin) {
+        this.caseJoin = caseJoin;
+    }
+
+
+    /**
+     * Gets the contactJoin value for this MessageSearch.
+     * 
+     * @return contactJoin
+     */
+    public com.netsuite.webservices.platform.common_2018_2.ContactSearchBasic getContactJoin() {
         return contactJoin;
     }
 
-    /**
-     * 设置contactJoin属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link ContactSearchBasic }
-     *     
-     */
-    public void setContactJoin(ContactSearchBasic value) {
-        this.contactJoin = value;
-    }
 
     /**
-     * 获取customerJoin属性的值。
+     * Sets the contactJoin value for this MessageSearch.
      * 
-     * @return
-     *     possible object is
-     *     {@link CustomerSearchBasic }
-     *     
+     * @param contactJoin
      */
-    public CustomerSearchBasic getCustomerJoin() {
+    public void setContactJoin(com.netsuite.webservices.platform.common_2018_2.ContactSearchBasic contactJoin) {
+        this.contactJoin = contactJoin;
+    }
+
+
+    /**
+     * Gets the customerJoin value for this MessageSearch.
+     * 
+     * @return customerJoin
+     */
+    public com.netsuite.webservices.platform.common_2018_2.CustomerSearchBasic getCustomerJoin() {
         return customerJoin;
     }
 
-    /**
-     * 设置customerJoin属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link CustomerSearchBasic }
-     *     
-     */
-    public void setCustomerJoin(CustomerSearchBasic value) {
-        this.customerJoin = value;
-    }
 
     /**
-     * 获取employeeJoin属性的值。
+     * Sets the customerJoin value for this MessageSearch.
      * 
-     * @return
-     *     possible object is
-     *     {@link EmployeeSearchBasic }
-     *     
+     * @param customerJoin
      */
-    public EmployeeSearchBasic getEmployeeJoin() {
+    public void setCustomerJoin(com.netsuite.webservices.platform.common_2018_2.CustomerSearchBasic customerJoin) {
+        this.customerJoin = customerJoin;
+    }
+
+
+    /**
+     * Gets the employeeJoin value for this MessageSearch.
+     * 
+     * @return employeeJoin
+     */
+    public com.netsuite.webservices.platform.common_2018_2.EmployeeSearchBasic getEmployeeJoin() {
         return employeeJoin;
     }
 
-    /**
-     * 设置employeeJoin属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link EmployeeSearchBasic }
-     *     
-     */
-    public void setEmployeeJoin(EmployeeSearchBasic value) {
-        this.employeeJoin = value;
-    }
 
     /**
-     * 获取entityJoin属性的值。
+     * Sets the employeeJoin value for this MessageSearch.
      * 
-     * @return
-     *     possible object is
-     *     {@link EntitySearchBasic }
-     *     
+     * @param employeeJoin
      */
-    public EntitySearchBasic getEntityJoin() {
+    public void setEmployeeJoin(com.netsuite.webservices.platform.common_2018_2.EmployeeSearchBasic employeeJoin) {
+        this.employeeJoin = employeeJoin;
+    }
+
+
+    /**
+     * Gets the entityJoin value for this MessageSearch.
+     * 
+     * @return entityJoin
+     */
+    public com.netsuite.webservices.platform.common_2018_2.EntitySearchBasic getEntityJoin() {
         return entityJoin;
     }
 
-    /**
-     * 设置entityJoin属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link EntitySearchBasic }
-     *     
-     */
-    public void setEntityJoin(EntitySearchBasic value) {
-        this.entityJoin = value;
-    }
 
     /**
-     * 获取opportunityJoin属性的值。
+     * Sets the entityJoin value for this MessageSearch.
      * 
-     * @return
-     *     possible object is
-     *     {@link OpportunitySearchBasic }
-     *     
+     * @param entityJoin
      */
-    public OpportunitySearchBasic getOpportunityJoin() {
+    public void setEntityJoin(com.netsuite.webservices.platform.common_2018_2.EntitySearchBasic entityJoin) {
+        this.entityJoin = entityJoin;
+    }
+
+
+    /**
+     * Gets the opportunityJoin value for this MessageSearch.
+     * 
+     * @return opportunityJoin
+     */
+    public com.netsuite.webservices.platform.common_2018_2.OpportunitySearchBasic getOpportunityJoin() {
         return opportunityJoin;
     }
 
-    /**
-     * 设置opportunityJoin属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link OpportunitySearchBasic }
-     *     
-     */
-    public void setOpportunityJoin(OpportunitySearchBasic value) {
-        this.opportunityJoin = value;
-    }
 
     /**
-     * 获取originatingLeadJoin属性的值。
+     * Sets the opportunityJoin value for this MessageSearch.
      * 
-     * @return
-     *     possible object is
-     *     {@link OriginatingLeadSearchBasic }
-     *     
+     * @param opportunityJoin
      */
-    public OriginatingLeadSearchBasic getOriginatingLeadJoin() {
+    public void setOpportunityJoin(com.netsuite.webservices.platform.common_2018_2.OpportunitySearchBasic opportunityJoin) {
+        this.opportunityJoin = opportunityJoin;
+    }
+
+
+    /**
+     * Gets the originatingLeadJoin value for this MessageSearch.
+     * 
+     * @return originatingLeadJoin
+     */
+    public com.netsuite.webservices.platform.common_2018_2.OriginatingLeadSearchBasic getOriginatingLeadJoin() {
         return originatingLeadJoin;
     }
 
-    /**
-     * 设置originatingLeadJoin属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link OriginatingLeadSearchBasic }
-     *     
-     */
-    public void setOriginatingLeadJoin(OriginatingLeadSearchBasic value) {
-        this.originatingLeadJoin = value;
-    }
 
     /**
-     * 获取partnerJoin属性的值。
+     * Sets the originatingLeadJoin value for this MessageSearch.
      * 
-     * @return
-     *     possible object is
-     *     {@link PartnerSearchBasic }
-     *     
+     * @param originatingLeadJoin
      */
-    public PartnerSearchBasic getPartnerJoin() {
+    public void setOriginatingLeadJoin(com.netsuite.webservices.platform.common_2018_2.OriginatingLeadSearchBasic originatingLeadJoin) {
+        this.originatingLeadJoin = originatingLeadJoin;
+    }
+
+
+    /**
+     * Gets the partnerJoin value for this MessageSearch.
+     * 
+     * @return partnerJoin
+     */
+    public com.netsuite.webservices.platform.common_2018_2.PartnerSearchBasic getPartnerJoin() {
         return partnerJoin;
     }
 
-    /**
-     * 设置partnerJoin属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link PartnerSearchBasic }
-     *     
-     */
-    public void setPartnerJoin(PartnerSearchBasic value) {
-        this.partnerJoin = value;
-    }
 
     /**
-     * 获取recipientJoin属性的值。
+     * Sets the partnerJoin value for this MessageSearch.
      * 
-     * @return
-     *     possible object is
-     *     {@link EntitySearchBasic }
-     *     
+     * @param partnerJoin
      */
-    public EntitySearchBasic getRecipientJoin() {
+    public void setPartnerJoin(com.netsuite.webservices.platform.common_2018_2.PartnerSearchBasic partnerJoin) {
+        this.partnerJoin = partnerJoin;
+    }
+
+
+    /**
+     * Gets the recipientJoin value for this MessageSearch.
+     * 
+     * @return recipientJoin
+     */
+    public com.netsuite.webservices.platform.common_2018_2.EntitySearchBasic getRecipientJoin() {
         return recipientJoin;
     }
 
-    /**
-     * 设置recipientJoin属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link EntitySearchBasic }
-     *     
-     */
-    public void setRecipientJoin(EntitySearchBasic value) {
-        this.recipientJoin = value;
-    }
 
     /**
-     * 获取transactionJoin属性的值。
+     * Sets the recipientJoin value for this MessageSearch.
      * 
-     * @return
-     *     possible object is
-     *     {@link TransactionSearchBasic }
-     *     
+     * @param recipientJoin
      */
-    public TransactionSearchBasic getTransactionJoin() {
+    public void setRecipientJoin(com.netsuite.webservices.platform.common_2018_2.EntitySearchBasic recipientJoin) {
+        this.recipientJoin = recipientJoin;
+    }
+
+
+    /**
+     * Gets the transactionJoin value for this MessageSearch.
+     * 
+     * @return transactionJoin
+     */
+    public com.netsuite.webservices.platform.common_2018_2.TransactionSearchBasic getTransactionJoin() {
         return transactionJoin;
     }
 
-    /**
-     * 设置transactionJoin属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link TransactionSearchBasic }
-     *     
-     */
-    public void setTransactionJoin(TransactionSearchBasic value) {
-        this.transactionJoin = value;
-    }
 
     /**
-     * 获取userJoin属性的值。
+     * Sets the transactionJoin value for this MessageSearch.
      * 
-     * @return
-     *     possible object is
-     *     {@link EmployeeSearchBasic }
-     *     
+     * @param transactionJoin
      */
-    public EmployeeSearchBasic getUserJoin() {
+    public void setTransactionJoin(com.netsuite.webservices.platform.common_2018_2.TransactionSearchBasic transactionJoin) {
+        this.transactionJoin = transactionJoin;
+    }
+
+
+    /**
+     * Gets the userJoin value for this MessageSearch.
+     * 
+     * @return userJoin
+     */
+    public com.netsuite.webservices.platform.common_2018_2.EmployeeSearchBasic getUserJoin() {
         return userJoin;
     }
 
-    /**
-     * 设置userJoin属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link EmployeeSearchBasic }
-     *     
-     */
-    public void setUserJoin(EmployeeSearchBasic value) {
-        this.userJoin = value;
-    }
 
     /**
-     * 获取vendorJoin属性的值。
+     * Sets the userJoin value for this MessageSearch.
      * 
-     * @return
-     *     possible object is
-     *     {@link VendorSearchBasic }
-     *     
+     * @param userJoin
      */
-    public VendorSearchBasic getVendorJoin() {
+    public void setUserJoin(com.netsuite.webservices.platform.common_2018_2.EmployeeSearchBasic userJoin) {
+        this.userJoin = userJoin;
+    }
+
+
+    /**
+     * Gets the vendorJoin value for this MessageSearch.
+     * 
+     * @return vendorJoin
+     */
+    public com.netsuite.webservices.platform.common_2018_2.VendorSearchBasic getVendorJoin() {
         return vendorJoin;
     }
 
+
     /**
-     * 设置vendorJoin属性的值。
+     * Sets the vendorJoin value for this MessageSearch.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link VendorSearchBasic }
-     *     
+     * @param vendorJoin
      */
-    public void setVendorJoin(VendorSearchBasic value) {
-        this.vendorJoin = value;
+    public void setVendorJoin(com.netsuite.webservices.platform.common_2018_2.VendorSearchBasic vendorJoin) {
+        this.vendorJoin = vendorJoin;
+    }
+
+    private java.lang.Object __equalsCalc = null;
+    public synchronized boolean equals(java.lang.Object obj) {
+        if (!(obj instanceof MessageSearch)) return false;
+        MessageSearch other = (MessageSearch) obj;
+        if (obj == null) return false;
+        if (this == obj) return true;
+        if (__equalsCalc != null) {
+            return (__equalsCalc == obj);
+        }
+        __equalsCalc = obj;
+        boolean _equals;
+        _equals = super.equals(obj) && 
+            ((this.basic==null && other.getBasic()==null) || 
+             (this.basic!=null &&
+              this.basic.equals(other.getBasic()))) &&
+            ((this.attachmentsJoin==null && other.getAttachmentsJoin()==null) || 
+             (this.attachmentsJoin!=null &&
+              this.attachmentsJoin.equals(other.getAttachmentsJoin()))) &&
+            ((this.authorJoin==null && other.getAuthorJoin()==null) || 
+             (this.authorJoin!=null &&
+              this.authorJoin.equals(other.getAuthorJoin()))) &&
+            ((this.campaignJoin==null && other.getCampaignJoin()==null) || 
+             (this.campaignJoin!=null &&
+              this.campaignJoin.equals(other.getCampaignJoin()))) &&
+            ((this.caseJoin==null && other.getCaseJoin()==null) || 
+             (this.caseJoin!=null &&
+              this.caseJoin.equals(other.getCaseJoin()))) &&
+            ((this.contactJoin==null && other.getContactJoin()==null) || 
+             (this.contactJoin!=null &&
+              this.contactJoin.equals(other.getContactJoin()))) &&
+            ((this.customerJoin==null && other.getCustomerJoin()==null) || 
+             (this.customerJoin!=null &&
+              this.customerJoin.equals(other.getCustomerJoin()))) &&
+            ((this.employeeJoin==null && other.getEmployeeJoin()==null) || 
+             (this.employeeJoin!=null &&
+              this.employeeJoin.equals(other.getEmployeeJoin()))) &&
+            ((this.entityJoin==null && other.getEntityJoin()==null) || 
+             (this.entityJoin!=null &&
+              this.entityJoin.equals(other.getEntityJoin()))) &&
+            ((this.opportunityJoin==null && other.getOpportunityJoin()==null) || 
+             (this.opportunityJoin!=null &&
+              this.opportunityJoin.equals(other.getOpportunityJoin()))) &&
+            ((this.originatingLeadJoin==null && other.getOriginatingLeadJoin()==null) || 
+             (this.originatingLeadJoin!=null &&
+              this.originatingLeadJoin.equals(other.getOriginatingLeadJoin()))) &&
+            ((this.partnerJoin==null && other.getPartnerJoin()==null) || 
+             (this.partnerJoin!=null &&
+              this.partnerJoin.equals(other.getPartnerJoin()))) &&
+            ((this.recipientJoin==null && other.getRecipientJoin()==null) || 
+             (this.recipientJoin!=null &&
+              this.recipientJoin.equals(other.getRecipientJoin()))) &&
+            ((this.transactionJoin==null && other.getTransactionJoin()==null) || 
+             (this.transactionJoin!=null &&
+              this.transactionJoin.equals(other.getTransactionJoin()))) &&
+            ((this.userJoin==null && other.getUserJoin()==null) || 
+             (this.userJoin!=null &&
+              this.userJoin.equals(other.getUserJoin()))) &&
+            ((this.vendorJoin==null && other.getVendorJoin()==null) || 
+             (this.vendorJoin!=null &&
+              this.vendorJoin.equals(other.getVendorJoin())));
+        __equalsCalc = null;
+        return _equals;
+    }
+
+    private boolean __hashCodeCalc = false;
+    public synchronized int hashCode() {
+        if (__hashCodeCalc) {
+            return 0;
+        }
+        __hashCodeCalc = true;
+        int _hashCode = super.hashCode();
+        if (getBasic() != null) {
+            _hashCode += getBasic().hashCode();
+        }
+        if (getAttachmentsJoin() != null) {
+            _hashCode += getAttachmentsJoin().hashCode();
+        }
+        if (getAuthorJoin() != null) {
+            _hashCode += getAuthorJoin().hashCode();
+        }
+        if (getCampaignJoin() != null) {
+            _hashCode += getCampaignJoin().hashCode();
+        }
+        if (getCaseJoin() != null) {
+            _hashCode += getCaseJoin().hashCode();
+        }
+        if (getContactJoin() != null) {
+            _hashCode += getContactJoin().hashCode();
+        }
+        if (getCustomerJoin() != null) {
+            _hashCode += getCustomerJoin().hashCode();
+        }
+        if (getEmployeeJoin() != null) {
+            _hashCode += getEmployeeJoin().hashCode();
+        }
+        if (getEntityJoin() != null) {
+            _hashCode += getEntityJoin().hashCode();
+        }
+        if (getOpportunityJoin() != null) {
+            _hashCode += getOpportunityJoin().hashCode();
+        }
+        if (getOriginatingLeadJoin() != null) {
+            _hashCode += getOriginatingLeadJoin().hashCode();
+        }
+        if (getPartnerJoin() != null) {
+            _hashCode += getPartnerJoin().hashCode();
+        }
+        if (getRecipientJoin() != null) {
+            _hashCode += getRecipientJoin().hashCode();
+        }
+        if (getTransactionJoin() != null) {
+            _hashCode += getTransactionJoin().hashCode();
+        }
+        if (getUserJoin() != null) {
+            _hashCode += getUserJoin().hashCode();
+        }
+        if (getVendorJoin() != null) {
+            _hashCode += getVendorJoin().hashCode();
+        }
+        __hashCodeCalc = false;
+        return _hashCode;
+    }
+
+    // Type metadata
+    private static org.apache.axis.description.TypeDesc typeDesc =
+        new org.apache.axis.description.TypeDesc(MessageSearch.class, true);
+
+    static {
+        typeDesc.setXmlType(new javax.xml.namespace.QName("urn:communication_2018_2.general.webservices.netsuite.com", "MessageSearch"));
+        org.apache.axis.description.ElementDesc elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("basic");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:communication_2018_2.general.webservices.netsuite.com", "basic"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "MessageSearchBasic"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("attachmentsJoin");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:communication_2018_2.general.webservices.netsuite.com", "attachmentsJoin"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "FileSearchBasic"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("authorJoin");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:communication_2018_2.general.webservices.netsuite.com", "authorJoin"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "EntitySearchBasic"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("campaignJoin");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:communication_2018_2.general.webservices.netsuite.com", "campaignJoin"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "CampaignSearchBasic"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("caseJoin");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:communication_2018_2.general.webservices.netsuite.com", "caseJoin"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "SupportCaseSearchBasic"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("contactJoin");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:communication_2018_2.general.webservices.netsuite.com", "contactJoin"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "ContactSearchBasic"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("customerJoin");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:communication_2018_2.general.webservices.netsuite.com", "customerJoin"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "CustomerSearchBasic"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("employeeJoin");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:communication_2018_2.general.webservices.netsuite.com", "employeeJoin"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "EmployeeSearchBasic"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("entityJoin");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:communication_2018_2.general.webservices.netsuite.com", "entityJoin"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "EntitySearchBasic"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("opportunityJoin");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:communication_2018_2.general.webservices.netsuite.com", "opportunityJoin"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "OpportunitySearchBasic"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("originatingLeadJoin");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:communication_2018_2.general.webservices.netsuite.com", "originatingLeadJoin"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "OriginatingLeadSearchBasic"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("partnerJoin");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:communication_2018_2.general.webservices.netsuite.com", "partnerJoin"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "PartnerSearchBasic"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("recipientJoin");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:communication_2018_2.general.webservices.netsuite.com", "recipientJoin"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "EntitySearchBasic"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("transactionJoin");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:communication_2018_2.general.webservices.netsuite.com", "transactionJoin"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "TransactionSearchBasic"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("userJoin");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:communication_2018_2.general.webservices.netsuite.com", "userJoin"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "EmployeeSearchBasic"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("vendorJoin");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:communication_2018_2.general.webservices.netsuite.com", "vendorJoin"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "VendorSearchBasic"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+    }
+
+    /**
+     * Return type metadata object
+     */
+    public static org.apache.axis.description.TypeDesc getTypeDesc() {
+        return typeDesc;
+    }
+
+    /**
+     * Get Custom Serializer
+     */
+    public static org.apache.axis.encoding.Serializer getSerializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanSerializer(
+            _javaType, _xmlType, typeDesc);
+    }
+
+    /**
+     * Get Custom Deserializer
+     */
+    public static org.apache.axis.encoding.Deserializer getDeserializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanDeserializer(
+            _javaType, _xmlType, typeDesc);
     }
 
 }

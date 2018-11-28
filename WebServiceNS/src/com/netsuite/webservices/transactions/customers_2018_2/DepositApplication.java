@@ -1,723 +1,1034 @@
+/**
+ * DepositApplication.java
+ *
+ * This file was auto-generated from WSDL
+ * by the Apache Axis 1.4 Jul 28, 2010 (04:07:04 PDT) WSDL2Java emitter.
+ */
 
 package com.netsuite.webservices.transactions.customers_2018_2;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlAttribute;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlSchemaType;
-import javax.xml.bind.annotation.XmlType;
-import javax.xml.datatype.XMLGregorianCalendar;
-import com.netsuite.webservices.platform.common_2018_2.AccountingBookDetailList;
-import com.netsuite.webservices.platform.core_2018_2.CustomFieldList;
-import com.netsuite.webservices.platform.core_2018_2.Record;
-import com.netsuite.webservices.platform.core_2018_2.RecordRef;
+public class DepositApplication  extends com.netsuite.webservices.platform.core_2018_2.Record  implements java.io.Serializable {
+    private java.util.Calendar createdDate;
 
+    private java.util.Calendar lastModifiedDate;
 
-/**
- * <p>DepositApplication complex type的 Java 类。
- * 
- * <p>以下模式片段指定包含在此类中的预期内容。
- * 
- * <pre>
- * &lt;complexType name="DepositApplication">
- *   &lt;complexContent>
- *     &lt;extension base="{urn:core_2018_2.platform.webservices.netsuite.com}Record">
- *       &lt;sequence>
- *         &lt;element name="createdDate" type="{http://www.w3.org/2001/XMLSchema}dateTime" minOccurs="0"/>
- *         &lt;element name="lastModifiedDate" type="{http://www.w3.org/2001/XMLSchema}dateTime" minOccurs="0"/>
- *         &lt;element name="arAcct" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="status" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="customer" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="tranDate" type="{http://www.w3.org/2001/XMLSchema}dateTime" minOccurs="0"/>
- *         &lt;element name="postingPeriod" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="deposit" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="depDate" type="{http://www.w3.org/2001/XMLSchema}dateTime" minOccurs="0"/>
- *         &lt;element name="currency" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="exchangeRate" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
- *         &lt;element name="memo" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="subsidiary" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="total" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
- *         &lt;element name="department" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="applied" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
- *         &lt;element name="class" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="unapplied" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
- *         &lt;element name="location" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="tranId" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="applyList" type="{urn:customers_2018_2.transactions.webservices.netsuite.com}DepositApplicationApplyList" minOccurs="0"/>
- *         &lt;element name="accountingBookDetailList" type="{urn:common_2018_2.platform.webservices.netsuite.com}AccountingBookDetailList" minOccurs="0"/>
- *         &lt;element name="customFieldList" type="{urn:core_2018_2.platform.webservices.netsuite.com}CustomFieldList" minOccurs="0"/>
- *       &lt;/sequence>
- *       &lt;attribute name="internalId" type="{http://www.w3.org/2001/XMLSchema}string" />
- *       &lt;attribute name="externalId" type="{http://www.w3.org/2001/XMLSchema}string" />
- *     &lt;/extension>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
- */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "DepositApplication", propOrder = {
-    "createdDate",
-    "lastModifiedDate",
-    "arAcct",
-    "status",
-    "customer",
-    "tranDate",
-    "postingPeriod",
-    "deposit",
-    "depDate",
-    "currency",
-    "exchangeRate",
-    "memo",
-    "subsidiary",
-    "total",
-    "department",
-    "applied",
-    "clazz",
-    "unapplied",
-    "location",
-    "tranId",
-    "applyList",
-    "accountingBookDetailList",
-    "customFieldList"
-})
-public class DepositApplication
-    extends Record
-{
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef arAcct;
 
-    @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar createdDate;
-    @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar lastModifiedDate;
-    protected RecordRef arAcct;
-    protected String status;
-    protected RecordRef customer;
-    @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar tranDate;
-    protected RecordRef postingPeriod;
-    protected RecordRef deposit;
-    @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar depDate;
-    protected RecordRef currency;
-    protected Double exchangeRate;
-    protected String memo;
-    protected RecordRef subsidiary;
-    protected Double total;
-    protected RecordRef department;
-    protected Double applied;
-    @XmlElement(name = "class")
-    protected RecordRef clazz;
-    protected Double unapplied;
-    protected RecordRef location;
-    protected String tranId;
-    protected DepositApplicationApplyList applyList;
-    protected AccountingBookDetailList accountingBookDetailList;
-    protected CustomFieldList customFieldList;
-    @XmlAttribute(name = "internalId")
-    protected String internalId;
-    @XmlAttribute(name = "externalId")
-    protected String externalId;
+    private java.lang.String status;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef customer;
+
+    private java.util.Calendar tranDate;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef postingPeriod;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef deposit;
+
+    private java.util.Calendar depDate;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef currency;
+
+    private java.lang.Double exchangeRate;
+
+    private java.lang.String memo;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef subsidiary;
+
+    private java.lang.Double total;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef department;
+
+    private java.lang.Double applied;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef _class;
+
+    private java.lang.Double unapplied;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef location;
+
+    private java.lang.String tranId;
+
+    private com.netsuite.webservices.transactions.customers_2018_2.DepositApplicationApply[] applyList;
+
+    private com.netsuite.webservices.platform.common_2018_2.AccountingBookDetail[] accountingBookDetailList;
+
+    private com.netsuite.webservices.platform.core_2018_2.CustomFieldRef[] customFieldList;
+
+    private java.lang.String internalId;  // attribute
+
+    private java.lang.String externalId;  // attribute
+
+    public DepositApplication() {
+    }
+
+    public DepositApplication(
+           java.lang.String[] nullFieldList,
+           java.lang.String internalId,
+           java.lang.String externalId,
+           java.util.Calendar createdDate,
+           java.util.Calendar lastModifiedDate,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef arAcct,
+           java.lang.String status,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef customer,
+           java.util.Calendar tranDate,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef postingPeriod,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef deposit,
+           java.util.Calendar depDate,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef currency,
+           java.lang.Double exchangeRate,
+           java.lang.String memo,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef subsidiary,
+           java.lang.Double total,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef department,
+           java.lang.Double applied,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef _class,
+           java.lang.Double unapplied,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef location,
+           java.lang.String tranId,
+           com.netsuite.webservices.transactions.customers_2018_2.DepositApplicationApply[] applyList,
+           com.netsuite.webservices.platform.common_2018_2.AccountingBookDetail[] accountingBookDetailList,
+           com.netsuite.webservices.platform.core_2018_2.CustomFieldRef[] customFieldList) {
+        super(
+            nullFieldList);
+        this.internalId = internalId;
+        this.externalId = externalId;
+        this.createdDate = createdDate;
+        this.lastModifiedDate = lastModifiedDate;
+        this.arAcct = arAcct;
+        this.status = status;
+        this.customer = customer;
+        this.tranDate = tranDate;
+        this.postingPeriod = postingPeriod;
+        this.deposit = deposit;
+        this.depDate = depDate;
+        this.currency = currency;
+        this.exchangeRate = exchangeRate;
+        this.memo = memo;
+        this.subsidiary = subsidiary;
+        this.total = total;
+        this.department = department;
+        this.applied = applied;
+        this._class = _class;
+        this.unapplied = unapplied;
+        this.location = location;
+        this.tranId = tranId;
+        this.applyList = applyList;
+        this.accountingBookDetailList = accountingBookDetailList;
+        this.customFieldList = customFieldList;
+    }
+
 
     /**
-     * 获取createdDate属性的值。
+     * Gets the createdDate value for this DepositApplication.
      * 
-     * @return
-     *     possible object is
-     *     {@link XMLGregorianCalendar }
-     *     
+     * @return createdDate
      */
-    public XMLGregorianCalendar getCreatedDate() {
+    public java.util.Calendar getCreatedDate() {
         return createdDate;
     }
 
-    /**
-     * 设置createdDate属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link XMLGregorianCalendar }
-     *     
-     */
-    public void setCreatedDate(XMLGregorianCalendar value) {
-        this.createdDate = value;
-    }
 
     /**
-     * 获取lastModifiedDate属性的值。
+     * Sets the createdDate value for this DepositApplication.
      * 
-     * @return
-     *     possible object is
-     *     {@link XMLGregorianCalendar }
-     *     
+     * @param createdDate
      */
-    public XMLGregorianCalendar getLastModifiedDate() {
+    public void setCreatedDate(java.util.Calendar createdDate) {
+        this.createdDate = createdDate;
+    }
+
+
+    /**
+     * Gets the lastModifiedDate value for this DepositApplication.
+     * 
+     * @return lastModifiedDate
+     */
+    public java.util.Calendar getLastModifiedDate() {
         return lastModifiedDate;
     }
 
-    /**
-     * 设置lastModifiedDate属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link XMLGregorianCalendar }
-     *     
-     */
-    public void setLastModifiedDate(XMLGregorianCalendar value) {
-        this.lastModifiedDate = value;
-    }
 
     /**
-     * 获取arAcct属性的值。
+     * Sets the lastModifiedDate value for this DepositApplication.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param lastModifiedDate
      */
-    public RecordRef getArAcct() {
+    public void setLastModifiedDate(java.util.Calendar lastModifiedDate) {
+        this.lastModifiedDate = lastModifiedDate;
+    }
+
+
+    /**
+     * Gets the arAcct value for this DepositApplication.
+     * 
+     * @return arAcct
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getArAcct() {
         return arAcct;
     }
 
-    /**
-     * 设置arAcct属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setArAcct(RecordRef value) {
-        this.arAcct = value;
-    }
 
     /**
-     * 获取status属性的值。
+     * Sets the arAcct value for this DepositApplication.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param arAcct
      */
-    public String getStatus() {
+    public void setArAcct(com.netsuite.webservices.platform.core_2018_2.RecordRef arAcct) {
+        this.arAcct = arAcct;
+    }
+
+
+    /**
+     * Gets the status value for this DepositApplication.
+     * 
+     * @return status
+     */
+    public java.lang.String getStatus() {
         return status;
     }
 
-    /**
-     * 设置status属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setStatus(String value) {
-        this.status = value;
-    }
 
     /**
-     * 获取customer属性的值。
+     * Sets the status value for this DepositApplication.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param status
      */
-    public RecordRef getCustomer() {
+    public void setStatus(java.lang.String status) {
+        this.status = status;
+    }
+
+
+    /**
+     * Gets the customer value for this DepositApplication.
+     * 
+     * @return customer
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getCustomer() {
         return customer;
     }
 
-    /**
-     * 设置customer属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setCustomer(RecordRef value) {
-        this.customer = value;
-    }
 
     /**
-     * 获取tranDate属性的值。
+     * Sets the customer value for this DepositApplication.
      * 
-     * @return
-     *     possible object is
-     *     {@link XMLGregorianCalendar }
-     *     
+     * @param customer
      */
-    public XMLGregorianCalendar getTranDate() {
+    public void setCustomer(com.netsuite.webservices.platform.core_2018_2.RecordRef customer) {
+        this.customer = customer;
+    }
+
+
+    /**
+     * Gets the tranDate value for this DepositApplication.
+     * 
+     * @return tranDate
+     */
+    public java.util.Calendar getTranDate() {
         return tranDate;
     }
 
-    /**
-     * 设置tranDate属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link XMLGregorianCalendar }
-     *     
-     */
-    public void setTranDate(XMLGregorianCalendar value) {
-        this.tranDate = value;
-    }
 
     /**
-     * 获取postingPeriod属性的值。
+     * Sets the tranDate value for this DepositApplication.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param tranDate
      */
-    public RecordRef getPostingPeriod() {
+    public void setTranDate(java.util.Calendar tranDate) {
+        this.tranDate = tranDate;
+    }
+
+
+    /**
+     * Gets the postingPeriod value for this DepositApplication.
+     * 
+     * @return postingPeriod
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getPostingPeriod() {
         return postingPeriod;
     }
 
-    /**
-     * 设置postingPeriod属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setPostingPeriod(RecordRef value) {
-        this.postingPeriod = value;
-    }
 
     /**
-     * 获取deposit属性的值。
+     * Sets the postingPeriod value for this DepositApplication.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param postingPeriod
      */
-    public RecordRef getDeposit() {
+    public void setPostingPeriod(com.netsuite.webservices.platform.core_2018_2.RecordRef postingPeriod) {
+        this.postingPeriod = postingPeriod;
+    }
+
+
+    /**
+     * Gets the deposit value for this DepositApplication.
+     * 
+     * @return deposit
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getDeposit() {
         return deposit;
     }
 
-    /**
-     * 设置deposit属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setDeposit(RecordRef value) {
-        this.deposit = value;
-    }
 
     /**
-     * 获取depDate属性的值。
+     * Sets the deposit value for this DepositApplication.
      * 
-     * @return
-     *     possible object is
-     *     {@link XMLGregorianCalendar }
-     *     
+     * @param deposit
      */
-    public XMLGregorianCalendar getDepDate() {
+    public void setDeposit(com.netsuite.webservices.platform.core_2018_2.RecordRef deposit) {
+        this.deposit = deposit;
+    }
+
+
+    /**
+     * Gets the depDate value for this DepositApplication.
+     * 
+     * @return depDate
+     */
+    public java.util.Calendar getDepDate() {
         return depDate;
     }
 
-    /**
-     * 设置depDate属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link XMLGregorianCalendar }
-     *     
-     */
-    public void setDepDate(XMLGregorianCalendar value) {
-        this.depDate = value;
-    }
 
     /**
-     * 获取currency属性的值。
+     * Sets the depDate value for this DepositApplication.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param depDate
      */
-    public RecordRef getCurrency() {
+    public void setDepDate(java.util.Calendar depDate) {
+        this.depDate = depDate;
+    }
+
+
+    /**
+     * Gets the currency value for this DepositApplication.
+     * 
+     * @return currency
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getCurrency() {
         return currency;
     }
 
-    /**
-     * 设置currency属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setCurrency(RecordRef value) {
-        this.currency = value;
-    }
 
     /**
-     * 获取exchangeRate属性的值。
+     * Sets the currency value for this DepositApplication.
      * 
-     * @return
-     *     possible object is
-     *     {@link Double }
-     *     
+     * @param currency
      */
-    public Double getExchangeRate() {
+    public void setCurrency(com.netsuite.webservices.platform.core_2018_2.RecordRef currency) {
+        this.currency = currency;
+    }
+
+
+    /**
+     * Gets the exchangeRate value for this DepositApplication.
+     * 
+     * @return exchangeRate
+     */
+    public java.lang.Double getExchangeRate() {
         return exchangeRate;
     }
 
-    /**
-     * 设置exchangeRate属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Double }
-     *     
-     */
-    public void setExchangeRate(Double value) {
-        this.exchangeRate = value;
-    }
 
     /**
-     * 获取memo属性的值。
+     * Sets the exchangeRate value for this DepositApplication.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param exchangeRate
      */
-    public String getMemo() {
+    public void setExchangeRate(java.lang.Double exchangeRate) {
+        this.exchangeRate = exchangeRate;
+    }
+
+
+    /**
+     * Gets the memo value for this DepositApplication.
+     * 
+     * @return memo
+     */
+    public java.lang.String getMemo() {
         return memo;
     }
 
-    /**
-     * 设置memo属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setMemo(String value) {
-        this.memo = value;
-    }
 
     /**
-     * 获取subsidiary属性的值。
+     * Sets the memo value for this DepositApplication.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param memo
      */
-    public RecordRef getSubsidiary() {
+    public void setMemo(java.lang.String memo) {
+        this.memo = memo;
+    }
+
+
+    /**
+     * Gets the subsidiary value for this DepositApplication.
+     * 
+     * @return subsidiary
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getSubsidiary() {
         return subsidiary;
     }
 
-    /**
-     * 设置subsidiary属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setSubsidiary(RecordRef value) {
-        this.subsidiary = value;
-    }
 
     /**
-     * 获取total属性的值。
+     * Sets the subsidiary value for this DepositApplication.
      * 
-     * @return
-     *     possible object is
-     *     {@link Double }
-     *     
+     * @param subsidiary
      */
-    public Double getTotal() {
+    public void setSubsidiary(com.netsuite.webservices.platform.core_2018_2.RecordRef subsidiary) {
+        this.subsidiary = subsidiary;
+    }
+
+
+    /**
+     * Gets the total value for this DepositApplication.
+     * 
+     * @return total
+     */
+    public java.lang.Double getTotal() {
         return total;
     }
 
-    /**
-     * 设置total属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Double }
-     *     
-     */
-    public void setTotal(Double value) {
-        this.total = value;
-    }
 
     /**
-     * 获取department属性的值。
+     * Sets the total value for this DepositApplication.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param total
      */
-    public RecordRef getDepartment() {
+    public void setTotal(java.lang.Double total) {
+        this.total = total;
+    }
+
+
+    /**
+     * Gets the department value for this DepositApplication.
+     * 
+     * @return department
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getDepartment() {
         return department;
     }
 
-    /**
-     * 设置department属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setDepartment(RecordRef value) {
-        this.department = value;
-    }
 
     /**
-     * 获取applied属性的值。
+     * Sets the department value for this DepositApplication.
      * 
-     * @return
-     *     possible object is
-     *     {@link Double }
-     *     
+     * @param department
      */
-    public Double getApplied() {
+    public void setDepartment(com.netsuite.webservices.platform.core_2018_2.RecordRef department) {
+        this.department = department;
+    }
+
+
+    /**
+     * Gets the applied value for this DepositApplication.
+     * 
+     * @return applied
+     */
+    public java.lang.Double getApplied() {
         return applied;
     }
 
-    /**
-     * 设置applied属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Double }
-     *     
-     */
-    public void setApplied(Double value) {
-        this.applied = value;
-    }
 
     /**
-     * 获取clazz属性的值。
+     * Sets the applied value for this DepositApplication.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param applied
      */
-    public RecordRef getClazz() {
-        return clazz;
+    public void setApplied(java.lang.Double applied) {
+        this.applied = applied;
     }
 
-    /**
-     * 设置clazz属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setClazz(RecordRef value) {
-        this.clazz = value;
-    }
 
     /**
-     * 获取unapplied属性的值。
+     * Gets the _class value for this DepositApplication.
      * 
-     * @return
-     *     possible object is
-     *     {@link Double }
-     *     
+     * @return _class
      */
-    public Double getUnapplied() {
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef get_class() {
+        return _class;
+    }
+
+
+    /**
+     * Sets the _class value for this DepositApplication.
+     * 
+     * @param _class
+     */
+    public void set_class(com.netsuite.webservices.platform.core_2018_2.RecordRef _class) {
+        this._class = _class;
+    }
+
+
+    /**
+     * Gets the unapplied value for this DepositApplication.
+     * 
+     * @return unapplied
+     */
+    public java.lang.Double getUnapplied() {
         return unapplied;
     }
 
-    /**
-     * 设置unapplied属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Double }
-     *     
-     */
-    public void setUnapplied(Double value) {
-        this.unapplied = value;
-    }
 
     /**
-     * 获取location属性的值。
+     * Sets the unapplied value for this DepositApplication.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param unapplied
      */
-    public RecordRef getLocation() {
+    public void setUnapplied(java.lang.Double unapplied) {
+        this.unapplied = unapplied;
+    }
+
+
+    /**
+     * Gets the location value for this DepositApplication.
+     * 
+     * @return location
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getLocation() {
         return location;
     }
 
-    /**
-     * 设置location属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setLocation(RecordRef value) {
-        this.location = value;
-    }
 
     /**
-     * 获取tranId属性的值。
+     * Sets the location value for this DepositApplication.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param location
      */
-    public String getTranId() {
+    public void setLocation(com.netsuite.webservices.platform.core_2018_2.RecordRef location) {
+        this.location = location;
+    }
+
+
+    /**
+     * Gets the tranId value for this DepositApplication.
+     * 
+     * @return tranId
+     */
+    public java.lang.String getTranId() {
         return tranId;
     }
 
-    /**
-     * 设置tranId属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setTranId(String value) {
-        this.tranId = value;
-    }
 
     /**
-     * 获取applyList属性的值。
+     * Sets the tranId value for this DepositApplication.
      * 
-     * @return
-     *     possible object is
-     *     {@link DepositApplicationApplyList }
-     *     
+     * @param tranId
      */
-    public DepositApplicationApplyList getApplyList() {
+    public void setTranId(java.lang.String tranId) {
+        this.tranId = tranId;
+    }
+
+
+    /**
+     * Gets the applyList value for this DepositApplication.
+     * 
+     * @return applyList
+     */
+    public com.netsuite.webservices.transactions.customers_2018_2.DepositApplicationApply[] getApplyList() {
         return applyList;
     }
 
-    /**
-     * 设置applyList属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link DepositApplicationApplyList }
-     *     
-     */
-    public void setApplyList(DepositApplicationApplyList value) {
-        this.applyList = value;
-    }
 
     /**
-     * 获取accountingBookDetailList属性的值。
+     * Sets the applyList value for this DepositApplication.
      * 
-     * @return
-     *     possible object is
-     *     {@link AccountingBookDetailList }
-     *     
+     * @param applyList
      */
-    public AccountingBookDetailList getAccountingBookDetailList() {
+    public void setApplyList(com.netsuite.webservices.transactions.customers_2018_2.DepositApplicationApply[] applyList) {
+        this.applyList = applyList;
+    }
+
+
+    /**
+     * Gets the accountingBookDetailList value for this DepositApplication.
+     * 
+     * @return accountingBookDetailList
+     */
+    public com.netsuite.webservices.platform.common_2018_2.AccountingBookDetail[] getAccountingBookDetailList() {
         return accountingBookDetailList;
     }
 
-    /**
-     * 设置accountingBookDetailList属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link AccountingBookDetailList }
-     *     
-     */
-    public void setAccountingBookDetailList(AccountingBookDetailList value) {
-        this.accountingBookDetailList = value;
-    }
 
     /**
-     * 获取customFieldList属性的值。
+     * Sets the accountingBookDetailList value for this DepositApplication.
      * 
-     * @return
-     *     possible object is
-     *     {@link CustomFieldList }
-     *     
+     * @param accountingBookDetailList
      */
-    public CustomFieldList getCustomFieldList() {
+    public void setAccountingBookDetailList(com.netsuite.webservices.platform.common_2018_2.AccountingBookDetail[] accountingBookDetailList) {
+        this.accountingBookDetailList = accountingBookDetailList;
+    }
+
+
+    /**
+     * Gets the customFieldList value for this DepositApplication.
+     * 
+     * @return customFieldList
+     */
+    public com.netsuite.webservices.platform.core_2018_2.CustomFieldRef[] getCustomFieldList() {
         return customFieldList;
     }
 
-    /**
-     * 设置customFieldList属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link CustomFieldList }
-     *     
-     */
-    public void setCustomFieldList(CustomFieldList value) {
-        this.customFieldList = value;
-    }
 
     /**
-     * 获取internalId属性的值。
+     * Sets the customFieldList value for this DepositApplication.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param customFieldList
      */
-    public String getInternalId() {
+    public void setCustomFieldList(com.netsuite.webservices.platform.core_2018_2.CustomFieldRef[] customFieldList) {
+        this.customFieldList = customFieldList;
+    }
+
+
+    /**
+     * Gets the internalId value for this DepositApplication.
+     * 
+     * @return internalId
+     */
+    public java.lang.String getInternalId() {
         return internalId;
     }
 
-    /**
-     * 设置internalId属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setInternalId(String value) {
-        this.internalId = value;
-    }
 
     /**
-     * 获取externalId属性的值。
+     * Sets the internalId value for this DepositApplication.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param internalId
      */
-    public String getExternalId() {
+    public void setInternalId(java.lang.String internalId) {
+        this.internalId = internalId;
+    }
+
+
+    /**
+     * Gets the externalId value for this DepositApplication.
+     * 
+     * @return externalId
+     */
+    public java.lang.String getExternalId() {
         return externalId;
     }
 
+
     /**
-     * 设置externalId属性的值。
+     * Sets the externalId value for this DepositApplication.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     * @param externalId
      */
-    public void setExternalId(String value) {
-        this.externalId = value;
+    public void setExternalId(java.lang.String externalId) {
+        this.externalId = externalId;
+    }
+
+    private java.lang.Object __equalsCalc = null;
+    public synchronized boolean equals(java.lang.Object obj) {
+        if (!(obj instanceof DepositApplication)) return false;
+        DepositApplication other = (DepositApplication) obj;
+        if (obj == null) return false;
+        if (this == obj) return true;
+        if (__equalsCalc != null) {
+            return (__equalsCalc == obj);
+        }
+        __equalsCalc = obj;
+        boolean _equals;
+        _equals = super.equals(obj) && 
+            ((this.createdDate==null && other.getCreatedDate()==null) || 
+             (this.createdDate!=null &&
+              this.createdDate.equals(other.getCreatedDate()))) &&
+            ((this.lastModifiedDate==null && other.getLastModifiedDate()==null) || 
+             (this.lastModifiedDate!=null &&
+              this.lastModifiedDate.equals(other.getLastModifiedDate()))) &&
+            ((this.arAcct==null && other.getArAcct()==null) || 
+             (this.arAcct!=null &&
+              this.arAcct.equals(other.getArAcct()))) &&
+            ((this.status==null && other.getStatus()==null) || 
+             (this.status!=null &&
+              this.status.equals(other.getStatus()))) &&
+            ((this.customer==null && other.getCustomer()==null) || 
+             (this.customer!=null &&
+              this.customer.equals(other.getCustomer()))) &&
+            ((this.tranDate==null && other.getTranDate()==null) || 
+             (this.tranDate!=null &&
+              this.tranDate.equals(other.getTranDate()))) &&
+            ((this.postingPeriod==null && other.getPostingPeriod()==null) || 
+             (this.postingPeriod!=null &&
+              this.postingPeriod.equals(other.getPostingPeriod()))) &&
+            ((this.deposit==null && other.getDeposit()==null) || 
+             (this.deposit!=null &&
+              this.deposit.equals(other.getDeposit()))) &&
+            ((this.depDate==null && other.getDepDate()==null) || 
+             (this.depDate!=null &&
+              this.depDate.equals(other.getDepDate()))) &&
+            ((this.currency==null && other.getCurrency()==null) || 
+             (this.currency!=null &&
+              this.currency.equals(other.getCurrency()))) &&
+            ((this.exchangeRate==null && other.getExchangeRate()==null) || 
+             (this.exchangeRate!=null &&
+              this.exchangeRate.equals(other.getExchangeRate()))) &&
+            ((this.memo==null && other.getMemo()==null) || 
+             (this.memo!=null &&
+              this.memo.equals(other.getMemo()))) &&
+            ((this.subsidiary==null && other.getSubsidiary()==null) || 
+             (this.subsidiary!=null &&
+              this.subsidiary.equals(other.getSubsidiary()))) &&
+            ((this.total==null && other.getTotal()==null) || 
+             (this.total!=null &&
+              this.total.equals(other.getTotal()))) &&
+            ((this.department==null && other.getDepartment()==null) || 
+             (this.department!=null &&
+              this.department.equals(other.getDepartment()))) &&
+            ((this.applied==null && other.getApplied()==null) || 
+             (this.applied!=null &&
+              this.applied.equals(other.getApplied()))) &&
+            ((this._class==null && other.get_class()==null) || 
+             (this._class!=null &&
+              this._class.equals(other.get_class()))) &&
+            ((this.unapplied==null && other.getUnapplied()==null) || 
+             (this.unapplied!=null &&
+              this.unapplied.equals(other.getUnapplied()))) &&
+            ((this.location==null && other.getLocation()==null) || 
+             (this.location!=null &&
+              this.location.equals(other.getLocation()))) &&
+            ((this.tranId==null && other.getTranId()==null) || 
+             (this.tranId!=null &&
+              this.tranId.equals(other.getTranId()))) &&
+            ((this.applyList==null && other.getApplyList()==null) || 
+             (this.applyList!=null &&
+              java.util.Arrays.equals(this.applyList, other.getApplyList()))) &&
+            ((this.accountingBookDetailList==null && other.getAccountingBookDetailList()==null) || 
+             (this.accountingBookDetailList!=null &&
+              java.util.Arrays.equals(this.accountingBookDetailList, other.getAccountingBookDetailList()))) &&
+            ((this.customFieldList==null && other.getCustomFieldList()==null) || 
+             (this.customFieldList!=null &&
+              java.util.Arrays.equals(this.customFieldList, other.getCustomFieldList()))) &&
+            ((this.internalId==null && other.getInternalId()==null) || 
+             (this.internalId!=null &&
+              this.internalId.equals(other.getInternalId()))) &&
+            ((this.externalId==null && other.getExternalId()==null) || 
+             (this.externalId!=null &&
+              this.externalId.equals(other.getExternalId())));
+        __equalsCalc = null;
+        return _equals;
+    }
+
+    private boolean __hashCodeCalc = false;
+    public synchronized int hashCode() {
+        if (__hashCodeCalc) {
+            return 0;
+        }
+        __hashCodeCalc = true;
+        int _hashCode = super.hashCode();
+        if (getCreatedDate() != null) {
+            _hashCode += getCreatedDate().hashCode();
+        }
+        if (getLastModifiedDate() != null) {
+            _hashCode += getLastModifiedDate().hashCode();
+        }
+        if (getArAcct() != null) {
+            _hashCode += getArAcct().hashCode();
+        }
+        if (getStatus() != null) {
+            _hashCode += getStatus().hashCode();
+        }
+        if (getCustomer() != null) {
+            _hashCode += getCustomer().hashCode();
+        }
+        if (getTranDate() != null) {
+            _hashCode += getTranDate().hashCode();
+        }
+        if (getPostingPeriod() != null) {
+            _hashCode += getPostingPeriod().hashCode();
+        }
+        if (getDeposit() != null) {
+            _hashCode += getDeposit().hashCode();
+        }
+        if (getDepDate() != null) {
+            _hashCode += getDepDate().hashCode();
+        }
+        if (getCurrency() != null) {
+            _hashCode += getCurrency().hashCode();
+        }
+        if (getExchangeRate() != null) {
+            _hashCode += getExchangeRate().hashCode();
+        }
+        if (getMemo() != null) {
+            _hashCode += getMemo().hashCode();
+        }
+        if (getSubsidiary() != null) {
+            _hashCode += getSubsidiary().hashCode();
+        }
+        if (getTotal() != null) {
+            _hashCode += getTotal().hashCode();
+        }
+        if (getDepartment() != null) {
+            _hashCode += getDepartment().hashCode();
+        }
+        if (getApplied() != null) {
+            _hashCode += getApplied().hashCode();
+        }
+        if (get_class() != null) {
+            _hashCode += get_class().hashCode();
+        }
+        if (getUnapplied() != null) {
+            _hashCode += getUnapplied().hashCode();
+        }
+        if (getLocation() != null) {
+            _hashCode += getLocation().hashCode();
+        }
+        if (getTranId() != null) {
+            _hashCode += getTranId().hashCode();
+        }
+        if (getApplyList() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getApplyList());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getApplyList(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getAccountingBookDetailList() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getAccountingBookDetailList());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getAccountingBookDetailList(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getCustomFieldList() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getCustomFieldList());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getCustomFieldList(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getInternalId() != null) {
+            _hashCode += getInternalId().hashCode();
+        }
+        if (getExternalId() != null) {
+            _hashCode += getExternalId().hashCode();
+        }
+        __hashCodeCalc = false;
+        return _hashCode;
+    }
+
+    // Type metadata
+    private static org.apache.axis.description.TypeDesc typeDesc =
+        new org.apache.axis.description.TypeDesc(DepositApplication.class, true);
+
+    static {
+        typeDesc.setXmlType(new javax.xml.namespace.QName("urn:customers_2018_2.transactions.webservices.netsuite.com", "DepositApplication"));
+        org.apache.axis.description.AttributeDesc attrField = new org.apache.axis.description.AttributeDesc();
+        attrField.setFieldName("internalId");
+        attrField.setXmlName(new javax.xml.namespace.QName("", "internalId"));
+        attrField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        typeDesc.addFieldDesc(attrField);
+        attrField = new org.apache.axis.description.AttributeDesc();
+        attrField.setFieldName("externalId");
+        attrField.setXmlName(new javax.xml.namespace.QName("", "externalId"));
+        attrField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        typeDesc.addFieldDesc(attrField);
+        org.apache.axis.description.ElementDesc elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("createdDate");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:customers_2018_2.transactions.webservices.netsuite.com", "createdDate"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "dateTime"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("lastModifiedDate");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:customers_2018_2.transactions.webservices.netsuite.com", "lastModifiedDate"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "dateTime"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("arAcct");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:customers_2018_2.transactions.webservices.netsuite.com", "arAcct"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("status");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:customers_2018_2.transactions.webservices.netsuite.com", "status"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("customer");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:customers_2018_2.transactions.webservices.netsuite.com", "customer"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("tranDate");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:customers_2018_2.transactions.webservices.netsuite.com", "tranDate"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "dateTime"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("postingPeriod");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:customers_2018_2.transactions.webservices.netsuite.com", "postingPeriod"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("deposit");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:customers_2018_2.transactions.webservices.netsuite.com", "deposit"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("depDate");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:customers_2018_2.transactions.webservices.netsuite.com", "depDate"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "dateTime"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("currency");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:customers_2018_2.transactions.webservices.netsuite.com", "currency"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("exchangeRate");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:customers_2018_2.transactions.webservices.netsuite.com", "exchangeRate"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "double"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("memo");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:customers_2018_2.transactions.webservices.netsuite.com", "memo"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("subsidiary");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:customers_2018_2.transactions.webservices.netsuite.com", "subsidiary"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("total");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:customers_2018_2.transactions.webservices.netsuite.com", "total"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "double"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("department");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:customers_2018_2.transactions.webservices.netsuite.com", "department"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("applied");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:customers_2018_2.transactions.webservices.netsuite.com", "applied"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "double"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("_class");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:customers_2018_2.transactions.webservices.netsuite.com", "class"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("unapplied");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:customers_2018_2.transactions.webservices.netsuite.com", "unapplied"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "double"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("location");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:customers_2018_2.transactions.webservices.netsuite.com", "location"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("tranId");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:customers_2018_2.transactions.webservices.netsuite.com", "tranId"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("applyList");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:customers_2018_2.transactions.webservices.netsuite.com", "applyList"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:customers_2018_2.transactions.webservices.netsuite.com", "DepositApplicationApply"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:customers_2018_2.transactions.webservices.netsuite.com", "apply"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("accountingBookDetailList");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:customers_2018_2.transactions.webservices.netsuite.com", "accountingBookDetailList"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "AccountingBookDetail"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "accountingBookDetail"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("customFieldList");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:customers_2018_2.transactions.webservices.netsuite.com", "customFieldList"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "CustomFieldRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "customField"));
+        typeDesc.addFieldDesc(elemField);
+    }
+
+    /**
+     * Return type metadata object
+     */
+    public static org.apache.axis.description.TypeDesc getTypeDesc() {
+        return typeDesc;
+    }
+
+    /**
+     * Get Custom Serializer
+     */
+    public static org.apache.axis.encoding.Serializer getSerializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanSerializer(
+            _javaType, _xmlType, typeDesc);
+    }
+
+    /**
+     * Get Custom Deserializer
+     */
+    public static org.apache.axis.encoding.Deserializer getDeserializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanDeserializer(
+            _javaType, _xmlType, typeDesc);
     }
 
 }

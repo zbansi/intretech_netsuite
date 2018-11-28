@@ -1,142 +1,231 @@
+/**
+ * Partners.java
+ *
+ * This file was auto-generated from WSDL
+ * by the Apache Axis 1.4 Jul 28, 2010 (04:07:04 PDT) WSDL2Java emitter.
+ */
 
 package com.netsuite.webservices.platform.common_2018_2;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlType;
-import com.netsuite.webservices.platform.core_2018_2.RecordRef;
+public class Partners  implements java.io.Serializable {
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef partner;
 
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef partnerRole;
 
-/**
- * <p>Partners complex type的 Java 类。
- * 
- * <p>以下模式片段指定包含在此类中的预期内容。
- * 
- * <pre>
- * &lt;complexType name="Partners">
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element name="partner" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="partnerRole" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="isPrimary" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         &lt;element name="contribution" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
- */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "Partners", propOrder = {
-    "partner",
-    "partnerRole",
-    "isPrimary",
-    "contribution"
-})
-public class Partners {
+    private java.lang.Boolean isPrimary;
 
-    protected RecordRef partner;
-    protected RecordRef partnerRole;
-    protected Boolean isPrimary;
-    protected Double contribution;
+    private java.lang.Double contribution;
+
+    public Partners() {
+    }
+
+    public Partners(
+           com.netsuite.webservices.platform.core_2018_2.RecordRef partner,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef partnerRole,
+           java.lang.Boolean isPrimary,
+           java.lang.Double contribution) {
+           this.partner = partner;
+           this.partnerRole = partnerRole;
+           this.isPrimary = isPrimary;
+           this.contribution = contribution;
+    }
+
 
     /**
-     * 获取partner属性的值。
+     * Gets the partner value for this Partners.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @return partner
      */
-    public RecordRef getPartner() {
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getPartner() {
         return partner;
     }
 
-    /**
-     * 设置partner属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setPartner(RecordRef value) {
-        this.partner = value;
-    }
 
     /**
-     * 获取partnerRole属性的值。
+     * Sets the partner value for this Partners.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param partner
      */
-    public RecordRef getPartnerRole() {
+    public void setPartner(com.netsuite.webservices.platform.core_2018_2.RecordRef partner) {
+        this.partner = partner;
+    }
+
+
+    /**
+     * Gets the partnerRole value for this Partners.
+     * 
+     * @return partnerRole
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getPartnerRole() {
         return partnerRole;
     }
 
-    /**
-     * 设置partnerRole属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setPartnerRole(RecordRef value) {
-        this.partnerRole = value;
-    }
 
     /**
-     * 获取isPrimary属性的值。
+     * Sets the partnerRole value for this Partners.
      * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
+     * @param partnerRole
      */
-    public Boolean isIsPrimary() {
+    public void setPartnerRole(com.netsuite.webservices.platform.core_2018_2.RecordRef partnerRole) {
+        this.partnerRole = partnerRole;
+    }
+
+
+    /**
+     * Gets the isPrimary value for this Partners.
+     * 
+     * @return isPrimary
+     */
+    public java.lang.Boolean getIsPrimary() {
         return isPrimary;
     }
 
-    /**
-     * 设置isPrimary属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
-     */
-    public void setIsPrimary(Boolean value) {
-        this.isPrimary = value;
-    }
 
     /**
-     * 获取contribution属性的值。
+     * Sets the isPrimary value for this Partners.
      * 
-     * @return
-     *     possible object is
-     *     {@link Double }
-     *     
+     * @param isPrimary
      */
-    public Double getContribution() {
+    public void setIsPrimary(java.lang.Boolean isPrimary) {
+        this.isPrimary = isPrimary;
+    }
+
+
+    /**
+     * Gets the contribution value for this Partners.
+     * 
+     * @return contribution
+     */
+    public java.lang.Double getContribution() {
         return contribution;
     }
 
+
     /**
-     * 设置contribution属性的值。
+     * Sets the contribution value for this Partners.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link Double }
-     *     
+     * @param contribution
      */
-    public void setContribution(Double value) {
-        this.contribution = value;
+    public void setContribution(java.lang.Double contribution) {
+        this.contribution = contribution;
+    }
+
+    private java.lang.Object __equalsCalc = null;
+    public synchronized boolean equals(java.lang.Object obj) {
+        if (!(obj instanceof Partners)) return false;
+        Partners other = (Partners) obj;
+        if (obj == null) return false;
+        if (this == obj) return true;
+        if (__equalsCalc != null) {
+            return (__equalsCalc == obj);
+        }
+        __equalsCalc = obj;
+        boolean _equals;
+        _equals = true && 
+            ((this.partner==null && other.getPartner()==null) || 
+             (this.partner!=null &&
+              this.partner.equals(other.getPartner()))) &&
+            ((this.partnerRole==null && other.getPartnerRole()==null) || 
+             (this.partnerRole!=null &&
+              this.partnerRole.equals(other.getPartnerRole()))) &&
+            ((this.isPrimary==null && other.getIsPrimary()==null) || 
+             (this.isPrimary!=null &&
+              this.isPrimary.equals(other.getIsPrimary()))) &&
+            ((this.contribution==null && other.getContribution()==null) || 
+             (this.contribution!=null &&
+              this.contribution.equals(other.getContribution())));
+        __equalsCalc = null;
+        return _equals;
+    }
+
+    private boolean __hashCodeCalc = false;
+    public synchronized int hashCode() {
+        if (__hashCodeCalc) {
+            return 0;
+        }
+        __hashCodeCalc = true;
+        int _hashCode = 1;
+        if (getPartner() != null) {
+            _hashCode += getPartner().hashCode();
+        }
+        if (getPartnerRole() != null) {
+            _hashCode += getPartnerRole().hashCode();
+        }
+        if (getIsPrimary() != null) {
+            _hashCode += getIsPrimary().hashCode();
+        }
+        if (getContribution() != null) {
+            _hashCode += getContribution().hashCode();
+        }
+        __hashCodeCalc = false;
+        return _hashCode;
+    }
+
+    // Type metadata
+    private static org.apache.axis.description.TypeDesc typeDesc =
+        new org.apache.axis.description.TypeDesc(Partners.class, true);
+
+    static {
+        typeDesc.setXmlType(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "Partners"));
+        org.apache.axis.description.ElementDesc elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("partner");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "partner"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("partnerRole");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "partnerRole"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("isPrimary");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "isPrimary"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("contribution");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "contribution"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "double"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+    }
+
+    /**
+     * Return type metadata object
+     */
+    public static org.apache.axis.description.TypeDesc getTypeDesc() {
+        return typeDesc;
+    }
+
+    /**
+     * Get Custom Serializer
+     */
+    public static org.apache.axis.encoding.Serializer getSerializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanSerializer(
+            _javaType, _xmlType, typeDesc);
+    }
+
+    /**
+     * Get Custom Deserializer
+     */
+    public static org.apache.axis.encoding.Deserializer getDeserializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanDeserializer(
+            _javaType, _xmlType, typeDesc);
     }
 
 }

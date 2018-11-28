@@ -1,111 +1,110 @@
+/**
+ * CustomizationFieldType.java
+ *
+ * This file was auto-generated from WSDL
+ * by the Apache Axis 1.4 Jul 28, 2010 (04:07:04 PDT) WSDL2Java emitter.
+ */
 
 package com.netsuite.webservices.setup.customization_2018_2.types;
 
-import javax.xml.bind.annotation.XmlEnum;
-import javax.xml.bind.annotation.XmlEnumValue;
-import javax.xml.bind.annotation.XmlType;
+public class CustomizationFieldType implements java.io.Serializable {
+    private java.lang.String _value_;
+    private static java.util.HashMap _table_ = new java.util.HashMap();
 
-
-/**
- * <p>CustomizationFieldType的 Java 类。
- * 
- * <p>以下模式片段指定包含在此类中的预期内容。
- * <p>
- * <pre>
- * &lt;simpleType name="CustomizationFieldType">
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     &lt;enumeration value="_checkBox"/>
- *     &lt;enumeration value="_currency"/>
- *     &lt;enumeration value="_date"/>
- *     &lt;enumeration value="_datetime"/>
- *     &lt;enumeration value="_decimalNumber"/>
- *     &lt;enumeration value="_document"/>
- *     &lt;enumeration value="_eMailAddress"/>
- *     &lt;enumeration value="_freeFormText"/>
- *     &lt;enumeration value="_help"/>
- *     &lt;enumeration value="_hyperlink"/>
- *     &lt;enumeration value="_image"/>
- *     &lt;enumeration value="_inlineHTML"/>
- *     &lt;enumeration value="_integerNumber"/>
- *     &lt;enumeration value="_listRecord"/>
- *     &lt;enumeration value="_longText"/>
- *     &lt;enumeration value="_multipleSelect"/>
- *     &lt;enumeration value="_password"/>
- *     &lt;enumeration value="_percent"/>
- *     &lt;enumeration value="_phoneNumber"/>
- *     &lt;enumeration value="_richText"/>
- *     &lt;enumeration value="_textArea"/>
- *     &lt;enumeration value="_timeOfDay"/>
- *   &lt;/restriction>
- * &lt;/simpleType>
- * </pre>
- * 
- */
-@XmlType(name = "CustomizationFieldType", namespace = "urn:types.customization_2018_2.setup.webservices.netsuite.com")
-@XmlEnum
-public enum CustomizationFieldType {
-
-    @XmlEnumValue("_checkBox")
-    CHECK_BOX("_checkBox"),
-    @XmlEnumValue("_currency")
-    CURRENCY("_currency"),
-    @XmlEnumValue("_date")
-    DATE("_date"),
-    @XmlEnumValue("_datetime")
-    DATETIME("_datetime"),
-    @XmlEnumValue("_decimalNumber")
-    DECIMAL_NUMBER("_decimalNumber"),
-    @XmlEnumValue("_document")
-    DOCUMENT("_document"),
-    @XmlEnumValue("_eMailAddress")
-    E_MAIL_ADDRESS("_eMailAddress"),
-    @XmlEnumValue("_freeFormText")
-    FREE_FORM_TEXT("_freeFormText"),
-    @XmlEnumValue("_help")
-    HELP("_help"),
-    @XmlEnumValue("_hyperlink")
-    HYPERLINK("_hyperlink"),
-    @XmlEnumValue("_image")
-    IMAGE("_image"),
-    @XmlEnumValue("_inlineHTML")
-    INLINE_HTML("_inlineHTML"),
-    @XmlEnumValue("_integerNumber")
-    INTEGER_NUMBER("_integerNumber"),
-    @XmlEnumValue("_listRecord")
-    LIST_RECORD("_listRecord"),
-    @XmlEnumValue("_longText")
-    LONG_TEXT("_longText"),
-    @XmlEnumValue("_multipleSelect")
-    MULTIPLE_SELECT("_multipleSelect"),
-    @XmlEnumValue("_password")
-    PASSWORD("_password"),
-    @XmlEnumValue("_percent")
-    PERCENT("_percent"),
-    @XmlEnumValue("_phoneNumber")
-    PHONE_NUMBER("_phoneNumber"),
-    @XmlEnumValue("_richText")
-    RICH_TEXT("_richText"),
-    @XmlEnumValue("_textArea")
-    TEXT_AREA("_textArea"),
-    @XmlEnumValue("_timeOfDay")
-    TIME_OF_DAY("_timeOfDay");
-    private final String value;
-
-    CustomizationFieldType(String v) {
-        value = v;
+    // Constructor
+    protected CustomizationFieldType(java.lang.String value) {
+        _value_ = value;
+        _table_.put(_value_,this);
     }
 
-    public String value() {
-        return value;
+    public static final java.lang.String __checkBox = "_checkBox";
+    public static final java.lang.String __currency = "_currency";
+    public static final java.lang.String __date = "_date";
+    public static final java.lang.String __datetime = "_datetime";
+    public static final java.lang.String __decimalNumber = "_decimalNumber";
+    public static final java.lang.String __document = "_document";
+    public static final java.lang.String __eMailAddress = "_eMailAddress";
+    public static final java.lang.String __freeFormText = "_freeFormText";
+    public static final java.lang.String __help = "_help";
+    public static final java.lang.String __hyperlink = "_hyperlink";
+    public static final java.lang.String __image = "_image";
+    public static final java.lang.String __inlineHTML = "_inlineHTML";
+    public static final java.lang.String __integerNumber = "_integerNumber";
+    public static final java.lang.String __listRecord = "_listRecord";
+    public static final java.lang.String __longText = "_longText";
+    public static final java.lang.String __multipleSelect = "_multipleSelect";
+    public static final java.lang.String __password = "_password";
+    public static final java.lang.String __percent = "_percent";
+    public static final java.lang.String __phoneNumber = "_phoneNumber";
+    public static final java.lang.String __richText = "_richText";
+    public static final java.lang.String __textArea = "_textArea";
+    public static final java.lang.String __timeOfDay = "_timeOfDay";
+    public static final CustomizationFieldType _checkBox = new CustomizationFieldType(__checkBox);
+    public static final CustomizationFieldType _currency = new CustomizationFieldType(__currency);
+    public static final CustomizationFieldType _date = new CustomizationFieldType(__date);
+    public static final CustomizationFieldType _datetime = new CustomizationFieldType(__datetime);
+    public static final CustomizationFieldType _decimalNumber = new CustomizationFieldType(__decimalNumber);
+    public static final CustomizationFieldType _document = new CustomizationFieldType(__document);
+    public static final CustomizationFieldType _eMailAddress = new CustomizationFieldType(__eMailAddress);
+    public static final CustomizationFieldType _freeFormText = new CustomizationFieldType(__freeFormText);
+    public static final CustomizationFieldType _help = new CustomizationFieldType(__help);
+    public static final CustomizationFieldType _hyperlink = new CustomizationFieldType(__hyperlink);
+    public static final CustomizationFieldType _image = new CustomizationFieldType(__image);
+    public static final CustomizationFieldType _inlineHTML = new CustomizationFieldType(__inlineHTML);
+    public static final CustomizationFieldType _integerNumber = new CustomizationFieldType(__integerNumber);
+    public static final CustomizationFieldType _listRecord = new CustomizationFieldType(__listRecord);
+    public static final CustomizationFieldType _longText = new CustomizationFieldType(__longText);
+    public static final CustomizationFieldType _multipleSelect = new CustomizationFieldType(__multipleSelect);
+    public static final CustomizationFieldType _password = new CustomizationFieldType(__password);
+    public static final CustomizationFieldType _percent = new CustomizationFieldType(__percent);
+    public static final CustomizationFieldType _phoneNumber = new CustomizationFieldType(__phoneNumber);
+    public static final CustomizationFieldType _richText = new CustomizationFieldType(__richText);
+    public static final CustomizationFieldType _textArea = new CustomizationFieldType(__textArea);
+    public static final CustomizationFieldType _timeOfDay = new CustomizationFieldType(__timeOfDay);
+    public java.lang.String getValue() { return _value_;}
+    public static CustomizationFieldType fromValue(java.lang.String value)
+          throws java.lang.IllegalArgumentException {
+        CustomizationFieldType enumeration = (CustomizationFieldType)
+            _table_.get(value);
+        if (enumeration==null) throw new java.lang.IllegalArgumentException();
+        return enumeration;
     }
+    public static CustomizationFieldType fromString(java.lang.String value)
+          throws java.lang.IllegalArgumentException {
+        return fromValue(value);
+    }
+    public boolean equals(java.lang.Object obj) {return (obj == this);}
+    public int hashCode() { return toString().hashCode();}
+    public java.lang.String toString() { return _value_;}
+    public java.lang.Object readResolve() throws java.io.ObjectStreamException { return fromValue(_value_);}
+    public static org.apache.axis.encoding.Serializer getSerializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new org.apache.axis.encoding.ser.EnumSerializer(
+            _javaType, _xmlType);
+    }
+    public static org.apache.axis.encoding.Deserializer getDeserializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new org.apache.axis.encoding.ser.EnumDeserializer(
+            _javaType, _xmlType);
+    }
+    // Type metadata
+    private static org.apache.axis.description.TypeDesc typeDesc =
+        new org.apache.axis.description.TypeDesc(CustomizationFieldType.class);
 
-    public static CustomizationFieldType fromValue(String v) {
-        for (CustomizationFieldType c: CustomizationFieldType.values()) {
-            if (c.value.equals(v)) {
-                return c;
-            }
-        }
-        throw new IllegalArgumentException(v);
+    static {
+        typeDesc.setXmlType(new javax.xml.namespace.QName("urn:types.customization_2018_2.setup.webservices.netsuite.com", "CustomizationFieldType"));
+    }
+    /**
+     * Return type metadata object
+     */
+    public static org.apache.axis.description.TypeDesc getTypeDesc() {
+        return typeDesc;
     }
 
 }

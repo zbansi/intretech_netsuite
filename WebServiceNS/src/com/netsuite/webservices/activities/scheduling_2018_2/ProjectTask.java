@@ -1,970 +1,1376 @@
+/**
+ * ProjectTask.java
+ *
+ * This file was auto-generated from WSDL
+ * by the Apache Axis 1.4 Jul 28, 2010 (04:07:04 PDT) WSDL2Java emitter.
+ */
 
 package com.netsuite.webservices.activities.scheduling_2018_2;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlAttribute;
-import javax.xml.bind.annotation.XmlSchemaType;
-import javax.xml.bind.annotation.XmlType;
-import javax.xml.datatype.XMLGregorianCalendar;
-import com.netsuite.webservices.activities.scheduling_2018_2.types.ProjectTaskConstraintType;
-import com.netsuite.webservices.activities.scheduling_2018_2.types.ProjectTaskStatus;
-import com.netsuite.webservices.platform.core_2018_2.CustomFieldList;
-import com.netsuite.webservices.platform.core_2018_2.Record;
-import com.netsuite.webservices.platform.core_2018_2.RecordRef;
+public class ProjectTask  extends com.netsuite.webservices.platform.core_2018_2.Record  implements java.io.Serializable {
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef customForm;
 
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef eventId;
 
-/**
- * <p>ProjectTask complex type的 Java 类。
- * 
- * <p>以下模式片段指定包含在此类中的预期内容。
- * 
- * <pre>
- * &lt;complexType name="ProjectTask">
- *   &lt;complexContent>
- *     &lt;extension base="{urn:core_2018_2.platform.webservices.netsuite.com}Record">
- *       &lt;sequence>
- *         &lt;element name="customForm" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="eventId" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="percentTimeComplete" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
- *         &lt;element name="title" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="company" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="contact" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="order" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="owner" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="parent" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="priority" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="estimatedWork" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
- *         &lt;element name="estimatedWorkBaseline" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
- *         &lt;element name="constraintType" type="{urn:types.scheduling_2018_2.activities.webservices.netsuite.com}ProjectTaskConstraintType" minOccurs="0"/>
- *         &lt;element name="startDate" type="{http://www.w3.org/2001/XMLSchema}dateTime" minOccurs="0"/>
- *         &lt;element name="startDateBaseline" type="{http://www.w3.org/2001/XMLSchema}dateTime" minOccurs="0"/>
- *         &lt;element name="endDate" type="{http://www.w3.org/2001/XMLSchema}dateTime" minOccurs="0"/>
- *         &lt;element name="finishByDate" type="{http://www.w3.org/2001/XMLSchema}dateTime" minOccurs="0"/>
- *         &lt;element name="endDateBaseline" type="{http://www.w3.org/2001/XMLSchema}dateTime" minOccurs="0"/>
- *         &lt;element name="actualWork" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
- *         &lt;element name="remainingWork" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
- *         &lt;element name="message" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="isMilestone" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         &lt;element name="isOnCriticalPath" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="slackMinutes" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
- *         &lt;element name="lateEnd" type="{http://www.w3.org/2001/XMLSchema}dateTime" minOccurs="0"/>
- *         &lt;element name="lateStart" type="{http://www.w3.org/2001/XMLSchema}dateTime" minOccurs="0"/>
- *         &lt;element name="status" type="{urn:types.scheduling_2018_2.activities.webservices.netsuite.com}ProjectTaskStatus" minOccurs="0"/>
- *         &lt;element name="nonBillableTask" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         &lt;element name="assigneeList" type="{urn:scheduling_2018_2.activities.webservices.netsuite.com}ProjectTaskAssigneeList" minOccurs="0"/>
- *         &lt;element name="predecessorList" type="{urn:scheduling_2018_2.activities.webservices.netsuite.com}ProjectTaskPredecessorList" minOccurs="0"/>
- *         &lt;element name="timeItemList" type="{urn:scheduling_2018_2.activities.webservices.netsuite.com}ProjectTaskTimeItemList" minOccurs="0"/>
- *         &lt;element name="customFieldList" type="{urn:core_2018_2.platform.webservices.netsuite.com}CustomFieldList" minOccurs="0"/>
- *       &lt;/sequence>
- *       &lt;attribute name="internalId" type="{http://www.w3.org/2001/XMLSchema}string" />
- *       &lt;attribute name="externalId" type="{http://www.w3.org/2001/XMLSchema}string" />
- *     &lt;/extension>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
- */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "ProjectTask", propOrder = {
-    "customForm",
-    "eventId",
-    "percentTimeComplete",
-    "title",
-    "company",
-    "contact",
-    "order",
-    "owner",
-    "parent",
-    "priority",
-    "estimatedWork",
-    "estimatedWorkBaseline",
-    "constraintType",
-    "startDate",
-    "startDateBaseline",
-    "endDate",
-    "finishByDate",
-    "endDateBaseline",
-    "actualWork",
-    "remainingWork",
-    "message",
-    "isMilestone",
-    "isOnCriticalPath",
-    "slackMinutes",
-    "lateEnd",
-    "lateStart",
-    "status",
-    "nonBillableTask",
-    "assigneeList",
-    "predecessorList",
-    "timeItemList",
-    "customFieldList"
-})
-public class ProjectTask
-    extends Record
-{
+    private java.lang.Double percentTimeComplete;
 
-    protected RecordRef customForm;
-    protected RecordRef eventId;
-    protected Double percentTimeComplete;
-    protected String title;
-    protected RecordRef company;
-    protected RecordRef contact;
-    protected RecordRef order;
-    protected RecordRef owner;
-    protected RecordRef parent;
-    protected RecordRef priority;
-    protected Double estimatedWork;
-    protected Double estimatedWorkBaseline;
-    @XmlSchemaType(name = "string")
-    protected ProjectTaskConstraintType constraintType;
-    @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar startDate;
-    @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar startDateBaseline;
-    @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar endDate;
-    @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar finishByDate;
-    @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar endDateBaseline;
-    protected Double actualWork;
-    protected Double remainingWork;
-    protected String message;
-    protected Boolean isMilestone;
-    protected String isOnCriticalPath;
-    protected Double slackMinutes;
-    @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar lateEnd;
-    @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar lateStart;
-    @XmlSchemaType(name = "string")
-    protected ProjectTaskStatus status;
-    protected Boolean nonBillableTask;
-    protected ProjectTaskAssigneeList assigneeList;
-    protected ProjectTaskPredecessorList predecessorList;
-    protected ProjectTaskTimeItemList timeItemList;
-    protected CustomFieldList customFieldList;
-    @XmlAttribute(name = "internalId")
-    protected String internalId;
-    @XmlAttribute(name = "externalId")
-    protected String externalId;
+    private java.lang.String title;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef company;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef contact;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef order;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef owner;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef parent;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef priority;
+
+    private java.lang.Double estimatedWork;
+
+    private java.lang.Double estimatedWorkBaseline;
+
+    private com.netsuite.webservices.activities.scheduling_2018_2.types.ProjectTaskConstraintType constraintType;
+
+    private java.util.Calendar startDate;
+
+    private java.util.Calendar startDateBaseline;
+
+    private java.util.Calendar endDate;
+
+    private java.util.Calendar finishByDate;
+
+    private java.util.Calendar endDateBaseline;
+
+    private java.lang.Double actualWork;
+
+    private java.lang.Double remainingWork;
+
+    private java.lang.String message;
+
+    private java.lang.Boolean isMilestone;
+
+    private java.lang.String isOnCriticalPath;
+
+    private java.lang.Double slackMinutes;
+
+    private java.util.Calendar lateEnd;
+
+    private java.util.Calendar lateStart;
+
+    private com.netsuite.webservices.activities.scheduling_2018_2.types.ProjectTaskStatus status;
+
+    private java.lang.Boolean nonBillableTask;
+
+    private com.netsuite.webservices.activities.scheduling_2018_2.ProjectTaskAssignee[] assigneeList;
+
+    private com.netsuite.webservices.activities.scheduling_2018_2.ProjectTaskPredecessor[] predecessorList;
+
+    private com.netsuite.webservices.platform.common_2018_2.TimeItem[] timeItemList;
+
+    private com.netsuite.webservices.platform.core_2018_2.CustomFieldRef[] customFieldList;
+
+    private java.lang.String internalId;  // attribute
+
+    private java.lang.String externalId;  // attribute
+
+    public ProjectTask() {
+    }
+
+    public ProjectTask(
+           java.lang.String[] nullFieldList,
+           java.lang.String internalId,
+           java.lang.String externalId,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef customForm,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef eventId,
+           java.lang.Double percentTimeComplete,
+           java.lang.String title,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef company,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef contact,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef order,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef owner,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef parent,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef priority,
+           java.lang.Double estimatedWork,
+           java.lang.Double estimatedWorkBaseline,
+           com.netsuite.webservices.activities.scheduling_2018_2.types.ProjectTaskConstraintType constraintType,
+           java.util.Calendar startDate,
+           java.util.Calendar startDateBaseline,
+           java.util.Calendar endDate,
+           java.util.Calendar finishByDate,
+           java.util.Calendar endDateBaseline,
+           java.lang.Double actualWork,
+           java.lang.Double remainingWork,
+           java.lang.String message,
+           java.lang.Boolean isMilestone,
+           java.lang.String isOnCriticalPath,
+           java.lang.Double slackMinutes,
+           java.util.Calendar lateEnd,
+           java.util.Calendar lateStart,
+           com.netsuite.webservices.activities.scheduling_2018_2.types.ProjectTaskStatus status,
+           java.lang.Boolean nonBillableTask,
+           com.netsuite.webservices.activities.scheduling_2018_2.ProjectTaskAssignee[] assigneeList,
+           com.netsuite.webservices.activities.scheduling_2018_2.ProjectTaskPredecessor[] predecessorList,
+           com.netsuite.webservices.platform.common_2018_2.TimeItem[] timeItemList,
+           com.netsuite.webservices.platform.core_2018_2.CustomFieldRef[] customFieldList) {
+        super(
+            nullFieldList);
+        this.internalId = internalId;
+        this.externalId = externalId;
+        this.customForm = customForm;
+        this.eventId = eventId;
+        this.percentTimeComplete = percentTimeComplete;
+        this.title = title;
+        this.company = company;
+        this.contact = contact;
+        this.order = order;
+        this.owner = owner;
+        this.parent = parent;
+        this.priority = priority;
+        this.estimatedWork = estimatedWork;
+        this.estimatedWorkBaseline = estimatedWorkBaseline;
+        this.constraintType = constraintType;
+        this.startDate = startDate;
+        this.startDateBaseline = startDateBaseline;
+        this.endDate = endDate;
+        this.finishByDate = finishByDate;
+        this.endDateBaseline = endDateBaseline;
+        this.actualWork = actualWork;
+        this.remainingWork = remainingWork;
+        this.message = message;
+        this.isMilestone = isMilestone;
+        this.isOnCriticalPath = isOnCriticalPath;
+        this.slackMinutes = slackMinutes;
+        this.lateEnd = lateEnd;
+        this.lateStart = lateStart;
+        this.status = status;
+        this.nonBillableTask = nonBillableTask;
+        this.assigneeList = assigneeList;
+        this.predecessorList = predecessorList;
+        this.timeItemList = timeItemList;
+        this.customFieldList = customFieldList;
+    }
+
 
     /**
-     * 获取customForm属性的值。
+     * Gets the customForm value for this ProjectTask.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @return customForm
      */
-    public RecordRef getCustomForm() {
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getCustomForm() {
         return customForm;
     }
 
-    /**
-     * 设置customForm属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setCustomForm(RecordRef value) {
-        this.customForm = value;
-    }
 
     /**
-     * 获取eventId属性的值。
+     * Sets the customForm value for this ProjectTask.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param customForm
      */
-    public RecordRef getEventId() {
+    public void setCustomForm(com.netsuite.webservices.platform.core_2018_2.RecordRef customForm) {
+        this.customForm = customForm;
+    }
+
+
+    /**
+     * Gets the eventId value for this ProjectTask.
+     * 
+     * @return eventId
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getEventId() {
         return eventId;
     }
 
-    /**
-     * 设置eventId属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setEventId(RecordRef value) {
-        this.eventId = value;
-    }
 
     /**
-     * 获取percentTimeComplete属性的值。
+     * Sets the eventId value for this ProjectTask.
      * 
-     * @return
-     *     possible object is
-     *     {@link Double }
-     *     
+     * @param eventId
      */
-    public Double getPercentTimeComplete() {
+    public void setEventId(com.netsuite.webservices.platform.core_2018_2.RecordRef eventId) {
+        this.eventId = eventId;
+    }
+
+
+    /**
+     * Gets the percentTimeComplete value for this ProjectTask.
+     * 
+     * @return percentTimeComplete
+     */
+    public java.lang.Double getPercentTimeComplete() {
         return percentTimeComplete;
     }
 
-    /**
-     * 设置percentTimeComplete属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Double }
-     *     
-     */
-    public void setPercentTimeComplete(Double value) {
-        this.percentTimeComplete = value;
-    }
 
     /**
-     * 获取title属性的值。
+     * Sets the percentTimeComplete value for this ProjectTask.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param percentTimeComplete
      */
-    public String getTitle() {
+    public void setPercentTimeComplete(java.lang.Double percentTimeComplete) {
+        this.percentTimeComplete = percentTimeComplete;
+    }
+
+
+    /**
+     * Gets the title value for this ProjectTask.
+     * 
+     * @return title
+     */
+    public java.lang.String getTitle() {
         return title;
     }
 
-    /**
-     * 设置title属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setTitle(String value) {
-        this.title = value;
-    }
 
     /**
-     * 获取company属性的值。
+     * Sets the title value for this ProjectTask.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param title
      */
-    public RecordRef getCompany() {
+    public void setTitle(java.lang.String title) {
+        this.title = title;
+    }
+
+
+    /**
+     * Gets the company value for this ProjectTask.
+     * 
+     * @return company
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getCompany() {
         return company;
     }
 
-    /**
-     * 设置company属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setCompany(RecordRef value) {
-        this.company = value;
-    }
 
     /**
-     * 获取contact属性的值。
+     * Sets the company value for this ProjectTask.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param company
      */
-    public RecordRef getContact() {
+    public void setCompany(com.netsuite.webservices.platform.core_2018_2.RecordRef company) {
+        this.company = company;
+    }
+
+
+    /**
+     * Gets the contact value for this ProjectTask.
+     * 
+     * @return contact
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getContact() {
         return contact;
     }
 
-    /**
-     * 设置contact属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setContact(RecordRef value) {
-        this.contact = value;
-    }
 
     /**
-     * 获取order属性的值。
+     * Sets the contact value for this ProjectTask.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param contact
      */
-    public RecordRef getOrder() {
+    public void setContact(com.netsuite.webservices.platform.core_2018_2.RecordRef contact) {
+        this.contact = contact;
+    }
+
+
+    /**
+     * Gets the order value for this ProjectTask.
+     * 
+     * @return order
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getOrder() {
         return order;
     }
 
-    /**
-     * 设置order属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setOrder(RecordRef value) {
-        this.order = value;
-    }
 
     /**
-     * 获取owner属性的值。
+     * Sets the order value for this ProjectTask.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param order
      */
-    public RecordRef getOwner() {
+    public void setOrder(com.netsuite.webservices.platform.core_2018_2.RecordRef order) {
+        this.order = order;
+    }
+
+
+    /**
+     * Gets the owner value for this ProjectTask.
+     * 
+     * @return owner
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getOwner() {
         return owner;
     }
 
-    /**
-     * 设置owner属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setOwner(RecordRef value) {
-        this.owner = value;
-    }
 
     /**
-     * 获取parent属性的值。
+     * Sets the owner value for this ProjectTask.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param owner
      */
-    public RecordRef getParent() {
+    public void setOwner(com.netsuite.webservices.platform.core_2018_2.RecordRef owner) {
+        this.owner = owner;
+    }
+
+
+    /**
+     * Gets the parent value for this ProjectTask.
+     * 
+     * @return parent
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getParent() {
         return parent;
     }
 
-    /**
-     * 设置parent属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setParent(RecordRef value) {
-        this.parent = value;
-    }
 
     /**
-     * 获取priority属性的值。
+     * Sets the parent value for this ProjectTask.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param parent
      */
-    public RecordRef getPriority() {
+    public void setParent(com.netsuite.webservices.platform.core_2018_2.RecordRef parent) {
+        this.parent = parent;
+    }
+
+
+    /**
+     * Gets the priority value for this ProjectTask.
+     * 
+     * @return priority
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getPriority() {
         return priority;
     }
 
-    /**
-     * 设置priority属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setPriority(RecordRef value) {
-        this.priority = value;
-    }
 
     /**
-     * 获取estimatedWork属性的值。
+     * Sets the priority value for this ProjectTask.
      * 
-     * @return
-     *     possible object is
-     *     {@link Double }
-     *     
+     * @param priority
      */
-    public Double getEstimatedWork() {
+    public void setPriority(com.netsuite.webservices.platform.core_2018_2.RecordRef priority) {
+        this.priority = priority;
+    }
+
+
+    /**
+     * Gets the estimatedWork value for this ProjectTask.
+     * 
+     * @return estimatedWork
+     */
+    public java.lang.Double getEstimatedWork() {
         return estimatedWork;
     }
 
-    /**
-     * 设置estimatedWork属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Double }
-     *     
-     */
-    public void setEstimatedWork(Double value) {
-        this.estimatedWork = value;
-    }
 
     /**
-     * 获取estimatedWorkBaseline属性的值。
+     * Sets the estimatedWork value for this ProjectTask.
      * 
-     * @return
-     *     possible object is
-     *     {@link Double }
-     *     
+     * @param estimatedWork
      */
-    public Double getEstimatedWorkBaseline() {
+    public void setEstimatedWork(java.lang.Double estimatedWork) {
+        this.estimatedWork = estimatedWork;
+    }
+
+
+    /**
+     * Gets the estimatedWorkBaseline value for this ProjectTask.
+     * 
+     * @return estimatedWorkBaseline
+     */
+    public java.lang.Double getEstimatedWorkBaseline() {
         return estimatedWorkBaseline;
     }
 
-    /**
-     * 设置estimatedWorkBaseline属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Double }
-     *     
-     */
-    public void setEstimatedWorkBaseline(Double value) {
-        this.estimatedWorkBaseline = value;
-    }
 
     /**
-     * 获取constraintType属性的值。
+     * Sets the estimatedWorkBaseline value for this ProjectTask.
      * 
-     * @return
-     *     possible object is
-     *     {@link ProjectTaskConstraintType }
-     *     
+     * @param estimatedWorkBaseline
      */
-    public ProjectTaskConstraintType getConstraintType() {
+    public void setEstimatedWorkBaseline(java.lang.Double estimatedWorkBaseline) {
+        this.estimatedWorkBaseline = estimatedWorkBaseline;
+    }
+
+
+    /**
+     * Gets the constraintType value for this ProjectTask.
+     * 
+     * @return constraintType
+     */
+    public com.netsuite.webservices.activities.scheduling_2018_2.types.ProjectTaskConstraintType getConstraintType() {
         return constraintType;
     }
 
-    /**
-     * 设置constraintType属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link ProjectTaskConstraintType }
-     *     
-     */
-    public void setConstraintType(ProjectTaskConstraintType value) {
-        this.constraintType = value;
-    }
 
     /**
-     * 获取startDate属性的值。
+     * Sets the constraintType value for this ProjectTask.
      * 
-     * @return
-     *     possible object is
-     *     {@link XMLGregorianCalendar }
-     *     
+     * @param constraintType
      */
-    public XMLGregorianCalendar getStartDate() {
+    public void setConstraintType(com.netsuite.webservices.activities.scheduling_2018_2.types.ProjectTaskConstraintType constraintType) {
+        this.constraintType = constraintType;
+    }
+
+
+    /**
+     * Gets the startDate value for this ProjectTask.
+     * 
+     * @return startDate
+     */
+    public java.util.Calendar getStartDate() {
         return startDate;
     }
 
-    /**
-     * 设置startDate属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link XMLGregorianCalendar }
-     *     
-     */
-    public void setStartDate(XMLGregorianCalendar value) {
-        this.startDate = value;
-    }
 
     /**
-     * 获取startDateBaseline属性的值。
+     * Sets the startDate value for this ProjectTask.
      * 
-     * @return
-     *     possible object is
-     *     {@link XMLGregorianCalendar }
-     *     
+     * @param startDate
      */
-    public XMLGregorianCalendar getStartDateBaseline() {
+    public void setStartDate(java.util.Calendar startDate) {
+        this.startDate = startDate;
+    }
+
+
+    /**
+     * Gets the startDateBaseline value for this ProjectTask.
+     * 
+     * @return startDateBaseline
+     */
+    public java.util.Calendar getStartDateBaseline() {
         return startDateBaseline;
     }
 
-    /**
-     * 设置startDateBaseline属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link XMLGregorianCalendar }
-     *     
-     */
-    public void setStartDateBaseline(XMLGregorianCalendar value) {
-        this.startDateBaseline = value;
-    }
 
     /**
-     * 获取endDate属性的值。
+     * Sets the startDateBaseline value for this ProjectTask.
      * 
-     * @return
-     *     possible object is
-     *     {@link XMLGregorianCalendar }
-     *     
+     * @param startDateBaseline
      */
-    public XMLGregorianCalendar getEndDate() {
+    public void setStartDateBaseline(java.util.Calendar startDateBaseline) {
+        this.startDateBaseline = startDateBaseline;
+    }
+
+
+    /**
+     * Gets the endDate value for this ProjectTask.
+     * 
+     * @return endDate
+     */
+    public java.util.Calendar getEndDate() {
         return endDate;
     }
 
-    /**
-     * 设置endDate属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link XMLGregorianCalendar }
-     *     
-     */
-    public void setEndDate(XMLGregorianCalendar value) {
-        this.endDate = value;
-    }
 
     /**
-     * 获取finishByDate属性的值。
+     * Sets the endDate value for this ProjectTask.
      * 
-     * @return
-     *     possible object is
-     *     {@link XMLGregorianCalendar }
-     *     
+     * @param endDate
      */
-    public XMLGregorianCalendar getFinishByDate() {
+    public void setEndDate(java.util.Calendar endDate) {
+        this.endDate = endDate;
+    }
+
+
+    /**
+     * Gets the finishByDate value for this ProjectTask.
+     * 
+     * @return finishByDate
+     */
+    public java.util.Calendar getFinishByDate() {
         return finishByDate;
     }
 
-    /**
-     * 设置finishByDate属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link XMLGregorianCalendar }
-     *     
-     */
-    public void setFinishByDate(XMLGregorianCalendar value) {
-        this.finishByDate = value;
-    }
 
     /**
-     * 获取endDateBaseline属性的值。
+     * Sets the finishByDate value for this ProjectTask.
      * 
-     * @return
-     *     possible object is
-     *     {@link XMLGregorianCalendar }
-     *     
+     * @param finishByDate
      */
-    public XMLGregorianCalendar getEndDateBaseline() {
+    public void setFinishByDate(java.util.Calendar finishByDate) {
+        this.finishByDate = finishByDate;
+    }
+
+
+    /**
+     * Gets the endDateBaseline value for this ProjectTask.
+     * 
+     * @return endDateBaseline
+     */
+    public java.util.Calendar getEndDateBaseline() {
         return endDateBaseline;
     }
 
-    /**
-     * 设置endDateBaseline属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link XMLGregorianCalendar }
-     *     
-     */
-    public void setEndDateBaseline(XMLGregorianCalendar value) {
-        this.endDateBaseline = value;
-    }
 
     /**
-     * 获取actualWork属性的值。
+     * Sets the endDateBaseline value for this ProjectTask.
      * 
-     * @return
-     *     possible object is
-     *     {@link Double }
-     *     
+     * @param endDateBaseline
      */
-    public Double getActualWork() {
+    public void setEndDateBaseline(java.util.Calendar endDateBaseline) {
+        this.endDateBaseline = endDateBaseline;
+    }
+
+
+    /**
+     * Gets the actualWork value for this ProjectTask.
+     * 
+     * @return actualWork
+     */
+    public java.lang.Double getActualWork() {
         return actualWork;
     }
 
-    /**
-     * 设置actualWork属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Double }
-     *     
-     */
-    public void setActualWork(Double value) {
-        this.actualWork = value;
-    }
 
     /**
-     * 获取remainingWork属性的值。
+     * Sets the actualWork value for this ProjectTask.
      * 
-     * @return
-     *     possible object is
-     *     {@link Double }
-     *     
+     * @param actualWork
      */
-    public Double getRemainingWork() {
+    public void setActualWork(java.lang.Double actualWork) {
+        this.actualWork = actualWork;
+    }
+
+
+    /**
+     * Gets the remainingWork value for this ProjectTask.
+     * 
+     * @return remainingWork
+     */
+    public java.lang.Double getRemainingWork() {
         return remainingWork;
     }
 
-    /**
-     * 设置remainingWork属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Double }
-     *     
-     */
-    public void setRemainingWork(Double value) {
-        this.remainingWork = value;
-    }
 
     /**
-     * 获取message属性的值。
+     * Sets the remainingWork value for this ProjectTask.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param remainingWork
      */
-    public String getMessage() {
+    public void setRemainingWork(java.lang.Double remainingWork) {
+        this.remainingWork = remainingWork;
+    }
+
+
+    /**
+     * Gets the message value for this ProjectTask.
+     * 
+     * @return message
+     */
+    public java.lang.String getMessage() {
         return message;
     }
 
-    /**
-     * 设置message属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setMessage(String value) {
-        this.message = value;
-    }
 
     /**
-     * 获取isMilestone属性的值。
+     * Sets the message value for this ProjectTask.
      * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
+     * @param message
      */
-    public Boolean isIsMilestone() {
+    public void setMessage(java.lang.String message) {
+        this.message = message;
+    }
+
+
+    /**
+     * Gets the isMilestone value for this ProjectTask.
+     * 
+     * @return isMilestone
+     */
+    public java.lang.Boolean getIsMilestone() {
         return isMilestone;
     }
 
-    /**
-     * 设置isMilestone属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
-     */
-    public void setIsMilestone(Boolean value) {
-        this.isMilestone = value;
-    }
 
     /**
-     * 获取isOnCriticalPath属性的值。
+     * Sets the isMilestone value for this ProjectTask.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param isMilestone
      */
-    public String getIsOnCriticalPath() {
+    public void setIsMilestone(java.lang.Boolean isMilestone) {
+        this.isMilestone = isMilestone;
+    }
+
+
+    /**
+     * Gets the isOnCriticalPath value for this ProjectTask.
+     * 
+     * @return isOnCriticalPath
+     */
+    public java.lang.String getIsOnCriticalPath() {
         return isOnCriticalPath;
     }
 
-    /**
-     * 设置isOnCriticalPath属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setIsOnCriticalPath(String value) {
-        this.isOnCriticalPath = value;
-    }
 
     /**
-     * 获取slackMinutes属性的值。
+     * Sets the isOnCriticalPath value for this ProjectTask.
      * 
-     * @return
-     *     possible object is
-     *     {@link Double }
-     *     
+     * @param isOnCriticalPath
      */
-    public Double getSlackMinutes() {
+    public void setIsOnCriticalPath(java.lang.String isOnCriticalPath) {
+        this.isOnCriticalPath = isOnCriticalPath;
+    }
+
+
+    /**
+     * Gets the slackMinutes value for this ProjectTask.
+     * 
+     * @return slackMinutes
+     */
+    public java.lang.Double getSlackMinutes() {
         return slackMinutes;
     }
 
-    /**
-     * 设置slackMinutes属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Double }
-     *     
-     */
-    public void setSlackMinutes(Double value) {
-        this.slackMinutes = value;
-    }
 
     /**
-     * 获取lateEnd属性的值。
+     * Sets the slackMinutes value for this ProjectTask.
      * 
-     * @return
-     *     possible object is
-     *     {@link XMLGregorianCalendar }
-     *     
+     * @param slackMinutes
      */
-    public XMLGregorianCalendar getLateEnd() {
+    public void setSlackMinutes(java.lang.Double slackMinutes) {
+        this.slackMinutes = slackMinutes;
+    }
+
+
+    /**
+     * Gets the lateEnd value for this ProjectTask.
+     * 
+     * @return lateEnd
+     */
+    public java.util.Calendar getLateEnd() {
         return lateEnd;
     }
 
-    /**
-     * 设置lateEnd属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link XMLGregorianCalendar }
-     *     
-     */
-    public void setLateEnd(XMLGregorianCalendar value) {
-        this.lateEnd = value;
-    }
 
     /**
-     * 获取lateStart属性的值。
+     * Sets the lateEnd value for this ProjectTask.
      * 
-     * @return
-     *     possible object is
-     *     {@link XMLGregorianCalendar }
-     *     
+     * @param lateEnd
      */
-    public XMLGregorianCalendar getLateStart() {
+    public void setLateEnd(java.util.Calendar lateEnd) {
+        this.lateEnd = lateEnd;
+    }
+
+
+    /**
+     * Gets the lateStart value for this ProjectTask.
+     * 
+     * @return lateStart
+     */
+    public java.util.Calendar getLateStart() {
         return lateStart;
     }
 
-    /**
-     * 设置lateStart属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link XMLGregorianCalendar }
-     *     
-     */
-    public void setLateStart(XMLGregorianCalendar value) {
-        this.lateStart = value;
-    }
 
     /**
-     * 获取status属性的值。
+     * Sets the lateStart value for this ProjectTask.
      * 
-     * @return
-     *     possible object is
-     *     {@link ProjectTaskStatus }
-     *     
+     * @param lateStart
      */
-    public ProjectTaskStatus getStatus() {
+    public void setLateStart(java.util.Calendar lateStart) {
+        this.lateStart = lateStart;
+    }
+
+
+    /**
+     * Gets the status value for this ProjectTask.
+     * 
+     * @return status
+     */
+    public com.netsuite.webservices.activities.scheduling_2018_2.types.ProjectTaskStatus getStatus() {
         return status;
     }
 
-    /**
-     * 设置status属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link ProjectTaskStatus }
-     *     
-     */
-    public void setStatus(ProjectTaskStatus value) {
-        this.status = value;
-    }
 
     /**
-     * 获取nonBillableTask属性的值。
+     * Sets the status value for this ProjectTask.
      * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
+     * @param status
      */
-    public Boolean isNonBillableTask() {
+    public void setStatus(com.netsuite.webservices.activities.scheduling_2018_2.types.ProjectTaskStatus status) {
+        this.status = status;
+    }
+
+
+    /**
+     * Gets the nonBillableTask value for this ProjectTask.
+     * 
+     * @return nonBillableTask
+     */
+    public java.lang.Boolean getNonBillableTask() {
         return nonBillableTask;
     }
 
-    /**
-     * 设置nonBillableTask属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
-     */
-    public void setNonBillableTask(Boolean value) {
-        this.nonBillableTask = value;
-    }
 
     /**
-     * 获取assigneeList属性的值。
+     * Sets the nonBillableTask value for this ProjectTask.
      * 
-     * @return
-     *     possible object is
-     *     {@link ProjectTaskAssigneeList }
-     *     
+     * @param nonBillableTask
      */
-    public ProjectTaskAssigneeList getAssigneeList() {
+    public void setNonBillableTask(java.lang.Boolean nonBillableTask) {
+        this.nonBillableTask = nonBillableTask;
+    }
+
+
+    /**
+     * Gets the assigneeList value for this ProjectTask.
+     * 
+     * @return assigneeList
+     */
+    public com.netsuite.webservices.activities.scheduling_2018_2.ProjectTaskAssignee[] getAssigneeList() {
         return assigneeList;
     }
 
-    /**
-     * 设置assigneeList属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link ProjectTaskAssigneeList }
-     *     
-     */
-    public void setAssigneeList(ProjectTaskAssigneeList value) {
-        this.assigneeList = value;
-    }
 
     /**
-     * 获取predecessorList属性的值。
+     * Sets the assigneeList value for this ProjectTask.
      * 
-     * @return
-     *     possible object is
-     *     {@link ProjectTaskPredecessorList }
-     *     
+     * @param assigneeList
      */
-    public ProjectTaskPredecessorList getPredecessorList() {
+    public void setAssigneeList(com.netsuite.webservices.activities.scheduling_2018_2.ProjectTaskAssignee[] assigneeList) {
+        this.assigneeList = assigneeList;
+    }
+
+
+    /**
+     * Gets the predecessorList value for this ProjectTask.
+     * 
+     * @return predecessorList
+     */
+    public com.netsuite.webservices.activities.scheduling_2018_2.ProjectTaskPredecessor[] getPredecessorList() {
         return predecessorList;
     }
 
-    /**
-     * 设置predecessorList属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link ProjectTaskPredecessorList }
-     *     
-     */
-    public void setPredecessorList(ProjectTaskPredecessorList value) {
-        this.predecessorList = value;
-    }
 
     /**
-     * 获取timeItemList属性的值。
+     * Sets the predecessorList value for this ProjectTask.
      * 
-     * @return
-     *     possible object is
-     *     {@link ProjectTaskTimeItemList }
-     *     
+     * @param predecessorList
      */
-    public ProjectTaskTimeItemList getTimeItemList() {
+    public void setPredecessorList(com.netsuite.webservices.activities.scheduling_2018_2.ProjectTaskPredecessor[] predecessorList) {
+        this.predecessorList = predecessorList;
+    }
+
+
+    /**
+     * Gets the timeItemList value for this ProjectTask.
+     * 
+     * @return timeItemList
+     */
+    public com.netsuite.webservices.platform.common_2018_2.TimeItem[] getTimeItemList() {
         return timeItemList;
     }
 
-    /**
-     * 设置timeItemList属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link ProjectTaskTimeItemList }
-     *     
-     */
-    public void setTimeItemList(ProjectTaskTimeItemList value) {
-        this.timeItemList = value;
-    }
 
     /**
-     * 获取customFieldList属性的值。
+     * Sets the timeItemList value for this ProjectTask.
      * 
-     * @return
-     *     possible object is
-     *     {@link CustomFieldList }
-     *     
+     * @param timeItemList
      */
-    public CustomFieldList getCustomFieldList() {
+    public void setTimeItemList(com.netsuite.webservices.platform.common_2018_2.TimeItem[] timeItemList) {
+        this.timeItemList = timeItemList;
+    }
+
+
+    /**
+     * Gets the customFieldList value for this ProjectTask.
+     * 
+     * @return customFieldList
+     */
+    public com.netsuite.webservices.platform.core_2018_2.CustomFieldRef[] getCustomFieldList() {
         return customFieldList;
     }
 
-    /**
-     * 设置customFieldList属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link CustomFieldList }
-     *     
-     */
-    public void setCustomFieldList(CustomFieldList value) {
-        this.customFieldList = value;
-    }
 
     /**
-     * 获取internalId属性的值。
+     * Sets the customFieldList value for this ProjectTask.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param customFieldList
      */
-    public String getInternalId() {
+    public void setCustomFieldList(com.netsuite.webservices.platform.core_2018_2.CustomFieldRef[] customFieldList) {
+        this.customFieldList = customFieldList;
+    }
+
+
+    /**
+     * Gets the internalId value for this ProjectTask.
+     * 
+     * @return internalId
+     */
+    public java.lang.String getInternalId() {
         return internalId;
     }
 
-    /**
-     * 设置internalId属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setInternalId(String value) {
-        this.internalId = value;
-    }
 
     /**
-     * 获取externalId属性的值。
+     * Sets the internalId value for this ProjectTask.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param internalId
      */
-    public String getExternalId() {
+    public void setInternalId(java.lang.String internalId) {
+        this.internalId = internalId;
+    }
+
+
+    /**
+     * Gets the externalId value for this ProjectTask.
+     * 
+     * @return externalId
+     */
+    public java.lang.String getExternalId() {
         return externalId;
     }
 
+
     /**
-     * 设置externalId属性的值。
+     * Sets the externalId value for this ProjectTask.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     * @param externalId
      */
-    public void setExternalId(String value) {
-        this.externalId = value;
+    public void setExternalId(java.lang.String externalId) {
+        this.externalId = externalId;
+    }
+
+    private java.lang.Object __equalsCalc = null;
+    public synchronized boolean equals(java.lang.Object obj) {
+        if (!(obj instanceof ProjectTask)) return false;
+        ProjectTask other = (ProjectTask) obj;
+        if (obj == null) return false;
+        if (this == obj) return true;
+        if (__equalsCalc != null) {
+            return (__equalsCalc == obj);
+        }
+        __equalsCalc = obj;
+        boolean _equals;
+        _equals = super.equals(obj) && 
+            ((this.customForm==null && other.getCustomForm()==null) || 
+             (this.customForm!=null &&
+              this.customForm.equals(other.getCustomForm()))) &&
+            ((this.eventId==null && other.getEventId()==null) || 
+             (this.eventId!=null &&
+              this.eventId.equals(other.getEventId()))) &&
+            ((this.percentTimeComplete==null && other.getPercentTimeComplete()==null) || 
+             (this.percentTimeComplete!=null &&
+              this.percentTimeComplete.equals(other.getPercentTimeComplete()))) &&
+            ((this.title==null && other.getTitle()==null) || 
+             (this.title!=null &&
+              this.title.equals(other.getTitle()))) &&
+            ((this.company==null && other.getCompany()==null) || 
+             (this.company!=null &&
+              this.company.equals(other.getCompany()))) &&
+            ((this.contact==null && other.getContact()==null) || 
+             (this.contact!=null &&
+              this.contact.equals(other.getContact()))) &&
+            ((this.order==null && other.getOrder()==null) || 
+             (this.order!=null &&
+              this.order.equals(other.getOrder()))) &&
+            ((this.owner==null && other.getOwner()==null) || 
+             (this.owner!=null &&
+              this.owner.equals(other.getOwner()))) &&
+            ((this.parent==null && other.getParent()==null) || 
+             (this.parent!=null &&
+              this.parent.equals(other.getParent()))) &&
+            ((this.priority==null && other.getPriority()==null) || 
+             (this.priority!=null &&
+              this.priority.equals(other.getPriority()))) &&
+            ((this.estimatedWork==null && other.getEstimatedWork()==null) || 
+             (this.estimatedWork!=null &&
+              this.estimatedWork.equals(other.getEstimatedWork()))) &&
+            ((this.estimatedWorkBaseline==null && other.getEstimatedWorkBaseline()==null) || 
+             (this.estimatedWorkBaseline!=null &&
+              this.estimatedWorkBaseline.equals(other.getEstimatedWorkBaseline()))) &&
+            ((this.constraintType==null && other.getConstraintType()==null) || 
+             (this.constraintType!=null &&
+              this.constraintType.equals(other.getConstraintType()))) &&
+            ((this.startDate==null && other.getStartDate()==null) || 
+             (this.startDate!=null &&
+              this.startDate.equals(other.getStartDate()))) &&
+            ((this.startDateBaseline==null && other.getStartDateBaseline()==null) || 
+             (this.startDateBaseline!=null &&
+              this.startDateBaseline.equals(other.getStartDateBaseline()))) &&
+            ((this.endDate==null && other.getEndDate()==null) || 
+             (this.endDate!=null &&
+              this.endDate.equals(other.getEndDate()))) &&
+            ((this.finishByDate==null && other.getFinishByDate()==null) || 
+             (this.finishByDate!=null &&
+              this.finishByDate.equals(other.getFinishByDate()))) &&
+            ((this.endDateBaseline==null && other.getEndDateBaseline()==null) || 
+             (this.endDateBaseline!=null &&
+              this.endDateBaseline.equals(other.getEndDateBaseline()))) &&
+            ((this.actualWork==null && other.getActualWork()==null) || 
+             (this.actualWork!=null &&
+              this.actualWork.equals(other.getActualWork()))) &&
+            ((this.remainingWork==null && other.getRemainingWork()==null) || 
+             (this.remainingWork!=null &&
+              this.remainingWork.equals(other.getRemainingWork()))) &&
+            ((this.message==null && other.getMessage()==null) || 
+             (this.message!=null &&
+              this.message.equals(other.getMessage()))) &&
+            ((this.isMilestone==null && other.getIsMilestone()==null) || 
+             (this.isMilestone!=null &&
+              this.isMilestone.equals(other.getIsMilestone()))) &&
+            ((this.isOnCriticalPath==null && other.getIsOnCriticalPath()==null) || 
+             (this.isOnCriticalPath!=null &&
+              this.isOnCriticalPath.equals(other.getIsOnCriticalPath()))) &&
+            ((this.slackMinutes==null && other.getSlackMinutes()==null) || 
+             (this.slackMinutes!=null &&
+              this.slackMinutes.equals(other.getSlackMinutes()))) &&
+            ((this.lateEnd==null && other.getLateEnd()==null) || 
+             (this.lateEnd!=null &&
+              this.lateEnd.equals(other.getLateEnd()))) &&
+            ((this.lateStart==null && other.getLateStart()==null) || 
+             (this.lateStart!=null &&
+              this.lateStart.equals(other.getLateStart()))) &&
+            ((this.status==null && other.getStatus()==null) || 
+             (this.status!=null &&
+              this.status.equals(other.getStatus()))) &&
+            ((this.nonBillableTask==null && other.getNonBillableTask()==null) || 
+             (this.nonBillableTask!=null &&
+              this.nonBillableTask.equals(other.getNonBillableTask()))) &&
+            ((this.assigneeList==null && other.getAssigneeList()==null) || 
+             (this.assigneeList!=null &&
+              java.util.Arrays.equals(this.assigneeList, other.getAssigneeList()))) &&
+            ((this.predecessorList==null && other.getPredecessorList()==null) || 
+             (this.predecessorList!=null &&
+              java.util.Arrays.equals(this.predecessorList, other.getPredecessorList()))) &&
+            ((this.timeItemList==null && other.getTimeItemList()==null) || 
+             (this.timeItemList!=null &&
+              java.util.Arrays.equals(this.timeItemList, other.getTimeItemList()))) &&
+            ((this.customFieldList==null && other.getCustomFieldList()==null) || 
+             (this.customFieldList!=null &&
+              java.util.Arrays.equals(this.customFieldList, other.getCustomFieldList()))) &&
+            ((this.internalId==null && other.getInternalId()==null) || 
+             (this.internalId!=null &&
+              this.internalId.equals(other.getInternalId()))) &&
+            ((this.externalId==null && other.getExternalId()==null) || 
+             (this.externalId!=null &&
+              this.externalId.equals(other.getExternalId())));
+        __equalsCalc = null;
+        return _equals;
+    }
+
+    private boolean __hashCodeCalc = false;
+    public synchronized int hashCode() {
+        if (__hashCodeCalc) {
+            return 0;
+        }
+        __hashCodeCalc = true;
+        int _hashCode = super.hashCode();
+        if (getCustomForm() != null) {
+            _hashCode += getCustomForm().hashCode();
+        }
+        if (getEventId() != null) {
+            _hashCode += getEventId().hashCode();
+        }
+        if (getPercentTimeComplete() != null) {
+            _hashCode += getPercentTimeComplete().hashCode();
+        }
+        if (getTitle() != null) {
+            _hashCode += getTitle().hashCode();
+        }
+        if (getCompany() != null) {
+            _hashCode += getCompany().hashCode();
+        }
+        if (getContact() != null) {
+            _hashCode += getContact().hashCode();
+        }
+        if (getOrder() != null) {
+            _hashCode += getOrder().hashCode();
+        }
+        if (getOwner() != null) {
+            _hashCode += getOwner().hashCode();
+        }
+        if (getParent() != null) {
+            _hashCode += getParent().hashCode();
+        }
+        if (getPriority() != null) {
+            _hashCode += getPriority().hashCode();
+        }
+        if (getEstimatedWork() != null) {
+            _hashCode += getEstimatedWork().hashCode();
+        }
+        if (getEstimatedWorkBaseline() != null) {
+            _hashCode += getEstimatedWorkBaseline().hashCode();
+        }
+        if (getConstraintType() != null) {
+            _hashCode += getConstraintType().hashCode();
+        }
+        if (getStartDate() != null) {
+            _hashCode += getStartDate().hashCode();
+        }
+        if (getStartDateBaseline() != null) {
+            _hashCode += getStartDateBaseline().hashCode();
+        }
+        if (getEndDate() != null) {
+            _hashCode += getEndDate().hashCode();
+        }
+        if (getFinishByDate() != null) {
+            _hashCode += getFinishByDate().hashCode();
+        }
+        if (getEndDateBaseline() != null) {
+            _hashCode += getEndDateBaseline().hashCode();
+        }
+        if (getActualWork() != null) {
+            _hashCode += getActualWork().hashCode();
+        }
+        if (getRemainingWork() != null) {
+            _hashCode += getRemainingWork().hashCode();
+        }
+        if (getMessage() != null) {
+            _hashCode += getMessage().hashCode();
+        }
+        if (getIsMilestone() != null) {
+            _hashCode += getIsMilestone().hashCode();
+        }
+        if (getIsOnCriticalPath() != null) {
+            _hashCode += getIsOnCriticalPath().hashCode();
+        }
+        if (getSlackMinutes() != null) {
+            _hashCode += getSlackMinutes().hashCode();
+        }
+        if (getLateEnd() != null) {
+            _hashCode += getLateEnd().hashCode();
+        }
+        if (getLateStart() != null) {
+            _hashCode += getLateStart().hashCode();
+        }
+        if (getStatus() != null) {
+            _hashCode += getStatus().hashCode();
+        }
+        if (getNonBillableTask() != null) {
+            _hashCode += getNonBillableTask().hashCode();
+        }
+        if (getAssigneeList() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getAssigneeList());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getAssigneeList(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getPredecessorList() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getPredecessorList());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getPredecessorList(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getTimeItemList() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getTimeItemList());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getTimeItemList(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getCustomFieldList() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getCustomFieldList());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getCustomFieldList(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getInternalId() != null) {
+            _hashCode += getInternalId().hashCode();
+        }
+        if (getExternalId() != null) {
+            _hashCode += getExternalId().hashCode();
+        }
+        __hashCodeCalc = false;
+        return _hashCode;
+    }
+
+    // Type metadata
+    private static org.apache.axis.description.TypeDesc typeDesc =
+        new org.apache.axis.description.TypeDesc(ProjectTask.class, true);
+
+    static {
+        typeDesc.setXmlType(new javax.xml.namespace.QName("urn:scheduling_2018_2.activities.webservices.netsuite.com", "ProjectTask"));
+        org.apache.axis.description.AttributeDesc attrField = new org.apache.axis.description.AttributeDesc();
+        attrField.setFieldName("internalId");
+        attrField.setXmlName(new javax.xml.namespace.QName("", "internalId"));
+        attrField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        typeDesc.addFieldDesc(attrField);
+        attrField = new org.apache.axis.description.AttributeDesc();
+        attrField.setFieldName("externalId");
+        attrField.setXmlName(new javax.xml.namespace.QName("", "externalId"));
+        attrField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        typeDesc.addFieldDesc(attrField);
+        org.apache.axis.description.ElementDesc elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("customForm");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:scheduling_2018_2.activities.webservices.netsuite.com", "customForm"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("eventId");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:scheduling_2018_2.activities.webservices.netsuite.com", "eventId"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("percentTimeComplete");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:scheduling_2018_2.activities.webservices.netsuite.com", "percentTimeComplete"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "double"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("title");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:scheduling_2018_2.activities.webservices.netsuite.com", "title"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("company");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:scheduling_2018_2.activities.webservices.netsuite.com", "company"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("contact");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:scheduling_2018_2.activities.webservices.netsuite.com", "contact"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("order");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:scheduling_2018_2.activities.webservices.netsuite.com", "order"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("owner");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:scheduling_2018_2.activities.webservices.netsuite.com", "owner"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("parent");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:scheduling_2018_2.activities.webservices.netsuite.com", "parent"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("priority");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:scheduling_2018_2.activities.webservices.netsuite.com", "priority"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("estimatedWork");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:scheduling_2018_2.activities.webservices.netsuite.com", "estimatedWork"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "double"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("estimatedWorkBaseline");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:scheduling_2018_2.activities.webservices.netsuite.com", "estimatedWorkBaseline"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "double"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("constraintType");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:scheduling_2018_2.activities.webservices.netsuite.com", "constraintType"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:types.scheduling_2018_2.activities.webservices.netsuite.com", "ProjectTaskConstraintType"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("startDate");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:scheduling_2018_2.activities.webservices.netsuite.com", "startDate"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "dateTime"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("startDateBaseline");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:scheduling_2018_2.activities.webservices.netsuite.com", "startDateBaseline"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "dateTime"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("endDate");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:scheduling_2018_2.activities.webservices.netsuite.com", "endDate"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "dateTime"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("finishByDate");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:scheduling_2018_2.activities.webservices.netsuite.com", "finishByDate"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "dateTime"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("endDateBaseline");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:scheduling_2018_2.activities.webservices.netsuite.com", "endDateBaseline"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "dateTime"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("actualWork");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:scheduling_2018_2.activities.webservices.netsuite.com", "actualWork"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "double"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("remainingWork");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:scheduling_2018_2.activities.webservices.netsuite.com", "remainingWork"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "double"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("message");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:scheduling_2018_2.activities.webservices.netsuite.com", "message"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("isMilestone");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:scheduling_2018_2.activities.webservices.netsuite.com", "isMilestone"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("isOnCriticalPath");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:scheduling_2018_2.activities.webservices.netsuite.com", "isOnCriticalPath"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("slackMinutes");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:scheduling_2018_2.activities.webservices.netsuite.com", "slackMinutes"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "double"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("lateEnd");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:scheduling_2018_2.activities.webservices.netsuite.com", "lateEnd"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "dateTime"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("lateStart");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:scheduling_2018_2.activities.webservices.netsuite.com", "lateStart"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "dateTime"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("status");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:scheduling_2018_2.activities.webservices.netsuite.com", "status"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:types.scheduling_2018_2.activities.webservices.netsuite.com", "ProjectTaskStatus"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("nonBillableTask");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:scheduling_2018_2.activities.webservices.netsuite.com", "nonBillableTask"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("assigneeList");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:scheduling_2018_2.activities.webservices.netsuite.com", "assigneeList"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:scheduling_2018_2.activities.webservices.netsuite.com", "ProjectTaskAssignee"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:scheduling_2018_2.activities.webservices.netsuite.com", "projectTaskAssignee"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("predecessorList");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:scheduling_2018_2.activities.webservices.netsuite.com", "predecessorList"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:scheduling_2018_2.activities.webservices.netsuite.com", "ProjectTaskPredecessor"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:scheduling_2018_2.activities.webservices.netsuite.com", "projectTaskPredecessor"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("timeItemList");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:scheduling_2018_2.activities.webservices.netsuite.com", "timeItemList"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "TimeItem"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:scheduling_2018_2.activities.webservices.netsuite.com", "timeItem"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("customFieldList");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:scheduling_2018_2.activities.webservices.netsuite.com", "customFieldList"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "CustomFieldRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "customField"));
+        typeDesc.addFieldDesc(elemField);
+    }
+
+    /**
+     * Return type metadata object
+     */
+    public static org.apache.axis.description.TypeDesc getTypeDesc() {
+        return typeDesc;
+    }
+
+    /**
+     * Get Custom Serializer
+     */
+    public static org.apache.axis.encoding.Serializer getSerializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanSerializer(
+            _javaType, _xmlType, typeDesc);
+    }
+
+    /**
+     * Get Custom Deserializer
+     */
+    public static org.apache.axis.encoding.Deserializer getDeserializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanDeserializer(
+            _javaType, _xmlType, typeDesc);
     }
 
 }

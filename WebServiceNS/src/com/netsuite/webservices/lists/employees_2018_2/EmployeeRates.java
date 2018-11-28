@@ -1,88 +1,157 @@
+/**
+ * EmployeeRates.java
+ *
+ * This file was auto-generated from WSDL
+ * by the Apache Axis 1.4 Jul 28, 2010 (04:07:04 PDT) WSDL2Java emitter.
+ */
 
 package com.netsuite.webservices.lists.employees_2018_2;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlType;
-import com.netsuite.webservices.platform.core_2018_2.RecordRef;
+public class EmployeeRates  implements java.io.Serializable {
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef entityCurrency;
 
+    private java.lang.Double rate;
 
-/**
- * <p>EmployeeRates complex type的 Java 类。
- * 
- * <p>以下模式片段指定包含在此类中的预期内容。
- * 
- * <pre>
- * &lt;complexType name="EmployeeRates">
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element name="entityCurrency" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="rate" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
- */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "EmployeeRates", propOrder = {
-    "entityCurrency",
-    "rate"
-})
-public class EmployeeRates {
+    public EmployeeRates() {
+    }
 
-    protected RecordRef entityCurrency;
-    protected Double rate;
+    public EmployeeRates(
+           com.netsuite.webservices.platform.core_2018_2.RecordRef entityCurrency,
+           java.lang.Double rate) {
+           this.entityCurrency = entityCurrency;
+           this.rate = rate;
+    }
+
 
     /**
-     * 获取entityCurrency属性的值。
+     * Gets the entityCurrency value for this EmployeeRates.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @return entityCurrency
      */
-    public RecordRef getEntityCurrency() {
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getEntityCurrency() {
         return entityCurrency;
     }
 
-    /**
-     * 设置entityCurrency属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setEntityCurrency(RecordRef value) {
-        this.entityCurrency = value;
-    }
 
     /**
-     * 获取rate属性的值。
+     * Sets the entityCurrency value for this EmployeeRates.
      * 
-     * @return
-     *     possible object is
-     *     {@link Double }
-     *     
+     * @param entityCurrency
      */
-    public Double getRate() {
+    public void setEntityCurrency(com.netsuite.webservices.platform.core_2018_2.RecordRef entityCurrency) {
+        this.entityCurrency = entityCurrency;
+    }
+
+
+    /**
+     * Gets the rate value for this EmployeeRates.
+     * 
+     * @return rate
+     */
+    public java.lang.Double getRate() {
         return rate;
     }
 
+
     /**
-     * 设置rate属性的值。
+     * Sets the rate value for this EmployeeRates.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link Double }
-     *     
+     * @param rate
      */
-    public void setRate(Double value) {
-        this.rate = value;
+    public void setRate(java.lang.Double rate) {
+        this.rate = rate;
+    }
+
+    private java.lang.Object __equalsCalc = null;
+    public synchronized boolean equals(java.lang.Object obj) {
+        if (!(obj instanceof EmployeeRates)) return false;
+        EmployeeRates other = (EmployeeRates) obj;
+        if (obj == null) return false;
+        if (this == obj) return true;
+        if (__equalsCalc != null) {
+            return (__equalsCalc == obj);
+        }
+        __equalsCalc = obj;
+        boolean _equals;
+        _equals = true && 
+            ((this.entityCurrency==null && other.getEntityCurrency()==null) || 
+             (this.entityCurrency!=null &&
+              this.entityCurrency.equals(other.getEntityCurrency()))) &&
+            ((this.rate==null && other.getRate()==null) || 
+             (this.rate!=null &&
+              this.rate.equals(other.getRate())));
+        __equalsCalc = null;
+        return _equals;
+    }
+
+    private boolean __hashCodeCalc = false;
+    public synchronized int hashCode() {
+        if (__hashCodeCalc) {
+            return 0;
+        }
+        __hashCodeCalc = true;
+        int _hashCode = 1;
+        if (getEntityCurrency() != null) {
+            _hashCode += getEntityCurrency().hashCode();
+        }
+        if (getRate() != null) {
+            _hashCode += getRate().hashCode();
+        }
+        __hashCodeCalc = false;
+        return _hashCode;
+    }
+
+    // Type metadata
+    private static org.apache.axis.description.TypeDesc typeDesc =
+        new org.apache.axis.description.TypeDesc(EmployeeRates.class, true);
+
+    static {
+        typeDesc.setXmlType(new javax.xml.namespace.QName("urn:employees_2018_2.lists.webservices.netsuite.com", "EmployeeRates"));
+        org.apache.axis.description.ElementDesc elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("entityCurrency");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:employees_2018_2.lists.webservices.netsuite.com", "entityCurrency"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("rate");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:employees_2018_2.lists.webservices.netsuite.com", "rate"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "double"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+    }
+
+    /**
+     * Return type metadata object
+     */
+    public static org.apache.axis.description.TypeDesc getTypeDesc() {
+        return typeDesc;
+    }
+
+    /**
+     * Get Custom Serializer
+     */
+    public static org.apache.axis.encoding.Serializer getSerializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanSerializer(
+            _javaType, _xmlType, typeDesc);
+    }
+
+    /**
+     * Get Custom Deserializer
+     */
+    public static org.apache.axis.encoding.Deserializer getDeserializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanDeserializer(
+            _javaType, _xmlType, typeDesc);
     }
 
 }

@@ -1,450 +1,691 @@
+/**
+ * CustomRecordSearchBasic.java
+ *
+ * This file was auto-generated from WSDL
+ * by the Apache Axis 1.4 Jul 28, 2010 (04:07:04 PDT) WSDL2Java emitter.
+ */
 
 package com.netsuite.webservices.platform.common_2018_2;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlType;
-import com.netsuite.webservices.platform.core_2018_2.RecordRef;
-import com.netsuite.webservices.platform.core_2018_2.SearchBooleanField;
-import com.netsuite.webservices.platform.core_2018_2.SearchCustomFieldList;
-import com.netsuite.webservices.platform.core_2018_2.SearchDateField;
-import com.netsuite.webservices.platform.core_2018_2.SearchLongField;
-import com.netsuite.webservices.platform.core_2018_2.SearchMultiSelectField;
-import com.netsuite.webservices.platform.core_2018_2.SearchRecordBasic;
-import com.netsuite.webservices.platform.core_2018_2.SearchStringField;
+public class CustomRecordSearchBasic  extends com.netsuite.webservices.platform.core_2018_2.SearchRecordBasic  implements java.io.Serializable {
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef recType;
 
+    private com.netsuite.webservices.platform.core_2018_2.SearchBooleanField availableOffline;
 
-/**
- * <p>CustomRecordSearchBasic complex type的 Java 类。
- * 
- * <p>以下模式片段指定包含在此类中的预期内容。
- * 
- * <pre>
- * &lt;complexType name="CustomRecordSearchBasic">
- *   &lt;complexContent>
- *     &lt;extension base="{urn:core_2018_2.platform.webservices.netsuite.com}SearchRecordBasic">
- *       &lt;sequence>
- *         &lt;element name="recType" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef"/>
- *         &lt;element name="availableOffline" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchBooleanField" minOccurs="0"/>
- *         &lt;element name="created" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchDateField" minOccurs="0"/>
- *         &lt;element name="externalId" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchMultiSelectField" minOccurs="0"/>
- *         &lt;element name="externalIdString" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchStringField" minOccurs="0"/>
- *         &lt;element name="id" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchLongField" minOccurs="0"/>
- *         &lt;element name="internalId" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchMultiSelectField" minOccurs="0"/>
- *         &lt;element name="internalIdNumber" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchLongField" minOccurs="0"/>
- *         &lt;element name="isInactive" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchBooleanField" minOccurs="0"/>
- *         &lt;element name="lastModified" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchDateField" minOccurs="0"/>
- *         &lt;element name="lastModifiedBy" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchMultiSelectField" minOccurs="0"/>
- *         &lt;element name="name" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchStringField" minOccurs="0"/>
- *         &lt;element name="owner" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchMultiSelectField" minOccurs="0"/>
- *         &lt;element name="parent" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchMultiSelectField" minOccurs="0"/>
- *         &lt;element name="customFieldList" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchCustomFieldList" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/extension>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
- */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "CustomRecordSearchBasic", propOrder = {
-    "recType",
-    "availableOffline",
-    "created",
-    "externalId",
-    "externalIdString",
-    "id",
-    "internalId",
-    "internalIdNumber",
-    "isInactive",
-    "lastModified",
-    "lastModifiedBy",
-    "name",
-    "owner",
-    "parent",
-    "customFieldList"
-})
-public class CustomRecordSearchBasic
-    extends SearchRecordBasic
-{
+    private com.netsuite.webservices.platform.core_2018_2.SearchDateField created;
 
-    @XmlElement(required = true)
-    protected RecordRef recType;
-    protected SearchBooleanField availableOffline;
-    protected SearchDateField created;
-    protected SearchMultiSelectField externalId;
-    protected SearchStringField externalIdString;
-    protected SearchLongField id;
-    protected SearchMultiSelectField internalId;
-    protected SearchLongField internalIdNumber;
-    protected SearchBooleanField isInactive;
-    protected SearchDateField lastModified;
-    protected SearchMultiSelectField lastModifiedBy;
-    protected SearchStringField name;
-    protected SearchMultiSelectField owner;
-    protected SearchMultiSelectField parent;
-    protected SearchCustomFieldList customFieldList;
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef[] externalId;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchStringField externalIdString;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchLongField id;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef[] internalId;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchLongField internalIdNumber;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchBooleanField isInactive;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchDateField lastModified;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef[] lastModifiedBy;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchStringField name;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef[] owner;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef[] parent;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchCustomField[] customFieldList;
+
+    public CustomRecordSearchBasic() {
+    }
+
+    public CustomRecordSearchBasic(
+           com.netsuite.webservices.platform.core_2018_2.RecordRef recType,
+           com.netsuite.webservices.platform.core_2018_2.SearchBooleanField availableOffline,
+           com.netsuite.webservices.platform.core_2018_2.SearchDateField created,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef[] externalId,
+           com.netsuite.webservices.platform.core_2018_2.SearchStringField externalIdString,
+           com.netsuite.webservices.platform.core_2018_2.SearchLongField id,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef[] internalId,
+           com.netsuite.webservices.platform.core_2018_2.SearchLongField internalIdNumber,
+           com.netsuite.webservices.platform.core_2018_2.SearchBooleanField isInactive,
+           com.netsuite.webservices.platform.core_2018_2.SearchDateField lastModified,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef[] lastModifiedBy,
+           com.netsuite.webservices.platform.core_2018_2.SearchStringField name,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef[] owner,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef[] parent,
+           com.netsuite.webservices.platform.core_2018_2.SearchCustomField[] customFieldList) {
+        this.recType = recType;
+        this.availableOffline = availableOffline;
+        this.created = created;
+        this.externalId = externalId;
+        this.externalIdString = externalIdString;
+        this.id = id;
+        this.internalId = internalId;
+        this.internalIdNumber = internalIdNumber;
+        this.isInactive = isInactive;
+        this.lastModified = lastModified;
+        this.lastModifiedBy = lastModifiedBy;
+        this.name = name;
+        this.owner = owner;
+        this.parent = parent;
+        this.customFieldList = customFieldList;
+    }
+
 
     /**
-     * 获取recType属性的值。
+     * Gets the recType value for this CustomRecordSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @return recType
      */
-    public RecordRef getRecType() {
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getRecType() {
         return recType;
     }
 
-    /**
-     * 设置recType属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setRecType(RecordRef value) {
-        this.recType = value;
-    }
 
     /**
-     * 获取availableOffline属性的值。
+     * Sets the recType value for this CustomRecordSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchBooleanField }
-     *     
+     * @param recType
      */
-    public SearchBooleanField getAvailableOffline() {
+    public void setRecType(com.netsuite.webservices.platform.core_2018_2.RecordRef recType) {
+        this.recType = recType;
+    }
+
+
+    /**
+     * Gets the availableOffline value for this CustomRecordSearchBasic.
+     * 
+     * @return availableOffline
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchBooleanField getAvailableOffline() {
         return availableOffline;
     }
 
-    /**
-     * 设置availableOffline属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchBooleanField }
-     *     
-     */
-    public void setAvailableOffline(SearchBooleanField value) {
-        this.availableOffline = value;
-    }
 
     /**
-     * 获取created属性的值。
+     * Sets the availableOffline value for this CustomRecordSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchDateField }
-     *     
+     * @param availableOffline
      */
-    public SearchDateField getCreated() {
+    public void setAvailableOffline(com.netsuite.webservices.platform.core_2018_2.SearchBooleanField availableOffline) {
+        this.availableOffline = availableOffline;
+    }
+
+
+    /**
+     * Gets the created value for this CustomRecordSearchBasic.
+     * 
+     * @return created
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchDateField getCreated() {
         return created;
     }
 
-    /**
-     * 设置created属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchDateField }
-     *     
-     */
-    public void setCreated(SearchDateField value) {
-        this.created = value;
-    }
 
     /**
-     * 获取externalId属性的值。
+     * Sets the created value for this CustomRecordSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchMultiSelectField }
-     *     
+     * @param created
      */
-    public SearchMultiSelectField getExternalId() {
+    public void setCreated(com.netsuite.webservices.platform.core_2018_2.SearchDateField created) {
+        this.created = created;
+    }
+
+
+    /**
+     * Gets the externalId value for this CustomRecordSearchBasic.
+     * 
+     * @return externalId
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef[] getExternalId() {
         return externalId;
     }
 
-    /**
-     * 设置externalId属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchMultiSelectField }
-     *     
-     */
-    public void setExternalId(SearchMultiSelectField value) {
-        this.externalId = value;
-    }
 
     /**
-     * 获取externalIdString属性的值。
+     * Sets the externalId value for this CustomRecordSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchStringField }
-     *     
+     * @param externalId
      */
-    public SearchStringField getExternalIdString() {
+    public void setExternalId(com.netsuite.webservices.platform.core_2018_2.RecordRef[] externalId) {
+        this.externalId = externalId;
+    }
+
+
+    /**
+     * Gets the externalIdString value for this CustomRecordSearchBasic.
+     * 
+     * @return externalIdString
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchStringField getExternalIdString() {
         return externalIdString;
     }
 
-    /**
-     * 设置externalIdString属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchStringField }
-     *     
-     */
-    public void setExternalIdString(SearchStringField value) {
-        this.externalIdString = value;
-    }
 
     /**
-     * 获取id属性的值。
+     * Sets the externalIdString value for this CustomRecordSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchLongField }
-     *     
+     * @param externalIdString
      */
-    public SearchLongField getId() {
+    public void setExternalIdString(com.netsuite.webservices.platform.core_2018_2.SearchStringField externalIdString) {
+        this.externalIdString = externalIdString;
+    }
+
+
+    /**
+     * Gets the id value for this CustomRecordSearchBasic.
+     * 
+     * @return id
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchLongField getId() {
         return id;
     }
 
-    /**
-     * 设置id属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchLongField }
-     *     
-     */
-    public void setId(SearchLongField value) {
-        this.id = value;
-    }
 
     /**
-     * 获取internalId属性的值。
+     * Sets the id value for this CustomRecordSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchMultiSelectField }
-     *     
+     * @param id
      */
-    public SearchMultiSelectField getInternalId() {
+    public void setId(com.netsuite.webservices.platform.core_2018_2.SearchLongField id) {
+        this.id = id;
+    }
+
+
+    /**
+     * Gets the internalId value for this CustomRecordSearchBasic.
+     * 
+     * @return internalId
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef[] getInternalId() {
         return internalId;
     }
 
-    /**
-     * 设置internalId属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchMultiSelectField }
-     *     
-     */
-    public void setInternalId(SearchMultiSelectField value) {
-        this.internalId = value;
-    }
 
     /**
-     * 获取internalIdNumber属性的值。
+     * Sets the internalId value for this CustomRecordSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchLongField }
-     *     
+     * @param internalId
      */
-    public SearchLongField getInternalIdNumber() {
+    public void setInternalId(com.netsuite.webservices.platform.core_2018_2.RecordRef[] internalId) {
+        this.internalId = internalId;
+    }
+
+
+    /**
+     * Gets the internalIdNumber value for this CustomRecordSearchBasic.
+     * 
+     * @return internalIdNumber
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchLongField getInternalIdNumber() {
         return internalIdNumber;
     }
 
-    /**
-     * 设置internalIdNumber属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchLongField }
-     *     
-     */
-    public void setInternalIdNumber(SearchLongField value) {
-        this.internalIdNumber = value;
-    }
 
     /**
-     * 获取isInactive属性的值。
+     * Sets the internalIdNumber value for this CustomRecordSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchBooleanField }
-     *     
+     * @param internalIdNumber
      */
-    public SearchBooleanField getIsInactive() {
+    public void setInternalIdNumber(com.netsuite.webservices.platform.core_2018_2.SearchLongField internalIdNumber) {
+        this.internalIdNumber = internalIdNumber;
+    }
+
+
+    /**
+     * Gets the isInactive value for this CustomRecordSearchBasic.
+     * 
+     * @return isInactive
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchBooleanField getIsInactive() {
         return isInactive;
     }
 
-    /**
-     * 设置isInactive属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchBooleanField }
-     *     
-     */
-    public void setIsInactive(SearchBooleanField value) {
-        this.isInactive = value;
-    }
 
     /**
-     * 获取lastModified属性的值。
+     * Sets the isInactive value for this CustomRecordSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchDateField }
-     *     
+     * @param isInactive
      */
-    public SearchDateField getLastModified() {
+    public void setIsInactive(com.netsuite.webservices.platform.core_2018_2.SearchBooleanField isInactive) {
+        this.isInactive = isInactive;
+    }
+
+
+    /**
+     * Gets the lastModified value for this CustomRecordSearchBasic.
+     * 
+     * @return lastModified
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchDateField getLastModified() {
         return lastModified;
     }
 
-    /**
-     * 设置lastModified属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchDateField }
-     *     
-     */
-    public void setLastModified(SearchDateField value) {
-        this.lastModified = value;
-    }
 
     /**
-     * 获取lastModifiedBy属性的值。
+     * Sets the lastModified value for this CustomRecordSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchMultiSelectField }
-     *     
+     * @param lastModified
      */
-    public SearchMultiSelectField getLastModifiedBy() {
+    public void setLastModified(com.netsuite.webservices.platform.core_2018_2.SearchDateField lastModified) {
+        this.lastModified = lastModified;
+    }
+
+
+    /**
+     * Gets the lastModifiedBy value for this CustomRecordSearchBasic.
+     * 
+     * @return lastModifiedBy
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef[] getLastModifiedBy() {
         return lastModifiedBy;
     }
 
-    /**
-     * 设置lastModifiedBy属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchMultiSelectField }
-     *     
-     */
-    public void setLastModifiedBy(SearchMultiSelectField value) {
-        this.lastModifiedBy = value;
-    }
 
     /**
-     * 获取name属性的值。
+     * Sets the lastModifiedBy value for this CustomRecordSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchStringField }
-     *     
+     * @param lastModifiedBy
      */
-    public SearchStringField getName() {
+    public void setLastModifiedBy(com.netsuite.webservices.platform.core_2018_2.RecordRef[] lastModifiedBy) {
+        this.lastModifiedBy = lastModifiedBy;
+    }
+
+
+    /**
+     * Gets the name value for this CustomRecordSearchBasic.
+     * 
+     * @return name
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchStringField getName() {
         return name;
     }
 
-    /**
-     * 设置name属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchStringField }
-     *     
-     */
-    public void setName(SearchStringField value) {
-        this.name = value;
-    }
 
     /**
-     * 获取owner属性的值。
+     * Sets the name value for this CustomRecordSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchMultiSelectField }
-     *     
+     * @param name
      */
-    public SearchMultiSelectField getOwner() {
+    public void setName(com.netsuite.webservices.platform.core_2018_2.SearchStringField name) {
+        this.name = name;
+    }
+
+
+    /**
+     * Gets the owner value for this CustomRecordSearchBasic.
+     * 
+     * @return owner
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef[] getOwner() {
         return owner;
     }
 
-    /**
-     * 设置owner属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchMultiSelectField }
-     *     
-     */
-    public void setOwner(SearchMultiSelectField value) {
-        this.owner = value;
-    }
 
     /**
-     * 获取parent属性的值。
+     * Sets the owner value for this CustomRecordSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchMultiSelectField }
-     *     
+     * @param owner
      */
-    public SearchMultiSelectField getParent() {
+    public void setOwner(com.netsuite.webservices.platform.core_2018_2.RecordRef[] owner) {
+        this.owner = owner;
+    }
+
+
+    /**
+     * Gets the parent value for this CustomRecordSearchBasic.
+     * 
+     * @return parent
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef[] getParent() {
         return parent;
     }
 
-    /**
-     * 设置parent属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchMultiSelectField }
-     *     
-     */
-    public void setParent(SearchMultiSelectField value) {
-        this.parent = value;
-    }
 
     /**
-     * 获取customFieldList属性的值。
+     * Sets the parent value for this CustomRecordSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchCustomFieldList }
-     *     
+     * @param parent
      */
-    public SearchCustomFieldList getCustomFieldList() {
+    public void setParent(com.netsuite.webservices.platform.core_2018_2.RecordRef[] parent) {
+        this.parent = parent;
+    }
+
+
+    /**
+     * Gets the customFieldList value for this CustomRecordSearchBasic.
+     * 
+     * @return customFieldList
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchCustomField[] getCustomFieldList() {
         return customFieldList;
     }
 
+
     /**
-     * 设置customFieldList属性的值。
+     * Sets the customFieldList value for this CustomRecordSearchBasic.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchCustomFieldList }
-     *     
+     * @param customFieldList
      */
-    public void setCustomFieldList(SearchCustomFieldList value) {
-        this.customFieldList = value;
+    public void setCustomFieldList(com.netsuite.webservices.platform.core_2018_2.SearchCustomField[] customFieldList) {
+        this.customFieldList = customFieldList;
+    }
+
+    private java.lang.Object __equalsCalc = null;
+    public synchronized boolean equals(java.lang.Object obj) {
+        if (!(obj instanceof CustomRecordSearchBasic)) return false;
+        CustomRecordSearchBasic other = (CustomRecordSearchBasic) obj;
+        if (obj == null) return false;
+        if (this == obj) return true;
+        if (__equalsCalc != null) {
+            return (__equalsCalc == obj);
+        }
+        __equalsCalc = obj;
+        boolean _equals;
+        _equals = super.equals(obj) && 
+            ((this.recType==null && other.getRecType()==null) || 
+             (this.recType!=null &&
+              this.recType.equals(other.getRecType()))) &&
+            ((this.availableOffline==null && other.getAvailableOffline()==null) || 
+             (this.availableOffline!=null &&
+              this.availableOffline.equals(other.getAvailableOffline()))) &&
+            ((this.created==null && other.getCreated()==null) || 
+             (this.created!=null &&
+              this.created.equals(other.getCreated()))) &&
+            ((this.externalId==null && other.getExternalId()==null) || 
+             (this.externalId!=null &&
+              java.util.Arrays.equals(this.externalId, other.getExternalId()))) &&
+            ((this.externalIdString==null && other.getExternalIdString()==null) || 
+             (this.externalIdString!=null &&
+              this.externalIdString.equals(other.getExternalIdString()))) &&
+            ((this.id==null && other.getId()==null) || 
+             (this.id!=null &&
+              this.id.equals(other.getId()))) &&
+            ((this.internalId==null && other.getInternalId()==null) || 
+             (this.internalId!=null &&
+              java.util.Arrays.equals(this.internalId, other.getInternalId()))) &&
+            ((this.internalIdNumber==null && other.getInternalIdNumber()==null) || 
+             (this.internalIdNumber!=null &&
+              this.internalIdNumber.equals(other.getInternalIdNumber()))) &&
+            ((this.isInactive==null && other.getIsInactive()==null) || 
+             (this.isInactive!=null &&
+              this.isInactive.equals(other.getIsInactive()))) &&
+            ((this.lastModified==null && other.getLastModified()==null) || 
+             (this.lastModified!=null &&
+              this.lastModified.equals(other.getLastModified()))) &&
+            ((this.lastModifiedBy==null && other.getLastModifiedBy()==null) || 
+             (this.lastModifiedBy!=null &&
+              java.util.Arrays.equals(this.lastModifiedBy, other.getLastModifiedBy()))) &&
+            ((this.name==null && other.getName()==null) || 
+             (this.name!=null &&
+              this.name.equals(other.getName()))) &&
+            ((this.owner==null && other.getOwner()==null) || 
+             (this.owner!=null &&
+              java.util.Arrays.equals(this.owner, other.getOwner()))) &&
+            ((this.parent==null && other.getParent()==null) || 
+             (this.parent!=null &&
+              java.util.Arrays.equals(this.parent, other.getParent()))) &&
+            ((this.customFieldList==null && other.getCustomFieldList()==null) || 
+             (this.customFieldList!=null &&
+              java.util.Arrays.equals(this.customFieldList, other.getCustomFieldList())));
+        __equalsCalc = null;
+        return _equals;
+    }
+
+    private boolean __hashCodeCalc = false;
+    public synchronized int hashCode() {
+        if (__hashCodeCalc) {
+            return 0;
+        }
+        __hashCodeCalc = true;
+        int _hashCode = super.hashCode();
+        if (getRecType() != null) {
+            _hashCode += getRecType().hashCode();
+        }
+        if (getAvailableOffline() != null) {
+            _hashCode += getAvailableOffline().hashCode();
+        }
+        if (getCreated() != null) {
+            _hashCode += getCreated().hashCode();
+        }
+        if (getExternalId() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getExternalId());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getExternalId(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getExternalIdString() != null) {
+            _hashCode += getExternalIdString().hashCode();
+        }
+        if (getId() != null) {
+            _hashCode += getId().hashCode();
+        }
+        if (getInternalId() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getInternalId());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getInternalId(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getInternalIdNumber() != null) {
+            _hashCode += getInternalIdNumber().hashCode();
+        }
+        if (getIsInactive() != null) {
+            _hashCode += getIsInactive().hashCode();
+        }
+        if (getLastModified() != null) {
+            _hashCode += getLastModified().hashCode();
+        }
+        if (getLastModifiedBy() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getLastModifiedBy());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getLastModifiedBy(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getName() != null) {
+            _hashCode += getName().hashCode();
+        }
+        if (getOwner() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getOwner());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getOwner(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getParent() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getParent());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getParent(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getCustomFieldList() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getCustomFieldList());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getCustomFieldList(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        __hashCodeCalc = false;
+        return _hashCode;
+    }
+
+    // Type metadata
+    private static org.apache.axis.description.TypeDesc typeDesc =
+        new org.apache.axis.description.TypeDesc(CustomRecordSearchBasic.class, true);
+
+    static {
+        typeDesc.setXmlType(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "CustomRecordSearchBasic"));
+        org.apache.axis.description.ElementDesc elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("recType");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "recType"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("availableOffline");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "availableOffline"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchBooleanField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("created");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "created"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchDateField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("externalId");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "externalId"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "searchValue"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("externalIdString");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "externalIdString"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchStringField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("id");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "id"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchLongField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("internalId");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "internalId"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "searchValue"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("internalIdNumber");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "internalIdNumber"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchLongField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("isInactive");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "isInactive"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchBooleanField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("lastModified");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "lastModified"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchDateField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("lastModifiedBy");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "lastModifiedBy"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "searchValue"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("name");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "name"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchStringField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("owner");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "owner"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "searchValue"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("parent");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "parent"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "searchValue"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("customFieldList");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "customFieldList"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchCustomField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "customField"));
+        typeDesc.addFieldDesc(elemField);
+    }
+
+    /**
+     * Return type metadata object
+     */
+    public static org.apache.axis.description.TypeDesc getTypeDesc() {
+        return typeDesc;
+    }
+
+    /**
+     * Get Custom Serializer
+     */
+    public static org.apache.axis.encoding.Serializer getSerializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanSerializer(
+            _javaType, _xmlType, typeDesc);
+    }
+
+    /**
+     * Get Custom Deserializer
+     */
+    public static org.apache.axis.encoding.Deserializer getDeserializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanDeserializer(
+            _javaType, _xmlType, typeDesc);
     }
 
 }

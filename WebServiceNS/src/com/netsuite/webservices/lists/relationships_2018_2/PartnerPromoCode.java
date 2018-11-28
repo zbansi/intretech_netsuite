@@ -1,118 +1,194 @@
+/**
+ * PartnerPromoCode.java
+ *
+ * This file was auto-generated from WSDL
+ * by the Apache Axis 1.4 Jul 28, 2010 (04:07:04 PDT) WSDL2Java emitter.
+ */
 
 package com.netsuite.webservices.lists.relationships_2018_2;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlSchemaType;
-import javax.xml.bind.annotation.XmlType;
-import javax.xml.datatype.XMLGregorianCalendar;
-import com.netsuite.webservices.platform.core_2018_2.RecordRef;
+public class PartnerPromoCode  implements java.io.Serializable {
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef promoCode;
 
+    private java.lang.String discount;
 
-/**
- * <p>PartnerPromoCode complex type的 Java 类。
- * 
- * <p>以下模式片段指定包含在此类中的预期内容。
- * 
- * <pre>
- * &lt;complexType name="PartnerPromoCode">
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element name="promoCode" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="discount" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="endDate" type="{http://www.w3.org/2001/XMLSchema}dateTime" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
- */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "PartnerPromoCode", propOrder = {
-    "promoCode",
-    "discount",
-    "endDate"
-})
-public class PartnerPromoCode {
+    private java.util.Calendar endDate;
 
-    protected RecordRef promoCode;
-    protected String discount;
-    @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar endDate;
+    public PartnerPromoCode() {
+    }
+
+    public PartnerPromoCode(
+           com.netsuite.webservices.platform.core_2018_2.RecordRef promoCode,
+           java.lang.String discount,
+           java.util.Calendar endDate) {
+           this.promoCode = promoCode;
+           this.discount = discount;
+           this.endDate = endDate;
+    }
+
 
     /**
-     * 获取promoCode属性的值。
+     * Gets the promoCode value for this PartnerPromoCode.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @return promoCode
      */
-    public RecordRef getPromoCode() {
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getPromoCode() {
         return promoCode;
     }
 
-    /**
-     * 设置promoCode属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setPromoCode(RecordRef value) {
-        this.promoCode = value;
-    }
 
     /**
-     * 获取discount属性的值。
+     * Sets the promoCode value for this PartnerPromoCode.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param promoCode
      */
-    public String getDiscount() {
+    public void setPromoCode(com.netsuite.webservices.platform.core_2018_2.RecordRef promoCode) {
+        this.promoCode = promoCode;
+    }
+
+
+    /**
+     * Gets the discount value for this PartnerPromoCode.
+     * 
+     * @return discount
+     */
+    public java.lang.String getDiscount() {
         return discount;
     }
 
-    /**
-     * 设置discount属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setDiscount(String value) {
-        this.discount = value;
-    }
 
     /**
-     * 获取endDate属性的值。
+     * Sets the discount value for this PartnerPromoCode.
      * 
-     * @return
-     *     possible object is
-     *     {@link XMLGregorianCalendar }
-     *     
+     * @param discount
      */
-    public XMLGregorianCalendar getEndDate() {
+    public void setDiscount(java.lang.String discount) {
+        this.discount = discount;
+    }
+
+
+    /**
+     * Gets the endDate value for this PartnerPromoCode.
+     * 
+     * @return endDate
+     */
+    public java.util.Calendar getEndDate() {
         return endDate;
     }
 
+
     /**
-     * 设置endDate属性的值。
+     * Sets the endDate value for this PartnerPromoCode.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link XMLGregorianCalendar }
-     *     
+     * @param endDate
      */
-    public void setEndDate(XMLGregorianCalendar value) {
-        this.endDate = value;
+    public void setEndDate(java.util.Calendar endDate) {
+        this.endDate = endDate;
+    }
+
+    private java.lang.Object __equalsCalc = null;
+    public synchronized boolean equals(java.lang.Object obj) {
+        if (!(obj instanceof PartnerPromoCode)) return false;
+        PartnerPromoCode other = (PartnerPromoCode) obj;
+        if (obj == null) return false;
+        if (this == obj) return true;
+        if (__equalsCalc != null) {
+            return (__equalsCalc == obj);
+        }
+        __equalsCalc = obj;
+        boolean _equals;
+        _equals = true && 
+            ((this.promoCode==null && other.getPromoCode()==null) || 
+             (this.promoCode!=null &&
+              this.promoCode.equals(other.getPromoCode()))) &&
+            ((this.discount==null && other.getDiscount()==null) || 
+             (this.discount!=null &&
+              this.discount.equals(other.getDiscount()))) &&
+            ((this.endDate==null && other.getEndDate()==null) || 
+             (this.endDate!=null &&
+              this.endDate.equals(other.getEndDate())));
+        __equalsCalc = null;
+        return _equals;
+    }
+
+    private boolean __hashCodeCalc = false;
+    public synchronized int hashCode() {
+        if (__hashCodeCalc) {
+            return 0;
+        }
+        __hashCodeCalc = true;
+        int _hashCode = 1;
+        if (getPromoCode() != null) {
+            _hashCode += getPromoCode().hashCode();
+        }
+        if (getDiscount() != null) {
+            _hashCode += getDiscount().hashCode();
+        }
+        if (getEndDate() != null) {
+            _hashCode += getEndDate().hashCode();
+        }
+        __hashCodeCalc = false;
+        return _hashCode;
+    }
+
+    // Type metadata
+    private static org.apache.axis.description.TypeDesc typeDesc =
+        new org.apache.axis.description.TypeDesc(PartnerPromoCode.class, true);
+
+    static {
+        typeDesc.setXmlType(new javax.xml.namespace.QName("urn:relationships_2018_2.lists.webservices.netsuite.com", "PartnerPromoCode"));
+        org.apache.axis.description.ElementDesc elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("promoCode");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:relationships_2018_2.lists.webservices.netsuite.com", "promoCode"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("discount");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:relationships_2018_2.lists.webservices.netsuite.com", "discount"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("endDate");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:relationships_2018_2.lists.webservices.netsuite.com", "endDate"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "dateTime"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+    }
+
+    /**
+     * Return type metadata object
+     */
+    public static org.apache.axis.description.TypeDesc getTypeDesc() {
+        return typeDesc;
+    }
+
+    /**
+     * Get Custom Serializer
+     */
+    public static org.apache.axis.encoding.Serializer getSerializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanSerializer(
+            _javaType, _xmlType, typeDesc);
+    }
+
+    /**
+     * Get Custom Deserializer
+     */
+    public static org.apache.axis.encoding.Deserializer getDeserializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanDeserializer(
+            _javaType, _xmlType, typeDesc);
     }
 
 }

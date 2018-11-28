@@ -1,91 +1,169 @@
+/**
+ * InventoryDetail.java
+ *
+ * This file was auto-generated from WSDL
+ * by the Apache Axis 1.4 Jul 28, 2010 (04:07:04 PDT) WSDL2Java emitter.
+ */
 
 package com.netsuite.webservices.platform.common_2018_2;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlType;
-import com.netsuite.webservices.platform.core_2018_2.Record;
-import com.netsuite.webservices.platform.core_2018_2.RecordRef;
+public class InventoryDetail  extends com.netsuite.webservices.platform.core_2018_2.Record  implements java.io.Serializable {
+    private com.netsuite.webservices.platform.common_2018_2.InventoryAssignment[] inventoryAssignmentList;
 
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef customForm;
 
-/**
- * <p>InventoryDetail complex type的 Java 类。
- * 
- * <p>以下模式片段指定包含在此类中的预期内容。
- * 
- * <pre>
- * &lt;complexType name="InventoryDetail">
- *   &lt;complexContent>
- *     &lt;extension base="{urn:core_2018_2.platform.webservices.netsuite.com}Record">
- *       &lt;sequence>
- *         &lt;element name="inventoryAssignmentList" type="{urn:common_2018_2.platform.webservices.netsuite.com}InventoryAssignmentList" minOccurs="0"/>
- *         &lt;element name="customForm" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/extension>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
- */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "InventoryDetail", propOrder = {
-    "inventoryAssignmentList",
-    "customForm"
-})
-public class InventoryDetail
-    extends Record
-{
+    public InventoryDetail() {
+    }
 
-    protected InventoryAssignmentList inventoryAssignmentList;
-    protected RecordRef customForm;
+    public InventoryDetail(
+           java.lang.String[] nullFieldList,
+           com.netsuite.webservices.platform.common_2018_2.InventoryAssignment[] inventoryAssignmentList,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef customForm) {
+        super(
+            nullFieldList);
+        this.inventoryAssignmentList = inventoryAssignmentList;
+        this.customForm = customForm;
+    }
+
 
     /**
-     * 获取inventoryAssignmentList属性的值。
+     * Gets the inventoryAssignmentList value for this InventoryDetail.
      * 
-     * @return
-     *     possible object is
-     *     {@link InventoryAssignmentList }
-     *     
+     * @return inventoryAssignmentList
      */
-    public InventoryAssignmentList getInventoryAssignmentList() {
+    public com.netsuite.webservices.platform.common_2018_2.InventoryAssignment[] getInventoryAssignmentList() {
         return inventoryAssignmentList;
     }
 
-    /**
-     * 设置inventoryAssignmentList属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link InventoryAssignmentList }
-     *     
-     */
-    public void setInventoryAssignmentList(InventoryAssignmentList value) {
-        this.inventoryAssignmentList = value;
-    }
 
     /**
-     * 获取customForm属性的值。
+     * Sets the inventoryAssignmentList value for this InventoryDetail.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param inventoryAssignmentList
      */
-    public RecordRef getCustomForm() {
+    public void setInventoryAssignmentList(com.netsuite.webservices.platform.common_2018_2.InventoryAssignment[] inventoryAssignmentList) {
+        this.inventoryAssignmentList = inventoryAssignmentList;
+    }
+
+
+    /**
+     * Gets the customForm value for this InventoryDetail.
+     * 
+     * @return customForm
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getCustomForm() {
         return customForm;
     }
 
+
     /**
-     * 设置customForm属性的值。
+     * Sets the customForm value for this InventoryDetail.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
+     * @param customForm
      */
-    public void setCustomForm(RecordRef value) {
-        this.customForm = value;
+    public void setCustomForm(com.netsuite.webservices.platform.core_2018_2.RecordRef customForm) {
+        this.customForm = customForm;
+    }
+
+    private java.lang.Object __equalsCalc = null;
+    public synchronized boolean equals(java.lang.Object obj) {
+        if (!(obj instanceof InventoryDetail)) return false;
+        InventoryDetail other = (InventoryDetail) obj;
+        if (obj == null) return false;
+        if (this == obj) return true;
+        if (__equalsCalc != null) {
+            return (__equalsCalc == obj);
+        }
+        __equalsCalc = obj;
+        boolean _equals;
+        _equals = super.equals(obj) && 
+            ((this.inventoryAssignmentList==null && other.getInventoryAssignmentList()==null) || 
+             (this.inventoryAssignmentList!=null &&
+              java.util.Arrays.equals(this.inventoryAssignmentList, other.getInventoryAssignmentList()))) &&
+            ((this.customForm==null && other.getCustomForm()==null) || 
+             (this.customForm!=null &&
+              this.customForm.equals(other.getCustomForm())));
+        __equalsCalc = null;
+        return _equals;
+    }
+
+    private boolean __hashCodeCalc = false;
+    public synchronized int hashCode() {
+        if (__hashCodeCalc) {
+            return 0;
+        }
+        __hashCodeCalc = true;
+        int _hashCode = super.hashCode();
+        if (getInventoryAssignmentList() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getInventoryAssignmentList());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getInventoryAssignmentList(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getCustomForm() != null) {
+            _hashCode += getCustomForm().hashCode();
+        }
+        __hashCodeCalc = false;
+        return _hashCode;
+    }
+
+    // Type metadata
+    private static org.apache.axis.description.TypeDesc typeDesc =
+        new org.apache.axis.description.TypeDesc(InventoryDetail.class, true);
+
+    static {
+        typeDesc.setXmlType(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "InventoryDetail"));
+        org.apache.axis.description.ElementDesc elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("inventoryAssignmentList");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "inventoryAssignmentList"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "InventoryAssignment"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "inventoryAssignment"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("customForm");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "customForm"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+    }
+
+    /**
+     * Return type metadata object
+     */
+    public static org.apache.axis.description.TypeDesc getTypeDesc() {
+        return typeDesc;
+    }
+
+    /**
+     * Get Custom Serializer
+     */
+    public static org.apache.axis.encoding.Serializer getSerializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanSerializer(
+            _javaType, _xmlType, typeDesc);
+    }
+
+    /**
+     * Get Custom Deserializer
+     */
+    public static org.apache.axis.encoding.Deserializer getDeserializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanDeserializer(
+            _javaType, _xmlType, typeDesc);
     }
 
 }

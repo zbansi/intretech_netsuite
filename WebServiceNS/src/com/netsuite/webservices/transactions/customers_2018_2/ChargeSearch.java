@@ -1,404 +1,581 @@
+/**
+ * ChargeSearch.java
+ *
+ * This file was auto-generated from WSDL
+ * by the Apache Axis 1.4 Jul 28, 2010 (04:07:04 PDT) WSDL2Java emitter.
+ */
 
 package com.netsuite.webservices.transactions.customers_2018_2;
 
-import java.util.ArrayList;
-import java.util.List;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlType;
-import com.netsuite.webservices.platform.common_2018_2.BillingAccountSearchBasic;
-import com.netsuite.webservices.platform.common_2018_2.BillingScheduleSearchBasic;
-import com.netsuite.webservices.platform.common_2018_2.ChargeSearchBasic;
-import com.netsuite.webservices.platform.common_2018_2.CustomSearchJoin;
-import com.netsuite.webservices.platform.common_2018_2.CustomerSearchBasic;
-import com.netsuite.webservices.platform.common_2018_2.EmployeeSearchBasic;
-import com.netsuite.webservices.platform.common_2018_2.ItemSearchBasic;
-import com.netsuite.webservices.platform.common_2018_2.JobSearchBasic;
-import com.netsuite.webservices.platform.common_2018_2.TimeBillSearchBasic;
-import com.netsuite.webservices.platform.common_2018_2.TransactionSearchBasic;
-import com.netsuite.webservices.platform.core_2018_2.SearchRecord;
+public class ChargeSearch  extends com.netsuite.webservices.platform.core_2018_2.SearchRecord  implements java.io.Serializable {
+    private com.netsuite.webservices.platform.common_2018_2.ChargeSearchBasic basic;
 
+    private com.netsuite.webservices.platform.common_2018_2.BillingAccountSearchBasic billingAccountJoin;
 
-/**
- * <p>ChargeSearch complex type的 Java 类。
- * 
- * <p>以下模式片段指定包含在此类中的预期内容。
- * 
- * <pre>
- * &lt;complexType name="ChargeSearch">
- *   &lt;complexContent>
- *     &lt;extension base="{urn:core_2018_2.platform.webservices.netsuite.com}SearchRecord">
- *       &lt;sequence>
- *         &lt;element name="basic" type="{urn:common_2018_2.platform.webservices.netsuite.com}ChargeSearchBasic" minOccurs="0"/>
- *         &lt;element name="billingAccountJoin" type="{urn:common_2018_2.platform.webservices.netsuite.com}BillingAccountSearchBasic" minOccurs="0"/>
- *         &lt;element name="billingScheduleJoin" type="{urn:common_2018_2.platform.webservices.netsuite.com}BillingScheduleSearchBasic" minOccurs="0"/>
- *         &lt;element name="chargeEmployeeJoin" type="{urn:common_2018_2.platform.webservices.netsuite.com}EmployeeSearchBasic" minOccurs="0"/>
- *         &lt;element name="customerJoin" type="{urn:common_2018_2.platform.webservices.netsuite.com}CustomerSearchBasic" minOccurs="0"/>
- *         &lt;element name="invoiceJoin" type="{urn:common_2018_2.platform.webservices.netsuite.com}TransactionSearchBasic" minOccurs="0"/>
- *         &lt;element name="itemJoin" type="{urn:common_2018_2.platform.webservices.netsuite.com}ItemSearchBasic" minOccurs="0"/>
- *         &lt;element name="jobJoin" type="{urn:common_2018_2.platform.webservices.netsuite.com}JobSearchBasic" minOccurs="0"/>
- *         &lt;element name="salesOrderJoin" type="{urn:common_2018_2.platform.webservices.netsuite.com}TransactionSearchBasic" minOccurs="0"/>
- *         &lt;element name="timeJoin" type="{urn:common_2018_2.platform.webservices.netsuite.com}TimeBillSearchBasic" minOccurs="0"/>
- *         &lt;element name="transactionJoin" type="{urn:common_2018_2.platform.webservices.netsuite.com}TransactionSearchBasic" minOccurs="0"/>
- *         &lt;element name="userJoin" type="{urn:common_2018_2.platform.webservices.netsuite.com}EmployeeSearchBasic" minOccurs="0"/>
- *         &lt;element name="customSearchJoin" type="{urn:common_2018_2.platform.webservices.netsuite.com}CustomSearchJoin" maxOccurs="unbounded" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/extension>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
- */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "ChargeSearch", propOrder = {
-    "basic",
-    "billingAccountJoin",
-    "billingScheduleJoin",
-    "chargeEmployeeJoin",
-    "customerJoin",
-    "invoiceJoin",
-    "itemJoin",
-    "jobJoin",
-    "salesOrderJoin",
-    "timeJoin",
-    "transactionJoin",
-    "userJoin",
-    "customSearchJoin"
-})
-public class ChargeSearch
-    extends SearchRecord
-{
+    private com.netsuite.webservices.platform.common_2018_2.BillingScheduleSearchBasic billingScheduleJoin;
 
-    protected ChargeSearchBasic basic;
-    protected BillingAccountSearchBasic billingAccountJoin;
-    protected BillingScheduleSearchBasic billingScheduleJoin;
-    protected EmployeeSearchBasic chargeEmployeeJoin;
-    protected CustomerSearchBasic customerJoin;
-    protected TransactionSearchBasic invoiceJoin;
-    protected ItemSearchBasic itemJoin;
-    protected JobSearchBasic jobJoin;
-    protected TransactionSearchBasic salesOrderJoin;
-    protected TimeBillSearchBasic timeJoin;
-    protected TransactionSearchBasic transactionJoin;
-    protected EmployeeSearchBasic userJoin;
-    protected List<CustomSearchJoin> customSearchJoin;
+    private com.netsuite.webservices.platform.common_2018_2.EmployeeSearchBasic chargeEmployeeJoin;
+
+    private com.netsuite.webservices.platform.common_2018_2.CustomerSearchBasic customerJoin;
+
+    private com.netsuite.webservices.platform.common_2018_2.TransactionSearchBasic invoiceJoin;
+
+    private com.netsuite.webservices.platform.common_2018_2.ItemSearchBasic itemJoin;
+
+    private com.netsuite.webservices.platform.common_2018_2.JobSearchBasic jobJoin;
+
+    private com.netsuite.webservices.platform.common_2018_2.TransactionSearchBasic salesOrderJoin;
+
+    private com.netsuite.webservices.platform.common_2018_2.TimeBillSearchBasic timeJoin;
+
+    private com.netsuite.webservices.platform.common_2018_2.TransactionSearchBasic transactionJoin;
+
+    private com.netsuite.webservices.platform.common_2018_2.EmployeeSearchBasic userJoin;
+
+    private com.netsuite.webservices.platform.common_2018_2.CustomSearchJoin[] customSearchJoin;
+
+    public ChargeSearch() {
+    }
+
+    public ChargeSearch(
+           com.netsuite.webservices.platform.common_2018_2.ChargeSearchBasic basic,
+           com.netsuite.webservices.platform.common_2018_2.BillingAccountSearchBasic billingAccountJoin,
+           com.netsuite.webservices.platform.common_2018_2.BillingScheduleSearchBasic billingScheduleJoin,
+           com.netsuite.webservices.platform.common_2018_2.EmployeeSearchBasic chargeEmployeeJoin,
+           com.netsuite.webservices.platform.common_2018_2.CustomerSearchBasic customerJoin,
+           com.netsuite.webservices.platform.common_2018_2.TransactionSearchBasic invoiceJoin,
+           com.netsuite.webservices.platform.common_2018_2.ItemSearchBasic itemJoin,
+           com.netsuite.webservices.platform.common_2018_2.JobSearchBasic jobJoin,
+           com.netsuite.webservices.platform.common_2018_2.TransactionSearchBasic salesOrderJoin,
+           com.netsuite.webservices.platform.common_2018_2.TimeBillSearchBasic timeJoin,
+           com.netsuite.webservices.platform.common_2018_2.TransactionSearchBasic transactionJoin,
+           com.netsuite.webservices.platform.common_2018_2.EmployeeSearchBasic userJoin,
+           com.netsuite.webservices.platform.common_2018_2.CustomSearchJoin[] customSearchJoin) {
+        this.basic = basic;
+        this.billingAccountJoin = billingAccountJoin;
+        this.billingScheduleJoin = billingScheduleJoin;
+        this.chargeEmployeeJoin = chargeEmployeeJoin;
+        this.customerJoin = customerJoin;
+        this.invoiceJoin = invoiceJoin;
+        this.itemJoin = itemJoin;
+        this.jobJoin = jobJoin;
+        this.salesOrderJoin = salesOrderJoin;
+        this.timeJoin = timeJoin;
+        this.transactionJoin = transactionJoin;
+        this.userJoin = userJoin;
+        this.customSearchJoin = customSearchJoin;
+    }
+
 
     /**
-     * 获取basic属性的值。
+     * Gets the basic value for this ChargeSearch.
      * 
-     * @return
-     *     possible object is
-     *     {@link ChargeSearchBasic }
-     *     
+     * @return basic
      */
-    public ChargeSearchBasic getBasic() {
+    public com.netsuite.webservices.platform.common_2018_2.ChargeSearchBasic getBasic() {
         return basic;
     }
 
-    /**
-     * 设置basic属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link ChargeSearchBasic }
-     *     
-     */
-    public void setBasic(ChargeSearchBasic value) {
-        this.basic = value;
-    }
 
     /**
-     * 获取billingAccountJoin属性的值。
+     * Sets the basic value for this ChargeSearch.
      * 
-     * @return
-     *     possible object is
-     *     {@link BillingAccountSearchBasic }
-     *     
+     * @param basic
      */
-    public BillingAccountSearchBasic getBillingAccountJoin() {
+    public void setBasic(com.netsuite.webservices.platform.common_2018_2.ChargeSearchBasic basic) {
+        this.basic = basic;
+    }
+
+
+    /**
+     * Gets the billingAccountJoin value for this ChargeSearch.
+     * 
+     * @return billingAccountJoin
+     */
+    public com.netsuite.webservices.platform.common_2018_2.BillingAccountSearchBasic getBillingAccountJoin() {
         return billingAccountJoin;
     }
 
-    /**
-     * 设置billingAccountJoin属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link BillingAccountSearchBasic }
-     *     
-     */
-    public void setBillingAccountJoin(BillingAccountSearchBasic value) {
-        this.billingAccountJoin = value;
-    }
 
     /**
-     * 获取billingScheduleJoin属性的值。
+     * Sets the billingAccountJoin value for this ChargeSearch.
      * 
-     * @return
-     *     possible object is
-     *     {@link BillingScheduleSearchBasic }
-     *     
+     * @param billingAccountJoin
      */
-    public BillingScheduleSearchBasic getBillingScheduleJoin() {
+    public void setBillingAccountJoin(com.netsuite.webservices.platform.common_2018_2.BillingAccountSearchBasic billingAccountJoin) {
+        this.billingAccountJoin = billingAccountJoin;
+    }
+
+
+    /**
+     * Gets the billingScheduleJoin value for this ChargeSearch.
+     * 
+     * @return billingScheduleJoin
+     */
+    public com.netsuite.webservices.platform.common_2018_2.BillingScheduleSearchBasic getBillingScheduleJoin() {
         return billingScheduleJoin;
     }
 
-    /**
-     * 设置billingScheduleJoin属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link BillingScheduleSearchBasic }
-     *     
-     */
-    public void setBillingScheduleJoin(BillingScheduleSearchBasic value) {
-        this.billingScheduleJoin = value;
-    }
 
     /**
-     * 获取chargeEmployeeJoin属性的值。
+     * Sets the billingScheduleJoin value for this ChargeSearch.
      * 
-     * @return
-     *     possible object is
-     *     {@link EmployeeSearchBasic }
-     *     
+     * @param billingScheduleJoin
      */
-    public EmployeeSearchBasic getChargeEmployeeJoin() {
+    public void setBillingScheduleJoin(com.netsuite.webservices.platform.common_2018_2.BillingScheduleSearchBasic billingScheduleJoin) {
+        this.billingScheduleJoin = billingScheduleJoin;
+    }
+
+
+    /**
+     * Gets the chargeEmployeeJoin value for this ChargeSearch.
+     * 
+     * @return chargeEmployeeJoin
+     */
+    public com.netsuite.webservices.platform.common_2018_2.EmployeeSearchBasic getChargeEmployeeJoin() {
         return chargeEmployeeJoin;
     }
 
-    /**
-     * 设置chargeEmployeeJoin属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link EmployeeSearchBasic }
-     *     
-     */
-    public void setChargeEmployeeJoin(EmployeeSearchBasic value) {
-        this.chargeEmployeeJoin = value;
-    }
 
     /**
-     * 获取customerJoin属性的值。
+     * Sets the chargeEmployeeJoin value for this ChargeSearch.
      * 
-     * @return
-     *     possible object is
-     *     {@link CustomerSearchBasic }
-     *     
+     * @param chargeEmployeeJoin
      */
-    public CustomerSearchBasic getCustomerJoin() {
+    public void setChargeEmployeeJoin(com.netsuite.webservices.platform.common_2018_2.EmployeeSearchBasic chargeEmployeeJoin) {
+        this.chargeEmployeeJoin = chargeEmployeeJoin;
+    }
+
+
+    /**
+     * Gets the customerJoin value for this ChargeSearch.
+     * 
+     * @return customerJoin
+     */
+    public com.netsuite.webservices.platform.common_2018_2.CustomerSearchBasic getCustomerJoin() {
         return customerJoin;
     }
 
-    /**
-     * 设置customerJoin属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link CustomerSearchBasic }
-     *     
-     */
-    public void setCustomerJoin(CustomerSearchBasic value) {
-        this.customerJoin = value;
-    }
 
     /**
-     * 获取invoiceJoin属性的值。
+     * Sets the customerJoin value for this ChargeSearch.
      * 
-     * @return
-     *     possible object is
-     *     {@link TransactionSearchBasic }
-     *     
+     * @param customerJoin
      */
-    public TransactionSearchBasic getInvoiceJoin() {
+    public void setCustomerJoin(com.netsuite.webservices.platform.common_2018_2.CustomerSearchBasic customerJoin) {
+        this.customerJoin = customerJoin;
+    }
+
+
+    /**
+     * Gets the invoiceJoin value for this ChargeSearch.
+     * 
+     * @return invoiceJoin
+     */
+    public com.netsuite.webservices.platform.common_2018_2.TransactionSearchBasic getInvoiceJoin() {
         return invoiceJoin;
     }
 
-    /**
-     * 设置invoiceJoin属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link TransactionSearchBasic }
-     *     
-     */
-    public void setInvoiceJoin(TransactionSearchBasic value) {
-        this.invoiceJoin = value;
-    }
 
     /**
-     * 获取itemJoin属性的值。
+     * Sets the invoiceJoin value for this ChargeSearch.
      * 
-     * @return
-     *     possible object is
-     *     {@link ItemSearchBasic }
-     *     
+     * @param invoiceJoin
      */
-    public ItemSearchBasic getItemJoin() {
+    public void setInvoiceJoin(com.netsuite.webservices.platform.common_2018_2.TransactionSearchBasic invoiceJoin) {
+        this.invoiceJoin = invoiceJoin;
+    }
+
+
+    /**
+     * Gets the itemJoin value for this ChargeSearch.
+     * 
+     * @return itemJoin
+     */
+    public com.netsuite.webservices.platform.common_2018_2.ItemSearchBasic getItemJoin() {
         return itemJoin;
     }
 
-    /**
-     * 设置itemJoin属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link ItemSearchBasic }
-     *     
-     */
-    public void setItemJoin(ItemSearchBasic value) {
-        this.itemJoin = value;
-    }
 
     /**
-     * 获取jobJoin属性的值。
+     * Sets the itemJoin value for this ChargeSearch.
      * 
-     * @return
-     *     possible object is
-     *     {@link JobSearchBasic }
-     *     
+     * @param itemJoin
      */
-    public JobSearchBasic getJobJoin() {
+    public void setItemJoin(com.netsuite.webservices.platform.common_2018_2.ItemSearchBasic itemJoin) {
+        this.itemJoin = itemJoin;
+    }
+
+
+    /**
+     * Gets the jobJoin value for this ChargeSearch.
+     * 
+     * @return jobJoin
+     */
+    public com.netsuite.webservices.platform.common_2018_2.JobSearchBasic getJobJoin() {
         return jobJoin;
     }
 
-    /**
-     * 设置jobJoin属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link JobSearchBasic }
-     *     
-     */
-    public void setJobJoin(JobSearchBasic value) {
-        this.jobJoin = value;
-    }
 
     /**
-     * 获取salesOrderJoin属性的值。
+     * Sets the jobJoin value for this ChargeSearch.
      * 
-     * @return
-     *     possible object is
-     *     {@link TransactionSearchBasic }
-     *     
+     * @param jobJoin
      */
-    public TransactionSearchBasic getSalesOrderJoin() {
+    public void setJobJoin(com.netsuite.webservices.platform.common_2018_2.JobSearchBasic jobJoin) {
+        this.jobJoin = jobJoin;
+    }
+
+
+    /**
+     * Gets the salesOrderJoin value for this ChargeSearch.
+     * 
+     * @return salesOrderJoin
+     */
+    public com.netsuite.webservices.platform.common_2018_2.TransactionSearchBasic getSalesOrderJoin() {
         return salesOrderJoin;
     }
 
-    /**
-     * 设置salesOrderJoin属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link TransactionSearchBasic }
-     *     
-     */
-    public void setSalesOrderJoin(TransactionSearchBasic value) {
-        this.salesOrderJoin = value;
-    }
 
     /**
-     * 获取timeJoin属性的值。
+     * Sets the salesOrderJoin value for this ChargeSearch.
      * 
-     * @return
-     *     possible object is
-     *     {@link TimeBillSearchBasic }
-     *     
+     * @param salesOrderJoin
      */
-    public TimeBillSearchBasic getTimeJoin() {
+    public void setSalesOrderJoin(com.netsuite.webservices.platform.common_2018_2.TransactionSearchBasic salesOrderJoin) {
+        this.salesOrderJoin = salesOrderJoin;
+    }
+
+
+    /**
+     * Gets the timeJoin value for this ChargeSearch.
+     * 
+     * @return timeJoin
+     */
+    public com.netsuite.webservices.platform.common_2018_2.TimeBillSearchBasic getTimeJoin() {
         return timeJoin;
     }
 
-    /**
-     * 设置timeJoin属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link TimeBillSearchBasic }
-     *     
-     */
-    public void setTimeJoin(TimeBillSearchBasic value) {
-        this.timeJoin = value;
-    }
 
     /**
-     * 获取transactionJoin属性的值。
+     * Sets the timeJoin value for this ChargeSearch.
      * 
-     * @return
-     *     possible object is
-     *     {@link TransactionSearchBasic }
-     *     
+     * @param timeJoin
      */
-    public TransactionSearchBasic getTransactionJoin() {
+    public void setTimeJoin(com.netsuite.webservices.platform.common_2018_2.TimeBillSearchBasic timeJoin) {
+        this.timeJoin = timeJoin;
+    }
+
+
+    /**
+     * Gets the transactionJoin value for this ChargeSearch.
+     * 
+     * @return transactionJoin
+     */
+    public com.netsuite.webservices.platform.common_2018_2.TransactionSearchBasic getTransactionJoin() {
         return transactionJoin;
     }
 
-    /**
-     * 设置transactionJoin属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link TransactionSearchBasic }
-     *     
-     */
-    public void setTransactionJoin(TransactionSearchBasic value) {
-        this.transactionJoin = value;
-    }
 
     /**
-     * 获取userJoin属性的值。
+     * Sets the transactionJoin value for this ChargeSearch.
      * 
-     * @return
-     *     possible object is
-     *     {@link EmployeeSearchBasic }
-     *     
+     * @param transactionJoin
      */
-    public EmployeeSearchBasic getUserJoin() {
+    public void setTransactionJoin(com.netsuite.webservices.platform.common_2018_2.TransactionSearchBasic transactionJoin) {
+        this.transactionJoin = transactionJoin;
+    }
+
+
+    /**
+     * Gets the userJoin value for this ChargeSearch.
+     * 
+     * @return userJoin
+     */
+    public com.netsuite.webservices.platform.common_2018_2.EmployeeSearchBasic getUserJoin() {
         return userJoin;
     }
 
+
     /**
-     * 设置userJoin属性的值。
+     * Sets the userJoin value for this ChargeSearch.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link EmployeeSearchBasic }
-     *     
+     * @param userJoin
      */
-    public void setUserJoin(EmployeeSearchBasic value) {
-        this.userJoin = value;
+    public void setUserJoin(com.netsuite.webservices.platform.common_2018_2.EmployeeSearchBasic userJoin) {
+        this.userJoin = userJoin;
+    }
+
+
+    /**
+     * Gets the customSearchJoin value for this ChargeSearch.
+     * 
+     * @return customSearchJoin
+     */
+    public com.netsuite.webservices.platform.common_2018_2.CustomSearchJoin[] getCustomSearchJoin() {
+        return customSearchJoin;
+    }
+
+
+    /**
+     * Sets the customSearchJoin value for this ChargeSearch.
+     * 
+     * @param customSearchJoin
+     */
+    public void setCustomSearchJoin(com.netsuite.webservices.platform.common_2018_2.CustomSearchJoin[] customSearchJoin) {
+        this.customSearchJoin = customSearchJoin;
+    }
+
+    public com.netsuite.webservices.platform.common_2018_2.CustomSearchJoin getCustomSearchJoin(int i) {
+        return this.customSearchJoin[i];
+    }
+
+    public void setCustomSearchJoin(int i, com.netsuite.webservices.platform.common_2018_2.CustomSearchJoin _value) {
+        this.customSearchJoin[i] = _value;
+    }
+
+    private java.lang.Object __equalsCalc = null;
+    public synchronized boolean equals(java.lang.Object obj) {
+        if (!(obj instanceof ChargeSearch)) return false;
+        ChargeSearch other = (ChargeSearch) obj;
+        if (obj == null) return false;
+        if (this == obj) return true;
+        if (__equalsCalc != null) {
+            return (__equalsCalc == obj);
+        }
+        __equalsCalc = obj;
+        boolean _equals;
+        _equals = super.equals(obj) && 
+            ((this.basic==null && other.getBasic()==null) || 
+             (this.basic!=null &&
+              this.basic.equals(other.getBasic()))) &&
+            ((this.billingAccountJoin==null && other.getBillingAccountJoin()==null) || 
+             (this.billingAccountJoin!=null &&
+              this.billingAccountJoin.equals(other.getBillingAccountJoin()))) &&
+            ((this.billingScheduleJoin==null && other.getBillingScheduleJoin()==null) || 
+             (this.billingScheduleJoin!=null &&
+              this.billingScheduleJoin.equals(other.getBillingScheduleJoin()))) &&
+            ((this.chargeEmployeeJoin==null && other.getChargeEmployeeJoin()==null) || 
+             (this.chargeEmployeeJoin!=null &&
+              this.chargeEmployeeJoin.equals(other.getChargeEmployeeJoin()))) &&
+            ((this.customerJoin==null && other.getCustomerJoin()==null) || 
+             (this.customerJoin!=null &&
+              this.customerJoin.equals(other.getCustomerJoin()))) &&
+            ((this.invoiceJoin==null && other.getInvoiceJoin()==null) || 
+             (this.invoiceJoin!=null &&
+              this.invoiceJoin.equals(other.getInvoiceJoin()))) &&
+            ((this.itemJoin==null && other.getItemJoin()==null) || 
+             (this.itemJoin!=null &&
+              this.itemJoin.equals(other.getItemJoin()))) &&
+            ((this.jobJoin==null && other.getJobJoin()==null) || 
+             (this.jobJoin!=null &&
+              this.jobJoin.equals(other.getJobJoin()))) &&
+            ((this.salesOrderJoin==null && other.getSalesOrderJoin()==null) || 
+             (this.salesOrderJoin!=null &&
+              this.salesOrderJoin.equals(other.getSalesOrderJoin()))) &&
+            ((this.timeJoin==null && other.getTimeJoin()==null) || 
+             (this.timeJoin!=null &&
+              this.timeJoin.equals(other.getTimeJoin()))) &&
+            ((this.transactionJoin==null && other.getTransactionJoin()==null) || 
+             (this.transactionJoin!=null &&
+              this.transactionJoin.equals(other.getTransactionJoin()))) &&
+            ((this.userJoin==null && other.getUserJoin()==null) || 
+             (this.userJoin!=null &&
+              this.userJoin.equals(other.getUserJoin()))) &&
+            ((this.customSearchJoin==null && other.getCustomSearchJoin()==null) || 
+             (this.customSearchJoin!=null &&
+              java.util.Arrays.equals(this.customSearchJoin, other.getCustomSearchJoin())));
+        __equalsCalc = null;
+        return _equals;
+    }
+
+    private boolean __hashCodeCalc = false;
+    public synchronized int hashCode() {
+        if (__hashCodeCalc) {
+            return 0;
+        }
+        __hashCodeCalc = true;
+        int _hashCode = super.hashCode();
+        if (getBasic() != null) {
+            _hashCode += getBasic().hashCode();
+        }
+        if (getBillingAccountJoin() != null) {
+            _hashCode += getBillingAccountJoin().hashCode();
+        }
+        if (getBillingScheduleJoin() != null) {
+            _hashCode += getBillingScheduleJoin().hashCode();
+        }
+        if (getChargeEmployeeJoin() != null) {
+            _hashCode += getChargeEmployeeJoin().hashCode();
+        }
+        if (getCustomerJoin() != null) {
+            _hashCode += getCustomerJoin().hashCode();
+        }
+        if (getInvoiceJoin() != null) {
+            _hashCode += getInvoiceJoin().hashCode();
+        }
+        if (getItemJoin() != null) {
+            _hashCode += getItemJoin().hashCode();
+        }
+        if (getJobJoin() != null) {
+            _hashCode += getJobJoin().hashCode();
+        }
+        if (getSalesOrderJoin() != null) {
+            _hashCode += getSalesOrderJoin().hashCode();
+        }
+        if (getTimeJoin() != null) {
+            _hashCode += getTimeJoin().hashCode();
+        }
+        if (getTransactionJoin() != null) {
+            _hashCode += getTransactionJoin().hashCode();
+        }
+        if (getUserJoin() != null) {
+            _hashCode += getUserJoin().hashCode();
+        }
+        if (getCustomSearchJoin() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getCustomSearchJoin());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getCustomSearchJoin(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        __hashCodeCalc = false;
+        return _hashCode;
+    }
+
+    // Type metadata
+    private static org.apache.axis.description.TypeDesc typeDesc =
+        new org.apache.axis.description.TypeDesc(ChargeSearch.class, true);
+
+    static {
+        typeDesc.setXmlType(new javax.xml.namespace.QName("urn:customers_2018_2.transactions.webservices.netsuite.com", "ChargeSearch"));
+        org.apache.axis.description.ElementDesc elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("basic");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:customers_2018_2.transactions.webservices.netsuite.com", "basic"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "ChargeSearchBasic"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("billingAccountJoin");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:customers_2018_2.transactions.webservices.netsuite.com", "billingAccountJoin"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "BillingAccountSearchBasic"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("billingScheduleJoin");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:customers_2018_2.transactions.webservices.netsuite.com", "billingScheduleJoin"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "BillingScheduleSearchBasic"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("chargeEmployeeJoin");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:customers_2018_2.transactions.webservices.netsuite.com", "chargeEmployeeJoin"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "EmployeeSearchBasic"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("customerJoin");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:customers_2018_2.transactions.webservices.netsuite.com", "customerJoin"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "CustomerSearchBasic"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("invoiceJoin");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:customers_2018_2.transactions.webservices.netsuite.com", "invoiceJoin"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "TransactionSearchBasic"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("itemJoin");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:customers_2018_2.transactions.webservices.netsuite.com", "itemJoin"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "ItemSearchBasic"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("jobJoin");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:customers_2018_2.transactions.webservices.netsuite.com", "jobJoin"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "JobSearchBasic"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("salesOrderJoin");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:customers_2018_2.transactions.webservices.netsuite.com", "salesOrderJoin"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "TransactionSearchBasic"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("timeJoin");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:customers_2018_2.transactions.webservices.netsuite.com", "timeJoin"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "TimeBillSearchBasic"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("transactionJoin");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:customers_2018_2.transactions.webservices.netsuite.com", "transactionJoin"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "TransactionSearchBasic"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("userJoin");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:customers_2018_2.transactions.webservices.netsuite.com", "userJoin"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "EmployeeSearchBasic"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("customSearchJoin");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:customers_2018_2.transactions.webservices.netsuite.com", "customSearchJoin"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "CustomSearchJoin"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
     }
 
     /**
-     * Gets the value of the customSearchJoin property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the customSearchJoin property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getCustomSearchJoin().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link CustomSearchJoin }
-     * 
-     * 
+     * Return type metadata object
      */
-    public List<CustomSearchJoin> getCustomSearchJoin() {
-        if (customSearchJoin == null) {
-            customSearchJoin = new ArrayList<CustomSearchJoin>();
-        }
-        return this.customSearchJoin;
+    public static org.apache.axis.description.TypeDesc getTypeDesc() {
+        return typeDesc;
+    }
+
+    /**
+     * Get Custom Serializer
+     */
+    public static org.apache.axis.encoding.Serializer getSerializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanSerializer(
+            _javaType, _xmlType, typeDesc);
+    }
+
+    /**
+     * Get Custom Deserializer
+     */
+    public static org.apache.axis.encoding.Deserializer getDeserializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanDeserializer(
+            _javaType, _xmlType, typeDesc);
     }
 
 }

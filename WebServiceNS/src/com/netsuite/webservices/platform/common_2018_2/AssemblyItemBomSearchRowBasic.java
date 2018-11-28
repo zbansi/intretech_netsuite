@@ -1,170 +1,299 @@
+/**
+ * AssemblyItemBomSearchRowBasic.java
+ *
+ * This file was auto-generated from WSDL
+ * by the Apache Axis 1.4 Jul 28, 2010 (04:07:04 PDT) WSDL2Java emitter.
+ */
 
 package com.netsuite.webservices.platform.common_2018_2;
 
-import java.util.ArrayList;
-import java.util.List;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlType;
-import com.netsuite.webservices.platform.core_2018_2.SearchColumnBooleanField;
-import com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField;
-import com.netsuite.webservices.platform.core_2018_2.SearchRowBasic;
+public class AssemblyItemBomSearchRowBasic  extends com.netsuite.webservices.platform.core_2018_2.SearchRowBasic  implements java.io.Serializable {
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] assembly;
 
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] billOfMaterials;
 
-/**
- * <p>AssemblyItemBomSearchRowBasic complex type的 Java 类。
- * 
- * <p>以下模式片段指定包含在此类中的预期内容。
- * 
- * <pre>
- * &lt;complexType name="AssemblyItemBomSearchRowBasic">
- *   &lt;complexContent>
- *     &lt;extension base="{urn:core_2018_2.platform.webservices.netsuite.com}SearchRowBasic">
- *       &lt;sequence>
- *         &lt;element name="assembly" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnSelectField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="billOfMaterials" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnSelectField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="default" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnBooleanField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="locations" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnSelectField" maxOccurs="unbounded" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/extension>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
- */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "AssemblyItemBomSearchRowBasic", propOrder = {
-    "assembly",
-    "billOfMaterials",
-    "_default",
-    "locations"
-})
-public class AssemblyItemBomSearchRowBasic
-    extends SearchRowBasic
-{
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnBooleanField[] _default;
 
-    protected List<SearchColumnSelectField> assembly;
-    protected List<SearchColumnSelectField> billOfMaterials;
-    @XmlElement(name = "default")
-    protected List<SearchColumnBooleanField> _default;
-    protected List<SearchColumnSelectField> locations;
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] locations;
+
+    public AssemblyItemBomSearchRowBasic() {
+    }
+
+    public AssemblyItemBomSearchRowBasic(
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] assembly,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] billOfMaterials,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnBooleanField[] _default,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] locations) {
+        this.assembly = assembly;
+        this.billOfMaterials = billOfMaterials;
+        this._default = _default;
+        this.locations = locations;
+    }
+
 
     /**
-     * Gets the value of the assembly property.
+     * Gets the assembly value for this AssemblyItemBomSearchRowBasic.
      * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the assembly property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getAssembly().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnSelectField }
-     * 
-     * 
+     * @return assembly
      */
-    public List<SearchColumnSelectField> getAssembly() {
-        if (assembly == null) {
-            assembly = new ArrayList<SearchColumnSelectField>();
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] getAssembly() {
+        return assembly;
+    }
+
+
+    /**
+     * Sets the assembly value for this AssemblyItemBomSearchRowBasic.
+     * 
+     * @param assembly
+     */
+    public void setAssembly(com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] assembly) {
+        this.assembly = assembly;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField getAssembly(int i) {
+        return this.assembly[i];
+    }
+
+    public void setAssembly(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField _value) {
+        this.assembly[i] = _value;
+    }
+
+
+    /**
+     * Gets the billOfMaterials value for this AssemblyItemBomSearchRowBasic.
+     * 
+     * @return billOfMaterials
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] getBillOfMaterials() {
+        return billOfMaterials;
+    }
+
+
+    /**
+     * Sets the billOfMaterials value for this AssemblyItemBomSearchRowBasic.
+     * 
+     * @param billOfMaterials
+     */
+    public void setBillOfMaterials(com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] billOfMaterials) {
+        this.billOfMaterials = billOfMaterials;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField getBillOfMaterials(int i) {
+        return this.billOfMaterials[i];
+    }
+
+    public void setBillOfMaterials(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField _value) {
+        this.billOfMaterials[i] = _value;
+    }
+
+
+    /**
+     * Gets the _default value for this AssemblyItemBomSearchRowBasic.
+     * 
+     * @return _default
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnBooleanField[] get_default() {
+        return _default;
+    }
+
+
+    /**
+     * Sets the _default value for this AssemblyItemBomSearchRowBasic.
+     * 
+     * @param _default
+     */
+    public void set_default(com.netsuite.webservices.platform.core_2018_2.SearchColumnBooleanField[] _default) {
+        this._default = _default;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnBooleanField get_default(int i) {
+        return this._default[i];
+    }
+
+    public void set_default(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnBooleanField _value) {
+        this._default[i] = _value;
+    }
+
+
+    /**
+     * Gets the locations value for this AssemblyItemBomSearchRowBasic.
+     * 
+     * @return locations
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] getLocations() {
+        return locations;
+    }
+
+
+    /**
+     * Sets the locations value for this AssemblyItemBomSearchRowBasic.
+     * 
+     * @param locations
+     */
+    public void setLocations(com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] locations) {
+        this.locations = locations;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField getLocations(int i) {
+        return this.locations[i];
+    }
+
+    public void setLocations(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField _value) {
+        this.locations[i] = _value;
+    }
+
+    private java.lang.Object __equalsCalc = null;
+    public synchronized boolean equals(java.lang.Object obj) {
+        if (!(obj instanceof AssemblyItemBomSearchRowBasic)) return false;
+        AssemblyItemBomSearchRowBasic other = (AssemblyItemBomSearchRowBasic) obj;
+        if (obj == null) return false;
+        if (this == obj) return true;
+        if (__equalsCalc != null) {
+            return (__equalsCalc == obj);
         }
-        return this.assembly;
+        __equalsCalc = obj;
+        boolean _equals;
+        _equals = super.equals(obj) && 
+            ((this.assembly==null && other.getAssembly()==null) || 
+             (this.assembly!=null &&
+              java.util.Arrays.equals(this.assembly, other.getAssembly()))) &&
+            ((this.billOfMaterials==null && other.getBillOfMaterials()==null) || 
+             (this.billOfMaterials!=null &&
+              java.util.Arrays.equals(this.billOfMaterials, other.getBillOfMaterials()))) &&
+            ((this._default==null && other.get_default()==null) || 
+             (this._default!=null &&
+              java.util.Arrays.equals(this._default, other.get_default()))) &&
+            ((this.locations==null && other.getLocations()==null) || 
+             (this.locations!=null &&
+              java.util.Arrays.equals(this.locations, other.getLocations())));
+        __equalsCalc = null;
+        return _equals;
+    }
+
+    private boolean __hashCodeCalc = false;
+    public synchronized int hashCode() {
+        if (__hashCodeCalc) {
+            return 0;
+        }
+        __hashCodeCalc = true;
+        int _hashCode = super.hashCode();
+        if (getAssembly() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getAssembly());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getAssembly(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getBillOfMaterials() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getBillOfMaterials());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getBillOfMaterials(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (get_default() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(get_default());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(get_default(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getLocations() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getLocations());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getLocations(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        __hashCodeCalc = false;
+        return _hashCode;
+    }
+
+    // Type metadata
+    private static org.apache.axis.description.TypeDesc typeDesc =
+        new org.apache.axis.description.TypeDesc(AssemblyItemBomSearchRowBasic.class, true);
+
+    static {
+        typeDesc.setXmlType(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "AssemblyItemBomSearchRowBasic"));
+        org.apache.axis.description.ElementDesc elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("assembly");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "assembly"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnSelectField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("billOfMaterials");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "billOfMaterials"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnSelectField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("_default");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "default"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnBooleanField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("locations");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "locations"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnSelectField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
     }
 
     /**
-     * Gets the value of the billOfMaterials property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the billOfMaterials property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getBillOfMaterials().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnSelectField }
-     * 
-     * 
+     * Return type metadata object
      */
-    public List<SearchColumnSelectField> getBillOfMaterials() {
-        if (billOfMaterials == null) {
-            billOfMaterials = new ArrayList<SearchColumnSelectField>();
-        }
-        return this.billOfMaterials;
+    public static org.apache.axis.description.TypeDesc getTypeDesc() {
+        return typeDesc;
     }
 
     /**
-     * Gets the value of the default property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the default property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getDefault().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnBooleanField }
-     * 
-     * 
+     * Get Custom Serializer
      */
-    public List<SearchColumnBooleanField> getDefault() {
-        if (_default == null) {
-            _default = new ArrayList<SearchColumnBooleanField>();
-        }
-        return this._default;
+    public static org.apache.axis.encoding.Serializer getSerializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanSerializer(
+            _javaType, _xmlType, typeDesc);
     }
 
     /**
-     * Gets the value of the locations property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the locations property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getLocations().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnSelectField }
-     * 
-     * 
+     * Get Custom Deserializer
      */
-    public List<SearchColumnSelectField> getLocations() {
-        if (locations == null) {
-            locations = new ArrayList<SearchColumnSelectField>();
-        }
-        return this.locations;
+    public static org.apache.axis.encoding.Deserializer getDeserializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanDeserializer(
+            _javaType, _xmlType, typeDesc);
     }
 
 }

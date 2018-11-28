@@ -1,609 +1,868 @@
+/**
+ * Message.java
+ *
+ * This file was auto-generated from WSDL
+ * by the Apache Axis 1.4 Jul 28, 2010 (04:07:04 PDT) WSDL2Java emitter.
+ */
 
 package com.netsuite.webservices.general.communication_2018_2;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlAttribute;
-import javax.xml.bind.annotation.XmlSchemaType;
-import javax.xml.bind.annotation.XmlType;
-import javax.xml.datatype.XMLGregorianCalendar;
-import com.netsuite.webservices.platform.core_2018_2.Record;
-import com.netsuite.webservices.platform.core_2018_2.RecordRef;
+public class Message  extends com.netsuite.webservices.platform.core_2018_2.Record  implements java.io.Serializable {
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef author;
 
+    private java.lang.String authorEmail;
 
-/**
- * <p>Message complex type的 Java 类。
- * 
- * <p>以下模式片段指定包含在此类中的预期内容。
- * 
- * <pre>
- * &lt;complexType name="Message">
- *   &lt;complexContent>
- *     &lt;extension base="{urn:core_2018_2.platform.webservices.netsuite.com}Record">
- *       &lt;sequence>
- *         &lt;element name="author" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="authorEmail" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="recipient" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="recipientEmail" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="cc" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="bcc" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="messageDate" type="{http://www.w3.org/2001/XMLSchema}dateTime" minOccurs="0"/>
- *         &lt;element name="recordName" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="recordTypeName" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="subject" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="message" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="emailed" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         &lt;element name="activity" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="compressAttachments" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         &lt;element name="incoming" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         &lt;element name="lastModifiedDate" type="{http://www.w3.org/2001/XMLSchema}dateTime" minOccurs="0"/>
- *         &lt;element name="transaction" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="mediaItemList" type="{urn:communication_2018_2.general.webservices.netsuite.com}MessageMediaItemList" minOccurs="0"/>
- *         &lt;element name="dateTime" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *       &lt;/sequence>
- *       &lt;attribute name="internalId" type="{http://www.w3.org/2001/XMLSchema}string" />
- *       &lt;attribute name="externalId" type="{http://www.w3.org/2001/XMLSchema}string" />
- *     &lt;/extension>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
- */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "Message", propOrder = {
-    "author",
-    "authorEmail",
-    "recipient",
-    "recipientEmail",
-    "cc",
-    "bcc",
-    "messageDate",
-    "recordName",
-    "recordTypeName",
-    "subject",
-    "message",
-    "emailed",
-    "activity",
-    "compressAttachments",
-    "incoming",
-    "lastModifiedDate",
-    "transaction",
-    "mediaItemList",
-    "dateTime"
-})
-public class Message
-    extends Record
-{
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef recipient;
 
-    protected RecordRef author;
-    protected String authorEmail;
-    protected RecordRef recipient;
-    protected String recipientEmail;
-    protected String cc;
-    protected String bcc;
-    @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar messageDate;
-    protected String recordName;
-    protected String recordTypeName;
-    protected String subject;
-    protected String message;
-    protected Boolean emailed;
-    protected RecordRef activity;
-    protected Boolean compressAttachments;
-    protected Boolean incoming;
-    @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar lastModifiedDate;
-    protected RecordRef transaction;
-    protected MessageMediaItemList mediaItemList;
-    protected String dateTime;
-    @XmlAttribute(name = "internalId")
-    protected String internalId;
-    @XmlAttribute(name = "externalId")
-    protected String externalId;
+    private java.lang.String recipientEmail;
+
+    private java.lang.String cc;
+
+    private java.lang.String bcc;
+
+    private java.util.Calendar messageDate;
+
+    private java.lang.String recordName;
+
+    private java.lang.String recordTypeName;
+
+    private java.lang.String subject;
+
+    private java.lang.String message;
+
+    private java.lang.Boolean emailed;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef activity;
+
+    private java.lang.Boolean compressAttachments;
+
+    private java.lang.Boolean incoming;
+
+    private java.util.Calendar lastModifiedDate;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef transaction;
+
+    private com.netsuite.webservices.documents.filecabinet_2018_2.File[] mediaItemList;
+
+    private java.lang.String dateTime;
+
+    private java.lang.String internalId;  // attribute
+
+    private java.lang.String externalId;  // attribute
+
+    public Message() {
+    }
+
+    public Message(
+           java.lang.String[] nullFieldList,
+           java.lang.String internalId,
+           java.lang.String externalId,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef author,
+           java.lang.String authorEmail,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef recipient,
+           java.lang.String recipientEmail,
+           java.lang.String cc,
+           java.lang.String bcc,
+           java.util.Calendar messageDate,
+           java.lang.String recordName,
+           java.lang.String recordTypeName,
+           java.lang.String subject,
+           java.lang.String message,
+           java.lang.Boolean emailed,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef activity,
+           java.lang.Boolean compressAttachments,
+           java.lang.Boolean incoming,
+           java.util.Calendar lastModifiedDate,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef transaction,
+           com.netsuite.webservices.documents.filecabinet_2018_2.File[] mediaItemList,
+           java.lang.String dateTime) {
+        super(
+            nullFieldList);
+        this.internalId = internalId;
+        this.externalId = externalId;
+        this.author = author;
+        this.authorEmail = authorEmail;
+        this.recipient = recipient;
+        this.recipientEmail = recipientEmail;
+        this.cc = cc;
+        this.bcc = bcc;
+        this.messageDate = messageDate;
+        this.recordName = recordName;
+        this.recordTypeName = recordTypeName;
+        this.subject = subject;
+        this.message = message;
+        this.emailed = emailed;
+        this.activity = activity;
+        this.compressAttachments = compressAttachments;
+        this.incoming = incoming;
+        this.lastModifiedDate = lastModifiedDate;
+        this.transaction = transaction;
+        this.mediaItemList = mediaItemList;
+        this.dateTime = dateTime;
+    }
+
 
     /**
-     * 获取author属性的值。
+     * Gets the author value for this Message.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @return author
      */
-    public RecordRef getAuthor() {
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getAuthor() {
         return author;
     }
 
-    /**
-     * 设置author属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setAuthor(RecordRef value) {
-        this.author = value;
-    }
 
     /**
-     * 获取authorEmail属性的值。
+     * Sets the author value for this Message.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param author
      */
-    public String getAuthorEmail() {
+    public void setAuthor(com.netsuite.webservices.platform.core_2018_2.RecordRef author) {
+        this.author = author;
+    }
+
+
+    /**
+     * Gets the authorEmail value for this Message.
+     * 
+     * @return authorEmail
+     */
+    public java.lang.String getAuthorEmail() {
         return authorEmail;
     }
 
-    /**
-     * 设置authorEmail属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setAuthorEmail(String value) {
-        this.authorEmail = value;
-    }
 
     /**
-     * 获取recipient属性的值。
+     * Sets the authorEmail value for this Message.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param authorEmail
      */
-    public RecordRef getRecipient() {
+    public void setAuthorEmail(java.lang.String authorEmail) {
+        this.authorEmail = authorEmail;
+    }
+
+
+    /**
+     * Gets the recipient value for this Message.
+     * 
+     * @return recipient
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getRecipient() {
         return recipient;
     }
 
-    /**
-     * 设置recipient属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setRecipient(RecordRef value) {
-        this.recipient = value;
-    }
 
     /**
-     * 获取recipientEmail属性的值。
+     * Sets the recipient value for this Message.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param recipient
      */
-    public String getRecipientEmail() {
+    public void setRecipient(com.netsuite.webservices.platform.core_2018_2.RecordRef recipient) {
+        this.recipient = recipient;
+    }
+
+
+    /**
+     * Gets the recipientEmail value for this Message.
+     * 
+     * @return recipientEmail
+     */
+    public java.lang.String getRecipientEmail() {
         return recipientEmail;
     }
 
-    /**
-     * 设置recipientEmail属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setRecipientEmail(String value) {
-        this.recipientEmail = value;
-    }
 
     /**
-     * 获取cc属性的值。
+     * Sets the recipientEmail value for this Message.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param recipientEmail
      */
-    public String getCc() {
+    public void setRecipientEmail(java.lang.String recipientEmail) {
+        this.recipientEmail = recipientEmail;
+    }
+
+
+    /**
+     * Gets the cc value for this Message.
+     * 
+     * @return cc
+     */
+    public java.lang.String getCc() {
         return cc;
     }
 
-    /**
-     * 设置cc属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setCc(String value) {
-        this.cc = value;
-    }
 
     /**
-     * 获取bcc属性的值。
+     * Sets the cc value for this Message.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param cc
      */
-    public String getBcc() {
+    public void setCc(java.lang.String cc) {
+        this.cc = cc;
+    }
+
+
+    /**
+     * Gets the bcc value for this Message.
+     * 
+     * @return bcc
+     */
+    public java.lang.String getBcc() {
         return bcc;
     }
 
-    /**
-     * 设置bcc属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setBcc(String value) {
-        this.bcc = value;
-    }
 
     /**
-     * 获取messageDate属性的值。
+     * Sets the bcc value for this Message.
      * 
-     * @return
-     *     possible object is
-     *     {@link XMLGregorianCalendar }
-     *     
+     * @param bcc
      */
-    public XMLGregorianCalendar getMessageDate() {
+    public void setBcc(java.lang.String bcc) {
+        this.bcc = bcc;
+    }
+
+
+    /**
+     * Gets the messageDate value for this Message.
+     * 
+     * @return messageDate
+     */
+    public java.util.Calendar getMessageDate() {
         return messageDate;
     }
 
-    /**
-     * 设置messageDate属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link XMLGregorianCalendar }
-     *     
-     */
-    public void setMessageDate(XMLGregorianCalendar value) {
-        this.messageDate = value;
-    }
 
     /**
-     * 获取recordName属性的值。
+     * Sets the messageDate value for this Message.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param messageDate
      */
-    public String getRecordName() {
+    public void setMessageDate(java.util.Calendar messageDate) {
+        this.messageDate = messageDate;
+    }
+
+
+    /**
+     * Gets the recordName value for this Message.
+     * 
+     * @return recordName
+     */
+    public java.lang.String getRecordName() {
         return recordName;
     }
 
-    /**
-     * 设置recordName属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setRecordName(String value) {
-        this.recordName = value;
-    }
 
     /**
-     * 获取recordTypeName属性的值。
+     * Sets the recordName value for this Message.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param recordName
      */
-    public String getRecordTypeName() {
+    public void setRecordName(java.lang.String recordName) {
+        this.recordName = recordName;
+    }
+
+
+    /**
+     * Gets the recordTypeName value for this Message.
+     * 
+     * @return recordTypeName
+     */
+    public java.lang.String getRecordTypeName() {
         return recordTypeName;
     }
 
-    /**
-     * 设置recordTypeName属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setRecordTypeName(String value) {
-        this.recordTypeName = value;
-    }
 
     /**
-     * 获取subject属性的值。
+     * Sets the recordTypeName value for this Message.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param recordTypeName
      */
-    public String getSubject() {
+    public void setRecordTypeName(java.lang.String recordTypeName) {
+        this.recordTypeName = recordTypeName;
+    }
+
+
+    /**
+     * Gets the subject value for this Message.
+     * 
+     * @return subject
+     */
+    public java.lang.String getSubject() {
         return subject;
     }
 
-    /**
-     * 设置subject属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setSubject(String value) {
-        this.subject = value;
-    }
 
     /**
-     * 获取message属性的值。
+     * Sets the subject value for this Message.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param subject
      */
-    public String getMessage() {
+    public void setSubject(java.lang.String subject) {
+        this.subject = subject;
+    }
+
+
+    /**
+     * Gets the message value for this Message.
+     * 
+     * @return message
+     */
+    public java.lang.String getMessage() {
         return message;
     }
 
-    /**
-     * 设置message属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setMessage(String value) {
-        this.message = value;
-    }
 
     /**
-     * 获取emailed属性的值。
+     * Sets the message value for this Message.
      * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
+     * @param message
      */
-    public Boolean isEmailed() {
+    public void setMessage(java.lang.String message) {
+        this.message = message;
+    }
+
+
+    /**
+     * Gets the emailed value for this Message.
+     * 
+     * @return emailed
+     */
+    public java.lang.Boolean getEmailed() {
         return emailed;
     }
 
-    /**
-     * 设置emailed属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
-     */
-    public void setEmailed(Boolean value) {
-        this.emailed = value;
-    }
 
     /**
-     * 获取activity属性的值。
+     * Sets the emailed value for this Message.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param emailed
      */
-    public RecordRef getActivity() {
+    public void setEmailed(java.lang.Boolean emailed) {
+        this.emailed = emailed;
+    }
+
+
+    /**
+     * Gets the activity value for this Message.
+     * 
+     * @return activity
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getActivity() {
         return activity;
     }
 
-    /**
-     * 设置activity属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setActivity(RecordRef value) {
-        this.activity = value;
-    }
 
     /**
-     * 获取compressAttachments属性的值。
+     * Sets the activity value for this Message.
      * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
+     * @param activity
      */
-    public Boolean isCompressAttachments() {
+    public void setActivity(com.netsuite.webservices.platform.core_2018_2.RecordRef activity) {
+        this.activity = activity;
+    }
+
+
+    /**
+     * Gets the compressAttachments value for this Message.
+     * 
+     * @return compressAttachments
+     */
+    public java.lang.Boolean getCompressAttachments() {
         return compressAttachments;
     }
 
-    /**
-     * 设置compressAttachments属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
-     */
-    public void setCompressAttachments(Boolean value) {
-        this.compressAttachments = value;
-    }
 
     /**
-     * 获取incoming属性的值。
+     * Sets the compressAttachments value for this Message.
      * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
+     * @param compressAttachments
      */
-    public Boolean isIncoming() {
+    public void setCompressAttachments(java.lang.Boolean compressAttachments) {
+        this.compressAttachments = compressAttachments;
+    }
+
+
+    /**
+     * Gets the incoming value for this Message.
+     * 
+     * @return incoming
+     */
+    public java.lang.Boolean getIncoming() {
         return incoming;
     }
 
-    /**
-     * 设置incoming属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
-     */
-    public void setIncoming(Boolean value) {
-        this.incoming = value;
-    }
 
     /**
-     * 获取lastModifiedDate属性的值。
+     * Sets the incoming value for this Message.
      * 
-     * @return
-     *     possible object is
-     *     {@link XMLGregorianCalendar }
-     *     
+     * @param incoming
      */
-    public XMLGregorianCalendar getLastModifiedDate() {
+    public void setIncoming(java.lang.Boolean incoming) {
+        this.incoming = incoming;
+    }
+
+
+    /**
+     * Gets the lastModifiedDate value for this Message.
+     * 
+     * @return lastModifiedDate
+     */
+    public java.util.Calendar getLastModifiedDate() {
         return lastModifiedDate;
     }
 
-    /**
-     * 设置lastModifiedDate属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link XMLGregorianCalendar }
-     *     
-     */
-    public void setLastModifiedDate(XMLGregorianCalendar value) {
-        this.lastModifiedDate = value;
-    }
 
     /**
-     * 获取transaction属性的值。
+     * Sets the lastModifiedDate value for this Message.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param lastModifiedDate
      */
-    public RecordRef getTransaction() {
+    public void setLastModifiedDate(java.util.Calendar lastModifiedDate) {
+        this.lastModifiedDate = lastModifiedDate;
+    }
+
+
+    /**
+     * Gets the transaction value for this Message.
+     * 
+     * @return transaction
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getTransaction() {
         return transaction;
     }
 
-    /**
-     * 设置transaction属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setTransaction(RecordRef value) {
-        this.transaction = value;
-    }
 
     /**
-     * 获取mediaItemList属性的值。
+     * Sets the transaction value for this Message.
      * 
-     * @return
-     *     possible object is
-     *     {@link MessageMediaItemList }
-     *     
+     * @param transaction
      */
-    public MessageMediaItemList getMediaItemList() {
+    public void setTransaction(com.netsuite.webservices.platform.core_2018_2.RecordRef transaction) {
+        this.transaction = transaction;
+    }
+
+
+    /**
+     * Gets the mediaItemList value for this Message.
+     * 
+     * @return mediaItemList
+     */
+    public com.netsuite.webservices.documents.filecabinet_2018_2.File[] getMediaItemList() {
         return mediaItemList;
     }
 
-    /**
-     * 设置mediaItemList属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link MessageMediaItemList }
-     *     
-     */
-    public void setMediaItemList(MessageMediaItemList value) {
-        this.mediaItemList = value;
-    }
 
     /**
-     * 获取dateTime属性的值。
+     * Sets the mediaItemList value for this Message.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param mediaItemList
      */
-    public String getDateTime() {
+    public void setMediaItemList(com.netsuite.webservices.documents.filecabinet_2018_2.File[] mediaItemList) {
+        this.mediaItemList = mediaItemList;
+    }
+
+
+    /**
+     * Gets the dateTime value for this Message.
+     * 
+     * @return dateTime
+     */
+    public java.lang.String getDateTime() {
         return dateTime;
     }
 
-    /**
-     * 设置dateTime属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setDateTime(String value) {
-        this.dateTime = value;
-    }
 
     /**
-     * 获取internalId属性的值。
+     * Sets the dateTime value for this Message.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param dateTime
      */
-    public String getInternalId() {
+    public void setDateTime(java.lang.String dateTime) {
+        this.dateTime = dateTime;
+    }
+
+
+    /**
+     * Gets the internalId value for this Message.
+     * 
+     * @return internalId
+     */
+    public java.lang.String getInternalId() {
         return internalId;
     }
 
-    /**
-     * 设置internalId属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setInternalId(String value) {
-        this.internalId = value;
-    }
 
     /**
-     * 获取externalId属性的值。
+     * Sets the internalId value for this Message.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param internalId
      */
-    public String getExternalId() {
+    public void setInternalId(java.lang.String internalId) {
+        this.internalId = internalId;
+    }
+
+
+    /**
+     * Gets the externalId value for this Message.
+     * 
+     * @return externalId
+     */
+    public java.lang.String getExternalId() {
         return externalId;
     }
 
+
     /**
-     * 设置externalId属性的值。
+     * Sets the externalId value for this Message.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     * @param externalId
      */
-    public void setExternalId(String value) {
-        this.externalId = value;
+    public void setExternalId(java.lang.String externalId) {
+        this.externalId = externalId;
+    }
+
+    private java.lang.Object __equalsCalc = null;
+    public synchronized boolean equals(java.lang.Object obj) {
+        if (!(obj instanceof Message)) return false;
+        Message other = (Message) obj;
+        if (obj == null) return false;
+        if (this == obj) return true;
+        if (__equalsCalc != null) {
+            return (__equalsCalc == obj);
+        }
+        __equalsCalc = obj;
+        boolean _equals;
+        _equals = super.equals(obj) && 
+            ((this.author==null && other.getAuthor()==null) || 
+             (this.author!=null &&
+              this.author.equals(other.getAuthor()))) &&
+            ((this.authorEmail==null && other.getAuthorEmail()==null) || 
+             (this.authorEmail!=null &&
+              this.authorEmail.equals(other.getAuthorEmail()))) &&
+            ((this.recipient==null && other.getRecipient()==null) || 
+             (this.recipient!=null &&
+              this.recipient.equals(other.getRecipient()))) &&
+            ((this.recipientEmail==null && other.getRecipientEmail()==null) || 
+             (this.recipientEmail!=null &&
+              this.recipientEmail.equals(other.getRecipientEmail()))) &&
+            ((this.cc==null && other.getCc()==null) || 
+             (this.cc!=null &&
+              this.cc.equals(other.getCc()))) &&
+            ((this.bcc==null && other.getBcc()==null) || 
+             (this.bcc!=null &&
+              this.bcc.equals(other.getBcc()))) &&
+            ((this.messageDate==null && other.getMessageDate()==null) || 
+             (this.messageDate!=null &&
+              this.messageDate.equals(other.getMessageDate()))) &&
+            ((this.recordName==null && other.getRecordName()==null) || 
+             (this.recordName!=null &&
+              this.recordName.equals(other.getRecordName()))) &&
+            ((this.recordTypeName==null && other.getRecordTypeName()==null) || 
+             (this.recordTypeName!=null &&
+              this.recordTypeName.equals(other.getRecordTypeName()))) &&
+            ((this.subject==null && other.getSubject()==null) || 
+             (this.subject!=null &&
+              this.subject.equals(other.getSubject()))) &&
+            ((this.message==null && other.getMessage()==null) || 
+             (this.message!=null &&
+              this.message.equals(other.getMessage()))) &&
+            ((this.emailed==null && other.getEmailed()==null) || 
+             (this.emailed!=null &&
+              this.emailed.equals(other.getEmailed()))) &&
+            ((this.activity==null && other.getActivity()==null) || 
+             (this.activity!=null &&
+              this.activity.equals(other.getActivity()))) &&
+            ((this.compressAttachments==null && other.getCompressAttachments()==null) || 
+             (this.compressAttachments!=null &&
+              this.compressAttachments.equals(other.getCompressAttachments()))) &&
+            ((this.incoming==null && other.getIncoming()==null) || 
+             (this.incoming!=null &&
+              this.incoming.equals(other.getIncoming()))) &&
+            ((this.lastModifiedDate==null && other.getLastModifiedDate()==null) || 
+             (this.lastModifiedDate!=null &&
+              this.lastModifiedDate.equals(other.getLastModifiedDate()))) &&
+            ((this.transaction==null && other.getTransaction()==null) || 
+             (this.transaction!=null &&
+              this.transaction.equals(other.getTransaction()))) &&
+            ((this.mediaItemList==null && other.getMediaItemList()==null) || 
+             (this.mediaItemList!=null &&
+              java.util.Arrays.equals(this.mediaItemList, other.getMediaItemList()))) &&
+            ((this.dateTime==null && other.getDateTime()==null) || 
+             (this.dateTime!=null &&
+              this.dateTime.equals(other.getDateTime()))) &&
+            ((this.internalId==null && other.getInternalId()==null) || 
+             (this.internalId!=null &&
+              this.internalId.equals(other.getInternalId()))) &&
+            ((this.externalId==null && other.getExternalId()==null) || 
+             (this.externalId!=null &&
+              this.externalId.equals(other.getExternalId())));
+        __equalsCalc = null;
+        return _equals;
+    }
+
+    private boolean __hashCodeCalc = false;
+    public synchronized int hashCode() {
+        if (__hashCodeCalc) {
+            return 0;
+        }
+        __hashCodeCalc = true;
+        int _hashCode = super.hashCode();
+        if (getAuthor() != null) {
+            _hashCode += getAuthor().hashCode();
+        }
+        if (getAuthorEmail() != null) {
+            _hashCode += getAuthorEmail().hashCode();
+        }
+        if (getRecipient() != null) {
+            _hashCode += getRecipient().hashCode();
+        }
+        if (getRecipientEmail() != null) {
+            _hashCode += getRecipientEmail().hashCode();
+        }
+        if (getCc() != null) {
+            _hashCode += getCc().hashCode();
+        }
+        if (getBcc() != null) {
+            _hashCode += getBcc().hashCode();
+        }
+        if (getMessageDate() != null) {
+            _hashCode += getMessageDate().hashCode();
+        }
+        if (getRecordName() != null) {
+            _hashCode += getRecordName().hashCode();
+        }
+        if (getRecordTypeName() != null) {
+            _hashCode += getRecordTypeName().hashCode();
+        }
+        if (getSubject() != null) {
+            _hashCode += getSubject().hashCode();
+        }
+        if (getMessage() != null) {
+            _hashCode += getMessage().hashCode();
+        }
+        if (getEmailed() != null) {
+            _hashCode += getEmailed().hashCode();
+        }
+        if (getActivity() != null) {
+            _hashCode += getActivity().hashCode();
+        }
+        if (getCompressAttachments() != null) {
+            _hashCode += getCompressAttachments().hashCode();
+        }
+        if (getIncoming() != null) {
+            _hashCode += getIncoming().hashCode();
+        }
+        if (getLastModifiedDate() != null) {
+            _hashCode += getLastModifiedDate().hashCode();
+        }
+        if (getTransaction() != null) {
+            _hashCode += getTransaction().hashCode();
+        }
+        if (getMediaItemList() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getMediaItemList());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getMediaItemList(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getDateTime() != null) {
+            _hashCode += getDateTime().hashCode();
+        }
+        if (getInternalId() != null) {
+            _hashCode += getInternalId().hashCode();
+        }
+        if (getExternalId() != null) {
+            _hashCode += getExternalId().hashCode();
+        }
+        __hashCodeCalc = false;
+        return _hashCode;
+    }
+
+    // Type metadata
+    private static org.apache.axis.description.TypeDesc typeDesc =
+        new org.apache.axis.description.TypeDesc(Message.class, true);
+
+    static {
+        typeDesc.setXmlType(new javax.xml.namespace.QName("urn:communication_2018_2.general.webservices.netsuite.com", "Message"));
+        org.apache.axis.description.AttributeDesc attrField = new org.apache.axis.description.AttributeDesc();
+        attrField.setFieldName("internalId");
+        attrField.setXmlName(new javax.xml.namespace.QName("", "internalId"));
+        attrField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        typeDesc.addFieldDesc(attrField);
+        attrField = new org.apache.axis.description.AttributeDesc();
+        attrField.setFieldName("externalId");
+        attrField.setXmlName(new javax.xml.namespace.QName("", "externalId"));
+        attrField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        typeDesc.addFieldDesc(attrField);
+        org.apache.axis.description.ElementDesc elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("author");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:communication_2018_2.general.webservices.netsuite.com", "author"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("authorEmail");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:communication_2018_2.general.webservices.netsuite.com", "authorEmail"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("recipient");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:communication_2018_2.general.webservices.netsuite.com", "recipient"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("recipientEmail");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:communication_2018_2.general.webservices.netsuite.com", "recipientEmail"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("cc");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:communication_2018_2.general.webservices.netsuite.com", "cc"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("bcc");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:communication_2018_2.general.webservices.netsuite.com", "bcc"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("messageDate");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:communication_2018_2.general.webservices.netsuite.com", "messageDate"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "dateTime"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("recordName");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:communication_2018_2.general.webservices.netsuite.com", "recordName"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("recordTypeName");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:communication_2018_2.general.webservices.netsuite.com", "recordTypeName"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("subject");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:communication_2018_2.general.webservices.netsuite.com", "subject"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("message");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:communication_2018_2.general.webservices.netsuite.com", "message"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("emailed");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:communication_2018_2.general.webservices.netsuite.com", "emailed"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("activity");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:communication_2018_2.general.webservices.netsuite.com", "activity"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("compressAttachments");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:communication_2018_2.general.webservices.netsuite.com", "compressAttachments"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("incoming");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:communication_2018_2.general.webservices.netsuite.com", "incoming"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("lastModifiedDate");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:communication_2018_2.general.webservices.netsuite.com", "lastModifiedDate"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "dateTime"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("transaction");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:communication_2018_2.general.webservices.netsuite.com", "transaction"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("mediaItemList");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:communication_2018_2.general.webservices.netsuite.com", "mediaItemList"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:filecabinet_2018_2.documents.webservices.netsuite.com", "File"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:communication_2018_2.general.webservices.netsuite.com", "mediaItem"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("dateTime");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:communication_2018_2.general.webservices.netsuite.com", "dateTime"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+    }
+
+    /**
+     * Return type metadata object
+     */
+    public static org.apache.axis.description.TypeDesc getTypeDesc() {
+        return typeDesc;
+    }
+
+    /**
+     * Get Custom Serializer
+     */
+    public static org.apache.axis.encoding.Serializer getSerializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanSerializer(
+            _javaType, _xmlType, typeDesc);
+    }
+
+    /**
+     * Get Custom Deserializer
+     */
+    public static org.apache.axis.encoding.Deserializer getDeserializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanDeserializer(
+            _javaType, _xmlType, typeDesc);
     }
 
 }

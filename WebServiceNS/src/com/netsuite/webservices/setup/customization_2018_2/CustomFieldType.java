@@ -1,105 +1,160 @@
+/**
+ * CustomFieldType.java
+ *
+ * This file was auto-generated from WSDL
+ * by the Apache Axis 1.4 Jul 28, 2010 (04:07:04 PDT) WSDL2Java emitter.
+ */
 
 package com.netsuite.webservices.setup.customization_2018_2;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlSchemaType;
-import javax.xml.bind.annotation.XmlSeeAlso;
-import javax.xml.bind.annotation.XmlType;
-import com.netsuite.webservices.platform.core_2018_2.Record;
-import com.netsuite.webservices.setup.customization_2018_2.types.CustomizationFieldType;
+public abstract class CustomFieldType  extends com.netsuite.webservices.platform.core_2018_2.Record  implements java.io.Serializable {
+    private com.netsuite.webservices.setup.customization_2018_2.types.CustomizationFieldType fieldType;
 
+    private java.lang.String scriptId;
 
-/**
- * <p>CustomFieldType complex type的 Java 类。
- * 
- * <p>以下模式片段指定包含在此类中的预期内容。
- * 
- * <pre>
- * &lt;complexType name="CustomFieldType">
- *   &lt;complexContent>
- *     &lt;extension base="{urn:core_2018_2.platform.webservices.netsuite.com}Record">
- *       &lt;sequence>
- *         &lt;element name="fieldType" type="{urn:types.customization_2018_2.setup.webservices.netsuite.com}CustomizationFieldType" minOccurs="0"/>
- *         &lt;element name="scriptId" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/extension>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
- */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "CustomFieldType", propOrder = {
-    "fieldType",
-    "scriptId"
-})
-@XmlSeeAlso({
-    ItemCustomField.class,
-    TransactionColumnCustomField.class,
-    EntityCustomField.class,
-    ItemNumberCustomField.class,
-    CustomRecordCustomField.class,
-    TransactionBodyCustomField.class,
-    OtherCustomField.class,
-    CrmCustomField.class,
-    ItemOptionCustomField.class
-})
-public abstract class CustomFieldType
-    extends Record
-{
+    public CustomFieldType() {
+    }
 
-    @XmlSchemaType(name = "string")
-    protected CustomizationFieldType fieldType;
-    protected String scriptId;
+    public CustomFieldType(
+           java.lang.String[] nullFieldList,
+           com.netsuite.webservices.setup.customization_2018_2.types.CustomizationFieldType fieldType,
+           java.lang.String scriptId) {
+        super(
+            nullFieldList);
+        this.fieldType = fieldType;
+        this.scriptId = scriptId;
+    }
+
 
     /**
-     * 获取fieldType属性的值。
+     * Gets the fieldType value for this CustomFieldType.
      * 
-     * @return
-     *     possible object is
-     *     {@link CustomizationFieldType }
-     *     
+     * @return fieldType
      */
-    public CustomizationFieldType getFieldType() {
+    public com.netsuite.webservices.setup.customization_2018_2.types.CustomizationFieldType getFieldType() {
         return fieldType;
     }
 
-    /**
-     * 设置fieldType属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link CustomizationFieldType }
-     *     
-     */
-    public void setFieldType(CustomizationFieldType value) {
-        this.fieldType = value;
-    }
 
     /**
-     * 获取scriptId属性的值。
+     * Sets the fieldType value for this CustomFieldType.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param fieldType
      */
-    public String getScriptId() {
+    public void setFieldType(com.netsuite.webservices.setup.customization_2018_2.types.CustomizationFieldType fieldType) {
+        this.fieldType = fieldType;
+    }
+
+
+    /**
+     * Gets the scriptId value for this CustomFieldType.
+     * 
+     * @return scriptId
+     */
+    public java.lang.String getScriptId() {
         return scriptId;
     }
 
+
     /**
-     * 设置scriptId属性的值。
+     * Sets the scriptId value for this CustomFieldType.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     * @param scriptId
      */
-    public void setScriptId(String value) {
-        this.scriptId = value;
+    public void setScriptId(java.lang.String scriptId) {
+        this.scriptId = scriptId;
+    }
+
+    private java.lang.Object __equalsCalc = null;
+    public synchronized boolean equals(java.lang.Object obj) {
+        if (!(obj instanceof CustomFieldType)) return false;
+        CustomFieldType other = (CustomFieldType) obj;
+        if (obj == null) return false;
+        if (this == obj) return true;
+        if (__equalsCalc != null) {
+            return (__equalsCalc == obj);
+        }
+        __equalsCalc = obj;
+        boolean _equals;
+        _equals = super.equals(obj) && 
+            ((this.fieldType==null && other.getFieldType()==null) || 
+             (this.fieldType!=null &&
+              this.fieldType.equals(other.getFieldType()))) &&
+            ((this.scriptId==null && other.getScriptId()==null) || 
+             (this.scriptId!=null &&
+              this.scriptId.equals(other.getScriptId())));
+        __equalsCalc = null;
+        return _equals;
+    }
+
+    private boolean __hashCodeCalc = false;
+    public synchronized int hashCode() {
+        if (__hashCodeCalc) {
+            return 0;
+        }
+        __hashCodeCalc = true;
+        int _hashCode = super.hashCode();
+        if (getFieldType() != null) {
+            _hashCode += getFieldType().hashCode();
+        }
+        if (getScriptId() != null) {
+            _hashCode += getScriptId().hashCode();
+        }
+        __hashCodeCalc = false;
+        return _hashCode;
+    }
+
+    // Type metadata
+    private static org.apache.axis.description.TypeDesc typeDesc =
+        new org.apache.axis.description.TypeDesc(CustomFieldType.class, true);
+
+    static {
+        typeDesc.setXmlType(new javax.xml.namespace.QName("urn:customization_2018_2.setup.webservices.netsuite.com", "CustomFieldType"));
+        org.apache.axis.description.ElementDesc elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("fieldType");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:customization_2018_2.setup.webservices.netsuite.com", "fieldType"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:types.customization_2018_2.setup.webservices.netsuite.com", "CustomizationFieldType"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("scriptId");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:customization_2018_2.setup.webservices.netsuite.com", "scriptId"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+    }
+
+    /**
+     * Return type metadata object
+     */
+    public static org.apache.axis.description.TypeDesc getTypeDesc() {
+        return typeDesc;
+    }
+
+    /**
+     * Get Custom Serializer
+     */
+    public static org.apache.axis.encoding.Serializer getSerializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanSerializer(
+            _javaType, _xmlType, typeDesc);
+    }
+
+    /**
+     * Get Custom Deserializer
+     */
+    public static org.apache.axis.encoding.Deserializer getDeserializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanDeserializer(
+            _javaType, _xmlType, typeDesc);
     }
 
 }

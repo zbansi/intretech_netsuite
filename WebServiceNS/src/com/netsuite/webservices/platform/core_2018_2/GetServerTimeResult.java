@@ -1,93 +1,163 @@
+/**
+ * GetServerTimeResult.java
+ *
+ * This file was auto-generated from WSDL
+ * by the Apache Axis 1.4 Jul 28, 2010 (04:07:04 PDT) WSDL2Java emitter.
+ */
 
 package com.netsuite.webservices.platform.core_2018_2;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlSchemaType;
-import javax.xml.bind.annotation.XmlType;
-import javax.xml.datatype.XMLGregorianCalendar;
+public class GetServerTimeResult  implements java.io.Serializable {
+    private com.netsuite.webservices.platform.core_2018_2.StatusDetail[] status;
 
+    private java.util.Calendar serverTime;
 
-/**
- * <p>GetServerTimeResult complex type的 Java 类。
- * 
- * <p>以下模式片段指定包含在此类中的预期内容。
- * 
- * <pre>
- * &lt;complexType name="GetServerTimeResult">
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element ref="{urn:core_2018_2.platform.webservices.netsuite.com}status"/>
- *         &lt;element name="serverTime" type="{http://www.w3.org/2001/XMLSchema}dateTime"/>
- *       &lt;/sequence>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
- */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "GetServerTimeResult", propOrder = {
-    "status",
-    "serverTime"
-})
-public class GetServerTimeResult {
+    public GetServerTimeResult() {
+    }
 
-    @XmlElement(required = true)
-    protected Status status;
-    @XmlElement(required = true)
-    @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar serverTime;
+    public GetServerTimeResult(
+           com.netsuite.webservices.platform.core_2018_2.StatusDetail[] status,
+           java.util.Calendar serverTime) {
+           this.status = status;
+           this.serverTime = serverTime;
+    }
+
 
     /**
-     * 获取status属性的值。
+     * Gets the status value for this GetServerTimeResult.
      * 
-     * @return
-     *     possible object is
-     *     {@link Status }
-     *     
+     * @return status
      */
-    public Status getStatus() {
+    public com.netsuite.webservices.platform.core_2018_2.StatusDetail[] getStatus() {
         return status;
     }
 
-    /**
-     * 设置status属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Status }
-     *     
-     */
-    public void setStatus(Status value) {
-        this.status = value;
-    }
 
     /**
-     * 获取serverTime属性的值。
+     * Sets the status value for this GetServerTimeResult.
      * 
-     * @return
-     *     possible object is
-     *     {@link XMLGregorianCalendar }
-     *     
+     * @param status
      */
-    public XMLGregorianCalendar getServerTime() {
+    public void setStatus(com.netsuite.webservices.platform.core_2018_2.StatusDetail[] status) {
+        this.status = status;
+    }
+
+
+    /**
+     * Gets the serverTime value for this GetServerTimeResult.
+     * 
+     * @return serverTime
+     */
+    public java.util.Calendar getServerTime() {
         return serverTime;
     }
 
+
     /**
-     * 设置serverTime属性的值。
+     * Sets the serverTime value for this GetServerTimeResult.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link XMLGregorianCalendar }
-     *     
+     * @param serverTime
      */
-    public void setServerTime(XMLGregorianCalendar value) {
-        this.serverTime = value;
+    public void setServerTime(java.util.Calendar serverTime) {
+        this.serverTime = serverTime;
+    }
+
+    private java.lang.Object __equalsCalc = null;
+    public synchronized boolean equals(java.lang.Object obj) {
+        if (!(obj instanceof GetServerTimeResult)) return false;
+        GetServerTimeResult other = (GetServerTimeResult) obj;
+        if (obj == null) return false;
+        if (this == obj) return true;
+        if (__equalsCalc != null) {
+            return (__equalsCalc == obj);
+        }
+        __equalsCalc = obj;
+        boolean _equals;
+        _equals = true && 
+            ((this.status==null && other.getStatus()==null) || 
+             (this.status!=null &&
+              java.util.Arrays.equals(this.status, other.getStatus()))) &&
+            ((this.serverTime==null && other.getServerTime()==null) || 
+             (this.serverTime!=null &&
+              this.serverTime.equals(other.getServerTime())));
+        __equalsCalc = null;
+        return _equals;
+    }
+
+    private boolean __hashCodeCalc = false;
+    public synchronized int hashCode() {
+        if (__hashCodeCalc) {
+            return 0;
+        }
+        __hashCodeCalc = true;
+        int _hashCode = 1;
+        if (getStatus() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getStatus());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getStatus(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getServerTime() != null) {
+            _hashCode += getServerTime().hashCode();
+        }
+        __hashCodeCalc = false;
+        return _hashCode;
+    }
+
+    // Type metadata
+    private static org.apache.axis.description.TypeDesc typeDesc =
+        new org.apache.axis.description.TypeDesc(GetServerTimeResult.class, true);
+
+    static {
+        typeDesc.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "GetServerTimeResult"));
+        org.apache.axis.description.ElementDesc elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("status");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "status"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "Status"));
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("serverTime");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "serverTime"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "dateTime"));
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+    }
+
+    /**
+     * Return type metadata object
+     */
+    public static org.apache.axis.description.TypeDesc getTypeDesc() {
+        return typeDesc;
+    }
+
+    /**
+     * Get Custom Serializer
+     */
+    public static org.apache.axis.encoding.Serializer getSerializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanSerializer(
+            _javaType, _xmlType, typeDesc);
+    }
+
+    /**
+     * Get Custom Deserializer
+     */
+    public static org.apache.axis.encoding.Deserializer getDeserializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanDeserializer(
+            _javaType, _xmlType, typeDesc);
     }
 
 }

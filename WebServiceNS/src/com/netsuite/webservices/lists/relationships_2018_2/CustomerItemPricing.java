@@ -1,142 +1,231 @@
+/**
+ * CustomerItemPricing.java
+ *
+ * This file was auto-generated from WSDL
+ * by the Apache Axis 1.4 Jul 28, 2010 (04:07:04 PDT) WSDL2Java emitter.
+ */
 
 package com.netsuite.webservices.lists.relationships_2018_2;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlType;
-import com.netsuite.webservices.platform.core_2018_2.RecordRef;
+public class CustomerItemPricing  implements java.io.Serializable {
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef item;
 
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef level;
 
-/**
- * <p>CustomerItemPricing complex type的 Java 类。
- * 
- * <p>以下模式片段指定包含在此类中的预期内容。
- * 
- * <pre>
- * &lt;complexType name="CustomerItemPricing">
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element name="item" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="level" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="currency" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="price" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
- */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "CustomerItemPricing", propOrder = {
-    "item",
-    "level",
-    "currency",
-    "price"
-})
-public class CustomerItemPricing {
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef currency;
 
-    protected RecordRef item;
-    protected RecordRef level;
-    protected RecordRef currency;
-    protected Double price;
+    private java.lang.Double price;
+
+    public CustomerItemPricing() {
+    }
+
+    public CustomerItemPricing(
+           com.netsuite.webservices.platform.core_2018_2.RecordRef item,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef level,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef currency,
+           java.lang.Double price) {
+           this.item = item;
+           this.level = level;
+           this.currency = currency;
+           this.price = price;
+    }
+
 
     /**
-     * 获取item属性的值。
+     * Gets the item value for this CustomerItemPricing.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @return item
      */
-    public RecordRef getItem() {
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getItem() {
         return item;
     }
 
-    /**
-     * 设置item属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setItem(RecordRef value) {
-        this.item = value;
-    }
 
     /**
-     * 获取level属性的值。
+     * Sets the item value for this CustomerItemPricing.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param item
      */
-    public RecordRef getLevel() {
+    public void setItem(com.netsuite.webservices.platform.core_2018_2.RecordRef item) {
+        this.item = item;
+    }
+
+
+    /**
+     * Gets the level value for this CustomerItemPricing.
+     * 
+     * @return level
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getLevel() {
         return level;
     }
 
-    /**
-     * 设置level属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setLevel(RecordRef value) {
-        this.level = value;
-    }
 
     /**
-     * 获取currency属性的值。
+     * Sets the level value for this CustomerItemPricing.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param level
      */
-    public RecordRef getCurrency() {
+    public void setLevel(com.netsuite.webservices.platform.core_2018_2.RecordRef level) {
+        this.level = level;
+    }
+
+
+    /**
+     * Gets the currency value for this CustomerItemPricing.
+     * 
+     * @return currency
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getCurrency() {
         return currency;
     }
 
-    /**
-     * 设置currency属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setCurrency(RecordRef value) {
-        this.currency = value;
-    }
 
     /**
-     * 获取price属性的值。
+     * Sets the currency value for this CustomerItemPricing.
      * 
-     * @return
-     *     possible object is
-     *     {@link Double }
-     *     
+     * @param currency
      */
-    public Double getPrice() {
+    public void setCurrency(com.netsuite.webservices.platform.core_2018_2.RecordRef currency) {
+        this.currency = currency;
+    }
+
+
+    /**
+     * Gets the price value for this CustomerItemPricing.
+     * 
+     * @return price
+     */
+    public java.lang.Double getPrice() {
         return price;
     }
 
+
     /**
-     * 设置price属性的值。
+     * Sets the price value for this CustomerItemPricing.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link Double }
-     *     
+     * @param price
      */
-    public void setPrice(Double value) {
-        this.price = value;
+    public void setPrice(java.lang.Double price) {
+        this.price = price;
+    }
+
+    private java.lang.Object __equalsCalc = null;
+    public synchronized boolean equals(java.lang.Object obj) {
+        if (!(obj instanceof CustomerItemPricing)) return false;
+        CustomerItemPricing other = (CustomerItemPricing) obj;
+        if (obj == null) return false;
+        if (this == obj) return true;
+        if (__equalsCalc != null) {
+            return (__equalsCalc == obj);
+        }
+        __equalsCalc = obj;
+        boolean _equals;
+        _equals = true && 
+            ((this.item==null && other.getItem()==null) || 
+             (this.item!=null &&
+              this.item.equals(other.getItem()))) &&
+            ((this.level==null && other.getLevel()==null) || 
+             (this.level!=null &&
+              this.level.equals(other.getLevel()))) &&
+            ((this.currency==null && other.getCurrency()==null) || 
+             (this.currency!=null &&
+              this.currency.equals(other.getCurrency()))) &&
+            ((this.price==null && other.getPrice()==null) || 
+             (this.price!=null &&
+              this.price.equals(other.getPrice())));
+        __equalsCalc = null;
+        return _equals;
+    }
+
+    private boolean __hashCodeCalc = false;
+    public synchronized int hashCode() {
+        if (__hashCodeCalc) {
+            return 0;
+        }
+        __hashCodeCalc = true;
+        int _hashCode = 1;
+        if (getItem() != null) {
+            _hashCode += getItem().hashCode();
+        }
+        if (getLevel() != null) {
+            _hashCode += getLevel().hashCode();
+        }
+        if (getCurrency() != null) {
+            _hashCode += getCurrency().hashCode();
+        }
+        if (getPrice() != null) {
+            _hashCode += getPrice().hashCode();
+        }
+        __hashCodeCalc = false;
+        return _hashCode;
+    }
+
+    // Type metadata
+    private static org.apache.axis.description.TypeDesc typeDesc =
+        new org.apache.axis.description.TypeDesc(CustomerItemPricing.class, true);
+
+    static {
+        typeDesc.setXmlType(new javax.xml.namespace.QName("urn:relationships_2018_2.lists.webservices.netsuite.com", "CustomerItemPricing"));
+        org.apache.axis.description.ElementDesc elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("item");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:relationships_2018_2.lists.webservices.netsuite.com", "item"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("level");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:relationships_2018_2.lists.webservices.netsuite.com", "level"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("currency");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:relationships_2018_2.lists.webservices.netsuite.com", "currency"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("price");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:relationships_2018_2.lists.webservices.netsuite.com", "price"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "double"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+    }
+
+    /**
+     * Return type metadata object
+     */
+    public static org.apache.axis.description.TypeDesc getTypeDesc() {
+        return typeDesc;
+    }
+
+    /**
+     * Get Custom Serializer
+     */
+    public static org.apache.axis.encoding.Serializer getSerializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanSerializer(
+            _javaType, _xmlType, typeDesc);
+    }
+
+    /**
+     * Get Custom Deserializer
+     */
+    public static org.apache.axis.encoding.Deserializer getDeserializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanDeserializer(
+            _javaType, _xmlType, typeDesc);
     }
 
 }

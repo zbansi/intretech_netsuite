@@ -1,54 +1,72 @@
+/**
+ * ItemFulfillmentExportTypeUps.java
+ *
+ * This file was auto-generated from WSDL
+ * by the Apache Axis 1.4 Jul 28, 2010 (04:07:04 PDT) WSDL2Java emitter.
+ */
 
 package com.netsuite.webservices.transactions.sales_2018_2.types;
 
-import javax.xml.bind.annotation.XmlEnum;
-import javax.xml.bind.annotation.XmlEnumValue;
-import javax.xml.bind.annotation.XmlType;
+public class ItemFulfillmentExportTypeUps implements java.io.Serializable {
+    private java.lang.String _value_;
+    private static java.util.HashMap _table_ = new java.util.HashMap();
 
-
-/**
- * <p>ItemFulfillmentExportTypeUps的 Java 类。
- * 
- * <p>以下模式片段指定包含在此类中的预期内容。
- * <p>
- * <pre>
- * &lt;simpleType name="ItemFulfillmentExportTypeUps">
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     &lt;enumeration value="_domesticExports"/>
- *     &lt;enumeration value="_foreignExports"/>
- *     &lt;enumeration value="_foreignMilitarySales"/>
- *   &lt;/restriction>
- * &lt;/simpleType>
- * </pre>
- * 
- */
-@XmlType(name = "ItemFulfillmentExportTypeUps", namespace = "urn:types.sales_2018_2.transactions.webservices.netsuite.com")
-@XmlEnum
-public enum ItemFulfillmentExportTypeUps {
-
-    @XmlEnumValue("_domesticExports")
-    DOMESTIC_EXPORTS("_domesticExports"),
-    @XmlEnumValue("_foreignExports")
-    FOREIGN_EXPORTS("_foreignExports"),
-    @XmlEnumValue("_foreignMilitarySales")
-    FOREIGN_MILITARY_SALES("_foreignMilitarySales");
-    private final String value;
-
-    ItemFulfillmentExportTypeUps(String v) {
-        value = v;
+    // Constructor
+    protected ItemFulfillmentExportTypeUps(java.lang.String value) {
+        _value_ = value;
+        _table_.put(_value_,this);
     }
 
-    public String value() {
-        return value;
+    public static final java.lang.String __domesticExports = "_domesticExports";
+    public static final java.lang.String __foreignExports = "_foreignExports";
+    public static final java.lang.String __foreignMilitarySales = "_foreignMilitarySales";
+    public static final ItemFulfillmentExportTypeUps _domesticExports = new ItemFulfillmentExportTypeUps(__domesticExports);
+    public static final ItemFulfillmentExportTypeUps _foreignExports = new ItemFulfillmentExportTypeUps(__foreignExports);
+    public static final ItemFulfillmentExportTypeUps _foreignMilitarySales = new ItemFulfillmentExportTypeUps(__foreignMilitarySales);
+    public java.lang.String getValue() { return _value_;}
+    public static ItemFulfillmentExportTypeUps fromValue(java.lang.String value)
+          throws java.lang.IllegalArgumentException {
+        ItemFulfillmentExportTypeUps enumeration = (ItemFulfillmentExportTypeUps)
+            _table_.get(value);
+        if (enumeration==null) throw new java.lang.IllegalArgumentException();
+        return enumeration;
     }
+    public static ItemFulfillmentExportTypeUps fromString(java.lang.String value)
+          throws java.lang.IllegalArgumentException {
+        return fromValue(value);
+    }
+    public boolean equals(java.lang.Object obj) {return (obj == this);}
+    public int hashCode() { return toString().hashCode();}
+    public java.lang.String toString() { return _value_;}
+    public java.lang.Object readResolve() throws java.io.ObjectStreamException { return fromValue(_value_);}
+    public static org.apache.axis.encoding.Serializer getSerializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new org.apache.axis.encoding.ser.EnumSerializer(
+            _javaType, _xmlType);
+    }
+    public static org.apache.axis.encoding.Deserializer getDeserializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new org.apache.axis.encoding.ser.EnumDeserializer(
+            _javaType, _xmlType);
+    }
+    // Type metadata
+    private static org.apache.axis.description.TypeDesc typeDesc =
+        new org.apache.axis.description.TypeDesc(ItemFulfillmentExportTypeUps.class);
 
-    public static ItemFulfillmentExportTypeUps fromValue(String v) {
-        for (ItemFulfillmentExportTypeUps c: ItemFulfillmentExportTypeUps.values()) {
-            if (c.value.equals(v)) {
-                return c;
-            }
-        }
-        throw new IllegalArgumentException(v);
+    static {
+        typeDesc.setXmlType(new javax.xml.namespace.QName("urn:types.sales_2018_2.transactions.webservices.netsuite.com", "ItemFulfillmentExportTypeUps"));
+    }
+    /**
+     * Return type metadata object
+     */
+    public static org.apache.axis.description.TypeDesc getTypeDesc() {
+        return typeDesc;
     }
 
 }

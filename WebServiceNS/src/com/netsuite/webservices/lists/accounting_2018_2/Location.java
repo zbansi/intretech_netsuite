@@ -1,889 +1,1283 @@
+/**
+ * Location.java
+ *
+ * This file was auto-generated from WSDL
+ * by the Apache Axis 1.4 Jul 28, 2010 (04:07:04 PDT) WSDL2Java emitter.
+ */
 
 package com.netsuite.webservices.lists.accounting_2018_2;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlAttribute;
-import javax.xml.bind.annotation.XmlSchemaType;
-import javax.xml.bind.annotation.XmlType;
-import javax.xml.datatype.XMLGregorianCalendar;
-import com.netsuite.webservices.lists.accounting_2018_2.types.LocationAutoAssignmentRegionSetting;
-import com.netsuite.webservices.lists.accounting_2018_2.types.LocationGeolocationMethod;
-import com.netsuite.webservices.lists.accounting_2018_2.types.LocationTimeZone;
-import com.netsuite.webservices.lists.accounting_2018_2.types.LocationType;
-import com.netsuite.webservices.platform.common_2018_2.Address;
-import com.netsuite.webservices.platform.core_2018_2.CustomFieldList;
-import com.netsuite.webservices.platform.core_2018_2.Record;
-import com.netsuite.webservices.platform.core_2018_2.RecordRef;
-import com.netsuite.webservices.platform.core_2018_2.RecordRefList;
+public class Location  extends com.netsuite.webservices.platform.core_2018_2.Record  implements java.io.Serializable {
+    private java.lang.String name;
 
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef parent;
 
-/**
- * <p>Location complex type的 Java 类。
- * 
- * <p>以下模式片段指定包含在此类中的预期内容。
- * 
- * <pre>
- * &lt;complexType name="Location">
- *   &lt;complexContent>
- *     &lt;extension base="{urn:core_2018_2.platform.webservices.netsuite.com}Record">
- *       &lt;sequence>
- *         &lt;element name="name" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="parent" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="includeChildren" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         &lt;element name="subsidiaryList" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRefList" minOccurs="0"/>
- *         &lt;element name="isInactive" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         &lt;element name="tranPrefix" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="mainAddress" type="{urn:common_2018_2.platform.webservices.netsuite.com}Address" minOccurs="0"/>
- *         &lt;element name="returnAddress" type="{urn:common_2018_2.platform.webservices.netsuite.com}Address" minOccurs="0"/>
- *         &lt;element name="locationType" type="{urn:types.accounting_2018_2.lists.webservices.netsuite.com}LocationType" minOccurs="0"/>
- *         &lt;element name="timeZone" type="{urn:types.accounting_2018_2.lists.webservices.netsuite.com}LocationTimeZone" minOccurs="0"/>
- *         &lt;element name="latitude" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
- *         &lt;element name="longitude" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
- *         &lt;element name="logo" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="useBins" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         &lt;element name="makeInventoryAvailable" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         &lt;element name="makeInventoryAvailableStore" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         &lt;element name="geolocationMethod" type="{urn:types.accounting_2018_2.lists.webservices.netsuite.com}LocationGeolocationMethod" minOccurs="0"/>
- *         &lt;element name="autoAssignmentRegionSetting" type="{urn:types.accounting_2018_2.lists.webservices.netsuite.com}LocationAutoAssignmentRegionSetting" minOccurs="0"/>
- *         &lt;element name="nextPickupCutOffTime" type="{http://www.w3.org/2001/XMLSchema}dateTime" minOccurs="0"/>
- *         &lt;element name="bufferStock" type="{http://www.w3.org/2001/XMLSchema}long" minOccurs="0"/>
- *         &lt;element name="allowStorePickup" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         &lt;element name="storePickupBufferStock" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
- *         &lt;element name="dailyShippingCapacity" type="{http://www.w3.org/2001/XMLSchema}long" minOccurs="0"/>
- *         &lt;element name="totalShippingCapacity" type="{http://www.w3.org/2001/XMLSchema}long" minOccurs="0"/>
- *         &lt;element name="includeLocationRegionsList" type="{urn:accounting_2018_2.lists.webservices.netsuite.com}LocationRegionsList" minOccurs="0"/>
- *         &lt;element name="excludeLocationRegionsList" type="{urn:accounting_2018_2.lists.webservices.netsuite.com}LocationRegionsList" minOccurs="0"/>
- *         &lt;element name="businessHoursList" type="{urn:accounting_2018_2.lists.webservices.netsuite.com}LocationBusinessHoursList" minOccurs="0"/>
- *         &lt;element name="classTranslationList" type="{urn:accounting_2018_2.lists.webservices.netsuite.com}ClassTranslationList" minOccurs="0"/>
- *         &lt;element name="customFieldList" type="{urn:core_2018_2.platform.webservices.netsuite.com}CustomFieldList" minOccurs="0"/>
- *       &lt;/sequence>
- *       &lt;attribute name="internalId" type="{http://www.w3.org/2001/XMLSchema}string" />
- *       &lt;attribute name="externalId" type="{http://www.w3.org/2001/XMLSchema}string" />
- *     &lt;/extension>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
- */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "Location", propOrder = {
-    "name",
-    "parent",
-    "includeChildren",
-    "subsidiaryList",
-    "isInactive",
-    "tranPrefix",
-    "mainAddress",
-    "returnAddress",
-    "locationType",
-    "timeZone",
-    "latitude",
-    "longitude",
-    "logo",
-    "useBins",
-    "makeInventoryAvailable",
-    "makeInventoryAvailableStore",
-    "geolocationMethod",
-    "autoAssignmentRegionSetting",
-    "nextPickupCutOffTime",
-    "bufferStock",
-    "allowStorePickup",
-    "storePickupBufferStock",
-    "dailyShippingCapacity",
-    "totalShippingCapacity",
-    "includeLocationRegionsList",
-    "excludeLocationRegionsList",
-    "businessHoursList",
-    "classTranslationList",
-    "customFieldList"
-})
-public class Location
-    extends Record
-{
+    private java.lang.Boolean includeChildren;
 
-    protected String name;
-    protected RecordRef parent;
-    protected Boolean includeChildren;
-    protected RecordRefList subsidiaryList;
-    protected Boolean isInactive;
-    protected String tranPrefix;
-    protected Address mainAddress;
-    protected Address returnAddress;
-    @XmlSchemaType(name = "string")
-    protected LocationType locationType;
-    @XmlSchemaType(name = "string")
-    protected LocationTimeZone timeZone;
-    protected Double latitude;
-    protected Double longitude;
-    protected RecordRef logo;
-    protected Boolean useBins;
-    protected Boolean makeInventoryAvailable;
-    protected Boolean makeInventoryAvailableStore;
-    @XmlSchemaType(name = "string")
-    protected LocationGeolocationMethod geolocationMethod;
-    @XmlSchemaType(name = "string")
-    protected LocationAutoAssignmentRegionSetting autoAssignmentRegionSetting;
-    @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar nextPickupCutOffTime;
-    protected Long bufferStock;
-    protected Boolean allowStorePickup;
-    protected Double storePickupBufferStock;
-    protected Long dailyShippingCapacity;
-    protected Long totalShippingCapacity;
-    protected LocationRegionsList includeLocationRegionsList;
-    protected LocationRegionsList excludeLocationRegionsList;
-    protected LocationBusinessHoursList businessHoursList;
-    protected ClassTranslationList classTranslationList;
-    protected CustomFieldList customFieldList;
-    @XmlAttribute(name = "internalId")
-    protected String internalId;
-    @XmlAttribute(name = "externalId")
-    protected String externalId;
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef[] subsidiaryList;
+
+    private java.lang.Boolean isInactive;
+
+    private java.lang.String tranPrefix;
+
+    private com.netsuite.webservices.platform.common_2018_2.Address mainAddress;
+
+    private com.netsuite.webservices.platform.common_2018_2.Address returnAddress;
+
+    private com.netsuite.webservices.lists.accounting_2018_2.types.LocationType locationType;
+
+    private com.netsuite.webservices.lists.accounting_2018_2.types.LocationTimeZone timeZone;
+
+    private java.lang.Double latitude;
+
+    private java.lang.Double longitude;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef logo;
+
+    private java.lang.Boolean useBins;
+
+    private java.lang.Boolean makeInventoryAvailable;
+
+    private java.lang.Boolean makeInventoryAvailableStore;
+
+    private com.netsuite.webservices.lists.accounting_2018_2.types.LocationGeolocationMethod geolocationMethod;
+
+    private com.netsuite.webservices.lists.accounting_2018_2.types.LocationAutoAssignmentRegionSetting autoAssignmentRegionSetting;
+
+    private java.util.Calendar nextPickupCutOffTime;
+
+    private java.lang.Long bufferStock;
+
+    private java.lang.Boolean allowStorePickup;
+
+    private java.lang.Double storePickupBufferStock;
+
+    private java.lang.Long dailyShippingCapacity;
+
+    private java.lang.Long totalShippingCapacity;
+
+    private com.netsuite.webservices.lists.accounting_2018_2.LocationRegions[] includeLocationRegionsList;
+
+    private com.netsuite.webservices.lists.accounting_2018_2.LocationRegions[] excludeLocationRegionsList;
+
+    private com.netsuite.webservices.lists.accounting_2018_2.LocationBusinessHours[] businessHoursList;
+
+    private com.netsuite.webservices.lists.accounting_2018_2.ClassTranslation[] classTranslationList;
+
+    private com.netsuite.webservices.platform.core_2018_2.CustomFieldRef[] customFieldList;
+
+    private java.lang.String internalId;  // attribute
+
+    private java.lang.String externalId;  // attribute
+
+    public Location() {
+    }
+
+    public Location(
+           java.lang.String[] nullFieldList,
+           java.lang.String internalId,
+           java.lang.String externalId,
+           java.lang.String name,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef parent,
+           java.lang.Boolean includeChildren,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef[] subsidiaryList,
+           java.lang.Boolean isInactive,
+           java.lang.String tranPrefix,
+           com.netsuite.webservices.platform.common_2018_2.Address mainAddress,
+           com.netsuite.webservices.platform.common_2018_2.Address returnAddress,
+           com.netsuite.webservices.lists.accounting_2018_2.types.LocationType locationType,
+           com.netsuite.webservices.lists.accounting_2018_2.types.LocationTimeZone timeZone,
+           java.lang.Double latitude,
+           java.lang.Double longitude,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef logo,
+           java.lang.Boolean useBins,
+           java.lang.Boolean makeInventoryAvailable,
+           java.lang.Boolean makeInventoryAvailableStore,
+           com.netsuite.webservices.lists.accounting_2018_2.types.LocationGeolocationMethod geolocationMethod,
+           com.netsuite.webservices.lists.accounting_2018_2.types.LocationAutoAssignmentRegionSetting autoAssignmentRegionSetting,
+           java.util.Calendar nextPickupCutOffTime,
+           java.lang.Long bufferStock,
+           java.lang.Boolean allowStorePickup,
+           java.lang.Double storePickupBufferStock,
+           java.lang.Long dailyShippingCapacity,
+           java.lang.Long totalShippingCapacity,
+           com.netsuite.webservices.lists.accounting_2018_2.LocationRegions[] includeLocationRegionsList,
+           com.netsuite.webservices.lists.accounting_2018_2.LocationRegions[] excludeLocationRegionsList,
+           com.netsuite.webservices.lists.accounting_2018_2.LocationBusinessHours[] businessHoursList,
+           com.netsuite.webservices.lists.accounting_2018_2.ClassTranslation[] classTranslationList,
+           com.netsuite.webservices.platform.core_2018_2.CustomFieldRef[] customFieldList) {
+        super(
+            nullFieldList);
+        this.internalId = internalId;
+        this.externalId = externalId;
+        this.name = name;
+        this.parent = parent;
+        this.includeChildren = includeChildren;
+        this.subsidiaryList = subsidiaryList;
+        this.isInactive = isInactive;
+        this.tranPrefix = tranPrefix;
+        this.mainAddress = mainAddress;
+        this.returnAddress = returnAddress;
+        this.locationType = locationType;
+        this.timeZone = timeZone;
+        this.latitude = latitude;
+        this.longitude = longitude;
+        this.logo = logo;
+        this.useBins = useBins;
+        this.makeInventoryAvailable = makeInventoryAvailable;
+        this.makeInventoryAvailableStore = makeInventoryAvailableStore;
+        this.geolocationMethod = geolocationMethod;
+        this.autoAssignmentRegionSetting = autoAssignmentRegionSetting;
+        this.nextPickupCutOffTime = nextPickupCutOffTime;
+        this.bufferStock = bufferStock;
+        this.allowStorePickup = allowStorePickup;
+        this.storePickupBufferStock = storePickupBufferStock;
+        this.dailyShippingCapacity = dailyShippingCapacity;
+        this.totalShippingCapacity = totalShippingCapacity;
+        this.includeLocationRegionsList = includeLocationRegionsList;
+        this.excludeLocationRegionsList = excludeLocationRegionsList;
+        this.businessHoursList = businessHoursList;
+        this.classTranslationList = classTranslationList;
+        this.customFieldList = customFieldList;
+    }
+
 
     /**
-     * 获取name属性的值。
+     * Gets the name value for this Location.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @return name
      */
-    public String getName() {
+    public java.lang.String getName() {
         return name;
     }
 
-    /**
-     * 设置name属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setName(String value) {
-        this.name = value;
-    }
 
     /**
-     * 获取parent属性的值。
+     * Sets the name value for this Location.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param name
      */
-    public RecordRef getParent() {
+    public void setName(java.lang.String name) {
+        this.name = name;
+    }
+
+
+    /**
+     * Gets the parent value for this Location.
+     * 
+     * @return parent
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getParent() {
         return parent;
     }
 
-    /**
-     * 设置parent属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setParent(RecordRef value) {
-        this.parent = value;
-    }
 
     /**
-     * 获取includeChildren属性的值。
+     * Sets the parent value for this Location.
      * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
+     * @param parent
      */
-    public Boolean isIncludeChildren() {
+    public void setParent(com.netsuite.webservices.platform.core_2018_2.RecordRef parent) {
+        this.parent = parent;
+    }
+
+
+    /**
+     * Gets the includeChildren value for this Location.
+     * 
+     * @return includeChildren
+     */
+    public java.lang.Boolean getIncludeChildren() {
         return includeChildren;
     }
 
-    /**
-     * 设置includeChildren属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
-     */
-    public void setIncludeChildren(Boolean value) {
-        this.includeChildren = value;
-    }
 
     /**
-     * 获取subsidiaryList属性的值。
+     * Sets the includeChildren value for this Location.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRefList }
-     *     
+     * @param includeChildren
      */
-    public RecordRefList getSubsidiaryList() {
+    public void setIncludeChildren(java.lang.Boolean includeChildren) {
+        this.includeChildren = includeChildren;
+    }
+
+
+    /**
+     * Gets the subsidiaryList value for this Location.
+     * 
+     * @return subsidiaryList
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef[] getSubsidiaryList() {
         return subsidiaryList;
     }
 
-    /**
-     * 设置subsidiaryList属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRefList }
-     *     
-     */
-    public void setSubsidiaryList(RecordRefList value) {
-        this.subsidiaryList = value;
-    }
 
     /**
-     * 获取isInactive属性的值。
+     * Sets the subsidiaryList value for this Location.
      * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
+     * @param subsidiaryList
      */
-    public Boolean isIsInactive() {
+    public void setSubsidiaryList(com.netsuite.webservices.platform.core_2018_2.RecordRef[] subsidiaryList) {
+        this.subsidiaryList = subsidiaryList;
+    }
+
+
+    /**
+     * Gets the isInactive value for this Location.
+     * 
+     * @return isInactive
+     */
+    public java.lang.Boolean getIsInactive() {
         return isInactive;
     }
 
-    /**
-     * 设置isInactive属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
-     */
-    public void setIsInactive(Boolean value) {
-        this.isInactive = value;
-    }
 
     /**
-     * 获取tranPrefix属性的值。
+     * Sets the isInactive value for this Location.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param isInactive
      */
-    public String getTranPrefix() {
+    public void setIsInactive(java.lang.Boolean isInactive) {
+        this.isInactive = isInactive;
+    }
+
+
+    /**
+     * Gets the tranPrefix value for this Location.
+     * 
+     * @return tranPrefix
+     */
+    public java.lang.String getTranPrefix() {
         return tranPrefix;
     }
 
-    /**
-     * 设置tranPrefix属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setTranPrefix(String value) {
-        this.tranPrefix = value;
-    }
 
     /**
-     * 获取mainAddress属性的值。
+     * Sets the tranPrefix value for this Location.
      * 
-     * @return
-     *     possible object is
-     *     {@link Address }
-     *     
+     * @param tranPrefix
      */
-    public Address getMainAddress() {
+    public void setTranPrefix(java.lang.String tranPrefix) {
+        this.tranPrefix = tranPrefix;
+    }
+
+
+    /**
+     * Gets the mainAddress value for this Location.
+     * 
+     * @return mainAddress
+     */
+    public com.netsuite.webservices.platform.common_2018_2.Address getMainAddress() {
         return mainAddress;
     }
 
-    /**
-     * 设置mainAddress属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Address }
-     *     
-     */
-    public void setMainAddress(Address value) {
-        this.mainAddress = value;
-    }
 
     /**
-     * 获取returnAddress属性的值。
+     * Sets the mainAddress value for this Location.
      * 
-     * @return
-     *     possible object is
-     *     {@link Address }
-     *     
+     * @param mainAddress
      */
-    public Address getReturnAddress() {
+    public void setMainAddress(com.netsuite.webservices.platform.common_2018_2.Address mainAddress) {
+        this.mainAddress = mainAddress;
+    }
+
+
+    /**
+     * Gets the returnAddress value for this Location.
+     * 
+     * @return returnAddress
+     */
+    public com.netsuite.webservices.platform.common_2018_2.Address getReturnAddress() {
         return returnAddress;
     }
 
-    /**
-     * 设置returnAddress属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Address }
-     *     
-     */
-    public void setReturnAddress(Address value) {
-        this.returnAddress = value;
-    }
 
     /**
-     * 获取locationType属性的值。
+     * Sets the returnAddress value for this Location.
      * 
-     * @return
-     *     possible object is
-     *     {@link LocationType }
-     *     
+     * @param returnAddress
      */
-    public LocationType getLocationType() {
+    public void setReturnAddress(com.netsuite.webservices.platform.common_2018_2.Address returnAddress) {
+        this.returnAddress = returnAddress;
+    }
+
+
+    /**
+     * Gets the locationType value for this Location.
+     * 
+     * @return locationType
+     */
+    public com.netsuite.webservices.lists.accounting_2018_2.types.LocationType getLocationType() {
         return locationType;
     }
 
-    /**
-     * 设置locationType属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link LocationType }
-     *     
-     */
-    public void setLocationType(LocationType value) {
-        this.locationType = value;
-    }
 
     /**
-     * 获取timeZone属性的值。
+     * Sets the locationType value for this Location.
      * 
-     * @return
-     *     possible object is
-     *     {@link LocationTimeZone }
-     *     
+     * @param locationType
      */
-    public LocationTimeZone getTimeZone() {
+    public void setLocationType(com.netsuite.webservices.lists.accounting_2018_2.types.LocationType locationType) {
+        this.locationType = locationType;
+    }
+
+
+    /**
+     * Gets the timeZone value for this Location.
+     * 
+     * @return timeZone
+     */
+    public com.netsuite.webservices.lists.accounting_2018_2.types.LocationTimeZone getTimeZone() {
         return timeZone;
     }
 
-    /**
-     * 设置timeZone属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link LocationTimeZone }
-     *     
-     */
-    public void setTimeZone(LocationTimeZone value) {
-        this.timeZone = value;
-    }
 
     /**
-     * 获取latitude属性的值。
+     * Sets the timeZone value for this Location.
      * 
-     * @return
-     *     possible object is
-     *     {@link Double }
-     *     
+     * @param timeZone
      */
-    public Double getLatitude() {
+    public void setTimeZone(com.netsuite.webservices.lists.accounting_2018_2.types.LocationTimeZone timeZone) {
+        this.timeZone = timeZone;
+    }
+
+
+    /**
+     * Gets the latitude value for this Location.
+     * 
+     * @return latitude
+     */
+    public java.lang.Double getLatitude() {
         return latitude;
     }
 
-    /**
-     * 设置latitude属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Double }
-     *     
-     */
-    public void setLatitude(Double value) {
-        this.latitude = value;
-    }
 
     /**
-     * 获取longitude属性的值。
+     * Sets the latitude value for this Location.
      * 
-     * @return
-     *     possible object is
-     *     {@link Double }
-     *     
+     * @param latitude
      */
-    public Double getLongitude() {
+    public void setLatitude(java.lang.Double latitude) {
+        this.latitude = latitude;
+    }
+
+
+    /**
+     * Gets the longitude value for this Location.
+     * 
+     * @return longitude
+     */
+    public java.lang.Double getLongitude() {
         return longitude;
     }
 
-    /**
-     * 设置longitude属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Double }
-     *     
-     */
-    public void setLongitude(Double value) {
-        this.longitude = value;
-    }
 
     /**
-     * 获取logo属性的值。
+     * Sets the longitude value for this Location.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param longitude
      */
-    public RecordRef getLogo() {
+    public void setLongitude(java.lang.Double longitude) {
+        this.longitude = longitude;
+    }
+
+
+    /**
+     * Gets the logo value for this Location.
+     * 
+     * @return logo
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getLogo() {
         return logo;
     }
 
-    /**
-     * 设置logo属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setLogo(RecordRef value) {
-        this.logo = value;
-    }
 
     /**
-     * 获取useBins属性的值。
+     * Sets the logo value for this Location.
      * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
+     * @param logo
      */
-    public Boolean isUseBins() {
+    public void setLogo(com.netsuite.webservices.platform.core_2018_2.RecordRef logo) {
+        this.logo = logo;
+    }
+
+
+    /**
+     * Gets the useBins value for this Location.
+     * 
+     * @return useBins
+     */
+    public java.lang.Boolean getUseBins() {
         return useBins;
     }
 
-    /**
-     * 设置useBins属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
-     */
-    public void setUseBins(Boolean value) {
-        this.useBins = value;
-    }
 
     /**
-     * 获取makeInventoryAvailable属性的值。
+     * Sets the useBins value for this Location.
      * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
+     * @param useBins
      */
-    public Boolean isMakeInventoryAvailable() {
+    public void setUseBins(java.lang.Boolean useBins) {
+        this.useBins = useBins;
+    }
+
+
+    /**
+     * Gets the makeInventoryAvailable value for this Location.
+     * 
+     * @return makeInventoryAvailable
+     */
+    public java.lang.Boolean getMakeInventoryAvailable() {
         return makeInventoryAvailable;
     }
 
-    /**
-     * 设置makeInventoryAvailable属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
-     */
-    public void setMakeInventoryAvailable(Boolean value) {
-        this.makeInventoryAvailable = value;
-    }
 
     /**
-     * 获取makeInventoryAvailableStore属性的值。
+     * Sets the makeInventoryAvailable value for this Location.
      * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
+     * @param makeInventoryAvailable
      */
-    public Boolean isMakeInventoryAvailableStore() {
+    public void setMakeInventoryAvailable(java.lang.Boolean makeInventoryAvailable) {
+        this.makeInventoryAvailable = makeInventoryAvailable;
+    }
+
+
+    /**
+     * Gets the makeInventoryAvailableStore value for this Location.
+     * 
+     * @return makeInventoryAvailableStore
+     */
+    public java.lang.Boolean getMakeInventoryAvailableStore() {
         return makeInventoryAvailableStore;
     }
 
-    /**
-     * 设置makeInventoryAvailableStore属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
-     */
-    public void setMakeInventoryAvailableStore(Boolean value) {
-        this.makeInventoryAvailableStore = value;
-    }
 
     /**
-     * 获取geolocationMethod属性的值。
+     * Sets the makeInventoryAvailableStore value for this Location.
      * 
-     * @return
-     *     possible object is
-     *     {@link LocationGeolocationMethod }
-     *     
+     * @param makeInventoryAvailableStore
      */
-    public LocationGeolocationMethod getGeolocationMethod() {
+    public void setMakeInventoryAvailableStore(java.lang.Boolean makeInventoryAvailableStore) {
+        this.makeInventoryAvailableStore = makeInventoryAvailableStore;
+    }
+
+
+    /**
+     * Gets the geolocationMethod value for this Location.
+     * 
+     * @return geolocationMethod
+     */
+    public com.netsuite.webservices.lists.accounting_2018_2.types.LocationGeolocationMethod getGeolocationMethod() {
         return geolocationMethod;
     }
 
-    /**
-     * 设置geolocationMethod属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link LocationGeolocationMethod }
-     *     
-     */
-    public void setGeolocationMethod(LocationGeolocationMethod value) {
-        this.geolocationMethod = value;
-    }
 
     /**
-     * 获取autoAssignmentRegionSetting属性的值。
+     * Sets the geolocationMethod value for this Location.
      * 
-     * @return
-     *     possible object is
-     *     {@link LocationAutoAssignmentRegionSetting }
-     *     
+     * @param geolocationMethod
      */
-    public LocationAutoAssignmentRegionSetting getAutoAssignmentRegionSetting() {
+    public void setGeolocationMethod(com.netsuite.webservices.lists.accounting_2018_2.types.LocationGeolocationMethod geolocationMethod) {
+        this.geolocationMethod = geolocationMethod;
+    }
+
+
+    /**
+     * Gets the autoAssignmentRegionSetting value for this Location.
+     * 
+     * @return autoAssignmentRegionSetting
+     */
+    public com.netsuite.webservices.lists.accounting_2018_2.types.LocationAutoAssignmentRegionSetting getAutoAssignmentRegionSetting() {
         return autoAssignmentRegionSetting;
     }
 
-    /**
-     * 设置autoAssignmentRegionSetting属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link LocationAutoAssignmentRegionSetting }
-     *     
-     */
-    public void setAutoAssignmentRegionSetting(LocationAutoAssignmentRegionSetting value) {
-        this.autoAssignmentRegionSetting = value;
-    }
 
     /**
-     * 获取nextPickupCutOffTime属性的值。
+     * Sets the autoAssignmentRegionSetting value for this Location.
      * 
-     * @return
-     *     possible object is
-     *     {@link XMLGregorianCalendar }
-     *     
+     * @param autoAssignmentRegionSetting
      */
-    public XMLGregorianCalendar getNextPickupCutOffTime() {
+    public void setAutoAssignmentRegionSetting(com.netsuite.webservices.lists.accounting_2018_2.types.LocationAutoAssignmentRegionSetting autoAssignmentRegionSetting) {
+        this.autoAssignmentRegionSetting = autoAssignmentRegionSetting;
+    }
+
+
+    /**
+     * Gets the nextPickupCutOffTime value for this Location.
+     * 
+     * @return nextPickupCutOffTime
+     */
+    public java.util.Calendar getNextPickupCutOffTime() {
         return nextPickupCutOffTime;
     }
 
-    /**
-     * 设置nextPickupCutOffTime属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link XMLGregorianCalendar }
-     *     
-     */
-    public void setNextPickupCutOffTime(XMLGregorianCalendar value) {
-        this.nextPickupCutOffTime = value;
-    }
 
     /**
-     * 获取bufferStock属性的值。
+     * Sets the nextPickupCutOffTime value for this Location.
      * 
-     * @return
-     *     possible object is
-     *     {@link Long }
-     *     
+     * @param nextPickupCutOffTime
      */
-    public Long getBufferStock() {
+    public void setNextPickupCutOffTime(java.util.Calendar nextPickupCutOffTime) {
+        this.nextPickupCutOffTime = nextPickupCutOffTime;
+    }
+
+
+    /**
+     * Gets the bufferStock value for this Location.
+     * 
+     * @return bufferStock
+     */
+    public java.lang.Long getBufferStock() {
         return bufferStock;
     }
 
-    /**
-     * 设置bufferStock属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Long }
-     *     
-     */
-    public void setBufferStock(Long value) {
-        this.bufferStock = value;
-    }
 
     /**
-     * 获取allowStorePickup属性的值。
+     * Sets the bufferStock value for this Location.
      * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
+     * @param bufferStock
      */
-    public Boolean isAllowStorePickup() {
+    public void setBufferStock(java.lang.Long bufferStock) {
+        this.bufferStock = bufferStock;
+    }
+
+
+    /**
+     * Gets the allowStorePickup value for this Location.
+     * 
+     * @return allowStorePickup
+     */
+    public java.lang.Boolean getAllowStorePickup() {
         return allowStorePickup;
     }
 
-    /**
-     * 设置allowStorePickup属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
-     */
-    public void setAllowStorePickup(Boolean value) {
-        this.allowStorePickup = value;
-    }
 
     /**
-     * 获取storePickupBufferStock属性的值。
+     * Sets the allowStorePickup value for this Location.
      * 
-     * @return
-     *     possible object is
-     *     {@link Double }
-     *     
+     * @param allowStorePickup
      */
-    public Double getStorePickupBufferStock() {
+    public void setAllowStorePickup(java.lang.Boolean allowStorePickup) {
+        this.allowStorePickup = allowStorePickup;
+    }
+
+
+    /**
+     * Gets the storePickupBufferStock value for this Location.
+     * 
+     * @return storePickupBufferStock
+     */
+    public java.lang.Double getStorePickupBufferStock() {
         return storePickupBufferStock;
     }
 
-    /**
-     * 设置storePickupBufferStock属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Double }
-     *     
-     */
-    public void setStorePickupBufferStock(Double value) {
-        this.storePickupBufferStock = value;
-    }
 
     /**
-     * 获取dailyShippingCapacity属性的值。
+     * Sets the storePickupBufferStock value for this Location.
      * 
-     * @return
-     *     possible object is
-     *     {@link Long }
-     *     
+     * @param storePickupBufferStock
      */
-    public Long getDailyShippingCapacity() {
+    public void setStorePickupBufferStock(java.lang.Double storePickupBufferStock) {
+        this.storePickupBufferStock = storePickupBufferStock;
+    }
+
+
+    /**
+     * Gets the dailyShippingCapacity value for this Location.
+     * 
+     * @return dailyShippingCapacity
+     */
+    public java.lang.Long getDailyShippingCapacity() {
         return dailyShippingCapacity;
     }
 
-    /**
-     * 设置dailyShippingCapacity属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Long }
-     *     
-     */
-    public void setDailyShippingCapacity(Long value) {
-        this.dailyShippingCapacity = value;
-    }
 
     /**
-     * 获取totalShippingCapacity属性的值。
+     * Sets the dailyShippingCapacity value for this Location.
      * 
-     * @return
-     *     possible object is
-     *     {@link Long }
-     *     
+     * @param dailyShippingCapacity
      */
-    public Long getTotalShippingCapacity() {
+    public void setDailyShippingCapacity(java.lang.Long dailyShippingCapacity) {
+        this.dailyShippingCapacity = dailyShippingCapacity;
+    }
+
+
+    /**
+     * Gets the totalShippingCapacity value for this Location.
+     * 
+     * @return totalShippingCapacity
+     */
+    public java.lang.Long getTotalShippingCapacity() {
         return totalShippingCapacity;
     }
 
-    /**
-     * 设置totalShippingCapacity属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Long }
-     *     
-     */
-    public void setTotalShippingCapacity(Long value) {
-        this.totalShippingCapacity = value;
-    }
 
     /**
-     * 获取includeLocationRegionsList属性的值。
+     * Sets the totalShippingCapacity value for this Location.
      * 
-     * @return
-     *     possible object is
-     *     {@link LocationRegionsList }
-     *     
+     * @param totalShippingCapacity
      */
-    public LocationRegionsList getIncludeLocationRegionsList() {
+    public void setTotalShippingCapacity(java.lang.Long totalShippingCapacity) {
+        this.totalShippingCapacity = totalShippingCapacity;
+    }
+
+
+    /**
+     * Gets the includeLocationRegionsList value for this Location.
+     * 
+     * @return includeLocationRegionsList
+     */
+    public com.netsuite.webservices.lists.accounting_2018_2.LocationRegions[] getIncludeLocationRegionsList() {
         return includeLocationRegionsList;
     }
 
-    /**
-     * 设置includeLocationRegionsList属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link LocationRegionsList }
-     *     
-     */
-    public void setIncludeLocationRegionsList(LocationRegionsList value) {
-        this.includeLocationRegionsList = value;
-    }
 
     /**
-     * 获取excludeLocationRegionsList属性的值。
+     * Sets the includeLocationRegionsList value for this Location.
      * 
-     * @return
-     *     possible object is
-     *     {@link LocationRegionsList }
-     *     
+     * @param includeLocationRegionsList
      */
-    public LocationRegionsList getExcludeLocationRegionsList() {
+    public void setIncludeLocationRegionsList(com.netsuite.webservices.lists.accounting_2018_2.LocationRegions[] includeLocationRegionsList) {
+        this.includeLocationRegionsList = includeLocationRegionsList;
+    }
+
+
+    /**
+     * Gets the excludeLocationRegionsList value for this Location.
+     * 
+     * @return excludeLocationRegionsList
+     */
+    public com.netsuite.webservices.lists.accounting_2018_2.LocationRegions[] getExcludeLocationRegionsList() {
         return excludeLocationRegionsList;
     }
 
-    /**
-     * 设置excludeLocationRegionsList属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link LocationRegionsList }
-     *     
-     */
-    public void setExcludeLocationRegionsList(LocationRegionsList value) {
-        this.excludeLocationRegionsList = value;
-    }
 
     /**
-     * 获取businessHoursList属性的值。
+     * Sets the excludeLocationRegionsList value for this Location.
      * 
-     * @return
-     *     possible object is
-     *     {@link LocationBusinessHoursList }
-     *     
+     * @param excludeLocationRegionsList
      */
-    public LocationBusinessHoursList getBusinessHoursList() {
+    public void setExcludeLocationRegionsList(com.netsuite.webservices.lists.accounting_2018_2.LocationRegions[] excludeLocationRegionsList) {
+        this.excludeLocationRegionsList = excludeLocationRegionsList;
+    }
+
+
+    /**
+     * Gets the businessHoursList value for this Location.
+     * 
+     * @return businessHoursList
+     */
+    public com.netsuite.webservices.lists.accounting_2018_2.LocationBusinessHours[] getBusinessHoursList() {
         return businessHoursList;
     }
 
-    /**
-     * 设置businessHoursList属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link LocationBusinessHoursList }
-     *     
-     */
-    public void setBusinessHoursList(LocationBusinessHoursList value) {
-        this.businessHoursList = value;
-    }
 
     /**
-     * 获取classTranslationList属性的值。
+     * Sets the businessHoursList value for this Location.
      * 
-     * @return
-     *     possible object is
-     *     {@link ClassTranslationList }
-     *     
+     * @param businessHoursList
      */
-    public ClassTranslationList getClassTranslationList() {
+    public void setBusinessHoursList(com.netsuite.webservices.lists.accounting_2018_2.LocationBusinessHours[] businessHoursList) {
+        this.businessHoursList = businessHoursList;
+    }
+
+
+    /**
+     * Gets the classTranslationList value for this Location.
+     * 
+     * @return classTranslationList
+     */
+    public com.netsuite.webservices.lists.accounting_2018_2.ClassTranslation[] getClassTranslationList() {
         return classTranslationList;
     }
 
-    /**
-     * 设置classTranslationList属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link ClassTranslationList }
-     *     
-     */
-    public void setClassTranslationList(ClassTranslationList value) {
-        this.classTranslationList = value;
-    }
 
     /**
-     * 获取customFieldList属性的值。
+     * Sets the classTranslationList value for this Location.
      * 
-     * @return
-     *     possible object is
-     *     {@link CustomFieldList }
-     *     
+     * @param classTranslationList
      */
-    public CustomFieldList getCustomFieldList() {
+    public void setClassTranslationList(com.netsuite.webservices.lists.accounting_2018_2.ClassTranslation[] classTranslationList) {
+        this.classTranslationList = classTranslationList;
+    }
+
+
+    /**
+     * Gets the customFieldList value for this Location.
+     * 
+     * @return customFieldList
+     */
+    public com.netsuite.webservices.platform.core_2018_2.CustomFieldRef[] getCustomFieldList() {
         return customFieldList;
     }
 
-    /**
-     * 设置customFieldList属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link CustomFieldList }
-     *     
-     */
-    public void setCustomFieldList(CustomFieldList value) {
-        this.customFieldList = value;
-    }
 
     /**
-     * 获取internalId属性的值。
+     * Sets the customFieldList value for this Location.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param customFieldList
      */
-    public String getInternalId() {
+    public void setCustomFieldList(com.netsuite.webservices.platform.core_2018_2.CustomFieldRef[] customFieldList) {
+        this.customFieldList = customFieldList;
+    }
+
+
+    /**
+     * Gets the internalId value for this Location.
+     * 
+     * @return internalId
+     */
+    public java.lang.String getInternalId() {
         return internalId;
     }
 
-    /**
-     * 设置internalId属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setInternalId(String value) {
-        this.internalId = value;
-    }
 
     /**
-     * 获取externalId属性的值。
+     * Sets the internalId value for this Location.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param internalId
      */
-    public String getExternalId() {
+    public void setInternalId(java.lang.String internalId) {
+        this.internalId = internalId;
+    }
+
+
+    /**
+     * Gets the externalId value for this Location.
+     * 
+     * @return externalId
+     */
+    public java.lang.String getExternalId() {
         return externalId;
     }
 
+
     /**
-     * 设置externalId属性的值。
+     * Sets the externalId value for this Location.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     * @param externalId
      */
-    public void setExternalId(String value) {
-        this.externalId = value;
+    public void setExternalId(java.lang.String externalId) {
+        this.externalId = externalId;
+    }
+
+    private java.lang.Object __equalsCalc = null;
+    public synchronized boolean equals(java.lang.Object obj) {
+        if (!(obj instanceof Location)) return false;
+        Location other = (Location) obj;
+        if (obj == null) return false;
+        if (this == obj) return true;
+        if (__equalsCalc != null) {
+            return (__equalsCalc == obj);
+        }
+        __equalsCalc = obj;
+        boolean _equals;
+        _equals = super.equals(obj) && 
+            ((this.name==null && other.getName()==null) || 
+             (this.name!=null &&
+              this.name.equals(other.getName()))) &&
+            ((this.parent==null && other.getParent()==null) || 
+             (this.parent!=null &&
+              this.parent.equals(other.getParent()))) &&
+            ((this.includeChildren==null && other.getIncludeChildren()==null) || 
+             (this.includeChildren!=null &&
+              this.includeChildren.equals(other.getIncludeChildren()))) &&
+            ((this.subsidiaryList==null && other.getSubsidiaryList()==null) || 
+             (this.subsidiaryList!=null &&
+              java.util.Arrays.equals(this.subsidiaryList, other.getSubsidiaryList()))) &&
+            ((this.isInactive==null && other.getIsInactive()==null) || 
+             (this.isInactive!=null &&
+              this.isInactive.equals(other.getIsInactive()))) &&
+            ((this.tranPrefix==null && other.getTranPrefix()==null) || 
+             (this.tranPrefix!=null &&
+              this.tranPrefix.equals(other.getTranPrefix()))) &&
+            ((this.mainAddress==null && other.getMainAddress()==null) || 
+             (this.mainAddress!=null &&
+              this.mainAddress.equals(other.getMainAddress()))) &&
+            ((this.returnAddress==null && other.getReturnAddress()==null) || 
+             (this.returnAddress!=null &&
+              this.returnAddress.equals(other.getReturnAddress()))) &&
+            ((this.locationType==null && other.getLocationType()==null) || 
+             (this.locationType!=null &&
+              this.locationType.equals(other.getLocationType()))) &&
+            ((this.timeZone==null && other.getTimeZone()==null) || 
+             (this.timeZone!=null &&
+              this.timeZone.equals(other.getTimeZone()))) &&
+            ((this.latitude==null && other.getLatitude()==null) || 
+             (this.latitude!=null &&
+              this.latitude.equals(other.getLatitude()))) &&
+            ((this.longitude==null && other.getLongitude()==null) || 
+             (this.longitude!=null &&
+              this.longitude.equals(other.getLongitude()))) &&
+            ((this.logo==null && other.getLogo()==null) || 
+             (this.logo!=null &&
+              this.logo.equals(other.getLogo()))) &&
+            ((this.useBins==null && other.getUseBins()==null) || 
+             (this.useBins!=null &&
+              this.useBins.equals(other.getUseBins()))) &&
+            ((this.makeInventoryAvailable==null && other.getMakeInventoryAvailable()==null) || 
+             (this.makeInventoryAvailable!=null &&
+              this.makeInventoryAvailable.equals(other.getMakeInventoryAvailable()))) &&
+            ((this.makeInventoryAvailableStore==null && other.getMakeInventoryAvailableStore()==null) || 
+             (this.makeInventoryAvailableStore!=null &&
+              this.makeInventoryAvailableStore.equals(other.getMakeInventoryAvailableStore()))) &&
+            ((this.geolocationMethod==null && other.getGeolocationMethod()==null) || 
+             (this.geolocationMethod!=null &&
+              this.geolocationMethod.equals(other.getGeolocationMethod()))) &&
+            ((this.autoAssignmentRegionSetting==null && other.getAutoAssignmentRegionSetting()==null) || 
+             (this.autoAssignmentRegionSetting!=null &&
+              this.autoAssignmentRegionSetting.equals(other.getAutoAssignmentRegionSetting()))) &&
+            ((this.nextPickupCutOffTime==null && other.getNextPickupCutOffTime()==null) || 
+             (this.nextPickupCutOffTime!=null &&
+              this.nextPickupCutOffTime.equals(other.getNextPickupCutOffTime()))) &&
+            ((this.bufferStock==null && other.getBufferStock()==null) || 
+             (this.bufferStock!=null &&
+              this.bufferStock.equals(other.getBufferStock()))) &&
+            ((this.allowStorePickup==null && other.getAllowStorePickup()==null) || 
+             (this.allowStorePickup!=null &&
+              this.allowStorePickup.equals(other.getAllowStorePickup()))) &&
+            ((this.storePickupBufferStock==null && other.getStorePickupBufferStock()==null) || 
+             (this.storePickupBufferStock!=null &&
+              this.storePickupBufferStock.equals(other.getStorePickupBufferStock()))) &&
+            ((this.dailyShippingCapacity==null && other.getDailyShippingCapacity()==null) || 
+             (this.dailyShippingCapacity!=null &&
+              this.dailyShippingCapacity.equals(other.getDailyShippingCapacity()))) &&
+            ((this.totalShippingCapacity==null && other.getTotalShippingCapacity()==null) || 
+             (this.totalShippingCapacity!=null &&
+              this.totalShippingCapacity.equals(other.getTotalShippingCapacity()))) &&
+            ((this.includeLocationRegionsList==null && other.getIncludeLocationRegionsList()==null) || 
+             (this.includeLocationRegionsList!=null &&
+              java.util.Arrays.equals(this.includeLocationRegionsList, other.getIncludeLocationRegionsList()))) &&
+            ((this.excludeLocationRegionsList==null && other.getExcludeLocationRegionsList()==null) || 
+             (this.excludeLocationRegionsList!=null &&
+              java.util.Arrays.equals(this.excludeLocationRegionsList, other.getExcludeLocationRegionsList()))) &&
+            ((this.businessHoursList==null && other.getBusinessHoursList()==null) || 
+             (this.businessHoursList!=null &&
+              java.util.Arrays.equals(this.businessHoursList, other.getBusinessHoursList()))) &&
+            ((this.classTranslationList==null && other.getClassTranslationList()==null) || 
+             (this.classTranslationList!=null &&
+              java.util.Arrays.equals(this.classTranslationList, other.getClassTranslationList()))) &&
+            ((this.customFieldList==null && other.getCustomFieldList()==null) || 
+             (this.customFieldList!=null &&
+              java.util.Arrays.equals(this.customFieldList, other.getCustomFieldList()))) &&
+            ((this.internalId==null && other.getInternalId()==null) || 
+             (this.internalId!=null &&
+              this.internalId.equals(other.getInternalId()))) &&
+            ((this.externalId==null && other.getExternalId()==null) || 
+             (this.externalId!=null &&
+              this.externalId.equals(other.getExternalId())));
+        __equalsCalc = null;
+        return _equals;
+    }
+
+    private boolean __hashCodeCalc = false;
+    public synchronized int hashCode() {
+        if (__hashCodeCalc) {
+            return 0;
+        }
+        __hashCodeCalc = true;
+        int _hashCode = super.hashCode();
+        if (getName() != null) {
+            _hashCode += getName().hashCode();
+        }
+        if (getParent() != null) {
+            _hashCode += getParent().hashCode();
+        }
+        if (getIncludeChildren() != null) {
+            _hashCode += getIncludeChildren().hashCode();
+        }
+        if (getSubsidiaryList() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getSubsidiaryList());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getSubsidiaryList(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getIsInactive() != null) {
+            _hashCode += getIsInactive().hashCode();
+        }
+        if (getTranPrefix() != null) {
+            _hashCode += getTranPrefix().hashCode();
+        }
+        if (getMainAddress() != null) {
+            _hashCode += getMainAddress().hashCode();
+        }
+        if (getReturnAddress() != null) {
+            _hashCode += getReturnAddress().hashCode();
+        }
+        if (getLocationType() != null) {
+            _hashCode += getLocationType().hashCode();
+        }
+        if (getTimeZone() != null) {
+            _hashCode += getTimeZone().hashCode();
+        }
+        if (getLatitude() != null) {
+            _hashCode += getLatitude().hashCode();
+        }
+        if (getLongitude() != null) {
+            _hashCode += getLongitude().hashCode();
+        }
+        if (getLogo() != null) {
+            _hashCode += getLogo().hashCode();
+        }
+        if (getUseBins() != null) {
+            _hashCode += getUseBins().hashCode();
+        }
+        if (getMakeInventoryAvailable() != null) {
+            _hashCode += getMakeInventoryAvailable().hashCode();
+        }
+        if (getMakeInventoryAvailableStore() != null) {
+            _hashCode += getMakeInventoryAvailableStore().hashCode();
+        }
+        if (getGeolocationMethod() != null) {
+            _hashCode += getGeolocationMethod().hashCode();
+        }
+        if (getAutoAssignmentRegionSetting() != null) {
+            _hashCode += getAutoAssignmentRegionSetting().hashCode();
+        }
+        if (getNextPickupCutOffTime() != null) {
+            _hashCode += getNextPickupCutOffTime().hashCode();
+        }
+        if (getBufferStock() != null) {
+            _hashCode += getBufferStock().hashCode();
+        }
+        if (getAllowStorePickup() != null) {
+            _hashCode += getAllowStorePickup().hashCode();
+        }
+        if (getStorePickupBufferStock() != null) {
+            _hashCode += getStorePickupBufferStock().hashCode();
+        }
+        if (getDailyShippingCapacity() != null) {
+            _hashCode += getDailyShippingCapacity().hashCode();
+        }
+        if (getTotalShippingCapacity() != null) {
+            _hashCode += getTotalShippingCapacity().hashCode();
+        }
+        if (getIncludeLocationRegionsList() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getIncludeLocationRegionsList());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getIncludeLocationRegionsList(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getExcludeLocationRegionsList() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getExcludeLocationRegionsList());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getExcludeLocationRegionsList(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getBusinessHoursList() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getBusinessHoursList());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getBusinessHoursList(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getClassTranslationList() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getClassTranslationList());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getClassTranslationList(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getCustomFieldList() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getCustomFieldList());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getCustomFieldList(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getInternalId() != null) {
+            _hashCode += getInternalId().hashCode();
+        }
+        if (getExternalId() != null) {
+            _hashCode += getExternalId().hashCode();
+        }
+        __hashCodeCalc = false;
+        return _hashCode;
+    }
+
+    // Type metadata
+    private static org.apache.axis.description.TypeDesc typeDesc =
+        new org.apache.axis.description.TypeDesc(Location.class, true);
+
+    static {
+        typeDesc.setXmlType(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "Location"));
+        org.apache.axis.description.AttributeDesc attrField = new org.apache.axis.description.AttributeDesc();
+        attrField.setFieldName("internalId");
+        attrField.setXmlName(new javax.xml.namespace.QName("", "internalId"));
+        attrField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        typeDesc.addFieldDesc(attrField);
+        attrField = new org.apache.axis.description.AttributeDesc();
+        attrField.setFieldName("externalId");
+        attrField.setXmlName(new javax.xml.namespace.QName("", "externalId"));
+        attrField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        typeDesc.addFieldDesc(attrField);
+        org.apache.axis.description.ElementDesc elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("name");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "name"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("parent");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "parent"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("includeChildren");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "includeChildren"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("subsidiaryList");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "subsidiaryList"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "recordRef"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("isInactive");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "isInactive"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("tranPrefix");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "tranPrefix"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("mainAddress");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "mainAddress"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "Address"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("returnAddress");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "returnAddress"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "Address"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("locationType");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "locationType"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:types.accounting_2018_2.lists.webservices.netsuite.com", "LocationType"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("timeZone");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "timeZone"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:types.accounting_2018_2.lists.webservices.netsuite.com", "LocationTimeZone"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("latitude");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "latitude"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "double"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("longitude");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "longitude"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "double"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("logo");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "logo"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("useBins");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "useBins"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("makeInventoryAvailable");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "makeInventoryAvailable"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("makeInventoryAvailableStore");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "makeInventoryAvailableStore"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("geolocationMethod");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "geolocationMethod"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:types.accounting_2018_2.lists.webservices.netsuite.com", "LocationGeolocationMethod"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("autoAssignmentRegionSetting");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "autoAssignmentRegionSetting"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:types.accounting_2018_2.lists.webservices.netsuite.com", "LocationAutoAssignmentRegionSetting"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("nextPickupCutOffTime");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "nextPickupCutOffTime"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "dateTime"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("bufferStock");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "bufferStock"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "long"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("allowStorePickup");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "allowStorePickup"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("storePickupBufferStock");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "storePickupBufferStock"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "double"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("dailyShippingCapacity");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "dailyShippingCapacity"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "long"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("totalShippingCapacity");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "totalShippingCapacity"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "long"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("includeLocationRegionsList");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "includeLocationRegionsList"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "LocationRegions"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "locationRegions"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("excludeLocationRegionsList");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "excludeLocationRegionsList"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "LocationRegions"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "locationRegions"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("businessHoursList");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "businessHoursList"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "LocationBusinessHours"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "locationBusinessHours"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("classTranslationList");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "classTranslationList"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "ClassTranslation"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "classTranslation"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("customFieldList");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "customFieldList"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "CustomFieldRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "customField"));
+        typeDesc.addFieldDesc(elemField);
+    }
+
+    /**
+     * Return type metadata object
+     */
+    public static org.apache.axis.description.TypeDesc getTypeDesc() {
+        return typeDesc;
+    }
+
+    /**
+     * Get Custom Serializer
+     */
+    public static org.apache.axis.encoding.Serializer getSerializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanSerializer(
+            _javaType, _xmlType, typeDesc);
+    }
+
+    /**
+     * Get Custom Deserializer
+     */
+    public static org.apache.axis.encoding.Deserializer getDeserializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanDeserializer(
+            _javaType, _xmlType, typeDesc);
     }
 
 }

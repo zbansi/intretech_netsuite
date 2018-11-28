@@ -1,201 +1,170 @@
+/**
+ * MediaType.java
+ *
+ * This file was auto-generated from WSDL
+ * by the Apache Axis 1.4 Jul 28, 2010 (04:07:04 PDT) WSDL2Java emitter.
+ */
 
 package com.netsuite.webservices.documents.filecabinet_2018_2.types;
 
-import javax.xml.bind.annotation.XmlEnum;
-import javax.xml.bind.annotation.XmlEnumValue;
-import javax.xml.bind.annotation.XmlType;
+public class MediaType implements java.io.Serializable {
+    private java.lang.String _value_;
+    private static java.util.HashMap _table_ = new java.util.HashMap();
 
-
-/**
- * <p>MediaType的 Java 类。
- * 
- * <p>以下模式片段指定包含在此类中的预期内容。
- * <p>
- * <pre>
- * &lt;simpleType name="MediaType">
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     &lt;enumeration value="_APPCACHE"/>
- *     &lt;enumeration value="_AUTOCAD"/>
- *     &lt;enumeration value="_BMPIMAGE"/>
- *     &lt;enumeration value="_CERTIFICATE"/>
- *     &lt;enumeration value="_CFF"/>
- *     &lt;enumeration value="_CONFIG"/>
- *     &lt;enumeration value="_CSV"/>
- *     &lt;enumeration value="_EOT"/>
- *     &lt;enumeration value="_EXCEL"/>
- *     &lt;enumeration value="_FLASH"/>
- *     &lt;enumeration value="_FREEMARKER"/>
- *     &lt;enumeration value="_GIFIMAGE"/>
- *     &lt;enumeration value="_GZIP"/>
- *     &lt;enumeration value="_HTMLDOC"/>
- *     &lt;enumeration value="_ICON"/>
- *     &lt;enumeration value="_IMAGE"/>
- *     &lt;enumeration value="_JAVASCRIPT"/>
- *     &lt;enumeration value="_JPGIMAGE"/>
- *     &lt;enumeration value="_JSON"/>
- *     &lt;enumeration value="_LZH"/>
- *     &lt;enumeration value="_MESSAGERFC"/>
- *     &lt;enumeration value="_MISCBINARY"/>
- *     &lt;enumeration value="_MISCTEXT"/>
- *     &lt;enumeration value="_MP3"/>
- *     &lt;enumeration value="_MPEGMOVIE"/>
- *     &lt;enumeration value="_MSPROJECT"/>
- *     &lt;enumeration value="_OTF"/>
- *     &lt;enumeration value="_PDF"/>
- *     &lt;enumeration value="_PJPGIMAGE"/>
- *     &lt;enumeration value="_PLAINTEXT"/>
- *     &lt;enumeration value="_PNGIMAGE"/>
- *     &lt;enumeration value="_POSTSCRIPT"/>
- *     &lt;enumeration value="_POWERPOINT"/>
- *     &lt;enumeration value="_QUICKTIME"/>
- *     &lt;enumeration value="_RTF"/>
- *     &lt;enumeration value="_SCSS"/>
- *     &lt;enumeration value="_SMS"/>
- *     &lt;enumeration value="_STYLESHEET"/>
- *     &lt;enumeration value="_SVG"/>
- *     &lt;enumeration value="_TAR"/>
- *     &lt;enumeration value="_TARCOMP"/>
- *     &lt;enumeration value="_TIFFIMAGE"/>
- *     &lt;enumeration value="_TTF"/>
- *     &lt;enumeration value="_VISIO"/>
- *     &lt;enumeration value="_WEBAPPPAGE"/>
- *     &lt;enumeration value="_WEBAPPSCRIPT"/>
- *     &lt;enumeration value="_WOFF"/>
- *     &lt;enumeration value="_WOFF2"/>
- *     &lt;enumeration value="_WORD"/>
- *     &lt;enumeration value="_XMLDOC"/>
- *     &lt;enumeration value="_XSD"/>
- *     &lt;enumeration value="_ZIP"/>
- *   &lt;/restriction>
- * &lt;/simpleType>
- * </pre>
- * 
- */
-@XmlType(name = "MediaType", namespace = "urn:types.filecabinet_2018_2.documents.webservices.netsuite.com")
-@XmlEnum
-public enum MediaType {
-
-    @XmlEnumValue("_APPCACHE")
-    APPCACHE("_APPCACHE"),
-    @XmlEnumValue("_AUTOCAD")
-    AUTOCAD("_AUTOCAD"),
-    @XmlEnumValue("_BMPIMAGE")
-    BMPIMAGE("_BMPIMAGE"),
-    @XmlEnumValue("_CERTIFICATE")
-    CERTIFICATE("_CERTIFICATE"),
-    @XmlEnumValue("_CFF")
-    CFF("_CFF"),
-    @XmlEnumValue("_CONFIG")
-    CONFIG("_CONFIG"),
-    @XmlEnumValue("_CSV")
-    CSV("_CSV"),
-    @XmlEnumValue("_EOT")
-    EOT("_EOT"),
-    @XmlEnumValue("_EXCEL")
-    EXCEL("_EXCEL"),
-    @XmlEnumValue("_FLASH")
-    FLASH("_FLASH"),
-    @XmlEnumValue("_FREEMARKER")
-    FREEMARKER("_FREEMARKER"),
-    @XmlEnumValue("_GIFIMAGE")
-    GIFIMAGE("_GIFIMAGE"),
-    @XmlEnumValue("_GZIP")
-    GZIP("_GZIP"),
-    @XmlEnumValue("_HTMLDOC")
-    HTMLDOC("_HTMLDOC"),
-    @XmlEnumValue("_ICON")
-    ICON("_ICON"),
-    @XmlEnumValue("_IMAGE")
-    IMAGE("_IMAGE"),
-    @XmlEnumValue("_JAVASCRIPT")
-    JAVASCRIPT("_JAVASCRIPT"),
-    @XmlEnumValue("_JPGIMAGE")
-    JPGIMAGE("_JPGIMAGE"),
-    @XmlEnumValue("_JSON")
-    JSON("_JSON"),
-    @XmlEnumValue("_LZH")
-    LZH("_LZH"),
-    @XmlEnumValue("_MESSAGERFC")
-    MESSAGERFC("_MESSAGERFC"),
-    @XmlEnumValue("_MISCBINARY")
-    MISCBINARY("_MISCBINARY"),
-    @XmlEnumValue("_MISCTEXT")
-    MISCTEXT("_MISCTEXT"),
-    @XmlEnumValue("_MP3")
-    MP_3("_MP3"),
-    @XmlEnumValue("_MPEGMOVIE")
-    MPEGMOVIE("_MPEGMOVIE"),
-    @XmlEnumValue("_MSPROJECT")
-    MSPROJECT("_MSPROJECT"),
-    @XmlEnumValue("_OTF")
-    OTF("_OTF"),
-    @XmlEnumValue("_PDF")
-    PDF("_PDF"),
-    @XmlEnumValue("_PJPGIMAGE")
-    PJPGIMAGE("_PJPGIMAGE"),
-    @XmlEnumValue("_PLAINTEXT")
-    PLAINTEXT("_PLAINTEXT"),
-    @XmlEnumValue("_PNGIMAGE")
-    PNGIMAGE("_PNGIMAGE"),
-    @XmlEnumValue("_POSTSCRIPT")
-    POSTSCRIPT("_POSTSCRIPT"),
-    @XmlEnumValue("_POWERPOINT")
-    POWERPOINT("_POWERPOINT"),
-    @XmlEnumValue("_QUICKTIME")
-    QUICKTIME("_QUICKTIME"),
-    @XmlEnumValue("_RTF")
-    RTF("_RTF"),
-    @XmlEnumValue("_SCSS")
-    SCSS("_SCSS"),
-    @XmlEnumValue("_SMS")
-    SMS("_SMS"),
-    @XmlEnumValue("_STYLESHEET")
-    STYLESHEET("_STYLESHEET"),
-    @XmlEnumValue("_SVG")
-    SVG("_SVG"),
-    @XmlEnumValue("_TAR")
-    TAR("_TAR"),
-    @XmlEnumValue("_TARCOMP")
-    TARCOMP("_TARCOMP"),
-    @XmlEnumValue("_TIFFIMAGE")
-    TIFFIMAGE("_TIFFIMAGE"),
-    @XmlEnumValue("_TTF")
-    TTF("_TTF"),
-    @XmlEnumValue("_VISIO")
-    VISIO("_VISIO"),
-    @XmlEnumValue("_WEBAPPPAGE")
-    WEBAPPPAGE("_WEBAPPPAGE"),
-    @XmlEnumValue("_WEBAPPSCRIPT")
-    WEBAPPSCRIPT("_WEBAPPSCRIPT"),
-    @XmlEnumValue("_WOFF")
-    WOFF("_WOFF"),
-    @XmlEnumValue("_WOFF2")
-    WOFF_2("_WOFF2"),
-    @XmlEnumValue("_WORD")
-    WORD("_WORD"),
-    @XmlEnumValue("_XMLDOC")
-    XMLDOC("_XMLDOC"),
-    @XmlEnumValue("_XSD")
-    XSD("_XSD"),
-    @XmlEnumValue("_ZIP")
-    ZIP("_ZIP");
-    private final String value;
-
-    MediaType(String v) {
-        value = v;
+    // Constructor
+    protected MediaType(java.lang.String value) {
+        _value_ = value;
+        _table_.put(_value_,this);
     }
 
-    public String value() {
-        return value;
+    public static final java.lang.String __APPCACHE = "_APPCACHE";
+    public static final java.lang.String __AUTOCAD = "_AUTOCAD";
+    public static final java.lang.String __BMPIMAGE = "_BMPIMAGE";
+    public static final java.lang.String __CERTIFICATE = "_CERTIFICATE";
+    public static final java.lang.String __CFF = "_CFF";
+    public static final java.lang.String __CONFIG = "_CONFIG";
+    public static final java.lang.String __CSV = "_CSV";
+    public static final java.lang.String __EOT = "_EOT";
+    public static final java.lang.String __EXCEL = "_EXCEL";
+    public static final java.lang.String __FLASH = "_FLASH";
+    public static final java.lang.String __FREEMARKER = "_FREEMARKER";
+    public static final java.lang.String __GIFIMAGE = "_GIFIMAGE";
+    public static final java.lang.String __GZIP = "_GZIP";
+    public static final java.lang.String __HTMLDOC = "_HTMLDOC";
+    public static final java.lang.String __ICON = "_ICON";
+    public static final java.lang.String __IMAGE = "_IMAGE";
+    public static final java.lang.String __JAVASCRIPT = "_JAVASCRIPT";
+    public static final java.lang.String __JPGIMAGE = "_JPGIMAGE";
+    public static final java.lang.String __JSON = "_JSON";
+    public static final java.lang.String __LZH = "_LZH";
+    public static final java.lang.String __MESSAGERFC = "_MESSAGERFC";
+    public static final java.lang.String __MISCBINARY = "_MISCBINARY";
+    public static final java.lang.String __MISCTEXT = "_MISCTEXT";
+    public static final java.lang.String __MP3 = "_MP3";
+    public static final java.lang.String __MPEGMOVIE = "_MPEGMOVIE";
+    public static final java.lang.String __MSPROJECT = "_MSPROJECT";
+    public static final java.lang.String __OTF = "_OTF";
+    public static final java.lang.String __PDF = "_PDF";
+    public static final java.lang.String __PJPGIMAGE = "_PJPGIMAGE";
+    public static final java.lang.String __PLAINTEXT = "_PLAINTEXT";
+    public static final java.lang.String __PNGIMAGE = "_PNGIMAGE";
+    public static final java.lang.String __POSTSCRIPT = "_POSTSCRIPT";
+    public static final java.lang.String __POWERPOINT = "_POWERPOINT";
+    public static final java.lang.String __QUICKTIME = "_QUICKTIME";
+    public static final java.lang.String __RTF = "_RTF";
+    public static final java.lang.String __SCSS = "_SCSS";
+    public static final java.lang.String __SMS = "_SMS";
+    public static final java.lang.String __STYLESHEET = "_STYLESHEET";
+    public static final java.lang.String __SVG = "_SVG";
+    public static final java.lang.String __TAR = "_TAR";
+    public static final java.lang.String __TARCOMP = "_TARCOMP";
+    public static final java.lang.String __TIFFIMAGE = "_TIFFIMAGE";
+    public static final java.lang.String __TTF = "_TTF";
+    public static final java.lang.String __VISIO = "_VISIO";
+    public static final java.lang.String __WEBAPPPAGE = "_WEBAPPPAGE";
+    public static final java.lang.String __WEBAPPSCRIPT = "_WEBAPPSCRIPT";
+    public static final java.lang.String __WOFF = "_WOFF";
+    public static final java.lang.String __WOFF2 = "_WOFF2";
+    public static final java.lang.String __WORD = "_WORD";
+    public static final java.lang.String __XMLDOC = "_XMLDOC";
+    public static final java.lang.String __XSD = "_XSD";
+    public static final java.lang.String __ZIP = "_ZIP";
+    public static final MediaType _APPCACHE = new MediaType(__APPCACHE);
+    public static final MediaType _AUTOCAD = new MediaType(__AUTOCAD);
+    public static final MediaType _BMPIMAGE = new MediaType(__BMPIMAGE);
+    public static final MediaType _CERTIFICATE = new MediaType(__CERTIFICATE);
+    public static final MediaType _CFF = new MediaType(__CFF);
+    public static final MediaType _CONFIG = new MediaType(__CONFIG);
+    public static final MediaType _CSV = new MediaType(__CSV);
+    public static final MediaType _EOT = new MediaType(__EOT);
+    public static final MediaType _EXCEL = new MediaType(__EXCEL);
+    public static final MediaType _FLASH = new MediaType(__FLASH);
+    public static final MediaType _FREEMARKER = new MediaType(__FREEMARKER);
+    public static final MediaType _GIFIMAGE = new MediaType(__GIFIMAGE);
+    public static final MediaType _GZIP = new MediaType(__GZIP);
+    public static final MediaType _HTMLDOC = new MediaType(__HTMLDOC);
+    public static final MediaType _ICON = new MediaType(__ICON);
+    public static final MediaType _IMAGE = new MediaType(__IMAGE);
+    public static final MediaType _JAVASCRIPT = new MediaType(__JAVASCRIPT);
+    public static final MediaType _JPGIMAGE = new MediaType(__JPGIMAGE);
+    public static final MediaType _JSON = new MediaType(__JSON);
+    public static final MediaType _LZH = new MediaType(__LZH);
+    public static final MediaType _MESSAGERFC = new MediaType(__MESSAGERFC);
+    public static final MediaType _MISCBINARY = new MediaType(__MISCBINARY);
+    public static final MediaType _MISCTEXT = new MediaType(__MISCTEXT);
+    public static final MediaType _MP3 = new MediaType(__MP3);
+    public static final MediaType _MPEGMOVIE = new MediaType(__MPEGMOVIE);
+    public static final MediaType _MSPROJECT = new MediaType(__MSPROJECT);
+    public static final MediaType _OTF = new MediaType(__OTF);
+    public static final MediaType _PDF = new MediaType(__PDF);
+    public static final MediaType _PJPGIMAGE = new MediaType(__PJPGIMAGE);
+    public static final MediaType _PLAINTEXT = new MediaType(__PLAINTEXT);
+    public static final MediaType _PNGIMAGE = new MediaType(__PNGIMAGE);
+    public static final MediaType _POSTSCRIPT = new MediaType(__POSTSCRIPT);
+    public static final MediaType _POWERPOINT = new MediaType(__POWERPOINT);
+    public static final MediaType _QUICKTIME = new MediaType(__QUICKTIME);
+    public static final MediaType _RTF = new MediaType(__RTF);
+    public static final MediaType _SCSS = new MediaType(__SCSS);
+    public static final MediaType _SMS = new MediaType(__SMS);
+    public static final MediaType _STYLESHEET = new MediaType(__STYLESHEET);
+    public static final MediaType _SVG = new MediaType(__SVG);
+    public static final MediaType _TAR = new MediaType(__TAR);
+    public static final MediaType _TARCOMP = new MediaType(__TARCOMP);
+    public static final MediaType _TIFFIMAGE = new MediaType(__TIFFIMAGE);
+    public static final MediaType _TTF = new MediaType(__TTF);
+    public static final MediaType _VISIO = new MediaType(__VISIO);
+    public static final MediaType _WEBAPPPAGE = new MediaType(__WEBAPPPAGE);
+    public static final MediaType _WEBAPPSCRIPT = new MediaType(__WEBAPPSCRIPT);
+    public static final MediaType _WOFF = new MediaType(__WOFF);
+    public static final MediaType _WOFF2 = new MediaType(__WOFF2);
+    public static final MediaType _WORD = new MediaType(__WORD);
+    public static final MediaType _XMLDOC = new MediaType(__XMLDOC);
+    public static final MediaType _XSD = new MediaType(__XSD);
+    public static final MediaType _ZIP = new MediaType(__ZIP);
+    public java.lang.String getValue() { return _value_;}
+    public static MediaType fromValue(java.lang.String value)
+          throws java.lang.IllegalArgumentException {
+        MediaType enumeration = (MediaType)
+            _table_.get(value);
+        if (enumeration==null) throw new java.lang.IllegalArgumentException();
+        return enumeration;
     }
+    public static MediaType fromString(java.lang.String value)
+          throws java.lang.IllegalArgumentException {
+        return fromValue(value);
+    }
+    public boolean equals(java.lang.Object obj) {return (obj == this);}
+    public int hashCode() { return toString().hashCode();}
+    public java.lang.String toString() { return _value_;}
+    public java.lang.Object readResolve() throws java.io.ObjectStreamException { return fromValue(_value_);}
+    public static org.apache.axis.encoding.Serializer getSerializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new org.apache.axis.encoding.ser.EnumSerializer(
+            _javaType, _xmlType);
+    }
+    public static org.apache.axis.encoding.Deserializer getDeserializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new org.apache.axis.encoding.ser.EnumDeserializer(
+            _javaType, _xmlType);
+    }
+    // Type metadata
+    private static org.apache.axis.description.TypeDesc typeDesc =
+        new org.apache.axis.description.TypeDesc(MediaType.class);
 
-    public static MediaType fromValue(String v) {
-        for (MediaType c: MediaType.values()) {
-            if (c.value.equals(v)) {
-                return c;
-            }
-        }
-        throw new IllegalArgumentException(v);
+    static {
+        typeDesc.setXmlType(new javax.xml.namespace.QName("urn:types.filecabinet_2018_2.documents.webservices.netsuite.com", "MediaType"));
+    }
+    /**
+     * Return type metadata object
+     */
+    public static org.apache.axis.description.TypeDesc getTypeDesc() {
+        return typeDesc;
     }
 
 }

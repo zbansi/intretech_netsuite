@@ -1,69 +1,82 @@
+/**
+ * ItemCostEstimateType.java
+ *
+ * This file was auto-generated from WSDL
+ * by the Apache Axis 1.4 Jul 28, 2010 (04:07:04 PDT) WSDL2Java emitter.
+ */
 
 package com.netsuite.webservices.platform.common_2018_2.types;
 
-import javax.xml.bind.annotation.XmlEnum;
-import javax.xml.bind.annotation.XmlEnumValue;
-import javax.xml.bind.annotation.XmlType;
+public class ItemCostEstimateType implements java.io.Serializable {
+    private java.lang.String _value_;
+    private static java.util.HashMap _table_ = new java.util.HashMap();
 
-
-/**
- * <p>ItemCostEstimateType的 Java 类。
- * 
- * <p>以下模式片段指定包含在此类中的预期内容。
- * <p>
- * <pre>
- * &lt;simpleType name="ItemCostEstimateType">
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     &lt;enumeration value="_averageCost"/>
- *     &lt;enumeration value="_custom"/>
- *     &lt;enumeration value="_derivedFromMemberItems"/>
- *     &lt;enumeration value="_itemDefinedCost"/>
- *     &lt;enumeration value="_lastPurchasePrice"/>
- *     &lt;enumeration value="_preferredVendorRate"/>
- *     &lt;enumeration value="_purchaseOrderRate"/>
- *     &lt;enumeration value="_purchasePrice"/>
- *   &lt;/restriction>
- * &lt;/simpleType>
- * </pre>
- * 
- */
-@XmlType(name = "ItemCostEstimateType", namespace = "urn:types.common_2018_2.platform.webservices.netsuite.com")
-@XmlEnum
-public enum ItemCostEstimateType {
-
-    @XmlEnumValue("_averageCost")
-    AVERAGE_COST("_averageCost"),
-    @XmlEnumValue("_custom")
-    CUSTOM("_custom"),
-    @XmlEnumValue("_derivedFromMemberItems")
-    DERIVED_FROM_MEMBER_ITEMS("_derivedFromMemberItems"),
-    @XmlEnumValue("_itemDefinedCost")
-    ITEM_DEFINED_COST("_itemDefinedCost"),
-    @XmlEnumValue("_lastPurchasePrice")
-    LAST_PURCHASE_PRICE("_lastPurchasePrice"),
-    @XmlEnumValue("_preferredVendorRate")
-    PREFERRED_VENDOR_RATE("_preferredVendorRate"),
-    @XmlEnumValue("_purchaseOrderRate")
-    PURCHASE_ORDER_RATE("_purchaseOrderRate"),
-    @XmlEnumValue("_purchasePrice")
-    PURCHASE_PRICE("_purchasePrice");
-    private final String value;
-
-    ItemCostEstimateType(String v) {
-        value = v;
+    // Constructor
+    protected ItemCostEstimateType(java.lang.String value) {
+        _value_ = value;
+        _table_.put(_value_,this);
     }
 
-    public String value() {
-        return value;
+    public static final java.lang.String __averageCost = "_averageCost";
+    public static final java.lang.String __custom = "_custom";
+    public static final java.lang.String __derivedFromMemberItems = "_derivedFromMemberItems";
+    public static final java.lang.String __itemDefinedCost = "_itemDefinedCost";
+    public static final java.lang.String __lastPurchasePrice = "_lastPurchasePrice";
+    public static final java.lang.String __preferredVendorRate = "_preferredVendorRate";
+    public static final java.lang.String __purchaseOrderRate = "_purchaseOrderRate";
+    public static final java.lang.String __purchasePrice = "_purchasePrice";
+    public static final ItemCostEstimateType _averageCost = new ItemCostEstimateType(__averageCost);
+    public static final ItemCostEstimateType _custom = new ItemCostEstimateType(__custom);
+    public static final ItemCostEstimateType _derivedFromMemberItems = new ItemCostEstimateType(__derivedFromMemberItems);
+    public static final ItemCostEstimateType _itemDefinedCost = new ItemCostEstimateType(__itemDefinedCost);
+    public static final ItemCostEstimateType _lastPurchasePrice = new ItemCostEstimateType(__lastPurchasePrice);
+    public static final ItemCostEstimateType _preferredVendorRate = new ItemCostEstimateType(__preferredVendorRate);
+    public static final ItemCostEstimateType _purchaseOrderRate = new ItemCostEstimateType(__purchaseOrderRate);
+    public static final ItemCostEstimateType _purchasePrice = new ItemCostEstimateType(__purchasePrice);
+    public java.lang.String getValue() { return _value_;}
+    public static ItemCostEstimateType fromValue(java.lang.String value)
+          throws java.lang.IllegalArgumentException {
+        ItemCostEstimateType enumeration = (ItemCostEstimateType)
+            _table_.get(value);
+        if (enumeration==null) throw new java.lang.IllegalArgumentException();
+        return enumeration;
     }
+    public static ItemCostEstimateType fromString(java.lang.String value)
+          throws java.lang.IllegalArgumentException {
+        return fromValue(value);
+    }
+    public boolean equals(java.lang.Object obj) {return (obj == this);}
+    public int hashCode() { return toString().hashCode();}
+    public java.lang.String toString() { return _value_;}
+    public java.lang.Object readResolve() throws java.io.ObjectStreamException { return fromValue(_value_);}
+    public static org.apache.axis.encoding.Serializer getSerializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new org.apache.axis.encoding.ser.EnumSerializer(
+            _javaType, _xmlType);
+    }
+    public static org.apache.axis.encoding.Deserializer getDeserializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new org.apache.axis.encoding.ser.EnumDeserializer(
+            _javaType, _xmlType);
+    }
+    // Type metadata
+    private static org.apache.axis.description.TypeDesc typeDesc =
+        new org.apache.axis.description.TypeDesc(ItemCostEstimateType.class);
 
-    public static ItemCostEstimateType fromValue(String v) {
-        for (ItemCostEstimateType c: ItemCostEstimateType.values()) {
-            if (c.value.equals(v)) {
-                return c;
-            }
-        }
-        throw new IllegalArgumentException(v);
+    static {
+        typeDesc.setXmlType(new javax.xml.namespace.QName("urn:types.common_2018_2.platform.webservices.netsuite.com", "ItemCostEstimateType"));
+    }
+    /**
+     * Return type metadata object
+     */
+    public static org.apache.axis.description.TypeDesc getTypeDesc() {
+        return typeDesc;
     }
 
 }

@@ -1,828 +1,1174 @@
+/**
+ * WorkOrderItem.java
+ *
+ * This file was auto-generated from WSDL
+ * by the Apache Axis 1.4 Jul 28, 2010 (04:07:04 PDT) WSDL2Java emitter.
+ */
 
 package com.netsuite.webservices.transactions.inventory_2018_2;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlSchemaType;
-import javax.xml.bind.annotation.XmlType;
-import javax.xml.datatype.XMLGregorianCalendar;
-import com.netsuite.webservices.platform.common_2018_2.InventoryDetail;
-import com.netsuite.webservices.platform.common_2018_2.types.ItemSource;
-import com.netsuite.webservices.platform.core_2018_2.CustomFieldList;
-import com.netsuite.webservices.platform.core_2018_2.RecordRef;
-import com.netsuite.webservices.transactions.inventory_2018_2.types.WorkOrderItemItemCommitInventory;
+public class WorkOrderItem  implements java.io.Serializable {
+    private java.lang.Long line;
 
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef item;
 
-/**
- * <p>WorkOrderItem complex type的 Java 类。
- * 
- * <p>以下模式片段指定包含在此类中的预期内容。
- * 
- * <pre>
- * &lt;complexType name="WorkOrderItem">
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element name="line" type="{http://www.w3.org/2001/XMLSchema}long" minOccurs="0"/>
- *         &lt;element name="item" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="operationSequenceNumber" type="{http://www.w3.org/2001/XMLSchema}long" minOccurs="0"/>
- *         &lt;element name="componentYield" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
- *         &lt;element name="bomQuantity" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
- *         &lt;element name="quantityCommitted" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
- *         &lt;element name="quantityBackOrdered" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
- *         &lt;element name="quantityAvailable" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
- *         &lt;element name="averageCost" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
- *         &lt;element name="lastPurchasePrice" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
- *         &lt;element name="quantityOnHand" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
- *         &lt;element name="quantity" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
- *         &lt;element name="units" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="inventoryDetail" type="{urn:common_2018_2.platform.webservices.netsuite.com}InventoryDetail" minOccurs="0"/>
- *         &lt;element name="serialNumbers" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="orderPriority" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
- *         &lt;element name="options" type="{urn:core_2018_2.platform.webservices.netsuite.com}CustomFieldList" minOccurs="0"/>
- *         &lt;element name="itemSource" type="{urn:types.common_2018_2.platform.webservices.netsuite.com}ItemSource" minOccurs="0"/>
- *         &lt;element name="department" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="class" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="location" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="poVendor" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="poRate" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
- *         &lt;element name="percentComplete" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
- *         &lt;element name="contribution" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
- *         &lt;element name="description" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="commitInventory" type="{urn:types.inventory_2018_2.transactions.webservices.netsuite.com}WorkOrderItemItemCommitInventory" minOccurs="0"/>
- *         &lt;element name="plannedIssueDate" type="{http://www.w3.org/2001/XMLSchema}dateTime" minOccurs="0"/>
- *         &lt;element name="customFieldList" type="{urn:core_2018_2.platform.webservices.netsuite.com}CustomFieldList" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
- */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "WorkOrderItem", propOrder = {
-    "line",
-    "item",
-    "operationSequenceNumber",
-    "componentYield",
-    "bomQuantity",
-    "quantityCommitted",
-    "quantityBackOrdered",
-    "quantityAvailable",
-    "averageCost",
-    "lastPurchasePrice",
-    "quantityOnHand",
-    "quantity",
-    "units",
-    "inventoryDetail",
-    "serialNumbers",
-    "orderPriority",
-    "options",
-    "itemSource",
-    "department",
-    "clazz",
-    "location",
-    "poVendor",
-    "poRate",
-    "percentComplete",
-    "contribution",
-    "description",
-    "commitInventory",
-    "plannedIssueDate",
-    "customFieldList"
-})
-public class WorkOrderItem {
+    private java.lang.Long operationSequenceNumber;
 
-    protected Long line;
-    protected RecordRef item;
-    protected Long operationSequenceNumber;
-    protected Double componentYield;
-    protected Double bomQuantity;
-    protected Double quantityCommitted;
-    protected Double quantityBackOrdered;
-    protected Double quantityAvailable;
-    protected Double averageCost;
-    protected Double lastPurchasePrice;
-    protected Double quantityOnHand;
-    protected Double quantity;
-    protected RecordRef units;
-    protected InventoryDetail inventoryDetail;
-    protected String serialNumbers;
-    protected Double orderPriority;
-    protected CustomFieldList options;
-    @XmlSchemaType(name = "string")
-    protected ItemSource itemSource;
-    protected RecordRef department;
-    @XmlElement(name = "class")
-    protected RecordRef clazz;
-    protected RecordRef location;
-    protected RecordRef poVendor;
-    protected Double poRate;
-    protected Double percentComplete;
-    protected Double contribution;
-    protected String description;
-    @XmlSchemaType(name = "string")
-    protected WorkOrderItemItemCommitInventory commitInventory;
-    @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar plannedIssueDate;
-    protected CustomFieldList customFieldList;
+    private java.lang.Double componentYield;
+
+    private java.lang.Double bomQuantity;
+
+    private java.lang.Double quantityCommitted;
+
+    private java.lang.Double quantityBackOrdered;
+
+    private java.lang.Double quantityAvailable;
+
+    private java.lang.Double averageCost;
+
+    private java.lang.Double lastPurchasePrice;
+
+    private java.lang.Double quantityOnHand;
+
+    private java.lang.Double quantity;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef units;
+
+    private com.netsuite.webservices.platform.common_2018_2.InventoryDetail inventoryDetail;
+
+    private java.lang.String serialNumbers;
+
+    private java.lang.Double orderPriority;
+
+    private com.netsuite.webservices.platform.core_2018_2.CustomFieldRef[] options;
+
+    private com.netsuite.webservices.platform.common_2018_2.types.ItemSource itemSource;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef department;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef _class;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef location;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef poVendor;
+
+    private java.lang.Double poRate;
+
+    private java.lang.Double percentComplete;
+
+    private java.lang.Double contribution;
+
+    private java.lang.String description;
+
+    private com.netsuite.webservices.transactions.inventory_2018_2.types.WorkOrderItemItemCommitInventory commitInventory;
+
+    private java.util.Calendar plannedIssueDate;
+
+    private com.netsuite.webservices.platform.core_2018_2.CustomFieldRef[] customFieldList;
+
+    public WorkOrderItem() {
+    }
+
+    public WorkOrderItem(
+           java.lang.Long line,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef item,
+           java.lang.Long operationSequenceNumber,
+           java.lang.Double componentYield,
+           java.lang.Double bomQuantity,
+           java.lang.Double quantityCommitted,
+           java.lang.Double quantityBackOrdered,
+           java.lang.Double quantityAvailable,
+           java.lang.Double averageCost,
+           java.lang.Double lastPurchasePrice,
+           java.lang.Double quantityOnHand,
+           java.lang.Double quantity,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef units,
+           com.netsuite.webservices.platform.common_2018_2.InventoryDetail inventoryDetail,
+           java.lang.String serialNumbers,
+           java.lang.Double orderPriority,
+           com.netsuite.webservices.platform.core_2018_2.CustomFieldRef[] options,
+           com.netsuite.webservices.platform.common_2018_2.types.ItemSource itemSource,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef department,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef _class,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef location,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef poVendor,
+           java.lang.Double poRate,
+           java.lang.Double percentComplete,
+           java.lang.Double contribution,
+           java.lang.String description,
+           com.netsuite.webservices.transactions.inventory_2018_2.types.WorkOrderItemItemCommitInventory commitInventory,
+           java.util.Calendar plannedIssueDate,
+           com.netsuite.webservices.platform.core_2018_2.CustomFieldRef[] customFieldList) {
+           this.line = line;
+           this.item = item;
+           this.operationSequenceNumber = operationSequenceNumber;
+           this.componentYield = componentYield;
+           this.bomQuantity = bomQuantity;
+           this.quantityCommitted = quantityCommitted;
+           this.quantityBackOrdered = quantityBackOrdered;
+           this.quantityAvailable = quantityAvailable;
+           this.averageCost = averageCost;
+           this.lastPurchasePrice = lastPurchasePrice;
+           this.quantityOnHand = quantityOnHand;
+           this.quantity = quantity;
+           this.units = units;
+           this.inventoryDetail = inventoryDetail;
+           this.serialNumbers = serialNumbers;
+           this.orderPriority = orderPriority;
+           this.options = options;
+           this.itemSource = itemSource;
+           this.department = department;
+           this._class = _class;
+           this.location = location;
+           this.poVendor = poVendor;
+           this.poRate = poRate;
+           this.percentComplete = percentComplete;
+           this.contribution = contribution;
+           this.description = description;
+           this.commitInventory = commitInventory;
+           this.plannedIssueDate = plannedIssueDate;
+           this.customFieldList = customFieldList;
+    }
+
 
     /**
-     * 获取line属性的值。
+     * Gets the line value for this WorkOrderItem.
      * 
-     * @return
-     *     possible object is
-     *     {@link Long }
-     *     
+     * @return line
      */
-    public Long getLine() {
+    public java.lang.Long getLine() {
         return line;
     }
 
-    /**
-     * 设置line属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Long }
-     *     
-     */
-    public void setLine(Long value) {
-        this.line = value;
-    }
 
     /**
-     * 获取item属性的值。
+     * Sets the line value for this WorkOrderItem.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param line
      */
-    public RecordRef getItem() {
+    public void setLine(java.lang.Long line) {
+        this.line = line;
+    }
+
+
+    /**
+     * Gets the item value for this WorkOrderItem.
+     * 
+     * @return item
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getItem() {
         return item;
     }
 
-    /**
-     * 设置item属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setItem(RecordRef value) {
-        this.item = value;
-    }
 
     /**
-     * 获取operationSequenceNumber属性的值。
+     * Sets the item value for this WorkOrderItem.
      * 
-     * @return
-     *     possible object is
-     *     {@link Long }
-     *     
+     * @param item
      */
-    public Long getOperationSequenceNumber() {
+    public void setItem(com.netsuite.webservices.platform.core_2018_2.RecordRef item) {
+        this.item = item;
+    }
+
+
+    /**
+     * Gets the operationSequenceNumber value for this WorkOrderItem.
+     * 
+     * @return operationSequenceNumber
+     */
+    public java.lang.Long getOperationSequenceNumber() {
         return operationSequenceNumber;
     }
 
-    /**
-     * 设置operationSequenceNumber属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Long }
-     *     
-     */
-    public void setOperationSequenceNumber(Long value) {
-        this.operationSequenceNumber = value;
-    }
 
     /**
-     * 获取componentYield属性的值。
+     * Sets the operationSequenceNumber value for this WorkOrderItem.
      * 
-     * @return
-     *     possible object is
-     *     {@link Double }
-     *     
+     * @param operationSequenceNumber
      */
-    public Double getComponentYield() {
+    public void setOperationSequenceNumber(java.lang.Long operationSequenceNumber) {
+        this.operationSequenceNumber = operationSequenceNumber;
+    }
+
+
+    /**
+     * Gets the componentYield value for this WorkOrderItem.
+     * 
+     * @return componentYield
+     */
+    public java.lang.Double getComponentYield() {
         return componentYield;
     }
 
-    /**
-     * 设置componentYield属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Double }
-     *     
-     */
-    public void setComponentYield(Double value) {
-        this.componentYield = value;
-    }
 
     /**
-     * 获取bomQuantity属性的值。
+     * Sets the componentYield value for this WorkOrderItem.
      * 
-     * @return
-     *     possible object is
-     *     {@link Double }
-     *     
+     * @param componentYield
      */
-    public Double getBomQuantity() {
+    public void setComponentYield(java.lang.Double componentYield) {
+        this.componentYield = componentYield;
+    }
+
+
+    /**
+     * Gets the bomQuantity value for this WorkOrderItem.
+     * 
+     * @return bomQuantity
+     */
+    public java.lang.Double getBomQuantity() {
         return bomQuantity;
     }
 
-    /**
-     * 设置bomQuantity属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Double }
-     *     
-     */
-    public void setBomQuantity(Double value) {
-        this.bomQuantity = value;
-    }
 
     /**
-     * 获取quantityCommitted属性的值。
+     * Sets the bomQuantity value for this WorkOrderItem.
      * 
-     * @return
-     *     possible object is
-     *     {@link Double }
-     *     
+     * @param bomQuantity
      */
-    public Double getQuantityCommitted() {
+    public void setBomQuantity(java.lang.Double bomQuantity) {
+        this.bomQuantity = bomQuantity;
+    }
+
+
+    /**
+     * Gets the quantityCommitted value for this WorkOrderItem.
+     * 
+     * @return quantityCommitted
+     */
+    public java.lang.Double getQuantityCommitted() {
         return quantityCommitted;
     }
 
-    /**
-     * 设置quantityCommitted属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Double }
-     *     
-     */
-    public void setQuantityCommitted(Double value) {
-        this.quantityCommitted = value;
-    }
 
     /**
-     * 获取quantityBackOrdered属性的值。
+     * Sets the quantityCommitted value for this WorkOrderItem.
      * 
-     * @return
-     *     possible object is
-     *     {@link Double }
-     *     
+     * @param quantityCommitted
      */
-    public Double getQuantityBackOrdered() {
+    public void setQuantityCommitted(java.lang.Double quantityCommitted) {
+        this.quantityCommitted = quantityCommitted;
+    }
+
+
+    /**
+     * Gets the quantityBackOrdered value for this WorkOrderItem.
+     * 
+     * @return quantityBackOrdered
+     */
+    public java.lang.Double getQuantityBackOrdered() {
         return quantityBackOrdered;
     }
 
-    /**
-     * 设置quantityBackOrdered属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Double }
-     *     
-     */
-    public void setQuantityBackOrdered(Double value) {
-        this.quantityBackOrdered = value;
-    }
 
     /**
-     * 获取quantityAvailable属性的值。
+     * Sets the quantityBackOrdered value for this WorkOrderItem.
      * 
-     * @return
-     *     possible object is
-     *     {@link Double }
-     *     
+     * @param quantityBackOrdered
      */
-    public Double getQuantityAvailable() {
+    public void setQuantityBackOrdered(java.lang.Double quantityBackOrdered) {
+        this.quantityBackOrdered = quantityBackOrdered;
+    }
+
+
+    /**
+     * Gets the quantityAvailable value for this WorkOrderItem.
+     * 
+     * @return quantityAvailable
+     */
+    public java.lang.Double getQuantityAvailable() {
         return quantityAvailable;
     }
 
-    /**
-     * 设置quantityAvailable属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Double }
-     *     
-     */
-    public void setQuantityAvailable(Double value) {
-        this.quantityAvailable = value;
-    }
 
     /**
-     * 获取averageCost属性的值。
+     * Sets the quantityAvailable value for this WorkOrderItem.
      * 
-     * @return
-     *     possible object is
-     *     {@link Double }
-     *     
+     * @param quantityAvailable
      */
-    public Double getAverageCost() {
+    public void setQuantityAvailable(java.lang.Double quantityAvailable) {
+        this.quantityAvailable = quantityAvailable;
+    }
+
+
+    /**
+     * Gets the averageCost value for this WorkOrderItem.
+     * 
+     * @return averageCost
+     */
+    public java.lang.Double getAverageCost() {
         return averageCost;
     }
 
-    /**
-     * 设置averageCost属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Double }
-     *     
-     */
-    public void setAverageCost(Double value) {
-        this.averageCost = value;
-    }
 
     /**
-     * 获取lastPurchasePrice属性的值。
+     * Sets the averageCost value for this WorkOrderItem.
      * 
-     * @return
-     *     possible object is
-     *     {@link Double }
-     *     
+     * @param averageCost
      */
-    public Double getLastPurchasePrice() {
+    public void setAverageCost(java.lang.Double averageCost) {
+        this.averageCost = averageCost;
+    }
+
+
+    /**
+     * Gets the lastPurchasePrice value for this WorkOrderItem.
+     * 
+     * @return lastPurchasePrice
+     */
+    public java.lang.Double getLastPurchasePrice() {
         return lastPurchasePrice;
     }
 
-    /**
-     * 设置lastPurchasePrice属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Double }
-     *     
-     */
-    public void setLastPurchasePrice(Double value) {
-        this.lastPurchasePrice = value;
-    }
 
     /**
-     * 获取quantityOnHand属性的值。
+     * Sets the lastPurchasePrice value for this WorkOrderItem.
      * 
-     * @return
-     *     possible object is
-     *     {@link Double }
-     *     
+     * @param lastPurchasePrice
      */
-    public Double getQuantityOnHand() {
+    public void setLastPurchasePrice(java.lang.Double lastPurchasePrice) {
+        this.lastPurchasePrice = lastPurchasePrice;
+    }
+
+
+    /**
+     * Gets the quantityOnHand value for this WorkOrderItem.
+     * 
+     * @return quantityOnHand
+     */
+    public java.lang.Double getQuantityOnHand() {
         return quantityOnHand;
     }
 
-    /**
-     * 设置quantityOnHand属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Double }
-     *     
-     */
-    public void setQuantityOnHand(Double value) {
-        this.quantityOnHand = value;
-    }
 
     /**
-     * 获取quantity属性的值。
+     * Sets the quantityOnHand value for this WorkOrderItem.
      * 
-     * @return
-     *     possible object is
-     *     {@link Double }
-     *     
+     * @param quantityOnHand
      */
-    public Double getQuantity() {
+    public void setQuantityOnHand(java.lang.Double quantityOnHand) {
+        this.quantityOnHand = quantityOnHand;
+    }
+
+
+    /**
+     * Gets the quantity value for this WorkOrderItem.
+     * 
+     * @return quantity
+     */
+    public java.lang.Double getQuantity() {
         return quantity;
     }
 
-    /**
-     * 设置quantity属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Double }
-     *     
-     */
-    public void setQuantity(Double value) {
-        this.quantity = value;
-    }
 
     /**
-     * 获取units属性的值。
+     * Sets the quantity value for this WorkOrderItem.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param quantity
      */
-    public RecordRef getUnits() {
+    public void setQuantity(java.lang.Double quantity) {
+        this.quantity = quantity;
+    }
+
+
+    /**
+     * Gets the units value for this WorkOrderItem.
+     * 
+     * @return units
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getUnits() {
         return units;
     }
 
-    /**
-     * 设置units属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setUnits(RecordRef value) {
-        this.units = value;
-    }
 
     /**
-     * 获取inventoryDetail属性的值。
+     * Sets the units value for this WorkOrderItem.
      * 
-     * @return
-     *     possible object is
-     *     {@link InventoryDetail }
-     *     
+     * @param units
      */
-    public InventoryDetail getInventoryDetail() {
+    public void setUnits(com.netsuite.webservices.platform.core_2018_2.RecordRef units) {
+        this.units = units;
+    }
+
+
+    /**
+     * Gets the inventoryDetail value for this WorkOrderItem.
+     * 
+     * @return inventoryDetail
+     */
+    public com.netsuite.webservices.platform.common_2018_2.InventoryDetail getInventoryDetail() {
         return inventoryDetail;
     }
 
-    /**
-     * 设置inventoryDetail属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link InventoryDetail }
-     *     
-     */
-    public void setInventoryDetail(InventoryDetail value) {
-        this.inventoryDetail = value;
-    }
 
     /**
-     * 获取serialNumbers属性的值。
+     * Sets the inventoryDetail value for this WorkOrderItem.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param inventoryDetail
      */
-    public String getSerialNumbers() {
+    public void setInventoryDetail(com.netsuite.webservices.platform.common_2018_2.InventoryDetail inventoryDetail) {
+        this.inventoryDetail = inventoryDetail;
+    }
+
+
+    /**
+     * Gets the serialNumbers value for this WorkOrderItem.
+     * 
+     * @return serialNumbers
+     */
+    public java.lang.String getSerialNumbers() {
         return serialNumbers;
     }
 
-    /**
-     * 设置serialNumbers属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setSerialNumbers(String value) {
-        this.serialNumbers = value;
-    }
 
     /**
-     * 获取orderPriority属性的值。
+     * Sets the serialNumbers value for this WorkOrderItem.
      * 
-     * @return
-     *     possible object is
-     *     {@link Double }
-     *     
+     * @param serialNumbers
      */
-    public Double getOrderPriority() {
+    public void setSerialNumbers(java.lang.String serialNumbers) {
+        this.serialNumbers = serialNumbers;
+    }
+
+
+    /**
+     * Gets the orderPriority value for this WorkOrderItem.
+     * 
+     * @return orderPriority
+     */
+    public java.lang.Double getOrderPriority() {
         return orderPriority;
     }
 
-    /**
-     * 设置orderPriority属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Double }
-     *     
-     */
-    public void setOrderPriority(Double value) {
-        this.orderPriority = value;
-    }
 
     /**
-     * 获取options属性的值。
+     * Sets the orderPriority value for this WorkOrderItem.
      * 
-     * @return
-     *     possible object is
-     *     {@link CustomFieldList }
-     *     
+     * @param orderPriority
      */
-    public CustomFieldList getOptions() {
+    public void setOrderPriority(java.lang.Double orderPriority) {
+        this.orderPriority = orderPriority;
+    }
+
+
+    /**
+     * Gets the options value for this WorkOrderItem.
+     * 
+     * @return options
+     */
+    public com.netsuite.webservices.platform.core_2018_2.CustomFieldRef[] getOptions() {
         return options;
     }
 
-    /**
-     * 设置options属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link CustomFieldList }
-     *     
-     */
-    public void setOptions(CustomFieldList value) {
-        this.options = value;
-    }
 
     /**
-     * 获取itemSource属性的值。
+     * Sets the options value for this WorkOrderItem.
      * 
-     * @return
-     *     possible object is
-     *     {@link ItemSource }
-     *     
+     * @param options
      */
-    public ItemSource getItemSource() {
+    public void setOptions(com.netsuite.webservices.platform.core_2018_2.CustomFieldRef[] options) {
+        this.options = options;
+    }
+
+
+    /**
+     * Gets the itemSource value for this WorkOrderItem.
+     * 
+     * @return itemSource
+     */
+    public com.netsuite.webservices.platform.common_2018_2.types.ItemSource getItemSource() {
         return itemSource;
     }
 
-    /**
-     * 设置itemSource属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link ItemSource }
-     *     
-     */
-    public void setItemSource(ItemSource value) {
-        this.itemSource = value;
-    }
 
     /**
-     * 获取department属性的值。
+     * Sets the itemSource value for this WorkOrderItem.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param itemSource
      */
-    public RecordRef getDepartment() {
+    public void setItemSource(com.netsuite.webservices.platform.common_2018_2.types.ItemSource itemSource) {
+        this.itemSource = itemSource;
+    }
+
+
+    /**
+     * Gets the department value for this WorkOrderItem.
+     * 
+     * @return department
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getDepartment() {
         return department;
     }
 
-    /**
-     * 设置department属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setDepartment(RecordRef value) {
-        this.department = value;
-    }
 
     /**
-     * 获取clazz属性的值。
+     * Sets the department value for this WorkOrderItem.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param department
      */
-    public RecordRef getClazz() {
-        return clazz;
+    public void setDepartment(com.netsuite.webservices.platform.core_2018_2.RecordRef department) {
+        this.department = department;
     }
 
-    /**
-     * 设置clazz属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setClazz(RecordRef value) {
-        this.clazz = value;
-    }
 
     /**
-     * 获取location属性的值。
+     * Gets the _class value for this WorkOrderItem.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @return _class
      */
-    public RecordRef getLocation() {
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef get_class() {
+        return _class;
+    }
+
+
+    /**
+     * Sets the _class value for this WorkOrderItem.
+     * 
+     * @param _class
+     */
+    public void set_class(com.netsuite.webservices.platform.core_2018_2.RecordRef _class) {
+        this._class = _class;
+    }
+
+
+    /**
+     * Gets the location value for this WorkOrderItem.
+     * 
+     * @return location
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getLocation() {
         return location;
     }
 
-    /**
-     * 设置location属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setLocation(RecordRef value) {
-        this.location = value;
-    }
 
     /**
-     * 获取poVendor属性的值。
+     * Sets the location value for this WorkOrderItem.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param location
      */
-    public RecordRef getPoVendor() {
+    public void setLocation(com.netsuite.webservices.platform.core_2018_2.RecordRef location) {
+        this.location = location;
+    }
+
+
+    /**
+     * Gets the poVendor value for this WorkOrderItem.
+     * 
+     * @return poVendor
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getPoVendor() {
         return poVendor;
     }
 
-    /**
-     * 设置poVendor属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setPoVendor(RecordRef value) {
-        this.poVendor = value;
-    }
 
     /**
-     * 获取poRate属性的值。
+     * Sets the poVendor value for this WorkOrderItem.
      * 
-     * @return
-     *     possible object is
-     *     {@link Double }
-     *     
+     * @param poVendor
      */
-    public Double getPoRate() {
+    public void setPoVendor(com.netsuite.webservices.platform.core_2018_2.RecordRef poVendor) {
+        this.poVendor = poVendor;
+    }
+
+
+    /**
+     * Gets the poRate value for this WorkOrderItem.
+     * 
+     * @return poRate
+     */
+    public java.lang.Double getPoRate() {
         return poRate;
     }
 
-    /**
-     * 设置poRate属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Double }
-     *     
-     */
-    public void setPoRate(Double value) {
-        this.poRate = value;
-    }
 
     /**
-     * 获取percentComplete属性的值。
+     * Sets the poRate value for this WorkOrderItem.
      * 
-     * @return
-     *     possible object is
-     *     {@link Double }
-     *     
+     * @param poRate
      */
-    public Double getPercentComplete() {
+    public void setPoRate(java.lang.Double poRate) {
+        this.poRate = poRate;
+    }
+
+
+    /**
+     * Gets the percentComplete value for this WorkOrderItem.
+     * 
+     * @return percentComplete
+     */
+    public java.lang.Double getPercentComplete() {
         return percentComplete;
     }
 
-    /**
-     * 设置percentComplete属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Double }
-     *     
-     */
-    public void setPercentComplete(Double value) {
-        this.percentComplete = value;
-    }
 
     /**
-     * 获取contribution属性的值。
+     * Sets the percentComplete value for this WorkOrderItem.
      * 
-     * @return
-     *     possible object is
-     *     {@link Double }
-     *     
+     * @param percentComplete
      */
-    public Double getContribution() {
+    public void setPercentComplete(java.lang.Double percentComplete) {
+        this.percentComplete = percentComplete;
+    }
+
+
+    /**
+     * Gets the contribution value for this WorkOrderItem.
+     * 
+     * @return contribution
+     */
+    public java.lang.Double getContribution() {
         return contribution;
     }
 
-    /**
-     * 设置contribution属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Double }
-     *     
-     */
-    public void setContribution(Double value) {
-        this.contribution = value;
-    }
 
     /**
-     * 获取description属性的值。
+     * Sets the contribution value for this WorkOrderItem.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param contribution
      */
-    public String getDescription() {
+    public void setContribution(java.lang.Double contribution) {
+        this.contribution = contribution;
+    }
+
+
+    /**
+     * Gets the description value for this WorkOrderItem.
+     * 
+     * @return description
+     */
+    public java.lang.String getDescription() {
         return description;
     }
 
-    /**
-     * 设置description属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setDescription(String value) {
-        this.description = value;
-    }
 
     /**
-     * 获取commitInventory属性的值。
+     * Sets the description value for this WorkOrderItem.
      * 
-     * @return
-     *     possible object is
-     *     {@link WorkOrderItemItemCommitInventory }
-     *     
+     * @param description
      */
-    public WorkOrderItemItemCommitInventory getCommitInventory() {
+    public void setDescription(java.lang.String description) {
+        this.description = description;
+    }
+
+
+    /**
+     * Gets the commitInventory value for this WorkOrderItem.
+     * 
+     * @return commitInventory
+     */
+    public com.netsuite.webservices.transactions.inventory_2018_2.types.WorkOrderItemItemCommitInventory getCommitInventory() {
         return commitInventory;
     }
 
-    /**
-     * 设置commitInventory属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link WorkOrderItemItemCommitInventory }
-     *     
-     */
-    public void setCommitInventory(WorkOrderItemItemCommitInventory value) {
-        this.commitInventory = value;
-    }
 
     /**
-     * 获取plannedIssueDate属性的值。
+     * Sets the commitInventory value for this WorkOrderItem.
      * 
-     * @return
-     *     possible object is
-     *     {@link XMLGregorianCalendar }
-     *     
+     * @param commitInventory
      */
-    public XMLGregorianCalendar getPlannedIssueDate() {
+    public void setCommitInventory(com.netsuite.webservices.transactions.inventory_2018_2.types.WorkOrderItemItemCommitInventory commitInventory) {
+        this.commitInventory = commitInventory;
+    }
+
+
+    /**
+     * Gets the plannedIssueDate value for this WorkOrderItem.
+     * 
+     * @return plannedIssueDate
+     */
+    public java.util.Calendar getPlannedIssueDate() {
         return plannedIssueDate;
     }
 
-    /**
-     * 设置plannedIssueDate属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link XMLGregorianCalendar }
-     *     
-     */
-    public void setPlannedIssueDate(XMLGregorianCalendar value) {
-        this.plannedIssueDate = value;
-    }
 
     /**
-     * 获取customFieldList属性的值。
+     * Sets the plannedIssueDate value for this WorkOrderItem.
      * 
-     * @return
-     *     possible object is
-     *     {@link CustomFieldList }
-     *     
+     * @param plannedIssueDate
      */
-    public CustomFieldList getCustomFieldList() {
+    public void setPlannedIssueDate(java.util.Calendar plannedIssueDate) {
+        this.plannedIssueDate = plannedIssueDate;
+    }
+
+
+    /**
+     * Gets the customFieldList value for this WorkOrderItem.
+     * 
+     * @return customFieldList
+     */
+    public com.netsuite.webservices.platform.core_2018_2.CustomFieldRef[] getCustomFieldList() {
         return customFieldList;
     }
 
+
     /**
-     * 设置customFieldList属性的值。
+     * Sets the customFieldList value for this WorkOrderItem.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link CustomFieldList }
-     *     
+     * @param customFieldList
      */
-    public void setCustomFieldList(CustomFieldList value) {
-        this.customFieldList = value;
+    public void setCustomFieldList(com.netsuite.webservices.platform.core_2018_2.CustomFieldRef[] customFieldList) {
+        this.customFieldList = customFieldList;
+    }
+
+    private java.lang.Object __equalsCalc = null;
+    public synchronized boolean equals(java.lang.Object obj) {
+        if (!(obj instanceof WorkOrderItem)) return false;
+        WorkOrderItem other = (WorkOrderItem) obj;
+        if (obj == null) return false;
+        if (this == obj) return true;
+        if (__equalsCalc != null) {
+            return (__equalsCalc == obj);
+        }
+        __equalsCalc = obj;
+        boolean _equals;
+        _equals = true && 
+            ((this.line==null && other.getLine()==null) || 
+             (this.line!=null &&
+              this.line.equals(other.getLine()))) &&
+            ((this.item==null && other.getItem()==null) || 
+             (this.item!=null &&
+              this.item.equals(other.getItem()))) &&
+            ((this.operationSequenceNumber==null && other.getOperationSequenceNumber()==null) || 
+             (this.operationSequenceNumber!=null &&
+              this.operationSequenceNumber.equals(other.getOperationSequenceNumber()))) &&
+            ((this.componentYield==null && other.getComponentYield()==null) || 
+             (this.componentYield!=null &&
+              this.componentYield.equals(other.getComponentYield()))) &&
+            ((this.bomQuantity==null && other.getBomQuantity()==null) || 
+             (this.bomQuantity!=null &&
+              this.bomQuantity.equals(other.getBomQuantity()))) &&
+            ((this.quantityCommitted==null && other.getQuantityCommitted()==null) || 
+             (this.quantityCommitted!=null &&
+              this.quantityCommitted.equals(other.getQuantityCommitted()))) &&
+            ((this.quantityBackOrdered==null && other.getQuantityBackOrdered()==null) || 
+             (this.quantityBackOrdered!=null &&
+              this.quantityBackOrdered.equals(other.getQuantityBackOrdered()))) &&
+            ((this.quantityAvailable==null && other.getQuantityAvailable()==null) || 
+             (this.quantityAvailable!=null &&
+              this.quantityAvailable.equals(other.getQuantityAvailable()))) &&
+            ((this.averageCost==null && other.getAverageCost()==null) || 
+             (this.averageCost!=null &&
+              this.averageCost.equals(other.getAverageCost()))) &&
+            ((this.lastPurchasePrice==null && other.getLastPurchasePrice()==null) || 
+             (this.lastPurchasePrice!=null &&
+              this.lastPurchasePrice.equals(other.getLastPurchasePrice()))) &&
+            ((this.quantityOnHand==null && other.getQuantityOnHand()==null) || 
+             (this.quantityOnHand!=null &&
+              this.quantityOnHand.equals(other.getQuantityOnHand()))) &&
+            ((this.quantity==null && other.getQuantity()==null) || 
+             (this.quantity!=null &&
+              this.quantity.equals(other.getQuantity()))) &&
+            ((this.units==null && other.getUnits()==null) || 
+             (this.units!=null &&
+              this.units.equals(other.getUnits()))) &&
+            ((this.inventoryDetail==null && other.getInventoryDetail()==null) || 
+             (this.inventoryDetail!=null &&
+              this.inventoryDetail.equals(other.getInventoryDetail()))) &&
+            ((this.serialNumbers==null && other.getSerialNumbers()==null) || 
+             (this.serialNumbers!=null &&
+              this.serialNumbers.equals(other.getSerialNumbers()))) &&
+            ((this.orderPriority==null && other.getOrderPriority()==null) || 
+             (this.orderPriority!=null &&
+              this.orderPriority.equals(other.getOrderPriority()))) &&
+            ((this.options==null && other.getOptions()==null) || 
+             (this.options!=null &&
+              java.util.Arrays.equals(this.options, other.getOptions()))) &&
+            ((this.itemSource==null && other.getItemSource()==null) || 
+             (this.itemSource!=null &&
+              this.itemSource.equals(other.getItemSource()))) &&
+            ((this.department==null && other.getDepartment()==null) || 
+             (this.department!=null &&
+              this.department.equals(other.getDepartment()))) &&
+            ((this._class==null && other.get_class()==null) || 
+             (this._class!=null &&
+              this._class.equals(other.get_class()))) &&
+            ((this.location==null && other.getLocation()==null) || 
+             (this.location!=null &&
+              this.location.equals(other.getLocation()))) &&
+            ((this.poVendor==null && other.getPoVendor()==null) || 
+             (this.poVendor!=null &&
+              this.poVendor.equals(other.getPoVendor()))) &&
+            ((this.poRate==null && other.getPoRate()==null) || 
+             (this.poRate!=null &&
+              this.poRate.equals(other.getPoRate()))) &&
+            ((this.percentComplete==null && other.getPercentComplete()==null) || 
+             (this.percentComplete!=null &&
+              this.percentComplete.equals(other.getPercentComplete()))) &&
+            ((this.contribution==null && other.getContribution()==null) || 
+             (this.contribution!=null &&
+              this.contribution.equals(other.getContribution()))) &&
+            ((this.description==null && other.getDescription()==null) || 
+             (this.description!=null &&
+              this.description.equals(other.getDescription()))) &&
+            ((this.commitInventory==null && other.getCommitInventory()==null) || 
+             (this.commitInventory!=null &&
+              this.commitInventory.equals(other.getCommitInventory()))) &&
+            ((this.plannedIssueDate==null && other.getPlannedIssueDate()==null) || 
+             (this.plannedIssueDate!=null &&
+              this.plannedIssueDate.equals(other.getPlannedIssueDate()))) &&
+            ((this.customFieldList==null && other.getCustomFieldList()==null) || 
+             (this.customFieldList!=null &&
+              java.util.Arrays.equals(this.customFieldList, other.getCustomFieldList())));
+        __equalsCalc = null;
+        return _equals;
+    }
+
+    private boolean __hashCodeCalc = false;
+    public synchronized int hashCode() {
+        if (__hashCodeCalc) {
+            return 0;
+        }
+        __hashCodeCalc = true;
+        int _hashCode = 1;
+        if (getLine() != null) {
+            _hashCode += getLine().hashCode();
+        }
+        if (getItem() != null) {
+            _hashCode += getItem().hashCode();
+        }
+        if (getOperationSequenceNumber() != null) {
+            _hashCode += getOperationSequenceNumber().hashCode();
+        }
+        if (getComponentYield() != null) {
+            _hashCode += getComponentYield().hashCode();
+        }
+        if (getBomQuantity() != null) {
+            _hashCode += getBomQuantity().hashCode();
+        }
+        if (getQuantityCommitted() != null) {
+            _hashCode += getQuantityCommitted().hashCode();
+        }
+        if (getQuantityBackOrdered() != null) {
+            _hashCode += getQuantityBackOrdered().hashCode();
+        }
+        if (getQuantityAvailable() != null) {
+            _hashCode += getQuantityAvailable().hashCode();
+        }
+        if (getAverageCost() != null) {
+            _hashCode += getAverageCost().hashCode();
+        }
+        if (getLastPurchasePrice() != null) {
+            _hashCode += getLastPurchasePrice().hashCode();
+        }
+        if (getQuantityOnHand() != null) {
+            _hashCode += getQuantityOnHand().hashCode();
+        }
+        if (getQuantity() != null) {
+            _hashCode += getQuantity().hashCode();
+        }
+        if (getUnits() != null) {
+            _hashCode += getUnits().hashCode();
+        }
+        if (getInventoryDetail() != null) {
+            _hashCode += getInventoryDetail().hashCode();
+        }
+        if (getSerialNumbers() != null) {
+            _hashCode += getSerialNumbers().hashCode();
+        }
+        if (getOrderPriority() != null) {
+            _hashCode += getOrderPriority().hashCode();
+        }
+        if (getOptions() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getOptions());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getOptions(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getItemSource() != null) {
+            _hashCode += getItemSource().hashCode();
+        }
+        if (getDepartment() != null) {
+            _hashCode += getDepartment().hashCode();
+        }
+        if (get_class() != null) {
+            _hashCode += get_class().hashCode();
+        }
+        if (getLocation() != null) {
+            _hashCode += getLocation().hashCode();
+        }
+        if (getPoVendor() != null) {
+            _hashCode += getPoVendor().hashCode();
+        }
+        if (getPoRate() != null) {
+            _hashCode += getPoRate().hashCode();
+        }
+        if (getPercentComplete() != null) {
+            _hashCode += getPercentComplete().hashCode();
+        }
+        if (getContribution() != null) {
+            _hashCode += getContribution().hashCode();
+        }
+        if (getDescription() != null) {
+            _hashCode += getDescription().hashCode();
+        }
+        if (getCommitInventory() != null) {
+            _hashCode += getCommitInventory().hashCode();
+        }
+        if (getPlannedIssueDate() != null) {
+            _hashCode += getPlannedIssueDate().hashCode();
+        }
+        if (getCustomFieldList() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getCustomFieldList());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getCustomFieldList(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        __hashCodeCalc = false;
+        return _hashCode;
+    }
+
+    // Type metadata
+    private static org.apache.axis.description.TypeDesc typeDesc =
+        new org.apache.axis.description.TypeDesc(WorkOrderItem.class, true);
+
+    static {
+        typeDesc.setXmlType(new javax.xml.namespace.QName("urn:inventory_2018_2.transactions.webservices.netsuite.com", "WorkOrderItem"));
+        org.apache.axis.description.ElementDesc elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("line");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:inventory_2018_2.transactions.webservices.netsuite.com", "line"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "long"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("item");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:inventory_2018_2.transactions.webservices.netsuite.com", "item"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("operationSequenceNumber");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:inventory_2018_2.transactions.webservices.netsuite.com", "operationSequenceNumber"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "long"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("componentYield");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:inventory_2018_2.transactions.webservices.netsuite.com", "componentYield"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "double"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("bomQuantity");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:inventory_2018_2.transactions.webservices.netsuite.com", "bomQuantity"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "double"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("quantityCommitted");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:inventory_2018_2.transactions.webservices.netsuite.com", "quantityCommitted"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "double"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("quantityBackOrdered");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:inventory_2018_2.transactions.webservices.netsuite.com", "quantityBackOrdered"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "double"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("quantityAvailable");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:inventory_2018_2.transactions.webservices.netsuite.com", "quantityAvailable"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "double"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("averageCost");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:inventory_2018_2.transactions.webservices.netsuite.com", "averageCost"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "double"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("lastPurchasePrice");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:inventory_2018_2.transactions.webservices.netsuite.com", "lastPurchasePrice"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "double"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("quantityOnHand");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:inventory_2018_2.transactions.webservices.netsuite.com", "quantityOnHand"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "double"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("quantity");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:inventory_2018_2.transactions.webservices.netsuite.com", "quantity"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "double"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("units");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:inventory_2018_2.transactions.webservices.netsuite.com", "units"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("inventoryDetail");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:inventory_2018_2.transactions.webservices.netsuite.com", "inventoryDetail"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "InventoryDetail"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("serialNumbers");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:inventory_2018_2.transactions.webservices.netsuite.com", "serialNumbers"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("orderPriority");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:inventory_2018_2.transactions.webservices.netsuite.com", "orderPriority"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "double"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("options");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:inventory_2018_2.transactions.webservices.netsuite.com", "options"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "CustomFieldRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "customField"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("itemSource");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:inventory_2018_2.transactions.webservices.netsuite.com", "itemSource"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:types.common_2018_2.platform.webservices.netsuite.com", "ItemSource"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("department");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:inventory_2018_2.transactions.webservices.netsuite.com", "department"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("_class");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:inventory_2018_2.transactions.webservices.netsuite.com", "class"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("location");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:inventory_2018_2.transactions.webservices.netsuite.com", "location"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("poVendor");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:inventory_2018_2.transactions.webservices.netsuite.com", "poVendor"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("poRate");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:inventory_2018_2.transactions.webservices.netsuite.com", "poRate"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "double"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("percentComplete");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:inventory_2018_2.transactions.webservices.netsuite.com", "percentComplete"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "double"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("contribution");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:inventory_2018_2.transactions.webservices.netsuite.com", "contribution"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "double"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("description");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:inventory_2018_2.transactions.webservices.netsuite.com", "description"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("commitInventory");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:inventory_2018_2.transactions.webservices.netsuite.com", "commitInventory"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:types.inventory_2018_2.transactions.webservices.netsuite.com", "WorkOrderItemItemCommitInventory"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("plannedIssueDate");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:inventory_2018_2.transactions.webservices.netsuite.com", "plannedIssueDate"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "dateTime"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("customFieldList");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:inventory_2018_2.transactions.webservices.netsuite.com", "customFieldList"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "CustomFieldRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "customField"));
+        typeDesc.addFieldDesc(elemField);
+    }
+
+    /**
+     * Return type metadata object
+     */
+    public static org.apache.axis.description.TypeDesc getTypeDesc() {
+        return typeDesc;
+    }
+
+    /**
+     * Get Custom Serializer
+     */
+    public static org.apache.axis.encoding.Serializer getSerializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanSerializer(
+            _javaType, _xmlType, typeDesc);
+    }
+
+    /**
+     * Get Custom Deserializer
+     */
+    public static org.apache.axis.encoding.Deserializer getDeserializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanDeserializer(
+            _javaType, _xmlType, typeDesc);
     }
 
 }

@@ -1,115 +1,203 @@
+/**
+ * BillingRates.java
+ *
+ * This file was auto-generated from WSDL
+ * by the Apache Axis 1.4 Jul 28, 2010 (04:07:04 PDT) WSDL2Java emitter.
+ */
 
 package com.netsuite.webservices.lists.accounting_2018_2;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlType;
-import com.netsuite.webservices.platform.core_2018_2.RecordRef;
+public class BillingRates  implements java.io.Serializable {
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef currency;
 
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef billingClass;
 
-/**
- * <p>BillingRates complex type的 Java 类。
- * 
- * <p>以下模式片段指定包含在此类中的预期内容。
- * 
- * <pre>
- * &lt;complexType name="BillingRates">
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element name="currency" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="billingClass" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="rateList" type="{urn:accounting_2018_2.lists.webservices.netsuite.com}RateList" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
- */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "BillingRates", propOrder = {
-    "currency",
-    "billingClass",
-    "rateList"
-})
-public class BillingRates {
+    private com.netsuite.webservices.lists.accounting_2018_2.Rate[] rateList;
 
-    protected RecordRef currency;
-    protected RecordRef billingClass;
-    protected RateList rateList;
+    public BillingRates() {
+    }
+
+    public BillingRates(
+           com.netsuite.webservices.platform.core_2018_2.RecordRef currency,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef billingClass,
+           com.netsuite.webservices.lists.accounting_2018_2.Rate[] rateList) {
+           this.currency = currency;
+           this.billingClass = billingClass;
+           this.rateList = rateList;
+    }
+
 
     /**
-     * 获取currency属性的值。
+     * Gets the currency value for this BillingRates.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @return currency
      */
-    public RecordRef getCurrency() {
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getCurrency() {
         return currency;
     }
 
-    /**
-     * 设置currency属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setCurrency(RecordRef value) {
-        this.currency = value;
-    }
 
     /**
-     * 获取billingClass属性的值。
+     * Sets the currency value for this BillingRates.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param currency
      */
-    public RecordRef getBillingClass() {
+    public void setCurrency(com.netsuite.webservices.platform.core_2018_2.RecordRef currency) {
+        this.currency = currency;
+    }
+
+
+    /**
+     * Gets the billingClass value for this BillingRates.
+     * 
+     * @return billingClass
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getBillingClass() {
         return billingClass;
     }
 
-    /**
-     * 设置billingClass属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setBillingClass(RecordRef value) {
-        this.billingClass = value;
-    }
 
     /**
-     * 获取rateList属性的值。
+     * Sets the billingClass value for this BillingRates.
      * 
-     * @return
-     *     possible object is
-     *     {@link RateList }
-     *     
+     * @param billingClass
      */
-    public RateList getRateList() {
+    public void setBillingClass(com.netsuite.webservices.platform.core_2018_2.RecordRef billingClass) {
+        this.billingClass = billingClass;
+    }
+
+
+    /**
+     * Gets the rateList value for this BillingRates.
+     * 
+     * @return rateList
+     */
+    public com.netsuite.webservices.lists.accounting_2018_2.Rate[] getRateList() {
         return rateList;
     }
 
+
     /**
-     * 设置rateList属性的值。
+     * Sets the rateList value for this BillingRates.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link RateList }
-     *     
+     * @param rateList
      */
-    public void setRateList(RateList value) {
-        this.rateList = value;
+    public void setRateList(com.netsuite.webservices.lists.accounting_2018_2.Rate[] rateList) {
+        this.rateList = rateList;
+    }
+
+    private java.lang.Object __equalsCalc = null;
+    public synchronized boolean equals(java.lang.Object obj) {
+        if (!(obj instanceof BillingRates)) return false;
+        BillingRates other = (BillingRates) obj;
+        if (obj == null) return false;
+        if (this == obj) return true;
+        if (__equalsCalc != null) {
+            return (__equalsCalc == obj);
+        }
+        __equalsCalc = obj;
+        boolean _equals;
+        _equals = true && 
+            ((this.currency==null && other.getCurrency()==null) || 
+             (this.currency!=null &&
+              this.currency.equals(other.getCurrency()))) &&
+            ((this.billingClass==null && other.getBillingClass()==null) || 
+             (this.billingClass!=null &&
+              this.billingClass.equals(other.getBillingClass()))) &&
+            ((this.rateList==null && other.getRateList()==null) || 
+             (this.rateList!=null &&
+              java.util.Arrays.equals(this.rateList, other.getRateList())));
+        __equalsCalc = null;
+        return _equals;
+    }
+
+    private boolean __hashCodeCalc = false;
+    public synchronized int hashCode() {
+        if (__hashCodeCalc) {
+            return 0;
+        }
+        __hashCodeCalc = true;
+        int _hashCode = 1;
+        if (getCurrency() != null) {
+            _hashCode += getCurrency().hashCode();
+        }
+        if (getBillingClass() != null) {
+            _hashCode += getBillingClass().hashCode();
+        }
+        if (getRateList() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getRateList());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getRateList(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        __hashCodeCalc = false;
+        return _hashCode;
+    }
+
+    // Type metadata
+    private static org.apache.axis.description.TypeDesc typeDesc =
+        new org.apache.axis.description.TypeDesc(BillingRates.class, true);
+
+    static {
+        typeDesc.setXmlType(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "BillingRates"));
+        org.apache.axis.description.ElementDesc elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("currency");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "currency"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("billingClass");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "billingClass"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("rateList");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "rateList"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "Rate"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "rate"));
+        typeDesc.addFieldDesc(elemField);
+    }
+
+    /**
+     * Return type metadata object
+     */
+    public static org.apache.axis.description.TypeDesc getTypeDesc() {
+        return typeDesc;
+    }
+
+    /**
+     * Get Custom Serializer
+     */
+    public static org.apache.axis.encoding.Serializer getSerializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanSerializer(
+            _javaType, _xmlType, typeDesc);
+    }
+
+    /**
+     * Get Custom Deserializer
+     */
+    public static org.apache.axis.encoding.Deserializer getDeserializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanDeserializer(
+            _javaType, _xmlType, typeDesc);
     }
 
 }

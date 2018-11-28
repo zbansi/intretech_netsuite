@@ -1,260 +1,376 @@
+/**
+ * CouponCode.java
+ *
+ * This file was auto-generated from WSDL
+ * by the Apache Axis 1.4 Jul 28, 2010 (04:07:04 PDT) WSDL2Java emitter.
+ */
 
 package com.netsuite.webservices.lists.marketing_2018_2;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlAttribute;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlSchemaType;
-import javax.xml.bind.annotation.XmlType;
-import javax.xml.datatype.XMLGregorianCalendar;
-import com.netsuite.webservices.platform.core_2018_2.Record;
-import com.netsuite.webservices.platform.core_2018_2.RecordRef;
+public class CouponCode  extends com.netsuite.webservices.platform.core_2018_2.Record  implements java.io.Serializable {
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef promotion;
 
+    private java.lang.String code;
 
-/**
- * <p>CouponCode complex type的 Java 类。
- * 
- * <p>以下模式片段指定包含在此类中的预期内容。
- * 
- * <pre>
- * &lt;complexType name="CouponCode">
- *   &lt;complexContent>
- *     &lt;extension base="{urn:core_2018_2.platform.webservices.netsuite.com}Record">
- *       &lt;sequence>
- *         &lt;element name="promotion" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef"/>
- *         &lt;element name="code" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *         &lt;element name="recipient" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="dateSent" type="{http://www.w3.org/2001/XMLSchema}dateTime" minOccurs="0"/>
- *         &lt;element name="used" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         &lt;element name="useCount" type="{http://www.w3.org/2001/XMLSchema}long" minOccurs="0"/>
- *       &lt;/sequence>
- *       &lt;attribute name="internalId" type="{http://www.w3.org/2001/XMLSchema}string" />
- *       &lt;attribute name="externalId" type="{http://www.w3.org/2001/XMLSchema}string" />
- *     &lt;/extension>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
- */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "CouponCode", propOrder = {
-    "promotion",
-    "code",
-    "recipient",
-    "dateSent",
-    "used",
-    "useCount"
-})
-public class CouponCode
-    extends Record
-{
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef recipient;
 
-    @XmlElement(required = true)
-    protected RecordRef promotion;
-    @XmlElement(required = true)
-    protected String code;
-    protected RecordRef recipient;
-    @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar dateSent;
-    protected Boolean used;
-    protected Long useCount;
-    @XmlAttribute(name = "internalId")
-    protected String internalId;
-    @XmlAttribute(name = "externalId")
-    protected String externalId;
+    private java.util.Calendar dateSent;
+
+    private java.lang.Boolean used;
+
+    private java.lang.Long useCount;
+
+    private java.lang.String internalId;  // attribute
+
+    private java.lang.String externalId;  // attribute
+
+    public CouponCode() {
+    }
+
+    public CouponCode(
+           java.lang.String[] nullFieldList,
+           java.lang.String internalId,
+           java.lang.String externalId,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef promotion,
+           java.lang.String code,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef recipient,
+           java.util.Calendar dateSent,
+           java.lang.Boolean used,
+           java.lang.Long useCount) {
+        super(
+            nullFieldList);
+        this.internalId = internalId;
+        this.externalId = externalId;
+        this.promotion = promotion;
+        this.code = code;
+        this.recipient = recipient;
+        this.dateSent = dateSent;
+        this.used = used;
+        this.useCount = useCount;
+    }
+
 
     /**
-     * 获取promotion属性的值。
+     * Gets the promotion value for this CouponCode.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @return promotion
      */
-    public RecordRef getPromotion() {
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getPromotion() {
         return promotion;
     }
 
-    /**
-     * 设置promotion属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setPromotion(RecordRef value) {
-        this.promotion = value;
-    }
 
     /**
-     * 获取code属性的值。
+     * Sets the promotion value for this CouponCode.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param promotion
      */
-    public String getCode() {
+    public void setPromotion(com.netsuite.webservices.platform.core_2018_2.RecordRef promotion) {
+        this.promotion = promotion;
+    }
+
+
+    /**
+     * Gets the code value for this CouponCode.
+     * 
+     * @return code
+     */
+    public java.lang.String getCode() {
         return code;
     }
 
-    /**
-     * 设置code属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setCode(String value) {
-        this.code = value;
-    }
 
     /**
-     * 获取recipient属性的值。
+     * Sets the code value for this CouponCode.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param code
      */
-    public RecordRef getRecipient() {
+    public void setCode(java.lang.String code) {
+        this.code = code;
+    }
+
+
+    /**
+     * Gets the recipient value for this CouponCode.
+     * 
+     * @return recipient
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getRecipient() {
         return recipient;
     }
 
-    /**
-     * 设置recipient属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setRecipient(RecordRef value) {
-        this.recipient = value;
-    }
 
     /**
-     * 获取dateSent属性的值。
+     * Sets the recipient value for this CouponCode.
      * 
-     * @return
-     *     possible object is
-     *     {@link XMLGregorianCalendar }
-     *     
+     * @param recipient
      */
-    public XMLGregorianCalendar getDateSent() {
+    public void setRecipient(com.netsuite.webservices.platform.core_2018_2.RecordRef recipient) {
+        this.recipient = recipient;
+    }
+
+
+    /**
+     * Gets the dateSent value for this CouponCode.
+     * 
+     * @return dateSent
+     */
+    public java.util.Calendar getDateSent() {
         return dateSent;
     }
 
-    /**
-     * 设置dateSent属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link XMLGregorianCalendar }
-     *     
-     */
-    public void setDateSent(XMLGregorianCalendar value) {
-        this.dateSent = value;
-    }
 
     /**
-     * 获取used属性的值。
+     * Sets the dateSent value for this CouponCode.
      * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
+     * @param dateSent
      */
-    public Boolean isUsed() {
+    public void setDateSent(java.util.Calendar dateSent) {
+        this.dateSent = dateSent;
+    }
+
+
+    /**
+     * Gets the used value for this CouponCode.
+     * 
+     * @return used
+     */
+    public java.lang.Boolean getUsed() {
         return used;
     }
 
-    /**
-     * 设置used属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
-     */
-    public void setUsed(Boolean value) {
-        this.used = value;
-    }
 
     /**
-     * 获取useCount属性的值。
+     * Sets the used value for this CouponCode.
      * 
-     * @return
-     *     possible object is
-     *     {@link Long }
-     *     
+     * @param used
      */
-    public Long getUseCount() {
+    public void setUsed(java.lang.Boolean used) {
+        this.used = used;
+    }
+
+
+    /**
+     * Gets the useCount value for this CouponCode.
+     * 
+     * @return useCount
+     */
+    public java.lang.Long getUseCount() {
         return useCount;
     }
 
-    /**
-     * 设置useCount属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Long }
-     *     
-     */
-    public void setUseCount(Long value) {
-        this.useCount = value;
-    }
 
     /**
-     * 获取internalId属性的值。
+     * Sets the useCount value for this CouponCode.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param useCount
      */
-    public String getInternalId() {
+    public void setUseCount(java.lang.Long useCount) {
+        this.useCount = useCount;
+    }
+
+
+    /**
+     * Gets the internalId value for this CouponCode.
+     * 
+     * @return internalId
+     */
+    public java.lang.String getInternalId() {
         return internalId;
     }
 
-    /**
-     * 设置internalId属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setInternalId(String value) {
-        this.internalId = value;
-    }
 
     /**
-     * 获取externalId属性的值。
+     * Sets the internalId value for this CouponCode.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param internalId
      */
-    public String getExternalId() {
+    public void setInternalId(java.lang.String internalId) {
+        this.internalId = internalId;
+    }
+
+
+    /**
+     * Gets the externalId value for this CouponCode.
+     * 
+     * @return externalId
+     */
+    public java.lang.String getExternalId() {
         return externalId;
     }
 
+
     /**
-     * 设置externalId属性的值。
+     * Sets the externalId value for this CouponCode.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     * @param externalId
      */
-    public void setExternalId(String value) {
-        this.externalId = value;
+    public void setExternalId(java.lang.String externalId) {
+        this.externalId = externalId;
+    }
+
+    private java.lang.Object __equalsCalc = null;
+    public synchronized boolean equals(java.lang.Object obj) {
+        if (!(obj instanceof CouponCode)) return false;
+        CouponCode other = (CouponCode) obj;
+        if (obj == null) return false;
+        if (this == obj) return true;
+        if (__equalsCalc != null) {
+            return (__equalsCalc == obj);
+        }
+        __equalsCalc = obj;
+        boolean _equals;
+        _equals = super.equals(obj) && 
+            ((this.promotion==null && other.getPromotion()==null) || 
+             (this.promotion!=null &&
+              this.promotion.equals(other.getPromotion()))) &&
+            ((this.code==null && other.getCode()==null) || 
+             (this.code!=null &&
+              this.code.equals(other.getCode()))) &&
+            ((this.recipient==null && other.getRecipient()==null) || 
+             (this.recipient!=null &&
+              this.recipient.equals(other.getRecipient()))) &&
+            ((this.dateSent==null && other.getDateSent()==null) || 
+             (this.dateSent!=null &&
+              this.dateSent.equals(other.getDateSent()))) &&
+            ((this.used==null && other.getUsed()==null) || 
+             (this.used!=null &&
+              this.used.equals(other.getUsed()))) &&
+            ((this.useCount==null && other.getUseCount()==null) || 
+             (this.useCount!=null &&
+              this.useCount.equals(other.getUseCount()))) &&
+            ((this.internalId==null && other.getInternalId()==null) || 
+             (this.internalId!=null &&
+              this.internalId.equals(other.getInternalId()))) &&
+            ((this.externalId==null && other.getExternalId()==null) || 
+             (this.externalId!=null &&
+              this.externalId.equals(other.getExternalId())));
+        __equalsCalc = null;
+        return _equals;
+    }
+
+    private boolean __hashCodeCalc = false;
+    public synchronized int hashCode() {
+        if (__hashCodeCalc) {
+            return 0;
+        }
+        __hashCodeCalc = true;
+        int _hashCode = super.hashCode();
+        if (getPromotion() != null) {
+            _hashCode += getPromotion().hashCode();
+        }
+        if (getCode() != null) {
+            _hashCode += getCode().hashCode();
+        }
+        if (getRecipient() != null) {
+            _hashCode += getRecipient().hashCode();
+        }
+        if (getDateSent() != null) {
+            _hashCode += getDateSent().hashCode();
+        }
+        if (getUsed() != null) {
+            _hashCode += getUsed().hashCode();
+        }
+        if (getUseCount() != null) {
+            _hashCode += getUseCount().hashCode();
+        }
+        if (getInternalId() != null) {
+            _hashCode += getInternalId().hashCode();
+        }
+        if (getExternalId() != null) {
+            _hashCode += getExternalId().hashCode();
+        }
+        __hashCodeCalc = false;
+        return _hashCode;
+    }
+
+    // Type metadata
+    private static org.apache.axis.description.TypeDesc typeDesc =
+        new org.apache.axis.description.TypeDesc(CouponCode.class, true);
+
+    static {
+        typeDesc.setXmlType(new javax.xml.namespace.QName("urn:marketing_2018_2.lists.webservices.netsuite.com", "CouponCode"));
+        org.apache.axis.description.AttributeDesc attrField = new org.apache.axis.description.AttributeDesc();
+        attrField.setFieldName("internalId");
+        attrField.setXmlName(new javax.xml.namespace.QName("", "internalId"));
+        attrField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        typeDesc.addFieldDesc(attrField);
+        attrField = new org.apache.axis.description.AttributeDesc();
+        attrField.setFieldName("externalId");
+        attrField.setXmlName(new javax.xml.namespace.QName("", "externalId"));
+        attrField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        typeDesc.addFieldDesc(attrField);
+        org.apache.axis.description.ElementDesc elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("promotion");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:marketing_2018_2.lists.webservices.netsuite.com", "promotion"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("code");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:marketing_2018_2.lists.webservices.netsuite.com", "code"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("recipient");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:marketing_2018_2.lists.webservices.netsuite.com", "recipient"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("dateSent");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:marketing_2018_2.lists.webservices.netsuite.com", "dateSent"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "dateTime"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("used");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:marketing_2018_2.lists.webservices.netsuite.com", "used"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("useCount");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:marketing_2018_2.lists.webservices.netsuite.com", "useCount"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "long"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+    }
+
+    /**
+     * Return type metadata object
+     */
+    public static org.apache.axis.description.TypeDesc getTypeDesc() {
+        return typeDesc;
+    }
+
+    /**
+     * Get Custom Serializer
+     */
+    public static org.apache.axis.encoding.Serializer getSerializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanSerializer(
+            _javaType, _xmlType, typeDesc);
+    }
+
+    /**
+     * Get Custom Deserializer
+     */
+    public static org.apache.axis.encoding.Deserializer getDeserializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanDeserializer(
+            _javaType, _xmlType, typeDesc);
     }
 
 }

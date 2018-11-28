@@ -1,312 +1,498 @@
+/**
+ * TimeSheetSearchBasic.java
+ *
+ * This file was auto-generated from WSDL
+ * by the Apache Axis 1.4 Jul 28, 2010 (04:07:04 PDT) WSDL2Java emitter.
+ */
 
 package com.netsuite.webservices.platform.common_2018_2;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlType;
-import com.netsuite.webservices.platform.core_2018_2.SearchCustomFieldList;
-import com.netsuite.webservices.platform.core_2018_2.SearchDateField;
-import com.netsuite.webservices.platform.core_2018_2.SearchDoubleField;
-import com.netsuite.webservices.platform.core_2018_2.SearchLongField;
-import com.netsuite.webservices.platform.core_2018_2.SearchMultiSelectField;
-import com.netsuite.webservices.platform.core_2018_2.SearchRecordBasic;
-import com.netsuite.webservices.platform.core_2018_2.SearchStringField;
+public class TimeSheetSearchBasic  extends com.netsuite.webservices.platform.core_2018_2.SearchRecordBasic  implements java.io.Serializable {
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef[] approvalStatus;
 
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef[] employee;
 
-/**
- * <p>TimeSheetSearchBasic complex type的 Java 类。
- * 
- * <p>以下模式片段指定包含在此类中的预期内容。
- * 
- * <pre>
- * &lt;complexType name="TimeSheetSearchBasic">
- *   &lt;complexContent>
- *     &lt;extension base="{urn:core_2018_2.platform.webservices.netsuite.com}SearchRecordBasic">
- *       &lt;sequence>
- *         &lt;element name="approvalStatus" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchMultiSelectField" minOccurs="0"/>
- *         &lt;element name="employee" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchMultiSelectField" minOccurs="0"/>
- *         &lt;element name="externalId" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchMultiSelectField" minOccurs="0"/>
- *         &lt;element name="externalIdString" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchStringField" minOccurs="0"/>
- *         &lt;element name="id" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchLongField" minOccurs="0"/>
- *         &lt;element name="internalId" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchMultiSelectField" minOccurs="0"/>
- *         &lt;element name="internalIdNumber" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchLongField" minOccurs="0"/>
- *         &lt;element name="timeSheetDate" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchDateField" minOccurs="0"/>
- *         &lt;element name="totalHours" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchDoubleField" minOccurs="0"/>
- *         &lt;element name="customFieldList" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchCustomFieldList" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/extension>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
- */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "TimeSheetSearchBasic", propOrder = {
-    "approvalStatus",
-    "employee",
-    "externalId",
-    "externalIdString",
-    "id",
-    "internalId",
-    "internalIdNumber",
-    "timeSheetDate",
-    "totalHours",
-    "customFieldList"
-})
-public class TimeSheetSearchBasic
-    extends SearchRecordBasic
-{
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef[] externalId;
 
-    protected SearchMultiSelectField approvalStatus;
-    protected SearchMultiSelectField employee;
-    protected SearchMultiSelectField externalId;
-    protected SearchStringField externalIdString;
-    protected SearchLongField id;
-    protected SearchMultiSelectField internalId;
-    protected SearchLongField internalIdNumber;
-    protected SearchDateField timeSheetDate;
-    protected SearchDoubleField totalHours;
-    protected SearchCustomFieldList customFieldList;
+    private com.netsuite.webservices.platform.core_2018_2.SearchStringField externalIdString;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchLongField id;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef[] internalId;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchLongField internalIdNumber;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchDateField timeSheetDate;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchDoubleField totalHours;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchCustomField[] customFieldList;
+
+    public TimeSheetSearchBasic() {
+    }
+
+    public TimeSheetSearchBasic(
+           com.netsuite.webservices.platform.core_2018_2.RecordRef[] approvalStatus,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef[] employee,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef[] externalId,
+           com.netsuite.webservices.platform.core_2018_2.SearchStringField externalIdString,
+           com.netsuite.webservices.platform.core_2018_2.SearchLongField id,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef[] internalId,
+           com.netsuite.webservices.platform.core_2018_2.SearchLongField internalIdNumber,
+           com.netsuite.webservices.platform.core_2018_2.SearchDateField timeSheetDate,
+           com.netsuite.webservices.platform.core_2018_2.SearchDoubleField totalHours,
+           com.netsuite.webservices.platform.core_2018_2.SearchCustomField[] customFieldList) {
+        this.approvalStatus = approvalStatus;
+        this.employee = employee;
+        this.externalId = externalId;
+        this.externalIdString = externalIdString;
+        this.id = id;
+        this.internalId = internalId;
+        this.internalIdNumber = internalIdNumber;
+        this.timeSheetDate = timeSheetDate;
+        this.totalHours = totalHours;
+        this.customFieldList = customFieldList;
+    }
+
 
     /**
-     * 获取approvalStatus属性的值。
+     * Gets the approvalStatus value for this TimeSheetSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchMultiSelectField }
-     *     
+     * @return approvalStatus
      */
-    public SearchMultiSelectField getApprovalStatus() {
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef[] getApprovalStatus() {
         return approvalStatus;
     }
 
-    /**
-     * 设置approvalStatus属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchMultiSelectField }
-     *     
-     */
-    public void setApprovalStatus(SearchMultiSelectField value) {
-        this.approvalStatus = value;
-    }
 
     /**
-     * 获取employee属性的值。
+     * Sets the approvalStatus value for this TimeSheetSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchMultiSelectField }
-     *     
+     * @param approvalStatus
      */
-    public SearchMultiSelectField getEmployee() {
+    public void setApprovalStatus(com.netsuite.webservices.platform.core_2018_2.RecordRef[] approvalStatus) {
+        this.approvalStatus = approvalStatus;
+    }
+
+
+    /**
+     * Gets the employee value for this TimeSheetSearchBasic.
+     * 
+     * @return employee
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef[] getEmployee() {
         return employee;
     }
 
-    /**
-     * 设置employee属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchMultiSelectField }
-     *     
-     */
-    public void setEmployee(SearchMultiSelectField value) {
-        this.employee = value;
-    }
 
     /**
-     * 获取externalId属性的值。
+     * Sets the employee value for this TimeSheetSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchMultiSelectField }
-     *     
+     * @param employee
      */
-    public SearchMultiSelectField getExternalId() {
+    public void setEmployee(com.netsuite.webservices.platform.core_2018_2.RecordRef[] employee) {
+        this.employee = employee;
+    }
+
+
+    /**
+     * Gets the externalId value for this TimeSheetSearchBasic.
+     * 
+     * @return externalId
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef[] getExternalId() {
         return externalId;
     }
 
-    /**
-     * 设置externalId属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchMultiSelectField }
-     *     
-     */
-    public void setExternalId(SearchMultiSelectField value) {
-        this.externalId = value;
-    }
 
     /**
-     * 获取externalIdString属性的值。
+     * Sets the externalId value for this TimeSheetSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchStringField }
-     *     
+     * @param externalId
      */
-    public SearchStringField getExternalIdString() {
+    public void setExternalId(com.netsuite.webservices.platform.core_2018_2.RecordRef[] externalId) {
+        this.externalId = externalId;
+    }
+
+
+    /**
+     * Gets the externalIdString value for this TimeSheetSearchBasic.
+     * 
+     * @return externalIdString
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchStringField getExternalIdString() {
         return externalIdString;
     }
 
-    /**
-     * 设置externalIdString属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchStringField }
-     *     
-     */
-    public void setExternalIdString(SearchStringField value) {
-        this.externalIdString = value;
-    }
 
     /**
-     * 获取id属性的值。
+     * Sets the externalIdString value for this TimeSheetSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchLongField }
-     *     
+     * @param externalIdString
      */
-    public SearchLongField getId() {
+    public void setExternalIdString(com.netsuite.webservices.platform.core_2018_2.SearchStringField externalIdString) {
+        this.externalIdString = externalIdString;
+    }
+
+
+    /**
+     * Gets the id value for this TimeSheetSearchBasic.
+     * 
+     * @return id
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchLongField getId() {
         return id;
     }
 
-    /**
-     * 设置id属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchLongField }
-     *     
-     */
-    public void setId(SearchLongField value) {
-        this.id = value;
-    }
 
     /**
-     * 获取internalId属性的值。
+     * Sets the id value for this TimeSheetSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchMultiSelectField }
-     *     
+     * @param id
      */
-    public SearchMultiSelectField getInternalId() {
+    public void setId(com.netsuite.webservices.platform.core_2018_2.SearchLongField id) {
+        this.id = id;
+    }
+
+
+    /**
+     * Gets the internalId value for this TimeSheetSearchBasic.
+     * 
+     * @return internalId
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef[] getInternalId() {
         return internalId;
     }
 
-    /**
-     * 设置internalId属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchMultiSelectField }
-     *     
-     */
-    public void setInternalId(SearchMultiSelectField value) {
-        this.internalId = value;
-    }
 
     /**
-     * 获取internalIdNumber属性的值。
+     * Sets the internalId value for this TimeSheetSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchLongField }
-     *     
+     * @param internalId
      */
-    public SearchLongField getInternalIdNumber() {
+    public void setInternalId(com.netsuite.webservices.platform.core_2018_2.RecordRef[] internalId) {
+        this.internalId = internalId;
+    }
+
+
+    /**
+     * Gets the internalIdNumber value for this TimeSheetSearchBasic.
+     * 
+     * @return internalIdNumber
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchLongField getInternalIdNumber() {
         return internalIdNumber;
     }
 
-    /**
-     * 设置internalIdNumber属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchLongField }
-     *     
-     */
-    public void setInternalIdNumber(SearchLongField value) {
-        this.internalIdNumber = value;
-    }
 
     /**
-     * 获取timeSheetDate属性的值。
+     * Sets the internalIdNumber value for this TimeSheetSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchDateField }
-     *     
+     * @param internalIdNumber
      */
-    public SearchDateField getTimeSheetDate() {
+    public void setInternalIdNumber(com.netsuite.webservices.platform.core_2018_2.SearchLongField internalIdNumber) {
+        this.internalIdNumber = internalIdNumber;
+    }
+
+
+    /**
+     * Gets the timeSheetDate value for this TimeSheetSearchBasic.
+     * 
+     * @return timeSheetDate
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchDateField getTimeSheetDate() {
         return timeSheetDate;
     }
 
-    /**
-     * 设置timeSheetDate属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchDateField }
-     *     
-     */
-    public void setTimeSheetDate(SearchDateField value) {
-        this.timeSheetDate = value;
-    }
 
     /**
-     * 获取totalHours属性的值。
+     * Sets the timeSheetDate value for this TimeSheetSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchDoubleField }
-     *     
+     * @param timeSheetDate
      */
-    public SearchDoubleField getTotalHours() {
+    public void setTimeSheetDate(com.netsuite.webservices.platform.core_2018_2.SearchDateField timeSheetDate) {
+        this.timeSheetDate = timeSheetDate;
+    }
+
+
+    /**
+     * Gets the totalHours value for this TimeSheetSearchBasic.
+     * 
+     * @return totalHours
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchDoubleField getTotalHours() {
         return totalHours;
     }
 
-    /**
-     * 设置totalHours属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchDoubleField }
-     *     
-     */
-    public void setTotalHours(SearchDoubleField value) {
-        this.totalHours = value;
-    }
 
     /**
-     * 获取customFieldList属性的值。
+     * Sets the totalHours value for this TimeSheetSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchCustomFieldList }
-     *     
+     * @param totalHours
      */
-    public SearchCustomFieldList getCustomFieldList() {
+    public void setTotalHours(com.netsuite.webservices.platform.core_2018_2.SearchDoubleField totalHours) {
+        this.totalHours = totalHours;
+    }
+
+
+    /**
+     * Gets the customFieldList value for this TimeSheetSearchBasic.
+     * 
+     * @return customFieldList
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchCustomField[] getCustomFieldList() {
         return customFieldList;
     }
 
+
     /**
-     * 设置customFieldList属性的值。
+     * Sets the customFieldList value for this TimeSheetSearchBasic.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchCustomFieldList }
-     *     
+     * @param customFieldList
      */
-    public void setCustomFieldList(SearchCustomFieldList value) {
-        this.customFieldList = value;
+    public void setCustomFieldList(com.netsuite.webservices.platform.core_2018_2.SearchCustomField[] customFieldList) {
+        this.customFieldList = customFieldList;
+    }
+
+    private java.lang.Object __equalsCalc = null;
+    public synchronized boolean equals(java.lang.Object obj) {
+        if (!(obj instanceof TimeSheetSearchBasic)) return false;
+        TimeSheetSearchBasic other = (TimeSheetSearchBasic) obj;
+        if (obj == null) return false;
+        if (this == obj) return true;
+        if (__equalsCalc != null) {
+            return (__equalsCalc == obj);
+        }
+        __equalsCalc = obj;
+        boolean _equals;
+        _equals = super.equals(obj) && 
+            ((this.approvalStatus==null && other.getApprovalStatus()==null) || 
+             (this.approvalStatus!=null &&
+              java.util.Arrays.equals(this.approvalStatus, other.getApprovalStatus()))) &&
+            ((this.employee==null && other.getEmployee()==null) || 
+             (this.employee!=null &&
+              java.util.Arrays.equals(this.employee, other.getEmployee()))) &&
+            ((this.externalId==null && other.getExternalId()==null) || 
+             (this.externalId!=null &&
+              java.util.Arrays.equals(this.externalId, other.getExternalId()))) &&
+            ((this.externalIdString==null && other.getExternalIdString()==null) || 
+             (this.externalIdString!=null &&
+              this.externalIdString.equals(other.getExternalIdString()))) &&
+            ((this.id==null && other.getId()==null) || 
+             (this.id!=null &&
+              this.id.equals(other.getId()))) &&
+            ((this.internalId==null && other.getInternalId()==null) || 
+             (this.internalId!=null &&
+              java.util.Arrays.equals(this.internalId, other.getInternalId()))) &&
+            ((this.internalIdNumber==null && other.getInternalIdNumber()==null) || 
+             (this.internalIdNumber!=null &&
+              this.internalIdNumber.equals(other.getInternalIdNumber()))) &&
+            ((this.timeSheetDate==null && other.getTimeSheetDate()==null) || 
+             (this.timeSheetDate!=null &&
+              this.timeSheetDate.equals(other.getTimeSheetDate()))) &&
+            ((this.totalHours==null && other.getTotalHours()==null) || 
+             (this.totalHours!=null &&
+              this.totalHours.equals(other.getTotalHours()))) &&
+            ((this.customFieldList==null && other.getCustomFieldList()==null) || 
+             (this.customFieldList!=null &&
+              java.util.Arrays.equals(this.customFieldList, other.getCustomFieldList())));
+        __equalsCalc = null;
+        return _equals;
+    }
+
+    private boolean __hashCodeCalc = false;
+    public synchronized int hashCode() {
+        if (__hashCodeCalc) {
+            return 0;
+        }
+        __hashCodeCalc = true;
+        int _hashCode = super.hashCode();
+        if (getApprovalStatus() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getApprovalStatus());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getApprovalStatus(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getEmployee() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getEmployee());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getEmployee(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getExternalId() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getExternalId());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getExternalId(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getExternalIdString() != null) {
+            _hashCode += getExternalIdString().hashCode();
+        }
+        if (getId() != null) {
+            _hashCode += getId().hashCode();
+        }
+        if (getInternalId() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getInternalId());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getInternalId(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getInternalIdNumber() != null) {
+            _hashCode += getInternalIdNumber().hashCode();
+        }
+        if (getTimeSheetDate() != null) {
+            _hashCode += getTimeSheetDate().hashCode();
+        }
+        if (getTotalHours() != null) {
+            _hashCode += getTotalHours().hashCode();
+        }
+        if (getCustomFieldList() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getCustomFieldList());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getCustomFieldList(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        __hashCodeCalc = false;
+        return _hashCode;
+    }
+
+    // Type metadata
+    private static org.apache.axis.description.TypeDesc typeDesc =
+        new org.apache.axis.description.TypeDesc(TimeSheetSearchBasic.class, true);
+
+    static {
+        typeDesc.setXmlType(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "TimeSheetSearchBasic"));
+        org.apache.axis.description.ElementDesc elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("approvalStatus");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "approvalStatus"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "searchValue"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("employee");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "employee"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "searchValue"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("externalId");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "externalId"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "searchValue"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("externalIdString");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "externalIdString"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchStringField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("id");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "id"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchLongField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("internalId");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "internalId"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "searchValue"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("internalIdNumber");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "internalIdNumber"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchLongField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("timeSheetDate");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "timeSheetDate"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchDateField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("totalHours");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "totalHours"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchDoubleField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("customFieldList");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "customFieldList"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchCustomField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "customField"));
+        typeDesc.addFieldDesc(elemField);
+    }
+
+    /**
+     * Return type metadata object
+     */
+    public static org.apache.axis.description.TypeDesc getTypeDesc() {
+        return typeDesc;
+    }
+
+    /**
+     * Get Custom Serializer
+     */
+    public static org.apache.axis.encoding.Serializer getSerializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanSerializer(
+            _javaType, _xmlType, typeDesc);
+    }
+
+    /**
+     * Get Custom Deserializer
+     */
+    public static org.apache.axis.encoding.Deserializer getDeserializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanDeserializer(
+            _javaType, _xmlType, typeDesc);
     }
 
 }

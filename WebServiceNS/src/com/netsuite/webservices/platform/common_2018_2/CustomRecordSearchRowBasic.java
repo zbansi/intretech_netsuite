@@ -1,485 +1,813 @@
+/**
+ * CustomRecordSearchRowBasic.java
+ *
+ * This file was auto-generated from WSDL
+ * by the Apache Axis 1.4 Jul 28, 2010 (04:07:04 PDT) WSDL2Java emitter.
+ */
 
 package com.netsuite.webservices.platform.common_2018_2;
 
-import java.util.ArrayList;
-import java.util.List;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlType;
-import com.netsuite.webservices.platform.core_2018_2.RecordRef;
-import com.netsuite.webservices.platform.core_2018_2.SearchColumnBooleanField;
-import com.netsuite.webservices.platform.core_2018_2.SearchColumnCustomFieldList;
-import com.netsuite.webservices.platform.core_2018_2.SearchColumnDateField;
-import com.netsuite.webservices.platform.core_2018_2.SearchColumnLongField;
-import com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField;
-import com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField;
-import com.netsuite.webservices.platform.core_2018_2.SearchRowBasic;
+public class CustomRecordSearchRowBasic  extends com.netsuite.webservices.platform.core_2018_2.SearchRowBasic  implements java.io.Serializable {
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef recType;
 
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] altName;
 
-/**
- * <p>CustomRecordSearchRowBasic complex type的 Java 类。
- * 
- * <p>以下模式片段指定包含在此类中的预期内容。
- * 
- * <pre>
- * &lt;complexType name="CustomRecordSearchRowBasic">
- *   &lt;complexContent>
- *     &lt;extension base="{urn:core_2018_2.platform.webservices.netsuite.com}SearchRowBasic">
- *       &lt;sequence>
- *         &lt;element name="recType" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef"/>
- *         &lt;element name="altName" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnStringField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="availableOffline" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnBooleanField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="created" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnDateField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="externalId" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnSelectField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="id" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnLongField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="internalId" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnSelectField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="isInactive" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnBooleanField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="lastModified" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnDateField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="lastModifiedBy" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnSelectField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="name" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnStringField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="owner" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnSelectField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="parent" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnSelectField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="customFieldList" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnCustomFieldList" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/extension>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
- */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "CustomRecordSearchRowBasic", propOrder = {
-    "recType",
-    "altName",
-    "availableOffline",
-    "created",
-    "externalId",
-    "id",
-    "internalId",
-    "isInactive",
-    "lastModified",
-    "lastModifiedBy",
-    "name",
-    "owner",
-    "parent",
-    "customFieldList"
-})
-public class CustomRecordSearchRowBasic
-    extends SearchRowBasic
-{
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnBooleanField[] availableOffline;
 
-    @XmlElement(required = true)
-    protected RecordRef recType;
-    protected List<SearchColumnStringField> altName;
-    protected List<SearchColumnBooleanField> availableOffline;
-    protected List<SearchColumnDateField> created;
-    protected List<SearchColumnSelectField> externalId;
-    protected List<SearchColumnLongField> id;
-    protected List<SearchColumnSelectField> internalId;
-    protected List<SearchColumnBooleanField> isInactive;
-    protected List<SearchColumnDateField> lastModified;
-    protected List<SearchColumnSelectField> lastModifiedBy;
-    protected List<SearchColumnStringField> name;
-    protected List<SearchColumnSelectField> owner;
-    protected List<SearchColumnSelectField> parent;
-    protected SearchColumnCustomFieldList customFieldList;
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnDateField[] created;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] externalId;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnLongField[] id;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] internalId;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnBooleanField[] isInactive;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnDateField[] lastModified;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] lastModifiedBy;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] name;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] owner;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] parent;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnCustomField[] customFieldList;
+
+    public CustomRecordSearchRowBasic() {
+    }
+
+    public CustomRecordSearchRowBasic(
+           com.netsuite.webservices.platform.core_2018_2.RecordRef recType,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] altName,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnBooleanField[] availableOffline,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnDateField[] created,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] externalId,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnLongField[] id,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] internalId,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnBooleanField[] isInactive,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnDateField[] lastModified,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] lastModifiedBy,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] name,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] owner,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] parent,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnCustomField[] customFieldList) {
+        this.recType = recType;
+        this.altName = altName;
+        this.availableOffline = availableOffline;
+        this.created = created;
+        this.externalId = externalId;
+        this.id = id;
+        this.internalId = internalId;
+        this.isInactive = isInactive;
+        this.lastModified = lastModified;
+        this.lastModifiedBy = lastModifiedBy;
+        this.name = name;
+        this.owner = owner;
+        this.parent = parent;
+        this.customFieldList = customFieldList;
+    }
+
 
     /**
-     * 获取recType属性的值。
+     * Gets the recType value for this CustomRecordSearchRowBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @return recType
      */
-    public RecordRef getRecType() {
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getRecType() {
         return recType;
     }
 
-    /**
-     * 设置recType属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setRecType(RecordRef value) {
-        this.recType = value;
-    }
 
     /**
-     * Gets the value of the altName property.
+     * Sets the recType value for this CustomRecordSearchRowBasic.
      * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the altName property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getAltName().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnStringField }
-     * 
-     * 
+     * @param recType
      */
-    public List<SearchColumnStringField> getAltName() {
-        if (altName == null) {
-            altName = new ArrayList<SearchColumnStringField>();
-        }
-        return this.altName;
+    public void setRecType(com.netsuite.webservices.platform.core_2018_2.RecordRef recType) {
+        this.recType = recType;
     }
 
-    /**
-     * Gets the value of the availableOffline property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the availableOffline property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getAvailableOffline().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnBooleanField }
-     * 
-     * 
-     */
-    public List<SearchColumnBooleanField> getAvailableOffline() {
-        if (availableOffline == null) {
-            availableOffline = new ArrayList<SearchColumnBooleanField>();
-        }
-        return this.availableOffline;
-    }
 
     /**
-     * Gets the value of the created property.
+     * Gets the altName value for this CustomRecordSearchRowBasic.
      * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the created property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getCreated().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnDateField }
-     * 
-     * 
+     * @return altName
      */
-    public List<SearchColumnDateField> getCreated() {
-        if (created == null) {
-            created = new ArrayList<SearchColumnDateField>();
-        }
-        return this.created;
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] getAltName() {
+        return altName;
     }
 
-    /**
-     * Gets the value of the externalId property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the externalId property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getExternalId().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnSelectField }
-     * 
-     * 
-     */
-    public List<SearchColumnSelectField> getExternalId() {
-        if (externalId == null) {
-            externalId = new ArrayList<SearchColumnSelectField>();
-        }
-        return this.externalId;
-    }
 
     /**
-     * Gets the value of the id property.
+     * Sets the altName value for this CustomRecordSearchRowBasic.
      * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the id property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getId().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnLongField }
-     * 
-     * 
+     * @param altName
      */
-    public List<SearchColumnLongField> getId() {
-        if (id == null) {
-            id = new ArrayList<SearchColumnLongField>();
-        }
-        return this.id;
+    public void setAltName(com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] altName) {
+        this.altName = altName;
     }
 
-    /**
-     * Gets the value of the internalId property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the internalId property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getInternalId().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnSelectField }
-     * 
-     * 
-     */
-    public List<SearchColumnSelectField> getInternalId() {
-        if (internalId == null) {
-            internalId = new ArrayList<SearchColumnSelectField>();
-        }
-        return this.internalId;
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField getAltName(int i) {
+        return this.altName[i];
     }
 
-    /**
-     * Gets the value of the isInactive property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the isInactive property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getIsInactive().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnBooleanField }
-     * 
-     * 
-     */
-    public List<SearchColumnBooleanField> getIsInactive() {
-        if (isInactive == null) {
-            isInactive = new ArrayList<SearchColumnBooleanField>();
-        }
-        return this.isInactive;
+    public void setAltName(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField _value) {
+        this.altName[i] = _value;
     }
 
-    /**
-     * Gets the value of the lastModified property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the lastModified property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getLastModified().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnDateField }
-     * 
-     * 
-     */
-    public List<SearchColumnDateField> getLastModified() {
-        if (lastModified == null) {
-            lastModified = new ArrayList<SearchColumnDateField>();
-        }
-        return this.lastModified;
-    }
 
     /**
-     * Gets the value of the lastModifiedBy property.
+     * Gets the availableOffline value for this CustomRecordSearchRowBasic.
      * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the lastModifiedBy property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getLastModifiedBy().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnSelectField }
-     * 
-     * 
+     * @return availableOffline
      */
-    public List<SearchColumnSelectField> getLastModifiedBy() {
-        if (lastModifiedBy == null) {
-            lastModifiedBy = new ArrayList<SearchColumnSelectField>();
-        }
-        return this.lastModifiedBy;
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnBooleanField[] getAvailableOffline() {
+        return availableOffline;
     }
 
-    /**
-     * Gets the value of the name property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the name property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getName().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnStringField }
-     * 
-     * 
-     */
-    public List<SearchColumnStringField> getName() {
-        if (name == null) {
-            name = new ArrayList<SearchColumnStringField>();
-        }
-        return this.name;
-    }
 
     /**
-     * Gets the value of the owner property.
+     * Sets the availableOffline value for this CustomRecordSearchRowBasic.
      * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the owner property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getOwner().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnSelectField }
-     * 
-     * 
+     * @param availableOffline
      */
-    public List<SearchColumnSelectField> getOwner() {
-        if (owner == null) {
-            owner = new ArrayList<SearchColumnSelectField>();
-        }
-        return this.owner;
+    public void setAvailableOffline(com.netsuite.webservices.platform.core_2018_2.SearchColumnBooleanField[] availableOffline) {
+        this.availableOffline = availableOffline;
     }
 
-    /**
-     * Gets the value of the parent property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the parent property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getParent().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnSelectField }
-     * 
-     * 
-     */
-    public List<SearchColumnSelectField> getParent() {
-        if (parent == null) {
-            parent = new ArrayList<SearchColumnSelectField>();
-        }
-        return this.parent;
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnBooleanField getAvailableOffline(int i) {
+        return this.availableOffline[i];
     }
 
+    public void setAvailableOffline(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnBooleanField _value) {
+        this.availableOffline[i] = _value;
+    }
+
+
     /**
-     * 获取customFieldList属性的值。
+     * Gets the created value for this CustomRecordSearchRowBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchColumnCustomFieldList }
-     *     
+     * @return created
      */
-    public SearchColumnCustomFieldList getCustomFieldList() {
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnDateField[] getCreated() {
+        return created;
+    }
+
+
+    /**
+     * Sets the created value for this CustomRecordSearchRowBasic.
+     * 
+     * @param created
+     */
+    public void setCreated(com.netsuite.webservices.platform.core_2018_2.SearchColumnDateField[] created) {
+        this.created = created;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnDateField getCreated(int i) {
+        return this.created[i];
+    }
+
+    public void setCreated(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnDateField _value) {
+        this.created[i] = _value;
+    }
+
+
+    /**
+     * Gets the externalId value for this CustomRecordSearchRowBasic.
+     * 
+     * @return externalId
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] getExternalId() {
+        return externalId;
+    }
+
+
+    /**
+     * Sets the externalId value for this CustomRecordSearchRowBasic.
+     * 
+     * @param externalId
+     */
+    public void setExternalId(com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] externalId) {
+        this.externalId = externalId;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField getExternalId(int i) {
+        return this.externalId[i];
+    }
+
+    public void setExternalId(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField _value) {
+        this.externalId[i] = _value;
+    }
+
+
+    /**
+     * Gets the id value for this CustomRecordSearchRowBasic.
+     * 
+     * @return id
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnLongField[] getId() {
+        return id;
+    }
+
+
+    /**
+     * Sets the id value for this CustomRecordSearchRowBasic.
+     * 
+     * @param id
+     */
+    public void setId(com.netsuite.webservices.platform.core_2018_2.SearchColumnLongField[] id) {
+        this.id = id;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnLongField getId(int i) {
+        return this.id[i];
+    }
+
+    public void setId(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnLongField _value) {
+        this.id[i] = _value;
+    }
+
+
+    /**
+     * Gets the internalId value for this CustomRecordSearchRowBasic.
+     * 
+     * @return internalId
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] getInternalId() {
+        return internalId;
+    }
+
+
+    /**
+     * Sets the internalId value for this CustomRecordSearchRowBasic.
+     * 
+     * @param internalId
+     */
+    public void setInternalId(com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] internalId) {
+        this.internalId = internalId;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField getInternalId(int i) {
+        return this.internalId[i];
+    }
+
+    public void setInternalId(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField _value) {
+        this.internalId[i] = _value;
+    }
+
+
+    /**
+     * Gets the isInactive value for this CustomRecordSearchRowBasic.
+     * 
+     * @return isInactive
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnBooleanField[] getIsInactive() {
+        return isInactive;
+    }
+
+
+    /**
+     * Sets the isInactive value for this CustomRecordSearchRowBasic.
+     * 
+     * @param isInactive
+     */
+    public void setIsInactive(com.netsuite.webservices.platform.core_2018_2.SearchColumnBooleanField[] isInactive) {
+        this.isInactive = isInactive;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnBooleanField getIsInactive(int i) {
+        return this.isInactive[i];
+    }
+
+    public void setIsInactive(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnBooleanField _value) {
+        this.isInactive[i] = _value;
+    }
+
+
+    /**
+     * Gets the lastModified value for this CustomRecordSearchRowBasic.
+     * 
+     * @return lastModified
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnDateField[] getLastModified() {
+        return lastModified;
+    }
+
+
+    /**
+     * Sets the lastModified value for this CustomRecordSearchRowBasic.
+     * 
+     * @param lastModified
+     */
+    public void setLastModified(com.netsuite.webservices.platform.core_2018_2.SearchColumnDateField[] lastModified) {
+        this.lastModified = lastModified;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnDateField getLastModified(int i) {
+        return this.lastModified[i];
+    }
+
+    public void setLastModified(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnDateField _value) {
+        this.lastModified[i] = _value;
+    }
+
+
+    /**
+     * Gets the lastModifiedBy value for this CustomRecordSearchRowBasic.
+     * 
+     * @return lastModifiedBy
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] getLastModifiedBy() {
+        return lastModifiedBy;
+    }
+
+
+    /**
+     * Sets the lastModifiedBy value for this CustomRecordSearchRowBasic.
+     * 
+     * @param lastModifiedBy
+     */
+    public void setLastModifiedBy(com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] lastModifiedBy) {
+        this.lastModifiedBy = lastModifiedBy;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField getLastModifiedBy(int i) {
+        return this.lastModifiedBy[i];
+    }
+
+    public void setLastModifiedBy(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField _value) {
+        this.lastModifiedBy[i] = _value;
+    }
+
+
+    /**
+     * Gets the name value for this CustomRecordSearchRowBasic.
+     * 
+     * @return name
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] getName() {
+        return name;
+    }
+
+
+    /**
+     * Sets the name value for this CustomRecordSearchRowBasic.
+     * 
+     * @param name
+     */
+    public void setName(com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] name) {
+        this.name = name;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField getName(int i) {
+        return this.name[i];
+    }
+
+    public void setName(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField _value) {
+        this.name[i] = _value;
+    }
+
+
+    /**
+     * Gets the owner value for this CustomRecordSearchRowBasic.
+     * 
+     * @return owner
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] getOwner() {
+        return owner;
+    }
+
+
+    /**
+     * Sets the owner value for this CustomRecordSearchRowBasic.
+     * 
+     * @param owner
+     */
+    public void setOwner(com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] owner) {
+        this.owner = owner;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField getOwner(int i) {
+        return this.owner[i];
+    }
+
+    public void setOwner(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField _value) {
+        this.owner[i] = _value;
+    }
+
+
+    /**
+     * Gets the parent value for this CustomRecordSearchRowBasic.
+     * 
+     * @return parent
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] getParent() {
+        return parent;
+    }
+
+
+    /**
+     * Sets the parent value for this CustomRecordSearchRowBasic.
+     * 
+     * @param parent
+     */
+    public void setParent(com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] parent) {
+        this.parent = parent;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField getParent(int i) {
+        return this.parent[i];
+    }
+
+    public void setParent(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField _value) {
+        this.parent[i] = _value;
+    }
+
+
+    /**
+     * Gets the customFieldList value for this CustomRecordSearchRowBasic.
+     * 
+     * @return customFieldList
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnCustomField[] getCustomFieldList() {
         return customFieldList;
     }
 
+
     /**
-     * 设置customFieldList属性的值。
+     * Sets the customFieldList value for this CustomRecordSearchRowBasic.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchColumnCustomFieldList }
-     *     
+     * @param customFieldList
      */
-    public void setCustomFieldList(SearchColumnCustomFieldList value) {
-        this.customFieldList = value;
+    public void setCustomFieldList(com.netsuite.webservices.platform.core_2018_2.SearchColumnCustomField[] customFieldList) {
+        this.customFieldList = customFieldList;
+    }
+
+    private java.lang.Object __equalsCalc = null;
+    public synchronized boolean equals(java.lang.Object obj) {
+        if (!(obj instanceof CustomRecordSearchRowBasic)) return false;
+        CustomRecordSearchRowBasic other = (CustomRecordSearchRowBasic) obj;
+        if (obj == null) return false;
+        if (this == obj) return true;
+        if (__equalsCalc != null) {
+            return (__equalsCalc == obj);
+        }
+        __equalsCalc = obj;
+        boolean _equals;
+        _equals = super.equals(obj) && 
+            ((this.recType==null && other.getRecType()==null) || 
+             (this.recType!=null &&
+              this.recType.equals(other.getRecType()))) &&
+            ((this.altName==null && other.getAltName()==null) || 
+             (this.altName!=null &&
+              java.util.Arrays.equals(this.altName, other.getAltName()))) &&
+            ((this.availableOffline==null && other.getAvailableOffline()==null) || 
+             (this.availableOffline!=null &&
+              java.util.Arrays.equals(this.availableOffline, other.getAvailableOffline()))) &&
+            ((this.created==null && other.getCreated()==null) || 
+             (this.created!=null &&
+              java.util.Arrays.equals(this.created, other.getCreated()))) &&
+            ((this.externalId==null && other.getExternalId()==null) || 
+             (this.externalId!=null &&
+              java.util.Arrays.equals(this.externalId, other.getExternalId()))) &&
+            ((this.id==null && other.getId()==null) || 
+             (this.id!=null &&
+              java.util.Arrays.equals(this.id, other.getId()))) &&
+            ((this.internalId==null && other.getInternalId()==null) || 
+             (this.internalId!=null &&
+              java.util.Arrays.equals(this.internalId, other.getInternalId()))) &&
+            ((this.isInactive==null && other.getIsInactive()==null) || 
+             (this.isInactive!=null &&
+              java.util.Arrays.equals(this.isInactive, other.getIsInactive()))) &&
+            ((this.lastModified==null && other.getLastModified()==null) || 
+             (this.lastModified!=null &&
+              java.util.Arrays.equals(this.lastModified, other.getLastModified()))) &&
+            ((this.lastModifiedBy==null && other.getLastModifiedBy()==null) || 
+             (this.lastModifiedBy!=null &&
+              java.util.Arrays.equals(this.lastModifiedBy, other.getLastModifiedBy()))) &&
+            ((this.name==null && other.getName()==null) || 
+             (this.name!=null &&
+              java.util.Arrays.equals(this.name, other.getName()))) &&
+            ((this.owner==null && other.getOwner()==null) || 
+             (this.owner!=null &&
+              java.util.Arrays.equals(this.owner, other.getOwner()))) &&
+            ((this.parent==null && other.getParent()==null) || 
+             (this.parent!=null &&
+              java.util.Arrays.equals(this.parent, other.getParent()))) &&
+            ((this.customFieldList==null && other.getCustomFieldList()==null) || 
+             (this.customFieldList!=null &&
+              java.util.Arrays.equals(this.customFieldList, other.getCustomFieldList())));
+        __equalsCalc = null;
+        return _equals;
+    }
+
+    private boolean __hashCodeCalc = false;
+    public synchronized int hashCode() {
+        if (__hashCodeCalc) {
+            return 0;
+        }
+        __hashCodeCalc = true;
+        int _hashCode = super.hashCode();
+        if (getRecType() != null) {
+            _hashCode += getRecType().hashCode();
+        }
+        if (getAltName() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getAltName());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getAltName(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getAvailableOffline() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getAvailableOffline());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getAvailableOffline(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getCreated() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getCreated());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getCreated(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getExternalId() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getExternalId());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getExternalId(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getId() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getId());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getId(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getInternalId() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getInternalId());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getInternalId(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getIsInactive() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getIsInactive());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getIsInactive(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getLastModified() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getLastModified());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getLastModified(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getLastModifiedBy() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getLastModifiedBy());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getLastModifiedBy(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getName() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getName());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getName(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getOwner() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getOwner());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getOwner(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getParent() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getParent());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getParent(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getCustomFieldList() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getCustomFieldList());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getCustomFieldList(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        __hashCodeCalc = false;
+        return _hashCode;
+    }
+
+    // Type metadata
+    private static org.apache.axis.description.TypeDesc typeDesc =
+        new org.apache.axis.description.TypeDesc(CustomRecordSearchRowBasic.class, true);
+
+    static {
+        typeDesc.setXmlType(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "CustomRecordSearchRowBasic"));
+        org.apache.axis.description.ElementDesc elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("recType");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "recType"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("altName");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "altName"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnStringField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("availableOffline");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "availableOffline"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnBooleanField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("created");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "created"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnDateField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("externalId");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "externalId"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnSelectField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("id");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "id"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnLongField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("internalId");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "internalId"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnSelectField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("isInactive");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "isInactive"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnBooleanField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("lastModified");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "lastModified"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnDateField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("lastModifiedBy");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "lastModifiedBy"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnSelectField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("name");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "name"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnStringField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("owner");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "owner"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnSelectField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("parent");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "parent"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnSelectField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("customFieldList");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "customFieldList"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnCustomField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "customField"));
+        typeDesc.addFieldDesc(elemField);
+    }
+
+    /**
+     * Return type metadata object
+     */
+    public static org.apache.axis.description.TypeDesc getTypeDesc() {
+        return typeDesc;
+    }
+
+    /**
+     * Get Custom Serializer
+     */
+    public static org.apache.axis.encoding.Serializer getSerializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanSerializer(
+            _javaType, _xmlType, typeDesc);
+    }
+
+    /**
+     * Get Custom Deserializer
+     */
+    public static org.apache.axis.encoding.Deserializer getDeserializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanDeserializer(
+            _javaType, _xmlType, typeDesc);
     }
 
 }

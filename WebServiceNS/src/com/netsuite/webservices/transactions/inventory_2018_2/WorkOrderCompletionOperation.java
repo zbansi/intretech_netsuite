@@ -1,411 +1,601 @@
+/**
+ * WorkOrderCompletionOperation.java
+ *
+ * This file was auto-generated from WSDL
+ * by the Apache Axis 1.4 Jul 28, 2010 (04:07:04 PDT) WSDL2Java emitter.
+ */
 
 package com.netsuite.webservices.transactions.inventory_2018_2;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlType;
+public class WorkOrderCompletionOperation  implements java.io.Serializable {
+    private java.lang.Long operationSequence;
 
+    private java.lang.String operationName;
 
-/**
- * <p>WorkOrderCompletionOperation complex type的 Java 类。
- * 
- * <p>以下模式片段指定包含在此类中的预期内容。
- * 
- * <pre>
- * &lt;complexType name="WorkOrderCompletionOperation">
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element name="operationSequence" type="{http://www.w3.org/2001/XMLSchema}long" minOccurs="0"/>
- *         &lt;element name="operationName" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="workCenter" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="machineResources" type="{http://www.w3.org/2001/XMLSchema}long" minOccurs="0"/>
- *         &lt;element name="laborResources" type="{http://www.w3.org/2001/XMLSchema}long" minOccurs="0"/>
- *         &lt;element name="inputQuantity" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
- *         &lt;element name="quantityRemaining" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
- *         &lt;element name="predecessorCompletedQuantity" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
- *         &lt;element name="completedQuantity" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
- *         &lt;element name="recordSetup" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         &lt;element name="machineSetupTime" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
- *         &lt;element name="laborSetupTime" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
- *         &lt;element name="machineRunTime" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
- *         &lt;element name="laborRunTime" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
- */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "WorkOrderCompletionOperation", propOrder = {
-    "operationSequence",
-    "operationName",
-    "workCenter",
-    "machineResources",
-    "laborResources",
-    "inputQuantity",
-    "quantityRemaining",
-    "predecessorCompletedQuantity",
-    "completedQuantity",
-    "recordSetup",
-    "machineSetupTime",
-    "laborSetupTime",
-    "machineRunTime",
-    "laborRunTime"
-})
-public class WorkOrderCompletionOperation {
+    private java.lang.String workCenter;
 
-    protected Long operationSequence;
-    protected String operationName;
-    protected String workCenter;
-    protected Long machineResources;
-    protected Long laborResources;
-    protected Double inputQuantity;
-    protected Double quantityRemaining;
-    protected Double predecessorCompletedQuantity;
-    protected Double completedQuantity;
-    protected Boolean recordSetup;
-    protected Double machineSetupTime;
-    protected Double laborSetupTime;
-    protected Double machineRunTime;
-    protected Double laborRunTime;
+    private java.lang.Long machineResources;
+
+    private java.lang.Long laborResources;
+
+    private java.lang.Double inputQuantity;
+
+    private java.lang.Double quantityRemaining;
+
+    private java.lang.Double predecessorCompletedQuantity;
+
+    private java.lang.Double completedQuantity;
+
+    private java.lang.Boolean recordSetup;
+
+    private java.lang.Double machineSetupTime;
+
+    private java.lang.Double laborSetupTime;
+
+    private java.lang.Double machineRunTime;
+
+    private java.lang.Double laborRunTime;
+
+    public WorkOrderCompletionOperation() {
+    }
+
+    public WorkOrderCompletionOperation(
+           java.lang.Long operationSequence,
+           java.lang.String operationName,
+           java.lang.String workCenter,
+           java.lang.Long machineResources,
+           java.lang.Long laborResources,
+           java.lang.Double inputQuantity,
+           java.lang.Double quantityRemaining,
+           java.lang.Double predecessorCompletedQuantity,
+           java.lang.Double completedQuantity,
+           java.lang.Boolean recordSetup,
+           java.lang.Double machineSetupTime,
+           java.lang.Double laborSetupTime,
+           java.lang.Double machineRunTime,
+           java.lang.Double laborRunTime) {
+           this.operationSequence = operationSequence;
+           this.operationName = operationName;
+           this.workCenter = workCenter;
+           this.machineResources = machineResources;
+           this.laborResources = laborResources;
+           this.inputQuantity = inputQuantity;
+           this.quantityRemaining = quantityRemaining;
+           this.predecessorCompletedQuantity = predecessorCompletedQuantity;
+           this.completedQuantity = completedQuantity;
+           this.recordSetup = recordSetup;
+           this.machineSetupTime = machineSetupTime;
+           this.laborSetupTime = laborSetupTime;
+           this.machineRunTime = machineRunTime;
+           this.laborRunTime = laborRunTime;
+    }
+
 
     /**
-     * 获取operationSequence属性的值。
+     * Gets the operationSequence value for this WorkOrderCompletionOperation.
      * 
-     * @return
-     *     possible object is
-     *     {@link Long }
-     *     
+     * @return operationSequence
      */
-    public Long getOperationSequence() {
+    public java.lang.Long getOperationSequence() {
         return operationSequence;
     }
 
-    /**
-     * 设置operationSequence属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Long }
-     *     
-     */
-    public void setOperationSequence(Long value) {
-        this.operationSequence = value;
-    }
 
     /**
-     * 获取operationName属性的值。
+     * Sets the operationSequence value for this WorkOrderCompletionOperation.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param operationSequence
      */
-    public String getOperationName() {
+    public void setOperationSequence(java.lang.Long operationSequence) {
+        this.operationSequence = operationSequence;
+    }
+
+
+    /**
+     * Gets the operationName value for this WorkOrderCompletionOperation.
+     * 
+     * @return operationName
+     */
+    public java.lang.String getOperationName() {
         return operationName;
     }
 
-    /**
-     * 设置operationName属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setOperationName(String value) {
-        this.operationName = value;
-    }
 
     /**
-     * 获取workCenter属性的值。
+     * Sets the operationName value for this WorkOrderCompletionOperation.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param operationName
      */
-    public String getWorkCenter() {
+    public void setOperationName(java.lang.String operationName) {
+        this.operationName = operationName;
+    }
+
+
+    /**
+     * Gets the workCenter value for this WorkOrderCompletionOperation.
+     * 
+     * @return workCenter
+     */
+    public java.lang.String getWorkCenter() {
         return workCenter;
     }
 
-    /**
-     * 设置workCenter属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setWorkCenter(String value) {
-        this.workCenter = value;
-    }
 
     /**
-     * 获取machineResources属性的值。
+     * Sets the workCenter value for this WorkOrderCompletionOperation.
      * 
-     * @return
-     *     possible object is
-     *     {@link Long }
-     *     
+     * @param workCenter
      */
-    public Long getMachineResources() {
+    public void setWorkCenter(java.lang.String workCenter) {
+        this.workCenter = workCenter;
+    }
+
+
+    /**
+     * Gets the machineResources value for this WorkOrderCompletionOperation.
+     * 
+     * @return machineResources
+     */
+    public java.lang.Long getMachineResources() {
         return machineResources;
     }
 
-    /**
-     * 设置machineResources属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Long }
-     *     
-     */
-    public void setMachineResources(Long value) {
-        this.machineResources = value;
-    }
 
     /**
-     * 获取laborResources属性的值。
+     * Sets the machineResources value for this WorkOrderCompletionOperation.
      * 
-     * @return
-     *     possible object is
-     *     {@link Long }
-     *     
+     * @param machineResources
      */
-    public Long getLaborResources() {
+    public void setMachineResources(java.lang.Long machineResources) {
+        this.machineResources = machineResources;
+    }
+
+
+    /**
+     * Gets the laborResources value for this WorkOrderCompletionOperation.
+     * 
+     * @return laborResources
+     */
+    public java.lang.Long getLaborResources() {
         return laborResources;
     }
 
-    /**
-     * 设置laborResources属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Long }
-     *     
-     */
-    public void setLaborResources(Long value) {
-        this.laborResources = value;
-    }
 
     /**
-     * 获取inputQuantity属性的值。
+     * Sets the laborResources value for this WorkOrderCompletionOperation.
      * 
-     * @return
-     *     possible object is
-     *     {@link Double }
-     *     
+     * @param laborResources
      */
-    public Double getInputQuantity() {
+    public void setLaborResources(java.lang.Long laborResources) {
+        this.laborResources = laborResources;
+    }
+
+
+    /**
+     * Gets the inputQuantity value for this WorkOrderCompletionOperation.
+     * 
+     * @return inputQuantity
+     */
+    public java.lang.Double getInputQuantity() {
         return inputQuantity;
     }
 
-    /**
-     * 设置inputQuantity属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Double }
-     *     
-     */
-    public void setInputQuantity(Double value) {
-        this.inputQuantity = value;
-    }
 
     /**
-     * 获取quantityRemaining属性的值。
+     * Sets the inputQuantity value for this WorkOrderCompletionOperation.
      * 
-     * @return
-     *     possible object is
-     *     {@link Double }
-     *     
+     * @param inputQuantity
      */
-    public Double getQuantityRemaining() {
+    public void setInputQuantity(java.lang.Double inputQuantity) {
+        this.inputQuantity = inputQuantity;
+    }
+
+
+    /**
+     * Gets the quantityRemaining value for this WorkOrderCompletionOperation.
+     * 
+     * @return quantityRemaining
+     */
+    public java.lang.Double getQuantityRemaining() {
         return quantityRemaining;
     }
 
-    /**
-     * 设置quantityRemaining属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Double }
-     *     
-     */
-    public void setQuantityRemaining(Double value) {
-        this.quantityRemaining = value;
-    }
 
     /**
-     * 获取predecessorCompletedQuantity属性的值。
+     * Sets the quantityRemaining value for this WorkOrderCompletionOperation.
      * 
-     * @return
-     *     possible object is
-     *     {@link Double }
-     *     
+     * @param quantityRemaining
      */
-    public Double getPredecessorCompletedQuantity() {
+    public void setQuantityRemaining(java.lang.Double quantityRemaining) {
+        this.quantityRemaining = quantityRemaining;
+    }
+
+
+    /**
+     * Gets the predecessorCompletedQuantity value for this WorkOrderCompletionOperation.
+     * 
+     * @return predecessorCompletedQuantity
+     */
+    public java.lang.Double getPredecessorCompletedQuantity() {
         return predecessorCompletedQuantity;
     }
 
-    /**
-     * 设置predecessorCompletedQuantity属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Double }
-     *     
-     */
-    public void setPredecessorCompletedQuantity(Double value) {
-        this.predecessorCompletedQuantity = value;
-    }
 
     /**
-     * 获取completedQuantity属性的值。
+     * Sets the predecessorCompletedQuantity value for this WorkOrderCompletionOperation.
      * 
-     * @return
-     *     possible object is
-     *     {@link Double }
-     *     
+     * @param predecessorCompletedQuantity
      */
-    public Double getCompletedQuantity() {
+    public void setPredecessorCompletedQuantity(java.lang.Double predecessorCompletedQuantity) {
+        this.predecessorCompletedQuantity = predecessorCompletedQuantity;
+    }
+
+
+    /**
+     * Gets the completedQuantity value for this WorkOrderCompletionOperation.
+     * 
+     * @return completedQuantity
+     */
+    public java.lang.Double getCompletedQuantity() {
         return completedQuantity;
     }
 
-    /**
-     * 设置completedQuantity属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Double }
-     *     
-     */
-    public void setCompletedQuantity(Double value) {
-        this.completedQuantity = value;
-    }
 
     /**
-     * 获取recordSetup属性的值。
+     * Sets the completedQuantity value for this WorkOrderCompletionOperation.
      * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
+     * @param completedQuantity
      */
-    public Boolean isRecordSetup() {
+    public void setCompletedQuantity(java.lang.Double completedQuantity) {
+        this.completedQuantity = completedQuantity;
+    }
+
+
+    /**
+     * Gets the recordSetup value for this WorkOrderCompletionOperation.
+     * 
+     * @return recordSetup
+     */
+    public java.lang.Boolean getRecordSetup() {
         return recordSetup;
     }
 
-    /**
-     * 设置recordSetup属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
-     */
-    public void setRecordSetup(Boolean value) {
-        this.recordSetup = value;
-    }
 
     /**
-     * 获取machineSetupTime属性的值。
+     * Sets the recordSetup value for this WorkOrderCompletionOperation.
      * 
-     * @return
-     *     possible object is
-     *     {@link Double }
-     *     
+     * @param recordSetup
      */
-    public Double getMachineSetupTime() {
+    public void setRecordSetup(java.lang.Boolean recordSetup) {
+        this.recordSetup = recordSetup;
+    }
+
+
+    /**
+     * Gets the machineSetupTime value for this WorkOrderCompletionOperation.
+     * 
+     * @return machineSetupTime
+     */
+    public java.lang.Double getMachineSetupTime() {
         return machineSetupTime;
     }
 
-    /**
-     * 设置machineSetupTime属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Double }
-     *     
-     */
-    public void setMachineSetupTime(Double value) {
-        this.machineSetupTime = value;
-    }
 
     /**
-     * 获取laborSetupTime属性的值。
+     * Sets the machineSetupTime value for this WorkOrderCompletionOperation.
      * 
-     * @return
-     *     possible object is
-     *     {@link Double }
-     *     
+     * @param machineSetupTime
      */
-    public Double getLaborSetupTime() {
+    public void setMachineSetupTime(java.lang.Double machineSetupTime) {
+        this.machineSetupTime = machineSetupTime;
+    }
+
+
+    /**
+     * Gets the laborSetupTime value for this WorkOrderCompletionOperation.
+     * 
+     * @return laborSetupTime
+     */
+    public java.lang.Double getLaborSetupTime() {
         return laborSetupTime;
     }
 
-    /**
-     * 设置laborSetupTime属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Double }
-     *     
-     */
-    public void setLaborSetupTime(Double value) {
-        this.laborSetupTime = value;
-    }
 
     /**
-     * 获取machineRunTime属性的值。
+     * Sets the laborSetupTime value for this WorkOrderCompletionOperation.
      * 
-     * @return
-     *     possible object is
-     *     {@link Double }
-     *     
+     * @param laborSetupTime
      */
-    public Double getMachineRunTime() {
+    public void setLaborSetupTime(java.lang.Double laborSetupTime) {
+        this.laborSetupTime = laborSetupTime;
+    }
+
+
+    /**
+     * Gets the machineRunTime value for this WorkOrderCompletionOperation.
+     * 
+     * @return machineRunTime
+     */
+    public java.lang.Double getMachineRunTime() {
         return machineRunTime;
     }
 
-    /**
-     * 设置machineRunTime属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Double }
-     *     
-     */
-    public void setMachineRunTime(Double value) {
-        this.machineRunTime = value;
-    }
 
     /**
-     * 获取laborRunTime属性的值。
+     * Sets the machineRunTime value for this WorkOrderCompletionOperation.
      * 
-     * @return
-     *     possible object is
-     *     {@link Double }
-     *     
+     * @param machineRunTime
      */
-    public Double getLaborRunTime() {
+    public void setMachineRunTime(java.lang.Double machineRunTime) {
+        this.machineRunTime = machineRunTime;
+    }
+
+
+    /**
+     * Gets the laborRunTime value for this WorkOrderCompletionOperation.
+     * 
+     * @return laborRunTime
+     */
+    public java.lang.Double getLaborRunTime() {
         return laborRunTime;
     }
 
+
     /**
-     * 设置laborRunTime属性的值。
+     * Sets the laborRunTime value for this WorkOrderCompletionOperation.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link Double }
-     *     
+     * @param laborRunTime
      */
-    public void setLaborRunTime(Double value) {
-        this.laborRunTime = value;
+    public void setLaborRunTime(java.lang.Double laborRunTime) {
+        this.laborRunTime = laborRunTime;
+    }
+
+    private java.lang.Object __equalsCalc = null;
+    public synchronized boolean equals(java.lang.Object obj) {
+        if (!(obj instanceof WorkOrderCompletionOperation)) return false;
+        WorkOrderCompletionOperation other = (WorkOrderCompletionOperation) obj;
+        if (obj == null) return false;
+        if (this == obj) return true;
+        if (__equalsCalc != null) {
+            return (__equalsCalc == obj);
+        }
+        __equalsCalc = obj;
+        boolean _equals;
+        _equals = true && 
+            ((this.operationSequence==null && other.getOperationSequence()==null) || 
+             (this.operationSequence!=null &&
+              this.operationSequence.equals(other.getOperationSequence()))) &&
+            ((this.operationName==null && other.getOperationName()==null) || 
+             (this.operationName!=null &&
+              this.operationName.equals(other.getOperationName()))) &&
+            ((this.workCenter==null && other.getWorkCenter()==null) || 
+             (this.workCenter!=null &&
+              this.workCenter.equals(other.getWorkCenter()))) &&
+            ((this.machineResources==null && other.getMachineResources()==null) || 
+             (this.machineResources!=null &&
+              this.machineResources.equals(other.getMachineResources()))) &&
+            ((this.laborResources==null && other.getLaborResources()==null) || 
+             (this.laborResources!=null &&
+              this.laborResources.equals(other.getLaborResources()))) &&
+            ((this.inputQuantity==null && other.getInputQuantity()==null) || 
+             (this.inputQuantity!=null &&
+              this.inputQuantity.equals(other.getInputQuantity()))) &&
+            ((this.quantityRemaining==null && other.getQuantityRemaining()==null) || 
+             (this.quantityRemaining!=null &&
+              this.quantityRemaining.equals(other.getQuantityRemaining()))) &&
+            ((this.predecessorCompletedQuantity==null && other.getPredecessorCompletedQuantity()==null) || 
+             (this.predecessorCompletedQuantity!=null &&
+              this.predecessorCompletedQuantity.equals(other.getPredecessorCompletedQuantity()))) &&
+            ((this.completedQuantity==null && other.getCompletedQuantity()==null) || 
+             (this.completedQuantity!=null &&
+              this.completedQuantity.equals(other.getCompletedQuantity()))) &&
+            ((this.recordSetup==null && other.getRecordSetup()==null) || 
+             (this.recordSetup!=null &&
+              this.recordSetup.equals(other.getRecordSetup()))) &&
+            ((this.machineSetupTime==null && other.getMachineSetupTime()==null) || 
+             (this.machineSetupTime!=null &&
+              this.machineSetupTime.equals(other.getMachineSetupTime()))) &&
+            ((this.laborSetupTime==null && other.getLaborSetupTime()==null) || 
+             (this.laborSetupTime!=null &&
+              this.laborSetupTime.equals(other.getLaborSetupTime()))) &&
+            ((this.machineRunTime==null && other.getMachineRunTime()==null) || 
+             (this.machineRunTime!=null &&
+              this.machineRunTime.equals(other.getMachineRunTime()))) &&
+            ((this.laborRunTime==null && other.getLaborRunTime()==null) || 
+             (this.laborRunTime!=null &&
+              this.laborRunTime.equals(other.getLaborRunTime())));
+        __equalsCalc = null;
+        return _equals;
+    }
+
+    private boolean __hashCodeCalc = false;
+    public synchronized int hashCode() {
+        if (__hashCodeCalc) {
+            return 0;
+        }
+        __hashCodeCalc = true;
+        int _hashCode = 1;
+        if (getOperationSequence() != null) {
+            _hashCode += getOperationSequence().hashCode();
+        }
+        if (getOperationName() != null) {
+            _hashCode += getOperationName().hashCode();
+        }
+        if (getWorkCenter() != null) {
+            _hashCode += getWorkCenter().hashCode();
+        }
+        if (getMachineResources() != null) {
+            _hashCode += getMachineResources().hashCode();
+        }
+        if (getLaborResources() != null) {
+            _hashCode += getLaborResources().hashCode();
+        }
+        if (getInputQuantity() != null) {
+            _hashCode += getInputQuantity().hashCode();
+        }
+        if (getQuantityRemaining() != null) {
+            _hashCode += getQuantityRemaining().hashCode();
+        }
+        if (getPredecessorCompletedQuantity() != null) {
+            _hashCode += getPredecessorCompletedQuantity().hashCode();
+        }
+        if (getCompletedQuantity() != null) {
+            _hashCode += getCompletedQuantity().hashCode();
+        }
+        if (getRecordSetup() != null) {
+            _hashCode += getRecordSetup().hashCode();
+        }
+        if (getMachineSetupTime() != null) {
+            _hashCode += getMachineSetupTime().hashCode();
+        }
+        if (getLaborSetupTime() != null) {
+            _hashCode += getLaborSetupTime().hashCode();
+        }
+        if (getMachineRunTime() != null) {
+            _hashCode += getMachineRunTime().hashCode();
+        }
+        if (getLaborRunTime() != null) {
+            _hashCode += getLaborRunTime().hashCode();
+        }
+        __hashCodeCalc = false;
+        return _hashCode;
+    }
+
+    // Type metadata
+    private static org.apache.axis.description.TypeDesc typeDesc =
+        new org.apache.axis.description.TypeDesc(WorkOrderCompletionOperation.class, true);
+
+    static {
+        typeDesc.setXmlType(new javax.xml.namespace.QName("urn:inventory_2018_2.transactions.webservices.netsuite.com", "WorkOrderCompletionOperation"));
+        org.apache.axis.description.ElementDesc elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("operationSequence");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:inventory_2018_2.transactions.webservices.netsuite.com", "operationSequence"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "long"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("operationName");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:inventory_2018_2.transactions.webservices.netsuite.com", "operationName"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("workCenter");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:inventory_2018_2.transactions.webservices.netsuite.com", "workCenter"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("machineResources");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:inventory_2018_2.transactions.webservices.netsuite.com", "machineResources"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "long"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("laborResources");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:inventory_2018_2.transactions.webservices.netsuite.com", "laborResources"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "long"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("inputQuantity");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:inventory_2018_2.transactions.webservices.netsuite.com", "inputQuantity"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "double"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("quantityRemaining");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:inventory_2018_2.transactions.webservices.netsuite.com", "quantityRemaining"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "double"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("predecessorCompletedQuantity");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:inventory_2018_2.transactions.webservices.netsuite.com", "predecessorCompletedQuantity"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "double"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("completedQuantity");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:inventory_2018_2.transactions.webservices.netsuite.com", "completedQuantity"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "double"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("recordSetup");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:inventory_2018_2.transactions.webservices.netsuite.com", "recordSetup"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("machineSetupTime");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:inventory_2018_2.transactions.webservices.netsuite.com", "machineSetupTime"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "double"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("laborSetupTime");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:inventory_2018_2.transactions.webservices.netsuite.com", "laborSetupTime"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "double"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("machineRunTime");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:inventory_2018_2.transactions.webservices.netsuite.com", "machineRunTime"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "double"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("laborRunTime");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:inventory_2018_2.transactions.webservices.netsuite.com", "laborRunTime"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "double"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+    }
+
+    /**
+     * Return type metadata object
+     */
+    public static org.apache.axis.description.TypeDesc getTypeDesc() {
+        return typeDesc;
+    }
+
+    /**
+     * Get Custom Serializer
+     */
+    public static org.apache.axis.encoding.Serializer getSerializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanSerializer(
+            _javaType, _xmlType, typeDesc);
+    }
+
+    /**
+     * Get Custom Deserializer
+     */
+    public static org.apache.axis.encoding.Deserializer getDeserializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanDeserializer(
+            _javaType, _xmlType, typeDesc);
     }
 
 }

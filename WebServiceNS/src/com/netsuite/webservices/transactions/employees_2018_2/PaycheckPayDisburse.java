@@ -1,168 +1,268 @@
+/**
+ * PaycheckPayDisburse.java
+ *
+ * This file was auto-generated from WSDL
+ * by the Apache Axis 1.4 Jul 28, 2010 (04:07:04 PDT) WSDL2Java emitter.
+ */
 
 package com.netsuite.webservices.transactions.employees_2018_2;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlType;
+public class PaycheckPayDisburse  implements java.io.Serializable {
+    private java.lang.String method;
 
+    private java.lang.String bankName;
 
-/**
- * <p>PaycheckPayDisburse complex type的 Java 类。
- * 
- * <p>以下模式片段指定包含在此类中的预期内容。
- * 
- * <pre>
- * &lt;complexType name="PaycheckPayDisburse">
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element name="method" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="bankName" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="bankAccountDecrypt" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="statusName" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="amount" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
- */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "PaycheckPayDisburse", propOrder = {
-    "method",
-    "bankName",
-    "bankAccountDecrypt",
-    "statusName",
-    "amount"
-})
-public class PaycheckPayDisburse {
+    private java.lang.String bankAccountDecrypt;
 
-    protected String method;
-    protected String bankName;
-    protected String bankAccountDecrypt;
-    protected String statusName;
-    protected Double amount;
+    private java.lang.String statusName;
+
+    private java.lang.Double amount;
+
+    public PaycheckPayDisburse() {
+    }
+
+    public PaycheckPayDisburse(
+           java.lang.String method,
+           java.lang.String bankName,
+           java.lang.String bankAccountDecrypt,
+           java.lang.String statusName,
+           java.lang.Double amount) {
+           this.method = method;
+           this.bankName = bankName;
+           this.bankAccountDecrypt = bankAccountDecrypt;
+           this.statusName = statusName;
+           this.amount = amount;
+    }
+
 
     /**
-     * 获取method属性的值。
+     * Gets the method value for this PaycheckPayDisburse.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @return method
      */
-    public String getMethod() {
+    public java.lang.String getMethod() {
         return method;
     }
 
-    /**
-     * 设置method属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setMethod(String value) {
-        this.method = value;
-    }
 
     /**
-     * 获取bankName属性的值。
+     * Sets the method value for this PaycheckPayDisburse.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param method
      */
-    public String getBankName() {
+    public void setMethod(java.lang.String method) {
+        this.method = method;
+    }
+
+
+    /**
+     * Gets the bankName value for this PaycheckPayDisburse.
+     * 
+     * @return bankName
+     */
+    public java.lang.String getBankName() {
         return bankName;
     }
 
-    /**
-     * 设置bankName属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setBankName(String value) {
-        this.bankName = value;
-    }
 
     /**
-     * 获取bankAccountDecrypt属性的值。
+     * Sets the bankName value for this PaycheckPayDisburse.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param bankName
      */
-    public String getBankAccountDecrypt() {
+    public void setBankName(java.lang.String bankName) {
+        this.bankName = bankName;
+    }
+
+
+    /**
+     * Gets the bankAccountDecrypt value for this PaycheckPayDisburse.
+     * 
+     * @return bankAccountDecrypt
+     */
+    public java.lang.String getBankAccountDecrypt() {
         return bankAccountDecrypt;
     }
 
-    /**
-     * 设置bankAccountDecrypt属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setBankAccountDecrypt(String value) {
-        this.bankAccountDecrypt = value;
-    }
 
     /**
-     * 获取statusName属性的值。
+     * Sets the bankAccountDecrypt value for this PaycheckPayDisburse.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param bankAccountDecrypt
      */
-    public String getStatusName() {
+    public void setBankAccountDecrypt(java.lang.String bankAccountDecrypt) {
+        this.bankAccountDecrypt = bankAccountDecrypt;
+    }
+
+
+    /**
+     * Gets the statusName value for this PaycheckPayDisburse.
+     * 
+     * @return statusName
+     */
+    public java.lang.String getStatusName() {
         return statusName;
     }
 
-    /**
-     * 设置statusName属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setStatusName(String value) {
-        this.statusName = value;
-    }
 
     /**
-     * 获取amount属性的值。
+     * Sets the statusName value for this PaycheckPayDisburse.
      * 
-     * @return
-     *     possible object is
-     *     {@link Double }
-     *     
+     * @param statusName
      */
-    public Double getAmount() {
+    public void setStatusName(java.lang.String statusName) {
+        this.statusName = statusName;
+    }
+
+
+    /**
+     * Gets the amount value for this PaycheckPayDisburse.
+     * 
+     * @return amount
+     */
+    public java.lang.Double getAmount() {
         return amount;
     }
 
+
     /**
-     * 设置amount属性的值。
+     * Sets the amount value for this PaycheckPayDisburse.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link Double }
-     *     
+     * @param amount
      */
-    public void setAmount(Double value) {
-        this.amount = value;
+    public void setAmount(java.lang.Double amount) {
+        this.amount = amount;
+    }
+
+    private java.lang.Object __equalsCalc = null;
+    public synchronized boolean equals(java.lang.Object obj) {
+        if (!(obj instanceof PaycheckPayDisburse)) return false;
+        PaycheckPayDisburse other = (PaycheckPayDisburse) obj;
+        if (obj == null) return false;
+        if (this == obj) return true;
+        if (__equalsCalc != null) {
+            return (__equalsCalc == obj);
+        }
+        __equalsCalc = obj;
+        boolean _equals;
+        _equals = true && 
+            ((this.method==null && other.getMethod()==null) || 
+             (this.method!=null &&
+              this.method.equals(other.getMethod()))) &&
+            ((this.bankName==null && other.getBankName()==null) || 
+             (this.bankName!=null &&
+              this.bankName.equals(other.getBankName()))) &&
+            ((this.bankAccountDecrypt==null && other.getBankAccountDecrypt()==null) || 
+             (this.bankAccountDecrypt!=null &&
+              this.bankAccountDecrypt.equals(other.getBankAccountDecrypt()))) &&
+            ((this.statusName==null && other.getStatusName()==null) || 
+             (this.statusName!=null &&
+              this.statusName.equals(other.getStatusName()))) &&
+            ((this.amount==null && other.getAmount()==null) || 
+             (this.amount!=null &&
+              this.amount.equals(other.getAmount())));
+        __equalsCalc = null;
+        return _equals;
+    }
+
+    private boolean __hashCodeCalc = false;
+    public synchronized int hashCode() {
+        if (__hashCodeCalc) {
+            return 0;
+        }
+        __hashCodeCalc = true;
+        int _hashCode = 1;
+        if (getMethod() != null) {
+            _hashCode += getMethod().hashCode();
+        }
+        if (getBankName() != null) {
+            _hashCode += getBankName().hashCode();
+        }
+        if (getBankAccountDecrypt() != null) {
+            _hashCode += getBankAccountDecrypt().hashCode();
+        }
+        if (getStatusName() != null) {
+            _hashCode += getStatusName().hashCode();
+        }
+        if (getAmount() != null) {
+            _hashCode += getAmount().hashCode();
+        }
+        __hashCodeCalc = false;
+        return _hashCode;
+    }
+
+    // Type metadata
+    private static org.apache.axis.description.TypeDesc typeDesc =
+        new org.apache.axis.description.TypeDesc(PaycheckPayDisburse.class, true);
+
+    static {
+        typeDesc.setXmlType(new javax.xml.namespace.QName("urn:employees_2018_2.transactions.webservices.netsuite.com", "PaycheckPayDisburse"));
+        org.apache.axis.description.ElementDesc elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("method");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:employees_2018_2.transactions.webservices.netsuite.com", "method"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("bankName");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:employees_2018_2.transactions.webservices.netsuite.com", "bankName"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("bankAccountDecrypt");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:employees_2018_2.transactions.webservices.netsuite.com", "bankAccountDecrypt"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("statusName");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:employees_2018_2.transactions.webservices.netsuite.com", "statusName"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("amount");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:employees_2018_2.transactions.webservices.netsuite.com", "amount"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "double"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+    }
+
+    /**
+     * Return type metadata object
+     */
+    public static org.apache.axis.description.TypeDesc getTypeDesc() {
+        return typeDesc;
+    }
+
+    /**
+     * Get Custom Serializer
+     */
+    public static org.apache.axis.encoding.Serializer getSerializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanSerializer(
+            _javaType, _xmlType, typeDesc);
+    }
+
+    /**
+     * Get Custom Deserializer
+     */
+    public static org.apache.axis.encoding.Deserializer getDeserializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanDeserializer(
+            _javaType, _xmlType, typeDesc);
     }
 
 }

@@ -1,54 +1,72 @@
+/**
+ * AvsMatchCode.java
+ *
+ * This file was auto-generated from WSDL
+ * by the Apache Axis 1.4 Jul 28, 2010 (04:07:04 PDT) WSDL2Java emitter.
+ */
 
 package com.netsuite.webservices.platform.common_2018_2.types;
 
-import javax.xml.bind.annotation.XmlEnum;
-import javax.xml.bind.annotation.XmlEnumValue;
-import javax.xml.bind.annotation.XmlType;
+public class AvsMatchCode implements java.io.Serializable {
+    private java.lang.String _value_;
+    private static java.util.HashMap _table_ = new java.util.HashMap();
 
-
-/**
- * <p>AvsMatchCode的 Java 类。
- * 
- * <p>以下模式片段指定包含在此类中的预期内容。
- * <p>
- * <pre>
- * &lt;simpleType name="AvsMatchCode">
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     &lt;enumeration value="_n"/>
- *     &lt;enumeration value="_x"/>
- *     &lt;enumeration value="_y"/>
- *   &lt;/restriction>
- * &lt;/simpleType>
- * </pre>
- * 
- */
-@XmlType(name = "AvsMatchCode", namespace = "urn:types.common_2018_2.platform.webservices.netsuite.com")
-@XmlEnum
-public enum AvsMatchCode {
-
-    @XmlEnumValue("_n")
-    N("_n"),
-    @XmlEnumValue("_x")
-    X("_x"),
-    @XmlEnumValue("_y")
-    Y("_y");
-    private final String value;
-
-    AvsMatchCode(String v) {
-        value = v;
+    // Constructor
+    protected AvsMatchCode(java.lang.String value) {
+        _value_ = value;
+        _table_.put(_value_,this);
     }
 
-    public String value() {
-        return value;
+    public static final java.lang.String __n = "_n";
+    public static final java.lang.String __x = "_x";
+    public static final java.lang.String __y = "_y";
+    public static final AvsMatchCode _n = new AvsMatchCode(__n);
+    public static final AvsMatchCode _x = new AvsMatchCode(__x);
+    public static final AvsMatchCode _y = new AvsMatchCode(__y);
+    public java.lang.String getValue() { return _value_;}
+    public static AvsMatchCode fromValue(java.lang.String value)
+          throws java.lang.IllegalArgumentException {
+        AvsMatchCode enumeration = (AvsMatchCode)
+            _table_.get(value);
+        if (enumeration==null) throw new java.lang.IllegalArgumentException();
+        return enumeration;
     }
+    public static AvsMatchCode fromString(java.lang.String value)
+          throws java.lang.IllegalArgumentException {
+        return fromValue(value);
+    }
+    public boolean equals(java.lang.Object obj) {return (obj == this);}
+    public int hashCode() { return toString().hashCode();}
+    public java.lang.String toString() { return _value_;}
+    public java.lang.Object readResolve() throws java.io.ObjectStreamException { return fromValue(_value_);}
+    public static org.apache.axis.encoding.Serializer getSerializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new org.apache.axis.encoding.ser.EnumSerializer(
+            _javaType, _xmlType);
+    }
+    public static org.apache.axis.encoding.Deserializer getDeserializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new org.apache.axis.encoding.ser.EnumDeserializer(
+            _javaType, _xmlType);
+    }
+    // Type metadata
+    private static org.apache.axis.description.TypeDesc typeDesc =
+        new org.apache.axis.description.TypeDesc(AvsMatchCode.class);
 
-    public static AvsMatchCode fromValue(String v) {
-        for (AvsMatchCode c: AvsMatchCode.values()) {
-            if (c.value.equals(v)) {
-                return c;
-            }
-        }
-        throw new IllegalArgumentException(v);
+    static {
+        typeDesc.setXmlType(new javax.xml.namespace.QName("urn:types.common_2018_2.platform.webservices.netsuite.com", "AvsMatchCode"));
+    }
+    /**
+     * Return type metadata object
+     */
+    public static org.apache.axis.description.TypeDesc getTypeDesc() {
+        return typeDesc;
     }
 
 }

@@ -1,200 +1,305 @@
+/**
+ * EmployeeDeduction.java
+ *
+ * This file was auto-generated from WSDL
+ * by the Apache Axis 1.4 Jul 28, 2010 (04:07:04 PDT) WSDL2Java emitter.
+ */
 
 package com.netsuite.webservices.lists.employees_2018_2;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlSchemaType;
-import javax.xml.bind.annotation.XmlType;
-import javax.xml.datatype.XMLGregorianCalendar;
-import com.netsuite.webservices.platform.core_2018_2.RecordRef;
+public class EmployeeDeduction  implements java.io.Serializable {
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef payrollItem;
 
+    private java.lang.String rate;
 
-/**
- * <p>EmployeeDeduction complex type的 Java 类。
- * 
- * <p>以下模式片段指定包含在此类中的预期内容。
- * 
- * <pre>
- * &lt;complexType name="EmployeeDeduction">
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element name="payrollItem" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="rate" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="limit" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
- *         &lt;element name="inactive" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         &lt;element name="effectiveDate" type="{http://www.w3.org/2001/XMLSchema}dateTime" minOccurs="0"/>
- *         &lt;element name="expirationDate" type="{http://www.w3.org/2001/XMLSchema}dateTime" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
- */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "EmployeeDeduction", propOrder = {
-    "payrollItem",
-    "rate",
-    "limit",
-    "inactive",
-    "effectiveDate",
-    "expirationDate"
-})
-public class EmployeeDeduction {
+    private java.lang.Double limit;
 
-    protected RecordRef payrollItem;
-    protected String rate;
-    protected Double limit;
-    protected Boolean inactive;
-    @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar effectiveDate;
-    @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar expirationDate;
+    private java.lang.Boolean inactive;
+
+    private java.util.Calendar effectiveDate;
+
+    private java.util.Calendar expirationDate;
+
+    public EmployeeDeduction() {
+    }
+
+    public EmployeeDeduction(
+           com.netsuite.webservices.platform.core_2018_2.RecordRef payrollItem,
+           java.lang.String rate,
+           java.lang.Double limit,
+           java.lang.Boolean inactive,
+           java.util.Calendar effectiveDate,
+           java.util.Calendar expirationDate) {
+           this.payrollItem = payrollItem;
+           this.rate = rate;
+           this.limit = limit;
+           this.inactive = inactive;
+           this.effectiveDate = effectiveDate;
+           this.expirationDate = expirationDate;
+    }
+
 
     /**
-     * 获取payrollItem属性的值。
+     * Gets the payrollItem value for this EmployeeDeduction.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @return payrollItem
      */
-    public RecordRef getPayrollItem() {
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getPayrollItem() {
         return payrollItem;
     }
 
-    /**
-     * 设置payrollItem属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setPayrollItem(RecordRef value) {
-        this.payrollItem = value;
-    }
 
     /**
-     * 获取rate属性的值。
+     * Sets the payrollItem value for this EmployeeDeduction.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param payrollItem
      */
-    public String getRate() {
+    public void setPayrollItem(com.netsuite.webservices.platform.core_2018_2.RecordRef payrollItem) {
+        this.payrollItem = payrollItem;
+    }
+
+
+    /**
+     * Gets the rate value for this EmployeeDeduction.
+     * 
+     * @return rate
+     */
+    public java.lang.String getRate() {
         return rate;
     }
 
-    /**
-     * 设置rate属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setRate(String value) {
-        this.rate = value;
-    }
 
     /**
-     * 获取limit属性的值。
+     * Sets the rate value for this EmployeeDeduction.
      * 
-     * @return
-     *     possible object is
-     *     {@link Double }
-     *     
+     * @param rate
      */
-    public Double getLimit() {
+    public void setRate(java.lang.String rate) {
+        this.rate = rate;
+    }
+
+
+    /**
+     * Gets the limit value for this EmployeeDeduction.
+     * 
+     * @return limit
+     */
+    public java.lang.Double getLimit() {
         return limit;
     }
 
-    /**
-     * 设置limit属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Double }
-     *     
-     */
-    public void setLimit(Double value) {
-        this.limit = value;
-    }
 
     /**
-     * 获取inactive属性的值。
+     * Sets the limit value for this EmployeeDeduction.
      * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
+     * @param limit
      */
-    public Boolean isInactive() {
+    public void setLimit(java.lang.Double limit) {
+        this.limit = limit;
+    }
+
+
+    /**
+     * Gets the inactive value for this EmployeeDeduction.
+     * 
+     * @return inactive
+     */
+    public java.lang.Boolean getInactive() {
         return inactive;
     }
 
-    /**
-     * 设置inactive属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
-     */
-    public void setInactive(Boolean value) {
-        this.inactive = value;
-    }
 
     /**
-     * 获取effectiveDate属性的值。
+     * Sets the inactive value for this EmployeeDeduction.
      * 
-     * @return
-     *     possible object is
-     *     {@link XMLGregorianCalendar }
-     *     
+     * @param inactive
      */
-    public XMLGregorianCalendar getEffectiveDate() {
+    public void setInactive(java.lang.Boolean inactive) {
+        this.inactive = inactive;
+    }
+
+
+    /**
+     * Gets the effectiveDate value for this EmployeeDeduction.
+     * 
+     * @return effectiveDate
+     */
+    public java.util.Calendar getEffectiveDate() {
         return effectiveDate;
     }
 
-    /**
-     * 设置effectiveDate属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link XMLGregorianCalendar }
-     *     
-     */
-    public void setEffectiveDate(XMLGregorianCalendar value) {
-        this.effectiveDate = value;
-    }
 
     /**
-     * 获取expirationDate属性的值。
+     * Sets the effectiveDate value for this EmployeeDeduction.
      * 
-     * @return
-     *     possible object is
-     *     {@link XMLGregorianCalendar }
-     *     
+     * @param effectiveDate
      */
-    public XMLGregorianCalendar getExpirationDate() {
+    public void setEffectiveDate(java.util.Calendar effectiveDate) {
+        this.effectiveDate = effectiveDate;
+    }
+
+
+    /**
+     * Gets the expirationDate value for this EmployeeDeduction.
+     * 
+     * @return expirationDate
+     */
+    public java.util.Calendar getExpirationDate() {
         return expirationDate;
     }
 
+
     /**
-     * 设置expirationDate属性的值。
+     * Sets the expirationDate value for this EmployeeDeduction.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link XMLGregorianCalendar }
-     *     
+     * @param expirationDate
      */
-    public void setExpirationDate(XMLGregorianCalendar value) {
-        this.expirationDate = value;
+    public void setExpirationDate(java.util.Calendar expirationDate) {
+        this.expirationDate = expirationDate;
+    }
+
+    private java.lang.Object __equalsCalc = null;
+    public synchronized boolean equals(java.lang.Object obj) {
+        if (!(obj instanceof EmployeeDeduction)) return false;
+        EmployeeDeduction other = (EmployeeDeduction) obj;
+        if (obj == null) return false;
+        if (this == obj) return true;
+        if (__equalsCalc != null) {
+            return (__equalsCalc == obj);
+        }
+        __equalsCalc = obj;
+        boolean _equals;
+        _equals = true && 
+            ((this.payrollItem==null && other.getPayrollItem()==null) || 
+             (this.payrollItem!=null &&
+              this.payrollItem.equals(other.getPayrollItem()))) &&
+            ((this.rate==null && other.getRate()==null) || 
+             (this.rate!=null &&
+              this.rate.equals(other.getRate()))) &&
+            ((this.limit==null && other.getLimit()==null) || 
+             (this.limit!=null &&
+              this.limit.equals(other.getLimit()))) &&
+            ((this.inactive==null && other.getInactive()==null) || 
+             (this.inactive!=null &&
+              this.inactive.equals(other.getInactive()))) &&
+            ((this.effectiveDate==null && other.getEffectiveDate()==null) || 
+             (this.effectiveDate!=null &&
+              this.effectiveDate.equals(other.getEffectiveDate()))) &&
+            ((this.expirationDate==null && other.getExpirationDate()==null) || 
+             (this.expirationDate!=null &&
+              this.expirationDate.equals(other.getExpirationDate())));
+        __equalsCalc = null;
+        return _equals;
+    }
+
+    private boolean __hashCodeCalc = false;
+    public synchronized int hashCode() {
+        if (__hashCodeCalc) {
+            return 0;
+        }
+        __hashCodeCalc = true;
+        int _hashCode = 1;
+        if (getPayrollItem() != null) {
+            _hashCode += getPayrollItem().hashCode();
+        }
+        if (getRate() != null) {
+            _hashCode += getRate().hashCode();
+        }
+        if (getLimit() != null) {
+            _hashCode += getLimit().hashCode();
+        }
+        if (getInactive() != null) {
+            _hashCode += getInactive().hashCode();
+        }
+        if (getEffectiveDate() != null) {
+            _hashCode += getEffectiveDate().hashCode();
+        }
+        if (getExpirationDate() != null) {
+            _hashCode += getExpirationDate().hashCode();
+        }
+        __hashCodeCalc = false;
+        return _hashCode;
+    }
+
+    // Type metadata
+    private static org.apache.axis.description.TypeDesc typeDesc =
+        new org.apache.axis.description.TypeDesc(EmployeeDeduction.class, true);
+
+    static {
+        typeDesc.setXmlType(new javax.xml.namespace.QName("urn:employees_2018_2.lists.webservices.netsuite.com", "EmployeeDeduction"));
+        org.apache.axis.description.ElementDesc elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("payrollItem");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:employees_2018_2.lists.webservices.netsuite.com", "payrollItem"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("rate");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:employees_2018_2.lists.webservices.netsuite.com", "rate"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("limit");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:employees_2018_2.lists.webservices.netsuite.com", "limit"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "double"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("inactive");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:employees_2018_2.lists.webservices.netsuite.com", "inactive"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("effectiveDate");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:employees_2018_2.lists.webservices.netsuite.com", "effectiveDate"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "dateTime"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("expirationDate");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:employees_2018_2.lists.webservices.netsuite.com", "expirationDate"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "dateTime"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+    }
+
+    /**
+     * Return type metadata object
+     */
+    public static org.apache.axis.description.TypeDesc getTypeDesc() {
+        return typeDesc;
+    }
+
+    /**
+     * Get Custom Serializer
+     */
+    public static org.apache.axis.encoding.Serializer getSerializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanSerializer(
+            _javaType, _xmlType, typeDesc);
+    }
+
+    /**
+     * Get Custom Deserializer
+     */
+    public static org.apache.axis.encoding.Deserializer getDeserializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanDeserializer(
+            _javaType, _xmlType, typeDesc);
     }
 
 }

@@ -1,169 +1,268 @@
+/**
+ * PaycheckPayContrib.java
+ *
+ * This file was auto-generated from WSDL
+ * by the Apache Axis 1.4 Jul 28, 2010 (04:07:04 PDT) WSDL2Java emitter.
+ */
 
 package com.netsuite.webservices.transactions.employees_2018_2;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlType;
-import com.netsuite.webservices.platform.core_2018_2.RecordRef;
+public class PaycheckPayContrib  implements java.io.Serializable {
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef payItem;
 
+    private java.lang.Long line;
 
-/**
- * <p>PaycheckPayContrib complex type的 Java 类。
- * 
- * <p>以下模式片段指定包含在此类中的预期内容。
- * 
- * <pre>
- * &lt;complexType name="PaycheckPayContrib">
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element name="payItem" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="line" type="{http://www.w3.org/2001/XMLSchema}long" minOccurs="0"/>
- *         &lt;element name="wageBase" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
- *         &lt;element name="amount" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
- *         &lt;element name="manualEntry" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
- */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "PaycheckPayContrib", propOrder = {
-    "payItem",
-    "line",
-    "wageBase",
-    "amount",
-    "manualEntry"
-})
-public class PaycheckPayContrib {
+    private java.lang.Double wageBase;
 
-    protected RecordRef payItem;
-    protected Long line;
-    protected Double wageBase;
-    protected Double amount;
-    protected Boolean manualEntry;
+    private java.lang.Double amount;
+
+    private java.lang.Boolean manualEntry;
+
+    public PaycheckPayContrib() {
+    }
+
+    public PaycheckPayContrib(
+           com.netsuite.webservices.platform.core_2018_2.RecordRef payItem,
+           java.lang.Long line,
+           java.lang.Double wageBase,
+           java.lang.Double amount,
+           java.lang.Boolean manualEntry) {
+           this.payItem = payItem;
+           this.line = line;
+           this.wageBase = wageBase;
+           this.amount = amount;
+           this.manualEntry = manualEntry;
+    }
+
 
     /**
-     * 获取payItem属性的值。
+     * Gets the payItem value for this PaycheckPayContrib.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @return payItem
      */
-    public RecordRef getPayItem() {
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getPayItem() {
         return payItem;
     }
 
-    /**
-     * 设置payItem属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setPayItem(RecordRef value) {
-        this.payItem = value;
-    }
 
     /**
-     * 获取line属性的值。
+     * Sets the payItem value for this PaycheckPayContrib.
      * 
-     * @return
-     *     possible object is
-     *     {@link Long }
-     *     
+     * @param payItem
      */
-    public Long getLine() {
+    public void setPayItem(com.netsuite.webservices.platform.core_2018_2.RecordRef payItem) {
+        this.payItem = payItem;
+    }
+
+
+    /**
+     * Gets the line value for this PaycheckPayContrib.
+     * 
+     * @return line
+     */
+    public java.lang.Long getLine() {
         return line;
     }
 
-    /**
-     * 设置line属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Long }
-     *     
-     */
-    public void setLine(Long value) {
-        this.line = value;
-    }
 
     /**
-     * 获取wageBase属性的值。
+     * Sets the line value for this PaycheckPayContrib.
      * 
-     * @return
-     *     possible object is
-     *     {@link Double }
-     *     
+     * @param line
      */
-    public Double getWageBase() {
+    public void setLine(java.lang.Long line) {
+        this.line = line;
+    }
+
+
+    /**
+     * Gets the wageBase value for this PaycheckPayContrib.
+     * 
+     * @return wageBase
+     */
+    public java.lang.Double getWageBase() {
         return wageBase;
     }
 
-    /**
-     * 设置wageBase属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Double }
-     *     
-     */
-    public void setWageBase(Double value) {
-        this.wageBase = value;
-    }
 
     /**
-     * 获取amount属性的值。
+     * Sets the wageBase value for this PaycheckPayContrib.
      * 
-     * @return
-     *     possible object is
-     *     {@link Double }
-     *     
+     * @param wageBase
      */
-    public Double getAmount() {
+    public void setWageBase(java.lang.Double wageBase) {
+        this.wageBase = wageBase;
+    }
+
+
+    /**
+     * Gets the amount value for this PaycheckPayContrib.
+     * 
+     * @return amount
+     */
+    public java.lang.Double getAmount() {
         return amount;
     }
 
-    /**
-     * 设置amount属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Double }
-     *     
-     */
-    public void setAmount(Double value) {
-        this.amount = value;
-    }
 
     /**
-     * 获取manualEntry属性的值。
+     * Sets the amount value for this PaycheckPayContrib.
      * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
+     * @param amount
      */
-    public Boolean isManualEntry() {
+    public void setAmount(java.lang.Double amount) {
+        this.amount = amount;
+    }
+
+
+    /**
+     * Gets the manualEntry value for this PaycheckPayContrib.
+     * 
+     * @return manualEntry
+     */
+    public java.lang.Boolean getManualEntry() {
         return manualEntry;
     }
 
+
     /**
-     * 设置manualEntry属性的值。
+     * Sets the manualEntry value for this PaycheckPayContrib.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
+     * @param manualEntry
      */
-    public void setManualEntry(Boolean value) {
-        this.manualEntry = value;
+    public void setManualEntry(java.lang.Boolean manualEntry) {
+        this.manualEntry = manualEntry;
+    }
+
+    private java.lang.Object __equalsCalc = null;
+    public synchronized boolean equals(java.lang.Object obj) {
+        if (!(obj instanceof PaycheckPayContrib)) return false;
+        PaycheckPayContrib other = (PaycheckPayContrib) obj;
+        if (obj == null) return false;
+        if (this == obj) return true;
+        if (__equalsCalc != null) {
+            return (__equalsCalc == obj);
+        }
+        __equalsCalc = obj;
+        boolean _equals;
+        _equals = true && 
+            ((this.payItem==null && other.getPayItem()==null) || 
+             (this.payItem!=null &&
+              this.payItem.equals(other.getPayItem()))) &&
+            ((this.line==null && other.getLine()==null) || 
+             (this.line!=null &&
+              this.line.equals(other.getLine()))) &&
+            ((this.wageBase==null && other.getWageBase()==null) || 
+             (this.wageBase!=null &&
+              this.wageBase.equals(other.getWageBase()))) &&
+            ((this.amount==null && other.getAmount()==null) || 
+             (this.amount!=null &&
+              this.amount.equals(other.getAmount()))) &&
+            ((this.manualEntry==null && other.getManualEntry()==null) || 
+             (this.manualEntry!=null &&
+              this.manualEntry.equals(other.getManualEntry())));
+        __equalsCalc = null;
+        return _equals;
+    }
+
+    private boolean __hashCodeCalc = false;
+    public synchronized int hashCode() {
+        if (__hashCodeCalc) {
+            return 0;
+        }
+        __hashCodeCalc = true;
+        int _hashCode = 1;
+        if (getPayItem() != null) {
+            _hashCode += getPayItem().hashCode();
+        }
+        if (getLine() != null) {
+            _hashCode += getLine().hashCode();
+        }
+        if (getWageBase() != null) {
+            _hashCode += getWageBase().hashCode();
+        }
+        if (getAmount() != null) {
+            _hashCode += getAmount().hashCode();
+        }
+        if (getManualEntry() != null) {
+            _hashCode += getManualEntry().hashCode();
+        }
+        __hashCodeCalc = false;
+        return _hashCode;
+    }
+
+    // Type metadata
+    private static org.apache.axis.description.TypeDesc typeDesc =
+        new org.apache.axis.description.TypeDesc(PaycheckPayContrib.class, true);
+
+    static {
+        typeDesc.setXmlType(new javax.xml.namespace.QName("urn:employees_2018_2.transactions.webservices.netsuite.com", "PaycheckPayContrib"));
+        org.apache.axis.description.ElementDesc elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("payItem");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:employees_2018_2.transactions.webservices.netsuite.com", "payItem"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("line");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:employees_2018_2.transactions.webservices.netsuite.com", "line"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "long"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("wageBase");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:employees_2018_2.transactions.webservices.netsuite.com", "wageBase"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "double"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("amount");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:employees_2018_2.transactions.webservices.netsuite.com", "amount"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "double"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("manualEntry");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:employees_2018_2.transactions.webservices.netsuite.com", "manualEntry"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+    }
+
+    /**
+     * Return type metadata object
+     */
+    public static org.apache.axis.description.TypeDesc getTypeDesc() {
+        return typeDesc;
+    }
+
+    /**
+     * Get Custom Serializer
+     */
+    public static org.apache.axis.encoding.Serializer getSerializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanSerializer(
+            _javaType, _xmlType, typeDesc);
+    }
+
+    /**
+     * Get Custom Deserializer
+     */
+    public static org.apache.axis.encoding.Deserializer getDeserializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanDeserializer(
+            _javaType, _xmlType, typeDesc);
     }
 
 }

@@ -1,587 +1,1001 @@
+/**
+ * FairValuePriceSearchRowBasic.java
+ *
+ * This file was auto-generated from WSDL
+ * by the Apache Axis 1.4 Jul 28, 2010 (04:07:04 PDT) WSDL2Java emitter.
+ */
 
 package com.netsuite.webservices.platform.common_2018_2;
 
-import java.util.ArrayList;
-import java.util.List;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlType;
-import com.netsuite.webservices.platform.core_2018_2.SearchColumnBooleanField;
-import com.netsuite.webservices.platform.core_2018_2.SearchColumnDateField;
-import com.netsuite.webservices.platform.core_2018_2.SearchColumnDoubleField;
-import com.netsuite.webservices.platform.core_2018_2.SearchColumnEnumSelectField;
-import com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField;
-import com.netsuite.webservices.platform.core_2018_2.SearchRowBasic;
+public class FairValuePriceSearchRowBasic  extends com.netsuite.webservices.platform.core_2018_2.SearchRowBasic  implements java.io.Serializable {
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] currency;
 
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnDateField[] endDate;
 
-/**
- * <p>FairValuePriceSearchRowBasic complex type的 Java 类。
- * 
- * <p>以下模式片段指定包含在此类中的预期内容。
- * 
- * <pre>
- * &lt;complexType name="FairValuePriceSearchRowBasic">
- *   &lt;complexContent>
- *     &lt;extension base="{urn:core_2018_2.platform.webservices.netsuite.com}SearchRowBasic">
- *       &lt;sequence>
- *         &lt;element name="currency" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnSelectField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="endDate" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnDateField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="externalId" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnSelectField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="fairValue" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnDoubleField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="fairValueFormula" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnSelectField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="fairValueRangePolicy" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnEnumSelectField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="highValue" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnDoubleField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="highValuePercent" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnDoubleField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="internalId" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnSelectField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="isVsoePrice" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnBooleanField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="item" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnSelectField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="itemRevenueCategory" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnSelectField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="lowValue" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnDoubleField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="lowValuePercent" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnDoubleField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="startDate" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnDateField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="units" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnSelectField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="unitsType" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnSelectField" maxOccurs="unbounded" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/extension>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
- */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "FairValuePriceSearchRowBasic", propOrder = {
-    "currency",
-    "endDate",
-    "externalId",
-    "fairValue",
-    "fairValueFormula",
-    "fairValueRangePolicy",
-    "highValue",
-    "highValuePercent",
-    "internalId",
-    "isVsoePrice",
-    "item",
-    "itemRevenueCategory",
-    "lowValue",
-    "lowValuePercent",
-    "startDate",
-    "units",
-    "unitsType"
-})
-public class FairValuePriceSearchRowBasic
-    extends SearchRowBasic
-{
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] externalId;
 
-    protected List<SearchColumnSelectField> currency;
-    protected List<SearchColumnDateField> endDate;
-    protected List<SearchColumnSelectField> externalId;
-    protected List<SearchColumnDoubleField> fairValue;
-    protected List<SearchColumnSelectField> fairValueFormula;
-    protected List<SearchColumnEnumSelectField> fairValueRangePolicy;
-    protected List<SearchColumnDoubleField> highValue;
-    protected List<SearchColumnDoubleField> highValuePercent;
-    protected List<SearchColumnSelectField> internalId;
-    protected List<SearchColumnBooleanField> isVsoePrice;
-    protected List<SearchColumnSelectField> item;
-    protected List<SearchColumnSelectField> itemRevenueCategory;
-    protected List<SearchColumnDoubleField> lowValue;
-    protected List<SearchColumnDoubleField> lowValuePercent;
-    protected List<SearchColumnDateField> startDate;
-    protected List<SearchColumnSelectField> units;
-    protected List<SearchColumnSelectField> unitsType;
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnDoubleField[] fairValue;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] fairValueFormula;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnEnumSelectField[] fairValueRangePolicy;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnDoubleField[] highValue;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnDoubleField[] highValuePercent;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] internalId;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnBooleanField[] isVsoePrice;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] item;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] itemRevenueCategory;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnDoubleField[] lowValue;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnDoubleField[] lowValuePercent;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnDateField[] startDate;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] units;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] unitsType;
+
+    public FairValuePriceSearchRowBasic() {
+    }
+
+    public FairValuePriceSearchRowBasic(
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] currency,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnDateField[] endDate,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] externalId,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnDoubleField[] fairValue,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] fairValueFormula,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnEnumSelectField[] fairValueRangePolicy,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnDoubleField[] highValue,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnDoubleField[] highValuePercent,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] internalId,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnBooleanField[] isVsoePrice,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] item,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] itemRevenueCategory,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnDoubleField[] lowValue,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnDoubleField[] lowValuePercent,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnDateField[] startDate,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] units,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] unitsType) {
+        this.currency = currency;
+        this.endDate = endDate;
+        this.externalId = externalId;
+        this.fairValue = fairValue;
+        this.fairValueFormula = fairValueFormula;
+        this.fairValueRangePolicy = fairValueRangePolicy;
+        this.highValue = highValue;
+        this.highValuePercent = highValuePercent;
+        this.internalId = internalId;
+        this.isVsoePrice = isVsoePrice;
+        this.item = item;
+        this.itemRevenueCategory = itemRevenueCategory;
+        this.lowValue = lowValue;
+        this.lowValuePercent = lowValuePercent;
+        this.startDate = startDate;
+        this.units = units;
+        this.unitsType = unitsType;
+    }
+
 
     /**
-     * Gets the value of the currency property.
+     * Gets the currency value for this FairValuePriceSearchRowBasic.
      * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the currency property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getCurrency().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnSelectField }
-     * 
-     * 
+     * @return currency
      */
-    public List<SearchColumnSelectField> getCurrency() {
-        if (currency == null) {
-            currency = new ArrayList<SearchColumnSelectField>();
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] getCurrency() {
+        return currency;
+    }
+
+
+    /**
+     * Sets the currency value for this FairValuePriceSearchRowBasic.
+     * 
+     * @param currency
+     */
+    public void setCurrency(com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] currency) {
+        this.currency = currency;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField getCurrency(int i) {
+        return this.currency[i];
+    }
+
+    public void setCurrency(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField _value) {
+        this.currency[i] = _value;
+    }
+
+
+    /**
+     * Gets the endDate value for this FairValuePriceSearchRowBasic.
+     * 
+     * @return endDate
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnDateField[] getEndDate() {
+        return endDate;
+    }
+
+
+    /**
+     * Sets the endDate value for this FairValuePriceSearchRowBasic.
+     * 
+     * @param endDate
+     */
+    public void setEndDate(com.netsuite.webservices.platform.core_2018_2.SearchColumnDateField[] endDate) {
+        this.endDate = endDate;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnDateField getEndDate(int i) {
+        return this.endDate[i];
+    }
+
+    public void setEndDate(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnDateField _value) {
+        this.endDate[i] = _value;
+    }
+
+
+    /**
+     * Gets the externalId value for this FairValuePriceSearchRowBasic.
+     * 
+     * @return externalId
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] getExternalId() {
+        return externalId;
+    }
+
+
+    /**
+     * Sets the externalId value for this FairValuePriceSearchRowBasic.
+     * 
+     * @param externalId
+     */
+    public void setExternalId(com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] externalId) {
+        this.externalId = externalId;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField getExternalId(int i) {
+        return this.externalId[i];
+    }
+
+    public void setExternalId(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField _value) {
+        this.externalId[i] = _value;
+    }
+
+
+    /**
+     * Gets the fairValue value for this FairValuePriceSearchRowBasic.
+     * 
+     * @return fairValue
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnDoubleField[] getFairValue() {
+        return fairValue;
+    }
+
+
+    /**
+     * Sets the fairValue value for this FairValuePriceSearchRowBasic.
+     * 
+     * @param fairValue
+     */
+    public void setFairValue(com.netsuite.webservices.platform.core_2018_2.SearchColumnDoubleField[] fairValue) {
+        this.fairValue = fairValue;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnDoubleField getFairValue(int i) {
+        return this.fairValue[i];
+    }
+
+    public void setFairValue(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnDoubleField _value) {
+        this.fairValue[i] = _value;
+    }
+
+
+    /**
+     * Gets the fairValueFormula value for this FairValuePriceSearchRowBasic.
+     * 
+     * @return fairValueFormula
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] getFairValueFormula() {
+        return fairValueFormula;
+    }
+
+
+    /**
+     * Sets the fairValueFormula value for this FairValuePriceSearchRowBasic.
+     * 
+     * @param fairValueFormula
+     */
+    public void setFairValueFormula(com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] fairValueFormula) {
+        this.fairValueFormula = fairValueFormula;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField getFairValueFormula(int i) {
+        return this.fairValueFormula[i];
+    }
+
+    public void setFairValueFormula(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField _value) {
+        this.fairValueFormula[i] = _value;
+    }
+
+
+    /**
+     * Gets the fairValueRangePolicy value for this FairValuePriceSearchRowBasic.
+     * 
+     * @return fairValueRangePolicy
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnEnumSelectField[] getFairValueRangePolicy() {
+        return fairValueRangePolicy;
+    }
+
+
+    /**
+     * Sets the fairValueRangePolicy value for this FairValuePriceSearchRowBasic.
+     * 
+     * @param fairValueRangePolicy
+     */
+    public void setFairValueRangePolicy(com.netsuite.webservices.platform.core_2018_2.SearchColumnEnumSelectField[] fairValueRangePolicy) {
+        this.fairValueRangePolicy = fairValueRangePolicy;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnEnumSelectField getFairValueRangePolicy(int i) {
+        return this.fairValueRangePolicy[i];
+    }
+
+    public void setFairValueRangePolicy(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnEnumSelectField _value) {
+        this.fairValueRangePolicy[i] = _value;
+    }
+
+
+    /**
+     * Gets the highValue value for this FairValuePriceSearchRowBasic.
+     * 
+     * @return highValue
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnDoubleField[] getHighValue() {
+        return highValue;
+    }
+
+
+    /**
+     * Sets the highValue value for this FairValuePriceSearchRowBasic.
+     * 
+     * @param highValue
+     */
+    public void setHighValue(com.netsuite.webservices.platform.core_2018_2.SearchColumnDoubleField[] highValue) {
+        this.highValue = highValue;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnDoubleField getHighValue(int i) {
+        return this.highValue[i];
+    }
+
+    public void setHighValue(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnDoubleField _value) {
+        this.highValue[i] = _value;
+    }
+
+
+    /**
+     * Gets the highValuePercent value for this FairValuePriceSearchRowBasic.
+     * 
+     * @return highValuePercent
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnDoubleField[] getHighValuePercent() {
+        return highValuePercent;
+    }
+
+
+    /**
+     * Sets the highValuePercent value for this FairValuePriceSearchRowBasic.
+     * 
+     * @param highValuePercent
+     */
+    public void setHighValuePercent(com.netsuite.webservices.platform.core_2018_2.SearchColumnDoubleField[] highValuePercent) {
+        this.highValuePercent = highValuePercent;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnDoubleField getHighValuePercent(int i) {
+        return this.highValuePercent[i];
+    }
+
+    public void setHighValuePercent(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnDoubleField _value) {
+        this.highValuePercent[i] = _value;
+    }
+
+
+    /**
+     * Gets the internalId value for this FairValuePriceSearchRowBasic.
+     * 
+     * @return internalId
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] getInternalId() {
+        return internalId;
+    }
+
+
+    /**
+     * Sets the internalId value for this FairValuePriceSearchRowBasic.
+     * 
+     * @param internalId
+     */
+    public void setInternalId(com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] internalId) {
+        this.internalId = internalId;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField getInternalId(int i) {
+        return this.internalId[i];
+    }
+
+    public void setInternalId(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField _value) {
+        this.internalId[i] = _value;
+    }
+
+
+    /**
+     * Gets the isVsoePrice value for this FairValuePriceSearchRowBasic.
+     * 
+     * @return isVsoePrice
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnBooleanField[] getIsVsoePrice() {
+        return isVsoePrice;
+    }
+
+
+    /**
+     * Sets the isVsoePrice value for this FairValuePriceSearchRowBasic.
+     * 
+     * @param isVsoePrice
+     */
+    public void setIsVsoePrice(com.netsuite.webservices.platform.core_2018_2.SearchColumnBooleanField[] isVsoePrice) {
+        this.isVsoePrice = isVsoePrice;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnBooleanField getIsVsoePrice(int i) {
+        return this.isVsoePrice[i];
+    }
+
+    public void setIsVsoePrice(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnBooleanField _value) {
+        this.isVsoePrice[i] = _value;
+    }
+
+
+    /**
+     * Gets the item value for this FairValuePriceSearchRowBasic.
+     * 
+     * @return item
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] getItem() {
+        return item;
+    }
+
+
+    /**
+     * Sets the item value for this FairValuePriceSearchRowBasic.
+     * 
+     * @param item
+     */
+    public void setItem(com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] item) {
+        this.item = item;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField getItem(int i) {
+        return this.item[i];
+    }
+
+    public void setItem(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField _value) {
+        this.item[i] = _value;
+    }
+
+
+    /**
+     * Gets the itemRevenueCategory value for this FairValuePriceSearchRowBasic.
+     * 
+     * @return itemRevenueCategory
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] getItemRevenueCategory() {
+        return itemRevenueCategory;
+    }
+
+
+    /**
+     * Sets the itemRevenueCategory value for this FairValuePriceSearchRowBasic.
+     * 
+     * @param itemRevenueCategory
+     */
+    public void setItemRevenueCategory(com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] itemRevenueCategory) {
+        this.itemRevenueCategory = itemRevenueCategory;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField getItemRevenueCategory(int i) {
+        return this.itemRevenueCategory[i];
+    }
+
+    public void setItemRevenueCategory(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField _value) {
+        this.itemRevenueCategory[i] = _value;
+    }
+
+
+    /**
+     * Gets the lowValue value for this FairValuePriceSearchRowBasic.
+     * 
+     * @return lowValue
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnDoubleField[] getLowValue() {
+        return lowValue;
+    }
+
+
+    /**
+     * Sets the lowValue value for this FairValuePriceSearchRowBasic.
+     * 
+     * @param lowValue
+     */
+    public void setLowValue(com.netsuite.webservices.platform.core_2018_2.SearchColumnDoubleField[] lowValue) {
+        this.lowValue = lowValue;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnDoubleField getLowValue(int i) {
+        return this.lowValue[i];
+    }
+
+    public void setLowValue(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnDoubleField _value) {
+        this.lowValue[i] = _value;
+    }
+
+
+    /**
+     * Gets the lowValuePercent value for this FairValuePriceSearchRowBasic.
+     * 
+     * @return lowValuePercent
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnDoubleField[] getLowValuePercent() {
+        return lowValuePercent;
+    }
+
+
+    /**
+     * Sets the lowValuePercent value for this FairValuePriceSearchRowBasic.
+     * 
+     * @param lowValuePercent
+     */
+    public void setLowValuePercent(com.netsuite.webservices.platform.core_2018_2.SearchColumnDoubleField[] lowValuePercent) {
+        this.lowValuePercent = lowValuePercent;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnDoubleField getLowValuePercent(int i) {
+        return this.lowValuePercent[i];
+    }
+
+    public void setLowValuePercent(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnDoubleField _value) {
+        this.lowValuePercent[i] = _value;
+    }
+
+
+    /**
+     * Gets the startDate value for this FairValuePriceSearchRowBasic.
+     * 
+     * @return startDate
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnDateField[] getStartDate() {
+        return startDate;
+    }
+
+
+    /**
+     * Sets the startDate value for this FairValuePriceSearchRowBasic.
+     * 
+     * @param startDate
+     */
+    public void setStartDate(com.netsuite.webservices.platform.core_2018_2.SearchColumnDateField[] startDate) {
+        this.startDate = startDate;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnDateField getStartDate(int i) {
+        return this.startDate[i];
+    }
+
+    public void setStartDate(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnDateField _value) {
+        this.startDate[i] = _value;
+    }
+
+
+    /**
+     * Gets the units value for this FairValuePriceSearchRowBasic.
+     * 
+     * @return units
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] getUnits() {
+        return units;
+    }
+
+
+    /**
+     * Sets the units value for this FairValuePriceSearchRowBasic.
+     * 
+     * @param units
+     */
+    public void setUnits(com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] units) {
+        this.units = units;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField getUnits(int i) {
+        return this.units[i];
+    }
+
+    public void setUnits(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField _value) {
+        this.units[i] = _value;
+    }
+
+
+    /**
+     * Gets the unitsType value for this FairValuePriceSearchRowBasic.
+     * 
+     * @return unitsType
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] getUnitsType() {
+        return unitsType;
+    }
+
+
+    /**
+     * Sets the unitsType value for this FairValuePriceSearchRowBasic.
+     * 
+     * @param unitsType
+     */
+    public void setUnitsType(com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] unitsType) {
+        this.unitsType = unitsType;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField getUnitsType(int i) {
+        return this.unitsType[i];
+    }
+
+    public void setUnitsType(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField _value) {
+        this.unitsType[i] = _value;
+    }
+
+    private java.lang.Object __equalsCalc = null;
+    public synchronized boolean equals(java.lang.Object obj) {
+        if (!(obj instanceof FairValuePriceSearchRowBasic)) return false;
+        FairValuePriceSearchRowBasic other = (FairValuePriceSearchRowBasic) obj;
+        if (obj == null) return false;
+        if (this == obj) return true;
+        if (__equalsCalc != null) {
+            return (__equalsCalc == obj);
         }
-        return this.currency;
+        __equalsCalc = obj;
+        boolean _equals;
+        _equals = super.equals(obj) && 
+            ((this.currency==null && other.getCurrency()==null) || 
+             (this.currency!=null &&
+              java.util.Arrays.equals(this.currency, other.getCurrency()))) &&
+            ((this.endDate==null && other.getEndDate()==null) || 
+             (this.endDate!=null &&
+              java.util.Arrays.equals(this.endDate, other.getEndDate()))) &&
+            ((this.externalId==null && other.getExternalId()==null) || 
+             (this.externalId!=null &&
+              java.util.Arrays.equals(this.externalId, other.getExternalId()))) &&
+            ((this.fairValue==null && other.getFairValue()==null) || 
+             (this.fairValue!=null &&
+              java.util.Arrays.equals(this.fairValue, other.getFairValue()))) &&
+            ((this.fairValueFormula==null && other.getFairValueFormula()==null) || 
+             (this.fairValueFormula!=null &&
+              java.util.Arrays.equals(this.fairValueFormula, other.getFairValueFormula()))) &&
+            ((this.fairValueRangePolicy==null && other.getFairValueRangePolicy()==null) || 
+             (this.fairValueRangePolicy!=null &&
+              java.util.Arrays.equals(this.fairValueRangePolicy, other.getFairValueRangePolicy()))) &&
+            ((this.highValue==null && other.getHighValue()==null) || 
+             (this.highValue!=null &&
+              java.util.Arrays.equals(this.highValue, other.getHighValue()))) &&
+            ((this.highValuePercent==null && other.getHighValuePercent()==null) || 
+             (this.highValuePercent!=null &&
+              java.util.Arrays.equals(this.highValuePercent, other.getHighValuePercent()))) &&
+            ((this.internalId==null && other.getInternalId()==null) || 
+             (this.internalId!=null &&
+              java.util.Arrays.equals(this.internalId, other.getInternalId()))) &&
+            ((this.isVsoePrice==null && other.getIsVsoePrice()==null) || 
+             (this.isVsoePrice!=null &&
+              java.util.Arrays.equals(this.isVsoePrice, other.getIsVsoePrice()))) &&
+            ((this.item==null && other.getItem()==null) || 
+             (this.item!=null &&
+              java.util.Arrays.equals(this.item, other.getItem()))) &&
+            ((this.itemRevenueCategory==null && other.getItemRevenueCategory()==null) || 
+             (this.itemRevenueCategory!=null &&
+              java.util.Arrays.equals(this.itemRevenueCategory, other.getItemRevenueCategory()))) &&
+            ((this.lowValue==null && other.getLowValue()==null) || 
+             (this.lowValue!=null &&
+              java.util.Arrays.equals(this.lowValue, other.getLowValue()))) &&
+            ((this.lowValuePercent==null && other.getLowValuePercent()==null) || 
+             (this.lowValuePercent!=null &&
+              java.util.Arrays.equals(this.lowValuePercent, other.getLowValuePercent()))) &&
+            ((this.startDate==null && other.getStartDate()==null) || 
+             (this.startDate!=null &&
+              java.util.Arrays.equals(this.startDate, other.getStartDate()))) &&
+            ((this.units==null && other.getUnits()==null) || 
+             (this.units!=null &&
+              java.util.Arrays.equals(this.units, other.getUnits()))) &&
+            ((this.unitsType==null && other.getUnitsType()==null) || 
+             (this.unitsType!=null &&
+              java.util.Arrays.equals(this.unitsType, other.getUnitsType())));
+        __equalsCalc = null;
+        return _equals;
+    }
+
+    private boolean __hashCodeCalc = false;
+    public synchronized int hashCode() {
+        if (__hashCodeCalc) {
+            return 0;
+        }
+        __hashCodeCalc = true;
+        int _hashCode = super.hashCode();
+        if (getCurrency() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getCurrency());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getCurrency(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getEndDate() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getEndDate());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getEndDate(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getExternalId() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getExternalId());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getExternalId(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getFairValue() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getFairValue());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getFairValue(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getFairValueFormula() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getFairValueFormula());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getFairValueFormula(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getFairValueRangePolicy() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getFairValueRangePolicy());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getFairValueRangePolicy(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getHighValue() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getHighValue());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getHighValue(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getHighValuePercent() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getHighValuePercent());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getHighValuePercent(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getInternalId() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getInternalId());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getInternalId(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getIsVsoePrice() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getIsVsoePrice());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getIsVsoePrice(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getItem() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getItem());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getItem(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getItemRevenueCategory() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getItemRevenueCategory());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getItemRevenueCategory(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getLowValue() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getLowValue());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getLowValue(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getLowValuePercent() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getLowValuePercent());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getLowValuePercent(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getStartDate() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getStartDate());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getStartDate(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getUnits() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getUnits());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getUnits(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getUnitsType() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getUnitsType());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getUnitsType(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        __hashCodeCalc = false;
+        return _hashCode;
+    }
+
+    // Type metadata
+    private static org.apache.axis.description.TypeDesc typeDesc =
+        new org.apache.axis.description.TypeDesc(FairValuePriceSearchRowBasic.class, true);
+
+    static {
+        typeDesc.setXmlType(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "FairValuePriceSearchRowBasic"));
+        org.apache.axis.description.ElementDesc elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("currency");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "currency"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnSelectField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("endDate");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "endDate"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnDateField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("externalId");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "externalId"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnSelectField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("fairValue");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "fairValue"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnDoubleField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("fairValueFormula");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "fairValueFormula"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnSelectField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("fairValueRangePolicy");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "fairValueRangePolicy"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnEnumSelectField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("highValue");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "highValue"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnDoubleField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("highValuePercent");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "highValuePercent"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnDoubleField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("internalId");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "internalId"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnSelectField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("isVsoePrice");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "isVsoePrice"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnBooleanField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("item");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "item"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnSelectField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("itemRevenueCategory");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "itemRevenueCategory"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnSelectField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("lowValue");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "lowValue"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnDoubleField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("lowValuePercent");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "lowValuePercent"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnDoubleField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("startDate");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "startDate"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnDateField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("units");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "units"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnSelectField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("unitsType");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "unitsType"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnSelectField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
     }
 
     /**
-     * Gets the value of the endDate property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the endDate property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getEndDate().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnDateField }
-     * 
-     * 
+     * Return type metadata object
      */
-    public List<SearchColumnDateField> getEndDate() {
-        if (endDate == null) {
-            endDate = new ArrayList<SearchColumnDateField>();
-        }
-        return this.endDate;
+    public static org.apache.axis.description.TypeDesc getTypeDesc() {
+        return typeDesc;
     }
 
     /**
-     * Gets the value of the externalId property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the externalId property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getExternalId().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnSelectField }
-     * 
-     * 
+     * Get Custom Serializer
      */
-    public List<SearchColumnSelectField> getExternalId() {
-        if (externalId == null) {
-            externalId = new ArrayList<SearchColumnSelectField>();
-        }
-        return this.externalId;
+    public static org.apache.axis.encoding.Serializer getSerializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanSerializer(
+            _javaType, _xmlType, typeDesc);
     }
 
     /**
-     * Gets the value of the fairValue property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the fairValue property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getFairValue().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnDoubleField }
-     * 
-     * 
+     * Get Custom Deserializer
      */
-    public List<SearchColumnDoubleField> getFairValue() {
-        if (fairValue == null) {
-            fairValue = new ArrayList<SearchColumnDoubleField>();
-        }
-        return this.fairValue;
-    }
-
-    /**
-     * Gets the value of the fairValueFormula property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the fairValueFormula property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getFairValueFormula().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnSelectField }
-     * 
-     * 
-     */
-    public List<SearchColumnSelectField> getFairValueFormula() {
-        if (fairValueFormula == null) {
-            fairValueFormula = new ArrayList<SearchColumnSelectField>();
-        }
-        return this.fairValueFormula;
-    }
-
-    /**
-     * Gets the value of the fairValueRangePolicy property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the fairValueRangePolicy property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getFairValueRangePolicy().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnEnumSelectField }
-     * 
-     * 
-     */
-    public List<SearchColumnEnumSelectField> getFairValueRangePolicy() {
-        if (fairValueRangePolicy == null) {
-            fairValueRangePolicy = new ArrayList<SearchColumnEnumSelectField>();
-        }
-        return this.fairValueRangePolicy;
-    }
-
-    /**
-     * Gets the value of the highValue property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the highValue property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getHighValue().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnDoubleField }
-     * 
-     * 
-     */
-    public List<SearchColumnDoubleField> getHighValue() {
-        if (highValue == null) {
-            highValue = new ArrayList<SearchColumnDoubleField>();
-        }
-        return this.highValue;
-    }
-
-    /**
-     * Gets the value of the highValuePercent property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the highValuePercent property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getHighValuePercent().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnDoubleField }
-     * 
-     * 
-     */
-    public List<SearchColumnDoubleField> getHighValuePercent() {
-        if (highValuePercent == null) {
-            highValuePercent = new ArrayList<SearchColumnDoubleField>();
-        }
-        return this.highValuePercent;
-    }
-
-    /**
-     * Gets the value of the internalId property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the internalId property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getInternalId().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnSelectField }
-     * 
-     * 
-     */
-    public List<SearchColumnSelectField> getInternalId() {
-        if (internalId == null) {
-            internalId = new ArrayList<SearchColumnSelectField>();
-        }
-        return this.internalId;
-    }
-
-    /**
-     * Gets the value of the isVsoePrice property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the isVsoePrice property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getIsVsoePrice().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnBooleanField }
-     * 
-     * 
-     */
-    public List<SearchColumnBooleanField> getIsVsoePrice() {
-        if (isVsoePrice == null) {
-            isVsoePrice = new ArrayList<SearchColumnBooleanField>();
-        }
-        return this.isVsoePrice;
-    }
-
-    /**
-     * Gets the value of the item property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the item property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getItem().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnSelectField }
-     * 
-     * 
-     */
-    public List<SearchColumnSelectField> getItem() {
-        if (item == null) {
-            item = new ArrayList<SearchColumnSelectField>();
-        }
-        return this.item;
-    }
-
-    /**
-     * Gets the value of the itemRevenueCategory property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the itemRevenueCategory property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getItemRevenueCategory().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnSelectField }
-     * 
-     * 
-     */
-    public List<SearchColumnSelectField> getItemRevenueCategory() {
-        if (itemRevenueCategory == null) {
-            itemRevenueCategory = new ArrayList<SearchColumnSelectField>();
-        }
-        return this.itemRevenueCategory;
-    }
-
-    /**
-     * Gets the value of the lowValue property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the lowValue property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getLowValue().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnDoubleField }
-     * 
-     * 
-     */
-    public List<SearchColumnDoubleField> getLowValue() {
-        if (lowValue == null) {
-            lowValue = new ArrayList<SearchColumnDoubleField>();
-        }
-        return this.lowValue;
-    }
-
-    /**
-     * Gets the value of the lowValuePercent property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the lowValuePercent property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getLowValuePercent().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnDoubleField }
-     * 
-     * 
-     */
-    public List<SearchColumnDoubleField> getLowValuePercent() {
-        if (lowValuePercent == null) {
-            lowValuePercent = new ArrayList<SearchColumnDoubleField>();
-        }
-        return this.lowValuePercent;
-    }
-
-    /**
-     * Gets the value of the startDate property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the startDate property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getStartDate().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnDateField }
-     * 
-     * 
-     */
-    public List<SearchColumnDateField> getStartDate() {
-        if (startDate == null) {
-            startDate = new ArrayList<SearchColumnDateField>();
-        }
-        return this.startDate;
-    }
-
-    /**
-     * Gets the value of the units property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the units property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getUnits().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnSelectField }
-     * 
-     * 
-     */
-    public List<SearchColumnSelectField> getUnits() {
-        if (units == null) {
-            units = new ArrayList<SearchColumnSelectField>();
-        }
-        return this.units;
-    }
-
-    /**
-     * Gets the value of the unitsType property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the unitsType property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getUnitsType().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnSelectField }
-     * 
-     * 
-     */
-    public List<SearchColumnSelectField> getUnitsType() {
-        if (unitsType == null) {
-            unitsType = new ArrayList<SearchColumnSelectField>();
-        }
-        return this.unitsType;
+    public static org.apache.axis.encoding.Deserializer getDeserializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanDeserializer(
+            _javaType, _xmlType, typeDesc);
     }
 
 }

@@ -1,87 +1,94 @@
+/**
+ * SearchDateFieldOperator.java
+ *
+ * This file was auto-generated from WSDL
+ * by the Apache Axis 1.4 Jul 28, 2010 (04:07:04 PDT) WSDL2Java emitter.
+ */
 
 package com.netsuite.webservices.platform.core_2018_2.types;
 
-import javax.xml.bind.annotation.XmlEnum;
-import javax.xml.bind.annotation.XmlEnumValue;
-import javax.xml.bind.annotation.XmlType;
+public class SearchDateFieldOperator implements java.io.Serializable {
+    private java.lang.String _value_;
+    private static java.util.HashMap _table_ = new java.util.HashMap();
 
-
-/**
- * <p>SearchDateFieldOperator的 Java 类。
- * 
- * <p>以下模式片段指定包含在此类中的预期内容。
- * <p>
- * <pre>
- * &lt;simpleType name="SearchDateFieldOperator">
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     &lt;enumeration value="after"/>
- *     &lt;enumeration value="before"/>
- *     &lt;enumeration value="empty"/>
- *     &lt;enumeration value="notAfter"/>
- *     &lt;enumeration value="notBefore"/>
- *     &lt;enumeration value="notEmpty"/>
- *     &lt;enumeration value="notOn"/>
- *     &lt;enumeration value="notOnOrAfter"/>
- *     &lt;enumeration value="notOnOrBefore"/>
- *     &lt;enumeration value="notWithin"/>
- *     &lt;enumeration value="on"/>
- *     &lt;enumeration value="onOrAfter"/>
- *     &lt;enumeration value="onOrBefore"/>
- *     &lt;enumeration value="within"/>
- *   &lt;/restriction>
- * &lt;/simpleType>
- * </pre>
- * 
- */
-@XmlType(name = "SearchDateFieldOperator", namespace = "urn:types.core_2018_2.platform.webservices.netsuite.com")
-@XmlEnum
-public enum SearchDateFieldOperator {
-
-    @XmlEnumValue("after")
-    AFTER("after"),
-    @XmlEnumValue("before")
-    BEFORE("before"),
-    @XmlEnumValue("empty")
-    EMPTY("empty"),
-    @XmlEnumValue("notAfter")
-    NOT_AFTER("notAfter"),
-    @XmlEnumValue("notBefore")
-    NOT_BEFORE("notBefore"),
-    @XmlEnumValue("notEmpty")
-    NOT_EMPTY("notEmpty"),
-    @XmlEnumValue("notOn")
-    NOT_ON("notOn"),
-    @XmlEnumValue("notOnOrAfter")
-    NOT_ON_OR_AFTER("notOnOrAfter"),
-    @XmlEnumValue("notOnOrBefore")
-    NOT_ON_OR_BEFORE("notOnOrBefore"),
-    @XmlEnumValue("notWithin")
-    NOT_WITHIN("notWithin"),
-    @XmlEnumValue("on")
-    ON("on"),
-    @XmlEnumValue("onOrAfter")
-    ON_OR_AFTER("onOrAfter"),
-    @XmlEnumValue("onOrBefore")
-    ON_OR_BEFORE("onOrBefore"),
-    @XmlEnumValue("within")
-    WITHIN("within");
-    private final String value;
-
-    SearchDateFieldOperator(String v) {
-        value = v;
+    // Constructor
+    protected SearchDateFieldOperator(java.lang.String value) {
+        _value_ = value;
+        _table_.put(_value_,this);
     }
 
-    public String value() {
-        return value;
+    public static final java.lang.String _after = "after";
+    public static final java.lang.String _before = "before";
+    public static final java.lang.String _empty = "empty";
+    public static final java.lang.String _notAfter = "notAfter";
+    public static final java.lang.String _notBefore = "notBefore";
+    public static final java.lang.String _notEmpty = "notEmpty";
+    public static final java.lang.String _notOn = "notOn";
+    public static final java.lang.String _notOnOrAfter = "notOnOrAfter";
+    public static final java.lang.String _notOnOrBefore = "notOnOrBefore";
+    public static final java.lang.String _notWithin = "notWithin";
+    public static final java.lang.String _on = "on";
+    public static final java.lang.String _onOrAfter = "onOrAfter";
+    public static final java.lang.String _onOrBefore = "onOrBefore";
+    public static final java.lang.String _within = "within";
+    public static final SearchDateFieldOperator after = new SearchDateFieldOperator(_after);
+    public static final SearchDateFieldOperator before = new SearchDateFieldOperator(_before);
+    public static final SearchDateFieldOperator empty = new SearchDateFieldOperator(_empty);
+    public static final SearchDateFieldOperator notAfter = new SearchDateFieldOperator(_notAfter);
+    public static final SearchDateFieldOperator notBefore = new SearchDateFieldOperator(_notBefore);
+    public static final SearchDateFieldOperator notEmpty = new SearchDateFieldOperator(_notEmpty);
+    public static final SearchDateFieldOperator notOn = new SearchDateFieldOperator(_notOn);
+    public static final SearchDateFieldOperator notOnOrAfter = new SearchDateFieldOperator(_notOnOrAfter);
+    public static final SearchDateFieldOperator notOnOrBefore = new SearchDateFieldOperator(_notOnOrBefore);
+    public static final SearchDateFieldOperator notWithin = new SearchDateFieldOperator(_notWithin);
+    public static final SearchDateFieldOperator on = new SearchDateFieldOperator(_on);
+    public static final SearchDateFieldOperator onOrAfter = new SearchDateFieldOperator(_onOrAfter);
+    public static final SearchDateFieldOperator onOrBefore = new SearchDateFieldOperator(_onOrBefore);
+    public static final SearchDateFieldOperator within = new SearchDateFieldOperator(_within);
+    public java.lang.String getValue() { return _value_;}
+    public static SearchDateFieldOperator fromValue(java.lang.String value)
+          throws java.lang.IllegalArgumentException {
+        SearchDateFieldOperator enumeration = (SearchDateFieldOperator)
+            _table_.get(value);
+        if (enumeration==null) throw new java.lang.IllegalArgumentException();
+        return enumeration;
     }
+    public static SearchDateFieldOperator fromString(java.lang.String value)
+          throws java.lang.IllegalArgumentException {
+        return fromValue(value);
+    }
+    public boolean equals(java.lang.Object obj) {return (obj == this);}
+    public int hashCode() { return toString().hashCode();}
+    public java.lang.String toString() { return _value_;}
+    public java.lang.Object readResolve() throws java.io.ObjectStreamException { return fromValue(_value_);}
+    public static org.apache.axis.encoding.Serializer getSerializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new org.apache.axis.encoding.ser.EnumSerializer(
+            _javaType, _xmlType);
+    }
+    public static org.apache.axis.encoding.Deserializer getDeserializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new org.apache.axis.encoding.ser.EnumDeserializer(
+            _javaType, _xmlType);
+    }
+    // Type metadata
+    private static org.apache.axis.description.TypeDesc typeDesc =
+        new org.apache.axis.description.TypeDesc(SearchDateFieldOperator.class);
 
-    public static SearchDateFieldOperator fromValue(String v) {
-        for (SearchDateFieldOperator c: SearchDateFieldOperator.values()) {
-            if (c.value.equals(v)) {
-                return c;
-            }
-        }
-        throw new IllegalArgumentException(v);
+    static {
+        typeDesc.setXmlType(new javax.xml.namespace.QName("urn:types.core_2018_2.platform.webservices.netsuite.com", "SearchDateFieldOperator"));
+    }
+    /**
+     * Return type metadata object
+     */
+    public static org.apache.axis.description.TypeDesc getTypeDesc() {
+        return typeDesc;
     }
 
 }

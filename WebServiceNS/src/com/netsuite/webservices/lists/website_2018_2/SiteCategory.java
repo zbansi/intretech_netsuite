@@ -1,659 +1,951 @@
+/**
+ * SiteCategory.java
+ *
+ * This file was auto-generated from WSDL
+ * by the Apache Axis 1.4 Jul 28, 2010 (04:07:04 PDT) WSDL2Java emitter.
+ */
 
 package com.netsuite.webservices.lists.website_2018_2;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlAttribute;
-import javax.xml.bind.annotation.XmlType;
-import com.netsuite.webservices.platform.core_2018_2.Record;
-import com.netsuite.webservices.platform.core_2018_2.RecordRef;
+public class SiteCategory  extends com.netsuite.webservices.platform.core_2018_2.Record  implements java.io.Serializable {
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef website;
 
+    private java.lang.String itemId;
 
-/**
- * <p>SiteCategory complex type的 Java 类。
- * 
- * <p>以下模式片段指定包含在此类中的预期内容。
- * 
- * <pre>
- * &lt;complexType name="SiteCategory">
- *   &lt;complexContent>
- *     &lt;extension base="{urn:core_2018_2.platform.webservices.netsuite.com}Record">
- *       &lt;sequence>
- *         &lt;element name="website" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="itemId" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="parentCategory" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="categoryListLayout" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="itemListLayout" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="relatedItemsListLayout" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="correlatedItemsListLayout" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="isOnline" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         &lt;element name="isInactive" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         &lt;element name="description" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="storeDetailedDescription" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="storeDisplayThumbnail" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="storeDisplayImage" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="pageTitle" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="metaTagHtml" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="excludeFromSitemap" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         &lt;element name="urlComponent" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="sitemapPriority" type="{urn:types.common_2018_2.platform.webservices.netsuite.com}SitemapPriority" minOccurs="0"/>
- *         &lt;element name="searchKeywords" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="presentationItemList" type="{urn:website_2018_2.lists.webservices.netsuite.com}SiteCategoryPresentationItemList" minOccurs="0"/>
- *         &lt;element name="translationsList" type="{urn:website_2018_2.lists.webservices.netsuite.com}SiteCategoryTranslationList" minOccurs="0"/>
- *       &lt;/sequence>
- *       &lt;attribute name="internalId" type="{http://www.w3.org/2001/XMLSchema}string" />
- *       &lt;attribute name="externalId" type="{http://www.w3.org/2001/XMLSchema}string" />
- *     &lt;/extension>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
- */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "SiteCategory", propOrder = {
-    "website",
-    "itemId",
-    "parentCategory",
-    "categoryListLayout",
-    "itemListLayout",
-    "relatedItemsListLayout",
-    "correlatedItemsListLayout",
-    "isOnline",
-    "isInactive",
-    "description",
-    "storeDetailedDescription",
-    "storeDisplayThumbnail",
-    "storeDisplayImage",
-    "pageTitle",
-    "metaTagHtml",
-    "excludeFromSitemap",
-    "urlComponent",
-    "sitemapPriority",
-    "searchKeywords",
-    "presentationItemList",
-    "translationsList"
-})
-public class SiteCategory
-    extends Record
-{
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef parentCategory;
 
-    protected RecordRef website;
-    protected String itemId;
-    protected RecordRef parentCategory;
-    protected RecordRef categoryListLayout;
-    protected RecordRef itemListLayout;
-    protected RecordRef relatedItemsListLayout;
-    protected RecordRef correlatedItemsListLayout;
-    protected Boolean isOnline;
-    protected Boolean isInactive;
-    protected String description;
-    protected String storeDetailedDescription;
-    protected RecordRef storeDisplayThumbnail;
-    protected RecordRef storeDisplayImage;
-    protected String pageTitle;
-    protected String metaTagHtml;
-    protected Boolean excludeFromSitemap;
-    protected String urlComponent;
-    protected String sitemapPriority;
-    protected String searchKeywords;
-    protected SiteCategoryPresentationItemList presentationItemList;
-    protected SiteCategoryTranslationList translationsList;
-    @XmlAttribute(name = "internalId")
-    protected String internalId;
-    @XmlAttribute(name = "externalId")
-    protected String externalId;
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef categoryListLayout;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef itemListLayout;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef relatedItemsListLayout;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef correlatedItemsListLayout;
+
+    private java.lang.Boolean isOnline;
+
+    private java.lang.Boolean isInactive;
+
+    private java.lang.String description;
+
+    private java.lang.String storeDetailedDescription;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef storeDisplayThumbnail;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef storeDisplayImage;
+
+    private java.lang.String pageTitle;
+
+    private java.lang.String metaTagHtml;
+
+    private java.lang.Boolean excludeFromSitemap;
+
+    private java.lang.String urlComponent;
+
+    private com.netsuite.webservices.platform.common_2018_2.types.SitemapPriority sitemapPriority;
+
+    private java.lang.String searchKeywords;
+
+    private com.netsuite.webservices.platform.common_2018_2.PresentationItem[] presentationItemList;
+
+    private com.netsuite.webservices.lists.website_2018_2.SiteCategoryTranslation[] translationsList;
+
+    private java.lang.String internalId;  // attribute
+
+    private java.lang.String externalId;  // attribute
+
+    public SiteCategory() {
+    }
+
+    public SiteCategory(
+           java.lang.String[] nullFieldList,
+           java.lang.String internalId,
+           java.lang.String externalId,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef website,
+           java.lang.String itemId,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef parentCategory,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef categoryListLayout,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef itemListLayout,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef relatedItemsListLayout,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef correlatedItemsListLayout,
+           java.lang.Boolean isOnline,
+           java.lang.Boolean isInactive,
+           java.lang.String description,
+           java.lang.String storeDetailedDescription,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef storeDisplayThumbnail,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef storeDisplayImage,
+           java.lang.String pageTitle,
+           java.lang.String metaTagHtml,
+           java.lang.Boolean excludeFromSitemap,
+           java.lang.String urlComponent,
+           com.netsuite.webservices.platform.common_2018_2.types.SitemapPriority sitemapPriority,
+           java.lang.String searchKeywords,
+           com.netsuite.webservices.platform.common_2018_2.PresentationItem[] presentationItemList,
+           com.netsuite.webservices.lists.website_2018_2.SiteCategoryTranslation[] translationsList) {
+        super(
+            nullFieldList);
+        this.internalId = internalId;
+        this.externalId = externalId;
+        this.website = website;
+        this.itemId = itemId;
+        this.parentCategory = parentCategory;
+        this.categoryListLayout = categoryListLayout;
+        this.itemListLayout = itemListLayout;
+        this.relatedItemsListLayout = relatedItemsListLayout;
+        this.correlatedItemsListLayout = correlatedItemsListLayout;
+        this.isOnline = isOnline;
+        this.isInactive = isInactive;
+        this.description = description;
+        this.storeDetailedDescription = storeDetailedDescription;
+        this.storeDisplayThumbnail = storeDisplayThumbnail;
+        this.storeDisplayImage = storeDisplayImage;
+        this.pageTitle = pageTitle;
+        this.metaTagHtml = metaTagHtml;
+        this.excludeFromSitemap = excludeFromSitemap;
+        this.urlComponent = urlComponent;
+        this.sitemapPriority = sitemapPriority;
+        this.searchKeywords = searchKeywords;
+        this.presentationItemList = presentationItemList;
+        this.translationsList = translationsList;
+    }
+
 
     /**
-     * 获取website属性的值。
+     * Gets the website value for this SiteCategory.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @return website
      */
-    public RecordRef getWebsite() {
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getWebsite() {
         return website;
     }
 
-    /**
-     * 设置website属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setWebsite(RecordRef value) {
-        this.website = value;
-    }
 
     /**
-     * 获取itemId属性的值。
+     * Sets the website value for this SiteCategory.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param website
      */
-    public String getItemId() {
+    public void setWebsite(com.netsuite.webservices.platform.core_2018_2.RecordRef website) {
+        this.website = website;
+    }
+
+
+    /**
+     * Gets the itemId value for this SiteCategory.
+     * 
+     * @return itemId
+     */
+    public java.lang.String getItemId() {
         return itemId;
     }
 
-    /**
-     * 设置itemId属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setItemId(String value) {
-        this.itemId = value;
-    }
 
     /**
-     * 获取parentCategory属性的值。
+     * Sets the itemId value for this SiteCategory.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param itemId
      */
-    public RecordRef getParentCategory() {
+    public void setItemId(java.lang.String itemId) {
+        this.itemId = itemId;
+    }
+
+
+    /**
+     * Gets the parentCategory value for this SiteCategory.
+     * 
+     * @return parentCategory
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getParentCategory() {
         return parentCategory;
     }
 
-    /**
-     * 设置parentCategory属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setParentCategory(RecordRef value) {
-        this.parentCategory = value;
-    }
 
     /**
-     * 获取categoryListLayout属性的值。
+     * Sets the parentCategory value for this SiteCategory.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param parentCategory
      */
-    public RecordRef getCategoryListLayout() {
+    public void setParentCategory(com.netsuite.webservices.platform.core_2018_2.RecordRef parentCategory) {
+        this.parentCategory = parentCategory;
+    }
+
+
+    /**
+     * Gets the categoryListLayout value for this SiteCategory.
+     * 
+     * @return categoryListLayout
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getCategoryListLayout() {
         return categoryListLayout;
     }
 
-    /**
-     * 设置categoryListLayout属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setCategoryListLayout(RecordRef value) {
-        this.categoryListLayout = value;
-    }
 
     /**
-     * 获取itemListLayout属性的值。
+     * Sets the categoryListLayout value for this SiteCategory.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param categoryListLayout
      */
-    public RecordRef getItemListLayout() {
+    public void setCategoryListLayout(com.netsuite.webservices.platform.core_2018_2.RecordRef categoryListLayout) {
+        this.categoryListLayout = categoryListLayout;
+    }
+
+
+    /**
+     * Gets the itemListLayout value for this SiteCategory.
+     * 
+     * @return itemListLayout
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getItemListLayout() {
         return itemListLayout;
     }
 
-    /**
-     * 设置itemListLayout属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setItemListLayout(RecordRef value) {
-        this.itemListLayout = value;
-    }
 
     /**
-     * 获取relatedItemsListLayout属性的值。
+     * Sets the itemListLayout value for this SiteCategory.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param itemListLayout
      */
-    public RecordRef getRelatedItemsListLayout() {
+    public void setItemListLayout(com.netsuite.webservices.platform.core_2018_2.RecordRef itemListLayout) {
+        this.itemListLayout = itemListLayout;
+    }
+
+
+    /**
+     * Gets the relatedItemsListLayout value for this SiteCategory.
+     * 
+     * @return relatedItemsListLayout
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getRelatedItemsListLayout() {
         return relatedItemsListLayout;
     }
 
-    /**
-     * 设置relatedItemsListLayout属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setRelatedItemsListLayout(RecordRef value) {
-        this.relatedItemsListLayout = value;
-    }
 
     /**
-     * 获取correlatedItemsListLayout属性的值。
+     * Sets the relatedItemsListLayout value for this SiteCategory.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param relatedItemsListLayout
      */
-    public RecordRef getCorrelatedItemsListLayout() {
+    public void setRelatedItemsListLayout(com.netsuite.webservices.platform.core_2018_2.RecordRef relatedItemsListLayout) {
+        this.relatedItemsListLayout = relatedItemsListLayout;
+    }
+
+
+    /**
+     * Gets the correlatedItemsListLayout value for this SiteCategory.
+     * 
+     * @return correlatedItemsListLayout
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getCorrelatedItemsListLayout() {
         return correlatedItemsListLayout;
     }
 
-    /**
-     * 设置correlatedItemsListLayout属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setCorrelatedItemsListLayout(RecordRef value) {
-        this.correlatedItemsListLayout = value;
-    }
 
     /**
-     * 获取isOnline属性的值。
+     * Sets the correlatedItemsListLayout value for this SiteCategory.
      * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
+     * @param correlatedItemsListLayout
      */
-    public Boolean isIsOnline() {
+    public void setCorrelatedItemsListLayout(com.netsuite.webservices.platform.core_2018_2.RecordRef correlatedItemsListLayout) {
+        this.correlatedItemsListLayout = correlatedItemsListLayout;
+    }
+
+
+    /**
+     * Gets the isOnline value for this SiteCategory.
+     * 
+     * @return isOnline
+     */
+    public java.lang.Boolean getIsOnline() {
         return isOnline;
     }
 
-    /**
-     * 设置isOnline属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
-     */
-    public void setIsOnline(Boolean value) {
-        this.isOnline = value;
-    }
 
     /**
-     * 获取isInactive属性的值。
+     * Sets the isOnline value for this SiteCategory.
      * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
+     * @param isOnline
      */
-    public Boolean isIsInactive() {
+    public void setIsOnline(java.lang.Boolean isOnline) {
+        this.isOnline = isOnline;
+    }
+
+
+    /**
+     * Gets the isInactive value for this SiteCategory.
+     * 
+     * @return isInactive
+     */
+    public java.lang.Boolean getIsInactive() {
         return isInactive;
     }
 
-    /**
-     * 设置isInactive属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
-     */
-    public void setIsInactive(Boolean value) {
-        this.isInactive = value;
-    }
 
     /**
-     * 获取description属性的值。
+     * Sets the isInactive value for this SiteCategory.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param isInactive
      */
-    public String getDescription() {
+    public void setIsInactive(java.lang.Boolean isInactive) {
+        this.isInactive = isInactive;
+    }
+
+
+    /**
+     * Gets the description value for this SiteCategory.
+     * 
+     * @return description
+     */
+    public java.lang.String getDescription() {
         return description;
     }
 
-    /**
-     * 设置description属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setDescription(String value) {
-        this.description = value;
-    }
 
     /**
-     * 获取storeDetailedDescription属性的值。
+     * Sets the description value for this SiteCategory.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param description
      */
-    public String getStoreDetailedDescription() {
+    public void setDescription(java.lang.String description) {
+        this.description = description;
+    }
+
+
+    /**
+     * Gets the storeDetailedDescription value for this SiteCategory.
+     * 
+     * @return storeDetailedDescription
+     */
+    public java.lang.String getStoreDetailedDescription() {
         return storeDetailedDescription;
     }
 
-    /**
-     * 设置storeDetailedDescription属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setStoreDetailedDescription(String value) {
-        this.storeDetailedDescription = value;
-    }
 
     /**
-     * 获取storeDisplayThumbnail属性的值。
+     * Sets the storeDetailedDescription value for this SiteCategory.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param storeDetailedDescription
      */
-    public RecordRef getStoreDisplayThumbnail() {
+    public void setStoreDetailedDescription(java.lang.String storeDetailedDescription) {
+        this.storeDetailedDescription = storeDetailedDescription;
+    }
+
+
+    /**
+     * Gets the storeDisplayThumbnail value for this SiteCategory.
+     * 
+     * @return storeDisplayThumbnail
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getStoreDisplayThumbnail() {
         return storeDisplayThumbnail;
     }
 
-    /**
-     * 设置storeDisplayThumbnail属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setStoreDisplayThumbnail(RecordRef value) {
-        this.storeDisplayThumbnail = value;
-    }
 
     /**
-     * 获取storeDisplayImage属性的值。
+     * Sets the storeDisplayThumbnail value for this SiteCategory.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param storeDisplayThumbnail
      */
-    public RecordRef getStoreDisplayImage() {
+    public void setStoreDisplayThumbnail(com.netsuite.webservices.platform.core_2018_2.RecordRef storeDisplayThumbnail) {
+        this.storeDisplayThumbnail = storeDisplayThumbnail;
+    }
+
+
+    /**
+     * Gets the storeDisplayImage value for this SiteCategory.
+     * 
+     * @return storeDisplayImage
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getStoreDisplayImage() {
         return storeDisplayImage;
     }
 
-    /**
-     * 设置storeDisplayImage属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setStoreDisplayImage(RecordRef value) {
-        this.storeDisplayImage = value;
-    }
 
     /**
-     * 获取pageTitle属性的值。
+     * Sets the storeDisplayImage value for this SiteCategory.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param storeDisplayImage
      */
-    public String getPageTitle() {
+    public void setStoreDisplayImage(com.netsuite.webservices.platform.core_2018_2.RecordRef storeDisplayImage) {
+        this.storeDisplayImage = storeDisplayImage;
+    }
+
+
+    /**
+     * Gets the pageTitle value for this SiteCategory.
+     * 
+     * @return pageTitle
+     */
+    public java.lang.String getPageTitle() {
         return pageTitle;
     }
 
-    /**
-     * 设置pageTitle属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setPageTitle(String value) {
-        this.pageTitle = value;
-    }
 
     /**
-     * 获取metaTagHtml属性的值。
+     * Sets the pageTitle value for this SiteCategory.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param pageTitle
      */
-    public String getMetaTagHtml() {
+    public void setPageTitle(java.lang.String pageTitle) {
+        this.pageTitle = pageTitle;
+    }
+
+
+    /**
+     * Gets the metaTagHtml value for this SiteCategory.
+     * 
+     * @return metaTagHtml
+     */
+    public java.lang.String getMetaTagHtml() {
         return metaTagHtml;
     }
 
-    /**
-     * 设置metaTagHtml属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setMetaTagHtml(String value) {
-        this.metaTagHtml = value;
-    }
 
     /**
-     * 获取excludeFromSitemap属性的值。
+     * Sets the metaTagHtml value for this SiteCategory.
      * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
+     * @param metaTagHtml
      */
-    public Boolean isExcludeFromSitemap() {
+    public void setMetaTagHtml(java.lang.String metaTagHtml) {
+        this.metaTagHtml = metaTagHtml;
+    }
+
+
+    /**
+     * Gets the excludeFromSitemap value for this SiteCategory.
+     * 
+     * @return excludeFromSitemap
+     */
+    public java.lang.Boolean getExcludeFromSitemap() {
         return excludeFromSitemap;
     }
 
-    /**
-     * 设置excludeFromSitemap属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
-     */
-    public void setExcludeFromSitemap(Boolean value) {
-        this.excludeFromSitemap = value;
-    }
 
     /**
-     * 获取urlComponent属性的值。
+     * Sets the excludeFromSitemap value for this SiteCategory.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param excludeFromSitemap
      */
-    public String getUrlComponent() {
+    public void setExcludeFromSitemap(java.lang.Boolean excludeFromSitemap) {
+        this.excludeFromSitemap = excludeFromSitemap;
+    }
+
+
+    /**
+     * Gets the urlComponent value for this SiteCategory.
+     * 
+     * @return urlComponent
+     */
+    public java.lang.String getUrlComponent() {
         return urlComponent;
     }
 
-    /**
-     * 设置urlComponent属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setUrlComponent(String value) {
-        this.urlComponent = value;
-    }
 
     /**
-     * 获取sitemapPriority属性的值。
+     * Sets the urlComponent value for this SiteCategory.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param urlComponent
      */
-    public String getSitemapPriority() {
+    public void setUrlComponent(java.lang.String urlComponent) {
+        this.urlComponent = urlComponent;
+    }
+
+
+    /**
+     * Gets the sitemapPriority value for this SiteCategory.
+     * 
+     * @return sitemapPriority
+     */
+    public com.netsuite.webservices.platform.common_2018_2.types.SitemapPriority getSitemapPriority() {
         return sitemapPriority;
     }
 
-    /**
-     * 设置sitemapPriority属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setSitemapPriority(String value) {
-        this.sitemapPriority = value;
-    }
 
     /**
-     * 获取searchKeywords属性的值。
+     * Sets the sitemapPriority value for this SiteCategory.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param sitemapPriority
      */
-    public String getSearchKeywords() {
+    public void setSitemapPriority(com.netsuite.webservices.platform.common_2018_2.types.SitemapPriority sitemapPriority) {
+        this.sitemapPriority = sitemapPriority;
+    }
+
+
+    /**
+     * Gets the searchKeywords value for this SiteCategory.
+     * 
+     * @return searchKeywords
+     */
+    public java.lang.String getSearchKeywords() {
         return searchKeywords;
     }
 
-    /**
-     * 设置searchKeywords属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setSearchKeywords(String value) {
-        this.searchKeywords = value;
-    }
 
     /**
-     * 获取presentationItemList属性的值。
+     * Sets the searchKeywords value for this SiteCategory.
      * 
-     * @return
-     *     possible object is
-     *     {@link SiteCategoryPresentationItemList }
-     *     
+     * @param searchKeywords
      */
-    public SiteCategoryPresentationItemList getPresentationItemList() {
+    public void setSearchKeywords(java.lang.String searchKeywords) {
+        this.searchKeywords = searchKeywords;
+    }
+
+
+    /**
+     * Gets the presentationItemList value for this SiteCategory.
+     * 
+     * @return presentationItemList
+     */
+    public com.netsuite.webservices.platform.common_2018_2.PresentationItem[] getPresentationItemList() {
         return presentationItemList;
     }
 
-    /**
-     * 设置presentationItemList属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SiteCategoryPresentationItemList }
-     *     
-     */
-    public void setPresentationItemList(SiteCategoryPresentationItemList value) {
-        this.presentationItemList = value;
-    }
 
     /**
-     * 获取translationsList属性的值。
+     * Sets the presentationItemList value for this SiteCategory.
      * 
-     * @return
-     *     possible object is
-     *     {@link SiteCategoryTranslationList }
-     *     
+     * @param presentationItemList
      */
-    public SiteCategoryTranslationList getTranslationsList() {
+    public void setPresentationItemList(com.netsuite.webservices.platform.common_2018_2.PresentationItem[] presentationItemList) {
+        this.presentationItemList = presentationItemList;
+    }
+
+
+    /**
+     * Gets the translationsList value for this SiteCategory.
+     * 
+     * @return translationsList
+     */
+    public com.netsuite.webservices.lists.website_2018_2.SiteCategoryTranslation[] getTranslationsList() {
         return translationsList;
     }
 
-    /**
-     * 设置translationsList属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SiteCategoryTranslationList }
-     *     
-     */
-    public void setTranslationsList(SiteCategoryTranslationList value) {
-        this.translationsList = value;
-    }
 
     /**
-     * 获取internalId属性的值。
+     * Sets the translationsList value for this SiteCategory.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param translationsList
      */
-    public String getInternalId() {
+    public void setTranslationsList(com.netsuite.webservices.lists.website_2018_2.SiteCategoryTranslation[] translationsList) {
+        this.translationsList = translationsList;
+    }
+
+
+    /**
+     * Gets the internalId value for this SiteCategory.
+     * 
+     * @return internalId
+     */
+    public java.lang.String getInternalId() {
         return internalId;
     }
 
-    /**
-     * 设置internalId属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setInternalId(String value) {
-        this.internalId = value;
-    }
 
     /**
-     * 获取externalId属性的值。
+     * Sets the internalId value for this SiteCategory.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param internalId
      */
-    public String getExternalId() {
+    public void setInternalId(java.lang.String internalId) {
+        this.internalId = internalId;
+    }
+
+
+    /**
+     * Gets the externalId value for this SiteCategory.
+     * 
+     * @return externalId
+     */
+    public java.lang.String getExternalId() {
         return externalId;
     }
 
+
     /**
-     * 设置externalId属性的值。
+     * Sets the externalId value for this SiteCategory.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     * @param externalId
      */
-    public void setExternalId(String value) {
-        this.externalId = value;
+    public void setExternalId(java.lang.String externalId) {
+        this.externalId = externalId;
+    }
+
+    private java.lang.Object __equalsCalc = null;
+    public synchronized boolean equals(java.lang.Object obj) {
+        if (!(obj instanceof SiteCategory)) return false;
+        SiteCategory other = (SiteCategory) obj;
+        if (obj == null) return false;
+        if (this == obj) return true;
+        if (__equalsCalc != null) {
+            return (__equalsCalc == obj);
+        }
+        __equalsCalc = obj;
+        boolean _equals;
+        _equals = super.equals(obj) && 
+            ((this.website==null && other.getWebsite()==null) || 
+             (this.website!=null &&
+              this.website.equals(other.getWebsite()))) &&
+            ((this.itemId==null && other.getItemId()==null) || 
+             (this.itemId!=null &&
+              this.itemId.equals(other.getItemId()))) &&
+            ((this.parentCategory==null && other.getParentCategory()==null) || 
+             (this.parentCategory!=null &&
+              this.parentCategory.equals(other.getParentCategory()))) &&
+            ((this.categoryListLayout==null && other.getCategoryListLayout()==null) || 
+             (this.categoryListLayout!=null &&
+              this.categoryListLayout.equals(other.getCategoryListLayout()))) &&
+            ((this.itemListLayout==null && other.getItemListLayout()==null) || 
+             (this.itemListLayout!=null &&
+              this.itemListLayout.equals(other.getItemListLayout()))) &&
+            ((this.relatedItemsListLayout==null && other.getRelatedItemsListLayout()==null) || 
+             (this.relatedItemsListLayout!=null &&
+              this.relatedItemsListLayout.equals(other.getRelatedItemsListLayout()))) &&
+            ((this.correlatedItemsListLayout==null && other.getCorrelatedItemsListLayout()==null) || 
+             (this.correlatedItemsListLayout!=null &&
+              this.correlatedItemsListLayout.equals(other.getCorrelatedItemsListLayout()))) &&
+            ((this.isOnline==null && other.getIsOnline()==null) || 
+             (this.isOnline!=null &&
+              this.isOnline.equals(other.getIsOnline()))) &&
+            ((this.isInactive==null && other.getIsInactive()==null) || 
+             (this.isInactive!=null &&
+              this.isInactive.equals(other.getIsInactive()))) &&
+            ((this.description==null && other.getDescription()==null) || 
+             (this.description!=null &&
+              this.description.equals(other.getDescription()))) &&
+            ((this.storeDetailedDescription==null && other.getStoreDetailedDescription()==null) || 
+             (this.storeDetailedDescription!=null &&
+              this.storeDetailedDescription.equals(other.getStoreDetailedDescription()))) &&
+            ((this.storeDisplayThumbnail==null && other.getStoreDisplayThumbnail()==null) || 
+             (this.storeDisplayThumbnail!=null &&
+              this.storeDisplayThumbnail.equals(other.getStoreDisplayThumbnail()))) &&
+            ((this.storeDisplayImage==null && other.getStoreDisplayImage()==null) || 
+             (this.storeDisplayImage!=null &&
+              this.storeDisplayImage.equals(other.getStoreDisplayImage()))) &&
+            ((this.pageTitle==null && other.getPageTitle()==null) || 
+             (this.pageTitle!=null &&
+              this.pageTitle.equals(other.getPageTitle()))) &&
+            ((this.metaTagHtml==null && other.getMetaTagHtml()==null) || 
+             (this.metaTagHtml!=null &&
+              this.metaTagHtml.equals(other.getMetaTagHtml()))) &&
+            ((this.excludeFromSitemap==null && other.getExcludeFromSitemap()==null) || 
+             (this.excludeFromSitemap!=null &&
+              this.excludeFromSitemap.equals(other.getExcludeFromSitemap()))) &&
+            ((this.urlComponent==null && other.getUrlComponent()==null) || 
+             (this.urlComponent!=null &&
+              this.urlComponent.equals(other.getUrlComponent()))) &&
+            ((this.sitemapPriority==null && other.getSitemapPriority()==null) || 
+             (this.sitemapPriority!=null &&
+              this.sitemapPriority.equals(other.getSitemapPriority()))) &&
+            ((this.searchKeywords==null && other.getSearchKeywords()==null) || 
+             (this.searchKeywords!=null &&
+              this.searchKeywords.equals(other.getSearchKeywords()))) &&
+            ((this.presentationItemList==null && other.getPresentationItemList()==null) || 
+             (this.presentationItemList!=null &&
+              java.util.Arrays.equals(this.presentationItemList, other.getPresentationItemList()))) &&
+            ((this.translationsList==null && other.getTranslationsList()==null) || 
+             (this.translationsList!=null &&
+              java.util.Arrays.equals(this.translationsList, other.getTranslationsList()))) &&
+            ((this.internalId==null && other.getInternalId()==null) || 
+             (this.internalId!=null &&
+              this.internalId.equals(other.getInternalId()))) &&
+            ((this.externalId==null && other.getExternalId()==null) || 
+             (this.externalId!=null &&
+              this.externalId.equals(other.getExternalId())));
+        __equalsCalc = null;
+        return _equals;
+    }
+
+    private boolean __hashCodeCalc = false;
+    public synchronized int hashCode() {
+        if (__hashCodeCalc) {
+            return 0;
+        }
+        __hashCodeCalc = true;
+        int _hashCode = super.hashCode();
+        if (getWebsite() != null) {
+            _hashCode += getWebsite().hashCode();
+        }
+        if (getItemId() != null) {
+            _hashCode += getItemId().hashCode();
+        }
+        if (getParentCategory() != null) {
+            _hashCode += getParentCategory().hashCode();
+        }
+        if (getCategoryListLayout() != null) {
+            _hashCode += getCategoryListLayout().hashCode();
+        }
+        if (getItemListLayout() != null) {
+            _hashCode += getItemListLayout().hashCode();
+        }
+        if (getRelatedItemsListLayout() != null) {
+            _hashCode += getRelatedItemsListLayout().hashCode();
+        }
+        if (getCorrelatedItemsListLayout() != null) {
+            _hashCode += getCorrelatedItemsListLayout().hashCode();
+        }
+        if (getIsOnline() != null) {
+            _hashCode += getIsOnline().hashCode();
+        }
+        if (getIsInactive() != null) {
+            _hashCode += getIsInactive().hashCode();
+        }
+        if (getDescription() != null) {
+            _hashCode += getDescription().hashCode();
+        }
+        if (getStoreDetailedDescription() != null) {
+            _hashCode += getStoreDetailedDescription().hashCode();
+        }
+        if (getStoreDisplayThumbnail() != null) {
+            _hashCode += getStoreDisplayThumbnail().hashCode();
+        }
+        if (getStoreDisplayImage() != null) {
+            _hashCode += getStoreDisplayImage().hashCode();
+        }
+        if (getPageTitle() != null) {
+            _hashCode += getPageTitle().hashCode();
+        }
+        if (getMetaTagHtml() != null) {
+            _hashCode += getMetaTagHtml().hashCode();
+        }
+        if (getExcludeFromSitemap() != null) {
+            _hashCode += getExcludeFromSitemap().hashCode();
+        }
+        if (getUrlComponent() != null) {
+            _hashCode += getUrlComponent().hashCode();
+        }
+        if (getSitemapPriority() != null) {
+            _hashCode += getSitemapPriority().hashCode();
+        }
+        if (getSearchKeywords() != null) {
+            _hashCode += getSearchKeywords().hashCode();
+        }
+        if (getPresentationItemList() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getPresentationItemList());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getPresentationItemList(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getTranslationsList() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getTranslationsList());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getTranslationsList(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getInternalId() != null) {
+            _hashCode += getInternalId().hashCode();
+        }
+        if (getExternalId() != null) {
+            _hashCode += getExternalId().hashCode();
+        }
+        __hashCodeCalc = false;
+        return _hashCode;
+    }
+
+    // Type metadata
+    private static org.apache.axis.description.TypeDesc typeDesc =
+        new org.apache.axis.description.TypeDesc(SiteCategory.class, true);
+
+    static {
+        typeDesc.setXmlType(new javax.xml.namespace.QName("urn:website_2018_2.lists.webservices.netsuite.com", "SiteCategory"));
+        org.apache.axis.description.AttributeDesc attrField = new org.apache.axis.description.AttributeDesc();
+        attrField.setFieldName("internalId");
+        attrField.setXmlName(new javax.xml.namespace.QName("", "internalId"));
+        attrField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        typeDesc.addFieldDesc(attrField);
+        attrField = new org.apache.axis.description.AttributeDesc();
+        attrField.setFieldName("externalId");
+        attrField.setXmlName(new javax.xml.namespace.QName("", "externalId"));
+        attrField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        typeDesc.addFieldDesc(attrField);
+        org.apache.axis.description.ElementDesc elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("website");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:website_2018_2.lists.webservices.netsuite.com", "website"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("itemId");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:website_2018_2.lists.webservices.netsuite.com", "itemId"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("parentCategory");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:website_2018_2.lists.webservices.netsuite.com", "parentCategory"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("categoryListLayout");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:website_2018_2.lists.webservices.netsuite.com", "categoryListLayout"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("itemListLayout");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:website_2018_2.lists.webservices.netsuite.com", "itemListLayout"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("relatedItemsListLayout");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:website_2018_2.lists.webservices.netsuite.com", "relatedItemsListLayout"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("correlatedItemsListLayout");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:website_2018_2.lists.webservices.netsuite.com", "correlatedItemsListLayout"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("isOnline");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:website_2018_2.lists.webservices.netsuite.com", "isOnline"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("isInactive");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:website_2018_2.lists.webservices.netsuite.com", "isInactive"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("description");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:website_2018_2.lists.webservices.netsuite.com", "description"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("storeDetailedDescription");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:website_2018_2.lists.webservices.netsuite.com", "storeDetailedDescription"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("storeDisplayThumbnail");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:website_2018_2.lists.webservices.netsuite.com", "storeDisplayThumbnail"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("storeDisplayImage");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:website_2018_2.lists.webservices.netsuite.com", "storeDisplayImage"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("pageTitle");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:website_2018_2.lists.webservices.netsuite.com", "pageTitle"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("metaTagHtml");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:website_2018_2.lists.webservices.netsuite.com", "metaTagHtml"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("excludeFromSitemap");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:website_2018_2.lists.webservices.netsuite.com", "excludeFromSitemap"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("urlComponent");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:website_2018_2.lists.webservices.netsuite.com", "urlComponent"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("sitemapPriority");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:website_2018_2.lists.webservices.netsuite.com", "sitemapPriority"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:types.common_2018_2.platform.webservices.netsuite.com", "SitemapPriority"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("searchKeywords");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:website_2018_2.lists.webservices.netsuite.com", "searchKeywords"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("presentationItemList");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:website_2018_2.lists.webservices.netsuite.com", "presentationItemList"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "PresentationItem"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:website_2018_2.lists.webservices.netsuite.com", "presentationItem"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("translationsList");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:website_2018_2.lists.webservices.netsuite.com", "translationsList"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:website_2018_2.lists.webservices.netsuite.com", "SiteCategoryTranslation"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:website_2018_2.lists.webservices.netsuite.com", "translation"));
+        typeDesc.addFieldDesc(elemField);
+    }
+
+    /**
+     * Return type metadata object
+     */
+    public static org.apache.axis.description.TypeDesc getTypeDesc() {
+        return typeDesc;
+    }
+
+    /**
+     * Get Custom Serializer
+     */
+    public static org.apache.axis.encoding.Serializer getSerializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanSerializer(
+            _javaType, _xmlType, typeDesc);
+    }
+
+    /**
+     * Get Custom Deserializer
+     */
+    public static org.apache.axis.encoding.Deserializer getDeserializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanDeserializer(
+            _javaType, _xmlType, typeDesc);
     }
 
 }

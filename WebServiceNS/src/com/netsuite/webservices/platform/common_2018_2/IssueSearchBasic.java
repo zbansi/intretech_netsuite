@@ -1,1663 +1,2600 @@
+/**
+ * IssueSearchBasic.java
+ *
+ * This file was auto-generated from WSDL
+ * by the Apache Axis 1.4 Jul 28, 2010 (04:07:04 PDT) WSDL2Java emitter.
+ */
 
 package com.netsuite.webservices.platform.common_2018_2;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlType;
-import com.netsuite.webservices.platform.core_2018_2.SearchBooleanField;
-import com.netsuite.webservices.platform.core_2018_2.SearchCustomFieldList;
-import com.netsuite.webservices.platform.core_2018_2.SearchDateField;
-import com.netsuite.webservices.platform.core_2018_2.SearchEnumMultiSelectField;
-import com.netsuite.webservices.platform.core_2018_2.SearchLongField;
-import com.netsuite.webservices.platform.core_2018_2.SearchMultiSelectField;
-import com.netsuite.webservices.platform.core_2018_2.SearchRecordBasic;
-import com.netsuite.webservices.platform.core_2018_2.SearchStringField;
+public class IssueSearchBasic  extends com.netsuite.webservices.platform.core_2018_2.SearchRecordBasic  implements java.io.Serializable {
+    private com.netsuite.webservices.platform.core_2018_2.SearchLongField ageInMonths;
 
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef[] assigned;
 
-/**
- * <p>IssueSearchBasic complex type的 Java 类。
- * 
- * <p>以下模式片段指定包含在此类中的预期内容。
- * 
- * <pre>
- * &lt;complexType name="IssueSearchBasic">
- *   &lt;complexContent>
- *     &lt;extension base="{urn:core_2018_2.platform.webservices.netsuite.com}SearchRecordBasic">
- *       &lt;sequence>
- *         &lt;element name="ageInMonths" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchLongField" minOccurs="0"/>
- *         &lt;element name="assigned" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchMultiSelectField" minOccurs="0"/>
- *         &lt;element name="buildBroken" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchMultiSelectField" minOccurs="0"/>
- *         &lt;element name="buildBrokenName" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchStringField" minOccurs="0"/>
- *         &lt;element name="buildFixed" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchMultiSelectField" minOccurs="0"/>
- *         &lt;element name="buildFixedName" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchStringField" minOccurs="0"/>
- *         &lt;element name="buildTarget" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchMultiSelectField" minOccurs="0"/>
- *         &lt;element name="buildTargetName" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchStringField" minOccurs="0"/>
- *         &lt;element name="caseCount" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchLongField" minOccurs="0"/>
- *         &lt;element name="caseNumber" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchStringField" minOccurs="0"/>
- *         &lt;element name="closedDate" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchDateField" minOccurs="0"/>
- *         &lt;element name="createdDate" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchDateField" minOccurs="0"/>
- *         &lt;element name="dateReleased" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchDateField" minOccurs="0"/>
- *         &lt;element name="details" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchStringField" minOccurs="0"/>
- *         &lt;element name="duplicateOf" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchMultiSelectField" minOccurs="0"/>
- *         &lt;element name="eFix" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchBooleanField" minOccurs="0"/>
- *         &lt;element name="employeeOrTeam" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchMultiSelectField" minOccurs="0"/>
- *         &lt;element name="eventStatus" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchEnumMultiSelectField" minOccurs="0"/>
- *         &lt;element name="externalAbstract" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchStringField" minOccurs="0"/>
- *         &lt;element name="externalDetails" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchStringField" minOccurs="0"/>
- *         &lt;element name="externalFixedIn" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchMultiSelectField" minOccurs="0"/>
- *         &lt;element name="externalId" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchMultiSelectField" minOccurs="0"/>
- *         &lt;element name="externalIdString" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchStringField" minOccurs="0"/>
- *         &lt;element name="externalStatus" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchMultiSelectField" minOccurs="0"/>
- *         &lt;element name="fixed" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchDateField" minOccurs="0"/>
- *         &lt;element name="fixedBy" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchMultiSelectField" minOccurs="0"/>
- *         &lt;element name="internalId" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchMultiSelectField" minOccurs="0"/>
- *         &lt;element name="internalIdNumber" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchLongField" minOccurs="0"/>
- *         &lt;element name="isOwner" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchBooleanField" minOccurs="0"/>
- *         &lt;element name="isReviewed" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchBooleanField" minOccurs="0"/>
- *         &lt;element name="isShowStopper" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchBooleanField" minOccurs="0"/>
- *         &lt;element name="issueAbstract" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchStringField" minOccurs="0"/>
- *         &lt;element name="issueNumber" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchStringField" minOccurs="0"/>
- *         &lt;element name="item" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchMultiSelectField" minOccurs="0"/>
- *         &lt;element name="lastModifiedDate" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchDateField" minOccurs="0"/>
- *         &lt;element name="module" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchMultiSelectField" minOccurs="0"/>
- *         &lt;element name="number" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchLongField" minOccurs="0"/>
- *         &lt;element name="originalFixedIn" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchStringField" minOccurs="0"/>
- *         &lt;element name="priority" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchMultiSelectField" minOccurs="0"/>
- *         &lt;element name="product" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchMultiSelectField" minOccurs="0"/>
- *         &lt;element name="productTeam" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchMultiSelectField" minOccurs="0"/>
- *         &lt;element name="relatedIssue" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchMultiSelectField" minOccurs="0"/>
- *         &lt;element name="relationship" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchEnumMultiSelectField" minOccurs="0"/>
- *         &lt;element name="relationshipComment" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchStringField" minOccurs="0"/>
- *         &lt;element name="reportedBy" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchMultiSelectField" minOccurs="0"/>
- *         &lt;element name="reproduce" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchMultiSelectField" minOccurs="0"/>
- *         &lt;element name="resolved" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchDateField" minOccurs="0"/>
- *         &lt;element name="resolvedBy" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchMultiSelectField" minOccurs="0"/>
- *         &lt;element name="reviewer" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchMultiSelectField" minOccurs="0"/>
- *         &lt;element name="severity" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchMultiSelectField" minOccurs="0"/>
- *         &lt;element name="source" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchEnumMultiSelectField" minOccurs="0"/>
- *         &lt;element name="status" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchMultiSelectField" minOccurs="0"/>
- *         &lt;element name="tags" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchMultiSelectField" minOccurs="0"/>
- *         &lt;element name="tracking" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchBooleanField" minOccurs="0"/>
- *         &lt;element name="type" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchMultiSelectField" minOccurs="0"/>
- *         &lt;element name="userType" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchMultiSelectField" minOccurs="0"/>
- *         &lt;element name="versionBroken" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchMultiSelectField" minOccurs="0"/>
- *         &lt;element name="versionFixed" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchMultiSelectField" minOccurs="0"/>
- *         &lt;element name="versionTarget" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchMultiSelectField" minOccurs="0"/>
- *         &lt;element name="customFieldList" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchCustomFieldList" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/extension>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
- */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "IssueSearchBasic", propOrder = {
-    "ageInMonths",
-    "assigned",
-    "buildBroken",
-    "buildBrokenName",
-    "buildFixed",
-    "buildFixedName",
-    "buildTarget",
-    "buildTargetName",
-    "caseCount",
-    "caseNumber",
-    "closedDate",
-    "createdDate",
-    "dateReleased",
-    "details",
-    "duplicateOf",
-    "eFix",
-    "employeeOrTeam",
-    "eventStatus",
-    "externalAbstract",
-    "externalDetails",
-    "externalFixedIn",
-    "externalId",
-    "externalIdString",
-    "externalStatus",
-    "fixed",
-    "fixedBy",
-    "internalId",
-    "internalIdNumber",
-    "isOwner",
-    "isReviewed",
-    "isShowStopper",
-    "issueAbstract",
-    "issueNumber",
-    "item",
-    "lastModifiedDate",
-    "module",
-    "number",
-    "originalFixedIn",
-    "priority",
-    "product",
-    "productTeam",
-    "relatedIssue",
-    "relationship",
-    "relationshipComment",
-    "reportedBy",
-    "reproduce",
-    "resolved",
-    "resolvedBy",
-    "reviewer",
-    "severity",
-    "source",
-    "status",
-    "tags",
-    "tracking",
-    "type",
-    "userType",
-    "versionBroken",
-    "versionFixed",
-    "versionTarget",
-    "customFieldList"
-})
-public class IssueSearchBasic
-    extends SearchRecordBasic
-{
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef[] buildBroken;
 
-    protected SearchLongField ageInMonths;
-    protected SearchMultiSelectField assigned;
-    protected SearchMultiSelectField buildBroken;
-    protected SearchStringField buildBrokenName;
-    protected SearchMultiSelectField buildFixed;
-    protected SearchStringField buildFixedName;
-    protected SearchMultiSelectField buildTarget;
-    protected SearchStringField buildTargetName;
-    protected SearchLongField caseCount;
-    protected SearchStringField caseNumber;
-    protected SearchDateField closedDate;
-    protected SearchDateField createdDate;
-    protected SearchDateField dateReleased;
-    protected SearchStringField details;
-    protected SearchMultiSelectField duplicateOf;
-    protected SearchBooleanField eFix;
-    protected SearchMultiSelectField employeeOrTeam;
-    protected SearchEnumMultiSelectField eventStatus;
-    protected SearchStringField externalAbstract;
-    protected SearchStringField externalDetails;
-    protected SearchMultiSelectField externalFixedIn;
-    protected SearchMultiSelectField externalId;
-    protected SearchStringField externalIdString;
-    protected SearchMultiSelectField externalStatus;
-    protected SearchDateField fixed;
-    protected SearchMultiSelectField fixedBy;
-    protected SearchMultiSelectField internalId;
-    protected SearchLongField internalIdNumber;
-    protected SearchBooleanField isOwner;
-    protected SearchBooleanField isReviewed;
-    protected SearchBooleanField isShowStopper;
-    protected SearchStringField issueAbstract;
-    protected SearchStringField issueNumber;
-    protected SearchMultiSelectField item;
-    protected SearchDateField lastModifiedDate;
-    protected SearchMultiSelectField module;
-    protected SearchLongField number;
-    protected SearchStringField originalFixedIn;
-    protected SearchMultiSelectField priority;
-    protected SearchMultiSelectField product;
-    protected SearchMultiSelectField productTeam;
-    protected SearchMultiSelectField relatedIssue;
-    protected SearchEnumMultiSelectField relationship;
-    protected SearchStringField relationshipComment;
-    protected SearchMultiSelectField reportedBy;
-    protected SearchMultiSelectField reproduce;
-    protected SearchDateField resolved;
-    protected SearchMultiSelectField resolvedBy;
-    protected SearchMultiSelectField reviewer;
-    protected SearchMultiSelectField severity;
-    protected SearchEnumMultiSelectField source;
-    protected SearchMultiSelectField status;
-    protected SearchMultiSelectField tags;
-    protected SearchBooleanField tracking;
-    protected SearchMultiSelectField type;
-    protected SearchMultiSelectField userType;
-    protected SearchMultiSelectField versionBroken;
-    protected SearchMultiSelectField versionFixed;
-    protected SearchMultiSelectField versionTarget;
-    protected SearchCustomFieldList customFieldList;
+    private com.netsuite.webservices.platform.core_2018_2.SearchStringField buildBrokenName;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef[] buildFixed;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchStringField buildFixedName;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef[] buildTarget;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchStringField buildTargetName;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchLongField caseCount;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchStringField caseNumber;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchDateField closedDate;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchDateField createdDate;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchDateField dateReleased;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchStringField details;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef[] duplicateOf;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchBooleanField eFix;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef[] employeeOrTeam;
+
+    private java.lang.String[] eventStatus;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchStringField externalAbstract;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchStringField externalDetails;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef[] externalFixedIn;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef[] externalId;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchStringField externalIdString;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef[] externalStatus;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchDateField fixed;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef[] fixedBy;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef[] internalId;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchLongField internalIdNumber;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchBooleanField isOwner;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchBooleanField isReviewed;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchBooleanField isShowStopper;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchStringField issueAbstract;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchStringField issueNumber;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef[] item;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchDateField lastModifiedDate;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef[] module;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchLongField number;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchStringField originalFixedIn;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef[] priority;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef[] product;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef[] productTeam;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef[] relatedIssue;
+
+    private java.lang.String[] relationship;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchStringField relationshipComment;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef[] reportedBy;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef[] reproduce;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchDateField resolved;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef[] resolvedBy;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef[] reviewer;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef[] severity;
+
+    private java.lang.String[] source;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef[] status;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef[] tags;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchBooleanField tracking;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef[] type;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef[] userType;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef[] versionBroken;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef[] versionFixed;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef[] versionTarget;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchCustomField[] customFieldList;
+
+    public IssueSearchBasic() {
+    }
+
+    public IssueSearchBasic(
+           com.netsuite.webservices.platform.core_2018_2.SearchLongField ageInMonths,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef[] assigned,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef[] buildBroken,
+           com.netsuite.webservices.platform.core_2018_2.SearchStringField buildBrokenName,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef[] buildFixed,
+           com.netsuite.webservices.platform.core_2018_2.SearchStringField buildFixedName,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef[] buildTarget,
+           com.netsuite.webservices.platform.core_2018_2.SearchStringField buildTargetName,
+           com.netsuite.webservices.platform.core_2018_2.SearchLongField caseCount,
+           com.netsuite.webservices.platform.core_2018_2.SearchStringField caseNumber,
+           com.netsuite.webservices.platform.core_2018_2.SearchDateField closedDate,
+           com.netsuite.webservices.platform.core_2018_2.SearchDateField createdDate,
+           com.netsuite.webservices.platform.core_2018_2.SearchDateField dateReleased,
+           com.netsuite.webservices.platform.core_2018_2.SearchStringField details,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef[] duplicateOf,
+           com.netsuite.webservices.platform.core_2018_2.SearchBooleanField eFix,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef[] employeeOrTeam,
+           java.lang.String[] eventStatus,
+           com.netsuite.webservices.platform.core_2018_2.SearchStringField externalAbstract,
+           com.netsuite.webservices.platform.core_2018_2.SearchStringField externalDetails,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef[] externalFixedIn,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef[] externalId,
+           com.netsuite.webservices.platform.core_2018_2.SearchStringField externalIdString,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef[] externalStatus,
+           com.netsuite.webservices.platform.core_2018_2.SearchDateField fixed,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef[] fixedBy,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef[] internalId,
+           com.netsuite.webservices.platform.core_2018_2.SearchLongField internalIdNumber,
+           com.netsuite.webservices.platform.core_2018_2.SearchBooleanField isOwner,
+           com.netsuite.webservices.platform.core_2018_2.SearchBooleanField isReviewed,
+           com.netsuite.webservices.platform.core_2018_2.SearchBooleanField isShowStopper,
+           com.netsuite.webservices.platform.core_2018_2.SearchStringField issueAbstract,
+           com.netsuite.webservices.platform.core_2018_2.SearchStringField issueNumber,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef[] item,
+           com.netsuite.webservices.platform.core_2018_2.SearchDateField lastModifiedDate,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef[] module,
+           com.netsuite.webservices.platform.core_2018_2.SearchLongField number,
+           com.netsuite.webservices.platform.core_2018_2.SearchStringField originalFixedIn,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef[] priority,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef[] product,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef[] productTeam,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef[] relatedIssue,
+           java.lang.String[] relationship,
+           com.netsuite.webservices.platform.core_2018_2.SearchStringField relationshipComment,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef[] reportedBy,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef[] reproduce,
+           com.netsuite.webservices.platform.core_2018_2.SearchDateField resolved,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef[] resolvedBy,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef[] reviewer,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef[] severity,
+           java.lang.String[] source,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef[] status,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef[] tags,
+           com.netsuite.webservices.platform.core_2018_2.SearchBooleanField tracking,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef[] type,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef[] userType,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef[] versionBroken,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef[] versionFixed,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef[] versionTarget,
+           com.netsuite.webservices.platform.core_2018_2.SearchCustomField[] customFieldList) {
+        this.ageInMonths = ageInMonths;
+        this.assigned = assigned;
+        this.buildBroken = buildBroken;
+        this.buildBrokenName = buildBrokenName;
+        this.buildFixed = buildFixed;
+        this.buildFixedName = buildFixedName;
+        this.buildTarget = buildTarget;
+        this.buildTargetName = buildTargetName;
+        this.caseCount = caseCount;
+        this.caseNumber = caseNumber;
+        this.closedDate = closedDate;
+        this.createdDate = createdDate;
+        this.dateReleased = dateReleased;
+        this.details = details;
+        this.duplicateOf = duplicateOf;
+        this.eFix = eFix;
+        this.employeeOrTeam = employeeOrTeam;
+        this.eventStatus = eventStatus;
+        this.externalAbstract = externalAbstract;
+        this.externalDetails = externalDetails;
+        this.externalFixedIn = externalFixedIn;
+        this.externalId = externalId;
+        this.externalIdString = externalIdString;
+        this.externalStatus = externalStatus;
+        this.fixed = fixed;
+        this.fixedBy = fixedBy;
+        this.internalId = internalId;
+        this.internalIdNumber = internalIdNumber;
+        this.isOwner = isOwner;
+        this.isReviewed = isReviewed;
+        this.isShowStopper = isShowStopper;
+        this.issueAbstract = issueAbstract;
+        this.issueNumber = issueNumber;
+        this.item = item;
+        this.lastModifiedDate = lastModifiedDate;
+        this.module = module;
+        this.number = number;
+        this.originalFixedIn = originalFixedIn;
+        this.priority = priority;
+        this.product = product;
+        this.productTeam = productTeam;
+        this.relatedIssue = relatedIssue;
+        this.relationship = relationship;
+        this.relationshipComment = relationshipComment;
+        this.reportedBy = reportedBy;
+        this.reproduce = reproduce;
+        this.resolved = resolved;
+        this.resolvedBy = resolvedBy;
+        this.reviewer = reviewer;
+        this.severity = severity;
+        this.source = source;
+        this.status = status;
+        this.tags = tags;
+        this.tracking = tracking;
+        this.type = type;
+        this.userType = userType;
+        this.versionBroken = versionBroken;
+        this.versionFixed = versionFixed;
+        this.versionTarget = versionTarget;
+        this.customFieldList = customFieldList;
+    }
+
 
     /**
-     * 获取ageInMonths属性的值。
+     * Gets the ageInMonths value for this IssueSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchLongField }
-     *     
+     * @return ageInMonths
      */
-    public SearchLongField getAgeInMonths() {
+    public com.netsuite.webservices.platform.core_2018_2.SearchLongField getAgeInMonths() {
         return ageInMonths;
     }
 
-    /**
-     * 设置ageInMonths属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchLongField }
-     *     
-     */
-    public void setAgeInMonths(SearchLongField value) {
-        this.ageInMonths = value;
-    }
 
     /**
-     * 获取assigned属性的值。
+     * Sets the ageInMonths value for this IssueSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchMultiSelectField }
-     *     
+     * @param ageInMonths
      */
-    public SearchMultiSelectField getAssigned() {
+    public void setAgeInMonths(com.netsuite.webservices.platform.core_2018_2.SearchLongField ageInMonths) {
+        this.ageInMonths = ageInMonths;
+    }
+
+
+    /**
+     * Gets the assigned value for this IssueSearchBasic.
+     * 
+     * @return assigned
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef[] getAssigned() {
         return assigned;
     }
 
-    /**
-     * 设置assigned属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchMultiSelectField }
-     *     
-     */
-    public void setAssigned(SearchMultiSelectField value) {
-        this.assigned = value;
-    }
 
     /**
-     * 获取buildBroken属性的值。
+     * Sets the assigned value for this IssueSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchMultiSelectField }
-     *     
+     * @param assigned
      */
-    public SearchMultiSelectField getBuildBroken() {
+    public void setAssigned(com.netsuite.webservices.platform.core_2018_2.RecordRef[] assigned) {
+        this.assigned = assigned;
+    }
+
+
+    /**
+     * Gets the buildBroken value for this IssueSearchBasic.
+     * 
+     * @return buildBroken
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef[] getBuildBroken() {
         return buildBroken;
     }
 
-    /**
-     * 设置buildBroken属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchMultiSelectField }
-     *     
-     */
-    public void setBuildBroken(SearchMultiSelectField value) {
-        this.buildBroken = value;
-    }
 
     /**
-     * 获取buildBrokenName属性的值。
+     * Sets the buildBroken value for this IssueSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchStringField }
-     *     
+     * @param buildBroken
      */
-    public SearchStringField getBuildBrokenName() {
+    public void setBuildBroken(com.netsuite.webservices.platform.core_2018_2.RecordRef[] buildBroken) {
+        this.buildBroken = buildBroken;
+    }
+
+
+    /**
+     * Gets the buildBrokenName value for this IssueSearchBasic.
+     * 
+     * @return buildBrokenName
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchStringField getBuildBrokenName() {
         return buildBrokenName;
     }
 
-    /**
-     * 设置buildBrokenName属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchStringField }
-     *     
-     */
-    public void setBuildBrokenName(SearchStringField value) {
-        this.buildBrokenName = value;
-    }
 
     /**
-     * 获取buildFixed属性的值。
+     * Sets the buildBrokenName value for this IssueSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchMultiSelectField }
-     *     
+     * @param buildBrokenName
      */
-    public SearchMultiSelectField getBuildFixed() {
+    public void setBuildBrokenName(com.netsuite.webservices.platform.core_2018_2.SearchStringField buildBrokenName) {
+        this.buildBrokenName = buildBrokenName;
+    }
+
+
+    /**
+     * Gets the buildFixed value for this IssueSearchBasic.
+     * 
+     * @return buildFixed
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef[] getBuildFixed() {
         return buildFixed;
     }
 
-    /**
-     * 设置buildFixed属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchMultiSelectField }
-     *     
-     */
-    public void setBuildFixed(SearchMultiSelectField value) {
-        this.buildFixed = value;
-    }
 
     /**
-     * 获取buildFixedName属性的值。
+     * Sets the buildFixed value for this IssueSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchStringField }
-     *     
+     * @param buildFixed
      */
-    public SearchStringField getBuildFixedName() {
+    public void setBuildFixed(com.netsuite.webservices.platform.core_2018_2.RecordRef[] buildFixed) {
+        this.buildFixed = buildFixed;
+    }
+
+
+    /**
+     * Gets the buildFixedName value for this IssueSearchBasic.
+     * 
+     * @return buildFixedName
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchStringField getBuildFixedName() {
         return buildFixedName;
     }
 
-    /**
-     * 设置buildFixedName属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchStringField }
-     *     
-     */
-    public void setBuildFixedName(SearchStringField value) {
-        this.buildFixedName = value;
-    }
 
     /**
-     * 获取buildTarget属性的值。
+     * Sets the buildFixedName value for this IssueSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchMultiSelectField }
-     *     
+     * @param buildFixedName
      */
-    public SearchMultiSelectField getBuildTarget() {
+    public void setBuildFixedName(com.netsuite.webservices.platform.core_2018_2.SearchStringField buildFixedName) {
+        this.buildFixedName = buildFixedName;
+    }
+
+
+    /**
+     * Gets the buildTarget value for this IssueSearchBasic.
+     * 
+     * @return buildTarget
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef[] getBuildTarget() {
         return buildTarget;
     }
 
-    /**
-     * 设置buildTarget属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchMultiSelectField }
-     *     
-     */
-    public void setBuildTarget(SearchMultiSelectField value) {
-        this.buildTarget = value;
-    }
 
     /**
-     * 获取buildTargetName属性的值。
+     * Sets the buildTarget value for this IssueSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchStringField }
-     *     
+     * @param buildTarget
      */
-    public SearchStringField getBuildTargetName() {
+    public void setBuildTarget(com.netsuite.webservices.platform.core_2018_2.RecordRef[] buildTarget) {
+        this.buildTarget = buildTarget;
+    }
+
+
+    /**
+     * Gets the buildTargetName value for this IssueSearchBasic.
+     * 
+     * @return buildTargetName
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchStringField getBuildTargetName() {
         return buildTargetName;
     }
 
-    /**
-     * 设置buildTargetName属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchStringField }
-     *     
-     */
-    public void setBuildTargetName(SearchStringField value) {
-        this.buildTargetName = value;
-    }
 
     /**
-     * 获取caseCount属性的值。
+     * Sets the buildTargetName value for this IssueSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchLongField }
-     *     
+     * @param buildTargetName
      */
-    public SearchLongField getCaseCount() {
+    public void setBuildTargetName(com.netsuite.webservices.platform.core_2018_2.SearchStringField buildTargetName) {
+        this.buildTargetName = buildTargetName;
+    }
+
+
+    /**
+     * Gets the caseCount value for this IssueSearchBasic.
+     * 
+     * @return caseCount
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchLongField getCaseCount() {
         return caseCount;
     }
 
-    /**
-     * 设置caseCount属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchLongField }
-     *     
-     */
-    public void setCaseCount(SearchLongField value) {
-        this.caseCount = value;
-    }
 
     /**
-     * 获取caseNumber属性的值。
+     * Sets the caseCount value for this IssueSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchStringField }
-     *     
+     * @param caseCount
      */
-    public SearchStringField getCaseNumber() {
+    public void setCaseCount(com.netsuite.webservices.platform.core_2018_2.SearchLongField caseCount) {
+        this.caseCount = caseCount;
+    }
+
+
+    /**
+     * Gets the caseNumber value for this IssueSearchBasic.
+     * 
+     * @return caseNumber
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchStringField getCaseNumber() {
         return caseNumber;
     }
 
-    /**
-     * 设置caseNumber属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchStringField }
-     *     
-     */
-    public void setCaseNumber(SearchStringField value) {
-        this.caseNumber = value;
-    }
 
     /**
-     * 获取closedDate属性的值。
+     * Sets the caseNumber value for this IssueSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchDateField }
-     *     
+     * @param caseNumber
      */
-    public SearchDateField getClosedDate() {
+    public void setCaseNumber(com.netsuite.webservices.platform.core_2018_2.SearchStringField caseNumber) {
+        this.caseNumber = caseNumber;
+    }
+
+
+    /**
+     * Gets the closedDate value for this IssueSearchBasic.
+     * 
+     * @return closedDate
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchDateField getClosedDate() {
         return closedDate;
     }
 
-    /**
-     * 设置closedDate属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchDateField }
-     *     
-     */
-    public void setClosedDate(SearchDateField value) {
-        this.closedDate = value;
-    }
 
     /**
-     * 获取createdDate属性的值。
+     * Sets the closedDate value for this IssueSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchDateField }
-     *     
+     * @param closedDate
      */
-    public SearchDateField getCreatedDate() {
+    public void setClosedDate(com.netsuite.webservices.platform.core_2018_2.SearchDateField closedDate) {
+        this.closedDate = closedDate;
+    }
+
+
+    /**
+     * Gets the createdDate value for this IssueSearchBasic.
+     * 
+     * @return createdDate
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchDateField getCreatedDate() {
         return createdDate;
     }
 
-    /**
-     * 设置createdDate属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchDateField }
-     *     
-     */
-    public void setCreatedDate(SearchDateField value) {
-        this.createdDate = value;
-    }
 
     /**
-     * 获取dateReleased属性的值。
+     * Sets the createdDate value for this IssueSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchDateField }
-     *     
+     * @param createdDate
      */
-    public SearchDateField getDateReleased() {
+    public void setCreatedDate(com.netsuite.webservices.platform.core_2018_2.SearchDateField createdDate) {
+        this.createdDate = createdDate;
+    }
+
+
+    /**
+     * Gets the dateReleased value for this IssueSearchBasic.
+     * 
+     * @return dateReleased
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchDateField getDateReleased() {
         return dateReleased;
     }
 
-    /**
-     * 设置dateReleased属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchDateField }
-     *     
-     */
-    public void setDateReleased(SearchDateField value) {
-        this.dateReleased = value;
-    }
 
     /**
-     * 获取details属性的值。
+     * Sets the dateReleased value for this IssueSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchStringField }
-     *     
+     * @param dateReleased
      */
-    public SearchStringField getDetails() {
+    public void setDateReleased(com.netsuite.webservices.platform.core_2018_2.SearchDateField dateReleased) {
+        this.dateReleased = dateReleased;
+    }
+
+
+    /**
+     * Gets the details value for this IssueSearchBasic.
+     * 
+     * @return details
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchStringField getDetails() {
         return details;
     }
 
-    /**
-     * 设置details属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchStringField }
-     *     
-     */
-    public void setDetails(SearchStringField value) {
-        this.details = value;
-    }
 
     /**
-     * 获取duplicateOf属性的值。
+     * Sets the details value for this IssueSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchMultiSelectField }
-     *     
+     * @param details
      */
-    public SearchMultiSelectField getDuplicateOf() {
+    public void setDetails(com.netsuite.webservices.platform.core_2018_2.SearchStringField details) {
+        this.details = details;
+    }
+
+
+    /**
+     * Gets the duplicateOf value for this IssueSearchBasic.
+     * 
+     * @return duplicateOf
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef[] getDuplicateOf() {
         return duplicateOf;
     }
 
-    /**
-     * 设置duplicateOf属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchMultiSelectField }
-     *     
-     */
-    public void setDuplicateOf(SearchMultiSelectField value) {
-        this.duplicateOf = value;
-    }
 
     /**
-     * 获取eFix属性的值。
+     * Sets the duplicateOf value for this IssueSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchBooleanField }
-     *     
+     * @param duplicateOf
      */
-    public SearchBooleanField getEFix() {
+    public void setDuplicateOf(com.netsuite.webservices.platform.core_2018_2.RecordRef[] duplicateOf) {
+        this.duplicateOf = duplicateOf;
+    }
+
+
+    /**
+     * Gets the eFix value for this IssueSearchBasic.
+     * 
+     * @return eFix
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchBooleanField getEFix() {
         return eFix;
     }
 
-    /**
-     * 设置eFix属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchBooleanField }
-     *     
-     */
-    public void setEFix(SearchBooleanField value) {
-        this.eFix = value;
-    }
 
     /**
-     * 获取employeeOrTeam属性的值。
+     * Sets the eFix value for this IssueSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchMultiSelectField }
-     *     
+     * @param eFix
      */
-    public SearchMultiSelectField getEmployeeOrTeam() {
+    public void setEFix(com.netsuite.webservices.platform.core_2018_2.SearchBooleanField eFix) {
+        this.eFix = eFix;
+    }
+
+
+    /**
+     * Gets the employeeOrTeam value for this IssueSearchBasic.
+     * 
+     * @return employeeOrTeam
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef[] getEmployeeOrTeam() {
         return employeeOrTeam;
     }
 
-    /**
-     * 设置employeeOrTeam属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchMultiSelectField }
-     *     
-     */
-    public void setEmployeeOrTeam(SearchMultiSelectField value) {
-        this.employeeOrTeam = value;
-    }
 
     /**
-     * 获取eventStatus属性的值。
+     * Sets the employeeOrTeam value for this IssueSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchEnumMultiSelectField }
-     *     
+     * @param employeeOrTeam
      */
-    public SearchEnumMultiSelectField getEventStatus() {
+    public void setEmployeeOrTeam(com.netsuite.webservices.platform.core_2018_2.RecordRef[] employeeOrTeam) {
+        this.employeeOrTeam = employeeOrTeam;
+    }
+
+
+    /**
+     * Gets the eventStatus value for this IssueSearchBasic.
+     * 
+     * @return eventStatus
+     */
+    public java.lang.String[] getEventStatus() {
         return eventStatus;
     }
 
-    /**
-     * 设置eventStatus属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchEnumMultiSelectField }
-     *     
-     */
-    public void setEventStatus(SearchEnumMultiSelectField value) {
-        this.eventStatus = value;
-    }
 
     /**
-     * 获取externalAbstract属性的值。
+     * Sets the eventStatus value for this IssueSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchStringField }
-     *     
+     * @param eventStatus
      */
-    public SearchStringField getExternalAbstract() {
+    public void setEventStatus(java.lang.String[] eventStatus) {
+        this.eventStatus = eventStatus;
+    }
+
+
+    /**
+     * Gets the externalAbstract value for this IssueSearchBasic.
+     * 
+     * @return externalAbstract
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchStringField getExternalAbstract() {
         return externalAbstract;
     }
 
-    /**
-     * 设置externalAbstract属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchStringField }
-     *     
-     */
-    public void setExternalAbstract(SearchStringField value) {
-        this.externalAbstract = value;
-    }
 
     /**
-     * 获取externalDetails属性的值。
+     * Sets the externalAbstract value for this IssueSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchStringField }
-     *     
+     * @param externalAbstract
      */
-    public SearchStringField getExternalDetails() {
+    public void setExternalAbstract(com.netsuite.webservices.platform.core_2018_2.SearchStringField externalAbstract) {
+        this.externalAbstract = externalAbstract;
+    }
+
+
+    /**
+     * Gets the externalDetails value for this IssueSearchBasic.
+     * 
+     * @return externalDetails
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchStringField getExternalDetails() {
         return externalDetails;
     }
 
-    /**
-     * 设置externalDetails属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchStringField }
-     *     
-     */
-    public void setExternalDetails(SearchStringField value) {
-        this.externalDetails = value;
-    }
 
     /**
-     * 获取externalFixedIn属性的值。
+     * Sets the externalDetails value for this IssueSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchMultiSelectField }
-     *     
+     * @param externalDetails
      */
-    public SearchMultiSelectField getExternalFixedIn() {
+    public void setExternalDetails(com.netsuite.webservices.platform.core_2018_2.SearchStringField externalDetails) {
+        this.externalDetails = externalDetails;
+    }
+
+
+    /**
+     * Gets the externalFixedIn value for this IssueSearchBasic.
+     * 
+     * @return externalFixedIn
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef[] getExternalFixedIn() {
         return externalFixedIn;
     }
 
-    /**
-     * 设置externalFixedIn属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchMultiSelectField }
-     *     
-     */
-    public void setExternalFixedIn(SearchMultiSelectField value) {
-        this.externalFixedIn = value;
-    }
 
     /**
-     * 获取externalId属性的值。
+     * Sets the externalFixedIn value for this IssueSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchMultiSelectField }
-     *     
+     * @param externalFixedIn
      */
-    public SearchMultiSelectField getExternalId() {
+    public void setExternalFixedIn(com.netsuite.webservices.platform.core_2018_2.RecordRef[] externalFixedIn) {
+        this.externalFixedIn = externalFixedIn;
+    }
+
+
+    /**
+     * Gets the externalId value for this IssueSearchBasic.
+     * 
+     * @return externalId
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef[] getExternalId() {
         return externalId;
     }
 
-    /**
-     * 设置externalId属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchMultiSelectField }
-     *     
-     */
-    public void setExternalId(SearchMultiSelectField value) {
-        this.externalId = value;
-    }
 
     /**
-     * 获取externalIdString属性的值。
+     * Sets the externalId value for this IssueSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchStringField }
-     *     
+     * @param externalId
      */
-    public SearchStringField getExternalIdString() {
+    public void setExternalId(com.netsuite.webservices.platform.core_2018_2.RecordRef[] externalId) {
+        this.externalId = externalId;
+    }
+
+
+    /**
+     * Gets the externalIdString value for this IssueSearchBasic.
+     * 
+     * @return externalIdString
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchStringField getExternalIdString() {
         return externalIdString;
     }
 
-    /**
-     * 设置externalIdString属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchStringField }
-     *     
-     */
-    public void setExternalIdString(SearchStringField value) {
-        this.externalIdString = value;
-    }
 
     /**
-     * 获取externalStatus属性的值。
+     * Sets the externalIdString value for this IssueSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchMultiSelectField }
-     *     
+     * @param externalIdString
      */
-    public SearchMultiSelectField getExternalStatus() {
+    public void setExternalIdString(com.netsuite.webservices.platform.core_2018_2.SearchStringField externalIdString) {
+        this.externalIdString = externalIdString;
+    }
+
+
+    /**
+     * Gets the externalStatus value for this IssueSearchBasic.
+     * 
+     * @return externalStatus
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef[] getExternalStatus() {
         return externalStatus;
     }
 
-    /**
-     * 设置externalStatus属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchMultiSelectField }
-     *     
-     */
-    public void setExternalStatus(SearchMultiSelectField value) {
-        this.externalStatus = value;
-    }
 
     /**
-     * 获取fixed属性的值。
+     * Sets the externalStatus value for this IssueSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchDateField }
-     *     
+     * @param externalStatus
      */
-    public SearchDateField getFixed() {
+    public void setExternalStatus(com.netsuite.webservices.platform.core_2018_2.RecordRef[] externalStatus) {
+        this.externalStatus = externalStatus;
+    }
+
+
+    /**
+     * Gets the fixed value for this IssueSearchBasic.
+     * 
+     * @return fixed
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchDateField getFixed() {
         return fixed;
     }
 
-    /**
-     * 设置fixed属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchDateField }
-     *     
-     */
-    public void setFixed(SearchDateField value) {
-        this.fixed = value;
-    }
 
     /**
-     * 获取fixedBy属性的值。
+     * Sets the fixed value for this IssueSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchMultiSelectField }
-     *     
+     * @param fixed
      */
-    public SearchMultiSelectField getFixedBy() {
+    public void setFixed(com.netsuite.webservices.platform.core_2018_2.SearchDateField fixed) {
+        this.fixed = fixed;
+    }
+
+
+    /**
+     * Gets the fixedBy value for this IssueSearchBasic.
+     * 
+     * @return fixedBy
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef[] getFixedBy() {
         return fixedBy;
     }
 
-    /**
-     * 设置fixedBy属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchMultiSelectField }
-     *     
-     */
-    public void setFixedBy(SearchMultiSelectField value) {
-        this.fixedBy = value;
-    }
 
     /**
-     * 获取internalId属性的值。
+     * Sets the fixedBy value for this IssueSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchMultiSelectField }
-     *     
+     * @param fixedBy
      */
-    public SearchMultiSelectField getInternalId() {
+    public void setFixedBy(com.netsuite.webservices.platform.core_2018_2.RecordRef[] fixedBy) {
+        this.fixedBy = fixedBy;
+    }
+
+
+    /**
+     * Gets the internalId value for this IssueSearchBasic.
+     * 
+     * @return internalId
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef[] getInternalId() {
         return internalId;
     }
 
-    /**
-     * 设置internalId属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchMultiSelectField }
-     *     
-     */
-    public void setInternalId(SearchMultiSelectField value) {
-        this.internalId = value;
-    }
 
     /**
-     * 获取internalIdNumber属性的值。
+     * Sets the internalId value for this IssueSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchLongField }
-     *     
+     * @param internalId
      */
-    public SearchLongField getInternalIdNumber() {
+    public void setInternalId(com.netsuite.webservices.platform.core_2018_2.RecordRef[] internalId) {
+        this.internalId = internalId;
+    }
+
+
+    /**
+     * Gets the internalIdNumber value for this IssueSearchBasic.
+     * 
+     * @return internalIdNumber
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchLongField getInternalIdNumber() {
         return internalIdNumber;
     }
 
-    /**
-     * 设置internalIdNumber属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchLongField }
-     *     
-     */
-    public void setInternalIdNumber(SearchLongField value) {
-        this.internalIdNumber = value;
-    }
 
     /**
-     * 获取isOwner属性的值。
+     * Sets the internalIdNumber value for this IssueSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchBooleanField }
-     *     
+     * @param internalIdNumber
      */
-    public SearchBooleanField getIsOwner() {
+    public void setInternalIdNumber(com.netsuite.webservices.platform.core_2018_2.SearchLongField internalIdNumber) {
+        this.internalIdNumber = internalIdNumber;
+    }
+
+
+    /**
+     * Gets the isOwner value for this IssueSearchBasic.
+     * 
+     * @return isOwner
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchBooleanField getIsOwner() {
         return isOwner;
     }
 
-    /**
-     * 设置isOwner属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchBooleanField }
-     *     
-     */
-    public void setIsOwner(SearchBooleanField value) {
-        this.isOwner = value;
-    }
 
     /**
-     * 获取isReviewed属性的值。
+     * Sets the isOwner value for this IssueSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchBooleanField }
-     *     
+     * @param isOwner
      */
-    public SearchBooleanField getIsReviewed() {
+    public void setIsOwner(com.netsuite.webservices.platform.core_2018_2.SearchBooleanField isOwner) {
+        this.isOwner = isOwner;
+    }
+
+
+    /**
+     * Gets the isReviewed value for this IssueSearchBasic.
+     * 
+     * @return isReviewed
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchBooleanField getIsReviewed() {
         return isReviewed;
     }
 
-    /**
-     * 设置isReviewed属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchBooleanField }
-     *     
-     */
-    public void setIsReviewed(SearchBooleanField value) {
-        this.isReviewed = value;
-    }
 
     /**
-     * 获取isShowStopper属性的值。
+     * Sets the isReviewed value for this IssueSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchBooleanField }
-     *     
+     * @param isReviewed
      */
-    public SearchBooleanField getIsShowStopper() {
+    public void setIsReviewed(com.netsuite.webservices.platform.core_2018_2.SearchBooleanField isReviewed) {
+        this.isReviewed = isReviewed;
+    }
+
+
+    /**
+     * Gets the isShowStopper value for this IssueSearchBasic.
+     * 
+     * @return isShowStopper
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchBooleanField getIsShowStopper() {
         return isShowStopper;
     }
 
-    /**
-     * 设置isShowStopper属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchBooleanField }
-     *     
-     */
-    public void setIsShowStopper(SearchBooleanField value) {
-        this.isShowStopper = value;
-    }
 
     /**
-     * 获取issueAbstract属性的值。
+     * Sets the isShowStopper value for this IssueSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchStringField }
-     *     
+     * @param isShowStopper
      */
-    public SearchStringField getIssueAbstract() {
+    public void setIsShowStopper(com.netsuite.webservices.platform.core_2018_2.SearchBooleanField isShowStopper) {
+        this.isShowStopper = isShowStopper;
+    }
+
+
+    /**
+     * Gets the issueAbstract value for this IssueSearchBasic.
+     * 
+     * @return issueAbstract
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchStringField getIssueAbstract() {
         return issueAbstract;
     }
 
-    /**
-     * 设置issueAbstract属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchStringField }
-     *     
-     */
-    public void setIssueAbstract(SearchStringField value) {
-        this.issueAbstract = value;
-    }
 
     /**
-     * 获取issueNumber属性的值。
+     * Sets the issueAbstract value for this IssueSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchStringField }
-     *     
+     * @param issueAbstract
      */
-    public SearchStringField getIssueNumber() {
+    public void setIssueAbstract(com.netsuite.webservices.platform.core_2018_2.SearchStringField issueAbstract) {
+        this.issueAbstract = issueAbstract;
+    }
+
+
+    /**
+     * Gets the issueNumber value for this IssueSearchBasic.
+     * 
+     * @return issueNumber
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchStringField getIssueNumber() {
         return issueNumber;
     }
 
-    /**
-     * 设置issueNumber属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchStringField }
-     *     
-     */
-    public void setIssueNumber(SearchStringField value) {
-        this.issueNumber = value;
-    }
 
     /**
-     * 获取item属性的值。
+     * Sets the issueNumber value for this IssueSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchMultiSelectField }
-     *     
+     * @param issueNumber
      */
-    public SearchMultiSelectField getItem() {
+    public void setIssueNumber(com.netsuite.webservices.platform.core_2018_2.SearchStringField issueNumber) {
+        this.issueNumber = issueNumber;
+    }
+
+
+    /**
+     * Gets the item value for this IssueSearchBasic.
+     * 
+     * @return item
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef[] getItem() {
         return item;
     }
 
-    /**
-     * 设置item属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchMultiSelectField }
-     *     
-     */
-    public void setItem(SearchMultiSelectField value) {
-        this.item = value;
-    }
 
     /**
-     * 获取lastModifiedDate属性的值。
+     * Sets the item value for this IssueSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchDateField }
-     *     
+     * @param item
      */
-    public SearchDateField getLastModifiedDate() {
+    public void setItem(com.netsuite.webservices.platform.core_2018_2.RecordRef[] item) {
+        this.item = item;
+    }
+
+
+    /**
+     * Gets the lastModifiedDate value for this IssueSearchBasic.
+     * 
+     * @return lastModifiedDate
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchDateField getLastModifiedDate() {
         return lastModifiedDate;
     }
 
-    /**
-     * 设置lastModifiedDate属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchDateField }
-     *     
-     */
-    public void setLastModifiedDate(SearchDateField value) {
-        this.lastModifiedDate = value;
-    }
 
     /**
-     * 获取module属性的值。
+     * Sets the lastModifiedDate value for this IssueSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchMultiSelectField }
-     *     
+     * @param lastModifiedDate
      */
-    public SearchMultiSelectField getModule() {
+    public void setLastModifiedDate(com.netsuite.webservices.platform.core_2018_2.SearchDateField lastModifiedDate) {
+        this.lastModifiedDate = lastModifiedDate;
+    }
+
+
+    /**
+     * Gets the module value for this IssueSearchBasic.
+     * 
+     * @return module
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef[] getModule() {
         return module;
     }
 
-    /**
-     * 设置module属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchMultiSelectField }
-     *     
-     */
-    public void setModule(SearchMultiSelectField value) {
-        this.module = value;
-    }
 
     /**
-     * 获取number属性的值。
+     * Sets the module value for this IssueSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchLongField }
-     *     
+     * @param module
      */
-    public SearchLongField getNumber() {
+    public void setModule(com.netsuite.webservices.platform.core_2018_2.RecordRef[] module) {
+        this.module = module;
+    }
+
+
+    /**
+     * Gets the number value for this IssueSearchBasic.
+     * 
+     * @return number
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchLongField getNumber() {
         return number;
     }
 
-    /**
-     * 设置number属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchLongField }
-     *     
-     */
-    public void setNumber(SearchLongField value) {
-        this.number = value;
-    }
 
     /**
-     * 获取originalFixedIn属性的值。
+     * Sets the number value for this IssueSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchStringField }
-     *     
+     * @param number
      */
-    public SearchStringField getOriginalFixedIn() {
+    public void setNumber(com.netsuite.webservices.platform.core_2018_2.SearchLongField number) {
+        this.number = number;
+    }
+
+
+    /**
+     * Gets the originalFixedIn value for this IssueSearchBasic.
+     * 
+     * @return originalFixedIn
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchStringField getOriginalFixedIn() {
         return originalFixedIn;
     }
 
-    /**
-     * 设置originalFixedIn属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchStringField }
-     *     
-     */
-    public void setOriginalFixedIn(SearchStringField value) {
-        this.originalFixedIn = value;
-    }
 
     /**
-     * 获取priority属性的值。
+     * Sets the originalFixedIn value for this IssueSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchMultiSelectField }
-     *     
+     * @param originalFixedIn
      */
-    public SearchMultiSelectField getPriority() {
+    public void setOriginalFixedIn(com.netsuite.webservices.platform.core_2018_2.SearchStringField originalFixedIn) {
+        this.originalFixedIn = originalFixedIn;
+    }
+
+
+    /**
+     * Gets the priority value for this IssueSearchBasic.
+     * 
+     * @return priority
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef[] getPriority() {
         return priority;
     }
 
-    /**
-     * 设置priority属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchMultiSelectField }
-     *     
-     */
-    public void setPriority(SearchMultiSelectField value) {
-        this.priority = value;
-    }
 
     /**
-     * 获取product属性的值。
+     * Sets the priority value for this IssueSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchMultiSelectField }
-     *     
+     * @param priority
      */
-    public SearchMultiSelectField getProduct() {
+    public void setPriority(com.netsuite.webservices.platform.core_2018_2.RecordRef[] priority) {
+        this.priority = priority;
+    }
+
+
+    /**
+     * Gets the product value for this IssueSearchBasic.
+     * 
+     * @return product
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef[] getProduct() {
         return product;
     }
 
-    /**
-     * 设置product属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchMultiSelectField }
-     *     
-     */
-    public void setProduct(SearchMultiSelectField value) {
-        this.product = value;
-    }
 
     /**
-     * 获取productTeam属性的值。
+     * Sets the product value for this IssueSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchMultiSelectField }
-     *     
+     * @param product
      */
-    public SearchMultiSelectField getProductTeam() {
+    public void setProduct(com.netsuite.webservices.platform.core_2018_2.RecordRef[] product) {
+        this.product = product;
+    }
+
+
+    /**
+     * Gets the productTeam value for this IssueSearchBasic.
+     * 
+     * @return productTeam
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef[] getProductTeam() {
         return productTeam;
     }
 
-    /**
-     * 设置productTeam属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchMultiSelectField }
-     *     
-     */
-    public void setProductTeam(SearchMultiSelectField value) {
-        this.productTeam = value;
-    }
 
     /**
-     * 获取relatedIssue属性的值。
+     * Sets the productTeam value for this IssueSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchMultiSelectField }
-     *     
+     * @param productTeam
      */
-    public SearchMultiSelectField getRelatedIssue() {
+    public void setProductTeam(com.netsuite.webservices.platform.core_2018_2.RecordRef[] productTeam) {
+        this.productTeam = productTeam;
+    }
+
+
+    /**
+     * Gets the relatedIssue value for this IssueSearchBasic.
+     * 
+     * @return relatedIssue
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef[] getRelatedIssue() {
         return relatedIssue;
     }
 
-    /**
-     * 设置relatedIssue属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchMultiSelectField }
-     *     
-     */
-    public void setRelatedIssue(SearchMultiSelectField value) {
-        this.relatedIssue = value;
-    }
 
     /**
-     * 获取relationship属性的值。
+     * Sets the relatedIssue value for this IssueSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchEnumMultiSelectField }
-     *     
+     * @param relatedIssue
      */
-    public SearchEnumMultiSelectField getRelationship() {
+    public void setRelatedIssue(com.netsuite.webservices.platform.core_2018_2.RecordRef[] relatedIssue) {
+        this.relatedIssue = relatedIssue;
+    }
+
+
+    /**
+     * Gets the relationship value for this IssueSearchBasic.
+     * 
+     * @return relationship
+     */
+    public java.lang.String[] getRelationship() {
         return relationship;
     }
 
-    /**
-     * 设置relationship属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchEnumMultiSelectField }
-     *     
-     */
-    public void setRelationship(SearchEnumMultiSelectField value) {
-        this.relationship = value;
-    }
 
     /**
-     * 获取relationshipComment属性的值。
+     * Sets the relationship value for this IssueSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchStringField }
-     *     
+     * @param relationship
      */
-    public SearchStringField getRelationshipComment() {
+    public void setRelationship(java.lang.String[] relationship) {
+        this.relationship = relationship;
+    }
+
+
+    /**
+     * Gets the relationshipComment value for this IssueSearchBasic.
+     * 
+     * @return relationshipComment
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchStringField getRelationshipComment() {
         return relationshipComment;
     }
 
-    /**
-     * 设置relationshipComment属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchStringField }
-     *     
-     */
-    public void setRelationshipComment(SearchStringField value) {
-        this.relationshipComment = value;
-    }
 
     /**
-     * 获取reportedBy属性的值。
+     * Sets the relationshipComment value for this IssueSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchMultiSelectField }
-     *     
+     * @param relationshipComment
      */
-    public SearchMultiSelectField getReportedBy() {
+    public void setRelationshipComment(com.netsuite.webservices.platform.core_2018_2.SearchStringField relationshipComment) {
+        this.relationshipComment = relationshipComment;
+    }
+
+
+    /**
+     * Gets the reportedBy value for this IssueSearchBasic.
+     * 
+     * @return reportedBy
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef[] getReportedBy() {
         return reportedBy;
     }
 
-    /**
-     * 设置reportedBy属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchMultiSelectField }
-     *     
-     */
-    public void setReportedBy(SearchMultiSelectField value) {
-        this.reportedBy = value;
-    }
 
     /**
-     * 获取reproduce属性的值。
+     * Sets the reportedBy value for this IssueSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchMultiSelectField }
-     *     
+     * @param reportedBy
      */
-    public SearchMultiSelectField getReproduce() {
+    public void setReportedBy(com.netsuite.webservices.platform.core_2018_2.RecordRef[] reportedBy) {
+        this.reportedBy = reportedBy;
+    }
+
+
+    /**
+     * Gets the reproduce value for this IssueSearchBasic.
+     * 
+     * @return reproduce
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef[] getReproduce() {
         return reproduce;
     }
 
-    /**
-     * 设置reproduce属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchMultiSelectField }
-     *     
-     */
-    public void setReproduce(SearchMultiSelectField value) {
-        this.reproduce = value;
-    }
 
     /**
-     * 获取resolved属性的值。
+     * Sets the reproduce value for this IssueSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchDateField }
-     *     
+     * @param reproduce
      */
-    public SearchDateField getResolved() {
+    public void setReproduce(com.netsuite.webservices.platform.core_2018_2.RecordRef[] reproduce) {
+        this.reproduce = reproduce;
+    }
+
+
+    /**
+     * Gets the resolved value for this IssueSearchBasic.
+     * 
+     * @return resolved
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchDateField getResolved() {
         return resolved;
     }
 
-    /**
-     * 设置resolved属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchDateField }
-     *     
-     */
-    public void setResolved(SearchDateField value) {
-        this.resolved = value;
-    }
 
     /**
-     * 获取resolvedBy属性的值。
+     * Sets the resolved value for this IssueSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchMultiSelectField }
-     *     
+     * @param resolved
      */
-    public SearchMultiSelectField getResolvedBy() {
+    public void setResolved(com.netsuite.webservices.platform.core_2018_2.SearchDateField resolved) {
+        this.resolved = resolved;
+    }
+
+
+    /**
+     * Gets the resolvedBy value for this IssueSearchBasic.
+     * 
+     * @return resolvedBy
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef[] getResolvedBy() {
         return resolvedBy;
     }
 
-    /**
-     * 设置resolvedBy属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchMultiSelectField }
-     *     
-     */
-    public void setResolvedBy(SearchMultiSelectField value) {
-        this.resolvedBy = value;
-    }
 
     /**
-     * 获取reviewer属性的值。
+     * Sets the resolvedBy value for this IssueSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchMultiSelectField }
-     *     
+     * @param resolvedBy
      */
-    public SearchMultiSelectField getReviewer() {
+    public void setResolvedBy(com.netsuite.webservices.platform.core_2018_2.RecordRef[] resolvedBy) {
+        this.resolvedBy = resolvedBy;
+    }
+
+
+    /**
+     * Gets the reviewer value for this IssueSearchBasic.
+     * 
+     * @return reviewer
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef[] getReviewer() {
         return reviewer;
     }
 
-    /**
-     * 设置reviewer属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchMultiSelectField }
-     *     
-     */
-    public void setReviewer(SearchMultiSelectField value) {
-        this.reviewer = value;
-    }
 
     /**
-     * 获取severity属性的值。
+     * Sets the reviewer value for this IssueSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchMultiSelectField }
-     *     
+     * @param reviewer
      */
-    public SearchMultiSelectField getSeverity() {
+    public void setReviewer(com.netsuite.webservices.platform.core_2018_2.RecordRef[] reviewer) {
+        this.reviewer = reviewer;
+    }
+
+
+    /**
+     * Gets the severity value for this IssueSearchBasic.
+     * 
+     * @return severity
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef[] getSeverity() {
         return severity;
     }
 
-    /**
-     * 设置severity属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchMultiSelectField }
-     *     
-     */
-    public void setSeverity(SearchMultiSelectField value) {
-        this.severity = value;
-    }
 
     /**
-     * 获取source属性的值。
+     * Sets the severity value for this IssueSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchEnumMultiSelectField }
-     *     
+     * @param severity
      */
-    public SearchEnumMultiSelectField getSource() {
+    public void setSeverity(com.netsuite.webservices.platform.core_2018_2.RecordRef[] severity) {
+        this.severity = severity;
+    }
+
+
+    /**
+     * Gets the source value for this IssueSearchBasic.
+     * 
+     * @return source
+     */
+    public java.lang.String[] getSource() {
         return source;
     }
 
-    /**
-     * 设置source属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchEnumMultiSelectField }
-     *     
-     */
-    public void setSource(SearchEnumMultiSelectField value) {
-        this.source = value;
-    }
 
     /**
-     * 获取status属性的值。
+     * Sets the source value for this IssueSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchMultiSelectField }
-     *     
+     * @param source
      */
-    public SearchMultiSelectField getStatus() {
+    public void setSource(java.lang.String[] source) {
+        this.source = source;
+    }
+
+
+    /**
+     * Gets the status value for this IssueSearchBasic.
+     * 
+     * @return status
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef[] getStatus() {
         return status;
     }
 
-    /**
-     * 设置status属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchMultiSelectField }
-     *     
-     */
-    public void setStatus(SearchMultiSelectField value) {
-        this.status = value;
-    }
 
     /**
-     * 获取tags属性的值。
+     * Sets the status value for this IssueSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchMultiSelectField }
-     *     
+     * @param status
      */
-    public SearchMultiSelectField getTags() {
+    public void setStatus(com.netsuite.webservices.platform.core_2018_2.RecordRef[] status) {
+        this.status = status;
+    }
+
+
+    /**
+     * Gets the tags value for this IssueSearchBasic.
+     * 
+     * @return tags
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef[] getTags() {
         return tags;
     }
 
-    /**
-     * 设置tags属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchMultiSelectField }
-     *     
-     */
-    public void setTags(SearchMultiSelectField value) {
-        this.tags = value;
-    }
 
     /**
-     * 获取tracking属性的值。
+     * Sets the tags value for this IssueSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchBooleanField }
-     *     
+     * @param tags
      */
-    public SearchBooleanField getTracking() {
+    public void setTags(com.netsuite.webservices.platform.core_2018_2.RecordRef[] tags) {
+        this.tags = tags;
+    }
+
+
+    /**
+     * Gets the tracking value for this IssueSearchBasic.
+     * 
+     * @return tracking
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchBooleanField getTracking() {
         return tracking;
     }
 
-    /**
-     * 设置tracking属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchBooleanField }
-     *     
-     */
-    public void setTracking(SearchBooleanField value) {
-        this.tracking = value;
-    }
 
     /**
-     * 获取type属性的值。
+     * Sets the tracking value for this IssueSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchMultiSelectField }
-     *     
+     * @param tracking
      */
-    public SearchMultiSelectField getType() {
+    public void setTracking(com.netsuite.webservices.platform.core_2018_2.SearchBooleanField tracking) {
+        this.tracking = tracking;
+    }
+
+
+    /**
+     * Gets the type value for this IssueSearchBasic.
+     * 
+     * @return type
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef[] getType() {
         return type;
     }
 
-    /**
-     * 设置type属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchMultiSelectField }
-     *     
-     */
-    public void setType(SearchMultiSelectField value) {
-        this.type = value;
-    }
 
     /**
-     * 获取userType属性的值。
+     * Sets the type value for this IssueSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchMultiSelectField }
-     *     
+     * @param type
      */
-    public SearchMultiSelectField getUserType() {
+    public void setType(com.netsuite.webservices.platform.core_2018_2.RecordRef[] type) {
+        this.type = type;
+    }
+
+
+    /**
+     * Gets the userType value for this IssueSearchBasic.
+     * 
+     * @return userType
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef[] getUserType() {
         return userType;
     }
 
-    /**
-     * 设置userType属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchMultiSelectField }
-     *     
-     */
-    public void setUserType(SearchMultiSelectField value) {
-        this.userType = value;
-    }
 
     /**
-     * 获取versionBroken属性的值。
+     * Sets the userType value for this IssueSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchMultiSelectField }
-     *     
+     * @param userType
      */
-    public SearchMultiSelectField getVersionBroken() {
+    public void setUserType(com.netsuite.webservices.platform.core_2018_2.RecordRef[] userType) {
+        this.userType = userType;
+    }
+
+
+    /**
+     * Gets the versionBroken value for this IssueSearchBasic.
+     * 
+     * @return versionBroken
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef[] getVersionBroken() {
         return versionBroken;
     }
 
-    /**
-     * 设置versionBroken属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchMultiSelectField }
-     *     
-     */
-    public void setVersionBroken(SearchMultiSelectField value) {
-        this.versionBroken = value;
-    }
 
     /**
-     * 获取versionFixed属性的值。
+     * Sets the versionBroken value for this IssueSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchMultiSelectField }
-     *     
+     * @param versionBroken
      */
-    public SearchMultiSelectField getVersionFixed() {
+    public void setVersionBroken(com.netsuite.webservices.platform.core_2018_2.RecordRef[] versionBroken) {
+        this.versionBroken = versionBroken;
+    }
+
+
+    /**
+     * Gets the versionFixed value for this IssueSearchBasic.
+     * 
+     * @return versionFixed
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef[] getVersionFixed() {
         return versionFixed;
     }
 
-    /**
-     * 设置versionFixed属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchMultiSelectField }
-     *     
-     */
-    public void setVersionFixed(SearchMultiSelectField value) {
-        this.versionFixed = value;
-    }
 
     /**
-     * 获取versionTarget属性的值。
+     * Sets the versionFixed value for this IssueSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchMultiSelectField }
-     *     
+     * @param versionFixed
      */
-    public SearchMultiSelectField getVersionTarget() {
+    public void setVersionFixed(com.netsuite.webservices.platform.core_2018_2.RecordRef[] versionFixed) {
+        this.versionFixed = versionFixed;
+    }
+
+
+    /**
+     * Gets the versionTarget value for this IssueSearchBasic.
+     * 
+     * @return versionTarget
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef[] getVersionTarget() {
         return versionTarget;
     }
 
-    /**
-     * 设置versionTarget属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchMultiSelectField }
-     *     
-     */
-    public void setVersionTarget(SearchMultiSelectField value) {
-        this.versionTarget = value;
-    }
 
     /**
-     * 获取customFieldList属性的值。
+     * Sets the versionTarget value for this IssueSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchCustomFieldList }
-     *     
+     * @param versionTarget
      */
-    public SearchCustomFieldList getCustomFieldList() {
+    public void setVersionTarget(com.netsuite.webservices.platform.core_2018_2.RecordRef[] versionTarget) {
+        this.versionTarget = versionTarget;
+    }
+
+
+    /**
+     * Gets the customFieldList value for this IssueSearchBasic.
+     * 
+     * @return customFieldList
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchCustomField[] getCustomFieldList() {
         return customFieldList;
     }
 
+
     /**
-     * 设置customFieldList属性的值。
+     * Sets the customFieldList value for this IssueSearchBasic.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchCustomFieldList }
-     *     
+     * @param customFieldList
      */
-    public void setCustomFieldList(SearchCustomFieldList value) {
-        this.customFieldList = value;
+    public void setCustomFieldList(com.netsuite.webservices.platform.core_2018_2.SearchCustomField[] customFieldList) {
+        this.customFieldList = customFieldList;
+    }
+
+    private java.lang.Object __equalsCalc = null;
+    public synchronized boolean equals(java.lang.Object obj) {
+        if (!(obj instanceof IssueSearchBasic)) return false;
+        IssueSearchBasic other = (IssueSearchBasic) obj;
+        if (obj == null) return false;
+        if (this == obj) return true;
+        if (__equalsCalc != null) {
+            return (__equalsCalc == obj);
+        }
+        __equalsCalc = obj;
+        boolean _equals;
+        _equals = super.equals(obj) && 
+            ((this.ageInMonths==null && other.getAgeInMonths()==null) || 
+             (this.ageInMonths!=null &&
+              this.ageInMonths.equals(other.getAgeInMonths()))) &&
+            ((this.assigned==null && other.getAssigned()==null) || 
+             (this.assigned!=null &&
+              java.util.Arrays.equals(this.assigned, other.getAssigned()))) &&
+            ((this.buildBroken==null && other.getBuildBroken()==null) || 
+             (this.buildBroken!=null &&
+              java.util.Arrays.equals(this.buildBroken, other.getBuildBroken()))) &&
+            ((this.buildBrokenName==null && other.getBuildBrokenName()==null) || 
+             (this.buildBrokenName!=null &&
+              this.buildBrokenName.equals(other.getBuildBrokenName()))) &&
+            ((this.buildFixed==null && other.getBuildFixed()==null) || 
+             (this.buildFixed!=null &&
+              java.util.Arrays.equals(this.buildFixed, other.getBuildFixed()))) &&
+            ((this.buildFixedName==null && other.getBuildFixedName()==null) || 
+             (this.buildFixedName!=null &&
+              this.buildFixedName.equals(other.getBuildFixedName()))) &&
+            ((this.buildTarget==null && other.getBuildTarget()==null) || 
+             (this.buildTarget!=null &&
+              java.util.Arrays.equals(this.buildTarget, other.getBuildTarget()))) &&
+            ((this.buildTargetName==null && other.getBuildTargetName()==null) || 
+             (this.buildTargetName!=null &&
+              this.buildTargetName.equals(other.getBuildTargetName()))) &&
+            ((this.caseCount==null && other.getCaseCount()==null) || 
+             (this.caseCount!=null &&
+              this.caseCount.equals(other.getCaseCount()))) &&
+            ((this.caseNumber==null && other.getCaseNumber()==null) || 
+             (this.caseNumber!=null &&
+              this.caseNumber.equals(other.getCaseNumber()))) &&
+            ((this.closedDate==null && other.getClosedDate()==null) || 
+             (this.closedDate!=null &&
+              this.closedDate.equals(other.getClosedDate()))) &&
+            ((this.createdDate==null && other.getCreatedDate()==null) || 
+             (this.createdDate!=null &&
+              this.createdDate.equals(other.getCreatedDate()))) &&
+            ((this.dateReleased==null && other.getDateReleased()==null) || 
+             (this.dateReleased!=null &&
+              this.dateReleased.equals(other.getDateReleased()))) &&
+            ((this.details==null && other.getDetails()==null) || 
+             (this.details!=null &&
+              this.details.equals(other.getDetails()))) &&
+            ((this.duplicateOf==null && other.getDuplicateOf()==null) || 
+             (this.duplicateOf!=null &&
+              java.util.Arrays.equals(this.duplicateOf, other.getDuplicateOf()))) &&
+            ((this.eFix==null && other.getEFix()==null) || 
+             (this.eFix!=null &&
+              this.eFix.equals(other.getEFix()))) &&
+            ((this.employeeOrTeam==null && other.getEmployeeOrTeam()==null) || 
+             (this.employeeOrTeam!=null &&
+              java.util.Arrays.equals(this.employeeOrTeam, other.getEmployeeOrTeam()))) &&
+            ((this.eventStatus==null && other.getEventStatus()==null) || 
+             (this.eventStatus!=null &&
+              java.util.Arrays.equals(this.eventStatus, other.getEventStatus()))) &&
+            ((this.externalAbstract==null && other.getExternalAbstract()==null) || 
+             (this.externalAbstract!=null &&
+              this.externalAbstract.equals(other.getExternalAbstract()))) &&
+            ((this.externalDetails==null && other.getExternalDetails()==null) || 
+             (this.externalDetails!=null &&
+              this.externalDetails.equals(other.getExternalDetails()))) &&
+            ((this.externalFixedIn==null && other.getExternalFixedIn()==null) || 
+             (this.externalFixedIn!=null &&
+              java.util.Arrays.equals(this.externalFixedIn, other.getExternalFixedIn()))) &&
+            ((this.externalId==null && other.getExternalId()==null) || 
+             (this.externalId!=null &&
+              java.util.Arrays.equals(this.externalId, other.getExternalId()))) &&
+            ((this.externalIdString==null && other.getExternalIdString()==null) || 
+             (this.externalIdString!=null &&
+              this.externalIdString.equals(other.getExternalIdString()))) &&
+            ((this.externalStatus==null && other.getExternalStatus()==null) || 
+             (this.externalStatus!=null &&
+              java.util.Arrays.equals(this.externalStatus, other.getExternalStatus()))) &&
+            ((this.fixed==null && other.getFixed()==null) || 
+             (this.fixed!=null &&
+              this.fixed.equals(other.getFixed()))) &&
+            ((this.fixedBy==null && other.getFixedBy()==null) || 
+             (this.fixedBy!=null &&
+              java.util.Arrays.equals(this.fixedBy, other.getFixedBy()))) &&
+            ((this.internalId==null && other.getInternalId()==null) || 
+             (this.internalId!=null &&
+              java.util.Arrays.equals(this.internalId, other.getInternalId()))) &&
+            ((this.internalIdNumber==null && other.getInternalIdNumber()==null) || 
+             (this.internalIdNumber!=null &&
+              this.internalIdNumber.equals(other.getInternalIdNumber()))) &&
+            ((this.isOwner==null && other.getIsOwner()==null) || 
+             (this.isOwner!=null &&
+              this.isOwner.equals(other.getIsOwner()))) &&
+            ((this.isReviewed==null && other.getIsReviewed()==null) || 
+             (this.isReviewed!=null &&
+              this.isReviewed.equals(other.getIsReviewed()))) &&
+            ((this.isShowStopper==null && other.getIsShowStopper()==null) || 
+             (this.isShowStopper!=null &&
+              this.isShowStopper.equals(other.getIsShowStopper()))) &&
+            ((this.issueAbstract==null && other.getIssueAbstract()==null) || 
+             (this.issueAbstract!=null &&
+              this.issueAbstract.equals(other.getIssueAbstract()))) &&
+            ((this.issueNumber==null && other.getIssueNumber()==null) || 
+             (this.issueNumber!=null &&
+              this.issueNumber.equals(other.getIssueNumber()))) &&
+            ((this.item==null && other.getItem()==null) || 
+             (this.item!=null &&
+              java.util.Arrays.equals(this.item, other.getItem()))) &&
+            ((this.lastModifiedDate==null && other.getLastModifiedDate()==null) || 
+             (this.lastModifiedDate!=null &&
+              this.lastModifiedDate.equals(other.getLastModifiedDate()))) &&
+            ((this.module==null && other.getModule()==null) || 
+             (this.module!=null &&
+              java.util.Arrays.equals(this.module, other.getModule()))) &&
+            ((this.number==null && other.getNumber()==null) || 
+             (this.number!=null &&
+              this.number.equals(other.getNumber()))) &&
+            ((this.originalFixedIn==null && other.getOriginalFixedIn()==null) || 
+             (this.originalFixedIn!=null &&
+              this.originalFixedIn.equals(other.getOriginalFixedIn()))) &&
+            ((this.priority==null && other.getPriority()==null) || 
+             (this.priority!=null &&
+              java.util.Arrays.equals(this.priority, other.getPriority()))) &&
+            ((this.product==null && other.getProduct()==null) || 
+             (this.product!=null &&
+              java.util.Arrays.equals(this.product, other.getProduct()))) &&
+            ((this.productTeam==null && other.getProductTeam()==null) || 
+             (this.productTeam!=null &&
+              java.util.Arrays.equals(this.productTeam, other.getProductTeam()))) &&
+            ((this.relatedIssue==null && other.getRelatedIssue()==null) || 
+             (this.relatedIssue!=null &&
+              java.util.Arrays.equals(this.relatedIssue, other.getRelatedIssue()))) &&
+            ((this.relationship==null && other.getRelationship()==null) || 
+             (this.relationship!=null &&
+              java.util.Arrays.equals(this.relationship, other.getRelationship()))) &&
+            ((this.relationshipComment==null && other.getRelationshipComment()==null) || 
+             (this.relationshipComment!=null &&
+              this.relationshipComment.equals(other.getRelationshipComment()))) &&
+            ((this.reportedBy==null && other.getReportedBy()==null) || 
+             (this.reportedBy!=null &&
+              java.util.Arrays.equals(this.reportedBy, other.getReportedBy()))) &&
+            ((this.reproduce==null && other.getReproduce()==null) || 
+             (this.reproduce!=null &&
+              java.util.Arrays.equals(this.reproduce, other.getReproduce()))) &&
+            ((this.resolved==null && other.getResolved()==null) || 
+             (this.resolved!=null &&
+              this.resolved.equals(other.getResolved()))) &&
+            ((this.resolvedBy==null && other.getResolvedBy()==null) || 
+             (this.resolvedBy!=null &&
+              java.util.Arrays.equals(this.resolvedBy, other.getResolvedBy()))) &&
+            ((this.reviewer==null && other.getReviewer()==null) || 
+             (this.reviewer!=null &&
+              java.util.Arrays.equals(this.reviewer, other.getReviewer()))) &&
+            ((this.severity==null && other.getSeverity()==null) || 
+             (this.severity!=null &&
+              java.util.Arrays.equals(this.severity, other.getSeverity()))) &&
+            ((this.source==null && other.getSource()==null) || 
+             (this.source!=null &&
+              java.util.Arrays.equals(this.source, other.getSource()))) &&
+            ((this.status==null && other.getStatus()==null) || 
+             (this.status!=null &&
+              java.util.Arrays.equals(this.status, other.getStatus()))) &&
+            ((this.tags==null && other.getTags()==null) || 
+             (this.tags!=null &&
+              java.util.Arrays.equals(this.tags, other.getTags()))) &&
+            ((this.tracking==null && other.getTracking()==null) || 
+             (this.tracking!=null &&
+              this.tracking.equals(other.getTracking()))) &&
+            ((this.type==null && other.getType()==null) || 
+             (this.type!=null &&
+              java.util.Arrays.equals(this.type, other.getType()))) &&
+            ((this.userType==null && other.getUserType()==null) || 
+             (this.userType!=null &&
+              java.util.Arrays.equals(this.userType, other.getUserType()))) &&
+            ((this.versionBroken==null && other.getVersionBroken()==null) || 
+             (this.versionBroken!=null &&
+              java.util.Arrays.equals(this.versionBroken, other.getVersionBroken()))) &&
+            ((this.versionFixed==null && other.getVersionFixed()==null) || 
+             (this.versionFixed!=null &&
+              java.util.Arrays.equals(this.versionFixed, other.getVersionFixed()))) &&
+            ((this.versionTarget==null && other.getVersionTarget()==null) || 
+             (this.versionTarget!=null &&
+              java.util.Arrays.equals(this.versionTarget, other.getVersionTarget()))) &&
+            ((this.customFieldList==null && other.getCustomFieldList()==null) || 
+             (this.customFieldList!=null &&
+              java.util.Arrays.equals(this.customFieldList, other.getCustomFieldList())));
+        __equalsCalc = null;
+        return _equals;
+    }
+
+    private boolean __hashCodeCalc = false;
+    public synchronized int hashCode() {
+        if (__hashCodeCalc) {
+            return 0;
+        }
+        __hashCodeCalc = true;
+        int _hashCode = super.hashCode();
+        if (getAgeInMonths() != null) {
+            _hashCode += getAgeInMonths().hashCode();
+        }
+        if (getAssigned() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getAssigned());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getAssigned(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getBuildBroken() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getBuildBroken());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getBuildBroken(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getBuildBrokenName() != null) {
+            _hashCode += getBuildBrokenName().hashCode();
+        }
+        if (getBuildFixed() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getBuildFixed());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getBuildFixed(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getBuildFixedName() != null) {
+            _hashCode += getBuildFixedName().hashCode();
+        }
+        if (getBuildTarget() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getBuildTarget());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getBuildTarget(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getBuildTargetName() != null) {
+            _hashCode += getBuildTargetName().hashCode();
+        }
+        if (getCaseCount() != null) {
+            _hashCode += getCaseCount().hashCode();
+        }
+        if (getCaseNumber() != null) {
+            _hashCode += getCaseNumber().hashCode();
+        }
+        if (getClosedDate() != null) {
+            _hashCode += getClosedDate().hashCode();
+        }
+        if (getCreatedDate() != null) {
+            _hashCode += getCreatedDate().hashCode();
+        }
+        if (getDateReleased() != null) {
+            _hashCode += getDateReleased().hashCode();
+        }
+        if (getDetails() != null) {
+            _hashCode += getDetails().hashCode();
+        }
+        if (getDuplicateOf() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getDuplicateOf());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getDuplicateOf(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getEFix() != null) {
+            _hashCode += getEFix().hashCode();
+        }
+        if (getEmployeeOrTeam() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getEmployeeOrTeam());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getEmployeeOrTeam(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getEventStatus() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getEventStatus());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getEventStatus(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getExternalAbstract() != null) {
+            _hashCode += getExternalAbstract().hashCode();
+        }
+        if (getExternalDetails() != null) {
+            _hashCode += getExternalDetails().hashCode();
+        }
+        if (getExternalFixedIn() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getExternalFixedIn());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getExternalFixedIn(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getExternalId() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getExternalId());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getExternalId(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getExternalIdString() != null) {
+            _hashCode += getExternalIdString().hashCode();
+        }
+        if (getExternalStatus() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getExternalStatus());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getExternalStatus(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getFixed() != null) {
+            _hashCode += getFixed().hashCode();
+        }
+        if (getFixedBy() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getFixedBy());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getFixedBy(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getInternalId() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getInternalId());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getInternalId(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getInternalIdNumber() != null) {
+            _hashCode += getInternalIdNumber().hashCode();
+        }
+        if (getIsOwner() != null) {
+            _hashCode += getIsOwner().hashCode();
+        }
+        if (getIsReviewed() != null) {
+            _hashCode += getIsReviewed().hashCode();
+        }
+        if (getIsShowStopper() != null) {
+            _hashCode += getIsShowStopper().hashCode();
+        }
+        if (getIssueAbstract() != null) {
+            _hashCode += getIssueAbstract().hashCode();
+        }
+        if (getIssueNumber() != null) {
+            _hashCode += getIssueNumber().hashCode();
+        }
+        if (getItem() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getItem());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getItem(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getLastModifiedDate() != null) {
+            _hashCode += getLastModifiedDate().hashCode();
+        }
+        if (getModule() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getModule());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getModule(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getNumber() != null) {
+            _hashCode += getNumber().hashCode();
+        }
+        if (getOriginalFixedIn() != null) {
+            _hashCode += getOriginalFixedIn().hashCode();
+        }
+        if (getPriority() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getPriority());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getPriority(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getProduct() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getProduct());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getProduct(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getProductTeam() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getProductTeam());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getProductTeam(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getRelatedIssue() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getRelatedIssue());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getRelatedIssue(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getRelationship() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getRelationship());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getRelationship(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getRelationshipComment() != null) {
+            _hashCode += getRelationshipComment().hashCode();
+        }
+        if (getReportedBy() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getReportedBy());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getReportedBy(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getReproduce() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getReproduce());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getReproduce(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getResolved() != null) {
+            _hashCode += getResolved().hashCode();
+        }
+        if (getResolvedBy() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getResolvedBy());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getResolvedBy(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getReviewer() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getReviewer());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getReviewer(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getSeverity() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getSeverity());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getSeverity(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getSource() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getSource());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getSource(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getStatus() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getStatus());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getStatus(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getTags() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getTags());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getTags(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getTracking() != null) {
+            _hashCode += getTracking().hashCode();
+        }
+        if (getType() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getType());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getType(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getUserType() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getUserType());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getUserType(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getVersionBroken() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getVersionBroken());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getVersionBroken(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getVersionFixed() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getVersionFixed());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getVersionFixed(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getVersionTarget() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getVersionTarget());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getVersionTarget(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getCustomFieldList() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getCustomFieldList());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getCustomFieldList(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        __hashCodeCalc = false;
+        return _hashCode;
+    }
+
+    // Type metadata
+    private static org.apache.axis.description.TypeDesc typeDesc =
+        new org.apache.axis.description.TypeDesc(IssueSearchBasic.class, true);
+
+    static {
+        typeDesc.setXmlType(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "IssueSearchBasic"));
+        org.apache.axis.description.ElementDesc elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("ageInMonths");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "ageInMonths"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchLongField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("assigned");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "assigned"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "searchValue"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("buildBroken");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "buildBroken"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "searchValue"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("buildBrokenName");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "buildBrokenName"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchStringField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("buildFixed");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "buildFixed"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "searchValue"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("buildFixedName");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "buildFixedName"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchStringField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("buildTarget");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "buildTarget"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "searchValue"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("buildTargetName");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "buildTargetName"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchStringField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("caseCount");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "caseCount"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchLongField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("caseNumber");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "caseNumber"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchStringField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("closedDate");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "closedDate"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchDateField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("createdDate");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "createdDate"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchDateField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("dateReleased");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "dateReleased"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchDateField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("details");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "details"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchStringField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("duplicateOf");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "duplicateOf"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "searchValue"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("EFix");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "eFix"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchBooleanField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("employeeOrTeam");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "employeeOrTeam"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "searchValue"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("eventStatus");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "eventStatus"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "searchValue"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("externalAbstract");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "externalAbstract"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchStringField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("externalDetails");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "externalDetails"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchStringField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("externalFixedIn");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "externalFixedIn"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "searchValue"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("externalId");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "externalId"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "searchValue"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("externalIdString");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "externalIdString"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchStringField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("externalStatus");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "externalStatus"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "searchValue"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("fixed");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "fixed"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchDateField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("fixedBy");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "fixedBy"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "searchValue"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("internalId");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "internalId"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "searchValue"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("internalIdNumber");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "internalIdNumber"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchLongField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("isOwner");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "isOwner"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchBooleanField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("isReviewed");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "isReviewed"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchBooleanField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("isShowStopper");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "isShowStopper"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchBooleanField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("issueAbstract");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "issueAbstract"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchStringField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("issueNumber");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "issueNumber"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchStringField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("item");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "item"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "searchValue"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("lastModifiedDate");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "lastModifiedDate"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchDateField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("module");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "module"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "searchValue"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("number");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "number"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchLongField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("originalFixedIn");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "originalFixedIn"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchStringField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("priority");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "priority"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "searchValue"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("product");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "product"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "searchValue"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("productTeam");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "productTeam"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "searchValue"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("relatedIssue");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "relatedIssue"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "searchValue"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("relationship");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "relationship"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "searchValue"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("relationshipComment");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "relationshipComment"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchStringField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("reportedBy");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "reportedBy"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "searchValue"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("reproduce");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "reproduce"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "searchValue"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("resolved");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "resolved"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchDateField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("resolvedBy");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "resolvedBy"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "searchValue"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("reviewer");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "reviewer"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "searchValue"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("severity");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "severity"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "searchValue"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("source");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "source"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "searchValue"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("status");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "status"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "searchValue"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("tags");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "tags"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "searchValue"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("tracking");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "tracking"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchBooleanField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("type");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "type"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "searchValue"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("userType");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "userType"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "searchValue"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("versionBroken");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "versionBroken"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "searchValue"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("versionFixed");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "versionFixed"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "searchValue"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("versionTarget");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "versionTarget"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "searchValue"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("customFieldList");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "customFieldList"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchCustomField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "customField"));
+        typeDesc.addFieldDesc(elemField);
+    }
+
+    /**
+     * Return type metadata object
+     */
+    public static org.apache.axis.description.TypeDesc getTypeDesc() {
+        return typeDesc;
+    }
+
+    /**
+     * Get Custom Serializer
+     */
+    public static org.apache.axis.encoding.Serializer getSerializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanSerializer(
+            _javaType, _xmlType, typeDesc);
+    }
+
+    /**
+     * Get Custom Deserializer
+     */
+    public static org.apache.axis.encoding.Deserializer getDeserializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanDeserializer(
+            _javaType, _xmlType, typeDesc);
     }
 
 }

@@ -1,556 +1,947 @@
+/**
+ * FileSearchRowBasic.java
+ *
+ * This file was auto-generated from WSDL
+ * by the Apache Axis 1.4 Jul 28, 2010 (04:07:04 PDT) WSDL2Java emitter.
+ */
 
 package com.netsuite.webservices.platform.common_2018_2;
 
-import java.util.ArrayList;
-import java.util.List;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlType;
-import com.netsuite.webservices.platform.core_2018_2.SearchColumnBooleanField;
-import com.netsuite.webservices.platform.core_2018_2.SearchColumnDateField;
-import com.netsuite.webservices.platform.core_2018_2.SearchColumnEnumSelectField;
-import com.netsuite.webservices.platform.core_2018_2.SearchColumnLongField;
-import com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField;
-import com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField;
-import com.netsuite.webservices.platform.core_2018_2.SearchRowBasic;
+public class FileSearchRowBasic  extends com.netsuite.webservices.platform.core_2018_2.SearchRowBasic  implements java.io.Serializable {
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnBooleanField[] availableWithoutLogin;
 
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnDateField[] created;
 
-/**
- * <p>FileSearchRowBasic complex type的 Java 类。
- * 
- * <p>以下模式片段指定包含在此类中的预期内容。
- * 
- * <pre>
- * &lt;complexType name="FileSearchRowBasic">
- *   &lt;complexContent>
- *     &lt;extension base="{urn:core_2018_2.platform.webservices.netsuite.com}SearchRowBasic">
- *       &lt;sequence>
- *         &lt;element name="availableWithoutLogin" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnBooleanField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="created" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnDateField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="dateViewed" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnDateField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="description" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnStringField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="documentSize" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnLongField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="externalId" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnSelectField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="fileType" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnEnumSelectField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="folder" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnSelectField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="hits" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnLongField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="hostedPath" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnStringField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="internalId" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnSelectField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="isAvailable" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnBooleanField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="modified" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnDateField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="name" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnStringField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="owner" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnSelectField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="url" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnStringField" maxOccurs="unbounded" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/extension>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
- */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "FileSearchRowBasic", propOrder = {
-    "availableWithoutLogin",
-    "created",
-    "dateViewed",
-    "description",
-    "documentSize",
-    "externalId",
-    "fileType",
-    "folder",
-    "hits",
-    "hostedPath",
-    "internalId",
-    "isAvailable",
-    "modified",
-    "name",
-    "owner",
-    "url"
-})
-public class FileSearchRowBasic
-    extends SearchRowBasic
-{
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnDateField[] dateViewed;
 
-    protected List<SearchColumnBooleanField> availableWithoutLogin;
-    protected List<SearchColumnDateField> created;
-    protected List<SearchColumnDateField> dateViewed;
-    protected List<SearchColumnStringField> description;
-    protected List<SearchColumnLongField> documentSize;
-    protected List<SearchColumnSelectField> externalId;
-    protected List<SearchColumnEnumSelectField> fileType;
-    protected List<SearchColumnSelectField> folder;
-    protected List<SearchColumnLongField> hits;
-    protected List<SearchColumnStringField> hostedPath;
-    protected List<SearchColumnSelectField> internalId;
-    protected List<SearchColumnBooleanField> isAvailable;
-    protected List<SearchColumnDateField> modified;
-    protected List<SearchColumnStringField> name;
-    protected List<SearchColumnSelectField> owner;
-    protected List<SearchColumnStringField> url;
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] description;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnLongField[] documentSize;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] externalId;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnEnumSelectField[] fileType;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] folder;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnLongField[] hits;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] hostedPath;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] internalId;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnBooleanField[] isAvailable;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnDateField[] modified;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] name;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] owner;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] url;
+
+    public FileSearchRowBasic() {
+    }
+
+    public FileSearchRowBasic(
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnBooleanField[] availableWithoutLogin,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnDateField[] created,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnDateField[] dateViewed,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] description,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnLongField[] documentSize,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] externalId,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnEnumSelectField[] fileType,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] folder,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnLongField[] hits,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] hostedPath,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] internalId,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnBooleanField[] isAvailable,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnDateField[] modified,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] name,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] owner,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] url) {
+        this.availableWithoutLogin = availableWithoutLogin;
+        this.created = created;
+        this.dateViewed = dateViewed;
+        this.description = description;
+        this.documentSize = documentSize;
+        this.externalId = externalId;
+        this.fileType = fileType;
+        this.folder = folder;
+        this.hits = hits;
+        this.hostedPath = hostedPath;
+        this.internalId = internalId;
+        this.isAvailable = isAvailable;
+        this.modified = modified;
+        this.name = name;
+        this.owner = owner;
+        this.url = url;
+    }
+
 
     /**
-     * Gets the value of the availableWithoutLogin property.
+     * Gets the availableWithoutLogin value for this FileSearchRowBasic.
      * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the availableWithoutLogin property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getAvailableWithoutLogin().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnBooleanField }
-     * 
-     * 
+     * @return availableWithoutLogin
      */
-    public List<SearchColumnBooleanField> getAvailableWithoutLogin() {
-        if (availableWithoutLogin == null) {
-            availableWithoutLogin = new ArrayList<SearchColumnBooleanField>();
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnBooleanField[] getAvailableWithoutLogin() {
+        return availableWithoutLogin;
+    }
+
+
+    /**
+     * Sets the availableWithoutLogin value for this FileSearchRowBasic.
+     * 
+     * @param availableWithoutLogin
+     */
+    public void setAvailableWithoutLogin(com.netsuite.webservices.platform.core_2018_2.SearchColumnBooleanField[] availableWithoutLogin) {
+        this.availableWithoutLogin = availableWithoutLogin;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnBooleanField getAvailableWithoutLogin(int i) {
+        return this.availableWithoutLogin[i];
+    }
+
+    public void setAvailableWithoutLogin(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnBooleanField _value) {
+        this.availableWithoutLogin[i] = _value;
+    }
+
+
+    /**
+     * Gets the created value for this FileSearchRowBasic.
+     * 
+     * @return created
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnDateField[] getCreated() {
+        return created;
+    }
+
+
+    /**
+     * Sets the created value for this FileSearchRowBasic.
+     * 
+     * @param created
+     */
+    public void setCreated(com.netsuite.webservices.platform.core_2018_2.SearchColumnDateField[] created) {
+        this.created = created;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnDateField getCreated(int i) {
+        return this.created[i];
+    }
+
+    public void setCreated(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnDateField _value) {
+        this.created[i] = _value;
+    }
+
+
+    /**
+     * Gets the dateViewed value for this FileSearchRowBasic.
+     * 
+     * @return dateViewed
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnDateField[] getDateViewed() {
+        return dateViewed;
+    }
+
+
+    /**
+     * Sets the dateViewed value for this FileSearchRowBasic.
+     * 
+     * @param dateViewed
+     */
+    public void setDateViewed(com.netsuite.webservices.platform.core_2018_2.SearchColumnDateField[] dateViewed) {
+        this.dateViewed = dateViewed;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnDateField getDateViewed(int i) {
+        return this.dateViewed[i];
+    }
+
+    public void setDateViewed(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnDateField _value) {
+        this.dateViewed[i] = _value;
+    }
+
+
+    /**
+     * Gets the description value for this FileSearchRowBasic.
+     * 
+     * @return description
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] getDescription() {
+        return description;
+    }
+
+
+    /**
+     * Sets the description value for this FileSearchRowBasic.
+     * 
+     * @param description
+     */
+    public void setDescription(com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] description) {
+        this.description = description;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField getDescription(int i) {
+        return this.description[i];
+    }
+
+    public void setDescription(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField _value) {
+        this.description[i] = _value;
+    }
+
+
+    /**
+     * Gets the documentSize value for this FileSearchRowBasic.
+     * 
+     * @return documentSize
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnLongField[] getDocumentSize() {
+        return documentSize;
+    }
+
+
+    /**
+     * Sets the documentSize value for this FileSearchRowBasic.
+     * 
+     * @param documentSize
+     */
+    public void setDocumentSize(com.netsuite.webservices.platform.core_2018_2.SearchColumnLongField[] documentSize) {
+        this.documentSize = documentSize;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnLongField getDocumentSize(int i) {
+        return this.documentSize[i];
+    }
+
+    public void setDocumentSize(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnLongField _value) {
+        this.documentSize[i] = _value;
+    }
+
+
+    /**
+     * Gets the externalId value for this FileSearchRowBasic.
+     * 
+     * @return externalId
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] getExternalId() {
+        return externalId;
+    }
+
+
+    /**
+     * Sets the externalId value for this FileSearchRowBasic.
+     * 
+     * @param externalId
+     */
+    public void setExternalId(com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] externalId) {
+        this.externalId = externalId;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField getExternalId(int i) {
+        return this.externalId[i];
+    }
+
+    public void setExternalId(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField _value) {
+        this.externalId[i] = _value;
+    }
+
+
+    /**
+     * Gets the fileType value for this FileSearchRowBasic.
+     * 
+     * @return fileType
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnEnumSelectField[] getFileType() {
+        return fileType;
+    }
+
+
+    /**
+     * Sets the fileType value for this FileSearchRowBasic.
+     * 
+     * @param fileType
+     */
+    public void setFileType(com.netsuite.webservices.platform.core_2018_2.SearchColumnEnumSelectField[] fileType) {
+        this.fileType = fileType;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnEnumSelectField getFileType(int i) {
+        return this.fileType[i];
+    }
+
+    public void setFileType(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnEnumSelectField _value) {
+        this.fileType[i] = _value;
+    }
+
+
+    /**
+     * Gets the folder value for this FileSearchRowBasic.
+     * 
+     * @return folder
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] getFolder() {
+        return folder;
+    }
+
+
+    /**
+     * Sets the folder value for this FileSearchRowBasic.
+     * 
+     * @param folder
+     */
+    public void setFolder(com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] folder) {
+        this.folder = folder;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField getFolder(int i) {
+        return this.folder[i];
+    }
+
+    public void setFolder(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField _value) {
+        this.folder[i] = _value;
+    }
+
+
+    /**
+     * Gets the hits value for this FileSearchRowBasic.
+     * 
+     * @return hits
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnLongField[] getHits() {
+        return hits;
+    }
+
+
+    /**
+     * Sets the hits value for this FileSearchRowBasic.
+     * 
+     * @param hits
+     */
+    public void setHits(com.netsuite.webservices.platform.core_2018_2.SearchColumnLongField[] hits) {
+        this.hits = hits;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnLongField getHits(int i) {
+        return this.hits[i];
+    }
+
+    public void setHits(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnLongField _value) {
+        this.hits[i] = _value;
+    }
+
+
+    /**
+     * Gets the hostedPath value for this FileSearchRowBasic.
+     * 
+     * @return hostedPath
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] getHostedPath() {
+        return hostedPath;
+    }
+
+
+    /**
+     * Sets the hostedPath value for this FileSearchRowBasic.
+     * 
+     * @param hostedPath
+     */
+    public void setHostedPath(com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] hostedPath) {
+        this.hostedPath = hostedPath;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField getHostedPath(int i) {
+        return this.hostedPath[i];
+    }
+
+    public void setHostedPath(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField _value) {
+        this.hostedPath[i] = _value;
+    }
+
+
+    /**
+     * Gets the internalId value for this FileSearchRowBasic.
+     * 
+     * @return internalId
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] getInternalId() {
+        return internalId;
+    }
+
+
+    /**
+     * Sets the internalId value for this FileSearchRowBasic.
+     * 
+     * @param internalId
+     */
+    public void setInternalId(com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] internalId) {
+        this.internalId = internalId;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField getInternalId(int i) {
+        return this.internalId[i];
+    }
+
+    public void setInternalId(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField _value) {
+        this.internalId[i] = _value;
+    }
+
+
+    /**
+     * Gets the isAvailable value for this FileSearchRowBasic.
+     * 
+     * @return isAvailable
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnBooleanField[] getIsAvailable() {
+        return isAvailable;
+    }
+
+
+    /**
+     * Sets the isAvailable value for this FileSearchRowBasic.
+     * 
+     * @param isAvailable
+     */
+    public void setIsAvailable(com.netsuite.webservices.platform.core_2018_2.SearchColumnBooleanField[] isAvailable) {
+        this.isAvailable = isAvailable;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnBooleanField getIsAvailable(int i) {
+        return this.isAvailable[i];
+    }
+
+    public void setIsAvailable(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnBooleanField _value) {
+        this.isAvailable[i] = _value;
+    }
+
+
+    /**
+     * Gets the modified value for this FileSearchRowBasic.
+     * 
+     * @return modified
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnDateField[] getModified() {
+        return modified;
+    }
+
+
+    /**
+     * Sets the modified value for this FileSearchRowBasic.
+     * 
+     * @param modified
+     */
+    public void setModified(com.netsuite.webservices.platform.core_2018_2.SearchColumnDateField[] modified) {
+        this.modified = modified;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnDateField getModified(int i) {
+        return this.modified[i];
+    }
+
+    public void setModified(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnDateField _value) {
+        this.modified[i] = _value;
+    }
+
+
+    /**
+     * Gets the name value for this FileSearchRowBasic.
+     * 
+     * @return name
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] getName() {
+        return name;
+    }
+
+
+    /**
+     * Sets the name value for this FileSearchRowBasic.
+     * 
+     * @param name
+     */
+    public void setName(com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] name) {
+        this.name = name;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField getName(int i) {
+        return this.name[i];
+    }
+
+    public void setName(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField _value) {
+        this.name[i] = _value;
+    }
+
+
+    /**
+     * Gets the owner value for this FileSearchRowBasic.
+     * 
+     * @return owner
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] getOwner() {
+        return owner;
+    }
+
+
+    /**
+     * Sets the owner value for this FileSearchRowBasic.
+     * 
+     * @param owner
+     */
+    public void setOwner(com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] owner) {
+        this.owner = owner;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField getOwner(int i) {
+        return this.owner[i];
+    }
+
+    public void setOwner(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField _value) {
+        this.owner[i] = _value;
+    }
+
+
+    /**
+     * Gets the url value for this FileSearchRowBasic.
+     * 
+     * @return url
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] getUrl() {
+        return url;
+    }
+
+
+    /**
+     * Sets the url value for this FileSearchRowBasic.
+     * 
+     * @param url
+     */
+    public void setUrl(com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] url) {
+        this.url = url;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField getUrl(int i) {
+        return this.url[i];
+    }
+
+    public void setUrl(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField _value) {
+        this.url[i] = _value;
+    }
+
+    private java.lang.Object __equalsCalc = null;
+    public synchronized boolean equals(java.lang.Object obj) {
+        if (!(obj instanceof FileSearchRowBasic)) return false;
+        FileSearchRowBasic other = (FileSearchRowBasic) obj;
+        if (obj == null) return false;
+        if (this == obj) return true;
+        if (__equalsCalc != null) {
+            return (__equalsCalc == obj);
         }
-        return this.availableWithoutLogin;
+        __equalsCalc = obj;
+        boolean _equals;
+        _equals = super.equals(obj) && 
+            ((this.availableWithoutLogin==null && other.getAvailableWithoutLogin()==null) || 
+             (this.availableWithoutLogin!=null &&
+              java.util.Arrays.equals(this.availableWithoutLogin, other.getAvailableWithoutLogin()))) &&
+            ((this.created==null && other.getCreated()==null) || 
+             (this.created!=null &&
+              java.util.Arrays.equals(this.created, other.getCreated()))) &&
+            ((this.dateViewed==null && other.getDateViewed()==null) || 
+             (this.dateViewed!=null &&
+              java.util.Arrays.equals(this.dateViewed, other.getDateViewed()))) &&
+            ((this.description==null && other.getDescription()==null) || 
+             (this.description!=null &&
+              java.util.Arrays.equals(this.description, other.getDescription()))) &&
+            ((this.documentSize==null && other.getDocumentSize()==null) || 
+             (this.documentSize!=null &&
+              java.util.Arrays.equals(this.documentSize, other.getDocumentSize()))) &&
+            ((this.externalId==null && other.getExternalId()==null) || 
+             (this.externalId!=null &&
+              java.util.Arrays.equals(this.externalId, other.getExternalId()))) &&
+            ((this.fileType==null && other.getFileType()==null) || 
+             (this.fileType!=null &&
+              java.util.Arrays.equals(this.fileType, other.getFileType()))) &&
+            ((this.folder==null && other.getFolder()==null) || 
+             (this.folder!=null &&
+              java.util.Arrays.equals(this.folder, other.getFolder()))) &&
+            ((this.hits==null && other.getHits()==null) || 
+             (this.hits!=null &&
+              java.util.Arrays.equals(this.hits, other.getHits()))) &&
+            ((this.hostedPath==null && other.getHostedPath()==null) || 
+             (this.hostedPath!=null &&
+              java.util.Arrays.equals(this.hostedPath, other.getHostedPath()))) &&
+            ((this.internalId==null && other.getInternalId()==null) || 
+             (this.internalId!=null &&
+              java.util.Arrays.equals(this.internalId, other.getInternalId()))) &&
+            ((this.isAvailable==null && other.getIsAvailable()==null) || 
+             (this.isAvailable!=null &&
+              java.util.Arrays.equals(this.isAvailable, other.getIsAvailable()))) &&
+            ((this.modified==null && other.getModified()==null) || 
+             (this.modified!=null &&
+              java.util.Arrays.equals(this.modified, other.getModified()))) &&
+            ((this.name==null && other.getName()==null) || 
+             (this.name!=null &&
+              java.util.Arrays.equals(this.name, other.getName()))) &&
+            ((this.owner==null && other.getOwner()==null) || 
+             (this.owner!=null &&
+              java.util.Arrays.equals(this.owner, other.getOwner()))) &&
+            ((this.url==null && other.getUrl()==null) || 
+             (this.url!=null &&
+              java.util.Arrays.equals(this.url, other.getUrl())));
+        __equalsCalc = null;
+        return _equals;
+    }
+
+    private boolean __hashCodeCalc = false;
+    public synchronized int hashCode() {
+        if (__hashCodeCalc) {
+            return 0;
+        }
+        __hashCodeCalc = true;
+        int _hashCode = super.hashCode();
+        if (getAvailableWithoutLogin() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getAvailableWithoutLogin());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getAvailableWithoutLogin(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getCreated() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getCreated());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getCreated(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getDateViewed() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getDateViewed());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getDateViewed(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getDescription() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getDescription());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getDescription(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getDocumentSize() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getDocumentSize());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getDocumentSize(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getExternalId() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getExternalId());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getExternalId(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getFileType() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getFileType());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getFileType(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getFolder() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getFolder());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getFolder(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getHits() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getHits());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getHits(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getHostedPath() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getHostedPath());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getHostedPath(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getInternalId() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getInternalId());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getInternalId(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getIsAvailable() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getIsAvailable());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getIsAvailable(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getModified() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getModified());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getModified(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getName() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getName());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getName(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getOwner() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getOwner());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getOwner(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getUrl() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getUrl());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getUrl(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        __hashCodeCalc = false;
+        return _hashCode;
+    }
+
+    // Type metadata
+    private static org.apache.axis.description.TypeDesc typeDesc =
+        new org.apache.axis.description.TypeDesc(FileSearchRowBasic.class, true);
+
+    static {
+        typeDesc.setXmlType(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "FileSearchRowBasic"));
+        org.apache.axis.description.ElementDesc elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("availableWithoutLogin");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "availableWithoutLogin"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnBooleanField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("created");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "created"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnDateField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("dateViewed");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "dateViewed"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnDateField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("description");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "description"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnStringField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("documentSize");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "documentSize"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnLongField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("externalId");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "externalId"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnSelectField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("fileType");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "fileType"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnEnumSelectField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("folder");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "folder"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnSelectField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("hits");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "hits"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnLongField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("hostedPath");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "hostedPath"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnStringField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("internalId");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "internalId"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnSelectField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("isAvailable");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "isAvailable"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnBooleanField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("modified");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "modified"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnDateField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("name");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "name"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnStringField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("owner");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "owner"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnSelectField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("url");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "url"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnStringField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
     }
 
     /**
-     * Gets the value of the created property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the created property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getCreated().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnDateField }
-     * 
-     * 
+     * Return type metadata object
      */
-    public List<SearchColumnDateField> getCreated() {
-        if (created == null) {
-            created = new ArrayList<SearchColumnDateField>();
-        }
-        return this.created;
+    public static org.apache.axis.description.TypeDesc getTypeDesc() {
+        return typeDesc;
     }
 
     /**
-     * Gets the value of the dateViewed property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the dateViewed property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getDateViewed().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnDateField }
-     * 
-     * 
+     * Get Custom Serializer
      */
-    public List<SearchColumnDateField> getDateViewed() {
-        if (dateViewed == null) {
-            dateViewed = new ArrayList<SearchColumnDateField>();
-        }
-        return this.dateViewed;
+    public static org.apache.axis.encoding.Serializer getSerializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanSerializer(
+            _javaType, _xmlType, typeDesc);
     }
 
     /**
-     * Gets the value of the description property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the description property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getDescription().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnStringField }
-     * 
-     * 
+     * Get Custom Deserializer
      */
-    public List<SearchColumnStringField> getDescription() {
-        if (description == null) {
-            description = new ArrayList<SearchColumnStringField>();
-        }
-        return this.description;
-    }
-
-    /**
-     * Gets the value of the documentSize property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the documentSize property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getDocumentSize().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnLongField }
-     * 
-     * 
-     */
-    public List<SearchColumnLongField> getDocumentSize() {
-        if (documentSize == null) {
-            documentSize = new ArrayList<SearchColumnLongField>();
-        }
-        return this.documentSize;
-    }
-
-    /**
-     * Gets the value of the externalId property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the externalId property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getExternalId().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnSelectField }
-     * 
-     * 
-     */
-    public List<SearchColumnSelectField> getExternalId() {
-        if (externalId == null) {
-            externalId = new ArrayList<SearchColumnSelectField>();
-        }
-        return this.externalId;
-    }
-
-    /**
-     * Gets the value of the fileType property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the fileType property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getFileType().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnEnumSelectField }
-     * 
-     * 
-     */
-    public List<SearchColumnEnumSelectField> getFileType() {
-        if (fileType == null) {
-            fileType = new ArrayList<SearchColumnEnumSelectField>();
-        }
-        return this.fileType;
-    }
-
-    /**
-     * Gets the value of the folder property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the folder property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getFolder().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnSelectField }
-     * 
-     * 
-     */
-    public List<SearchColumnSelectField> getFolder() {
-        if (folder == null) {
-            folder = new ArrayList<SearchColumnSelectField>();
-        }
-        return this.folder;
-    }
-
-    /**
-     * Gets the value of the hits property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the hits property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getHits().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnLongField }
-     * 
-     * 
-     */
-    public List<SearchColumnLongField> getHits() {
-        if (hits == null) {
-            hits = new ArrayList<SearchColumnLongField>();
-        }
-        return this.hits;
-    }
-
-    /**
-     * Gets the value of the hostedPath property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the hostedPath property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getHostedPath().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnStringField }
-     * 
-     * 
-     */
-    public List<SearchColumnStringField> getHostedPath() {
-        if (hostedPath == null) {
-            hostedPath = new ArrayList<SearchColumnStringField>();
-        }
-        return this.hostedPath;
-    }
-
-    /**
-     * Gets the value of the internalId property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the internalId property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getInternalId().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnSelectField }
-     * 
-     * 
-     */
-    public List<SearchColumnSelectField> getInternalId() {
-        if (internalId == null) {
-            internalId = new ArrayList<SearchColumnSelectField>();
-        }
-        return this.internalId;
-    }
-
-    /**
-     * Gets the value of the isAvailable property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the isAvailable property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getIsAvailable().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnBooleanField }
-     * 
-     * 
-     */
-    public List<SearchColumnBooleanField> getIsAvailable() {
-        if (isAvailable == null) {
-            isAvailable = new ArrayList<SearchColumnBooleanField>();
-        }
-        return this.isAvailable;
-    }
-
-    /**
-     * Gets the value of the modified property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the modified property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getModified().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnDateField }
-     * 
-     * 
-     */
-    public List<SearchColumnDateField> getModified() {
-        if (modified == null) {
-            modified = new ArrayList<SearchColumnDateField>();
-        }
-        return this.modified;
-    }
-
-    /**
-     * Gets the value of the name property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the name property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getName().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnStringField }
-     * 
-     * 
-     */
-    public List<SearchColumnStringField> getName() {
-        if (name == null) {
-            name = new ArrayList<SearchColumnStringField>();
-        }
-        return this.name;
-    }
-
-    /**
-     * Gets the value of the owner property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the owner property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getOwner().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnSelectField }
-     * 
-     * 
-     */
-    public List<SearchColumnSelectField> getOwner() {
-        if (owner == null) {
-            owner = new ArrayList<SearchColumnSelectField>();
-        }
-        return this.owner;
-    }
-
-    /**
-     * Gets the value of the url property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the url property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getUrl().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnStringField }
-     * 
-     * 
-     */
-    public List<SearchColumnStringField> getUrl() {
-        if (url == null) {
-            url = new ArrayList<SearchColumnStringField>();
-        }
-        return this.url;
+    public static org.apache.axis.encoding.Deserializer getDeserializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanDeserializer(
+            _javaType, _xmlType, typeDesc);
     }
 
 }

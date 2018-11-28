@@ -1,200 +1,353 @@
+/**
+ * InventoryDetailSearchRowBasic.java
+ *
+ * This file was auto-generated from WSDL
+ * by the Apache Axis 1.4 Jul 28, 2010 (04:07:04 PDT) WSDL2Java emitter.
+ */
 
 package com.netsuite.webservices.platform.common_2018_2;
 
-import java.util.ArrayList;
-import java.util.List;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlType;
-import com.netsuite.webservices.platform.core_2018_2.SearchColumnDoubleField;
-import com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField;
-import com.netsuite.webservices.platform.core_2018_2.SearchRowBasic;
+public class InventoryDetailSearchRowBasic  extends com.netsuite.webservices.platform.core_2018_2.SearchRowBasic  implements java.io.Serializable {
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] binNumber;
 
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] externalId;
 
-/**
- * <p>InventoryDetailSearchRowBasic complex type的 Java 类。
- * 
- * <p>以下模式片段指定包含在此类中的预期内容。
- * 
- * <pre>
- * &lt;complexType name="InventoryDetailSearchRowBasic">
- *   &lt;complexContent>
- *     &lt;extension base="{urn:core_2018_2.platform.webservices.netsuite.com}SearchRowBasic">
- *       &lt;sequence>
- *         &lt;element name="binNumber" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnSelectField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="externalId" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnSelectField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="internalId" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnSelectField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="inventoryNumber" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnSelectField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="quantity" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnDoubleField" maxOccurs="unbounded" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/extension>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
- */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "InventoryDetailSearchRowBasic", propOrder = {
-    "binNumber",
-    "externalId",
-    "internalId",
-    "inventoryNumber",
-    "quantity"
-})
-public class InventoryDetailSearchRowBasic
-    extends SearchRowBasic
-{
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] internalId;
 
-    protected List<SearchColumnSelectField> binNumber;
-    protected List<SearchColumnSelectField> externalId;
-    protected List<SearchColumnSelectField> internalId;
-    protected List<SearchColumnSelectField> inventoryNumber;
-    protected List<SearchColumnDoubleField> quantity;
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] inventoryNumber;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnDoubleField[] quantity;
+
+    public InventoryDetailSearchRowBasic() {
+    }
+
+    public InventoryDetailSearchRowBasic(
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] binNumber,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] externalId,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] internalId,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] inventoryNumber,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnDoubleField[] quantity) {
+        this.binNumber = binNumber;
+        this.externalId = externalId;
+        this.internalId = internalId;
+        this.inventoryNumber = inventoryNumber;
+        this.quantity = quantity;
+    }
+
 
     /**
-     * Gets the value of the binNumber property.
+     * Gets the binNumber value for this InventoryDetailSearchRowBasic.
      * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the binNumber property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getBinNumber().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnSelectField }
-     * 
-     * 
+     * @return binNumber
      */
-    public List<SearchColumnSelectField> getBinNumber() {
-        if (binNumber == null) {
-            binNumber = new ArrayList<SearchColumnSelectField>();
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] getBinNumber() {
+        return binNumber;
+    }
+
+
+    /**
+     * Sets the binNumber value for this InventoryDetailSearchRowBasic.
+     * 
+     * @param binNumber
+     */
+    public void setBinNumber(com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] binNumber) {
+        this.binNumber = binNumber;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField getBinNumber(int i) {
+        return this.binNumber[i];
+    }
+
+    public void setBinNumber(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField _value) {
+        this.binNumber[i] = _value;
+    }
+
+
+    /**
+     * Gets the externalId value for this InventoryDetailSearchRowBasic.
+     * 
+     * @return externalId
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] getExternalId() {
+        return externalId;
+    }
+
+
+    /**
+     * Sets the externalId value for this InventoryDetailSearchRowBasic.
+     * 
+     * @param externalId
+     */
+    public void setExternalId(com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] externalId) {
+        this.externalId = externalId;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField getExternalId(int i) {
+        return this.externalId[i];
+    }
+
+    public void setExternalId(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField _value) {
+        this.externalId[i] = _value;
+    }
+
+
+    /**
+     * Gets the internalId value for this InventoryDetailSearchRowBasic.
+     * 
+     * @return internalId
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] getInternalId() {
+        return internalId;
+    }
+
+
+    /**
+     * Sets the internalId value for this InventoryDetailSearchRowBasic.
+     * 
+     * @param internalId
+     */
+    public void setInternalId(com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] internalId) {
+        this.internalId = internalId;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField getInternalId(int i) {
+        return this.internalId[i];
+    }
+
+    public void setInternalId(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField _value) {
+        this.internalId[i] = _value;
+    }
+
+
+    /**
+     * Gets the inventoryNumber value for this InventoryDetailSearchRowBasic.
+     * 
+     * @return inventoryNumber
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] getInventoryNumber() {
+        return inventoryNumber;
+    }
+
+
+    /**
+     * Sets the inventoryNumber value for this InventoryDetailSearchRowBasic.
+     * 
+     * @param inventoryNumber
+     */
+    public void setInventoryNumber(com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] inventoryNumber) {
+        this.inventoryNumber = inventoryNumber;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField getInventoryNumber(int i) {
+        return this.inventoryNumber[i];
+    }
+
+    public void setInventoryNumber(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField _value) {
+        this.inventoryNumber[i] = _value;
+    }
+
+
+    /**
+     * Gets the quantity value for this InventoryDetailSearchRowBasic.
+     * 
+     * @return quantity
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnDoubleField[] getQuantity() {
+        return quantity;
+    }
+
+
+    /**
+     * Sets the quantity value for this InventoryDetailSearchRowBasic.
+     * 
+     * @param quantity
+     */
+    public void setQuantity(com.netsuite.webservices.platform.core_2018_2.SearchColumnDoubleField[] quantity) {
+        this.quantity = quantity;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnDoubleField getQuantity(int i) {
+        return this.quantity[i];
+    }
+
+    public void setQuantity(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnDoubleField _value) {
+        this.quantity[i] = _value;
+    }
+
+    private java.lang.Object __equalsCalc = null;
+    public synchronized boolean equals(java.lang.Object obj) {
+        if (!(obj instanceof InventoryDetailSearchRowBasic)) return false;
+        InventoryDetailSearchRowBasic other = (InventoryDetailSearchRowBasic) obj;
+        if (obj == null) return false;
+        if (this == obj) return true;
+        if (__equalsCalc != null) {
+            return (__equalsCalc == obj);
         }
-        return this.binNumber;
+        __equalsCalc = obj;
+        boolean _equals;
+        _equals = super.equals(obj) && 
+            ((this.binNumber==null && other.getBinNumber()==null) || 
+             (this.binNumber!=null &&
+              java.util.Arrays.equals(this.binNumber, other.getBinNumber()))) &&
+            ((this.externalId==null && other.getExternalId()==null) || 
+             (this.externalId!=null &&
+              java.util.Arrays.equals(this.externalId, other.getExternalId()))) &&
+            ((this.internalId==null && other.getInternalId()==null) || 
+             (this.internalId!=null &&
+              java.util.Arrays.equals(this.internalId, other.getInternalId()))) &&
+            ((this.inventoryNumber==null && other.getInventoryNumber()==null) || 
+             (this.inventoryNumber!=null &&
+              java.util.Arrays.equals(this.inventoryNumber, other.getInventoryNumber()))) &&
+            ((this.quantity==null && other.getQuantity()==null) || 
+             (this.quantity!=null &&
+              java.util.Arrays.equals(this.quantity, other.getQuantity())));
+        __equalsCalc = null;
+        return _equals;
+    }
+
+    private boolean __hashCodeCalc = false;
+    public synchronized int hashCode() {
+        if (__hashCodeCalc) {
+            return 0;
+        }
+        __hashCodeCalc = true;
+        int _hashCode = super.hashCode();
+        if (getBinNumber() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getBinNumber());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getBinNumber(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getExternalId() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getExternalId());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getExternalId(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getInternalId() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getInternalId());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getInternalId(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getInventoryNumber() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getInventoryNumber());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getInventoryNumber(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getQuantity() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getQuantity());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getQuantity(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        __hashCodeCalc = false;
+        return _hashCode;
+    }
+
+    // Type metadata
+    private static org.apache.axis.description.TypeDesc typeDesc =
+        new org.apache.axis.description.TypeDesc(InventoryDetailSearchRowBasic.class, true);
+
+    static {
+        typeDesc.setXmlType(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "InventoryDetailSearchRowBasic"));
+        org.apache.axis.description.ElementDesc elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("binNumber");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "binNumber"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnSelectField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("externalId");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "externalId"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnSelectField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("internalId");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "internalId"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnSelectField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("inventoryNumber");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "inventoryNumber"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnSelectField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("quantity");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "quantity"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnDoubleField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
     }
 
     /**
-     * Gets the value of the externalId property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the externalId property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getExternalId().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnSelectField }
-     * 
-     * 
+     * Return type metadata object
      */
-    public List<SearchColumnSelectField> getExternalId() {
-        if (externalId == null) {
-            externalId = new ArrayList<SearchColumnSelectField>();
-        }
-        return this.externalId;
+    public static org.apache.axis.description.TypeDesc getTypeDesc() {
+        return typeDesc;
     }
 
     /**
-     * Gets the value of the internalId property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the internalId property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getInternalId().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnSelectField }
-     * 
-     * 
+     * Get Custom Serializer
      */
-    public List<SearchColumnSelectField> getInternalId() {
-        if (internalId == null) {
-            internalId = new ArrayList<SearchColumnSelectField>();
-        }
-        return this.internalId;
+    public static org.apache.axis.encoding.Serializer getSerializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanSerializer(
+            _javaType, _xmlType, typeDesc);
     }
 
     /**
-     * Gets the value of the inventoryNumber property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the inventoryNumber property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getInventoryNumber().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnSelectField }
-     * 
-     * 
+     * Get Custom Deserializer
      */
-    public List<SearchColumnSelectField> getInventoryNumber() {
-        if (inventoryNumber == null) {
-            inventoryNumber = new ArrayList<SearchColumnSelectField>();
-        }
-        return this.inventoryNumber;
-    }
-
-    /**
-     * Gets the value of the quantity property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the quantity property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getQuantity().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnDoubleField }
-     * 
-     * 
-     */
-    public List<SearchColumnDoubleField> getQuantity() {
-        if (quantity == null) {
-            quantity = new ArrayList<SearchColumnDoubleField>();
-        }
-        return this.quantity;
+    public static org.apache.axis.encoding.Deserializer getDeserializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanDeserializer(
+            _javaType, _xmlType, typeDesc);
     }
 
 }

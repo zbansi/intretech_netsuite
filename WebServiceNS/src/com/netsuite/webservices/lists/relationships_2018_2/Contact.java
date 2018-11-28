@@ -1,1044 +1,1487 @@
+/**
+ * Contact.java
+ *
+ * This file was auto-generated from WSDL
+ * by the Apache Axis 1.4 Jul 28, 2010 (04:07:04 PDT) WSDL2Java emitter.
+ */
 
 package com.netsuite.webservices.lists.relationships_2018_2;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlAttribute;
-import javax.xml.bind.annotation.XmlSchemaType;
-import javax.xml.bind.annotation.XmlType;
-import javax.xml.datatype.XMLGregorianCalendar;
-import com.netsuite.webservices.platform.common_2018_2.types.GlobalSubscriptionStatus;
-import com.netsuite.webservices.platform.core_2018_2.CustomFieldList;
-import com.netsuite.webservices.platform.core_2018_2.Record;
-import com.netsuite.webservices.platform.core_2018_2.RecordRef;
+public class Contact  extends com.netsuite.webservices.platform.core_2018_2.Record  implements java.io.Serializable {
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef customForm;
 
+    private java.lang.String entityId;
 
-/**
- * <p>Contact complex type的 Java 类。
- * 
- * <p>以下模式片段指定包含在此类中的预期内容。
- * 
- * <pre>
- * &lt;complexType name="Contact">
- *   &lt;complexContent>
- *     &lt;extension base="{urn:core_2018_2.platform.webservices.netsuite.com}Record">
- *       &lt;sequence>
- *         &lt;element name="customForm" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="entityId" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="contactSource" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="company" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="salutation" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="firstName" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="middleName" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="lastName" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="title" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="phone" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="fax" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="email" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="defaultAddress" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="isPrivate" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         &lt;element name="isInactive" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         &lt;element name="subsidiary" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="phoneticName" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="categoryList" type="{urn:relationships_2018_2.lists.webservices.netsuite.com}CategoryList" minOccurs="0"/>
- *         &lt;element name="altEmail" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="officePhone" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="homePhone" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="mobilePhone" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="supervisor" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="supervisorPhone" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="assistant" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="assistantPhone" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="comments" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="globalSubscriptionStatus" type="{urn:types.common_2018_2.platform.webservices.netsuite.com}GlobalSubscriptionStatus" minOccurs="0"/>
- *         &lt;element name="image" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="billPay" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         &lt;element name="dateCreated" type="{http://www.w3.org/2001/XMLSchema}dateTime" minOccurs="0"/>
- *         &lt;element name="lastModifiedDate" type="{http://www.w3.org/2001/XMLSchema}dateTime" minOccurs="0"/>
- *         &lt;element name="addressbookList" type="{urn:relationships_2018_2.lists.webservices.netsuite.com}ContactAddressbookList" minOccurs="0"/>
- *         &lt;element name="subscriptionsList" type="{urn:relationships_2018_2.lists.webservices.netsuite.com}SubscriptionsList" minOccurs="0"/>
- *         &lt;element name="customFieldList" type="{urn:core_2018_2.platform.webservices.netsuite.com}CustomFieldList" minOccurs="0"/>
- *       &lt;/sequence>
- *       &lt;attribute name="internalId" type="{http://www.w3.org/2001/XMLSchema}string" />
- *       &lt;attribute name="externalId" type="{http://www.w3.org/2001/XMLSchema}string" />
- *     &lt;/extension>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
- */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "Contact", propOrder = {
-    "customForm",
-    "entityId",
-    "contactSource",
-    "company",
-    "salutation",
-    "firstName",
-    "middleName",
-    "lastName",
-    "title",
-    "phone",
-    "fax",
-    "email",
-    "defaultAddress",
-    "isPrivate",
-    "isInactive",
-    "subsidiary",
-    "phoneticName",
-    "categoryList",
-    "altEmail",
-    "officePhone",
-    "homePhone",
-    "mobilePhone",
-    "supervisor",
-    "supervisorPhone",
-    "assistant",
-    "assistantPhone",
-    "comments",
-    "globalSubscriptionStatus",
-    "image",
-    "billPay",
-    "dateCreated",
-    "lastModifiedDate",
-    "addressbookList",
-    "subscriptionsList",
-    "customFieldList"
-})
-public class Contact
-    extends Record
-{
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef contactSource;
 
-    protected RecordRef customForm;
-    protected String entityId;
-    protected RecordRef contactSource;
-    protected RecordRef company;
-    protected String salutation;
-    protected String firstName;
-    protected String middleName;
-    protected String lastName;
-    protected String title;
-    protected String phone;
-    protected String fax;
-    protected String email;
-    protected String defaultAddress;
-    protected Boolean isPrivate;
-    protected Boolean isInactive;
-    protected RecordRef subsidiary;
-    protected String phoneticName;
-    protected CategoryList categoryList;
-    protected String altEmail;
-    protected String officePhone;
-    protected String homePhone;
-    protected String mobilePhone;
-    protected RecordRef supervisor;
-    protected String supervisorPhone;
-    protected RecordRef assistant;
-    protected String assistantPhone;
-    protected String comments;
-    @XmlSchemaType(name = "string")
-    protected GlobalSubscriptionStatus globalSubscriptionStatus;
-    protected RecordRef image;
-    protected Boolean billPay;
-    @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar dateCreated;
-    @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar lastModifiedDate;
-    protected ContactAddressbookList addressbookList;
-    protected SubscriptionsList subscriptionsList;
-    protected CustomFieldList customFieldList;
-    @XmlAttribute(name = "internalId")
-    protected String internalId;
-    @XmlAttribute(name = "externalId")
-    protected String externalId;
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef company;
+
+    private java.lang.String salutation;
+
+    private java.lang.String firstName;
+
+    private java.lang.String middleName;
+
+    private java.lang.String lastName;
+
+    private java.lang.String title;
+
+    private java.lang.String phone;
+
+    private java.lang.String fax;
+
+    private java.lang.String email;
+
+    private java.lang.String defaultAddress;
+
+    private java.lang.Boolean isPrivate;
+
+    private java.lang.Boolean isInactive;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef subsidiary;
+
+    private java.lang.String phoneticName;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef[] categoryList;
+
+    private java.lang.String altEmail;
+
+    private java.lang.String officePhone;
+
+    private java.lang.String homePhone;
+
+    private java.lang.String mobilePhone;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef supervisor;
+
+    private java.lang.String supervisorPhone;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef assistant;
+
+    private java.lang.String assistantPhone;
+
+    private java.lang.String comments;
+
+    private com.netsuite.webservices.platform.common_2018_2.types.GlobalSubscriptionStatus globalSubscriptionStatus;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef image;
+
+    private java.lang.Boolean billPay;
+
+    private java.util.Calendar dateCreated;
+
+    private java.util.Calendar lastModifiedDate;
+
+    private com.netsuite.webservices.lists.relationships_2018_2.ContactAddressbook[] addressbookList;
+
+    private com.netsuite.webservices.lists.relationships_2018_2.Subscriptions[] subscriptionsList;
+
+    private com.netsuite.webservices.platform.core_2018_2.CustomFieldRef[] customFieldList;
+
+    private java.lang.String internalId;  // attribute
+
+    private java.lang.String externalId;  // attribute
+
+    public Contact() {
+    }
+
+    public Contact(
+           java.lang.String[] nullFieldList,
+           java.lang.String internalId,
+           java.lang.String externalId,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef customForm,
+           java.lang.String entityId,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef contactSource,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef company,
+           java.lang.String salutation,
+           java.lang.String firstName,
+           java.lang.String middleName,
+           java.lang.String lastName,
+           java.lang.String title,
+           java.lang.String phone,
+           java.lang.String fax,
+           java.lang.String email,
+           java.lang.String defaultAddress,
+           java.lang.Boolean isPrivate,
+           java.lang.Boolean isInactive,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef subsidiary,
+           java.lang.String phoneticName,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef[] categoryList,
+           java.lang.String altEmail,
+           java.lang.String officePhone,
+           java.lang.String homePhone,
+           java.lang.String mobilePhone,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef supervisor,
+           java.lang.String supervisorPhone,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef assistant,
+           java.lang.String assistantPhone,
+           java.lang.String comments,
+           com.netsuite.webservices.platform.common_2018_2.types.GlobalSubscriptionStatus globalSubscriptionStatus,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef image,
+           java.lang.Boolean billPay,
+           java.util.Calendar dateCreated,
+           java.util.Calendar lastModifiedDate,
+           com.netsuite.webservices.lists.relationships_2018_2.ContactAddressbook[] addressbookList,
+           com.netsuite.webservices.lists.relationships_2018_2.Subscriptions[] subscriptionsList,
+           com.netsuite.webservices.platform.core_2018_2.CustomFieldRef[] customFieldList) {
+        super(
+            nullFieldList);
+        this.internalId = internalId;
+        this.externalId = externalId;
+        this.customForm = customForm;
+        this.entityId = entityId;
+        this.contactSource = contactSource;
+        this.company = company;
+        this.salutation = salutation;
+        this.firstName = firstName;
+        this.middleName = middleName;
+        this.lastName = lastName;
+        this.title = title;
+        this.phone = phone;
+        this.fax = fax;
+        this.email = email;
+        this.defaultAddress = defaultAddress;
+        this.isPrivate = isPrivate;
+        this.isInactive = isInactive;
+        this.subsidiary = subsidiary;
+        this.phoneticName = phoneticName;
+        this.categoryList = categoryList;
+        this.altEmail = altEmail;
+        this.officePhone = officePhone;
+        this.homePhone = homePhone;
+        this.mobilePhone = mobilePhone;
+        this.supervisor = supervisor;
+        this.supervisorPhone = supervisorPhone;
+        this.assistant = assistant;
+        this.assistantPhone = assistantPhone;
+        this.comments = comments;
+        this.globalSubscriptionStatus = globalSubscriptionStatus;
+        this.image = image;
+        this.billPay = billPay;
+        this.dateCreated = dateCreated;
+        this.lastModifiedDate = lastModifiedDate;
+        this.addressbookList = addressbookList;
+        this.subscriptionsList = subscriptionsList;
+        this.customFieldList = customFieldList;
+    }
+
 
     /**
-     * 获取customForm属性的值。
+     * Gets the customForm value for this Contact.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @return customForm
      */
-    public RecordRef getCustomForm() {
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getCustomForm() {
         return customForm;
     }
 
-    /**
-     * 设置customForm属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setCustomForm(RecordRef value) {
-        this.customForm = value;
-    }
 
     /**
-     * 获取entityId属性的值。
+     * Sets the customForm value for this Contact.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param customForm
      */
-    public String getEntityId() {
+    public void setCustomForm(com.netsuite.webservices.platform.core_2018_2.RecordRef customForm) {
+        this.customForm = customForm;
+    }
+
+
+    /**
+     * Gets the entityId value for this Contact.
+     * 
+     * @return entityId
+     */
+    public java.lang.String getEntityId() {
         return entityId;
     }
 
-    /**
-     * 设置entityId属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setEntityId(String value) {
-        this.entityId = value;
-    }
 
     /**
-     * 获取contactSource属性的值。
+     * Sets the entityId value for this Contact.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param entityId
      */
-    public RecordRef getContactSource() {
+    public void setEntityId(java.lang.String entityId) {
+        this.entityId = entityId;
+    }
+
+
+    /**
+     * Gets the contactSource value for this Contact.
+     * 
+     * @return contactSource
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getContactSource() {
         return contactSource;
     }
 
-    /**
-     * 设置contactSource属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setContactSource(RecordRef value) {
-        this.contactSource = value;
-    }
 
     /**
-     * 获取company属性的值。
+     * Sets the contactSource value for this Contact.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param contactSource
      */
-    public RecordRef getCompany() {
+    public void setContactSource(com.netsuite.webservices.platform.core_2018_2.RecordRef contactSource) {
+        this.contactSource = contactSource;
+    }
+
+
+    /**
+     * Gets the company value for this Contact.
+     * 
+     * @return company
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getCompany() {
         return company;
     }
 
-    /**
-     * 设置company属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setCompany(RecordRef value) {
-        this.company = value;
-    }
 
     /**
-     * 获取salutation属性的值。
+     * Sets the company value for this Contact.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param company
      */
-    public String getSalutation() {
+    public void setCompany(com.netsuite.webservices.platform.core_2018_2.RecordRef company) {
+        this.company = company;
+    }
+
+
+    /**
+     * Gets the salutation value for this Contact.
+     * 
+     * @return salutation
+     */
+    public java.lang.String getSalutation() {
         return salutation;
     }
 
-    /**
-     * 设置salutation属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setSalutation(String value) {
-        this.salutation = value;
-    }
 
     /**
-     * 获取firstName属性的值。
+     * Sets the salutation value for this Contact.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param salutation
      */
-    public String getFirstName() {
+    public void setSalutation(java.lang.String salutation) {
+        this.salutation = salutation;
+    }
+
+
+    /**
+     * Gets the firstName value for this Contact.
+     * 
+     * @return firstName
+     */
+    public java.lang.String getFirstName() {
         return firstName;
     }
 
-    /**
-     * 设置firstName属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setFirstName(String value) {
-        this.firstName = value;
-    }
 
     /**
-     * 获取middleName属性的值。
+     * Sets the firstName value for this Contact.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param firstName
      */
-    public String getMiddleName() {
+    public void setFirstName(java.lang.String firstName) {
+        this.firstName = firstName;
+    }
+
+
+    /**
+     * Gets the middleName value for this Contact.
+     * 
+     * @return middleName
+     */
+    public java.lang.String getMiddleName() {
         return middleName;
     }
 
-    /**
-     * 设置middleName属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setMiddleName(String value) {
-        this.middleName = value;
-    }
 
     /**
-     * 获取lastName属性的值。
+     * Sets the middleName value for this Contact.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param middleName
      */
-    public String getLastName() {
+    public void setMiddleName(java.lang.String middleName) {
+        this.middleName = middleName;
+    }
+
+
+    /**
+     * Gets the lastName value for this Contact.
+     * 
+     * @return lastName
+     */
+    public java.lang.String getLastName() {
         return lastName;
     }
 
-    /**
-     * 设置lastName属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setLastName(String value) {
-        this.lastName = value;
-    }
 
     /**
-     * 获取title属性的值。
+     * Sets the lastName value for this Contact.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param lastName
      */
-    public String getTitle() {
+    public void setLastName(java.lang.String lastName) {
+        this.lastName = lastName;
+    }
+
+
+    /**
+     * Gets the title value for this Contact.
+     * 
+     * @return title
+     */
+    public java.lang.String getTitle() {
         return title;
     }
 
-    /**
-     * 设置title属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setTitle(String value) {
-        this.title = value;
-    }
 
     /**
-     * 获取phone属性的值。
+     * Sets the title value for this Contact.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param title
      */
-    public String getPhone() {
+    public void setTitle(java.lang.String title) {
+        this.title = title;
+    }
+
+
+    /**
+     * Gets the phone value for this Contact.
+     * 
+     * @return phone
+     */
+    public java.lang.String getPhone() {
         return phone;
     }
 
-    /**
-     * 设置phone属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setPhone(String value) {
-        this.phone = value;
-    }
 
     /**
-     * 获取fax属性的值。
+     * Sets the phone value for this Contact.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param phone
      */
-    public String getFax() {
+    public void setPhone(java.lang.String phone) {
+        this.phone = phone;
+    }
+
+
+    /**
+     * Gets the fax value for this Contact.
+     * 
+     * @return fax
+     */
+    public java.lang.String getFax() {
         return fax;
     }
 
-    /**
-     * 设置fax属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setFax(String value) {
-        this.fax = value;
-    }
 
     /**
-     * 获取email属性的值。
+     * Sets the fax value for this Contact.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param fax
      */
-    public String getEmail() {
+    public void setFax(java.lang.String fax) {
+        this.fax = fax;
+    }
+
+
+    /**
+     * Gets the email value for this Contact.
+     * 
+     * @return email
+     */
+    public java.lang.String getEmail() {
         return email;
     }
 
-    /**
-     * 设置email属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setEmail(String value) {
-        this.email = value;
-    }
 
     /**
-     * 获取defaultAddress属性的值。
+     * Sets the email value for this Contact.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param email
      */
-    public String getDefaultAddress() {
+    public void setEmail(java.lang.String email) {
+        this.email = email;
+    }
+
+
+    /**
+     * Gets the defaultAddress value for this Contact.
+     * 
+     * @return defaultAddress
+     */
+    public java.lang.String getDefaultAddress() {
         return defaultAddress;
     }
 
-    /**
-     * 设置defaultAddress属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setDefaultAddress(String value) {
-        this.defaultAddress = value;
-    }
 
     /**
-     * 获取isPrivate属性的值。
+     * Sets the defaultAddress value for this Contact.
      * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
+     * @param defaultAddress
      */
-    public Boolean isIsPrivate() {
+    public void setDefaultAddress(java.lang.String defaultAddress) {
+        this.defaultAddress = defaultAddress;
+    }
+
+
+    /**
+     * Gets the isPrivate value for this Contact.
+     * 
+     * @return isPrivate
+     */
+    public java.lang.Boolean getIsPrivate() {
         return isPrivate;
     }
 
-    /**
-     * 设置isPrivate属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
-     */
-    public void setIsPrivate(Boolean value) {
-        this.isPrivate = value;
-    }
 
     /**
-     * 获取isInactive属性的值。
+     * Sets the isPrivate value for this Contact.
      * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
+     * @param isPrivate
      */
-    public Boolean isIsInactive() {
+    public void setIsPrivate(java.lang.Boolean isPrivate) {
+        this.isPrivate = isPrivate;
+    }
+
+
+    /**
+     * Gets the isInactive value for this Contact.
+     * 
+     * @return isInactive
+     */
+    public java.lang.Boolean getIsInactive() {
         return isInactive;
     }
 
-    /**
-     * 设置isInactive属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
-     */
-    public void setIsInactive(Boolean value) {
-        this.isInactive = value;
-    }
 
     /**
-     * 获取subsidiary属性的值。
+     * Sets the isInactive value for this Contact.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param isInactive
      */
-    public RecordRef getSubsidiary() {
+    public void setIsInactive(java.lang.Boolean isInactive) {
+        this.isInactive = isInactive;
+    }
+
+
+    /**
+     * Gets the subsidiary value for this Contact.
+     * 
+     * @return subsidiary
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getSubsidiary() {
         return subsidiary;
     }
 
-    /**
-     * 设置subsidiary属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setSubsidiary(RecordRef value) {
-        this.subsidiary = value;
-    }
 
     /**
-     * 获取phoneticName属性的值。
+     * Sets the subsidiary value for this Contact.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param subsidiary
      */
-    public String getPhoneticName() {
+    public void setSubsidiary(com.netsuite.webservices.platform.core_2018_2.RecordRef subsidiary) {
+        this.subsidiary = subsidiary;
+    }
+
+
+    /**
+     * Gets the phoneticName value for this Contact.
+     * 
+     * @return phoneticName
+     */
+    public java.lang.String getPhoneticName() {
         return phoneticName;
     }
 
-    /**
-     * 设置phoneticName属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setPhoneticName(String value) {
-        this.phoneticName = value;
-    }
 
     /**
-     * 获取categoryList属性的值。
+     * Sets the phoneticName value for this Contact.
      * 
-     * @return
-     *     possible object is
-     *     {@link CategoryList }
-     *     
+     * @param phoneticName
      */
-    public CategoryList getCategoryList() {
+    public void setPhoneticName(java.lang.String phoneticName) {
+        this.phoneticName = phoneticName;
+    }
+
+
+    /**
+     * Gets the categoryList value for this Contact.
+     * 
+     * @return categoryList
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef[] getCategoryList() {
         return categoryList;
     }
 
-    /**
-     * 设置categoryList属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link CategoryList }
-     *     
-     */
-    public void setCategoryList(CategoryList value) {
-        this.categoryList = value;
-    }
 
     /**
-     * 获取altEmail属性的值。
+     * Sets the categoryList value for this Contact.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param categoryList
      */
-    public String getAltEmail() {
+    public void setCategoryList(com.netsuite.webservices.platform.core_2018_2.RecordRef[] categoryList) {
+        this.categoryList = categoryList;
+    }
+
+
+    /**
+     * Gets the altEmail value for this Contact.
+     * 
+     * @return altEmail
+     */
+    public java.lang.String getAltEmail() {
         return altEmail;
     }
 
-    /**
-     * 设置altEmail属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setAltEmail(String value) {
-        this.altEmail = value;
-    }
 
     /**
-     * 获取officePhone属性的值。
+     * Sets the altEmail value for this Contact.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param altEmail
      */
-    public String getOfficePhone() {
+    public void setAltEmail(java.lang.String altEmail) {
+        this.altEmail = altEmail;
+    }
+
+
+    /**
+     * Gets the officePhone value for this Contact.
+     * 
+     * @return officePhone
+     */
+    public java.lang.String getOfficePhone() {
         return officePhone;
     }
 
-    /**
-     * 设置officePhone属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setOfficePhone(String value) {
-        this.officePhone = value;
-    }
 
     /**
-     * 获取homePhone属性的值。
+     * Sets the officePhone value for this Contact.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param officePhone
      */
-    public String getHomePhone() {
+    public void setOfficePhone(java.lang.String officePhone) {
+        this.officePhone = officePhone;
+    }
+
+
+    /**
+     * Gets the homePhone value for this Contact.
+     * 
+     * @return homePhone
+     */
+    public java.lang.String getHomePhone() {
         return homePhone;
     }
 
-    /**
-     * 设置homePhone属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setHomePhone(String value) {
-        this.homePhone = value;
-    }
 
     /**
-     * 获取mobilePhone属性的值。
+     * Sets the homePhone value for this Contact.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param homePhone
      */
-    public String getMobilePhone() {
+    public void setHomePhone(java.lang.String homePhone) {
+        this.homePhone = homePhone;
+    }
+
+
+    /**
+     * Gets the mobilePhone value for this Contact.
+     * 
+     * @return mobilePhone
+     */
+    public java.lang.String getMobilePhone() {
         return mobilePhone;
     }
 
-    /**
-     * 设置mobilePhone属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setMobilePhone(String value) {
-        this.mobilePhone = value;
-    }
 
     /**
-     * 获取supervisor属性的值。
+     * Sets the mobilePhone value for this Contact.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param mobilePhone
      */
-    public RecordRef getSupervisor() {
+    public void setMobilePhone(java.lang.String mobilePhone) {
+        this.mobilePhone = mobilePhone;
+    }
+
+
+    /**
+     * Gets the supervisor value for this Contact.
+     * 
+     * @return supervisor
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getSupervisor() {
         return supervisor;
     }
 
-    /**
-     * 设置supervisor属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setSupervisor(RecordRef value) {
-        this.supervisor = value;
-    }
 
     /**
-     * 获取supervisorPhone属性的值。
+     * Sets the supervisor value for this Contact.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param supervisor
      */
-    public String getSupervisorPhone() {
+    public void setSupervisor(com.netsuite.webservices.platform.core_2018_2.RecordRef supervisor) {
+        this.supervisor = supervisor;
+    }
+
+
+    /**
+     * Gets the supervisorPhone value for this Contact.
+     * 
+     * @return supervisorPhone
+     */
+    public java.lang.String getSupervisorPhone() {
         return supervisorPhone;
     }
 
-    /**
-     * 设置supervisorPhone属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setSupervisorPhone(String value) {
-        this.supervisorPhone = value;
-    }
 
     /**
-     * 获取assistant属性的值。
+     * Sets the supervisorPhone value for this Contact.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param supervisorPhone
      */
-    public RecordRef getAssistant() {
+    public void setSupervisorPhone(java.lang.String supervisorPhone) {
+        this.supervisorPhone = supervisorPhone;
+    }
+
+
+    /**
+     * Gets the assistant value for this Contact.
+     * 
+     * @return assistant
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getAssistant() {
         return assistant;
     }
 
-    /**
-     * 设置assistant属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setAssistant(RecordRef value) {
-        this.assistant = value;
-    }
 
     /**
-     * 获取assistantPhone属性的值。
+     * Sets the assistant value for this Contact.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param assistant
      */
-    public String getAssistantPhone() {
+    public void setAssistant(com.netsuite.webservices.platform.core_2018_2.RecordRef assistant) {
+        this.assistant = assistant;
+    }
+
+
+    /**
+     * Gets the assistantPhone value for this Contact.
+     * 
+     * @return assistantPhone
+     */
+    public java.lang.String getAssistantPhone() {
         return assistantPhone;
     }
 
-    /**
-     * 设置assistantPhone属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setAssistantPhone(String value) {
-        this.assistantPhone = value;
-    }
 
     /**
-     * 获取comments属性的值。
+     * Sets the assistantPhone value for this Contact.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param assistantPhone
      */
-    public String getComments() {
+    public void setAssistantPhone(java.lang.String assistantPhone) {
+        this.assistantPhone = assistantPhone;
+    }
+
+
+    /**
+     * Gets the comments value for this Contact.
+     * 
+     * @return comments
+     */
+    public java.lang.String getComments() {
         return comments;
     }
 
-    /**
-     * 设置comments属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setComments(String value) {
-        this.comments = value;
-    }
 
     /**
-     * 获取globalSubscriptionStatus属性的值。
+     * Sets the comments value for this Contact.
      * 
-     * @return
-     *     possible object is
-     *     {@link GlobalSubscriptionStatus }
-     *     
+     * @param comments
      */
-    public GlobalSubscriptionStatus getGlobalSubscriptionStatus() {
+    public void setComments(java.lang.String comments) {
+        this.comments = comments;
+    }
+
+
+    /**
+     * Gets the globalSubscriptionStatus value for this Contact.
+     * 
+     * @return globalSubscriptionStatus
+     */
+    public com.netsuite.webservices.platform.common_2018_2.types.GlobalSubscriptionStatus getGlobalSubscriptionStatus() {
         return globalSubscriptionStatus;
     }
 
-    /**
-     * 设置globalSubscriptionStatus属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link GlobalSubscriptionStatus }
-     *     
-     */
-    public void setGlobalSubscriptionStatus(GlobalSubscriptionStatus value) {
-        this.globalSubscriptionStatus = value;
-    }
 
     /**
-     * 获取image属性的值。
+     * Sets the globalSubscriptionStatus value for this Contact.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param globalSubscriptionStatus
      */
-    public RecordRef getImage() {
+    public void setGlobalSubscriptionStatus(com.netsuite.webservices.platform.common_2018_2.types.GlobalSubscriptionStatus globalSubscriptionStatus) {
+        this.globalSubscriptionStatus = globalSubscriptionStatus;
+    }
+
+
+    /**
+     * Gets the image value for this Contact.
+     * 
+     * @return image
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getImage() {
         return image;
     }
 
-    /**
-     * 设置image属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setImage(RecordRef value) {
-        this.image = value;
-    }
 
     /**
-     * 获取billPay属性的值。
+     * Sets the image value for this Contact.
      * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
+     * @param image
      */
-    public Boolean isBillPay() {
+    public void setImage(com.netsuite.webservices.platform.core_2018_2.RecordRef image) {
+        this.image = image;
+    }
+
+
+    /**
+     * Gets the billPay value for this Contact.
+     * 
+     * @return billPay
+     */
+    public java.lang.Boolean getBillPay() {
         return billPay;
     }
 
-    /**
-     * 设置billPay属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
-     */
-    public void setBillPay(Boolean value) {
-        this.billPay = value;
-    }
 
     /**
-     * 获取dateCreated属性的值。
+     * Sets the billPay value for this Contact.
      * 
-     * @return
-     *     possible object is
-     *     {@link XMLGregorianCalendar }
-     *     
+     * @param billPay
      */
-    public XMLGregorianCalendar getDateCreated() {
+    public void setBillPay(java.lang.Boolean billPay) {
+        this.billPay = billPay;
+    }
+
+
+    /**
+     * Gets the dateCreated value for this Contact.
+     * 
+     * @return dateCreated
+     */
+    public java.util.Calendar getDateCreated() {
         return dateCreated;
     }
 
-    /**
-     * 设置dateCreated属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link XMLGregorianCalendar }
-     *     
-     */
-    public void setDateCreated(XMLGregorianCalendar value) {
-        this.dateCreated = value;
-    }
 
     /**
-     * 获取lastModifiedDate属性的值。
+     * Sets the dateCreated value for this Contact.
      * 
-     * @return
-     *     possible object is
-     *     {@link XMLGregorianCalendar }
-     *     
+     * @param dateCreated
      */
-    public XMLGregorianCalendar getLastModifiedDate() {
+    public void setDateCreated(java.util.Calendar dateCreated) {
+        this.dateCreated = dateCreated;
+    }
+
+
+    /**
+     * Gets the lastModifiedDate value for this Contact.
+     * 
+     * @return lastModifiedDate
+     */
+    public java.util.Calendar getLastModifiedDate() {
         return lastModifiedDate;
     }
 
-    /**
-     * 设置lastModifiedDate属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link XMLGregorianCalendar }
-     *     
-     */
-    public void setLastModifiedDate(XMLGregorianCalendar value) {
-        this.lastModifiedDate = value;
-    }
 
     /**
-     * 获取addressbookList属性的值。
+     * Sets the lastModifiedDate value for this Contact.
      * 
-     * @return
-     *     possible object is
-     *     {@link ContactAddressbookList }
-     *     
+     * @param lastModifiedDate
      */
-    public ContactAddressbookList getAddressbookList() {
+    public void setLastModifiedDate(java.util.Calendar lastModifiedDate) {
+        this.lastModifiedDate = lastModifiedDate;
+    }
+
+
+    /**
+     * Gets the addressbookList value for this Contact.
+     * 
+     * @return addressbookList
+     */
+    public com.netsuite.webservices.lists.relationships_2018_2.ContactAddressbook[] getAddressbookList() {
         return addressbookList;
     }
 
-    /**
-     * 设置addressbookList属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link ContactAddressbookList }
-     *     
-     */
-    public void setAddressbookList(ContactAddressbookList value) {
-        this.addressbookList = value;
-    }
 
     /**
-     * 获取subscriptionsList属性的值。
+     * Sets the addressbookList value for this Contact.
      * 
-     * @return
-     *     possible object is
-     *     {@link SubscriptionsList }
-     *     
+     * @param addressbookList
      */
-    public SubscriptionsList getSubscriptionsList() {
+    public void setAddressbookList(com.netsuite.webservices.lists.relationships_2018_2.ContactAddressbook[] addressbookList) {
+        this.addressbookList = addressbookList;
+    }
+
+
+    /**
+     * Gets the subscriptionsList value for this Contact.
+     * 
+     * @return subscriptionsList
+     */
+    public com.netsuite.webservices.lists.relationships_2018_2.Subscriptions[] getSubscriptionsList() {
         return subscriptionsList;
     }
 
-    /**
-     * 设置subscriptionsList属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SubscriptionsList }
-     *     
-     */
-    public void setSubscriptionsList(SubscriptionsList value) {
-        this.subscriptionsList = value;
-    }
 
     /**
-     * 获取customFieldList属性的值。
+     * Sets the subscriptionsList value for this Contact.
      * 
-     * @return
-     *     possible object is
-     *     {@link CustomFieldList }
-     *     
+     * @param subscriptionsList
      */
-    public CustomFieldList getCustomFieldList() {
+    public void setSubscriptionsList(com.netsuite.webservices.lists.relationships_2018_2.Subscriptions[] subscriptionsList) {
+        this.subscriptionsList = subscriptionsList;
+    }
+
+
+    /**
+     * Gets the customFieldList value for this Contact.
+     * 
+     * @return customFieldList
+     */
+    public com.netsuite.webservices.platform.core_2018_2.CustomFieldRef[] getCustomFieldList() {
         return customFieldList;
     }
 
-    /**
-     * 设置customFieldList属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link CustomFieldList }
-     *     
-     */
-    public void setCustomFieldList(CustomFieldList value) {
-        this.customFieldList = value;
-    }
 
     /**
-     * 获取internalId属性的值。
+     * Sets the customFieldList value for this Contact.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param customFieldList
      */
-    public String getInternalId() {
+    public void setCustomFieldList(com.netsuite.webservices.platform.core_2018_2.CustomFieldRef[] customFieldList) {
+        this.customFieldList = customFieldList;
+    }
+
+
+    /**
+     * Gets the internalId value for this Contact.
+     * 
+     * @return internalId
+     */
+    public java.lang.String getInternalId() {
         return internalId;
     }
 
-    /**
-     * 设置internalId属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setInternalId(String value) {
-        this.internalId = value;
-    }
 
     /**
-     * 获取externalId属性的值。
+     * Sets the internalId value for this Contact.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param internalId
      */
-    public String getExternalId() {
+    public void setInternalId(java.lang.String internalId) {
+        this.internalId = internalId;
+    }
+
+
+    /**
+     * Gets the externalId value for this Contact.
+     * 
+     * @return externalId
+     */
+    public java.lang.String getExternalId() {
         return externalId;
     }
 
+
     /**
-     * 设置externalId属性的值。
+     * Sets the externalId value for this Contact.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     * @param externalId
      */
-    public void setExternalId(String value) {
-        this.externalId = value;
+    public void setExternalId(java.lang.String externalId) {
+        this.externalId = externalId;
+    }
+
+    private java.lang.Object __equalsCalc = null;
+    public synchronized boolean equals(java.lang.Object obj) {
+        if (!(obj instanceof Contact)) return false;
+        Contact other = (Contact) obj;
+        if (obj == null) return false;
+        if (this == obj) return true;
+        if (__equalsCalc != null) {
+            return (__equalsCalc == obj);
+        }
+        __equalsCalc = obj;
+        boolean _equals;
+        _equals = super.equals(obj) && 
+            ((this.customForm==null && other.getCustomForm()==null) || 
+             (this.customForm!=null &&
+              this.customForm.equals(other.getCustomForm()))) &&
+            ((this.entityId==null && other.getEntityId()==null) || 
+             (this.entityId!=null &&
+              this.entityId.equals(other.getEntityId()))) &&
+            ((this.contactSource==null && other.getContactSource()==null) || 
+             (this.contactSource!=null &&
+              this.contactSource.equals(other.getContactSource()))) &&
+            ((this.company==null && other.getCompany()==null) || 
+             (this.company!=null &&
+              this.company.equals(other.getCompany()))) &&
+            ((this.salutation==null && other.getSalutation()==null) || 
+             (this.salutation!=null &&
+              this.salutation.equals(other.getSalutation()))) &&
+            ((this.firstName==null && other.getFirstName()==null) || 
+             (this.firstName!=null &&
+              this.firstName.equals(other.getFirstName()))) &&
+            ((this.middleName==null && other.getMiddleName()==null) || 
+             (this.middleName!=null &&
+              this.middleName.equals(other.getMiddleName()))) &&
+            ((this.lastName==null && other.getLastName()==null) || 
+             (this.lastName!=null &&
+              this.lastName.equals(other.getLastName()))) &&
+            ((this.title==null && other.getTitle()==null) || 
+             (this.title!=null &&
+              this.title.equals(other.getTitle()))) &&
+            ((this.phone==null && other.getPhone()==null) || 
+             (this.phone!=null &&
+              this.phone.equals(other.getPhone()))) &&
+            ((this.fax==null && other.getFax()==null) || 
+             (this.fax!=null &&
+              this.fax.equals(other.getFax()))) &&
+            ((this.email==null && other.getEmail()==null) || 
+             (this.email!=null &&
+              this.email.equals(other.getEmail()))) &&
+            ((this.defaultAddress==null && other.getDefaultAddress()==null) || 
+             (this.defaultAddress!=null &&
+              this.defaultAddress.equals(other.getDefaultAddress()))) &&
+            ((this.isPrivate==null && other.getIsPrivate()==null) || 
+             (this.isPrivate!=null &&
+              this.isPrivate.equals(other.getIsPrivate()))) &&
+            ((this.isInactive==null && other.getIsInactive()==null) || 
+             (this.isInactive!=null &&
+              this.isInactive.equals(other.getIsInactive()))) &&
+            ((this.subsidiary==null && other.getSubsidiary()==null) || 
+             (this.subsidiary!=null &&
+              this.subsidiary.equals(other.getSubsidiary()))) &&
+            ((this.phoneticName==null && other.getPhoneticName()==null) || 
+             (this.phoneticName!=null &&
+              this.phoneticName.equals(other.getPhoneticName()))) &&
+            ((this.categoryList==null && other.getCategoryList()==null) || 
+             (this.categoryList!=null &&
+              java.util.Arrays.equals(this.categoryList, other.getCategoryList()))) &&
+            ((this.altEmail==null && other.getAltEmail()==null) || 
+             (this.altEmail!=null &&
+              this.altEmail.equals(other.getAltEmail()))) &&
+            ((this.officePhone==null && other.getOfficePhone()==null) || 
+             (this.officePhone!=null &&
+              this.officePhone.equals(other.getOfficePhone()))) &&
+            ((this.homePhone==null && other.getHomePhone()==null) || 
+             (this.homePhone!=null &&
+              this.homePhone.equals(other.getHomePhone()))) &&
+            ((this.mobilePhone==null && other.getMobilePhone()==null) || 
+             (this.mobilePhone!=null &&
+              this.mobilePhone.equals(other.getMobilePhone()))) &&
+            ((this.supervisor==null && other.getSupervisor()==null) || 
+             (this.supervisor!=null &&
+              this.supervisor.equals(other.getSupervisor()))) &&
+            ((this.supervisorPhone==null && other.getSupervisorPhone()==null) || 
+             (this.supervisorPhone!=null &&
+              this.supervisorPhone.equals(other.getSupervisorPhone()))) &&
+            ((this.assistant==null && other.getAssistant()==null) || 
+             (this.assistant!=null &&
+              this.assistant.equals(other.getAssistant()))) &&
+            ((this.assistantPhone==null && other.getAssistantPhone()==null) || 
+             (this.assistantPhone!=null &&
+              this.assistantPhone.equals(other.getAssistantPhone()))) &&
+            ((this.comments==null && other.getComments()==null) || 
+             (this.comments!=null &&
+              this.comments.equals(other.getComments()))) &&
+            ((this.globalSubscriptionStatus==null && other.getGlobalSubscriptionStatus()==null) || 
+             (this.globalSubscriptionStatus!=null &&
+              this.globalSubscriptionStatus.equals(other.getGlobalSubscriptionStatus()))) &&
+            ((this.image==null && other.getImage()==null) || 
+             (this.image!=null &&
+              this.image.equals(other.getImage()))) &&
+            ((this.billPay==null && other.getBillPay()==null) || 
+             (this.billPay!=null &&
+              this.billPay.equals(other.getBillPay()))) &&
+            ((this.dateCreated==null && other.getDateCreated()==null) || 
+             (this.dateCreated!=null &&
+              this.dateCreated.equals(other.getDateCreated()))) &&
+            ((this.lastModifiedDate==null && other.getLastModifiedDate()==null) || 
+             (this.lastModifiedDate!=null &&
+              this.lastModifiedDate.equals(other.getLastModifiedDate()))) &&
+            ((this.addressbookList==null && other.getAddressbookList()==null) || 
+             (this.addressbookList!=null &&
+              java.util.Arrays.equals(this.addressbookList, other.getAddressbookList()))) &&
+            ((this.subscriptionsList==null && other.getSubscriptionsList()==null) || 
+             (this.subscriptionsList!=null &&
+              java.util.Arrays.equals(this.subscriptionsList, other.getSubscriptionsList()))) &&
+            ((this.customFieldList==null && other.getCustomFieldList()==null) || 
+             (this.customFieldList!=null &&
+              java.util.Arrays.equals(this.customFieldList, other.getCustomFieldList()))) &&
+            ((this.internalId==null && other.getInternalId()==null) || 
+             (this.internalId!=null &&
+              this.internalId.equals(other.getInternalId()))) &&
+            ((this.externalId==null && other.getExternalId()==null) || 
+             (this.externalId!=null &&
+              this.externalId.equals(other.getExternalId())));
+        __equalsCalc = null;
+        return _equals;
+    }
+
+    private boolean __hashCodeCalc = false;
+    public synchronized int hashCode() {
+        if (__hashCodeCalc) {
+            return 0;
+        }
+        __hashCodeCalc = true;
+        int _hashCode = super.hashCode();
+        if (getCustomForm() != null) {
+            _hashCode += getCustomForm().hashCode();
+        }
+        if (getEntityId() != null) {
+            _hashCode += getEntityId().hashCode();
+        }
+        if (getContactSource() != null) {
+            _hashCode += getContactSource().hashCode();
+        }
+        if (getCompany() != null) {
+            _hashCode += getCompany().hashCode();
+        }
+        if (getSalutation() != null) {
+            _hashCode += getSalutation().hashCode();
+        }
+        if (getFirstName() != null) {
+            _hashCode += getFirstName().hashCode();
+        }
+        if (getMiddleName() != null) {
+            _hashCode += getMiddleName().hashCode();
+        }
+        if (getLastName() != null) {
+            _hashCode += getLastName().hashCode();
+        }
+        if (getTitle() != null) {
+            _hashCode += getTitle().hashCode();
+        }
+        if (getPhone() != null) {
+            _hashCode += getPhone().hashCode();
+        }
+        if (getFax() != null) {
+            _hashCode += getFax().hashCode();
+        }
+        if (getEmail() != null) {
+            _hashCode += getEmail().hashCode();
+        }
+        if (getDefaultAddress() != null) {
+            _hashCode += getDefaultAddress().hashCode();
+        }
+        if (getIsPrivate() != null) {
+            _hashCode += getIsPrivate().hashCode();
+        }
+        if (getIsInactive() != null) {
+            _hashCode += getIsInactive().hashCode();
+        }
+        if (getSubsidiary() != null) {
+            _hashCode += getSubsidiary().hashCode();
+        }
+        if (getPhoneticName() != null) {
+            _hashCode += getPhoneticName().hashCode();
+        }
+        if (getCategoryList() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getCategoryList());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getCategoryList(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getAltEmail() != null) {
+            _hashCode += getAltEmail().hashCode();
+        }
+        if (getOfficePhone() != null) {
+            _hashCode += getOfficePhone().hashCode();
+        }
+        if (getHomePhone() != null) {
+            _hashCode += getHomePhone().hashCode();
+        }
+        if (getMobilePhone() != null) {
+            _hashCode += getMobilePhone().hashCode();
+        }
+        if (getSupervisor() != null) {
+            _hashCode += getSupervisor().hashCode();
+        }
+        if (getSupervisorPhone() != null) {
+            _hashCode += getSupervisorPhone().hashCode();
+        }
+        if (getAssistant() != null) {
+            _hashCode += getAssistant().hashCode();
+        }
+        if (getAssistantPhone() != null) {
+            _hashCode += getAssistantPhone().hashCode();
+        }
+        if (getComments() != null) {
+            _hashCode += getComments().hashCode();
+        }
+        if (getGlobalSubscriptionStatus() != null) {
+            _hashCode += getGlobalSubscriptionStatus().hashCode();
+        }
+        if (getImage() != null) {
+            _hashCode += getImage().hashCode();
+        }
+        if (getBillPay() != null) {
+            _hashCode += getBillPay().hashCode();
+        }
+        if (getDateCreated() != null) {
+            _hashCode += getDateCreated().hashCode();
+        }
+        if (getLastModifiedDate() != null) {
+            _hashCode += getLastModifiedDate().hashCode();
+        }
+        if (getAddressbookList() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getAddressbookList());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getAddressbookList(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getSubscriptionsList() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getSubscriptionsList());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getSubscriptionsList(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getCustomFieldList() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getCustomFieldList());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getCustomFieldList(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getInternalId() != null) {
+            _hashCode += getInternalId().hashCode();
+        }
+        if (getExternalId() != null) {
+            _hashCode += getExternalId().hashCode();
+        }
+        __hashCodeCalc = false;
+        return _hashCode;
+    }
+
+    // Type metadata
+    private static org.apache.axis.description.TypeDesc typeDesc =
+        new org.apache.axis.description.TypeDesc(Contact.class, true);
+
+    static {
+        typeDesc.setXmlType(new javax.xml.namespace.QName("urn:relationships_2018_2.lists.webservices.netsuite.com", "Contact"));
+        org.apache.axis.description.AttributeDesc attrField = new org.apache.axis.description.AttributeDesc();
+        attrField.setFieldName("internalId");
+        attrField.setXmlName(new javax.xml.namespace.QName("", "internalId"));
+        attrField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        typeDesc.addFieldDesc(attrField);
+        attrField = new org.apache.axis.description.AttributeDesc();
+        attrField.setFieldName("externalId");
+        attrField.setXmlName(new javax.xml.namespace.QName("", "externalId"));
+        attrField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        typeDesc.addFieldDesc(attrField);
+        org.apache.axis.description.ElementDesc elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("customForm");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:relationships_2018_2.lists.webservices.netsuite.com", "customForm"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("entityId");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:relationships_2018_2.lists.webservices.netsuite.com", "entityId"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("contactSource");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:relationships_2018_2.lists.webservices.netsuite.com", "contactSource"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("company");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:relationships_2018_2.lists.webservices.netsuite.com", "company"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("salutation");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:relationships_2018_2.lists.webservices.netsuite.com", "salutation"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("firstName");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:relationships_2018_2.lists.webservices.netsuite.com", "firstName"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("middleName");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:relationships_2018_2.lists.webservices.netsuite.com", "middleName"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("lastName");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:relationships_2018_2.lists.webservices.netsuite.com", "lastName"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("title");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:relationships_2018_2.lists.webservices.netsuite.com", "title"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("phone");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:relationships_2018_2.lists.webservices.netsuite.com", "phone"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("fax");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:relationships_2018_2.lists.webservices.netsuite.com", "fax"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("email");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:relationships_2018_2.lists.webservices.netsuite.com", "email"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("defaultAddress");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:relationships_2018_2.lists.webservices.netsuite.com", "defaultAddress"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("isPrivate");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:relationships_2018_2.lists.webservices.netsuite.com", "isPrivate"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("isInactive");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:relationships_2018_2.lists.webservices.netsuite.com", "isInactive"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("subsidiary");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:relationships_2018_2.lists.webservices.netsuite.com", "subsidiary"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("phoneticName");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:relationships_2018_2.lists.webservices.netsuite.com", "phoneticName"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("categoryList");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:relationships_2018_2.lists.webservices.netsuite.com", "categoryList"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:relationships_2018_2.lists.webservices.netsuite.com", "category"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("altEmail");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:relationships_2018_2.lists.webservices.netsuite.com", "altEmail"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("officePhone");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:relationships_2018_2.lists.webservices.netsuite.com", "officePhone"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("homePhone");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:relationships_2018_2.lists.webservices.netsuite.com", "homePhone"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("mobilePhone");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:relationships_2018_2.lists.webservices.netsuite.com", "mobilePhone"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("supervisor");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:relationships_2018_2.lists.webservices.netsuite.com", "supervisor"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("supervisorPhone");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:relationships_2018_2.lists.webservices.netsuite.com", "supervisorPhone"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("assistant");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:relationships_2018_2.lists.webservices.netsuite.com", "assistant"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("assistantPhone");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:relationships_2018_2.lists.webservices.netsuite.com", "assistantPhone"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("comments");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:relationships_2018_2.lists.webservices.netsuite.com", "comments"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("globalSubscriptionStatus");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:relationships_2018_2.lists.webservices.netsuite.com", "globalSubscriptionStatus"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:types.common_2018_2.platform.webservices.netsuite.com", "GlobalSubscriptionStatus"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("image");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:relationships_2018_2.lists.webservices.netsuite.com", "image"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("billPay");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:relationships_2018_2.lists.webservices.netsuite.com", "billPay"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("dateCreated");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:relationships_2018_2.lists.webservices.netsuite.com", "dateCreated"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "dateTime"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("lastModifiedDate");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:relationships_2018_2.lists.webservices.netsuite.com", "lastModifiedDate"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "dateTime"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("addressbookList");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:relationships_2018_2.lists.webservices.netsuite.com", "addressbookList"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:relationships_2018_2.lists.webservices.netsuite.com", "ContactAddressbook"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:relationships_2018_2.lists.webservices.netsuite.com", "addressbook"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("subscriptionsList");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:relationships_2018_2.lists.webservices.netsuite.com", "subscriptionsList"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:relationships_2018_2.lists.webservices.netsuite.com", "Subscriptions"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:relationships_2018_2.lists.webservices.netsuite.com", "subscriptions"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("customFieldList");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:relationships_2018_2.lists.webservices.netsuite.com", "customFieldList"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "CustomFieldRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "customField"));
+        typeDesc.addFieldDesc(elemField);
+    }
+
+    /**
+     * Return type metadata object
+     */
+    public static org.apache.axis.description.TypeDesc getTypeDesc() {
+        return typeDesc;
+    }
+
+    /**
+     * Get Custom Serializer
+     */
+    public static org.apache.axis.encoding.Serializer getSerializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanSerializer(
+            _javaType, _xmlType, typeDesc);
+    }
+
+    /**
+     * Get Custom Deserializer
+     */
+    public static org.apache.axis.encoding.Deserializer getDeserializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanDeserializer(
+            _javaType, _xmlType, typeDesc);
     }
 
 }

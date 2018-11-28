@@ -1,88 +1,157 @@
+/**
+ * SubsidiaryNexus.java
+ *
+ * This file was auto-generated from WSDL
+ * by the Apache Axis 1.4 Jul 28, 2010 (04:07:04 PDT) WSDL2Java emitter.
+ */
 
 package com.netsuite.webservices.lists.accounting_2018_2;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlType;
-import com.netsuite.webservices.platform.core_2018_2.RecordRef;
+public class SubsidiaryNexus  implements java.io.Serializable {
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef nexusId;
 
+    private java.lang.String country;
 
-/**
- * <p>SubsidiaryNexus complex type的 Java 类。
- * 
- * <p>以下模式片段指定包含在此类中的预期内容。
- * 
- * <pre>
- * &lt;complexType name="SubsidiaryNexus">
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element name="nexusId" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="country" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
- */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "SubsidiaryNexus", propOrder = {
-    "nexusId",
-    "country"
-})
-public class SubsidiaryNexus {
+    public SubsidiaryNexus() {
+    }
 
-    protected RecordRef nexusId;
-    protected String country;
+    public SubsidiaryNexus(
+           com.netsuite.webservices.platform.core_2018_2.RecordRef nexusId,
+           java.lang.String country) {
+           this.nexusId = nexusId;
+           this.country = country;
+    }
+
 
     /**
-     * 获取nexusId属性的值。
+     * Gets the nexusId value for this SubsidiaryNexus.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @return nexusId
      */
-    public RecordRef getNexusId() {
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getNexusId() {
         return nexusId;
     }
 
-    /**
-     * 设置nexusId属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setNexusId(RecordRef value) {
-        this.nexusId = value;
-    }
 
     /**
-     * 获取country属性的值。
+     * Sets the nexusId value for this SubsidiaryNexus.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param nexusId
      */
-    public String getCountry() {
+    public void setNexusId(com.netsuite.webservices.platform.core_2018_2.RecordRef nexusId) {
+        this.nexusId = nexusId;
+    }
+
+
+    /**
+     * Gets the country value for this SubsidiaryNexus.
+     * 
+     * @return country
+     */
+    public java.lang.String getCountry() {
         return country;
     }
 
+
     /**
-     * 设置country属性的值。
+     * Sets the country value for this SubsidiaryNexus.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     * @param country
      */
-    public void setCountry(String value) {
-        this.country = value;
+    public void setCountry(java.lang.String country) {
+        this.country = country;
+    }
+
+    private java.lang.Object __equalsCalc = null;
+    public synchronized boolean equals(java.lang.Object obj) {
+        if (!(obj instanceof SubsidiaryNexus)) return false;
+        SubsidiaryNexus other = (SubsidiaryNexus) obj;
+        if (obj == null) return false;
+        if (this == obj) return true;
+        if (__equalsCalc != null) {
+            return (__equalsCalc == obj);
+        }
+        __equalsCalc = obj;
+        boolean _equals;
+        _equals = true && 
+            ((this.nexusId==null && other.getNexusId()==null) || 
+             (this.nexusId!=null &&
+              this.nexusId.equals(other.getNexusId()))) &&
+            ((this.country==null && other.getCountry()==null) || 
+             (this.country!=null &&
+              this.country.equals(other.getCountry())));
+        __equalsCalc = null;
+        return _equals;
+    }
+
+    private boolean __hashCodeCalc = false;
+    public synchronized int hashCode() {
+        if (__hashCodeCalc) {
+            return 0;
+        }
+        __hashCodeCalc = true;
+        int _hashCode = 1;
+        if (getNexusId() != null) {
+            _hashCode += getNexusId().hashCode();
+        }
+        if (getCountry() != null) {
+            _hashCode += getCountry().hashCode();
+        }
+        __hashCodeCalc = false;
+        return _hashCode;
+    }
+
+    // Type metadata
+    private static org.apache.axis.description.TypeDesc typeDesc =
+        new org.apache.axis.description.TypeDesc(SubsidiaryNexus.class, true);
+
+    static {
+        typeDesc.setXmlType(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "SubsidiaryNexus"));
+        org.apache.axis.description.ElementDesc elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("nexusId");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "nexusId"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("country");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "country"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+    }
+
+    /**
+     * Return type metadata object
+     */
+    public static org.apache.axis.description.TypeDesc getTypeDesc() {
+        return typeDesc;
+    }
+
+    /**
+     * Get Custom Serializer
+     */
+    public static org.apache.axis.encoding.Serializer getSerializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanSerializer(
+            _javaType, _xmlType, typeDesc);
+    }
+
+    /**
+     * Get Custom Deserializer
+     */
+    public static org.apache.axis.encoding.Deserializer getDeserializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanDeserializer(
+            _javaType, _xmlType, typeDesc);
     }
 
 }

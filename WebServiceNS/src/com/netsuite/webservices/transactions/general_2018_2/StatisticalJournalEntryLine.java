@@ -1,361 +1,536 @@
+/**
+ * StatisticalJournalEntryLine.java
+ *
+ * This file was auto-generated from WSDL
+ * by the Apache Axis 1.4 Jul 28, 2010 (04:07:04 PDT) WSDL2Java emitter.
+ */
 
 package com.netsuite.webservices.transactions.general_2018_2;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlType;
-import com.netsuite.webservices.platform.core_2018_2.CustomFieldList;
-import com.netsuite.webservices.platform.core_2018_2.RecordRef;
+public class StatisticalJournalEntryLine  implements java.io.Serializable {
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef account;
 
+    private java.lang.Long line;
 
-/**
- * <p>StatisticalJournalEntryLine complex type的 Java 类。
- * 
- * <p>以下模式片段指定包含在此类中的预期内容。
- * 
- * <pre>
- * &lt;complexType name="StatisticalJournalEntryLine">
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element name="account" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="line" type="{http://www.w3.org/2001/XMLSchema}long" minOccurs="0"/>
- *         &lt;element name="location" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="scheduleNum" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="debit" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
- *         &lt;element name="memo" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="entity" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="department" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="class" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="lineUnit" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="previewDebit" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="customFieldList" type="{urn:core_2018_2.platform.webservices.netsuite.com}CustomFieldList" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
- */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "StatisticalJournalEntryLine", propOrder = {
-    "account",
-    "line",
-    "location",
-    "scheduleNum",
-    "debit",
-    "memo",
-    "entity",
-    "department",
-    "clazz",
-    "lineUnit",
-    "previewDebit",
-    "customFieldList"
-})
-public class StatisticalJournalEntryLine {
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef location;
 
-    protected RecordRef account;
-    protected Long line;
-    protected RecordRef location;
-    protected RecordRef scheduleNum;
-    protected Double debit;
-    protected String memo;
-    protected RecordRef entity;
-    protected RecordRef department;
-    @XmlElement(name = "class")
-    protected RecordRef clazz;
-    protected RecordRef lineUnit;
-    protected String previewDebit;
-    protected CustomFieldList customFieldList;
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef scheduleNum;
+
+    private java.lang.Double debit;
+
+    private java.lang.String memo;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef entity;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef department;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef _class;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef lineUnit;
+
+    private java.lang.String previewDebit;
+
+    private com.netsuite.webservices.platform.core_2018_2.CustomFieldRef[] customFieldList;
+
+    public StatisticalJournalEntryLine() {
+    }
+
+    public StatisticalJournalEntryLine(
+           com.netsuite.webservices.platform.core_2018_2.RecordRef account,
+           java.lang.Long line,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef location,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef scheduleNum,
+           java.lang.Double debit,
+           java.lang.String memo,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef entity,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef department,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef _class,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef lineUnit,
+           java.lang.String previewDebit,
+           com.netsuite.webservices.platform.core_2018_2.CustomFieldRef[] customFieldList) {
+           this.account = account;
+           this.line = line;
+           this.location = location;
+           this.scheduleNum = scheduleNum;
+           this.debit = debit;
+           this.memo = memo;
+           this.entity = entity;
+           this.department = department;
+           this._class = _class;
+           this.lineUnit = lineUnit;
+           this.previewDebit = previewDebit;
+           this.customFieldList = customFieldList;
+    }
+
 
     /**
-     * 获取account属性的值。
+     * Gets the account value for this StatisticalJournalEntryLine.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @return account
      */
-    public RecordRef getAccount() {
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getAccount() {
         return account;
     }
 
-    /**
-     * 设置account属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setAccount(RecordRef value) {
-        this.account = value;
-    }
 
     /**
-     * 获取line属性的值。
+     * Sets the account value for this StatisticalJournalEntryLine.
      * 
-     * @return
-     *     possible object is
-     *     {@link Long }
-     *     
+     * @param account
      */
-    public Long getLine() {
+    public void setAccount(com.netsuite.webservices.platform.core_2018_2.RecordRef account) {
+        this.account = account;
+    }
+
+
+    /**
+     * Gets the line value for this StatisticalJournalEntryLine.
+     * 
+     * @return line
+     */
+    public java.lang.Long getLine() {
         return line;
     }
 
-    /**
-     * 设置line属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Long }
-     *     
-     */
-    public void setLine(Long value) {
-        this.line = value;
-    }
 
     /**
-     * 获取location属性的值。
+     * Sets the line value for this StatisticalJournalEntryLine.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param line
      */
-    public RecordRef getLocation() {
+    public void setLine(java.lang.Long line) {
+        this.line = line;
+    }
+
+
+    /**
+     * Gets the location value for this StatisticalJournalEntryLine.
+     * 
+     * @return location
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getLocation() {
         return location;
     }
 
-    /**
-     * 设置location属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setLocation(RecordRef value) {
-        this.location = value;
-    }
 
     /**
-     * 获取scheduleNum属性的值。
+     * Sets the location value for this StatisticalJournalEntryLine.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param location
      */
-    public RecordRef getScheduleNum() {
+    public void setLocation(com.netsuite.webservices.platform.core_2018_2.RecordRef location) {
+        this.location = location;
+    }
+
+
+    /**
+     * Gets the scheduleNum value for this StatisticalJournalEntryLine.
+     * 
+     * @return scheduleNum
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getScheduleNum() {
         return scheduleNum;
     }
 
-    /**
-     * 设置scheduleNum属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setScheduleNum(RecordRef value) {
-        this.scheduleNum = value;
-    }
 
     /**
-     * 获取debit属性的值。
+     * Sets the scheduleNum value for this StatisticalJournalEntryLine.
      * 
-     * @return
-     *     possible object is
-     *     {@link Double }
-     *     
+     * @param scheduleNum
      */
-    public Double getDebit() {
+    public void setScheduleNum(com.netsuite.webservices.platform.core_2018_2.RecordRef scheduleNum) {
+        this.scheduleNum = scheduleNum;
+    }
+
+
+    /**
+     * Gets the debit value for this StatisticalJournalEntryLine.
+     * 
+     * @return debit
+     */
+    public java.lang.Double getDebit() {
         return debit;
     }
 
-    /**
-     * 设置debit属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Double }
-     *     
-     */
-    public void setDebit(Double value) {
-        this.debit = value;
-    }
 
     /**
-     * 获取memo属性的值。
+     * Sets the debit value for this StatisticalJournalEntryLine.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param debit
      */
-    public String getMemo() {
+    public void setDebit(java.lang.Double debit) {
+        this.debit = debit;
+    }
+
+
+    /**
+     * Gets the memo value for this StatisticalJournalEntryLine.
+     * 
+     * @return memo
+     */
+    public java.lang.String getMemo() {
         return memo;
     }
 
-    /**
-     * 设置memo属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setMemo(String value) {
-        this.memo = value;
-    }
 
     /**
-     * 获取entity属性的值。
+     * Sets the memo value for this StatisticalJournalEntryLine.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param memo
      */
-    public RecordRef getEntity() {
+    public void setMemo(java.lang.String memo) {
+        this.memo = memo;
+    }
+
+
+    /**
+     * Gets the entity value for this StatisticalJournalEntryLine.
+     * 
+     * @return entity
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getEntity() {
         return entity;
     }
 
-    /**
-     * 设置entity属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setEntity(RecordRef value) {
-        this.entity = value;
-    }
 
     /**
-     * 获取department属性的值。
+     * Sets the entity value for this StatisticalJournalEntryLine.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param entity
      */
-    public RecordRef getDepartment() {
+    public void setEntity(com.netsuite.webservices.platform.core_2018_2.RecordRef entity) {
+        this.entity = entity;
+    }
+
+
+    /**
+     * Gets the department value for this StatisticalJournalEntryLine.
+     * 
+     * @return department
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getDepartment() {
         return department;
     }
 
-    /**
-     * 设置department属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setDepartment(RecordRef value) {
-        this.department = value;
-    }
 
     /**
-     * 获取clazz属性的值。
+     * Sets the department value for this StatisticalJournalEntryLine.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param department
      */
-    public RecordRef getClazz() {
-        return clazz;
+    public void setDepartment(com.netsuite.webservices.platform.core_2018_2.RecordRef department) {
+        this.department = department;
     }
 
-    /**
-     * 设置clazz属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setClazz(RecordRef value) {
-        this.clazz = value;
-    }
 
     /**
-     * 获取lineUnit属性的值。
+     * Gets the _class value for this StatisticalJournalEntryLine.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @return _class
      */
-    public RecordRef getLineUnit() {
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef get_class() {
+        return _class;
+    }
+
+
+    /**
+     * Sets the _class value for this StatisticalJournalEntryLine.
+     * 
+     * @param _class
+     */
+    public void set_class(com.netsuite.webservices.platform.core_2018_2.RecordRef _class) {
+        this._class = _class;
+    }
+
+
+    /**
+     * Gets the lineUnit value for this StatisticalJournalEntryLine.
+     * 
+     * @return lineUnit
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getLineUnit() {
         return lineUnit;
     }
 
-    /**
-     * 设置lineUnit属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setLineUnit(RecordRef value) {
-        this.lineUnit = value;
-    }
 
     /**
-     * 获取previewDebit属性的值。
+     * Sets the lineUnit value for this StatisticalJournalEntryLine.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param lineUnit
      */
-    public String getPreviewDebit() {
+    public void setLineUnit(com.netsuite.webservices.platform.core_2018_2.RecordRef lineUnit) {
+        this.lineUnit = lineUnit;
+    }
+
+
+    /**
+     * Gets the previewDebit value for this StatisticalJournalEntryLine.
+     * 
+     * @return previewDebit
+     */
+    public java.lang.String getPreviewDebit() {
         return previewDebit;
     }
 
-    /**
-     * 设置previewDebit属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setPreviewDebit(String value) {
-        this.previewDebit = value;
-    }
 
     /**
-     * 获取customFieldList属性的值。
+     * Sets the previewDebit value for this StatisticalJournalEntryLine.
      * 
-     * @return
-     *     possible object is
-     *     {@link CustomFieldList }
-     *     
+     * @param previewDebit
      */
-    public CustomFieldList getCustomFieldList() {
+    public void setPreviewDebit(java.lang.String previewDebit) {
+        this.previewDebit = previewDebit;
+    }
+
+
+    /**
+     * Gets the customFieldList value for this StatisticalJournalEntryLine.
+     * 
+     * @return customFieldList
+     */
+    public com.netsuite.webservices.platform.core_2018_2.CustomFieldRef[] getCustomFieldList() {
         return customFieldList;
     }
 
+
     /**
-     * 设置customFieldList属性的值。
+     * Sets the customFieldList value for this StatisticalJournalEntryLine.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link CustomFieldList }
-     *     
+     * @param customFieldList
      */
-    public void setCustomFieldList(CustomFieldList value) {
-        this.customFieldList = value;
+    public void setCustomFieldList(com.netsuite.webservices.platform.core_2018_2.CustomFieldRef[] customFieldList) {
+        this.customFieldList = customFieldList;
+    }
+
+    private java.lang.Object __equalsCalc = null;
+    public synchronized boolean equals(java.lang.Object obj) {
+        if (!(obj instanceof StatisticalJournalEntryLine)) return false;
+        StatisticalJournalEntryLine other = (StatisticalJournalEntryLine) obj;
+        if (obj == null) return false;
+        if (this == obj) return true;
+        if (__equalsCalc != null) {
+            return (__equalsCalc == obj);
+        }
+        __equalsCalc = obj;
+        boolean _equals;
+        _equals = true && 
+            ((this.account==null && other.getAccount()==null) || 
+             (this.account!=null &&
+              this.account.equals(other.getAccount()))) &&
+            ((this.line==null && other.getLine()==null) || 
+             (this.line!=null &&
+              this.line.equals(other.getLine()))) &&
+            ((this.location==null && other.getLocation()==null) || 
+             (this.location!=null &&
+              this.location.equals(other.getLocation()))) &&
+            ((this.scheduleNum==null && other.getScheduleNum()==null) || 
+             (this.scheduleNum!=null &&
+              this.scheduleNum.equals(other.getScheduleNum()))) &&
+            ((this.debit==null && other.getDebit()==null) || 
+             (this.debit!=null &&
+              this.debit.equals(other.getDebit()))) &&
+            ((this.memo==null && other.getMemo()==null) || 
+             (this.memo!=null &&
+              this.memo.equals(other.getMemo()))) &&
+            ((this.entity==null && other.getEntity()==null) || 
+             (this.entity!=null &&
+              this.entity.equals(other.getEntity()))) &&
+            ((this.department==null && other.getDepartment()==null) || 
+             (this.department!=null &&
+              this.department.equals(other.getDepartment()))) &&
+            ((this._class==null && other.get_class()==null) || 
+             (this._class!=null &&
+              this._class.equals(other.get_class()))) &&
+            ((this.lineUnit==null && other.getLineUnit()==null) || 
+             (this.lineUnit!=null &&
+              this.lineUnit.equals(other.getLineUnit()))) &&
+            ((this.previewDebit==null && other.getPreviewDebit()==null) || 
+             (this.previewDebit!=null &&
+              this.previewDebit.equals(other.getPreviewDebit()))) &&
+            ((this.customFieldList==null && other.getCustomFieldList()==null) || 
+             (this.customFieldList!=null &&
+              java.util.Arrays.equals(this.customFieldList, other.getCustomFieldList())));
+        __equalsCalc = null;
+        return _equals;
+    }
+
+    private boolean __hashCodeCalc = false;
+    public synchronized int hashCode() {
+        if (__hashCodeCalc) {
+            return 0;
+        }
+        __hashCodeCalc = true;
+        int _hashCode = 1;
+        if (getAccount() != null) {
+            _hashCode += getAccount().hashCode();
+        }
+        if (getLine() != null) {
+            _hashCode += getLine().hashCode();
+        }
+        if (getLocation() != null) {
+            _hashCode += getLocation().hashCode();
+        }
+        if (getScheduleNum() != null) {
+            _hashCode += getScheduleNum().hashCode();
+        }
+        if (getDebit() != null) {
+            _hashCode += getDebit().hashCode();
+        }
+        if (getMemo() != null) {
+            _hashCode += getMemo().hashCode();
+        }
+        if (getEntity() != null) {
+            _hashCode += getEntity().hashCode();
+        }
+        if (getDepartment() != null) {
+            _hashCode += getDepartment().hashCode();
+        }
+        if (get_class() != null) {
+            _hashCode += get_class().hashCode();
+        }
+        if (getLineUnit() != null) {
+            _hashCode += getLineUnit().hashCode();
+        }
+        if (getPreviewDebit() != null) {
+            _hashCode += getPreviewDebit().hashCode();
+        }
+        if (getCustomFieldList() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getCustomFieldList());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getCustomFieldList(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        __hashCodeCalc = false;
+        return _hashCode;
+    }
+
+    // Type metadata
+    private static org.apache.axis.description.TypeDesc typeDesc =
+        new org.apache.axis.description.TypeDesc(StatisticalJournalEntryLine.class, true);
+
+    static {
+        typeDesc.setXmlType(new javax.xml.namespace.QName("urn:general_2018_2.transactions.webservices.netsuite.com", "StatisticalJournalEntryLine"));
+        org.apache.axis.description.ElementDesc elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("account");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:general_2018_2.transactions.webservices.netsuite.com", "account"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("line");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:general_2018_2.transactions.webservices.netsuite.com", "line"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "long"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("location");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:general_2018_2.transactions.webservices.netsuite.com", "location"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("scheduleNum");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:general_2018_2.transactions.webservices.netsuite.com", "scheduleNum"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("debit");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:general_2018_2.transactions.webservices.netsuite.com", "debit"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "double"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("memo");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:general_2018_2.transactions.webservices.netsuite.com", "memo"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("entity");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:general_2018_2.transactions.webservices.netsuite.com", "entity"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("department");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:general_2018_2.transactions.webservices.netsuite.com", "department"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("_class");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:general_2018_2.transactions.webservices.netsuite.com", "class"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("lineUnit");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:general_2018_2.transactions.webservices.netsuite.com", "lineUnit"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("previewDebit");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:general_2018_2.transactions.webservices.netsuite.com", "previewDebit"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("customFieldList");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:general_2018_2.transactions.webservices.netsuite.com", "customFieldList"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "CustomFieldRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "customField"));
+        typeDesc.addFieldDesc(elemField);
+    }
+
+    /**
+     * Return type metadata object
+     */
+    public static org.apache.axis.description.TypeDesc getTypeDesc() {
+        return typeDesc;
+    }
+
+    /**
+     * Get Custom Serializer
+     */
+    public static org.apache.axis.encoding.Serializer getSerializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanSerializer(
+            _javaType, _xmlType, typeDesc);
+    }
+
+    /**
+     * Get Custom Deserializer
+     */
+    public static org.apache.axis.encoding.Deserializer getDeserializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanDeserializer(
+            _javaType, _xmlType, typeDesc);
     }
 
 }

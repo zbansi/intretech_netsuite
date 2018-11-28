@@ -1,0 +1,76 @@
+package com.bansi.ws.nscux;
+
+import java.rmi.RemoteException;
+
+import com.netsuite.webservices.*;
+import com.netsuite.webservices.lists.relationships_2017_1.Customer;
+import com.netsuite.webservices.platform.core_2017_1.Passport;
+import com.netsuite.webservices.platform.core_2017_1.RecordRef;
+import com.netsuite.webservices.platform.core_2017_1.StatusDetail;
+import com.netsuite.webservices.platform.core_2018_2.Status;
+import com.netsuite.webservices.platform.faults_2017_1.ExceededRequestLimitFault;
+import com.netsuite.webservices.platform.faults_2017_1.InsufficientPermissionFault;
+import com.netsuite.webservices.platform.faults_2017_1.InvalidAccountFault;
+import com.netsuite.webservices.platform.faults_2017_1.InvalidCredentialsFault;
+import com.netsuite.webservices.platform.faults_2017_1.InvalidSessionFault;
+import com.netsuite.webservices.platform.faults_2017_1.InvalidVersionFault;
+import com.netsuite.webservices.platform.faults_2017_1.UnexpectedErrorFault;
+import com.netsuite.webservices.platform.messages_2017_1.WriteResponse;
+import com.netsuite.webservices.platform_2017_1.NetSuiteServiceLocator;
+import com.netsuite.webservices.platform_2017_1.NetSuitePortType;;
+
+public class CuxClient {
+	
+	public  CuxClient(){
+	NetSuiteServiceLocator nsservice = new NetSuiteServiceLocator();
+	nsservice.setMaintainSession(true);
+	
+	NetSuitePortType port = nsservice.getNetSuitePort();
+	
+	Passport passport = new Passport();
+	
+	
+	passport.setEmail( "username@netsuite.com" );
+	passport.setPassword( "mypassword" );
+	
+	RecordRef role = new RecordRef() ;
+
+	role.setInternalId("3");
+	
+	passport.setRole( role );
+	passport.setAccount( "TSTDRV96" );
+	
+//	Status status = port.login(passport).getStatus();
+	try {
+		StatusDetail[] sta = port.login(passport).getStatus();
+	} catch (InsufficientPermissionFault e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	} catch (InvalidCredentialsFault e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	} catch (InvalidAccountFault e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	} catch (InvalidVersionFault e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	} catch (ExceededRequestLimitFault e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	} catch (UnexpectedErrorFault e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	} catch (InvalidSessionFault e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	} catch (RemoteException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	}
+	Customer cust = new Customer();
+	cust.setEntityId( "XYZ Inc" );
+	WriteResponse response = port.add( cust );
+	port.logout();
+	}
+}

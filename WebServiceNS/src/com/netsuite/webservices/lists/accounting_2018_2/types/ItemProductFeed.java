@@ -1,60 +1,76 @@
+/**
+ * ItemProductFeed.java
+ *
+ * This file was auto-generated from WSDL
+ * by the Apache Axis 1.4 Jul 28, 2010 (04:07:04 PDT) WSDL2Java emitter.
+ */
 
 package com.netsuite.webservices.lists.accounting_2018_2.types;
 
-import javax.xml.bind.annotation.XmlEnum;
-import javax.xml.bind.annotation.XmlEnumValue;
-import javax.xml.bind.annotation.XmlType;
+public class ItemProductFeed implements java.io.Serializable {
+    private java.lang.String _value_;
+    private static java.util.HashMap _table_ = new java.util.HashMap();
 
-
-/**
- * <p>ItemProductFeed的 Java 类。
- * 
- * <p>以下模式片段指定包含在此类中的预期内容。
- * <p>
- * <pre>
- * &lt;simpleType name="ItemProductFeed">
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     &lt;enumeration value="_googleBase"/>
- *     &lt;enumeration value="_nexTag"/>
- *     &lt;enumeration value="_shoppingCom"/>
- *     &lt;enumeration value="_shopzilla"/>
- *     &lt;enumeration value="_yahooShopping"/>
- *   &lt;/restriction>
- * &lt;/simpleType>
- * </pre>
- * 
- */
-@XmlType(name = "ItemProductFeed", namespace = "urn:types.accounting_2018_2.lists.webservices.netsuite.com")
-@XmlEnum
-public enum ItemProductFeed {
-
-    @XmlEnumValue("_googleBase")
-    GOOGLE_BASE("_googleBase"),
-    @XmlEnumValue("_nexTag")
-    NEX_TAG("_nexTag"),
-    @XmlEnumValue("_shoppingCom")
-    SHOPPING_COM("_shoppingCom"),
-    @XmlEnumValue("_shopzilla")
-    SHOPZILLA("_shopzilla"),
-    @XmlEnumValue("_yahooShopping")
-    YAHOO_SHOPPING("_yahooShopping");
-    private final String value;
-
-    ItemProductFeed(String v) {
-        value = v;
+    // Constructor
+    protected ItemProductFeed(java.lang.String value) {
+        _value_ = value;
+        _table_.put(_value_,this);
     }
 
-    public String value() {
-        return value;
+    public static final java.lang.String __googleBase = "_googleBase";
+    public static final java.lang.String __nexTag = "_nexTag";
+    public static final java.lang.String __shoppingCom = "_shoppingCom";
+    public static final java.lang.String __shopzilla = "_shopzilla";
+    public static final java.lang.String __yahooShopping = "_yahooShopping";
+    public static final ItemProductFeed _googleBase = new ItemProductFeed(__googleBase);
+    public static final ItemProductFeed _nexTag = new ItemProductFeed(__nexTag);
+    public static final ItemProductFeed _shoppingCom = new ItemProductFeed(__shoppingCom);
+    public static final ItemProductFeed _shopzilla = new ItemProductFeed(__shopzilla);
+    public static final ItemProductFeed _yahooShopping = new ItemProductFeed(__yahooShopping);
+    public java.lang.String getValue() { return _value_;}
+    public static ItemProductFeed fromValue(java.lang.String value)
+          throws java.lang.IllegalArgumentException {
+        ItemProductFeed enumeration = (ItemProductFeed)
+            _table_.get(value);
+        if (enumeration==null) throw new java.lang.IllegalArgumentException();
+        return enumeration;
     }
+    public static ItemProductFeed fromString(java.lang.String value)
+          throws java.lang.IllegalArgumentException {
+        return fromValue(value);
+    }
+    public boolean equals(java.lang.Object obj) {return (obj == this);}
+    public int hashCode() { return toString().hashCode();}
+    public java.lang.String toString() { return _value_;}
+    public java.lang.Object readResolve() throws java.io.ObjectStreamException { return fromValue(_value_);}
+    public static org.apache.axis.encoding.Serializer getSerializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new org.apache.axis.encoding.ser.EnumSerializer(
+            _javaType, _xmlType);
+    }
+    public static org.apache.axis.encoding.Deserializer getDeserializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new org.apache.axis.encoding.ser.EnumDeserializer(
+            _javaType, _xmlType);
+    }
+    // Type metadata
+    private static org.apache.axis.description.TypeDesc typeDesc =
+        new org.apache.axis.description.TypeDesc(ItemProductFeed.class);
 
-    public static ItemProductFeed fromValue(String v) {
-        for (ItemProductFeed c: ItemProductFeed.values()) {
-            if (c.value.equals(v)) {
-                return c;
-            }
-        }
-        throw new IllegalArgumentException(v);
+    static {
+        typeDesc.setXmlType(new javax.xml.namespace.QName("urn:types.accounting_2018_2.lists.webservices.netsuite.com", "ItemProductFeed"));
+    }
+    /**
+     * Return type metadata object
+     */
+    public static org.apache.axis.description.TypeDesc getTypeDesc() {
+        return typeDesc;
     }
 
 }

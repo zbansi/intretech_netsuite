@@ -1,168 +1,268 @@
+/**
+ * InventoryNumberLocations.java
+ *
+ * This file was auto-generated from WSDL
+ * by the Apache Axis 1.4 Jul 28, 2010 (04:07:04 PDT) WSDL2Java emitter.
+ */
 
 package com.netsuite.webservices.lists.accounting_2018_2;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlType;
+public class InventoryNumberLocations  implements java.io.Serializable {
+    private java.lang.String location;
 
+    private java.lang.Double quantityOnHand;
 
-/**
- * <p>InventoryNumberLocations complex type的 Java 类。
- * 
- * <p>以下模式片段指定包含在此类中的预期内容。
- * 
- * <pre>
- * &lt;complexType name="InventoryNumberLocations">
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element name="location" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="quantityOnHand" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
- *         &lt;element name="quantityAvailable" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
- *         &lt;element name="quantityOnOrder" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
- *         &lt;element name="quantityInTransit" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
- */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "InventoryNumberLocations", propOrder = {
-    "location",
-    "quantityOnHand",
-    "quantityAvailable",
-    "quantityOnOrder",
-    "quantityInTransit"
-})
-public class InventoryNumberLocations {
+    private java.lang.Double quantityAvailable;
 
-    protected String location;
-    protected Double quantityOnHand;
-    protected Double quantityAvailable;
-    protected Double quantityOnOrder;
-    protected Double quantityInTransit;
+    private java.lang.Double quantityOnOrder;
+
+    private java.lang.Double quantityInTransit;
+
+    public InventoryNumberLocations() {
+    }
+
+    public InventoryNumberLocations(
+           java.lang.String location,
+           java.lang.Double quantityOnHand,
+           java.lang.Double quantityAvailable,
+           java.lang.Double quantityOnOrder,
+           java.lang.Double quantityInTransit) {
+           this.location = location;
+           this.quantityOnHand = quantityOnHand;
+           this.quantityAvailable = quantityAvailable;
+           this.quantityOnOrder = quantityOnOrder;
+           this.quantityInTransit = quantityInTransit;
+    }
+
 
     /**
-     * 获取location属性的值。
+     * Gets the location value for this InventoryNumberLocations.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @return location
      */
-    public String getLocation() {
+    public java.lang.String getLocation() {
         return location;
     }
 
-    /**
-     * 设置location属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setLocation(String value) {
-        this.location = value;
-    }
 
     /**
-     * 获取quantityOnHand属性的值。
+     * Sets the location value for this InventoryNumberLocations.
      * 
-     * @return
-     *     possible object is
-     *     {@link Double }
-     *     
+     * @param location
      */
-    public Double getQuantityOnHand() {
+    public void setLocation(java.lang.String location) {
+        this.location = location;
+    }
+
+
+    /**
+     * Gets the quantityOnHand value for this InventoryNumberLocations.
+     * 
+     * @return quantityOnHand
+     */
+    public java.lang.Double getQuantityOnHand() {
         return quantityOnHand;
     }
 
-    /**
-     * 设置quantityOnHand属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Double }
-     *     
-     */
-    public void setQuantityOnHand(Double value) {
-        this.quantityOnHand = value;
-    }
 
     /**
-     * 获取quantityAvailable属性的值。
+     * Sets the quantityOnHand value for this InventoryNumberLocations.
      * 
-     * @return
-     *     possible object is
-     *     {@link Double }
-     *     
+     * @param quantityOnHand
      */
-    public Double getQuantityAvailable() {
+    public void setQuantityOnHand(java.lang.Double quantityOnHand) {
+        this.quantityOnHand = quantityOnHand;
+    }
+
+
+    /**
+     * Gets the quantityAvailable value for this InventoryNumberLocations.
+     * 
+     * @return quantityAvailable
+     */
+    public java.lang.Double getQuantityAvailable() {
         return quantityAvailable;
     }
 
-    /**
-     * 设置quantityAvailable属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Double }
-     *     
-     */
-    public void setQuantityAvailable(Double value) {
-        this.quantityAvailable = value;
-    }
 
     /**
-     * 获取quantityOnOrder属性的值。
+     * Sets the quantityAvailable value for this InventoryNumberLocations.
      * 
-     * @return
-     *     possible object is
-     *     {@link Double }
-     *     
+     * @param quantityAvailable
      */
-    public Double getQuantityOnOrder() {
+    public void setQuantityAvailable(java.lang.Double quantityAvailable) {
+        this.quantityAvailable = quantityAvailable;
+    }
+
+
+    /**
+     * Gets the quantityOnOrder value for this InventoryNumberLocations.
+     * 
+     * @return quantityOnOrder
+     */
+    public java.lang.Double getQuantityOnOrder() {
         return quantityOnOrder;
     }
 
-    /**
-     * 设置quantityOnOrder属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Double }
-     *     
-     */
-    public void setQuantityOnOrder(Double value) {
-        this.quantityOnOrder = value;
-    }
 
     /**
-     * 获取quantityInTransit属性的值。
+     * Sets the quantityOnOrder value for this InventoryNumberLocations.
      * 
-     * @return
-     *     possible object is
-     *     {@link Double }
-     *     
+     * @param quantityOnOrder
      */
-    public Double getQuantityInTransit() {
+    public void setQuantityOnOrder(java.lang.Double quantityOnOrder) {
+        this.quantityOnOrder = quantityOnOrder;
+    }
+
+
+    /**
+     * Gets the quantityInTransit value for this InventoryNumberLocations.
+     * 
+     * @return quantityInTransit
+     */
+    public java.lang.Double getQuantityInTransit() {
         return quantityInTransit;
     }
 
+
     /**
-     * 设置quantityInTransit属性的值。
+     * Sets the quantityInTransit value for this InventoryNumberLocations.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link Double }
-     *     
+     * @param quantityInTransit
      */
-    public void setQuantityInTransit(Double value) {
-        this.quantityInTransit = value;
+    public void setQuantityInTransit(java.lang.Double quantityInTransit) {
+        this.quantityInTransit = quantityInTransit;
+    }
+
+    private java.lang.Object __equalsCalc = null;
+    public synchronized boolean equals(java.lang.Object obj) {
+        if (!(obj instanceof InventoryNumberLocations)) return false;
+        InventoryNumberLocations other = (InventoryNumberLocations) obj;
+        if (obj == null) return false;
+        if (this == obj) return true;
+        if (__equalsCalc != null) {
+            return (__equalsCalc == obj);
+        }
+        __equalsCalc = obj;
+        boolean _equals;
+        _equals = true && 
+            ((this.location==null && other.getLocation()==null) || 
+             (this.location!=null &&
+              this.location.equals(other.getLocation()))) &&
+            ((this.quantityOnHand==null && other.getQuantityOnHand()==null) || 
+             (this.quantityOnHand!=null &&
+              this.quantityOnHand.equals(other.getQuantityOnHand()))) &&
+            ((this.quantityAvailable==null && other.getQuantityAvailable()==null) || 
+             (this.quantityAvailable!=null &&
+              this.quantityAvailable.equals(other.getQuantityAvailable()))) &&
+            ((this.quantityOnOrder==null && other.getQuantityOnOrder()==null) || 
+             (this.quantityOnOrder!=null &&
+              this.quantityOnOrder.equals(other.getQuantityOnOrder()))) &&
+            ((this.quantityInTransit==null && other.getQuantityInTransit()==null) || 
+             (this.quantityInTransit!=null &&
+              this.quantityInTransit.equals(other.getQuantityInTransit())));
+        __equalsCalc = null;
+        return _equals;
+    }
+
+    private boolean __hashCodeCalc = false;
+    public synchronized int hashCode() {
+        if (__hashCodeCalc) {
+            return 0;
+        }
+        __hashCodeCalc = true;
+        int _hashCode = 1;
+        if (getLocation() != null) {
+            _hashCode += getLocation().hashCode();
+        }
+        if (getQuantityOnHand() != null) {
+            _hashCode += getQuantityOnHand().hashCode();
+        }
+        if (getQuantityAvailable() != null) {
+            _hashCode += getQuantityAvailable().hashCode();
+        }
+        if (getQuantityOnOrder() != null) {
+            _hashCode += getQuantityOnOrder().hashCode();
+        }
+        if (getQuantityInTransit() != null) {
+            _hashCode += getQuantityInTransit().hashCode();
+        }
+        __hashCodeCalc = false;
+        return _hashCode;
+    }
+
+    // Type metadata
+    private static org.apache.axis.description.TypeDesc typeDesc =
+        new org.apache.axis.description.TypeDesc(InventoryNumberLocations.class, true);
+
+    static {
+        typeDesc.setXmlType(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "InventoryNumberLocations"));
+        org.apache.axis.description.ElementDesc elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("location");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "location"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("quantityOnHand");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "quantityOnHand"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "double"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("quantityAvailable");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "quantityAvailable"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "double"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("quantityOnOrder");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "quantityOnOrder"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "double"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("quantityInTransit");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "quantityInTransit"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "double"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+    }
+
+    /**
+     * Return type metadata object
+     */
+    public static org.apache.axis.description.TypeDesc getTypeDesc() {
+        return typeDesc;
+    }
+
+    /**
+     * Get Custom Serializer
+     */
+    public static org.apache.axis.encoding.Serializer getSerializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanSerializer(
+            _javaType, _xmlType, typeDesc);
+    }
+
+    /**
+     * Get Custom Deserializer
+     */
+    public static org.apache.axis.encoding.Deserializer getDeserializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanDeserializer(
+            _javaType, _xmlType, typeDesc);
     }
 
 }

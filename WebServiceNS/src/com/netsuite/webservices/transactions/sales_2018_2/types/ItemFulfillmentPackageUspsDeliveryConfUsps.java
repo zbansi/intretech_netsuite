@@ -1,51 +1,70 @@
+/**
+ * ItemFulfillmentPackageUspsDeliveryConfUsps.java
+ *
+ * This file was auto-generated from WSDL
+ * by the Apache Axis 1.4 Jul 28, 2010 (04:07:04 PDT) WSDL2Java emitter.
+ */
 
 package com.netsuite.webservices.transactions.sales_2018_2.types;
 
-import javax.xml.bind.annotation.XmlEnum;
-import javax.xml.bind.annotation.XmlEnumValue;
-import javax.xml.bind.annotation.XmlType;
+public class ItemFulfillmentPackageUspsDeliveryConfUsps implements java.io.Serializable {
+    private java.lang.String _value_;
+    private static java.util.HashMap _table_ = new java.util.HashMap();
 
-
-/**
- * <p>ItemFulfillmentPackageUspsDeliveryConfUsps的 Java 类。
- * 
- * <p>以下模式片段指定包含在此类中的预期内容。
- * <p>
- * <pre>
- * &lt;simpleType name="ItemFulfillmentPackageUspsDeliveryConfUsps">
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     &lt;enumeration value="_deliveryConfirmation"/>
- *     &lt;enumeration value="_signatureConfirmation"/>
- *   &lt;/restriction>
- * &lt;/simpleType>
- * </pre>
- * 
- */
-@XmlType(name = "ItemFulfillmentPackageUspsDeliveryConfUsps", namespace = "urn:types.sales_2018_2.transactions.webservices.netsuite.com")
-@XmlEnum
-public enum ItemFulfillmentPackageUspsDeliveryConfUsps {
-
-    @XmlEnumValue("_deliveryConfirmation")
-    DELIVERY_CONFIRMATION("_deliveryConfirmation"),
-    @XmlEnumValue("_signatureConfirmation")
-    SIGNATURE_CONFIRMATION("_signatureConfirmation");
-    private final String value;
-
-    ItemFulfillmentPackageUspsDeliveryConfUsps(String v) {
-        value = v;
+    // Constructor
+    protected ItemFulfillmentPackageUspsDeliveryConfUsps(java.lang.String value) {
+        _value_ = value;
+        _table_.put(_value_,this);
     }
 
-    public String value() {
-        return value;
+    public static final java.lang.String __deliveryConfirmation = "_deliveryConfirmation";
+    public static final java.lang.String __signatureConfirmation = "_signatureConfirmation";
+    public static final ItemFulfillmentPackageUspsDeliveryConfUsps _deliveryConfirmation = new ItemFulfillmentPackageUspsDeliveryConfUsps(__deliveryConfirmation);
+    public static final ItemFulfillmentPackageUspsDeliveryConfUsps _signatureConfirmation = new ItemFulfillmentPackageUspsDeliveryConfUsps(__signatureConfirmation);
+    public java.lang.String getValue() { return _value_;}
+    public static ItemFulfillmentPackageUspsDeliveryConfUsps fromValue(java.lang.String value)
+          throws java.lang.IllegalArgumentException {
+        ItemFulfillmentPackageUspsDeliveryConfUsps enumeration = (ItemFulfillmentPackageUspsDeliveryConfUsps)
+            _table_.get(value);
+        if (enumeration==null) throw new java.lang.IllegalArgumentException();
+        return enumeration;
     }
+    public static ItemFulfillmentPackageUspsDeliveryConfUsps fromString(java.lang.String value)
+          throws java.lang.IllegalArgumentException {
+        return fromValue(value);
+    }
+    public boolean equals(java.lang.Object obj) {return (obj == this);}
+    public int hashCode() { return toString().hashCode();}
+    public java.lang.String toString() { return _value_;}
+    public java.lang.Object readResolve() throws java.io.ObjectStreamException { return fromValue(_value_);}
+    public static org.apache.axis.encoding.Serializer getSerializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new org.apache.axis.encoding.ser.EnumSerializer(
+            _javaType, _xmlType);
+    }
+    public static org.apache.axis.encoding.Deserializer getDeserializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new org.apache.axis.encoding.ser.EnumDeserializer(
+            _javaType, _xmlType);
+    }
+    // Type metadata
+    private static org.apache.axis.description.TypeDesc typeDesc =
+        new org.apache.axis.description.TypeDesc(ItemFulfillmentPackageUspsDeliveryConfUsps.class);
 
-    public static ItemFulfillmentPackageUspsDeliveryConfUsps fromValue(String v) {
-        for (ItemFulfillmentPackageUspsDeliveryConfUsps c: ItemFulfillmentPackageUspsDeliveryConfUsps.values()) {
-            if (c.value.equals(v)) {
-                return c;
-            }
-        }
-        throw new IllegalArgumentException(v);
+    static {
+        typeDesc.setXmlType(new javax.xml.namespace.QName("urn:types.sales_2018_2.transactions.webservices.netsuite.com", "ItemFulfillmentPackageUspsDeliveryConfUsps"));
+    }
+    /**
+     * Return type metadata object
+     */
+    public static org.apache.axis.description.TypeDesc getTypeDesc() {
+        return typeDesc;
     }
 
 }

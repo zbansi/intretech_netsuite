@@ -1,333 +1,490 @@
+/**
+ * CustomerPaymentCredit.java
+ *
+ * This file was auto-generated from WSDL
+ * by the Apache Axis 1.4 Jul 28, 2010 (04:07:04 PDT) WSDL2Java emitter.
+ */
 
 package com.netsuite.webservices.transactions.customers_2018_2;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlSchemaType;
-import javax.xml.bind.annotation.XmlType;
-import javax.xml.datatype.XMLGregorianCalendar;
+public class CustomerPaymentCredit  implements java.io.Serializable {
+    private java.lang.Boolean apply;
 
+    private java.lang.Long doc;
 
-/**
- * <p>CustomerPaymentCredit complex type的 Java 类。
- * 
- * <p>以下模式片段指定包含在此类中的预期内容。
- * 
- * <pre>
- * &lt;complexType name="CustomerPaymentCredit">
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element name="apply" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         &lt;element name="doc" type="{http://www.w3.org/2001/XMLSchema}long" minOccurs="0"/>
- *         &lt;element name="line" type="{http://www.w3.org/2001/XMLSchema}long" minOccurs="0"/>
- *         &lt;element name="creditDate" type="{http://www.w3.org/2001/XMLSchema}dateTime" minOccurs="0"/>
- *         &lt;element name="type" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="refNum" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="appliedTo" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="total" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
- *         &lt;element name="due" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
- *         &lt;element name="currency" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="amount" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
- */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "CustomerPaymentCredit", propOrder = {
-    "apply",
-    "doc",
-    "line",
-    "creditDate",
-    "type",
-    "refNum",
-    "appliedTo",
-    "total",
-    "due",
-    "currency",
-    "amount"
-})
-public class CustomerPaymentCredit {
+    private java.lang.Long line;
 
-    protected Boolean apply;
-    protected Long doc;
-    protected Long line;
-    @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar creditDate;
-    protected String type;
-    protected String refNum;
-    protected String appliedTo;
-    protected Double total;
-    protected Double due;
-    protected String currency;
-    protected Double amount;
+    private java.util.Calendar creditDate;
+
+    private java.lang.String type;
+
+    private java.lang.String refNum;
+
+    private java.lang.String appliedTo;
+
+    private java.lang.Double total;
+
+    private java.lang.Double due;
+
+    private java.lang.String currency;
+
+    private java.lang.Double amount;
+
+    public CustomerPaymentCredit() {
+    }
+
+    public CustomerPaymentCredit(
+           java.lang.Boolean apply,
+           java.lang.Long doc,
+           java.lang.Long line,
+           java.util.Calendar creditDate,
+           java.lang.String type,
+           java.lang.String refNum,
+           java.lang.String appliedTo,
+           java.lang.Double total,
+           java.lang.Double due,
+           java.lang.String currency,
+           java.lang.Double amount) {
+           this.apply = apply;
+           this.doc = doc;
+           this.line = line;
+           this.creditDate = creditDate;
+           this.type = type;
+           this.refNum = refNum;
+           this.appliedTo = appliedTo;
+           this.total = total;
+           this.due = due;
+           this.currency = currency;
+           this.amount = amount;
+    }
+
 
     /**
-     * 获取apply属性的值。
+     * Gets the apply value for this CustomerPaymentCredit.
      * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
+     * @return apply
      */
-    public Boolean isApply() {
+    public java.lang.Boolean getApply() {
         return apply;
     }
 
-    /**
-     * 设置apply属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
-     */
-    public void setApply(Boolean value) {
-        this.apply = value;
-    }
 
     /**
-     * 获取doc属性的值。
+     * Sets the apply value for this CustomerPaymentCredit.
      * 
-     * @return
-     *     possible object is
-     *     {@link Long }
-     *     
+     * @param apply
      */
-    public Long getDoc() {
+    public void setApply(java.lang.Boolean apply) {
+        this.apply = apply;
+    }
+
+
+    /**
+     * Gets the doc value for this CustomerPaymentCredit.
+     * 
+     * @return doc
+     */
+    public java.lang.Long getDoc() {
         return doc;
     }
 
-    /**
-     * 设置doc属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Long }
-     *     
-     */
-    public void setDoc(Long value) {
-        this.doc = value;
-    }
 
     /**
-     * 获取line属性的值。
+     * Sets the doc value for this CustomerPaymentCredit.
      * 
-     * @return
-     *     possible object is
-     *     {@link Long }
-     *     
+     * @param doc
      */
-    public Long getLine() {
+    public void setDoc(java.lang.Long doc) {
+        this.doc = doc;
+    }
+
+
+    /**
+     * Gets the line value for this CustomerPaymentCredit.
+     * 
+     * @return line
+     */
+    public java.lang.Long getLine() {
         return line;
     }
 
-    /**
-     * 设置line属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Long }
-     *     
-     */
-    public void setLine(Long value) {
-        this.line = value;
-    }
 
     /**
-     * 获取creditDate属性的值。
+     * Sets the line value for this CustomerPaymentCredit.
      * 
-     * @return
-     *     possible object is
-     *     {@link XMLGregorianCalendar }
-     *     
+     * @param line
      */
-    public XMLGregorianCalendar getCreditDate() {
+    public void setLine(java.lang.Long line) {
+        this.line = line;
+    }
+
+
+    /**
+     * Gets the creditDate value for this CustomerPaymentCredit.
+     * 
+     * @return creditDate
+     */
+    public java.util.Calendar getCreditDate() {
         return creditDate;
     }
 
-    /**
-     * 设置creditDate属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link XMLGregorianCalendar }
-     *     
-     */
-    public void setCreditDate(XMLGregorianCalendar value) {
-        this.creditDate = value;
-    }
 
     /**
-     * 获取type属性的值。
+     * Sets the creditDate value for this CustomerPaymentCredit.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param creditDate
      */
-    public String getType() {
+    public void setCreditDate(java.util.Calendar creditDate) {
+        this.creditDate = creditDate;
+    }
+
+
+    /**
+     * Gets the type value for this CustomerPaymentCredit.
+     * 
+     * @return type
+     */
+    public java.lang.String getType() {
         return type;
     }
 
-    /**
-     * 设置type属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setType(String value) {
-        this.type = value;
-    }
 
     /**
-     * 获取refNum属性的值。
+     * Sets the type value for this CustomerPaymentCredit.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param type
      */
-    public String getRefNum() {
+    public void setType(java.lang.String type) {
+        this.type = type;
+    }
+
+
+    /**
+     * Gets the refNum value for this CustomerPaymentCredit.
+     * 
+     * @return refNum
+     */
+    public java.lang.String getRefNum() {
         return refNum;
     }
 
-    /**
-     * 设置refNum属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setRefNum(String value) {
-        this.refNum = value;
-    }
 
     /**
-     * 获取appliedTo属性的值。
+     * Sets the refNum value for this CustomerPaymentCredit.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param refNum
      */
-    public String getAppliedTo() {
+    public void setRefNum(java.lang.String refNum) {
+        this.refNum = refNum;
+    }
+
+
+    /**
+     * Gets the appliedTo value for this CustomerPaymentCredit.
+     * 
+     * @return appliedTo
+     */
+    public java.lang.String getAppliedTo() {
         return appliedTo;
     }
 
-    /**
-     * 设置appliedTo属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setAppliedTo(String value) {
-        this.appliedTo = value;
-    }
 
     /**
-     * 获取total属性的值。
+     * Sets the appliedTo value for this CustomerPaymentCredit.
      * 
-     * @return
-     *     possible object is
-     *     {@link Double }
-     *     
+     * @param appliedTo
      */
-    public Double getTotal() {
+    public void setAppliedTo(java.lang.String appliedTo) {
+        this.appliedTo = appliedTo;
+    }
+
+
+    /**
+     * Gets the total value for this CustomerPaymentCredit.
+     * 
+     * @return total
+     */
+    public java.lang.Double getTotal() {
         return total;
     }
 
-    /**
-     * 设置total属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Double }
-     *     
-     */
-    public void setTotal(Double value) {
-        this.total = value;
-    }
 
     /**
-     * 获取due属性的值。
+     * Sets the total value for this CustomerPaymentCredit.
      * 
-     * @return
-     *     possible object is
-     *     {@link Double }
-     *     
+     * @param total
      */
-    public Double getDue() {
+    public void setTotal(java.lang.Double total) {
+        this.total = total;
+    }
+
+
+    /**
+     * Gets the due value for this CustomerPaymentCredit.
+     * 
+     * @return due
+     */
+    public java.lang.Double getDue() {
         return due;
     }
 
-    /**
-     * 设置due属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Double }
-     *     
-     */
-    public void setDue(Double value) {
-        this.due = value;
-    }
 
     /**
-     * 获取currency属性的值。
+     * Sets the due value for this CustomerPaymentCredit.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param due
      */
-    public String getCurrency() {
+    public void setDue(java.lang.Double due) {
+        this.due = due;
+    }
+
+
+    /**
+     * Gets the currency value for this CustomerPaymentCredit.
+     * 
+     * @return currency
+     */
+    public java.lang.String getCurrency() {
         return currency;
     }
 
-    /**
-     * 设置currency属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setCurrency(String value) {
-        this.currency = value;
-    }
 
     /**
-     * 获取amount属性的值。
+     * Sets the currency value for this CustomerPaymentCredit.
      * 
-     * @return
-     *     possible object is
-     *     {@link Double }
-     *     
+     * @param currency
      */
-    public Double getAmount() {
+    public void setCurrency(java.lang.String currency) {
+        this.currency = currency;
+    }
+
+
+    /**
+     * Gets the amount value for this CustomerPaymentCredit.
+     * 
+     * @return amount
+     */
+    public java.lang.Double getAmount() {
         return amount;
     }
 
+
     /**
-     * 设置amount属性的值。
+     * Sets the amount value for this CustomerPaymentCredit.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link Double }
-     *     
+     * @param amount
      */
-    public void setAmount(Double value) {
-        this.amount = value;
+    public void setAmount(java.lang.Double amount) {
+        this.amount = amount;
+    }
+
+    private java.lang.Object __equalsCalc = null;
+    public synchronized boolean equals(java.lang.Object obj) {
+        if (!(obj instanceof CustomerPaymentCredit)) return false;
+        CustomerPaymentCredit other = (CustomerPaymentCredit) obj;
+        if (obj == null) return false;
+        if (this == obj) return true;
+        if (__equalsCalc != null) {
+            return (__equalsCalc == obj);
+        }
+        __equalsCalc = obj;
+        boolean _equals;
+        _equals = true && 
+            ((this.apply==null && other.getApply()==null) || 
+             (this.apply!=null &&
+              this.apply.equals(other.getApply()))) &&
+            ((this.doc==null && other.getDoc()==null) || 
+             (this.doc!=null &&
+              this.doc.equals(other.getDoc()))) &&
+            ((this.line==null && other.getLine()==null) || 
+             (this.line!=null &&
+              this.line.equals(other.getLine()))) &&
+            ((this.creditDate==null && other.getCreditDate()==null) || 
+             (this.creditDate!=null &&
+              this.creditDate.equals(other.getCreditDate()))) &&
+            ((this.type==null && other.getType()==null) || 
+             (this.type!=null &&
+              this.type.equals(other.getType()))) &&
+            ((this.refNum==null && other.getRefNum()==null) || 
+             (this.refNum!=null &&
+              this.refNum.equals(other.getRefNum()))) &&
+            ((this.appliedTo==null && other.getAppliedTo()==null) || 
+             (this.appliedTo!=null &&
+              this.appliedTo.equals(other.getAppliedTo()))) &&
+            ((this.total==null && other.getTotal()==null) || 
+             (this.total!=null &&
+              this.total.equals(other.getTotal()))) &&
+            ((this.due==null && other.getDue()==null) || 
+             (this.due!=null &&
+              this.due.equals(other.getDue()))) &&
+            ((this.currency==null && other.getCurrency()==null) || 
+             (this.currency!=null &&
+              this.currency.equals(other.getCurrency()))) &&
+            ((this.amount==null && other.getAmount()==null) || 
+             (this.amount!=null &&
+              this.amount.equals(other.getAmount())));
+        __equalsCalc = null;
+        return _equals;
+    }
+
+    private boolean __hashCodeCalc = false;
+    public synchronized int hashCode() {
+        if (__hashCodeCalc) {
+            return 0;
+        }
+        __hashCodeCalc = true;
+        int _hashCode = 1;
+        if (getApply() != null) {
+            _hashCode += getApply().hashCode();
+        }
+        if (getDoc() != null) {
+            _hashCode += getDoc().hashCode();
+        }
+        if (getLine() != null) {
+            _hashCode += getLine().hashCode();
+        }
+        if (getCreditDate() != null) {
+            _hashCode += getCreditDate().hashCode();
+        }
+        if (getType() != null) {
+            _hashCode += getType().hashCode();
+        }
+        if (getRefNum() != null) {
+            _hashCode += getRefNum().hashCode();
+        }
+        if (getAppliedTo() != null) {
+            _hashCode += getAppliedTo().hashCode();
+        }
+        if (getTotal() != null) {
+            _hashCode += getTotal().hashCode();
+        }
+        if (getDue() != null) {
+            _hashCode += getDue().hashCode();
+        }
+        if (getCurrency() != null) {
+            _hashCode += getCurrency().hashCode();
+        }
+        if (getAmount() != null) {
+            _hashCode += getAmount().hashCode();
+        }
+        __hashCodeCalc = false;
+        return _hashCode;
+    }
+
+    // Type metadata
+    private static org.apache.axis.description.TypeDesc typeDesc =
+        new org.apache.axis.description.TypeDesc(CustomerPaymentCredit.class, true);
+
+    static {
+        typeDesc.setXmlType(new javax.xml.namespace.QName("urn:customers_2018_2.transactions.webservices.netsuite.com", "CustomerPaymentCredit"));
+        org.apache.axis.description.ElementDesc elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("apply");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:customers_2018_2.transactions.webservices.netsuite.com", "apply"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("doc");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:customers_2018_2.transactions.webservices.netsuite.com", "doc"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "long"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("line");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:customers_2018_2.transactions.webservices.netsuite.com", "line"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "long"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("creditDate");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:customers_2018_2.transactions.webservices.netsuite.com", "creditDate"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "dateTime"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("type");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:customers_2018_2.transactions.webservices.netsuite.com", "type"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("refNum");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:customers_2018_2.transactions.webservices.netsuite.com", "refNum"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("appliedTo");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:customers_2018_2.transactions.webservices.netsuite.com", "appliedTo"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("total");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:customers_2018_2.transactions.webservices.netsuite.com", "total"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "double"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("due");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:customers_2018_2.transactions.webservices.netsuite.com", "due"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "double"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("currency");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:customers_2018_2.transactions.webservices.netsuite.com", "currency"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("amount");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:customers_2018_2.transactions.webservices.netsuite.com", "amount"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "double"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+    }
+
+    /**
+     * Return type metadata object
+     */
+    public static org.apache.axis.description.TypeDesc getTypeDesc() {
+        return typeDesc;
+    }
+
+    /**
+     * Get Custom Serializer
+     */
+    public static org.apache.axis.encoding.Serializer getSerializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanSerializer(
+            _javaType, _xmlType, typeDesc);
+    }
+
+    /**
+     * Get Custom Deserializer
+     */
+    public static org.apache.axis.encoding.Deserializer getDeserializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanDeserializer(
+            _javaType, _xmlType, typeDesc);
     }
 
 }

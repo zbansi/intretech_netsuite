@@ -1,54 +1,72 @@
+/**
+ * ProjectTaskPriority.java
+ *
+ * This file was auto-generated from WSDL
+ * by the Apache Axis 1.4 Jul 28, 2010 (04:07:04 PDT) WSDL2Java emitter.
+ */
 
 package com.netsuite.webservices.activities.scheduling_2018_2.types;
 
-import javax.xml.bind.annotation.XmlEnum;
-import javax.xml.bind.annotation.XmlEnumValue;
-import javax.xml.bind.annotation.XmlType;
+public class ProjectTaskPriority implements java.io.Serializable {
+    private java.lang.String _value_;
+    private static java.util.HashMap _table_ = new java.util.HashMap();
 
-
-/**
- * <p>ProjectTaskPriority的 Java 类。
- * 
- * <p>以下模式片段指定包含在此类中的预期内容。
- * <p>
- * <pre>
- * &lt;simpleType name="ProjectTaskPriority">
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     &lt;enumeration value="_high"/>
- *     &lt;enumeration value="_low"/>
- *     &lt;enumeration value="_medium"/>
- *   &lt;/restriction>
- * &lt;/simpleType>
- * </pre>
- * 
- */
-@XmlType(name = "ProjectTaskPriority", namespace = "urn:types.scheduling_2018_2.activities.webservices.netsuite.com")
-@XmlEnum
-public enum ProjectTaskPriority {
-
-    @XmlEnumValue("_high")
-    HIGH("_high"),
-    @XmlEnumValue("_low")
-    LOW("_low"),
-    @XmlEnumValue("_medium")
-    MEDIUM("_medium");
-    private final String value;
-
-    ProjectTaskPriority(String v) {
-        value = v;
+    // Constructor
+    protected ProjectTaskPriority(java.lang.String value) {
+        _value_ = value;
+        _table_.put(_value_,this);
     }
 
-    public String value() {
-        return value;
+    public static final java.lang.String __high = "_high";
+    public static final java.lang.String __low = "_low";
+    public static final java.lang.String __medium = "_medium";
+    public static final ProjectTaskPriority _high = new ProjectTaskPriority(__high);
+    public static final ProjectTaskPriority _low = new ProjectTaskPriority(__low);
+    public static final ProjectTaskPriority _medium = new ProjectTaskPriority(__medium);
+    public java.lang.String getValue() { return _value_;}
+    public static ProjectTaskPriority fromValue(java.lang.String value)
+          throws java.lang.IllegalArgumentException {
+        ProjectTaskPriority enumeration = (ProjectTaskPriority)
+            _table_.get(value);
+        if (enumeration==null) throw new java.lang.IllegalArgumentException();
+        return enumeration;
     }
+    public static ProjectTaskPriority fromString(java.lang.String value)
+          throws java.lang.IllegalArgumentException {
+        return fromValue(value);
+    }
+    public boolean equals(java.lang.Object obj) {return (obj == this);}
+    public int hashCode() { return toString().hashCode();}
+    public java.lang.String toString() { return _value_;}
+    public java.lang.Object readResolve() throws java.io.ObjectStreamException { return fromValue(_value_);}
+    public static org.apache.axis.encoding.Serializer getSerializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new org.apache.axis.encoding.ser.EnumSerializer(
+            _javaType, _xmlType);
+    }
+    public static org.apache.axis.encoding.Deserializer getDeserializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new org.apache.axis.encoding.ser.EnumDeserializer(
+            _javaType, _xmlType);
+    }
+    // Type metadata
+    private static org.apache.axis.description.TypeDesc typeDesc =
+        new org.apache.axis.description.TypeDesc(ProjectTaskPriority.class);
 
-    public static ProjectTaskPriority fromValue(String v) {
-        for (ProjectTaskPriority c: ProjectTaskPriority.values()) {
-            if (c.value.equals(v)) {
-                return c;
-            }
-        }
-        throw new IllegalArgumentException(v);
+    static {
+        typeDesc.setXmlType(new javax.xml.namespace.QName("urn:types.scheduling_2018_2.activities.webservices.netsuite.com", "ProjectTaskPriority"));
+    }
+    /**
+     * Return type metadata object
+     */
+    public static org.apache.axis.description.TypeDesc getTypeDesc() {
+        return typeDesc;
     }
 
 }

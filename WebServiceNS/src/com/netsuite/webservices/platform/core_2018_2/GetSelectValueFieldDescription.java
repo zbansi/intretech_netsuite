@@ -1,254 +1,387 @@
+/**
+ * GetSelectValueFieldDescription.java
+ *
+ * This file was auto-generated from WSDL
+ * by the Apache Axis 1.4 Jul 28, 2010 (04:07:04 PDT) WSDL2Java emitter.
+ */
 
 package com.netsuite.webservices.platform.core_2018_2;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlSchemaType;
-import javax.xml.bind.annotation.XmlType;
-import com.netsuite.webservices.platform.core_2018_2.types.RecordType;
+public class GetSelectValueFieldDescription  implements java.io.Serializable {
+    private com.netsuite.webservices.platform.core_2018_2.types.RecordType recordType;
 
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef customRecordType;
 
-/**
- * <p>GetSelectValueFieldDescription complex type的 Java 类。
- * 
- * <p>以下模式片段指定包含在此类中的预期内容。
- * 
- * <pre>
- * &lt;complexType name="GetSelectValueFieldDescription">
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element name="recordType" type="{urn:types.core_2018_2.platform.webservices.netsuite.com}RecordType" minOccurs="0"/>
- *         &lt;element name="customRecordType" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="customTransactionType" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="sublist" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="field" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *         &lt;element name="customForm" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="filter" type="{urn:core_2018_2.platform.webservices.netsuite.com}GetSelectValueFilter" minOccurs="0"/>
- *         &lt;element name="filterByValueList" type="{urn:core_2018_2.platform.webservices.netsuite.com}GetSelectFilterByFieldValueList" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
- */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "GetSelectValueFieldDescription", propOrder = {
-    "recordType",
-    "customRecordType",
-    "customTransactionType",
-    "sublist",
-    "field",
-    "customForm",
-    "filter",
-    "filterByValueList"
-})
-public class GetSelectValueFieldDescription {
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef customTransactionType;
 
-    @XmlSchemaType(name = "string")
-    protected RecordType recordType;
-    protected RecordRef customRecordType;
-    protected RecordRef customTransactionType;
-    protected String sublist;
-    @XmlElement(required = true)
-    protected String field;
-    protected RecordRef customForm;
-    protected GetSelectValueFilter filter;
-    protected GetSelectFilterByFieldValueList filterByValueList;
+    private java.lang.String sublist;
+
+    private java.lang.String field;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef customForm;
+
+    private com.netsuite.webservices.platform.core_2018_2.GetSelectValueFilter filter;
+
+    private com.netsuite.webservices.platform.core_2018_2.GetSelectFilterByFieldValue[] filterByValueList;
+
+    public GetSelectValueFieldDescription() {
+    }
+
+    public GetSelectValueFieldDescription(
+           com.netsuite.webservices.platform.core_2018_2.types.RecordType recordType,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef customRecordType,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef customTransactionType,
+           java.lang.String sublist,
+           java.lang.String field,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef customForm,
+           com.netsuite.webservices.platform.core_2018_2.GetSelectValueFilter filter,
+           com.netsuite.webservices.platform.core_2018_2.GetSelectFilterByFieldValue[] filterByValueList) {
+           this.recordType = recordType;
+           this.customRecordType = customRecordType;
+           this.customTransactionType = customTransactionType;
+           this.sublist = sublist;
+           this.field = field;
+           this.customForm = customForm;
+           this.filter = filter;
+           this.filterByValueList = filterByValueList;
+    }
+
 
     /**
-     * 获取recordType属性的值。
+     * Gets the recordType value for this GetSelectValueFieldDescription.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordType }
-     *     
+     * @return recordType
      */
-    public RecordType getRecordType() {
+    public com.netsuite.webservices.platform.core_2018_2.types.RecordType getRecordType() {
         return recordType;
     }
 
-    /**
-     * 设置recordType属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordType }
-     *     
-     */
-    public void setRecordType(RecordType value) {
-        this.recordType = value;
-    }
 
     /**
-     * 获取customRecordType属性的值。
+     * Sets the recordType value for this GetSelectValueFieldDescription.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param recordType
      */
-    public RecordRef getCustomRecordType() {
+    public void setRecordType(com.netsuite.webservices.platform.core_2018_2.types.RecordType recordType) {
+        this.recordType = recordType;
+    }
+
+
+    /**
+     * Gets the customRecordType value for this GetSelectValueFieldDescription.
+     * 
+     * @return customRecordType
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getCustomRecordType() {
         return customRecordType;
     }
 
-    /**
-     * 设置customRecordType属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setCustomRecordType(RecordRef value) {
-        this.customRecordType = value;
-    }
 
     /**
-     * 获取customTransactionType属性的值。
+     * Sets the customRecordType value for this GetSelectValueFieldDescription.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param customRecordType
      */
-    public RecordRef getCustomTransactionType() {
+    public void setCustomRecordType(com.netsuite.webservices.platform.core_2018_2.RecordRef customRecordType) {
+        this.customRecordType = customRecordType;
+    }
+
+
+    /**
+     * Gets the customTransactionType value for this GetSelectValueFieldDescription.
+     * 
+     * @return customTransactionType
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getCustomTransactionType() {
         return customTransactionType;
     }
 
-    /**
-     * 设置customTransactionType属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setCustomTransactionType(RecordRef value) {
-        this.customTransactionType = value;
-    }
 
     /**
-     * 获取sublist属性的值。
+     * Sets the customTransactionType value for this GetSelectValueFieldDescription.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param customTransactionType
      */
-    public String getSublist() {
+    public void setCustomTransactionType(com.netsuite.webservices.platform.core_2018_2.RecordRef customTransactionType) {
+        this.customTransactionType = customTransactionType;
+    }
+
+
+    /**
+     * Gets the sublist value for this GetSelectValueFieldDescription.
+     * 
+     * @return sublist
+     */
+    public java.lang.String getSublist() {
         return sublist;
     }
 
-    /**
-     * 设置sublist属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setSublist(String value) {
-        this.sublist = value;
-    }
 
     /**
-     * 获取field属性的值。
+     * Sets the sublist value for this GetSelectValueFieldDescription.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param sublist
      */
-    public String getField() {
+    public void setSublist(java.lang.String sublist) {
+        this.sublist = sublist;
+    }
+
+
+    /**
+     * Gets the field value for this GetSelectValueFieldDescription.
+     * 
+     * @return field
+     */
+    public java.lang.String getField() {
         return field;
     }
 
-    /**
-     * 设置field属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setField(String value) {
-        this.field = value;
-    }
 
     /**
-     * 获取customForm属性的值。
+     * Sets the field value for this GetSelectValueFieldDescription.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param field
      */
-    public RecordRef getCustomForm() {
+    public void setField(java.lang.String field) {
+        this.field = field;
+    }
+
+
+    /**
+     * Gets the customForm value for this GetSelectValueFieldDescription.
+     * 
+     * @return customForm
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getCustomForm() {
         return customForm;
     }
 
-    /**
-     * 设置customForm属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setCustomForm(RecordRef value) {
-        this.customForm = value;
-    }
 
     /**
-     * 获取filter属性的值。
+     * Sets the customForm value for this GetSelectValueFieldDescription.
      * 
-     * @return
-     *     possible object is
-     *     {@link GetSelectValueFilter }
-     *     
+     * @param customForm
      */
-    public GetSelectValueFilter getFilter() {
+    public void setCustomForm(com.netsuite.webservices.platform.core_2018_2.RecordRef customForm) {
+        this.customForm = customForm;
+    }
+
+
+    /**
+     * Gets the filter value for this GetSelectValueFieldDescription.
+     * 
+     * @return filter
+     */
+    public com.netsuite.webservices.platform.core_2018_2.GetSelectValueFilter getFilter() {
         return filter;
     }
 
-    /**
-     * 设置filter属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link GetSelectValueFilter }
-     *     
-     */
-    public void setFilter(GetSelectValueFilter value) {
-        this.filter = value;
-    }
 
     /**
-     * 获取filterByValueList属性的值。
+     * Sets the filter value for this GetSelectValueFieldDescription.
      * 
-     * @return
-     *     possible object is
-     *     {@link GetSelectFilterByFieldValueList }
-     *     
+     * @param filter
      */
-    public GetSelectFilterByFieldValueList getFilterByValueList() {
+    public void setFilter(com.netsuite.webservices.platform.core_2018_2.GetSelectValueFilter filter) {
+        this.filter = filter;
+    }
+
+
+    /**
+     * Gets the filterByValueList value for this GetSelectValueFieldDescription.
+     * 
+     * @return filterByValueList
+     */
+    public com.netsuite.webservices.platform.core_2018_2.GetSelectFilterByFieldValue[] getFilterByValueList() {
         return filterByValueList;
     }
 
+
     /**
-     * 设置filterByValueList属性的值。
+     * Sets the filterByValueList value for this GetSelectValueFieldDescription.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link GetSelectFilterByFieldValueList }
-     *     
+     * @param filterByValueList
      */
-    public void setFilterByValueList(GetSelectFilterByFieldValueList value) {
-        this.filterByValueList = value;
+    public void setFilterByValueList(com.netsuite.webservices.platform.core_2018_2.GetSelectFilterByFieldValue[] filterByValueList) {
+        this.filterByValueList = filterByValueList;
+    }
+
+    private java.lang.Object __equalsCalc = null;
+    public synchronized boolean equals(java.lang.Object obj) {
+        if (!(obj instanceof GetSelectValueFieldDescription)) return false;
+        GetSelectValueFieldDescription other = (GetSelectValueFieldDescription) obj;
+        if (obj == null) return false;
+        if (this == obj) return true;
+        if (__equalsCalc != null) {
+            return (__equalsCalc == obj);
+        }
+        __equalsCalc = obj;
+        boolean _equals;
+        _equals = true && 
+            ((this.recordType==null && other.getRecordType()==null) || 
+             (this.recordType!=null &&
+              this.recordType.equals(other.getRecordType()))) &&
+            ((this.customRecordType==null && other.getCustomRecordType()==null) || 
+             (this.customRecordType!=null &&
+              this.customRecordType.equals(other.getCustomRecordType()))) &&
+            ((this.customTransactionType==null && other.getCustomTransactionType()==null) || 
+             (this.customTransactionType!=null &&
+              this.customTransactionType.equals(other.getCustomTransactionType()))) &&
+            ((this.sublist==null && other.getSublist()==null) || 
+             (this.sublist!=null &&
+              this.sublist.equals(other.getSublist()))) &&
+            ((this.field==null && other.getField()==null) || 
+             (this.field!=null &&
+              this.field.equals(other.getField()))) &&
+            ((this.customForm==null && other.getCustomForm()==null) || 
+             (this.customForm!=null &&
+              this.customForm.equals(other.getCustomForm()))) &&
+            ((this.filter==null && other.getFilter()==null) || 
+             (this.filter!=null &&
+              this.filter.equals(other.getFilter()))) &&
+            ((this.filterByValueList==null && other.getFilterByValueList()==null) || 
+             (this.filterByValueList!=null &&
+              java.util.Arrays.equals(this.filterByValueList, other.getFilterByValueList())));
+        __equalsCalc = null;
+        return _equals;
+    }
+
+    private boolean __hashCodeCalc = false;
+    public synchronized int hashCode() {
+        if (__hashCodeCalc) {
+            return 0;
+        }
+        __hashCodeCalc = true;
+        int _hashCode = 1;
+        if (getRecordType() != null) {
+            _hashCode += getRecordType().hashCode();
+        }
+        if (getCustomRecordType() != null) {
+            _hashCode += getCustomRecordType().hashCode();
+        }
+        if (getCustomTransactionType() != null) {
+            _hashCode += getCustomTransactionType().hashCode();
+        }
+        if (getSublist() != null) {
+            _hashCode += getSublist().hashCode();
+        }
+        if (getField() != null) {
+            _hashCode += getField().hashCode();
+        }
+        if (getCustomForm() != null) {
+            _hashCode += getCustomForm().hashCode();
+        }
+        if (getFilter() != null) {
+            _hashCode += getFilter().hashCode();
+        }
+        if (getFilterByValueList() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getFilterByValueList());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getFilterByValueList(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        __hashCodeCalc = false;
+        return _hashCode;
+    }
+
+    // Type metadata
+    private static org.apache.axis.description.TypeDesc typeDesc =
+        new org.apache.axis.description.TypeDesc(GetSelectValueFieldDescription.class, true);
+
+    static {
+        typeDesc.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "GetSelectValueFieldDescription"));
+        org.apache.axis.description.ElementDesc elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("recordType");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "recordType"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:types.core_2018_2.platform.webservices.netsuite.com", "RecordType"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("customRecordType");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "customRecordType"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("customTransactionType");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "customTransactionType"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("sublist");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "sublist"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("field");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "field"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("customForm");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "customForm"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("filter");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "filter"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "GetSelectValueFilter"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("filterByValueList");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "filterByValueList"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "GetSelectFilterByFieldValue"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "filterBy"));
+        typeDesc.addFieldDesc(elemField);
+    }
+
+    /**
+     * Return type metadata object
+     */
+    public static org.apache.axis.description.TypeDesc getTypeDesc() {
+        return typeDesc;
+    }
+
+    /**
+     * Get Custom Serializer
+     */
+    public static org.apache.axis.encoding.Serializer getSerializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanSerializer(
+            _javaType, _xmlType, typeDesc);
+    }
+
+    /**
+     * Get Custom Deserializer
+     */
+    public static org.apache.axis.encoding.Deserializer getDeserializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanDeserializer(
+            _javaType, _xmlType, typeDesc);
     }
 
 }

@@ -1,115 +1,194 @@
+/**
+ * RevRecTemplateRecurrence.java
+ *
+ * This file was auto-generated from WSDL
+ * by the Apache Axis 1.4 Jul 28, 2010 (04:07:04 PDT) WSDL2Java emitter.
+ */
 
 package com.netsuite.webservices.lists.accounting_2018_2;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlType;
-import com.netsuite.webservices.platform.core_2018_2.RecordRef;
+public class RevRecTemplateRecurrence  implements java.io.Serializable {
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef incomeaccount;
 
+    private java.lang.Long periodOffset;
 
-/**
- * <p>RevRecTemplateRecurrence complex type的 Java 类。
- * 
- * <p>以下模式片段指定包含在此类中的预期内容。
- * 
- * <pre>
- * &lt;complexType name="RevRecTemplateRecurrence">
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element name="incomeaccount" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="periodOffset" type="{http://www.w3.org/2001/XMLSchema}long" minOccurs="0"/>
- *         &lt;element name="recamount" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
- */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "RevRecTemplateRecurrence", propOrder = {
-    "incomeaccount",
-    "periodOffset",
-    "recamount"
-})
-public class RevRecTemplateRecurrence {
+    private java.lang.String recamount;
 
-    protected RecordRef incomeaccount;
-    protected Long periodOffset;
-    protected String recamount;
+    public RevRecTemplateRecurrence() {
+    }
+
+    public RevRecTemplateRecurrence(
+           com.netsuite.webservices.platform.core_2018_2.RecordRef incomeaccount,
+           java.lang.Long periodOffset,
+           java.lang.String recamount) {
+           this.incomeaccount = incomeaccount;
+           this.periodOffset = periodOffset;
+           this.recamount = recamount;
+    }
+
 
     /**
-     * 获取incomeaccount属性的值。
+     * Gets the incomeaccount value for this RevRecTemplateRecurrence.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @return incomeaccount
      */
-    public RecordRef getIncomeaccount() {
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getIncomeaccount() {
         return incomeaccount;
     }
 
-    /**
-     * 设置incomeaccount属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setIncomeaccount(RecordRef value) {
-        this.incomeaccount = value;
-    }
 
     /**
-     * 获取periodOffset属性的值。
+     * Sets the incomeaccount value for this RevRecTemplateRecurrence.
      * 
-     * @return
-     *     possible object is
-     *     {@link Long }
-     *     
+     * @param incomeaccount
      */
-    public Long getPeriodOffset() {
+    public void setIncomeaccount(com.netsuite.webservices.platform.core_2018_2.RecordRef incomeaccount) {
+        this.incomeaccount = incomeaccount;
+    }
+
+
+    /**
+     * Gets the periodOffset value for this RevRecTemplateRecurrence.
+     * 
+     * @return periodOffset
+     */
+    public java.lang.Long getPeriodOffset() {
         return periodOffset;
     }
 
-    /**
-     * 设置periodOffset属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Long }
-     *     
-     */
-    public void setPeriodOffset(Long value) {
-        this.periodOffset = value;
-    }
 
     /**
-     * 获取recamount属性的值。
+     * Sets the periodOffset value for this RevRecTemplateRecurrence.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param periodOffset
      */
-    public String getRecamount() {
+    public void setPeriodOffset(java.lang.Long periodOffset) {
+        this.periodOffset = periodOffset;
+    }
+
+
+    /**
+     * Gets the recamount value for this RevRecTemplateRecurrence.
+     * 
+     * @return recamount
+     */
+    public java.lang.String getRecamount() {
         return recamount;
     }
 
+
     /**
-     * 设置recamount属性的值。
+     * Sets the recamount value for this RevRecTemplateRecurrence.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     * @param recamount
      */
-    public void setRecamount(String value) {
-        this.recamount = value;
+    public void setRecamount(java.lang.String recamount) {
+        this.recamount = recamount;
+    }
+
+    private java.lang.Object __equalsCalc = null;
+    public synchronized boolean equals(java.lang.Object obj) {
+        if (!(obj instanceof RevRecTemplateRecurrence)) return false;
+        RevRecTemplateRecurrence other = (RevRecTemplateRecurrence) obj;
+        if (obj == null) return false;
+        if (this == obj) return true;
+        if (__equalsCalc != null) {
+            return (__equalsCalc == obj);
+        }
+        __equalsCalc = obj;
+        boolean _equals;
+        _equals = true && 
+            ((this.incomeaccount==null && other.getIncomeaccount()==null) || 
+             (this.incomeaccount!=null &&
+              this.incomeaccount.equals(other.getIncomeaccount()))) &&
+            ((this.periodOffset==null && other.getPeriodOffset()==null) || 
+             (this.periodOffset!=null &&
+              this.periodOffset.equals(other.getPeriodOffset()))) &&
+            ((this.recamount==null && other.getRecamount()==null) || 
+             (this.recamount!=null &&
+              this.recamount.equals(other.getRecamount())));
+        __equalsCalc = null;
+        return _equals;
+    }
+
+    private boolean __hashCodeCalc = false;
+    public synchronized int hashCode() {
+        if (__hashCodeCalc) {
+            return 0;
+        }
+        __hashCodeCalc = true;
+        int _hashCode = 1;
+        if (getIncomeaccount() != null) {
+            _hashCode += getIncomeaccount().hashCode();
+        }
+        if (getPeriodOffset() != null) {
+            _hashCode += getPeriodOffset().hashCode();
+        }
+        if (getRecamount() != null) {
+            _hashCode += getRecamount().hashCode();
+        }
+        __hashCodeCalc = false;
+        return _hashCode;
+    }
+
+    // Type metadata
+    private static org.apache.axis.description.TypeDesc typeDesc =
+        new org.apache.axis.description.TypeDesc(RevRecTemplateRecurrence.class, true);
+
+    static {
+        typeDesc.setXmlType(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "RevRecTemplateRecurrence"));
+        org.apache.axis.description.ElementDesc elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("incomeaccount");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "incomeaccount"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("periodOffset");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "periodOffset"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "long"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("recamount");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "recamount"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+    }
+
+    /**
+     * Return type metadata object
+     */
+    public static org.apache.axis.description.TypeDesc getTypeDesc() {
+        return typeDesc;
+    }
+
+    /**
+     * Get Custom Serializer
+     */
+    public static org.apache.axis.encoding.Serializer getSerializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanSerializer(
+            _javaType, _xmlType, typeDesc);
+    }
+
+    /**
+     * Get Custom Deserializer
+     */
+    public static org.apache.axis.encoding.Deserializer getDeserializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanDeserializer(
+            _javaType, _xmlType, typeDesc);
     }
 
 }

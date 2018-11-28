@@ -1,529 +1,830 @@
+/**
+ * PromotionCodeSearchBasic.java
+ *
+ * This file was auto-generated from WSDL
+ * by the Apache Axis 1.4 Jul 28, 2010 (04:07:04 PDT) WSDL2Java emitter.
+ */
 
 package com.netsuite.webservices.platform.common_2018_2;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlType;
-import com.netsuite.webservices.platform.core_2018_2.SearchBooleanField;
-import com.netsuite.webservices.platform.core_2018_2.SearchCustomFieldList;
-import com.netsuite.webservices.platform.core_2018_2.SearchDateField;
-import com.netsuite.webservices.platform.core_2018_2.SearchEnumMultiSelectField;
-import com.netsuite.webservices.platform.core_2018_2.SearchLongField;
-import com.netsuite.webservices.platform.core_2018_2.SearchMultiSelectField;
-import com.netsuite.webservices.platform.core_2018_2.SearchRecordBasic;
-import com.netsuite.webservices.platform.core_2018_2.SearchStringField;
+public class PromotionCodeSearchBasic  extends com.netsuite.webservices.platform.core_2018_2.SearchRecordBasic  implements java.io.Serializable {
+    private java.lang.String[] applyDiscountTo;
 
+    private com.netsuite.webservices.platform.core_2018_2.SearchStringField code;
 
-/**
- * <p>PromotionCodeSearchBasic complex type的 Java 类。
- * 
- * <p>以下模式片段指定包含在此类中的预期内容。
- * 
- * <pre>
- * &lt;complexType name="PromotionCodeSearchBasic">
- *   &lt;complexContent>
- *     &lt;extension base="{urn:core_2018_2.platform.webservices.netsuite.com}SearchRecordBasic">
- *       &lt;sequence>
- *         &lt;element name="applyDiscountTo" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchEnumMultiSelectField" minOccurs="0"/>
- *         &lt;element name="code" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchStringField" minOccurs="0"/>
- *         &lt;element name="description" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchStringField" minOccurs="0"/>
- *         &lt;element name="discount" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchMultiSelectField" minOccurs="0"/>
- *         &lt;element name="endDate" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchDateField" minOccurs="0"/>
- *         &lt;element name="externalId" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchMultiSelectField" minOccurs="0"/>
- *         &lt;element name="externalIdString" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchStringField" minOccurs="0"/>
- *         &lt;element name="freeShipItem" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchMultiSelectField" minOccurs="0"/>
- *         &lt;element name="internalId" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchMultiSelectField" minOccurs="0"/>
- *         &lt;element name="internalIdNumber" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchLongField" minOccurs="0"/>
- *         &lt;element name="isInactive" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchBooleanField" minOccurs="0"/>
- *         &lt;element name="isPublic" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchBooleanField" minOccurs="0"/>
- *         &lt;element name="item" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchMultiSelectField" minOccurs="0"/>
- *         &lt;element name="location" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchMultiSelectField" minOccurs="0"/>
- *         &lt;element name="name" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchStringField" minOccurs="0"/>
- *         &lt;element name="partner" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchMultiSelectField" minOccurs="0"/>
- *         &lt;element name="startDate" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchDateField" minOccurs="0"/>
- *         &lt;element name="customFieldList" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchCustomFieldList" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/extension>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
- */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "PromotionCodeSearchBasic", propOrder = {
-    "applyDiscountTo",
-    "code",
-    "description",
-    "discount",
-    "endDate",
-    "externalId",
-    "externalIdString",
-    "freeShipItem",
-    "internalId",
-    "internalIdNumber",
-    "isInactive",
-    "isPublic",
-    "item",
-    "location",
-    "name",
-    "partner",
-    "startDate",
-    "customFieldList"
-})
-public class PromotionCodeSearchBasic
-    extends SearchRecordBasic
-{
+    private com.netsuite.webservices.platform.core_2018_2.SearchStringField description;
 
-    protected SearchEnumMultiSelectField applyDiscountTo;
-    protected SearchStringField code;
-    protected SearchStringField description;
-    protected SearchMultiSelectField discount;
-    protected SearchDateField endDate;
-    protected SearchMultiSelectField externalId;
-    protected SearchStringField externalIdString;
-    protected SearchMultiSelectField freeShipItem;
-    protected SearchMultiSelectField internalId;
-    protected SearchLongField internalIdNumber;
-    protected SearchBooleanField isInactive;
-    protected SearchBooleanField isPublic;
-    protected SearchMultiSelectField item;
-    protected SearchMultiSelectField location;
-    protected SearchStringField name;
-    protected SearchMultiSelectField partner;
-    protected SearchDateField startDate;
-    protected SearchCustomFieldList customFieldList;
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef[] discount;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchDateField endDate;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef[] externalId;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchStringField externalIdString;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef[] freeShipItem;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef[] internalId;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchLongField internalIdNumber;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchBooleanField isInactive;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchBooleanField isPublic;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef[] item;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef[] location;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchStringField name;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef[] partner;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchDateField startDate;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchCustomField[] customFieldList;
+
+    public PromotionCodeSearchBasic() {
+    }
+
+    public PromotionCodeSearchBasic(
+           java.lang.String[] applyDiscountTo,
+           com.netsuite.webservices.platform.core_2018_2.SearchStringField code,
+           com.netsuite.webservices.platform.core_2018_2.SearchStringField description,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef[] discount,
+           com.netsuite.webservices.platform.core_2018_2.SearchDateField endDate,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef[] externalId,
+           com.netsuite.webservices.platform.core_2018_2.SearchStringField externalIdString,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef[] freeShipItem,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef[] internalId,
+           com.netsuite.webservices.platform.core_2018_2.SearchLongField internalIdNumber,
+           com.netsuite.webservices.platform.core_2018_2.SearchBooleanField isInactive,
+           com.netsuite.webservices.platform.core_2018_2.SearchBooleanField isPublic,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef[] item,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef[] location,
+           com.netsuite.webservices.platform.core_2018_2.SearchStringField name,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef[] partner,
+           com.netsuite.webservices.platform.core_2018_2.SearchDateField startDate,
+           com.netsuite.webservices.platform.core_2018_2.SearchCustomField[] customFieldList) {
+        this.applyDiscountTo = applyDiscountTo;
+        this.code = code;
+        this.description = description;
+        this.discount = discount;
+        this.endDate = endDate;
+        this.externalId = externalId;
+        this.externalIdString = externalIdString;
+        this.freeShipItem = freeShipItem;
+        this.internalId = internalId;
+        this.internalIdNumber = internalIdNumber;
+        this.isInactive = isInactive;
+        this.isPublic = isPublic;
+        this.item = item;
+        this.location = location;
+        this.name = name;
+        this.partner = partner;
+        this.startDate = startDate;
+        this.customFieldList = customFieldList;
+    }
+
 
     /**
-     * 获取applyDiscountTo属性的值。
+     * Gets the applyDiscountTo value for this PromotionCodeSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchEnumMultiSelectField }
-     *     
+     * @return applyDiscountTo
      */
-    public SearchEnumMultiSelectField getApplyDiscountTo() {
+    public java.lang.String[] getApplyDiscountTo() {
         return applyDiscountTo;
     }
 
-    /**
-     * 设置applyDiscountTo属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchEnumMultiSelectField }
-     *     
-     */
-    public void setApplyDiscountTo(SearchEnumMultiSelectField value) {
-        this.applyDiscountTo = value;
-    }
 
     /**
-     * 获取code属性的值。
+     * Sets the applyDiscountTo value for this PromotionCodeSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchStringField }
-     *     
+     * @param applyDiscountTo
      */
-    public SearchStringField getCode() {
+    public void setApplyDiscountTo(java.lang.String[] applyDiscountTo) {
+        this.applyDiscountTo = applyDiscountTo;
+    }
+
+
+    /**
+     * Gets the code value for this PromotionCodeSearchBasic.
+     * 
+     * @return code
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchStringField getCode() {
         return code;
     }
 
-    /**
-     * 设置code属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchStringField }
-     *     
-     */
-    public void setCode(SearchStringField value) {
-        this.code = value;
-    }
 
     /**
-     * 获取description属性的值。
+     * Sets the code value for this PromotionCodeSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchStringField }
-     *     
+     * @param code
      */
-    public SearchStringField getDescription() {
+    public void setCode(com.netsuite.webservices.platform.core_2018_2.SearchStringField code) {
+        this.code = code;
+    }
+
+
+    /**
+     * Gets the description value for this PromotionCodeSearchBasic.
+     * 
+     * @return description
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchStringField getDescription() {
         return description;
     }
 
-    /**
-     * 设置description属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchStringField }
-     *     
-     */
-    public void setDescription(SearchStringField value) {
-        this.description = value;
-    }
 
     /**
-     * 获取discount属性的值。
+     * Sets the description value for this PromotionCodeSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchMultiSelectField }
-     *     
+     * @param description
      */
-    public SearchMultiSelectField getDiscount() {
+    public void setDescription(com.netsuite.webservices.platform.core_2018_2.SearchStringField description) {
+        this.description = description;
+    }
+
+
+    /**
+     * Gets the discount value for this PromotionCodeSearchBasic.
+     * 
+     * @return discount
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef[] getDiscount() {
         return discount;
     }
 
-    /**
-     * 设置discount属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchMultiSelectField }
-     *     
-     */
-    public void setDiscount(SearchMultiSelectField value) {
-        this.discount = value;
-    }
 
     /**
-     * 获取endDate属性的值。
+     * Sets the discount value for this PromotionCodeSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchDateField }
-     *     
+     * @param discount
      */
-    public SearchDateField getEndDate() {
+    public void setDiscount(com.netsuite.webservices.platform.core_2018_2.RecordRef[] discount) {
+        this.discount = discount;
+    }
+
+
+    /**
+     * Gets the endDate value for this PromotionCodeSearchBasic.
+     * 
+     * @return endDate
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchDateField getEndDate() {
         return endDate;
     }
 
-    /**
-     * 设置endDate属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchDateField }
-     *     
-     */
-    public void setEndDate(SearchDateField value) {
-        this.endDate = value;
-    }
 
     /**
-     * 获取externalId属性的值。
+     * Sets the endDate value for this PromotionCodeSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchMultiSelectField }
-     *     
+     * @param endDate
      */
-    public SearchMultiSelectField getExternalId() {
+    public void setEndDate(com.netsuite.webservices.platform.core_2018_2.SearchDateField endDate) {
+        this.endDate = endDate;
+    }
+
+
+    /**
+     * Gets the externalId value for this PromotionCodeSearchBasic.
+     * 
+     * @return externalId
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef[] getExternalId() {
         return externalId;
     }
 
-    /**
-     * 设置externalId属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchMultiSelectField }
-     *     
-     */
-    public void setExternalId(SearchMultiSelectField value) {
-        this.externalId = value;
-    }
 
     /**
-     * 获取externalIdString属性的值。
+     * Sets the externalId value for this PromotionCodeSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchStringField }
-     *     
+     * @param externalId
      */
-    public SearchStringField getExternalIdString() {
+    public void setExternalId(com.netsuite.webservices.platform.core_2018_2.RecordRef[] externalId) {
+        this.externalId = externalId;
+    }
+
+
+    /**
+     * Gets the externalIdString value for this PromotionCodeSearchBasic.
+     * 
+     * @return externalIdString
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchStringField getExternalIdString() {
         return externalIdString;
     }
 
-    /**
-     * 设置externalIdString属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchStringField }
-     *     
-     */
-    public void setExternalIdString(SearchStringField value) {
-        this.externalIdString = value;
-    }
 
     /**
-     * 获取freeShipItem属性的值。
+     * Sets the externalIdString value for this PromotionCodeSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchMultiSelectField }
-     *     
+     * @param externalIdString
      */
-    public SearchMultiSelectField getFreeShipItem() {
+    public void setExternalIdString(com.netsuite.webservices.platform.core_2018_2.SearchStringField externalIdString) {
+        this.externalIdString = externalIdString;
+    }
+
+
+    /**
+     * Gets the freeShipItem value for this PromotionCodeSearchBasic.
+     * 
+     * @return freeShipItem
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef[] getFreeShipItem() {
         return freeShipItem;
     }
 
-    /**
-     * 设置freeShipItem属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchMultiSelectField }
-     *     
-     */
-    public void setFreeShipItem(SearchMultiSelectField value) {
-        this.freeShipItem = value;
-    }
 
     /**
-     * 获取internalId属性的值。
+     * Sets the freeShipItem value for this PromotionCodeSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchMultiSelectField }
-     *     
+     * @param freeShipItem
      */
-    public SearchMultiSelectField getInternalId() {
+    public void setFreeShipItem(com.netsuite.webservices.platform.core_2018_2.RecordRef[] freeShipItem) {
+        this.freeShipItem = freeShipItem;
+    }
+
+
+    /**
+     * Gets the internalId value for this PromotionCodeSearchBasic.
+     * 
+     * @return internalId
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef[] getInternalId() {
         return internalId;
     }
 
-    /**
-     * 设置internalId属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchMultiSelectField }
-     *     
-     */
-    public void setInternalId(SearchMultiSelectField value) {
-        this.internalId = value;
-    }
 
     /**
-     * 获取internalIdNumber属性的值。
+     * Sets the internalId value for this PromotionCodeSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchLongField }
-     *     
+     * @param internalId
      */
-    public SearchLongField getInternalIdNumber() {
+    public void setInternalId(com.netsuite.webservices.platform.core_2018_2.RecordRef[] internalId) {
+        this.internalId = internalId;
+    }
+
+
+    /**
+     * Gets the internalIdNumber value for this PromotionCodeSearchBasic.
+     * 
+     * @return internalIdNumber
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchLongField getInternalIdNumber() {
         return internalIdNumber;
     }
 
-    /**
-     * 设置internalIdNumber属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchLongField }
-     *     
-     */
-    public void setInternalIdNumber(SearchLongField value) {
-        this.internalIdNumber = value;
-    }
 
     /**
-     * 获取isInactive属性的值。
+     * Sets the internalIdNumber value for this PromotionCodeSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchBooleanField }
-     *     
+     * @param internalIdNumber
      */
-    public SearchBooleanField getIsInactive() {
+    public void setInternalIdNumber(com.netsuite.webservices.platform.core_2018_2.SearchLongField internalIdNumber) {
+        this.internalIdNumber = internalIdNumber;
+    }
+
+
+    /**
+     * Gets the isInactive value for this PromotionCodeSearchBasic.
+     * 
+     * @return isInactive
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchBooleanField getIsInactive() {
         return isInactive;
     }
 
-    /**
-     * 设置isInactive属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchBooleanField }
-     *     
-     */
-    public void setIsInactive(SearchBooleanField value) {
-        this.isInactive = value;
-    }
 
     /**
-     * 获取isPublic属性的值。
+     * Sets the isInactive value for this PromotionCodeSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchBooleanField }
-     *     
+     * @param isInactive
      */
-    public SearchBooleanField getIsPublic() {
+    public void setIsInactive(com.netsuite.webservices.platform.core_2018_2.SearchBooleanField isInactive) {
+        this.isInactive = isInactive;
+    }
+
+
+    /**
+     * Gets the isPublic value for this PromotionCodeSearchBasic.
+     * 
+     * @return isPublic
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchBooleanField getIsPublic() {
         return isPublic;
     }
 
-    /**
-     * 设置isPublic属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchBooleanField }
-     *     
-     */
-    public void setIsPublic(SearchBooleanField value) {
-        this.isPublic = value;
-    }
 
     /**
-     * 获取item属性的值。
+     * Sets the isPublic value for this PromotionCodeSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchMultiSelectField }
-     *     
+     * @param isPublic
      */
-    public SearchMultiSelectField getItem() {
+    public void setIsPublic(com.netsuite.webservices.platform.core_2018_2.SearchBooleanField isPublic) {
+        this.isPublic = isPublic;
+    }
+
+
+    /**
+     * Gets the item value for this PromotionCodeSearchBasic.
+     * 
+     * @return item
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef[] getItem() {
         return item;
     }
 
-    /**
-     * 设置item属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchMultiSelectField }
-     *     
-     */
-    public void setItem(SearchMultiSelectField value) {
-        this.item = value;
-    }
 
     /**
-     * 获取location属性的值。
+     * Sets the item value for this PromotionCodeSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchMultiSelectField }
-     *     
+     * @param item
      */
-    public SearchMultiSelectField getLocation() {
+    public void setItem(com.netsuite.webservices.platform.core_2018_2.RecordRef[] item) {
+        this.item = item;
+    }
+
+
+    /**
+     * Gets the location value for this PromotionCodeSearchBasic.
+     * 
+     * @return location
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef[] getLocation() {
         return location;
     }
 
-    /**
-     * 设置location属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchMultiSelectField }
-     *     
-     */
-    public void setLocation(SearchMultiSelectField value) {
-        this.location = value;
-    }
 
     /**
-     * 获取name属性的值。
+     * Sets the location value for this PromotionCodeSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchStringField }
-     *     
+     * @param location
      */
-    public SearchStringField getName() {
+    public void setLocation(com.netsuite.webservices.platform.core_2018_2.RecordRef[] location) {
+        this.location = location;
+    }
+
+
+    /**
+     * Gets the name value for this PromotionCodeSearchBasic.
+     * 
+     * @return name
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchStringField getName() {
         return name;
     }
 
-    /**
-     * 设置name属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchStringField }
-     *     
-     */
-    public void setName(SearchStringField value) {
-        this.name = value;
-    }
 
     /**
-     * 获取partner属性的值。
+     * Sets the name value for this PromotionCodeSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchMultiSelectField }
-     *     
+     * @param name
      */
-    public SearchMultiSelectField getPartner() {
+    public void setName(com.netsuite.webservices.platform.core_2018_2.SearchStringField name) {
+        this.name = name;
+    }
+
+
+    /**
+     * Gets the partner value for this PromotionCodeSearchBasic.
+     * 
+     * @return partner
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef[] getPartner() {
         return partner;
     }
 
-    /**
-     * 设置partner属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchMultiSelectField }
-     *     
-     */
-    public void setPartner(SearchMultiSelectField value) {
-        this.partner = value;
-    }
 
     /**
-     * 获取startDate属性的值。
+     * Sets the partner value for this PromotionCodeSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchDateField }
-     *     
+     * @param partner
      */
-    public SearchDateField getStartDate() {
+    public void setPartner(com.netsuite.webservices.platform.core_2018_2.RecordRef[] partner) {
+        this.partner = partner;
+    }
+
+
+    /**
+     * Gets the startDate value for this PromotionCodeSearchBasic.
+     * 
+     * @return startDate
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchDateField getStartDate() {
         return startDate;
     }
 
-    /**
-     * 设置startDate属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchDateField }
-     *     
-     */
-    public void setStartDate(SearchDateField value) {
-        this.startDate = value;
-    }
 
     /**
-     * 获取customFieldList属性的值。
+     * Sets the startDate value for this PromotionCodeSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchCustomFieldList }
-     *     
+     * @param startDate
      */
-    public SearchCustomFieldList getCustomFieldList() {
+    public void setStartDate(com.netsuite.webservices.platform.core_2018_2.SearchDateField startDate) {
+        this.startDate = startDate;
+    }
+
+
+    /**
+     * Gets the customFieldList value for this PromotionCodeSearchBasic.
+     * 
+     * @return customFieldList
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchCustomField[] getCustomFieldList() {
         return customFieldList;
     }
 
+
     /**
-     * 设置customFieldList属性的值。
+     * Sets the customFieldList value for this PromotionCodeSearchBasic.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchCustomFieldList }
-     *     
+     * @param customFieldList
      */
-    public void setCustomFieldList(SearchCustomFieldList value) {
-        this.customFieldList = value;
+    public void setCustomFieldList(com.netsuite.webservices.platform.core_2018_2.SearchCustomField[] customFieldList) {
+        this.customFieldList = customFieldList;
+    }
+
+    private java.lang.Object __equalsCalc = null;
+    public synchronized boolean equals(java.lang.Object obj) {
+        if (!(obj instanceof PromotionCodeSearchBasic)) return false;
+        PromotionCodeSearchBasic other = (PromotionCodeSearchBasic) obj;
+        if (obj == null) return false;
+        if (this == obj) return true;
+        if (__equalsCalc != null) {
+            return (__equalsCalc == obj);
+        }
+        __equalsCalc = obj;
+        boolean _equals;
+        _equals = super.equals(obj) && 
+            ((this.applyDiscountTo==null && other.getApplyDiscountTo()==null) || 
+             (this.applyDiscountTo!=null &&
+              java.util.Arrays.equals(this.applyDiscountTo, other.getApplyDiscountTo()))) &&
+            ((this.code==null && other.getCode()==null) || 
+             (this.code!=null &&
+              this.code.equals(other.getCode()))) &&
+            ((this.description==null && other.getDescription()==null) || 
+             (this.description!=null &&
+              this.description.equals(other.getDescription()))) &&
+            ((this.discount==null && other.getDiscount()==null) || 
+             (this.discount!=null &&
+              java.util.Arrays.equals(this.discount, other.getDiscount()))) &&
+            ((this.endDate==null && other.getEndDate()==null) || 
+             (this.endDate!=null &&
+              this.endDate.equals(other.getEndDate()))) &&
+            ((this.externalId==null && other.getExternalId()==null) || 
+             (this.externalId!=null &&
+              java.util.Arrays.equals(this.externalId, other.getExternalId()))) &&
+            ((this.externalIdString==null && other.getExternalIdString()==null) || 
+             (this.externalIdString!=null &&
+              this.externalIdString.equals(other.getExternalIdString()))) &&
+            ((this.freeShipItem==null && other.getFreeShipItem()==null) || 
+             (this.freeShipItem!=null &&
+              java.util.Arrays.equals(this.freeShipItem, other.getFreeShipItem()))) &&
+            ((this.internalId==null && other.getInternalId()==null) || 
+             (this.internalId!=null &&
+              java.util.Arrays.equals(this.internalId, other.getInternalId()))) &&
+            ((this.internalIdNumber==null && other.getInternalIdNumber()==null) || 
+             (this.internalIdNumber!=null &&
+              this.internalIdNumber.equals(other.getInternalIdNumber()))) &&
+            ((this.isInactive==null && other.getIsInactive()==null) || 
+             (this.isInactive!=null &&
+              this.isInactive.equals(other.getIsInactive()))) &&
+            ((this.isPublic==null && other.getIsPublic()==null) || 
+             (this.isPublic!=null &&
+              this.isPublic.equals(other.getIsPublic()))) &&
+            ((this.item==null && other.getItem()==null) || 
+             (this.item!=null &&
+              java.util.Arrays.equals(this.item, other.getItem()))) &&
+            ((this.location==null && other.getLocation()==null) || 
+             (this.location!=null &&
+              java.util.Arrays.equals(this.location, other.getLocation()))) &&
+            ((this.name==null && other.getName()==null) || 
+             (this.name!=null &&
+              this.name.equals(other.getName()))) &&
+            ((this.partner==null && other.getPartner()==null) || 
+             (this.partner!=null &&
+              java.util.Arrays.equals(this.partner, other.getPartner()))) &&
+            ((this.startDate==null && other.getStartDate()==null) || 
+             (this.startDate!=null &&
+              this.startDate.equals(other.getStartDate()))) &&
+            ((this.customFieldList==null && other.getCustomFieldList()==null) || 
+             (this.customFieldList!=null &&
+              java.util.Arrays.equals(this.customFieldList, other.getCustomFieldList())));
+        __equalsCalc = null;
+        return _equals;
+    }
+
+    private boolean __hashCodeCalc = false;
+    public synchronized int hashCode() {
+        if (__hashCodeCalc) {
+            return 0;
+        }
+        __hashCodeCalc = true;
+        int _hashCode = super.hashCode();
+        if (getApplyDiscountTo() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getApplyDiscountTo());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getApplyDiscountTo(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getCode() != null) {
+            _hashCode += getCode().hashCode();
+        }
+        if (getDescription() != null) {
+            _hashCode += getDescription().hashCode();
+        }
+        if (getDiscount() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getDiscount());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getDiscount(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getEndDate() != null) {
+            _hashCode += getEndDate().hashCode();
+        }
+        if (getExternalId() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getExternalId());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getExternalId(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getExternalIdString() != null) {
+            _hashCode += getExternalIdString().hashCode();
+        }
+        if (getFreeShipItem() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getFreeShipItem());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getFreeShipItem(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getInternalId() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getInternalId());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getInternalId(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getInternalIdNumber() != null) {
+            _hashCode += getInternalIdNumber().hashCode();
+        }
+        if (getIsInactive() != null) {
+            _hashCode += getIsInactive().hashCode();
+        }
+        if (getIsPublic() != null) {
+            _hashCode += getIsPublic().hashCode();
+        }
+        if (getItem() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getItem());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getItem(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getLocation() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getLocation());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getLocation(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getName() != null) {
+            _hashCode += getName().hashCode();
+        }
+        if (getPartner() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getPartner());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getPartner(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getStartDate() != null) {
+            _hashCode += getStartDate().hashCode();
+        }
+        if (getCustomFieldList() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getCustomFieldList());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getCustomFieldList(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        __hashCodeCalc = false;
+        return _hashCode;
+    }
+
+    // Type metadata
+    private static org.apache.axis.description.TypeDesc typeDesc =
+        new org.apache.axis.description.TypeDesc(PromotionCodeSearchBasic.class, true);
+
+    static {
+        typeDesc.setXmlType(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "PromotionCodeSearchBasic"));
+        org.apache.axis.description.ElementDesc elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("applyDiscountTo");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "applyDiscountTo"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "searchValue"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("code");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "code"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchStringField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("description");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "description"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchStringField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("discount");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "discount"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "searchValue"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("endDate");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "endDate"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchDateField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("externalId");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "externalId"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "searchValue"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("externalIdString");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "externalIdString"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchStringField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("freeShipItem");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "freeShipItem"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "searchValue"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("internalId");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "internalId"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "searchValue"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("internalIdNumber");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "internalIdNumber"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchLongField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("isInactive");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "isInactive"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchBooleanField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("isPublic");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "isPublic"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchBooleanField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("item");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "item"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "searchValue"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("location");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "location"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "searchValue"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("name");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "name"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchStringField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("partner");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "partner"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "searchValue"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("startDate");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "startDate"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchDateField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("customFieldList");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "customFieldList"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchCustomField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "customField"));
+        typeDesc.addFieldDesc(elemField);
+    }
+
+    /**
+     * Return type metadata object
+     */
+    public static org.apache.axis.description.TypeDesc getTypeDesc() {
+        return typeDesc;
+    }
+
+    /**
+     * Get Custom Serializer
+     */
+    public static org.apache.axis.encoding.Serializer getSerializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanSerializer(
+            _javaType, _xmlType, typeDesc);
+    }
+
+    /**
+     * Get Custom Deserializer
+     */
+    public static org.apache.axis.encoding.Deserializer getDeserializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanDeserializer(
+            _javaType, _xmlType, typeDesc);
     }
 
 }

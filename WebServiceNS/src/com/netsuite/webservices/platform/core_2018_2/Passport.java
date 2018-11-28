@@ -1,145 +1,228 @@
+/**
+ * Passport.java
+ *
+ * This file was auto-generated from WSDL
+ * by the Apache Axis 1.4 Jul 28, 2010 (04:07:04 PDT) WSDL2Java emitter.
+ */
 
 package com.netsuite.webservices.platform.core_2018_2;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlType;
+public class Passport  implements java.io.Serializable {
+    private java.lang.String email;
 
+    private java.lang.String password;
 
-/**
- * <p>Passport complex type的 Java 类。
- * 
- * <p>以下模式片段指定包含在此类中的预期内容。
- * 
- * <pre>
- * &lt;complexType name="Passport">
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element name="email" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *         &lt;element name="password" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *         &lt;element name="account" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *         &lt;element name="role" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
- */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "Passport", propOrder = {
-    "email",
-    "password",
-    "account",
-    "role"
-})
-public class Passport {
+    private java.lang.String account;
 
-    @XmlElement(required = true)
-    protected String email;
-    @XmlElement(required = true)
-    protected String password;
-    @XmlElement(required = true)
-    protected String account;
-    protected RecordRef role;
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef role;
+
+    public Passport() {
+    }
+
+    public Passport(
+           java.lang.String email,
+           java.lang.String password,
+           java.lang.String account,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef role) {
+           this.email = email;
+           this.password = password;
+           this.account = account;
+           this.role = role;
+    }
+
 
     /**
-     * 获取email属性的值。
+     * Gets the email value for this Passport.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @return email
      */
-    public String getEmail() {
+    public java.lang.String getEmail() {
         return email;
     }
 
-    /**
-     * 设置email属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setEmail(String value) {
-        this.email = value;
-    }
 
     /**
-     * 获取password属性的值。
+     * Sets the email value for this Passport.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param email
      */
-    public String getPassword() {
+    public void setEmail(java.lang.String email) {
+        this.email = email;
+    }
+
+
+    /**
+     * Gets the password value for this Passport.
+     * 
+     * @return password
+     */
+    public java.lang.String getPassword() {
         return password;
     }
 
-    /**
-     * 设置password属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setPassword(String value) {
-        this.password = value;
-    }
 
     /**
-     * 获取account属性的值。
+     * Sets the password value for this Passport.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param password
      */
-    public String getAccount() {
+    public void setPassword(java.lang.String password) {
+        this.password = password;
+    }
+
+
+    /**
+     * Gets the account value for this Passport.
+     * 
+     * @return account
+     */
+    public java.lang.String getAccount() {
         return account;
     }
 
-    /**
-     * 设置account属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setAccount(String value) {
-        this.account = value;
-    }
 
     /**
-     * 获取role属性的值。
+     * Sets the account value for this Passport.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param account
      */
-    public RecordRef getRole() {
+    public void setAccount(java.lang.String account) {
+        this.account = account;
+    }
+
+
+    /**
+     * Gets the role value for this Passport.
+     * 
+     * @return role
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getRole() {
         return role;
     }
 
+
     /**
-     * 设置role属性的值。
+     * Sets the role value for this Passport.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
+     * @param role
      */
-    public void setRole(RecordRef value) {
-        this.role = value;
+    public void setRole(com.netsuite.webservices.platform.core_2018_2.RecordRef role) {
+        this.role = role;
+    }
+
+    private java.lang.Object __equalsCalc = null;
+    public synchronized boolean equals(java.lang.Object obj) {
+        if (!(obj instanceof Passport)) return false;
+        Passport other = (Passport) obj;
+        if (obj == null) return false;
+        if (this == obj) return true;
+        if (__equalsCalc != null) {
+            return (__equalsCalc == obj);
+        }
+        __equalsCalc = obj;
+        boolean _equals;
+        _equals = true && 
+            ((this.email==null && other.getEmail()==null) || 
+             (this.email!=null &&
+              this.email.equals(other.getEmail()))) &&
+            ((this.password==null && other.getPassword()==null) || 
+             (this.password!=null &&
+              this.password.equals(other.getPassword()))) &&
+            ((this.account==null && other.getAccount()==null) || 
+             (this.account!=null &&
+              this.account.equals(other.getAccount()))) &&
+            ((this.role==null && other.getRole()==null) || 
+             (this.role!=null &&
+              this.role.equals(other.getRole())));
+        __equalsCalc = null;
+        return _equals;
+    }
+
+    private boolean __hashCodeCalc = false;
+    public synchronized int hashCode() {
+        if (__hashCodeCalc) {
+            return 0;
+        }
+        __hashCodeCalc = true;
+        int _hashCode = 1;
+        if (getEmail() != null) {
+            _hashCode += getEmail().hashCode();
+        }
+        if (getPassword() != null) {
+            _hashCode += getPassword().hashCode();
+        }
+        if (getAccount() != null) {
+            _hashCode += getAccount().hashCode();
+        }
+        if (getRole() != null) {
+            _hashCode += getRole().hashCode();
+        }
+        __hashCodeCalc = false;
+        return _hashCode;
+    }
+
+    // Type metadata
+    private static org.apache.axis.description.TypeDesc typeDesc =
+        new org.apache.axis.description.TypeDesc(Passport.class, true);
+
+    static {
+        typeDesc.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "Passport"));
+        org.apache.axis.description.ElementDesc elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("email");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "email"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("password");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "password"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("account");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "account"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("role");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "role"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+    }
+
+    /**
+     * Return type metadata object
+     */
+    public static org.apache.axis.description.TypeDesc getTypeDesc() {
+        return typeDesc;
+    }
+
+    /**
+     * Get Custom Serializer
+     */
+    public static org.apache.axis.encoding.Serializer getSerializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanSerializer(
+            _javaType, _xmlType, typeDesc);
+    }
+
+    /**
+     * Get Custom Deserializer
+     */
+    public static org.apache.axis.encoding.Deserializer getDeserializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanDeserializer(
+            _javaType, _xmlType, typeDesc);
     }
 
 }

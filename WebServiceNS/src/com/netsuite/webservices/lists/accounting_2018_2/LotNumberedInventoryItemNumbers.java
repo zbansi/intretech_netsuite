@@ -1,118 +1,194 @@
+/**
+ * LotNumberedInventoryItemNumbers.java
+ *
+ * This file was auto-generated from WSDL
+ * by the Apache Axis 1.4 Jul 28, 2010 (04:07:04 PDT) WSDL2Java emitter.
+ */
 
 package com.netsuite.webservices.lists.accounting_2018_2;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlSchemaType;
-import javax.xml.bind.annotation.XmlType;
-import javax.xml.datatype.XMLGregorianCalendar;
-import com.netsuite.webservices.platform.core_2018_2.RecordRef;
+public class LotNumberedInventoryItemNumbers  implements java.io.Serializable {
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef serialNumber;
 
+    private java.lang.Double quantityOnHand;
 
-/**
- * <p>LotNumberedInventoryItemNumbers complex type的 Java 类。
- * 
- * <p>以下模式片段指定包含在此类中的预期内容。
- * 
- * <pre>
- * &lt;complexType name="LotNumberedInventoryItemNumbers">
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element name="serialNumber" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="quantityOnHand" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
- *         &lt;element name="expirationDate" type="{http://www.w3.org/2001/XMLSchema}dateTime" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
- */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "LotNumberedInventoryItemNumbers", propOrder = {
-    "serialNumber",
-    "quantityOnHand",
-    "expirationDate"
-})
-public class LotNumberedInventoryItemNumbers {
+    private java.util.Calendar expirationDate;
 
-    protected RecordRef serialNumber;
-    protected Double quantityOnHand;
-    @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar expirationDate;
+    public LotNumberedInventoryItemNumbers() {
+    }
+
+    public LotNumberedInventoryItemNumbers(
+           com.netsuite.webservices.platform.core_2018_2.RecordRef serialNumber,
+           java.lang.Double quantityOnHand,
+           java.util.Calendar expirationDate) {
+           this.serialNumber = serialNumber;
+           this.quantityOnHand = quantityOnHand;
+           this.expirationDate = expirationDate;
+    }
+
 
     /**
-     * 获取serialNumber属性的值。
+     * Gets the serialNumber value for this LotNumberedInventoryItemNumbers.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @return serialNumber
      */
-    public RecordRef getSerialNumber() {
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getSerialNumber() {
         return serialNumber;
     }
 
-    /**
-     * 设置serialNumber属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setSerialNumber(RecordRef value) {
-        this.serialNumber = value;
-    }
 
     /**
-     * 获取quantityOnHand属性的值。
+     * Sets the serialNumber value for this LotNumberedInventoryItemNumbers.
      * 
-     * @return
-     *     possible object is
-     *     {@link Double }
-     *     
+     * @param serialNumber
      */
-    public Double getQuantityOnHand() {
+    public void setSerialNumber(com.netsuite.webservices.platform.core_2018_2.RecordRef serialNumber) {
+        this.serialNumber = serialNumber;
+    }
+
+
+    /**
+     * Gets the quantityOnHand value for this LotNumberedInventoryItemNumbers.
+     * 
+     * @return quantityOnHand
+     */
+    public java.lang.Double getQuantityOnHand() {
         return quantityOnHand;
     }
 
-    /**
-     * 设置quantityOnHand属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Double }
-     *     
-     */
-    public void setQuantityOnHand(Double value) {
-        this.quantityOnHand = value;
-    }
 
     /**
-     * 获取expirationDate属性的值。
+     * Sets the quantityOnHand value for this LotNumberedInventoryItemNumbers.
      * 
-     * @return
-     *     possible object is
-     *     {@link XMLGregorianCalendar }
-     *     
+     * @param quantityOnHand
      */
-    public XMLGregorianCalendar getExpirationDate() {
+    public void setQuantityOnHand(java.lang.Double quantityOnHand) {
+        this.quantityOnHand = quantityOnHand;
+    }
+
+
+    /**
+     * Gets the expirationDate value for this LotNumberedInventoryItemNumbers.
+     * 
+     * @return expirationDate
+     */
+    public java.util.Calendar getExpirationDate() {
         return expirationDate;
     }
 
+
     /**
-     * 设置expirationDate属性的值。
+     * Sets the expirationDate value for this LotNumberedInventoryItemNumbers.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link XMLGregorianCalendar }
-     *     
+     * @param expirationDate
      */
-    public void setExpirationDate(XMLGregorianCalendar value) {
-        this.expirationDate = value;
+    public void setExpirationDate(java.util.Calendar expirationDate) {
+        this.expirationDate = expirationDate;
+    }
+
+    private java.lang.Object __equalsCalc = null;
+    public synchronized boolean equals(java.lang.Object obj) {
+        if (!(obj instanceof LotNumberedInventoryItemNumbers)) return false;
+        LotNumberedInventoryItemNumbers other = (LotNumberedInventoryItemNumbers) obj;
+        if (obj == null) return false;
+        if (this == obj) return true;
+        if (__equalsCalc != null) {
+            return (__equalsCalc == obj);
+        }
+        __equalsCalc = obj;
+        boolean _equals;
+        _equals = true && 
+            ((this.serialNumber==null && other.getSerialNumber()==null) || 
+             (this.serialNumber!=null &&
+              this.serialNumber.equals(other.getSerialNumber()))) &&
+            ((this.quantityOnHand==null && other.getQuantityOnHand()==null) || 
+             (this.quantityOnHand!=null &&
+              this.quantityOnHand.equals(other.getQuantityOnHand()))) &&
+            ((this.expirationDate==null && other.getExpirationDate()==null) || 
+             (this.expirationDate!=null &&
+              this.expirationDate.equals(other.getExpirationDate())));
+        __equalsCalc = null;
+        return _equals;
+    }
+
+    private boolean __hashCodeCalc = false;
+    public synchronized int hashCode() {
+        if (__hashCodeCalc) {
+            return 0;
+        }
+        __hashCodeCalc = true;
+        int _hashCode = 1;
+        if (getSerialNumber() != null) {
+            _hashCode += getSerialNumber().hashCode();
+        }
+        if (getQuantityOnHand() != null) {
+            _hashCode += getQuantityOnHand().hashCode();
+        }
+        if (getExpirationDate() != null) {
+            _hashCode += getExpirationDate().hashCode();
+        }
+        __hashCodeCalc = false;
+        return _hashCode;
+    }
+
+    // Type metadata
+    private static org.apache.axis.description.TypeDesc typeDesc =
+        new org.apache.axis.description.TypeDesc(LotNumberedInventoryItemNumbers.class, true);
+
+    static {
+        typeDesc.setXmlType(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "LotNumberedInventoryItemNumbers"));
+        org.apache.axis.description.ElementDesc elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("serialNumber");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "serialNumber"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("quantityOnHand");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "quantityOnHand"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "double"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("expirationDate");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "expirationDate"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "dateTime"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+    }
+
+    /**
+     * Return type metadata object
+     */
+    public static org.apache.axis.description.TypeDesc getTypeDesc() {
+        return typeDesc;
+    }
+
+    /**
+     * Get Custom Serializer
+     */
+    public static org.apache.axis.encoding.Serializer getSerializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanSerializer(
+            _javaType, _xmlType, typeDesc);
+    }
+
+    /**
+     * Get Custom Deserializer
+     */
+    public static org.apache.axis.encoding.Deserializer getDeserializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanDeserializer(
+            _javaType, _xmlType, typeDesc);
     }
 
 }

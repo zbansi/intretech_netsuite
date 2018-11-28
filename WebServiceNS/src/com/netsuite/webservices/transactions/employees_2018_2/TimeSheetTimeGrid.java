@@ -1,222 +1,342 @@
+/**
+ * TimeSheetTimeGrid.java
+ *
+ * This file was auto-generated from WSDL
+ * by the Apache Axis 1.4 Jul 28, 2010 (04:07:04 PDT) WSDL2Java emitter.
+ */
 
 package com.netsuite.webservices.transactions.employees_2018_2;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlType;
+public class TimeSheetTimeGrid  implements java.io.Serializable {
+    private com.netsuite.webservices.transactions.employees_2018_2.TimeEntry sunday;
 
+    private com.netsuite.webservices.transactions.employees_2018_2.TimeEntry monday;
 
-/**
- * <p>TimeSheetTimeGrid complex type的 Java 类。
- * 
- * <p>以下模式片段指定包含在此类中的预期内容。
- * 
- * <pre>
- * &lt;complexType name="TimeSheetTimeGrid">
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element name="sunday" type="{urn:employees_2018_2.transactions.webservices.netsuite.com}TimeEntry" minOccurs="0"/>
- *         &lt;element name="monday" type="{urn:employees_2018_2.transactions.webservices.netsuite.com}TimeEntry" minOccurs="0"/>
- *         &lt;element name="tuesday" type="{urn:employees_2018_2.transactions.webservices.netsuite.com}TimeEntry" minOccurs="0"/>
- *         &lt;element name="wednesday" type="{urn:employees_2018_2.transactions.webservices.netsuite.com}TimeEntry" minOccurs="0"/>
- *         &lt;element name="thursday" type="{urn:employees_2018_2.transactions.webservices.netsuite.com}TimeEntry" minOccurs="0"/>
- *         &lt;element name="friday" type="{urn:employees_2018_2.transactions.webservices.netsuite.com}TimeEntry" minOccurs="0"/>
- *         &lt;element name="saturday" type="{urn:employees_2018_2.transactions.webservices.netsuite.com}TimeEntry" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
- */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "TimeSheetTimeGrid", propOrder = {
-    "sunday",
-    "monday",
-    "tuesday",
-    "wednesday",
-    "thursday",
-    "friday",
-    "saturday"
-})
-public class TimeSheetTimeGrid {
+    private com.netsuite.webservices.transactions.employees_2018_2.TimeEntry tuesday;
 
-    protected TimeEntry sunday;
-    protected TimeEntry monday;
-    protected TimeEntry tuesday;
-    protected TimeEntry wednesday;
-    protected TimeEntry thursday;
-    protected TimeEntry friday;
-    protected TimeEntry saturday;
+    private com.netsuite.webservices.transactions.employees_2018_2.TimeEntry wednesday;
+
+    private com.netsuite.webservices.transactions.employees_2018_2.TimeEntry thursday;
+
+    private com.netsuite.webservices.transactions.employees_2018_2.TimeEntry friday;
+
+    private com.netsuite.webservices.transactions.employees_2018_2.TimeEntry saturday;
+
+    public TimeSheetTimeGrid() {
+    }
+
+    public TimeSheetTimeGrid(
+           com.netsuite.webservices.transactions.employees_2018_2.TimeEntry sunday,
+           com.netsuite.webservices.transactions.employees_2018_2.TimeEntry monday,
+           com.netsuite.webservices.transactions.employees_2018_2.TimeEntry tuesday,
+           com.netsuite.webservices.transactions.employees_2018_2.TimeEntry wednesday,
+           com.netsuite.webservices.transactions.employees_2018_2.TimeEntry thursday,
+           com.netsuite.webservices.transactions.employees_2018_2.TimeEntry friday,
+           com.netsuite.webservices.transactions.employees_2018_2.TimeEntry saturday) {
+           this.sunday = sunday;
+           this.monday = monday;
+           this.tuesday = tuesday;
+           this.wednesday = wednesday;
+           this.thursday = thursday;
+           this.friday = friday;
+           this.saturday = saturday;
+    }
+
 
     /**
-     * 获取sunday属性的值。
+     * Gets the sunday value for this TimeSheetTimeGrid.
      * 
-     * @return
-     *     possible object is
-     *     {@link TimeEntry }
-     *     
+     * @return sunday
      */
-    public TimeEntry getSunday() {
+    public com.netsuite.webservices.transactions.employees_2018_2.TimeEntry getSunday() {
         return sunday;
     }
 
-    /**
-     * 设置sunday属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link TimeEntry }
-     *     
-     */
-    public void setSunday(TimeEntry value) {
-        this.sunday = value;
-    }
 
     /**
-     * 获取monday属性的值。
+     * Sets the sunday value for this TimeSheetTimeGrid.
      * 
-     * @return
-     *     possible object is
-     *     {@link TimeEntry }
-     *     
+     * @param sunday
      */
-    public TimeEntry getMonday() {
+    public void setSunday(com.netsuite.webservices.transactions.employees_2018_2.TimeEntry sunday) {
+        this.sunday = sunday;
+    }
+
+
+    /**
+     * Gets the monday value for this TimeSheetTimeGrid.
+     * 
+     * @return monday
+     */
+    public com.netsuite.webservices.transactions.employees_2018_2.TimeEntry getMonday() {
         return monday;
     }
 
-    /**
-     * 设置monday属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link TimeEntry }
-     *     
-     */
-    public void setMonday(TimeEntry value) {
-        this.monday = value;
-    }
 
     /**
-     * 获取tuesday属性的值。
+     * Sets the monday value for this TimeSheetTimeGrid.
      * 
-     * @return
-     *     possible object is
-     *     {@link TimeEntry }
-     *     
+     * @param monday
      */
-    public TimeEntry getTuesday() {
+    public void setMonday(com.netsuite.webservices.transactions.employees_2018_2.TimeEntry monday) {
+        this.monday = monday;
+    }
+
+
+    /**
+     * Gets the tuesday value for this TimeSheetTimeGrid.
+     * 
+     * @return tuesday
+     */
+    public com.netsuite.webservices.transactions.employees_2018_2.TimeEntry getTuesday() {
         return tuesday;
     }
 
-    /**
-     * 设置tuesday属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link TimeEntry }
-     *     
-     */
-    public void setTuesday(TimeEntry value) {
-        this.tuesday = value;
-    }
 
     /**
-     * 获取wednesday属性的值。
+     * Sets the tuesday value for this TimeSheetTimeGrid.
      * 
-     * @return
-     *     possible object is
-     *     {@link TimeEntry }
-     *     
+     * @param tuesday
      */
-    public TimeEntry getWednesday() {
+    public void setTuesday(com.netsuite.webservices.transactions.employees_2018_2.TimeEntry tuesday) {
+        this.tuesday = tuesday;
+    }
+
+
+    /**
+     * Gets the wednesday value for this TimeSheetTimeGrid.
+     * 
+     * @return wednesday
+     */
+    public com.netsuite.webservices.transactions.employees_2018_2.TimeEntry getWednesday() {
         return wednesday;
     }
 
-    /**
-     * 设置wednesday属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link TimeEntry }
-     *     
-     */
-    public void setWednesday(TimeEntry value) {
-        this.wednesday = value;
-    }
 
     /**
-     * 获取thursday属性的值。
+     * Sets the wednesday value for this TimeSheetTimeGrid.
      * 
-     * @return
-     *     possible object is
-     *     {@link TimeEntry }
-     *     
+     * @param wednesday
      */
-    public TimeEntry getThursday() {
+    public void setWednesday(com.netsuite.webservices.transactions.employees_2018_2.TimeEntry wednesday) {
+        this.wednesday = wednesday;
+    }
+
+
+    /**
+     * Gets the thursday value for this TimeSheetTimeGrid.
+     * 
+     * @return thursday
+     */
+    public com.netsuite.webservices.transactions.employees_2018_2.TimeEntry getThursday() {
         return thursday;
     }
 
-    /**
-     * 设置thursday属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link TimeEntry }
-     *     
-     */
-    public void setThursday(TimeEntry value) {
-        this.thursday = value;
-    }
 
     /**
-     * 获取friday属性的值。
+     * Sets the thursday value for this TimeSheetTimeGrid.
      * 
-     * @return
-     *     possible object is
-     *     {@link TimeEntry }
-     *     
+     * @param thursday
      */
-    public TimeEntry getFriday() {
+    public void setThursday(com.netsuite.webservices.transactions.employees_2018_2.TimeEntry thursday) {
+        this.thursday = thursday;
+    }
+
+
+    /**
+     * Gets the friday value for this TimeSheetTimeGrid.
+     * 
+     * @return friday
+     */
+    public com.netsuite.webservices.transactions.employees_2018_2.TimeEntry getFriday() {
         return friday;
     }
 
-    /**
-     * 设置friday属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link TimeEntry }
-     *     
-     */
-    public void setFriday(TimeEntry value) {
-        this.friday = value;
-    }
 
     /**
-     * 获取saturday属性的值。
+     * Sets the friday value for this TimeSheetTimeGrid.
      * 
-     * @return
-     *     possible object is
-     *     {@link TimeEntry }
-     *     
+     * @param friday
      */
-    public TimeEntry getSaturday() {
+    public void setFriday(com.netsuite.webservices.transactions.employees_2018_2.TimeEntry friday) {
+        this.friday = friday;
+    }
+
+
+    /**
+     * Gets the saturday value for this TimeSheetTimeGrid.
+     * 
+     * @return saturday
+     */
+    public com.netsuite.webservices.transactions.employees_2018_2.TimeEntry getSaturday() {
         return saturday;
     }
 
+
     /**
-     * 设置saturday属性的值。
+     * Sets the saturday value for this TimeSheetTimeGrid.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link TimeEntry }
-     *     
+     * @param saturday
      */
-    public void setSaturday(TimeEntry value) {
-        this.saturday = value;
+    public void setSaturday(com.netsuite.webservices.transactions.employees_2018_2.TimeEntry saturday) {
+        this.saturday = saturday;
+    }
+
+    private java.lang.Object __equalsCalc = null;
+    public synchronized boolean equals(java.lang.Object obj) {
+        if (!(obj instanceof TimeSheetTimeGrid)) return false;
+        TimeSheetTimeGrid other = (TimeSheetTimeGrid) obj;
+        if (obj == null) return false;
+        if (this == obj) return true;
+        if (__equalsCalc != null) {
+            return (__equalsCalc == obj);
+        }
+        __equalsCalc = obj;
+        boolean _equals;
+        _equals = true && 
+            ((this.sunday==null && other.getSunday()==null) || 
+             (this.sunday!=null &&
+              this.sunday.equals(other.getSunday()))) &&
+            ((this.monday==null && other.getMonday()==null) || 
+             (this.monday!=null &&
+              this.monday.equals(other.getMonday()))) &&
+            ((this.tuesday==null && other.getTuesday()==null) || 
+             (this.tuesday!=null &&
+              this.tuesday.equals(other.getTuesday()))) &&
+            ((this.wednesday==null && other.getWednesday()==null) || 
+             (this.wednesday!=null &&
+              this.wednesday.equals(other.getWednesday()))) &&
+            ((this.thursday==null && other.getThursday()==null) || 
+             (this.thursday!=null &&
+              this.thursday.equals(other.getThursday()))) &&
+            ((this.friday==null && other.getFriday()==null) || 
+             (this.friday!=null &&
+              this.friday.equals(other.getFriday()))) &&
+            ((this.saturday==null && other.getSaturday()==null) || 
+             (this.saturday!=null &&
+              this.saturday.equals(other.getSaturday())));
+        __equalsCalc = null;
+        return _equals;
+    }
+
+    private boolean __hashCodeCalc = false;
+    public synchronized int hashCode() {
+        if (__hashCodeCalc) {
+            return 0;
+        }
+        __hashCodeCalc = true;
+        int _hashCode = 1;
+        if (getSunday() != null) {
+            _hashCode += getSunday().hashCode();
+        }
+        if (getMonday() != null) {
+            _hashCode += getMonday().hashCode();
+        }
+        if (getTuesday() != null) {
+            _hashCode += getTuesday().hashCode();
+        }
+        if (getWednesday() != null) {
+            _hashCode += getWednesday().hashCode();
+        }
+        if (getThursday() != null) {
+            _hashCode += getThursday().hashCode();
+        }
+        if (getFriday() != null) {
+            _hashCode += getFriday().hashCode();
+        }
+        if (getSaturday() != null) {
+            _hashCode += getSaturday().hashCode();
+        }
+        __hashCodeCalc = false;
+        return _hashCode;
+    }
+
+    // Type metadata
+    private static org.apache.axis.description.TypeDesc typeDesc =
+        new org.apache.axis.description.TypeDesc(TimeSheetTimeGrid.class, true);
+
+    static {
+        typeDesc.setXmlType(new javax.xml.namespace.QName("urn:employees_2018_2.transactions.webservices.netsuite.com", "TimeSheetTimeGrid"));
+        org.apache.axis.description.ElementDesc elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("sunday");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:employees_2018_2.transactions.webservices.netsuite.com", "sunday"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:employees_2018_2.transactions.webservices.netsuite.com", "TimeEntry"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("monday");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:employees_2018_2.transactions.webservices.netsuite.com", "monday"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:employees_2018_2.transactions.webservices.netsuite.com", "TimeEntry"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("tuesday");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:employees_2018_2.transactions.webservices.netsuite.com", "tuesday"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:employees_2018_2.transactions.webservices.netsuite.com", "TimeEntry"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("wednesday");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:employees_2018_2.transactions.webservices.netsuite.com", "wednesday"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:employees_2018_2.transactions.webservices.netsuite.com", "TimeEntry"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("thursday");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:employees_2018_2.transactions.webservices.netsuite.com", "thursday"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:employees_2018_2.transactions.webservices.netsuite.com", "TimeEntry"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("friday");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:employees_2018_2.transactions.webservices.netsuite.com", "friday"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:employees_2018_2.transactions.webservices.netsuite.com", "TimeEntry"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("saturday");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:employees_2018_2.transactions.webservices.netsuite.com", "saturday"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:employees_2018_2.transactions.webservices.netsuite.com", "TimeEntry"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+    }
+
+    /**
+     * Return type metadata object
+     */
+    public static org.apache.axis.description.TypeDesc getTypeDesc() {
+        return typeDesc;
+    }
+
+    /**
+     * Get Custom Serializer
+     */
+    public static org.apache.axis.encoding.Serializer getSerializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanSerializer(
+            _javaType, _xmlType, typeDesc);
+    }
+
+    /**
+     * Get Custom Deserializer
+     */
+    public static org.apache.axis.encoding.Deserializer getDeserializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanDeserializer(
+            _javaType, _xmlType, typeDesc);
     }
 
 }

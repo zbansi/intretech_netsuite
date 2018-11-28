@@ -1,490 +1,839 @@
+/**
+ * ConsolidatedExchangeRateSearchRowBasic.java
+ *
+ * This file was auto-generated from WSDL
+ * by the Apache Axis 1.4 Jul 28, 2010 (04:07:04 PDT) WSDL2Java emitter.
+ */
 
 package com.netsuite.webservices.platform.common_2018_2;
 
-import java.util.ArrayList;
-import java.util.List;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlType;
-import com.netsuite.webservices.platform.core_2018_2.SearchColumnBooleanField;
-import com.netsuite.webservices.platform.core_2018_2.SearchColumnDateField;
-import com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField;
-import com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField;
-import com.netsuite.webservices.platform.core_2018_2.SearchRowBasic;
+public class ConsolidatedExchangeRateSearchRowBasic  extends com.netsuite.webservices.platform.core_2018_2.SearchRowBasic  implements java.io.Serializable {
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] accountingBook;
 
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] averageRate;
 
-/**
- * <p>ConsolidatedExchangeRateSearchRowBasic complex type的 Java 类。
- * 
- * <p>以下模式片段指定包含在此类中的预期内容。
- * 
- * <pre>
- * &lt;complexType name="ConsolidatedExchangeRateSearchRowBasic">
- *   &lt;complexContent>
- *     &lt;extension base="{urn:core_2018_2.platform.webservices.netsuite.com}SearchRowBasic">
- *       &lt;sequence>
- *         &lt;element name="accountingBook" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnStringField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="averageRate" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnStringField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="closed" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnBooleanField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="currentRate" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnStringField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="externalId" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnSelectField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="fromCurrency" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnStringField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="fromSubsidiary" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnStringField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="historicalRate" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnStringField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="internalId" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnSelectField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="periodEndDate" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnDateField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="periodName" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnStringField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="periodStartDate" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnDateField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="toCurrency" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnStringField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="toSubsidiary" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnStringField" maxOccurs="unbounded" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/extension>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
- */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "ConsolidatedExchangeRateSearchRowBasic", propOrder = {
-    "accountingBook",
-    "averageRate",
-    "closed",
-    "currentRate",
-    "externalId",
-    "fromCurrency",
-    "fromSubsidiary",
-    "historicalRate",
-    "internalId",
-    "periodEndDate",
-    "periodName",
-    "periodStartDate",
-    "toCurrency",
-    "toSubsidiary"
-})
-public class ConsolidatedExchangeRateSearchRowBasic
-    extends SearchRowBasic
-{
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnBooleanField[] closed;
 
-    protected List<SearchColumnStringField> accountingBook;
-    protected List<SearchColumnStringField> averageRate;
-    protected List<SearchColumnBooleanField> closed;
-    protected List<SearchColumnStringField> currentRate;
-    protected List<SearchColumnSelectField> externalId;
-    protected List<SearchColumnStringField> fromCurrency;
-    protected List<SearchColumnStringField> fromSubsidiary;
-    protected List<SearchColumnStringField> historicalRate;
-    protected List<SearchColumnSelectField> internalId;
-    protected List<SearchColumnDateField> periodEndDate;
-    protected List<SearchColumnStringField> periodName;
-    protected List<SearchColumnDateField> periodStartDate;
-    protected List<SearchColumnStringField> toCurrency;
-    protected List<SearchColumnStringField> toSubsidiary;
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] currentRate;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] externalId;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] fromCurrency;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] fromSubsidiary;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] historicalRate;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] internalId;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnDateField[] periodEndDate;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] periodName;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnDateField[] periodStartDate;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] toCurrency;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] toSubsidiary;
+
+    public ConsolidatedExchangeRateSearchRowBasic() {
+    }
+
+    public ConsolidatedExchangeRateSearchRowBasic(
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] accountingBook,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] averageRate,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnBooleanField[] closed,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] currentRate,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] externalId,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] fromCurrency,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] fromSubsidiary,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] historicalRate,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] internalId,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnDateField[] periodEndDate,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] periodName,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnDateField[] periodStartDate,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] toCurrency,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] toSubsidiary) {
+        this.accountingBook = accountingBook;
+        this.averageRate = averageRate;
+        this.closed = closed;
+        this.currentRate = currentRate;
+        this.externalId = externalId;
+        this.fromCurrency = fromCurrency;
+        this.fromSubsidiary = fromSubsidiary;
+        this.historicalRate = historicalRate;
+        this.internalId = internalId;
+        this.periodEndDate = periodEndDate;
+        this.periodName = periodName;
+        this.periodStartDate = periodStartDate;
+        this.toCurrency = toCurrency;
+        this.toSubsidiary = toSubsidiary;
+    }
+
 
     /**
-     * Gets the value of the accountingBook property.
+     * Gets the accountingBook value for this ConsolidatedExchangeRateSearchRowBasic.
      * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the accountingBook property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getAccountingBook().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnStringField }
-     * 
-     * 
+     * @return accountingBook
      */
-    public List<SearchColumnStringField> getAccountingBook() {
-        if (accountingBook == null) {
-            accountingBook = new ArrayList<SearchColumnStringField>();
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] getAccountingBook() {
+        return accountingBook;
+    }
+
+
+    /**
+     * Sets the accountingBook value for this ConsolidatedExchangeRateSearchRowBasic.
+     * 
+     * @param accountingBook
+     */
+    public void setAccountingBook(com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] accountingBook) {
+        this.accountingBook = accountingBook;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField getAccountingBook(int i) {
+        return this.accountingBook[i];
+    }
+
+    public void setAccountingBook(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField _value) {
+        this.accountingBook[i] = _value;
+    }
+
+
+    /**
+     * Gets the averageRate value for this ConsolidatedExchangeRateSearchRowBasic.
+     * 
+     * @return averageRate
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] getAverageRate() {
+        return averageRate;
+    }
+
+
+    /**
+     * Sets the averageRate value for this ConsolidatedExchangeRateSearchRowBasic.
+     * 
+     * @param averageRate
+     */
+    public void setAverageRate(com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] averageRate) {
+        this.averageRate = averageRate;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField getAverageRate(int i) {
+        return this.averageRate[i];
+    }
+
+    public void setAverageRate(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField _value) {
+        this.averageRate[i] = _value;
+    }
+
+
+    /**
+     * Gets the closed value for this ConsolidatedExchangeRateSearchRowBasic.
+     * 
+     * @return closed
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnBooleanField[] getClosed() {
+        return closed;
+    }
+
+
+    /**
+     * Sets the closed value for this ConsolidatedExchangeRateSearchRowBasic.
+     * 
+     * @param closed
+     */
+    public void setClosed(com.netsuite.webservices.platform.core_2018_2.SearchColumnBooleanField[] closed) {
+        this.closed = closed;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnBooleanField getClosed(int i) {
+        return this.closed[i];
+    }
+
+    public void setClosed(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnBooleanField _value) {
+        this.closed[i] = _value;
+    }
+
+
+    /**
+     * Gets the currentRate value for this ConsolidatedExchangeRateSearchRowBasic.
+     * 
+     * @return currentRate
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] getCurrentRate() {
+        return currentRate;
+    }
+
+
+    /**
+     * Sets the currentRate value for this ConsolidatedExchangeRateSearchRowBasic.
+     * 
+     * @param currentRate
+     */
+    public void setCurrentRate(com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] currentRate) {
+        this.currentRate = currentRate;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField getCurrentRate(int i) {
+        return this.currentRate[i];
+    }
+
+    public void setCurrentRate(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField _value) {
+        this.currentRate[i] = _value;
+    }
+
+
+    /**
+     * Gets the externalId value for this ConsolidatedExchangeRateSearchRowBasic.
+     * 
+     * @return externalId
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] getExternalId() {
+        return externalId;
+    }
+
+
+    /**
+     * Sets the externalId value for this ConsolidatedExchangeRateSearchRowBasic.
+     * 
+     * @param externalId
+     */
+    public void setExternalId(com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] externalId) {
+        this.externalId = externalId;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField getExternalId(int i) {
+        return this.externalId[i];
+    }
+
+    public void setExternalId(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField _value) {
+        this.externalId[i] = _value;
+    }
+
+
+    /**
+     * Gets the fromCurrency value for this ConsolidatedExchangeRateSearchRowBasic.
+     * 
+     * @return fromCurrency
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] getFromCurrency() {
+        return fromCurrency;
+    }
+
+
+    /**
+     * Sets the fromCurrency value for this ConsolidatedExchangeRateSearchRowBasic.
+     * 
+     * @param fromCurrency
+     */
+    public void setFromCurrency(com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] fromCurrency) {
+        this.fromCurrency = fromCurrency;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField getFromCurrency(int i) {
+        return this.fromCurrency[i];
+    }
+
+    public void setFromCurrency(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField _value) {
+        this.fromCurrency[i] = _value;
+    }
+
+
+    /**
+     * Gets the fromSubsidiary value for this ConsolidatedExchangeRateSearchRowBasic.
+     * 
+     * @return fromSubsidiary
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] getFromSubsidiary() {
+        return fromSubsidiary;
+    }
+
+
+    /**
+     * Sets the fromSubsidiary value for this ConsolidatedExchangeRateSearchRowBasic.
+     * 
+     * @param fromSubsidiary
+     */
+    public void setFromSubsidiary(com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] fromSubsidiary) {
+        this.fromSubsidiary = fromSubsidiary;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField getFromSubsidiary(int i) {
+        return this.fromSubsidiary[i];
+    }
+
+    public void setFromSubsidiary(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField _value) {
+        this.fromSubsidiary[i] = _value;
+    }
+
+
+    /**
+     * Gets the historicalRate value for this ConsolidatedExchangeRateSearchRowBasic.
+     * 
+     * @return historicalRate
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] getHistoricalRate() {
+        return historicalRate;
+    }
+
+
+    /**
+     * Sets the historicalRate value for this ConsolidatedExchangeRateSearchRowBasic.
+     * 
+     * @param historicalRate
+     */
+    public void setHistoricalRate(com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] historicalRate) {
+        this.historicalRate = historicalRate;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField getHistoricalRate(int i) {
+        return this.historicalRate[i];
+    }
+
+    public void setHistoricalRate(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField _value) {
+        this.historicalRate[i] = _value;
+    }
+
+
+    /**
+     * Gets the internalId value for this ConsolidatedExchangeRateSearchRowBasic.
+     * 
+     * @return internalId
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] getInternalId() {
+        return internalId;
+    }
+
+
+    /**
+     * Sets the internalId value for this ConsolidatedExchangeRateSearchRowBasic.
+     * 
+     * @param internalId
+     */
+    public void setInternalId(com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] internalId) {
+        this.internalId = internalId;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField getInternalId(int i) {
+        return this.internalId[i];
+    }
+
+    public void setInternalId(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField _value) {
+        this.internalId[i] = _value;
+    }
+
+
+    /**
+     * Gets the periodEndDate value for this ConsolidatedExchangeRateSearchRowBasic.
+     * 
+     * @return periodEndDate
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnDateField[] getPeriodEndDate() {
+        return periodEndDate;
+    }
+
+
+    /**
+     * Sets the periodEndDate value for this ConsolidatedExchangeRateSearchRowBasic.
+     * 
+     * @param periodEndDate
+     */
+    public void setPeriodEndDate(com.netsuite.webservices.platform.core_2018_2.SearchColumnDateField[] periodEndDate) {
+        this.periodEndDate = periodEndDate;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnDateField getPeriodEndDate(int i) {
+        return this.periodEndDate[i];
+    }
+
+    public void setPeriodEndDate(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnDateField _value) {
+        this.periodEndDate[i] = _value;
+    }
+
+
+    /**
+     * Gets the periodName value for this ConsolidatedExchangeRateSearchRowBasic.
+     * 
+     * @return periodName
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] getPeriodName() {
+        return periodName;
+    }
+
+
+    /**
+     * Sets the periodName value for this ConsolidatedExchangeRateSearchRowBasic.
+     * 
+     * @param periodName
+     */
+    public void setPeriodName(com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] periodName) {
+        this.periodName = periodName;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField getPeriodName(int i) {
+        return this.periodName[i];
+    }
+
+    public void setPeriodName(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField _value) {
+        this.periodName[i] = _value;
+    }
+
+
+    /**
+     * Gets the periodStartDate value for this ConsolidatedExchangeRateSearchRowBasic.
+     * 
+     * @return periodStartDate
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnDateField[] getPeriodStartDate() {
+        return periodStartDate;
+    }
+
+
+    /**
+     * Sets the periodStartDate value for this ConsolidatedExchangeRateSearchRowBasic.
+     * 
+     * @param periodStartDate
+     */
+    public void setPeriodStartDate(com.netsuite.webservices.platform.core_2018_2.SearchColumnDateField[] periodStartDate) {
+        this.periodStartDate = periodStartDate;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnDateField getPeriodStartDate(int i) {
+        return this.periodStartDate[i];
+    }
+
+    public void setPeriodStartDate(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnDateField _value) {
+        this.periodStartDate[i] = _value;
+    }
+
+
+    /**
+     * Gets the toCurrency value for this ConsolidatedExchangeRateSearchRowBasic.
+     * 
+     * @return toCurrency
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] getToCurrency() {
+        return toCurrency;
+    }
+
+
+    /**
+     * Sets the toCurrency value for this ConsolidatedExchangeRateSearchRowBasic.
+     * 
+     * @param toCurrency
+     */
+    public void setToCurrency(com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] toCurrency) {
+        this.toCurrency = toCurrency;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField getToCurrency(int i) {
+        return this.toCurrency[i];
+    }
+
+    public void setToCurrency(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField _value) {
+        this.toCurrency[i] = _value;
+    }
+
+
+    /**
+     * Gets the toSubsidiary value for this ConsolidatedExchangeRateSearchRowBasic.
+     * 
+     * @return toSubsidiary
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] getToSubsidiary() {
+        return toSubsidiary;
+    }
+
+
+    /**
+     * Sets the toSubsidiary value for this ConsolidatedExchangeRateSearchRowBasic.
+     * 
+     * @param toSubsidiary
+     */
+    public void setToSubsidiary(com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] toSubsidiary) {
+        this.toSubsidiary = toSubsidiary;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField getToSubsidiary(int i) {
+        return this.toSubsidiary[i];
+    }
+
+    public void setToSubsidiary(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField _value) {
+        this.toSubsidiary[i] = _value;
+    }
+
+    private java.lang.Object __equalsCalc = null;
+    public synchronized boolean equals(java.lang.Object obj) {
+        if (!(obj instanceof ConsolidatedExchangeRateSearchRowBasic)) return false;
+        ConsolidatedExchangeRateSearchRowBasic other = (ConsolidatedExchangeRateSearchRowBasic) obj;
+        if (obj == null) return false;
+        if (this == obj) return true;
+        if (__equalsCalc != null) {
+            return (__equalsCalc == obj);
         }
-        return this.accountingBook;
+        __equalsCalc = obj;
+        boolean _equals;
+        _equals = super.equals(obj) && 
+            ((this.accountingBook==null && other.getAccountingBook()==null) || 
+             (this.accountingBook!=null &&
+              java.util.Arrays.equals(this.accountingBook, other.getAccountingBook()))) &&
+            ((this.averageRate==null && other.getAverageRate()==null) || 
+             (this.averageRate!=null &&
+              java.util.Arrays.equals(this.averageRate, other.getAverageRate()))) &&
+            ((this.closed==null && other.getClosed()==null) || 
+             (this.closed!=null &&
+              java.util.Arrays.equals(this.closed, other.getClosed()))) &&
+            ((this.currentRate==null && other.getCurrentRate()==null) || 
+             (this.currentRate!=null &&
+              java.util.Arrays.equals(this.currentRate, other.getCurrentRate()))) &&
+            ((this.externalId==null && other.getExternalId()==null) || 
+             (this.externalId!=null &&
+              java.util.Arrays.equals(this.externalId, other.getExternalId()))) &&
+            ((this.fromCurrency==null && other.getFromCurrency()==null) || 
+             (this.fromCurrency!=null &&
+              java.util.Arrays.equals(this.fromCurrency, other.getFromCurrency()))) &&
+            ((this.fromSubsidiary==null && other.getFromSubsidiary()==null) || 
+             (this.fromSubsidiary!=null &&
+              java.util.Arrays.equals(this.fromSubsidiary, other.getFromSubsidiary()))) &&
+            ((this.historicalRate==null && other.getHistoricalRate()==null) || 
+             (this.historicalRate!=null &&
+              java.util.Arrays.equals(this.historicalRate, other.getHistoricalRate()))) &&
+            ((this.internalId==null && other.getInternalId()==null) || 
+             (this.internalId!=null &&
+              java.util.Arrays.equals(this.internalId, other.getInternalId()))) &&
+            ((this.periodEndDate==null && other.getPeriodEndDate()==null) || 
+             (this.periodEndDate!=null &&
+              java.util.Arrays.equals(this.periodEndDate, other.getPeriodEndDate()))) &&
+            ((this.periodName==null && other.getPeriodName()==null) || 
+             (this.periodName!=null &&
+              java.util.Arrays.equals(this.periodName, other.getPeriodName()))) &&
+            ((this.periodStartDate==null && other.getPeriodStartDate()==null) || 
+             (this.periodStartDate!=null &&
+              java.util.Arrays.equals(this.periodStartDate, other.getPeriodStartDate()))) &&
+            ((this.toCurrency==null && other.getToCurrency()==null) || 
+             (this.toCurrency!=null &&
+              java.util.Arrays.equals(this.toCurrency, other.getToCurrency()))) &&
+            ((this.toSubsidiary==null && other.getToSubsidiary()==null) || 
+             (this.toSubsidiary!=null &&
+              java.util.Arrays.equals(this.toSubsidiary, other.getToSubsidiary())));
+        __equalsCalc = null;
+        return _equals;
+    }
+
+    private boolean __hashCodeCalc = false;
+    public synchronized int hashCode() {
+        if (__hashCodeCalc) {
+            return 0;
+        }
+        __hashCodeCalc = true;
+        int _hashCode = super.hashCode();
+        if (getAccountingBook() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getAccountingBook());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getAccountingBook(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getAverageRate() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getAverageRate());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getAverageRate(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getClosed() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getClosed());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getClosed(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getCurrentRate() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getCurrentRate());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getCurrentRate(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getExternalId() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getExternalId());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getExternalId(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getFromCurrency() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getFromCurrency());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getFromCurrency(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getFromSubsidiary() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getFromSubsidiary());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getFromSubsidiary(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getHistoricalRate() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getHistoricalRate());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getHistoricalRate(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getInternalId() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getInternalId());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getInternalId(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getPeriodEndDate() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getPeriodEndDate());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getPeriodEndDate(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getPeriodName() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getPeriodName());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getPeriodName(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getPeriodStartDate() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getPeriodStartDate());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getPeriodStartDate(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getToCurrency() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getToCurrency());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getToCurrency(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getToSubsidiary() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getToSubsidiary());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getToSubsidiary(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        __hashCodeCalc = false;
+        return _hashCode;
+    }
+
+    // Type metadata
+    private static org.apache.axis.description.TypeDesc typeDesc =
+        new org.apache.axis.description.TypeDesc(ConsolidatedExchangeRateSearchRowBasic.class, true);
+
+    static {
+        typeDesc.setXmlType(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "ConsolidatedExchangeRateSearchRowBasic"));
+        org.apache.axis.description.ElementDesc elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("accountingBook");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "accountingBook"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnStringField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("averageRate");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "averageRate"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnStringField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("closed");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "closed"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnBooleanField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("currentRate");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "currentRate"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnStringField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("externalId");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "externalId"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnSelectField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("fromCurrency");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "fromCurrency"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnStringField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("fromSubsidiary");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "fromSubsidiary"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnStringField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("historicalRate");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "historicalRate"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnStringField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("internalId");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "internalId"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnSelectField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("periodEndDate");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "periodEndDate"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnDateField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("periodName");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "periodName"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnStringField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("periodStartDate");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "periodStartDate"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnDateField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("toCurrency");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "toCurrency"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnStringField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("toSubsidiary");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "toSubsidiary"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnStringField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
     }
 
     /**
-     * Gets the value of the averageRate property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the averageRate property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getAverageRate().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnStringField }
-     * 
-     * 
+     * Return type metadata object
      */
-    public List<SearchColumnStringField> getAverageRate() {
-        if (averageRate == null) {
-            averageRate = new ArrayList<SearchColumnStringField>();
-        }
-        return this.averageRate;
+    public static org.apache.axis.description.TypeDesc getTypeDesc() {
+        return typeDesc;
     }
 
     /**
-     * Gets the value of the closed property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the closed property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getClosed().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnBooleanField }
-     * 
-     * 
+     * Get Custom Serializer
      */
-    public List<SearchColumnBooleanField> getClosed() {
-        if (closed == null) {
-            closed = new ArrayList<SearchColumnBooleanField>();
-        }
-        return this.closed;
+    public static org.apache.axis.encoding.Serializer getSerializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanSerializer(
+            _javaType, _xmlType, typeDesc);
     }
 
     /**
-     * Gets the value of the currentRate property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the currentRate property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getCurrentRate().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnStringField }
-     * 
-     * 
+     * Get Custom Deserializer
      */
-    public List<SearchColumnStringField> getCurrentRate() {
-        if (currentRate == null) {
-            currentRate = new ArrayList<SearchColumnStringField>();
-        }
-        return this.currentRate;
-    }
-
-    /**
-     * Gets the value of the externalId property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the externalId property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getExternalId().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnSelectField }
-     * 
-     * 
-     */
-    public List<SearchColumnSelectField> getExternalId() {
-        if (externalId == null) {
-            externalId = new ArrayList<SearchColumnSelectField>();
-        }
-        return this.externalId;
-    }
-
-    /**
-     * Gets the value of the fromCurrency property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the fromCurrency property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getFromCurrency().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnStringField }
-     * 
-     * 
-     */
-    public List<SearchColumnStringField> getFromCurrency() {
-        if (fromCurrency == null) {
-            fromCurrency = new ArrayList<SearchColumnStringField>();
-        }
-        return this.fromCurrency;
-    }
-
-    /**
-     * Gets the value of the fromSubsidiary property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the fromSubsidiary property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getFromSubsidiary().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnStringField }
-     * 
-     * 
-     */
-    public List<SearchColumnStringField> getFromSubsidiary() {
-        if (fromSubsidiary == null) {
-            fromSubsidiary = new ArrayList<SearchColumnStringField>();
-        }
-        return this.fromSubsidiary;
-    }
-
-    /**
-     * Gets the value of the historicalRate property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the historicalRate property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getHistoricalRate().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnStringField }
-     * 
-     * 
-     */
-    public List<SearchColumnStringField> getHistoricalRate() {
-        if (historicalRate == null) {
-            historicalRate = new ArrayList<SearchColumnStringField>();
-        }
-        return this.historicalRate;
-    }
-
-    /**
-     * Gets the value of the internalId property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the internalId property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getInternalId().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnSelectField }
-     * 
-     * 
-     */
-    public List<SearchColumnSelectField> getInternalId() {
-        if (internalId == null) {
-            internalId = new ArrayList<SearchColumnSelectField>();
-        }
-        return this.internalId;
-    }
-
-    /**
-     * Gets the value of the periodEndDate property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the periodEndDate property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getPeriodEndDate().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnDateField }
-     * 
-     * 
-     */
-    public List<SearchColumnDateField> getPeriodEndDate() {
-        if (periodEndDate == null) {
-            periodEndDate = new ArrayList<SearchColumnDateField>();
-        }
-        return this.periodEndDate;
-    }
-
-    /**
-     * Gets the value of the periodName property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the periodName property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getPeriodName().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnStringField }
-     * 
-     * 
-     */
-    public List<SearchColumnStringField> getPeriodName() {
-        if (periodName == null) {
-            periodName = new ArrayList<SearchColumnStringField>();
-        }
-        return this.periodName;
-    }
-
-    /**
-     * Gets the value of the periodStartDate property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the periodStartDate property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getPeriodStartDate().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnDateField }
-     * 
-     * 
-     */
-    public List<SearchColumnDateField> getPeriodStartDate() {
-        if (periodStartDate == null) {
-            periodStartDate = new ArrayList<SearchColumnDateField>();
-        }
-        return this.periodStartDate;
-    }
-
-    /**
-     * Gets the value of the toCurrency property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the toCurrency property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getToCurrency().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnStringField }
-     * 
-     * 
-     */
-    public List<SearchColumnStringField> getToCurrency() {
-        if (toCurrency == null) {
-            toCurrency = new ArrayList<SearchColumnStringField>();
-        }
-        return this.toCurrency;
-    }
-
-    /**
-     * Gets the value of the toSubsidiary property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the toSubsidiary property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getToSubsidiary().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnStringField }
-     * 
-     * 
-     */
-    public List<SearchColumnStringField> getToSubsidiary() {
-        if (toSubsidiary == null) {
-            toSubsidiary = new ArrayList<SearchColumnStringField>();
-        }
-        return this.toSubsidiary;
+    public static org.apache.axis.encoding.Deserializer getDeserializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanDeserializer(
+            _javaType, _xmlType, typeDesc);
     }
 
 }

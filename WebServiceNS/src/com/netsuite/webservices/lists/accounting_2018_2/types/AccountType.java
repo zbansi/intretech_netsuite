@@ -1,105 +1,106 @@
+/**
+ * AccountType.java
+ *
+ * This file was auto-generated from WSDL
+ * by the Apache Axis 1.4 Jul 28, 2010 (04:07:04 PDT) WSDL2Java emitter.
+ */
 
 package com.netsuite.webservices.lists.accounting_2018_2.types;
 
-import javax.xml.bind.annotation.XmlEnum;
-import javax.xml.bind.annotation.XmlEnumValue;
-import javax.xml.bind.annotation.XmlType;
+public class AccountType implements java.io.Serializable {
+    private java.lang.String _value_;
+    private static java.util.HashMap _table_ = new java.util.HashMap();
 
-
-/**
- * <p>AccountType的 Java 类。
- * 
- * <p>以下模式片段指定包含在此类中的预期内容。
- * <p>
- * <pre>
- * &lt;simpleType name="AccountType">
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     &lt;enumeration value="_accountsPayable"/>
- *     &lt;enumeration value="_accountsReceivable"/>
- *     &lt;enumeration value="_bank"/>
- *     &lt;enumeration value="_costOfGoodsSold"/>
- *     &lt;enumeration value="_creditCard"/>
- *     &lt;enumeration value="_deferredExpense"/>
- *     &lt;enumeration value="_deferredRevenue"/>
- *     &lt;enumeration value="_equity"/>
- *     &lt;enumeration value="_expense"/>
- *     &lt;enumeration value="_fixedAsset"/>
- *     &lt;enumeration value="_income"/>
- *     &lt;enumeration value="_longTermLiability"/>
- *     &lt;enumeration value="_nonPosting"/>
- *     &lt;enumeration value="_otherAsset"/>
- *     &lt;enumeration value="_otherCurrentAsset"/>
- *     &lt;enumeration value="_otherCurrentLiability"/>
- *     &lt;enumeration value="_otherExpense"/>
- *     &lt;enumeration value="_otherIncome"/>
- *     &lt;enumeration value="_statistical"/>
- *     &lt;enumeration value="_unbilledReceivable"/>
- *   &lt;/restriction>
- * &lt;/simpleType>
- * </pre>
- * 
- */
-@XmlType(name = "AccountType", namespace = "urn:types.accounting_2018_2.lists.webservices.netsuite.com")
-@XmlEnum
-public enum AccountType {
-
-    @XmlEnumValue("_accountsPayable")
-    ACCOUNTS_PAYABLE("_accountsPayable"),
-    @XmlEnumValue("_accountsReceivable")
-    ACCOUNTS_RECEIVABLE("_accountsReceivable"),
-    @XmlEnumValue("_bank")
-    BANK("_bank"),
-    @XmlEnumValue("_costOfGoodsSold")
-    COST_OF_GOODS_SOLD("_costOfGoodsSold"),
-    @XmlEnumValue("_creditCard")
-    CREDIT_CARD("_creditCard"),
-    @XmlEnumValue("_deferredExpense")
-    DEFERRED_EXPENSE("_deferredExpense"),
-    @XmlEnumValue("_deferredRevenue")
-    DEFERRED_REVENUE("_deferredRevenue"),
-    @XmlEnumValue("_equity")
-    EQUITY("_equity"),
-    @XmlEnumValue("_expense")
-    EXPENSE("_expense"),
-    @XmlEnumValue("_fixedAsset")
-    FIXED_ASSET("_fixedAsset"),
-    @XmlEnumValue("_income")
-    INCOME("_income"),
-    @XmlEnumValue("_longTermLiability")
-    LONG_TERM_LIABILITY("_longTermLiability"),
-    @XmlEnumValue("_nonPosting")
-    NON_POSTING("_nonPosting"),
-    @XmlEnumValue("_otherAsset")
-    OTHER_ASSET("_otherAsset"),
-    @XmlEnumValue("_otherCurrentAsset")
-    OTHER_CURRENT_ASSET("_otherCurrentAsset"),
-    @XmlEnumValue("_otherCurrentLiability")
-    OTHER_CURRENT_LIABILITY("_otherCurrentLiability"),
-    @XmlEnumValue("_otherExpense")
-    OTHER_EXPENSE("_otherExpense"),
-    @XmlEnumValue("_otherIncome")
-    OTHER_INCOME("_otherIncome"),
-    @XmlEnumValue("_statistical")
-    STATISTICAL("_statistical"),
-    @XmlEnumValue("_unbilledReceivable")
-    UNBILLED_RECEIVABLE("_unbilledReceivable");
-    private final String value;
-
-    AccountType(String v) {
-        value = v;
+    // Constructor
+    protected AccountType(java.lang.String value) {
+        _value_ = value;
+        _table_.put(_value_,this);
     }
 
-    public String value() {
-        return value;
+    public static final java.lang.String __accountsPayable = "_accountsPayable";
+    public static final java.lang.String __accountsReceivable = "_accountsReceivable";
+    public static final java.lang.String __bank = "_bank";
+    public static final java.lang.String __costOfGoodsSold = "_costOfGoodsSold";
+    public static final java.lang.String __creditCard = "_creditCard";
+    public static final java.lang.String __deferredExpense = "_deferredExpense";
+    public static final java.lang.String __deferredRevenue = "_deferredRevenue";
+    public static final java.lang.String __equity = "_equity";
+    public static final java.lang.String __expense = "_expense";
+    public static final java.lang.String __fixedAsset = "_fixedAsset";
+    public static final java.lang.String __income = "_income";
+    public static final java.lang.String __longTermLiability = "_longTermLiability";
+    public static final java.lang.String __nonPosting = "_nonPosting";
+    public static final java.lang.String __otherAsset = "_otherAsset";
+    public static final java.lang.String __otherCurrentAsset = "_otherCurrentAsset";
+    public static final java.lang.String __otherCurrentLiability = "_otherCurrentLiability";
+    public static final java.lang.String __otherExpense = "_otherExpense";
+    public static final java.lang.String __otherIncome = "_otherIncome";
+    public static final java.lang.String __statistical = "_statistical";
+    public static final java.lang.String __unbilledReceivable = "_unbilledReceivable";
+    public static final AccountType _accountsPayable = new AccountType(__accountsPayable);
+    public static final AccountType _accountsReceivable = new AccountType(__accountsReceivable);
+    public static final AccountType _bank = new AccountType(__bank);
+    public static final AccountType _costOfGoodsSold = new AccountType(__costOfGoodsSold);
+    public static final AccountType _creditCard = new AccountType(__creditCard);
+    public static final AccountType _deferredExpense = new AccountType(__deferredExpense);
+    public static final AccountType _deferredRevenue = new AccountType(__deferredRevenue);
+    public static final AccountType _equity = new AccountType(__equity);
+    public static final AccountType _expense = new AccountType(__expense);
+    public static final AccountType _fixedAsset = new AccountType(__fixedAsset);
+    public static final AccountType _income = new AccountType(__income);
+    public static final AccountType _longTermLiability = new AccountType(__longTermLiability);
+    public static final AccountType _nonPosting = new AccountType(__nonPosting);
+    public static final AccountType _otherAsset = new AccountType(__otherAsset);
+    public static final AccountType _otherCurrentAsset = new AccountType(__otherCurrentAsset);
+    public static final AccountType _otherCurrentLiability = new AccountType(__otherCurrentLiability);
+    public static final AccountType _otherExpense = new AccountType(__otherExpense);
+    public static final AccountType _otherIncome = new AccountType(__otherIncome);
+    public static final AccountType _statistical = new AccountType(__statistical);
+    public static final AccountType _unbilledReceivable = new AccountType(__unbilledReceivable);
+    public java.lang.String getValue() { return _value_;}
+    public static AccountType fromValue(java.lang.String value)
+          throws java.lang.IllegalArgumentException {
+        AccountType enumeration = (AccountType)
+            _table_.get(value);
+        if (enumeration==null) throw new java.lang.IllegalArgumentException();
+        return enumeration;
     }
+    public static AccountType fromString(java.lang.String value)
+          throws java.lang.IllegalArgumentException {
+        return fromValue(value);
+    }
+    public boolean equals(java.lang.Object obj) {return (obj == this);}
+    public int hashCode() { return toString().hashCode();}
+    public java.lang.String toString() { return _value_;}
+    public java.lang.Object readResolve() throws java.io.ObjectStreamException { return fromValue(_value_);}
+    public static org.apache.axis.encoding.Serializer getSerializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new org.apache.axis.encoding.ser.EnumSerializer(
+            _javaType, _xmlType);
+    }
+    public static org.apache.axis.encoding.Deserializer getDeserializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new org.apache.axis.encoding.ser.EnumDeserializer(
+            _javaType, _xmlType);
+    }
+    // Type metadata
+    private static org.apache.axis.description.TypeDesc typeDesc =
+        new org.apache.axis.description.TypeDesc(AccountType.class);
 
-    public static AccountType fromValue(String v) {
-        for (AccountType c: AccountType.values()) {
-            if (c.value.equals(v)) {
-                return c;
-            }
-        }
-        throw new IllegalArgumentException(v);
+    static {
+        typeDesc.setXmlType(new javax.xml.namespace.QName("urn:types.accounting_2018_2.lists.webservices.netsuite.com", "AccountType"));
+    }
+    /**
+     * Return type metadata object
+     */
+    public static org.apache.axis.description.TypeDesc getTypeDesc() {
+        return typeDesc;
     }
 
 }

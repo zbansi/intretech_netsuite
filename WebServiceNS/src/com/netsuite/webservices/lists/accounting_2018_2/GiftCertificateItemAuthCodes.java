@@ -1,87 +1,157 @@
+/**
+ * GiftCertificateItemAuthCodes.java
+ *
+ * This file was auto-generated from WSDL
+ * by the Apache Axis 1.4 Jul 28, 2010 (04:07:04 PDT) WSDL2Java emitter.
+ */
 
 package com.netsuite.webservices.lists.accounting_2018_2;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlType;
+public class GiftCertificateItemAuthCodes  implements java.io.Serializable {
+    private java.lang.String authCode;
 
+    private java.lang.Boolean used;
 
-/**
- * <p>GiftCertificateItemAuthCodes complex type的 Java 类。
- * 
- * <p>以下模式片段指定包含在此类中的预期内容。
- * 
- * <pre>
- * &lt;complexType name="GiftCertificateItemAuthCodes">
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element name="authCode" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="used" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
- */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "GiftCertificateItemAuthCodes", propOrder = {
-    "authCode",
-    "used"
-})
-public class GiftCertificateItemAuthCodes {
+    public GiftCertificateItemAuthCodes() {
+    }
 
-    protected String authCode;
-    protected Boolean used;
+    public GiftCertificateItemAuthCodes(
+           java.lang.String authCode,
+           java.lang.Boolean used) {
+           this.authCode = authCode;
+           this.used = used;
+    }
+
 
     /**
-     * 获取authCode属性的值。
+     * Gets the authCode value for this GiftCertificateItemAuthCodes.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @return authCode
      */
-    public String getAuthCode() {
+    public java.lang.String getAuthCode() {
         return authCode;
     }
 
-    /**
-     * 设置authCode属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setAuthCode(String value) {
-        this.authCode = value;
-    }
 
     /**
-     * 获取used属性的值。
+     * Sets the authCode value for this GiftCertificateItemAuthCodes.
      * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
+     * @param authCode
      */
-    public Boolean isUsed() {
+    public void setAuthCode(java.lang.String authCode) {
+        this.authCode = authCode;
+    }
+
+
+    /**
+     * Gets the used value for this GiftCertificateItemAuthCodes.
+     * 
+     * @return used
+     */
+    public java.lang.Boolean getUsed() {
         return used;
     }
 
+
     /**
-     * 设置used属性的值。
+     * Sets the used value for this GiftCertificateItemAuthCodes.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
+     * @param used
      */
-    public void setUsed(Boolean value) {
-        this.used = value;
+    public void setUsed(java.lang.Boolean used) {
+        this.used = used;
+    }
+
+    private java.lang.Object __equalsCalc = null;
+    public synchronized boolean equals(java.lang.Object obj) {
+        if (!(obj instanceof GiftCertificateItemAuthCodes)) return false;
+        GiftCertificateItemAuthCodes other = (GiftCertificateItemAuthCodes) obj;
+        if (obj == null) return false;
+        if (this == obj) return true;
+        if (__equalsCalc != null) {
+            return (__equalsCalc == obj);
+        }
+        __equalsCalc = obj;
+        boolean _equals;
+        _equals = true && 
+            ((this.authCode==null && other.getAuthCode()==null) || 
+             (this.authCode!=null &&
+              this.authCode.equals(other.getAuthCode()))) &&
+            ((this.used==null && other.getUsed()==null) || 
+             (this.used!=null &&
+              this.used.equals(other.getUsed())));
+        __equalsCalc = null;
+        return _equals;
+    }
+
+    private boolean __hashCodeCalc = false;
+    public synchronized int hashCode() {
+        if (__hashCodeCalc) {
+            return 0;
+        }
+        __hashCodeCalc = true;
+        int _hashCode = 1;
+        if (getAuthCode() != null) {
+            _hashCode += getAuthCode().hashCode();
+        }
+        if (getUsed() != null) {
+            _hashCode += getUsed().hashCode();
+        }
+        __hashCodeCalc = false;
+        return _hashCode;
+    }
+
+    // Type metadata
+    private static org.apache.axis.description.TypeDesc typeDesc =
+        new org.apache.axis.description.TypeDesc(GiftCertificateItemAuthCodes.class, true);
+
+    static {
+        typeDesc.setXmlType(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "GiftCertificateItemAuthCodes"));
+        org.apache.axis.description.ElementDesc elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("authCode");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "authCode"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("used");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "used"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+    }
+
+    /**
+     * Return type metadata object
+     */
+    public static org.apache.axis.description.TypeDesc getTypeDesc() {
+        return typeDesc;
+    }
+
+    /**
+     * Get Custom Serializer
+     */
+    public static org.apache.axis.encoding.Serializer getSerializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanSerializer(
+            _javaType, _xmlType, typeDesc);
+    }
+
+    /**
+     * Get Custom Deserializer
+     */
+    public static org.apache.axis.encoding.Deserializer getDeserializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanDeserializer(
+            _javaType, _xmlType, typeDesc);
     }
 
 }

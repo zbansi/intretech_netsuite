@@ -1,883 +1,1247 @@
+/**
+ * SalesTaxItem.java
+ *
+ * This file was auto-generated from WSDL
+ * by the Apache Axis 1.4 Jul 28, 2010 (04:07:04 PDT) WSDL2Java emitter.
+ */
 
 package com.netsuite.webservices.lists.accounting_2018_2;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlAttribute;
-import javax.xml.bind.annotation.XmlSchemaType;
-import javax.xml.bind.annotation.XmlType;
-import javax.xml.datatype.XMLGregorianCalendar;
-import com.netsuite.webservices.lists.accounting_2018_2.types.SalesTaxItemAvailable;
-import com.netsuite.webservices.platform.core_2018_2.CustomFieldList;
-import com.netsuite.webservices.platform.core_2018_2.Record;
-import com.netsuite.webservices.platform.core_2018_2.RecordRef;
-import com.netsuite.webservices.platform.core_2018_2.RecordRefList;
+public class SalesTaxItem  extends com.netsuite.webservices.platform.core_2018_2.Record  implements java.io.Serializable {
+    private java.lang.String itemId;
 
+    private java.lang.String displayName;
 
-/**
- * <p>SalesTaxItem complex type的 Java 类。
- * 
- * <p>以下模式片段指定包含在此类中的预期内容。
- * 
- * <pre>
- * &lt;complexType name="SalesTaxItem">
- *   &lt;complexContent>
- *     &lt;extension base="{urn:core_2018_2.platform.webservices.netsuite.com}Record">
- *       &lt;sequence>
- *         &lt;element name="itemId" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="displayName" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="description" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="rate" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="taxType" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="taxAgency" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="purchaseAccount" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="saleAccount" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="isInactive" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         &lt;element name="effectiveFrom" type="{http://www.w3.org/2001/XMLSchema}dateTime" minOccurs="0"/>
- *         &lt;element name="validUntil" type="{http://www.w3.org/2001/XMLSchema}dateTime" minOccurs="0"/>
- *         &lt;element name="subsidiaryList" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRefList" minOccurs="0"/>
- *         &lt;element name="includeChildren" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         &lt;element name="eccode" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         &lt;element name="reverseCharge" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         &lt;element name="parent" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="service" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         &lt;element name="exempt" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         &lt;element name="isDefault" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         &lt;element name="excludeFromTaxReports" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         &lt;element name="available" type="{urn:types.accounting_2018_2.lists.webservices.netsuite.com}SalesTaxItemAvailable" minOccurs="0"/>
- *         &lt;element name="export" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         &lt;element name="taxAccount" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="county" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="city" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="state" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="zip" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="nexusCountry" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="customFieldList" type="{urn:core_2018_2.platform.webservices.netsuite.com}CustomFieldList" minOccurs="0"/>
- *       &lt;/sequence>
- *       &lt;attribute name="internalId" type="{http://www.w3.org/2001/XMLSchema}string" />
- *       &lt;attribute name="externalId" type="{http://www.w3.org/2001/XMLSchema}string" />
- *     &lt;/extension>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
- */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "SalesTaxItem", propOrder = {
-    "itemId",
-    "displayName",
-    "description",
-    "rate",
-    "taxType",
-    "taxAgency",
-    "purchaseAccount",
-    "saleAccount",
-    "isInactive",
-    "effectiveFrom",
-    "validUntil",
-    "subsidiaryList",
-    "includeChildren",
-    "eccode",
-    "reverseCharge",
-    "parent",
-    "service",
-    "exempt",
-    "isDefault",
-    "excludeFromTaxReports",
-    "available",
-    "export",
-    "taxAccount",
-    "county",
-    "city",
-    "state",
-    "zip",
-    "nexusCountry",
-    "customFieldList"
-})
-public class SalesTaxItem
-    extends Record
-{
+    private java.lang.String description;
 
-    protected String itemId;
-    protected String displayName;
-    protected String description;
-    protected String rate;
-    protected RecordRef taxType;
-    protected RecordRef taxAgency;
-    protected RecordRef purchaseAccount;
-    protected RecordRef saleAccount;
-    protected Boolean isInactive;
-    @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar effectiveFrom;
-    @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar validUntil;
-    protected RecordRefList subsidiaryList;
-    protected Boolean includeChildren;
-    protected Boolean eccode;
-    protected Boolean reverseCharge;
-    protected RecordRef parent;
-    protected Boolean service;
-    protected Boolean exempt;
-    protected Boolean isDefault;
-    protected Boolean excludeFromTaxReports;
-    @XmlSchemaType(name = "string")
-    protected SalesTaxItemAvailable available;
-    protected Boolean export;
-    protected RecordRef taxAccount;
-    protected String county;
-    protected String city;
-    protected String state;
-    protected String zip;
-    protected RecordRef nexusCountry;
-    protected CustomFieldList customFieldList;
-    @XmlAttribute(name = "internalId")
-    protected String internalId;
-    @XmlAttribute(name = "externalId")
-    protected String externalId;
+    private java.lang.String rate;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef taxType;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef taxAgency;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef purchaseAccount;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef saleAccount;
+
+    private java.lang.Boolean isInactive;
+
+    private java.util.Calendar effectiveFrom;
+
+    private java.util.Calendar validUntil;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef[] subsidiaryList;
+
+    private java.lang.Boolean includeChildren;
+
+    private java.lang.Boolean eccode;
+
+    private java.lang.Boolean reverseCharge;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef parent;
+
+    private java.lang.Boolean service;
+
+    private java.lang.Boolean exempt;
+
+    private java.lang.Boolean isDefault;
+
+    private java.lang.Boolean excludeFromTaxReports;
+
+    private com.netsuite.webservices.lists.accounting_2018_2.types.SalesTaxItemAvailable available;
+
+    private java.lang.Boolean export;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef taxAccount;
+
+    private java.lang.String county;
+
+    private java.lang.String city;
+
+    private java.lang.String state;
+
+    private java.lang.String zip;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef nexusCountry;
+
+    private com.netsuite.webservices.platform.core_2018_2.CustomFieldRef[] customFieldList;
+
+    private java.lang.String internalId;  // attribute
+
+    private java.lang.String externalId;  // attribute
+
+    public SalesTaxItem() {
+    }
+
+    public SalesTaxItem(
+           java.lang.String[] nullFieldList,
+           java.lang.String internalId,
+           java.lang.String externalId,
+           java.lang.String itemId,
+           java.lang.String displayName,
+           java.lang.String description,
+           java.lang.String rate,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef taxType,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef taxAgency,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef purchaseAccount,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef saleAccount,
+           java.lang.Boolean isInactive,
+           java.util.Calendar effectiveFrom,
+           java.util.Calendar validUntil,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef[] subsidiaryList,
+           java.lang.Boolean includeChildren,
+           java.lang.Boolean eccode,
+           java.lang.Boolean reverseCharge,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef parent,
+           java.lang.Boolean service,
+           java.lang.Boolean exempt,
+           java.lang.Boolean isDefault,
+           java.lang.Boolean excludeFromTaxReports,
+           com.netsuite.webservices.lists.accounting_2018_2.types.SalesTaxItemAvailable available,
+           java.lang.Boolean export,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef taxAccount,
+           java.lang.String county,
+           java.lang.String city,
+           java.lang.String state,
+           java.lang.String zip,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef nexusCountry,
+           com.netsuite.webservices.platform.core_2018_2.CustomFieldRef[] customFieldList) {
+        super(
+            nullFieldList);
+        this.internalId = internalId;
+        this.externalId = externalId;
+        this.itemId = itemId;
+        this.displayName = displayName;
+        this.description = description;
+        this.rate = rate;
+        this.taxType = taxType;
+        this.taxAgency = taxAgency;
+        this.purchaseAccount = purchaseAccount;
+        this.saleAccount = saleAccount;
+        this.isInactive = isInactive;
+        this.effectiveFrom = effectiveFrom;
+        this.validUntil = validUntil;
+        this.subsidiaryList = subsidiaryList;
+        this.includeChildren = includeChildren;
+        this.eccode = eccode;
+        this.reverseCharge = reverseCharge;
+        this.parent = parent;
+        this.service = service;
+        this.exempt = exempt;
+        this.isDefault = isDefault;
+        this.excludeFromTaxReports = excludeFromTaxReports;
+        this.available = available;
+        this.export = export;
+        this.taxAccount = taxAccount;
+        this.county = county;
+        this.city = city;
+        this.state = state;
+        this.zip = zip;
+        this.nexusCountry = nexusCountry;
+        this.customFieldList = customFieldList;
+    }
+
 
     /**
-     * 获取itemId属性的值。
+     * Gets the itemId value for this SalesTaxItem.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @return itemId
      */
-    public String getItemId() {
+    public java.lang.String getItemId() {
         return itemId;
     }
 
-    /**
-     * 设置itemId属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setItemId(String value) {
-        this.itemId = value;
-    }
 
     /**
-     * 获取displayName属性的值。
+     * Sets the itemId value for this SalesTaxItem.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param itemId
      */
-    public String getDisplayName() {
+    public void setItemId(java.lang.String itemId) {
+        this.itemId = itemId;
+    }
+
+
+    /**
+     * Gets the displayName value for this SalesTaxItem.
+     * 
+     * @return displayName
+     */
+    public java.lang.String getDisplayName() {
         return displayName;
     }
 
-    /**
-     * 设置displayName属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setDisplayName(String value) {
-        this.displayName = value;
-    }
 
     /**
-     * 获取description属性的值。
+     * Sets the displayName value for this SalesTaxItem.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param displayName
      */
-    public String getDescription() {
+    public void setDisplayName(java.lang.String displayName) {
+        this.displayName = displayName;
+    }
+
+
+    /**
+     * Gets the description value for this SalesTaxItem.
+     * 
+     * @return description
+     */
+    public java.lang.String getDescription() {
         return description;
     }
 
-    /**
-     * 设置description属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setDescription(String value) {
-        this.description = value;
-    }
 
     /**
-     * 获取rate属性的值。
+     * Sets the description value for this SalesTaxItem.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param description
      */
-    public String getRate() {
+    public void setDescription(java.lang.String description) {
+        this.description = description;
+    }
+
+
+    /**
+     * Gets the rate value for this SalesTaxItem.
+     * 
+     * @return rate
+     */
+    public java.lang.String getRate() {
         return rate;
     }
 
-    /**
-     * 设置rate属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setRate(String value) {
-        this.rate = value;
-    }
 
     /**
-     * 获取taxType属性的值。
+     * Sets the rate value for this SalesTaxItem.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param rate
      */
-    public RecordRef getTaxType() {
+    public void setRate(java.lang.String rate) {
+        this.rate = rate;
+    }
+
+
+    /**
+     * Gets the taxType value for this SalesTaxItem.
+     * 
+     * @return taxType
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getTaxType() {
         return taxType;
     }
 
-    /**
-     * 设置taxType属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setTaxType(RecordRef value) {
-        this.taxType = value;
-    }
 
     /**
-     * 获取taxAgency属性的值。
+     * Sets the taxType value for this SalesTaxItem.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param taxType
      */
-    public RecordRef getTaxAgency() {
+    public void setTaxType(com.netsuite.webservices.platform.core_2018_2.RecordRef taxType) {
+        this.taxType = taxType;
+    }
+
+
+    /**
+     * Gets the taxAgency value for this SalesTaxItem.
+     * 
+     * @return taxAgency
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getTaxAgency() {
         return taxAgency;
     }
 
-    /**
-     * 设置taxAgency属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setTaxAgency(RecordRef value) {
-        this.taxAgency = value;
-    }
 
     /**
-     * 获取purchaseAccount属性的值。
+     * Sets the taxAgency value for this SalesTaxItem.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param taxAgency
      */
-    public RecordRef getPurchaseAccount() {
+    public void setTaxAgency(com.netsuite.webservices.platform.core_2018_2.RecordRef taxAgency) {
+        this.taxAgency = taxAgency;
+    }
+
+
+    /**
+     * Gets the purchaseAccount value for this SalesTaxItem.
+     * 
+     * @return purchaseAccount
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getPurchaseAccount() {
         return purchaseAccount;
     }
 
-    /**
-     * 设置purchaseAccount属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setPurchaseAccount(RecordRef value) {
-        this.purchaseAccount = value;
-    }
 
     /**
-     * 获取saleAccount属性的值。
+     * Sets the purchaseAccount value for this SalesTaxItem.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param purchaseAccount
      */
-    public RecordRef getSaleAccount() {
+    public void setPurchaseAccount(com.netsuite.webservices.platform.core_2018_2.RecordRef purchaseAccount) {
+        this.purchaseAccount = purchaseAccount;
+    }
+
+
+    /**
+     * Gets the saleAccount value for this SalesTaxItem.
+     * 
+     * @return saleAccount
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getSaleAccount() {
         return saleAccount;
     }
 
-    /**
-     * 设置saleAccount属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setSaleAccount(RecordRef value) {
-        this.saleAccount = value;
-    }
 
     /**
-     * 获取isInactive属性的值。
+     * Sets the saleAccount value for this SalesTaxItem.
      * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
+     * @param saleAccount
      */
-    public Boolean isIsInactive() {
+    public void setSaleAccount(com.netsuite.webservices.platform.core_2018_2.RecordRef saleAccount) {
+        this.saleAccount = saleAccount;
+    }
+
+
+    /**
+     * Gets the isInactive value for this SalesTaxItem.
+     * 
+     * @return isInactive
+     */
+    public java.lang.Boolean getIsInactive() {
         return isInactive;
     }
 
-    /**
-     * 设置isInactive属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
-     */
-    public void setIsInactive(Boolean value) {
-        this.isInactive = value;
-    }
 
     /**
-     * 获取effectiveFrom属性的值。
+     * Sets the isInactive value for this SalesTaxItem.
      * 
-     * @return
-     *     possible object is
-     *     {@link XMLGregorianCalendar }
-     *     
+     * @param isInactive
      */
-    public XMLGregorianCalendar getEffectiveFrom() {
+    public void setIsInactive(java.lang.Boolean isInactive) {
+        this.isInactive = isInactive;
+    }
+
+
+    /**
+     * Gets the effectiveFrom value for this SalesTaxItem.
+     * 
+     * @return effectiveFrom
+     */
+    public java.util.Calendar getEffectiveFrom() {
         return effectiveFrom;
     }
 
-    /**
-     * 设置effectiveFrom属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link XMLGregorianCalendar }
-     *     
-     */
-    public void setEffectiveFrom(XMLGregorianCalendar value) {
-        this.effectiveFrom = value;
-    }
 
     /**
-     * 获取validUntil属性的值。
+     * Sets the effectiveFrom value for this SalesTaxItem.
      * 
-     * @return
-     *     possible object is
-     *     {@link XMLGregorianCalendar }
-     *     
+     * @param effectiveFrom
      */
-    public XMLGregorianCalendar getValidUntil() {
+    public void setEffectiveFrom(java.util.Calendar effectiveFrom) {
+        this.effectiveFrom = effectiveFrom;
+    }
+
+
+    /**
+     * Gets the validUntil value for this SalesTaxItem.
+     * 
+     * @return validUntil
+     */
+    public java.util.Calendar getValidUntil() {
         return validUntil;
     }
 
-    /**
-     * 设置validUntil属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link XMLGregorianCalendar }
-     *     
-     */
-    public void setValidUntil(XMLGregorianCalendar value) {
-        this.validUntil = value;
-    }
 
     /**
-     * 获取subsidiaryList属性的值。
+     * Sets the validUntil value for this SalesTaxItem.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRefList }
-     *     
+     * @param validUntil
      */
-    public RecordRefList getSubsidiaryList() {
+    public void setValidUntil(java.util.Calendar validUntil) {
+        this.validUntil = validUntil;
+    }
+
+
+    /**
+     * Gets the subsidiaryList value for this SalesTaxItem.
+     * 
+     * @return subsidiaryList
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef[] getSubsidiaryList() {
         return subsidiaryList;
     }
 
-    /**
-     * 设置subsidiaryList属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRefList }
-     *     
-     */
-    public void setSubsidiaryList(RecordRefList value) {
-        this.subsidiaryList = value;
-    }
 
     /**
-     * 获取includeChildren属性的值。
+     * Sets the subsidiaryList value for this SalesTaxItem.
      * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
+     * @param subsidiaryList
      */
-    public Boolean isIncludeChildren() {
+    public void setSubsidiaryList(com.netsuite.webservices.platform.core_2018_2.RecordRef[] subsidiaryList) {
+        this.subsidiaryList = subsidiaryList;
+    }
+
+
+    /**
+     * Gets the includeChildren value for this SalesTaxItem.
+     * 
+     * @return includeChildren
+     */
+    public java.lang.Boolean getIncludeChildren() {
         return includeChildren;
     }
 
-    /**
-     * 设置includeChildren属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
-     */
-    public void setIncludeChildren(Boolean value) {
-        this.includeChildren = value;
-    }
 
     /**
-     * 获取eccode属性的值。
+     * Sets the includeChildren value for this SalesTaxItem.
      * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
+     * @param includeChildren
      */
-    public Boolean isEccode() {
+    public void setIncludeChildren(java.lang.Boolean includeChildren) {
+        this.includeChildren = includeChildren;
+    }
+
+
+    /**
+     * Gets the eccode value for this SalesTaxItem.
+     * 
+     * @return eccode
+     */
+    public java.lang.Boolean getEccode() {
         return eccode;
     }
 
-    /**
-     * 设置eccode属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
-     */
-    public void setEccode(Boolean value) {
-        this.eccode = value;
-    }
 
     /**
-     * 获取reverseCharge属性的值。
+     * Sets the eccode value for this SalesTaxItem.
      * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
+     * @param eccode
      */
-    public Boolean isReverseCharge() {
+    public void setEccode(java.lang.Boolean eccode) {
+        this.eccode = eccode;
+    }
+
+
+    /**
+     * Gets the reverseCharge value for this SalesTaxItem.
+     * 
+     * @return reverseCharge
+     */
+    public java.lang.Boolean getReverseCharge() {
         return reverseCharge;
     }
 
-    /**
-     * 设置reverseCharge属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
-     */
-    public void setReverseCharge(Boolean value) {
-        this.reverseCharge = value;
-    }
 
     /**
-     * 获取parent属性的值。
+     * Sets the reverseCharge value for this SalesTaxItem.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param reverseCharge
      */
-    public RecordRef getParent() {
+    public void setReverseCharge(java.lang.Boolean reverseCharge) {
+        this.reverseCharge = reverseCharge;
+    }
+
+
+    /**
+     * Gets the parent value for this SalesTaxItem.
+     * 
+     * @return parent
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getParent() {
         return parent;
     }
 
-    /**
-     * 设置parent属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setParent(RecordRef value) {
-        this.parent = value;
-    }
 
     /**
-     * 获取service属性的值。
+     * Sets the parent value for this SalesTaxItem.
      * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
+     * @param parent
      */
-    public Boolean isService() {
+    public void setParent(com.netsuite.webservices.platform.core_2018_2.RecordRef parent) {
+        this.parent = parent;
+    }
+
+
+    /**
+     * Gets the service value for this SalesTaxItem.
+     * 
+     * @return service
+     */
+    public java.lang.Boolean getService() {
         return service;
     }
 
-    /**
-     * 设置service属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
-     */
-    public void setService(Boolean value) {
-        this.service = value;
-    }
 
     /**
-     * 获取exempt属性的值。
+     * Sets the service value for this SalesTaxItem.
      * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
+     * @param service
      */
-    public Boolean isExempt() {
+    public void setService(java.lang.Boolean service) {
+        this.service = service;
+    }
+
+
+    /**
+     * Gets the exempt value for this SalesTaxItem.
+     * 
+     * @return exempt
+     */
+    public java.lang.Boolean getExempt() {
         return exempt;
     }
 
-    /**
-     * 设置exempt属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
-     */
-    public void setExempt(Boolean value) {
-        this.exempt = value;
-    }
 
     /**
-     * 获取isDefault属性的值。
+     * Sets the exempt value for this SalesTaxItem.
      * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
+     * @param exempt
      */
-    public Boolean isIsDefault() {
+    public void setExempt(java.lang.Boolean exempt) {
+        this.exempt = exempt;
+    }
+
+
+    /**
+     * Gets the isDefault value for this SalesTaxItem.
+     * 
+     * @return isDefault
+     */
+    public java.lang.Boolean getIsDefault() {
         return isDefault;
     }
 
-    /**
-     * 设置isDefault属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
-     */
-    public void setIsDefault(Boolean value) {
-        this.isDefault = value;
-    }
 
     /**
-     * 获取excludeFromTaxReports属性的值。
+     * Sets the isDefault value for this SalesTaxItem.
      * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
+     * @param isDefault
      */
-    public Boolean isExcludeFromTaxReports() {
+    public void setIsDefault(java.lang.Boolean isDefault) {
+        this.isDefault = isDefault;
+    }
+
+
+    /**
+     * Gets the excludeFromTaxReports value for this SalesTaxItem.
+     * 
+     * @return excludeFromTaxReports
+     */
+    public java.lang.Boolean getExcludeFromTaxReports() {
         return excludeFromTaxReports;
     }
 
-    /**
-     * 设置excludeFromTaxReports属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
-     */
-    public void setExcludeFromTaxReports(Boolean value) {
-        this.excludeFromTaxReports = value;
-    }
 
     /**
-     * 获取available属性的值。
+     * Sets the excludeFromTaxReports value for this SalesTaxItem.
      * 
-     * @return
-     *     possible object is
-     *     {@link SalesTaxItemAvailable }
-     *     
+     * @param excludeFromTaxReports
      */
-    public SalesTaxItemAvailable getAvailable() {
+    public void setExcludeFromTaxReports(java.lang.Boolean excludeFromTaxReports) {
+        this.excludeFromTaxReports = excludeFromTaxReports;
+    }
+
+
+    /**
+     * Gets the available value for this SalesTaxItem.
+     * 
+     * @return available
+     */
+    public com.netsuite.webservices.lists.accounting_2018_2.types.SalesTaxItemAvailable getAvailable() {
         return available;
     }
 
-    /**
-     * 设置available属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SalesTaxItemAvailable }
-     *     
-     */
-    public void setAvailable(SalesTaxItemAvailable value) {
-        this.available = value;
-    }
 
     /**
-     * 获取export属性的值。
+     * Sets the available value for this SalesTaxItem.
      * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
+     * @param available
      */
-    public Boolean isExport() {
+    public void setAvailable(com.netsuite.webservices.lists.accounting_2018_2.types.SalesTaxItemAvailable available) {
+        this.available = available;
+    }
+
+
+    /**
+     * Gets the export value for this SalesTaxItem.
+     * 
+     * @return export
+     */
+    public java.lang.Boolean getExport() {
         return export;
     }
 
-    /**
-     * 设置export属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
-     */
-    public void setExport(Boolean value) {
-        this.export = value;
-    }
 
     /**
-     * 获取taxAccount属性的值。
+     * Sets the export value for this SalesTaxItem.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param export
      */
-    public RecordRef getTaxAccount() {
+    public void setExport(java.lang.Boolean export) {
+        this.export = export;
+    }
+
+
+    /**
+     * Gets the taxAccount value for this SalesTaxItem.
+     * 
+     * @return taxAccount
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getTaxAccount() {
         return taxAccount;
     }
 
-    /**
-     * 设置taxAccount属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setTaxAccount(RecordRef value) {
-        this.taxAccount = value;
-    }
 
     /**
-     * 获取county属性的值。
+     * Sets the taxAccount value for this SalesTaxItem.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param taxAccount
      */
-    public String getCounty() {
+    public void setTaxAccount(com.netsuite.webservices.platform.core_2018_2.RecordRef taxAccount) {
+        this.taxAccount = taxAccount;
+    }
+
+
+    /**
+     * Gets the county value for this SalesTaxItem.
+     * 
+     * @return county
+     */
+    public java.lang.String getCounty() {
         return county;
     }
 
-    /**
-     * 设置county属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setCounty(String value) {
-        this.county = value;
-    }
 
     /**
-     * 获取city属性的值。
+     * Sets the county value for this SalesTaxItem.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param county
      */
-    public String getCity() {
+    public void setCounty(java.lang.String county) {
+        this.county = county;
+    }
+
+
+    /**
+     * Gets the city value for this SalesTaxItem.
+     * 
+     * @return city
+     */
+    public java.lang.String getCity() {
         return city;
     }
 
-    /**
-     * 设置city属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setCity(String value) {
-        this.city = value;
-    }
 
     /**
-     * 获取state属性的值。
+     * Sets the city value for this SalesTaxItem.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param city
      */
-    public String getState() {
+    public void setCity(java.lang.String city) {
+        this.city = city;
+    }
+
+
+    /**
+     * Gets the state value for this SalesTaxItem.
+     * 
+     * @return state
+     */
+    public java.lang.String getState() {
         return state;
     }
 
-    /**
-     * 设置state属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setState(String value) {
-        this.state = value;
-    }
 
     /**
-     * 获取zip属性的值。
+     * Sets the state value for this SalesTaxItem.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param state
      */
-    public String getZip() {
+    public void setState(java.lang.String state) {
+        this.state = state;
+    }
+
+
+    /**
+     * Gets the zip value for this SalesTaxItem.
+     * 
+     * @return zip
+     */
+    public java.lang.String getZip() {
         return zip;
     }
 
-    /**
-     * 设置zip属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setZip(String value) {
-        this.zip = value;
-    }
 
     /**
-     * 获取nexusCountry属性的值。
+     * Sets the zip value for this SalesTaxItem.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param zip
      */
-    public RecordRef getNexusCountry() {
+    public void setZip(java.lang.String zip) {
+        this.zip = zip;
+    }
+
+
+    /**
+     * Gets the nexusCountry value for this SalesTaxItem.
+     * 
+     * @return nexusCountry
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getNexusCountry() {
         return nexusCountry;
     }
 
-    /**
-     * 设置nexusCountry属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setNexusCountry(RecordRef value) {
-        this.nexusCountry = value;
-    }
 
     /**
-     * 获取customFieldList属性的值。
+     * Sets the nexusCountry value for this SalesTaxItem.
      * 
-     * @return
-     *     possible object is
-     *     {@link CustomFieldList }
-     *     
+     * @param nexusCountry
      */
-    public CustomFieldList getCustomFieldList() {
+    public void setNexusCountry(com.netsuite.webservices.platform.core_2018_2.RecordRef nexusCountry) {
+        this.nexusCountry = nexusCountry;
+    }
+
+
+    /**
+     * Gets the customFieldList value for this SalesTaxItem.
+     * 
+     * @return customFieldList
+     */
+    public com.netsuite.webservices.platform.core_2018_2.CustomFieldRef[] getCustomFieldList() {
         return customFieldList;
     }
 
-    /**
-     * 设置customFieldList属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link CustomFieldList }
-     *     
-     */
-    public void setCustomFieldList(CustomFieldList value) {
-        this.customFieldList = value;
-    }
 
     /**
-     * 获取internalId属性的值。
+     * Sets the customFieldList value for this SalesTaxItem.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param customFieldList
      */
-    public String getInternalId() {
+    public void setCustomFieldList(com.netsuite.webservices.platform.core_2018_2.CustomFieldRef[] customFieldList) {
+        this.customFieldList = customFieldList;
+    }
+
+
+    /**
+     * Gets the internalId value for this SalesTaxItem.
+     * 
+     * @return internalId
+     */
+    public java.lang.String getInternalId() {
         return internalId;
     }
 
-    /**
-     * 设置internalId属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setInternalId(String value) {
-        this.internalId = value;
-    }
 
     /**
-     * 获取externalId属性的值。
+     * Sets the internalId value for this SalesTaxItem.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param internalId
      */
-    public String getExternalId() {
+    public void setInternalId(java.lang.String internalId) {
+        this.internalId = internalId;
+    }
+
+
+    /**
+     * Gets the externalId value for this SalesTaxItem.
+     * 
+     * @return externalId
+     */
+    public java.lang.String getExternalId() {
         return externalId;
     }
 
+
     /**
-     * 设置externalId属性的值。
+     * Sets the externalId value for this SalesTaxItem.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     * @param externalId
      */
-    public void setExternalId(String value) {
-        this.externalId = value;
+    public void setExternalId(java.lang.String externalId) {
+        this.externalId = externalId;
+    }
+
+    private java.lang.Object __equalsCalc = null;
+    public synchronized boolean equals(java.lang.Object obj) {
+        if (!(obj instanceof SalesTaxItem)) return false;
+        SalesTaxItem other = (SalesTaxItem) obj;
+        if (obj == null) return false;
+        if (this == obj) return true;
+        if (__equalsCalc != null) {
+            return (__equalsCalc == obj);
+        }
+        __equalsCalc = obj;
+        boolean _equals;
+        _equals = super.equals(obj) && 
+            ((this.itemId==null && other.getItemId()==null) || 
+             (this.itemId!=null &&
+              this.itemId.equals(other.getItemId()))) &&
+            ((this.displayName==null && other.getDisplayName()==null) || 
+             (this.displayName!=null &&
+              this.displayName.equals(other.getDisplayName()))) &&
+            ((this.description==null && other.getDescription()==null) || 
+             (this.description!=null &&
+              this.description.equals(other.getDescription()))) &&
+            ((this.rate==null && other.getRate()==null) || 
+             (this.rate!=null &&
+              this.rate.equals(other.getRate()))) &&
+            ((this.taxType==null && other.getTaxType()==null) || 
+             (this.taxType!=null &&
+              this.taxType.equals(other.getTaxType()))) &&
+            ((this.taxAgency==null && other.getTaxAgency()==null) || 
+             (this.taxAgency!=null &&
+              this.taxAgency.equals(other.getTaxAgency()))) &&
+            ((this.purchaseAccount==null && other.getPurchaseAccount()==null) || 
+             (this.purchaseAccount!=null &&
+              this.purchaseAccount.equals(other.getPurchaseAccount()))) &&
+            ((this.saleAccount==null && other.getSaleAccount()==null) || 
+             (this.saleAccount!=null &&
+              this.saleAccount.equals(other.getSaleAccount()))) &&
+            ((this.isInactive==null && other.getIsInactive()==null) || 
+             (this.isInactive!=null &&
+              this.isInactive.equals(other.getIsInactive()))) &&
+            ((this.effectiveFrom==null && other.getEffectiveFrom()==null) || 
+             (this.effectiveFrom!=null &&
+              this.effectiveFrom.equals(other.getEffectiveFrom()))) &&
+            ((this.validUntil==null && other.getValidUntil()==null) || 
+             (this.validUntil!=null &&
+              this.validUntil.equals(other.getValidUntil()))) &&
+            ((this.subsidiaryList==null && other.getSubsidiaryList()==null) || 
+             (this.subsidiaryList!=null &&
+              java.util.Arrays.equals(this.subsidiaryList, other.getSubsidiaryList()))) &&
+            ((this.includeChildren==null && other.getIncludeChildren()==null) || 
+             (this.includeChildren!=null &&
+              this.includeChildren.equals(other.getIncludeChildren()))) &&
+            ((this.eccode==null && other.getEccode()==null) || 
+             (this.eccode!=null &&
+              this.eccode.equals(other.getEccode()))) &&
+            ((this.reverseCharge==null && other.getReverseCharge()==null) || 
+             (this.reverseCharge!=null &&
+              this.reverseCharge.equals(other.getReverseCharge()))) &&
+            ((this.parent==null && other.getParent()==null) || 
+             (this.parent!=null &&
+              this.parent.equals(other.getParent()))) &&
+            ((this.service==null && other.getService()==null) || 
+             (this.service!=null &&
+              this.service.equals(other.getService()))) &&
+            ((this.exempt==null && other.getExempt()==null) || 
+             (this.exempt!=null &&
+              this.exempt.equals(other.getExempt()))) &&
+            ((this.isDefault==null && other.getIsDefault()==null) || 
+             (this.isDefault!=null &&
+              this.isDefault.equals(other.getIsDefault()))) &&
+            ((this.excludeFromTaxReports==null && other.getExcludeFromTaxReports()==null) || 
+             (this.excludeFromTaxReports!=null &&
+              this.excludeFromTaxReports.equals(other.getExcludeFromTaxReports()))) &&
+            ((this.available==null && other.getAvailable()==null) || 
+             (this.available!=null &&
+              this.available.equals(other.getAvailable()))) &&
+            ((this.export==null && other.getExport()==null) || 
+             (this.export!=null &&
+              this.export.equals(other.getExport()))) &&
+            ((this.taxAccount==null && other.getTaxAccount()==null) || 
+             (this.taxAccount!=null &&
+              this.taxAccount.equals(other.getTaxAccount()))) &&
+            ((this.county==null && other.getCounty()==null) || 
+             (this.county!=null &&
+              this.county.equals(other.getCounty()))) &&
+            ((this.city==null && other.getCity()==null) || 
+             (this.city!=null &&
+              this.city.equals(other.getCity()))) &&
+            ((this.state==null && other.getState()==null) || 
+             (this.state!=null &&
+              this.state.equals(other.getState()))) &&
+            ((this.zip==null && other.getZip()==null) || 
+             (this.zip!=null &&
+              this.zip.equals(other.getZip()))) &&
+            ((this.nexusCountry==null && other.getNexusCountry()==null) || 
+             (this.nexusCountry!=null &&
+              this.nexusCountry.equals(other.getNexusCountry()))) &&
+            ((this.customFieldList==null && other.getCustomFieldList()==null) || 
+             (this.customFieldList!=null &&
+              java.util.Arrays.equals(this.customFieldList, other.getCustomFieldList()))) &&
+            ((this.internalId==null && other.getInternalId()==null) || 
+             (this.internalId!=null &&
+              this.internalId.equals(other.getInternalId()))) &&
+            ((this.externalId==null && other.getExternalId()==null) || 
+             (this.externalId!=null &&
+              this.externalId.equals(other.getExternalId())));
+        __equalsCalc = null;
+        return _equals;
+    }
+
+    private boolean __hashCodeCalc = false;
+    public synchronized int hashCode() {
+        if (__hashCodeCalc) {
+            return 0;
+        }
+        __hashCodeCalc = true;
+        int _hashCode = super.hashCode();
+        if (getItemId() != null) {
+            _hashCode += getItemId().hashCode();
+        }
+        if (getDisplayName() != null) {
+            _hashCode += getDisplayName().hashCode();
+        }
+        if (getDescription() != null) {
+            _hashCode += getDescription().hashCode();
+        }
+        if (getRate() != null) {
+            _hashCode += getRate().hashCode();
+        }
+        if (getTaxType() != null) {
+            _hashCode += getTaxType().hashCode();
+        }
+        if (getTaxAgency() != null) {
+            _hashCode += getTaxAgency().hashCode();
+        }
+        if (getPurchaseAccount() != null) {
+            _hashCode += getPurchaseAccount().hashCode();
+        }
+        if (getSaleAccount() != null) {
+            _hashCode += getSaleAccount().hashCode();
+        }
+        if (getIsInactive() != null) {
+            _hashCode += getIsInactive().hashCode();
+        }
+        if (getEffectiveFrom() != null) {
+            _hashCode += getEffectiveFrom().hashCode();
+        }
+        if (getValidUntil() != null) {
+            _hashCode += getValidUntil().hashCode();
+        }
+        if (getSubsidiaryList() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getSubsidiaryList());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getSubsidiaryList(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getIncludeChildren() != null) {
+            _hashCode += getIncludeChildren().hashCode();
+        }
+        if (getEccode() != null) {
+            _hashCode += getEccode().hashCode();
+        }
+        if (getReverseCharge() != null) {
+            _hashCode += getReverseCharge().hashCode();
+        }
+        if (getParent() != null) {
+            _hashCode += getParent().hashCode();
+        }
+        if (getService() != null) {
+            _hashCode += getService().hashCode();
+        }
+        if (getExempt() != null) {
+            _hashCode += getExempt().hashCode();
+        }
+        if (getIsDefault() != null) {
+            _hashCode += getIsDefault().hashCode();
+        }
+        if (getExcludeFromTaxReports() != null) {
+            _hashCode += getExcludeFromTaxReports().hashCode();
+        }
+        if (getAvailable() != null) {
+            _hashCode += getAvailable().hashCode();
+        }
+        if (getExport() != null) {
+            _hashCode += getExport().hashCode();
+        }
+        if (getTaxAccount() != null) {
+            _hashCode += getTaxAccount().hashCode();
+        }
+        if (getCounty() != null) {
+            _hashCode += getCounty().hashCode();
+        }
+        if (getCity() != null) {
+            _hashCode += getCity().hashCode();
+        }
+        if (getState() != null) {
+            _hashCode += getState().hashCode();
+        }
+        if (getZip() != null) {
+            _hashCode += getZip().hashCode();
+        }
+        if (getNexusCountry() != null) {
+            _hashCode += getNexusCountry().hashCode();
+        }
+        if (getCustomFieldList() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getCustomFieldList());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getCustomFieldList(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getInternalId() != null) {
+            _hashCode += getInternalId().hashCode();
+        }
+        if (getExternalId() != null) {
+            _hashCode += getExternalId().hashCode();
+        }
+        __hashCodeCalc = false;
+        return _hashCode;
+    }
+
+    // Type metadata
+    private static org.apache.axis.description.TypeDesc typeDesc =
+        new org.apache.axis.description.TypeDesc(SalesTaxItem.class, true);
+
+    static {
+        typeDesc.setXmlType(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "SalesTaxItem"));
+        org.apache.axis.description.AttributeDesc attrField = new org.apache.axis.description.AttributeDesc();
+        attrField.setFieldName("internalId");
+        attrField.setXmlName(new javax.xml.namespace.QName("", "internalId"));
+        attrField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        typeDesc.addFieldDesc(attrField);
+        attrField = new org.apache.axis.description.AttributeDesc();
+        attrField.setFieldName("externalId");
+        attrField.setXmlName(new javax.xml.namespace.QName("", "externalId"));
+        attrField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        typeDesc.addFieldDesc(attrField);
+        org.apache.axis.description.ElementDesc elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("itemId");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "itemId"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("displayName");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "displayName"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("description");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "description"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("rate");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "rate"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("taxType");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "taxType"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("taxAgency");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "taxAgency"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("purchaseAccount");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "purchaseAccount"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("saleAccount");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "saleAccount"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("isInactive");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "isInactive"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("effectiveFrom");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "effectiveFrom"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "dateTime"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("validUntil");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "validUntil"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "dateTime"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("subsidiaryList");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "subsidiaryList"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "recordRef"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("includeChildren");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "includeChildren"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("eccode");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "eccode"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("reverseCharge");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "reverseCharge"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("parent");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "parent"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("service");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "service"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("exempt");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "exempt"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("isDefault");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "isDefault"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("excludeFromTaxReports");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "excludeFromTaxReports"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("available");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "available"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:types.accounting_2018_2.lists.webservices.netsuite.com", "SalesTaxItemAvailable"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("export");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "export"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("taxAccount");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "taxAccount"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("county");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "county"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("city");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "city"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("state");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "state"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("zip");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "zip"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("nexusCountry");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "nexusCountry"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("customFieldList");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "customFieldList"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "CustomFieldRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "customField"));
+        typeDesc.addFieldDesc(elemField);
+    }
+
+    /**
+     * Return type metadata object
+     */
+    public static org.apache.axis.description.TypeDesc getTypeDesc() {
+        return typeDesc;
+    }
+
+    /**
+     * Get Custom Serializer
+     */
+    public static org.apache.axis.encoding.Serializer getSerializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanSerializer(
+            _javaType, _xmlType, typeDesc);
+    }
+
+    /**
+     * Get Custom Deserializer
+     */
+    public static org.apache.axis.encoding.Deserializer getDeserializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanDeserializer(
+            _javaType, _xmlType, typeDesc);
     }
 
 }

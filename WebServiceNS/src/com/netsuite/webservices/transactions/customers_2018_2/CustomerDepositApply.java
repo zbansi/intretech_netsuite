@@ -1,279 +1,416 @@
+/**
+ * CustomerDepositApply.java
+ *
+ * This file was auto-generated from WSDL
+ * by the Apache Axis 1.4 Jul 28, 2010 (04:07:04 PDT) WSDL2Java emitter.
+ */
 
 package com.netsuite.webservices.transactions.customers_2018_2;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlSchemaType;
-import javax.xml.bind.annotation.XmlType;
-import javax.xml.datatype.XMLGregorianCalendar;
+public class CustomerDepositApply  implements java.io.Serializable {
+    private java.lang.Long doc;
 
+    private java.lang.Long line;
 
-/**
- * <p>CustomerDepositApply complex type的 Java 类。
- * 
- * <p>以下模式片段指定包含在此类中的预期内容。
- * 
- * <pre>
- * &lt;complexType name="CustomerDepositApply">
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element name="doc" type="{http://www.w3.org/2001/XMLSchema}long" minOccurs="0"/>
- *         &lt;element name="line" type="{http://www.w3.org/2001/XMLSchema}long" minOccurs="0"/>
- *         &lt;element name="apply" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         &lt;element name="applyDate" type="{http://www.w3.org/2001/XMLSchema}dateTime" minOccurs="0"/>
- *         &lt;element name="type" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="refNum" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="total" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
- *         &lt;element name="amount" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
- *         &lt;element name="job" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
- */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "CustomerDepositApply", propOrder = {
-    "doc",
-    "line",
-    "apply",
-    "applyDate",
-    "type",
-    "refNum",
-    "total",
-    "amount",
-    "job"
-})
-public class CustomerDepositApply {
+    private java.lang.Boolean apply;
 
-    protected Long doc;
-    protected Long line;
-    protected Boolean apply;
-    @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar applyDate;
-    protected String type;
-    protected String refNum;
-    protected Double total;
-    protected Double amount;
-    protected String job;
+    private java.util.Calendar applyDate;
+
+    private java.lang.String type;
+
+    private java.lang.String refNum;
+
+    private java.lang.Double total;
+
+    private java.lang.Double amount;
+
+    private java.lang.String job;
+
+    public CustomerDepositApply() {
+    }
+
+    public CustomerDepositApply(
+           java.lang.Long doc,
+           java.lang.Long line,
+           java.lang.Boolean apply,
+           java.util.Calendar applyDate,
+           java.lang.String type,
+           java.lang.String refNum,
+           java.lang.Double total,
+           java.lang.Double amount,
+           java.lang.String job) {
+           this.doc = doc;
+           this.line = line;
+           this.apply = apply;
+           this.applyDate = applyDate;
+           this.type = type;
+           this.refNum = refNum;
+           this.total = total;
+           this.amount = amount;
+           this.job = job;
+    }
+
 
     /**
-     * 获取doc属性的值。
+     * Gets the doc value for this CustomerDepositApply.
      * 
-     * @return
-     *     possible object is
-     *     {@link Long }
-     *     
+     * @return doc
      */
-    public Long getDoc() {
+    public java.lang.Long getDoc() {
         return doc;
     }
 
-    /**
-     * 设置doc属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Long }
-     *     
-     */
-    public void setDoc(Long value) {
-        this.doc = value;
-    }
 
     /**
-     * 获取line属性的值。
+     * Sets the doc value for this CustomerDepositApply.
      * 
-     * @return
-     *     possible object is
-     *     {@link Long }
-     *     
+     * @param doc
      */
-    public Long getLine() {
+    public void setDoc(java.lang.Long doc) {
+        this.doc = doc;
+    }
+
+
+    /**
+     * Gets the line value for this CustomerDepositApply.
+     * 
+     * @return line
+     */
+    public java.lang.Long getLine() {
         return line;
     }
 
-    /**
-     * 设置line属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Long }
-     *     
-     */
-    public void setLine(Long value) {
-        this.line = value;
-    }
 
     /**
-     * 获取apply属性的值。
+     * Sets the line value for this CustomerDepositApply.
      * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
+     * @param line
      */
-    public Boolean isApply() {
+    public void setLine(java.lang.Long line) {
+        this.line = line;
+    }
+
+
+    /**
+     * Gets the apply value for this CustomerDepositApply.
+     * 
+     * @return apply
+     */
+    public java.lang.Boolean getApply() {
         return apply;
     }
 
-    /**
-     * 设置apply属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
-     */
-    public void setApply(Boolean value) {
-        this.apply = value;
-    }
 
     /**
-     * 获取applyDate属性的值。
+     * Sets the apply value for this CustomerDepositApply.
      * 
-     * @return
-     *     possible object is
-     *     {@link XMLGregorianCalendar }
-     *     
+     * @param apply
      */
-    public XMLGregorianCalendar getApplyDate() {
+    public void setApply(java.lang.Boolean apply) {
+        this.apply = apply;
+    }
+
+
+    /**
+     * Gets the applyDate value for this CustomerDepositApply.
+     * 
+     * @return applyDate
+     */
+    public java.util.Calendar getApplyDate() {
         return applyDate;
     }
 
-    /**
-     * 设置applyDate属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link XMLGregorianCalendar }
-     *     
-     */
-    public void setApplyDate(XMLGregorianCalendar value) {
-        this.applyDate = value;
-    }
 
     /**
-     * 获取type属性的值。
+     * Sets the applyDate value for this CustomerDepositApply.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param applyDate
      */
-    public String getType() {
+    public void setApplyDate(java.util.Calendar applyDate) {
+        this.applyDate = applyDate;
+    }
+
+
+    /**
+     * Gets the type value for this CustomerDepositApply.
+     * 
+     * @return type
+     */
+    public java.lang.String getType() {
         return type;
     }
 
-    /**
-     * 设置type属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setType(String value) {
-        this.type = value;
-    }
 
     /**
-     * 获取refNum属性的值。
+     * Sets the type value for this CustomerDepositApply.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param type
      */
-    public String getRefNum() {
+    public void setType(java.lang.String type) {
+        this.type = type;
+    }
+
+
+    /**
+     * Gets the refNum value for this CustomerDepositApply.
+     * 
+     * @return refNum
+     */
+    public java.lang.String getRefNum() {
         return refNum;
     }
 
-    /**
-     * 设置refNum属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setRefNum(String value) {
-        this.refNum = value;
-    }
 
     /**
-     * 获取total属性的值。
+     * Sets the refNum value for this CustomerDepositApply.
      * 
-     * @return
-     *     possible object is
-     *     {@link Double }
-     *     
+     * @param refNum
      */
-    public Double getTotal() {
+    public void setRefNum(java.lang.String refNum) {
+        this.refNum = refNum;
+    }
+
+
+    /**
+     * Gets the total value for this CustomerDepositApply.
+     * 
+     * @return total
+     */
+    public java.lang.Double getTotal() {
         return total;
     }
 
-    /**
-     * 设置total属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Double }
-     *     
-     */
-    public void setTotal(Double value) {
-        this.total = value;
-    }
 
     /**
-     * 获取amount属性的值。
+     * Sets the total value for this CustomerDepositApply.
      * 
-     * @return
-     *     possible object is
-     *     {@link Double }
-     *     
+     * @param total
      */
-    public Double getAmount() {
+    public void setTotal(java.lang.Double total) {
+        this.total = total;
+    }
+
+
+    /**
+     * Gets the amount value for this CustomerDepositApply.
+     * 
+     * @return amount
+     */
+    public java.lang.Double getAmount() {
         return amount;
     }
 
-    /**
-     * 设置amount属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Double }
-     *     
-     */
-    public void setAmount(Double value) {
-        this.amount = value;
-    }
 
     /**
-     * 获取job属性的值。
+     * Sets the amount value for this CustomerDepositApply.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param amount
      */
-    public String getJob() {
+    public void setAmount(java.lang.Double amount) {
+        this.amount = amount;
+    }
+
+
+    /**
+     * Gets the job value for this CustomerDepositApply.
+     * 
+     * @return job
+     */
+    public java.lang.String getJob() {
         return job;
     }
 
+
     /**
-     * 设置job属性的值。
+     * Sets the job value for this CustomerDepositApply.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     * @param job
      */
-    public void setJob(String value) {
-        this.job = value;
+    public void setJob(java.lang.String job) {
+        this.job = job;
+    }
+
+    private java.lang.Object __equalsCalc = null;
+    public synchronized boolean equals(java.lang.Object obj) {
+        if (!(obj instanceof CustomerDepositApply)) return false;
+        CustomerDepositApply other = (CustomerDepositApply) obj;
+        if (obj == null) return false;
+        if (this == obj) return true;
+        if (__equalsCalc != null) {
+            return (__equalsCalc == obj);
+        }
+        __equalsCalc = obj;
+        boolean _equals;
+        _equals = true && 
+            ((this.doc==null && other.getDoc()==null) || 
+             (this.doc!=null &&
+              this.doc.equals(other.getDoc()))) &&
+            ((this.line==null && other.getLine()==null) || 
+             (this.line!=null &&
+              this.line.equals(other.getLine()))) &&
+            ((this.apply==null && other.getApply()==null) || 
+             (this.apply!=null &&
+              this.apply.equals(other.getApply()))) &&
+            ((this.applyDate==null && other.getApplyDate()==null) || 
+             (this.applyDate!=null &&
+              this.applyDate.equals(other.getApplyDate()))) &&
+            ((this.type==null && other.getType()==null) || 
+             (this.type!=null &&
+              this.type.equals(other.getType()))) &&
+            ((this.refNum==null && other.getRefNum()==null) || 
+             (this.refNum!=null &&
+              this.refNum.equals(other.getRefNum()))) &&
+            ((this.total==null && other.getTotal()==null) || 
+             (this.total!=null &&
+              this.total.equals(other.getTotal()))) &&
+            ((this.amount==null && other.getAmount()==null) || 
+             (this.amount!=null &&
+              this.amount.equals(other.getAmount()))) &&
+            ((this.job==null && other.getJob()==null) || 
+             (this.job!=null &&
+              this.job.equals(other.getJob())));
+        __equalsCalc = null;
+        return _equals;
+    }
+
+    private boolean __hashCodeCalc = false;
+    public synchronized int hashCode() {
+        if (__hashCodeCalc) {
+            return 0;
+        }
+        __hashCodeCalc = true;
+        int _hashCode = 1;
+        if (getDoc() != null) {
+            _hashCode += getDoc().hashCode();
+        }
+        if (getLine() != null) {
+            _hashCode += getLine().hashCode();
+        }
+        if (getApply() != null) {
+            _hashCode += getApply().hashCode();
+        }
+        if (getApplyDate() != null) {
+            _hashCode += getApplyDate().hashCode();
+        }
+        if (getType() != null) {
+            _hashCode += getType().hashCode();
+        }
+        if (getRefNum() != null) {
+            _hashCode += getRefNum().hashCode();
+        }
+        if (getTotal() != null) {
+            _hashCode += getTotal().hashCode();
+        }
+        if (getAmount() != null) {
+            _hashCode += getAmount().hashCode();
+        }
+        if (getJob() != null) {
+            _hashCode += getJob().hashCode();
+        }
+        __hashCodeCalc = false;
+        return _hashCode;
+    }
+
+    // Type metadata
+    private static org.apache.axis.description.TypeDesc typeDesc =
+        new org.apache.axis.description.TypeDesc(CustomerDepositApply.class, true);
+
+    static {
+        typeDesc.setXmlType(new javax.xml.namespace.QName("urn:customers_2018_2.transactions.webservices.netsuite.com", "CustomerDepositApply"));
+        org.apache.axis.description.ElementDesc elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("doc");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:customers_2018_2.transactions.webservices.netsuite.com", "doc"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "long"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("line");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:customers_2018_2.transactions.webservices.netsuite.com", "line"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "long"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("apply");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:customers_2018_2.transactions.webservices.netsuite.com", "apply"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("applyDate");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:customers_2018_2.transactions.webservices.netsuite.com", "applyDate"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "dateTime"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("type");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:customers_2018_2.transactions.webservices.netsuite.com", "type"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("refNum");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:customers_2018_2.transactions.webservices.netsuite.com", "refNum"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("total");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:customers_2018_2.transactions.webservices.netsuite.com", "total"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "double"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("amount");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:customers_2018_2.transactions.webservices.netsuite.com", "amount"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "double"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("job");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:customers_2018_2.transactions.webservices.netsuite.com", "job"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+    }
+
+    /**
+     * Return type metadata object
+     */
+    public static org.apache.axis.description.TypeDesc getTypeDesc() {
+        return typeDesc;
+    }
+
+    /**
+     * Get Custom Serializer
+     */
+    public static org.apache.axis.encoding.Serializer getSerializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanSerializer(
+            _javaType, _xmlType, typeDesc);
+    }
+
+    /**
+     * Get Custom Deserializer
+     */
+    public static org.apache.axis.encoding.Deserializer getDeserializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanDeserializer(
+            _javaType, _xmlType, typeDesc);
     }
 
 }

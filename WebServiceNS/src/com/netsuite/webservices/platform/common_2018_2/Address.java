@@ -1,418 +1,613 @@
+/**
+ * Address.java
+ *
+ * This file was auto-generated from WSDL
+ * by the Apache Axis 1.4 Jul 28, 2010 (04:07:04 PDT) WSDL2Java emitter.
+ */
 
 package com.netsuite.webservices.platform.common_2018_2;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlSchemaType;
-import javax.xml.bind.annotation.XmlType;
-import com.netsuite.webservices.platform.common_2018_2.types.Country;
-import com.netsuite.webservices.platform.core_2018_2.CustomFieldList;
-import com.netsuite.webservices.platform.core_2018_2.Record;
+public class Address  extends com.netsuite.webservices.platform.core_2018_2.Record  implements java.io.Serializable {
+    private java.lang.String internalId;
 
+    private com.netsuite.webservices.platform.common_2018_2.types.Country country;
 
-/**
- * <p>Address complex type的 Java 类。
- * 
- * <p>以下模式片段指定包含在此类中的预期内容。
- * 
- * <pre>
- * &lt;complexType name="Address">
- *   &lt;complexContent>
- *     &lt;extension base="{urn:core_2018_2.platform.webservices.netsuite.com}Record">
- *       &lt;sequence>
- *         &lt;element name="internalId" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="country" type="{urn:types.common_2018_2.platform.webservices.netsuite.com}Country" minOccurs="0"/>
- *         &lt;element name="attention" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="addressee" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="addrPhone" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="addr1" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="addr2" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="addr3" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="city" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="state" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="zip" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="addrText" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="override" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         &lt;element name="customFieldList" type="{urn:core_2018_2.platform.webservices.netsuite.com}CustomFieldList" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/extension>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
- */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "Address", propOrder = {
-    "internalId",
-    "country",
-    "attention",
-    "addressee",
-    "addrPhone",
-    "addr1",
-    "addr2",
-    "addr3",
-    "city",
-    "state",
-    "zip",
-    "addrText",
-    "override",
-    "customFieldList"
-})
-public class Address
-    extends Record
-{
+    private java.lang.String attention;
 
-    protected String internalId;
-    @XmlSchemaType(name = "string")
-    protected Country country;
-    protected String attention;
-    protected String addressee;
-    protected String addrPhone;
-    protected String addr1;
-    protected String addr2;
-    protected String addr3;
-    protected String city;
-    protected String state;
-    protected String zip;
-    protected String addrText;
-    protected Boolean override;
-    protected CustomFieldList customFieldList;
+    private java.lang.String addressee;
+
+    private java.lang.String addrPhone;
+
+    private java.lang.String addr1;
+
+    private java.lang.String addr2;
+
+    private java.lang.String addr3;
+
+    private java.lang.String city;
+
+    private java.lang.String state;
+
+    private java.lang.String zip;
+
+    private java.lang.String addrText;
+
+    private java.lang.Boolean override;
+
+    private com.netsuite.webservices.platform.core_2018_2.CustomFieldRef[] customFieldList;
+
+    public Address() {
+    }
+
+    public Address(
+           java.lang.String[] nullFieldList,
+           java.lang.String internalId,
+           com.netsuite.webservices.platform.common_2018_2.types.Country country,
+           java.lang.String attention,
+           java.lang.String addressee,
+           java.lang.String addrPhone,
+           java.lang.String addr1,
+           java.lang.String addr2,
+           java.lang.String addr3,
+           java.lang.String city,
+           java.lang.String state,
+           java.lang.String zip,
+           java.lang.String addrText,
+           java.lang.Boolean override,
+           com.netsuite.webservices.platform.core_2018_2.CustomFieldRef[] customFieldList) {
+        super(
+            nullFieldList);
+        this.internalId = internalId;
+        this.country = country;
+        this.attention = attention;
+        this.addressee = addressee;
+        this.addrPhone = addrPhone;
+        this.addr1 = addr1;
+        this.addr2 = addr2;
+        this.addr3 = addr3;
+        this.city = city;
+        this.state = state;
+        this.zip = zip;
+        this.addrText = addrText;
+        this.override = override;
+        this.customFieldList = customFieldList;
+    }
+
 
     /**
-     * 获取internalId属性的值。
+     * Gets the internalId value for this Address.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @return internalId
      */
-    public String getInternalId() {
+    public java.lang.String getInternalId() {
         return internalId;
     }
 
-    /**
-     * 设置internalId属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setInternalId(String value) {
-        this.internalId = value;
-    }
 
     /**
-     * 获取country属性的值。
+     * Sets the internalId value for this Address.
      * 
-     * @return
-     *     possible object is
-     *     {@link Country }
-     *     
+     * @param internalId
      */
-    public Country getCountry() {
+    public void setInternalId(java.lang.String internalId) {
+        this.internalId = internalId;
+    }
+
+
+    /**
+     * Gets the country value for this Address.
+     * 
+     * @return country
+     */
+    public com.netsuite.webservices.platform.common_2018_2.types.Country getCountry() {
         return country;
     }
 
-    /**
-     * 设置country属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Country }
-     *     
-     */
-    public void setCountry(Country value) {
-        this.country = value;
-    }
 
     /**
-     * 获取attention属性的值。
+     * Sets the country value for this Address.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param country
      */
-    public String getAttention() {
+    public void setCountry(com.netsuite.webservices.platform.common_2018_2.types.Country country) {
+        this.country = country;
+    }
+
+
+    /**
+     * Gets the attention value for this Address.
+     * 
+     * @return attention
+     */
+    public java.lang.String getAttention() {
         return attention;
     }
 
-    /**
-     * 设置attention属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setAttention(String value) {
-        this.attention = value;
-    }
 
     /**
-     * 获取addressee属性的值。
+     * Sets the attention value for this Address.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param attention
      */
-    public String getAddressee() {
+    public void setAttention(java.lang.String attention) {
+        this.attention = attention;
+    }
+
+
+    /**
+     * Gets the addressee value for this Address.
+     * 
+     * @return addressee
+     */
+    public java.lang.String getAddressee() {
         return addressee;
     }
 
-    /**
-     * 设置addressee属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setAddressee(String value) {
-        this.addressee = value;
-    }
 
     /**
-     * 获取addrPhone属性的值。
+     * Sets the addressee value for this Address.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param addressee
      */
-    public String getAddrPhone() {
+    public void setAddressee(java.lang.String addressee) {
+        this.addressee = addressee;
+    }
+
+
+    /**
+     * Gets the addrPhone value for this Address.
+     * 
+     * @return addrPhone
+     */
+    public java.lang.String getAddrPhone() {
         return addrPhone;
     }
 
-    /**
-     * 设置addrPhone属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setAddrPhone(String value) {
-        this.addrPhone = value;
-    }
 
     /**
-     * 获取addr1属性的值。
+     * Sets the addrPhone value for this Address.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param addrPhone
      */
-    public String getAddr1() {
+    public void setAddrPhone(java.lang.String addrPhone) {
+        this.addrPhone = addrPhone;
+    }
+
+
+    /**
+     * Gets the addr1 value for this Address.
+     * 
+     * @return addr1
+     */
+    public java.lang.String getAddr1() {
         return addr1;
     }
 
-    /**
-     * 设置addr1属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setAddr1(String value) {
-        this.addr1 = value;
-    }
 
     /**
-     * 获取addr2属性的值。
+     * Sets the addr1 value for this Address.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param addr1
      */
-    public String getAddr2() {
+    public void setAddr1(java.lang.String addr1) {
+        this.addr1 = addr1;
+    }
+
+
+    /**
+     * Gets the addr2 value for this Address.
+     * 
+     * @return addr2
+     */
+    public java.lang.String getAddr2() {
         return addr2;
     }
 
-    /**
-     * 设置addr2属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setAddr2(String value) {
-        this.addr2 = value;
-    }
 
     /**
-     * 获取addr3属性的值。
+     * Sets the addr2 value for this Address.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param addr2
      */
-    public String getAddr3() {
+    public void setAddr2(java.lang.String addr2) {
+        this.addr2 = addr2;
+    }
+
+
+    /**
+     * Gets the addr3 value for this Address.
+     * 
+     * @return addr3
+     */
+    public java.lang.String getAddr3() {
         return addr3;
     }
 
-    /**
-     * 设置addr3属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setAddr3(String value) {
-        this.addr3 = value;
-    }
 
     /**
-     * 获取city属性的值。
+     * Sets the addr3 value for this Address.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param addr3
      */
-    public String getCity() {
+    public void setAddr3(java.lang.String addr3) {
+        this.addr3 = addr3;
+    }
+
+
+    /**
+     * Gets the city value for this Address.
+     * 
+     * @return city
+     */
+    public java.lang.String getCity() {
         return city;
     }
 
-    /**
-     * 设置city属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setCity(String value) {
-        this.city = value;
-    }
 
     /**
-     * 获取state属性的值。
+     * Sets the city value for this Address.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param city
      */
-    public String getState() {
+    public void setCity(java.lang.String city) {
+        this.city = city;
+    }
+
+
+    /**
+     * Gets the state value for this Address.
+     * 
+     * @return state
+     */
+    public java.lang.String getState() {
         return state;
     }
 
-    /**
-     * 设置state属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setState(String value) {
-        this.state = value;
-    }
 
     /**
-     * 获取zip属性的值。
+     * Sets the state value for this Address.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param state
      */
-    public String getZip() {
+    public void setState(java.lang.String state) {
+        this.state = state;
+    }
+
+
+    /**
+     * Gets the zip value for this Address.
+     * 
+     * @return zip
+     */
+    public java.lang.String getZip() {
         return zip;
     }
 
-    /**
-     * 设置zip属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setZip(String value) {
-        this.zip = value;
-    }
 
     /**
-     * 获取addrText属性的值。
+     * Sets the zip value for this Address.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param zip
      */
-    public String getAddrText() {
+    public void setZip(java.lang.String zip) {
+        this.zip = zip;
+    }
+
+
+    /**
+     * Gets the addrText value for this Address.
+     * 
+     * @return addrText
+     */
+    public java.lang.String getAddrText() {
         return addrText;
     }
 
-    /**
-     * 设置addrText属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setAddrText(String value) {
-        this.addrText = value;
-    }
 
     /**
-     * 获取override属性的值。
+     * Sets the addrText value for this Address.
      * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
+     * @param addrText
      */
-    public Boolean isOverride() {
+    public void setAddrText(java.lang.String addrText) {
+        this.addrText = addrText;
+    }
+
+
+    /**
+     * Gets the override value for this Address.
+     * 
+     * @return override
+     */
+    public java.lang.Boolean getOverride() {
         return override;
     }
 
-    /**
-     * 设置override属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
-     */
-    public void setOverride(Boolean value) {
-        this.override = value;
-    }
 
     /**
-     * 获取customFieldList属性的值。
+     * Sets the override value for this Address.
      * 
-     * @return
-     *     possible object is
-     *     {@link CustomFieldList }
-     *     
+     * @param override
      */
-    public CustomFieldList getCustomFieldList() {
+    public void setOverride(java.lang.Boolean override) {
+        this.override = override;
+    }
+
+
+    /**
+     * Gets the customFieldList value for this Address.
+     * 
+     * @return customFieldList
+     */
+    public com.netsuite.webservices.platform.core_2018_2.CustomFieldRef[] getCustomFieldList() {
         return customFieldList;
     }
 
+
     /**
-     * 设置customFieldList属性的值。
+     * Sets the customFieldList value for this Address.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link CustomFieldList }
-     *     
+     * @param customFieldList
      */
-    public void setCustomFieldList(CustomFieldList value) {
-        this.customFieldList = value;
+    public void setCustomFieldList(com.netsuite.webservices.platform.core_2018_2.CustomFieldRef[] customFieldList) {
+        this.customFieldList = customFieldList;
+    }
+
+    private java.lang.Object __equalsCalc = null;
+    public synchronized boolean equals(java.lang.Object obj) {
+        if (!(obj instanceof Address)) return false;
+        Address other = (Address) obj;
+        if (obj == null) return false;
+        if (this == obj) return true;
+        if (__equalsCalc != null) {
+            return (__equalsCalc == obj);
+        }
+        __equalsCalc = obj;
+        boolean _equals;
+        _equals = super.equals(obj) && 
+            ((this.internalId==null && other.getInternalId()==null) || 
+             (this.internalId!=null &&
+              this.internalId.equals(other.getInternalId()))) &&
+            ((this.country==null && other.getCountry()==null) || 
+             (this.country!=null &&
+              this.country.equals(other.getCountry()))) &&
+            ((this.attention==null && other.getAttention()==null) || 
+             (this.attention!=null &&
+              this.attention.equals(other.getAttention()))) &&
+            ((this.addressee==null && other.getAddressee()==null) || 
+             (this.addressee!=null &&
+              this.addressee.equals(other.getAddressee()))) &&
+            ((this.addrPhone==null && other.getAddrPhone()==null) || 
+             (this.addrPhone!=null &&
+              this.addrPhone.equals(other.getAddrPhone()))) &&
+            ((this.addr1==null && other.getAddr1()==null) || 
+             (this.addr1!=null &&
+              this.addr1.equals(other.getAddr1()))) &&
+            ((this.addr2==null && other.getAddr2()==null) || 
+             (this.addr2!=null &&
+              this.addr2.equals(other.getAddr2()))) &&
+            ((this.addr3==null && other.getAddr3()==null) || 
+             (this.addr3!=null &&
+              this.addr3.equals(other.getAddr3()))) &&
+            ((this.city==null && other.getCity()==null) || 
+             (this.city!=null &&
+              this.city.equals(other.getCity()))) &&
+            ((this.state==null && other.getState()==null) || 
+             (this.state!=null &&
+              this.state.equals(other.getState()))) &&
+            ((this.zip==null && other.getZip()==null) || 
+             (this.zip!=null &&
+              this.zip.equals(other.getZip()))) &&
+            ((this.addrText==null && other.getAddrText()==null) || 
+             (this.addrText!=null &&
+              this.addrText.equals(other.getAddrText()))) &&
+            ((this.override==null && other.getOverride()==null) || 
+             (this.override!=null &&
+              this.override.equals(other.getOverride()))) &&
+            ((this.customFieldList==null && other.getCustomFieldList()==null) || 
+             (this.customFieldList!=null &&
+              java.util.Arrays.equals(this.customFieldList, other.getCustomFieldList())));
+        __equalsCalc = null;
+        return _equals;
+    }
+
+    private boolean __hashCodeCalc = false;
+    public synchronized int hashCode() {
+        if (__hashCodeCalc) {
+            return 0;
+        }
+        __hashCodeCalc = true;
+        int _hashCode = super.hashCode();
+        if (getInternalId() != null) {
+            _hashCode += getInternalId().hashCode();
+        }
+        if (getCountry() != null) {
+            _hashCode += getCountry().hashCode();
+        }
+        if (getAttention() != null) {
+            _hashCode += getAttention().hashCode();
+        }
+        if (getAddressee() != null) {
+            _hashCode += getAddressee().hashCode();
+        }
+        if (getAddrPhone() != null) {
+            _hashCode += getAddrPhone().hashCode();
+        }
+        if (getAddr1() != null) {
+            _hashCode += getAddr1().hashCode();
+        }
+        if (getAddr2() != null) {
+            _hashCode += getAddr2().hashCode();
+        }
+        if (getAddr3() != null) {
+            _hashCode += getAddr3().hashCode();
+        }
+        if (getCity() != null) {
+            _hashCode += getCity().hashCode();
+        }
+        if (getState() != null) {
+            _hashCode += getState().hashCode();
+        }
+        if (getZip() != null) {
+            _hashCode += getZip().hashCode();
+        }
+        if (getAddrText() != null) {
+            _hashCode += getAddrText().hashCode();
+        }
+        if (getOverride() != null) {
+            _hashCode += getOverride().hashCode();
+        }
+        if (getCustomFieldList() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getCustomFieldList());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getCustomFieldList(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        __hashCodeCalc = false;
+        return _hashCode;
+    }
+
+    // Type metadata
+    private static org.apache.axis.description.TypeDesc typeDesc =
+        new org.apache.axis.description.TypeDesc(Address.class, true);
+
+    static {
+        typeDesc.setXmlType(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "Address"));
+        org.apache.axis.description.ElementDesc elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("internalId");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "internalId"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("country");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "country"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:types.common_2018_2.platform.webservices.netsuite.com", "Country"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("attention");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "attention"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("addressee");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "addressee"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("addrPhone");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "addrPhone"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("addr1");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "addr1"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("addr2");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "addr2"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("addr3");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "addr3"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("city");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "city"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("state");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "state"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("zip");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "zip"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("addrText");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "addrText"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("override");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "override"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("customFieldList");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "customFieldList"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "CustomFieldRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "customField"));
+        typeDesc.addFieldDesc(elemField);
+    }
+
+    /**
+     * Return type metadata object
+     */
+    public static org.apache.axis.description.TypeDesc getTypeDesc() {
+        return typeDesc;
+    }
+
+    /**
+     * Get Custom Serializer
+     */
+    public static org.apache.axis.encoding.Serializer getSerializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanSerializer(
+            _javaType, _xmlType, typeDesc);
+    }
+
+    /**
+     * Get Custom Deserializer
+     */
+    public static org.apache.axis.encoding.Deserializer getDeserializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanDeserializer(
+            _javaType, _xmlType, typeDesc);
     }
 
 }

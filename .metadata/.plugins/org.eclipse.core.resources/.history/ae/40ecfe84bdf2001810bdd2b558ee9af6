@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="WebServiceNS" basedir="." default="generate.interfaces">
+	<property name="webContent.dir" value="WebContent" />
+	<property name="src.dir" value="src" />
+	<property name="client.dir" value="client" />
+	<property name="server.dir" value="server" />
+	<property name="compile.dir" value="${webContent.dir}/WEB-INF/classes" />
+	<property name="wsdl.url" value="http://localhost:7775/wstest/service/sayhi?wsdl" />
+
+	<echo message="wsdl2javaAll          -->java文件生成All,java2wsdl -Ddir=com/starit/cxf/java2wsdl -Dwsdl=hello.wsdl" />
+
+	<target name="generate.interfaces" description="Generates client interfaces using Axis">
+		<echo>Generating client interfaces using Apache Axis</echo>
+		<axis-wsdl2java timeout="120000" output="${src.dir}" verbose="true" url="${wsdl.url}" all="true" wrapArrays="ture">
+			<mapping namespace="http://axis.apache.org/ns/interop" package="interop">
+			</mapping>
+		</axis-wsdl2java>
+	</target>
+</project>

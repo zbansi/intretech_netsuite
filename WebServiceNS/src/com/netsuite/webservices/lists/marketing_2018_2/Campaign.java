@@ -1,1043 +1,1505 @@
+/**
+ * Campaign.java
+ *
+ * This file was auto-generated from WSDL
+ * by the Apache Axis 1.4 Jul 28, 2010 (04:07:04 PDT) WSDL2Java emitter.
+ */
 
 package com.netsuite.webservices.lists.marketing_2018_2;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlAttribute;
-import javax.xml.bind.annotation.XmlSchemaType;
-import javax.xml.bind.annotation.XmlType;
-import javax.xml.datatype.XMLGregorianCalendar;
-import com.netsuite.webservices.platform.core_2018_2.CustomFieldList;
-import com.netsuite.webservices.platform.core_2018_2.Record;
-import com.netsuite.webservices.platform.core_2018_2.RecordRef;
-import com.netsuite.webservices.platform.core_2018_2.RecordRefList;
+public class Campaign  extends com.netsuite.webservices.platform.core_2018_2.Record  implements java.io.Serializable {
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef customForm;
 
+    private java.lang.String campaignId;
 
-/**
- * <p>Campaign complex type的 Java 类。
- * 
- * <p>以下模式片段指定包含在此类中的预期内容。
- * 
- * <pre>
- * &lt;complexType name="Campaign">
- *   &lt;complexContent>
- *     &lt;extension base="{urn:core_2018_2.platform.webservices.netsuite.com}Record">
- *       &lt;sequence>
- *         &lt;element name="customForm" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="campaignId" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="title" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="category" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="owner" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="startDate" type="{http://www.w3.org/2001/XMLSchema}dateTime" minOccurs="0"/>
- *         &lt;element name="endDate" type="{http://www.w3.org/2001/XMLSchema}dateTime" minOccurs="0"/>
- *         &lt;element name="url" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="baseCost" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
- *         &lt;element name="cost" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
- *         &lt;element name="expectedRevenue" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
- *         &lt;element name="message" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="isInactive" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         &lt;element name="local" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         &lt;element name="totalRevenue" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
- *         &lt;element name="roi" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
- *         &lt;element name="profit" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
- *         &lt;element name="costPerCustomer" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
- *         &lt;element name="convCostPerCustomer" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
- *         &lt;element name="conversions" type="{http://www.w3.org/2001/XMLSchema}long" minOccurs="0"/>
- *         &lt;element name="leadsGenerated" type="{http://www.w3.org/2001/XMLSchema}long" minOccurs="0"/>
- *         &lt;element name="uniqueVisitors" type="{http://www.w3.org/2001/XMLSchema}long" minOccurs="0"/>
- *         &lt;element name="vertical" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="audience" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="offer" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="promotionCode" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="itemList" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRefList" minOccurs="0"/>
- *         &lt;element name="family" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="searchEngine" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="keyword" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="campaignEmailList" type="{urn:marketing_2018_2.lists.webservices.netsuite.com}CampaignEmailList" minOccurs="0"/>
- *         &lt;element name="campaignDirectMailList" type="{urn:marketing_2018_2.lists.webservices.netsuite.com}CampaignDirectMailList" minOccurs="0"/>
- *         &lt;element name="campaignEventList" type="{urn:marketing_2018_2.lists.webservices.netsuite.com}CampaignEventList" minOccurs="0"/>
- *         &lt;element name="eventResponseList" type="{urn:marketing_2018_2.lists.webservices.netsuite.com}CampaignEventResponseList" minOccurs="0"/>
- *         &lt;element name="customFieldList" type="{urn:core_2018_2.platform.webservices.netsuite.com}CustomFieldList" minOccurs="0"/>
- *       &lt;/sequence>
- *       &lt;attribute name="internalId" type="{http://www.w3.org/2001/XMLSchema}string" />
- *       &lt;attribute name="externalId" type="{http://www.w3.org/2001/XMLSchema}string" />
- *     &lt;/extension>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
- */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "Campaign", propOrder = {
-    "customForm",
-    "campaignId",
-    "title",
-    "category",
-    "owner",
-    "startDate",
-    "endDate",
-    "url",
-    "baseCost",
-    "cost",
-    "expectedRevenue",
-    "message",
-    "isInactive",
-    "local",
-    "totalRevenue",
-    "roi",
-    "profit",
-    "costPerCustomer",
-    "convCostPerCustomer",
-    "conversions",
-    "leadsGenerated",
-    "uniqueVisitors",
-    "vertical",
-    "audience",
-    "offer",
-    "promotionCode",
-    "itemList",
-    "family",
-    "searchEngine",
-    "keyword",
-    "campaignEmailList",
-    "campaignDirectMailList",
-    "campaignEventList",
-    "eventResponseList",
-    "customFieldList"
-})
-public class Campaign
-    extends Record
-{
+    private java.lang.String title;
 
-    protected RecordRef customForm;
-    protected String campaignId;
-    protected String title;
-    protected RecordRef category;
-    protected RecordRef owner;
-    @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar startDate;
-    @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar endDate;
-    protected String url;
-    protected Double baseCost;
-    protected Double cost;
-    protected Double expectedRevenue;
-    protected String message;
-    protected Boolean isInactive;
-    protected Boolean local;
-    protected Double totalRevenue;
-    protected Double roi;
-    protected Double profit;
-    protected Double costPerCustomer;
-    protected Double convCostPerCustomer;
-    protected Long conversions;
-    protected Long leadsGenerated;
-    protected Long uniqueVisitors;
-    protected RecordRef vertical;
-    protected RecordRef audience;
-    protected RecordRef offer;
-    protected RecordRef promotionCode;
-    protected RecordRefList itemList;
-    protected RecordRef family;
-    protected RecordRef searchEngine;
-    protected String keyword;
-    protected CampaignEmailList campaignEmailList;
-    protected CampaignDirectMailList campaignDirectMailList;
-    protected CampaignEventList campaignEventList;
-    protected CampaignEventResponseList eventResponseList;
-    protected CustomFieldList customFieldList;
-    @XmlAttribute(name = "internalId")
-    protected String internalId;
-    @XmlAttribute(name = "externalId")
-    protected String externalId;
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef category;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef owner;
+
+    private java.util.Calendar startDate;
+
+    private java.util.Calendar endDate;
+
+    private java.lang.String url;
+
+    private java.lang.Double baseCost;
+
+    private java.lang.Double cost;
+
+    private java.lang.Double expectedRevenue;
+
+    private java.lang.String message;
+
+    private java.lang.Boolean isInactive;
+
+    private java.lang.Boolean local;
+
+    private java.lang.Double totalRevenue;
+
+    private java.lang.Double roi;
+
+    private java.lang.Double profit;
+
+    private java.lang.Double costPerCustomer;
+
+    private java.lang.Double convCostPerCustomer;
+
+    private java.lang.Long conversions;
+
+    private java.lang.Long leadsGenerated;
+
+    private java.lang.Long uniqueVisitors;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef vertical;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef audience;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef offer;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef promotionCode;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef[] itemList;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef family;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef searchEngine;
+
+    private java.lang.String keyword;
+
+    private com.netsuite.webservices.lists.marketing_2018_2.CampaignEmail[] campaignEmailList;
+
+    private com.netsuite.webservices.lists.marketing_2018_2.CampaignDirectMail[] campaignDirectMailList;
+
+    private com.netsuite.webservices.lists.marketing_2018_2.CampaignEvent[] campaignEventList;
+
+    private com.netsuite.webservices.lists.marketing_2018_2.CampaignEventResponse[] eventResponseList;
+
+    private com.netsuite.webservices.platform.core_2018_2.CustomFieldRef[] customFieldList;
+
+    private java.lang.String internalId;  // attribute
+
+    private java.lang.String externalId;  // attribute
+
+    public Campaign() {
+    }
+
+    public Campaign(
+           java.lang.String[] nullFieldList,
+           java.lang.String internalId,
+           java.lang.String externalId,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef customForm,
+           java.lang.String campaignId,
+           java.lang.String title,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef category,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef owner,
+           java.util.Calendar startDate,
+           java.util.Calendar endDate,
+           java.lang.String url,
+           java.lang.Double baseCost,
+           java.lang.Double cost,
+           java.lang.Double expectedRevenue,
+           java.lang.String message,
+           java.lang.Boolean isInactive,
+           java.lang.Boolean local,
+           java.lang.Double totalRevenue,
+           java.lang.Double roi,
+           java.lang.Double profit,
+           java.lang.Double costPerCustomer,
+           java.lang.Double convCostPerCustomer,
+           java.lang.Long conversions,
+           java.lang.Long leadsGenerated,
+           java.lang.Long uniqueVisitors,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef vertical,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef audience,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef offer,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef promotionCode,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef[] itemList,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef family,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef searchEngine,
+           java.lang.String keyword,
+           com.netsuite.webservices.lists.marketing_2018_2.CampaignEmail[] campaignEmailList,
+           com.netsuite.webservices.lists.marketing_2018_2.CampaignDirectMail[] campaignDirectMailList,
+           com.netsuite.webservices.lists.marketing_2018_2.CampaignEvent[] campaignEventList,
+           com.netsuite.webservices.lists.marketing_2018_2.CampaignEventResponse[] eventResponseList,
+           com.netsuite.webservices.platform.core_2018_2.CustomFieldRef[] customFieldList) {
+        super(
+            nullFieldList);
+        this.internalId = internalId;
+        this.externalId = externalId;
+        this.customForm = customForm;
+        this.campaignId = campaignId;
+        this.title = title;
+        this.category = category;
+        this.owner = owner;
+        this.startDate = startDate;
+        this.endDate = endDate;
+        this.url = url;
+        this.baseCost = baseCost;
+        this.cost = cost;
+        this.expectedRevenue = expectedRevenue;
+        this.message = message;
+        this.isInactive = isInactive;
+        this.local = local;
+        this.totalRevenue = totalRevenue;
+        this.roi = roi;
+        this.profit = profit;
+        this.costPerCustomer = costPerCustomer;
+        this.convCostPerCustomer = convCostPerCustomer;
+        this.conversions = conversions;
+        this.leadsGenerated = leadsGenerated;
+        this.uniqueVisitors = uniqueVisitors;
+        this.vertical = vertical;
+        this.audience = audience;
+        this.offer = offer;
+        this.promotionCode = promotionCode;
+        this.itemList = itemList;
+        this.family = family;
+        this.searchEngine = searchEngine;
+        this.keyword = keyword;
+        this.campaignEmailList = campaignEmailList;
+        this.campaignDirectMailList = campaignDirectMailList;
+        this.campaignEventList = campaignEventList;
+        this.eventResponseList = eventResponseList;
+        this.customFieldList = customFieldList;
+    }
+
 
     /**
-     * 获取customForm属性的值。
+     * Gets the customForm value for this Campaign.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @return customForm
      */
-    public RecordRef getCustomForm() {
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getCustomForm() {
         return customForm;
     }
 
-    /**
-     * 设置customForm属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setCustomForm(RecordRef value) {
-        this.customForm = value;
-    }
 
     /**
-     * 获取campaignId属性的值。
+     * Sets the customForm value for this Campaign.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param customForm
      */
-    public String getCampaignId() {
+    public void setCustomForm(com.netsuite.webservices.platform.core_2018_2.RecordRef customForm) {
+        this.customForm = customForm;
+    }
+
+
+    /**
+     * Gets the campaignId value for this Campaign.
+     * 
+     * @return campaignId
+     */
+    public java.lang.String getCampaignId() {
         return campaignId;
     }
 
-    /**
-     * 设置campaignId属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setCampaignId(String value) {
-        this.campaignId = value;
-    }
 
     /**
-     * 获取title属性的值。
+     * Sets the campaignId value for this Campaign.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param campaignId
      */
-    public String getTitle() {
+    public void setCampaignId(java.lang.String campaignId) {
+        this.campaignId = campaignId;
+    }
+
+
+    /**
+     * Gets the title value for this Campaign.
+     * 
+     * @return title
+     */
+    public java.lang.String getTitle() {
         return title;
     }
 
-    /**
-     * 设置title属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setTitle(String value) {
-        this.title = value;
-    }
 
     /**
-     * 获取category属性的值。
+     * Sets the title value for this Campaign.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param title
      */
-    public RecordRef getCategory() {
+    public void setTitle(java.lang.String title) {
+        this.title = title;
+    }
+
+
+    /**
+     * Gets the category value for this Campaign.
+     * 
+     * @return category
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getCategory() {
         return category;
     }
 
-    /**
-     * 设置category属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setCategory(RecordRef value) {
-        this.category = value;
-    }
 
     /**
-     * 获取owner属性的值。
+     * Sets the category value for this Campaign.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param category
      */
-    public RecordRef getOwner() {
+    public void setCategory(com.netsuite.webservices.platform.core_2018_2.RecordRef category) {
+        this.category = category;
+    }
+
+
+    /**
+     * Gets the owner value for this Campaign.
+     * 
+     * @return owner
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getOwner() {
         return owner;
     }
 
-    /**
-     * 设置owner属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setOwner(RecordRef value) {
-        this.owner = value;
-    }
 
     /**
-     * 获取startDate属性的值。
+     * Sets the owner value for this Campaign.
      * 
-     * @return
-     *     possible object is
-     *     {@link XMLGregorianCalendar }
-     *     
+     * @param owner
      */
-    public XMLGregorianCalendar getStartDate() {
+    public void setOwner(com.netsuite.webservices.platform.core_2018_2.RecordRef owner) {
+        this.owner = owner;
+    }
+
+
+    /**
+     * Gets the startDate value for this Campaign.
+     * 
+     * @return startDate
+     */
+    public java.util.Calendar getStartDate() {
         return startDate;
     }
 
-    /**
-     * 设置startDate属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link XMLGregorianCalendar }
-     *     
-     */
-    public void setStartDate(XMLGregorianCalendar value) {
-        this.startDate = value;
-    }
 
     /**
-     * 获取endDate属性的值。
+     * Sets the startDate value for this Campaign.
      * 
-     * @return
-     *     possible object is
-     *     {@link XMLGregorianCalendar }
-     *     
+     * @param startDate
      */
-    public XMLGregorianCalendar getEndDate() {
+    public void setStartDate(java.util.Calendar startDate) {
+        this.startDate = startDate;
+    }
+
+
+    /**
+     * Gets the endDate value for this Campaign.
+     * 
+     * @return endDate
+     */
+    public java.util.Calendar getEndDate() {
         return endDate;
     }
 
-    /**
-     * 设置endDate属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link XMLGregorianCalendar }
-     *     
-     */
-    public void setEndDate(XMLGregorianCalendar value) {
-        this.endDate = value;
-    }
 
     /**
-     * 获取url属性的值。
+     * Sets the endDate value for this Campaign.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param endDate
      */
-    public String getUrl() {
+    public void setEndDate(java.util.Calendar endDate) {
+        this.endDate = endDate;
+    }
+
+
+    /**
+     * Gets the url value for this Campaign.
+     * 
+     * @return url
+     */
+    public java.lang.String getUrl() {
         return url;
     }
 
-    /**
-     * 设置url属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setUrl(String value) {
-        this.url = value;
-    }
 
     /**
-     * 获取baseCost属性的值。
+     * Sets the url value for this Campaign.
      * 
-     * @return
-     *     possible object is
-     *     {@link Double }
-     *     
+     * @param url
      */
-    public Double getBaseCost() {
+    public void setUrl(java.lang.String url) {
+        this.url = url;
+    }
+
+
+    /**
+     * Gets the baseCost value for this Campaign.
+     * 
+     * @return baseCost
+     */
+    public java.lang.Double getBaseCost() {
         return baseCost;
     }
 
-    /**
-     * 设置baseCost属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Double }
-     *     
-     */
-    public void setBaseCost(Double value) {
-        this.baseCost = value;
-    }
 
     /**
-     * 获取cost属性的值。
+     * Sets the baseCost value for this Campaign.
      * 
-     * @return
-     *     possible object is
-     *     {@link Double }
-     *     
+     * @param baseCost
      */
-    public Double getCost() {
+    public void setBaseCost(java.lang.Double baseCost) {
+        this.baseCost = baseCost;
+    }
+
+
+    /**
+     * Gets the cost value for this Campaign.
+     * 
+     * @return cost
+     */
+    public java.lang.Double getCost() {
         return cost;
     }
 
-    /**
-     * 设置cost属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Double }
-     *     
-     */
-    public void setCost(Double value) {
-        this.cost = value;
-    }
 
     /**
-     * 获取expectedRevenue属性的值。
+     * Sets the cost value for this Campaign.
      * 
-     * @return
-     *     possible object is
-     *     {@link Double }
-     *     
+     * @param cost
      */
-    public Double getExpectedRevenue() {
+    public void setCost(java.lang.Double cost) {
+        this.cost = cost;
+    }
+
+
+    /**
+     * Gets the expectedRevenue value for this Campaign.
+     * 
+     * @return expectedRevenue
+     */
+    public java.lang.Double getExpectedRevenue() {
         return expectedRevenue;
     }
 
-    /**
-     * 设置expectedRevenue属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Double }
-     *     
-     */
-    public void setExpectedRevenue(Double value) {
-        this.expectedRevenue = value;
-    }
 
     /**
-     * 获取message属性的值。
+     * Sets the expectedRevenue value for this Campaign.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param expectedRevenue
      */
-    public String getMessage() {
+    public void setExpectedRevenue(java.lang.Double expectedRevenue) {
+        this.expectedRevenue = expectedRevenue;
+    }
+
+
+    /**
+     * Gets the message value for this Campaign.
+     * 
+     * @return message
+     */
+    public java.lang.String getMessage() {
         return message;
     }
 
-    /**
-     * 设置message属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setMessage(String value) {
-        this.message = value;
-    }
 
     /**
-     * 获取isInactive属性的值。
+     * Sets the message value for this Campaign.
      * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
+     * @param message
      */
-    public Boolean isIsInactive() {
+    public void setMessage(java.lang.String message) {
+        this.message = message;
+    }
+
+
+    /**
+     * Gets the isInactive value for this Campaign.
+     * 
+     * @return isInactive
+     */
+    public java.lang.Boolean getIsInactive() {
         return isInactive;
     }
 
-    /**
-     * 设置isInactive属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
-     */
-    public void setIsInactive(Boolean value) {
-        this.isInactive = value;
-    }
 
     /**
-     * 获取local属性的值。
+     * Sets the isInactive value for this Campaign.
      * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
+     * @param isInactive
      */
-    public Boolean isLocal() {
+    public void setIsInactive(java.lang.Boolean isInactive) {
+        this.isInactive = isInactive;
+    }
+
+
+    /**
+     * Gets the local value for this Campaign.
+     * 
+     * @return local
+     */
+    public java.lang.Boolean getLocal() {
         return local;
     }
 
-    /**
-     * 设置local属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
-     */
-    public void setLocal(Boolean value) {
-        this.local = value;
-    }
 
     /**
-     * 获取totalRevenue属性的值。
+     * Sets the local value for this Campaign.
      * 
-     * @return
-     *     possible object is
-     *     {@link Double }
-     *     
+     * @param local
      */
-    public Double getTotalRevenue() {
+    public void setLocal(java.lang.Boolean local) {
+        this.local = local;
+    }
+
+
+    /**
+     * Gets the totalRevenue value for this Campaign.
+     * 
+     * @return totalRevenue
+     */
+    public java.lang.Double getTotalRevenue() {
         return totalRevenue;
     }
 
-    /**
-     * 设置totalRevenue属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Double }
-     *     
-     */
-    public void setTotalRevenue(Double value) {
-        this.totalRevenue = value;
-    }
 
     /**
-     * 获取roi属性的值。
+     * Sets the totalRevenue value for this Campaign.
      * 
-     * @return
-     *     possible object is
-     *     {@link Double }
-     *     
+     * @param totalRevenue
      */
-    public Double getRoi() {
+    public void setTotalRevenue(java.lang.Double totalRevenue) {
+        this.totalRevenue = totalRevenue;
+    }
+
+
+    /**
+     * Gets the roi value for this Campaign.
+     * 
+     * @return roi
+     */
+    public java.lang.Double getRoi() {
         return roi;
     }
 
-    /**
-     * 设置roi属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Double }
-     *     
-     */
-    public void setRoi(Double value) {
-        this.roi = value;
-    }
 
     /**
-     * 获取profit属性的值。
+     * Sets the roi value for this Campaign.
      * 
-     * @return
-     *     possible object is
-     *     {@link Double }
-     *     
+     * @param roi
      */
-    public Double getProfit() {
+    public void setRoi(java.lang.Double roi) {
+        this.roi = roi;
+    }
+
+
+    /**
+     * Gets the profit value for this Campaign.
+     * 
+     * @return profit
+     */
+    public java.lang.Double getProfit() {
         return profit;
     }
 
-    /**
-     * 设置profit属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Double }
-     *     
-     */
-    public void setProfit(Double value) {
-        this.profit = value;
-    }
 
     /**
-     * 获取costPerCustomer属性的值。
+     * Sets the profit value for this Campaign.
      * 
-     * @return
-     *     possible object is
-     *     {@link Double }
-     *     
+     * @param profit
      */
-    public Double getCostPerCustomer() {
+    public void setProfit(java.lang.Double profit) {
+        this.profit = profit;
+    }
+
+
+    /**
+     * Gets the costPerCustomer value for this Campaign.
+     * 
+     * @return costPerCustomer
+     */
+    public java.lang.Double getCostPerCustomer() {
         return costPerCustomer;
     }
 
-    /**
-     * 设置costPerCustomer属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Double }
-     *     
-     */
-    public void setCostPerCustomer(Double value) {
-        this.costPerCustomer = value;
-    }
 
     /**
-     * 获取convCostPerCustomer属性的值。
+     * Sets the costPerCustomer value for this Campaign.
      * 
-     * @return
-     *     possible object is
-     *     {@link Double }
-     *     
+     * @param costPerCustomer
      */
-    public Double getConvCostPerCustomer() {
+    public void setCostPerCustomer(java.lang.Double costPerCustomer) {
+        this.costPerCustomer = costPerCustomer;
+    }
+
+
+    /**
+     * Gets the convCostPerCustomer value for this Campaign.
+     * 
+     * @return convCostPerCustomer
+     */
+    public java.lang.Double getConvCostPerCustomer() {
         return convCostPerCustomer;
     }
 
-    /**
-     * 设置convCostPerCustomer属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Double }
-     *     
-     */
-    public void setConvCostPerCustomer(Double value) {
-        this.convCostPerCustomer = value;
-    }
 
     /**
-     * 获取conversions属性的值。
+     * Sets the convCostPerCustomer value for this Campaign.
      * 
-     * @return
-     *     possible object is
-     *     {@link Long }
-     *     
+     * @param convCostPerCustomer
      */
-    public Long getConversions() {
+    public void setConvCostPerCustomer(java.lang.Double convCostPerCustomer) {
+        this.convCostPerCustomer = convCostPerCustomer;
+    }
+
+
+    /**
+     * Gets the conversions value for this Campaign.
+     * 
+     * @return conversions
+     */
+    public java.lang.Long getConversions() {
         return conversions;
     }
 
-    /**
-     * 设置conversions属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Long }
-     *     
-     */
-    public void setConversions(Long value) {
-        this.conversions = value;
-    }
 
     /**
-     * 获取leadsGenerated属性的值。
+     * Sets the conversions value for this Campaign.
      * 
-     * @return
-     *     possible object is
-     *     {@link Long }
-     *     
+     * @param conversions
      */
-    public Long getLeadsGenerated() {
+    public void setConversions(java.lang.Long conversions) {
+        this.conversions = conversions;
+    }
+
+
+    /**
+     * Gets the leadsGenerated value for this Campaign.
+     * 
+     * @return leadsGenerated
+     */
+    public java.lang.Long getLeadsGenerated() {
         return leadsGenerated;
     }
 
-    /**
-     * 设置leadsGenerated属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Long }
-     *     
-     */
-    public void setLeadsGenerated(Long value) {
-        this.leadsGenerated = value;
-    }
 
     /**
-     * 获取uniqueVisitors属性的值。
+     * Sets the leadsGenerated value for this Campaign.
      * 
-     * @return
-     *     possible object is
-     *     {@link Long }
-     *     
+     * @param leadsGenerated
      */
-    public Long getUniqueVisitors() {
+    public void setLeadsGenerated(java.lang.Long leadsGenerated) {
+        this.leadsGenerated = leadsGenerated;
+    }
+
+
+    /**
+     * Gets the uniqueVisitors value for this Campaign.
+     * 
+     * @return uniqueVisitors
+     */
+    public java.lang.Long getUniqueVisitors() {
         return uniqueVisitors;
     }
 
-    /**
-     * 设置uniqueVisitors属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Long }
-     *     
-     */
-    public void setUniqueVisitors(Long value) {
-        this.uniqueVisitors = value;
-    }
 
     /**
-     * 获取vertical属性的值。
+     * Sets the uniqueVisitors value for this Campaign.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param uniqueVisitors
      */
-    public RecordRef getVertical() {
+    public void setUniqueVisitors(java.lang.Long uniqueVisitors) {
+        this.uniqueVisitors = uniqueVisitors;
+    }
+
+
+    /**
+     * Gets the vertical value for this Campaign.
+     * 
+     * @return vertical
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getVertical() {
         return vertical;
     }
 
-    /**
-     * 设置vertical属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setVertical(RecordRef value) {
-        this.vertical = value;
-    }
 
     /**
-     * 获取audience属性的值。
+     * Sets the vertical value for this Campaign.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param vertical
      */
-    public RecordRef getAudience() {
+    public void setVertical(com.netsuite.webservices.platform.core_2018_2.RecordRef vertical) {
+        this.vertical = vertical;
+    }
+
+
+    /**
+     * Gets the audience value for this Campaign.
+     * 
+     * @return audience
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getAudience() {
         return audience;
     }
 
-    /**
-     * 设置audience属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setAudience(RecordRef value) {
-        this.audience = value;
-    }
 
     /**
-     * 获取offer属性的值。
+     * Sets the audience value for this Campaign.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param audience
      */
-    public RecordRef getOffer() {
+    public void setAudience(com.netsuite.webservices.platform.core_2018_2.RecordRef audience) {
+        this.audience = audience;
+    }
+
+
+    /**
+     * Gets the offer value for this Campaign.
+     * 
+     * @return offer
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getOffer() {
         return offer;
     }
 
-    /**
-     * 设置offer属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setOffer(RecordRef value) {
-        this.offer = value;
-    }
 
     /**
-     * 获取promotionCode属性的值。
+     * Sets the offer value for this Campaign.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param offer
      */
-    public RecordRef getPromotionCode() {
+    public void setOffer(com.netsuite.webservices.platform.core_2018_2.RecordRef offer) {
+        this.offer = offer;
+    }
+
+
+    /**
+     * Gets the promotionCode value for this Campaign.
+     * 
+     * @return promotionCode
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getPromotionCode() {
         return promotionCode;
     }
 
-    /**
-     * 设置promotionCode属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setPromotionCode(RecordRef value) {
-        this.promotionCode = value;
-    }
 
     /**
-     * 获取itemList属性的值。
+     * Sets the promotionCode value for this Campaign.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRefList }
-     *     
+     * @param promotionCode
      */
-    public RecordRefList getItemList() {
+    public void setPromotionCode(com.netsuite.webservices.platform.core_2018_2.RecordRef promotionCode) {
+        this.promotionCode = promotionCode;
+    }
+
+
+    /**
+     * Gets the itemList value for this Campaign.
+     * 
+     * @return itemList
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef[] getItemList() {
         return itemList;
     }
 
-    /**
-     * 设置itemList属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRefList }
-     *     
-     */
-    public void setItemList(RecordRefList value) {
-        this.itemList = value;
-    }
 
     /**
-     * 获取family属性的值。
+     * Sets the itemList value for this Campaign.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param itemList
      */
-    public RecordRef getFamily() {
+    public void setItemList(com.netsuite.webservices.platform.core_2018_2.RecordRef[] itemList) {
+        this.itemList = itemList;
+    }
+
+
+    /**
+     * Gets the family value for this Campaign.
+     * 
+     * @return family
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getFamily() {
         return family;
     }
 
-    /**
-     * 设置family属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setFamily(RecordRef value) {
-        this.family = value;
-    }
 
     /**
-     * 获取searchEngine属性的值。
+     * Sets the family value for this Campaign.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param family
      */
-    public RecordRef getSearchEngine() {
+    public void setFamily(com.netsuite.webservices.platform.core_2018_2.RecordRef family) {
+        this.family = family;
+    }
+
+
+    /**
+     * Gets the searchEngine value for this Campaign.
+     * 
+     * @return searchEngine
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getSearchEngine() {
         return searchEngine;
     }
 
-    /**
-     * 设置searchEngine属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setSearchEngine(RecordRef value) {
-        this.searchEngine = value;
-    }
 
     /**
-     * 获取keyword属性的值。
+     * Sets the searchEngine value for this Campaign.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param searchEngine
      */
-    public String getKeyword() {
+    public void setSearchEngine(com.netsuite.webservices.platform.core_2018_2.RecordRef searchEngine) {
+        this.searchEngine = searchEngine;
+    }
+
+
+    /**
+     * Gets the keyword value for this Campaign.
+     * 
+     * @return keyword
+     */
+    public java.lang.String getKeyword() {
         return keyword;
     }
 
-    /**
-     * 设置keyword属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setKeyword(String value) {
-        this.keyword = value;
-    }
 
     /**
-     * 获取campaignEmailList属性的值。
+     * Sets the keyword value for this Campaign.
      * 
-     * @return
-     *     possible object is
-     *     {@link CampaignEmailList }
-     *     
+     * @param keyword
      */
-    public CampaignEmailList getCampaignEmailList() {
+    public void setKeyword(java.lang.String keyword) {
+        this.keyword = keyword;
+    }
+
+
+    /**
+     * Gets the campaignEmailList value for this Campaign.
+     * 
+     * @return campaignEmailList
+     */
+    public com.netsuite.webservices.lists.marketing_2018_2.CampaignEmail[] getCampaignEmailList() {
         return campaignEmailList;
     }
 
-    /**
-     * 设置campaignEmailList属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link CampaignEmailList }
-     *     
-     */
-    public void setCampaignEmailList(CampaignEmailList value) {
-        this.campaignEmailList = value;
-    }
 
     /**
-     * 获取campaignDirectMailList属性的值。
+     * Sets the campaignEmailList value for this Campaign.
      * 
-     * @return
-     *     possible object is
-     *     {@link CampaignDirectMailList }
-     *     
+     * @param campaignEmailList
      */
-    public CampaignDirectMailList getCampaignDirectMailList() {
+    public void setCampaignEmailList(com.netsuite.webservices.lists.marketing_2018_2.CampaignEmail[] campaignEmailList) {
+        this.campaignEmailList = campaignEmailList;
+    }
+
+
+    /**
+     * Gets the campaignDirectMailList value for this Campaign.
+     * 
+     * @return campaignDirectMailList
+     */
+    public com.netsuite.webservices.lists.marketing_2018_2.CampaignDirectMail[] getCampaignDirectMailList() {
         return campaignDirectMailList;
     }
 
-    /**
-     * 设置campaignDirectMailList属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link CampaignDirectMailList }
-     *     
-     */
-    public void setCampaignDirectMailList(CampaignDirectMailList value) {
-        this.campaignDirectMailList = value;
-    }
 
     /**
-     * 获取campaignEventList属性的值。
+     * Sets the campaignDirectMailList value for this Campaign.
      * 
-     * @return
-     *     possible object is
-     *     {@link CampaignEventList }
-     *     
+     * @param campaignDirectMailList
      */
-    public CampaignEventList getCampaignEventList() {
+    public void setCampaignDirectMailList(com.netsuite.webservices.lists.marketing_2018_2.CampaignDirectMail[] campaignDirectMailList) {
+        this.campaignDirectMailList = campaignDirectMailList;
+    }
+
+
+    /**
+     * Gets the campaignEventList value for this Campaign.
+     * 
+     * @return campaignEventList
+     */
+    public com.netsuite.webservices.lists.marketing_2018_2.CampaignEvent[] getCampaignEventList() {
         return campaignEventList;
     }
 
-    /**
-     * 设置campaignEventList属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link CampaignEventList }
-     *     
-     */
-    public void setCampaignEventList(CampaignEventList value) {
-        this.campaignEventList = value;
-    }
 
     /**
-     * 获取eventResponseList属性的值。
+     * Sets the campaignEventList value for this Campaign.
      * 
-     * @return
-     *     possible object is
-     *     {@link CampaignEventResponseList }
-     *     
+     * @param campaignEventList
      */
-    public CampaignEventResponseList getEventResponseList() {
+    public void setCampaignEventList(com.netsuite.webservices.lists.marketing_2018_2.CampaignEvent[] campaignEventList) {
+        this.campaignEventList = campaignEventList;
+    }
+
+
+    /**
+     * Gets the eventResponseList value for this Campaign.
+     * 
+     * @return eventResponseList
+     */
+    public com.netsuite.webservices.lists.marketing_2018_2.CampaignEventResponse[] getEventResponseList() {
         return eventResponseList;
     }
 
-    /**
-     * 设置eventResponseList属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link CampaignEventResponseList }
-     *     
-     */
-    public void setEventResponseList(CampaignEventResponseList value) {
-        this.eventResponseList = value;
-    }
 
     /**
-     * 获取customFieldList属性的值。
+     * Sets the eventResponseList value for this Campaign.
      * 
-     * @return
-     *     possible object is
-     *     {@link CustomFieldList }
-     *     
+     * @param eventResponseList
      */
-    public CustomFieldList getCustomFieldList() {
+    public void setEventResponseList(com.netsuite.webservices.lists.marketing_2018_2.CampaignEventResponse[] eventResponseList) {
+        this.eventResponseList = eventResponseList;
+    }
+
+
+    /**
+     * Gets the customFieldList value for this Campaign.
+     * 
+     * @return customFieldList
+     */
+    public com.netsuite.webservices.platform.core_2018_2.CustomFieldRef[] getCustomFieldList() {
         return customFieldList;
     }
 
-    /**
-     * 设置customFieldList属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link CustomFieldList }
-     *     
-     */
-    public void setCustomFieldList(CustomFieldList value) {
-        this.customFieldList = value;
-    }
 
     /**
-     * 获取internalId属性的值。
+     * Sets the customFieldList value for this Campaign.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param customFieldList
      */
-    public String getInternalId() {
+    public void setCustomFieldList(com.netsuite.webservices.platform.core_2018_2.CustomFieldRef[] customFieldList) {
+        this.customFieldList = customFieldList;
+    }
+
+
+    /**
+     * Gets the internalId value for this Campaign.
+     * 
+     * @return internalId
+     */
+    public java.lang.String getInternalId() {
         return internalId;
     }
 
-    /**
-     * 设置internalId属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setInternalId(String value) {
-        this.internalId = value;
-    }
 
     /**
-     * 获取externalId属性的值。
+     * Sets the internalId value for this Campaign.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param internalId
      */
-    public String getExternalId() {
+    public void setInternalId(java.lang.String internalId) {
+        this.internalId = internalId;
+    }
+
+
+    /**
+     * Gets the externalId value for this Campaign.
+     * 
+     * @return externalId
+     */
+    public java.lang.String getExternalId() {
         return externalId;
     }
 
+
     /**
-     * 设置externalId属性的值。
+     * Sets the externalId value for this Campaign.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     * @param externalId
      */
-    public void setExternalId(String value) {
-        this.externalId = value;
+    public void setExternalId(java.lang.String externalId) {
+        this.externalId = externalId;
+    }
+
+    private java.lang.Object __equalsCalc = null;
+    public synchronized boolean equals(java.lang.Object obj) {
+        if (!(obj instanceof Campaign)) return false;
+        Campaign other = (Campaign) obj;
+        if (obj == null) return false;
+        if (this == obj) return true;
+        if (__equalsCalc != null) {
+            return (__equalsCalc == obj);
+        }
+        __equalsCalc = obj;
+        boolean _equals;
+        _equals = super.equals(obj) && 
+            ((this.customForm==null && other.getCustomForm()==null) || 
+             (this.customForm!=null &&
+              this.customForm.equals(other.getCustomForm()))) &&
+            ((this.campaignId==null && other.getCampaignId()==null) || 
+             (this.campaignId!=null &&
+              this.campaignId.equals(other.getCampaignId()))) &&
+            ((this.title==null && other.getTitle()==null) || 
+             (this.title!=null &&
+              this.title.equals(other.getTitle()))) &&
+            ((this.category==null && other.getCategory()==null) || 
+             (this.category!=null &&
+              this.category.equals(other.getCategory()))) &&
+            ((this.owner==null && other.getOwner()==null) || 
+             (this.owner!=null &&
+              this.owner.equals(other.getOwner()))) &&
+            ((this.startDate==null && other.getStartDate()==null) || 
+             (this.startDate!=null &&
+              this.startDate.equals(other.getStartDate()))) &&
+            ((this.endDate==null && other.getEndDate()==null) || 
+             (this.endDate!=null &&
+              this.endDate.equals(other.getEndDate()))) &&
+            ((this.url==null && other.getUrl()==null) || 
+             (this.url!=null &&
+              this.url.equals(other.getUrl()))) &&
+            ((this.baseCost==null && other.getBaseCost()==null) || 
+             (this.baseCost!=null &&
+              this.baseCost.equals(other.getBaseCost()))) &&
+            ((this.cost==null && other.getCost()==null) || 
+             (this.cost!=null &&
+              this.cost.equals(other.getCost()))) &&
+            ((this.expectedRevenue==null && other.getExpectedRevenue()==null) || 
+             (this.expectedRevenue!=null &&
+              this.expectedRevenue.equals(other.getExpectedRevenue()))) &&
+            ((this.message==null && other.getMessage()==null) || 
+             (this.message!=null &&
+              this.message.equals(other.getMessage()))) &&
+            ((this.isInactive==null && other.getIsInactive()==null) || 
+             (this.isInactive!=null &&
+              this.isInactive.equals(other.getIsInactive()))) &&
+            ((this.local==null && other.getLocal()==null) || 
+             (this.local!=null &&
+              this.local.equals(other.getLocal()))) &&
+            ((this.totalRevenue==null && other.getTotalRevenue()==null) || 
+             (this.totalRevenue!=null &&
+              this.totalRevenue.equals(other.getTotalRevenue()))) &&
+            ((this.roi==null && other.getRoi()==null) || 
+             (this.roi!=null &&
+              this.roi.equals(other.getRoi()))) &&
+            ((this.profit==null && other.getProfit()==null) || 
+             (this.profit!=null &&
+              this.profit.equals(other.getProfit()))) &&
+            ((this.costPerCustomer==null && other.getCostPerCustomer()==null) || 
+             (this.costPerCustomer!=null &&
+              this.costPerCustomer.equals(other.getCostPerCustomer()))) &&
+            ((this.convCostPerCustomer==null && other.getConvCostPerCustomer()==null) || 
+             (this.convCostPerCustomer!=null &&
+              this.convCostPerCustomer.equals(other.getConvCostPerCustomer()))) &&
+            ((this.conversions==null && other.getConversions()==null) || 
+             (this.conversions!=null &&
+              this.conversions.equals(other.getConversions()))) &&
+            ((this.leadsGenerated==null && other.getLeadsGenerated()==null) || 
+             (this.leadsGenerated!=null &&
+              this.leadsGenerated.equals(other.getLeadsGenerated()))) &&
+            ((this.uniqueVisitors==null && other.getUniqueVisitors()==null) || 
+             (this.uniqueVisitors!=null &&
+              this.uniqueVisitors.equals(other.getUniqueVisitors()))) &&
+            ((this.vertical==null && other.getVertical()==null) || 
+             (this.vertical!=null &&
+              this.vertical.equals(other.getVertical()))) &&
+            ((this.audience==null && other.getAudience()==null) || 
+             (this.audience!=null &&
+              this.audience.equals(other.getAudience()))) &&
+            ((this.offer==null && other.getOffer()==null) || 
+             (this.offer!=null &&
+              this.offer.equals(other.getOffer()))) &&
+            ((this.promotionCode==null && other.getPromotionCode()==null) || 
+             (this.promotionCode!=null &&
+              this.promotionCode.equals(other.getPromotionCode()))) &&
+            ((this.itemList==null && other.getItemList()==null) || 
+             (this.itemList!=null &&
+              java.util.Arrays.equals(this.itemList, other.getItemList()))) &&
+            ((this.family==null && other.getFamily()==null) || 
+             (this.family!=null &&
+              this.family.equals(other.getFamily()))) &&
+            ((this.searchEngine==null && other.getSearchEngine()==null) || 
+             (this.searchEngine!=null &&
+              this.searchEngine.equals(other.getSearchEngine()))) &&
+            ((this.keyword==null && other.getKeyword()==null) || 
+             (this.keyword!=null &&
+              this.keyword.equals(other.getKeyword()))) &&
+            ((this.campaignEmailList==null && other.getCampaignEmailList()==null) || 
+             (this.campaignEmailList!=null &&
+              java.util.Arrays.equals(this.campaignEmailList, other.getCampaignEmailList()))) &&
+            ((this.campaignDirectMailList==null && other.getCampaignDirectMailList()==null) || 
+             (this.campaignDirectMailList!=null &&
+              java.util.Arrays.equals(this.campaignDirectMailList, other.getCampaignDirectMailList()))) &&
+            ((this.campaignEventList==null && other.getCampaignEventList()==null) || 
+             (this.campaignEventList!=null &&
+              java.util.Arrays.equals(this.campaignEventList, other.getCampaignEventList()))) &&
+            ((this.eventResponseList==null && other.getEventResponseList()==null) || 
+             (this.eventResponseList!=null &&
+              java.util.Arrays.equals(this.eventResponseList, other.getEventResponseList()))) &&
+            ((this.customFieldList==null && other.getCustomFieldList()==null) || 
+             (this.customFieldList!=null &&
+              java.util.Arrays.equals(this.customFieldList, other.getCustomFieldList()))) &&
+            ((this.internalId==null && other.getInternalId()==null) || 
+             (this.internalId!=null &&
+              this.internalId.equals(other.getInternalId()))) &&
+            ((this.externalId==null && other.getExternalId()==null) || 
+             (this.externalId!=null &&
+              this.externalId.equals(other.getExternalId())));
+        __equalsCalc = null;
+        return _equals;
+    }
+
+    private boolean __hashCodeCalc = false;
+    public synchronized int hashCode() {
+        if (__hashCodeCalc) {
+            return 0;
+        }
+        __hashCodeCalc = true;
+        int _hashCode = super.hashCode();
+        if (getCustomForm() != null) {
+            _hashCode += getCustomForm().hashCode();
+        }
+        if (getCampaignId() != null) {
+            _hashCode += getCampaignId().hashCode();
+        }
+        if (getTitle() != null) {
+            _hashCode += getTitle().hashCode();
+        }
+        if (getCategory() != null) {
+            _hashCode += getCategory().hashCode();
+        }
+        if (getOwner() != null) {
+            _hashCode += getOwner().hashCode();
+        }
+        if (getStartDate() != null) {
+            _hashCode += getStartDate().hashCode();
+        }
+        if (getEndDate() != null) {
+            _hashCode += getEndDate().hashCode();
+        }
+        if (getUrl() != null) {
+            _hashCode += getUrl().hashCode();
+        }
+        if (getBaseCost() != null) {
+            _hashCode += getBaseCost().hashCode();
+        }
+        if (getCost() != null) {
+            _hashCode += getCost().hashCode();
+        }
+        if (getExpectedRevenue() != null) {
+            _hashCode += getExpectedRevenue().hashCode();
+        }
+        if (getMessage() != null) {
+            _hashCode += getMessage().hashCode();
+        }
+        if (getIsInactive() != null) {
+            _hashCode += getIsInactive().hashCode();
+        }
+        if (getLocal() != null) {
+            _hashCode += getLocal().hashCode();
+        }
+        if (getTotalRevenue() != null) {
+            _hashCode += getTotalRevenue().hashCode();
+        }
+        if (getRoi() != null) {
+            _hashCode += getRoi().hashCode();
+        }
+        if (getProfit() != null) {
+            _hashCode += getProfit().hashCode();
+        }
+        if (getCostPerCustomer() != null) {
+            _hashCode += getCostPerCustomer().hashCode();
+        }
+        if (getConvCostPerCustomer() != null) {
+            _hashCode += getConvCostPerCustomer().hashCode();
+        }
+        if (getConversions() != null) {
+            _hashCode += getConversions().hashCode();
+        }
+        if (getLeadsGenerated() != null) {
+            _hashCode += getLeadsGenerated().hashCode();
+        }
+        if (getUniqueVisitors() != null) {
+            _hashCode += getUniqueVisitors().hashCode();
+        }
+        if (getVertical() != null) {
+            _hashCode += getVertical().hashCode();
+        }
+        if (getAudience() != null) {
+            _hashCode += getAudience().hashCode();
+        }
+        if (getOffer() != null) {
+            _hashCode += getOffer().hashCode();
+        }
+        if (getPromotionCode() != null) {
+            _hashCode += getPromotionCode().hashCode();
+        }
+        if (getItemList() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getItemList());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getItemList(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getFamily() != null) {
+            _hashCode += getFamily().hashCode();
+        }
+        if (getSearchEngine() != null) {
+            _hashCode += getSearchEngine().hashCode();
+        }
+        if (getKeyword() != null) {
+            _hashCode += getKeyword().hashCode();
+        }
+        if (getCampaignEmailList() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getCampaignEmailList());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getCampaignEmailList(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getCampaignDirectMailList() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getCampaignDirectMailList());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getCampaignDirectMailList(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getCampaignEventList() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getCampaignEventList());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getCampaignEventList(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getEventResponseList() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getEventResponseList());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getEventResponseList(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getCustomFieldList() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getCustomFieldList());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getCustomFieldList(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getInternalId() != null) {
+            _hashCode += getInternalId().hashCode();
+        }
+        if (getExternalId() != null) {
+            _hashCode += getExternalId().hashCode();
+        }
+        __hashCodeCalc = false;
+        return _hashCode;
+    }
+
+    // Type metadata
+    private static org.apache.axis.description.TypeDesc typeDesc =
+        new org.apache.axis.description.TypeDesc(Campaign.class, true);
+
+    static {
+        typeDesc.setXmlType(new javax.xml.namespace.QName("urn:marketing_2018_2.lists.webservices.netsuite.com", "Campaign"));
+        org.apache.axis.description.AttributeDesc attrField = new org.apache.axis.description.AttributeDesc();
+        attrField.setFieldName("internalId");
+        attrField.setXmlName(new javax.xml.namespace.QName("", "internalId"));
+        attrField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        typeDesc.addFieldDesc(attrField);
+        attrField = new org.apache.axis.description.AttributeDesc();
+        attrField.setFieldName("externalId");
+        attrField.setXmlName(new javax.xml.namespace.QName("", "externalId"));
+        attrField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        typeDesc.addFieldDesc(attrField);
+        org.apache.axis.description.ElementDesc elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("customForm");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:marketing_2018_2.lists.webservices.netsuite.com", "customForm"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("campaignId");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:marketing_2018_2.lists.webservices.netsuite.com", "campaignId"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("title");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:marketing_2018_2.lists.webservices.netsuite.com", "title"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("category");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:marketing_2018_2.lists.webservices.netsuite.com", "category"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("owner");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:marketing_2018_2.lists.webservices.netsuite.com", "owner"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("startDate");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:marketing_2018_2.lists.webservices.netsuite.com", "startDate"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "dateTime"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("endDate");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:marketing_2018_2.lists.webservices.netsuite.com", "endDate"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "dateTime"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("url");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:marketing_2018_2.lists.webservices.netsuite.com", "url"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("baseCost");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:marketing_2018_2.lists.webservices.netsuite.com", "baseCost"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "double"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("cost");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:marketing_2018_2.lists.webservices.netsuite.com", "cost"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "double"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("expectedRevenue");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:marketing_2018_2.lists.webservices.netsuite.com", "expectedRevenue"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "double"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("message");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:marketing_2018_2.lists.webservices.netsuite.com", "message"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("isInactive");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:marketing_2018_2.lists.webservices.netsuite.com", "isInactive"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("local");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:marketing_2018_2.lists.webservices.netsuite.com", "local"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("totalRevenue");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:marketing_2018_2.lists.webservices.netsuite.com", "totalRevenue"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "double"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("roi");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:marketing_2018_2.lists.webservices.netsuite.com", "roi"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "double"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("profit");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:marketing_2018_2.lists.webservices.netsuite.com", "profit"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "double"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("costPerCustomer");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:marketing_2018_2.lists.webservices.netsuite.com", "costPerCustomer"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "double"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("convCostPerCustomer");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:marketing_2018_2.lists.webservices.netsuite.com", "convCostPerCustomer"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "double"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("conversions");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:marketing_2018_2.lists.webservices.netsuite.com", "conversions"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "long"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("leadsGenerated");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:marketing_2018_2.lists.webservices.netsuite.com", "leadsGenerated"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "long"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("uniqueVisitors");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:marketing_2018_2.lists.webservices.netsuite.com", "uniqueVisitors"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "long"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("vertical");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:marketing_2018_2.lists.webservices.netsuite.com", "vertical"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("audience");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:marketing_2018_2.lists.webservices.netsuite.com", "audience"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("offer");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:marketing_2018_2.lists.webservices.netsuite.com", "offer"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("promotionCode");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:marketing_2018_2.lists.webservices.netsuite.com", "promotionCode"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("itemList");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:marketing_2018_2.lists.webservices.netsuite.com", "itemList"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "recordRef"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("family");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:marketing_2018_2.lists.webservices.netsuite.com", "family"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("searchEngine");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:marketing_2018_2.lists.webservices.netsuite.com", "searchEngine"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("keyword");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:marketing_2018_2.lists.webservices.netsuite.com", "keyword"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("campaignEmailList");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:marketing_2018_2.lists.webservices.netsuite.com", "campaignEmailList"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:marketing_2018_2.lists.webservices.netsuite.com", "CampaignEmail"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:marketing_2018_2.lists.webservices.netsuite.com", "campaignEmail"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("campaignDirectMailList");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:marketing_2018_2.lists.webservices.netsuite.com", "campaignDirectMailList"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:marketing_2018_2.lists.webservices.netsuite.com", "CampaignDirectMail"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:marketing_2018_2.lists.webservices.netsuite.com", "campaignDirectMail"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("campaignEventList");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:marketing_2018_2.lists.webservices.netsuite.com", "campaignEventList"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:marketing_2018_2.lists.webservices.netsuite.com", "CampaignEvent"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:marketing_2018_2.lists.webservices.netsuite.com", "campaignEvent"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("eventResponseList");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:marketing_2018_2.lists.webservices.netsuite.com", "eventResponseList"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:marketing_2018_2.lists.webservices.netsuite.com", "CampaignEventResponse"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:marketing_2018_2.lists.webservices.netsuite.com", "eventResponse"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("customFieldList");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:marketing_2018_2.lists.webservices.netsuite.com", "customFieldList"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "CustomFieldRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "customField"));
+        typeDesc.addFieldDesc(elemField);
+    }
+
+    /**
+     * Return type metadata object
+     */
+    public static org.apache.axis.description.TypeDesc getTypeDesc() {
+        return typeDesc;
+    }
+
+    /**
+     * Get Custom Serializer
+     */
+    public static org.apache.axis.encoding.Serializer getSerializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanSerializer(
+            _javaType, _xmlType, typeDesc);
+    }
+
+    /**
+     * Get Custom Deserializer
+     */
+    public static org.apache.axis.encoding.Deserializer getDeserializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanDeserializer(
+            _javaType, _xmlType, typeDesc);
     }
 
 }

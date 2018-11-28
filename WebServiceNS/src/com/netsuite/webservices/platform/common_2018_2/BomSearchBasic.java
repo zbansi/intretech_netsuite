@@ -1,500 +1,766 @@
+/**
+ * BomSearchBasic.java
+ *
+ * This file was auto-generated from WSDL
+ * by the Apache Axis 1.4 Jul 28, 2010 (04:07:04 PDT) WSDL2Java emitter.
+ */
 
 package com.netsuite.webservices.platform.common_2018_2;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlType;
-import com.netsuite.webservices.platform.core_2018_2.SearchBooleanField;
-import com.netsuite.webservices.platform.core_2018_2.SearchDateField;
-import com.netsuite.webservices.platform.core_2018_2.SearchLongField;
-import com.netsuite.webservices.platform.core_2018_2.SearchMultiSelectField;
-import com.netsuite.webservices.platform.core_2018_2.SearchRecordBasic;
-import com.netsuite.webservices.platform.core_2018_2.SearchStringField;
+public class BomSearchBasic  extends com.netsuite.webservices.platform.core_2018_2.SearchRecordBasic  implements java.io.Serializable {
+    private com.netsuite.webservices.platform.core_2018_2.SearchBooleanField availableForAllAssemblies;
 
+    private com.netsuite.webservices.platform.core_2018_2.SearchBooleanField availableForAllLocations;
 
-/**
- * <p>BomSearchBasic complex type的 Java 类。
- * 
- * <p>以下模式片段指定包含在此类中的预期内容。
- * 
- * <pre>
- * &lt;complexType name="BomSearchBasic">
- *   &lt;complexContent>
- *     &lt;extension base="{urn:core_2018_2.platform.webservices.netsuite.com}SearchRecordBasic">
- *       &lt;sequence>
- *         &lt;element name="availableForAllAssemblies" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchBooleanField" minOccurs="0"/>
- *         &lt;element name="availableForAllLocations" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchBooleanField" minOccurs="0"/>
- *         &lt;element name="createdDate" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchDateField" minOccurs="0"/>
- *         &lt;element name="externalId" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchMultiSelectField" minOccurs="0"/>
- *         &lt;element name="externalIdString" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchStringField" minOccurs="0"/>
- *         &lt;element name="includeChildren" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchBooleanField" minOccurs="0"/>
- *         &lt;element name="internalId" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchMultiSelectField" minOccurs="0"/>
- *         &lt;element name="internalIdNumber" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchLongField" minOccurs="0"/>
- *         &lt;element name="isInactive" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchBooleanField" minOccurs="0"/>
- *         &lt;element name="legacyBomForAssembly" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchMultiSelectField" minOccurs="0"/>
- *         &lt;element name="memo" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchStringField" minOccurs="0"/>
- *         &lt;element name="name" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchStringField" minOccurs="0"/>
- *         &lt;element name="restrictToAssemblies" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchMultiSelectField" minOccurs="0"/>
- *         &lt;element name="restrictToLocations" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchMultiSelectField" minOccurs="0"/>
- *         &lt;element name="subsidiary" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchMultiSelectField" minOccurs="0"/>
- *         &lt;element name="useComponentYield" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchBooleanField" minOccurs="0"/>
- *         &lt;element name="usedOnAssembly" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchBooleanField" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/extension>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
- */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "BomSearchBasic", propOrder = {
-    "availableForAllAssemblies",
-    "availableForAllLocations",
-    "createdDate",
-    "externalId",
-    "externalIdString",
-    "includeChildren",
-    "internalId",
-    "internalIdNumber",
-    "isInactive",
-    "legacyBomForAssembly",
-    "memo",
-    "name",
-    "restrictToAssemblies",
-    "restrictToLocations",
-    "subsidiary",
-    "useComponentYield",
-    "usedOnAssembly"
-})
-public class BomSearchBasic
-    extends SearchRecordBasic
-{
+    private com.netsuite.webservices.platform.core_2018_2.SearchDateField createdDate;
 
-    protected SearchBooleanField availableForAllAssemblies;
-    protected SearchBooleanField availableForAllLocations;
-    protected SearchDateField createdDate;
-    protected SearchMultiSelectField externalId;
-    protected SearchStringField externalIdString;
-    protected SearchBooleanField includeChildren;
-    protected SearchMultiSelectField internalId;
-    protected SearchLongField internalIdNumber;
-    protected SearchBooleanField isInactive;
-    protected SearchMultiSelectField legacyBomForAssembly;
-    protected SearchStringField memo;
-    protected SearchStringField name;
-    protected SearchMultiSelectField restrictToAssemblies;
-    protected SearchMultiSelectField restrictToLocations;
-    protected SearchMultiSelectField subsidiary;
-    protected SearchBooleanField useComponentYield;
-    protected SearchBooleanField usedOnAssembly;
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef[] externalId;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchStringField externalIdString;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchBooleanField includeChildren;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef[] internalId;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchLongField internalIdNumber;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchBooleanField isInactive;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef[] legacyBomForAssembly;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchStringField memo;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchStringField name;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef[] restrictToAssemblies;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef[] restrictToLocations;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef[] subsidiary;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchBooleanField useComponentYield;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchBooleanField usedOnAssembly;
+
+    public BomSearchBasic() {
+    }
+
+    public BomSearchBasic(
+           com.netsuite.webservices.platform.core_2018_2.SearchBooleanField availableForAllAssemblies,
+           com.netsuite.webservices.platform.core_2018_2.SearchBooleanField availableForAllLocations,
+           com.netsuite.webservices.platform.core_2018_2.SearchDateField createdDate,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef[] externalId,
+           com.netsuite.webservices.platform.core_2018_2.SearchStringField externalIdString,
+           com.netsuite.webservices.platform.core_2018_2.SearchBooleanField includeChildren,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef[] internalId,
+           com.netsuite.webservices.platform.core_2018_2.SearchLongField internalIdNumber,
+           com.netsuite.webservices.platform.core_2018_2.SearchBooleanField isInactive,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef[] legacyBomForAssembly,
+           com.netsuite.webservices.platform.core_2018_2.SearchStringField memo,
+           com.netsuite.webservices.platform.core_2018_2.SearchStringField name,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef[] restrictToAssemblies,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef[] restrictToLocations,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef[] subsidiary,
+           com.netsuite.webservices.platform.core_2018_2.SearchBooleanField useComponentYield,
+           com.netsuite.webservices.platform.core_2018_2.SearchBooleanField usedOnAssembly) {
+        this.availableForAllAssemblies = availableForAllAssemblies;
+        this.availableForAllLocations = availableForAllLocations;
+        this.createdDate = createdDate;
+        this.externalId = externalId;
+        this.externalIdString = externalIdString;
+        this.includeChildren = includeChildren;
+        this.internalId = internalId;
+        this.internalIdNumber = internalIdNumber;
+        this.isInactive = isInactive;
+        this.legacyBomForAssembly = legacyBomForAssembly;
+        this.memo = memo;
+        this.name = name;
+        this.restrictToAssemblies = restrictToAssemblies;
+        this.restrictToLocations = restrictToLocations;
+        this.subsidiary = subsidiary;
+        this.useComponentYield = useComponentYield;
+        this.usedOnAssembly = usedOnAssembly;
+    }
+
 
     /**
-     * 获取availableForAllAssemblies属性的值。
+     * Gets the availableForAllAssemblies value for this BomSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchBooleanField }
-     *     
+     * @return availableForAllAssemblies
      */
-    public SearchBooleanField getAvailableForAllAssemblies() {
+    public com.netsuite.webservices.platform.core_2018_2.SearchBooleanField getAvailableForAllAssemblies() {
         return availableForAllAssemblies;
     }
 
-    /**
-     * 设置availableForAllAssemblies属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchBooleanField }
-     *     
-     */
-    public void setAvailableForAllAssemblies(SearchBooleanField value) {
-        this.availableForAllAssemblies = value;
-    }
 
     /**
-     * 获取availableForAllLocations属性的值。
+     * Sets the availableForAllAssemblies value for this BomSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchBooleanField }
-     *     
+     * @param availableForAllAssemblies
      */
-    public SearchBooleanField getAvailableForAllLocations() {
+    public void setAvailableForAllAssemblies(com.netsuite.webservices.platform.core_2018_2.SearchBooleanField availableForAllAssemblies) {
+        this.availableForAllAssemblies = availableForAllAssemblies;
+    }
+
+
+    /**
+     * Gets the availableForAllLocations value for this BomSearchBasic.
+     * 
+     * @return availableForAllLocations
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchBooleanField getAvailableForAllLocations() {
         return availableForAllLocations;
     }
 
-    /**
-     * 设置availableForAllLocations属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchBooleanField }
-     *     
-     */
-    public void setAvailableForAllLocations(SearchBooleanField value) {
-        this.availableForAllLocations = value;
-    }
 
     /**
-     * 获取createdDate属性的值。
+     * Sets the availableForAllLocations value for this BomSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchDateField }
-     *     
+     * @param availableForAllLocations
      */
-    public SearchDateField getCreatedDate() {
+    public void setAvailableForAllLocations(com.netsuite.webservices.platform.core_2018_2.SearchBooleanField availableForAllLocations) {
+        this.availableForAllLocations = availableForAllLocations;
+    }
+
+
+    /**
+     * Gets the createdDate value for this BomSearchBasic.
+     * 
+     * @return createdDate
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchDateField getCreatedDate() {
         return createdDate;
     }
 
-    /**
-     * 设置createdDate属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchDateField }
-     *     
-     */
-    public void setCreatedDate(SearchDateField value) {
-        this.createdDate = value;
-    }
 
     /**
-     * 获取externalId属性的值。
+     * Sets the createdDate value for this BomSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchMultiSelectField }
-     *     
+     * @param createdDate
      */
-    public SearchMultiSelectField getExternalId() {
+    public void setCreatedDate(com.netsuite.webservices.platform.core_2018_2.SearchDateField createdDate) {
+        this.createdDate = createdDate;
+    }
+
+
+    /**
+     * Gets the externalId value for this BomSearchBasic.
+     * 
+     * @return externalId
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef[] getExternalId() {
         return externalId;
     }
 
-    /**
-     * 设置externalId属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchMultiSelectField }
-     *     
-     */
-    public void setExternalId(SearchMultiSelectField value) {
-        this.externalId = value;
-    }
 
     /**
-     * 获取externalIdString属性的值。
+     * Sets the externalId value for this BomSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchStringField }
-     *     
+     * @param externalId
      */
-    public SearchStringField getExternalIdString() {
+    public void setExternalId(com.netsuite.webservices.platform.core_2018_2.RecordRef[] externalId) {
+        this.externalId = externalId;
+    }
+
+
+    /**
+     * Gets the externalIdString value for this BomSearchBasic.
+     * 
+     * @return externalIdString
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchStringField getExternalIdString() {
         return externalIdString;
     }
 
-    /**
-     * 设置externalIdString属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchStringField }
-     *     
-     */
-    public void setExternalIdString(SearchStringField value) {
-        this.externalIdString = value;
-    }
 
     /**
-     * 获取includeChildren属性的值。
+     * Sets the externalIdString value for this BomSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchBooleanField }
-     *     
+     * @param externalIdString
      */
-    public SearchBooleanField getIncludeChildren() {
+    public void setExternalIdString(com.netsuite.webservices.platform.core_2018_2.SearchStringField externalIdString) {
+        this.externalIdString = externalIdString;
+    }
+
+
+    /**
+     * Gets the includeChildren value for this BomSearchBasic.
+     * 
+     * @return includeChildren
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchBooleanField getIncludeChildren() {
         return includeChildren;
     }
 
-    /**
-     * 设置includeChildren属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchBooleanField }
-     *     
-     */
-    public void setIncludeChildren(SearchBooleanField value) {
-        this.includeChildren = value;
-    }
 
     /**
-     * 获取internalId属性的值。
+     * Sets the includeChildren value for this BomSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchMultiSelectField }
-     *     
+     * @param includeChildren
      */
-    public SearchMultiSelectField getInternalId() {
+    public void setIncludeChildren(com.netsuite.webservices.platform.core_2018_2.SearchBooleanField includeChildren) {
+        this.includeChildren = includeChildren;
+    }
+
+
+    /**
+     * Gets the internalId value for this BomSearchBasic.
+     * 
+     * @return internalId
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef[] getInternalId() {
         return internalId;
     }
 
-    /**
-     * 设置internalId属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchMultiSelectField }
-     *     
-     */
-    public void setInternalId(SearchMultiSelectField value) {
-        this.internalId = value;
-    }
 
     /**
-     * 获取internalIdNumber属性的值。
+     * Sets the internalId value for this BomSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchLongField }
-     *     
+     * @param internalId
      */
-    public SearchLongField getInternalIdNumber() {
+    public void setInternalId(com.netsuite.webservices.platform.core_2018_2.RecordRef[] internalId) {
+        this.internalId = internalId;
+    }
+
+
+    /**
+     * Gets the internalIdNumber value for this BomSearchBasic.
+     * 
+     * @return internalIdNumber
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchLongField getInternalIdNumber() {
         return internalIdNumber;
     }
 
-    /**
-     * 设置internalIdNumber属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchLongField }
-     *     
-     */
-    public void setInternalIdNumber(SearchLongField value) {
-        this.internalIdNumber = value;
-    }
 
     /**
-     * 获取isInactive属性的值。
+     * Sets the internalIdNumber value for this BomSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchBooleanField }
-     *     
+     * @param internalIdNumber
      */
-    public SearchBooleanField getIsInactive() {
+    public void setInternalIdNumber(com.netsuite.webservices.platform.core_2018_2.SearchLongField internalIdNumber) {
+        this.internalIdNumber = internalIdNumber;
+    }
+
+
+    /**
+     * Gets the isInactive value for this BomSearchBasic.
+     * 
+     * @return isInactive
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchBooleanField getIsInactive() {
         return isInactive;
     }
 
-    /**
-     * 设置isInactive属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchBooleanField }
-     *     
-     */
-    public void setIsInactive(SearchBooleanField value) {
-        this.isInactive = value;
-    }
 
     /**
-     * 获取legacyBomForAssembly属性的值。
+     * Sets the isInactive value for this BomSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchMultiSelectField }
-     *     
+     * @param isInactive
      */
-    public SearchMultiSelectField getLegacyBomForAssembly() {
+    public void setIsInactive(com.netsuite.webservices.platform.core_2018_2.SearchBooleanField isInactive) {
+        this.isInactive = isInactive;
+    }
+
+
+    /**
+     * Gets the legacyBomForAssembly value for this BomSearchBasic.
+     * 
+     * @return legacyBomForAssembly
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef[] getLegacyBomForAssembly() {
         return legacyBomForAssembly;
     }
 
-    /**
-     * 设置legacyBomForAssembly属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchMultiSelectField }
-     *     
-     */
-    public void setLegacyBomForAssembly(SearchMultiSelectField value) {
-        this.legacyBomForAssembly = value;
-    }
 
     /**
-     * 获取memo属性的值。
+     * Sets the legacyBomForAssembly value for this BomSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchStringField }
-     *     
+     * @param legacyBomForAssembly
      */
-    public SearchStringField getMemo() {
+    public void setLegacyBomForAssembly(com.netsuite.webservices.platform.core_2018_2.RecordRef[] legacyBomForAssembly) {
+        this.legacyBomForAssembly = legacyBomForAssembly;
+    }
+
+
+    /**
+     * Gets the memo value for this BomSearchBasic.
+     * 
+     * @return memo
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchStringField getMemo() {
         return memo;
     }
 
-    /**
-     * 设置memo属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchStringField }
-     *     
-     */
-    public void setMemo(SearchStringField value) {
-        this.memo = value;
-    }
 
     /**
-     * 获取name属性的值。
+     * Sets the memo value for this BomSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchStringField }
-     *     
+     * @param memo
      */
-    public SearchStringField getName() {
+    public void setMemo(com.netsuite.webservices.platform.core_2018_2.SearchStringField memo) {
+        this.memo = memo;
+    }
+
+
+    /**
+     * Gets the name value for this BomSearchBasic.
+     * 
+     * @return name
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchStringField getName() {
         return name;
     }
 
-    /**
-     * 设置name属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchStringField }
-     *     
-     */
-    public void setName(SearchStringField value) {
-        this.name = value;
-    }
 
     /**
-     * 获取restrictToAssemblies属性的值。
+     * Sets the name value for this BomSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchMultiSelectField }
-     *     
+     * @param name
      */
-    public SearchMultiSelectField getRestrictToAssemblies() {
+    public void setName(com.netsuite.webservices.platform.core_2018_2.SearchStringField name) {
+        this.name = name;
+    }
+
+
+    /**
+     * Gets the restrictToAssemblies value for this BomSearchBasic.
+     * 
+     * @return restrictToAssemblies
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef[] getRestrictToAssemblies() {
         return restrictToAssemblies;
     }
 
-    /**
-     * 设置restrictToAssemblies属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchMultiSelectField }
-     *     
-     */
-    public void setRestrictToAssemblies(SearchMultiSelectField value) {
-        this.restrictToAssemblies = value;
-    }
 
     /**
-     * 获取restrictToLocations属性的值。
+     * Sets the restrictToAssemblies value for this BomSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchMultiSelectField }
-     *     
+     * @param restrictToAssemblies
      */
-    public SearchMultiSelectField getRestrictToLocations() {
+    public void setRestrictToAssemblies(com.netsuite.webservices.platform.core_2018_2.RecordRef[] restrictToAssemblies) {
+        this.restrictToAssemblies = restrictToAssemblies;
+    }
+
+
+    /**
+     * Gets the restrictToLocations value for this BomSearchBasic.
+     * 
+     * @return restrictToLocations
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef[] getRestrictToLocations() {
         return restrictToLocations;
     }
 
-    /**
-     * 设置restrictToLocations属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchMultiSelectField }
-     *     
-     */
-    public void setRestrictToLocations(SearchMultiSelectField value) {
-        this.restrictToLocations = value;
-    }
 
     /**
-     * 获取subsidiary属性的值。
+     * Sets the restrictToLocations value for this BomSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchMultiSelectField }
-     *     
+     * @param restrictToLocations
      */
-    public SearchMultiSelectField getSubsidiary() {
+    public void setRestrictToLocations(com.netsuite.webservices.platform.core_2018_2.RecordRef[] restrictToLocations) {
+        this.restrictToLocations = restrictToLocations;
+    }
+
+
+    /**
+     * Gets the subsidiary value for this BomSearchBasic.
+     * 
+     * @return subsidiary
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef[] getSubsidiary() {
         return subsidiary;
     }
 
-    /**
-     * 设置subsidiary属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchMultiSelectField }
-     *     
-     */
-    public void setSubsidiary(SearchMultiSelectField value) {
-        this.subsidiary = value;
-    }
 
     /**
-     * 获取useComponentYield属性的值。
+     * Sets the subsidiary value for this BomSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchBooleanField }
-     *     
+     * @param subsidiary
      */
-    public SearchBooleanField getUseComponentYield() {
+    public void setSubsidiary(com.netsuite.webservices.platform.core_2018_2.RecordRef[] subsidiary) {
+        this.subsidiary = subsidiary;
+    }
+
+
+    /**
+     * Gets the useComponentYield value for this BomSearchBasic.
+     * 
+     * @return useComponentYield
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchBooleanField getUseComponentYield() {
         return useComponentYield;
     }
 
-    /**
-     * 设置useComponentYield属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchBooleanField }
-     *     
-     */
-    public void setUseComponentYield(SearchBooleanField value) {
-        this.useComponentYield = value;
-    }
 
     /**
-     * 获取usedOnAssembly属性的值。
+     * Sets the useComponentYield value for this BomSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchBooleanField }
-     *     
+     * @param useComponentYield
      */
-    public SearchBooleanField getUsedOnAssembly() {
+    public void setUseComponentYield(com.netsuite.webservices.platform.core_2018_2.SearchBooleanField useComponentYield) {
+        this.useComponentYield = useComponentYield;
+    }
+
+
+    /**
+     * Gets the usedOnAssembly value for this BomSearchBasic.
+     * 
+     * @return usedOnAssembly
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchBooleanField getUsedOnAssembly() {
         return usedOnAssembly;
     }
 
+
     /**
-     * 设置usedOnAssembly属性的值。
+     * Sets the usedOnAssembly value for this BomSearchBasic.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchBooleanField }
-     *     
+     * @param usedOnAssembly
      */
-    public void setUsedOnAssembly(SearchBooleanField value) {
-        this.usedOnAssembly = value;
+    public void setUsedOnAssembly(com.netsuite.webservices.platform.core_2018_2.SearchBooleanField usedOnAssembly) {
+        this.usedOnAssembly = usedOnAssembly;
+    }
+
+    private java.lang.Object __equalsCalc = null;
+    public synchronized boolean equals(java.lang.Object obj) {
+        if (!(obj instanceof BomSearchBasic)) return false;
+        BomSearchBasic other = (BomSearchBasic) obj;
+        if (obj == null) return false;
+        if (this == obj) return true;
+        if (__equalsCalc != null) {
+            return (__equalsCalc == obj);
+        }
+        __equalsCalc = obj;
+        boolean _equals;
+        _equals = super.equals(obj) && 
+            ((this.availableForAllAssemblies==null && other.getAvailableForAllAssemblies()==null) || 
+             (this.availableForAllAssemblies!=null &&
+              this.availableForAllAssemblies.equals(other.getAvailableForAllAssemblies()))) &&
+            ((this.availableForAllLocations==null && other.getAvailableForAllLocations()==null) || 
+             (this.availableForAllLocations!=null &&
+              this.availableForAllLocations.equals(other.getAvailableForAllLocations()))) &&
+            ((this.createdDate==null && other.getCreatedDate()==null) || 
+             (this.createdDate!=null &&
+              this.createdDate.equals(other.getCreatedDate()))) &&
+            ((this.externalId==null && other.getExternalId()==null) || 
+             (this.externalId!=null &&
+              java.util.Arrays.equals(this.externalId, other.getExternalId()))) &&
+            ((this.externalIdString==null && other.getExternalIdString()==null) || 
+             (this.externalIdString!=null &&
+              this.externalIdString.equals(other.getExternalIdString()))) &&
+            ((this.includeChildren==null && other.getIncludeChildren()==null) || 
+             (this.includeChildren!=null &&
+              this.includeChildren.equals(other.getIncludeChildren()))) &&
+            ((this.internalId==null && other.getInternalId()==null) || 
+             (this.internalId!=null &&
+              java.util.Arrays.equals(this.internalId, other.getInternalId()))) &&
+            ((this.internalIdNumber==null && other.getInternalIdNumber()==null) || 
+             (this.internalIdNumber!=null &&
+              this.internalIdNumber.equals(other.getInternalIdNumber()))) &&
+            ((this.isInactive==null && other.getIsInactive()==null) || 
+             (this.isInactive!=null &&
+              this.isInactive.equals(other.getIsInactive()))) &&
+            ((this.legacyBomForAssembly==null && other.getLegacyBomForAssembly()==null) || 
+             (this.legacyBomForAssembly!=null &&
+              java.util.Arrays.equals(this.legacyBomForAssembly, other.getLegacyBomForAssembly()))) &&
+            ((this.memo==null && other.getMemo()==null) || 
+             (this.memo!=null &&
+              this.memo.equals(other.getMemo()))) &&
+            ((this.name==null && other.getName()==null) || 
+             (this.name!=null &&
+              this.name.equals(other.getName()))) &&
+            ((this.restrictToAssemblies==null && other.getRestrictToAssemblies()==null) || 
+             (this.restrictToAssemblies!=null &&
+              java.util.Arrays.equals(this.restrictToAssemblies, other.getRestrictToAssemblies()))) &&
+            ((this.restrictToLocations==null && other.getRestrictToLocations()==null) || 
+             (this.restrictToLocations!=null &&
+              java.util.Arrays.equals(this.restrictToLocations, other.getRestrictToLocations()))) &&
+            ((this.subsidiary==null && other.getSubsidiary()==null) || 
+             (this.subsidiary!=null &&
+              java.util.Arrays.equals(this.subsidiary, other.getSubsidiary()))) &&
+            ((this.useComponentYield==null && other.getUseComponentYield()==null) || 
+             (this.useComponentYield!=null &&
+              this.useComponentYield.equals(other.getUseComponentYield()))) &&
+            ((this.usedOnAssembly==null && other.getUsedOnAssembly()==null) || 
+             (this.usedOnAssembly!=null &&
+              this.usedOnAssembly.equals(other.getUsedOnAssembly())));
+        __equalsCalc = null;
+        return _equals;
+    }
+
+    private boolean __hashCodeCalc = false;
+    public synchronized int hashCode() {
+        if (__hashCodeCalc) {
+            return 0;
+        }
+        __hashCodeCalc = true;
+        int _hashCode = super.hashCode();
+        if (getAvailableForAllAssemblies() != null) {
+            _hashCode += getAvailableForAllAssemblies().hashCode();
+        }
+        if (getAvailableForAllLocations() != null) {
+            _hashCode += getAvailableForAllLocations().hashCode();
+        }
+        if (getCreatedDate() != null) {
+            _hashCode += getCreatedDate().hashCode();
+        }
+        if (getExternalId() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getExternalId());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getExternalId(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getExternalIdString() != null) {
+            _hashCode += getExternalIdString().hashCode();
+        }
+        if (getIncludeChildren() != null) {
+            _hashCode += getIncludeChildren().hashCode();
+        }
+        if (getInternalId() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getInternalId());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getInternalId(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getInternalIdNumber() != null) {
+            _hashCode += getInternalIdNumber().hashCode();
+        }
+        if (getIsInactive() != null) {
+            _hashCode += getIsInactive().hashCode();
+        }
+        if (getLegacyBomForAssembly() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getLegacyBomForAssembly());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getLegacyBomForAssembly(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getMemo() != null) {
+            _hashCode += getMemo().hashCode();
+        }
+        if (getName() != null) {
+            _hashCode += getName().hashCode();
+        }
+        if (getRestrictToAssemblies() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getRestrictToAssemblies());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getRestrictToAssemblies(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getRestrictToLocations() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getRestrictToLocations());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getRestrictToLocations(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getSubsidiary() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getSubsidiary());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getSubsidiary(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getUseComponentYield() != null) {
+            _hashCode += getUseComponentYield().hashCode();
+        }
+        if (getUsedOnAssembly() != null) {
+            _hashCode += getUsedOnAssembly().hashCode();
+        }
+        __hashCodeCalc = false;
+        return _hashCode;
+    }
+
+    // Type metadata
+    private static org.apache.axis.description.TypeDesc typeDesc =
+        new org.apache.axis.description.TypeDesc(BomSearchBasic.class, true);
+
+    static {
+        typeDesc.setXmlType(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "BomSearchBasic"));
+        org.apache.axis.description.ElementDesc elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("availableForAllAssemblies");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "availableForAllAssemblies"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchBooleanField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("availableForAllLocations");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "availableForAllLocations"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchBooleanField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("createdDate");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "createdDate"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchDateField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("externalId");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "externalId"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "searchValue"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("externalIdString");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "externalIdString"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchStringField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("includeChildren");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "includeChildren"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchBooleanField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("internalId");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "internalId"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "searchValue"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("internalIdNumber");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "internalIdNumber"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchLongField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("isInactive");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "isInactive"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchBooleanField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("legacyBomForAssembly");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "legacyBomForAssembly"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "searchValue"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("memo");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "memo"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchStringField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("name");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "name"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchStringField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("restrictToAssemblies");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "restrictToAssemblies"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "searchValue"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("restrictToLocations");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "restrictToLocations"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "searchValue"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("subsidiary");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "subsidiary"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "searchValue"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("useComponentYield");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "useComponentYield"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchBooleanField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("usedOnAssembly");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "usedOnAssembly"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchBooleanField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+    }
+
+    /**
+     * Return type metadata object
+     */
+    public static org.apache.axis.description.TypeDesc getTypeDesc() {
+        return typeDesc;
+    }
+
+    /**
+     * Get Custom Serializer
+     */
+    public static org.apache.axis.encoding.Serializer getSerializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanSerializer(
+            _javaType, _xmlType, typeDesc);
+    }
+
+    /**
+     * Get Custom Deserializer
+     */
+    public static org.apache.axis.encoding.Deserializer getDeserializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanDeserializer(
+            _javaType, _xmlType, typeDesc);
     }
 
 }

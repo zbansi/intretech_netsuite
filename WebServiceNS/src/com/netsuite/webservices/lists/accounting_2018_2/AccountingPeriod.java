@@ -1,502 +1,722 @@
+/**
+ * AccountingPeriod.java
+ *
+ * This file was auto-generated from WSDL
+ * by the Apache Axis 1.4 Jul 28, 2010 (04:07:04 PDT) WSDL2Java emitter.
+ */
 
 package com.netsuite.webservices.lists.accounting_2018_2;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlAttribute;
-import javax.xml.bind.annotation.XmlSchemaType;
-import javax.xml.bind.annotation.XmlType;
-import javax.xml.datatype.XMLGregorianCalendar;
-import com.netsuite.webservices.platform.core_2018_2.Record;
-import com.netsuite.webservices.platform.core_2018_2.RecordRef;
+public class AccountingPeriod  extends com.netsuite.webservices.platform.core_2018_2.Record  implements java.io.Serializable {
+    private java.lang.String periodName;
 
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef parent;
 
-/**
- * <p>AccountingPeriod complex type的 Java 类。
- * 
- * <p>以下模式片段指定包含在此类中的预期内容。
- * 
- * <pre>
- * &lt;complexType name="AccountingPeriod">
- *   &lt;complexContent>
- *     &lt;extension base="{urn:core_2018_2.platform.webservices.netsuite.com}Record">
- *       &lt;sequence>
- *         &lt;element name="periodName" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="parent" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="startDate" type="{http://www.w3.org/2001/XMLSchema}dateTime" minOccurs="0"/>
- *         &lt;element name="endDate" type="{http://www.w3.org/2001/XMLSchema}dateTime" minOccurs="0"/>
- *         &lt;element name="fiscalCalendar" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="closedOnDate" type="{http://www.w3.org/2001/XMLSchema}dateTime" minOccurs="0"/>
- *         &lt;element name="isAdjust" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         &lt;element name="fiscalCalendarsList" type="{urn:accounting_2018_2.lists.webservices.netsuite.com}AccountingPeriodFiscalCalendarsList" minOccurs="0"/>
- *         &lt;element name="isQuarter" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         &lt;element name="isYear" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         &lt;element name="closed" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         &lt;element name="apLocked" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         &lt;element name="arLocked" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         &lt;element name="payrollLocked" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         &lt;element name="allLocked" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         &lt;element name="allowNonGLChanges" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *       &lt;/sequence>
- *       &lt;attribute name="internalId" type="{http://www.w3.org/2001/XMLSchema}string" />
- *     &lt;/extension>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
- */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "AccountingPeriod", propOrder = {
-    "periodName",
-    "parent",
-    "startDate",
-    "endDate",
-    "fiscalCalendar",
-    "closedOnDate",
-    "isAdjust",
-    "fiscalCalendarsList",
-    "isQuarter",
-    "isYear",
-    "closed",
-    "apLocked",
-    "arLocked",
-    "payrollLocked",
-    "allLocked",
-    "allowNonGLChanges"
-})
-public class AccountingPeriod
-    extends Record
-{
+    private java.util.Calendar startDate;
 
-    protected String periodName;
-    protected RecordRef parent;
-    @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar startDate;
-    @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar endDate;
-    protected RecordRef fiscalCalendar;
-    @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar closedOnDate;
-    protected Boolean isAdjust;
-    protected AccountingPeriodFiscalCalendarsList fiscalCalendarsList;
-    protected Boolean isQuarter;
-    protected Boolean isYear;
-    protected Boolean closed;
-    protected Boolean apLocked;
-    protected Boolean arLocked;
-    protected Boolean payrollLocked;
-    protected Boolean allLocked;
-    protected Boolean allowNonGLChanges;
-    @XmlAttribute(name = "internalId")
-    protected String internalId;
+    private java.util.Calendar endDate;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef fiscalCalendar;
+
+    private java.util.Calendar closedOnDate;
+
+    private java.lang.Boolean isAdjust;
+
+    private com.netsuite.webservices.lists.accounting_2018_2.AccountingPeriodFiscalCalendars[] fiscalCalendarsList;
+
+    private java.lang.Boolean isQuarter;
+
+    private java.lang.Boolean isYear;
+
+    private java.lang.Boolean closed;
+
+    private java.lang.Boolean apLocked;
+
+    private java.lang.Boolean arLocked;
+
+    private java.lang.Boolean payrollLocked;
+
+    private java.lang.Boolean allLocked;
+
+    private java.lang.Boolean allowNonGLChanges;
+
+    private java.lang.String internalId;  // attribute
+
+    public AccountingPeriod() {
+    }
+
+    public AccountingPeriod(
+           java.lang.String[] nullFieldList,
+           java.lang.String internalId,
+           java.lang.String periodName,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef parent,
+           java.util.Calendar startDate,
+           java.util.Calendar endDate,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef fiscalCalendar,
+           java.util.Calendar closedOnDate,
+           java.lang.Boolean isAdjust,
+           com.netsuite.webservices.lists.accounting_2018_2.AccountingPeriodFiscalCalendars[] fiscalCalendarsList,
+           java.lang.Boolean isQuarter,
+           java.lang.Boolean isYear,
+           java.lang.Boolean closed,
+           java.lang.Boolean apLocked,
+           java.lang.Boolean arLocked,
+           java.lang.Boolean payrollLocked,
+           java.lang.Boolean allLocked,
+           java.lang.Boolean allowNonGLChanges) {
+        super(
+            nullFieldList);
+        this.internalId = internalId;
+        this.periodName = periodName;
+        this.parent = parent;
+        this.startDate = startDate;
+        this.endDate = endDate;
+        this.fiscalCalendar = fiscalCalendar;
+        this.closedOnDate = closedOnDate;
+        this.isAdjust = isAdjust;
+        this.fiscalCalendarsList = fiscalCalendarsList;
+        this.isQuarter = isQuarter;
+        this.isYear = isYear;
+        this.closed = closed;
+        this.apLocked = apLocked;
+        this.arLocked = arLocked;
+        this.payrollLocked = payrollLocked;
+        this.allLocked = allLocked;
+        this.allowNonGLChanges = allowNonGLChanges;
+    }
+
 
     /**
-     * 获取periodName属性的值。
+     * Gets the periodName value for this AccountingPeriod.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @return periodName
      */
-    public String getPeriodName() {
+    public java.lang.String getPeriodName() {
         return periodName;
     }
 
-    /**
-     * 设置periodName属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setPeriodName(String value) {
-        this.periodName = value;
-    }
 
     /**
-     * 获取parent属性的值。
+     * Sets the periodName value for this AccountingPeriod.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param periodName
      */
-    public RecordRef getParent() {
+    public void setPeriodName(java.lang.String periodName) {
+        this.periodName = periodName;
+    }
+
+
+    /**
+     * Gets the parent value for this AccountingPeriod.
+     * 
+     * @return parent
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getParent() {
         return parent;
     }
 
-    /**
-     * 设置parent属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setParent(RecordRef value) {
-        this.parent = value;
-    }
 
     /**
-     * 获取startDate属性的值。
+     * Sets the parent value for this AccountingPeriod.
      * 
-     * @return
-     *     possible object is
-     *     {@link XMLGregorianCalendar }
-     *     
+     * @param parent
      */
-    public XMLGregorianCalendar getStartDate() {
+    public void setParent(com.netsuite.webservices.platform.core_2018_2.RecordRef parent) {
+        this.parent = parent;
+    }
+
+
+    /**
+     * Gets the startDate value for this AccountingPeriod.
+     * 
+     * @return startDate
+     */
+    public java.util.Calendar getStartDate() {
         return startDate;
     }
 
-    /**
-     * 设置startDate属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link XMLGregorianCalendar }
-     *     
-     */
-    public void setStartDate(XMLGregorianCalendar value) {
-        this.startDate = value;
-    }
 
     /**
-     * 获取endDate属性的值。
+     * Sets the startDate value for this AccountingPeriod.
      * 
-     * @return
-     *     possible object is
-     *     {@link XMLGregorianCalendar }
-     *     
+     * @param startDate
      */
-    public XMLGregorianCalendar getEndDate() {
+    public void setStartDate(java.util.Calendar startDate) {
+        this.startDate = startDate;
+    }
+
+
+    /**
+     * Gets the endDate value for this AccountingPeriod.
+     * 
+     * @return endDate
+     */
+    public java.util.Calendar getEndDate() {
         return endDate;
     }
 
-    /**
-     * 设置endDate属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link XMLGregorianCalendar }
-     *     
-     */
-    public void setEndDate(XMLGregorianCalendar value) {
-        this.endDate = value;
-    }
 
     /**
-     * 获取fiscalCalendar属性的值。
+     * Sets the endDate value for this AccountingPeriod.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param endDate
      */
-    public RecordRef getFiscalCalendar() {
+    public void setEndDate(java.util.Calendar endDate) {
+        this.endDate = endDate;
+    }
+
+
+    /**
+     * Gets the fiscalCalendar value for this AccountingPeriod.
+     * 
+     * @return fiscalCalendar
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getFiscalCalendar() {
         return fiscalCalendar;
     }
 
-    /**
-     * 设置fiscalCalendar属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setFiscalCalendar(RecordRef value) {
-        this.fiscalCalendar = value;
-    }
 
     /**
-     * 获取closedOnDate属性的值。
+     * Sets the fiscalCalendar value for this AccountingPeriod.
      * 
-     * @return
-     *     possible object is
-     *     {@link XMLGregorianCalendar }
-     *     
+     * @param fiscalCalendar
      */
-    public XMLGregorianCalendar getClosedOnDate() {
+    public void setFiscalCalendar(com.netsuite.webservices.platform.core_2018_2.RecordRef fiscalCalendar) {
+        this.fiscalCalendar = fiscalCalendar;
+    }
+
+
+    /**
+     * Gets the closedOnDate value for this AccountingPeriod.
+     * 
+     * @return closedOnDate
+     */
+    public java.util.Calendar getClosedOnDate() {
         return closedOnDate;
     }
 
-    /**
-     * 设置closedOnDate属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link XMLGregorianCalendar }
-     *     
-     */
-    public void setClosedOnDate(XMLGregorianCalendar value) {
-        this.closedOnDate = value;
-    }
 
     /**
-     * 获取isAdjust属性的值。
+     * Sets the closedOnDate value for this AccountingPeriod.
      * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
+     * @param closedOnDate
      */
-    public Boolean isIsAdjust() {
+    public void setClosedOnDate(java.util.Calendar closedOnDate) {
+        this.closedOnDate = closedOnDate;
+    }
+
+
+    /**
+     * Gets the isAdjust value for this AccountingPeriod.
+     * 
+     * @return isAdjust
+     */
+    public java.lang.Boolean getIsAdjust() {
         return isAdjust;
     }
 
-    /**
-     * 设置isAdjust属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
-     */
-    public void setIsAdjust(Boolean value) {
-        this.isAdjust = value;
-    }
 
     /**
-     * 获取fiscalCalendarsList属性的值。
+     * Sets the isAdjust value for this AccountingPeriod.
      * 
-     * @return
-     *     possible object is
-     *     {@link AccountingPeriodFiscalCalendarsList }
-     *     
+     * @param isAdjust
      */
-    public AccountingPeriodFiscalCalendarsList getFiscalCalendarsList() {
+    public void setIsAdjust(java.lang.Boolean isAdjust) {
+        this.isAdjust = isAdjust;
+    }
+
+
+    /**
+     * Gets the fiscalCalendarsList value for this AccountingPeriod.
+     * 
+     * @return fiscalCalendarsList
+     */
+    public com.netsuite.webservices.lists.accounting_2018_2.AccountingPeriodFiscalCalendars[] getFiscalCalendarsList() {
         return fiscalCalendarsList;
     }
 
-    /**
-     * 设置fiscalCalendarsList属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link AccountingPeriodFiscalCalendarsList }
-     *     
-     */
-    public void setFiscalCalendarsList(AccountingPeriodFiscalCalendarsList value) {
-        this.fiscalCalendarsList = value;
-    }
 
     /**
-     * 获取isQuarter属性的值。
+     * Sets the fiscalCalendarsList value for this AccountingPeriod.
      * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
+     * @param fiscalCalendarsList
      */
-    public Boolean isIsQuarter() {
+    public void setFiscalCalendarsList(com.netsuite.webservices.lists.accounting_2018_2.AccountingPeriodFiscalCalendars[] fiscalCalendarsList) {
+        this.fiscalCalendarsList = fiscalCalendarsList;
+    }
+
+
+    /**
+     * Gets the isQuarter value for this AccountingPeriod.
+     * 
+     * @return isQuarter
+     */
+    public java.lang.Boolean getIsQuarter() {
         return isQuarter;
     }
 
-    /**
-     * 设置isQuarter属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
-     */
-    public void setIsQuarter(Boolean value) {
-        this.isQuarter = value;
-    }
 
     /**
-     * 获取isYear属性的值。
+     * Sets the isQuarter value for this AccountingPeriod.
      * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
+     * @param isQuarter
      */
-    public Boolean isIsYear() {
+    public void setIsQuarter(java.lang.Boolean isQuarter) {
+        this.isQuarter = isQuarter;
+    }
+
+
+    /**
+     * Gets the isYear value for this AccountingPeriod.
+     * 
+     * @return isYear
+     */
+    public java.lang.Boolean getIsYear() {
         return isYear;
     }
 
-    /**
-     * 设置isYear属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
-     */
-    public void setIsYear(Boolean value) {
-        this.isYear = value;
-    }
 
     /**
-     * 获取closed属性的值。
+     * Sets the isYear value for this AccountingPeriod.
      * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
+     * @param isYear
      */
-    public Boolean isClosed() {
+    public void setIsYear(java.lang.Boolean isYear) {
+        this.isYear = isYear;
+    }
+
+
+    /**
+     * Gets the closed value for this AccountingPeriod.
+     * 
+     * @return closed
+     */
+    public java.lang.Boolean getClosed() {
         return closed;
     }
 
-    /**
-     * 设置closed属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
-     */
-    public void setClosed(Boolean value) {
-        this.closed = value;
-    }
 
     /**
-     * 获取apLocked属性的值。
+     * Sets the closed value for this AccountingPeriod.
      * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
+     * @param closed
      */
-    public Boolean isApLocked() {
+    public void setClosed(java.lang.Boolean closed) {
+        this.closed = closed;
+    }
+
+
+    /**
+     * Gets the apLocked value for this AccountingPeriod.
+     * 
+     * @return apLocked
+     */
+    public java.lang.Boolean getApLocked() {
         return apLocked;
     }
 
-    /**
-     * 设置apLocked属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
-     */
-    public void setApLocked(Boolean value) {
-        this.apLocked = value;
-    }
 
     /**
-     * 获取arLocked属性的值。
+     * Sets the apLocked value for this AccountingPeriod.
      * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
+     * @param apLocked
      */
-    public Boolean isArLocked() {
+    public void setApLocked(java.lang.Boolean apLocked) {
+        this.apLocked = apLocked;
+    }
+
+
+    /**
+     * Gets the arLocked value for this AccountingPeriod.
+     * 
+     * @return arLocked
+     */
+    public java.lang.Boolean getArLocked() {
         return arLocked;
     }
 
-    /**
-     * 设置arLocked属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
-     */
-    public void setArLocked(Boolean value) {
-        this.arLocked = value;
-    }
 
     /**
-     * 获取payrollLocked属性的值。
+     * Sets the arLocked value for this AccountingPeriod.
      * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
+     * @param arLocked
      */
-    public Boolean isPayrollLocked() {
+    public void setArLocked(java.lang.Boolean arLocked) {
+        this.arLocked = arLocked;
+    }
+
+
+    /**
+     * Gets the payrollLocked value for this AccountingPeriod.
+     * 
+     * @return payrollLocked
+     */
+    public java.lang.Boolean getPayrollLocked() {
         return payrollLocked;
     }
 
-    /**
-     * 设置payrollLocked属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
-     */
-    public void setPayrollLocked(Boolean value) {
-        this.payrollLocked = value;
-    }
 
     /**
-     * 获取allLocked属性的值。
+     * Sets the payrollLocked value for this AccountingPeriod.
      * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
+     * @param payrollLocked
      */
-    public Boolean isAllLocked() {
+    public void setPayrollLocked(java.lang.Boolean payrollLocked) {
+        this.payrollLocked = payrollLocked;
+    }
+
+
+    /**
+     * Gets the allLocked value for this AccountingPeriod.
+     * 
+     * @return allLocked
+     */
+    public java.lang.Boolean getAllLocked() {
         return allLocked;
     }
 
-    /**
-     * 设置allLocked属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
-     */
-    public void setAllLocked(Boolean value) {
-        this.allLocked = value;
-    }
 
     /**
-     * 获取allowNonGLChanges属性的值。
+     * Sets the allLocked value for this AccountingPeriod.
      * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
+     * @param allLocked
      */
-    public Boolean isAllowNonGLChanges() {
+    public void setAllLocked(java.lang.Boolean allLocked) {
+        this.allLocked = allLocked;
+    }
+
+
+    /**
+     * Gets the allowNonGLChanges value for this AccountingPeriod.
+     * 
+     * @return allowNonGLChanges
+     */
+    public java.lang.Boolean getAllowNonGLChanges() {
         return allowNonGLChanges;
     }
 
-    /**
-     * 设置allowNonGLChanges属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
-     */
-    public void setAllowNonGLChanges(Boolean value) {
-        this.allowNonGLChanges = value;
-    }
 
     /**
-     * 获取internalId属性的值。
+     * Sets the allowNonGLChanges value for this AccountingPeriod.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param allowNonGLChanges
      */
-    public String getInternalId() {
+    public void setAllowNonGLChanges(java.lang.Boolean allowNonGLChanges) {
+        this.allowNonGLChanges = allowNonGLChanges;
+    }
+
+
+    /**
+     * Gets the internalId value for this AccountingPeriod.
+     * 
+     * @return internalId
+     */
+    public java.lang.String getInternalId() {
         return internalId;
     }
 
+
     /**
-     * 设置internalId属性的值。
+     * Sets the internalId value for this AccountingPeriod.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     * @param internalId
      */
-    public void setInternalId(String value) {
-        this.internalId = value;
+    public void setInternalId(java.lang.String internalId) {
+        this.internalId = internalId;
+    }
+
+    private java.lang.Object __equalsCalc = null;
+    public synchronized boolean equals(java.lang.Object obj) {
+        if (!(obj instanceof AccountingPeriod)) return false;
+        AccountingPeriod other = (AccountingPeriod) obj;
+        if (obj == null) return false;
+        if (this == obj) return true;
+        if (__equalsCalc != null) {
+            return (__equalsCalc == obj);
+        }
+        __equalsCalc = obj;
+        boolean _equals;
+        _equals = super.equals(obj) && 
+            ((this.periodName==null && other.getPeriodName()==null) || 
+             (this.periodName!=null &&
+              this.periodName.equals(other.getPeriodName()))) &&
+            ((this.parent==null && other.getParent()==null) || 
+             (this.parent!=null &&
+              this.parent.equals(other.getParent()))) &&
+            ((this.startDate==null && other.getStartDate()==null) || 
+             (this.startDate!=null &&
+              this.startDate.equals(other.getStartDate()))) &&
+            ((this.endDate==null && other.getEndDate()==null) || 
+             (this.endDate!=null &&
+              this.endDate.equals(other.getEndDate()))) &&
+            ((this.fiscalCalendar==null && other.getFiscalCalendar()==null) || 
+             (this.fiscalCalendar!=null &&
+              this.fiscalCalendar.equals(other.getFiscalCalendar()))) &&
+            ((this.closedOnDate==null && other.getClosedOnDate()==null) || 
+             (this.closedOnDate!=null &&
+              this.closedOnDate.equals(other.getClosedOnDate()))) &&
+            ((this.isAdjust==null && other.getIsAdjust()==null) || 
+             (this.isAdjust!=null &&
+              this.isAdjust.equals(other.getIsAdjust()))) &&
+            ((this.fiscalCalendarsList==null && other.getFiscalCalendarsList()==null) || 
+             (this.fiscalCalendarsList!=null &&
+              java.util.Arrays.equals(this.fiscalCalendarsList, other.getFiscalCalendarsList()))) &&
+            ((this.isQuarter==null && other.getIsQuarter()==null) || 
+             (this.isQuarter!=null &&
+              this.isQuarter.equals(other.getIsQuarter()))) &&
+            ((this.isYear==null && other.getIsYear()==null) || 
+             (this.isYear!=null &&
+              this.isYear.equals(other.getIsYear()))) &&
+            ((this.closed==null && other.getClosed()==null) || 
+             (this.closed!=null &&
+              this.closed.equals(other.getClosed()))) &&
+            ((this.apLocked==null && other.getApLocked()==null) || 
+             (this.apLocked!=null &&
+              this.apLocked.equals(other.getApLocked()))) &&
+            ((this.arLocked==null && other.getArLocked()==null) || 
+             (this.arLocked!=null &&
+              this.arLocked.equals(other.getArLocked()))) &&
+            ((this.payrollLocked==null && other.getPayrollLocked()==null) || 
+             (this.payrollLocked!=null &&
+              this.payrollLocked.equals(other.getPayrollLocked()))) &&
+            ((this.allLocked==null && other.getAllLocked()==null) || 
+             (this.allLocked!=null &&
+              this.allLocked.equals(other.getAllLocked()))) &&
+            ((this.allowNonGLChanges==null && other.getAllowNonGLChanges()==null) || 
+             (this.allowNonGLChanges!=null &&
+              this.allowNonGLChanges.equals(other.getAllowNonGLChanges()))) &&
+            ((this.internalId==null && other.getInternalId()==null) || 
+             (this.internalId!=null &&
+              this.internalId.equals(other.getInternalId())));
+        __equalsCalc = null;
+        return _equals;
+    }
+
+    private boolean __hashCodeCalc = false;
+    public synchronized int hashCode() {
+        if (__hashCodeCalc) {
+            return 0;
+        }
+        __hashCodeCalc = true;
+        int _hashCode = super.hashCode();
+        if (getPeriodName() != null) {
+            _hashCode += getPeriodName().hashCode();
+        }
+        if (getParent() != null) {
+            _hashCode += getParent().hashCode();
+        }
+        if (getStartDate() != null) {
+            _hashCode += getStartDate().hashCode();
+        }
+        if (getEndDate() != null) {
+            _hashCode += getEndDate().hashCode();
+        }
+        if (getFiscalCalendar() != null) {
+            _hashCode += getFiscalCalendar().hashCode();
+        }
+        if (getClosedOnDate() != null) {
+            _hashCode += getClosedOnDate().hashCode();
+        }
+        if (getIsAdjust() != null) {
+            _hashCode += getIsAdjust().hashCode();
+        }
+        if (getFiscalCalendarsList() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getFiscalCalendarsList());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getFiscalCalendarsList(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getIsQuarter() != null) {
+            _hashCode += getIsQuarter().hashCode();
+        }
+        if (getIsYear() != null) {
+            _hashCode += getIsYear().hashCode();
+        }
+        if (getClosed() != null) {
+            _hashCode += getClosed().hashCode();
+        }
+        if (getApLocked() != null) {
+            _hashCode += getApLocked().hashCode();
+        }
+        if (getArLocked() != null) {
+            _hashCode += getArLocked().hashCode();
+        }
+        if (getPayrollLocked() != null) {
+            _hashCode += getPayrollLocked().hashCode();
+        }
+        if (getAllLocked() != null) {
+            _hashCode += getAllLocked().hashCode();
+        }
+        if (getAllowNonGLChanges() != null) {
+            _hashCode += getAllowNonGLChanges().hashCode();
+        }
+        if (getInternalId() != null) {
+            _hashCode += getInternalId().hashCode();
+        }
+        __hashCodeCalc = false;
+        return _hashCode;
+    }
+
+    // Type metadata
+    private static org.apache.axis.description.TypeDesc typeDesc =
+        new org.apache.axis.description.TypeDesc(AccountingPeriod.class, true);
+
+    static {
+        typeDesc.setXmlType(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "AccountingPeriod"));
+        org.apache.axis.description.AttributeDesc attrField = new org.apache.axis.description.AttributeDesc();
+        attrField.setFieldName("internalId");
+        attrField.setXmlName(new javax.xml.namespace.QName("", "internalId"));
+        attrField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        typeDesc.addFieldDesc(attrField);
+        org.apache.axis.description.ElementDesc elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("periodName");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "periodName"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("parent");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "parent"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("startDate");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "startDate"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "dateTime"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("endDate");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "endDate"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "dateTime"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("fiscalCalendar");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "fiscalCalendar"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("closedOnDate");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "closedOnDate"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "dateTime"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("isAdjust");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "isAdjust"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("fiscalCalendarsList");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "fiscalCalendarsList"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "AccountingPeriodFiscalCalendars"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "accountingPeriodFiscalCalendars"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("isQuarter");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "isQuarter"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("isYear");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "isYear"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("closed");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "closed"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("apLocked");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "apLocked"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("arLocked");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "arLocked"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("payrollLocked");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "payrollLocked"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("allLocked");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "allLocked"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("allowNonGLChanges");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "allowNonGLChanges"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+    }
+
+    /**
+     * Return type metadata object
+     */
+    public static org.apache.axis.description.TypeDesc getTypeDesc() {
+        return typeDesc;
+    }
+
+    /**
+     * Get Custom Serializer
+     */
+    public static org.apache.axis.encoding.Serializer getSerializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanSerializer(
+            _javaType, _xmlType, typeDesc);
+    }
+
+    /**
+     * Get Custom Deserializer
+     */
+    public static org.apache.axis.encoding.Deserializer getDeserializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanDeserializer(
+            _javaType, _xmlType, typeDesc);
     }
 
 }

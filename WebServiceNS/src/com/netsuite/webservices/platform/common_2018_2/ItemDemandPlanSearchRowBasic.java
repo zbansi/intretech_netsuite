@@ -1,615 +1,1047 @@
+/**
+ * ItemDemandPlanSearchRowBasic.java
+ *
+ * This file was auto-generated from WSDL
+ * by the Apache Axis 1.4 Jul 28, 2010 (04:07:04 PDT) WSDL2Java emitter.
+ */
 
 package com.netsuite.webservices.platform.common_2018_2;
 
-import java.util.ArrayList;
-import java.util.List;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlType;
-import com.netsuite.webservices.platform.core_2018_2.SearchColumnCustomFieldList;
-import com.netsuite.webservices.platform.core_2018_2.SearchColumnDateField;
-import com.netsuite.webservices.platform.core_2018_2.SearchColumnDoubleField;
-import com.netsuite.webservices.platform.core_2018_2.SearchColumnLongField;
-import com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField;
-import com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField;
-import com.netsuite.webservices.platform.core_2018_2.SearchRowBasic;
+public class ItemDemandPlanSearchRowBasic  extends com.netsuite.webservices.platform.core_2018_2.SearchRowBasic  implements java.io.Serializable {
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] alternateSourceItem;
 
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnLongField[] analysisDuration;
 
-/**
- * <p>ItemDemandPlanSearchRowBasic complex type的 Java 类。
- * 
- * <p>以下模式片段指定包含在此类中的预期内容。
- * 
- * <pre>
- * &lt;complexType name="ItemDemandPlanSearchRowBasic">
- *   &lt;complexContent>
- *     &lt;extension base="{urn:core_2018_2.platform.webservices.netsuite.com}SearchRowBasic">
- *       &lt;sequence>
- *         &lt;element name="alternateSourceItem" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnSelectField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="analysisDuration" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnLongField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="demandDate" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnDateField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="externalId" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnSelectField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="internalId" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnSelectField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="item" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnSelectField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="lastModifiedDate" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnDateField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="location" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnSelectField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="memo" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnStringField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="projectionDuration" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnLongField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="projectionInterval" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnStringField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="projectionMethod" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnStringField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="projectionStartDate" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnDateField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="quantity" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnDoubleField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="quantityUom" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnDoubleField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="subsidiary" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnSelectField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="units" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnSelectField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="customFieldList" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnCustomFieldList" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/extension>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
- */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "ItemDemandPlanSearchRowBasic", propOrder = {
-    "alternateSourceItem",
-    "analysisDuration",
-    "demandDate",
-    "externalId",
-    "internalId",
-    "item",
-    "lastModifiedDate",
-    "location",
-    "memo",
-    "projectionDuration",
-    "projectionInterval",
-    "projectionMethod",
-    "projectionStartDate",
-    "quantity",
-    "quantityUom",
-    "subsidiary",
-    "units",
-    "customFieldList"
-})
-public class ItemDemandPlanSearchRowBasic
-    extends SearchRowBasic
-{
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnDateField[] demandDate;
 
-    protected List<SearchColumnSelectField> alternateSourceItem;
-    protected List<SearchColumnLongField> analysisDuration;
-    protected List<SearchColumnDateField> demandDate;
-    protected List<SearchColumnSelectField> externalId;
-    protected List<SearchColumnSelectField> internalId;
-    protected List<SearchColumnSelectField> item;
-    protected List<SearchColumnDateField> lastModifiedDate;
-    protected List<SearchColumnSelectField> location;
-    protected List<SearchColumnStringField> memo;
-    protected List<SearchColumnLongField> projectionDuration;
-    protected List<SearchColumnStringField> projectionInterval;
-    protected List<SearchColumnStringField> projectionMethod;
-    protected List<SearchColumnDateField> projectionStartDate;
-    protected List<SearchColumnDoubleField> quantity;
-    protected List<SearchColumnDoubleField> quantityUom;
-    protected List<SearchColumnSelectField> subsidiary;
-    protected List<SearchColumnSelectField> units;
-    protected SearchColumnCustomFieldList customFieldList;
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] externalId;
 
-    /**
-     * Gets the value of the alternateSourceItem property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the alternateSourceItem property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getAlternateSourceItem().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnSelectField }
-     * 
-     * 
-     */
-    public List<SearchColumnSelectField> getAlternateSourceItem() {
-        if (alternateSourceItem == null) {
-            alternateSourceItem = new ArrayList<SearchColumnSelectField>();
-        }
-        return this.alternateSourceItem;
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] internalId;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] item;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnDateField[] lastModifiedDate;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] location;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] memo;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnLongField[] projectionDuration;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] projectionInterval;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] projectionMethod;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnDateField[] projectionStartDate;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnDoubleField[] quantity;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnDoubleField[] quantityUom;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] subsidiary;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] units;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnCustomField[] customFieldList;
+
+    public ItemDemandPlanSearchRowBasic() {
     }
 
-    /**
-     * Gets the value of the analysisDuration property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the analysisDuration property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getAnalysisDuration().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnLongField }
-     * 
-     * 
-     */
-    public List<SearchColumnLongField> getAnalysisDuration() {
-        if (analysisDuration == null) {
-            analysisDuration = new ArrayList<SearchColumnLongField>();
-        }
-        return this.analysisDuration;
+    public ItemDemandPlanSearchRowBasic(
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] alternateSourceItem,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnLongField[] analysisDuration,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnDateField[] demandDate,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] externalId,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] internalId,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] item,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnDateField[] lastModifiedDate,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] location,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] memo,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnLongField[] projectionDuration,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] projectionInterval,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] projectionMethod,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnDateField[] projectionStartDate,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnDoubleField[] quantity,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnDoubleField[] quantityUom,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] subsidiary,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] units,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnCustomField[] customFieldList) {
+        this.alternateSourceItem = alternateSourceItem;
+        this.analysisDuration = analysisDuration;
+        this.demandDate = demandDate;
+        this.externalId = externalId;
+        this.internalId = internalId;
+        this.item = item;
+        this.lastModifiedDate = lastModifiedDate;
+        this.location = location;
+        this.memo = memo;
+        this.projectionDuration = projectionDuration;
+        this.projectionInterval = projectionInterval;
+        this.projectionMethod = projectionMethod;
+        this.projectionStartDate = projectionStartDate;
+        this.quantity = quantity;
+        this.quantityUom = quantityUom;
+        this.subsidiary = subsidiary;
+        this.units = units;
+        this.customFieldList = customFieldList;
     }
 
-    /**
-     * Gets the value of the demandDate property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the demandDate property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getDemandDate().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnDateField }
-     * 
-     * 
-     */
-    public List<SearchColumnDateField> getDemandDate() {
-        if (demandDate == null) {
-            demandDate = new ArrayList<SearchColumnDateField>();
-        }
-        return this.demandDate;
-    }
 
     /**
-     * Gets the value of the externalId property.
+     * Gets the alternateSourceItem value for this ItemDemandPlanSearchRowBasic.
      * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the externalId property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getExternalId().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnSelectField }
-     * 
-     * 
+     * @return alternateSourceItem
      */
-    public List<SearchColumnSelectField> getExternalId() {
-        if (externalId == null) {
-            externalId = new ArrayList<SearchColumnSelectField>();
-        }
-        return this.externalId;
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] getAlternateSourceItem() {
+        return alternateSourceItem;
     }
 
-    /**
-     * Gets the value of the internalId property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the internalId property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getInternalId().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnSelectField }
-     * 
-     * 
-     */
-    public List<SearchColumnSelectField> getInternalId() {
-        if (internalId == null) {
-            internalId = new ArrayList<SearchColumnSelectField>();
-        }
-        return this.internalId;
-    }
 
     /**
-     * Gets the value of the item property.
+     * Sets the alternateSourceItem value for this ItemDemandPlanSearchRowBasic.
      * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the item property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getItem().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnSelectField }
-     * 
-     * 
+     * @param alternateSourceItem
      */
-    public List<SearchColumnSelectField> getItem() {
-        if (item == null) {
-            item = new ArrayList<SearchColumnSelectField>();
-        }
-        return this.item;
+    public void setAlternateSourceItem(com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] alternateSourceItem) {
+        this.alternateSourceItem = alternateSourceItem;
     }
 
-    /**
-     * Gets the value of the lastModifiedDate property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the lastModifiedDate property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getLastModifiedDate().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnDateField }
-     * 
-     * 
-     */
-    public List<SearchColumnDateField> getLastModifiedDate() {
-        if (lastModifiedDate == null) {
-            lastModifiedDate = new ArrayList<SearchColumnDateField>();
-        }
-        return this.lastModifiedDate;
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField getAlternateSourceItem(int i) {
+        return this.alternateSourceItem[i];
     }
 
-    /**
-     * Gets the value of the location property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the location property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getLocation().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnSelectField }
-     * 
-     * 
-     */
-    public List<SearchColumnSelectField> getLocation() {
-        if (location == null) {
-            location = new ArrayList<SearchColumnSelectField>();
-        }
-        return this.location;
+    public void setAlternateSourceItem(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField _value) {
+        this.alternateSourceItem[i] = _value;
     }
 
-    /**
-     * Gets the value of the memo property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the memo property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getMemo().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnStringField }
-     * 
-     * 
-     */
-    public List<SearchColumnStringField> getMemo() {
-        if (memo == null) {
-            memo = new ArrayList<SearchColumnStringField>();
-        }
-        return this.memo;
-    }
 
     /**
-     * Gets the value of the projectionDuration property.
+     * Gets the analysisDuration value for this ItemDemandPlanSearchRowBasic.
      * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the projectionDuration property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getProjectionDuration().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnLongField }
-     * 
-     * 
+     * @return analysisDuration
      */
-    public List<SearchColumnLongField> getProjectionDuration() {
-        if (projectionDuration == null) {
-            projectionDuration = new ArrayList<SearchColumnLongField>();
-        }
-        return this.projectionDuration;
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnLongField[] getAnalysisDuration() {
+        return analysisDuration;
     }
 
-    /**
-     * Gets the value of the projectionInterval property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the projectionInterval property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getProjectionInterval().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnStringField }
-     * 
-     * 
-     */
-    public List<SearchColumnStringField> getProjectionInterval() {
-        if (projectionInterval == null) {
-            projectionInterval = new ArrayList<SearchColumnStringField>();
-        }
-        return this.projectionInterval;
-    }
 
     /**
-     * Gets the value of the projectionMethod property.
+     * Sets the analysisDuration value for this ItemDemandPlanSearchRowBasic.
      * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the projectionMethod property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getProjectionMethod().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnStringField }
-     * 
-     * 
+     * @param analysisDuration
      */
-    public List<SearchColumnStringField> getProjectionMethod() {
-        if (projectionMethod == null) {
-            projectionMethod = new ArrayList<SearchColumnStringField>();
-        }
-        return this.projectionMethod;
+    public void setAnalysisDuration(com.netsuite.webservices.platform.core_2018_2.SearchColumnLongField[] analysisDuration) {
+        this.analysisDuration = analysisDuration;
     }
 
-    /**
-     * Gets the value of the projectionStartDate property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the projectionStartDate property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getProjectionStartDate().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnDateField }
-     * 
-     * 
-     */
-    public List<SearchColumnDateField> getProjectionStartDate() {
-        if (projectionStartDate == null) {
-            projectionStartDate = new ArrayList<SearchColumnDateField>();
-        }
-        return this.projectionStartDate;
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnLongField getAnalysisDuration(int i) {
+        return this.analysisDuration[i];
     }
 
-    /**
-     * Gets the value of the quantity property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the quantity property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getQuantity().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnDoubleField }
-     * 
-     * 
-     */
-    public List<SearchColumnDoubleField> getQuantity() {
-        if (quantity == null) {
-            quantity = new ArrayList<SearchColumnDoubleField>();
-        }
-        return this.quantity;
+    public void setAnalysisDuration(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnLongField _value) {
+        this.analysisDuration[i] = _value;
     }
 
-    /**
-     * Gets the value of the quantityUom property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the quantityUom property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getQuantityUom().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnDoubleField }
-     * 
-     * 
-     */
-    public List<SearchColumnDoubleField> getQuantityUom() {
-        if (quantityUom == null) {
-            quantityUom = new ArrayList<SearchColumnDoubleField>();
-        }
-        return this.quantityUom;
-    }
 
     /**
-     * Gets the value of the subsidiary property.
+     * Gets the demandDate value for this ItemDemandPlanSearchRowBasic.
      * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the subsidiary property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getSubsidiary().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnSelectField }
-     * 
-     * 
+     * @return demandDate
      */
-    public List<SearchColumnSelectField> getSubsidiary() {
-        if (subsidiary == null) {
-            subsidiary = new ArrayList<SearchColumnSelectField>();
-        }
-        return this.subsidiary;
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnDateField[] getDemandDate() {
+        return demandDate;
     }
 
-    /**
-     * Gets the value of the units property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the units property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getUnits().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnSelectField }
-     * 
-     * 
-     */
-    public List<SearchColumnSelectField> getUnits() {
-        if (units == null) {
-            units = new ArrayList<SearchColumnSelectField>();
-        }
-        return this.units;
-    }
 
     /**
-     * 获取customFieldList属性的值。
+     * Sets the demandDate value for this ItemDemandPlanSearchRowBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchColumnCustomFieldList }
-     *     
+     * @param demandDate
      */
-    public SearchColumnCustomFieldList getCustomFieldList() {
+    public void setDemandDate(com.netsuite.webservices.platform.core_2018_2.SearchColumnDateField[] demandDate) {
+        this.demandDate = demandDate;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnDateField getDemandDate(int i) {
+        return this.demandDate[i];
+    }
+
+    public void setDemandDate(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnDateField _value) {
+        this.demandDate[i] = _value;
+    }
+
+
+    /**
+     * Gets the externalId value for this ItemDemandPlanSearchRowBasic.
+     * 
+     * @return externalId
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] getExternalId() {
+        return externalId;
+    }
+
+
+    /**
+     * Sets the externalId value for this ItemDemandPlanSearchRowBasic.
+     * 
+     * @param externalId
+     */
+    public void setExternalId(com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] externalId) {
+        this.externalId = externalId;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField getExternalId(int i) {
+        return this.externalId[i];
+    }
+
+    public void setExternalId(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField _value) {
+        this.externalId[i] = _value;
+    }
+
+
+    /**
+     * Gets the internalId value for this ItemDemandPlanSearchRowBasic.
+     * 
+     * @return internalId
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] getInternalId() {
+        return internalId;
+    }
+
+
+    /**
+     * Sets the internalId value for this ItemDemandPlanSearchRowBasic.
+     * 
+     * @param internalId
+     */
+    public void setInternalId(com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] internalId) {
+        this.internalId = internalId;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField getInternalId(int i) {
+        return this.internalId[i];
+    }
+
+    public void setInternalId(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField _value) {
+        this.internalId[i] = _value;
+    }
+
+
+    /**
+     * Gets the item value for this ItemDemandPlanSearchRowBasic.
+     * 
+     * @return item
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] getItem() {
+        return item;
+    }
+
+
+    /**
+     * Sets the item value for this ItemDemandPlanSearchRowBasic.
+     * 
+     * @param item
+     */
+    public void setItem(com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] item) {
+        this.item = item;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField getItem(int i) {
+        return this.item[i];
+    }
+
+    public void setItem(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField _value) {
+        this.item[i] = _value;
+    }
+
+
+    /**
+     * Gets the lastModifiedDate value for this ItemDemandPlanSearchRowBasic.
+     * 
+     * @return lastModifiedDate
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnDateField[] getLastModifiedDate() {
+        return lastModifiedDate;
+    }
+
+
+    /**
+     * Sets the lastModifiedDate value for this ItemDemandPlanSearchRowBasic.
+     * 
+     * @param lastModifiedDate
+     */
+    public void setLastModifiedDate(com.netsuite.webservices.platform.core_2018_2.SearchColumnDateField[] lastModifiedDate) {
+        this.lastModifiedDate = lastModifiedDate;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnDateField getLastModifiedDate(int i) {
+        return this.lastModifiedDate[i];
+    }
+
+    public void setLastModifiedDate(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnDateField _value) {
+        this.lastModifiedDate[i] = _value;
+    }
+
+
+    /**
+     * Gets the location value for this ItemDemandPlanSearchRowBasic.
+     * 
+     * @return location
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] getLocation() {
+        return location;
+    }
+
+
+    /**
+     * Sets the location value for this ItemDemandPlanSearchRowBasic.
+     * 
+     * @param location
+     */
+    public void setLocation(com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] location) {
+        this.location = location;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField getLocation(int i) {
+        return this.location[i];
+    }
+
+    public void setLocation(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField _value) {
+        this.location[i] = _value;
+    }
+
+
+    /**
+     * Gets the memo value for this ItemDemandPlanSearchRowBasic.
+     * 
+     * @return memo
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] getMemo() {
+        return memo;
+    }
+
+
+    /**
+     * Sets the memo value for this ItemDemandPlanSearchRowBasic.
+     * 
+     * @param memo
+     */
+    public void setMemo(com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] memo) {
+        this.memo = memo;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField getMemo(int i) {
+        return this.memo[i];
+    }
+
+    public void setMemo(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField _value) {
+        this.memo[i] = _value;
+    }
+
+
+    /**
+     * Gets the projectionDuration value for this ItemDemandPlanSearchRowBasic.
+     * 
+     * @return projectionDuration
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnLongField[] getProjectionDuration() {
+        return projectionDuration;
+    }
+
+
+    /**
+     * Sets the projectionDuration value for this ItemDemandPlanSearchRowBasic.
+     * 
+     * @param projectionDuration
+     */
+    public void setProjectionDuration(com.netsuite.webservices.platform.core_2018_2.SearchColumnLongField[] projectionDuration) {
+        this.projectionDuration = projectionDuration;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnLongField getProjectionDuration(int i) {
+        return this.projectionDuration[i];
+    }
+
+    public void setProjectionDuration(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnLongField _value) {
+        this.projectionDuration[i] = _value;
+    }
+
+
+    /**
+     * Gets the projectionInterval value for this ItemDemandPlanSearchRowBasic.
+     * 
+     * @return projectionInterval
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] getProjectionInterval() {
+        return projectionInterval;
+    }
+
+
+    /**
+     * Sets the projectionInterval value for this ItemDemandPlanSearchRowBasic.
+     * 
+     * @param projectionInterval
+     */
+    public void setProjectionInterval(com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] projectionInterval) {
+        this.projectionInterval = projectionInterval;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField getProjectionInterval(int i) {
+        return this.projectionInterval[i];
+    }
+
+    public void setProjectionInterval(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField _value) {
+        this.projectionInterval[i] = _value;
+    }
+
+
+    /**
+     * Gets the projectionMethod value for this ItemDemandPlanSearchRowBasic.
+     * 
+     * @return projectionMethod
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] getProjectionMethod() {
+        return projectionMethod;
+    }
+
+
+    /**
+     * Sets the projectionMethod value for this ItemDemandPlanSearchRowBasic.
+     * 
+     * @param projectionMethod
+     */
+    public void setProjectionMethod(com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] projectionMethod) {
+        this.projectionMethod = projectionMethod;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField getProjectionMethod(int i) {
+        return this.projectionMethod[i];
+    }
+
+    public void setProjectionMethod(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField _value) {
+        this.projectionMethod[i] = _value;
+    }
+
+
+    /**
+     * Gets the projectionStartDate value for this ItemDemandPlanSearchRowBasic.
+     * 
+     * @return projectionStartDate
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnDateField[] getProjectionStartDate() {
+        return projectionStartDate;
+    }
+
+
+    /**
+     * Sets the projectionStartDate value for this ItemDemandPlanSearchRowBasic.
+     * 
+     * @param projectionStartDate
+     */
+    public void setProjectionStartDate(com.netsuite.webservices.platform.core_2018_2.SearchColumnDateField[] projectionStartDate) {
+        this.projectionStartDate = projectionStartDate;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnDateField getProjectionStartDate(int i) {
+        return this.projectionStartDate[i];
+    }
+
+    public void setProjectionStartDate(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnDateField _value) {
+        this.projectionStartDate[i] = _value;
+    }
+
+
+    /**
+     * Gets the quantity value for this ItemDemandPlanSearchRowBasic.
+     * 
+     * @return quantity
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnDoubleField[] getQuantity() {
+        return quantity;
+    }
+
+
+    /**
+     * Sets the quantity value for this ItemDemandPlanSearchRowBasic.
+     * 
+     * @param quantity
+     */
+    public void setQuantity(com.netsuite.webservices.platform.core_2018_2.SearchColumnDoubleField[] quantity) {
+        this.quantity = quantity;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnDoubleField getQuantity(int i) {
+        return this.quantity[i];
+    }
+
+    public void setQuantity(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnDoubleField _value) {
+        this.quantity[i] = _value;
+    }
+
+
+    /**
+     * Gets the quantityUom value for this ItemDemandPlanSearchRowBasic.
+     * 
+     * @return quantityUom
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnDoubleField[] getQuantityUom() {
+        return quantityUom;
+    }
+
+
+    /**
+     * Sets the quantityUom value for this ItemDemandPlanSearchRowBasic.
+     * 
+     * @param quantityUom
+     */
+    public void setQuantityUom(com.netsuite.webservices.platform.core_2018_2.SearchColumnDoubleField[] quantityUom) {
+        this.quantityUom = quantityUom;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnDoubleField getQuantityUom(int i) {
+        return this.quantityUom[i];
+    }
+
+    public void setQuantityUom(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnDoubleField _value) {
+        this.quantityUom[i] = _value;
+    }
+
+
+    /**
+     * Gets the subsidiary value for this ItemDemandPlanSearchRowBasic.
+     * 
+     * @return subsidiary
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] getSubsidiary() {
+        return subsidiary;
+    }
+
+
+    /**
+     * Sets the subsidiary value for this ItemDemandPlanSearchRowBasic.
+     * 
+     * @param subsidiary
+     */
+    public void setSubsidiary(com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] subsidiary) {
+        this.subsidiary = subsidiary;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField getSubsidiary(int i) {
+        return this.subsidiary[i];
+    }
+
+    public void setSubsidiary(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField _value) {
+        this.subsidiary[i] = _value;
+    }
+
+
+    /**
+     * Gets the units value for this ItemDemandPlanSearchRowBasic.
+     * 
+     * @return units
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] getUnits() {
+        return units;
+    }
+
+
+    /**
+     * Sets the units value for this ItemDemandPlanSearchRowBasic.
+     * 
+     * @param units
+     */
+    public void setUnits(com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] units) {
+        this.units = units;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField getUnits(int i) {
+        return this.units[i];
+    }
+
+    public void setUnits(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField _value) {
+        this.units[i] = _value;
+    }
+
+
+    /**
+     * Gets the customFieldList value for this ItemDemandPlanSearchRowBasic.
+     * 
+     * @return customFieldList
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnCustomField[] getCustomFieldList() {
         return customFieldList;
     }
 
+
     /**
-     * 设置customFieldList属性的值。
+     * Sets the customFieldList value for this ItemDemandPlanSearchRowBasic.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchColumnCustomFieldList }
-     *     
+     * @param customFieldList
      */
-    public void setCustomFieldList(SearchColumnCustomFieldList value) {
-        this.customFieldList = value;
+    public void setCustomFieldList(com.netsuite.webservices.platform.core_2018_2.SearchColumnCustomField[] customFieldList) {
+        this.customFieldList = customFieldList;
+    }
+
+    private java.lang.Object __equalsCalc = null;
+    public synchronized boolean equals(java.lang.Object obj) {
+        if (!(obj instanceof ItemDemandPlanSearchRowBasic)) return false;
+        ItemDemandPlanSearchRowBasic other = (ItemDemandPlanSearchRowBasic) obj;
+        if (obj == null) return false;
+        if (this == obj) return true;
+        if (__equalsCalc != null) {
+            return (__equalsCalc == obj);
+        }
+        __equalsCalc = obj;
+        boolean _equals;
+        _equals = super.equals(obj) && 
+            ((this.alternateSourceItem==null && other.getAlternateSourceItem()==null) || 
+             (this.alternateSourceItem!=null &&
+              java.util.Arrays.equals(this.alternateSourceItem, other.getAlternateSourceItem()))) &&
+            ((this.analysisDuration==null && other.getAnalysisDuration()==null) || 
+             (this.analysisDuration!=null &&
+              java.util.Arrays.equals(this.analysisDuration, other.getAnalysisDuration()))) &&
+            ((this.demandDate==null && other.getDemandDate()==null) || 
+             (this.demandDate!=null &&
+              java.util.Arrays.equals(this.demandDate, other.getDemandDate()))) &&
+            ((this.externalId==null && other.getExternalId()==null) || 
+             (this.externalId!=null &&
+              java.util.Arrays.equals(this.externalId, other.getExternalId()))) &&
+            ((this.internalId==null && other.getInternalId()==null) || 
+             (this.internalId!=null &&
+              java.util.Arrays.equals(this.internalId, other.getInternalId()))) &&
+            ((this.item==null && other.getItem()==null) || 
+             (this.item!=null &&
+              java.util.Arrays.equals(this.item, other.getItem()))) &&
+            ((this.lastModifiedDate==null && other.getLastModifiedDate()==null) || 
+             (this.lastModifiedDate!=null &&
+              java.util.Arrays.equals(this.lastModifiedDate, other.getLastModifiedDate()))) &&
+            ((this.location==null && other.getLocation()==null) || 
+             (this.location!=null &&
+              java.util.Arrays.equals(this.location, other.getLocation()))) &&
+            ((this.memo==null && other.getMemo()==null) || 
+             (this.memo!=null &&
+              java.util.Arrays.equals(this.memo, other.getMemo()))) &&
+            ((this.projectionDuration==null && other.getProjectionDuration()==null) || 
+             (this.projectionDuration!=null &&
+              java.util.Arrays.equals(this.projectionDuration, other.getProjectionDuration()))) &&
+            ((this.projectionInterval==null && other.getProjectionInterval()==null) || 
+             (this.projectionInterval!=null &&
+              java.util.Arrays.equals(this.projectionInterval, other.getProjectionInterval()))) &&
+            ((this.projectionMethod==null && other.getProjectionMethod()==null) || 
+             (this.projectionMethod!=null &&
+              java.util.Arrays.equals(this.projectionMethod, other.getProjectionMethod()))) &&
+            ((this.projectionStartDate==null && other.getProjectionStartDate()==null) || 
+             (this.projectionStartDate!=null &&
+              java.util.Arrays.equals(this.projectionStartDate, other.getProjectionStartDate()))) &&
+            ((this.quantity==null && other.getQuantity()==null) || 
+             (this.quantity!=null &&
+              java.util.Arrays.equals(this.quantity, other.getQuantity()))) &&
+            ((this.quantityUom==null && other.getQuantityUom()==null) || 
+             (this.quantityUom!=null &&
+              java.util.Arrays.equals(this.quantityUom, other.getQuantityUom()))) &&
+            ((this.subsidiary==null && other.getSubsidiary()==null) || 
+             (this.subsidiary!=null &&
+              java.util.Arrays.equals(this.subsidiary, other.getSubsidiary()))) &&
+            ((this.units==null && other.getUnits()==null) || 
+             (this.units!=null &&
+              java.util.Arrays.equals(this.units, other.getUnits()))) &&
+            ((this.customFieldList==null && other.getCustomFieldList()==null) || 
+             (this.customFieldList!=null &&
+              java.util.Arrays.equals(this.customFieldList, other.getCustomFieldList())));
+        __equalsCalc = null;
+        return _equals;
+    }
+
+    private boolean __hashCodeCalc = false;
+    public synchronized int hashCode() {
+        if (__hashCodeCalc) {
+            return 0;
+        }
+        __hashCodeCalc = true;
+        int _hashCode = super.hashCode();
+        if (getAlternateSourceItem() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getAlternateSourceItem());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getAlternateSourceItem(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getAnalysisDuration() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getAnalysisDuration());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getAnalysisDuration(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getDemandDate() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getDemandDate());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getDemandDate(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getExternalId() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getExternalId());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getExternalId(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getInternalId() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getInternalId());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getInternalId(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getItem() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getItem());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getItem(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getLastModifiedDate() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getLastModifiedDate());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getLastModifiedDate(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getLocation() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getLocation());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getLocation(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getMemo() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getMemo());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getMemo(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getProjectionDuration() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getProjectionDuration());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getProjectionDuration(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getProjectionInterval() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getProjectionInterval());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getProjectionInterval(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getProjectionMethod() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getProjectionMethod());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getProjectionMethod(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getProjectionStartDate() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getProjectionStartDate());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getProjectionStartDate(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getQuantity() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getQuantity());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getQuantity(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getQuantityUom() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getQuantityUom());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getQuantityUom(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getSubsidiary() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getSubsidiary());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getSubsidiary(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getUnits() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getUnits());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getUnits(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getCustomFieldList() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getCustomFieldList());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getCustomFieldList(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        __hashCodeCalc = false;
+        return _hashCode;
+    }
+
+    // Type metadata
+    private static org.apache.axis.description.TypeDesc typeDesc =
+        new org.apache.axis.description.TypeDesc(ItemDemandPlanSearchRowBasic.class, true);
+
+    static {
+        typeDesc.setXmlType(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "ItemDemandPlanSearchRowBasic"));
+        org.apache.axis.description.ElementDesc elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("alternateSourceItem");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "alternateSourceItem"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnSelectField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("analysisDuration");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "analysisDuration"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnLongField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("demandDate");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "demandDate"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnDateField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("externalId");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "externalId"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnSelectField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("internalId");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "internalId"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnSelectField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("item");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "item"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnSelectField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("lastModifiedDate");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "lastModifiedDate"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnDateField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("location");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "location"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnSelectField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("memo");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "memo"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnStringField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("projectionDuration");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "projectionDuration"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnLongField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("projectionInterval");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "projectionInterval"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnStringField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("projectionMethod");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "projectionMethod"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnStringField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("projectionStartDate");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "projectionStartDate"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnDateField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("quantity");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "quantity"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnDoubleField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("quantityUom");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "quantityUom"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnDoubleField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("subsidiary");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "subsidiary"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnSelectField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("units");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "units"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnSelectField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("customFieldList");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "customFieldList"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnCustomField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "customField"));
+        typeDesc.addFieldDesc(elemField);
+    }
+
+    /**
+     * Return type metadata object
+     */
+    public static org.apache.axis.description.TypeDesc getTypeDesc() {
+        return typeDesc;
+    }
+
+    /**
+     * Get Custom Serializer
+     */
+    public static org.apache.axis.encoding.Serializer getSerializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanSerializer(
+            _javaType, _xmlType, typeDesc);
+    }
+
+    /**
+     * Get Custom Deserializer
+     */
+    public static org.apache.axis.encoding.Deserializer getDeserializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanDeserializer(
+            _javaType, _xmlType, typeDesc);
     }
 
 }

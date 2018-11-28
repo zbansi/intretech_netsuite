@@ -1,176 +1,269 @@
+/**
+ * CurrencyRate.java
+ *
+ * This file was auto-generated from WSDL
+ * by the Apache Axis 1.4 Jul 28, 2010 (04:07:04 PDT) WSDL2Java emitter.
+ */
 
 package com.netsuite.webservices.lists.accounting_2018_2;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlAttribute;
-import javax.xml.bind.annotation.XmlSchemaType;
-import javax.xml.bind.annotation.XmlType;
-import javax.xml.datatype.XMLGregorianCalendar;
-import com.netsuite.webservices.platform.core_2018_2.Record;
-import com.netsuite.webservices.platform.core_2018_2.RecordRef;
+public class CurrencyRate  extends com.netsuite.webservices.platform.core_2018_2.Record  implements java.io.Serializable {
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef baseCurrency;
 
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef transactionCurrency;
 
-/**
- * <p>CurrencyRate complex type的 Java 类。
- * 
- * <p>以下模式片段指定包含在此类中的预期内容。
- * 
- * <pre>
- * &lt;complexType name="CurrencyRate">
- *   &lt;complexContent>
- *     &lt;extension base="{urn:core_2018_2.platform.webservices.netsuite.com}Record">
- *       &lt;sequence>
- *         &lt;element name="baseCurrency" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="transactionCurrency" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="exchangeRate" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
- *         &lt;element name="effectiveDate" type="{http://www.w3.org/2001/XMLSchema}dateTime" minOccurs="0"/>
- *       &lt;/sequence>
- *       &lt;attribute name="internalId" type="{http://www.w3.org/2001/XMLSchema}string" />
- *     &lt;/extension>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
- */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "CurrencyRate", propOrder = {
-    "baseCurrency",
-    "transactionCurrency",
-    "exchangeRate",
-    "effectiveDate"
-})
-public class CurrencyRate
-    extends Record
-{
+    private java.lang.Double exchangeRate;
 
-    protected RecordRef baseCurrency;
-    protected RecordRef transactionCurrency;
-    protected Double exchangeRate;
-    @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar effectiveDate;
-    @XmlAttribute(name = "internalId")
-    protected String internalId;
+    private java.util.Calendar effectiveDate;
+
+    private java.lang.String internalId;  // attribute
+
+    public CurrencyRate() {
+    }
+
+    public CurrencyRate(
+           java.lang.String[] nullFieldList,
+           java.lang.String internalId,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef baseCurrency,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef transactionCurrency,
+           java.lang.Double exchangeRate,
+           java.util.Calendar effectiveDate) {
+        super(
+            nullFieldList);
+        this.internalId = internalId;
+        this.baseCurrency = baseCurrency;
+        this.transactionCurrency = transactionCurrency;
+        this.exchangeRate = exchangeRate;
+        this.effectiveDate = effectiveDate;
+    }
+
 
     /**
-     * 获取baseCurrency属性的值。
+     * Gets the baseCurrency value for this CurrencyRate.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @return baseCurrency
      */
-    public RecordRef getBaseCurrency() {
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getBaseCurrency() {
         return baseCurrency;
     }
 
-    /**
-     * 设置baseCurrency属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setBaseCurrency(RecordRef value) {
-        this.baseCurrency = value;
-    }
 
     /**
-     * 获取transactionCurrency属性的值。
+     * Sets the baseCurrency value for this CurrencyRate.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param baseCurrency
      */
-    public RecordRef getTransactionCurrency() {
+    public void setBaseCurrency(com.netsuite.webservices.platform.core_2018_2.RecordRef baseCurrency) {
+        this.baseCurrency = baseCurrency;
+    }
+
+
+    /**
+     * Gets the transactionCurrency value for this CurrencyRate.
+     * 
+     * @return transactionCurrency
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getTransactionCurrency() {
         return transactionCurrency;
     }
 
-    /**
-     * 设置transactionCurrency属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setTransactionCurrency(RecordRef value) {
-        this.transactionCurrency = value;
-    }
 
     /**
-     * 获取exchangeRate属性的值。
+     * Sets the transactionCurrency value for this CurrencyRate.
      * 
-     * @return
-     *     possible object is
-     *     {@link Double }
-     *     
+     * @param transactionCurrency
      */
-    public Double getExchangeRate() {
+    public void setTransactionCurrency(com.netsuite.webservices.platform.core_2018_2.RecordRef transactionCurrency) {
+        this.transactionCurrency = transactionCurrency;
+    }
+
+
+    /**
+     * Gets the exchangeRate value for this CurrencyRate.
+     * 
+     * @return exchangeRate
+     */
+    public java.lang.Double getExchangeRate() {
         return exchangeRate;
     }
 
-    /**
-     * 设置exchangeRate属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Double }
-     *     
-     */
-    public void setExchangeRate(Double value) {
-        this.exchangeRate = value;
-    }
 
     /**
-     * 获取effectiveDate属性的值。
+     * Sets the exchangeRate value for this CurrencyRate.
      * 
-     * @return
-     *     possible object is
-     *     {@link XMLGregorianCalendar }
-     *     
+     * @param exchangeRate
      */
-    public XMLGregorianCalendar getEffectiveDate() {
+    public void setExchangeRate(java.lang.Double exchangeRate) {
+        this.exchangeRate = exchangeRate;
+    }
+
+
+    /**
+     * Gets the effectiveDate value for this CurrencyRate.
+     * 
+     * @return effectiveDate
+     */
+    public java.util.Calendar getEffectiveDate() {
         return effectiveDate;
     }
 
-    /**
-     * 设置effectiveDate属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link XMLGregorianCalendar }
-     *     
-     */
-    public void setEffectiveDate(XMLGregorianCalendar value) {
-        this.effectiveDate = value;
-    }
 
     /**
-     * 获取internalId属性的值。
+     * Sets the effectiveDate value for this CurrencyRate.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param effectiveDate
      */
-    public String getInternalId() {
+    public void setEffectiveDate(java.util.Calendar effectiveDate) {
+        this.effectiveDate = effectiveDate;
+    }
+
+
+    /**
+     * Gets the internalId value for this CurrencyRate.
+     * 
+     * @return internalId
+     */
+    public java.lang.String getInternalId() {
         return internalId;
     }
 
+
     /**
-     * 设置internalId属性的值。
+     * Sets the internalId value for this CurrencyRate.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     * @param internalId
      */
-    public void setInternalId(String value) {
-        this.internalId = value;
+    public void setInternalId(java.lang.String internalId) {
+        this.internalId = internalId;
+    }
+
+    private java.lang.Object __equalsCalc = null;
+    public synchronized boolean equals(java.lang.Object obj) {
+        if (!(obj instanceof CurrencyRate)) return false;
+        CurrencyRate other = (CurrencyRate) obj;
+        if (obj == null) return false;
+        if (this == obj) return true;
+        if (__equalsCalc != null) {
+            return (__equalsCalc == obj);
+        }
+        __equalsCalc = obj;
+        boolean _equals;
+        _equals = super.equals(obj) && 
+            ((this.baseCurrency==null && other.getBaseCurrency()==null) || 
+             (this.baseCurrency!=null &&
+              this.baseCurrency.equals(other.getBaseCurrency()))) &&
+            ((this.transactionCurrency==null && other.getTransactionCurrency()==null) || 
+             (this.transactionCurrency!=null &&
+              this.transactionCurrency.equals(other.getTransactionCurrency()))) &&
+            ((this.exchangeRate==null && other.getExchangeRate()==null) || 
+             (this.exchangeRate!=null &&
+              this.exchangeRate.equals(other.getExchangeRate()))) &&
+            ((this.effectiveDate==null && other.getEffectiveDate()==null) || 
+             (this.effectiveDate!=null &&
+              this.effectiveDate.equals(other.getEffectiveDate()))) &&
+            ((this.internalId==null && other.getInternalId()==null) || 
+             (this.internalId!=null &&
+              this.internalId.equals(other.getInternalId())));
+        __equalsCalc = null;
+        return _equals;
+    }
+
+    private boolean __hashCodeCalc = false;
+    public synchronized int hashCode() {
+        if (__hashCodeCalc) {
+            return 0;
+        }
+        __hashCodeCalc = true;
+        int _hashCode = super.hashCode();
+        if (getBaseCurrency() != null) {
+            _hashCode += getBaseCurrency().hashCode();
+        }
+        if (getTransactionCurrency() != null) {
+            _hashCode += getTransactionCurrency().hashCode();
+        }
+        if (getExchangeRate() != null) {
+            _hashCode += getExchangeRate().hashCode();
+        }
+        if (getEffectiveDate() != null) {
+            _hashCode += getEffectiveDate().hashCode();
+        }
+        if (getInternalId() != null) {
+            _hashCode += getInternalId().hashCode();
+        }
+        __hashCodeCalc = false;
+        return _hashCode;
+    }
+
+    // Type metadata
+    private static org.apache.axis.description.TypeDesc typeDesc =
+        new org.apache.axis.description.TypeDesc(CurrencyRate.class, true);
+
+    static {
+        typeDesc.setXmlType(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "CurrencyRate"));
+        org.apache.axis.description.AttributeDesc attrField = new org.apache.axis.description.AttributeDesc();
+        attrField.setFieldName("internalId");
+        attrField.setXmlName(new javax.xml.namespace.QName("", "internalId"));
+        attrField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        typeDesc.addFieldDesc(attrField);
+        org.apache.axis.description.ElementDesc elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("baseCurrency");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "baseCurrency"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("transactionCurrency");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "transactionCurrency"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("exchangeRate");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "exchangeRate"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "double"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("effectiveDate");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "effectiveDate"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "dateTime"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+    }
+
+    /**
+     * Return type metadata object
+     */
+    public static org.apache.axis.description.TypeDesc getTypeDesc() {
+        return typeDesc;
+    }
+
+    /**
+     * Get Custom Serializer
+     */
+    public static org.apache.axis.encoding.Serializer getSerializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanSerializer(
+            _javaType, _xmlType, typeDesc);
+    }
+
+    /**
+     * Get Custom Deserializer
+     */
+    public static org.apache.axis.encoding.Deserializer getDeserializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanDeserializer(
+            _javaType, _xmlType, typeDesc);
     }
 
 }

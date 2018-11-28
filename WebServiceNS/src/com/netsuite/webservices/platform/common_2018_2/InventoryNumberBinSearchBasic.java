@@ -1,174 +1,286 @@
+/**
+ * InventoryNumberBinSearchBasic.java
+ *
+ * This file was auto-generated from WSDL
+ * by the Apache Axis 1.4 Jul 28, 2010 (04:07:04 PDT) WSDL2Java emitter.
+ */
 
 package com.netsuite.webservices.platform.common_2018_2;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlType;
-import com.netsuite.webservices.platform.core_2018_2.SearchDoubleField;
-import com.netsuite.webservices.platform.core_2018_2.SearchMultiSelectField;
-import com.netsuite.webservices.platform.core_2018_2.SearchRecordBasic;
-import com.netsuite.webservices.platform.core_2018_2.SearchStringField;
+public class InventoryNumberBinSearchBasic  extends com.netsuite.webservices.platform.core_2018_2.SearchRecordBasic  implements java.io.Serializable {
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef[] binNumber;
 
+    private com.netsuite.webservices.platform.core_2018_2.SearchStringField inventoryNumber;
 
-/**
- * <p>InventoryNumberBinSearchBasic complex type的 Java 类。
- * 
- * <p>以下模式片段指定包含在此类中的预期内容。
- * 
- * <pre>
- * &lt;complexType name="InventoryNumberBinSearchBasic">
- *   &lt;complexContent>
- *     &lt;extension base="{urn:core_2018_2.platform.webservices.netsuite.com}SearchRecordBasic">
- *       &lt;sequence>
- *         &lt;element name="binNumber" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchMultiSelectField" minOccurs="0"/>
- *         &lt;element name="inventoryNumber" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchStringField" minOccurs="0"/>
- *         &lt;element name="location" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchMultiSelectField" minOccurs="0"/>
- *         &lt;element name="quantityAvailable" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchDoubleField" minOccurs="0"/>
- *         &lt;element name="quantityOnHand" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchDoubleField" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/extension>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
- */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "InventoryNumberBinSearchBasic", propOrder = {
-    "binNumber",
-    "inventoryNumber",
-    "location",
-    "quantityAvailable",
-    "quantityOnHand"
-})
-public class InventoryNumberBinSearchBasic
-    extends SearchRecordBasic
-{
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef[] location;
 
-    protected SearchMultiSelectField binNumber;
-    protected SearchStringField inventoryNumber;
-    protected SearchMultiSelectField location;
-    protected SearchDoubleField quantityAvailable;
-    protected SearchDoubleField quantityOnHand;
+    private com.netsuite.webservices.platform.core_2018_2.SearchDoubleField quantityAvailable;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchDoubleField quantityOnHand;
+
+    public InventoryNumberBinSearchBasic() {
+    }
+
+    public InventoryNumberBinSearchBasic(
+           com.netsuite.webservices.platform.core_2018_2.RecordRef[] binNumber,
+           com.netsuite.webservices.platform.core_2018_2.SearchStringField inventoryNumber,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef[] location,
+           com.netsuite.webservices.platform.core_2018_2.SearchDoubleField quantityAvailable,
+           com.netsuite.webservices.platform.core_2018_2.SearchDoubleField quantityOnHand) {
+        this.binNumber = binNumber;
+        this.inventoryNumber = inventoryNumber;
+        this.location = location;
+        this.quantityAvailable = quantityAvailable;
+        this.quantityOnHand = quantityOnHand;
+    }
+
 
     /**
-     * 获取binNumber属性的值。
+     * Gets the binNumber value for this InventoryNumberBinSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchMultiSelectField }
-     *     
+     * @return binNumber
      */
-    public SearchMultiSelectField getBinNumber() {
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef[] getBinNumber() {
         return binNumber;
     }
 
-    /**
-     * 设置binNumber属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchMultiSelectField }
-     *     
-     */
-    public void setBinNumber(SearchMultiSelectField value) {
-        this.binNumber = value;
-    }
 
     /**
-     * 获取inventoryNumber属性的值。
+     * Sets the binNumber value for this InventoryNumberBinSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchStringField }
-     *     
+     * @param binNumber
      */
-    public SearchStringField getInventoryNumber() {
+    public void setBinNumber(com.netsuite.webservices.platform.core_2018_2.RecordRef[] binNumber) {
+        this.binNumber = binNumber;
+    }
+
+
+    /**
+     * Gets the inventoryNumber value for this InventoryNumberBinSearchBasic.
+     * 
+     * @return inventoryNumber
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchStringField getInventoryNumber() {
         return inventoryNumber;
     }
 
-    /**
-     * 设置inventoryNumber属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchStringField }
-     *     
-     */
-    public void setInventoryNumber(SearchStringField value) {
-        this.inventoryNumber = value;
-    }
 
     /**
-     * 获取location属性的值。
+     * Sets the inventoryNumber value for this InventoryNumberBinSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchMultiSelectField }
-     *     
+     * @param inventoryNumber
      */
-    public SearchMultiSelectField getLocation() {
+    public void setInventoryNumber(com.netsuite.webservices.platform.core_2018_2.SearchStringField inventoryNumber) {
+        this.inventoryNumber = inventoryNumber;
+    }
+
+
+    /**
+     * Gets the location value for this InventoryNumberBinSearchBasic.
+     * 
+     * @return location
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef[] getLocation() {
         return location;
     }
 
-    /**
-     * 设置location属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchMultiSelectField }
-     *     
-     */
-    public void setLocation(SearchMultiSelectField value) {
-        this.location = value;
-    }
 
     /**
-     * 获取quantityAvailable属性的值。
+     * Sets the location value for this InventoryNumberBinSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchDoubleField }
-     *     
+     * @param location
      */
-    public SearchDoubleField getQuantityAvailable() {
+    public void setLocation(com.netsuite.webservices.platform.core_2018_2.RecordRef[] location) {
+        this.location = location;
+    }
+
+
+    /**
+     * Gets the quantityAvailable value for this InventoryNumberBinSearchBasic.
+     * 
+     * @return quantityAvailable
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchDoubleField getQuantityAvailable() {
         return quantityAvailable;
     }
 
-    /**
-     * 设置quantityAvailable属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchDoubleField }
-     *     
-     */
-    public void setQuantityAvailable(SearchDoubleField value) {
-        this.quantityAvailable = value;
-    }
 
     /**
-     * 获取quantityOnHand属性的值。
+     * Sets the quantityAvailable value for this InventoryNumberBinSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchDoubleField }
-     *     
+     * @param quantityAvailable
      */
-    public SearchDoubleField getQuantityOnHand() {
+    public void setQuantityAvailable(com.netsuite.webservices.platform.core_2018_2.SearchDoubleField quantityAvailable) {
+        this.quantityAvailable = quantityAvailable;
+    }
+
+
+    /**
+     * Gets the quantityOnHand value for this InventoryNumberBinSearchBasic.
+     * 
+     * @return quantityOnHand
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchDoubleField getQuantityOnHand() {
         return quantityOnHand;
     }
 
+
     /**
-     * 设置quantityOnHand属性的值。
+     * Sets the quantityOnHand value for this InventoryNumberBinSearchBasic.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchDoubleField }
-     *     
+     * @param quantityOnHand
      */
-    public void setQuantityOnHand(SearchDoubleField value) {
-        this.quantityOnHand = value;
+    public void setQuantityOnHand(com.netsuite.webservices.platform.core_2018_2.SearchDoubleField quantityOnHand) {
+        this.quantityOnHand = quantityOnHand;
+    }
+
+    private java.lang.Object __equalsCalc = null;
+    public synchronized boolean equals(java.lang.Object obj) {
+        if (!(obj instanceof InventoryNumberBinSearchBasic)) return false;
+        InventoryNumberBinSearchBasic other = (InventoryNumberBinSearchBasic) obj;
+        if (obj == null) return false;
+        if (this == obj) return true;
+        if (__equalsCalc != null) {
+            return (__equalsCalc == obj);
+        }
+        __equalsCalc = obj;
+        boolean _equals;
+        _equals = super.equals(obj) && 
+            ((this.binNumber==null && other.getBinNumber()==null) || 
+             (this.binNumber!=null &&
+              java.util.Arrays.equals(this.binNumber, other.getBinNumber()))) &&
+            ((this.inventoryNumber==null && other.getInventoryNumber()==null) || 
+             (this.inventoryNumber!=null &&
+              this.inventoryNumber.equals(other.getInventoryNumber()))) &&
+            ((this.location==null && other.getLocation()==null) || 
+             (this.location!=null &&
+              java.util.Arrays.equals(this.location, other.getLocation()))) &&
+            ((this.quantityAvailable==null && other.getQuantityAvailable()==null) || 
+             (this.quantityAvailable!=null &&
+              this.quantityAvailable.equals(other.getQuantityAvailable()))) &&
+            ((this.quantityOnHand==null && other.getQuantityOnHand()==null) || 
+             (this.quantityOnHand!=null &&
+              this.quantityOnHand.equals(other.getQuantityOnHand())));
+        __equalsCalc = null;
+        return _equals;
+    }
+
+    private boolean __hashCodeCalc = false;
+    public synchronized int hashCode() {
+        if (__hashCodeCalc) {
+            return 0;
+        }
+        __hashCodeCalc = true;
+        int _hashCode = super.hashCode();
+        if (getBinNumber() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getBinNumber());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getBinNumber(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getInventoryNumber() != null) {
+            _hashCode += getInventoryNumber().hashCode();
+        }
+        if (getLocation() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getLocation());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getLocation(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getQuantityAvailable() != null) {
+            _hashCode += getQuantityAvailable().hashCode();
+        }
+        if (getQuantityOnHand() != null) {
+            _hashCode += getQuantityOnHand().hashCode();
+        }
+        __hashCodeCalc = false;
+        return _hashCode;
+    }
+
+    // Type metadata
+    private static org.apache.axis.description.TypeDesc typeDesc =
+        new org.apache.axis.description.TypeDesc(InventoryNumberBinSearchBasic.class, true);
+
+    static {
+        typeDesc.setXmlType(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "InventoryNumberBinSearchBasic"));
+        org.apache.axis.description.ElementDesc elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("binNumber");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "binNumber"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "searchValue"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("inventoryNumber");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "inventoryNumber"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchStringField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("location");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "location"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "searchValue"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("quantityAvailable");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "quantityAvailable"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchDoubleField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("quantityOnHand");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "quantityOnHand"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchDoubleField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+    }
+
+    /**
+     * Return type metadata object
+     */
+    public static org.apache.axis.description.TypeDesc getTypeDesc() {
+        return typeDesc;
+    }
+
+    /**
+     * Get Custom Serializer
+     */
+    public static org.apache.axis.encoding.Serializer getSerializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanSerializer(
+            _javaType, _xmlType, typeDesc);
+    }
+
+    /**
+     * Get Custom Deserializer
+     */
+    public static org.apache.axis.encoding.Deserializer getDeserializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanDeserializer(
+            _javaType, _xmlType, typeDesc);
     }
 
 }

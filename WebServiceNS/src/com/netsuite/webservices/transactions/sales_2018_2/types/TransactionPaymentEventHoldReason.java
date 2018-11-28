@@ -1,117 +1,114 @@
+/**
+ * TransactionPaymentEventHoldReason.java
+ *
+ * This file was auto-generated from WSDL
+ * by the Apache Axis 1.4 Jul 28, 2010 (04:07:04 PDT) WSDL2Java emitter.
+ */
 
 package com.netsuite.webservices.transactions.sales_2018_2.types;
 
-import javax.xml.bind.annotation.XmlEnum;
-import javax.xml.bind.annotation.XmlEnumValue;
-import javax.xml.bind.annotation.XmlType;
+public class TransactionPaymentEventHoldReason implements java.io.Serializable {
+    private java.lang.String _value_;
+    private static java.util.HashMap _table_ = new java.util.HashMap();
 
-
-/**
- * <p>TransactionPaymentEventHoldReason的 Java 类。
- * 
- * <p>以下模式片段指定包含在此类中的预期内容。
- * <p>
- * <pre>
- * &lt;simpleType name="TransactionPaymentEventHoldReason">
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     &lt;enumeration value="_amountExceedsMaximumAllowedAmount"/>
- *     &lt;enumeration value="_authorizationDecline"/>
- *     &lt;enumeration value="_cardExpired"/>
- *     &lt;enumeration value="_cardInvalid"/>
- *     &lt;enumeration value="_confirmationOfTheOperationIsPending"/>
- *     &lt;enumeration value="_externalFraudRejection"/>
- *     &lt;enumeration value="_externalFraudReview"/>
- *     &lt;enumeration value="_fatalError"/>
- *     &lt;enumeration value="_forwardedToPayerAuthentication"/>
- *     &lt;enumeration value="_forwardRequested"/>
- *     &lt;enumeration value="_gatewayAsynchronousNotification"/>
- *     &lt;enumeration value="_gatewayError"/>
- *     &lt;enumeration value="_generalHold"/>
- *     &lt;enumeration value="_generalReject"/>
- *     &lt;enumeration value="_operationWasSuccessful"/>
- *     &lt;enumeration value="_operationWasTerminated"/>
- *     &lt;enumeration value="_overridenBy"/>
- *     &lt;enumeration value="_partnerDecline"/>
- *     &lt;enumeration value="_paymentDeviceWasPrimed"/>
- *     &lt;enumeration value="_paymentOperationWasCanceled"/>
- *     &lt;enumeration value="_systemError"/>
- *     &lt;enumeration value="_verbalAuthorizationRequested"/>
- *     &lt;enumeration value="_verificationRejection"/>
- *     &lt;enumeration value="_verificationRequired"/>
- *   &lt;/restriction>
- * &lt;/simpleType>
- * </pre>
- * 
- */
-@XmlType(name = "TransactionPaymentEventHoldReason", namespace = "urn:types.sales_2018_2.transactions.webservices.netsuite.com")
-@XmlEnum
-public enum TransactionPaymentEventHoldReason {
-
-    @XmlEnumValue("_amountExceedsMaximumAllowedAmount")
-    AMOUNT_EXCEEDS_MAXIMUM_ALLOWED_AMOUNT("_amountExceedsMaximumAllowedAmount"),
-    @XmlEnumValue("_authorizationDecline")
-    AUTHORIZATION_DECLINE("_authorizationDecline"),
-    @XmlEnumValue("_cardExpired")
-    CARD_EXPIRED("_cardExpired"),
-    @XmlEnumValue("_cardInvalid")
-    CARD_INVALID("_cardInvalid"),
-    @XmlEnumValue("_confirmationOfTheOperationIsPending")
-    CONFIRMATION_OF_THE_OPERATION_IS_PENDING("_confirmationOfTheOperationIsPending"),
-    @XmlEnumValue("_externalFraudRejection")
-    EXTERNAL_FRAUD_REJECTION("_externalFraudRejection"),
-    @XmlEnumValue("_externalFraudReview")
-    EXTERNAL_FRAUD_REVIEW("_externalFraudReview"),
-    @XmlEnumValue("_fatalError")
-    FATAL_ERROR("_fatalError"),
-    @XmlEnumValue("_forwardedToPayerAuthentication")
-    FORWARDED_TO_PAYER_AUTHENTICATION("_forwardedToPayerAuthentication"),
-    @XmlEnumValue("_forwardRequested")
-    FORWARD_REQUESTED("_forwardRequested"),
-    @XmlEnumValue("_gatewayAsynchronousNotification")
-    GATEWAY_ASYNCHRONOUS_NOTIFICATION("_gatewayAsynchronousNotification"),
-    @XmlEnumValue("_gatewayError")
-    GATEWAY_ERROR("_gatewayError"),
-    @XmlEnumValue("_generalHold")
-    GENERAL_HOLD("_generalHold"),
-    @XmlEnumValue("_generalReject")
-    GENERAL_REJECT("_generalReject"),
-    @XmlEnumValue("_operationWasSuccessful")
-    OPERATION_WAS_SUCCESSFUL("_operationWasSuccessful"),
-    @XmlEnumValue("_operationWasTerminated")
-    OPERATION_WAS_TERMINATED("_operationWasTerminated"),
-    @XmlEnumValue("_overridenBy")
-    OVERRIDEN_BY("_overridenBy"),
-    @XmlEnumValue("_partnerDecline")
-    PARTNER_DECLINE("_partnerDecline"),
-    @XmlEnumValue("_paymentDeviceWasPrimed")
-    PAYMENT_DEVICE_WAS_PRIMED("_paymentDeviceWasPrimed"),
-    @XmlEnumValue("_paymentOperationWasCanceled")
-    PAYMENT_OPERATION_WAS_CANCELED("_paymentOperationWasCanceled"),
-    @XmlEnumValue("_systemError")
-    SYSTEM_ERROR("_systemError"),
-    @XmlEnumValue("_verbalAuthorizationRequested")
-    VERBAL_AUTHORIZATION_REQUESTED("_verbalAuthorizationRequested"),
-    @XmlEnumValue("_verificationRejection")
-    VERIFICATION_REJECTION("_verificationRejection"),
-    @XmlEnumValue("_verificationRequired")
-    VERIFICATION_REQUIRED("_verificationRequired");
-    private final String value;
-
-    TransactionPaymentEventHoldReason(String v) {
-        value = v;
+    // Constructor
+    protected TransactionPaymentEventHoldReason(java.lang.String value) {
+        _value_ = value;
+        _table_.put(_value_,this);
     }
 
-    public String value() {
-        return value;
+    public static final java.lang.String __amountExceedsMaximumAllowedAmount = "_amountExceedsMaximumAllowedAmount";
+    public static final java.lang.String __authorizationDecline = "_authorizationDecline";
+    public static final java.lang.String __cardExpired = "_cardExpired";
+    public static final java.lang.String __cardInvalid = "_cardInvalid";
+    public static final java.lang.String __confirmationOfTheOperationIsPending = "_confirmationOfTheOperationIsPending";
+    public static final java.lang.String __externalFraudRejection = "_externalFraudRejection";
+    public static final java.lang.String __externalFraudReview = "_externalFraudReview";
+    public static final java.lang.String __fatalError = "_fatalError";
+    public static final java.lang.String __forwardedToPayerAuthentication = "_forwardedToPayerAuthentication";
+    public static final java.lang.String __forwardRequested = "_forwardRequested";
+    public static final java.lang.String __gatewayAsynchronousNotification = "_gatewayAsynchronousNotification";
+    public static final java.lang.String __gatewayError = "_gatewayError";
+    public static final java.lang.String __generalHold = "_generalHold";
+    public static final java.lang.String __generalReject = "_generalReject";
+    public static final java.lang.String __operationWasSuccessful = "_operationWasSuccessful";
+    public static final java.lang.String __operationWasTerminated = "_operationWasTerminated";
+    public static final java.lang.String __overridenBy = "_overridenBy";
+    public static final java.lang.String __partnerDecline = "_partnerDecline";
+    public static final java.lang.String __paymentDeviceWasPrimed = "_paymentDeviceWasPrimed";
+    public static final java.lang.String __paymentOperationWasCanceled = "_paymentOperationWasCanceled";
+    public static final java.lang.String __systemError = "_systemError";
+    public static final java.lang.String __verbalAuthorizationRequested = "_verbalAuthorizationRequested";
+    public static final java.lang.String __verificationRejection = "_verificationRejection";
+    public static final java.lang.String __verificationRequired = "_verificationRequired";
+    public static final TransactionPaymentEventHoldReason _amountExceedsMaximumAllowedAmount = new TransactionPaymentEventHoldReason(__amountExceedsMaximumAllowedAmount);
+    public static final TransactionPaymentEventHoldReason _authorizationDecline = new TransactionPaymentEventHoldReason(__authorizationDecline);
+    public static final TransactionPaymentEventHoldReason _cardExpired = new TransactionPaymentEventHoldReason(__cardExpired);
+    public static final TransactionPaymentEventHoldReason _cardInvalid = new TransactionPaymentEventHoldReason(__cardInvalid);
+    public static final TransactionPaymentEventHoldReason _confirmationOfTheOperationIsPending = new TransactionPaymentEventHoldReason(__confirmationOfTheOperationIsPending);
+    public static final TransactionPaymentEventHoldReason _externalFraudRejection = new TransactionPaymentEventHoldReason(__externalFraudRejection);
+    public static final TransactionPaymentEventHoldReason _externalFraudReview = new TransactionPaymentEventHoldReason(__externalFraudReview);
+    public static final TransactionPaymentEventHoldReason _fatalError = new TransactionPaymentEventHoldReason(__fatalError);
+    public static final TransactionPaymentEventHoldReason _forwardedToPayerAuthentication = new TransactionPaymentEventHoldReason(__forwardedToPayerAuthentication);
+    public static final TransactionPaymentEventHoldReason _forwardRequested = new TransactionPaymentEventHoldReason(__forwardRequested);
+    public static final TransactionPaymentEventHoldReason _gatewayAsynchronousNotification = new TransactionPaymentEventHoldReason(__gatewayAsynchronousNotification);
+    public static final TransactionPaymentEventHoldReason _gatewayError = new TransactionPaymentEventHoldReason(__gatewayError);
+    public static final TransactionPaymentEventHoldReason _generalHold = new TransactionPaymentEventHoldReason(__generalHold);
+    public static final TransactionPaymentEventHoldReason _generalReject = new TransactionPaymentEventHoldReason(__generalReject);
+    public static final TransactionPaymentEventHoldReason _operationWasSuccessful = new TransactionPaymentEventHoldReason(__operationWasSuccessful);
+    public static final TransactionPaymentEventHoldReason _operationWasTerminated = new TransactionPaymentEventHoldReason(__operationWasTerminated);
+    public static final TransactionPaymentEventHoldReason _overridenBy = new TransactionPaymentEventHoldReason(__overridenBy);
+    public static final TransactionPaymentEventHoldReason _partnerDecline = new TransactionPaymentEventHoldReason(__partnerDecline);
+    public static final TransactionPaymentEventHoldReason _paymentDeviceWasPrimed = new TransactionPaymentEventHoldReason(__paymentDeviceWasPrimed);
+    public static final TransactionPaymentEventHoldReason _paymentOperationWasCanceled = new TransactionPaymentEventHoldReason(__paymentOperationWasCanceled);
+    public static final TransactionPaymentEventHoldReason _systemError = new TransactionPaymentEventHoldReason(__systemError);
+    public static final TransactionPaymentEventHoldReason _verbalAuthorizationRequested = new TransactionPaymentEventHoldReason(__verbalAuthorizationRequested);
+    public static final TransactionPaymentEventHoldReason _verificationRejection = new TransactionPaymentEventHoldReason(__verificationRejection);
+    public static final TransactionPaymentEventHoldReason _verificationRequired = new TransactionPaymentEventHoldReason(__verificationRequired);
+    public java.lang.String getValue() { return _value_;}
+    public static TransactionPaymentEventHoldReason fromValue(java.lang.String value)
+          throws java.lang.IllegalArgumentException {
+        TransactionPaymentEventHoldReason enumeration = (TransactionPaymentEventHoldReason)
+            _table_.get(value);
+        if (enumeration==null) throw new java.lang.IllegalArgumentException();
+        return enumeration;
     }
+    public static TransactionPaymentEventHoldReason fromString(java.lang.String value)
+          throws java.lang.IllegalArgumentException {
+        return fromValue(value);
+    }
+    public boolean equals(java.lang.Object obj) {return (obj == this);}
+    public int hashCode() { return toString().hashCode();}
+    public java.lang.String toString() { return _value_;}
+    public java.lang.Object readResolve() throws java.io.ObjectStreamException { return fromValue(_value_);}
+    public static org.apache.axis.encoding.Serializer getSerializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new org.apache.axis.encoding.ser.EnumSerializer(
+            _javaType, _xmlType);
+    }
+    public static org.apache.axis.encoding.Deserializer getDeserializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new org.apache.axis.encoding.ser.EnumDeserializer(
+            _javaType, _xmlType);
+    }
+    // Type metadata
+    private static org.apache.axis.description.TypeDesc typeDesc =
+        new org.apache.axis.description.TypeDesc(TransactionPaymentEventHoldReason.class);
 
-    public static TransactionPaymentEventHoldReason fromValue(String v) {
-        for (TransactionPaymentEventHoldReason c: TransactionPaymentEventHoldReason.values()) {
-            if (c.value.equals(v)) {
-                return c;
-            }
-        }
-        throw new IllegalArgumentException(v);
+    static {
+        typeDesc.setXmlType(new javax.xml.namespace.QName("urn:types.sales_2018_2.transactions.webservices.netsuite.com", "TransactionPaymentEventHoldReason"));
+    }
+    /**
+     * Return type metadata object
+     */
+    public static org.apache.axis.description.TypeDesc getTypeDesc() {
+        return typeDesc;
     }
 
 }

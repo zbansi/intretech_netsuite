@@ -1,1185 +1,1663 @@
+/**
+ * InterCompanyTransferOrder.java
+ *
+ * This file was auto-generated from WSDL
+ * by the Apache Axis 1.4 Jul 28, 2010 (04:07:04 PDT) WSDL2Java emitter.
+ */
 
 package com.netsuite.webservices.transactions.inventory_2018_2;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlAttribute;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlSchemaType;
-import javax.xml.bind.annotation.XmlType;
-import javax.xml.datatype.XMLGregorianCalendar;
-import com.netsuite.webservices.platform.common_2018_2.AccountingBookDetailList;
-import com.netsuite.webservices.platform.common_2018_2.Address;
-import com.netsuite.webservices.platform.core_2018_2.CustomFieldList;
-import com.netsuite.webservices.platform.core_2018_2.Record;
-import com.netsuite.webservices.platform.core_2018_2.RecordRef;
-import com.netsuite.webservices.transactions.inventory_2018_2.types.TransferOrderOrderStatus;
+public class InterCompanyTransferOrder  extends com.netsuite.webservices.platform.core_2018_2.Record  implements java.io.Serializable {
+    private java.util.Calendar createdDate;
 
+    private java.util.Calendar lastModifiedDate;
 
-/**
- * <p>InterCompanyTransferOrder complex type的 Java 类。
- * 
- * <p>以下模式片段指定包含在此类中的预期内容。
- * 
- * <pre>
- * &lt;complexType name="InterCompanyTransferOrder">
- *   &lt;complexContent>
- *     &lt;extension base="{urn:core_2018_2.platform.webservices.netsuite.com}Record">
- *       &lt;sequence>
- *         &lt;element name="createdDate" type="{http://www.w3.org/2001/XMLSchema}dateTime" minOccurs="0"/>
- *         &lt;element name="lastModifiedDate" type="{http://www.w3.org/2001/XMLSchema}dateTime" minOccurs="0"/>
- *         &lt;element name="customForm" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="shippingCost" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
- *         &lt;element name="subTotal" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
- *         &lt;element name="status" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="shippingAddress" type="{urn:common_2018_2.platform.webservices.netsuite.com}Address" minOccurs="0"/>
- *         &lt;element name="shipIsResidential" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         &lt;element name="shipAddressList" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="fob" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="tranDate" type="{http://www.w3.org/2001/XMLSchema}dateTime" minOccurs="0"/>
- *         &lt;element name="tranId" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="source" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="orderStatus" type="{urn:types.inventory_2018_2.transactions.webservices.netsuite.com}TransferOrderOrderStatus" minOccurs="0"/>
- *         &lt;element name="subsidiary" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="toSubsidiary" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="employee" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="useItemCostAsTransferCost" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         &lt;element name="incoterm" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="department" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="class" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="location" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="transferLocation" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="memo" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="shipDate" type="{http://www.w3.org/2001/XMLSchema}dateTime" minOccurs="0"/>
- *         &lt;element name="shipMethod" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="trackingNumbers" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="linkedTrackingNumbers" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="shipComplete" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         &lt;element name="altShippingCost" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
- *         &lt;element name="shippingTax1Rate" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
- *         &lt;element name="handlingTax1Rate" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
- *         &lt;element name="shippingTax2Rate" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
- *         &lt;element name="handlingTax2Rate" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
- *         &lt;element name="shippingTaxCode" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="handlingTaxCode" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="total" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
- *         &lt;element name="itemList" type="{urn:inventory_2018_2.transactions.webservices.netsuite.com}InterCompanyTransferOrderItemList" minOccurs="0"/>
- *         &lt;element name="accountingBookDetailList" type="{urn:common_2018_2.platform.webservices.netsuite.com}AccountingBookDetailList" minOccurs="0"/>
- *         &lt;element name="customFieldList" type="{urn:core_2018_2.platform.webservices.netsuite.com}CustomFieldList" minOccurs="0"/>
- *       &lt;/sequence>
- *       &lt;attribute name="internalId" type="{http://www.w3.org/2001/XMLSchema}string" />
- *       &lt;attribute name="externalId" type="{http://www.w3.org/2001/XMLSchema}string" />
- *     &lt;/extension>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
- */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "InterCompanyTransferOrder", propOrder = {
-    "createdDate",
-    "lastModifiedDate",
-    "customForm",
-    "shippingCost",
-    "subTotal",
-    "status",
-    "shippingAddress",
-    "shipIsResidential",
-    "shipAddressList",
-    "fob",
-    "tranDate",
-    "tranId",
-    "source",
-    "orderStatus",
-    "subsidiary",
-    "toSubsidiary",
-    "employee",
-    "useItemCostAsTransferCost",
-    "incoterm",
-    "department",
-    "clazz",
-    "location",
-    "transferLocation",
-    "memo",
-    "shipDate",
-    "shipMethod",
-    "trackingNumbers",
-    "linkedTrackingNumbers",
-    "shipComplete",
-    "altShippingCost",
-    "shippingTax1Rate",
-    "handlingTax1Rate",
-    "shippingTax2Rate",
-    "handlingTax2Rate",
-    "shippingTaxCode",
-    "handlingTaxCode",
-    "total",
-    "itemList",
-    "accountingBookDetailList",
-    "customFieldList"
-})
-public class InterCompanyTransferOrder
-    extends Record
-{
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef customForm;
 
-    @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar createdDate;
-    @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar lastModifiedDate;
-    protected RecordRef customForm;
-    protected Double shippingCost;
-    protected Double subTotal;
-    protected String status;
-    protected Address shippingAddress;
-    protected Boolean shipIsResidential;
-    protected RecordRef shipAddressList;
-    protected String fob;
-    @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar tranDate;
-    protected String tranId;
-    protected String source;
-    @XmlSchemaType(name = "string")
-    protected TransferOrderOrderStatus orderStatus;
-    protected RecordRef subsidiary;
-    protected RecordRef toSubsidiary;
-    protected RecordRef employee;
-    protected Boolean useItemCostAsTransferCost;
-    protected RecordRef incoterm;
-    protected RecordRef department;
-    @XmlElement(name = "class")
-    protected RecordRef clazz;
-    protected RecordRef location;
-    protected RecordRef transferLocation;
-    protected String memo;
-    @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar shipDate;
-    protected RecordRef shipMethod;
-    protected String trackingNumbers;
-    protected String linkedTrackingNumbers;
-    protected Boolean shipComplete;
-    protected Double altShippingCost;
-    protected Double shippingTax1Rate;
-    protected Double handlingTax1Rate;
-    protected Double shippingTax2Rate;
-    protected Double handlingTax2Rate;
-    protected RecordRef shippingTaxCode;
-    protected RecordRef handlingTaxCode;
-    protected Double total;
-    protected InterCompanyTransferOrderItemList itemList;
-    protected AccountingBookDetailList accountingBookDetailList;
-    protected CustomFieldList customFieldList;
-    @XmlAttribute(name = "internalId")
-    protected String internalId;
-    @XmlAttribute(name = "externalId")
-    protected String externalId;
+    private java.lang.Double shippingCost;
+
+    private java.lang.Double subTotal;
+
+    private java.lang.String status;
+
+    private com.netsuite.webservices.platform.common_2018_2.Address shippingAddress;
+
+    private java.lang.Boolean shipIsResidential;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef shipAddressList;
+
+    private java.lang.String fob;
+
+    private java.util.Calendar tranDate;
+
+    private java.lang.String tranId;
+
+    private java.lang.String source;
+
+    private com.netsuite.webservices.transactions.inventory_2018_2.types.TransferOrderOrderStatus orderStatus;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef subsidiary;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef toSubsidiary;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef employee;
+
+    private java.lang.Boolean useItemCostAsTransferCost;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef incoterm;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef department;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef _class;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef location;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef transferLocation;
+
+    private java.lang.String memo;
+
+    private java.util.Calendar shipDate;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef shipMethod;
+
+    private java.lang.String trackingNumbers;
+
+    private java.lang.String linkedTrackingNumbers;
+
+    private java.lang.Boolean shipComplete;
+
+    private java.lang.Double altShippingCost;
+
+    private java.lang.Double shippingTax1Rate;
+
+    private java.lang.Double handlingTax1Rate;
+
+    private java.lang.Double shippingTax2Rate;
+
+    private java.lang.Double handlingTax2Rate;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef shippingTaxCode;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef handlingTaxCode;
+
+    private java.lang.Double total;
+
+    private com.netsuite.webservices.transactions.inventory_2018_2.InterCompanyTransferOrderItem[] itemList;
+
+    private com.netsuite.webservices.platform.common_2018_2.AccountingBookDetail[] accountingBookDetailList;
+
+    private com.netsuite.webservices.platform.core_2018_2.CustomFieldRef[] customFieldList;
+
+    private java.lang.String internalId;  // attribute
+
+    private java.lang.String externalId;  // attribute
+
+    public InterCompanyTransferOrder() {
+    }
+
+    public InterCompanyTransferOrder(
+           java.lang.String[] nullFieldList,
+           java.lang.String internalId,
+           java.lang.String externalId,
+           java.util.Calendar createdDate,
+           java.util.Calendar lastModifiedDate,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef customForm,
+           java.lang.Double shippingCost,
+           java.lang.Double subTotal,
+           java.lang.String status,
+           com.netsuite.webservices.platform.common_2018_2.Address shippingAddress,
+           java.lang.Boolean shipIsResidential,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef shipAddressList,
+           java.lang.String fob,
+           java.util.Calendar tranDate,
+           java.lang.String tranId,
+           java.lang.String source,
+           com.netsuite.webservices.transactions.inventory_2018_2.types.TransferOrderOrderStatus orderStatus,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef subsidiary,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef toSubsidiary,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef employee,
+           java.lang.Boolean useItemCostAsTransferCost,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef incoterm,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef department,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef _class,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef location,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef transferLocation,
+           java.lang.String memo,
+           java.util.Calendar shipDate,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef shipMethod,
+           java.lang.String trackingNumbers,
+           java.lang.String linkedTrackingNumbers,
+           java.lang.Boolean shipComplete,
+           java.lang.Double altShippingCost,
+           java.lang.Double shippingTax1Rate,
+           java.lang.Double handlingTax1Rate,
+           java.lang.Double shippingTax2Rate,
+           java.lang.Double handlingTax2Rate,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef shippingTaxCode,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef handlingTaxCode,
+           java.lang.Double total,
+           com.netsuite.webservices.transactions.inventory_2018_2.InterCompanyTransferOrderItem[] itemList,
+           com.netsuite.webservices.platform.common_2018_2.AccountingBookDetail[] accountingBookDetailList,
+           com.netsuite.webservices.platform.core_2018_2.CustomFieldRef[] customFieldList) {
+        super(
+            nullFieldList);
+        this.internalId = internalId;
+        this.externalId = externalId;
+        this.createdDate = createdDate;
+        this.lastModifiedDate = lastModifiedDate;
+        this.customForm = customForm;
+        this.shippingCost = shippingCost;
+        this.subTotal = subTotal;
+        this.status = status;
+        this.shippingAddress = shippingAddress;
+        this.shipIsResidential = shipIsResidential;
+        this.shipAddressList = shipAddressList;
+        this.fob = fob;
+        this.tranDate = tranDate;
+        this.tranId = tranId;
+        this.source = source;
+        this.orderStatus = orderStatus;
+        this.subsidiary = subsidiary;
+        this.toSubsidiary = toSubsidiary;
+        this.employee = employee;
+        this.useItemCostAsTransferCost = useItemCostAsTransferCost;
+        this.incoterm = incoterm;
+        this.department = department;
+        this._class = _class;
+        this.location = location;
+        this.transferLocation = transferLocation;
+        this.memo = memo;
+        this.shipDate = shipDate;
+        this.shipMethod = shipMethod;
+        this.trackingNumbers = trackingNumbers;
+        this.linkedTrackingNumbers = linkedTrackingNumbers;
+        this.shipComplete = shipComplete;
+        this.altShippingCost = altShippingCost;
+        this.shippingTax1Rate = shippingTax1Rate;
+        this.handlingTax1Rate = handlingTax1Rate;
+        this.shippingTax2Rate = shippingTax2Rate;
+        this.handlingTax2Rate = handlingTax2Rate;
+        this.shippingTaxCode = shippingTaxCode;
+        this.handlingTaxCode = handlingTaxCode;
+        this.total = total;
+        this.itemList = itemList;
+        this.accountingBookDetailList = accountingBookDetailList;
+        this.customFieldList = customFieldList;
+    }
+
 
     /**
-     * 获取createdDate属性的值。
+     * Gets the createdDate value for this InterCompanyTransferOrder.
      * 
-     * @return
-     *     possible object is
-     *     {@link XMLGregorianCalendar }
-     *     
+     * @return createdDate
      */
-    public XMLGregorianCalendar getCreatedDate() {
+    public java.util.Calendar getCreatedDate() {
         return createdDate;
     }
 
-    /**
-     * 设置createdDate属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link XMLGregorianCalendar }
-     *     
-     */
-    public void setCreatedDate(XMLGregorianCalendar value) {
-        this.createdDate = value;
-    }
 
     /**
-     * 获取lastModifiedDate属性的值。
+     * Sets the createdDate value for this InterCompanyTransferOrder.
      * 
-     * @return
-     *     possible object is
-     *     {@link XMLGregorianCalendar }
-     *     
+     * @param createdDate
      */
-    public XMLGregorianCalendar getLastModifiedDate() {
+    public void setCreatedDate(java.util.Calendar createdDate) {
+        this.createdDate = createdDate;
+    }
+
+
+    /**
+     * Gets the lastModifiedDate value for this InterCompanyTransferOrder.
+     * 
+     * @return lastModifiedDate
+     */
+    public java.util.Calendar getLastModifiedDate() {
         return lastModifiedDate;
     }
 
-    /**
-     * 设置lastModifiedDate属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link XMLGregorianCalendar }
-     *     
-     */
-    public void setLastModifiedDate(XMLGregorianCalendar value) {
-        this.lastModifiedDate = value;
-    }
 
     /**
-     * 获取customForm属性的值。
+     * Sets the lastModifiedDate value for this InterCompanyTransferOrder.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param lastModifiedDate
      */
-    public RecordRef getCustomForm() {
+    public void setLastModifiedDate(java.util.Calendar lastModifiedDate) {
+        this.lastModifiedDate = lastModifiedDate;
+    }
+
+
+    /**
+     * Gets the customForm value for this InterCompanyTransferOrder.
+     * 
+     * @return customForm
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getCustomForm() {
         return customForm;
     }
 
-    /**
-     * 设置customForm属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setCustomForm(RecordRef value) {
-        this.customForm = value;
-    }
 
     /**
-     * 获取shippingCost属性的值。
+     * Sets the customForm value for this InterCompanyTransferOrder.
      * 
-     * @return
-     *     possible object is
-     *     {@link Double }
-     *     
+     * @param customForm
      */
-    public Double getShippingCost() {
+    public void setCustomForm(com.netsuite.webservices.platform.core_2018_2.RecordRef customForm) {
+        this.customForm = customForm;
+    }
+
+
+    /**
+     * Gets the shippingCost value for this InterCompanyTransferOrder.
+     * 
+     * @return shippingCost
+     */
+    public java.lang.Double getShippingCost() {
         return shippingCost;
     }
 
-    /**
-     * 设置shippingCost属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Double }
-     *     
-     */
-    public void setShippingCost(Double value) {
-        this.shippingCost = value;
-    }
 
     /**
-     * 获取subTotal属性的值。
+     * Sets the shippingCost value for this InterCompanyTransferOrder.
      * 
-     * @return
-     *     possible object is
-     *     {@link Double }
-     *     
+     * @param shippingCost
      */
-    public Double getSubTotal() {
+    public void setShippingCost(java.lang.Double shippingCost) {
+        this.shippingCost = shippingCost;
+    }
+
+
+    /**
+     * Gets the subTotal value for this InterCompanyTransferOrder.
+     * 
+     * @return subTotal
+     */
+    public java.lang.Double getSubTotal() {
         return subTotal;
     }
 
-    /**
-     * 设置subTotal属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Double }
-     *     
-     */
-    public void setSubTotal(Double value) {
-        this.subTotal = value;
-    }
 
     /**
-     * 获取status属性的值。
+     * Sets the subTotal value for this InterCompanyTransferOrder.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param subTotal
      */
-    public String getStatus() {
+    public void setSubTotal(java.lang.Double subTotal) {
+        this.subTotal = subTotal;
+    }
+
+
+    /**
+     * Gets the status value for this InterCompanyTransferOrder.
+     * 
+     * @return status
+     */
+    public java.lang.String getStatus() {
         return status;
     }
 
-    /**
-     * 设置status属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setStatus(String value) {
-        this.status = value;
-    }
 
     /**
-     * 获取shippingAddress属性的值。
+     * Sets the status value for this InterCompanyTransferOrder.
      * 
-     * @return
-     *     possible object is
-     *     {@link Address }
-     *     
+     * @param status
      */
-    public Address getShippingAddress() {
+    public void setStatus(java.lang.String status) {
+        this.status = status;
+    }
+
+
+    /**
+     * Gets the shippingAddress value for this InterCompanyTransferOrder.
+     * 
+     * @return shippingAddress
+     */
+    public com.netsuite.webservices.platform.common_2018_2.Address getShippingAddress() {
         return shippingAddress;
     }
 
-    /**
-     * 设置shippingAddress属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Address }
-     *     
-     */
-    public void setShippingAddress(Address value) {
-        this.shippingAddress = value;
-    }
 
     /**
-     * 获取shipIsResidential属性的值。
+     * Sets the shippingAddress value for this InterCompanyTransferOrder.
      * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
+     * @param shippingAddress
      */
-    public Boolean isShipIsResidential() {
+    public void setShippingAddress(com.netsuite.webservices.platform.common_2018_2.Address shippingAddress) {
+        this.shippingAddress = shippingAddress;
+    }
+
+
+    /**
+     * Gets the shipIsResidential value for this InterCompanyTransferOrder.
+     * 
+     * @return shipIsResidential
+     */
+    public java.lang.Boolean getShipIsResidential() {
         return shipIsResidential;
     }
 
-    /**
-     * 设置shipIsResidential属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
-     */
-    public void setShipIsResidential(Boolean value) {
-        this.shipIsResidential = value;
-    }
 
     /**
-     * 获取shipAddressList属性的值。
+     * Sets the shipIsResidential value for this InterCompanyTransferOrder.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param shipIsResidential
      */
-    public RecordRef getShipAddressList() {
+    public void setShipIsResidential(java.lang.Boolean shipIsResidential) {
+        this.shipIsResidential = shipIsResidential;
+    }
+
+
+    /**
+     * Gets the shipAddressList value for this InterCompanyTransferOrder.
+     * 
+     * @return shipAddressList
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getShipAddressList() {
         return shipAddressList;
     }
 
-    /**
-     * 设置shipAddressList属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setShipAddressList(RecordRef value) {
-        this.shipAddressList = value;
-    }
 
     /**
-     * 获取fob属性的值。
+     * Sets the shipAddressList value for this InterCompanyTransferOrder.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param shipAddressList
      */
-    public String getFob() {
+    public void setShipAddressList(com.netsuite.webservices.platform.core_2018_2.RecordRef shipAddressList) {
+        this.shipAddressList = shipAddressList;
+    }
+
+
+    /**
+     * Gets the fob value for this InterCompanyTransferOrder.
+     * 
+     * @return fob
+     */
+    public java.lang.String getFob() {
         return fob;
     }
 
-    /**
-     * 设置fob属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setFob(String value) {
-        this.fob = value;
-    }
 
     /**
-     * 获取tranDate属性的值。
+     * Sets the fob value for this InterCompanyTransferOrder.
      * 
-     * @return
-     *     possible object is
-     *     {@link XMLGregorianCalendar }
-     *     
+     * @param fob
      */
-    public XMLGregorianCalendar getTranDate() {
+    public void setFob(java.lang.String fob) {
+        this.fob = fob;
+    }
+
+
+    /**
+     * Gets the tranDate value for this InterCompanyTransferOrder.
+     * 
+     * @return tranDate
+     */
+    public java.util.Calendar getTranDate() {
         return tranDate;
     }
 
-    /**
-     * 设置tranDate属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link XMLGregorianCalendar }
-     *     
-     */
-    public void setTranDate(XMLGregorianCalendar value) {
-        this.tranDate = value;
-    }
 
     /**
-     * 获取tranId属性的值。
+     * Sets the tranDate value for this InterCompanyTransferOrder.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param tranDate
      */
-    public String getTranId() {
+    public void setTranDate(java.util.Calendar tranDate) {
+        this.tranDate = tranDate;
+    }
+
+
+    /**
+     * Gets the tranId value for this InterCompanyTransferOrder.
+     * 
+     * @return tranId
+     */
+    public java.lang.String getTranId() {
         return tranId;
     }
 
-    /**
-     * 设置tranId属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setTranId(String value) {
-        this.tranId = value;
-    }
 
     /**
-     * 获取source属性的值。
+     * Sets the tranId value for this InterCompanyTransferOrder.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param tranId
      */
-    public String getSource() {
+    public void setTranId(java.lang.String tranId) {
+        this.tranId = tranId;
+    }
+
+
+    /**
+     * Gets the source value for this InterCompanyTransferOrder.
+     * 
+     * @return source
+     */
+    public java.lang.String getSource() {
         return source;
     }
 
-    /**
-     * 设置source属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setSource(String value) {
-        this.source = value;
-    }
 
     /**
-     * 获取orderStatus属性的值。
+     * Sets the source value for this InterCompanyTransferOrder.
      * 
-     * @return
-     *     possible object is
-     *     {@link TransferOrderOrderStatus }
-     *     
+     * @param source
      */
-    public TransferOrderOrderStatus getOrderStatus() {
+    public void setSource(java.lang.String source) {
+        this.source = source;
+    }
+
+
+    /**
+     * Gets the orderStatus value for this InterCompanyTransferOrder.
+     * 
+     * @return orderStatus
+     */
+    public com.netsuite.webservices.transactions.inventory_2018_2.types.TransferOrderOrderStatus getOrderStatus() {
         return orderStatus;
     }
 
-    /**
-     * 设置orderStatus属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link TransferOrderOrderStatus }
-     *     
-     */
-    public void setOrderStatus(TransferOrderOrderStatus value) {
-        this.orderStatus = value;
-    }
 
     /**
-     * 获取subsidiary属性的值。
+     * Sets the orderStatus value for this InterCompanyTransferOrder.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param orderStatus
      */
-    public RecordRef getSubsidiary() {
+    public void setOrderStatus(com.netsuite.webservices.transactions.inventory_2018_2.types.TransferOrderOrderStatus orderStatus) {
+        this.orderStatus = orderStatus;
+    }
+
+
+    /**
+     * Gets the subsidiary value for this InterCompanyTransferOrder.
+     * 
+     * @return subsidiary
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getSubsidiary() {
         return subsidiary;
     }
 
-    /**
-     * 设置subsidiary属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setSubsidiary(RecordRef value) {
-        this.subsidiary = value;
-    }
 
     /**
-     * 获取toSubsidiary属性的值。
+     * Sets the subsidiary value for this InterCompanyTransferOrder.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param subsidiary
      */
-    public RecordRef getToSubsidiary() {
+    public void setSubsidiary(com.netsuite.webservices.platform.core_2018_2.RecordRef subsidiary) {
+        this.subsidiary = subsidiary;
+    }
+
+
+    /**
+     * Gets the toSubsidiary value for this InterCompanyTransferOrder.
+     * 
+     * @return toSubsidiary
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getToSubsidiary() {
         return toSubsidiary;
     }
 
-    /**
-     * 设置toSubsidiary属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setToSubsidiary(RecordRef value) {
-        this.toSubsidiary = value;
-    }
 
     /**
-     * 获取employee属性的值。
+     * Sets the toSubsidiary value for this InterCompanyTransferOrder.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param toSubsidiary
      */
-    public RecordRef getEmployee() {
+    public void setToSubsidiary(com.netsuite.webservices.platform.core_2018_2.RecordRef toSubsidiary) {
+        this.toSubsidiary = toSubsidiary;
+    }
+
+
+    /**
+     * Gets the employee value for this InterCompanyTransferOrder.
+     * 
+     * @return employee
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getEmployee() {
         return employee;
     }
 
-    /**
-     * 设置employee属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setEmployee(RecordRef value) {
-        this.employee = value;
-    }
 
     /**
-     * 获取useItemCostAsTransferCost属性的值。
+     * Sets the employee value for this InterCompanyTransferOrder.
      * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
+     * @param employee
      */
-    public Boolean isUseItemCostAsTransferCost() {
+    public void setEmployee(com.netsuite.webservices.platform.core_2018_2.RecordRef employee) {
+        this.employee = employee;
+    }
+
+
+    /**
+     * Gets the useItemCostAsTransferCost value for this InterCompanyTransferOrder.
+     * 
+     * @return useItemCostAsTransferCost
+     */
+    public java.lang.Boolean getUseItemCostAsTransferCost() {
         return useItemCostAsTransferCost;
     }
 
-    /**
-     * 设置useItemCostAsTransferCost属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
-     */
-    public void setUseItemCostAsTransferCost(Boolean value) {
-        this.useItemCostAsTransferCost = value;
-    }
 
     /**
-     * 获取incoterm属性的值。
+     * Sets the useItemCostAsTransferCost value for this InterCompanyTransferOrder.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param useItemCostAsTransferCost
      */
-    public RecordRef getIncoterm() {
+    public void setUseItemCostAsTransferCost(java.lang.Boolean useItemCostAsTransferCost) {
+        this.useItemCostAsTransferCost = useItemCostAsTransferCost;
+    }
+
+
+    /**
+     * Gets the incoterm value for this InterCompanyTransferOrder.
+     * 
+     * @return incoterm
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getIncoterm() {
         return incoterm;
     }
 
-    /**
-     * 设置incoterm属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setIncoterm(RecordRef value) {
-        this.incoterm = value;
-    }
 
     /**
-     * 获取department属性的值。
+     * Sets the incoterm value for this InterCompanyTransferOrder.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param incoterm
      */
-    public RecordRef getDepartment() {
+    public void setIncoterm(com.netsuite.webservices.platform.core_2018_2.RecordRef incoterm) {
+        this.incoterm = incoterm;
+    }
+
+
+    /**
+     * Gets the department value for this InterCompanyTransferOrder.
+     * 
+     * @return department
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getDepartment() {
         return department;
     }
 
-    /**
-     * 设置department属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setDepartment(RecordRef value) {
-        this.department = value;
-    }
 
     /**
-     * 获取clazz属性的值。
+     * Sets the department value for this InterCompanyTransferOrder.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param department
      */
-    public RecordRef getClazz() {
-        return clazz;
+    public void setDepartment(com.netsuite.webservices.platform.core_2018_2.RecordRef department) {
+        this.department = department;
     }
 
-    /**
-     * 设置clazz属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setClazz(RecordRef value) {
-        this.clazz = value;
-    }
 
     /**
-     * 获取location属性的值。
+     * Gets the _class value for this InterCompanyTransferOrder.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @return _class
      */
-    public RecordRef getLocation() {
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef get_class() {
+        return _class;
+    }
+
+
+    /**
+     * Sets the _class value for this InterCompanyTransferOrder.
+     * 
+     * @param _class
+     */
+    public void set_class(com.netsuite.webservices.platform.core_2018_2.RecordRef _class) {
+        this._class = _class;
+    }
+
+
+    /**
+     * Gets the location value for this InterCompanyTransferOrder.
+     * 
+     * @return location
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getLocation() {
         return location;
     }
 
-    /**
-     * 设置location属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setLocation(RecordRef value) {
-        this.location = value;
-    }
 
     /**
-     * 获取transferLocation属性的值。
+     * Sets the location value for this InterCompanyTransferOrder.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param location
      */
-    public RecordRef getTransferLocation() {
+    public void setLocation(com.netsuite.webservices.platform.core_2018_2.RecordRef location) {
+        this.location = location;
+    }
+
+
+    /**
+     * Gets the transferLocation value for this InterCompanyTransferOrder.
+     * 
+     * @return transferLocation
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getTransferLocation() {
         return transferLocation;
     }
 
-    /**
-     * 设置transferLocation属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setTransferLocation(RecordRef value) {
-        this.transferLocation = value;
-    }
 
     /**
-     * 获取memo属性的值。
+     * Sets the transferLocation value for this InterCompanyTransferOrder.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param transferLocation
      */
-    public String getMemo() {
+    public void setTransferLocation(com.netsuite.webservices.platform.core_2018_2.RecordRef transferLocation) {
+        this.transferLocation = transferLocation;
+    }
+
+
+    /**
+     * Gets the memo value for this InterCompanyTransferOrder.
+     * 
+     * @return memo
+     */
+    public java.lang.String getMemo() {
         return memo;
     }
 
-    /**
-     * 设置memo属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setMemo(String value) {
-        this.memo = value;
-    }
 
     /**
-     * 获取shipDate属性的值。
+     * Sets the memo value for this InterCompanyTransferOrder.
      * 
-     * @return
-     *     possible object is
-     *     {@link XMLGregorianCalendar }
-     *     
+     * @param memo
      */
-    public XMLGregorianCalendar getShipDate() {
+    public void setMemo(java.lang.String memo) {
+        this.memo = memo;
+    }
+
+
+    /**
+     * Gets the shipDate value for this InterCompanyTransferOrder.
+     * 
+     * @return shipDate
+     */
+    public java.util.Calendar getShipDate() {
         return shipDate;
     }
 
-    /**
-     * 设置shipDate属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link XMLGregorianCalendar }
-     *     
-     */
-    public void setShipDate(XMLGregorianCalendar value) {
-        this.shipDate = value;
-    }
 
     /**
-     * 获取shipMethod属性的值。
+     * Sets the shipDate value for this InterCompanyTransferOrder.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param shipDate
      */
-    public RecordRef getShipMethod() {
+    public void setShipDate(java.util.Calendar shipDate) {
+        this.shipDate = shipDate;
+    }
+
+
+    /**
+     * Gets the shipMethod value for this InterCompanyTransferOrder.
+     * 
+     * @return shipMethod
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getShipMethod() {
         return shipMethod;
     }
 
-    /**
-     * 设置shipMethod属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setShipMethod(RecordRef value) {
-        this.shipMethod = value;
-    }
 
     /**
-     * 获取trackingNumbers属性的值。
+     * Sets the shipMethod value for this InterCompanyTransferOrder.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param shipMethod
      */
-    public String getTrackingNumbers() {
+    public void setShipMethod(com.netsuite.webservices.platform.core_2018_2.RecordRef shipMethod) {
+        this.shipMethod = shipMethod;
+    }
+
+
+    /**
+     * Gets the trackingNumbers value for this InterCompanyTransferOrder.
+     * 
+     * @return trackingNumbers
+     */
+    public java.lang.String getTrackingNumbers() {
         return trackingNumbers;
     }
 
-    /**
-     * 设置trackingNumbers属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setTrackingNumbers(String value) {
-        this.trackingNumbers = value;
-    }
 
     /**
-     * 获取linkedTrackingNumbers属性的值。
+     * Sets the trackingNumbers value for this InterCompanyTransferOrder.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param trackingNumbers
      */
-    public String getLinkedTrackingNumbers() {
+    public void setTrackingNumbers(java.lang.String trackingNumbers) {
+        this.trackingNumbers = trackingNumbers;
+    }
+
+
+    /**
+     * Gets the linkedTrackingNumbers value for this InterCompanyTransferOrder.
+     * 
+     * @return linkedTrackingNumbers
+     */
+    public java.lang.String getLinkedTrackingNumbers() {
         return linkedTrackingNumbers;
     }
 
-    /**
-     * 设置linkedTrackingNumbers属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setLinkedTrackingNumbers(String value) {
-        this.linkedTrackingNumbers = value;
-    }
 
     /**
-     * 获取shipComplete属性的值。
+     * Sets the linkedTrackingNumbers value for this InterCompanyTransferOrder.
      * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
+     * @param linkedTrackingNumbers
      */
-    public Boolean isShipComplete() {
+    public void setLinkedTrackingNumbers(java.lang.String linkedTrackingNumbers) {
+        this.linkedTrackingNumbers = linkedTrackingNumbers;
+    }
+
+
+    /**
+     * Gets the shipComplete value for this InterCompanyTransferOrder.
+     * 
+     * @return shipComplete
+     */
+    public java.lang.Boolean getShipComplete() {
         return shipComplete;
     }
 
-    /**
-     * 设置shipComplete属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
-     */
-    public void setShipComplete(Boolean value) {
-        this.shipComplete = value;
-    }
 
     /**
-     * 获取altShippingCost属性的值。
+     * Sets the shipComplete value for this InterCompanyTransferOrder.
      * 
-     * @return
-     *     possible object is
-     *     {@link Double }
-     *     
+     * @param shipComplete
      */
-    public Double getAltShippingCost() {
+    public void setShipComplete(java.lang.Boolean shipComplete) {
+        this.shipComplete = shipComplete;
+    }
+
+
+    /**
+     * Gets the altShippingCost value for this InterCompanyTransferOrder.
+     * 
+     * @return altShippingCost
+     */
+    public java.lang.Double getAltShippingCost() {
         return altShippingCost;
     }
 
-    /**
-     * 设置altShippingCost属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Double }
-     *     
-     */
-    public void setAltShippingCost(Double value) {
-        this.altShippingCost = value;
-    }
 
     /**
-     * 获取shippingTax1Rate属性的值。
+     * Sets the altShippingCost value for this InterCompanyTransferOrder.
      * 
-     * @return
-     *     possible object is
-     *     {@link Double }
-     *     
+     * @param altShippingCost
      */
-    public Double getShippingTax1Rate() {
+    public void setAltShippingCost(java.lang.Double altShippingCost) {
+        this.altShippingCost = altShippingCost;
+    }
+
+
+    /**
+     * Gets the shippingTax1Rate value for this InterCompanyTransferOrder.
+     * 
+     * @return shippingTax1Rate
+     */
+    public java.lang.Double getShippingTax1Rate() {
         return shippingTax1Rate;
     }
 
-    /**
-     * 设置shippingTax1Rate属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Double }
-     *     
-     */
-    public void setShippingTax1Rate(Double value) {
-        this.shippingTax1Rate = value;
-    }
 
     /**
-     * 获取handlingTax1Rate属性的值。
+     * Sets the shippingTax1Rate value for this InterCompanyTransferOrder.
      * 
-     * @return
-     *     possible object is
-     *     {@link Double }
-     *     
+     * @param shippingTax1Rate
      */
-    public Double getHandlingTax1Rate() {
+    public void setShippingTax1Rate(java.lang.Double shippingTax1Rate) {
+        this.shippingTax1Rate = shippingTax1Rate;
+    }
+
+
+    /**
+     * Gets the handlingTax1Rate value for this InterCompanyTransferOrder.
+     * 
+     * @return handlingTax1Rate
+     */
+    public java.lang.Double getHandlingTax1Rate() {
         return handlingTax1Rate;
     }
 
-    /**
-     * 设置handlingTax1Rate属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Double }
-     *     
-     */
-    public void setHandlingTax1Rate(Double value) {
-        this.handlingTax1Rate = value;
-    }
 
     /**
-     * 获取shippingTax2Rate属性的值。
+     * Sets the handlingTax1Rate value for this InterCompanyTransferOrder.
      * 
-     * @return
-     *     possible object is
-     *     {@link Double }
-     *     
+     * @param handlingTax1Rate
      */
-    public Double getShippingTax2Rate() {
+    public void setHandlingTax1Rate(java.lang.Double handlingTax1Rate) {
+        this.handlingTax1Rate = handlingTax1Rate;
+    }
+
+
+    /**
+     * Gets the shippingTax2Rate value for this InterCompanyTransferOrder.
+     * 
+     * @return shippingTax2Rate
+     */
+    public java.lang.Double getShippingTax2Rate() {
         return shippingTax2Rate;
     }
 
-    /**
-     * 设置shippingTax2Rate属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Double }
-     *     
-     */
-    public void setShippingTax2Rate(Double value) {
-        this.shippingTax2Rate = value;
-    }
 
     /**
-     * 获取handlingTax2Rate属性的值。
+     * Sets the shippingTax2Rate value for this InterCompanyTransferOrder.
      * 
-     * @return
-     *     possible object is
-     *     {@link Double }
-     *     
+     * @param shippingTax2Rate
      */
-    public Double getHandlingTax2Rate() {
+    public void setShippingTax2Rate(java.lang.Double shippingTax2Rate) {
+        this.shippingTax2Rate = shippingTax2Rate;
+    }
+
+
+    /**
+     * Gets the handlingTax2Rate value for this InterCompanyTransferOrder.
+     * 
+     * @return handlingTax2Rate
+     */
+    public java.lang.Double getHandlingTax2Rate() {
         return handlingTax2Rate;
     }
 
-    /**
-     * 设置handlingTax2Rate属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Double }
-     *     
-     */
-    public void setHandlingTax2Rate(Double value) {
-        this.handlingTax2Rate = value;
-    }
 
     /**
-     * 获取shippingTaxCode属性的值。
+     * Sets the handlingTax2Rate value for this InterCompanyTransferOrder.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param handlingTax2Rate
      */
-    public RecordRef getShippingTaxCode() {
+    public void setHandlingTax2Rate(java.lang.Double handlingTax2Rate) {
+        this.handlingTax2Rate = handlingTax2Rate;
+    }
+
+
+    /**
+     * Gets the shippingTaxCode value for this InterCompanyTransferOrder.
+     * 
+     * @return shippingTaxCode
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getShippingTaxCode() {
         return shippingTaxCode;
     }
 
-    /**
-     * 设置shippingTaxCode属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setShippingTaxCode(RecordRef value) {
-        this.shippingTaxCode = value;
-    }
 
     /**
-     * 获取handlingTaxCode属性的值。
+     * Sets the shippingTaxCode value for this InterCompanyTransferOrder.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param shippingTaxCode
      */
-    public RecordRef getHandlingTaxCode() {
+    public void setShippingTaxCode(com.netsuite.webservices.platform.core_2018_2.RecordRef shippingTaxCode) {
+        this.shippingTaxCode = shippingTaxCode;
+    }
+
+
+    /**
+     * Gets the handlingTaxCode value for this InterCompanyTransferOrder.
+     * 
+     * @return handlingTaxCode
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getHandlingTaxCode() {
         return handlingTaxCode;
     }
 
-    /**
-     * 设置handlingTaxCode属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setHandlingTaxCode(RecordRef value) {
-        this.handlingTaxCode = value;
-    }
 
     /**
-     * 获取total属性的值。
+     * Sets the handlingTaxCode value for this InterCompanyTransferOrder.
      * 
-     * @return
-     *     possible object is
-     *     {@link Double }
-     *     
+     * @param handlingTaxCode
      */
-    public Double getTotal() {
+    public void setHandlingTaxCode(com.netsuite.webservices.platform.core_2018_2.RecordRef handlingTaxCode) {
+        this.handlingTaxCode = handlingTaxCode;
+    }
+
+
+    /**
+     * Gets the total value for this InterCompanyTransferOrder.
+     * 
+     * @return total
+     */
+    public java.lang.Double getTotal() {
         return total;
     }
 
-    /**
-     * 设置total属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Double }
-     *     
-     */
-    public void setTotal(Double value) {
-        this.total = value;
-    }
 
     /**
-     * 获取itemList属性的值。
+     * Sets the total value for this InterCompanyTransferOrder.
      * 
-     * @return
-     *     possible object is
-     *     {@link InterCompanyTransferOrderItemList }
-     *     
+     * @param total
      */
-    public InterCompanyTransferOrderItemList getItemList() {
+    public void setTotal(java.lang.Double total) {
+        this.total = total;
+    }
+
+
+    /**
+     * Gets the itemList value for this InterCompanyTransferOrder.
+     * 
+     * @return itemList
+     */
+    public com.netsuite.webservices.transactions.inventory_2018_2.InterCompanyTransferOrderItem[] getItemList() {
         return itemList;
     }
 
-    /**
-     * 设置itemList属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link InterCompanyTransferOrderItemList }
-     *     
-     */
-    public void setItemList(InterCompanyTransferOrderItemList value) {
-        this.itemList = value;
-    }
 
     /**
-     * 获取accountingBookDetailList属性的值。
+     * Sets the itemList value for this InterCompanyTransferOrder.
      * 
-     * @return
-     *     possible object is
-     *     {@link AccountingBookDetailList }
-     *     
+     * @param itemList
      */
-    public AccountingBookDetailList getAccountingBookDetailList() {
+    public void setItemList(com.netsuite.webservices.transactions.inventory_2018_2.InterCompanyTransferOrderItem[] itemList) {
+        this.itemList = itemList;
+    }
+
+
+    /**
+     * Gets the accountingBookDetailList value for this InterCompanyTransferOrder.
+     * 
+     * @return accountingBookDetailList
+     */
+    public com.netsuite.webservices.platform.common_2018_2.AccountingBookDetail[] getAccountingBookDetailList() {
         return accountingBookDetailList;
     }
 
-    /**
-     * 设置accountingBookDetailList属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link AccountingBookDetailList }
-     *     
-     */
-    public void setAccountingBookDetailList(AccountingBookDetailList value) {
-        this.accountingBookDetailList = value;
-    }
 
     /**
-     * 获取customFieldList属性的值。
+     * Sets the accountingBookDetailList value for this InterCompanyTransferOrder.
      * 
-     * @return
-     *     possible object is
-     *     {@link CustomFieldList }
-     *     
+     * @param accountingBookDetailList
      */
-    public CustomFieldList getCustomFieldList() {
+    public void setAccountingBookDetailList(com.netsuite.webservices.platform.common_2018_2.AccountingBookDetail[] accountingBookDetailList) {
+        this.accountingBookDetailList = accountingBookDetailList;
+    }
+
+
+    /**
+     * Gets the customFieldList value for this InterCompanyTransferOrder.
+     * 
+     * @return customFieldList
+     */
+    public com.netsuite.webservices.platform.core_2018_2.CustomFieldRef[] getCustomFieldList() {
         return customFieldList;
     }
 
-    /**
-     * 设置customFieldList属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link CustomFieldList }
-     *     
-     */
-    public void setCustomFieldList(CustomFieldList value) {
-        this.customFieldList = value;
-    }
 
     /**
-     * 获取internalId属性的值。
+     * Sets the customFieldList value for this InterCompanyTransferOrder.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param customFieldList
      */
-    public String getInternalId() {
+    public void setCustomFieldList(com.netsuite.webservices.platform.core_2018_2.CustomFieldRef[] customFieldList) {
+        this.customFieldList = customFieldList;
+    }
+
+
+    /**
+     * Gets the internalId value for this InterCompanyTransferOrder.
+     * 
+     * @return internalId
+     */
+    public java.lang.String getInternalId() {
         return internalId;
     }
 
-    /**
-     * 设置internalId属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setInternalId(String value) {
-        this.internalId = value;
-    }
 
     /**
-     * 获取externalId属性的值。
+     * Sets the internalId value for this InterCompanyTransferOrder.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param internalId
      */
-    public String getExternalId() {
+    public void setInternalId(java.lang.String internalId) {
+        this.internalId = internalId;
+    }
+
+
+    /**
+     * Gets the externalId value for this InterCompanyTransferOrder.
+     * 
+     * @return externalId
+     */
+    public java.lang.String getExternalId() {
         return externalId;
     }
 
+
     /**
-     * 设置externalId属性的值。
+     * Sets the externalId value for this InterCompanyTransferOrder.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     * @param externalId
      */
-    public void setExternalId(String value) {
-        this.externalId = value;
+    public void setExternalId(java.lang.String externalId) {
+        this.externalId = externalId;
+    }
+
+    private java.lang.Object __equalsCalc = null;
+    public synchronized boolean equals(java.lang.Object obj) {
+        if (!(obj instanceof InterCompanyTransferOrder)) return false;
+        InterCompanyTransferOrder other = (InterCompanyTransferOrder) obj;
+        if (obj == null) return false;
+        if (this == obj) return true;
+        if (__equalsCalc != null) {
+            return (__equalsCalc == obj);
+        }
+        __equalsCalc = obj;
+        boolean _equals;
+        _equals = super.equals(obj) && 
+            ((this.createdDate==null && other.getCreatedDate()==null) || 
+             (this.createdDate!=null &&
+              this.createdDate.equals(other.getCreatedDate()))) &&
+            ((this.lastModifiedDate==null && other.getLastModifiedDate()==null) || 
+             (this.lastModifiedDate!=null &&
+              this.lastModifiedDate.equals(other.getLastModifiedDate()))) &&
+            ((this.customForm==null && other.getCustomForm()==null) || 
+             (this.customForm!=null &&
+              this.customForm.equals(other.getCustomForm()))) &&
+            ((this.shippingCost==null && other.getShippingCost()==null) || 
+             (this.shippingCost!=null &&
+              this.shippingCost.equals(other.getShippingCost()))) &&
+            ((this.subTotal==null && other.getSubTotal()==null) || 
+             (this.subTotal!=null &&
+              this.subTotal.equals(other.getSubTotal()))) &&
+            ((this.status==null && other.getStatus()==null) || 
+             (this.status!=null &&
+              this.status.equals(other.getStatus()))) &&
+            ((this.shippingAddress==null && other.getShippingAddress()==null) || 
+             (this.shippingAddress!=null &&
+              this.shippingAddress.equals(other.getShippingAddress()))) &&
+            ((this.shipIsResidential==null && other.getShipIsResidential()==null) || 
+             (this.shipIsResidential!=null &&
+              this.shipIsResidential.equals(other.getShipIsResidential()))) &&
+            ((this.shipAddressList==null && other.getShipAddressList()==null) || 
+             (this.shipAddressList!=null &&
+              this.shipAddressList.equals(other.getShipAddressList()))) &&
+            ((this.fob==null && other.getFob()==null) || 
+             (this.fob!=null &&
+              this.fob.equals(other.getFob()))) &&
+            ((this.tranDate==null && other.getTranDate()==null) || 
+             (this.tranDate!=null &&
+              this.tranDate.equals(other.getTranDate()))) &&
+            ((this.tranId==null && other.getTranId()==null) || 
+             (this.tranId!=null &&
+              this.tranId.equals(other.getTranId()))) &&
+            ((this.source==null && other.getSource()==null) || 
+             (this.source!=null &&
+              this.source.equals(other.getSource()))) &&
+            ((this.orderStatus==null && other.getOrderStatus()==null) || 
+             (this.orderStatus!=null &&
+              this.orderStatus.equals(other.getOrderStatus()))) &&
+            ((this.subsidiary==null && other.getSubsidiary()==null) || 
+             (this.subsidiary!=null &&
+              this.subsidiary.equals(other.getSubsidiary()))) &&
+            ((this.toSubsidiary==null && other.getToSubsidiary()==null) || 
+             (this.toSubsidiary!=null &&
+              this.toSubsidiary.equals(other.getToSubsidiary()))) &&
+            ((this.employee==null && other.getEmployee()==null) || 
+             (this.employee!=null &&
+              this.employee.equals(other.getEmployee()))) &&
+            ((this.useItemCostAsTransferCost==null && other.getUseItemCostAsTransferCost()==null) || 
+             (this.useItemCostAsTransferCost!=null &&
+              this.useItemCostAsTransferCost.equals(other.getUseItemCostAsTransferCost()))) &&
+            ((this.incoterm==null && other.getIncoterm()==null) || 
+             (this.incoterm!=null &&
+              this.incoterm.equals(other.getIncoterm()))) &&
+            ((this.department==null && other.getDepartment()==null) || 
+             (this.department!=null &&
+              this.department.equals(other.getDepartment()))) &&
+            ((this._class==null && other.get_class()==null) || 
+             (this._class!=null &&
+              this._class.equals(other.get_class()))) &&
+            ((this.location==null && other.getLocation()==null) || 
+             (this.location!=null &&
+              this.location.equals(other.getLocation()))) &&
+            ((this.transferLocation==null && other.getTransferLocation()==null) || 
+             (this.transferLocation!=null &&
+              this.transferLocation.equals(other.getTransferLocation()))) &&
+            ((this.memo==null && other.getMemo()==null) || 
+             (this.memo!=null &&
+              this.memo.equals(other.getMemo()))) &&
+            ((this.shipDate==null && other.getShipDate()==null) || 
+             (this.shipDate!=null &&
+              this.shipDate.equals(other.getShipDate()))) &&
+            ((this.shipMethod==null && other.getShipMethod()==null) || 
+             (this.shipMethod!=null &&
+              this.shipMethod.equals(other.getShipMethod()))) &&
+            ((this.trackingNumbers==null && other.getTrackingNumbers()==null) || 
+             (this.trackingNumbers!=null &&
+              this.trackingNumbers.equals(other.getTrackingNumbers()))) &&
+            ((this.linkedTrackingNumbers==null && other.getLinkedTrackingNumbers()==null) || 
+             (this.linkedTrackingNumbers!=null &&
+              this.linkedTrackingNumbers.equals(other.getLinkedTrackingNumbers()))) &&
+            ((this.shipComplete==null && other.getShipComplete()==null) || 
+             (this.shipComplete!=null &&
+              this.shipComplete.equals(other.getShipComplete()))) &&
+            ((this.altShippingCost==null && other.getAltShippingCost()==null) || 
+             (this.altShippingCost!=null &&
+              this.altShippingCost.equals(other.getAltShippingCost()))) &&
+            ((this.shippingTax1Rate==null && other.getShippingTax1Rate()==null) || 
+             (this.shippingTax1Rate!=null &&
+              this.shippingTax1Rate.equals(other.getShippingTax1Rate()))) &&
+            ((this.handlingTax1Rate==null && other.getHandlingTax1Rate()==null) || 
+             (this.handlingTax1Rate!=null &&
+              this.handlingTax1Rate.equals(other.getHandlingTax1Rate()))) &&
+            ((this.shippingTax2Rate==null && other.getShippingTax2Rate()==null) || 
+             (this.shippingTax2Rate!=null &&
+              this.shippingTax2Rate.equals(other.getShippingTax2Rate()))) &&
+            ((this.handlingTax2Rate==null && other.getHandlingTax2Rate()==null) || 
+             (this.handlingTax2Rate!=null &&
+              this.handlingTax2Rate.equals(other.getHandlingTax2Rate()))) &&
+            ((this.shippingTaxCode==null && other.getShippingTaxCode()==null) || 
+             (this.shippingTaxCode!=null &&
+              this.shippingTaxCode.equals(other.getShippingTaxCode()))) &&
+            ((this.handlingTaxCode==null && other.getHandlingTaxCode()==null) || 
+             (this.handlingTaxCode!=null &&
+              this.handlingTaxCode.equals(other.getHandlingTaxCode()))) &&
+            ((this.total==null && other.getTotal()==null) || 
+             (this.total!=null &&
+              this.total.equals(other.getTotal()))) &&
+            ((this.itemList==null && other.getItemList()==null) || 
+             (this.itemList!=null &&
+              java.util.Arrays.equals(this.itemList, other.getItemList()))) &&
+            ((this.accountingBookDetailList==null && other.getAccountingBookDetailList()==null) || 
+             (this.accountingBookDetailList!=null &&
+              java.util.Arrays.equals(this.accountingBookDetailList, other.getAccountingBookDetailList()))) &&
+            ((this.customFieldList==null && other.getCustomFieldList()==null) || 
+             (this.customFieldList!=null &&
+              java.util.Arrays.equals(this.customFieldList, other.getCustomFieldList()))) &&
+            ((this.internalId==null && other.getInternalId()==null) || 
+             (this.internalId!=null &&
+              this.internalId.equals(other.getInternalId()))) &&
+            ((this.externalId==null && other.getExternalId()==null) || 
+             (this.externalId!=null &&
+              this.externalId.equals(other.getExternalId())));
+        __equalsCalc = null;
+        return _equals;
+    }
+
+    private boolean __hashCodeCalc = false;
+    public synchronized int hashCode() {
+        if (__hashCodeCalc) {
+            return 0;
+        }
+        __hashCodeCalc = true;
+        int _hashCode = super.hashCode();
+        if (getCreatedDate() != null) {
+            _hashCode += getCreatedDate().hashCode();
+        }
+        if (getLastModifiedDate() != null) {
+            _hashCode += getLastModifiedDate().hashCode();
+        }
+        if (getCustomForm() != null) {
+            _hashCode += getCustomForm().hashCode();
+        }
+        if (getShippingCost() != null) {
+            _hashCode += getShippingCost().hashCode();
+        }
+        if (getSubTotal() != null) {
+            _hashCode += getSubTotal().hashCode();
+        }
+        if (getStatus() != null) {
+            _hashCode += getStatus().hashCode();
+        }
+        if (getShippingAddress() != null) {
+            _hashCode += getShippingAddress().hashCode();
+        }
+        if (getShipIsResidential() != null) {
+            _hashCode += getShipIsResidential().hashCode();
+        }
+        if (getShipAddressList() != null) {
+            _hashCode += getShipAddressList().hashCode();
+        }
+        if (getFob() != null) {
+            _hashCode += getFob().hashCode();
+        }
+        if (getTranDate() != null) {
+            _hashCode += getTranDate().hashCode();
+        }
+        if (getTranId() != null) {
+            _hashCode += getTranId().hashCode();
+        }
+        if (getSource() != null) {
+            _hashCode += getSource().hashCode();
+        }
+        if (getOrderStatus() != null) {
+            _hashCode += getOrderStatus().hashCode();
+        }
+        if (getSubsidiary() != null) {
+            _hashCode += getSubsidiary().hashCode();
+        }
+        if (getToSubsidiary() != null) {
+            _hashCode += getToSubsidiary().hashCode();
+        }
+        if (getEmployee() != null) {
+            _hashCode += getEmployee().hashCode();
+        }
+        if (getUseItemCostAsTransferCost() != null) {
+            _hashCode += getUseItemCostAsTransferCost().hashCode();
+        }
+        if (getIncoterm() != null) {
+            _hashCode += getIncoterm().hashCode();
+        }
+        if (getDepartment() != null) {
+            _hashCode += getDepartment().hashCode();
+        }
+        if (get_class() != null) {
+            _hashCode += get_class().hashCode();
+        }
+        if (getLocation() != null) {
+            _hashCode += getLocation().hashCode();
+        }
+        if (getTransferLocation() != null) {
+            _hashCode += getTransferLocation().hashCode();
+        }
+        if (getMemo() != null) {
+            _hashCode += getMemo().hashCode();
+        }
+        if (getShipDate() != null) {
+            _hashCode += getShipDate().hashCode();
+        }
+        if (getShipMethod() != null) {
+            _hashCode += getShipMethod().hashCode();
+        }
+        if (getTrackingNumbers() != null) {
+            _hashCode += getTrackingNumbers().hashCode();
+        }
+        if (getLinkedTrackingNumbers() != null) {
+            _hashCode += getLinkedTrackingNumbers().hashCode();
+        }
+        if (getShipComplete() != null) {
+            _hashCode += getShipComplete().hashCode();
+        }
+        if (getAltShippingCost() != null) {
+            _hashCode += getAltShippingCost().hashCode();
+        }
+        if (getShippingTax1Rate() != null) {
+            _hashCode += getShippingTax1Rate().hashCode();
+        }
+        if (getHandlingTax1Rate() != null) {
+            _hashCode += getHandlingTax1Rate().hashCode();
+        }
+        if (getShippingTax2Rate() != null) {
+            _hashCode += getShippingTax2Rate().hashCode();
+        }
+        if (getHandlingTax2Rate() != null) {
+            _hashCode += getHandlingTax2Rate().hashCode();
+        }
+        if (getShippingTaxCode() != null) {
+            _hashCode += getShippingTaxCode().hashCode();
+        }
+        if (getHandlingTaxCode() != null) {
+            _hashCode += getHandlingTaxCode().hashCode();
+        }
+        if (getTotal() != null) {
+            _hashCode += getTotal().hashCode();
+        }
+        if (getItemList() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getItemList());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getItemList(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getAccountingBookDetailList() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getAccountingBookDetailList());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getAccountingBookDetailList(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getCustomFieldList() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getCustomFieldList());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getCustomFieldList(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getInternalId() != null) {
+            _hashCode += getInternalId().hashCode();
+        }
+        if (getExternalId() != null) {
+            _hashCode += getExternalId().hashCode();
+        }
+        __hashCodeCalc = false;
+        return _hashCode;
+    }
+
+    // Type metadata
+    private static org.apache.axis.description.TypeDesc typeDesc =
+        new org.apache.axis.description.TypeDesc(InterCompanyTransferOrder.class, true);
+
+    static {
+        typeDesc.setXmlType(new javax.xml.namespace.QName("urn:inventory_2018_2.transactions.webservices.netsuite.com", "InterCompanyTransferOrder"));
+        org.apache.axis.description.AttributeDesc attrField = new org.apache.axis.description.AttributeDesc();
+        attrField.setFieldName("internalId");
+        attrField.setXmlName(new javax.xml.namespace.QName("", "internalId"));
+        attrField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        typeDesc.addFieldDesc(attrField);
+        attrField = new org.apache.axis.description.AttributeDesc();
+        attrField.setFieldName("externalId");
+        attrField.setXmlName(new javax.xml.namespace.QName("", "externalId"));
+        attrField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        typeDesc.addFieldDesc(attrField);
+        org.apache.axis.description.ElementDesc elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("createdDate");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:inventory_2018_2.transactions.webservices.netsuite.com", "createdDate"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "dateTime"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("lastModifiedDate");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:inventory_2018_2.transactions.webservices.netsuite.com", "lastModifiedDate"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "dateTime"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("customForm");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:inventory_2018_2.transactions.webservices.netsuite.com", "customForm"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("shippingCost");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:inventory_2018_2.transactions.webservices.netsuite.com", "shippingCost"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "double"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("subTotal");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:inventory_2018_2.transactions.webservices.netsuite.com", "subTotal"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "double"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("status");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:inventory_2018_2.transactions.webservices.netsuite.com", "status"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("shippingAddress");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:inventory_2018_2.transactions.webservices.netsuite.com", "shippingAddress"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "Address"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("shipIsResidential");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:inventory_2018_2.transactions.webservices.netsuite.com", "shipIsResidential"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("shipAddressList");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:inventory_2018_2.transactions.webservices.netsuite.com", "shipAddressList"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("fob");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:inventory_2018_2.transactions.webservices.netsuite.com", "fob"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("tranDate");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:inventory_2018_2.transactions.webservices.netsuite.com", "tranDate"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "dateTime"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("tranId");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:inventory_2018_2.transactions.webservices.netsuite.com", "tranId"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("source");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:inventory_2018_2.transactions.webservices.netsuite.com", "source"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("orderStatus");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:inventory_2018_2.transactions.webservices.netsuite.com", "orderStatus"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:types.inventory_2018_2.transactions.webservices.netsuite.com", "TransferOrderOrderStatus"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("subsidiary");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:inventory_2018_2.transactions.webservices.netsuite.com", "subsidiary"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("toSubsidiary");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:inventory_2018_2.transactions.webservices.netsuite.com", "toSubsidiary"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("employee");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:inventory_2018_2.transactions.webservices.netsuite.com", "employee"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("useItemCostAsTransferCost");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:inventory_2018_2.transactions.webservices.netsuite.com", "useItemCostAsTransferCost"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("incoterm");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:inventory_2018_2.transactions.webservices.netsuite.com", "incoterm"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("department");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:inventory_2018_2.transactions.webservices.netsuite.com", "department"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("_class");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:inventory_2018_2.transactions.webservices.netsuite.com", "class"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("location");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:inventory_2018_2.transactions.webservices.netsuite.com", "location"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("transferLocation");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:inventory_2018_2.transactions.webservices.netsuite.com", "transferLocation"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("memo");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:inventory_2018_2.transactions.webservices.netsuite.com", "memo"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("shipDate");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:inventory_2018_2.transactions.webservices.netsuite.com", "shipDate"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "dateTime"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("shipMethod");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:inventory_2018_2.transactions.webservices.netsuite.com", "shipMethod"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("trackingNumbers");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:inventory_2018_2.transactions.webservices.netsuite.com", "trackingNumbers"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("linkedTrackingNumbers");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:inventory_2018_2.transactions.webservices.netsuite.com", "linkedTrackingNumbers"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("shipComplete");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:inventory_2018_2.transactions.webservices.netsuite.com", "shipComplete"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("altShippingCost");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:inventory_2018_2.transactions.webservices.netsuite.com", "altShippingCost"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "double"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("shippingTax1Rate");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:inventory_2018_2.transactions.webservices.netsuite.com", "shippingTax1Rate"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "double"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("handlingTax1Rate");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:inventory_2018_2.transactions.webservices.netsuite.com", "handlingTax1Rate"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "double"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("shippingTax2Rate");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:inventory_2018_2.transactions.webservices.netsuite.com", "shippingTax2Rate"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "double"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("handlingTax2Rate");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:inventory_2018_2.transactions.webservices.netsuite.com", "handlingTax2Rate"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "double"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("shippingTaxCode");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:inventory_2018_2.transactions.webservices.netsuite.com", "shippingTaxCode"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("handlingTaxCode");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:inventory_2018_2.transactions.webservices.netsuite.com", "handlingTaxCode"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("total");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:inventory_2018_2.transactions.webservices.netsuite.com", "total"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "double"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("itemList");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:inventory_2018_2.transactions.webservices.netsuite.com", "itemList"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:inventory_2018_2.transactions.webservices.netsuite.com", "InterCompanyTransferOrderItem"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:inventory_2018_2.transactions.webservices.netsuite.com", "item"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("accountingBookDetailList");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:inventory_2018_2.transactions.webservices.netsuite.com", "accountingBookDetailList"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "AccountingBookDetail"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "accountingBookDetail"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("customFieldList");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:inventory_2018_2.transactions.webservices.netsuite.com", "customFieldList"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "CustomFieldRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "customField"));
+        typeDesc.addFieldDesc(elemField);
+    }
+
+    /**
+     * Return type metadata object
+     */
+    public static org.apache.axis.description.TypeDesc getTypeDesc() {
+        return typeDesc;
+    }
+
+    /**
+     * Get Custom Serializer
+     */
+    public static org.apache.axis.encoding.Serializer getSerializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanSerializer(
+            _javaType, _xmlType, typeDesc);
+    }
+
+    /**
+     * Get Custom Deserializer
+     */
+    public static org.apache.axis.encoding.Deserializer getDeserializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanDeserializer(
+            _javaType, _xmlType, typeDesc);
     }
 
 }

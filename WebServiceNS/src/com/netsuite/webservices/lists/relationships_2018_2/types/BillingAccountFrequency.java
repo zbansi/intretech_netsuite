@@ -1,99 +1,102 @@
+/**
+ * BillingAccountFrequency.java
+ *
+ * This file was auto-generated from WSDL
+ * by the Apache Axis 1.4 Jul 28, 2010 (04:07:04 PDT) WSDL2Java emitter.
+ */
 
 package com.netsuite.webservices.lists.relationships_2018_2.types;
 
-import javax.xml.bind.annotation.XmlEnum;
-import javax.xml.bind.annotation.XmlEnumValue;
-import javax.xml.bind.annotation.XmlType;
+public class BillingAccountFrequency implements java.io.Serializable {
+    private java.lang.String _value_;
+    private static java.util.HashMap _table_ = new java.util.HashMap();
 
-
-/**
- * <p>BillingAccountFrequency的 Java 类。
- * 
- * <p>以下模式片段指定包含在此类中的预期内容。
- * <p>
- * <pre>
- * &lt;simpleType name="BillingAccountFrequency">
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     &lt;enumeration value="_annually"/>
- *     &lt;enumeration value="_custom"/>
- *     &lt;enumeration value="_daily"/>
- *     &lt;enumeration value="_endOfPeriod"/>
- *     &lt;enumeration value="_everyFourWeeks"/>
- *     &lt;enumeration value="_everyThreeYears"/>
- *     &lt;enumeration value="_everyTwoMonths"/>
- *     &lt;enumeration value="_everyTwoWeeks"/>
- *     &lt;enumeration value="_everyTwoYears"/>
- *     &lt;enumeration value="_hourly"/>
- *     &lt;enumeration value="_monthly"/>
- *     &lt;enumeration value="_never"/>
- *     &lt;enumeration value="_oneTime"/>
- *     &lt;enumeration value="_quarterly"/>
- *     &lt;enumeration value="_startOfPeriod"/>
- *     &lt;enumeration value="_twiceAMonth"/>
- *     &lt;enumeration value="_twiceAYear"/>
- *     &lt;enumeration value="_weekly"/>
- *   &lt;/restriction>
- * &lt;/simpleType>
- * </pre>
- * 
- */
-@XmlType(name = "BillingAccountFrequency", namespace = "urn:types.relationships_2018_2.lists.webservices.netsuite.com")
-@XmlEnum
-public enum BillingAccountFrequency {
-
-    @XmlEnumValue("_annually")
-    ANNUALLY("_annually"),
-    @XmlEnumValue("_custom")
-    CUSTOM("_custom"),
-    @XmlEnumValue("_daily")
-    DAILY("_daily"),
-    @XmlEnumValue("_endOfPeriod")
-    END_OF_PERIOD("_endOfPeriod"),
-    @XmlEnumValue("_everyFourWeeks")
-    EVERY_FOUR_WEEKS("_everyFourWeeks"),
-    @XmlEnumValue("_everyThreeYears")
-    EVERY_THREE_YEARS("_everyThreeYears"),
-    @XmlEnumValue("_everyTwoMonths")
-    EVERY_TWO_MONTHS("_everyTwoMonths"),
-    @XmlEnumValue("_everyTwoWeeks")
-    EVERY_TWO_WEEKS("_everyTwoWeeks"),
-    @XmlEnumValue("_everyTwoYears")
-    EVERY_TWO_YEARS("_everyTwoYears"),
-    @XmlEnumValue("_hourly")
-    HOURLY("_hourly"),
-    @XmlEnumValue("_monthly")
-    MONTHLY("_monthly"),
-    @XmlEnumValue("_never")
-    NEVER("_never"),
-    @XmlEnumValue("_oneTime")
-    ONE_TIME("_oneTime"),
-    @XmlEnumValue("_quarterly")
-    QUARTERLY("_quarterly"),
-    @XmlEnumValue("_startOfPeriod")
-    START_OF_PERIOD("_startOfPeriod"),
-    @XmlEnumValue("_twiceAMonth")
-    TWICE_A_MONTH("_twiceAMonth"),
-    @XmlEnumValue("_twiceAYear")
-    TWICE_A_YEAR("_twiceAYear"),
-    @XmlEnumValue("_weekly")
-    WEEKLY("_weekly");
-    private final String value;
-
-    BillingAccountFrequency(String v) {
-        value = v;
+    // Constructor
+    protected BillingAccountFrequency(java.lang.String value) {
+        _value_ = value;
+        _table_.put(_value_,this);
     }
 
-    public String value() {
-        return value;
+    public static final java.lang.String __annually = "_annually";
+    public static final java.lang.String __custom = "_custom";
+    public static final java.lang.String __daily = "_daily";
+    public static final java.lang.String __endOfPeriod = "_endOfPeriod";
+    public static final java.lang.String __everyFourWeeks = "_everyFourWeeks";
+    public static final java.lang.String __everyThreeYears = "_everyThreeYears";
+    public static final java.lang.String __everyTwoMonths = "_everyTwoMonths";
+    public static final java.lang.String __everyTwoWeeks = "_everyTwoWeeks";
+    public static final java.lang.String __everyTwoYears = "_everyTwoYears";
+    public static final java.lang.String __hourly = "_hourly";
+    public static final java.lang.String __monthly = "_monthly";
+    public static final java.lang.String __never = "_never";
+    public static final java.lang.String __oneTime = "_oneTime";
+    public static final java.lang.String __quarterly = "_quarterly";
+    public static final java.lang.String __startOfPeriod = "_startOfPeriod";
+    public static final java.lang.String __twiceAMonth = "_twiceAMonth";
+    public static final java.lang.String __twiceAYear = "_twiceAYear";
+    public static final java.lang.String __weekly = "_weekly";
+    public static final BillingAccountFrequency _annually = new BillingAccountFrequency(__annually);
+    public static final BillingAccountFrequency _custom = new BillingAccountFrequency(__custom);
+    public static final BillingAccountFrequency _daily = new BillingAccountFrequency(__daily);
+    public static final BillingAccountFrequency _endOfPeriod = new BillingAccountFrequency(__endOfPeriod);
+    public static final BillingAccountFrequency _everyFourWeeks = new BillingAccountFrequency(__everyFourWeeks);
+    public static final BillingAccountFrequency _everyThreeYears = new BillingAccountFrequency(__everyThreeYears);
+    public static final BillingAccountFrequency _everyTwoMonths = new BillingAccountFrequency(__everyTwoMonths);
+    public static final BillingAccountFrequency _everyTwoWeeks = new BillingAccountFrequency(__everyTwoWeeks);
+    public static final BillingAccountFrequency _everyTwoYears = new BillingAccountFrequency(__everyTwoYears);
+    public static final BillingAccountFrequency _hourly = new BillingAccountFrequency(__hourly);
+    public static final BillingAccountFrequency _monthly = new BillingAccountFrequency(__monthly);
+    public static final BillingAccountFrequency _never = new BillingAccountFrequency(__never);
+    public static final BillingAccountFrequency _oneTime = new BillingAccountFrequency(__oneTime);
+    public static final BillingAccountFrequency _quarterly = new BillingAccountFrequency(__quarterly);
+    public static final BillingAccountFrequency _startOfPeriod = new BillingAccountFrequency(__startOfPeriod);
+    public static final BillingAccountFrequency _twiceAMonth = new BillingAccountFrequency(__twiceAMonth);
+    public static final BillingAccountFrequency _twiceAYear = new BillingAccountFrequency(__twiceAYear);
+    public static final BillingAccountFrequency _weekly = new BillingAccountFrequency(__weekly);
+    public java.lang.String getValue() { return _value_;}
+    public static BillingAccountFrequency fromValue(java.lang.String value)
+          throws java.lang.IllegalArgumentException {
+        BillingAccountFrequency enumeration = (BillingAccountFrequency)
+            _table_.get(value);
+        if (enumeration==null) throw new java.lang.IllegalArgumentException();
+        return enumeration;
     }
+    public static BillingAccountFrequency fromString(java.lang.String value)
+          throws java.lang.IllegalArgumentException {
+        return fromValue(value);
+    }
+    public boolean equals(java.lang.Object obj) {return (obj == this);}
+    public int hashCode() { return toString().hashCode();}
+    public java.lang.String toString() { return _value_;}
+    public java.lang.Object readResolve() throws java.io.ObjectStreamException { return fromValue(_value_);}
+    public static org.apache.axis.encoding.Serializer getSerializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new org.apache.axis.encoding.ser.EnumSerializer(
+            _javaType, _xmlType);
+    }
+    public static org.apache.axis.encoding.Deserializer getDeserializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new org.apache.axis.encoding.ser.EnumDeserializer(
+            _javaType, _xmlType);
+    }
+    // Type metadata
+    private static org.apache.axis.description.TypeDesc typeDesc =
+        new org.apache.axis.description.TypeDesc(BillingAccountFrequency.class);
 
-    public static BillingAccountFrequency fromValue(String v) {
-        for (BillingAccountFrequency c: BillingAccountFrequency.values()) {
-            if (c.value.equals(v)) {
-                return c;
-            }
-        }
-        throw new IllegalArgumentException(v);
+    static {
+        typeDesc.setXmlType(new javax.xml.namespace.QName("urn:types.relationships_2018_2.lists.webservices.netsuite.com", "BillingAccountFrequency"));
+    }
+    /**
+     * Return type metadata object
+     */
+    public static org.apache.axis.description.TypeDesc getTypeDesc() {
+        return typeDesc;
     }
 
 }

@@ -1,586 +1,840 @@
+/**
+ * FairValuePrice.java
+ *
+ * This file was auto-generated from WSDL
+ * by the Apache Axis 1.4 Jul 28, 2010 (04:07:04 PDT) WSDL2Java emitter.
+ */
 
 package com.netsuite.webservices.lists.accounting_2018_2;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlAttribute;
-import javax.xml.bind.annotation.XmlSchemaType;
-import javax.xml.bind.annotation.XmlType;
-import javax.xml.datatype.XMLGregorianCalendar;
-import com.netsuite.webservices.lists.accounting_2018_2.types.FairValuePriceFairValueRangePolicy;
-import com.netsuite.webservices.platform.core_2018_2.CustomFieldList;
-import com.netsuite.webservices.platform.core_2018_2.DimensionList;
-import com.netsuite.webservices.platform.core_2018_2.Record;
-import com.netsuite.webservices.platform.core_2018_2.RecordRef;
+public class FairValuePrice  extends com.netsuite.webservices.platform.core_2018_2.Record  implements java.io.Serializable {
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef customForm;
 
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef item;
 
-/**
- * <p>FairValuePrice complex type的 Java 类。
- * 
- * <p>以下模式片段指定包含在此类中的预期内容。
- * 
- * <pre>
- * &lt;complexType name="FairValuePrice">
- *   &lt;complexContent>
- *     &lt;extension base="{urn:core_2018_2.platform.webservices.netsuite.com}Record">
- *       &lt;sequence>
- *         &lt;element name="customForm" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="item" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="itemRevenueCategory" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="fairValue" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
- *         &lt;element name="fairValueFormula" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="currency" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="unitsType" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="units" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="fairValueRangePolicy" type="{urn:types.accounting_2018_2.lists.webservices.netsuite.com}FairValuePriceFairValueRangePolicy" minOccurs="0"/>
- *         &lt;element name="lowValue" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
- *         &lt;element name="lowValuePercent" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
- *         &lt;element name="highValue" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
- *         &lt;element name="highValuePercent" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
- *         &lt;element name="isVsoePrice" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         &lt;element name="startDate" type="{http://www.w3.org/2001/XMLSchema}dateTime" minOccurs="0"/>
- *         &lt;element name="endDate" type="{http://www.w3.org/2001/XMLSchema}dateTime" minOccurs="0"/>
- *         &lt;element name="customFieldList" type="{urn:core_2018_2.platform.webservices.netsuite.com}CustomFieldList" minOccurs="0"/>
- *         &lt;element name="dimensionList" type="{urn:core_2018_2.platform.webservices.netsuite.com}DimensionList" minOccurs="0"/>
- *       &lt;/sequence>
- *       &lt;attribute name="internalId" type="{http://www.w3.org/2001/XMLSchema}string" />
- *       &lt;attribute name="externalId" type="{http://www.w3.org/2001/XMLSchema}string" />
- *     &lt;/extension>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
- */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "FairValuePrice", propOrder = {
-    "customForm",
-    "item",
-    "itemRevenueCategory",
-    "fairValue",
-    "fairValueFormula",
-    "currency",
-    "unitsType",
-    "units",
-    "fairValueRangePolicy",
-    "lowValue",
-    "lowValuePercent",
-    "highValue",
-    "highValuePercent",
-    "isVsoePrice",
-    "startDate",
-    "endDate",
-    "customFieldList",
-    "dimensionList"
-})
-public class FairValuePrice
-    extends Record
-{
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef itemRevenueCategory;
 
-    protected RecordRef customForm;
-    protected RecordRef item;
-    protected RecordRef itemRevenueCategory;
-    protected Double fairValue;
-    protected RecordRef fairValueFormula;
-    protected RecordRef currency;
-    protected RecordRef unitsType;
-    protected RecordRef units;
-    @XmlSchemaType(name = "string")
-    protected FairValuePriceFairValueRangePolicy fairValueRangePolicy;
-    protected Double lowValue;
-    protected Double lowValuePercent;
-    protected Double highValue;
-    protected Double highValuePercent;
-    protected Boolean isVsoePrice;
-    @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar startDate;
-    @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar endDate;
-    protected CustomFieldList customFieldList;
-    protected DimensionList dimensionList;
-    @XmlAttribute(name = "internalId")
-    protected String internalId;
-    @XmlAttribute(name = "externalId")
-    protected String externalId;
+    private java.lang.Double fairValue;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef fairValueFormula;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef currency;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef unitsType;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef units;
+
+    private com.netsuite.webservices.lists.accounting_2018_2.types.FairValuePriceFairValueRangePolicy fairValueRangePolicy;
+
+    private java.lang.Double lowValue;
+
+    private java.lang.Double lowValuePercent;
+
+    private java.lang.Double highValue;
+
+    private java.lang.Double highValuePercent;
+
+    private java.lang.Boolean isVsoePrice;
+
+    private java.util.Calendar startDate;
+
+    private java.util.Calendar endDate;
+
+    private com.netsuite.webservices.platform.core_2018_2.CustomFieldRef[] customFieldList;
+
+    private com.netsuite.webservices.platform.core_2018_2.DimensionRef[] dimensionList;
+
+    private java.lang.String internalId;  // attribute
+
+    private java.lang.String externalId;  // attribute
+
+    public FairValuePrice() {
+    }
+
+    public FairValuePrice(
+           java.lang.String[] nullFieldList,
+           java.lang.String internalId,
+           java.lang.String externalId,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef customForm,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef item,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef itemRevenueCategory,
+           java.lang.Double fairValue,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef fairValueFormula,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef currency,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef unitsType,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef units,
+           com.netsuite.webservices.lists.accounting_2018_2.types.FairValuePriceFairValueRangePolicy fairValueRangePolicy,
+           java.lang.Double lowValue,
+           java.lang.Double lowValuePercent,
+           java.lang.Double highValue,
+           java.lang.Double highValuePercent,
+           java.lang.Boolean isVsoePrice,
+           java.util.Calendar startDate,
+           java.util.Calendar endDate,
+           com.netsuite.webservices.platform.core_2018_2.CustomFieldRef[] customFieldList,
+           com.netsuite.webservices.platform.core_2018_2.DimensionRef[] dimensionList) {
+        super(
+            nullFieldList);
+        this.internalId = internalId;
+        this.externalId = externalId;
+        this.customForm = customForm;
+        this.item = item;
+        this.itemRevenueCategory = itemRevenueCategory;
+        this.fairValue = fairValue;
+        this.fairValueFormula = fairValueFormula;
+        this.currency = currency;
+        this.unitsType = unitsType;
+        this.units = units;
+        this.fairValueRangePolicy = fairValueRangePolicy;
+        this.lowValue = lowValue;
+        this.lowValuePercent = lowValuePercent;
+        this.highValue = highValue;
+        this.highValuePercent = highValuePercent;
+        this.isVsoePrice = isVsoePrice;
+        this.startDate = startDate;
+        this.endDate = endDate;
+        this.customFieldList = customFieldList;
+        this.dimensionList = dimensionList;
+    }
+
 
     /**
-     * 获取customForm属性的值。
+     * Gets the customForm value for this FairValuePrice.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @return customForm
      */
-    public RecordRef getCustomForm() {
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getCustomForm() {
         return customForm;
     }
 
-    /**
-     * 设置customForm属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setCustomForm(RecordRef value) {
-        this.customForm = value;
-    }
 
     /**
-     * 获取item属性的值。
+     * Sets the customForm value for this FairValuePrice.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param customForm
      */
-    public RecordRef getItem() {
+    public void setCustomForm(com.netsuite.webservices.platform.core_2018_2.RecordRef customForm) {
+        this.customForm = customForm;
+    }
+
+
+    /**
+     * Gets the item value for this FairValuePrice.
+     * 
+     * @return item
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getItem() {
         return item;
     }
 
-    /**
-     * 设置item属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setItem(RecordRef value) {
-        this.item = value;
-    }
 
     /**
-     * 获取itemRevenueCategory属性的值。
+     * Sets the item value for this FairValuePrice.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param item
      */
-    public RecordRef getItemRevenueCategory() {
+    public void setItem(com.netsuite.webservices.platform.core_2018_2.RecordRef item) {
+        this.item = item;
+    }
+
+
+    /**
+     * Gets the itemRevenueCategory value for this FairValuePrice.
+     * 
+     * @return itemRevenueCategory
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getItemRevenueCategory() {
         return itemRevenueCategory;
     }
 
-    /**
-     * 设置itemRevenueCategory属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setItemRevenueCategory(RecordRef value) {
-        this.itemRevenueCategory = value;
-    }
 
     /**
-     * 获取fairValue属性的值。
+     * Sets the itemRevenueCategory value for this FairValuePrice.
      * 
-     * @return
-     *     possible object is
-     *     {@link Double }
-     *     
+     * @param itemRevenueCategory
      */
-    public Double getFairValue() {
+    public void setItemRevenueCategory(com.netsuite.webservices.platform.core_2018_2.RecordRef itemRevenueCategory) {
+        this.itemRevenueCategory = itemRevenueCategory;
+    }
+
+
+    /**
+     * Gets the fairValue value for this FairValuePrice.
+     * 
+     * @return fairValue
+     */
+    public java.lang.Double getFairValue() {
         return fairValue;
     }
 
-    /**
-     * 设置fairValue属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Double }
-     *     
-     */
-    public void setFairValue(Double value) {
-        this.fairValue = value;
-    }
 
     /**
-     * 获取fairValueFormula属性的值。
+     * Sets the fairValue value for this FairValuePrice.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param fairValue
      */
-    public RecordRef getFairValueFormula() {
+    public void setFairValue(java.lang.Double fairValue) {
+        this.fairValue = fairValue;
+    }
+
+
+    /**
+     * Gets the fairValueFormula value for this FairValuePrice.
+     * 
+     * @return fairValueFormula
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getFairValueFormula() {
         return fairValueFormula;
     }
 
-    /**
-     * 设置fairValueFormula属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setFairValueFormula(RecordRef value) {
-        this.fairValueFormula = value;
-    }
 
     /**
-     * 获取currency属性的值。
+     * Sets the fairValueFormula value for this FairValuePrice.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param fairValueFormula
      */
-    public RecordRef getCurrency() {
+    public void setFairValueFormula(com.netsuite.webservices.platform.core_2018_2.RecordRef fairValueFormula) {
+        this.fairValueFormula = fairValueFormula;
+    }
+
+
+    /**
+     * Gets the currency value for this FairValuePrice.
+     * 
+     * @return currency
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getCurrency() {
         return currency;
     }
 
-    /**
-     * 设置currency属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setCurrency(RecordRef value) {
-        this.currency = value;
-    }
 
     /**
-     * 获取unitsType属性的值。
+     * Sets the currency value for this FairValuePrice.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param currency
      */
-    public RecordRef getUnitsType() {
+    public void setCurrency(com.netsuite.webservices.platform.core_2018_2.RecordRef currency) {
+        this.currency = currency;
+    }
+
+
+    /**
+     * Gets the unitsType value for this FairValuePrice.
+     * 
+     * @return unitsType
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getUnitsType() {
         return unitsType;
     }
 
-    /**
-     * 设置unitsType属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setUnitsType(RecordRef value) {
-        this.unitsType = value;
-    }
 
     /**
-     * 获取units属性的值。
+     * Sets the unitsType value for this FairValuePrice.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param unitsType
      */
-    public RecordRef getUnits() {
+    public void setUnitsType(com.netsuite.webservices.platform.core_2018_2.RecordRef unitsType) {
+        this.unitsType = unitsType;
+    }
+
+
+    /**
+     * Gets the units value for this FairValuePrice.
+     * 
+     * @return units
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getUnits() {
         return units;
     }
 
-    /**
-     * 设置units属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setUnits(RecordRef value) {
-        this.units = value;
-    }
 
     /**
-     * 获取fairValueRangePolicy属性的值。
+     * Sets the units value for this FairValuePrice.
      * 
-     * @return
-     *     possible object is
-     *     {@link FairValuePriceFairValueRangePolicy }
-     *     
+     * @param units
      */
-    public FairValuePriceFairValueRangePolicy getFairValueRangePolicy() {
+    public void setUnits(com.netsuite.webservices.platform.core_2018_2.RecordRef units) {
+        this.units = units;
+    }
+
+
+    /**
+     * Gets the fairValueRangePolicy value for this FairValuePrice.
+     * 
+     * @return fairValueRangePolicy
+     */
+    public com.netsuite.webservices.lists.accounting_2018_2.types.FairValuePriceFairValueRangePolicy getFairValueRangePolicy() {
         return fairValueRangePolicy;
     }
 
-    /**
-     * 设置fairValueRangePolicy属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link FairValuePriceFairValueRangePolicy }
-     *     
-     */
-    public void setFairValueRangePolicy(FairValuePriceFairValueRangePolicy value) {
-        this.fairValueRangePolicy = value;
-    }
 
     /**
-     * 获取lowValue属性的值。
+     * Sets the fairValueRangePolicy value for this FairValuePrice.
      * 
-     * @return
-     *     possible object is
-     *     {@link Double }
-     *     
+     * @param fairValueRangePolicy
      */
-    public Double getLowValue() {
+    public void setFairValueRangePolicy(com.netsuite.webservices.lists.accounting_2018_2.types.FairValuePriceFairValueRangePolicy fairValueRangePolicy) {
+        this.fairValueRangePolicy = fairValueRangePolicy;
+    }
+
+
+    /**
+     * Gets the lowValue value for this FairValuePrice.
+     * 
+     * @return lowValue
+     */
+    public java.lang.Double getLowValue() {
         return lowValue;
     }
 
-    /**
-     * 设置lowValue属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Double }
-     *     
-     */
-    public void setLowValue(Double value) {
-        this.lowValue = value;
-    }
 
     /**
-     * 获取lowValuePercent属性的值。
+     * Sets the lowValue value for this FairValuePrice.
      * 
-     * @return
-     *     possible object is
-     *     {@link Double }
-     *     
+     * @param lowValue
      */
-    public Double getLowValuePercent() {
+    public void setLowValue(java.lang.Double lowValue) {
+        this.lowValue = lowValue;
+    }
+
+
+    /**
+     * Gets the lowValuePercent value for this FairValuePrice.
+     * 
+     * @return lowValuePercent
+     */
+    public java.lang.Double getLowValuePercent() {
         return lowValuePercent;
     }
 
-    /**
-     * 设置lowValuePercent属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Double }
-     *     
-     */
-    public void setLowValuePercent(Double value) {
-        this.lowValuePercent = value;
-    }
 
     /**
-     * 获取highValue属性的值。
+     * Sets the lowValuePercent value for this FairValuePrice.
      * 
-     * @return
-     *     possible object is
-     *     {@link Double }
-     *     
+     * @param lowValuePercent
      */
-    public Double getHighValue() {
+    public void setLowValuePercent(java.lang.Double lowValuePercent) {
+        this.lowValuePercent = lowValuePercent;
+    }
+
+
+    /**
+     * Gets the highValue value for this FairValuePrice.
+     * 
+     * @return highValue
+     */
+    public java.lang.Double getHighValue() {
         return highValue;
     }
 
-    /**
-     * 设置highValue属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Double }
-     *     
-     */
-    public void setHighValue(Double value) {
-        this.highValue = value;
-    }
 
     /**
-     * 获取highValuePercent属性的值。
+     * Sets the highValue value for this FairValuePrice.
      * 
-     * @return
-     *     possible object is
-     *     {@link Double }
-     *     
+     * @param highValue
      */
-    public Double getHighValuePercent() {
+    public void setHighValue(java.lang.Double highValue) {
+        this.highValue = highValue;
+    }
+
+
+    /**
+     * Gets the highValuePercent value for this FairValuePrice.
+     * 
+     * @return highValuePercent
+     */
+    public java.lang.Double getHighValuePercent() {
         return highValuePercent;
     }
 
-    /**
-     * 设置highValuePercent属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Double }
-     *     
-     */
-    public void setHighValuePercent(Double value) {
-        this.highValuePercent = value;
-    }
 
     /**
-     * 获取isVsoePrice属性的值。
+     * Sets the highValuePercent value for this FairValuePrice.
      * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
+     * @param highValuePercent
      */
-    public Boolean isIsVsoePrice() {
+    public void setHighValuePercent(java.lang.Double highValuePercent) {
+        this.highValuePercent = highValuePercent;
+    }
+
+
+    /**
+     * Gets the isVsoePrice value for this FairValuePrice.
+     * 
+     * @return isVsoePrice
+     */
+    public java.lang.Boolean getIsVsoePrice() {
         return isVsoePrice;
     }
 
-    /**
-     * 设置isVsoePrice属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
-     */
-    public void setIsVsoePrice(Boolean value) {
-        this.isVsoePrice = value;
-    }
 
     /**
-     * 获取startDate属性的值。
+     * Sets the isVsoePrice value for this FairValuePrice.
      * 
-     * @return
-     *     possible object is
-     *     {@link XMLGregorianCalendar }
-     *     
+     * @param isVsoePrice
      */
-    public XMLGregorianCalendar getStartDate() {
+    public void setIsVsoePrice(java.lang.Boolean isVsoePrice) {
+        this.isVsoePrice = isVsoePrice;
+    }
+
+
+    /**
+     * Gets the startDate value for this FairValuePrice.
+     * 
+     * @return startDate
+     */
+    public java.util.Calendar getStartDate() {
         return startDate;
     }
 
-    /**
-     * 设置startDate属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link XMLGregorianCalendar }
-     *     
-     */
-    public void setStartDate(XMLGregorianCalendar value) {
-        this.startDate = value;
-    }
 
     /**
-     * 获取endDate属性的值。
+     * Sets the startDate value for this FairValuePrice.
      * 
-     * @return
-     *     possible object is
-     *     {@link XMLGregorianCalendar }
-     *     
+     * @param startDate
      */
-    public XMLGregorianCalendar getEndDate() {
+    public void setStartDate(java.util.Calendar startDate) {
+        this.startDate = startDate;
+    }
+
+
+    /**
+     * Gets the endDate value for this FairValuePrice.
+     * 
+     * @return endDate
+     */
+    public java.util.Calendar getEndDate() {
         return endDate;
     }
 
-    /**
-     * 设置endDate属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link XMLGregorianCalendar }
-     *     
-     */
-    public void setEndDate(XMLGregorianCalendar value) {
-        this.endDate = value;
-    }
 
     /**
-     * 获取customFieldList属性的值。
+     * Sets the endDate value for this FairValuePrice.
      * 
-     * @return
-     *     possible object is
-     *     {@link CustomFieldList }
-     *     
+     * @param endDate
      */
-    public CustomFieldList getCustomFieldList() {
+    public void setEndDate(java.util.Calendar endDate) {
+        this.endDate = endDate;
+    }
+
+
+    /**
+     * Gets the customFieldList value for this FairValuePrice.
+     * 
+     * @return customFieldList
+     */
+    public com.netsuite.webservices.platform.core_2018_2.CustomFieldRef[] getCustomFieldList() {
         return customFieldList;
     }
 
-    /**
-     * 设置customFieldList属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link CustomFieldList }
-     *     
-     */
-    public void setCustomFieldList(CustomFieldList value) {
-        this.customFieldList = value;
-    }
 
     /**
-     * 获取dimensionList属性的值。
+     * Sets the customFieldList value for this FairValuePrice.
      * 
-     * @return
-     *     possible object is
-     *     {@link DimensionList }
-     *     
+     * @param customFieldList
      */
-    public DimensionList getDimensionList() {
+    public void setCustomFieldList(com.netsuite.webservices.platform.core_2018_2.CustomFieldRef[] customFieldList) {
+        this.customFieldList = customFieldList;
+    }
+
+
+    /**
+     * Gets the dimensionList value for this FairValuePrice.
+     * 
+     * @return dimensionList
+     */
+    public com.netsuite.webservices.platform.core_2018_2.DimensionRef[] getDimensionList() {
         return dimensionList;
     }
 
-    /**
-     * 设置dimensionList属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link DimensionList }
-     *     
-     */
-    public void setDimensionList(DimensionList value) {
-        this.dimensionList = value;
-    }
 
     /**
-     * 获取internalId属性的值。
+     * Sets the dimensionList value for this FairValuePrice.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param dimensionList
      */
-    public String getInternalId() {
+    public void setDimensionList(com.netsuite.webservices.platform.core_2018_2.DimensionRef[] dimensionList) {
+        this.dimensionList = dimensionList;
+    }
+
+
+    /**
+     * Gets the internalId value for this FairValuePrice.
+     * 
+     * @return internalId
+     */
+    public java.lang.String getInternalId() {
         return internalId;
     }
 
-    /**
-     * 设置internalId属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setInternalId(String value) {
-        this.internalId = value;
-    }
 
     /**
-     * 获取externalId属性的值。
+     * Sets the internalId value for this FairValuePrice.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param internalId
      */
-    public String getExternalId() {
+    public void setInternalId(java.lang.String internalId) {
+        this.internalId = internalId;
+    }
+
+
+    /**
+     * Gets the externalId value for this FairValuePrice.
+     * 
+     * @return externalId
+     */
+    public java.lang.String getExternalId() {
         return externalId;
     }
 
+
     /**
-     * 设置externalId属性的值。
+     * Sets the externalId value for this FairValuePrice.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     * @param externalId
      */
-    public void setExternalId(String value) {
-        this.externalId = value;
+    public void setExternalId(java.lang.String externalId) {
+        this.externalId = externalId;
+    }
+
+    private java.lang.Object __equalsCalc = null;
+    public synchronized boolean equals(java.lang.Object obj) {
+        if (!(obj instanceof FairValuePrice)) return false;
+        FairValuePrice other = (FairValuePrice) obj;
+        if (obj == null) return false;
+        if (this == obj) return true;
+        if (__equalsCalc != null) {
+            return (__equalsCalc == obj);
+        }
+        __equalsCalc = obj;
+        boolean _equals;
+        _equals = super.equals(obj) && 
+            ((this.customForm==null && other.getCustomForm()==null) || 
+             (this.customForm!=null &&
+              this.customForm.equals(other.getCustomForm()))) &&
+            ((this.item==null && other.getItem()==null) || 
+             (this.item!=null &&
+              this.item.equals(other.getItem()))) &&
+            ((this.itemRevenueCategory==null && other.getItemRevenueCategory()==null) || 
+             (this.itemRevenueCategory!=null &&
+              this.itemRevenueCategory.equals(other.getItemRevenueCategory()))) &&
+            ((this.fairValue==null && other.getFairValue()==null) || 
+             (this.fairValue!=null &&
+              this.fairValue.equals(other.getFairValue()))) &&
+            ((this.fairValueFormula==null && other.getFairValueFormula()==null) || 
+             (this.fairValueFormula!=null &&
+              this.fairValueFormula.equals(other.getFairValueFormula()))) &&
+            ((this.currency==null && other.getCurrency()==null) || 
+             (this.currency!=null &&
+              this.currency.equals(other.getCurrency()))) &&
+            ((this.unitsType==null && other.getUnitsType()==null) || 
+             (this.unitsType!=null &&
+              this.unitsType.equals(other.getUnitsType()))) &&
+            ((this.units==null && other.getUnits()==null) || 
+             (this.units!=null &&
+              this.units.equals(other.getUnits()))) &&
+            ((this.fairValueRangePolicy==null && other.getFairValueRangePolicy()==null) || 
+             (this.fairValueRangePolicy!=null &&
+              this.fairValueRangePolicy.equals(other.getFairValueRangePolicy()))) &&
+            ((this.lowValue==null && other.getLowValue()==null) || 
+             (this.lowValue!=null &&
+              this.lowValue.equals(other.getLowValue()))) &&
+            ((this.lowValuePercent==null && other.getLowValuePercent()==null) || 
+             (this.lowValuePercent!=null &&
+              this.lowValuePercent.equals(other.getLowValuePercent()))) &&
+            ((this.highValue==null && other.getHighValue()==null) || 
+             (this.highValue!=null &&
+              this.highValue.equals(other.getHighValue()))) &&
+            ((this.highValuePercent==null && other.getHighValuePercent()==null) || 
+             (this.highValuePercent!=null &&
+              this.highValuePercent.equals(other.getHighValuePercent()))) &&
+            ((this.isVsoePrice==null && other.getIsVsoePrice()==null) || 
+             (this.isVsoePrice!=null &&
+              this.isVsoePrice.equals(other.getIsVsoePrice()))) &&
+            ((this.startDate==null && other.getStartDate()==null) || 
+             (this.startDate!=null &&
+              this.startDate.equals(other.getStartDate()))) &&
+            ((this.endDate==null && other.getEndDate()==null) || 
+             (this.endDate!=null &&
+              this.endDate.equals(other.getEndDate()))) &&
+            ((this.customFieldList==null && other.getCustomFieldList()==null) || 
+             (this.customFieldList!=null &&
+              java.util.Arrays.equals(this.customFieldList, other.getCustomFieldList()))) &&
+            ((this.dimensionList==null && other.getDimensionList()==null) || 
+             (this.dimensionList!=null &&
+              java.util.Arrays.equals(this.dimensionList, other.getDimensionList()))) &&
+            ((this.internalId==null && other.getInternalId()==null) || 
+             (this.internalId!=null &&
+              this.internalId.equals(other.getInternalId()))) &&
+            ((this.externalId==null && other.getExternalId()==null) || 
+             (this.externalId!=null &&
+              this.externalId.equals(other.getExternalId())));
+        __equalsCalc = null;
+        return _equals;
+    }
+
+    private boolean __hashCodeCalc = false;
+    public synchronized int hashCode() {
+        if (__hashCodeCalc) {
+            return 0;
+        }
+        __hashCodeCalc = true;
+        int _hashCode = super.hashCode();
+        if (getCustomForm() != null) {
+            _hashCode += getCustomForm().hashCode();
+        }
+        if (getItem() != null) {
+            _hashCode += getItem().hashCode();
+        }
+        if (getItemRevenueCategory() != null) {
+            _hashCode += getItemRevenueCategory().hashCode();
+        }
+        if (getFairValue() != null) {
+            _hashCode += getFairValue().hashCode();
+        }
+        if (getFairValueFormula() != null) {
+            _hashCode += getFairValueFormula().hashCode();
+        }
+        if (getCurrency() != null) {
+            _hashCode += getCurrency().hashCode();
+        }
+        if (getUnitsType() != null) {
+            _hashCode += getUnitsType().hashCode();
+        }
+        if (getUnits() != null) {
+            _hashCode += getUnits().hashCode();
+        }
+        if (getFairValueRangePolicy() != null) {
+            _hashCode += getFairValueRangePolicy().hashCode();
+        }
+        if (getLowValue() != null) {
+            _hashCode += getLowValue().hashCode();
+        }
+        if (getLowValuePercent() != null) {
+            _hashCode += getLowValuePercent().hashCode();
+        }
+        if (getHighValue() != null) {
+            _hashCode += getHighValue().hashCode();
+        }
+        if (getHighValuePercent() != null) {
+            _hashCode += getHighValuePercent().hashCode();
+        }
+        if (getIsVsoePrice() != null) {
+            _hashCode += getIsVsoePrice().hashCode();
+        }
+        if (getStartDate() != null) {
+            _hashCode += getStartDate().hashCode();
+        }
+        if (getEndDate() != null) {
+            _hashCode += getEndDate().hashCode();
+        }
+        if (getCustomFieldList() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getCustomFieldList());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getCustomFieldList(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getDimensionList() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getDimensionList());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getDimensionList(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getInternalId() != null) {
+            _hashCode += getInternalId().hashCode();
+        }
+        if (getExternalId() != null) {
+            _hashCode += getExternalId().hashCode();
+        }
+        __hashCodeCalc = false;
+        return _hashCode;
+    }
+
+    // Type metadata
+    private static org.apache.axis.description.TypeDesc typeDesc =
+        new org.apache.axis.description.TypeDesc(FairValuePrice.class, true);
+
+    static {
+        typeDesc.setXmlType(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "FairValuePrice"));
+        org.apache.axis.description.AttributeDesc attrField = new org.apache.axis.description.AttributeDesc();
+        attrField.setFieldName("internalId");
+        attrField.setXmlName(new javax.xml.namespace.QName("", "internalId"));
+        attrField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        typeDesc.addFieldDesc(attrField);
+        attrField = new org.apache.axis.description.AttributeDesc();
+        attrField.setFieldName("externalId");
+        attrField.setXmlName(new javax.xml.namespace.QName("", "externalId"));
+        attrField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        typeDesc.addFieldDesc(attrField);
+        org.apache.axis.description.ElementDesc elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("customForm");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "customForm"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("item");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "item"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("itemRevenueCategory");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "itemRevenueCategory"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("fairValue");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "fairValue"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "double"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("fairValueFormula");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "fairValueFormula"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("currency");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "currency"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("unitsType");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "unitsType"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("units");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "units"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("fairValueRangePolicy");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "fairValueRangePolicy"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:types.accounting_2018_2.lists.webservices.netsuite.com", "FairValuePriceFairValueRangePolicy"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("lowValue");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "lowValue"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "double"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("lowValuePercent");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "lowValuePercent"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "double"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("highValue");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "highValue"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "double"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("highValuePercent");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "highValuePercent"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "double"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("isVsoePrice");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "isVsoePrice"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("startDate");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "startDate"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "dateTime"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("endDate");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "endDate"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "dateTime"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("customFieldList");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "customFieldList"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "CustomFieldRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "customField"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("dimensionList");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "dimensionList"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "DimensionRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "dimension"));
+        typeDesc.addFieldDesc(elemField);
+    }
+
+    /**
+     * Return type metadata object
+     */
+    public static org.apache.axis.description.TypeDesc getTypeDesc() {
+        return typeDesc;
+    }
+
+    /**
+     * Get Custom Serializer
+     */
+    public static org.apache.axis.encoding.Serializer getSerializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanSerializer(
+            _javaType, _xmlType, typeDesc);
+    }
+
+    /**
+     * Get Custom Deserializer
+     */
+    public static org.apache.axis.encoding.Deserializer getDeserializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanDeserializer(
+            _javaType, _xmlType, typeDesc);
     }
 
 }

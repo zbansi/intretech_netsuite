@@ -1,51 +1,70 @@
+/**
+ * SignatureAlgorithm.java
+ *
+ * This file was auto-generated from WSDL
+ * by the Apache Axis 1.4 Jul 28, 2010 (04:07:04 PDT) WSDL2Java emitter.
+ */
 
 package com.netsuite.webservices.platform.core_2018_2.types;
 
-import javax.xml.bind.annotation.XmlEnum;
-import javax.xml.bind.annotation.XmlEnumValue;
-import javax.xml.bind.annotation.XmlType;
+public class SignatureAlgorithm implements java.io.Serializable {
+    private java.lang.String _value_;
+    private static java.util.HashMap _table_ = new java.util.HashMap();
 
-
-/**
- * <p>SignatureAlgorithm的 Java 类。
- * 
- * <p>以下模式片段指定包含在此类中的预期内容。
- * <p>
- * <pre>
- * &lt;simpleType name="SignatureAlgorithm">
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     &lt;enumeration value="HMAC_SHA256"/>
- *     &lt;enumeration value="HMAC_SHA1"/>
- *   &lt;/restriction>
- * &lt;/simpleType>
- * </pre>
- * 
- */
-@XmlType(name = "SignatureAlgorithm", namespace = "urn:types.core_2018_2.platform.webservices.netsuite.com")
-@XmlEnum
-public enum SignatureAlgorithm {
-
-    @XmlEnumValue("HMAC_SHA256")
-    HMAC_SHA_256("HMAC_SHA256"),
-    @XmlEnumValue("HMAC_SHA1")
-    HMAC_SHA_1("HMAC_SHA1");
-    private final String value;
-
-    SignatureAlgorithm(String v) {
-        value = v;
+    // Constructor
+    protected SignatureAlgorithm(java.lang.String value) {
+        _value_ = value;
+        _table_.put(_value_,this);
     }
 
-    public String value() {
-        return value;
+    public static final java.lang.String _HMAC_SHA256 = "HMAC_SHA256";
+    public static final java.lang.String _HMAC_SHA1 = "HMAC_SHA1";
+    public static final SignatureAlgorithm HMAC_SHA256 = new SignatureAlgorithm(_HMAC_SHA256);
+    public static final SignatureAlgorithm HMAC_SHA1 = new SignatureAlgorithm(_HMAC_SHA1);
+    public java.lang.String getValue() { return _value_;}
+    public static SignatureAlgorithm fromValue(java.lang.String value)
+          throws java.lang.IllegalArgumentException {
+        SignatureAlgorithm enumeration = (SignatureAlgorithm)
+            _table_.get(value);
+        if (enumeration==null) throw new java.lang.IllegalArgumentException();
+        return enumeration;
     }
+    public static SignatureAlgorithm fromString(java.lang.String value)
+          throws java.lang.IllegalArgumentException {
+        return fromValue(value);
+    }
+    public boolean equals(java.lang.Object obj) {return (obj == this);}
+    public int hashCode() { return toString().hashCode();}
+    public java.lang.String toString() { return _value_;}
+    public java.lang.Object readResolve() throws java.io.ObjectStreamException { return fromValue(_value_);}
+    public static org.apache.axis.encoding.Serializer getSerializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new org.apache.axis.encoding.ser.EnumSerializer(
+            _javaType, _xmlType);
+    }
+    public static org.apache.axis.encoding.Deserializer getDeserializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new org.apache.axis.encoding.ser.EnumDeserializer(
+            _javaType, _xmlType);
+    }
+    // Type metadata
+    private static org.apache.axis.description.TypeDesc typeDesc =
+        new org.apache.axis.description.TypeDesc(SignatureAlgorithm.class);
 
-    public static SignatureAlgorithm fromValue(String v) {
-        for (SignatureAlgorithm c: SignatureAlgorithm.values()) {
-            if (c.value.equals(v)) {
-                return c;
-            }
-        }
-        throw new IllegalArgumentException(v);
+    static {
+        typeDesc.setXmlType(new javax.xml.namespace.QName("urn:types.core_2018_2.platform.webservices.netsuite.com", "SignatureAlgorithm"));
+    }
+    /**
+     * Return type metadata object
+     */
+    public static org.apache.axis.description.TypeDesc getTypeDesc() {
+        return typeDesc;
     }
 
 }

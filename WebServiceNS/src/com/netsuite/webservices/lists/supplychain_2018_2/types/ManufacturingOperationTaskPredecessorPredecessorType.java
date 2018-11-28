@@ -1,57 +1,74 @@
+/**
+ * ManufacturingOperationTaskPredecessorPredecessorType.java
+ *
+ * This file was auto-generated from WSDL
+ * by the Apache Axis 1.4 Jul 28, 2010 (04:07:04 PDT) WSDL2Java emitter.
+ */
 
 package com.netsuite.webservices.lists.supplychain_2018_2.types;
 
-import javax.xml.bind.annotation.XmlEnum;
-import javax.xml.bind.annotation.XmlEnumValue;
-import javax.xml.bind.annotation.XmlType;
+public class ManufacturingOperationTaskPredecessorPredecessorType implements java.io.Serializable {
+    private java.lang.String _value_;
+    private static java.util.HashMap _table_ = new java.util.HashMap();
 
-
-/**
- * <p>ManufacturingOperationTaskPredecessorPredecessorType的 Java 类。
- * 
- * <p>以下模式片段指定包含在此类中的预期内容。
- * <p>
- * <pre>
- * &lt;simpleType name="ManufacturingOperationTaskPredecessorPredecessorType">
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     &lt;enumeration value="_finishToFinish"/>
- *     &lt;enumeration value="_finishToStart"/>
- *     &lt;enumeration value="_startToFinish"/>
- *     &lt;enumeration value="_startToStart"/>
- *   &lt;/restriction>
- * &lt;/simpleType>
- * </pre>
- * 
- */
-@XmlType(name = "ManufacturingOperationTaskPredecessorPredecessorType", namespace = "urn:types.supplychain_2018_2.lists.webservices.netsuite.com")
-@XmlEnum
-public enum ManufacturingOperationTaskPredecessorPredecessorType {
-
-    @XmlEnumValue("_finishToFinish")
-    FINISH_TO_FINISH("_finishToFinish"),
-    @XmlEnumValue("_finishToStart")
-    FINISH_TO_START("_finishToStart"),
-    @XmlEnumValue("_startToFinish")
-    START_TO_FINISH("_startToFinish"),
-    @XmlEnumValue("_startToStart")
-    START_TO_START("_startToStart");
-    private final String value;
-
-    ManufacturingOperationTaskPredecessorPredecessorType(String v) {
-        value = v;
+    // Constructor
+    protected ManufacturingOperationTaskPredecessorPredecessorType(java.lang.String value) {
+        _value_ = value;
+        _table_.put(_value_,this);
     }
 
-    public String value() {
-        return value;
+    public static final java.lang.String __finishToFinish = "_finishToFinish";
+    public static final java.lang.String __finishToStart = "_finishToStart";
+    public static final java.lang.String __startToFinish = "_startToFinish";
+    public static final java.lang.String __startToStart = "_startToStart";
+    public static final ManufacturingOperationTaskPredecessorPredecessorType _finishToFinish = new ManufacturingOperationTaskPredecessorPredecessorType(__finishToFinish);
+    public static final ManufacturingOperationTaskPredecessorPredecessorType _finishToStart = new ManufacturingOperationTaskPredecessorPredecessorType(__finishToStart);
+    public static final ManufacturingOperationTaskPredecessorPredecessorType _startToFinish = new ManufacturingOperationTaskPredecessorPredecessorType(__startToFinish);
+    public static final ManufacturingOperationTaskPredecessorPredecessorType _startToStart = new ManufacturingOperationTaskPredecessorPredecessorType(__startToStart);
+    public java.lang.String getValue() { return _value_;}
+    public static ManufacturingOperationTaskPredecessorPredecessorType fromValue(java.lang.String value)
+          throws java.lang.IllegalArgumentException {
+        ManufacturingOperationTaskPredecessorPredecessorType enumeration = (ManufacturingOperationTaskPredecessorPredecessorType)
+            _table_.get(value);
+        if (enumeration==null) throw new java.lang.IllegalArgumentException();
+        return enumeration;
     }
+    public static ManufacturingOperationTaskPredecessorPredecessorType fromString(java.lang.String value)
+          throws java.lang.IllegalArgumentException {
+        return fromValue(value);
+    }
+    public boolean equals(java.lang.Object obj) {return (obj == this);}
+    public int hashCode() { return toString().hashCode();}
+    public java.lang.String toString() { return _value_;}
+    public java.lang.Object readResolve() throws java.io.ObjectStreamException { return fromValue(_value_);}
+    public static org.apache.axis.encoding.Serializer getSerializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new org.apache.axis.encoding.ser.EnumSerializer(
+            _javaType, _xmlType);
+    }
+    public static org.apache.axis.encoding.Deserializer getDeserializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new org.apache.axis.encoding.ser.EnumDeserializer(
+            _javaType, _xmlType);
+    }
+    // Type metadata
+    private static org.apache.axis.description.TypeDesc typeDesc =
+        new org.apache.axis.description.TypeDesc(ManufacturingOperationTaskPredecessorPredecessorType.class);
 
-    public static ManufacturingOperationTaskPredecessorPredecessorType fromValue(String v) {
-        for (ManufacturingOperationTaskPredecessorPredecessorType c: ManufacturingOperationTaskPredecessorPredecessorType.values()) {
-            if (c.value.equals(v)) {
-                return c;
-            }
-        }
-        throw new IllegalArgumentException(v);
+    static {
+        typeDesc.setXmlType(new javax.xml.namespace.QName("urn:types.supplychain_2018_2.lists.webservices.netsuite.com", "ManufacturingOperationTaskPredecessorPredecessorType"));
+    }
+    /**
+     * Return type metadata object
+     */
+    public static org.apache.axis.description.TypeDesc getTypeDesc() {
+        return typeDesc;
     }
 
 }

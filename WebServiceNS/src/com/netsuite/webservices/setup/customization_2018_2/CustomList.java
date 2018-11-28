@@ -1,335 +1,509 @@
+/**
+ * CustomList.java
+ *
+ * This file was auto-generated from WSDL
+ * by the Apache Axis 1.4 Jul 28, 2010 (04:07:04 PDT) WSDL2Java emitter.
+ */
 
 package com.netsuite.webservices.setup.customization_2018_2;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlAttribute;
-import javax.xml.bind.annotation.XmlType;
-import com.netsuite.webservices.platform.core_2018_2.Record;
-import com.netsuite.webservices.platform.core_2018_2.RecordRef;
+public class CustomList  extends com.netsuite.webservices.platform.core_2018_2.Record  implements java.io.Serializable {
+    private java.lang.String name;
 
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef owner;
 
-/**
- * <p>CustomList complex type的 Java 类。
- * 
- * <p>以下模式片段指定包含在此类中的预期内容。
- * 
- * <pre>
- * &lt;complexType name="CustomList">
- *   &lt;complexContent>
- *     &lt;extension base="{urn:core_2018_2.platform.webservices.netsuite.com}Record">
- *       &lt;sequence>
- *         &lt;element name="name" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="owner" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="isOrdered" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         &lt;element name="description" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="isMatrixOption" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         &lt;element name="scriptId" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="convertToCustomRecord" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         &lt;element name="isInactive" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         &lt;element name="customValueList" type="{urn:customization_2018_2.setup.webservices.netsuite.com}CustomListCustomValueList" minOccurs="0"/>
- *         &lt;element name="translationsList" type="{urn:customization_2018_2.setup.webservices.netsuite.com}CustomListTranslationsList" minOccurs="0"/>
- *       &lt;/sequence>
- *       &lt;attribute name="internalId" type="{http://www.w3.org/2001/XMLSchema}string" />
- *     &lt;/extension>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
- */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "CustomList", propOrder = {
-    "name",
-    "owner",
-    "isOrdered",
-    "description",
-    "isMatrixOption",
-    "scriptId",
-    "convertToCustomRecord",
-    "isInactive",
-    "customValueList",
-    "translationsList"
-})
-public class CustomList
-    extends Record
-{
+    private java.lang.Boolean isOrdered;
 
-    protected String name;
-    protected RecordRef owner;
-    protected Boolean isOrdered;
-    protected String description;
-    protected Boolean isMatrixOption;
-    protected String scriptId;
-    protected Boolean convertToCustomRecord;
-    protected Boolean isInactive;
-    protected CustomListCustomValueList customValueList;
-    protected CustomListTranslationsList translationsList;
-    @XmlAttribute(name = "internalId")
-    protected String internalId;
+    private java.lang.String description;
+
+    private java.lang.Boolean isMatrixOption;
+
+    private java.lang.String scriptId;
+
+    private java.lang.Boolean convertToCustomRecord;
+
+    private java.lang.Boolean isInactive;
+
+    private com.netsuite.webservices.setup.customization_2018_2.CustomListCustomValue[] customValueList;
+
+    private com.netsuite.webservices.setup.customization_2018_2.CustomListTranslations[] translationsList;
+
+    private java.lang.String internalId;  // attribute
+
+    public CustomList() {
+    }
+
+    public CustomList(
+           java.lang.String[] nullFieldList,
+           java.lang.String internalId,
+           java.lang.String name,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef owner,
+           java.lang.Boolean isOrdered,
+           java.lang.String description,
+           java.lang.Boolean isMatrixOption,
+           java.lang.String scriptId,
+           java.lang.Boolean convertToCustomRecord,
+           java.lang.Boolean isInactive,
+           com.netsuite.webservices.setup.customization_2018_2.CustomListCustomValue[] customValueList,
+           com.netsuite.webservices.setup.customization_2018_2.CustomListTranslations[] translationsList) {
+        super(
+            nullFieldList);
+        this.internalId = internalId;
+        this.name = name;
+        this.owner = owner;
+        this.isOrdered = isOrdered;
+        this.description = description;
+        this.isMatrixOption = isMatrixOption;
+        this.scriptId = scriptId;
+        this.convertToCustomRecord = convertToCustomRecord;
+        this.isInactive = isInactive;
+        this.customValueList = customValueList;
+        this.translationsList = translationsList;
+    }
+
 
     /**
-     * 获取name属性的值。
+     * Gets the name value for this CustomList.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @return name
      */
-    public String getName() {
+    public java.lang.String getName() {
         return name;
     }
 
-    /**
-     * 设置name属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setName(String value) {
-        this.name = value;
-    }
 
     /**
-     * 获取owner属性的值。
+     * Sets the name value for this CustomList.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param name
      */
-    public RecordRef getOwner() {
+    public void setName(java.lang.String name) {
+        this.name = name;
+    }
+
+
+    /**
+     * Gets the owner value for this CustomList.
+     * 
+     * @return owner
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getOwner() {
         return owner;
     }
 
-    /**
-     * 设置owner属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setOwner(RecordRef value) {
-        this.owner = value;
-    }
 
     /**
-     * 获取isOrdered属性的值。
+     * Sets the owner value for this CustomList.
      * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
+     * @param owner
      */
-    public Boolean isIsOrdered() {
+    public void setOwner(com.netsuite.webservices.platform.core_2018_2.RecordRef owner) {
+        this.owner = owner;
+    }
+
+
+    /**
+     * Gets the isOrdered value for this CustomList.
+     * 
+     * @return isOrdered
+     */
+    public java.lang.Boolean getIsOrdered() {
         return isOrdered;
     }
 
-    /**
-     * 设置isOrdered属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
-     */
-    public void setIsOrdered(Boolean value) {
-        this.isOrdered = value;
-    }
 
     /**
-     * 获取description属性的值。
+     * Sets the isOrdered value for this CustomList.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param isOrdered
      */
-    public String getDescription() {
+    public void setIsOrdered(java.lang.Boolean isOrdered) {
+        this.isOrdered = isOrdered;
+    }
+
+
+    /**
+     * Gets the description value for this CustomList.
+     * 
+     * @return description
+     */
+    public java.lang.String getDescription() {
         return description;
     }
 
-    /**
-     * 设置description属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setDescription(String value) {
-        this.description = value;
-    }
 
     /**
-     * 获取isMatrixOption属性的值。
+     * Sets the description value for this CustomList.
      * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
+     * @param description
      */
-    public Boolean isIsMatrixOption() {
+    public void setDescription(java.lang.String description) {
+        this.description = description;
+    }
+
+
+    /**
+     * Gets the isMatrixOption value for this CustomList.
+     * 
+     * @return isMatrixOption
+     */
+    public java.lang.Boolean getIsMatrixOption() {
         return isMatrixOption;
     }
 
-    /**
-     * 设置isMatrixOption属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
-     */
-    public void setIsMatrixOption(Boolean value) {
-        this.isMatrixOption = value;
-    }
 
     /**
-     * 获取scriptId属性的值。
+     * Sets the isMatrixOption value for this CustomList.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param isMatrixOption
      */
-    public String getScriptId() {
+    public void setIsMatrixOption(java.lang.Boolean isMatrixOption) {
+        this.isMatrixOption = isMatrixOption;
+    }
+
+
+    /**
+     * Gets the scriptId value for this CustomList.
+     * 
+     * @return scriptId
+     */
+    public java.lang.String getScriptId() {
         return scriptId;
     }
 
-    /**
-     * 设置scriptId属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setScriptId(String value) {
-        this.scriptId = value;
-    }
 
     /**
-     * 获取convertToCustomRecord属性的值。
+     * Sets the scriptId value for this CustomList.
      * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
+     * @param scriptId
      */
-    public Boolean isConvertToCustomRecord() {
+    public void setScriptId(java.lang.String scriptId) {
+        this.scriptId = scriptId;
+    }
+
+
+    /**
+     * Gets the convertToCustomRecord value for this CustomList.
+     * 
+     * @return convertToCustomRecord
+     */
+    public java.lang.Boolean getConvertToCustomRecord() {
         return convertToCustomRecord;
     }
 
-    /**
-     * 设置convertToCustomRecord属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
-     */
-    public void setConvertToCustomRecord(Boolean value) {
-        this.convertToCustomRecord = value;
-    }
 
     /**
-     * 获取isInactive属性的值。
+     * Sets the convertToCustomRecord value for this CustomList.
      * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
+     * @param convertToCustomRecord
      */
-    public Boolean isIsInactive() {
+    public void setConvertToCustomRecord(java.lang.Boolean convertToCustomRecord) {
+        this.convertToCustomRecord = convertToCustomRecord;
+    }
+
+
+    /**
+     * Gets the isInactive value for this CustomList.
+     * 
+     * @return isInactive
+     */
+    public java.lang.Boolean getIsInactive() {
         return isInactive;
     }
 
-    /**
-     * 设置isInactive属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
-     */
-    public void setIsInactive(Boolean value) {
-        this.isInactive = value;
-    }
 
     /**
-     * 获取customValueList属性的值。
+     * Sets the isInactive value for this CustomList.
      * 
-     * @return
-     *     possible object is
-     *     {@link CustomListCustomValueList }
-     *     
+     * @param isInactive
      */
-    public CustomListCustomValueList getCustomValueList() {
+    public void setIsInactive(java.lang.Boolean isInactive) {
+        this.isInactive = isInactive;
+    }
+
+
+    /**
+     * Gets the customValueList value for this CustomList.
+     * 
+     * @return customValueList
+     */
+    public com.netsuite.webservices.setup.customization_2018_2.CustomListCustomValue[] getCustomValueList() {
         return customValueList;
     }
 
-    /**
-     * 设置customValueList属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link CustomListCustomValueList }
-     *     
-     */
-    public void setCustomValueList(CustomListCustomValueList value) {
-        this.customValueList = value;
-    }
 
     /**
-     * 获取translationsList属性的值。
+     * Sets the customValueList value for this CustomList.
      * 
-     * @return
-     *     possible object is
-     *     {@link CustomListTranslationsList }
-     *     
+     * @param customValueList
      */
-    public CustomListTranslationsList getTranslationsList() {
+    public void setCustomValueList(com.netsuite.webservices.setup.customization_2018_2.CustomListCustomValue[] customValueList) {
+        this.customValueList = customValueList;
+    }
+
+
+    /**
+     * Gets the translationsList value for this CustomList.
+     * 
+     * @return translationsList
+     */
+    public com.netsuite.webservices.setup.customization_2018_2.CustomListTranslations[] getTranslationsList() {
         return translationsList;
     }
 
-    /**
-     * 设置translationsList属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link CustomListTranslationsList }
-     *     
-     */
-    public void setTranslationsList(CustomListTranslationsList value) {
-        this.translationsList = value;
-    }
 
     /**
-     * 获取internalId属性的值。
+     * Sets the translationsList value for this CustomList.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param translationsList
      */
-    public String getInternalId() {
+    public void setTranslationsList(com.netsuite.webservices.setup.customization_2018_2.CustomListTranslations[] translationsList) {
+        this.translationsList = translationsList;
+    }
+
+
+    /**
+     * Gets the internalId value for this CustomList.
+     * 
+     * @return internalId
+     */
+    public java.lang.String getInternalId() {
         return internalId;
     }
 
+
     /**
-     * 设置internalId属性的值。
+     * Sets the internalId value for this CustomList.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     * @param internalId
      */
-    public void setInternalId(String value) {
-        this.internalId = value;
+    public void setInternalId(java.lang.String internalId) {
+        this.internalId = internalId;
+    }
+
+    private java.lang.Object __equalsCalc = null;
+    public synchronized boolean equals(java.lang.Object obj) {
+        if (!(obj instanceof CustomList)) return false;
+        CustomList other = (CustomList) obj;
+        if (obj == null) return false;
+        if (this == obj) return true;
+        if (__equalsCalc != null) {
+            return (__equalsCalc == obj);
+        }
+        __equalsCalc = obj;
+        boolean _equals;
+        _equals = super.equals(obj) && 
+            ((this.name==null && other.getName()==null) || 
+             (this.name!=null &&
+              this.name.equals(other.getName()))) &&
+            ((this.owner==null && other.getOwner()==null) || 
+             (this.owner!=null &&
+              this.owner.equals(other.getOwner()))) &&
+            ((this.isOrdered==null && other.getIsOrdered()==null) || 
+             (this.isOrdered!=null &&
+              this.isOrdered.equals(other.getIsOrdered()))) &&
+            ((this.description==null && other.getDescription()==null) || 
+             (this.description!=null &&
+              this.description.equals(other.getDescription()))) &&
+            ((this.isMatrixOption==null && other.getIsMatrixOption()==null) || 
+             (this.isMatrixOption!=null &&
+              this.isMatrixOption.equals(other.getIsMatrixOption()))) &&
+            ((this.scriptId==null && other.getScriptId()==null) || 
+             (this.scriptId!=null &&
+              this.scriptId.equals(other.getScriptId()))) &&
+            ((this.convertToCustomRecord==null && other.getConvertToCustomRecord()==null) || 
+             (this.convertToCustomRecord!=null &&
+              this.convertToCustomRecord.equals(other.getConvertToCustomRecord()))) &&
+            ((this.isInactive==null && other.getIsInactive()==null) || 
+             (this.isInactive!=null &&
+              this.isInactive.equals(other.getIsInactive()))) &&
+            ((this.customValueList==null && other.getCustomValueList()==null) || 
+             (this.customValueList!=null &&
+              java.util.Arrays.equals(this.customValueList, other.getCustomValueList()))) &&
+            ((this.translationsList==null && other.getTranslationsList()==null) || 
+             (this.translationsList!=null &&
+              java.util.Arrays.equals(this.translationsList, other.getTranslationsList()))) &&
+            ((this.internalId==null && other.getInternalId()==null) || 
+             (this.internalId!=null &&
+              this.internalId.equals(other.getInternalId())));
+        __equalsCalc = null;
+        return _equals;
+    }
+
+    private boolean __hashCodeCalc = false;
+    public synchronized int hashCode() {
+        if (__hashCodeCalc) {
+            return 0;
+        }
+        __hashCodeCalc = true;
+        int _hashCode = super.hashCode();
+        if (getName() != null) {
+            _hashCode += getName().hashCode();
+        }
+        if (getOwner() != null) {
+            _hashCode += getOwner().hashCode();
+        }
+        if (getIsOrdered() != null) {
+            _hashCode += getIsOrdered().hashCode();
+        }
+        if (getDescription() != null) {
+            _hashCode += getDescription().hashCode();
+        }
+        if (getIsMatrixOption() != null) {
+            _hashCode += getIsMatrixOption().hashCode();
+        }
+        if (getScriptId() != null) {
+            _hashCode += getScriptId().hashCode();
+        }
+        if (getConvertToCustomRecord() != null) {
+            _hashCode += getConvertToCustomRecord().hashCode();
+        }
+        if (getIsInactive() != null) {
+            _hashCode += getIsInactive().hashCode();
+        }
+        if (getCustomValueList() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getCustomValueList());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getCustomValueList(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getTranslationsList() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getTranslationsList());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getTranslationsList(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getInternalId() != null) {
+            _hashCode += getInternalId().hashCode();
+        }
+        __hashCodeCalc = false;
+        return _hashCode;
+    }
+
+    // Type metadata
+    private static org.apache.axis.description.TypeDesc typeDesc =
+        new org.apache.axis.description.TypeDesc(CustomList.class, true);
+
+    static {
+        typeDesc.setXmlType(new javax.xml.namespace.QName("urn:customization_2018_2.setup.webservices.netsuite.com", "CustomList"));
+        org.apache.axis.description.AttributeDesc attrField = new org.apache.axis.description.AttributeDesc();
+        attrField.setFieldName("internalId");
+        attrField.setXmlName(new javax.xml.namespace.QName("", "internalId"));
+        attrField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        typeDesc.addFieldDesc(attrField);
+        org.apache.axis.description.ElementDesc elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("name");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:customization_2018_2.setup.webservices.netsuite.com", "name"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("owner");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:customization_2018_2.setup.webservices.netsuite.com", "owner"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("isOrdered");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:customization_2018_2.setup.webservices.netsuite.com", "isOrdered"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("description");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:customization_2018_2.setup.webservices.netsuite.com", "description"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("isMatrixOption");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:customization_2018_2.setup.webservices.netsuite.com", "isMatrixOption"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("scriptId");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:customization_2018_2.setup.webservices.netsuite.com", "scriptId"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("convertToCustomRecord");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:customization_2018_2.setup.webservices.netsuite.com", "convertToCustomRecord"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("isInactive");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:customization_2018_2.setup.webservices.netsuite.com", "isInactive"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("customValueList");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:customization_2018_2.setup.webservices.netsuite.com", "customValueList"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:customization_2018_2.setup.webservices.netsuite.com", "CustomListCustomValue"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:customization_2018_2.setup.webservices.netsuite.com", "customValue"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("translationsList");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:customization_2018_2.setup.webservices.netsuite.com", "translationsList"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:customization_2018_2.setup.webservices.netsuite.com", "CustomListTranslations"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:customization_2018_2.setup.webservices.netsuite.com", "translations"));
+        typeDesc.addFieldDesc(elemField);
+    }
+
+    /**
+     * Return type metadata object
+     */
+    public static org.apache.axis.description.TypeDesc getTypeDesc() {
+        return typeDesc;
+    }
+
+    /**
+     * Get Custom Serializer
+     */
+    public static org.apache.axis.encoding.Serializer getSerializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanSerializer(
+            _javaType, _xmlType, typeDesc);
+    }
+
+    /**
+     * Get Custom Deserializer
+     */
+    public static org.apache.axis.encoding.Deserializer getDeserializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanDeserializer(
+            _javaType, _xmlType, typeDesc);
     }
 
 }

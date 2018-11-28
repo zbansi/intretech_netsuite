@@ -1,308 +1,453 @@
+/**
+ * LocationBusinessHours.java
+ *
+ * This file was auto-generated from WSDL
+ * by the Apache Axis 1.4 Jul 28, 2010 (04:07:04 PDT) WSDL2Java emitter.
+ */
 
 package com.netsuite.webservices.lists.accounting_2018_2;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlSchemaType;
-import javax.xml.bind.annotation.XmlType;
-import javax.xml.datatype.XMLGregorianCalendar;
+public class LocationBusinessHours  implements java.io.Serializable {
+    private java.util.Calendar startTime;
 
+    private java.util.Calendar endTime;
 
-/**
- * <p>LocationBusinessHours complex type的 Java 类。
- * 
- * <p>以下模式片段指定包含在此类中的预期内容。
- * 
- * <pre>
- * &lt;complexType name="LocationBusinessHours">
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element name="startTime" type="{http://www.w3.org/2001/XMLSchema}dateTime" minOccurs="0"/>
- *         &lt;element name="endTime" type="{http://www.w3.org/2001/XMLSchema}dateTime" minOccurs="0"/>
- *         &lt;element name="isSunday" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         &lt;element name="isMonday" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         &lt;element name="isTuesday" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         &lt;element name="isWednesday" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         &lt;element name="isThursday" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         &lt;element name="isFriday" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         &lt;element name="isSaturday" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         &lt;element name="sameDayPickupCutOffTime" type="{http://www.w3.org/2001/XMLSchema}dateTime" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
- */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "LocationBusinessHours", propOrder = {
-    "startTime",
-    "endTime",
-    "isSunday",
-    "isMonday",
-    "isTuesday",
-    "isWednesday",
-    "isThursday",
-    "isFriday",
-    "isSaturday",
-    "sameDayPickupCutOffTime"
-})
-public class LocationBusinessHours {
+    private java.lang.Boolean isSunday;
 
-    @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar startTime;
-    @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar endTime;
-    protected Boolean isSunday;
-    protected Boolean isMonday;
-    protected Boolean isTuesday;
-    protected Boolean isWednesday;
-    protected Boolean isThursday;
-    protected Boolean isFriday;
-    protected Boolean isSaturday;
-    @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar sameDayPickupCutOffTime;
+    private java.lang.Boolean isMonday;
+
+    private java.lang.Boolean isTuesday;
+
+    private java.lang.Boolean isWednesday;
+
+    private java.lang.Boolean isThursday;
+
+    private java.lang.Boolean isFriday;
+
+    private java.lang.Boolean isSaturday;
+
+    private java.util.Calendar sameDayPickupCutOffTime;
+
+    public LocationBusinessHours() {
+    }
+
+    public LocationBusinessHours(
+           java.util.Calendar startTime,
+           java.util.Calendar endTime,
+           java.lang.Boolean isSunday,
+           java.lang.Boolean isMonday,
+           java.lang.Boolean isTuesday,
+           java.lang.Boolean isWednesday,
+           java.lang.Boolean isThursday,
+           java.lang.Boolean isFriday,
+           java.lang.Boolean isSaturday,
+           java.util.Calendar sameDayPickupCutOffTime) {
+           this.startTime = startTime;
+           this.endTime = endTime;
+           this.isSunday = isSunday;
+           this.isMonday = isMonday;
+           this.isTuesday = isTuesday;
+           this.isWednesday = isWednesday;
+           this.isThursday = isThursday;
+           this.isFriday = isFriday;
+           this.isSaturday = isSaturday;
+           this.sameDayPickupCutOffTime = sameDayPickupCutOffTime;
+    }
+
 
     /**
-     * 获取startTime属性的值。
+     * Gets the startTime value for this LocationBusinessHours.
      * 
-     * @return
-     *     possible object is
-     *     {@link XMLGregorianCalendar }
-     *     
+     * @return startTime
      */
-    public XMLGregorianCalendar getStartTime() {
+    public java.util.Calendar getStartTime() {
         return startTime;
     }
 
-    /**
-     * 设置startTime属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link XMLGregorianCalendar }
-     *     
-     */
-    public void setStartTime(XMLGregorianCalendar value) {
-        this.startTime = value;
-    }
 
     /**
-     * 获取endTime属性的值。
+     * Sets the startTime value for this LocationBusinessHours.
      * 
-     * @return
-     *     possible object is
-     *     {@link XMLGregorianCalendar }
-     *     
+     * @param startTime
      */
-    public XMLGregorianCalendar getEndTime() {
+    public void setStartTime(java.util.Calendar startTime) {
+        this.startTime = startTime;
+    }
+
+
+    /**
+     * Gets the endTime value for this LocationBusinessHours.
+     * 
+     * @return endTime
+     */
+    public java.util.Calendar getEndTime() {
         return endTime;
     }
 
-    /**
-     * 设置endTime属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link XMLGregorianCalendar }
-     *     
-     */
-    public void setEndTime(XMLGregorianCalendar value) {
-        this.endTime = value;
-    }
 
     /**
-     * 获取isSunday属性的值。
+     * Sets the endTime value for this LocationBusinessHours.
      * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
+     * @param endTime
      */
-    public Boolean isIsSunday() {
+    public void setEndTime(java.util.Calendar endTime) {
+        this.endTime = endTime;
+    }
+
+
+    /**
+     * Gets the isSunday value for this LocationBusinessHours.
+     * 
+     * @return isSunday
+     */
+    public java.lang.Boolean getIsSunday() {
         return isSunday;
     }
 
-    /**
-     * 设置isSunday属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
-     */
-    public void setIsSunday(Boolean value) {
-        this.isSunday = value;
-    }
 
     /**
-     * 获取isMonday属性的值。
+     * Sets the isSunday value for this LocationBusinessHours.
      * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
+     * @param isSunday
      */
-    public Boolean isIsMonday() {
+    public void setIsSunday(java.lang.Boolean isSunday) {
+        this.isSunday = isSunday;
+    }
+
+
+    /**
+     * Gets the isMonday value for this LocationBusinessHours.
+     * 
+     * @return isMonday
+     */
+    public java.lang.Boolean getIsMonday() {
         return isMonday;
     }
 
-    /**
-     * 设置isMonday属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
-     */
-    public void setIsMonday(Boolean value) {
-        this.isMonday = value;
-    }
 
     /**
-     * 获取isTuesday属性的值。
+     * Sets the isMonday value for this LocationBusinessHours.
      * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
+     * @param isMonday
      */
-    public Boolean isIsTuesday() {
+    public void setIsMonday(java.lang.Boolean isMonday) {
+        this.isMonday = isMonday;
+    }
+
+
+    /**
+     * Gets the isTuesday value for this LocationBusinessHours.
+     * 
+     * @return isTuesday
+     */
+    public java.lang.Boolean getIsTuesday() {
         return isTuesday;
     }
 
-    /**
-     * 设置isTuesday属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
-     */
-    public void setIsTuesday(Boolean value) {
-        this.isTuesday = value;
-    }
 
     /**
-     * 获取isWednesday属性的值。
+     * Sets the isTuesday value for this LocationBusinessHours.
      * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
+     * @param isTuesday
      */
-    public Boolean isIsWednesday() {
+    public void setIsTuesday(java.lang.Boolean isTuesday) {
+        this.isTuesday = isTuesday;
+    }
+
+
+    /**
+     * Gets the isWednesday value for this LocationBusinessHours.
+     * 
+     * @return isWednesday
+     */
+    public java.lang.Boolean getIsWednesday() {
         return isWednesday;
     }
 
-    /**
-     * 设置isWednesday属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
-     */
-    public void setIsWednesday(Boolean value) {
-        this.isWednesday = value;
-    }
 
     /**
-     * 获取isThursday属性的值。
+     * Sets the isWednesday value for this LocationBusinessHours.
      * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
+     * @param isWednesday
      */
-    public Boolean isIsThursday() {
+    public void setIsWednesday(java.lang.Boolean isWednesday) {
+        this.isWednesday = isWednesday;
+    }
+
+
+    /**
+     * Gets the isThursday value for this LocationBusinessHours.
+     * 
+     * @return isThursday
+     */
+    public java.lang.Boolean getIsThursday() {
         return isThursday;
     }
 
-    /**
-     * 设置isThursday属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
-     */
-    public void setIsThursday(Boolean value) {
-        this.isThursday = value;
-    }
 
     /**
-     * 获取isFriday属性的值。
+     * Sets the isThursday value for this LocationBusinessHours.
      * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
+     * @param isThursday
      */
-    public Boolean isIsFriday() {
+    public void setIsThursday(java.lang.Boolean isThursday) {
+        this.isThursday = isThursday;
+    }
+
+
+    /**
+     * Gets the isFriday value for this LocationBusinessHours.
+     * 
+     * @return isFriday
+     */
+    public java.lang.Boolean getIsFriday() {
         return isFriday;
     }
 
-    /**
-     * 设置isFriday属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
-     */
-    public void setIsFriday(Boolean value) {
-        this.isFriday = value;
-    }
 
     /**
-     * 获取isSaturday属性的值。
+     * Sets the isFriday value for this LocationBusinessHours.
      * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
+     * @param isFriday
      */
-    public Boolean isIsSaturday() {
+    public void setIsFriday(java.lang.Boolean isFriday) {
+        this.isFriday = isFriday;
+    }
+
+
+    /**
+     * Gets the isSaturday value for this LocationBusinessHours.
+     * 
+     * @return isSaturday
+     */
+    public java.lang.Boolean getIsSaturday() {
         return isSaturday;
     }
 
-    /**
-     * 设置isSaturday属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
-     */
-    public void setIsSaturday(Boolean value) {
-        this.isSaturday = value;
-    }
 
     /**
-     * 获取sameDayPickupCutOffTime属性的值。
+     * Sets the isSaturday value for this LocationBusinessHours.
      * 
-     * @return
-     *     possible object is
-     *     {@link XMLGregorianCalendar }
-     *     
+     * @param isSaturday
      */
-    public XMLGregorianCalendar getSameDayPickupCutOffTime() {
+    public void setIsSaturday(java.lang.Boolean isSaturday) {
+        this.isSaturday = isSaturday;
+    }
+
+
+    /**
+     * Gets the sameDayPickupCutOffTime value for this LocationBusinessHours.
+     * 
+     * @return sameDayPickupCutOffTime
+     */
+    public java.util.Calendar getSameDayPickupCutOffTime() {
         return sameDayPickupCutOffTime;
     }
 
+
     /**
-     * 设置sameDayPickupCutOffTime属性的值。
+     * Sets the sameDayPickupCutOffTime value for this LocationBusinessHours.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link XMLGregorianCalendar }
-     *     
+     * @param sameDayPickupCutOffTime
      */
-    public void setSameDayPickupCutOffTime(XMLGregorianCalendar value) {
-        this.sameDayPickupCutOffTime = value;
+    public void setSameDayPickupCutOffTime(java.util.Calendar sameDayPickupCutOffTime) {
+        this.sameDayPickupCutOffTime = sameDayPickupCutOffTime;
+    }
+
+    private java.lang.Object __equalsCalc = null;
+    public synchronized boolean equals(java.lang.Object obj) {
+        if (!(obj instanceof LocationBusinessHours)) return false;
+        LocationBusinessHours other = (LocationBusinessHours) obj;
+        if (obj == null) return false;
+        if (this == obj) return true;
+        if (__equalsCalc != null) {
+            return (__equalsCalc == obj);
+        }
+        __equalsCalc = obj;
+        boolean _equals;
+        _equals = true && 
+            ((this.startTime==null && other.getStartTime()==null) || 
+             (this.startTime!=null &&
+              this.startTime.equals(other.getStartTime()))) &&
+            ((this.endTime==null && other.getEndTime()==null) || 
+             (this.endTime!=null &&
+              this.endTime.equals(other.getEndTime()))) &&
+            ((this.isSunday==null && other.getIsSunday()==null) || 
+             (this.isSunday!=null &&
+              this.isSunday.equals(other.getIsSunday()))) &&
+            ((this.isMonday==null && other.getIsMonday()==null) || 
+             (this.isMonday!=null &&
+              this.isMonday.equals(other.getIsMonday()))) &&
+            ((this.isTuesday==null && other.getIsTuesday()==null) || 
+             (this.isTuesday!=null &&
+              this.isTuesday.equals(other.getIsTuesday()))) &&
+            ((this.isWednesday==null && other.getIsWednesday()==null) || 
+             (this.isWednesday!=null &&
+              this.isWednesday.equals(other.getIsWednesday()))) &&
+            ((this.isThursday==null && other.getIsThursday()==null) || 
+             (this.isThursday!=null &&
+              this.isThursday.equals(other.getIsThursday()))) &&
+            ((this.isFriday==null && other.getIsFriday()==null) || 
+             (this.isFriday!=null &&
+              this.isFriday.equals(other.getIsFriday()))) &&
+            ((this.isSaturday==null && other.getIsSaturday()==null) || 
+             (this.isSaturday!=null &&
+              this.isSaturday.equals(other.getIsSaturday()))) &&
+            ((this.sameDayPickupCutOffTime==null && other.getSameDayPickupCutOffTime()==null) || 
+             (this.sameDayPickupCutOffTime!=null &&
+              this.sameDayPickupCutOffTime.equals(other.getSameDayPickupCutOffTime())));
+        __equalsCalc = null;
+        return _equals;
+    }
+
+    private boolean __hashCodeCalc = false;
+    public synchronized int hashCode() {
+        if (__hashCodeCalc) {
+            return 0;
+        }
+        __hashCodeCalc = true;
+        int _hashCode = 1;
+        if (getStartTime() != null) {
+            _hashCode += getStartTime().hashCode();
+        }
+        if (getEndTime() != null) {
+            _hashCode += getEndTime().hashCode();
+        }
+        if (getIsSunday() != null) {
+            _hashCode += getIsSunday().hashCode();
+        }
+        if (getIsMonday() != null) {
+            _hashCode += getIsMonday().hashCode();
+        }
+        if (getIsTuesday() != null) {
+            _hashCode += getIsTuesday().hashCode();
+        }
+        if (getIsWednesday() != null) {
+            _hashCode += getIsWednesday().hashCode();
+        }
+        if (getIsThursday() != null) {
+            _hashCode += getIsThursday().hashCode();
+        }
+        if (getIsFriday() != null) {
+            _hashCode += getIsFriday().hashCode();
+        }
+        if (getIsSaturday() != null) {
+            _hashCode += getIsSaturday().hashCode();
+        }
+        if (getSameDayPickupCutOffTime() != null) {
+            _hashCode += getSameDayPickupCutOffTime().hashCode();
+        }
+        __hashCodeCalc = false;
+        return _hashCode;
+    }
+
+    // Type metadata
+    private static org.apache.axis.description.TypeDesc typeDesc =
+        new org.apache.axis.description.TypeDesc(LocationBusinessHours.class, true);
+
+    static {
+        typeDesc.setXmlType(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "LocationBusinessHours"));
+        org.apache.axis.description.ElementDesc elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("startTime");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "startTime"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "dateTime"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("endTime");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "endTime"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "dateTime"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("isSunday");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "isSunday"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("isMonday");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "isMonday"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("isTuesday");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "isTuesday"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("isWednesday");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "isWednesday"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("isThursday");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "isThursday"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("isFriday");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "isFriday"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("isSaturday");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "isSaturday"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("sameDayPickupCutOffTime");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "sameDayPickupCutOffTime"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "dateTime"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+    }
+
+    /**
+     * Return type metadata object
+     */
+    public static org.apache.axis.description.TypeDesc getTypeDesc() {
+        return typeDesc;
+    }
+
+    /**
+     * Get Custom Serializer
+     */
+    public static org.apache.axis.encoding.Serializer getSerializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanSerializer(
+            _javaType, _xmlType, typeDesc);
+    }
+
+    /**
+     * Get Custom Deserializer
+     */
+    public static org.apache.axis.encoding.Deserializer getDeserializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanDeserializer(
+            _javaType, _xmlType, typeDesc);
     }
 
 }

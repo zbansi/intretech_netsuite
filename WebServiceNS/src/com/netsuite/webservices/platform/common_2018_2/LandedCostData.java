@@ -1,88 +1,157 @@
+/**
+ * LandedCostData.java
+ *
+ * This file was auto-generated from WSDL
+ * by the Apache Axis 1.4 Jul 28, 2010 (04:07:04 PDT) WSDL2Java emitter.
+ */
 
 package com.netsuite.webservices.platform.common_2018_2;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlType;
-import com.netsuite.webservices.platform.core_2018_2.RecordRef;
+public class LandedCostData  implements java.io.Serializable {
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef costCategory;
 
+    private java.lang.Double amount;
 
-/**
- * <p>LandedCostData complex type的 Java 类。
- * 
- * <p>以下模式片段指定包含在此类中的预期内容。
- * 
- * <pre>
- * &lt;complexType name="LandedCostData">
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element name="costCategory" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="amount" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
- */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "LandedCostData", propOrder = {
-    "costCategory",
-    "amount"
-})
-public class LandedCostData {
+    public LandedCostData() {
+    }
 
-    protected RecordRef costCategory;
-    protected Double amount;
+    public LandedCostData(
+           com.netsuite.webservices.platform.core_2018_2.RecordRef costCategory,
+           java.lang.Double amount) {
+           this.costCategory = costCategory;
+           this.amount = amount;
+    }
+
 
     /**
-     * 获取costCategory属性的值。
+     * Gets the costCategory value for this LandedCostData.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @return costCategory
      */
-    public RecordRef getCostCategory() {
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getCostCategory() {
         return costCategory;
     }
 
-    /**
-     * 设置costCategory属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setCostCategory(RecordRef value) {
-        this.costCategory = value;
-    }
 
     /**
-     * 获取amount属性的值。
+     * Sets the costCategory value for this LandedCostData.
      * 
-     * @return
-     *     possible object is
-     *     {@link Double }
-     *     
+     * @param costCategory
      */
-    public Double getAmount() {
+    public void setCostCategory(com.netsuite.webservices.platform.core_2018_2.RecordRef costCategory) {
+        this.costCategory = costCategory;
+    }
+
+
+    /**
+     * Gets the amount value for this LandedCostData.
+     * 
+     * @return amount
+     */
+    public java.lang.Double getAmount() {
         return amount;
     }
 
+
     /**
-     * 设置amount属性的值。
+     * Sets the amount value for this LandedCostData.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link Double }
-     *     
+     * @param amount
      */
-    public void setAmount(Double value) {
-        this.amount = value;
+    public void setAmount(java.lang.Double amount) {
+        this.amount = amount;
+    }
+
+    private java.lang.Object __equalsCalc = null;
+    public synchronized boolean equals(java.lang.Object obj) {
+        if (!(obj instanceof LandedCostData)) return false;
+        LandedCostData other = (LandedCostData) obj;
+        if (obj == null) return false;
+        if (this == obj) return true;
+        if (__equalsCalc != null) {
+            return (__equalsCalc == obj);
+        }
+        __equalsCalc = obj;
+        boolean _equals;
+        _equals = true && 
+            ((this.costCategory==null && other.getCostCategory()==null) || 
+             (this.costCategory!=null &&
+              this.costCategory.equals(other.getCostCategory()))) &&
+            ((this.amount==null && other.getAmount()==null) || 
+             (this.amount!=null &&
+              this.amount.equals(other.getAmount())));
+        __equalsCalc = null;
+        return _equals;
+    }
+
+    private boolean __hashCodeCalc = false;
+    public synchronized int hashCode() {
+        if (__hashCodeCalc) {
+            return 0;
+        }
+        __hashCodeCalc = true;
+        int _hashCode = 1;
+        if (getCostCategory() != null) {
+            _hashCode += getCostCategory().hashCode();
+        }
+        if (getAmount() != null) {
+            _hashCode += getAmount().hashCode();
+        }
+        __hashCodeCalc = false;
+        return _hashCode;
+    }
+
+    // Type metadata
+    private static org.apache.axis.description.TypeDesc typeDesc =
+        new org.apache.axis.description.TypeDesc(LandedCostData.class, true);
+
+    static {
+        typeDesc.setXmlType(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "LandedCostData"));
+        org.apache.axis.description.ElementDesc elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("costCategory");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "costCategory"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("amount");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "amount"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "double"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+    }
+
+    /**
+     * Return type metadata object
+     */
+    public static org.apache.axis.description.TypeDesc getTypeDesc() {
+        return typeDesc;
+    }
+
+    /**
+     * Get Custom Serializer
+     */
+    public static org.apache.axis.encoding.Serializer getSerializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanSerializer(
+            _javaType, _xmlType, typeDesc);
+    }
+
+    /**
+     * Get Custom Deserializer
+     */
+    public static org.apache.axis.encoding.Deserializer getDeserializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanDeserializer(
+            _javaType, _xmlType, typeDesc);
     }
 
 }

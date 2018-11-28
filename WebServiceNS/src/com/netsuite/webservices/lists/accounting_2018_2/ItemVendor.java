@@ -1,250 +1,379 @@
+/**
+ * ItemVendor.java
+ *
+ * This file was auto-generated from WSDL
+ * by the Apache Axis 1.4 Jul 28, 2010 (04:07:04 PDT) WSDL2Java emitter.
+ */
 
 package com.netsuite.webservices.lists.accounting_2018_2;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlType;
-import com.netsuite.webservices.platform.core_2018_2.RecordRef;
+public class ItemVendor  implements java.io.Serializable {
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef vendor;
 
+    private java.lang.String vendorCode;
 
-/**
- * <p>ItemVendor complex type的 Java 类。
- * 
- * <p>以下模式片段指定包含在此类中的预期内容。
- * 
- * <pre>
- * &lt;complexType name="ItemVendor">
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element name="vendor" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="vendorCode" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="vendorCurrencyName" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="vendorCurrency" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="purchasePrice" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
- *         &lt;element name="preferredVendor" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         &lt;element name="schedule" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="subsidiary" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
- */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "ItemVendor", propOrder = {
-    "vendor",
-    "vendorCode",
-    "vendorCurrencyName",
-    "vendorCurrency",
-    "purchasePrice",
-    "preferredVendor",
-    "schedule",
-    "subsidiary"
-})
-public class ItemVendor {
+    private java.lang.String vendorCurrencyName;
 
-    protected RecordRef vendor;
-    protected String vendorCode;
-    protected String vendorCurrencyName;
-    protected RecordRef vendorCurrency;
-    protected Double purchasePrice;
-    protected Boolean preferredVendor;
-    protected RecordRef schedule;
-    protected String subsidiary;
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef vendorCurrency;
+
+    private java.lang.Double purchasePrice;
+
+    private java.lang.Boolean preferredVendor;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef schedule;
+
+    private java.lang.String subsidiary;
+
+    public ItemVendor() {
+    }
+
+    public ItemVendor(
+           com.netsuite.webservices.platform.core_2018_2.RecordRef vendor,
+           java.lang.String vendorCode,
+           java.lang.String vendorCurrencyName,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef vendorCurrency,
+           java.lang.Double purchasePrice,
+           java.lang.Boolean preferredVendor,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef schedule,
+           java.lang.String subsidiary) {
+           this.vendor = vendor;
+           this.vendorCode = vendorCode;
+           this.vendorCurrencyName = vendorCurrencyName;
+           this.vendorCurrency = vendorCurrency;
+           this.purchasePrice = purchasePrice;
+           this.preferredVendor = preferredVendor;
+           this.schedule = schedule;
+           this.subsidiary = subsidiary;
+    }
+
 
     /**
-     * 获取vendor属性的值。
+     * Gets the vendor value for this ItemVendor.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @return vendor
      */
-    public RecordRef getVendor() {
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getVendor() {
         return vendor;
     }
 
-    /**
-     * 设置vendor属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setVendor(RecordRef value) {
-        this.vendor = value;
-    }
 
     /**
-     * 获取vendorCode属性的值。
+     * Sets the vendor value for this ItemVendor.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param vendor
      */
-    public String getVendorCode() {
+    public void setVendor(com.netsuite.webservices.platform.core_2018_2.RecordRef vendor) {
+        this.vendor = vendor;
+    }
+
+
+    /**
+     * Gets the vendorCode value for this ItemVendor.
+     * 
+     * @return vendorCode
+     */
+    public java.lang.String getVendorCode() {
         return vendorCode;
     }
 
-    /**
-     * 设置vendorCode属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setVendorCode(String value) {
-        this.vendorCode = value;
-    }
 
     /**
-     * 获取vendorCurrencyName属性的值。
+     * Sets the vendorCode value for this ItemVendor.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param vendorCode
      */
-    public String getVendorCurrencyName() {
+    public void setVendorCode(java.lang.String vendorCode) {
+        this.vendorCode = vendorCode;
+    }
+
+
+    /**
+     * Gets the vendorCurrencyName value for this ItemVendor.
+     * 
+     * @return vendorCurrencyName
+     */
+    public java.lang.String getVendorCurrencyName() {
         return vendorCurrencyName;
     }
 
-    /**
-     * 设置vendorCurrencyName属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setVendorCurrencyName(String value) {
-        this.vendorCurrencyName = value;
-    }
 
     /**
-     * 获取vendorCurrency属性的值。
+     * Sets the vendorCurrencyName value for this ItemVendor.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param vendorCurrencyName
      */
-    public RecordRef getVendorCurrency() {
+    public void setVendorCurrencyName(java.lang.String vendorCurrencyName) {
+        this.vendorCurrencyName = vendorCurrencyName;
+    }
+
+
+    /**
+     * Gets the vendorCurrency value for this ItemVendor.
+     * 
+     * @return vendorCurrency
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getVendorCurrency() {
         return vendorCurrency;
     }
 
-    /**
-     * 设置vendorCurrency属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setVendorCurrency(RecordRef value) {
-        this.vendorCurrency = value;
-    }
 
     /**
-     * 获取purchasePrice属性的值。
+     * Sets the vendorCurrency value for this ItemVendor.
      * 
-     * @return
-     *     possible object is
-     *     {@link Double }
-     *     
+     * @param vendorCurrency
      */
-    public Double getPurchasePrice() {
+    public void setVendorCurrency(com.netsuite.webservices.platform.core_2018_2.RecordRef vendorCurrency) {
+        this.vendorCurrency = vendorCurrency;
+    }
+
+
+    /**
+     * Gets the purchasePrice value for this ItemVendor.
+     * 
+     * @return purchasePrice
+     */
+    public java.lang.Double getPurchasePrice() {
         return purchasePrice;
     }
 
-    /**
-     * 设置purchasePrice属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Double }
-     *     
-     */
-    public void setPurchasePrice(Double value) {
-        this.purchasePrice = value;
-    }
 
     /**
-     * 获取preferredVendor属性的值。
+     * Sets the purchasePrice value for this ItemVendor.
      * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
+     * @param purchasePrice
      */
-    public Boolean isPreferredVendor() {
+    public void setPurchasePrice(java.lang.Double purchasePrice) {
+        this.purchasePrice = purchasePrice;
+    }
+
+
+    /**
+     * Gets the preferredVendor value for this ItemVendor.
+     * 
+     * @return preferredVendor
+     */
+    public java.lang.Boolean getPreferredVendor() {
         return preferredVendor;
     }
 
-    /**
-     * 设置preferredVendor属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
-     */
-    public void setPreferredVendor(Boolean value) {
-        this.preferredVendor = value;
-    }
 
     /**
-     * 获取schedule属性的值。
+     * Sets the preferredVendor value for this ItemVendor.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param preferredVendor
      */
-    public RecordRef getSchedule() {
+    public void setPreferredVendor(java.lang.Boolean preferredVendor) {
+        this.preferredVendor = preferredVendor;
+    }
+
+
+    /**
+     * Gets the schedule value for this ItemVendor.
+     * 
+     * @return schedule
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getSchedule() {
         return schedule;
     }
 
-    /**
-     * 设置schedule属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setSchedule(RecordRef value) {
-        this.schedule = value;
-    }
 
     /**
-     * 获取subsidiary属性的值。
+     * Sets the schedule value for this ItemVendor.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param schedule
      */
-    public String getSubsidiary() {
+    public void setSchedule(com.netsuite.webservices.platform.core_2018_2.RecordRef schedule) {
+        this.schedule = schedule;
+    }
+
+
+    /**
+     * Gets the subsidiary value for this ItemVendor.
+     * 
+     * @return subsidiary
+     */
+    public java.lang.String getSubsidiary() {
         return subsidiary;
     }
 
+
     /**
-     * 设置subsidiary属性的值。
+     * Sets the subsidiary value for this ItemVendor.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     * @param subsidiary
      */
-    public void setSubsidiary(String value) {
-        this.subsidiary = value;
+    public void setSubsidiary(java.lang.String subsidiary) {
+        this.subsidiary = subsidiary;
+    }
+
+    private java.lang.Object __equalsCalc = null;
+    public synchronized boolean equals(java.lang.Object obj) {
+        if (!(obj instanceof ItemVendor)) return false;
+        ItemVendor other = (ItemVendor) obj;
+        if (obj == null) return false;
+        if (this == obj) return true;
+        if (__equalsCalc != null) {
+            return (__equalsCalc == obj);
+        }
+        __equalsCalc = obj;
+        boolean _equals;
+        _equals = true && 
+            ((this.vendor==null && other.getVendor()==null) || 
+             (this.vendor!=null &&
+              this.vendor.equals(other.getVendor()))) &&
+            ((this.vendorCode==null && other.getVendorCode()==null) || 
+             (this.vendorCode!=null &&
+              this.vendorCode.equals(other.getVendorCode()))) &&
+            ((this.vendorCurrencyName==null && other.getVendorCurrencyName()==null) || 
+             (this.vendorCurrencyName!=null &&
+              this.vendorCurrencyName.equals(other.getVendorCurrencyName()))) &&
+            ((this.vendorCurrency==null && other.getVendorCurrency()==null) || 
+             (this.vendorCurrency!=null &&
+              this.vendorCurrency.equals(other.getVendorCurrency()))) &&
+            ((this.purchasePrice==null && other.getPurchasePrice()==null) || 
+             (this.purchasePrice!=null &&
+              this.purchasePrice.equals(other.getPurchasePrice()))) &&
+            ((this.preferredVendor==null && other.getPreferredVendor()==null) || 
+             (this.preferredVendor!=null &&
+              this.preferredVendor.equals(other.getPreferredVendor()))) &&
+            ((this.schedule==null && other.getSchedule()==null) || 
+             (this.schedule!=null &&
+              this.schedule.equals(other.getSchedule()))) &&
+            ((this.subsidiary==null && other.getSubsidiary()==null) || 
+             (this.subsidiary!=null &&
+              this.subsidiary.equals(other.getSubsidiary())));
+        __equalsCalc = null;
+        return _equals;
+    }
+
+    private boolean __hashCodeCalc = false;
+    public synchronized int hashCode() {
+        if (__hashCodeCalc) {
+            return 0;
+        }
+        __hashCodeCalc = true;
+        int _hashCode = 1;
+        if (getVendor() != null) {
+            _hashCode += getVendor().hashCode();
+        }
+        if (getVendorCode() != null) {
+            _hashCode += getVendorCode().hashCode();
+        }
+        if (getVendorCurrencyName() != null) {
+            _hashCode += getVendorCurrencyName().hashCode();
+        }
+        if (getVendorCurrency() != null) {
+            _hashCode += getVendorCurrency().hashCode();
+        }
+        if (getPurchasePrice() != null) {
+            _hashCode += getPurchasePrice().hashCode();
+        }
+        if (getPreferredVendor() != null) {
+            _hashCode += getPreferredVendor().hashCode();
+        }
+        if (getSchedule() != null) {
+            _hashCode += getSchedule().hashCode();
+        }
+        if (getSubsidiary() != null) {
+            _hashCode += getSubsidiary().hashCode();
+        }
+        __hashCodeCalc = false;
+        return _hashCode;
+    }
+
+    // Type metadata
+    private static org.apache.axis.description.TypeDesc typeDesc =
+        new org.apache.axis.description.TypeDesc(ItemVendor.class, true);
+
+    static {
+        typeDesc.setXmlType(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "ItemVendor"));
+        org.apache.axis.description.ElementDesc elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("vendor");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "vendor"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("vendorCode");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "vendorCode"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("vendorCurrencyName");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "vendorCurrencyName"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("vendorCurrency");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "vendorCurrency"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("purchasePrice");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "purchasePrice"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "double"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("preferredVendor");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "preferredVendor"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("schedule");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "schedule"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("subsidiary");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "subsidiary"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+    }
+
+    /**
+     * Return type metadata object
+     */
+    public static org.apache.axis.description.TypeDesc getTypeDesc() {
+        return typeDesc;
+    }
+
+    /**
+     * Get Custom Serializer
+     */
+    public static org.apache.axis.encoding.Serializer getSerializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanSerializer(
+            _javaType, _xmlType, typeDesc);
+    }
+
+    /**
+     * Get Custom Deserializer
+     */
+    public static org.apache.axis.encoding.Deserializer getDeserializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanDeserializer(
+            _javaType, _xmlType, typeDesc);
     }
 
 }

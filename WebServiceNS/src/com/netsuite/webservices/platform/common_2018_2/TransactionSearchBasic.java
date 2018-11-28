@@ -1,9232 +1,12907 @@
+/**
+ * TransactionSearchBasic.java
+ *
+ * This file was auto-generated from WSDL
+ * by the Apache Axis 1.4 Jul 28, 2010 (04:07:04 PDT) WSDL2Java emitter.
+ */
 
 package com.netsuite.webservices.platform.common_2018_2;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlSchemaType;
-import javax.xml.bind.annotation.XmlType;
-import com.netsuite.webservices.platform.common_2018_2.types.PostingPeriodDate;
-import com.netsuite.webservices.platform.core_2018_2.RecordRef;
-import com.netsuite.webservices.platform.core_2018_2.SearchBooleanField;
-import com.netsuite.webservices.platform.core_2018_2.SearchCustomFieldList;
-import com.netsuite.webservices.platform.core_2018_2.SearchDateField;
-import com.netsuite.webservices.platform.core_2018_2.SearchDoubleField;
-import com.netsuite.webservices.platform.core_2018_2.SearchEnumMultiSelectField;
-import com.netsuite.webservices.platform.core_2018_2.SearchLongField;
-import com.netsuite.webservices.platform.core_2018_2.SearchMultiSelectField;
-import com.netsuite.webservices.platform.core_2018_2.SearchRecordBasic;
-import com.netsuite.webservices.platform.core_2018_2.SearchStringField;
-import com.netsuite.webservices.platform.core_2018_2.SearchTextNumberField;
+public class TransactionSearchBasic  extends com.netsuite.webservices.platform.core_2018_2.SearchRecordBasic  implements java.io.Serializable {
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef[] account;
 
+    private java.lang.String[] accountType;
 
-/**
- * <p>TransactionSearchBasic complex type的 Java 类。
- * 
- * <p>以下模式片段指定包含在此类中的预期内容。
- * 
- * <pre>
- * &lt;complexType name="TransactionSearchBasic">
- *   &lt;complexContent>
- *     &lt;extension base="{urn:core_2018_2.platform.webservices.netsuite.com}SearchRecordBasic">
- *       &lt;sequence>
- *         &lt;element name="account" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchMultiSelectField" minOccurs="0"/>
- *         &lt;element name="accountType" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchEnumMultiSelectField" minOccurs="0"/>
- *         &lt;element name="actualShipDate" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchDateField" minOccurs="0"/>
- *         &lt;element name="altSalesAmount" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchDoubleField" minOccurs="0"/>
- *         &lt;element name="altSalesNetAmount" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchDoubleField" minOccurs="0"/>
- *         &lt;element name="amount" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchDoubleField" minOccurs="0"/>
- *         &lt;element name="amountPaid" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchDoubleField" minOccurs="0"/>
- *         &lt;element name="amountRemaining" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchDoubleField" minOccurs="0"/>
- *         &lt;element name="amountUnbilled" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchDoubleField" minOccurs="0"/>
- *         &lt;element name="anyLineItem" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchMultiSelectField" minOccurs="0"/>
- *         &lt;element name="appliedToForeignAmount" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchDoubleField" minOccurs="0"/>
- *         &lt;element name="appliedToIsFxVariance" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchBooleanField" minOccurs="0"/>
- *         &lt;element name="appliedToLinkAmount" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchDoubleField" minOccurs="0"/>
- *         &lt;element name="appliedToLinkType" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchEnumMultiSelectField" minOccurs="0"/>
- *         &lt;element name="appliedToTransaction" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchMultiSelectField" minOccurs="0"/>
- *         &lt;element name="applyingForeignAmount" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchDoubleField" minOccurs="0"/>
- *         &lt;element name="applyingIsFxVariance" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchBooleanField" minOccurs="0"/>
- *         &lt;element name="applyingLinkAmount" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchDoubleField" minOccurs="0"/>
- *         &lt;element name="applyingLinkType" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchEnumMultiSelectField" minOccurs="0"/>
- *         &lt;element name="applyingTransaction" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchMultiSelectField" minOccurs="0"/>
- *         &lt;element name="approvalStatus" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchEnumMultiSelectField" minOccurs="0"/>
- *         &lt;element name="authCode" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchStringField" minOccurs="0"/>
- *         &lt;element name="autoCalculateLag" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchBooleanField" minOccurs="0"/>
- *         &lt;element name="avsStreetMatch" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchEnumMultiSelectField" minOccurs="0"/>
- *         &lt;element name="avsZipMatch" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchEnumMultiSelectField" minOccurs="0"/>
- *         &lt;element name="billable" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchBooleanField" minOccurs="0"/>
- *         &lt;element name="billAddress" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchStringField" minOccurs="0"/>
- *         &lt;element name="billAddressee" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchStringField" minOccurs="0"/>
- *         &lt;element name="billAttention" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchStringField" minOccurs="0"/>
- *         &lt;element name="billCity" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchStringField" minOccurs="0"/>
- *         &lt;element name="billCountry" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchEnumMultiSelectField" minOccurs="0"/>
- *         &lt;element name="billCounty" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchStringField" minOccurs="0"/>
- *         &lt;element name="billedDate" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchDateField" minOccurs="0"/>
- *         &lt;element name="billingAccount" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchMultiSelectField" minOccurs="0"/>
- *         &lt;element name="billingSchedule" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchMultiSelectField" minOccurs="0"/>
- *         &lt;element name="billingStatus" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchBooleanField" minOccurs="0"/>
- *         &lt;element name="billingTransaction" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchMultiSelectField" minOccurs="0"/>
- *         &lt;element name="billPhone" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchStringField" minOccurs="0"/>
- *         &lt;element name="billState" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchStringField" minOccurs="0"/>
- *         &lt;element name="billVarianceStatus" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchEnumMultiSelectField" minOccurs="0"/>
- *         &lt;element name="billZip" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchStringField" minOccurs="0"/>
- *         &lt;element name="binNumber" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchStringField" minOccurs="0"/>
- *         &lt;element name="binNumberQuantity" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchDoubleField" minOccurs="0"/>
- *         &lt;element name="bomQuantity" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchDoubleField" minOccurs="0"/>
- *         &lt;element name="bookSpecificTransaction" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchBooleanField" minOccurs="0"/>
- *         &lt;element name="buildEntireAssembly" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchBooleanField" minOccurs="0"/>
- *         &lt;element name="buildVariance" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchDoubleField" minOccurs="0"/>
- *         &lt;element name="built" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchDoubleField" minOccurs="0"/>
- *         &lt;element name="canHaveStackablePromotions" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchBooleanField" minOccurs="0"/>
- *         &lt;element name="catchUpPeriod" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchMultiSelectField" minOccurs="0"/>
- *         &lt;element name="ccCustomerCode" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchStringField" minOccurs="0"/>
- *         &lt;element name="ccExpireDate" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchDateField" minOccurs="0"/>
- *         &lt;element name="ccName" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchStringField" minOccurs="0"/>
- *         &lt;element name="ccNumber" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchStringField" minOccurs="0"/>
- *         &lt;element name="chargeType" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchEnumMultiSelectField" minOccurs="0"/>
- *         &lt;element name="class" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchMultiSelectField" minOccurs="0"/>
- *         &lt;element name="cleared" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchBooleanField" minOccurs="0"/>
- *         &lt;element name="closed" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchBooleanField" minOccurs="0"/>
- *         &lt;element name="closeDate" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchDateField" minOccurs="0"/>
- *         &lt;element name="cogs" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchBooleanField" minOccurs="0"/>
- *         &lt;element name="commissionEffectiveDate" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchDateField" minOccurs="0"/>
- *         &lt;element name="commit" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchEnumMultiSelectField" minOccurs="0"/>
- *         &lt;element name="componentYield" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchDoubleField" minOccurs="0"/>
- *         &lt;element name="confirmationNumber" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchStringField" minOccurs="0"/>
- *         &lt;element name="contribution" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchLongField" minOccurs="0"/>
- *         &lt;element name="costComponentAmount" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchDoubleField" minOccurs="0"/>
- *         &lt;element name="costComponentCategory" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchMultiSelectField" minOccurs="0"/>
- *         &lt;element name="costComponentItem" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchMultiSelectField" minOccurs="0"/>
- *         &lt;element name="costComponentQuantity" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchDoubleField" minOccurs="0"/>
- *         &lt;element name="costComponentStandardCost" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchDoubleField" minOccurs="0"/>
- *         &lt;element name="costEstimate" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchDoubleField" minOccurs="0"/>
- *         &lt;element name="costEstimateRate" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchDoubleField" minOccurs="0"/>
- *         &lt;element name="costEstimateType" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchEnumMultiSelectField" minOccurs="0"/>
- *         &lt;element name="createdBy" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchMultiSelectField" minOccurs="0"/>
- *         &lt;element name="createdFrom" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchMultiSelectField" minOccurs="0"/>
- *         &lt;element name="creditAmount" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchDoubleField" minOccurs="0"/>
- *         &lt;element name="cscMatch" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchEnumMultiSelectField" minOccurs="0"/>
- *         &lt;element name="currency" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchMultiSelectField" minOccurs="0"/>
- *         &lt;element name="customerSubOf" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchMultiSelectField" minOccurs="0"/>
- *         &lt;element name="customForm" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchMultiSelectField" minOccurs="0"/>
- *         &lt;element name="customGL" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchBooleanField" minOccurs="0"/>
- *         &lt;element name="custType" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchMultiSelectField" minOccurs="0"/>
- *         &lt;element name="dateCreated" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchDateField" minOccurs="0"/>
- *         &lt;element name="daysOpen" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchLongField" minOccurs="0"/>
- *         &lt;element name="daysOverdue" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchLongField" minOccurs="0"/>
- *         &lt;element name="debitAmount" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchDoubleField" minOccurs="0"/>
- *         &lt;element name="deferredRevenue" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchDoubleField" minOccurs="0"/>
- *         &lt;element name="deferRevRec" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchBooleanField" minOccurs="0"/>
- *         &lt;element name="department" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchMultiSelectField" minOccurs="0"/>
- *         &lt;element name="depositDate" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchDateField" minOccurs="0"/>
- *         &lt;element name="depositTransaction" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchMultiSelectField" minOccurs="0"/>
- *         &lt;element name="drAccount" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchMultiSelectField" minOccurs="0"/>
- *         &lt;element name="dueDate" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchDateField" minOccurs="0"/>
- *         &lt;element name="email" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchStringField" minOccurs="0"/>
- *         &lt;element name="employee" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchMultiSelectField" minOccurs="0"/>
- *         &lt;element name="endDate" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchDateField" minOccurs="0"/>
- *         &lt;element name="entity" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchMultiSelectField" minOccurs="0"/>
- *         &lt;element name="entityStatus" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchMultiSelectField" minOccurs="0"/>
- *         &lt;element name="estGrossProfit" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchDoubleField" minOccurs="0"/>
- *         &lt;element name="estGrossProfitPct" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchDoubleField" minOccurs="0"/>
- *         &lt;element name="exchangeRate" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchDoubleField" minOccurs="0"/>
- *         &lt;element name="excludeCommission" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchBooleanField" minOccurs="0"/>
- *         &lt;element name="excludeFromRateRequest" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchBooleanField" minOccurs="0"/>
- *         &lt;element name="expectedCloseDate" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchDateField" minOccurs="0"/>
- *         &lt;element name="expectedReceiptDate" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchDateField" minOccurs="0"/>
- *         &lt;element name="expenseCategory" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchMultiSelectField" minOccurs="0"/>
- *         &lt;element name="expenseDate" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchDateField" minOccurs="0"/>
- *         &lt;element name="externalId" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchMultiSelectField" minOccurs="0"/>
- *         &lt;element name="externalIdString" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchStringField" minOccurs="0"/>
- *         &lt;element name="finChrg" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchBooleanField" minOccurs="0"/>
- *         &lt;element name="firmed" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchBooleanField" minOccurs="0"/>
- *         &lt;element name="forecastType" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchEnumMultiSelectField" minOccurs="0"/>
- *         &lt;element name="fulfillingTransaction" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchMultiSelectField" minOccurs="0"/>
- *         &lt;element name="fxAccount" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchMultiSelectField" minOccurs="0"/>
- *         &lt;element name="fxAmount" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchDoubleField" minOccurs="0"/>
- *         &lt;element name="fxCostEstimate" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchDoubleField" minOccurs="0"/>
- *         &lt;element name="fxCostEstimateRate" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchDoubleField" minOccurs="0"/>
- *         &lt;element name="fxEstGrossProfit" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchDoubleField" minOccurs="0"/>
- *         &lt;element name="fxTranCostEstimate" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchDoubleField" minOccurs="0"/>
- *         &lt;element name="fxVsoeAllocation" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchDoubleField" minOccurs="0"/>
- *         &lt;element name="fxVsoeAmount" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchDoubleField" minOccurs="0"/>
- *         &lt;element name="fxVsoePrice" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchDoubleField" minOccurs="0"/>
- *         &lt;element name="gcoAvailabelToCharge" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchBooleanField" minOccurs="0"/>
- *         &lt;element name="gcoAvailableToRefund" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchBooleanField" minOccurs="0"/>
- *         &lt;element name="gcoAvsStreetMatch" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchEnumMultiSelectField" minOccurs="0"/>
- *         &lt;element name="gcoAvsZipMatch" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchEnumMultiSelectField" minOccurs="0"/>
- *         &lt;element name="gcoBuyerAccountAge" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchLongField" minOccurs="0"/>
- *         &lt;element name="gcoBuyerIp" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchStringField" minOccurs="0"/>
- *         &lt;element name="gcoChargeAmount" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchDoubleField" minOccurs="0"/>
- *         &lt;element name="gcoChargebackAmount" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchDoubleField" minOccurs="0"/>
- *         &lt;element name="gcoConfirmedChargedTotal" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchDoubleField" minOccurs="0"/>
- *         &lt;element name="gcoConfirmedRefundedTotal" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchDoubleField" minOccurs="0"/>
- *         &lt;element name="gcoCreditcardNumber" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchStringField" minOccurs="0"/>
- *         &lt;element name="gcoCscMatch" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchEnumMultiSelectField" minOccurs="0"/>
- *         &lt;element name="gcoFinancialState" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchStringField" minOccurs="0"/>
- *         &lt;element name="gcoFulfillmentState" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchStringField" minOccurs="0"/>
- *         &lt;element name="gcoOrderId" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchStringField" minOccurs="0"/>
- *         &lt;element name="gcoOrderTotal" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchDoubleField" minOccurs="0"/>
- *         &lt;element name="gcoPromotionAmount" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchDoubleField" minOccurs="0"/>
- *         &lt;element name="gcoPromotionName" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchStringField" minOccurs="0"/>
- *         &lt;element name="gcoRefundAmount" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchDoubleField" minOccurs="0"/>
- *         &lt;element name="gcoShippingTotal" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchDoubleField" minOccurs="0"/>
- *         &lt;element name="gcoStateChangedDetail" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchStringField" minOccurs="0"/>
- *         &lt;element name="giftCertificate" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchStringField" minOccurs="0"/>
- *         &lt;element name="grossAmount" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchDoubleField" minOccurs="0"/>
- *         &lt;element name="includeInForecast" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchBooleanField" minOccurs="0"/>
- *         &lt;element name="incoterm" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchMultiSelectField" minOccurs="0"/>
- *         &lt;element name="intercoStatus" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchEnumMultiSelectField" minOccurs="0"/>
- *         &lt;element name="intercoTransaction" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchMultiSelectField" minOccurs="0"/>
- *         &lt;element name="internalId" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchMultiSelectField" minOccurs="0"/>
- *         &lt;element name="internalIdNumber" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchLongField" minOccurs="0"/>
- *         &lt;element name="inVsoeBundle" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchBooleanField" minOccurs="0"/>
- *         &lt;element name="isAllocation" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchBooleanField" minOccurs="0"/>
- *         &lt;element name="isBackflush" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchBooleanField" minOccurs="0"/>
- *         &lt;element name="isGcoChargeback" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchBooleanField" minOccurs="0"/>
- *         &lt;element name="isGcoChargeConfirmed" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchBooleanField" minOccurs="0"/>
- *         &lt;element name="isGcoPaymentGuaranteed" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchBooleanField" minOccurs="0"/>
- *         &lt;element name="isGcoRefundConfirmed" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchBooleanField" minOccurs="0"/>
- *         &lt;element name="isInsideDelivery" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchBooleanField" minOccurs="0"/>
- *         &lt;element name="isInsidePickup" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchBooleanField" minOccurs="0"/>
- *         &lt;element name="isIntercompanyAdjustment" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchBooleanField" minOccurs="0"/>
- *         &lt;element name="isMultiShipTo" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchBooleanField" minOccurs="0"/>
- *         &lt;element name="isPayPalMeth" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchBooleanField" minOccurs="0"/>
- *         &lt;element name="isReversal" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchBooleanField" minOccurs="0"/>
- *         &lt;element name="isRevRecTransaction" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchBooleanField" minOccurs="0"/>
- *         &lt;element name="isScrap" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchBooleanField" minOccurs="0"/>
- *         &lt;element name="isShipAddress" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchBooleanField" minOccurs="0"/>
- *         &lt;element name="isTransferPriceCosting" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchBooleanField" minOccurs="0"/>
- *         &lt;element name="isVsoeAlloc" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchBooleanField" minOccurs="0"/>
- *         &lt;element name="isWip" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchBooleanField" minOccurs="0"/>
- *         &lt;element name="item" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchMultiSelectField" minOccurs="0"/>
- *         &lt;element name="itemFulfillmentChoice" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchEnumMultiSelectField" minOccurs="0"/>
- *         &lt;element name="itemRevision" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchMultiSelectField" minOccurs="0"/>
- *         &lt;element name="itemSubOf" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchMultiSelectField" minOccurs="0"/>
- *         &lt;element name="landedCostPerLine" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchBooleanField" minOccurs="0"/>
- *         &lt;element name="lastModifiedDate" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchDateField" minOccurs="0"/>
- *         &lt;element name="leadSource" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchMultiSelectField" minOccurs="0"/>
- *         &lt;element name="lineUniqueKey" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchLongField" minOccurs="0"/>
- *         &lt;element name="location" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchMultiSelectField" minOccurs="0"/>
- *         &lt;element name="locationAutoAssigned" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchBooleanField" minOccurs="0"/>
- *         &lt;element name="mainLine" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchBooleanField" minOccurs="0"/>
- *         &lt;element name="mainName" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchMultiSelectField" minOccurs="0"/>
- *         &lt;element name="manufacturingRouting" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchMultiSelectField" minOccurs="0"/>
- *         &lt;element name="matchBillToReceipt" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchBooleanField" minOccurs="0"/>
- *         &lt;element name="memo" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchStringField" minOccurs="0"/>
- *         &lt;element name="memoMain" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchStringField" minOccurs="0"/>
- *         &lt;element name="memorized" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchBooleanField" minOccurs="0"/>
- *         &lt;element name="merchantAccount" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchStringField" minOccurs="0"/>
- *         &lt;element name="message" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchStringField" minOccurs="0"/>
- *         &lt;element name="multiSubsidiary" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchBooleanField" minOccurs="0"/>
- *         &lt;element name="nameText" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchStringField" minOccurs="0"/>
- *         &lt;element name="netAmount" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchDoubleField" minOccurs="0"/>
- *         &lt;element name="nextApprover" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchMultiSelectField" minOccurs="0"/>
- *         &lt;element name="nextBillDate" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchDateField" minOccurs="0"/>
- *         &lt;element name="noAutoAssignLocation" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchBooleanField" minOccurs="0"/>
- *         &lt;element name="nonReimbursable" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchBooleanField" minOccurs="0"/>
- *         &lt;element name="number" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchLongField" minOccurs="0"/>
- *         &lt;element name="oneTimeTotal" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchDoubleField" minOccurs="0"/>
- *         &lt;element name="opportunity" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchMultiSelectField" minOccurs="0"/>
- *         &lt;element name="orderPriority" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchDoubleField" minOccurs="0"/>
- *         &lt;element name="otherRefNum" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchTextNumberField" minOccurs="0"/>
- *         &lt;element name="otherRefNumNonDeposit" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchTextNumberField" minOccurs="0"/>
- *         &lt;element name="overheadParentItem" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchMultiSelectField" minOccurs="0"/>
- *         &lt;element name="packageCount" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchLongField" minOccurs="0"/>
- *         &lt;element name="paidTransaction" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchMultiSelectField" minOccurs="0"/>
- *         &lt;element name="parent" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchLongField" minOccurs="0"/>
- *         &lt;element name="partner" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchMultiSelectField" minOccurs="0"/>
- *         &lt;element name="partnerContribution" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchLongField" minOccurs="0"/>
- *         &lt;element name="partnerRole" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchMultiSelectField" minOccurs="0"/>
- *         &lt;element name="partnerTeamMember" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchMultiSelectField" minOccurs="0"/>
- *         &lt;element name="payingTransaction" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchMultiSelectField" minOccurs="0"/>
- *         &lt;element name="paymentApproved" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchBooleanField" minOccurs="0"/>
- *         &lt;element name="paymentEventDate" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchDateField" minOccurs="0"/>
- *         &lt;element name="paymentEventHoldReason" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchEnumMultiSelectField" minOccurs="0"/>
- *         &lt;element name="paymentEventPurchaseCardUsed" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchBooleanField" minOccurs="0"/>
- *         &lt;element name="paymentEventPurchaseDataSent" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchBooleanField" minOccurs="0"/>
- *         &lt;element name="paymentEventResult" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchEnumMultiSelectField" minOccurs="0"/>
- *         &lt;element name="paymentEventType" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchEnumMultiSelectField" minOccurs="0"/>
- *         &lt;element name="paymentHold" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchBooleanField" minOccurs="0"/>
- *         &lt;element name="paymentMethod" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchMultiSelectField" minOccurs="0"/>
- *         &lt;element name="payPalPending" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchBooleanField" minOccurs="0"/>
- *         &lt;element name="payPalStatus" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchStringField" minOccurs="0"/>
- *         &lt;element name="payPalTranId" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchStringField" minOccurs="0"/>
- *         &lt;element name="pnRefNum" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchStringField" minOccurs="0"/>
- *         &lt;element name="poAsText" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchStringField" minOccurs="0"/>
- *         &lt;element name="posting" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchBooleanField" minOccurs="0"/>
- *         &lt;element name="postingPeriod" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="postingPeriodRelative" type="{urn:types.common_2018_2.platform.webservices.netsuite.com}PostingPeriodDate" minOccurs="0"/>
- *         &lt;element name="priceLevel" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchMultiSelectField" minOccurs="0"/>
- *         &lt;element name="printedPickingTicket" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchBooleanField" minOccurs="0"/>
- *         &lt;element name="probability" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchLongField" minOccurs="0"/>
- *         &lt;element name="projectedAmount" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchDoubleField" minOccurs="0"/>
- *         &lt;element name="projectTask" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchMultiSelectField" minOccurs="0"/>
- *         &lt;element name="promoCode" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchMultiSelectField" minOccurs="0"/>
- *         &lt;element name="purchaseOrder" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchMultiSelectField" minOccurs="0"/>
- *         &lt;element name="quantity" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchDoubleField" minOccurs="0"/>
- *         &lt;element name="quantityBilled" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchDoubleField" minOccurs="0"/>
- *         &lt;element name="quantityCommitted" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchDoubleField" minOccurs="0"/>
- *         &lt;element name="quantityPacked" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchDoubleField" minOccurs="0"/>
- *         &lt;element name="quantityPicked" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchDoubleField" minOccurs="0"/>
- *         &lt;element name="quantityRevCommitted" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchDoubleField" minOccurs="0"/>
- *         &lt;element name="quantityShipRecv" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchDoubleField" minOccurs="0"/>
- *         &lt;element name="recognizedRevenue" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchDoubleField" minOccurs="0"/>
- *         &lt;element name="recordType" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchStringField" minOccurs="0"/>
- *         &lt;element name="recurAnnuallyTotal" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchDoubleField" minOccurs="0"/>
- *         &lt;element name="recurMonthlyTotal" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchDoubleField" minOccurs="0"/>
- *         &lt;element name="recurQuarterlyTotal" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchDoubleField" minOccurs="0"/>
- *         &lt;element name="recurringBill" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchBooleanField" minOccurs="0"/>
- *         &lt;element name="recurWeeklyTotal" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchDoubleField" minOccurs="0"/>
- *         &lt;element name="refNumber" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchLongField" minOccurs="0"/>
- *         &lt;element name="revCommitStatus" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchEnumMultiSelectField" minOccurs="0"/>
- *         &lt;element name="revCommittingStatus" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchBooleanField" minOccurs="0"/>
- *         &lt;element name="revCommittingTransaction" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchMultiSelectField" minOccurs="0"/>
- *         &lt;element name="revenueStatus" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchEnumMultiSelectField" minOccurs="0"/>
- *         &lt;element name="reversalDate" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchDateField" minOccurs="0"/>
- *         &lt;element name="reversalNumber" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchStringField" minOccurs="0"/>
- *         &lt;element name="revRecEndDate" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchDateField" minOccurs="0"/>
- *         &lt;element name="revRecOnRevCommitment" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchBooleanField" minOccurs="0"/>
- *         &lt;element name="revRecStartDate" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchDateField" minOccurs="0"/>
- *         &lt;element name="revRecTermInMonths" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchLongField" minOccurs="0"/>
- *         &lt;element name="salesEffectiveDate" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchDateField" minOccurs="0"/>
- *         &lt;element name="salesOrder" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchMultiSelectField" minOccurs="0"/>
- *         &lt;element name="salesRep" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchMultiSelectField" minOccurs="0"/>
- *         &lt;element name="salesTeamMember" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchMultiSelectField" minOccurs="0"/>
- *         &lt;element name="salesTeamRole" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchMultiSelectField" minOccurs="0"/>
- *         &lt;element name="schedulingMethod" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchEnumMultiSelectField" minOccurs="0"/>
- *         &lt;element name="serialNumber" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchStringField" minOccurs="0"/>
- *         &lt;element name="serialNumberCost" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchDoubleField" minOccurs="0"/>
- *         &lt;element name="serialNumberCostAdjustment" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchDoubleField" minOccurs="0"/>
- *         &lt;element name="serialNumberQuantity" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchDoubleField" minOccurs="0"/>
- *         &lt;element name="serialNumbers" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchStringField" minOccurs="0"/>
- *         &lt;element name="shipAddress" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchStringField" minOccurs="0"/>
- *         &lt;element name="shipAddressee" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchStringField" minOccurs="0"/>
- *         &lt;element name="shipAttention" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchStringField" minOccurs="0"/>
- *         &lt;element name="shipCarrier" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchEnumMultiSelectField" minOccurs="0"/>
- *         &lt;element name="shipCity" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchStringField" minOccurs="0"/>
- *         &lt;element name="shipComplete" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchBooleanField" minOccurs="0"/>
- *         &lt;element name="shipCountry" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchEnumMultiSelectField" minOccurs="0"/>
- *         &lt;element name="shipCounty" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchStringField" minOccurs="0"/>
- *         &lt;element name="shipDate" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchDateField" minOccurs="0"/>
- *         &lt;element name="shipGroup" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchLongField" minOccurs="0"/>
- *         &lt;element name="shipMethod" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchMultiSelectField" minOccurs="0"/>
- *         &lt;element name="shipPhone" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchStringField" minOccurs="0"/>
- *         &lt;element name="shipping" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchBooleanField" minOccurs="0"/>
- *         &lt;element name="shipRecvStatus" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchBooleanField" minOccurs="0"/>
- *         &lt;element name="shipRecvStatusLine" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchBooleanField" minOccurs="0"/>
- *         &lt;element name="shipState" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchMultiSelectField" minOccurs="0"/>
- *         &lt;element name="shipTo" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchMultiSelectField" minOccurs="0"/>
- *         &lt;element name="shipZip" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchStringField" minOccurs="0"/>
- *         &lt;element name="source" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchEnumMultiSelectField" minOccurs="0"/>
- *         &lt;element name="startDate" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchDateField" minOccurs="0"/>
- *         &lt;element name="statistical" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchBooleanField" minOccurs="0"/>
- *         &lt;element name="status" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchEnumMultiSelectField" minOccurs="0"/>
- *         &lt;element name="subscription" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchMultiSelectField" minOccurs="0"/>
- *         &lt;element name="subscriptionLine" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchMultiSelectField" minOccurs="0"/>
- *         &lt;element name="subsidiary" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchMultiSelectField" minOccurs="0"/>
- *         &lt;element name="taxItem" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchMultiSelectField" minOccurs="0"/>
- *         &lt;element name="taxLine" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchBooleanField" minOccurs="0"/>
- *         &lt;element name="taxPeriod" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="taxPeriodRelative" type="{urn:types.common_2018_2.platform.webservices.netsuite.com}PostingPeriodDate" minOccurs="0"/>
- *         &lt;element name="taxRate" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchDoubleField" minOccurs="0"/>
- *         &lt;element name="terms" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchMultiSelectField" minOccurs="0"/>
- *         &lt;element name="termsOfSale" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchEnumMultiSelectField" minOccurs="0"/>
- *         &lt;element name="title" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchStringField" minOccurs="0"/>
- *         &lt;element name="toBeEmailed" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchBooleanField" minOccurs="0"/>
- *         &lt;element name="toBePrinted" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchBooleanField" minOccurs="0"/>
- *         &lt;element name="toSubsidiary" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchMultiSelectField" minOccurs="0"/>
- *         &lt;element name="totalAmount" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchDoubleField" minOccurs="0"/>
- *         &lt;element name="trackingNumbers" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchStringField" minOccurs="0"/>
- *         &lt;element name="tranCostEstimate" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchDoubleField" minOccurs="0"/>
- *         &lt;element name="tranDate" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchDateField" minOccurs="0"/>
- *         &lt;element name="tranEstGrossProfit" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchDoubleField" minOccurs="0"/>
- *         &lt;element name="tranEstGrossProfitPct" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchDoubleField" minOccurs="0"/>
- *         &lt;element name="tranFxEstGrossProfit" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchDoubleField" minOccurs="0"/>
- *         &lt;element name="tranId" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchStringField" minOccurs="0"/>
- *         &lt;element name="tranIsVsoeBundle" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchBooleanField" minOccurs="0"/>
- *         &lt;element name="transactionDiscount" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchBooleanField" minOccurs="0"/>
- *         &lt;element name="transactionLineType" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchEnumMultiSelectField" minOccurs="0"/>
- *         &lt;element name="transactionNumber" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchStringField" minOccurs="0"/>
- *         &lt;element name="transferLocation" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchMultiSelectField" minOccurs="0"/>
- *         &lt;element name="transferOrderQuantityCommitted" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchDoubleField" minOccurs="0"/>
- *         &lt;element name="transferOrderQuantityPacked" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchDoubleField" minOccurs="0"/>
- *         &lt;element name="transferOrderQuantityPicked" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchDoubleField" minOccurs="0"/>
- *         &lt;element name="transferOrderQuantityReceived" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchDoubleField" minOccurs="0"/>
- *         &lt;element name="transferOrderQuantityShipped" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchDoubleField" minOccurs="0"/>
- *         &lt;element name="type" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchEnumMultiSelectField" minOccurs="0"/>
- *         &lt;element name="unit" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchMultiSelectField" minOccurs="0"/>
- *         &lt;element name="unitCostOverride" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchDoubleField" minOccurs="0"/>
- *         &lt;element name="unitsType" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchMultiSelectField" minOccurs="0"/>
- *         &lt;element name="vendType" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchMultiSelectField" minOccurs="0"/>
- *         &lt;element name="visibleToCustomer" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchBooleanField" minOccurs="0"/>
- *         &lt;element name="voided" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchBooleanField" minOccurs="0"/>
- *         &lt;element name="vsoeAllocation" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchDoubleField" minOccurs="0"/>
- *         &lt;element name="vsoeAmount" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchDoubleField" minOccurs="0"/>
- *         &lt;element name="vsoeDeferral" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchEnumMultiSelectField" minOccurs="0"/>
- *         &lt;element name="vsoeDelivered" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchBooleanField" minOccurs="0"/>
- *         &lt;element name="vsoePermitDiscount" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchEnumMultiSelectField" minOccurs="0"/>
- *         &lt;element name="vsoePrice" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchDoubleField" minOccurs="0"/>
- *         &lt;element name="webSite" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchMultiSelectField" minOccurs="0"/>
- *         &lt;element name="customFieldList" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchCustomFieldList" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/extension>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
- */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "TransactionSearchBasic", propOrder = {
-    "account",
-    "accountType",
-    "actualShipDate",
-    "altSalesAmount",
-    "altSalesNetAmount",
-    "amount",
-    "amountPaid",
-    "amountRemaining",
-    "amountUnbilled",
-    "anyLineItem",
-    "appliedToForeignAmount",
-    "appliedToIsFxVariance",
-    "appliedToLinkAmount",
-    "appliedToLinkType",
-    "appliedToTransaction",
-    "applyingForeignAmount",
-    "applyingIsFxVariance",
-    "applyingLinkAmount",
-    "applyingLinkType",
-    "applyingTransaction",
-    "approvalStatus",
-    "authCode",
-    "autoCalculateLag",
-    "avsStreetMatch",
-    "avsZipMatch",
-    "billable",
-    "billAddress",
-    "billAddressee",
-    "billAttention",
-    "billCity",
-    "billCountry",
-    "billCounty",
-    "billedDate",
-    "billingAccount",
-    "billingSchedule",
-    "billingStatus",
-    "billingTransaction",
-    "billPhone",
-    "billState",
-    "billVarianceStatus",
-    "billZip",
-    "binNumber",
-    "binNumberQuantity",
-    "bomQuantity",
-    "bookSpecificTransaction",
-    "buildEntireAssembly",
-    "buildVariance",
-    "built",
-    "canHaveStackablePromotions",
-    "catchUpPeriod",
-    "ccCustomerCode",
-    "ccExpireDate",
-    "ccName",
-    "ccNumber",
-    "chargeType",
-    "clazz",
-    "cleared",
-    "closed",
-    "closeDate",
-    "cogs",
-    "commissionEffectiveDate",
-    "commit",
-    "componentYield",
-    "confirmationNumber",
-    "contribution",
-    "costComponentAmount",
-    "costComponentCategory",
-    "costComponentItem",
-    "costComponentQuantity",
-    "costComponentStandardCost",
-    "costEstimate",
-    "costEstimateRate",
-    "costEstimateType",
-    "createdBy",
-    "createdFrom",
-    "creditAmount",
-    "cscMatch",
-    "currency",
-    "customerSubOf",
-    "customForm",
-    "customGL",
-    "custType",
-    "dateCreated",
-    "daysOpen",
-    "daysOverdue",
-    "debitAmount",
-    "deferredRevenue",
-    "deferRevRec",
-    "department",
-    "depositDate",
-    "depositTransaction",
-    "drAccount",
-    "dueDate",
-    "email",
-    "employee",
-    "endDate",
-    "entity",
-    "entityStatus",
-    "estGrossProfit",
-    "estGrossProfitPct",
-    "exchangeRate",
-    "excludeCommission",
-    "excludeFromRateRequest",
-    "expectedCloseDate",
-    "expectedReceiptDate",
-    "expenseCategory",
-    "expenseDate",
-    "externalId",
-    "externalIdString",
-    "finChrg",
-    "firmed",
-    "forecastType",
-    "fulfillingTransaction",
-    "fxAccount",
-    "fxAmount",
-    "fxCostEstimate",
-    "fxCostEstimateRate",
-    "fxEstGrossProfit",
-    "fxTranCostEstimate",
-    "fxVsoeAllocation",
-    "fxVsoeAmount",
-    "fxVsoePrice",
-    "gcoAvailabelToCharge",
-    "gcoAvailableToRefund",
-    "gcoAvsStreetMatch",
-    "gcoAvsZipMatch",
-    "gcoBuyerAccountAge",
-    "gcoBuyerIp",
-    "gcoChargeAmount",
-    "gcoChargebackAmount",
-    "gcoConfirmedChargedTotal",
-    "gcoConfirmedRefundedTotal",
-    "gcoCreditcardNumber",
-    "gcoCscMatch",
-    "gcoFinancialState",
-    "gcoFulfillmentState",
-    "gcoOrderId",
-    "gcoOrderTotal",
-    "gcoPromotionAmount",
-    "gcoPromotionName",
-    "gcoRefundAmount",
-    "gcoShippingTotal",
-    "gcoStateChangedDetail",
-    "giftCertificate",
-    "grossAmount",
-    "includeInForecast",
-    "incoterm",
-    "intercoStatus",
-    "intercoTransaction",
-    "internalId",
-    "internalIdNumber",
-    "inVsoeBundle",
-    "isAllocation",
-    "isBackflush",
-    "isGcoChargeback",
-    "isGcoChargeConfirmed",
-    "isGcoPaymentGuaranteed",
-    "isGcoRefundConfirmed",
-    "isInsideDelivery",
-    "isInsidePickup",
-    "isIntercompanyAdjustment",
-    "isMultiShipTo",
-    "isPayPalMeth",
-    "isReversal",
-    "isRevRecTransaction",
-    "isScrap",
-    "isShipAddress",
-    "isTransferPriceCosting",
-    "isVsoeAlloc",
-    "isWip",
-    "item",
-    "itemFulfillmentChoice",
-    "itemRevision",
-    "itemSubOf",
-    "landedCostPerLine",
-    "lastModifiedDate",
-    "leadSource",
-    "lineUniqueKey",
-    "location",
-    "locationAutoAssigned",
-    "mainLine",
-    "mainName",
-    "manufacturingRouting",
-    "matchBillToReceipt",
-    "memo",
-    "memoMain",
-    "memorized",
-    "merchantAccount",
-    "message",
-    "multiSubsidiary",
-    "nameText",
-    "netAmount",
-    "nextApprover",
-    "nextBillDate",
-    "noAutoAssignLocation",
-    "nonReimbursable",
-    "number",
-    "oneTimeTotal",
-    "opportunity",
-    "orderPriority",
-    "otherRefNum",
-    "otherRefNumNonDeposit",
-    "overheadParentItem",
-    "packageCount",
-    "paidTransaction",
-    "parent",
-    "partner",
-    "partnerContribution",
-    "partnerRole",
-    "partnerTeamMember",
-    "payingTransaction",
-    "paymentApproved",
-    "paymentEventDate",
-    "paymentEventHoldReason",
-    "paymentEventPurchaseCardUsed",
-    "paymentEventPurchaseDataSent",
-    "paymentEventResult",
-    "paymentEventType",
-    "paymentHold",
-    "paymentMethod",
-    "payPalPending",
-    "payPalStatus",
-    "payPalTranId",
-    "pnRefNum",
-    "poAsText",
-    "posting",
-    "postingPeriod",
-    "postingPeriodRelative",
-    "priceLevel",
-    "printedPickingTicket",
-    "probability",
-    "projectedAmount",
-    "projectTask",
-    "promoCode",
-    "purchaseOrder",
-    "quantity",
-    "quantityBilled",
-    "quantityCommitted",
-    "quantityPacked",
-    "quantityPicked",
-    "quantityRevCommitted",
-    "quantityShipRecv",
-    "recognizedRevenue",
-    "recordType",
-    "recurAnnuallyTotal",
-    "recurMonthlyTotal",
-    "recurQuarterlyTotal",
-    "recurringBill",
-    "recurWeeklyTotal",
-    "refNumber",
-    "revCommitStatus",
-    "revCommittingStatus",
-    "revCommittingTransaction",
-    "revenueStatus",
-    "reversalDate",
-    "reversalNumber",
-    "revRecEndDate",
-    "revRecOnRevCommitment",
-    "revRecStartDate",
-    "revRecTermInMonths",
-    "salesEffectiveDate",
-    "salesOrder",
-    "salesRep",
-    "salesTeamMember",
-    "salesTeamRole",
-    "schedulingMethod",
-    "serialNumber",
-    "serialNumberCost",
-    "serialNumberCostAdjustment",
-    "serialNumberQuantity",
-    "serialNumbers",
-    "shipAddress",
-    "shipAddressee",
-    "shipAttention",
-    "shipCarrier",
-    "shipCity",
-    "shipComplete",
-    "shipCountry",
-    "shipCounty",
-    "shipDate",
-    "shipGroup",
-    "shipMethod",
-    "shipPhone",
-    "shipping",
-    "shipRecvStatus",
-    "shipRecvStatusLine",
-    "shipState",
-    "shipTo",
-    "shipZip",
-    "source",
-    "startDate",
-    "statistical",
-    "status",
-    "subscription",
-    "subscriptionLine",
-    "subsidiary",
-    "taxItem",
-    "taxLine",
-    "taxPeriod",
-    "taxPeriodRelative",
-    "taxRate",
-    "terms",
-    "termsOfSale",
-    "title",
-    "toBeEmailed",
-    "toBePrinted",
-    "toSubsidiary",
-    "totalAmount",
-    "trackingNumbers",
-    "tranCostEstimate",
-    "tranDate",
-    "tranEstGrossProfit",
-    "tranEstGrossProfitPct",
-    "tranFxEstGrossProfit",
-    "tranId",
-    "tranIsVsoeBundle",
-    "transactionDiscount",
-    "transactionLineType",
-    "transactionNumber",
-    "transferLocation",
-    "transferOrderQuantityCommitted",
-    "transferOrderQuantityPacked",
-    "transferOrderQuantityPicked",
-    "transferOrderQuantityReceived",
-    "transferOrderQuantityShipped",
-    "type",
-    "unit",
-    "unitCostOverride",
-    "unitsType",
-    "vendType",
-    "visibleToCustomer",
-    "voided",
-    "vsoeAllocation",
-    "vsoeAmount",
-    "vsoeDeferral",
-    "vsoeDelivered",
-    "vsoePermitDiscount",
-    "vsoePrice",
-    "webSite",
-    "customFieldList"
-})
-public class TransactionSearchBasic
-    extends SearchRecordBasic
-{
+    private com.netsuite.webservices.platform.core_2018_2.SearchDateField actualShipDate;
 
-    protected SearchMultiSelectField account;
-    protected SearchEnumMultiSelectField accountType;
-    protected SearchDateField actualShipDate;
-    protected SearchDoubleField altSalesAmount;
-    protected SearchDoubleField altSalesNetAmount;
-    protected SearchDoubleField amount;
-    protected SearchDoubleField amountPaid;
-    protected SearchDoubleField amountRemaining;
-    protected SearchDoubleField amountUnbilled;
-    protected SearchMultiSelectField anyLineItem;
-    protected SearchDoubleField appliedToForeignAmount;
-    protected SearchBooleanField appliedToIsFxVariance;
-    protected SearchDoubleField appliedToLinkAmount;
-    protected SearchEnumMultiSelectField appliedToLinkType;
-    protected SearchMultiSelectField appliedToTransaction;
-    protected SearchDoubleField applyingForeignAmount;
-    protected SearchBooleanField applyingIsFxVariance;
-    protected SearchDoubleField applyingLinkAmount;
-    protected SearchEnumMultiSelectField applyingLinkType;
-    protected SearchMultiSelectField applyingTransaction;
-    protected SearchEnumMultiSelectField approvalStatus;
-    protected SearchStringField authCode;
-    protected SearchBooleanField autoCalculateLag;
-    protected SearchEnumMultiSelectField avsStreetMatch;
-    protected SearchEnumMultiSelectField avsZipMatch;
-    protected SearchBooleanField billable;
-    protected SearchStringField billAddress;
-    protected SearchStringField billAddressee;
-    protected SearchStringField billAttention;
-    protected SearchStringField billCity;
-    protected SearchEnumMultiSelectField billCountry;
-    protected SearchStringField billCounty;
-    protected SearchDateField billedDate;
-    protected SearchMultiSelectField billingAccount;
-    protected SearchMultiSelectField billingSchedule;
-    protected SearchBooleanField billingStatus;
-    protected SearchMultiSelectField billingTransaction;
-    protected SearchStringField billPhone;
-    protected SearchStringField billState;
-    protected SearchEnumMultiSelectField billVarianceStatus;
-    protected SearchStringField billZip;
-    protected SearchStringField binNumber;
-    protected SearchDoubleField binNumberQuantity;
-    protected SearchDoubleField bomQuantity;
-    protected SearchBooleanField bookSpecificTransaction;
-    protected SearchBooleanField buildEntireAssembly;
-    protected SearchDoubleField buildVariance;
-    protected SearchDoubleField built;
-    protected SearchBooleanField canHaveStackablePromotions;
-    protected SearchMultiSelectField catchUpPeriod;
-    protected SearchStringField ccCustomerCode;
-    protected SearchDateField ccExpireDate;
-    protected SearchStringField ccName;
-    protected SearchStringField ccNumber;
-    protected SearchEnumMultiSelectField chargeType;
-    @XmlElement(name = "class")
-    protected SearchMultiSelectField clazz;
-    protected SearchBooleanField cleared;
-    protected SearchBooleanField closed;
-    protected SearchDateField closeDate;
-    protected SearchBooleanField cogs;
-    protected SearchDateField commissionEffectiveDate;
-    protected SearchEnumMultiSelectField commit;
-    protected SearchDoubleField componentYield;
-    protected SearchStringField confirmationNumber;
-    protected SearchLongField contribution;
-    protected SearchDoubleField costComponentAmount;
-    protected SearchMultiSelectField costComponentCategory;
-    protected SearchMultiSelectField costComponentItem;
-    protected SearchDoubleField costComponentQuantity;
-    protected SearchDoubleField costComponentStandardCost;
-    protected SearchDoubleField costEstimate;
-    protected SearchDoubleField costEstimateRate;
-    protected SearchEnumMultiSelectField costEstimateType;
-    protected SearchMultiSelectField createdBy;
-    protected SearchMultiSelectField createdFrom;
-    protected SearchDoubleField creditAmount;
-    protected SearchEnumMultiSelectField cscMatch;
-    protected SearchMultiSelectField currency;
-    protected SearchMultiSelectField customerSubOf;
-    protected SearchMultiSelectField customForm;
-    protected SearchBooleanField customGL;
-    protected SearchMultiSelectField custType;
-    protected SearchDateField dateCreated;
-    protected SearchLongField daysOpen;
-    protected SearchLongField daysOverdue;
-    protected SearchDoubleField debitAmount;
-    protected SearchDoubleField deferredRevenue;
-    protected SearchBooleanField deferRevRec;
-    protected SearchMultiSelectField department;
-    protected SearchDateField depositDate;
-    protected SearchMultiSelectField depositTransaction;
-    protected SearchMultiSelectField drAccount;
-    protected SearchDateField dueDate;
-    protected SearchStringField email;
-    protected SearchMultiSelectField employee;
-    protected SearchDateField endDate;
-    protected SearchMultiSelectField entity;
-    protected SearchMultiSelectField entityStatus;
-    protected SearchDoubleField estGrossProfit;
-    protected SearchDoubleField estGrossProfitPct;
-    protected SearchDoubleField exchangeRate;
-    protected SearchBooleanField excludeCommission;
-    protected SearchBooleanField excludeFromRateRequest;
-    protected SearchDateField expectedCloseDate;
-    protected SearchDateField expectedReceiptDate;
-    protected SearchMultiSelectField expenseCategory;
-    protected SearchDateField expenseDate;
-    protected SearchMultiSelectField externalId;
-    protected SearchStringField externalIdString;
-    protected SearchBooleanField finChrg;
-    protected SearchBooleanField firmed;
-    protected SearchEnumMultiSelectField forecastType;
-    protected SearchMultiSelectField fulfillingTransaction;
-    protected SearchMultiSelectField fxAccount;
-    protected SearchDoubleField fxAmount;
-    protected SearchDoubleField fxCostEstimate;
-    protected SearchDoubleField fxCostEstimateRate;
-    protected SearchDoubleField fxEstGrossProfit;
-    protected SearchDoubleField fxTranCostEstimate;
-    protected SearchDoubleField fxVsoeAllocation;
-    protected SearchDoubleField fxVsoeAmount;
-    protected SearchDoubleField fxVsoePrice;
-    protected SearchBooleanField gcoAvailabelToCharge;
-    protected SearchBooleanField gcoAvailableToRefund;
-    protected SearchEnumMultiSelectField gcoAvsStreetMatch;
-    protected SearchEnumMultiSelectField gcoAvsZipMatch;
-    protected SearchLongField gcoBuyerAccountAge;
-    protected SearchStringField gcoBuyerIp;
-    protected SearchDoubleField gcoChargeAmount;
-    protected SearchDoubleField gcoChargebackAmount;
-    protected SearchDoubleField gcoConfirmedChargedTotal;
-    protected SearchDoubleField gcoConfirmedRefundedTotal;
-    protected SearchStringField gcoCreditcardNumber;
-    protected SearchEnumMultiSelectField gcoCscMatch;
-    protected SearchStringField gcoFinancialState;
-    protected SearchStringField gcoFulfillmentState;
-    protected SearchStringField gcoOrderId;
-    protected SearchDoubleField gcoOrderTotal;
-    protected SearchDoubleField gcoPromotionAmount;
-    protected SearchStringField gcoPromotionName;
-    protected SearchDoubleField gcoRefundAmount;
-    protected SearchDoubleField gcoShippingTotal;
-    protected SearchStringField gcoStateChangedDetail;
-    protected SearchStringField giftCertificate;
-    protected SearchDoubleField grossAmount;
-    protected SearchBooleanField includeInForecast;
-    protected SearchMultiSelectField incoterm;
-    protected SearchEnumMultiSelectField intercoStatus;
-    protected SearchMultiSelectField intercoTransaction;
-    protected SearchMultiSelectField internalId;
-    protected SearchLongField internalIdNumber;
-    protected SearchBooleanField inVsoeBundle;
-    protected SearchBooleanField isAllocation;
-    protected SearchBooleanField isBackflush;
-    protected SearchBooleanField isGcoChargeback;
-    protected SearchBooleanField isGcoChargeConfirmed;
-    protected SearchBooleanField isGcoPaymentGuaranteed;
-    protected SearchBooleanField isGcoRefundConfirmed;
-    protected SearchBooleanField isInsideDelivery;
-    protected SearchBooleanField isInsidePickup;
-    protected SearchBooleanField isIntercompanyAdjustment;
-    protected SearchBooleanField isMultiShipTo;
-    protected SearchBooleanField isPayPalMeth;
-    protected SearchBooleanField isReversal;
-    protected SearchBooleanField isRevRecTransaction;
-    protected SearchBooleanField isScrap;
-    protected SearchBooleanField isShipAddress;
-    protected SearchBooleanField isTransferPriceCosting;
-    protected SearchBooleanField isVsoeAlloc;
-    protected SearchBooleanField isWip;
-    protected SearchMultiSelectField item;
-    protected SearchEnumMultiSelectField itemFulfillmentChoice;
-    protected SearchMultiSelectField itemRevision;
-    protected SearchMultiSelectField itemSubOf;
-    protected SearchBooleanField landedCostPerLine;
-    protected SearchDateField lastModifiedDate;
-    protected SearchMultiSelectField leadSource;
-    protected SearchLongField lineUniqueKey;
-    protected SearchMultiSelectField location;
-    protected SearchBooleanField locationAutoAssigned;
-    protected SearchBooleanField mainLine;
-    protected SearchMultiSelectField mainName;
-    protected SearchMultiSelectField manufacturingRouting;
-    protected SearchBooleanField matchBillToReceipt;
-    protected SearchStringField memo;
-    protected SearchStringField memoMain;
-    protected SearchBooleanField memorized;
-    protected SearchStringField merchantAccount;
-    protected SearchStringField message;
-    protected SearchBooleanField multiSubsidiary;
-    protected SearchStringField nameText;
-    protected SearchDoubleField netAmount;
-    protected SearchMultiSelectField nextApprover;
-    protected SearchDateField nextBillDate;
-    protected SearchBooleanField noAutoAssignLocation;
-    protected SearchBooleanField nonReimbursable;
-    protected SearchLongField number;
-    protected SearchDoubleField oneTimeTotal;
-    protected SearchMultiSelectField opportunity;
-    protected SearchDoubleField orderPriority;
-    protected SearchTextNumberField otherRefNum;
-    protected SearchTextNumberField otherRefNumNonDeposit;
-    protected SearchMultiSelectField overheadParentItem;
-    protected SearchLongField packageCount;
-    protected SearchMultiSelectField paidTransaction;
-    protected SearchLongField parent;
-    protected SearchMultiSelectField partner;
-    protected SearchLongField partnerContribution;
-    protected SearchMultiSelectField partnerRole;
-    protected SearchMultiSelectField partnerTeamMember;
-    protected SearchMultiSelectField payingTransaction;
-    protected SearchBooleanField paymentApproved;
-    protected SearchDateField paymentEventDate;
-    protected SearchEnumMultiSelectField paymentEventHoldReason;
-    protected SearchBooleanField paymentEventPurchaseCardUsed;
-    protected SearchBooleanField paymentEventPurchaseDataSent;
-    protected SearchEnumMultiSelectField paymentEventResult;
-    protected SearchEnumMultiSelectField paymentEventType;
-    protected SearchBooleanField paymentHold;
-    protected SearchMultiSelectField paymentMethod;
-    protected SearchBooleanField payPalPending;
-    protected SearchStringField payPalStatus;
-    protected SearchStringField payPalTranId;
-    protected SearchStringField pnRefNum;
-    protected SearchStringField poAsText;
-    protected SearchBooleanField posting;
-    protected RecordRef postingPeriod;
-    @XmlSchemaType(name = "string")
-    protected PostingPeriodDate postingPeriodRelative;
-    protected SearchMultiSelectField priceLevel;
-    protected SearchBooleanField printedPickingTicket;
-    protected SearchLongField probability;
-    protected SearchDoubleField projectedAmount;
-    protected SearchMultiSelectField projectTask;
-    protected SearchMultiSelectField promoCode;
-    protected SearchMultiSelectField purchaseOrder;
-    protected SearchDoubleField quantity;
-    protected SearchDoubleField quantityBilled;
-    protected SearchDoubleField quantityCommitted;
-    protected SearchDoubleField quantityPacked;
-    protected SearchDoubleField quantityPicked;
-    protected SearchDoubleField quantityRevCommitted;
-    protected SearchDoubleField quantityShipRecv;
-    protected SearchDoubleField recognizedRevenue;
-    protected SearchStringField recordType;
-    protected SearchDoubleField recurAnnuallyTotal;
-    protected SearchDoubleField recurMonthlyTotal;
-    protected SearchDoubleField recurQuarterlyTotal;
-    protected SearchBooleanField recurringBill;
-    protected SearchDoubleField recurWeeklyTotal;
-    protected SearchLongField refNumber;
-    protected SearchEnumMultiSelectField revCommitStatus;
-    protected SearchBooleanField revCommittingStatus;
-    protected SearchMultiSelectField revCommittingTransaction;
-    protected SearchEnumMultiSelectField revenueStatus;
-    protected SearchDateField reversalDate;
-    protected SearchStringField reversalNumber;
-    protected SearchDateField revRecEndDate;
-    protected SearchBooleanField revRecOnRevCommitment;
-    protected SearchDateField revRecStartDate;
-    protected SearchLongField revRecTermInMonths;
-    protected SearchDateField salesEffectiveDate;
-    protected SearchMultiSelectField salesOrder;
-    protected SearchMultiSelectField salesRep;
-    protected SearchMultiSelectField salesTeamMember;
-    protected SearchMultiSelectField salesTeamRole;
-    protected SearchEnumMultiSelectField schedulingMethod;
-    protected SearchStringField serialNumber;
-    protected SearchDoubleField serialNumberCost;
-    protected SearchDoubleField serialNumberCostAdjustment;
-    protected SearchDoubleField serialNumberQuantity;
-    protected SearchStringField serialNumbers;
-    protected SearchStringField shipAddress;
-    protected SearchStringField shipAddressee;
-    protected SearchStringField shipAttention;
-    protected SearchEnumMultiSelectField shipCarrier;
-    protected SearchStringField shipCity;
-    protected SearchBooleanField shipComplete;
-    protected SearchEnumMultiSelectField shipCountry;
-    protected SearchStringField shipCounty;
-    protected SearchDateField shipDate;
-    protected SearchLongField shipGroup;
-    protected SearchMultiSelectField shipMethod;
-    protected SearchStringField shipPhone;
-    protected SearchBooleanField shipping;
-    protected SearchBooleanField shipRecvStatus;
-    protected SearchBooleanField shipRecvStatusLine;
-    protected SearchMultiSelectField shipState;
-    protected SearchMultiSelectField shipTo;
-    protected SearchStringField shipZip;
-    protected SearchEnumMultiSelectField source;
-    protected SearchDateField startDate;
-    protected SearchBooleanField statistical;
-    protected SearchEnumMultiSelectField status;
-    protected SearchMultiSelectField subscription;
-    protected SearchMultiSelectField subscriptionLine;
-    protected SearchMultiSelectField subsidiary;
-    protected SearchMultiSelectField taxItem;
-    protected SearchBooleanField taxLine;
-    protected RecordRef taxPeriod;
-    @XmlSchemaType(name = "string")
-    protected PostingPeriodDate taxPeriodRelative;
-    protected SearchDoubleField taxRate;
-    protected SearchMultiSelectField terms;
-    protected SearchEnumMultiSelectField termsOfSale;
-    protected SearchStringField title;
-    protected SearchBooleanField toBeEmailed;
-    protected SearchBooleanField toBePrinted;
-    protected SearchMultiSelectField toSubsidiary;
-    protected SearchDoubleField totalAmount;
-    protected SearchStringField trackingNumbers;
-    protected SearchDoubleField tranCostEstimate;
-    protected SearchDateField tranDate;
-    protected SearchDoubleField tranEstGrossProfit;
-    protected SearchDoubleField tranEstGrossProfitPct;
-    protected SearchDoubleField tranFxEstGrossProfit;
-    protected SearchStringField tranId;
-    protected SearchBooleanField tranIsVsoeBundle;
-    protected SearchBooleanField transactionDiscount;
-    protected SearchEnumMultiSelectField transactionLineType;
-    protected SearchStringField transactionNumber;
-    protected SearchMultiSelectField transferLocation;
-    protected SearchDoubleField transferOrderQuantityCommitted;
-    protected SearchDoubleField transferOrderQuantityPacked;
-    protected SearchDoubleField transferOrderQuantityPicked;
-    protected SearchDoubleField transferOrderQuantityReceived;
-    protected SearchDoubleField transferOrderQuantityShipped;
-    protected SearchEnumMultiSelectField type;
-    protected SearchMultiSelectField unit;
-    protected SearchDoubleField unitCostOverride;
-    protected SearchMultiSelectField unitsType;
-    protected SearchMultiSelectField vendType;
-    protected SearchBooleanField visibleToCustomer;
-    protected SearchBooleanField voided;
-    protected SearchDoubleField vsoeAllocation;
-    protected SearchDoubleField vsoeAmount;
-    protected SearchEnumMultiSelectField vsoeDeferral;
-    protected SearchBooleanField vsoeDelivered;
-    protected SearchEnumMultiSelectField vsoePermitDiscount;
-    protected SearchDoubleField vsoePrice;
-    protected SearchMultiSelectField webSite;
-    protected SearchCustomFieldList customFieldList;
+    private com.netsuite.webservices.platform.core_2018_2.SearchDoubleField altSalesAmount;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchDoubleField altSalesNetAmount;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchDoubleField amount;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchDoubleField amountPaid;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchDoubleField amountRemaining;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchDoubleField amountUnbilled;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef[] anyLineItem;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchDoubleField appliedToForeignAmount;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchBooleanField appliedToIsFxVariance;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchDoubleField appliedToLinkAmount;
+
+    private java.lang.String[] appliedToLinkType;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef[] appliedToTransaction;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchDoubleField applyingForeignAmount;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchBooleanField applyingIsFxVariance;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchDoubleField applyingLinkAmount;
+
+    private java.lang.String[] applyingLinkType;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef[] applyingTransaction;
+
+    private java.lang.String[] approvalStatus;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchStringField authCode;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchBooleanField autoCalculateLag;
+
+    private java.lang.String[] avsStreetMatch;
+
+    private java.lang.String[] avsZipMatch;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchBooleanField billable;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchStringField billAddress;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchStringField billAddressee;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchStringField billAttention;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchStringField billCity;
+
+    private java.lang.String[] billCountry;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchStringField billCounty;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchDateField billedDate;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef[] billingAccount;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef[] billingSchedule;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchBooleanField billingStatus;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef[] billingTransaction;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchStringField billPhone;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchStringField billState;
+
+    private java.lang.String[] billVarianceStatus;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchStringField billZip;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchStringField binNumber;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchDoubleField binNumberQuantity;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchDoubleField bomQuantity;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchBooleanField bookSpecificTransaction;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchBooleanField buildEntireAssembly;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchDoubleField buildVariance;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchDoubleField built;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchBooleanField canHaveStackablePromotions;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef[] catchUpPeriod;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchStringField ccCustomerCode;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchDateField ccExpireDate;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchStringField ccName;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchStringField ccNumber;
+
+    private java.lang.String[] chargeType;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef[] _class;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchBooleanField cleared;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchBooleanField closed;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchDateField closeDate;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchBooleanField cogs;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchDateField commissionEffectiveDate;
+
+    private java.lang.String[] commit;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchDoubleField componentYield;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchStringField confirmationNumber;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchLongField contribution;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchDoubleField costComponentAmount;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef[] costComponentCategory;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef[] costComponentItem;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchDoubleField costComponentQuantity;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchDoubleField costComponentStandardCost;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchDoubleField costEstimate;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchDoubleField costEstimateRate;
+
+    private java.lang.String[] costEstimateType;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef[] createdBy;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef[] createdFrom;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchDoubleField creditAmount;
+
+    private java.lang.String[] cscMatch;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef[] currency;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef[] customerSubOf;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef[] customForm;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchBooleanField customGL;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef[] custType;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchDateField dateCreated;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchLongField daysOpen;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchLongField daysOverdue;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchDoubleField debitAmount;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchDoubleField deferredRevenue;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchBooleanField deferRevRec;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef[] department;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchDateField depositDate;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef[] depositTransaction;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef[] drAccount;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchDateField dueDate;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchStringField email;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef[] employee;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchDateField endDate;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef[] entity;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef[] entityStatus;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchDoubleField estGrossProfit;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchDoubleField estGrossProfitPct;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchDoubleField exchangeRate;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchBooleanField excludeCommission;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchBooleanField excludeFromRateRequest;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchDateField expectedCloseDate;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchDateField expectedReceiptDate;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef[] expenseCategory;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchDateField expenseDate;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef[] externalId;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchStringField externalIdString;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchBooleanField finChrg;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchBooleanField firmed;
+
+    private java.lang.String[] forecastType;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef[] fulfillingTransaction;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef[] fxAccount;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchDoubleField fxAmount;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchDoubleField fxCostEstimate;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchDoubleField fxCostEstimateRate;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchDoubleField fxEstGrossProfit;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchDoubleField fxTranCostEstimate;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchDoubleField fxVsoeAllocation;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchDoubleField fxVsoeAmount;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchDoubleField fxVsoePrice;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchBooleanField gcoAvailabelToCharge;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchBooleanField gcoAvailableToRefund;
+
+    private java.lang.String[] gcoAvsStreetMatch;
+
+    private java.lang.String[] gcoAvsZipMatch;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchLongField gcoBuyerAccountAge;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchStringField gcoBuyerIp;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchDoubleField gcoChargeAmount;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchDoubleField gcoChargebackAmount;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchDoubleField gcoConfirmedChargedTotal;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchDoubleField gcoConfirmedRefundedTotal;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchStringField gcoCreditcardNumber;
+
+    private java.lang.String[] gcoCscMatch;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchStringField gcoFinancialState;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchStringField gcoFulfillmentState;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchStringField gcoOrderId;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchDoubleField gcoOrderTotal;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchDoubleField gcoPromotionAmount;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchStringField gcoPromotionName;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchDoubleField gcoRefundAmount;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchDoubleField gcoShippingTotal;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchStringField gcoStateChangedDetail;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchStringField giftCertificate;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchDoubleField grossAmount;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchBooleanField includeInForecast;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef[] incoterm;
+
+    private java.lang.String[] intercoStatus;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef[] intercoTransaction;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef[] internalId;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchLongField internalIdNumber;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchBooleanField inVsoeBundle;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchBooleanField isAllocation;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchBooleanField isBackflush;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchBooleanField isGcoChargeback;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchBooleanField isGcoChargeConfirmed;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchBooleanField isGcoPaymentGuaranteed;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchBooleanField isGcoRefundConfirmed;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchBooleanField isInsideDelivery;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchBooleanField isInsidePickup;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchBooleanField isIntercompanyAdjustment;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchBooleanField isMultiShipTo;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchBooleanField isPayPalMeth;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchBooleanField isReversal;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchBooleanField isRevRecTransaction;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchBooleanField isScrap;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchBooleanField isShipAddress;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchBooleanField isTransferPriceCosting;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchBooleanField isVsoeAlloc;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchBooleanField isWip;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef[] item;
+
+    private java.lang.String[] itemFulfillmentChoice;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef[] itemRevision;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef[] itemSubOf;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchBooleanField landedCostPerLine;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchDateField lastModifiedDate;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef[] leadSource;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchLongField lineUniqueKey;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef[] location;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchBooleanField locationAutoAssigned;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchBooleanField mainLine;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef[] mainName;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef[] manufacturingRouting;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchBooleanField matchBillToReceipt;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchStringField memo;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchStringField memoMain;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchBooleanField memorized;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchStringField merchantAccount;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchStringField message;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchBooleanField multiSubsidiary;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchStringField nameText;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchDoubleField netAmount;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef[] nextApprover;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchDateField nextBillDate;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchBooleanField noAutoAssignLocation;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchBooleanField nonReimbursable;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchLongField number;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchDoubleField oneTimeTotal;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef[] opportunity;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchDoubleField orderPriority;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchTextNumberField otherRefNum;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchTextNumberField otherRefNumNonDeposit;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef[] overheadParentItem;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchLongField packageCount;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef[] paidTransaction;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchLongField parent;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef[] partner;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchLongField partnerContribution;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef[] partnerRole;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef[] partnerTeamMember;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef[] payingTransaction;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchBooleanField paymentApproved;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchDateField paymentEventDate;
+
+    private java.lang.String[] paymentEventHoldReason;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchBooleanField paymentEventPurchaseCardUsed;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchBooleanField paymentEventPurchaseDataSent;
+
+    private java.lang.String[] paymentEventResult;
+
+    private java.lang.String[] paymentEventType;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchBooleanField paymentHold;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef[] paymentMethod;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchBooleanField payPalPending;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchStringField payPalStatus;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchStringField payPalTranId;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchStringField pnRefNum;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchStringField poAsText;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchBooleanField posting;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef postingPeriod;
+
+    private com.netsuite.webservices.platform.common_2018_2.types.PostingPeriodDate postingPeriodRelative;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef[] priceLevel;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchBooleanField printedPickingTicket;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchLongField probability;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchDoubleField projectedAmount;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef[] projectTask;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef[] promoCode;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef[] purchaseOrder;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchDoubleField quantity;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchDoubleField quantityBilled;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchDoubleField quantityCommitted;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchDoubleField quantityPacked;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchDoubleField quantityPicked;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchDoubleField quantityRevCommitted;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchDoubleField quantityShipRecv;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchDoubleField recognizedRevenue;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchStringField recordType;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchDoubleField recurAnnuallyTotal;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchDoubleField recurMonthlyTotal;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchDoubleField recurQuarterlyTotal;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchBooleanField recurringBill;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchDoubleField recurWeeklyTotal;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchLongField refNumber;
+
+    private java.lang.String[] revCommitStatus;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchBooleanField revCommittingStatus;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef[] revCommittingTransaction;
+
+    private java.lang.String[] revenueStatus;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchDateField reversalDate;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchStringField reversalNumber;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchDateField revRecEndDate;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchBooleanField revRecOnRevCommitment;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchDateField revRecStartDate;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchLongField revRecTermInMonths;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchDateField salesEffectiveDate;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef[] salesOrder;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef[] salesRep;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef[] salesTeamMember;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef[] salesTeamRole;
+
+    private java.lang.String[] schedulingMethod;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchStringField serialNumber;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchDoubleField serialNumberCost;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchDoubleField serialNumberCostAdjustment;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchDoubleField serialNumberQuantity;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchStringField serialNumbers;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchStringField shipAddress;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchStringField shipAddressee;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchStringField shipAttention;
+
+    private java.lang.String[] shipCarrier;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchStringField shipCity;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchBooleanField shipComplete;
+
+    private java.lang.String[] shipCountry;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchStringField shipCounty;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchDateField shipDate;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchLongField shipGroup;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef[] shipMethod;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchStringField shipPhone;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchBooleanField shipping;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchBooleanField shipRecvStatus;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchBooleanField shipRecvStatusLine;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef[] shipState;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef[] shipTo;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchStringField shipZip;
+
+    private java.lang.String[] source;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchDateField startDate;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchBooleanField statistical;
+
+    private java.lang.String[] status;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef[] subscription;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef[] subscriptionLine;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef[] subsidiary;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef[] taxItem;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchBooleanField taxLine;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef taxPeriod;
+
+    private com.netsuite.webservices.platform.common_2018_2.types.PostingPeriodDate taxPeriodRelative;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchDoubleField taxRate;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef[] terms;
+
+    private java.lang.String[] termsOfSale;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchStringField title;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchBooleanField toBeEmailed;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchBooleanField toBePrinted;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef[] toSubsidiary;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchDoubleField totalAmount;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchStringField trackingNumbers;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchDoubleField tranCostEstimate;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchDateField tranDate;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchDoubleField tranEstGrossProfit;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchDoubleField tranEstGrossProfitPct;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchDoubleField tranFxEstGrossProfit;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchStringField tranId;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchBooleanField tranIsVsoeBundle;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchBooleanField transactionDiscount;
+
+    private java.lang.String[] transactionLineType;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchStringField transactionNumber;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef[] transferLocation;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchDoubleField transferOrderQuantityCommitted;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchDoubleField transferOrderQuantityPacked;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchDoubleField transferOrderQuantityPicked;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchDoubleField transferOrderQuantityReceived;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchDoubleField transferOrderQuantityShipped;
+
+    private java.lang.String[] type;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef[] unit;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchDoubleField unitCostOverride;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef[] unitsType;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef[] vendType;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchBooleanField visibleToCustomer;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchBooleanField voided;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchDoubleField vsoeAllocation;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchDoubleField vsoeAmount;
+
+    private java.lang.String[] vsoeDeferral;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchBooleanField vsoeDelivered;
+
+    private java.lang.String[] vsoePermitDiscount;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchDoubleField vsoePrice;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef[] webSite;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchCustomField[] customFieldList;
+
+    public TransactionSearchBasic() {
+    }
+
 
     /**
-     * 获取account属性的值。
+     * Gets the account value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchMultiSelectField }
-     *     
+     * @return account
      */
-    public SearchMultiSelectField getAccount() {
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef[] getAccount() {
         return account;
     }
 
-    /**
-     * 设置account属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchMultiSelectField }
-     *     
-     */
-    public void setAccount(SearchMultiSelectField value) {
-        this.account = value;
-    }
 
     /**
-     * 获取accountType属性的值。
+     * Sets the account value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchEnumMultiSelectField }
-     *     
+     * @param account
      */
-    public SearchEnumMultiSelectField getAccountType() {
+    public void setAccount(com.netsuite.webservices.platform.core_2018_2.RecordRef[] account) {
+        this.account = account;
+    }
+
+
+    /**
+     * Gets the accountType value for this TransactionSearchBasic.
+     * 
+     * @return accountType
+     */
+    public java.lang.String[] getAccountType() {
         return accountType;
     }
 
-    /**
-     * 设置accountType属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchEnumMultiSelectField }
-     *     
-     */
-    public void setAccountType(SearchEnumMultiSelectField value) {
-        this.accountType = value;
-    }
 
     /**
-     * 获取actualShipDate属性的值。
+     * Sets the accountType value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchDateField }
-     *     
+     * @param accountType
      */
-    public SearchDateField getActualShipDate() {
+    public void setAccountType(java.lang.String[] accountType) {
+        this.accountType = accountType;
+    }
+
+
+    /**
+     * Gets the actualShipDate value for this TransactionSearchBasic.
+     * 
+     * @return actualShipDate
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchDateField getActualShipDate() {
         return actualShipDate;
     }
 
-    /**
-     * 设置actualShipDate属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchDateField }
-     *     
-     */
-    public void setActualShipDate(SearchDateField value) {
-        this.actualShipDate = value;
-    }
 
     /**
-     * 获取altSalesAmount属性的值。
+     * Sets the actualShipDate value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchDoubleField }
-     *     
+     * @param actualShipDate
      */
-    public SearchDoubleField getAltSalesAmount() {
+    public void setActualShipDate(com.netsuite.webservices.platform.core_2018_2.SearchDateField actualShipDate) {
+        this.actualShipDate = actualShipDate;
+    }
+
+
+    /**
+     * Gets the altSalesAmount value for this TransactionSearchBasic.
+     * 
+     * @return altSalesAmount
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchDoubleField getAltSalesAmount() {
         return altSalesAmount;
     }
 
-    /**
-     * 设置altSalesAmount属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchDoubleField }
-     *     
-     */
-    public void setAltSalesAmount(SearchDoubleField value) {
-        this.altSalesAmount = value;
-    }
 
     /**
-     * 获取altSalesNetAmount属性的值。
+     * Sets the altSalesAmount value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchDoubleField }
-     *     
+     * @param altSalesAmount
      */
-    public SearchDoubleField getAltSalesNetAmount() {
+    public void setAltSalesAmount(com.netsuite.webservices.platform.core_2018_2.SearchDoubleField altSalesAmount) {
+        this.altSalesAmount = altSalesAmount;
+    }
+
+
+    /**
+     * Gets the altSalesNetAmount value for this TransactionSearchBasic.
+     * 
+     * @return altSalesNetAmount
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchDoubleField getAltSalesNetAmount() {
         return altSalesNetAmount;
     }
 
-    /**
-     * 设置altSalesNetAmount属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchDoubleField }
-     *     
-     */
-    public void setAltSalesNetAmount(SearchDoubleField value) {
-        this.altSalesNetAmount = value;
-    }
 
     /**
-     * 获取amount属性的值。
+     * Sets the altSalesNetAmount value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchDoubleField }
-     *     
+     * @param altSalesNetAmount
      */
-    public SearchDoubleField getAmount() {
+    public void setAltSalesNetAmount(com.netsuite.webservices.platform.core_2018_2.SearchDoubleField altSalesNetAmount) {
+        this.altSalesNetAmount = altSalesNetAmount;
+    }
+
+
+    /**
+     * Gets the amount value for this TransactionSearchBasic.
+     * 
+     * @return amount
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchDoubleField getAmount() {
         return amount;
     }
 
-    /**
-     * 设置amount属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchDoubleField }
-     *     
-     */
-    public void setAmount(SearchDoubleField value) {
-        this.amount = value;
-    }
 
     /**
-     * 获取amountPaid属性的值。
+     * Sets the amount value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchDoubleField }
-     *     
+     * @param amount
      */
-    public SearchDoubleField getAmountPaid() {
+    public void setAmount(com.netsuite.webservices.platform.core_2018_2.SearchDoubleField amount) {
+        this.amount = amount;
+    }
+
+
+    /**
+     * Gets the amountPaid value for this TransactionSearchBasic.
+     * 
+     * @return amountPaid
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchDoubleField getAmountPaid() {
         return amountPaid;
     }
 
-    /**
-     * 设置amountPaid属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchDoubleField }
-     *     
-     */
-    public void setAmountPaid(SearchDoubleField value) {
-        this.amountPaid = value;
-    }
 
     /**
-     * 获取amountRemaining属性的值。
+     * Sets the amountPaid value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchDoubleField }
-     *     
+     * @param amountPaid
      */
-    public SearchDoubleField getAmountRemaining() {
+    public void setAmountPaid(com.netsuite.webservices.platform.core_2018_2.SearchDoubleField amountPaid) {
+        this.amountPaid = amountPaid;
+    }
+
+
+    /**
+     * Gets the amountRemaining value for this TransactionSearchBasic.
+     * 
+     * @return amountRemaining
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchDoubleField getAmountRemaining() {
         return amountRemaining;
     }
 
-    /**
-     * 设置amountRemaining属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchDoubleField }
-     *     
-     */
-    public void setAmountRemaining(SearchDoubleField value) {
-        this.amountRemaining = value;
-    }
 
     /**
-     * 获取amountUnbilled属性的值。
+     * Sets the amountRemaining value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchDoubleField }
-     *     
+     * @param amountRemaining
      */
-    public SearchDoubleField getAmountUnbilled() {
+    public void setAmountRemaining(com.netsuite.webservices.platform.core_2018_2.SearchDoubleField amountRemaining) {
+        this.amountRemaining = amountRemaining;
+    }
+
+
+    /**
+     * Gets the amountUnbilled value for this TransactionSearchBasic.
+     * 
+     * @return amountUnbilled
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchDoubleField getAmountUnbilled() {
         return amountUnbilled;
     }
 
-    /**
-     * 设置amountUnbilled属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchDoubleField }
-     *     
-     */
-    public void setAmountUnbilled(SearchDoubleField value) {
-        this.amountUnbilled = value;
-    }
 
     /**
-     * 获取anyLineItem属性的值。
+     * Sets the amountUnbilled value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchMultiSelectField }
-     *     
+     * @param amountUnbilled
      */
-    public SearchMultiSelectField getAnyLineItem() {
+    public void setAmountUnbilled(com.netsuite.webservices.platform.core_2018_2.SearchDoubleField amountUnbilled) {
+        this.amountUnbilled = amountUnbilled;
+    }
+
+
+    /**
+     * Gets the anyLineItem value for this TransactionSearchBasic.
+     * 
+     * @return anyLineItem
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef[] getAnyLineItem() {
         return anyLineItem;
     }
 
-    /**
-     * 设置anyLineItem属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchMultiSelectField }
-     *     
-     */
-    public void setAnyLineItem(SearchMultiSelectField value) {
-        this.anyLineItem = value;
-    }
 
     /**
-     * 获取appliedToForeignAmount属性的值。
+     * Sets the anyLineItem value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchDoubleField }
-     *     
+     * @param anyLineItem
      */
-    public SearchDoubleField getAppliedToForeignAmount() {
+    public void setAnyLineItem(com.netsuite.webservices.platform.core_2018_2.RecordRef[] anyLineItem) {
+        this.anyLineItem = anyLineItem;
+    }
+
+
+    /**
+     * Gets the appliedToForeignAmount value for this TransactionSearchBasic.
+     * 
+     * @return appliedToForeignAmount
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchDoubleField getAppliedToForeignAmount() {
         return appliedToForeignAmount;
     }
 
-    /**
-     * 设置appliedToForeignAmount属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchDoubleField }
-     *     
-     */
-    public void setAppliedToForeignAmount(SearchDoubleField value) {
-        this.appliedToForeignAmount = value;
-    }
 
     /**
-     * 获取appliedToIsFxVariance属性的值。
+     * Sets the appliedToForeignAmount value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchBooleanField }
-     *     
+     * @param appliedToForeignAmount
      */
-    public SearchBooleanField getAppliedToIsFxVariance() {
+    public void setAppliedToForeignAmount(com.netsuite.webservices.platform.core_2018_2.SearchDoubleField appliedToForeignAmount) {
+        this.appliedToForeignAmount = appliedToForeignAmount;
+    }
+
+
+    /**
+     * Gets the appliedToIsFxVariance value for this TransactionSearchBasic.
+     * 
+     * @return appliedToIsFxVariance
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchBooleanField getAppliedToIsFxVariance() {
         return appliedToIsFxVariance;
     }
 
-    /**
-     * 设置appliedToIsFxVariance属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchBooleanField }
-     *     
-     */
-    public void setAppliedToIsFxVariance(SearchBooleanField value) {
-        this.appliedToIsFxVariance = value;
-    }
 
     /**
-     * 获取appliedToLinkAmount属性的值。
+     * Sets the appliedToIsFxVariance value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchDoubleField }
-     *     
+     * @param appliedToIsFxVariance
      */
-    public SearchDoubleField getAppliedToLinkAmount() {
+    public void setAppliedToIsFxVariance(com.netsuite.webservices.platform.core_2018_2.SearchBooleanField appliedToIsFxVariance) {
+        this.appliedToIsFxVariance = appliedToIsFxVariance;
+    }
+
+
+    /**
+     * Gets the appliedToLinkAmount value for this TransactionSearchBasic.
+     * 
+     * @return appliedToLinkAmount
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchDoubleField getAppliedToLinkAmount() {
         return appliedToLinkAmount;
     }
 
-    /**
-     * 设置appliedToLinkAmount属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchDoubleField }
-     *     
-     */
-    public void setAppliedToLinkAmount(SearchDoubleField value) {
-        this.appliedToLinkAmount = value;
-    }
 
     /**
-     * 获取appliedToLinkType属性的值。
+     * Sets the appliedToLinkAmount value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchEnumMultiSelectField }
-     *     
+     * @param appliedToLinkAmount
      */
-    public SearchEnumMultiSelectField getAppliedToLinkType() {
+    public void setAppliedToLinkAmount(com.netsuite.webservices.platform.core_2018_2.SearchDoubleField appliedToLinkAmount) {
+        this.appliedToLinkAmount = appliedToLinkAmount;
+    }
+
+
+    /**
+     * Gets the appliedToLinkType value for this TransactionSearchBasic.
+     * 
+     * @return appliedToLinkType
+     */
+    public java.lang.String[] getAppliedToLinkType() {
         return appliedToLinkType;
     }
 
-    /**
-     * 设置appliedToLinkType属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchEnumMultiSelectField }
-     *     
-     */
-    public void setAppliedToLinkType(SearchEnumMultiSelectField value) {
-        this.appliedToLinkType = value;
-    }
 
     /**
-     * 获取appliedToTransaction属性的值。
+     * Sets the appliedToLinkType value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchMultiSelectField }
-     *     
+     * @param appliedToLinkType
      */
-    public SearchMultiSelectField getAppliedToTransaction() {
+    public void setAppliedToLinkType(java.lang.String[] appliedToLinkType) {
+        this.appliedToLinkType = appliedToLinkType;
+    }
+
+
+    /**
+     * Gets the appliedToTransaction value for this TransactionSearchBasic.
+     * 
+     * @return appliedToTransaction
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef[] getAppliedToTransaction() {
         return appliedToTransaction;
     }
 
-    /**
-     * 设置appliedToTransaction属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchMultiSelectField }
-     *     
-     */
-    public void setAppliedToTransaction(SearchMultiSelectField value) {
-        this.appliedToTransaction = value;
-    }
 
     /**
-     * 获取applyingForeignAmount属性的值。
+     * Sets the appliedToTransaction value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchDoubleField }
-     *     
+     * @param appliedToTransaction
      */
-    public SearchDoubleField getApplyingForeignAmount() {
+    public void setAppliedToTransaction(com.netsuite.webservices.platform.core_2018_2.RecordRef[] appliedToTransaction) {
+        this.appliedToTransaction = appliedToTransaction;
+    }
+
+
+    /**
+     * Gets the applyingForeignAmount value for this TransactionSearchBasic.
+     * 
+     * @return applyingForeignAmount
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchDoubleField getApplyingForeignAmount() {
         return applyingForeignAmount;
     }
 
-    /**
-     * 设置applyingForeignAmount属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchDoubleField }
-     *     
-     */
-    public void setApplyingForeignAmount(SearchDoubleField value) {
-        this.applyingForeignAmount = value;
-    }
 
     /**
-     * 获取applyingIsFxVariance属性的值。
+     * Sets the applyingForeignAmount value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchBooleanField }
-     *     
+     * @param applyingForeignAmount
      */
-    public SearchBooleanField getApplyingIsFxVariance() {
+    public void setApplyingForeignAmount(com.netsuite.webservices.platform.core_2018_2.SearchDoubleField applyingForeignAmount) {
+        this.applyingForeignAmount = applyingForeignAmount;
+    }
+
+
+    /**
+     * Gets the applyingIsFxVariance value for this TransactionSearchBasic.
+     * 
+     * @return applyingIsFxVariance
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchBooleanField getApplyingIsFxVariance() {
         return applyingIsFxVariance;
     }
 
-    /**
-     * 设置applyingIsFxVariance属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchBooleanField }
-     *     
-     */
-    public void setApplyingIsFxVariance(SearchBooleanField value) {
-        this.applyingIsFxVariance = value;
-    }
 
     /**
-     * 获取applyingLinkAmount属性的值。
+     * Sets the applyingIsFxVariance value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchDoubleField }
-     *     
+     * @param applyingIsFxVariance
      */
-    public SearchDoubleField getApplyingLinkAmount() {
+    public void setApplyingIsFxVariance(com.netsuite.webservices.platform.core_2018_2.SearchBooleanField applyingIsFxVariance) {
+        this.applyingIsFxVariance = applyingIsFxVariance;
+    }
+
+
+    /**
+     * Gets the applyingLinkAmount value for this TransactionSearchBasic.
+     * 
+     * @return applyingLinkAmount
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchDoubleField getApplyingLinkAmount() {
         return applyingLinkAmount;
     }
 
-    /**
-     * 设置applyingLinkAmount属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchDoubleField }
-     *     
-     */
-    public void setApplyingLinkAmount(SearchDoubleField value) {
-        this.applyingLinkAmount = value;
-    }
 
     /**
-     * 获取applyingLinkType属性的值。
+     * Sets the applyingLinkAmount value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchEnumMultiSelectField }
-     *     
+     * @param applyingLinkAmount
      */
-    public SearchEnumMultiSelectField getApplyingLinkType() {
+    public void setApplyingLinkAmount(com.netsuite.webservices.platform.core_2018_2.SearchDoubleField applyingLinkAmount) {
+        this.applyingLinkAmount = applyingLinkAmount;
+    }
+
+
+    /**
+     * Gets the applyingLinkType value for this TransactionSearchBasic.
+     * 
+     * @return applyingLinkType
+     */
+    public java.lang.String[] getApplyingLinkType() {
         return applyingLinkType;
     }
 
-    /**
-     * 设置applyingLinkType属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchEnumMultiSelectField }
-     *     
-     */
-    public void setApplyingLinkType(SearchEnumMultiSelectField value) {
-        this.applyingLinkType = value;
-    }
 
     /**
-     * 获取applyingTransaction属性的值。
+     * Sets the applyingLinkType value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchMultiSelectField }
-     *     
+     * @param applyingLinkType
      */
-    public SearchMultiSelectField getApplyingTransaction() {
+    public void setApplyingLinkType(java.lang.String[] applyingLinkType) {
+        this.applyingLinkType = applyingLinkType;
+    }
+
+
+    /**
+     * Gets the applyingTransaction value for this TransactionSearchBasic.
+     * 
+     * @return applyingTransaction
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef[] getApplyingTransaction() {
         return applyingTransaction;
     }
 
-    /**
-     * 设置applyingTransaction属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchMultiSelectField }
-     *     
-     */
-    public void setApplyingTransaction(SearchMultiSelectField value) {
-        this.applyingTransaction = value;
-    }
 
     /**
-     * 获取approvalStatus属性的值。
+     * Sets the applyingTransaction value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchEnumMultiSelectField }
-     *     
+     * @param applyingTransaction
      */
-    public SearchEnumMultiSelectField getApprovalStatus() {
+    public void setApplyingTransaction(com.netsuite.webservices.platform.core_2018_2.RecordRef[] applyingTransaction) {
+        this.applyingTransaction = applyingTransaction;
+    }
+
+
+    /**
+     * Gets the approvalStatus value for this TransactionSearchBasic.
+     * 
+     * @return approvalStatus
+     */
+    public java.lang.String[] getApprovalStatus() {
         return approvalStatus;
     }
 
-    /**
-     * 设置approvalStatus属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchEnumMultiSelectField }
-     *     
-     */
-    public void setApprovalStatus(SearchEnumMultiSelectField value) {
-        this.approvalStatus = value;
-    }
 
     /**
-     * 获取authCode属性的值。
+     * Sets the approvalStatus value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchStringField }
-     *     
+     * @param approvalStatus
      */
-    public SearchStringField getAuthCode() {
+    public void setApprovalStatus(java.lang.String[] approvalStatus) {
+        this.approvalStatus = approvalStatus;
+    }
+
+
+    /**
+     * Gets the authCode value for this TransactionSearchBasic.
+     * 
+     * @return authCode
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchStringField getAuthCode() {
         return authCode;
     }
 
-    /**
-     * 设置authCode属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchStringField }
-     *     
-     */
-    public void setAuthCode(SearchStringField value) {
-        this.authCode = value;
-    }
 
     /**
-     * 获取autoCalculateLag属性的值。
+     * Sets the authCode value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchBooleanField }
-     *     
+     * @param authCode
      */
-    public SearchBooleanField getAutoCalculateLag() {
+    public void setAuthCode(com.netsuite.webservices.platform.core_2018_2.SearchStringField authCode) {
+        this.authCode = authCode;
+    }
+
+
+    /**
+     * Gets the autoCalculateLag value for this TransactionSearchBasic.
+     * 
+     * @return autoCalculateLag
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchBooleanField getAutoCalculateLag() {
         return autoCalculateLag;
     }
 
-    /**
-     * 设置autoCalculateLag属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchBooleanField }
-     *     
-     */
-    public void setAutoCalculateLag(SearchBooleanField value) {
-        this.autoCalculateLag = value;
-    }
 
     /**
-     * 获取avsStreetMatch属性的值。
+     * Sets the autoCalculateLag value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchEnumMultiSelectField }
-     *     
+     * @param autoCalculateLag
      */
-    public SearchEnumMultiSelectField getAvsStreetMatch() {
+    public void setAutoCalculateLag(com.netsuite.webservices.platform.core_2018_2.SearchBooleanField autoCalculateLag) {
+        this.autoCalculateLag = autoCalculateLag;
+    }
+
+
+    /**
+     * Gets the avsStreetMatch value for this TransactionSearchBasic.
+     * 
+     * @return avsStreetMatch
+     */
+    public java.lang.String[] getAvsStreetMatch() {
         return avsStreetMatch;
     }
 
-    /**
-     * 设置avsStreetMatch属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchEnumMultiSelectField }
-     *     
-     */
-    public void setAvsStreetMatch(SearchEnumMultiSelectField value) {
-        this.avsStreetMatch = value;
-    }
 
     /**
-     * 获取avsZipMatch属性的值。
+     * Sets the avsStreetMatch value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchEnumMultiSelectField }
-     *     
+     * @param avsStreetMatch
      */
-    public SearchEnumMultiSelectField getAvsZipMatch() {
+    public void setAvsStreetMatch(java.lang.String[] avsStreetMatch) {
+        this.avsStreetMatch = avsStreetMatch;
+    }
+
+
+    /**
+     * Gets the avsZipMatch value for this TransactionSearchBasic.
+     * 
+     * @return avsZipMatch
+     */
+    public java.lang.String[] getAvsZipMatch() {
         return avsZipMatch;
     }
 
-    /**
-     * 设置avsZipMatch属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchEnumMultiSelectField }
-     *     
-     */
-    public void setAvsZipMatch(SearchEnumMultiSelectField value) {
-        this.avsZipMatch = value;
-    }
 
     /**
-     * 获取billable属性的值。
+     * Sets the avsZipMatch value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchBooleanField }
-     *     
+     * @param avsZipMatch
      */
-    public SearchBooleanField getBillable() {
+    public void setAvsZipMatch(java.lang.String[] avsZipMatch) {
+        this.avsZipMatch = avsZipMatch;
+    }
+
+
+    /**
+     * Gets the billable value for this TransactionSearchBasic.
+     * 
+     * @return billable
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchBooleanField getBillable() {
         return billable;
     }
 
-    /**
-     * 设置billable属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchBooleanField }
-     *     
-     */
-    public void setBillable(SearchBooleanField value) {
-        this.billable = value;
-    }
 
     /**
-     * 获取billAddress属性的值。
+     * Sets the billable value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchStringField }
-     *     
+     * @param billable
      */
-    public SearchStringField getBillAddress() {
+    public void setBillable(com.netsuite.webservices.platform.core_2018_2.SearchBooleanField billable) {
+        this.billable = billable;
+    }
+
+
+    /**
+     * Gets the billAddress value for this TransactionSearchBasic.
+     * 
+     * @return billAddress
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchStringField getBillAddress() {
         return billAddress;
     }
 
-    /**
-     * 设置billAddress属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchStringField }
-     *     
-     */
-    public void setBillAddress(SearchStringField value) {
-        this.billAddress = value;
-    }
 
     /**
-     * 获取billAddressee属性的值。
+     * Sets the billAddress value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchStringField }
-     *     
+     * @param billAddress
      */
-    public SearchStringField getBillAddressee() {
+    public void setBillAddress(com.netsuite.webservices.platform.core_2018_2.SearchStringField billAddress) {
+        this.billAddress = billAddress;
+    }
+
+
+    /**
+     * Gets the billAddressee value for this TransactionSearchBasic.
+     * 
+     * @return billAddressee
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchStringField getBillAddressee() {
         return billAddressee;
     }
 
-    /**
-     * 设置billAddressee属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchStringField }
-     *     
-     */
-    public void setBillAddressee(SearchStringField value) {
-        this.billAddressee = value;
-    }
 
     /**
-     * 获取billAttention属性的值。
+     * Sets the billAddressee value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchStringField }
-     *     
+     * @param billAddressee
      */
-    public SearchStringField getBillAttention() {
+    public void setBillAddressee(com.netsuite.webservices.platform.core_2018_2.SearchStringField billAddressee) {
+        this.billAddressee = billAddressee;
+    }
+
+
+    /**
+     * Gets the billAttention value for this TransactionSearchBasic.
+     * 
+     * @return billAttention
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchStringField getBillAttention() {
         return billAttention;
     }
 
-    /**
-     * 设置billAttention属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchStringField }
-     *     
-     */
-    public void setBillAttention(SearchStringField value) {
-        this.billAttention = value;
-    }
 
     /**
-     * 获取billCity属性的值。
+     * Sets the billAttention value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchStringField }
-     *     
+     * @param billAttention
      */
-    public SearchStringField getBillCity() {
+    public void setBillAttention(com.netsuite.webservices.platform.core_2018_2.SearchStringField billAttention) {
+        this.billAttention = billAttention;
+    }
+
+
+    /**
+     * Gets the billCity value for this TransactionSearchBasic.
+     * 
+     * @return billCity
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchStringField getBillCity() {
         return billCity;
     }
 
-    /**
-     * 设置billCity属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchStringField }
-     *     
-     */
-    public void setBillCity(SearchStringField value) {
-        this.billCity = value;
-    }
 
     /**
-     * 获取billCountry属性的值。
+     * Sets the billCity value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchEnumMultiSelectField }
-     *     
+     * @param billCity
      */
-    public SearchEnumMultiSelectField getBillCountry() {
+    public void setBillCity(com.netsuite.webservices.platform.core_2018_2.SearchStringField billCity) {
+        this.billCity = billCity;
+    }
+
+
+    /**
+     * Gets the billCountry value for this TransactionSearchBasic.
+     * 
+     * @return billCountry
+     */
+    public java.lang.String[] getBillCountry() {
         return billCountry;
     }
 
-    /**
-     * 设置billCountry属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchEnumMultiSelectField }
-     *     
-     */
-    public void setBillCountry(SearchEnumMultiSelectField value) {
-        this.billCountry = value;
-    }
 
     /**
-     * 获取billCounty属性的值。
+     * Sets the billCountry value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchStringField }
-     *     
+     * @param billCountry
      */
-    public SearchStringField getBillCounty() {
+    public void setBillCountry(java.lang.String[] billCountry) {
+        this.billCountry = billCountry;
+    }
+
+
+    /**
+     * Gets the billCounty value for this TransactionSearchBasic.
+     * 
+     * @return billCounty
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchStringField getBillCounty() {
         return billCounty;
     }
 
-    /**
-     * 设置billCounty属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchStringField }
-     *     
-     */
-    public void setBillCounty(SearchStringField value) {
-        this.billCounty = value;
-    }
 
     /**
-     * 获取billedDate属性的值。
+     * Sets the billCounty value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchDateField }
-     *     
+     * @param billCounty
      */
-    public SearchDateField getBilledDate() {
+    public void setBillCounty(com.netsuite.webservices.platform.core_2018_2.SearchStringField billCounty) {
+        this.billCounty = billCounty;
+    }
+
+
+    /**
+     * Gets the billedDate value for this TransactionSearchBasic.
+     * 
+     * @return billedDate
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchDateField getBilledDate() {
         return billedDate;
     }
 
-    /**
-     * 设置billedDate属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchDateField }
-     *     
-     */
-    public void setBilledDate(SearchDateField value) {
-        this.billedDate = value;
-    }
 
     /**
-     * 获取billingAccount属性的值。
+     * Sets the billedDate value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchMultiSelectField }
-     *     
+     * @param billedDate
      */
-    public SearchMultiSelectField getBillingAccount() {
+    public void setBilledDate(com.netsuite.webservices.platform.core_2018_2.SearchDateField billedDate) {
+        this.billedDate = billedDate;
+    }
+
+
+    /**
+     * Gets the billingAccount value for this TransactionSearchBasic.
+     * 
+     * @return billingAccount
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef[] getBillingAccount() {
         return billingAccount;
     }
 
-    /**
-     * 设置billingAccount属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchMultiSelectField }
-     *     
-     */
-    public void setBillingAccount(SearchMultiSelectField value) {
-        this.billingAccount = value;
-    }
 
     /**
-     * 获取billingSchedule属性的值。
+     * Sets the billingAccount value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchMultiSelectField }
-     *     
+     * @param billingAccount
      */
-    public SearchMultiSelectField getBillingSchedule() {
+    public void setBillingAccount(com.netsuite.webservices.platform.core_2018_2.RecordRef[] billingAccount) {
+        this.billingAccount = billingAccount;
+    }
+
+
+    /**
+     * Gets the billingSchedule value for this TransactionSearchBasic.
+     * 
+     * @return billingSchedule
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef[] getBillingSchedule() {
         return billingSchedule;
     }
 
-    /**
-     * 设置billingSchedule属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchMultiSelectField }
-     *     
-     */
-    public void setBillingSchedule(SearchMultiSelectField value) {
-        this.billingSchedule = value;
-    }
 
     /**
-     * 获取billingStatus属性的值。
+     * Sets the billingSchedule value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchBooleanField }
-     *     
+     * @param billingSchedule
      */
-    public SearchBooleanField getBillingStatus() {
+    public void setBillingSchedule(com.netsuite.webservices.platform.core_2018_2.RecordRef[] billingSchedule) {
+        this.billingSchedule = billingSchedule;
+    }
+
+
+    /**
+     * Gets the billingStatus value for this TransactionSearchBasic.
+     * 
+     * @return billingStatus
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchBooleanField getBillingStatus() {
         return billingStatus;
     }
 
-    /**
-     * 设置billingStatus属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchBooleanField }
-     *     
-     */
-    public void setBillingStatus(SearchBooleanField value) {
-        this.billingStatus = value;
-    }
 
     /**
-     * 获取billingTransaction属性的值。
+     * Sets the billingStatus value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchMultiSelectField }
-     *     
+     * @param billingStatus
      */
-    public SearchMultiSelectField getBillingTransaction() {
+    public void setBillingStatus(com.netsuite.webservices.platform.core_2018_2.SearchBooleanField billingStatus) {
+        this.billingStatus = billingStatus;
+    }
+
+
+    /**
+     * Gets the billingTransaction value for this TransactionSearchBasic.
+     * 
+     * @return billingTransaction
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef[] getBillingTransaction() {
         return billingTransaction;
     }
 
-    /**
-     * 设置billingTransaction属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchMultiSelectField }
-     *     
-     */
-    public void setBillingTransaction(SearchMultiSelectField value) {
-        this.billingTransaction = value;
-    }
 
     /**
-     * 获取billPhone属性的值。
+     * Sets the billingTransaction value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchStringField }
-     *     
+     * @param billingTransaction
      */
-    public SearchStringField getBillPhone() {
+    public void setBillingTransaction(com.netsuite.webservices.platform.core_2018_2.RecordRef[] billingTransaction) {
+        this.billingTransaction = billingTransaction;
+    }
+
+
+    /**
+     * Gets the billPhone value for this TransactionSearchBasic.
+     * 
+     * @return billPhone
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchStringField getBillPhone() {
         return billPhone;
     }
 
-    /**
-     * 设置billPhone属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchStringField }
-     *     
-     */
-    public void setBillPhone(SearchStringField value) {
-        this.billPhone = value;
-    }
 
     /**
-     * 获取billState属性的值。
+     * Sets the billPhone value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchStringField }
-     *     
+     * @param billPhone
      */
-    public SearchStringField getBillState() {
+    public void setBillPhone(com.netsuite.webservices.platform.core_2018_2.SearchStringField billPhone) {
+        this.billPhone = billPhone;
+    }
+
+
+    /**
+     * Gets the billState value for this TransactionSearchBasic.
+     * 
+     * @return billState
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchStringField getBillState() {
         return billState;
     }
 
-    /**
-     * 设置billState属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchStringField }
-     *     
-     */
-    public void setBillState(SearchStringField value) {
-        this.billState = value;
-    }
 
     /**
-     * 获取billVarianceStatus属性的值。
+     * Sets the billState value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchEnumMultiSelectField }
-     *     
+     * @param billState
      */
-    public SearchEnumMultiSelectField getBillVarianceStatus() {
+    public void setBillState(com.netsuite.webservices.platform.core_2018_2.SearchStringField billState) {
+        this.billState = billState;
+    }
+
+
+    /**
+     * Gets the billVarianceStatus value for this TransactionSearchBasic.
+     * 
+     * @return billVarianceStatus
+     */
+    public java.lang.String[] getBillVarianceStatus() {
         return billVarianceStatus;
     }
 
-    /**
-     * 设置billVarianceStatus属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchEnumMultiSelectField }
-     *     
-     */
-    public void setBillVarianceStatus(SearchEnumMultiSelectField value) {
-        this.billVarianceStatus = value;
-    }
 
     /**
-     * 获取billZip属性的值。
+     * Sets the billVarianceStatus value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchStringField }
-     *     
+     * @param billVarianceStatus
      */
-    public SearchStringField getBillZip() {
+    public void setBillVarianceStatus(java.lang.String[] billVarianceStatus) {
+        this.billVarianceStatus = billVarianceStatus;
+    }
+
+
+    /**
+     * Gets the billZip value for this TransactionSearchBasic.
+     * 
+     * @return billZip
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchStringField getBillZip() {
         return billZip;
     }
 
-    /**
-     * 设置billZip属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchStringField }
-     *     
-     */
-    public void setBillZip(SearchStringField value) {
-        this.billZip = value;
-    }
 
     /**
-     * 获取binNumber属性的值。
+     * Sets the billZip value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchStringField }
-     *     
+     * @param billZip
      */
-    public SearchStringField getBinNumber() {
+    public void setBillZip(com.netsuite.webservices.platform.core_2018_2.SearchStringField billZip) {
+        this.billZip = billZip;
+    }
+
+
+    /**
+     * Gets the binNumber value for this TransactionSearchBasic.
+     * 
+     * @return binNumber
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchStringField getBinNumber() {
         return binNumber;
     }
 
-    /**
-     * 设置binNumber属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchStringField }
-     *     
-     */
-    public void setBinNumber(SearchStringField value) {
-        this.binNumber = value;
-    }
 
     /**
-     * 获取binNumberQuantity属性的值。
+     * Sets the binNumber value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchDoubleField }
-     *     
+     * @param binNumber
      */
-    public SearchDoubleField getBinNumberQuantity() {
+    public void setBinNumber(com.netsuite.webservices.platform.core_2018_2.SearchStringField binNumber) {
+        this.binNumber = binNumber;
+    }
+
+
+    /**
+     * Gets the binNumberQuantity value for this TransactionSearchBasic.
+     * 
+     * @return binNumberQuantity
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchDoubleField getBinNumberQuantity() {
         return binNumberQuantity;
     }
 
-    /**
-     * 设置binNumberQuantity属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchDoubleField }
-     *     
-     */
-    public void setBinNumberQuantity(SearchDoubleField value) {
-        this.binNumberQuantity = value;
-    }
 
     /**
-     * 获取bomQuantity属性的值。
+     * Sets the binNumberQuantity value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchDoubleField }
-     *     
+     * @param binNumberQuantity
      */
-    public SearchDoubleField getBomQuantity() {
+    public void setBinNumberQuantity(com.netsuite.webservices.platform.core_2018_2.SearchDoubleField binNumberQuantity) {
+        this.binNumberQuantity = binNumberQuantity;
+    }
+
+
+    /**
+     * Gets the bomQuantity value for this TransactionSearchBasic.
+     * 
+     * @return bomQuantity
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchDoubleField getBomQuantity() {
         return bomQuantity;
     }
 
-    /**
-     * 设置bomQuantity属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchDoubleField }
-     *     
-     */
-    public void setBomQuantity(SearchDoubleField value) {
-        this.bomQuantity = value;
-    }
 
     /**
-     * 获取bookSpecificTransaction属性的值。
+     * Sets the bomQuantity value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchBooleanField }
-     *     
+     * @param bomQuantity
      */
-    public SearchBooleanField getBookSpecificTransaction() {
+    public void setBomQuantity(com.netsuite.webservices.platform.core_2018_2.SearchDoubleField bomQuantity) {
+        this.bomQuantity = bomQuantity;
+    }
+
+
+    /**
+     * Gets the bookSpecificTransaction value for this TransactionSearchBasic.
+     * 
+     * @return bookSpecificTransaction
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchBooleanField getBookSpecificTransaction() {
         return bookSpecificTransaction;
     }
 
-    /**
-     * 设置bookSpecificTransaction属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchBooleanField }
-     *     
-     */
-    public void setBookSpecificTransaction(SearchBooleanField value) {
-        this.bookSpecificTransaction = value;
-    }
 
     /**
-     * 获取buildEntireAssembly属性的值。
+     * Sets the bookSpecificTransaction value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchBooleanField }
-     *     
+     * @param bookSpecificTransaction
      */
-    public SearchBooleanField getBuildEntireAssembly() {
+    public void setBookSpecificTransaction(com.netsuite.webservices.platform.core_2018_2.SearchBooleanField bookSpecificTransaction) {
+        this.bookSpecificTransaction = bookSpecificTransaction;
+    }
+
+
+    /**
+     * Gets the buildEntireAssembly value for this TransactionSearchBasic.
+     * 
+     * @return buildEntireAssembly
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchBooleanField getBuildEntireAssembly() {
         return buildEntireAssembly;
     }
 
-    /**
-     * 设置buildEntireAssembly属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchBooleanField }
-     *     
-     */
-    public void setBuildEntireAssembly(SearchBooleanField value) {
-        this.buildEntireAssembly = value;
-    }
 
     /**
-     * 获取buildVariance属性的值。
+     * Sets the buildEntireAssembly value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchDoubleField }
-     *     
+     * @param buildEntireAssembly
      */
-    public SearchDoubleField getBuildVariance() {
+    public void setBuildEntireAssembly(com.netsuite.webservices.platform.core_2018_2.SearchBooleanField buildEntireAssembly) {
+        this.buildEntireAssembly = buildEntireAssembly;
+    }
+
+
+    /**
+     * Gets the buildVariance value for this TransactionSearchBasic.
+     * 
+     * @return buildVariance
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchDoubleField getBuildVariance() {
         return buildVariance;
     }
 
-    /**
-     * 设置buildVariance属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchDoubleField }
-     *     
-     */
-    public void setBuildVariance(SearchDoubleField value) {
-        this.buildVariance = value;
-    }
 
     /**
-     * 获取built属性的值。
+     * Sets the buildVariance value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchDoubleField }
-     *     
+     * @param buildVariance
      */
-    public SearchDoubleField getBuilt() {
+    public void setBuildVariance(com.netsuite.webservices.platform.core_2018_2.SearchDoubleField buildVariance) {
+        this.buildVariance = buildVariance;
+    }
+
+
+    /**
+     * Gets the built value for this TransactionSearchBasic.
+     * 
+     * @return built
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchDoubleField getBuilt() {
         return built;
     }
 
-    /**
-     * 设置built属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchDoubleField }
-     *     
-     */
-    public void setBuilt(SearchDoubleField value) {
-        this.built = value;
-    }
 
     /**
-     * 获取canHaveStackablePromotions属性的值。
+     * Sets the built value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchBooleanField }
-     *     
+     * @param built
      */
-    public SearchBooleanField getCanHaveStackablePromotions() {
+    public void setBuilt(com.netsuite.webservices.platform.core_2018_2.SearchDoubleField built) {
+        this.built = built;
+    }
+
+
+    /**
+     * Gets the canHaveStackablePromotions value for this TransactionSearchBasic.
+     * 
+     * @return canHaveStackablePromotions
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchBooleanField getCanHaveStackablePromotions() {
         return canHaveStackablePromotions;
     }
 
-    /**
-     * 设置canHaveStackablePromotions属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchBooleanField }
-     *     
-     */
-    public void setCanHaveStackablePromotions(SearchBooleanField value) {
-        this.canHaveStackablePromotions = value;
-    }
 
     /**
-     * 获取catchUpPeriod属性的值。
+     * Sets the canHaveStackablePromotions value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchMultiSelectField }
-     *     
+     * @param canHaveStackablePromotions
      */
-    public SearchMultiSelectField getCatchUpPeriod() {
+    public void setCanHaveStackablePromotions(com.netsuite.webservices.platform.core_2018_2.SearchBooleanField canHaveStackablePromotions) {
+        this.canHaveStackablePromotions = canHaveStackablePromotions;
+    }
+
+
+    /**
+     * Gets the catchUpPeriod value for this TransactionSearchBasic.
+     * 
+     * @return catchUpPeriod
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef[] getCatchUpPeriod() {
         return catchUpPeriod;
     }
 
-    /**
-     * 设置catchUpPeriod属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchMultiSelectField }
-     *     
-     */
-    public void setCatchUpPeriod(SearchMultiSelectField value) {
-        this.catchUpPeriod = value;
-    }
 
     /**
-     * 获取ccCustomerCode属性的值。
+     * Sets the catchUpPeriod value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchStringField }
-     *     
+     * @param catchUpPeriod
      */
-    public SearchStringField getCcCustomerCode() {
+    public void setCatchUpPeriod(com.netsuite.webservices.platform.core_2018_2.RecordRef[] catchUpPeriod) {
+        this.catchUpPeriod = catchUpPeriod;
+    }
+
+
+    /**
+     * Gets the ccCustomerCode value for this TransactionSearchBasic.
+     * 
+     * @return ccCustomerCode
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchStringField getCcCustomerCode() {
         return ccCustomerCode;
     }
 
-    /**
-     * 设置ccCustomerCode属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchStringField }
-     *     
-     */
-    public void setCcCustomerCode(SearchStringField value) {
-        this.ccCustomerCode = value;
-    }
 
     /**
-     * 获取ccExpireDate属性的值。
+     * Sets the ccCustomerCode value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchDateField }
-     *     
+     * @param ccCustomerCode
      */
-    public SearchDateField getCcExpireDate() {
+    public void setCcCustomerCode(com.netsuite.webservices.platform.core_2018_2.SearchStringField ccCustomerCode) {
+        this.ccCustomerCode = ccCustomerCode;
+    }
+
+
+    /**
+     * Gets the ccExpireDate value for this TransactionSearchBasic.
+     * 
+     * @return ccExpireDate
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchDateField getCcExpireDate() {
         return ccExpireDate;
     }
 
-    /**
-     * 设置ccExpireDate属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchDateField }
-     *     
-     */
-    public void setCcExpireDate(SearchDateField value) {
-        this.ccExpireDate = value;
-    }
 
     /**
-     * 获取ccName属性的值。
+     * Sets the ccExpireDate value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchStringField }
-     *     
+     * @param ccExpireDate
      */
-    public SearchStringField getCcName() {
+    public void setCcExpireDate(com.netsuite.webservices.platform.core_2018_2.SearchDateField ccExpireDate) {
+        this.ccExpireDate = ccExpireDate;
+    }
+
+
+    /**
+     * Gets the ccName value for this TransactionSearchBasic.
+     * 
+     * @return ccName
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchStringField getCcName() {
         return ccName;
     }
 
-    /**
-     * 设置ccName属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchStringField }
-     *     
-     */
-    public void setCcName(SearchStringField value) {
-        this.ccName = value;
-    }
 
     /**
-     * 获取ccNumber属性的值。
+     * Sets the ccName value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchStringField }
-     *     
+     * @param ccName
      */
-    public SearchStringField getCcNumber() {
+    public void setCcName(com.netsuite.webservices.platform.core_2018_2.SearchStringField ccName) {
+        this.ccName = ccName;
+    }
+
+
+    /**
+     * Gets the ccNumber value for this TransactionSearchBasic.
+     * 
+     * @return ccNumber
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchStringField getCcNumber() {
         return ccNumber;
     }
 
-    /**
-     * 设置ccNumber属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchStringField }
-     *     
-     */
-    public void setCcNumber(SearchStringField value) {
-        this.ccNumber = value;
-    }
 
     /**
-     * 获取chargeType属性的值。
+     * Sets the ccNumber value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchEnumMultiSelectField }
-     *     
+     * @param ccNumber
      */
-    public SearchEnumMultiSelectField getChargeType() {
+    public void setCcNumber(com.netsuite.webservices.platform.core_2018_2.SearchStringField ccNumber) {
+        this.ccNumber = ccNumber;
+    }
+
+
+    /**
+     * Gets the chargeType value for this TransactionSearchBasic.
+     * 
+     * @return chargeType
+     */
+    public java.lang.String[] getChargeType() {
         return chargeType;
     }
 
-    /**
-     * 设置chargeType属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchEnumMultiSelectField }
-     *     
-     */
-    public void setChargeType(SearchEnumMultiSelectField value) {
-        this.chargeType = value;
-    }
 
     /**
-     * 获取clazz属性的值。
+     * Sets the chargeType value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchMultiSelectField }
-     *     
+     * @param chargeType
      */
-    public SearchMultiSelectField getClazz() {
-        return clazz;
+    public void setChargeType(java.lang.String[] chargeType) {
+        this.chargeType = chargeType;
     }
 
-    /**
-     * 设置clazz属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchMultiSelectField }
-     *     
-     */
-    public void setClazz(SearchMultiSelectField value) {
-        this.clazz = value;
-    }
 
     /**
-     * 获取cleared属性的值。
+     * Gets the _class value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchBooleanField }
-     *     
+     * @return _class
      */
-    public SearchBooleanField getCleared() {
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef[] get_class() {
+        return _class;
+    }
+
+
+    /**
+     * Sets the _class value for this TransactionSearchBasic.
+     * 
+     * @param _class
+     */
+    public void set_class(com.netsuite.webservices.platform.core_2018_2.RecordRef[] _class) {
+        this._class = _class;
+    }
+
+
+    /**
+     * Gets the cleared value for this TransactionSearchBasic.
+     * 
+     * @return cleared
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchBooleanField getCleared() {
         return cleared;
     }
 
-    /**
-     * 设置cleared属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchBooleanField }
-     *     
-     */
-    public void setCleared(SearchBooleanField value) {
-        this.cleared = value;
-    }
 
     /**
-     * 获取closed属性的值。
+     * Sets the cleared value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchBooleanField }
-     *     
+     * @param cleared
      */
-    public SearchBooleanField getClosed() {
+    public void setCleared(com.netsuite.webservices.platform.core_2018_2.SearchBooleanField cleared) {
+        this.cleared = cleared;
+    }
+
+
+    /**
+     * Gets the closed value for this TransactionSearchBasic.
+     * 
+     * @return closed
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchBooleanField getClosed() {
         return closed;
     }
 
-    /**
-     * 设置closed属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchBooleanField }
-     *     
-     */
-    public void setClosed(SearchBooleanField value) {
-        this.closed = value;
-    }
 
     /**
-     * 获取closeDate属性的值。
+     * Sets the closed value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchDateField }
-     *     
+     * @param closed
      */
-    public SearchDateField getCloseDate() {
+    public void setClosed(com.netsuite.webservices.platform.core_2018_2.SearchBooleanField closed) {
+        this.closed = closed;
+    }
+
+
+    /**
+     * Gets the closeDate value for this TransactionSearchBasic.
+     * 
+     * @return closeDate
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchDateField getCloseDate() {
         return closeDate;
     }
 
-    /**
-     * 设置closeDate属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchDateField }
-     *     
-     */
-    public void setCloseDate(SearchDateField value) {
-        this.closeDate = value;
-    }
 
     /**
-     * 获取cogs属性的值。
+     * Sets the closeDate value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchBooleanField }
-     *     
+     * @param closeDate
      */
-    public SearchBooleanField getCogs() {
+    public void setCloseDate(com.netsuite.webservices.platform.core_2018_2.SearchDateField closeDate) {
+        this.closeDate = closeDate;
+    }
+
+
+    /**
+     * Gets the cogs value for this TransactionSearchBasic.
+     * 
+     * @return cogs
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchBooleanField getCogs() {
         return cogs;
     }
 
-    /**
-     * 设置cogs属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchBooleanField }
-     *     
-     */
-    public void setCogs(SearchBooleanField value) {
-        this.cogs = value;
-    }
 
     /**
-     * 获取commissionEffectiveDate属性的值。
+     * Sets the cogs value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchDateField }
-     *     
+     * @param cogs
      */
-    public SearchDateField getCommissionEffectiveDate() {
+    public void setCogs(com.netsuite.webservices.platform.core_2018_2.SearchBooleanField cogs) {
+        this.cogs = cogs;
+    }
+
+
+    /**
+     * Gets the commissionEffectiveDate value for this TransactionSearchBasic.
+     * 
+     * @return commissionEffectiveDate
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchDateField getCommissionEffectiveDate() {
         return commissionEffectiveDate;
     }
 
-    /**
-     * 设置commissionEffectiveDate属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchDateField }
-     *     
-     */
-    public void setCommissionEffectiveDate(SearchDateField value) {
-        this.commissionEffectiveDate = value;
-    }
 
     /**
-     * 获取commit属性的值。
+     * Sets the commissionEffectiveDate value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchEnumMultiSelectField }
-     *     
+     * @param commissionEffectiveDate
      */
-    public SearchEnumMultiSelectField getCommit() {
+    public void setCommissionEffectiveDate(com.netsuite.webservices.platform.core_2018_2.SearchDateField commissionEffectiveDate) {
+        this.commissionEffectiveDate = commissionEffectiveDate;
+    }
+
+
+    /**
+     * Gets the commit value for this TransactionSearchBasic.
+     * 
+     * @return commit
+     */
+    public java.lang.String[] getCommit() {
         return commit;
     }
 
-    /**
-     * 设置commit属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchEnumMultiSelectField }
-     *     
-     */
-    public void setCommit(SearchEnumMultiSelectField value) {
-        this.commit = value;
-    }
 
     /**
-     * 获取componentYield属性的值。
+     * Sets the commit value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchDoubleField }
-     *     
+     * @param commit
      */
-    public SearchDoubleField getComponentYield() {
+    public void setCommit(java.lang.String[] commit) {
+        this.commit = commit;
+    }
+
+
+    /**
+     * Gets the componentYield value for this TransactionSearchBasic.
+     * 
+     * @return componentYield
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchDoubleField getComponentYield() {
         return componentYield;
     }
 
-    /**
-     * 设置componentYield属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchDoubleField }
-     *     
-     */
-    public void setComponentYield(SearchDoubleField value) {
-        this.componentYield = value;
-    }
 
     /**
-     * 获取confirmationNumber属性的值。
+     * Sets the componentYield value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchStringField }
-     *     
+     * @param componentYield
      */
-    public SearchStringField getConfirmationNumber() {
+    public void setComponentYield(com.netsuite.webservices.platform.core_2018_2.SearchDoubleField componentYield) {
+        this.componentYield = componentYield;
+    }
+
+
+    /**
+     * Gets the confirmationNumber value for this TransactionSearchBasic.
+     * 
+     * @return confirmationNumber
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchStringField getConfirmationNumber() {
         return confirmationNumber;
     }
 
-    /**
-     * 设置confirmationNumber属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchStringField }
-     *     
-     */
-    public void setConfirmationNumber(SearchStringField value) {
-        this.confirmationNumber = value;
-    }
 
     /**
-     * 获取contribution属性的值。
+     * Sets the confirmationNumber value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchLongField }
-     *     
+     * @param confirmationNumber
      */
-    public SearchLongField getContribution() {
+    public void setConfirmationNumber(com.netsuite.webservices.platform.core_2018_2.SearchStringField confirmationNumber) {
+        this.confirmationNumber = confirmationNumber;
+    }
+
+
+    /**
+     * Gets the contribution value for this TransactionSearchBasic.
+     * 
+     * @return contribution
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchLongField getContribution() {
         return contribution;
     }
 
-    /**
-     * 设置contribution属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchLongField }
-     *     
-     */
-    public void setContribution(SearchLongField value) {
-        this.contribution = value;
-    }
 
     /**
-     * 获取costComponentAmount属性的值。
+     * Sets the contribution value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchDoubleField }
-     *     
+     * @param contribution
      */
-    public SearchDoubleField getCostComponentAmount() {
+    public void setContribution(com.netsuite.webservices.platform.core_2018_2.SearchLongField contribution) {
+        this.contribution = contribution;
+    }
+
+
+    /**
+     * Gets the costComponentAmount value for this TransactionSearchBasic.
+     * 
+     * @return costComponentAmount
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchDoubleField getCostComponentAmount() {
         return costComponentAmount;
     }
 
-    /**
-     * 设置costComponentAmount属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchDoubleField }
-     *     
-     */
-    public void setCostComponentAmount(SearchDoubleField value) {
-        this.costComponentAmount = value;
-    }
 
     /**
-     * 获取costComponentCategory属性的值。
+     * Sets the costComponentAmount value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchMultiSelectField }
-     *     
+     * @param costComponentAmount
      */
-    public SearchMultiSelectField getCostComponentCategory() {
+    public void setCostComponentAmount(com.netsuite.webservices.platform.core_2018_2.SearchDoubleField costComponentAmount) {
+        this.costComponentAmount = costComponentAmount;
+    }
+
+
+    /**
+     * Gets the costComponentCategory value for this TransactionSearchBasic.
+     * 
+     * @return costComponentCategory
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef[] getCostComponentCategory() {
         return costComponentCategory;
     }
 
-    /**
-     * 设置costComponentCategory属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchMultiSelectField }
-     *     
-     */
-    public void setCostComponentCategory(SearchMultiSelectField value) {
-        this.costComponentCategory = value;
-    }
 
     /**
-     * 获取costComponentItem属性的值。
+     * Sets the costComponentCategory value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchMultiSelectField }
-     *     
+     * @param costComponentCategory
      */
-    public SearchMultiSelectField getCostComponentItem() {
+    public void setCostComponentCategory(com.netsuite.webservices.platform.core_2018_2.RecordRef[] costComponentCategory) {
+        this.costComponentCategory = costComponentCategory;
+    }
+
+
+    /**
+     * Gets the costComponentItem value for this TransactionSearchBasic.
+     * 
+     * @return costComponentItem
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef[] getCostComponentItem() {
         return costComponentItem;
     }
 
-    /**
-     * 设置costComponentItem属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchMultiSelectField }
-     *     
-     */
-    public void setCostComponentItem(SearchMultiSelectField value) {
-        this.costComponentItem = value;
-    }
 
     /**
-     * 获取costComponentQuantity属性的值。
+     * Sets the costComponentItem value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchDoubleField }
-     *     
+     * @param costComponentItem
      */
-    public SearchDoubleField getCostComponentQuantity() {
+    public void setCostComponentItem(com.netsuite.webservices.platform.core_2018_2.RecordRef[] costComponentItem) {
+        this.costComponentItem = costComponentItem;
+    }
+
+
+    /**
+     * Gets the costComponentQuantity value for this TransactionSearchBasic.
+     * 
+     * @return costComponentQuantity
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchDoubleField getCostComponentQuantity() {
         return costComponentQuantity;
     }
 
-    /**
-     * 设置costComponentQuantity属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchDoubleField }
-     *     
-     */
-    public void setCostComponentQuantity(SearchDoubleField value) {
-        this.costComponentQuantity = value;
-    }
 
     /**
-     * 获取costComponentStandardCost属性的值。
+     * Sets the costComponentQuantity value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchDoubleField }
-     *     
+     * @param costComponentQuantity
      */
-    public SearchDoubleField getCostComponentStandardCost() {
+    public void setCostComponentQuantity(com.netsuite.webservices.platform.core_2018_2.SearchDoubleField costComponentQuantity) {
+        this.costComponentQuantity = costComponentQuantity;
+    }
+
+
+    /**
+     * Gets the costComponentStandardCost value for this TransactionSearchBasic.
+     * 
+     * @return costComponentStandardCost
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchDoubleField getCostComponentStandardCost() {
         return costComponentStandardCost;
     }
 
-    /**
-     * 设置costComponentStandardCost属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchDoubleField }
-     *     
-     */
-    public void setCostComponentStandardCost(SearchDoubleField value) {
-        this.costComponentStandardCost = value;
-    }
 
     /**
-     * 获取costEstimate属性的值。
+     * Sets the costComponentStandardCost value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchDoubleField }
-     *     
+     * @param costComponentStandardCost
      */
-    public SearchDoubleField getCostEstimate() {
+    public void setCostComponentStandardCost(com.netsuite.webservices.platform.core_2018_2.SearchDoubleField costComponentStandardCost) {
+        this.costComponentStandardCost = costComponentStandardCost;
+    }
+
+
+    /**
+     * Gets the costEstimate value for this TransactionSearchBasic.
+     * 
+     * @return costEstimate
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchDoubleField getCostEstimate() {
         return costEstimate;
     }
 
-    /**
-     * 设置costEstimate属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchDoubleField }
-     *     
-     */
-    public void setCostEstimate(SearchDoubleField value) {
-        this.costEstimate = value;
-    }
 
     /**
-     * 获取costEstimateRate属性的值。
+     * Sets the costEstimate value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchDoubleField }
-     *     
+     * @param costEstimate
      */
-    public SearchDoubleField getCostEstimateRate() {
+    public void setCostEstimate(com.netsuite.webservices.platform.core_2018_2.SearchDoubleField costEstimate) {
+        this.costEstimate = costEstimate;
+    }
+
+
+    /**
+     * Gets the costEstimateRate value for this TransactionSearchBasic.
+     * 
+     * @return costEstimateRate
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchDoubleField getCostEstimateRate() {
         return costEstimateRate;
     }
 
-    /**
-     * 设置costEstimateRate属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchDoubleField }
-     *     
-     */
-    public void setCostEstimateRate(SearchDoubleField value) {
-        this.costEstimateRate = value;
-    }
 
     /**
-     * 获取costEstimateType属性的值。
+     * Sets the costEstimateRate value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchEnumMultiSelectField }
-     *     
+     * @param costEstimateRate
      */
-    public SearchEnumMultiSelectField getCostEstimateType() {
+    public void setCostEstimateRate(com.netsuite.webservices.platform.core_2018_2.SearchDoubleField costEstimateRate) {
+        this.costEstimateRate = costEstimateRate;
+    }
+
+
+    /**
+     * Gets the costEstimateType value for this TransactionSearchBasic.
+     * 
+     * @return costEstimateType
+     */
+    public java.lang.String[] getCostEstimateType() {
         return costEstimateType;
     }
 
-    /**
-     * 设置costEstimateType属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchEnumMultiSelectField }
-     *     
-     */
-    public void setCostEstimateType(SearchEnumMultiSelectField value) {
-        this.costEstimateType = value;
-    }
 
     /**
-     * 获取createdBy属性的值。
+     * Sets the costEstimateType value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchMultiSelectField }
-     *     
+     * @param costEstimateType
      */
-    public SearchMultiSelectField getCreatedBy() {
+    public void setCostEstimateType(java.lang.String[] costEstimateType) {
+        this.costEstimateType = costEstimateType;
+    }
+
+
+    /**
+     * Gets the createdBy value for this TransactionSearchBasic.
+     * 
+     * @return createdBy
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef[] getCreatedBy() {
         return createdBy;
     }
 
-    /**
-     * 设置createdBy属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchMultiSelectField }
-     *     
-     */
-    public void setCreatedBy(SearchMultiSelectField value) {
-        this.createdBy = value;
-    }
 
     /**
-     * 获取createdFrom属性的值。
+     * Sets the createdBy value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchMultiSelectField }
-     *     
+     * @param createdBy
      */
-    public SearchMultiSelectField getCreatedFrom() {
+    public void setCreatedBy(com.netsuite.webservices.platform.core_2018_2.RecordRef[] createdBy) {
+        this.createdBy = createdBy;
+    }
+
+
+    /**
+     * Gets the createdFrom value for this TransactionSearchBasic.
+     * 
+     * @return createdFrom
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef[] getCreatedFrom() {
         return createdFrom;
     }
 
-    /**
-     * 设置createdFrom属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchMultiSelectField }
-     *     
-     */
-    public void setCreatedFrom(SearchMultiSelectField value) {
-        this.createdFrom = value;
-    }
 
     /**
-     * 获取creditAmount属性的值。
+     * Sets the createdFrom value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchDoubleField }
-     *     
+     * @param createdFrom
      */
-    public SearchDoubleField getCreditAmount() {
+    public void setCreatedFrom(com.netsuite.webservices.platform.core_2018_2.RecordRef[] createdFrom) {
+        this.createdFrom = createdFrom;
+    }
+
+
+    /**
+     * Gets the creditAmount value for this TransactionSearchBasic.
+     * 
+     * @return creditAmount
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchDoubleField getCreditAmount() {
         return creditAmount;
     }
 
-    /**
-     * 设置creditAmount属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchDoubleField }
-     *     
-     */
-    public void setCreditAmount(SearchDoubleField value) {
-        this.creditAmount = value;
-    }
 
     /**
-     * 获取cscMatch属性的值。
+     * Sets the creditAmount value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchEnumMultiSelectField }
-     *     
+     * @param creditAmount
      */
-    public SearchEnumMultiSelectField getCscMatch() {
+    public void setCreditAmount(com.netsuite.webservices.platform.core_2018_2.SearchDoubleField creditAmount) {
+        this.creditAmount = creditAmount;
+    }
+
+
+    /**
+     * Gets the cscMatch value for this TransactionSearchBasic.
+     * 
+     * @return cscMatch
+     */
+    public java.lang.String[] getCscMatch() {
         return cscMatch;
     }
 
-    /**
-     * 设置cscMatch属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchEnumMultiSelectField }
-     *     
-     */
-    public void setCscMatch(SearchEnumMultiSelectField value) {
-        this.cscMatch = value;
-    }
 
     /**
-     * 获取currency属性的值。
+     * Sets the cscMatch value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchMultiSelectField }
-     *     
+     * @param cscMatch
      */
-    public SearchMultiSelectField getCurrency() {
+    public void setCscMatch(java.lang.String[] cscMatch) {
+        this.cscMatch = cscMatch;
+    }
+
+
+    /**
+     * Gets the currency value for this TransactionSearchBasic.
+     * 
+     * @return currency
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef[] getCurrency() {
         return currency;
     }
 
-    /**
-     * 设置currency属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchMultiSelectField }
-     *     
-     */
-    public void setCurrency(SearchMultiSelectField value) {
-        this.currency = value;
-    }
 
     /**
-     * 获取customerSubOf属性的值。
+     * Sets the currency value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchMultiSelectField }
-     *     
+     * @param currency
      */
-    public SearchMultiSelectField getCustomerSubOf() {
+    public void setCurrency(com.netsuite.webservices.platform.core_2018_2.RecordRef[] currency) {
+        this.currency = currency;
+    }
+
+
+    /**
+     * Gets the customerSubOf value for this TransactionSearchBasic.
+     * 
+     * @return customerSubOf
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef[] getCustomerSubOf() {
         return customerSubOf;
     }
 
-    /**
-     * 设置customerSubOf属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchMultiSelectField }
-     *     
-     */
-    public void setCustomerSubOf(SearchMultiSelectField value) {
-        this.customerSubOf = value;
-    }
 
     /**
-     * 获取customForm属性的值。
+     * Sets the customerSubOf value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchMultiSelectField }
-     *     
+     * @param customerSubOf
      */
-    public SearchMultiSelectField getCustomForm() {
+    public void setCustomerSubOf(com.netsuite.webservices.platform.core_2018_2.RecordRef[] customerSubOf) {
+        this.customerSubOf = customerSubOf;
+    }
+
+
+    /**
+     * Gets the customForm value for this TransactionSearchBasic.
+     * 
+     * @return customForm
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef[] getCustomForm() {
         return customForm;
     }
 
-    /**
-     * 设置customForm属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchMultiSelectField }
-     *     
-     */
-    public void setCustomForm(SearchMultiSelectField value) {
-        this.customForm = value;
-    }
 
     /**
-     * 获取customGL属性的值。
+     * Sets the customForm value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchBooleanField }
-     *     
+     * @param customForm
      */
-    public SearchBooleanField getCustomGL() {
+    public void setCustomForm(com.netsuite.webservices.platform.core_2018_2.RecordRef[] customForm) {
+        this.customForm = customForm;
+    }
+
+
+    /**
+     * Gets the customGL value for this TransactionSearchBasic.
+     * 
+     * @return customGL
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchBooleanField getCustomGL() {
         return customGL;
     }
 
-    /**
-     * 设置customGL属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchBooleanField }
-     *     
-     */
-    public void setCustomGL(SearchBooleanField value) {
-        this.customGL = value;
-    }
 
     /**
-     * 获取custType属性的值。
+     * Sets the customGL value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchMultiSelectField }
-     *     
+     * @param customGL
      */
-    public SearchMultiSelectField getCustType() {
+    public void setCustomGL(com.netsuite.webservices.platform.core_2018_2.SearchBooleanField customGL) {
+        this.customGL = customGL;
+    }
+
+
+    /**
+     * Gets the custType value for this TransactionSearchBasic.
+     * 
+     * @return custType
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef[] getCustType() {
         return custType;
     }
 
-    /**
-     * 设置custType属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchMultiSelectField }
-     *     
-     */
-    public void setCustType(SearchMultiSelectField value) {
-        this.custType = value;
-    }
 
     /**
-     * 获取dateCreated属性的值。
+     * Sets the custType value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchDateField }
-     *     
+     * @param custType
      */
-    public SearchDateField getDateCreated() {
+    public void setCustType(com.netsuite.webservices.platform.core_2018_2.RecordRef[] custType) {
+        this.custType = custType;
+    }
+
+
+    /**
+     * Gets the dateCreated value for this TransactionSearchBasic.
+     * 
+     * @return dateCreated
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchDateField getDateCreated() {
         return dateCreated;
     }
 
-    /**
-     * 设置dateCreated属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchDateField }
-     *     
-     */
-    public void setDateCreated(SearchDateField value) {
-        this.dateCreated = value;
-    }
 
     /**
-     * 获取daysOpen属性的值。
+     * Sets the dateCreated value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchLongField }
-     *     
+     * @param dateCreated
      */
-    public SearchLongField getDaysOpen() {
+    public void setDateCreated(com.netsuite.webservices.platform.core_2018_2.SearchDateField dateCreated) {
+        this.dateCreated = dateCreated;
+    }
+
+
+    /**
+     * Gets the daysOpen value for this TransactionSearchBasic.
+     * 
+     * @return daysOpen
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchLongField getDaysOpen() {
         return daysOpen;
     }
 
-    /**
-     * 设置daysOpen属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchLongField }
-     *     
-     */
-    public void setDaysOpen(SearchLongField value) {
-        this.daysOpen = value;
-    }
 
     /**
-     * 获取daysOverdue属性的值。
+     * Sets the daysOpen value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchLongField }
-     *     
+     * @param daysOpen
      */
-    public SearchLongField getDaysOverdue() {
+    public void setDaysOpen(com.netsuite.webservices.platform.core_2018_2.SearchLongField daysOpen) {
+        this.daysOpen = daysOpen;
+    }
+
+
+    /**
+     * Gets the daysOverdue value for this TransactionSearchBasic.
+     * 
+     * @return daysOverdue
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchLongField getDaysOverdue() {
         return daysOverdue;
     }
 
-    /**
-     * 设置daysOverdue属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchLongField }
-     *     
-     */
-    public void setDaysOverdue(SearchLongField value) {
-        this.daysOverdue = value;
-    }
 
     /**
-     * 获取debitAmount属性的值。
+     * Sets the daysOverdue value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchDoubleField }
-     *     
+     * @param daysOverdue
      */
-    public SearchDoubleField getDebitAmount() {
+    public void setDaysOverdue(com.netsuite.webservices.platform.core_2018_2.SearchLongField daysOverdue) {
+        this.daysOverdue = daysOverdue;
+    }
+
+
+    /**
+     * Gets the debitAmount value for this TransactionSearchBasic.
+     * 
+     * @return debitAmount
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchDoubleField getDebitAmount() {
         return debitAmount;
     }
 
-    /**
-     * 设置debitAmount属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchDoubleField }
-     *     
-     */
-    public void setDebitAmount(SearchDoubleField value) {
-        this.debitAmount = value;
-    }
 
     /**
-     * 获取deferredRevenue属性的值。
+     * Sets the debitAmount value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchDoubleField }
-     *     
+     * @param debitAmount
      */
-    public SearchDoubleField getDeferredRevenue() {
+    public void setDebitAmount(com.netsuite.webservices.platform.core_2018_2.SearchDoubleField debitAmount) {
+        this.debitAmount = debitAmount;
+    }
+
+
+    /**
+     * Gets the deferredRevenue value for this TransactionSearchBasic.
+     * 
+     * @return deferredRevenue
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchDoubleField getDeferredRevenue() {
         return deferredRevenue;
     }
 
-    /**
-     * 设置deferredRevenue属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchDoubleField }
-     *     
-     */
-    public void setDeferredRevenue(SearchDoubleField value) {
-        this.deferredRevenue = value;
-    }
 
     /**
-     * 获取deferRevRec属性的值。
+     * Sets the deferredRevenue value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchBooleanField }
-     *     
+     * @param deferredRevenue
      */
-    public SearchBooleanField getDeferRevRec() {
+    public void setDeferredRevenue(com.netsuite.webservices.platform.core_2018_2.SearchDoubleField deferredRevenue) {
+        this.deferredRevenue = deferredRevenue;
+    }
+
+
+    /**
+     * Gets the deferRevRec value for this TransactionSearchBasic.
+     * 
+     * @return deferRevRec
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchBooleanField getDeferRevRec() {
         return deferRevRec;
     }
 
-    /**
-     * 设置deferRevRec属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchBooleanField }
-     *     
-     */
-    public void setDeferRevRec(SearchBooleanField value) {
-        this.deferRevRec = value;
-    }
 
     /**
-     * 获取department属性的值。
+     * Sets the deferRevRec value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchMultiSelectField }
-     *     
+     * @param deferRevRec
      */
-    public SearchMultiSelectField getDepartment() {
+    public void setDeferRevRec(com.netsuite.webservices.platform.core_2018_2.SearchBooleanField deferRevRec) {
+        this.deferRevRec = deferRevRec;
+    }
+
+
+    /**
+     * Gets the department value for this TransactionSearchBasic.
+     * 
+     * @return department
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef[] getDepartment() {
         return department;
     }
 
-    /**
-     * 设置department属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchMultiSelectField }
-     *     
-     */
-    public void setDepartment(SearchMultiSelectField value) {
-        this.department = value;
-    }
 
     /**
-     * 获取depositDate属性的值。
+     * Sets the department value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchDateField }
-     *     
+     * @param department
      */
-    public SearchDateField getDepositDate() {
+    public void setDepartment(com.netsuite.webservices.platform.core_2018_2.RecordRef[] department) {
+        this.department = department;
+    }
+
+
+    /**
+     * Gets the depositDate value for this TransactionSearchBasic.
+     * 
+     * @return depositDate
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchDateField getDepositDate() {
         return depositDate;
     }
 
-    /**
-     * 设置depositDate属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchDateField }
-     *     
-     */
-    public void setDepositDate(SearchDateField value) {
-        this.depositDate = value;
-    }
 
     /**
-     * 获取depositTransaction属性的值。
+     * Sets the depositDate value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchMultiSelectField }
-     *     
+     * @param depositDate
      */
-    public SearchMultiSelectField getDepositTransaction() {
+    public void setDepositDate(com.netsuite.webservices.platform.core_2018_2.SearchDateField depositDate) {
+        this.depositDate = depositDate;
+    }
+
+
+    /**
+     * Gets the depositTransaction value for this TransactionSearchBasic.
+     * 
+     * @return depositTransaction
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef[] getDepositTransaction() {
         return depositTransaction;
     }
 
-    /**
-     * 设置depositTransaction属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchMultiSelectField }
-     *     
-     */
-    public void setDepositTransaction(SearchMultiSelectField value) {
-        this.depositTransaction = value;
-    }
 
     /**
-     * 获取drAccount属性的值。
+     * Sets the depositTransaction value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchMultiSelectField }
-     *     
+     * @param depositTransaction
      */
-    public SearchMultiSelectField getDrAccount() {
+    public void setDepositTransaction(com.netsuite.webservices.platform.core_2018_2.RecordRef[] depositTransaction) {
+        this.depositTransaction = depositTransaction;
+    }
+
+
+    /**
+     * Gets the drAccount value for this TransactionSearchBasic.
+     * 
+     * @return drAccount
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef[] getDrAccount() {
         return drAccount;
     }
 
-    /**
-     * 设置drAccount属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchMultiSelectField }
-     *     
-     */
-    public void setDrAccount(SearchMultiSelectField value) {
-        this.drAccount = value;
-    }
 
     /**
-     * 获取dueDate属性的值。
+     * Sets the drAccount value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchDateField }
-     *     
+     * @param drAccount
      */
-    public SearchDateField getDueDate() {
+    public void setDrAccount(com.netsuite.webservices.platform.core_2018_2.RecordRef[] drAccount) {
+        this.drAccount = drAccount;
+    }
+
+
+    /**
+     * Gets the dueDate value for this TransactionSearchBasic.
+     * 
+     * @return dueDate
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchDateField getDueDate() {
         return dueDate;
     }
 
-    /**
-     * 设置dueDate属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchDateField }
-     *     
-     */
-    public void setDueDate(SearchDateField value) {
-        this.dueDate = value;
-    }
 
     /**
-     * 获取email属性的值。
+     * Sets the dueDate value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchStringField }
-     *     
+     * @param dueDate
      */
-    public SearchStringField getEmail() {
+    public void setDueDate(com.netsuite.webservices.platform.core_2018_2.SearchDateField dueDate) {
+        this.dueDate = dueDate;
+    }
+
+
+    /**
+     * Gets the email value for this TransactionSearchBasic.
+     * 
+     * @return email
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchStringField getEmail() {
         return email;
     }
 
-    /**
-     * 设置email属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchStringField }
-     *     
-     */
-    public void setEmail(SearchStringField value) {
-        this.email = value;
-    }
 
     /**
-     * 获取employee属性的值。
+     * Sets the email value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchMultiSelectField }
-     *     
+     * @param email
      */
-    public SearchMultiSelectField getEmployee() {
+    public void setEmail(com.netsuite.webservices.platform.core_2018_2.SearchStringField email) {
+        this.email = email;
+    }
+
+
+    /**
+     * Gets the employee value for this TransactionSearchBasic.
+     * 
+     * @return employee
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef[] getEmployee() {
         return employee;
     }
 
-    /**
-     * 设置employee属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchMultiSelectField }
-     *     
-     */
-    public void setEmployee(SearchMultiSelectField value) {
-        this.employee = value;
-    }
 
     /**
-     * 获取endDate属性的值。
+     * Sets the employee value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchDateField }
-     *     
+     * @param employee
      */
-    public SearchDateField getEndDate() {
+    public void setEmployee(com.netsuite.webservices.platform.core_2018_2.RecordRef[] employee) {
+        this.employee = employee;
+    }
+
+
+    /**
+     * Gets the endDate value for this TransactionSearchBasic.
+     * 
+     * @return endDate
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchDateField getEndDate() {
         return endDate;
     }
 
-    /**
-     * 设置endDate属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchDateField }
-     *     
-     */
-    public void setEndDate(SearchDateField value) {
-        this.endDate = value;
-    }
 
     /**
-     * 获取entity属性的值。
+     * Sets the endDate value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchMultiSelectField }
-     *     
+     * @param endDate
      */
-    public SearchMultiSelectField getEntity() {
+    public void setEndDate(com.netsuite.webservices.platform.core_2018_2.SearchDateField endDate) {
+        this.endDate = endDate;
+    }
+
+
+    /**
+     * Gets the entity value for this TransactionSearchBasic.
+     * 
+     * @return entity
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef[] getEntity() {
         return entity;
     }
 
-    /**
-     * 设置entity属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchMultiSelectField }
-     *     
-     */
-    public void setEntity(SearchMultiSelectField value) {
-        this.entity = value;
-    }
 
     /**
-     * 获取entityStatus属性的值。
+     * Sets the entity value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchMultiSelectField }
-     *     
+     * @param entity
      */
-    public SearchMultiSelectField getEntityStatus() {
+    public void setEntity(com.netsuite.webservices.platform.core_2018_2.RecordRef[] entity) {
+        this.entity = entity;
+    }
+
+
+    /**
+     * Gets the entityStatus value for this TransactionSearchBasic.
+     * 
+     * @return entityStatus
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef[] getEntityStatus() {
         return entityStatus;
     }
 
-    /**
-     * 设置entityStatus属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchMultiSelectField }
-     *     
-     */
-    public void setEntityStatus(SearchMultiSelectField value) {
-        this.entityStatus = value;
-    }
 
     /**
-     * 获取estGrossProfit属性的值。
+     * Sets the entityStatus value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchDoubleField }
-     *     
+     * @param entityStatus
      */
-    public SearchDoubleField getEstGrossProfit() {
+    public void setEntityStatus(com.netsuite.webservices.platform.core_2018_2.RecordRef[] entityStatus) {
+        this.entityStatus = entityStatus;
+    }
+
+
+    /**
+     * Gets the estGrossProfit value for this TransactionSearchBasic.
+     * 
+     * @return estGrossProfit
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchDoubleField getEstGrossProfit() {
         return estGrossProfit;
     }
 
-    /**
-     * 设置estGrossProfit属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchDoubleField }
-     *     
-     */
-    public void setEstGrossProfit(SearchDoubleField value) {
-        this.estGrossProfit = value;
-    }
 
     /**
-     * 获取estGrossProfitPct属性的值。
+     * Sets the estGrossProfit value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchDoubleField }
-     *     
+     * @param estGrossProfit
      */
-    public SearchDoubleField getEstGrossProfitPct() {
+    public void setEstGrossProfit(com.netsuite.webservices.platform.core_2018_2.SearchDoubleField estGrossProfit) {
+        this.estGrossProfit = estGrossProfit;
+    }
+
+
+    /**
+     * Gets the estGrossProfitPct value for this TransactionSearchBasic.
+     * 
+     * @return estGrossProfitPct
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchDoubleField getEstGrossProfitPct() {
         return estGrossProfitPct;
     }
 
-    /**
-     * 设置estGrossProfitPct属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchDoubleField }
-     *     
-     */
-    public void setEstGrossProfitPct(SearchDoubleField value) {
-        this.estGrossProfitPct = value;
-    }
 
     /**
-     * 获取exchangeRate属性的值。
+     * Sets the estGrossProfitPct value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchDoubleField }
-     *     
+     * @param estGrossProfitPct
      */
-    public SearchDoubleField getExchangeRate() {
+    public void setEstGrossProfitPct(com.netsuite.webservices.platform.core_2018_2.SearchDoubleField estGrossProfitPct) {
+        this.estGrossProfitPct = estGrossProfitPct;
+    }
+
+
+    /**
+     * Gets the exchangeRate value for this TransactionSearchBasic.
+     * 
+     * @return exchangeRate
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchDoubleField getExchangeRate() {
         return exchangeRate;
     }
 
-    /**
-     * 设置exchangeRate属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchDoubleField }
-     *     
-     */
-    public void setExchangeRate(SearchDoubleField value) {
-        this.exchangeRate = value;
-    }
 
     /**
-     * 获取excludeCommission属性的值。
+     * Sets the exchangeRate value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchBooleanField }
-     *     
+     * @param exchangeRate
      */
-    public SearchBooleanField getExcludeCommission() {
+    public void setExchangeRate(com.netsuite.webservices.platform.core_2018_2.SearchDoubleField exchangeRate) {
+        this.exchangeRate = exchangeRate;
+    }
+
+
+    /**
+     * Gets the excludeCommission value for this TransactionSearchBasic.
+     * 
+     * @return excludeCommission
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchBooleanField getExcludeCommission() {
         return excludeCommission;
     }
 
-    /**
-     * 设置excludeCommission属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchBooleanField }
-     *     
-     */
-    public void setExcludeCommission(SearchBooleanField value) {
-        this.excludeCommission = value;
-    }
 
     /**
-     * 获取excludeFromRateRequest属性的值。
+     * Sets the excludeCommission value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchBooleanField }
-     *     
+     * @param excludeCommission
      */
-    public SearchBooleanField getExcludeFromRateRequest() {
+    public void setExcludeCommission(com.netsuite.webservices.platform.core_2018_2.SearchBooleanField excludeCommission) {
+        this.excludeCommission = excludeCommission;
+    }
+
+
+    /**
+     * Gets the excludeFromRateRequest value for this TransactionSearchBasic.
+     * 
+     * @return excludeFromRateRequest
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchBooleanField getExcludeFromRateRequest() {
         return excludeFromRateRequest;
     }
 
-    /**
-     * 设置excludeFromRateRequest属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchBooleanField }
-     *     
-     */
-    public void setExcludeFromRateRequest(SearchBooleanField value) {
-        this.excludeFromRateRequest = value;
-    }
 
     /**
-     * 获取expectedCloseDate属性的值。
+     * Sets the excludeFromRateRequest value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchDateField }
-     *     
+     * @param excludeFromRateRequest
      */
-    public SearchDateField getExpectedCloseDate() {
+    public void setExcludeFromRateRequest(com.netsuite.webservices.platform.core_2018_2.SearchBooleanField excludeFromRateRequest) {
+        this.excludeFromRateRequest = excludeFromRateRequest;
+    }
+
+
+    /**
+     * Gets the expectedCloseDate value for this TransactionSearchBasic.
+     * 
+     * @return expectedCloseDate
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchDateField getExpectedCloseDate() {
         return expectedCloseDate;
     }
 
-    /**
-     * 设置expectedCloseDate属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchDateField }
-     *     
-     */
-    public void setExpectedCloseDate(SearchDateField value) {
-        this.expectedCloseDate = value;
-    }
 
     /**
-     * 获取expectedReceiptDate属性的值。
+     * Sets the expectedCloseDate value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchDateField }
-     *     
+     * @param expectedCloseDate
      */
-    public SearchDateField getExpectedReceiptDate() {
+    public void setExpectedCloseDate(com.netsuite.webservices.platform.core_2018_2.SearchDateField expectedCloseDate) {
+        this.expectedCloseDate = expectedCloseDate;
+    }
+
+
+    /**
+     * Gets the expectedReceiptDate value for this TransactionSearchBasic.
+     * 
+     * @return expectedReceiptDate
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchDateField getExpectedReceiptDate() {
         return expectedReceiptDate;
     }
 
-    /**
-     * 设置expectedReceiptDate属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchDateField }
-     *     
-     */
-    public void setExpectedReceiptDate(SearchDateField value) {
-        this.expectedReceiptDate = value;
-    }
 
     /**
-     * 获取expenseCategory属性的值。
+     * Sets the expectedReceiptDate value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchMultiSelectField }
-     *     
+     * @param expectedReceiptDate
      */
-    public SearchMultiSelectField getExpenseCategory() {
+    public void setExpectedReceiptDate(com.netsuite.webservices.platform.core_2018_2.SearchDateField expectedReceiptDate) {
+        this.expectedReceiptDate = expectedReceiptDate;
+    }
+
+
+    /**
+     * Gets the expenseCategory value for this TransactionSearchBasic.
+     * 
+     * @return expenseCategory
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef[] getExpenseCategory() {
         return expenseCategory;
     }
 
-    /**
-     * 设置expenseCategory属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchMultiSelectField }
-     *     
-     */
-    public void setExpenseCategory(SearchMultiSelectField value) {
-        this.expenseCategory = value;
-    }
 
     /**
-     * 获取expenseDate属性的值。
+     * Sets the expenseCategory value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchDateField }
-     *     
+     * @param expenseCategory
      */
-    public SearchDateField getExpenseDate() {
+    public void setExpenseCategory(com.netsuite.webservices.platform.core_2018_2.RecordRef[] expenseCategory) {
+        this.expenseCategory = expenseCategory;
+    }
+
+
+    /**
+     * Gets the expenseDate value for this TransactionSearchBasic.
+     * 
+     * @return expenseDate
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchDateField getExpenseDate() {
         return expenseDate;
     }
 
-    /**
-     * 设置expenseDate属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchDateField }
-     *     
-     */
-    public void setExpenseDate(SearchDateField value) {
-        this.expenseDate = value;
-    }
 
     /**
-     * 获取externalId属性的值。
+     * Sets the expenseDate value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchMultiSelectField }
-     *     
+     * @param expenseDate
      */
-    public SearchMultiSelectField getExternalId() {
+    public void setExpenseDate(com.netsuite.webservices.platform.core_2018_2.SearchDateField expenseDate) {
+        this.expenseDate = expenseDate;
+    }
+
+
+    /**
+     * Gets the externalId value for this TransactionSearchBasic.
+     * 
+     * @return externalId
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef[] getExternalId() {
         return externalId;
     }
 
-    /**
-     * 设置externalId属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchMultiSelectField }
-     *     
-     */
-    public void setExternalId(SearchMultiSelectField value) {
-        this.externalId = value;
-    }
 
     /**
-     * 获取externalIdString属性的值。
+     * Sets the externalId value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchStringField }
-     *     
+     * @param externalId
      */
-    public SearchStringField getExternalIdString() {
+    public void setExternalId(com.netsuite.webservices.platform.core_2018_2.RecordRef[] externalId) {
+        this.externalId = externalId;
+    }
+
+
+    /**
+     * Gets the externalIdString value for this TransactionSearchBasic.
+     * 
+     * @return externalIdString
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchStringField getExternalIdString() {
         return externalIdString;
     }
 
-    /**
-     * 设置externalIdString属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchStringField }
-     *     
-     */
-    public void setExternalIdString(SearchStringField value) {
-        this.externalIdString = value;
-    }
 
     /**
-     * 获取finChrg属性的值。
+     * Sets the externalIdString value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchBooleanField }
-     *     
+     * @param externalIdString
      */
-    public SearchBooleanField getFinChrg() {
+    public void setExternalIdString(com.netsuite.webservices.platform.core_2018_2.SearchStringField externalIdString) {
+        this.externalIdString = externalIdString;
+    }
+
+
+    /**
+     * Gets the finChrg value for this TransactionSearchBasic.
+     * 
+     * @return finChrg
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchBooleanField getFinChrg() {
         return finChrg;
     }
 
-    /**
-     * 设置finChrg属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchBooleanField }
-     *     
-     */
-    public void setFinChrg(SearchBooleanField value) {
-        this.finChrg = value;
-    }
 
     /**
-     * 获取firmed属性的值。
+     * Sets the finChrg value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchBooleanField }
-     *     
+     * @param finChrg
      */
-    public SearchBooleanField getFirmed() {
+    public void setFinChrg(com.netsuite.webservices.platform.core_2018_2.SearchBooleanField finChrg) {
+        this.finChrg = finChrg;
+    }
+
+
+    /**
+     * Gets the firmed value for this TransactionSearchBasic.
+     * 
+     * @return firmed
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchBooleanField getFirmed() {
         return firmed;
     }
 
-    /**
-     * 设置firmed属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchBooleanField }
-     *     
-     */
-    public void setFirmed(SearchBooleanField value) {
-        this.firmed = value;
-    }
 
     /**
-     * 获取forecastType属性的值。
+     * Sets the firmed value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchEnumMultiSelectField }
-     *     
+     * @param firmed
      */
-    public SearchEnumMultiSelectField getForecastType() {
+    public void setFirmed(com.netsuite.webservices.platform.core_2018_2.SearchBooleanField firmed) {
+        this.firmed = firmed;
+    }
+
+
+    /**
+     * Gets the forecastType value for this TransactionSearchBasic.
+     * 
+     * @return forecastType
+     */
+    public java.lang.String[] getForecastType() {
         return forecastType;
     }
 
-    /**
-     * 设置forecastType属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchEnumMultiSelectField }
-     *     
-     */
-    public void setForecastType(SearchEnumMultiSelectField value) {
-        this.forecastType = value;
-    }
 
     /**
-     * 获取fulfillingTransaction属性的值。
+     * Sets the forecastType value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchMultiSelectField }
-     *     
+     * @param forecastType
      */
-    public SearchMultiSelectField getFulfillingTransaction() {
+    public void setForecastType(java.lang.String[] forecastType) {
+        this.forecastType = forecastType;
+    }
+
+
+    /**
+     * Gets the fulfillingTransaction value for this TransactionSearchBasic.
+     * 
+     * @return fulfillingTransaction
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef[] getFulfillingTransaction() {
         return fulfillingTransaction;
     }
 
-    /**
-     * 设置fulfillingTransaction属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchMultiSelectField }
-     *     
-     */
-    public void setFulfillingTransaction(SearchMultiSelectField value) {
-        this.fulfillingTransaction = value;
-    }
 
     /**
-     * 获取fxAccount属性的值。
+     * Sets the fulfillingTransaction value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchMultiSelectField }
-     *     
+     * @param fulfillingTransaction
      */
-    public SearchMultiSelectField getFxAccount() {
+    public void setFulfillingTransaction(com.netsuite.webservices.platform.core_2018_2.RecordRef[] fulfillingTransaction) {
+        this.fulfillingTransaction = fulfillingTransaction;
+    }
+
+
+    /**
+     * Gets the fxAccount value for this TransactionSearchBasic.
+     * 
+     * @return fxAccount
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef[] getFxAccount() {
         return fxAccount;
     }
 
-    /**
-     * 设置fxAccount属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchMultiSelectField }
-     *     
-     */
-    public void setFxAccount(SearchMultiSelectField value) {
-        this.fxAccount = value;
-    }
 
     /**
-     * 获取fxAmount属性的值。
+     * Sets the fxAccount value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchDoubleField }
-     *     
+     * @param fxAccount
      */
-    public SearchDoubleField getFxAmount() {
+    public void setFxAccount(com.netsuite.webservices.platform.core_2018_2.RecordRef[] fxAccount) {
+        this.fxAccount = fxAccount;
+    }
+
+
+    /**
+     * Gets the fxAmount value for this TransactionSearchBasic.
+     * 
+     * @return fxAmount
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchDoubleField getFxAmount() {
         return fxAmount;
     }
 
-    /**
-     * 设置fxAmount属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchDoubleField }
-     *     
-     */
-    public void setFxAmount(SearchDoubleField value) {
-        this.fxAmount = value;
-    }
 
     /**
-     * 获取fxCostEstimate属性的值。
+     * Sets the fxAmount value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchDoubleField }
-     *     
+     * @param fxAmount
      */
-    public SearchDoubleField getFxCostEstimate() {
+    public void setFxAmount(com.netsuite.webservices.platform.core_2018_2.SearchDoubleField fxAmount) {
+        this.fxAmount = fxAmount;
+    }
+
+
+    /**
+     * Gets the fxCostEstimate value for this TransactionSearchBasic.
+     * 
+     * @return fxCostEstimate
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchDoubleField getFxCostEstimate() {
         return fxCostEstimate;
     }
 
-    /**
-     * 设置fxCostEstimate属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchDoubleField }
-     *     
-     */
-    public void setFxCostEstimate(SearchDoubleField value) {
-        this.fxCostEstimate = value;
-    }
 
     /**
-     * 获取fxCostEstimateRate属性的值。
+     * Sets the fxCostEstimate value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchDoubleField }
-     *     
+     * @param fxCostEstimate
      */
-    public SearchDoubleField getFxCostEstimateRate() {
+    public void setFxCostEstimate(com.netsuite.webservices.platform.core_2018_2.SearchDoubleField fxCostEstimate) {
+        this.fxCostEstimate = fxCostEstimate;
+    }
+
+
+    /**
+     * Gets the fxCostEstimateRate value for this TransactionSearchBasic.
+     * 
+     * @return fxCostEstimateRate
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchDoubleField getFxCostEstimateRate() {
         return fxCostEstimateRate;
     }
 
-    /**
-     * 设置fxCostEstimateRate属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchDoubleField }
-     *     
-     */
-    public void setFxCostEstimateRate(SearchDoubleField value) {
-        this.fxCostEstimateRate = value;
-    }
 
     /**
-     * 获取fxEstGrossProfit属性的值。
+     * Sets the fxCostEstimateRate value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchDoubleField }
-     *     
+     * @param fxCostEstimateRate
      */
-    public SearchDoubleField getFxEstGrossProfit() {
+    public void setFxCostEstimateRate(com.netsuite.webservices.platform.core_2018_2.SearchDoubleField fxCostEstimateRate) {
+        this.fxCostEstimateRate = fxCostEstimateRate;
+    }
+
+
+    /**
+     * Gets the fxEstGrossProfit value for this TransactionSearchBasic.
+     * 
+     * @return fxEstGrossProfit
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchDoubleField getFxEstGrossProfit() {
         return fxEstGrossProfit;
     }
 
-    /**
-     * 设置fxEstGrossProfit属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchDoubleField }
-     *     
-     */
-    public void setFxEstGrossProfit(SearchDoubleField value) {
-        this.fxEstGrossProfit = value;
-    }
 
     /**
-     * 获取fxTranCostEstimate属性的值。
+     * Sets the fxEstGrossProfit value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchDoubleField }
-     *     
+     * @param fxEstGrossProfit
      */
-    public SearchDoubleField getFxTranCostEstimate() {
+    public void setFxEstGrossProfit(com.netsuite.webservices.platform.core_2018_2.SearchDoubleField fxEstGrossProfit) {
+        this.fxEstGrossProfit = fxEstGrossProfit;
+    }
+
+
+    /**
+     * Gets the fxTranCostEstimate value for this TransactionSearchBasic.
+     * 
+     * @return fxTranCostEstimate
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchDoubleField getFxTranCostEstimate() {
         return fxTranCostEstimate;
     }
 
-    /**
-     * 设置fxTranCostEstimate属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchDoubleField }
-     *     
-     */
-    public void setFxTranCostEstimate(SearchDoubleField value) {
-        this.fxTranCostEstimate = value;
-    }
 
     /**
-     * 获取fxVsoeAllocation属性的值。
+     * Sets the fxTranCostEstimate value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchDoubleField }
-     *     
+     * @param fxTranCostEstimate
      */
-    public SearchDoubleField getFxVsoeAllocation() {
+    public void setFxTranCostEstimate(com.netsuite.webservices.platform.core_2018_2.SearchDoubleField fxTranCostEstimate) {
+        this.fxTranCostEstimate = fxTranCostEstimate;
+    }
+
+
+    /**
+     * Gets the fxVsoeAllocation value for this TransactionSearchBasic.
+     * 
+     * @return fxVsoeAllocation
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchDoubleField getFxVsoeAllocation() {
         return fxVsoeAllocation;
     }
 
-    /**
-     * 设置fxVsoeAllocation属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchDoubleField }
-     *     
-     */
-    public void setFxVsoeAllocation(SearchDoubleField value) {
-        this.fxVsoeAllocation = value;
-    }
 
     /**
-     * 获取fxVsoeAmount属性的值。
+     * Sets the fxVsoeAllocation value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchDoubleField }
-     *     
+     * @param fxVsoeAllocation
      */
-    public SearchDoubleField getFxVsoeAmount() {
+    public void setFxVsoeAllocation(com.netsuite.webservices.platform.core_2018_2.SearchDoubleField fxVsoeAllocation) {
+        this.fxVsoeAllocation = fxVsoeAllocation;
+    }
+
+
+    /**
+     * Gets the fxVsoeAmount value for this TransactionSearchBasic.
+     * 
+     * @return fxVsoeAmount
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchDoubleField getFxVsoeAmount() {
         return fxVsoeAmount;
     }
 
-    /**
-     * 设置fxVsoeAmount属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchDoubleField }
-     *     
-     */
-    public void setFxVsoeAmount(SearchDoubleField value) {
-        this.fxVsoeAmount = value;
-    }
 
     /**
-     * 获取fxVsoePrice属性的值。
+     * Sets the fxVsoeAmount value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchDoubleField }
-     *     
+     * @param fxVsoeAmount
      */
-    public SearchDoubleField getFxVsoePrice() {
+    public void setFxVsoeAmount(com.netsuite.webservices.platform.core_2018_2.SearchDoubleField fxVsoeAmount) {
+        this.fxVsoeAmount = fxVsoeAmount;
+    }
+
+
+    /**
+     * Gets the fxVsoePrice value for this TransactionSearchBasic.
+     * 
+     * @return fxVsoePrice
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchDoubleField getFxVsoePrice() {
         return fxVsoePrice;
     }
 
-    /**
-     * 设置fxVsoePrice属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchDoubleField }
-     *     
-     */
-    public void setFxVsoePrice(SearchDoubleField value) {
-        this.fxVsoePrice = value;
-    }
 
     /**
-     * 获取gcoAvailabelToCharge属性的值。
+     * Sets the fxVsoePrice value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchBooleanField }
-     *     
+     * @param fxVsoePrice
      */
-    public SearchBooleanField getGcoAvailabelToCharge() {
+    public void setFxVsoePrice(com.netsuite.webservices.platform.core_2018_2.SearchDoubleField fxVsoePrice) {
+        this.fxVsoePrice = fxVsoePrice;
+    }
+
+
+    /**
+     * Gets the gcoAvailabelToCharge value for this TransactionSearchBasic.
+     * 
+     * @return gcoAvailabelToCharge
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchBooleanField getGcoAvailabelToCharge() {
         return gcoAvailabelToCharge;
     }
 
-    /**
-     * 设置gcoAvailabelToCharge属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchBooleanField }
-     *     
-     */
-    public void setGcoAvailabelToCharge(SearchBooleanField value) {
-        this.gcoAvailabelToCharge = value;
-    }
 
     /**
-     * 获取gcoAvailableToRefund属性的值。
+     * Sets the gcoAvailabelToCharge value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchBooleanField }
-     *     
+     * @param gcoAvailabelToCharge
      */
-    public SearchBooleanField getGcoAvailableToRefund() {
+    public void setGcoAvailabelToCharge(com.netsuite.webservices.platform.core_2018_2.SearchBooleanField gcoAvailabelToCharge) {
+        this.gcoAvailabelToCharge = gcoAvailabelToCharge;
+    }
+
+
+    /**
+     * Gets the gcoAvailableToRefund value for this TransactionSearchBasic.
+     * 
+     * @return gcoAvailableToRefund
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchBooleanField getGcoAvailableToRefund() {
         return gcoAvailableToRefund;
     }
 
-    /**
-     * 设置gcoAvailableToRefund属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchBooleanField }
-     *     
-     */
-    public void setGcoAvailableToRefund(SearchBooleanField value) {
-        this.gcoAvailableToRefund = value;
-    }
 
     /**
-     * 获取gcoAvsStreetMatch属性的值。
+     * Sets the gcoAvailableToRefund value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchEnumMultiSelectField }
-     *     
+     * @param gcoAvailableToRefund
      */
-    public SearchEnumMultiSelectField getGcoAvsStreetMatch() {
+    public void setGcoAvailableToRefund(com.netsuite.webservices.platform.core_2018_2.SearchBooleanField gcoAvailableToRefund) {
+        this.gcoAvailableToRefund = gcoAvailableToRefund;
+    }
+
+
+    /**
+     * Gets the gcoAvsStreetMatch value for this TransactionSearchBasic.
+     * 
+     * @return gcoAvsStreetMatch
+     */
+    public java.lang.String[] getGcoAvsStreetMatch() {
         return gcoAvsStreetMatch;
     }
 
-    /**
-     * 设置gcoAvsStreetMatch属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchEnumMultiSelectField }
-     *     
-     */
-    public void setGcoAvsStreetMatch(SearchEnumMultiSelectField value) {
-        this.gcoAvsStreetMatch = value;
-    }
 
     /**
-     * 获取gcoAvsZipMatch属性的值。
+     * Sets the gcoAvsStreetMatch value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchEnumMultiSelectField }
-     *     
+     * @param gcoAvsStreetMatch
      */
-    public SearchEnumMultiSelectField getGcoAvsZipMatch() {
+    public void setGcoAvsStreetMatch(java.lang.String[] gcoAvsStreetMatch) {
+        this.gcoAvsStreetMatch = gcoAvsStreetMatch;
+    }
+
+
+    /**
+     * Gets the gcoAvsZipMatch value for this TransactionSearchBasic.
+     * 
+     * @return gcoAvsZipMatch
+     */
+    public java.lang.String[] getGcoAvsZipMatch() {
         return gcoAvsZipMatch;
     }
 
-    /**
-     * 设置gcoAvsZipMatch属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchEnumMultiSelectField }
-     *     
-     */
-    public void setGcoAvsZipMatch(SearchEnumMultiSelectField value) {
-        this.gcoAvsZipMatch = value;
-    }
 
     /**
-     * 获取gcoBuyerAccountAge属性的值。
+     * Sets the gcoAvsZipMatch value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchLongField }
-     *     
+     * @param gcoAvsZipMatch
      */
-    public SearchLongField getGcoBuyerAccountAge() {
+    public void setGcoAvsZipMatch(java.lang.String[] gcoAvsZipMatch) {
+        this.gcoAvsZipMatch = gcoAvsZipMatch;
+    }
+
+
+    /**
+     * Gets the gcoBuyerAccountAge value for this TransactionSearchBasic.
+     * 
+     * @return gcoBuyerAccountAge
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchLongField getGcoBuyerAccountAge() {
         return gcoBuyerAccountAge;
     }
 
-    /**
-     * 设置gcoBuyerAccountAge属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchLongField }
-     *     
-     */
-    public void setGcoBuyerAccountAge(SearchLongField value) {
-        this.gcoBuyerAccountAge = value;
-    }
 
     /**
-     * 获取gcoBuyerIp属性的值。
+     * Sets the gcoBuyerAccountAge value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchStringField }
-     *     
+     * @param gcoBuyerAccountAge
      */
-    public SearchStringField getGcoBuyerIp() {
+    public void setGcoBuyerAccountAge(com.netsuite.webservices.platform.core_2018_2.SearchLongField gcoBuyerAccountAge) {
+        this.gcoBuyerAccountAge = gcoBuyerAccountAge;
+    }
+
+
+    /**
+     * Gets the gcoBuyerIp value for this TransactionSearchBasic.
+     * 
+     * @return gcoBuyerIp
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchStringField getGcoBuyerIp() {
         return gcoBuyerIp;
     }
 
-    /**
-     * 设置gcoBuyerIp属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchStringField }
-     *     
-     */
-    public void setGcoBuyerIp(SearchStringField value) {
-        this.gcoBuyerIp = value;
-    }
 
     /**
-     * 获取gcoChargeAmount属性的值。
+     * Sets the gcoBuyerIp value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchDoubleField }
-     *     
+     * @param gcoBuyerIp
      */
-    public SearchDoubleField getGcoChargeAmount() {
+    public void setGcoBuyerIp(com.netsuite.webservices.platform.core_2018_2.SearchStringField gcoBuyerIp) {
+        this.gcoBuyerIp = gcoBuyerIp;
+    }
+
+
+    /**
+     * Gets the gcoChargeAmount value for this TransactionSearchBasic.
+     * 
+     * @return gcoChargeAmount
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchDoubleField getGcoChargeAmount() {
         return gcoChargeAmount;
     }
 
-    /**
-     * 设置gcoChargeAmount属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchDoubleField }
-     *     
-     */
-    public void setGcoChargeAmount(SearchDoubleField value) {
-        this.gcoChargeAmount = value;
-    }
 
     /**
-     * 获取gcoChargebackAmount属性的值。
+     * Sets the gcoChargeAmount value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchDoubleField }
-     *     
+     * @param gcoChargeAmount
      */
-    public SearchDoubleField getGcoChargebackAmount() {
+    public void setGcoChargeAmount(com.netsuite.webservices.platform.core_2018_2.SearchDoubleField gcoChargeAmount) {
+        this.gcoChargeAmount = gcoChargeAmount;
+    }
+
+
+    /**
+     * Gets the gcoChargebackAmount value for this TransactionSearchBasic.
+     * 
+     * @return gcoChargebackAmount
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchDoubleField getGcoChargebackAmount() {
         return gcoChargebackAmount;
     }
 
-    /**
-     * 设置gcoChargebackAmount属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchDoubleField }
-     *     
-     */
-    public void setGcoChargebackAmount(SearchDoubleField value) {
-        this.gcoChargebackAmount = value;
-    }
 
     /**
-     * 获取gcoConfirmedChargedTotal属性的值。
+     * Sets the gcoChargebackAmount value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchDoubleField }
-     *     
+     * @param gcoChargebackAmount
      */
-    public SearchDoubleField getGcoConfirmedChargedTotal() {
+    public void setGcoChargebackAmount(com.netsuite.webservices.platform.core_2018_2.SearchDoubleField gcoChargebackAmount) {
+        this.gcoChargebackAmount = gcoChargebackAmount;
+    }
+
+
+    /**
+     * Gets the gcoConfirmedChargedTotal value for this TransactionSearchBasic.
+     * 
+     * @return gcoConfirmedChargedTotal
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchDoubleField getGcoConfirmedChargedTotal() {
         return gcoConfirmedChargedTotal;
     }
 
-    /**
-     * 设置gcoConfirmedChargedTotal属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchDoubleField }
-     *     
-     */
-    public void setGcoConfirmedChargedTotal(SearchDoubleField value) {
-        this.gcoConfirmedChargedTotal = value;
-    }
 
     /**
-     * 获取gcoConfirmedRefundedTotal属性的值。
+     * Sets the gcoConfirmedChargedTotal value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchDoubleField }
-     *     
+     * @param gcoConfirmedChargedTotal
      */
-    public SearchDoubleField getGcoConfirmedRefundedTotal() {
+    public void setGcoConfirmedChargedTotal(com.netsuite.webservices.platform.core_2018_2.SearchDoubleField gcoConfirmedChargedTotal) {
+        this.gcoConfirmedChargedTotal = gcoConfirmedChargedTotal;
+    }
+
+
+    /**
+     * Gets the gcoConfirmedRefundedTotal value for this TransactionSearchBasic.
+     * 
+     * @return gcoConfirmedRefundedTotal
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchDoubleField getGcoConfirmedRefundedTotal() {
         return gcoConfirmedRefundedTotal;
     }
 
-    /**
-     * 设置gcoConfirmedRefundedTotal属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchDoubleField }
-     *     
-     */
-    public void setGcoConfirmedRefundedTotal(SearchDoubleField value) {
-        this.gcoConfirmedRefundedTotal = value;
-    }
 
     /**
-     * 获取gcoCreditcardNumber属性的值。
+     * Sets the gcoConfirmedRefundedTotal value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchStringField }
-     *     
+     * @param gcoConfirmedRefundedTotal
      */
-    public SearchStringField getGcoCreditcardNumber() {
+    public void setGcoConfirmedRefundedTotal(com.netsuite.webservices.platform.core_2018_2.SearchDoubleField gcoConfirmedRefundedTotal) {
+        this.gcoConfirmedRefundedTotal = gcoConfirmedRefundedTotal;
+    }
+
+
+    /**
+     * Gets the gcoCreditcardNumber value for this TransactionSearchBasic.
+     * 
+     * @return gcoCreditcardNumber
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchStringField getGcoCreditcardNumber() {
         return gcoCreditcardNumber;
     }
 
-    /**
-     * 设置gcoCreditcardNumber属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchStringField }
-     *     
-     */
-    public void setGcoCreditcardNumber(SearchStringField value) {
-        this.gcoCreditcardNumber = value;
-    }
 
     /**
-     * 获取gcoCscMatch属性的值。
+     * Sets the gcoCreditcardNumber value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchEnumMultiSelectField }
-     *     
+     * @param gcoCreditcardNumber
      */
-    public SearchEnumMultiSelectField getGcoCscMatch() {
+    public void setGcoCreditcardNumber(com.netsuite.webservices.platform.core_2018_2.SearchStringField gcoCreditcardNumber) {
+        this.gcoCreditcardNumber = gcoCreditcardNumber;
+    }
+
+
+    /**
+     * Gets the gcoCscMatch value for this TransactionSearchBasic.
+     * 
+     * @return gcoCscMatch
+     */
+    public java.lang.String[] getGcoCscMatch() {
         return gcoCscMatch;
     }
 
-    /**
-     * 设置gcoCscMatch属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchEnumMultiSelectField }
-     *     
-     */
-    public void setGcoCscMatch(SearchEnumMultiSelectField value) {
-        this.gcoCscMatch = value;
-    }
 
     /**
-     * 获取gcoFinancialState属性的值。
+     * Sets the gcoCscMatch value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchStringField }
-     *     
+     * @param gcoCscMatch
      */
-    public SearchStringField getGcoFinancialState() {
+    public void setGcoCscMatch(java.lang.String[] gcoCscMatch) {
+        this.gcoCscMatch = gcoCscMatch;
+    }
+
+
+    /**
+     * Gets the gcoFinancialState value for this TransactionSearchBasic.
+     * 
+     * @return gcoFinancialState
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchStringField getGcoFinancialState() {
         return gcoFinancialState;
     }
 
-    /**
-     * 设置gcoFinancialState属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchStringField }
-     *     
-     */
-    public void setGcoFinancialState(SearchStringField value) {
-        this.gcoFinancialState = value;
-    }
 
     /**
-     * 获取gcoFulfillmentState属性的值。
+     * Sets the gcoFinancialState value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchStringField }
-     *     
+     * @param gcoFinancialState
      */
-    public SearchStringField getGcoFulfillmentState() {
+    public void setGcoFinancialState(com.netsuite.webservices.platform.core_2018_2.SearchStringField gcoFinancialState) {
+        this.gcoFinancialState = gcoFinancialState;
+    }
+
+
+    /**
+     * Gets the gcoFulfillmentState value for this TransactionSearchBasic.
+     * 
+     * @return gcoFulfillmentState
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchStringField getGcoFulfillmentState() {
         return gcoFulfillmentState;
     }
 
-    /**
-     * 设置gcoFulfillmentState属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchStringField }
-     *     
-     */
-    public void setGcoFulfillmentState(SearchStringField value) {
-        this.gcoFulfillmentState = value;
-    }
 
     /**
-     * 获取gcoOrderId属性的值。
+     * Sets the gcoFulfillmentState value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchStringField }
-     *     
+     * @param gcoFulfillmentState
      */
-    public SearchStringField getGcoOrderId() {
+    public void setGcoFulfillmentState(com.netsuite.webservices.platform.core_2018_2.SearchStringField gcoFulfillmentState) {
+        this.gcoFulfillmentState = gcoFulfillmentState;
+    }
+
+
+    /**
+     * Gets the gcoOrderId value for this TransactionSearchBasic.
+     * 
+     * @return gcoOrderId
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchStringField getGcoOrderId() {
         return gcoOrderId;
     }
 
-    /**
-     * 设置gcoOrderId属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchStringField }
-     *     
-     */
-    public void setGcoOrderId(SearchStringField value) {
-        this.gcoOrderId = value;
-    }
 
     /**
-     * 获取gcoOrderTotal属性的值。
+     * Sets the gcoOrderId value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchDoubleField }
-     *     
+     * @param gcoOrderId
      */
-    public SearchDoubleField getGcoOrderTotal() {
+    public void setGcoOrderId(com.netsuite.webservices.platform.core_2018_2.SearchStringField gcoOrderId) {
+        this.gcoOrderId = gcoOrderId;
+    }
+
+
+    /**
+     * Gets the gcoOrderTotal value for this TransactionSearchBasic.
+     * 
+     * @return gcoOrderTotal
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchDoubleField getGcoOrderTotal() {
         return gcoOrderTotal;
     }
 
-    /**
-     * 设置gcoOrderTotal属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchDoubleField }
-     *     
-     */
-    public void setGcoOrderTotal(SearchDoubleField value) {
-        this.gcoOrderTotal = value;
-    }
 
     /**
-     * 获取gcoPromotionAmount属性的值。
+     * Sets the gcoOrderTotal value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchDoubleField }
-     *     
+     * @param gcoOrderTotal
      */
-    public SearchDoubleField getGcoPromotionAmount() {
+    public void setGcoOrderTotal(com.netsuite.webservices.platform.core_2018_2.SearchDoubleField gcoOrderTotal) {
+        this.gcoOrderTotal = gcoOrderTotal;
+    }
+
+
+    /**
+     * Gets the gcoPromotionAmount value for this TransactionSearchBasic.
+     * 
+     * @return gcoPromotionAmount
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchDoubleField getGcoPromotionAmount() {
         return gcoPromotionAmount;
     }
 
-    /**
-     * 设置gcoPromotionAmount属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchDoubleField }
-     *     
-     */
-    public void setGcoPromotionAmount(SearchDoubleField value) {
-        this.gcoPromotionAmount = value;
-    }
 
     /**
-     * 获取gcoPromotionName属性的值。
+     * Sets the gcoPromotionAmount value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchStringField }
-     *     
+     * @param gcoPromotionAmount
      */
-    public SearchStringField getGcoPromotionName() {
+    public void setGcoPromotionAmount(com.netsuite.webservices.platform.core_2018_2.SearchDoubleField gcoPromotionAmount) {
+        this.gcoPromotionAmount = gcoPromotionAmount;
+    }
+
+
+    /**
+     * Gets the gcoPromotionName value for this TransactionSearchBasic.
+     * 
+     * @return gcoPromotionName
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchStringField getGcoPromotionName() {
         return gcoPromotionName;
     }
 
-    /**
-     * 设置gcoPromotionName属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchStringField }
-     *     
-     */
-    public void setGcoPromotionName(SearchStringField value) {
-        this.gcoPromotionName = value;
-    }
 
     /**
-     * 获取gcoRefundAmount属性的值。
+     * Sets the gcoPromotionName value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchDoubleField }
-     *     
+     * @param gcoPromotionName
      */
-    public SearchDoubleField getGcoRefundAmount() {
+    public void setGcoPromotionName(com.netsuite.webservices.platform.core_2018_2.SearchStringField gcoPromotionName) {
+        this.gcoPromotionName = gcoPromotionName;
+    }
+
+
+    /**
+     * Gets the gcoRefundAmount value for this TransactionSearchBasic.
+     * 
+     * @return gcoRefundAmount
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchDoubleField getGcoRefundAmount() {
         return gcoRefundAmount;
     }
 
-    /**
-     * 设置gcoRefundAmount属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchDoubleField }
-     *     
-     */
-    public void setGcoRefundAmount(SearchDoubleField value) {
-        this.gcoRefundAmount = value;
-    }
 
     /**
-     * 获取gcoShippingTotal属性的值。
+     * Sets the gcoRefundAmount value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchDoubleField }
-     *     
+     * @param gcoRefundAmount
      */
-    public SearchDoubleField getGcoShippingTotal() {
+    public void setGcoRefundAmount(com.netsuite.webservices.platform.core_2018_2.SearchDoubleField gcoRefundAmount) {
+        this.gcoRefundAmount = gcoRefundAmount;
+    }
+
+
+    /**
+     * Gets the gcoShippingTotal value for this TransactionSearchBasic.
+     * 
+     * @return gcoShippingTotal
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchDoubleField getGcoShippingTotal() {
         return gcoShippingTotal;
     }
 
-    /**
-     * 设置gcoShippingTotal属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchDoubleField }
-     *     
-     */
-    public void setGcoShippingTotal(SearchDoubleField value) {
-        this.gcoShippingTotal = value;
-    }
 
     /**
-     * 获取gcoStateChangedDetail属性的值。
+     * Sets the gcoShippingTotal value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchStringField }
-     *     
+     * @param gcoShippingTotal
      */
-    public SearchStringField getGcoStateChangedDetail() {
+    public void setGcoShippingTotal(com.netsuite.webservices.platform.core_2018_2.SearchDoubleField gcoShippingTotal) {
+        this.gcoShippingTotal = gcoShippingTotal;
+    }
+
+
+    /**
+     * Gets the gcoStateChangedDetail value for this TransactionSearchBasic.
+     * 
+     * @return gcoStateChangedDetail
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchStringField getGcoStateChangedDetail() {
         return gcoStateChangedDetail;
     }
 
-    /**
-     * 设置gcoStateChangedDetail属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchStringField }
-     *     
-     */
-    public void setGcoStateChangedDetail(SearchStringField value) {
-        this.gcoStateChangedDetail = value;
-    }
 
     /**
-     * 获取giftCertificate属性的值。
+     * Sets the gcoStateChangedDetail value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchStringField }
-     *     
+     * @param gcoStateChangedDetail
      */
-    public SearchStringField getGiftCertificate() {
+    public void setGcoStateChangedDetail(com.netsuite.webservices.platform.core_2018_2.SearchStringField gcoStateChangedDetail) {
+        this.gcoStateChangedDetail = gcoStateChangedDetail;
+    }
+
+
+    /**
+     * Gets the giftCertificate value for this TransactionSearchBasic.
+     * 
+     * @return giftCertificate
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchStringField getGiftCertificate() {
         return giftCertificate;
     }
 
-    /**
-     * 设置giftCertificate属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchStringField }
-     *     
-     */
-    public void setGiftCertificate(SearchStringField value) {
-        this.giftCertificate = value;
-    }
 
     /**
-     * 获取grossAmount属性的值。
+     * Sets the giftCertificate value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchDoubleField }
-     *     
+     * @param giftCertificate
      */
-    public SearchDoubleField getGrossAmount() {
+    public void setGiftCertificate(com.netsuite.webservices.platform.core_2018_2.SearchStringField giftCertificate) {
+        this.giftCertificate = giftCertificate;
+    }
+
+
+    /**
+     * Gets the grossAmount value for this TransactionSearchBasic.
+     * 
+     * @return grossAmount
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchDoubleField getGrossAmount() {
         return grossAmount;
     }
 
-    /**
-     * 设置grossAmount属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchDoubleField }
-     *     
-     */
-    public void setGrossAmount(SearchDoubleField value) {
-        this.grossAmount = value;
-    }
 
     /**
-     * 获取includeInForecast属性的值。
+     * Sets the grossAmount value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchBooleanField }
-     *     
+     * @param grossAmount
      */
-    public SearchBooleanField getIncludeInForecast() {
+    public void setGrossAmount(com.netsuite.webservices.platform.core_2018_2.SearchDoubleField grossAmount) {
+        this.grossAmount = grossAmount;
+    }
+
+
+    /**
+     * Gets the includeInForecast value for this TransactionSearchBasic.
+     * 
+     * @return includeInForecast
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchBooleanField getIncludeInForecast() {
         return includeInForecast;
     }
 
-    /**
-     * 设置includeInForecast属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchBooleanField }
-     *     
-     */
-    public void setIncludeInForecast(SearchBooleanField value) {
-        this.includeInForecast = value;
-    }
 
     /**
-     * 获取incoterm属性的值。
+     * Sets the includeInForecast value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchMultiSelectField }
-     *     
+     * @param includeInForecast
      */
-    public SearchMultiSelectField getIncoterm() {
+    public void setIncludeInForecast(com.netsuite.webservices.platform.core_2018_2.SearchBooleanField includeInForecast) {
+        this.includeInForecast = includeInForecast;
+    }
+
+
+    /**
+     * Gets the incoterm value for this TransactionSearchBasic.
+     * 
+     * @return incoterm
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef[] getIncoterm() {
         return incoterm;
     }
 
-    /**
-     * 设置incoterm属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchMultiSelectField }
-     *     
-     */
-    public void setIncoterm(SearchMultiSelectField value) {
-        this.incoterm = value;
-    }
 
     /**
-     * 获取intercoStatus属性的值。
+     * Sets the incoterm value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchEnumMultiSelectField }
-     *     
+     * @param incoterm
      */
-    public SearchEnumMultiSelectField getIntercoStatus() {
+    public void setIncoterm(com.netsuite.webservices.platform.core_2018_2.RecordRef[] incoterm) {
+        this.incoterm = incoterm;
+    }
+
+
+    /**
+     * Gets the intercoStatus value for this TransactionSearchBasic.
+     * 
+     * @return intercoStatus
+     */
+    public java.lang.String[] getIntercoStatus() {
         return intercoStatus;
     }
 
-    /**
-     * 设置intercoStatus属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchEnumMultiSelectField }
-     *     
-     */
-    public void setIntercoStatus(SearchEnumMultiSelectField value) {
-        this.intercoStatus = value;
-    }
 
     /**
-     * 获取intercoTransaction属性的值。
+     * Sets the intercoStatus value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchMultiSelectField }
-     *     
+     * @param intercoStatus
      */
-    public SearchMultiSelectField getIntercoTransaction() {
+    public void setIntercoStatus(java.lang.String[] intercoStatus) {
+        this.intercoStatus = intercoStatus;
+    }
+
+
+    /**
+     * Gets the intercoTransaction value for this TransactionSearchBasic.
+     * 
+     * @return intercoTransaction
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef[] getIntercoTransaction() {
         return intercoTransaction;
     }
 
-    /**
-     * 设置intercoTransaction属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchMultiSelectField }
-     *     
-     */
-    public void setIntercoTransaction(SearchMultiSelectField value) {
-        this.intercoTransaction = value;
-    }
 
     /**
-     * 获取internalId属性的值。
+     * Sets the intercoTransaction value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchMultiSelectField }
-     *     
+     * @param intercoTransaction
      */
-    public SearchMultiSelectField getInternalId() {
+    public void setIntercoTransaction(com.netsuite.webservices.platform.core_2018_2.RecordRef[] intercoTransaction) {
+        this.intercoTransaction = intercoTransaction;
+    }
+
+
+    /**
+     * Gets the internalId value for this TransactionSearchBasic.
+     * 
+     * @return internalId
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef[] getInternalId() {
         return internalId;
     }
 
-    /**
-     * 设置internalId属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchMultiSelectField }
-     *     
-     */
-    public void setInternalId(SearchMultiSelectField value) {
-        this.internalId = value;
-    }
 
     /**
-     * 获取internalIdNumber属性的值。
+     * Sets the internalId value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchLongField }
-     *     
+     * @param internalId
      */
-    public SearchLongField getInternalIdNumber() {
+    public void setInternalId(com.netsuite.webservices.platform.core_2018_2.RecordRef[] internalId) {
+        this.internalId = internalId;
+    }
+
+
+    /**
+     * Gets the internalIdNumber value for this TransactionSearchBasic.
+     * 
+     * @return internalIdNumber
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchLongField getInternalIdNumber() {
         return internalIdNumber;
     }
 
-    /**
-     * 设置internalIdNumber属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchLongField }
-     *     
-     */
-    public void setInternalIdNumber(SearchLongField value) {
-        this.internalIdNumber = value;
-    }
 
     /**
-     * 获取inVsoeBundle属性的值。
+     * Sets the internalIdNumber value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchBooleanField }
-     *     
+     * @param internalIdNumber
      */
-    public SearchBooleanField getInVsoeBundle() {
+    public void setInternalIdNumber(com.netsuite.webservices.platform.core_2018_2.SearchLongField internalIdNumber) {
+        this.internalIdNumber = internalIdNumber;
+    }
+
+
+    /**
+     * Gets the inVsoeBundle value for this TransactionSearchBasic.
+     * 
+     * @return inVsoeBundle
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchBooleanField getInVsoeBundle() {
         return inVsoeBundle;
     }
 
-    /**
-     * 设置inVsoeBundle属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchBooleanField }
-     *     
-     */
-    public void setInVsoeBundle(SearchBooleanField value) {
-        this.inVsoeBundle = value;
-    }
 
     /**
-     * 获取isAllocation属性的值。
+     * Sets the inVsoeBundle value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchBooleanField }
-     *     
+     * @param inVsoeBundle
      */
-    public SearchBooleanField getIsAllocation() {
+    public void setInVsoeBundle(com.netsuite.webservices.platform.core_2018_2.SearchBooleanField inVsoeBundle) {
+        this.inVsoeBundle = inVsoeBundle;
+    }
+
+
+    /**
+     * Gets the isAllocation value for this TransactionSearchBasic.
+     * 
+     * @return isAllocation
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchBooleanField getIsAllocation() {
         return isAllocation;
     }
 
-    /**
-     * 设置isAllocation属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchBooleanField }
-     *     
-     */
-    public void setIsAllocation(SearchBooleanField value) {
-        this.isAllocation = value;
-    }
 
     /**
-     * 获取isBackflush属性的值。
+     * Sets the isAllocation value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchBooleanField }
-     *     
+     * @param isAllocation
      */
-    public SearchBooleanField getIsBackflush() {
+    public void setIsAllocation(com.netsuite.webservices.platform.core_2018_2.SearchBooleanField isAllocation) {
+        this.isAllocation = isAllocation;
+    }
+
+
+    /**
+     * Gets the isBackflush value for this TransactionSearchBasic.
+     * 
+     * @return isBackflush
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchBooleanField getIsBackflush() {
         return isBackflush;
     }
 
-    /**
-     * 设置isBackflush属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchBooleanField }
-     *     
-     */
-    public void setIsBackflush(SearchBooleanField value) {
-        this.isBackflush = value;
-    }
 
     /**
-     * 获取isGcoChargeback属性的值。
+     * Sets the isBackflush value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchBooleanField }
-     *     
+     * @param isBackflush
      */
-    public SearchBooleanField getIsGcoChargeback() {
+    public void setIsBackflush(com.netsuite.webservices.platform.core_2018_2.SearchBooleanField isBackflush) {
+        this.isBackflush = isBackflush;
+    }
+
+
+    /**
+     * Gets the isGcoChargeback value for this TransactionSearchBasic.
+     * 
+     * @return isGcoChargeback
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchBooleanField getIsGcoChargeback() {
         return isGcoChargeback;
     }
 
-    /**
-     * 设置isGcoChargeback属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchBooleanField }
-     *     
-     */
-    public void setIsGcoChargeback(SearchBooleanField value) {
-        this.isGcoChargeback = value;
-    }
 
     /**
-     * 获取isGcoChargeConfirmed属性的值。
+     * Sets the isGcoChargeback value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchBooleanField }
-     *     
+     * @param isGcoChargeback
      */
-    public SearchBooleanField getIsGcoChargeConfirmed() {
+    public void setIsGcoChargeback(com.netsuite.webservices.platform.core_2018_2.SearchBooleanField isGcoChargeback) {
+        this.isGcoChargeback = isGcoChargeback;
+    }
+
+
+    /**
+     * Gets the isGcoChargeConfirmed value for this TransactionSearchBasic.
+     * 
+     * @return isGcoChargeConfirmed
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchBooleanField getIsGcoChargeConfirmed() {
         return isGcoChargeConfirmed;
     }
 
-    /**
-     * 设置isGcoChargeConfirmed属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchBooleanField }
-     *     
-     */
-    public void setIsGcoChargeConfirmed(SearchBooleanField value) {
-        this.isGcoChargeConfirmed = value;
-    }
 
     /**
-     * 获取isGcoPaymentGuaranteed属性的值。
+     * Sets the isGcoChargeConfirmed value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchBooleanField }
-     *     
+     * @param isGcoChargeConfirmed
      */
-    public SearchBooleanField getIsGcoPaymentGuaranteed() {
+    public void setIsGcoChargeConfirmed(com.netsuite.webservices.platform.core_2018_2.SearchBooleanField isGcoChargeConfirmed) {
+        this.isGcoChargeConfirmed = isGcoChargeConfirmed;
+    }
+
+
+    /**
+     * Gets the isGcoPaymentGuaranteed value for this TransactionSearchBasic.
+     * 
+     * @return isGcoPaymentGuaranteed
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchBooleanField getIsGcoPaymentGuaranteed() {
         return isGcoPaymentGuaranteed;
     }
 
-    /**
-     * 设置isGcoPaymentGuaranteed属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchBooleanField }
-     *     
-     */
-    public void setIsGcoPaymentGuaranteed(SearchBooleanField value) {
-        this.isGcoPaymentGuaranteed = value;
-    }
 
     /**
-     * 获取isGcoRefundConfirmed属性的值。
+     * Sets the isGcoPaymentGuaranteed value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchBooleanField }
-     *     
+     * @param isGcoPaymentGuaranteed
      */
-    public SearchBooleanField getIsGcoRefundConfirmed() {
+    public void setIsGcoPaymentGuaranteed(com.netsuite.webservices.platform.core_2018_2.SearchBooleanField isGcoPaymentGuaranteed) {
+        this.isGcoPaymentGuaranteed = isGcoPaymentGuaranteed;
+    }
+
+
+    /**
+     * Gets the isGcoRefundConfirmed value for this TransactionSearchBasic.
+     * 
+     * @return isGcoRefundConfirmed
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchBooleanField getIsGcoRefundConfirmed() {
         return isGcoRefundConfirmed;
     }
 
-    /**
-     * 设置isGcoRefundConfirmed属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchBooleanField }
-     *     
-     */
-    public void setIsGcoRefundConfirmed(SearchBooleanField value) {
-        this.isGcoRefundConfirmed = value;
-    }
 
     /**
-     * 获取isInsideDelivery属性的值。
+     * Sets the isGcoRefundConfirmed value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchBooleanField }
-     *     
+     * @param isGcoRefundConfirmed
      */
-    public SearchBooleanField getIsInsideDelivery() {
+    public void setIsGcoRefundConfirmed(com.netsuite.webservices.platform.core_2018_2.SearchBooleanField isGcoRefundConfirmed) {
+        this.isGcoRefundConfirmed = isGcoRefundConfirmed;
+    }
+
+
+    /**
+     * Gets the isInsideDelivery value for this TransactionSearchBasic.
+     * 
+     * @return isInsideDelivery
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchBooleanField getIsInsideDelivery() {
         return isInsideDelivery;
     }
 
-    /**
-     * 设置isInsideDelivery属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchBooleanField }
-     *     
-     */
-    public void setIsInsideDelivery(SearchBooleanField value) {
-        this.isInsideDelivery = value;
-    }
 
     /**
-     * 获取isInsidePickup属性的值。
+     * Sets the isInsideDelivery value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchBooleanField }
-     *     
+     * @param isInsideDelivery
      */
-    public SearchBooleanField getIsInsidePickup() {
+    public void setIsInsideDelivery(com.netsuite.webservices.platform.core_2018_2.SearchBooleanField isInsideDelivery) {
+        this.isInsideDelivery = isInsideDelivery;
+    }
+
+
+    /**
+     * Gets the isInsidePickup value for this TransactionSearchBasic.
+     * 
+     * @return isInsidePickup
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchBooleanField getIsInsidePickup() {
         return isInsidePickup;
     }
 
-    /**
-     * 设置isInsidePickup属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchBooleanField }
-     *     
-     */
-    public void setIsInsidePickup(SearchBooleanField value) {
-        this.isInsidePickup = value;
-    }
 
     /**
-     * 获取isIntercompanyAdjustment属性的值。
+     * Sets the isInsidePickup value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchBooleanField }
-     *     
+     * @param isInsidePickup
      */
-    public SearchBooleanField getIsIntercompanyAdjustment() {
+    public void setIsInsidePickup(com.netsuite.webservices.platform.core_2018_2.SearchBooleanField isInsidePickup) {
+        this.isInsidePickup = isInsidePickup;
+    }
+
+
+    /**
+     * Gets the isIntercompanyAdjustment value for this TransactionSearchBasic.
+     * 
+     * @return isIntercompanyAdjustment
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchBooleanField getIsIntercompanyAdjustment() {
         return isIntercompanyAdjustment;
     }
 
-    /**
-     * 设置isIntercompanyAdjustment属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchBooleanField }
-     *     
-     */
-    public void setIsIntercompanyAdjustment(SearchBooleanField value) {
-        this.isIntercompanyAdjustment = value;
-    }
 
     /**
-     * 获取isMultiShipTo属性的值。
+     * Sets the isIntercompanyAdjustment value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchBooleanField }
-     *     
+     * @param isIntercompanyAdjustment
      */
-    public SearchBooleanField getIsMultiShipTo() {
+    public void setIsIntercompanyAdjustment(com.netsuite.webservices.platform.core_2018_2.SearchBooleanField isIntercompanyAdjustment) {
+        this.isIntercompanyAdjustment = isIntercompanyAdjustment;
+    }
+
+
+    /**
+     * Gets the isMultiShipTo value for this TransactionSearchBasic.
+     * 
+     * @return isMultiShipTo
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchBooleanField getIsMultiShipTo() {
         return isMultiShipTo;
     }
 
-    /**
-     * 设置isMultiShipTo属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchBooleanField }
-     *     
-     */
-    public void setIsMultiShipTo(SearchBooleanField value) {
-        this.isMultiShipTo = value;
-    }
 
     /**
-     * 获取isPayPalMeth属性的值。
+     * Sets the isMultiShipTo value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchBooleanField }
-     *     
+     * @param isMultiShipTo
      */
-    public SearchBooleanField getIsPayPalMeth() {
+    public void setIsMultiShipTo(com.netsuite.webservices.platform.core_2018_2.SearchBooleanField isMultiShipTo) {
+        this.isMultiShipTo = isMultiShipTo;
+    }
+
+
+    /**
+     * Gets the isPayPalMeth value for this TransactionSearchBasic.
+     * 
+     * @return isPayPalMeth
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchBooleanField getIsPayPalMeth() {
         return isPayPalMeth;
     }
 
-    /**
-     * 设置isPayPalMeth属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchBooleanField }
-     *     
-     */
-    public void setIsPayPalMeth(SearchBooleanField value) {
-        this.isPayPalMeth = value;
-    }
 
     /**
-     * 获取isReversal属性的值。
+     * Sets the isPayPalMeth value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchBooleanField }
-     *     
+     * @param isPayPalMeth
      */
-    public SearchBooleanField getIsReversal() {
+    public void setIsPayPalMeth(com.netsuite.webservices.platform.core_2018_2.SearchBooleanField isPayPalMeth) {
+        this.isPayPalMeth = isPayPalMeth;
+    }
+
+
+    /**
+     * Gets the isReversal value for this TransactionSearchBasic.
+     * 
+     * @return isReversal
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchBooleanField getIsReversal() {
         return isReversal;
     }
 
-    /**
-     * 设置isReversal属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchBooleanField }
-     *     
-     */
-    public void setIsReversal(SearchBooleanField value) {
-        this.isReversal = value;
-    }
 
     /**
-     * 获取isRevRecTransaction属性的值。
+     * Sets the isReversal value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchBooleanField }
-     *     
+     * @param isReversal
      */
-    public SearchBooleanField getIsRevRecTransaction() {
+    public void setIsReversal(com.netsuite.webservices.platform.core_2018_2.SearchBooleanField isReversal) {
+        this.isReversal = isReversal;
+    }
+
+
+    /**
+     * Gets the isRevRecTransaction value for this TransactionSearchBasic.
+     * 
+     * @return isRevRecTransaction
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchBooleanField getIsRevRecTransaction() {
         return isRevRecTransaction;
     }
 
-    /**
-     * 设置isRevRecTransaction属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchBooleanField }
-     *     
-     */
-    public void setIsRevRecTransaction(SearchBooleanField value) {
-        this.isRevRecTransaction = value;
-    }
 
     /**
-     * 获取isScrap属性的值。
+     * Sets the isRevRecTransaction value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchBooleanField }
-     *     
+     * @param isRevRecTransaction
      */
-    public SearchBooleanField getIsScrap() {
+    public void setIsRevRecTransaction(com.netsuite.webservices.platform.core_2018_2.SearchBooleanField isRevRecTransaction) {
+        this.isRevRecTransaction = isRevRecTransaction;
+    }
+
+
+    /**
+     * Gets the isScrap value for this TransactionSearchBasic.
+     * 
+     * @return isScrap
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchBooleanField getIsScrap() {
         return isScrap;
     }
 
-    /**
-     * 设置isScrap属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchBooleanField }
-     *     
-     */
-    public void setIsScrap(SearchBooleanField value) {
-        this.isScrap = value;
-    }
 
     /**
-     * 获取isShipAddress属性的值。
+     * Sets the isScrap value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchBooleanField }
-     *     
+     * @param isScrap
      */
-    public SearchBooleanField getIsShipAddress() {
+    public void setIsScrap(com.netsuite.webservices.platform.core_2018_2.SearchBooleanField isScrap) {
+        this.isScrap = isScrap;
+    }
+
+
+    /**
+     * Gets the isShipAddress value for this TransactionSearchBasic.
+     * 
+     * @return isShipAddress
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchBooleanField getIsShipAddress() {
         return isShipAddress;
     }
 
-    /**
-     * 设置isShipAddress属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchBooleanField }
-     *     
-     */
-    public void setIsShipAddress(SearchBooleanField value) {
-        this.isShipAddress = value;
-    }
 
     /**
-     * 获取isTransferPriceCosting属性的值。
+     * Sets the isShipAddress value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchBooleanField }
-     *     
+     * @param isShipAddress
      */
-    public SearchBooleanField getIsTransferPriceCosting() {
+    public void setIsShipAddress(com.netsuite.webservices.platform.core_2018_2.SearchBooleanField isShipAddress) {
+        this.isShipAddress = isShipAddress;
+    }
+
+
+    /**
+     * Gets the isTransferPriceCosting value for this TransactionSearchBasic.
+     * 
+     * @return isTransferPriceCosting
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchBooleanField getIsTransferPriceCosting() {
         return isTransferPriceCosting;
     }
 
-    /**
-     * 设置isTransferPriceCosting属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchBooleanField }
-     *     
-     */
-    public void setIsTransferPriceCosting(SearchBooleanField value) {
-        this.isTransferPriceCosting = value;
-    }
 
     /**
-     * 获取isVsoeAlloc属性的值。
+     * Sets the isTransferPriceCosting value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchBooleanField }
-     *     
+     * @param isTransferPriceCosting
      */
-    public SearchBooleanField getIsVsoeAlloc() {
+    public void setIsTransferPriceCosting(com.netsuite.webservices.platform.core_2018_2.SearchBooleanField isTransferPriceCosting) {
+        this.isTransferPriceCosting = isTransferPriceCosting;
+    }
+
+
+    /**
+     * Gets the isVsoeAlloc value for this TransactionSearchBasic.
+     * 
+     * @return isVsoeAlloc
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchBooleanField getIsVsoeAlloc() {
         return isVsoeAlloc;
     }
 
-    /**
-     * 设置isVsoeAlloc属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchBooleanField }
-     *     
-     */
-    public void setIsVsoeAlloc(SearchBooleanField value) {
-        this.isVsoeAlloc = value;
-    }
 
     /**
-     * 获取isWip属性的值。
+     * Sets the isVsoeAlloc value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchBooleanField }
-     *     
+     * @param isVsoeAlloc
      */
-    public SearchBooleanField getIsWip() {
+    public void setIsVsoeAlloc(com.netsuite.webservices.platform.core_2018_2.SearchBooleanField isVsoeAlloc) {
+        this.isVsoeAlloc = isVsoeAlloc;
+    }
+
+
+    /**
+     * Gets the isWip value for this TransactionSearchBasic.
+     * 
+     * @return isWip
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchBooleanField getIsWip() {
         return isWip;
     }
 
-    /**
-     * 设置isWip属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchBooleanField }
-     *     
-     */
-    public void setIsWip(SearchBooleanField value) {
-        this.isWip = value;
-    }
 
     /**
-     * 获取item属性的值。
+     * Sets the isWip value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchMultiSelectField }
-     *     
+     * @param isWip
      */
-    public SearchMultiSelectField getItem() {
+    public void setIsWip(com.netsuite.webservices.platform.core_2018_2.SearchBooleanField isWip) {
+        this.isWip = isWip;
+    }
+
+
+    /**
+     * Gets the item value for this TransactionSearchBasic.
+     * 
+     * @return item
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef[] getItem() {
         return item;
     }
 
-    /**
-     * 设置item属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchMultiSelectField }
-     *     
-     */
-    public void setItem(SearchMultiSelectField value) {
-        this.item = value;
-    }
 
     /**
-     * 获取itemFulfillmentChoice属性的值。
+     * Sets the item value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchEnumMultiSelectField }
-     *     
+     * @param item
      */
-    public SearchEnumMultiSelectField getItemFulfillmentChoice() {
+    public void setItem(com.netsuite.webservices.platform.core_2018_2.RecordRef[] item) {
+        this.item = item;
+    }
+
+
+    /**
+     * Gets the itemFulfillmentChoice value for this TransactionSearchBasic.
+     * 
+     * @return itemFulfillmentChoice
+     */
+    public java.lang.String[] getItemFulfillmentChoice() {
         return itemFulfillmentChoice;
     }
 
-    /**
-     * 设置itemFulfillmentChoice属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchEnumMultiSelectField }
-     *     
-     */
-    public void setItemFulfillmentChoice(SearchEnumMultiSelectField value) {
-        this.itemFulfillmentChoice = value;
-    }
 
     /**
-     * 获取itemRevision属性的值。
+     * Sets the itemFulfillmentChoice value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchMultiSelectField }
-     *     
+     * @param itemFulfillmentChoice
      */
-    public SearchMultiSelectField getItemRevision() {
+    public void setItemFulfillmentChoice(java.lang.String[] itemFulfillmentChoice) {
+        this.itemFulfillmentChoice = itemFulfillmentChoice;
+    }
+
+
+    /**
+     * Gets the itemRevision value for this TransactionSearchBasic.
+     * 
+     * @return itemRevision
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef[] getItemRevision() {
         return itemRevision;
     }
 
-    /**
-     * 设置itemRevision属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchMultiSelectField }
-     *     
-     */
-    public void setItemRevision(SearchMultiSelectField value) {
-        this.itemRevision = value;
-    }
 
     /**
-     * 获取itemSubOf属性的值。
+     * Sets the itemRevision value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchMultiSelectField }
-     *     
+     * @param itemRevision
      */
-    public SearchMultiSelectField getItemSubOf() {
+    public void setItemRevision(com.netsuite.webservices.platform.core_2018_2.RecordRef[] itemRevision) {
+        this.itemRevision = itemRevision;
+    }
+
+
+    /**
+     * Gets the itemSubOf value for this TransactionSearchBasic.
+     * 
+     * @return itemSubOf
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef[] getItemSubOf() {
         return itemSubOf;
     }
 
-    /**
-     * 设置itemSubOf属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchMultiSelectField }
-     *     
-     */
-    public void setItemSubOf(SearchMultiSelectField value) {
-        this.itemSubOf = value;
-    }
 
     /**
-     * 获取landedCostPerLine属性的值。
+     * Sets the itemSubOf value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchBooleanField }
-     *     
+     * @param itemSubOf
      */
-    public SearchBooleanField getLandedCostPerLine() {
+    public void setItemSubOf(com.netsuite.webservices.platform.core_2018_2.RecordRef[] itemSubOf) {
+        this.itemSubOf = itemSubOf;
+    }
+
+
+    /**
+     * Gets the landedCostPerLine value for this TransactionSearchBasic.
+     * 
+     * @return landedCostPerLine
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchBooleanField getLandedCostPerLine() {
         return landedCostPerLine;
     }
 
-    /**
-     * 设置landedCostPerLine属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchBooleanField }
-     *     
-     */
-    public void setLandedCostPerLine(SearchBooleanField value) {
-        this.landedCostPerLine = value;
-    }
 
     /**
-     * 获取lastModifiedDate属性的值。
+     * Sets the landedCostPerLine value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchDateField }
-     *     
+     * @param landedCostPerLine
      */
-    public SearchDateField getLastModifiedDate() {
+    public void setLandedCostPerLine(com.netsuite.webservices.platform.core_2018_2.SearchBooleanField landedCostPerLine) {
+        this.landedCostPerLine = landedCostPerLine;
+    }
+
+
+    /**
+     * Gets the lastModifiedDate value for this TransactionSearchBasic.
+     * 
+     * @return lastModifiedDate
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchDateField getLastModifiedDate() {
         return lastModifiedDate;
     }
 
-    /**
-     * 设置lastModifiedDate属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchDateField }
-     *     
-     */
-    public void setLastModifiedDate(SearchDateField value) {
-        this.lastModifiedDate = value;
-    }
 
     /**
-     * 获取leadSource属性的值。
+     * Sets the lastModifiedDate value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchMultiSelectField }
-     *     
+     * @param lastModifiedDate
      */
-    public SearchMultiSelectField getLeadSource() {
+    public void setLastModifiedDate(com.netsuite.webservices.platform.core_2018_2.SearchDateField lastModifiedDate) {
+        this.lastModifiedDate = lastModifiedDate;
+    }
+
+
+    /**
+     * Gets the leadSource value for this TransactionSearchBasic.
+     * 
+     * @return leadSource
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef[] getLeadSource() {
         return leadSource;
     }
 
-    /**
-     * 设置leadSource属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchMultiSelectField }
-     *     
-     */
-    public void setLeadSource(SearchMultiSelectField value) {
-        this.leadSource = value;
-    }
 
     /**
-     * 获取lineUniqueKey属性的值。
+     * Sets the leadSource value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchLongField }
-     *     
+     * @param leadSource
      */
-    public SearchLongField getLineUniqueKey() {
+    public void setLeadSource(com.netsuite.webservices.platform.core_2018_2.RecordRef[] leadSource) {
+        this.leadSource = leadSource;
+    }
+
+
+    /**
+     * Gets the lineUniqueKey value for this TransactionSearchBasic.
+     * 
+     * @return lineUniqueKey
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchLongField getLineUniqueKey() {
         return lineUniqueKey;
     }
 
-    /**
-     * 设置lineUniqueKey属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchLongField }
-     *     
-     */
-    public void setLineUniqueKey(SearchLongField value) {
-        this.lineUniqueKey = value;
-    }
 
     /**
-     * 获取location属性的值。
+     * Sets the lineUniqueKey value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchMultiSelectField }
-     *     
+     * @param lineUniqueKey
      */
-    public SearchMultiSelectField getLocation() {
+    public void setLineUniqueKey(com.netsuite.webservices.platform.core_2018_2.SearchLongField lineUniqueKey) {
+        this.lineUniqueKey = lineUniqueKey;
+    }
+
+
+    /**
+     * Gets the location value for this TransactionSearchBasic.
+     * 
+     * @return location
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef[] getLocation() {
         return location;
     }
 
-    /**
-     * 设置location属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchMultiSelectField }
-     *     
-     */
-    public void setLocation(SearchMultiSelectField value) {
-        this.location = value;
-    }
 
     /**
-     * 获取locationAutoAssigned属性的值。
+     * Sets the location value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchBooleanField }
-     *     
+     * @param location
      */
-    public SearchBooleanField getLocationAutoAssigned() {
+    public void setLocation(com.netsuite.webservices.platform.core_2018_2.RecordRef[] location) {
+        this.location = location;
+    }
+
+
+    /**
+     * Gets the locationAutoAssigned value for this TransactionSearchBasic.
+     * 
+     * @return locationAutoAssigned
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchBooleanField getLocationAutoAssigned() {
         return locationAutoAssigned;
     }
 
-    /**
-     * 设置locationAutoAssigned属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchBooleanField }
-     *     
-     */
-    public void setLocationAutoAssigned(SearchBooleanField value) {
-        this.locationAutoAssigned = value;
-    }
 
     /**
-     * 获取mainLine属性的值。
+     * Sets the locationAutoAssigned value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchBooleanField }
-     *     
+     * @param locationAutoAssigned
      */
-    public SearchBooleanField getMainLine() {
+    public void setLocationAutoAssigned(com.netsuite.webservices.platform.core_2018_2.SearchBooleanField locationAutoAssigned) {
+        this.locationAutoAssigned = locationAutoAssigned;
+    }
+
+
+    /**
+     * Gets the mainLine value for this TransactionSearchBasic.
+     * 
+     * @return mainLine
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchBooleanField getMainLine() {
         return mainLine;
     }
 
-    /**
-     * 设置mainLine属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchBooleanField }
-     *     
-     */
-    public void setMainLine(SearchBooleanField value) {
-        this.mainLine = value;
-    }
 
     /**
-     * 获取mainName属性的值。
+     * Sets the mainLine value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchMultiSelectField }
-     *     
+     * @param mainLine
      */
-    public SearchMultiSelectField getMainName() {
+    public void setMainLine(com.netsuite.webservices.platform.core_2018_2.SearchBooleanField mainLine) {
+        this.mainLine = mainLine;
+    }
+
+
+    /**
+     * Gets the mainName value for this TransactionSearchBasic.
+     * 
+     * @return mainName
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef[] getMainName() {
         return mainName;
     }
 
-    /**
-     * 设置mainName属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchMultiSelectField }
-     *     
-     */
-    public void setMainName(SearchMultiSelectField value) {
-        this.mainName = value;
-    }
 
     /**
-     * 获取manufacturingRouting属性的值。
+     * Sets the mainName value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchMultiSelectField }
-     *     
+     * @param mainName
      */
-    public SearchMultiSelectField getManufacturingRouting() {
+    public void setMainName(com.netsuite.webservices.platform.core_2018_2.RecordRef[] mainName) {
+        this.mainName = mainName;
+    }
+
+
+    /**
+     * Gets the manufacturingRouting value for this TransactionSearchBasic.
+     * 
+     * @return manufacturingRouting
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef[] getManufacturingRouting() {
         return manufacturingRouting;
     }
 
-    /**
-     * 设置manufacturingRouting属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchMultiSelectField }
-     *     
-     */
-    public void setManufacturingRouting(SearchMultiSelectField value) {
-        this.manufacturingRouting = value;
-    }
 
     /**
-     * 获取matchBillToReceipt属性的值。
+     * Sets the manufacturingRouting value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchBooleanField }
-     *     
+     * @param manufacturingRouting
      */
-    public SearchBooleanField getMatchBillToReceipt() {
+    public void setManufacturingRouting(com.netsuite.webservices.platform.core_2018_2.RecordRef[] manufacturingRouting) {
+        this.manufacturingRouting = manufacturingRouting;
+    }
+
+
+    /**
+     * Gets the matchBillToReceipt value for this TransactionSearchBasic.
+     * 
+     * @return matchBillToReceipt
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchBooleanField getMatchBillToReceipt() {
         return matchBillToReceipt;
     }
 
-    /**
-     * 设置matchBillToReceipt属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchBooleanField }
-     *     
-     */
-    public void setMatchBillToReceipt(SearchBooleanField value) {
-        this.matchBillToReceipt = value;
-    }
 
     /**
-     * 获取memo属性的值。
+     * Sets the matchBillToReceipt value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchStringField }
-     *     
+     * @param matchBillToReceipt
      */
-    public SearchStringField getMemo() {
+    public void setMatchBillToReceipt(com.netsuite.webservices.platform.core_2018_2.SearchBooleanField matchBillToReceipt) {
+        this.matchBillToReceipt = matchBillToReceipt;
+    }
+
+
+    /**
+     * Gets the memo value for this TransactionSearchBasic.
+     * 
+     * @return memo
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchStringField getMemo() {
         return memo;
     }
 
-    /**
-     * 设置memo属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchStringField }
-     *     
-     */
-    public void setMemo(SearchStringField value) {
-        this.memo = value;
-    }
 
     /**
-     * 获取memoMain属性的值。
+     * Sets the memo value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchStringField }
-     *     
+     * @param memo
      */
-    public SearchStringField getMemoMain() {
+    public void setMemo(com.netsuite.webservices.platform.core_2018_2.SearchStringField memo) {
+        this.memo = memo;
+    }
+
+
+    /**
+     * Gets the memoMain value for this TransactionSearchBasic.
+     * 
+     * @return memoMain
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchStringField getMemoMain() {
         return memoMain;
     }
 
-    /**
-     * 设置memoMain属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchStringField }
-     *     
-     */
-    public void setMemoMain(SearchStringField value) {
-        this.memoMain = value;
-    }
 
     /**
-     * 获取memorized属性的值。
+     * Sets the memoMain value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchBooleanField }
-     *     
+     * @param memoMain
      */
-    public SearchBooleanField getMemorized() {
+    public void setMemoMain(com.netsuite.webservices.platform.core_2018_2.SearchStringField memoMain) {
+        this.memoMain = memoMain;
+    }
+
+
+    /**
+     * Gets the memorized value for this TransactionSearchBasic.
+     * 
+     * @return memorized
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchBooleanField getMemorized() {
         return memorized;
     }
 
-    /**
-     * 设置memorized属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchBooleanField }
-     *     
-     */
-    public void setMemorized(SearchBooleanField value) {
-        this.memorized = value;
-    }
 
     /**
-     * 获取merchantAccount属性的值。
+     * Sets the memorized value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchStringField }
-     *     
+     * @param memorized
      */
-    public SearchStringField getMerchantAccount() {
+    public void setMemorized(com.netsuite.webservices.platform.core_2018_2.SearchBooleanField memorized) {
+        this.memorized = memorized;
+    }
+
+
+    /**
+     * Gets the merchantAccount value for this TransactionSearchBasic.
+     * 
+     * @return merchantAccount
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchStringField getMerchantAccount() {
         return merchantAccount;
     }
 
-    /**
-     * 设置merchantAccount属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchStringField }
-     *     
-     */
-    public void setMerchantAccount(SearchStringField value) {
-        this.merchantAccount = value;
-    }
 
     /**
-     * 获取message属性的值。
+     * Sets the merchantAccount value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchStringField }
-     *     
+     * @param merchantAccount
      */
-    public SearchStringField getMessage() {
+    public void setMerchantAccount(com.netsuite.webservices.platform.core_2018_2.SearchStringField merchantAccount) {
+        this.merchantAccount = merchantAccount;
+    }
+
+
+    /**
+     * Gets the message value for this TransactionSearchBasic.
+     * 
+     * @return message
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchStringField getMessage() {
         return message;
     }
 
-    /**
-     * 设置message属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchStringField }
-     *     
-     */
-    public void setMessage(SearchStringField value) {
-        this.message = value;
-    }
 
     /**
-     * 获取multiSubsidiary属性的值。
+     * Sets the message value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchBooleanField }
-     *     
+     * @param message
      */
-    public SearchBooleanField getMultiSubsidiary() {
+    public void setMessage(com.netsuite.webservices.platform.core_2018_2.SearchStringField message) {
+        this.message = message;
+    }
+
+
+    /**
+     * Gets the multiSubsidiary value for this TransactionSearchBasic.
+     * 
+     * @return multiSubsidiary
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchBooleanField getMultiSubsidiary() {
         return multiSubsidiary;
     }
 
-    /**
-     * 设置multiSubsidiary属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchBooleanField }
-     *     
-     */
-    public void setMultiSubsidiary(SearchBooleanField value) {
-        this.multiSubsidiary = value;
-    }
 
     /**
-     * 获取nameText属性的值。
+     * Sets the multiSubsidiary value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchStringField }
-     *     
+     * @param multiSubsidiary
      */
-    public SearchStringField getNameText() {
+    public void setMultiSubsidiary(com.netsuite.webservices.platform.core_2018_2.SearchBooleanField multiSubsidiary) {
+        this.multiSubsidiary = multiSubsidiary;
+    }
+
+
+    /**
+     * Gets the nameText value for this TransactionSearchBasic.
+     * 
+     * @return nameText
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchStringField getNameText() {
         return nameText;
     }
 
-    /**
-     * 设置nameText属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchStringField }
-     *     
-     */
-    public void setNameText(SearchStringField value) {
-        this.nameText = value;
-    }
 
     /**
-     * 获取netAmount属性的值。
+     * Sets the nameText value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchDoubleField }
-     *     
+     * @param nameText
      */
-    public SearchDoubleField getNetAmount() {
+    public void setNameText(com.netsuite.webservices.platform.core_2018_2.SearchStringField nameText) {
+        this.nameText = nameText;
+    }
+
+
+    /**
+     * Gets the netAmount value for this TransactionSearchBasic.
+     * 
+     * @return netAmount
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchDoubleField getNetAmount() {
         return netAmount;
     }
 
-    /**
-     * 设置netAmount属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchDoubleField }
-     *     
-     */
-    public void setNetAmount(SearchDoubleField value) {
-        this.netAmount = value;
-    }
 
     /**
-     * 获取nextApprover属性的值。
+     * Sets the netAmount value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchMultiSelectField }
-     *     
+     * @param netAmount
      */
-    public SearchMultiSelectField getNextApprover() {
+    public void setNetAmount(com.netsuite.webservices.platform.core_2018_2.SearchDoubleField netAmount) {
+        this.netAmount = netAmount;
+    }
+
+
+    /**
+     * Gets the nextApprover value for this TransactionSearchBasic.
+     * 
+     * @return nextApprover
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef[] getNextApprover() {
         return nextApprover;
     }
 
-    /**
-     * 设置nextApprover属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchMultiSelectField }
-     *     
-     */
-    public void setNextApprover(SearchMultiSelectField value) {
-        this.nextApprover = value;
-    }
 
     /**
-     * 获取nextBillDate属性的值。
+     * Sets the nextApprover value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchDateField }
-     *     
+     * @param nextApprover
      */
-    public SearchDateField getNextBillDate() {
+    public void setNextApprover(com.netsuite.webservices.platform.core_2018_2.RecordRef[] nextApprover) {
+        this.nextApprover = nextApprover;
+    }
+
+
+    /**
+     * Gets the nextBillDate value for this TransactionSearchBasic.
+     * 
+     * @return nextBillDate
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchDateField getNextBillDate() {
         return nextBillDate;
     }
 
-    /**
-     * 设置nextBillDate属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchDateField }
-     *     
-     */
-    public void setNextBillDate(SearchDateField value) {
-        this.nextBillDate = value;
-    }
 
     /**
-     * 获取noAutoAssignLocation属性的值。
+     * Sets the nextBillDate value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchBooleanField }
-     *     
+     * @param nextBillDate
      */
-    public SearchBooleanField getNoAutoAssignLocation() {
+    public void setNextBillDate(com.netsuite.webservices.platform.core_2018_2.SearchDateField nextBillDate) {
+        this.nextBillDate = nextBillDate;
+    }
+
+
+    /**
+     * Gets the noAutoAssignLocation value for this TransactionSearchBasic.
+     * 
+     * @return noAutoAssignLocation
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchBooleanField getNoAutoAssignLocation() {
         return noAutoAssignLocation;
     }
 
-    /**
-     * 设置noAutoAssignLocation属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchBooleanField }
-     *     
-     */
-    public void setNoAutoAssignLocation(SearchBooleanField value) {
-        this.noAutoAssignLocation = value;
-    }
 
     /**
-     * 获取nonReimbursable属性的值。
+     * Sets the noAutoAssignLocation value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchBooleanField }
-     *     
+     * @param noAutoAssignLocation
      */
-    public SearchBooleanField getNonReimbursable() {
+    public void setNoAutoAssignLocation(com.netsuite.webservices.platform.core_2018_2.SearchBooleanField noAutoAssignLocation) {
+        this.noAutoAssignLocation = noAutoAssignLocation;
+    }
+
+
+    /**
+     * Gets the nonReimbursable value for this TransactionSearchBasic.
+     * 
+     * @return nonReimbursable
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchBooleanField getNonReimbursable() {
         return nonReimbursable;
     }
 
-    /**
-     * 设置nonReimbursable属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchBooleanField }
-     *     
-     */
-    public void setNonReimbursable(SearchBooleanField value) {
-        this.nonReimbursable = value;
-    }
 
     /**
-     * 获取number属性的值。
+     * Sets the nonReimbursable value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchLongField }
-     *     
+     * @param nonReimbursable
      */
-    public SearchLongField getNumber() {
+    public void setNonReimbursable(com.netsuite.webservices.platform.core_2018_2.SearchBooleanField nonReimbursable) {
+        this.nonReimbursable = nonReimbursable;
+    }
+
+
+    /**
+     * Gets the number value for this TransactionSearchBasic.
+     * 
+     * @return number
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchLongField getNumber() {
         return number;
     }
 
-    /**
-     * 设置number属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchLongField }
-     *     
-     */
-    public void setNumber(SearchLongField value) {
-        this.number = value;
-    }
 
     /**
-     * 获取oneTimeTotal属性的值。
+     * Sets the number value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchDoubleField }
-     *     
+     * @param number
      */
-    public SearchDoubleField getOneTimeTotal() {
+    public void setNumber(com.netsuite.webservices.platform.core_2018_2.SearchLongField number) {
+        this.number = number;
+    }
+
+
+    /**
+     * Gets the oneTimeTotal value for this TransactionSearchBasic.
+     * 
+     * @return oneTimeTotal
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchDoubleField getOneTimeTotal() {
         return oneTimeTotal;
     }
 
-    /**
-     * 设置oneTimeTotal属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchDoubleField }
-     *     
-     */
-    public void setOneTimeTotal(SearchDoubleField value) {
-        this.oneTimeTotal = value;
-    }
 
     /**
-     * 获取opportunity属性的值。
+     * Sets the oneTimeTotal value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchMultiSelectField }
-     *     
+     * @param oneTimeTotal
      */
-    public SearchMultiSelectField getOpportunity() {
+    public void setOneTimeTotal(com.netsuite.webservices.platform.core_2018_2.SearchDoubleField oneTimeTotal) {
+        this.oneTimeTotal = oneTimeTotal;
+    }
+
+
+    /**
+     * Gets the opportunity value for this TransactionSearchBasic.
+     * 
+     * @return opportunity
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef[] getOpportunity() {
         return opportunity;
     }
 
-    /**
-     * 设置opportunity属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchMultiSelectField }
-     *     
-     */
-    public void setOpportunity(SearchMultiSelectField value) {
-        this.opportunity = value;
-    }
 
     /**
-     * 获取orderPriority属性的值。
+     * Sets the opportunity value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchDoubleField }
-     *     
+     * @param opportunity
      */
-    public SearchDoubleField getOrderPriority() {
+    public void setOpportunity(com.netsuite.webservices.platform.core_2018_2.RecordRef[] opportunity) {
+        this.opportunity = opportunity;
+    }
+
+
+    /**
+     * Gets the orderPriority value for this TransactionSearchBasic.
+     * 
+     * @return orderPriority
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchDoubleField getOrderPriority() {
         return orderPriority;
     }
 
-    /**
-     * 设置orderPriority属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchDoubleField }
-     *     
-     */
-    public void setOrderPriority(SearchDoubleField value) {
-        this.orderPriority = value;
-    }
 
     /**
-     * 获取otherRefNum属性的值。
+     * Sets the orderPriority value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchTextNumberField }
-     *     
+     * @param orderPriority
      */
-    public SearchTextNumberField getOtherRefNum() {
+    public void setOrderPriority(com.netsuite.webservices.platform.core_2018_2.SearchDoubleField orderPriority) {
+        this.orderPriority = orderPriority;
+    }
+
+
+    /**
+     * Gets the otherRefNum value for this TransactionSearchBasic.
+     * 
+     * @return otherRefNum
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchTextNumberField getOtherRefNum() {
         return otherRefNum;
     }
 
-    /**
-     * 设置otherRefNum属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchTextNumberField }
-     *     
-     */
-    public void setOtherRefNum(SearchTextNumberField value) {
-        this.otherRefNum = value;
-    }
 
     /**
-     * 获取otherRefNumNonDeposit属性的值。
+     * Sets the otherRefNum value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchTextNumberField }
-     *     
+     * @param otherRefNum
      */
-    public SearchTextNumberField getOtherRefNumNonDeposit() {
+    public void setOtherRefNum(com.netsuite.webservices.platform.core_2018_2.SearchTextNumberField otherRefNum) {
+        this.otherRefNum = otherRefNum;
+    }
+
+
+    /**
+     * Gets the otherRefNumNonDeposit value for this TransactionSearchBasic.
+     * 
+     * @return otherRefNumNonDeposit
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchTextNumberField getOtherRefNumNonDeposit() {
         return otherRefNumNonDeposit;
     }
 
-    /**
-     * 设置otherRefNumNonDeposit属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchTextNumberField }
-     *     
-     */
-    public void setOtherRefNumNonDeposit(SearchTextNumberField value) {
-        this.otherRefNumNonDeposit = value;
-    }
 
     /**
-     * 获取overheadParentItem属性的值。
+     * Sets the otherRefNumNonDeposit value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchMultiSelectField }
-     *     
+     * @param otherRefNumNonDeposit
      */
-    public SearchMultiSelectField getOverheadParentItem() {
+    public void setOtherRefNumNonDeposit(com.netsuite.webservices.platform.core_2018_2.SearchTextNumberField otherRefNumNonDeposit) {
+        this.otherRefNumNonDeposit = otherRefNumNonDeposit;
+    }
+
+
+    /**
+     * Gets the overheadParentItem value for this TransactionSearchBasic.
+     * 
+     * @return overheadParentItem
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef[] getOverheadParentItem() {
         return overheadParentItem;
     }
 
-    /**
-     * 设置overheadParentItem属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchMultiSelectField }
-     *     
-     */
-    public void setOverheadParentItem(SearchMultiSelectField value) {
-        this.overheadParentItem = value;
-    }
 
     /**
-     * 获取packageCount属性的值。
+     * Sets the overheadParentItem value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchLongField }
-     *     
+     * @param overheadParentItem
      */
-    public SearchLongField getPackageCount() {
+    public void setOverheadParentItem(com.netsuite.webservices.platform.core_2018_2.RecordRef[] overheadParentItem) {
+        this.overheadParentItem = overheadParentItem;
+    }
+
+
+    /**
+     * Gets the packageCount value for this TransactionSearchBasic.
+     * 
+     * @return packageCount
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchLongField getPackageCount() {
         return packageCount;
     }
 
-    /**
-     * 设置packageCount属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchLongField }
-     *     
-     */
-    public void setPackageCount(SearchLongField value) {
-        this.packageCount = value;
-    }
 
     /**
-     * 获取paidTransaction属性的值。
+     * Sets the packageCount value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchMultiSelectField }
-     *     
+     * @param packageCount
      */
-    public SearchMultiSelectField getPaidTransaction() {
+    public void setPackageCount(com.netsuite.webservices.platform.core_2018_2.SearchLongField packageCount) {
+        this.packageCount = packageCount;
+    }
+
+
+    /**
+     * Gets the paidTransaction value for this TransactionSearchBasic.
+     * 
+     * @return paidTransaction
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef[] getPaidTransaction() {
         return paidTransaction;
     }
 
-    /**
-     * 设置paidTransaction属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchMultiSelectField }
-     *     
-     */
-    public void setPaidTransaction(SearchMultiSelectField value) {
-        this.paidTransaction = value;
-    }
 
     /**
-     * 获取parent属性的值。
+     * Sets the paidTransaction value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchLongField }
-     *     
+     * @param paidTransaction
      */
-    public SearchLongField getParent() {
+    public void setPaidTransaction(com.netsuite.webservices.platform.core_2018_2.RecordRef[] paidTransaction) {
+        this.paidTransaction = paidTransaction;
+    }
+
+
+    /**
+     * Gets the parent value for this TransactionSearchBasic.
+     * 
+     * @return parent
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchLongField getParent() {
         return parent;
     }
 
-    /**
-     * 设置parent属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchLongField }
-     *     
-     */
-    public void setParent(SearchLongField value) {
-        this.parent = value;
-    }
 
     /**
-     * 获取partner属性的值。
+     * Sets the parent value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchMultiSelectField }
-     *     
+     * @param parent
      */
-    public SearchMultiSelectField getPartner() {
+    public void setParent(com.netsuite.webservices.platform.core_2018_2.SearchLongField parent) {
+        this.parent = parent;
+    }
+
+
+    /**
+     * Gets the partner value for this TransactionSearchBasic.
+     * 
+     * @return partner
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef[] getPartner() {
         return partner;
     }
 
-    /**
-     * 设置partner属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchMultiSelectField }
-     *     
-     */
-    public void setPartner(SearchMultiSelectField value) {
-        this.partner = value;
-    }
 
     /**
-     * 获取partnerContribution属性的值。
+     * Sets the partner value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchLongField }
-     *     
+     * @param partner
      */
-    public SearchLongField getPartnerContribution() {
+    public void setPartner(com.netsuite.webservices.platform.core_2018_2.RecordRef[] partner) {
+        this.partner = partner;
+    }
+
+
+    /**
+     * Gets the partnerContribution value for this TransactionSearchBasic.
+     * 
+     * @return partnerContribution
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchLongField getPartnerContribution() {
         return partnerContribution;
     }
 
-    /**
-     * 设置partnerContribution属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchLongField }
-     *     
-     */
-    public void setPartnerContribution(SearchLongField value) {
-        this.partnerContribution = value;
-    }
 
     /**
-     * 获取partnerRole属性的值。
+     * Sets the partnerContribution value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchMultiSelectField }
-     *     
+     * @param partnerContribution
      */
-    public SearchMultiSelectField getPartnerRole() {
+    public void setPartnerContribution(com.netsuite.webservices.platform.core_2018_2.SearchLongField partnerContribution) {
+        this.partnerContribution = partnerContribution;
+    }
+
+
+    /**
+     * Gets the partnerRole value for this TransactionSearchBasic.
+     * 
+     * @return partnerRole
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef[] getPartnerRole() {
         return partnerRole;
     }
 
-    /**
-     * 设置partnerRole属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchMultiSelectField }
-     *     
-     */
-    public void setPartnerRole(SearchMultiSelectField value) {
-        this.partnerRole = value;
-    }
 
     /**
-     * 获取partnerTeamMember属性的值。
+     * Sets the partnerRole value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchMultiSelectField }
-     *     
+     * @param partnerRole
      */
-    public SearchMultiSelectField getPartnerTeamMember() {
+    public void setPartnerRole(com.netsuite.webservices.platform.core_2018_2.RecordRef[] partnerRole) {
+        this.partnerRole = partnerRole;
+    }
+
+
+    /**
+     * Gets the partnerTeamMember value for this TransactionSearchBasic.
+     * 
+     * @return partnerTeamMember
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef[] getPartnerTeamMember() {
         return partnerTeamMember;
     }
 
-    /**
-     * 设置partnerTeamMember属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchMultiSelectField }
-     *     
-     */
-    public void setPartnerTeamMember(SearchMultiSelectField value) {
-        this.partnerTeamMember = value;
-    }
 
     /**
-     * 获取payingTransaction属性的值。
+     * Sets the partnerTeamMember value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchMultiSelectField }
-     *     
+     * @param partnerTeamMember
      */
-    public SearchMultiSelectField getPayingTransaction() {
+    public void setPartnerTeamMember(com.netsuite.webservices.platform.core_2018_2.RecordRef[] partnerTeamMember) {
+        this.partnerTeamMember = partnerTeamMember;
+    }
+
+
+    /**
+     * Gets the payingTransaction value for this TransactionSearchBasic.
+     * 
+     * @return payingTransaction
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef[] getPayingTransaction() {
         return payingTransaction;
     }
 
-    /**
-     * 设置payingTransaction属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchMultiSelectField }
-     *     
-     */
-    public void setPayingTransaction(SearchMultiSelectField value) {
-        this.payingTransaction = value;
-    }
 
     /**
-     * 获取paymentApproved属性的值。
+     * Sets the payingTransaction value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchBooleanField }
-     *     
+     * @param payingTransaction
      */
-    public SearchBooleanField getPaymentApproved() {
+    public void setPayingTransaction(com.netsuite.webservices.platform.core_2018_2.RecordRef[] payingTransaction) {
+        this.payingTransaction = payingTransaction;
+    }
+
+
+    /**
+     * Gets the paymentApproved value for this TransactionSearchBasic.
+     * 
+     * @return paymentApproved
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchBooleanField getPaymentApproved() {
         return paymentApproved;
     }
 
-    /**
-     * 设置paymentApproved属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchBooleanField }
-     *     
-     */
-    public void setPaymentApproved(SearchBooleanField value) {
-        this.paymentApproved = value;
-    }
 
     /**
-     * 获取paymentEventDate属性的值。
+     * Sets the paymentApproved value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchDateField }
-     *     
+     * @param paymentApproved
      */
-    public SearchDateField getPaymentEventDate() {
+    public void setPaymentApproved(com.netsuite.webservices.platform.core_2018_2.SearchBooleanField paymentApproved) {
+        this.paymentApproved = paymentApproved;
+    }
+
+
+    /**
+     * Gets the paymentEventDate value for this TransactionSearchBasic.
+     * 
+     * @return paymentEventDate
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchDateField getPaymentEventDate() {
         return paymentEventDate;
     }
 
-    /**
-     * 设置paymentEventDate属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchDateField }
-     *     
-     */
-    public void setPaymentEventDate(SearchDateField value) {
-        this.paymentEventDate = value;
-    }
 
     /**
-     * 获取paymentEventHoldReason属性的值。
+     * Sets the paymentEventDate value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchEnumMultiSelectField }
-     *     
+     * @param paymentEventDate
      */
-    public SearchEnumMultiSelectField getPaymentEventHoldReason() {
+    public void setPaymentEventDate(com.netsuite.webservices.platform.core_2018_2.SearchDateField paymentEventDate) {
+        this.paymentEventDate = paymentEventDate;
+    }
+
+
+    /**
+     * Gets the paymentEventHoldReason value for this TransactionSearchBasic.
+     * 
+     * @return paymentEventHoldReason
+     */
+    public java.lang.String[] getPaymentEventHoldReason() {
         return paymentEventHoldReason;
     }
 
-    /**
-     * 设置paymentEventHoldReason属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchEnumMultiSelectField }
-     *     
-     */
-    public void setPaymentEventHoldReason(SearchEnumMultiSelectField value) {
-        this.paymentEventHoldReason = value;
-    }
 
     /**
-     * 获取paymentEventPurchaseCardUsed属性的值。
+     * Sets the paymentEventHoldReason value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchBooleanField }
-     *     
+     * @param paymentEventHoldReason
      */
-    public SearchBooleanField getPaymentEventPurchaseCardUsed() {
+    public void setPaymentEventHoldReason(java.lang.String[] paymentEventHoldReason) {
+        this.paymentEventHoldReason = paymentEventHoldReason;
+    }
+
+
+    /**
+     * Gets the paymentEventPurchaseCardUsed value for this TransactionSearchBasic.
+     * 
+     * @return paymentEventPurchaseCardUsed
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchBooleanField getPaymentEventPurchaseCardUsed() {
         return paymentEventPurchaseCardUsed;
     }
 
-    /**
-     * 设置paymentEventPurchaseCardUsed属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchBooleanField }
-     *     
-     */
-    public void setPaymentEventPurchaseCardUsed(SearchBooleanField value) {
-        this.paymentEventPurchaseCardUsed = value;
-    }
 
     /**
-     * 获取paymentEventPurchaseDataSent属性的值。
+     * Sets the paymentEventPurchaseCardUsed value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchBooleanField }
-     *     
+     * @param paymentEventPurchaseCardUsed
      */
-    public SearchBooleanField getPaymentEventPurchaseDataSent() {
+    public void setPaymentEventPurchaseCardUsed(com.netsuite.webservices.platform.core_2018_2.SearchBooleanField paymentEventPurchaseCardUsed) {
+        this.paymentEventPurchaseCardUsed = paymentEventPurchaseCardUsed;
+    }
+
+
+    /**
+     * Gets the paymentEventPurchaseDataSent value for this TransactionSearchBasic.
+     * 
+     * @return paymentEventPurchaseDataSent
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchBooleanField getPaymentEventPurchaseDataSent() {
         return paymentEventPurchaseDataSent;
     }
 
-    /**
-     * 设置paymentEventPurchaseDataSent属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchBooleanField }
-     *     
-     */
-    public void setPaymentEventPurchaseDataSent(SearchBooleanField value) {
-        this.paymentEventPurchaseDataSent = value;
-    }
 
     /**
-     * 获取paymentEventResult属性的值。
+     * Sets the paymentEventPurchaseDataSent value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchEnumMultiSelectField }
-     *     
+     * @param paymentEventPurchaseDataSent
      */
-    public SearchEnumMultiSelectField getPaymentEventResult() {
+    public void setPaymentEventPurchaseDataSent(com.netsuite.webservices.platform.core_2018_2.SearchBooleanField paymentEventPurchaseDataSent) {
+        this.paymentEventPurchaseDataSent = paymentEventPurchaseDataSent;
+    }
+
+
+    /**
+     * Gets the paymentEventResult value for this TransactionSearchBasic.
+     * 
+     * @return paymentEventResult
+     */
+    public java.lang.String[] getPaymentEventResult() {
         return paymentEventResult;
     }
 
-    /**
-     * 设置paymentEventResult属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchEnumMultiSelectField }
-     *     
-     */
-    public void setPaymentEventResult(SearchEnumMultiSelectField value) {
-        this.paymentEventResult = value;
-    }
 
     /**
-     * 获取paymentEventType属性的值。
+     * Sets the paymentEventResult value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchEnumMultiSelectField }
-     *     
+     * @param paymentEventResult
      */
-    public SearchEnumMultiSelectField getPaymentEventType() {
+    public void setPaymentEventResult(java.lang.String[] paymentEventResult) {
+        this.paymentEventResult = paymentEventResult;
+    }
+
+
+    /**
+     * Gets the paymentEventType value for this TransactionSearchBasic.
+     * 
+     * @return paymentEventType
+     */
+    public java.lang.String[] getPaymentEventType() {
         return paymentEventType;
     }
 
-    /**
-     * 设置paymentEventType属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchEnumMultiSelectField }
-     *     
-     */
-    public void setPaymentEventType(SearchEnumMultiSelectField value) {
-        this.paymentEventType = value;
-    }
 
     /**
-     * 获取paymentHold属性的值。
+     * Sets the paymentEventType value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchBooleanField }
-     *     
+     * @param paymentEventType
      */
-    public SearchBooleanField getPaymentHold() {
+    public void setPaymentEventType(java.lang.String[] paymentEventType) {
+        this.paymentEventType = paymentEventType;
+    }
+
+
+    /**
+     * Gets the paymentHold value for this TransactionSearchBasic.
+     * 
+     * @return paymentHold
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchBooleanField getPaymentHold() {
         return paymentHold;
     }
 
-    /**
-     * 设置paymentHold属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchBooleanField }
-     *     
-     */
-    public void setPaymentHold(SearchBooleanField value) {
-        this.paymentHold = value;
-    }
 
     /**
-     * 获取paymentMethod属性的值。
+     * Sets the paymentHold value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchMultiSelectField }
-     *     
+     * @param paymentHold
      */
-    public SearchMultiSelectField getPaymentMethod() {
+    public void setPaymentHold(com.netsuite.webservices.platform.core_2018_2.SearchBooleanField paymentHold) {
+        this.paymentHold = paymentHold;
+    }
+
+
+    /**
+     * Gets the paymentMethod value for this TransactionSearchBasic.
+     * 
+     * @return paymentMethod
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef[] getPaymentMethod() {
         return paymentMethod;
     }
 
-    /**
-     * 设置paymentMethod属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchMultiSelectField }
-     *     
-     */
-    public void setPaymentMethod(SearchMultiSelectField value) {
-        this.paymentMethod = value;
-    }
 
     /**
-     * 获取payPalPending属性的值。
+     * Sets the paymentMethod value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchBooleanField }
-     *     
+     * @param paymentMethod
      */
-    public SearchBooleanField getPayPalPending() {
+    public void setPaymentMethod(com.netsuite.webservices.platform.core_2018_2.RecordRef[] paymentMethod) {
+        this.paymentMethod = paymentMethod;
+    }
+
+
+    /**
+     * Gets the payPalPending value for this TransactionSearchBasic.
+     * 
+     * @return payPalPending
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchBooleanField getPayPalPending() {
         return payPalPending;
     }
 
-    /**
-     * 设置payPalPending属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchBooleanField }
-     *     
-     */
-    public void setPayPalPending(SearchBooleanField value) {
-        this.payPalPending = value;
-    }
 
     /**
-     * 获取payPalStatus属性的值。
+     * Sets the payPalPending value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchStringField }
-     *     
+     * @param payPalPending
      */
-    public SearchStringField getPayPalStatus() {
+    public void setPayPalPending(com.netsuite.webservices.platform.core_2018_2.SearchBooleanField payPalPending) {
+        this.payPalPending = payPalPending;
+    }
+
+
+    /**
+     * Gets the payPalStatus value for this TransactionSearchBasic.
+     * 
+     * @return payPalStatus
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchStringField getPayPalStatus() {
         return payPalStatus;
     }
 
-    /**
-     * 设置payPalStatus属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchStringField }
-     *     
-     */
-    public void setPayPalStatus(SearchStringField value) {
-        this.payPalStatus = value;
-    }
 
     /**
-     * 获取payPalTranId属性的值。
+     * Sets the payPalStatus value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchStringField }
-     *     
+     * @param payPalStatus
      */
-    public SearchStringField getPayPalTranId() {
+    public void setPayPalStatus(com.netsuite.webservices.platform.core_2018_2.SearchStringField payPalStatus) {
+        this.payPalStatus = payPalStatus;
+    }
+
+
+    /**
+     * Gets the payPalTranId value for this TransactionSearchBasic.
+     * 
+     * @return payPalTranId
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchStringField getPayPalTranId() {
         return payPalTranId;
     }
 
-    /**
-     * 设置payPalTranId属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchStringField }
-     *     
-     */
-    public void setPayPalTranId(SearchStringField value) {
-        this.payPalTranId = value;
-    }
 
     /**
-     * 获取pnRefNum属性的值。
+     * Sets the payPalTranId value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchStringField }
-     *     
+     * @param payPalTranId
      */
-    public SearchStringField getPnRefNum() {
+    public void setPayPalTranId(com.netsuite.webservices.platform.core_2018_2.SearchStringField payPalTranId) {
+        this.payPalTranId = payPalTranId;
+    }
+
+
+    /**
+     * Gets the pnRefNum value for this TransactionSearchBasic.
+     * 
+     * @return pnRefNum
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchStringField getPnRefNum() {
         return pnRefNum;
     }
 
-    /**
-     * 设置pnRefNum属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchStringField }
-     *     
-     */
-    public void setPnRefNum(SearchStringField value) {
-        this.pnRefNum = value;
-    }
 
     /**
-     * 获取poAsText属性的值。
+     * Sets the pnRefNum value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchStringField }
-     *     
+     * @param pnRefNum
      */
-    public SearchStringField getPoAsText() {
+    public void setPnRefNum(com.netsuite.webservices.platform.core_2018_2.SearchStringField pnRefNum) {
+        this.pnRefNum = pnRefNum;
+    }
+
+
+    /**
+     * Gets the poAsText value for this TransactionSearchBasic.
+     * 
+     * @return poAsText
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchStringField getPoAsText() {
         return poAsText;
     }
 
-    /**
-     * 设置poAsText属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchStringField }
-     *     
-     */
-    public void setPoAsText(SearchStringField value) {
-        this.poAsText = value;
-    }
 
     /**
-     * 获取posting属性的值。
+     * Sets the poAsText value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchBooleanField }
-     *     
+     * @param poAsText
      */
-    public SearchBooleanField getPosting() {
+    public void setPoAsText(com.netsuite.webservices.platform.core_2018_2.SearchStringField poAsText) {
+        this.poAsText = poAsText;
+    }
+
+
+    /**
+     * Gets the posting value for this TransactionSearchBasic.
+     * 
+     * @return posting
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchBooleanField getPosting() {
         return posting;
     }
 
-    /**
-     * 设置posting属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchBooleanField }
-     *     
-     */
-    public void setPosting(SearchBooleanField value) {
-        this.posting = value;
-    }
 
     /**
-     * 获取postingPeriod属性的值。
+     * Sets the posting value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param posting
      */
-    public RecordRef getPostingPeriod() {
+    public void setPosting(com.netsuite.webservices.platform.core_2018_2.SearchBooleanField posting) {
+        this.posting = posting;
+    }
+
+
+    /**
+     * Gets the postingPeriod value for this TransactionSearchBasic.
+     * 
+     * @return postingPeriod
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getPostingPeriod() {
         return postingPeriod;
     }
 
-    /**
-     * 设置postingPeriod属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setPostingPeriod(RecordRef value) {
-        this.postingPeriod = value;
-    }
 
     /**
-     * 获取postingPeriodRelative属性的值。
+     * Sets the postingPeriod value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link PostingPeriodDate }
-     *     
+     * @param postingPeriod
      */
-    public PostingPeriodDate getPostingPeriodRelative() {
+    public void setPostingPeriod(com.netsuite.webservices.platform.core_2018_2.RecordRef postingPeriod) {
+        this.postingPeriod = postingPeriod;
+    }
+
+
+    /**
+     * Gets the postingPeriodRelative value for this TransactionSearchBasic.
+     * 
+     * @return postingPeriodRelative
+     */
+    public com.netsuite.webservices.platform.common_2018_2.types.PostingPeriodDate getPostingPeriodRelative() {
         return postingPeriodRelative;
     }
 
-    /**
-     * 设置postingPeriodRelative属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link PostingPeriodDate }
-     *     
-     */
-    public void setPostingPeriodRelative(PostingPeriodDate value) {
-        this.postingPeriodRelative = value;
-    }
 
     /**
-     * 获取priceLevel属性的值。
+     * Sets the postingPeriodRelative value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchMultiSelectField }
-     *     
+     * @param postingPeriodRelative
      */
-    public SearchMultiSelectField getPriceLevel() {
+    public void setPostingPeriodRelative(com.netsuite.webservices.platform.common_2018_2.types.PostingPeriodDate postingPeriodRelative) {
+        this.postingPeriodRelative = postingPeriodRelative;
+    }
+
+
+    /**
+     * Gets the priceLevel value for this TransactionSearchBasic.
+     * 
+     * @return priceLevel
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef[] getPriceLevel() {
         return priceLevel;
     }
 
-    /**
-     * 设置priceLevel属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchMultiSelectField }
-     *     
-     */
-    public void setPriceLevel(SearchMultiSelectField value) {
-        this.priceLevel = value;
-    }
 
     /**
-     * 获取printedPickingTicket属性的值。
+     * Sets the priceLevel value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchBooleanField }
-     *     
+     * @param priceLevel
      */
-    public SearchBooleanField getPrintedPickingTicket() {
+    public void setPriceLevel(com.netsuite.webservices.platform.core_2018_2.RecordRef[] priceLevel) {
+        this.priceLevel = priceLevel;
+    }
+
+
+    /**
+     * Gets the printedPickingTicket value for this TransactionSearchBasic.
+     * 
+     * @return printedPickingTicket
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchBooleanField getPrintedPickingTicket() {
         return printedPickingTicket;
     }
 
-    /**
-     * 设置printedPickingTicket属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchBooleanField }
-     *     
-     */
-    public void setPrintedPickingTicket(SearchBooleanField value) {
-        this.printedPickingTicket = value;
-    }
 
     /**
-     * 获取probability属性的值。
+     * Sets the printedPickingTicket value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchLongField }
-     *     
+     * @param printedPickingTicket
      */
-    public SearchLongField getProbability() {
+    public void setPrintedPickingTicket(com.netsuite.webservices.platform.core_2018_2.SearchBooleanField printedPickingTicket) {
+        this.printedPickingTicket = printedPickingTicket;
+    }
+
+
+    /**
+     * Gets the probability value for this TransactionSearchBasic.
+     * 
+     * @return probability
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchLongField getProbability() {
         return probability;
     }
 
-    /**
-     * 设置probability属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchLongField }
-     *     
-     */
-    public void setProbability(SearchLongField value) {
-        this.probability = value;
-    }
 
     /**
-     * 获取projectedAmount属性的值。
+     * Sets the probability value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchDoubleField }
-     *     
+     * @param probability
      */
-    public SearchDoubleField getProjectedAmount() {
+    public void setProbability(com.netsuite.webservices.platform.core_2018_2.SearchLongField probability) {
+        this.probability = probability;
+    }
+
+
+    /**
+     * Gets the projectedAmount value for this TransactionSearchBasic.
+     * 
+     * @return projectedAmount
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchDoubleField getProjectedAmount() {
         return projectedAmount;
     }
 
-    /**
-     * 设置projectedAmount属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchDoubleField }
-     *     
-     */
-    public void setProjectedAmount(SearchDoubleField value) {
-        this.projectedAmount = value;
-    }
 
     /**
-     * 获取projectTask属性的值。
+     * Sets the projectedAmount value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchMultiSelectField }
-     *     
+     * @param projectedAmount
      */
-    public SearchMultiSelectField getProjectTask() {
+    public void setProjectedAmount(com.netsuite.webservices.platform.core_2018_2.SearchDoubleField projectedAmount) {
+        this.projectedAmount = projectedAmount;
+    }
+
+
+    /**
+     * Gets the projectTask value for this TransactionSearchBasic.
+     * 
+     * @return projectTask
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef[] getProjectTask() {
         return projectTask;
     }
 
-    /**
-     * 设置projectTask属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchMultiSelectField }
-     *     
-     */
-    public void setProjectTask(SearchMultiSelectField value) {
-        this.projectTask = value;
-    }
 
     /**
-     * 获取promoCode属性的值。
+     * Sets the projectTask value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchMultiSelectField }
-     *     
+     * @param projectTask
      */
-    public SearchMultiSelectField getPromoCode() {
+    public void setProjectTask(com.netsuite.webservices.platform.core_2018_2.RecordRef[] projectTask) {
+        this.projectTask = projectTask;
+    }
+
+
+    /**
+     * Gets the promoCode value for this TransactionSearchBasic.
+     * 
+     * @return promoCode
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef[] getPromoCode() {
         return promoCode;
     }
 
-    /**
-     * 设置promoCode属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchMultiSelectField }
-     *     
-     */
-    public void setPromoCode(SearchMultiSelectField value) {
-        this.promoCode = value;
-    }
 
     /**
-     * 获取purchaseOrder属性的值。
+     * Sets the promoCode value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchMultiSelectField }
-     *     
+     * @param promoCode
      */
-    public SearchMultiSelectField getPurchaseOrder() {
+    public void setPromoCode(com.netsuite.webservices.platform.core_2018_2.RecordRef[] promoCode) {
+        this.promoCode = promoCode;
+    }
+
+
+    /**
+     * Gets the purchaseOrder value for this TransactionSearchBasic.
+     * 
+     * @return purchaseOrder
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef[] getPurchaseOrder() {
         return purchaseOrder;
     }
 
-    /**
-     * 设置purchaseOrder属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchMultiSelectField }
-     *     
-     */
-    public void setPurchaseOrder(SearchMultiSelectField value) {
-        this.purchaseOrder = value;
-    }
 
     /**
-     * 获取quantity属性的值。
+     * Sets the purchaseOrder value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchDoubleField }
-     *     
+     * @param purchaseOrder
      */
-    public SearchDoubleField getQuantity() {
+    public void setPurchaseOrder(com.netsuite.webservices.platform.core_2018_2.RecordRef[] purchaseOrder) {
+        this.purchaseOrder = purchaseOrder;
+    }
+
+
+    /**
+     * Gets the quantity value for this TransactionSearchBasic.
+     * 
+     * @return quantity
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchDoubleField getQuantity() {
         return quantity;
     }
 
-    /**
-     * 设置quantity属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchDoubleField }
-     *     
-     */
-    public void setQuantity(SearchDoubleField value) {
-        this.quantity = value;
-    }
 
     /**
-     * 获取quantityBilled属性的值。
+     * Sets the quantity value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchDoubleField }
-     *     
+     * @param quantity
      */
-    public SearchDoubleField getQuantityBilled() {
+    public void setQuantity(com.netsuite.webservices.platform.core_2018_2.SearchDoubleField quantity) {
+        this.quantity = quantity;
+    }
+
+
+    /**
+     * Gets the quantityBilled value for this TransactionSearchBasic.
+     * 
+     * @return quantityBilled
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchDoubleField getQuantityBilled() {
         return quantityBilled;
     }
 
-    /**
-     * 设置quantityBilled属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchDoubleField }
-     *     
-     */
-    public void setQuantityBilled(SearchDoubleField value) {
-        this.quantityBilled = value;
-    }
 
     /**
-     * 获取quantityCommitted属性的值。
+     * Sets the quantityBilled value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchDoubleField }
-     *     
+     * @param quantityBilled
      */
-    public SearchDoubleField getQuantityCommitted() {
+    public void setQuantityBilled(com.netsuite.webservices.platform.core_2018_2.SearchDoubleField quantityBilled) {
+        this.quantityBilled = quantityBilled;
+    }
+
+
+    /**
+     * Gets the quantityCommitted value for this TransactionSearchBasic.
+     * 
+     * @return quantityCommitted
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchDoubleField getQuantityCommitted() {
         return quantityCommitted;
     }
 
-    /**
-     * 设置quantityCommitted属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchDoubleField }
-     *     
-     */
-    public void setQuantityCommitted(SearchDoubleField value) {
-        this.quantityCommitted = value;
-    }
 
     /**
-     * 获取quantityPacked属性的值。
+     * Sets the quantityCommitted value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchDoubleField }
-     *     
+     * @param quantityCommitted
      */
-    public SearchDoubleField getQuantityPacked() {
+    public void setQuantityCommitted(com.netsuite.webservices.platform.core_2018_2.SearchDoubleField quantityCommitted) {
+        this.quantityCommitted = quantityCommitted;
+    }
+
+
+    /**
+     * Gets the quantityPacked value for this TransactionSearchBasic.
+     * 
+     * @return quantityPacked
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchDoubleField getQuantityPacked() {
         return quantityPacked;
     }
 
-    /**
-     * 设置quantityPacked属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchDoubleField }
-     *     
-     */
-    public void setQuantityPacked(SearchDoubleField value) {
-        this.quantityPacked = value;
-    }
 
     /**
-     * 获取quantityPicked属性的值。
+     * Sets the quantityPacked value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchDoubleField }
-     *     
+     * @param quantityPacked
      */
-    public SearchDoubleField getQuantityPicked() {
+    public void setQuantityPacked(com.netsuite.webservices.platform.core_2018_2.SearchDoubleField quantityPacked) {
+        this.quantityPacked = quantityPacked;
+    }
+
+
+    /**
+     * Gets the quantityPicked value for this TransactionSearchBasic.
+     * 
+     * @return quantityPicked
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchDoubleField getQuantityPicked() {
         return quantityPicked;
     }
 
-    /**
-     * 设置quantityPicked属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchDoubleField }
-     *     
-     */
-    public void setQuantityPicked(SearchDoubleField value) {
-        this.quantityPicked = value;
-    }
 
     /**
-     * 获取quantityRevCommitted属性的值。
+     * Sets the quantityPicked value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchDoubleField }
-     *     
+     * @param quantityPicked
      */
-    public SearchDoubleField getQuantityRevCommitted() {
+    public void setQuantityPicked(com.netsuite.webservices.platform.core_2018_2.SearchDoubleField quantityPicked) {
+        this.quantityPicked = quantityPicked;
+    }
+
+
+    /**
+     * Gets the quantityRevCommitted value for this TransactionSearchBasic.
+     * 
+     * @return quantityRevCommitted
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchDoubleField getQuantityRevCommitted() {
         return quantityRevCommitted;
     }
 
-    /**
-     * 设置quantityRevCommitted属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchDoubleField }
-     *     
-     */
-    public void setQuantityRevCommitted(SearchDoubleField value) {
-        this.quantityRevCommitted = value;
-    }
 
     /**
-     * 获取quantityShipRecv属性的值。
+     * Sets the quantityRevCommitted value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchDoubleField }
-     *     
+     * @param quantityRevCommitted
      */
-    public SearchDoubleField getQuantityShipRecv() {
+    public void setQuantityRevCommitted(com.netsuite.webservices.platform.core_2018_2.SearchDoubleField quantityRevCommitted) {
+        this.quantityRevCommitted = quantityRevCommitted;
+    }
+
+
+    /**
+     * Gets the quantityShipRecv value for this TransactionSearchBasic.
+     * 
+     * @return quantityShipRecv
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchDoubleField getQuantityShipRecv() {
         return quantityShipRecv;
     }
 
-    /**
-     * 设置quantityShipRecv属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchDoubleField }
-     *     
-     */
-    public void setQuantityShipRecv(SearchDoubleField value) {
-        this.quantityShipRecv = value;
-    }
 
     /**
-     * 获取recognizedRevenue属性的值。
+     * Sets the quantityShipRecv value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchDoubleField }
-     *     
+     * @param quantityShipRecv
      */
-    public SearchDoubleField getRecognizedRevenue() {
+    public void setQuantityShipRecv(com.netsuite.webservices.platform.core_2018_2.SearchDoubleField quantityShipRecv) {
+        this.quantityShipRecv = quantityShipRecv;
+    }
+
+
+    /**
+     * Gets the recognizedRevenue value for this TransactionSearchBasic.
+     * 
+     * @return recognizedRevenue
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchDoubleField getRecognizedRevenue() {
         return recognizedRevenue;
     }
 
-    /**
-     * 设置recognizedRevenue属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchDoubleField }
-     *     
-     */
-    public void setRecognizedRevenue(SearchDoubleField value) {
-        this.recognizedRevenue = value;
-    }
 
     /**
-     * 获取recordType属性的值。
+     * Sets the recognizedRevenue value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchStringField }
-     *     
+     * @param recognizedRevenue
      */
-    public SearchStringField getRecordType() {
+    public void setRecognizedRevenue(com.netsuite.webservices.platform.core_2018_2.SearchDoubleField recognizedRevenue) {
+        this.recognizedRevenue = recognizedRevenue;
+    }
+
+
+    /**
+     * Gets the recordType value for this TransactionSearchBasic.
+     * 
+     * @return recordType
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchStringField getRecordType() {
         return recordType;
     }
 
-    /**
-     * 设置recordType属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchStringField }
-     *     
-     */
-    public void setRecordType(SearchStringField value) {
-        this.recordType = value;
-    }
 
     /**
-     * 获取recurAnnuallyTotal属性的值。
+     * Sets the recordType value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchDoubleField }
-     *     
+     * @param recordType
      */
-    public SearchDoubleField getRecurAnnuallyTotal() {
+    public void setRecordType(com.netsuite.webservices.platform.core_2018_2.SearchStringField recordType) {
+        this.recordType = recordType;
+    }
+
+
+    /**
+     * Gets the recurAnnuallyTotal value for this TransactionSearchBasic.
+     * 
+     * @return recurAnnuallyTotal
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchDoubleField getRecurAnnuallyTotal() {
         return recurAnnuallyTotal;
     }
 
-    /**
-     * 设置recurAnnuallyTotal属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchDoubleField }
-     *     
-     */
-    public void setRecurAnnuallyTotal(SearchDoubleField value) {
-        this.recurAnnuallyTotal = value;
-    }
 
     /**
-     * 获取recurMonthlyTotal属性的值。
+     * Sets the recurAnnuallyTotal value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchDoubleField }
-     *     
+     * @param recurAnnuallyTotal
      */
-    public SearchDoubleField getRecurMonthlyTotal() {
+    public void setRecurAnnuallyTotal(com.netsuite.webservices.platform.core_2018_2.SearchDoubleField recurAnnuallyTotal) {
+        this.recurAnnuallyTotal = recurAnnuallyTotal;
+    }
+
+
+    /**
+     * Gets the recurMonthlyTotal value for this TransactionSearchBasic.
+     * 
+     * @return recurMonthlyTotal
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchDoubleField getRecurMonthlyTotal() {
         return recurMonthlyTotal;
     }
 
-    /**
-     * 设置recurMonthlyTotal属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchDoubleField }
-     *     
-     */
-    public void setRecurMonthlyTotal(SearchDoubleField value) {
-        this.recurMonthlyTotal = value;
-    }
 
     /**
-     * 获取recurQuarterlyTotal属性的值。
+     * Sets the recurMonthlyTotal value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchDoubleField }
-     *     
+     * @param recurMonthlyTotal
      */
-    public SearchDoubleField getRecurQuarterlyTotal() {
+    public void setRecurMonthlyTotal(com.netsuite.webservices.platform.core_2018_2.SearchDoubleField recurMonthlyTotal) {
+        this.recurMonthlyTotal = recurMonthlyTotal;
+    }
+
+
+    /**
+     * Gets the recurQuarterlyTotal value for this TransactionSearchBasic.
+     * 
+     * @return recurQuarterlyTotal
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchDoubleField getRecurQuarterlyTotal() {
         return recurQuarterlyTotal;
     }
 
-    /**
-     * 设置recurQuarterlyTotal属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchDoubleField }
-     *     
-     */
-    public void setRecurQuarterlyTotal(SearchDoubleField value) {
-        this.recurQuarterlyTotal = value;
-    }
 
     /**
-     * 获取recurringBill属性的值。
+     * Sets the recurQuarterlyTotal value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchBooleanField }
-     *     
+     * @param recurQuarterlyTotal
      */
-    public SearchBooleanField getRecurringBill() {
+    public void setRecurQuarterlyTotal(com.netsuite.webservices.platform.core_2018_2.SearchDoubleField recurQuarterlyTotal) {
+        this.recurQuarterlyTotal = recurQuarterlyTotal;
+    }
+
+
+    /**
+     * Gets the recurringBill value for this TransactionSearchBasic.
+     * 
+     * @return recurringBill
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchBooleanField getRecurringBill() {
         return recurringBill;
     }
 
-    /**
-     * 设置recurringBill属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchBooleanField }
-     *     
-     */
-    public void setRecurringBill(SearchBooleanField value) {
-        this.recurringBill = value;
-    }
 
     /**
-     * 获取recurWeeklyTotal属性的值。
+     * Sets the recurringBill value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchDoubleField }
-     *     
+     * @param recurringBill
      */
-    public SearchDoubleField getRecurWeeklyTotal() {
+    public void setRecurringBill(com.netsuite.webservices.platform.core_2018_2.SearchBooleanField recurringBill) {
+        this.recurringBill = recurringBill;
+    }
+
+
+    /**
+     * Gets the recurWeeklyTotal value for this TransactionSearchBasic.
+     * 
+     * @return recurWeeklyTotal
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchDoubleField getRecurWeeklyTotal() {
         return recurWeeklyTotal;
     }
 
-    /**
-     * 设置recurWeeklyTotal属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchDoubleField }
-     *     
-     */
-    public void setRecurWeeklyTotal(SearchDoubleField value) {
-        this.recurWeeklyTotal = value;
-    }
 
     /**
-     * 获取refNumber属性的值。
+     * Sets the recurWeeklyTotal value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchLongField }
-     *     
+     * @param recurWeeklyTotal
      */
-    public SearchLongField getRefNumber() {
+    public void setRecurWeeklyTotal(com.netsuite.webservices.platform.core_2018_2.SearchDoubleField recurWeeklyTotal) {
+        this.recurWeeklyTotal = recurWeeklyTotal;
+    }
+
+
+    /**
+     * Gets the refNumber value for this TransactionSearchBasic.
+     * 
+     * @return refNumber
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchLongField getRefNumber() {
         return refNumber;
     }
 
-    /**
-     * 设置refNumber属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchLongField }
-     *     
-     */
-    public void setRefNumber(SearchLongField value) {
-        this.refNumber = value;
-    }
 
     /**
-     * 获取revCommitStatus属性的值。
+     * Sets the refNumber value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchEnumMultiSelectField }
-     *     
+     * @param refNumber
      */
-    public SearchEnumMultiSelectField getRevCommitStatus() {
+    public void setRefNumber(com.netsuite.webservices.platform.core_2018_2.SearchLongField refNumber) {
+        this.refNumber = refNumber;
+    }
+
+
+    /**
+     * Gets the revCommitStatus value for this TransactionSearchBasic.
+     * 
+     * @return revCommitStatus
+     */
+    public java.lang.String[] getRevCommitStatus() {
         return revCommitStatus;
     }
 
-    /**
-     * 设置revCommitStatus属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchEnumMultiSelectField }
-     *     
-     */
-    public void setRevCommitStatus(SearchEnumMultiSelectField value) {
-        this.revCommitStatus = value;
-    }
 
     /**
-     * 获取revCommittingStatus属性的值。
+     * Sets the revCommitStatus value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchBooleanField }
-     *     
+     * @param revCommitStatus
      */
-    public SearchBooleanField getRevCommittingStatus() {
+    public void setRevCommitStatus(java.lang.String[] revCommitStatus) {
+        this.revCommitStatus = revCommitStatus;
+    }
+
+
+    /**
+     * Gets the revCommittingStatus value for this TransactionSearchBasic.
+     * 
+     * @return revCommittingStatus
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchBooleanField getRevCommittingStatus() {
         return revCommittingStatus;
     }
 
-    /**
-     * 设置revCommittingStatus属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchBooleanField }
-     *     
-     */
-    public void setRevCommittingStatus(SearchBooleanField value) {
-        this.revCommittingStatus = value;
-    }
 
     /**
-     * 获取revCommittingTransaction属性的值。
+     * Sets the revCommittingStatus value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchMultiSelectField }
-     *     
+     * @param revCommittingStatus
      */
-    public SearchMultiSelectField getRevCommittingTransaction() {
+    public void setRevCommittingStatus(com.netsuite.webservices.platform.core_2018_2.SearchBooleanField revCommittingStatus) {
+        this.revCommittingStatus = revCommittingStatus;
+    }
+
+
+    /**
+     * Gets the revCommittingTransaction value for this TransactionSearchBasic.
+     * 
+     * @return revCommittingTransaction
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef[] getRevCommittingTransaction() {
         return revCommittingTransaction;
     }
 
-    /**
-     * 设置revCommittingTransaction属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchMultiSelectField }
-     *     
-     */
-    public void setRevCommittingTransaction(SearchMultiSelectField value) {
-        this.revCommittingTransaction = value;
-    }
 
     /**
-     * 获取revenueStatus属性的值。
+     * Sets the revCommittingTransaction value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchEnumMultiSelectField }
-     *     
+     * @param revCommittingTransaction
      */
-    public SearchEnumMultiSelectField getRevenueStatus() {
+    public void setRevCommittingTransaction(com.netsuite.webservices.platform.core_2018_2.RecordRef[] revCommittingTransaction) {
+        this.revCommittingTransaction = revCommittingTransaction;
+    }
+
+
+    /**
+     * Gets the revenueStatus value for this TransactionSearchBasic.
+     * 
+     * @return revenueStatus
+     */
+    public java.lang.String[] getRevenueStatus() {
         return revenueStatus;
     }
 
-    /**
-     * 设置revenueStatus属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchEnumMultiSelectField }
-     *     
-     */
-    public void setRevenueStatus(SearchEnumMultiSelectField value) {
-        this.revenueStatus = value;
-    }
 
     /**
-     * 获取reversalDate属性的值。
+     * Sets the revenueStatus value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchDateField }
-     *     
+     * @param revenueStatus
      */
-    public SearchDateField getReversalDate() {
+    public void setRevenueStatus(java.lang.String[] revenueStatus) {
+        this.revenueStatus = revenueStatus;
+    }
+
+
+    /**
+     * Gets the reversalDate value for this TransactionSearchBasic.
+     * 
+     * @return reversalDate
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchDateField getReversalDate() {
         return reversalDate;
     }
 
-    /**
-     * 设置reversalDate属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchDateField }
-     *     
-     */
-    public void setReversalDate(SearchDateField value) {
-        this.reversalDate = value;
-    }
 
     /**
-     * 获取reversalNumber属性的值。
+     * Sets the reversalDate value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchStringField }
-     *     
+     * @param reversalDate
      */
-    public SearchStringField getReversalNumber() {
+    public void setReversalDate(com.netsuite.webservices.platform.core_2018_2.SearchDateField reversalDate) {
+        this.reversalDate = reversalDate;
+    }
+
+
+    /**
+     * Gets the reversalNumber value for this TransactionSearchBasic.
+     * 
+     * @return reversalNumber
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchStringField getReversalNumber() {
         return reversalNumber;
     }
 
-    /**
-     * 设置reversalNumber属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchStringField }
-     *     
-     */
-    public void setReversalNumber(SearchStringField value) {
-        this.reversalNumber = value;
-    }
 
     /**
-     * 获取revRecEndDate属性的值。
+     * Sets the reversalNumber value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchDateField }
-     *     
+     * @param reversalNumber
      */
-    public SearchDateField getRevRecEndDate() {
+    public void setReversalNumber(com.netsuite.webservices.platform.core_2018_2.SearchStringField reversalNumber) {
+        this.reversalNumber = reversalNumber;
+    }
+
+
+    /**
+     * Gets the revRecEndDate value for this TransactionSearchBasic.
+     * 
+     * @return revRecEndDate
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchDateField getRevRecEndDate() {
         return revRecEndDate;
     }
 
-    /**
-     * 设置revRecEndDate属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchDateField }
-     *     
-     */
-    public void setRevRecEndDate(SearchDateField value) {
-        this.revRecEndDate = value;
-    }
 
     /**
-     * 获取revRecOnRevCommitment属性的值。
+     * Sets the revRecEndDate value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchBooleanField }
-     *     
+     * @param revRecEndDate
      */
-    public SearchBooleanField getRevRecOnRevCommitment() {
+    public void setRevRecEndDate(com.netsuite.webservices.platform.core_2018_2.SearchDateField revRecEndDate) {
+        this.revRecEndDate = revRecEndDate;
+    }
+
+
+    /**
+     * Gets the revRecOnRevCommitment value for this TransactionSearchBasic.
+     * 
+     * @return revRecOnRevCommitment
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchBooleanField getRevRecOnRevCommitment() {
         return revRecOnRevCommitment;
     }
 
-    /**
-     * 设置revRecOnRevCommitment属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchBooleanField }
-     *     
-     */
-    public void setRevRecOnRevCommitment(SearchBooleanField value) {
-        this.revRecOnRevCommitment = value;
-    }
 
     /**
-     * 获取revRecStartDate属性的值。
+     * Sets the revRecOnRevCommitment value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchDateField }
-     *     
+     * @param revRecOnRevCommitment
      */
-    public SearchDateField getRevRecStartDate() {
+    public void setRevRecOnRevCommitment(com.netsuite.webservices.platform.core_2018_2.SearchBooleanField revRecOnRevCommitment) {
+        this.revRecOnRevCommitment = revRecOnRevCommitment;
+    }
+
+
+    /**
+     * Gets the revRecStartDate value for this TransactionSearchBasic.
+     * 
+     * @return revRecStartDate
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchDateField getRevRecStartDate() {
         return revRecStartDate;
     }
 
-    /**
-     * 设置revRecStartDate属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchDateField }
-     *     
-     */
-    public void setRevRecStartDate(SearchDateField value) {
-        this.revRecStartDate = value;
-    }
 
     /**
-     * 获取revRecTermInMonths属性的值。
+     * Sets the revRecStartDate value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchLongField }
-     *     
+     * @param revRecStartDate
      */
-    public SearchLongField getRevRecTermInMonths() {
+    public void setRevRecStartDate(com.netsuite.webservices.platform.core_2018_2.SearchDateField revRecStartDate) {
+        this.revRecStartDate = revRecStartDate;
+    }
+
+
+    /**
+     * Gets the revRecTermInMonths value for this TransactionSearchBasic.
+     * 
+     * @return revRecTermInMonths
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchLongField getRevRecTermInMonths() {
         return revRecTermInMonths;
     }
 
-    /**
-     * 设置revRecTermInMonths属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchLongField }
-     *     
-     */
-    public void setRevRecTermInMonths(SearchLongField value) {
-        this.revRecTermInMonths = value;
-    }
 
     /**
-     * 获取salesEffectiveDate属性的值。
+     * Sets the revRecTermInMonths value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchDateField }
-     *     
+     * @param revRecTermInMonths
      */
-    public SearchDateField getSalesEffectiveDate() {
+    public void setRevRecTermInMonths(com.netsuite.webservices.platform.core_2018_2.SearchLongField revRecTermInMonths) {
+        this.revRecTermInMonths = revRecTermInMonths;
+    }
+
+
+    /**
+     * Gets the salesEffectiveDate value for this TransactionSearchBasic.
+     * 
+     * @return salesEffectiveDate
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchDateField getSalesEffectiveDate() {
         return salesEffectiveDate;
     }
 
-    /**
-     * 设置salesEffectiveDate属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchDateField }
-     *     
-     */
-    public void setSalesEffectiveDate(SearchDateField value) {
-        this.salesEffectiveDate = value;
-    }
 
     /**
-     * 获取salesOrder属性的值。
+     * Sets the salesEffectiveDate value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchMultiSelectField }
-     *     
+     * @param salesEffectiveDate
      */
-    public SearchMultiSelectField getSalesOrder() {
+    public void setSalesEffectiveDate(com.netsuite.webservices.platform.core_2018_2.SearchDateField salesEffectiveDate) {
+        this.salesEffectiveDate = salesEffectiveDate;
+    }
+
+
+    /**
+     * Gets the salesOrder value for this TransactionSearchBasic.
+     * 
+     * @return salesOrder
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef[] getSalesOrder() {
         return salesOrder;
     }
 
-    /**
-     * 设置salesOrder属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchMultiSelectField }
-     *     
-     */
-    public void setSalesOrder(SearchMultiSelectField value) {
-        this.salesOrder = value;
-    }
 
     /**
-     * 获取salesRep属性的值。
+     * Sets the salesOrder value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchMultiSelectField }
-     *     
+     * @param salesOrder
      */
-    public SearchMultiSelectField getSalesRep() {
+    public void setSalesOrder(com.netsuite.webservices.platform.core_2018_2.RecordRef[] salesOrder) {
+        this.salesOrder = salesOrder;
+    }
+
+
+    /**
+     * Gets the salesRep value for this TransactionSearchBasic.
+     * 
+     * @return salesRep
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef[] getSalesRep() {
         return salesRep;
     }
 
-    /**
-     * 设置salesRep属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchMultiSelectField }
-     *     
-     */
-    public void setSalesRep(SearchMultiSelectField value) {
-        this.salesRep = value;
-    }
 
     /**
-     * 获取salesTeamMember属性的值。
+     * Sets the salesRep value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchMultiSelectField }
-     *     
+     * @param salesRep
      */
-    public SearchMultiSelectField getSalesTeamMember() {
+    public void setSalesRep(com.netsuite.webservices.platform.core_2018_2.RecordRef[] salesRep) {
+        this.salesRep = salesRep;
+    }
+
+
+    /**
+     * Gets the salesTeamMember value for this TransactionSearchBasic.
+     * 
+     * @return salesTeamMember
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef[] getSalesTeamMember() {
         return salesTeamMember;
     }
 
-    /**
-     * 设置salesTeamMember属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchMultiSelectField }
-     *     
-     */
-    public void setSalesTeamMember(SearchMultiSelectField value) {
-        this.salesTeamMember = value;
-    }
 
     /**
-     * 获取salesTeamRole属性的值。
+     * Sets the salesTeamMember value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchMultiSelectField }
-     *     
+     * @param salesTeamMember
      */
-    public SearchMultiSelectField getSalesTeamRole() {
+    public void setSalesTeamMember(com.netsuite.webservices.platform.core_2018_2.RecordRef[] salesTeamMember) {
+        this.salesTeamMember = salesTeamMember;
+    }
+
+
+    /**
+     * Gets the salesTeamRole value for this TransactionSearchBasic.
+     * 
+     * @return salesTeamRole
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef[] getSalesTeamRole() {
         return salesTeamRole;
     }
 
-    /**
-     * 设置salesTeamRole属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchMultiSelectField }
-     *     
-     */
-    public void setSalesTeamRole(SearchMultiSelectField value) {
-        this.salesTeamRole = value;
-    }
 
     /**
-     * 获取schedulingMethod属性的值。
+     * Sets the salesTeamRole value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchEnumMultiSelectField }
-     *     
+     * @param salesTeamRole
      */
-    public SearchEnumMultiSelectField getSchedulingMethod() {
+    public void setSalesTeamRole(com.netsuite.webservices.platform.core_2018_2.RecordRef[] salesTeamRole) {
+        this.salesTeamRole = salesTeamRole;
+    }
+
+
+    /**
+     * Gets the schedulingMethod value for this TransactionSearchBasic.
+     * 
+     * @return schedulingMethod
+     */
+    public java.lang.String[] getSchedulingMethod() {
         return schedulingMethod;
     }
 
-    /**
-     * 设置schedulingMethod属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchEnumMultiSelectField }
-     *     
-     */
-    public void setSchedulingMethod(SearchEnumMultiSelectField value) {
-        this.schedulingMethod = value;
-    }
 
     /**
-     * 获取serialNumber属性的值。
+     * Sets the schedulingMethod value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchStringField }
-     *     
+     * @param schedulingMethod
      */
-    public SearchStringField getSerialNumber() {
+    public void setSchedulingMethod(java.lang.String[] schedulingMethod) {
+        this.schedulingMethod = schedulingMethod;
+    }
+
+
+    /**
+     * Gets the serialNumber value for this TransactionSearchBasic.
+     * 
+     * @return serialNumber
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchStringField getSerialNumber() {
         return serialNumber;
     }
 
-    /**
-     * 设置serialNumber属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchStringField }
-     *     
-     */
-    public void setSerialNumber(SearchStringField value) {
-        this.serialNumber = value;
-    }
 
     /**
-     * 获取serialNumberCost属性的值。
+     * Sets the serialNumber value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchDoubleField }
-     *     
+     * @param serialNumber
      */
-    public SearchDoubleField getSerialNumberCost() {
+    public void setSerialNumber(com.netsuite.webservices.platform.core_2018_2.SearchStringField serialNumber) {
+        this.serialNumber = serialNumber;
+    }
+
+
+    /**
+     * Gets the serialNumberCost value for this TransactionSearchBasic.
+     * 
+     * @return serialNumberCost
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchDoubleField getSerialNumberCost() {
         return serialNumberCost;
     }
 
-    /**
-     * 设置serialNumberCost属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchDoubleField }
-     *     
-     */
-    public void setSerialNumberCost(SearchDoubleField value) {
-        this.serialNumberCost = value;
-    }
 
     /**
-     * 获取serialNumberCostAdjustment属性的值。
+     * Sets the serialNumberCost value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchDoubleField }
-     *     
+     * @param serialNumberCost
      */
-    public SearchDoubleField getSerialNumberCostAdjustment() {
+    public void setSerialNumberCost(com.netsuite.webservices.platform.core_2018_2.SearchDoubleField serialNumberCost) {
+        this.serialNumberCost = serialNumberCost;
+    }
+
+
+    /**
+     * Gets the serialNumberCostAdjustment value for this TransactionSearchBasic.
+     * 
+     * @return serialNumberCostAdjustment
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchDoubleField getSerialNumberCostAdjustment() {
         return serialNumberCostAdjustment;
     }
 
-    /**
-     * 设置serialNumberCostAdjustment属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchDoubleField }
-     *     
-     */
-    public void setSerialNumberCostAdjustment(SearchDoubleField value) {
-        this.serialNumberCostAdjustment = value;
-    }
 
     /**
-     * 获取serialNumberQuantity属性的值。
+     * Sets the serialNumberCostAdjustment value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchDoubleField }
-     *     
+     * @param serialNumberCostAdjustment
      */
-    public SearchDoubleField getSerialNumberQuantity() {
+    public void setSerialNumberCostAdjustment(com.netsuite.webservices.platform.core_2018_2.SearchDoubleField serialNumberCostAdjustment) {
+        this.serialNumberCostAdjustment = serialNumberCostAdjustment;
+    }
+
+
+    /**
+     * Gets the serialNumberQuantity value for this TransactionSearchBasic.
+     * 
+     * @return serialNumberQuantity
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchDoubleField getSerialNumberQuantity() {
         return serialNumberQuantity;
     }
 
-    /**
-     * 设置serialNumberQuantity属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchDoubleField }
-     *     
-     */
-    public void setSerialNumberQuantity(SearchDoubleField value) {
-        this.serialNumberQuantity = value;
-    }
 
     /**
-     * 获取serialNumbers属性的值。
+     * Sets the serialNumberQuantity value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchStringField }
-     *     
+     * @param serialNumberQuantity
      */
-    public SearchStringField getSerialNumbers() {
+    public void setSerialNumberQuantity(com.netsuite.webservices.platform.core_2018_2.SearchDoubleField serialNumberQuantity) {
+        this.serialNumberQuantity = serialNumberQuantity;
+    }
+
+
+    /**
+     * Gets the serialNumbers value for this TransactionSearchBasic.
+     * 
+     * @return serialNumbers
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchStringField getSerialNumbers() {
         return serialNumbers;
     }
 
-    /**
-     * 设置serialNumbers属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchStringField }
-     *     
-     */
-    public void setSerialNumbers(SearchStringField value) {
-        this.serialNumbers = value;
-    }
 
     /**
-     * 获取shipAddress属性的值。
+     * Sets the serialNumbers value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchStringField }
-     *     
+     * @param serialNumbers
      */
-    public SearchStringField getShipAddress() {
+    public void setSerialNumbers(com.netsuite.webservices.platform.core_2018_2.SearchStringField serialNumbers) {
+        this.serialNumbers = serialNumbers;
+    }
+
+
+    /**
+     * Gets the shipAddress value for this TransactionSearchBasic.
+     * 
+     * @return shipAddress
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchStringField getShipAddress() {
         return shipAddress;
     }
 
-    /**
-     * 设置shipAddress属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchStringField }
-     *     
-     */
-    public void setShipAddress(SearchStringField value) {
-        this.shipAddress = value;
-    }
 
     /**
-     * 获取shipAddressee属性的值。
+     * Sets the shipAddress value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchStringField }
-     *     
+     * @param shipAddress
      */
-    public SearchStringField getShipAddressee() {
+    public void setShipAddress(com.netsuite.webservices.platform.core_2018_2.SearchStringField shipAddress) {
+        this.shipAddress = shipAddress;
+    }
+
+
+    /**
+     * Gets the shipAddressee value for this TransactionSearchBasic.
+     * 
+     * @return shipAddressee
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchStringField getShipAddressee() {
         return shipAddressee;
     }
 
-    /**
-     * 设置shipAddressee属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchStringField }
-     *     
-     */
-    public void setShipAddressee(SearchStringField value) {
-        this.shipAddressee = value;
-    }
 
     /**
-     * 获取shipAttention属性的值。
+     * Sets the shipAddressee value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchStringField }
-     *     
+     * @param shipAddressee
      */
-    public SearchStringField getShipAttention() {
+    public void setShipAddressee(com.netsuite.webservices.platform.core_2018_2.SearchStringField shipAddressee) {
+        this.shipAddressee = shipAddressee;
+    }
+
+
+    /**
+     * Gets the shipAttention value for this TransactionSearchBasic.
+     * 
+     * @return shipAttention
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchStringField getShipAttention() {
         return shipAttention;
     }
 
-    /**
-     * 设置shipAttention属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchStringField }
-     *     
-     */
-    public void setShipAttention(SearchStringField value) {
-        this.shipAttention = value;
-    }
 
     /**
-     * 获取shipCarrier属性的值。
+     * Sets the shipAttention value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchEnumMultiSelectField }
-     *     
+     * @param shipAttention
      */
-    public SearchEnumMultiSelectField getShipCarrier() {
+    public void setShipAttention(com.netsuite.webservices.platform.core_2018_2.SearchStringField shipAttention) {
+        this.shipAttention = shipAttention;
+    }
+
+
+    /**
+     * Gets the shipCarrier value for this TransactionSearchBasic.
+     * 
+     * @return shipCarrier
+     */
+    public java.lang.String[] getShipCarrier() {
         return shipCarrier;
     }
 
-    /**
-     * 设置shipCarrier属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchEnumMultiSelectField }
-     *     
-     */
-    public void setShipCarrier(SearchEnumMultiSelectField value) {
-        this.shipCarrier = value;
-    }
 
     /**
-     * 获取shipCity属性的值。
+     * Sets the shipCarrier value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchStringField }
-     *     
+     * @param shipCarrier
      */
-    public SearchStringField getShipCity() {
+    public void setShipCarrier(java.lang.String[] shipCarrier) {
+        this.shipCarrier = shipCarrier;
+    }
+
+
+    /**
+     * Gets the shipCity value for this TransactionSearchBasic.
+     * 
+     * @return shipCity
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchStringField getShipCity() {
         return shipCity;
     }
 
-    /**
-     * 设置shipCity属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchStringField }
-     *     
-     */
-    public void setShipCity(SearchStringField value) {
-        this.shipCity = value;
-    }
 
     /**
-     * 获取shipComplete属性的值。
+     * Sets the shipCity value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchBooleanField }
-     *     
+     * @param shipCity
      */
-    public SearchBooleanField getShipComplete() {
+    public void setShipCity(com.netsuite.webservices.platform.core_2018_2.SearchStringField shipCity) {
+        this.shipCity = shipCity;
+    }
+
+
+    /**
+     * Gets the shipComplete value for this TransactionSearchBasic.
+     * 
+     * @return shipComplete
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchBooleanField getShipComplete() {
         return shipComplete;
     }
 
-    /**
-     * 设置shipComplete属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchBooleanField }
-     *     
-     */
-    public void setShipComplete(SearchBooleanField value) {
-        this.shipComplete = value;
-    }
 
     /**
-     * 获取shipCountry属性的值。
+     * Sets the shipComplete value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchEnumMultiSelectField }
-     *     
+     * @param shipComplete
      */
-    public SearchEnumMultiSelectField getShipCountry() {
+    public void setShipComplete(com.netsuite.webservices.platform.core_2018_2.SearchBooleanField shipComplete) {
+        this.shipComplete = shipComplete;
+    }
+
+
+    /**
+     * Gets the shipCountry value for this TransactionSearchBasic.
+     * 
+     * @return shipCountry
+     */
+    public java.lang.String[] getShipCountry() {
         return shipCountry;
     }
 
-    /**
-     * 设置shipCountry属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchEnumMultiSelectField }
-     *     
-     */
-    public void setShipCountry(SearchEnumMultiSelectField value) {
-        this.shipCountry = value;
-    }
 
     /**
-     * 获取shipCounty属性的值。
+     * Sets the shipCountry value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchStringField }
-     *     
+     * @param shipCountry
      */
-    public SearchStringField getShipCounty() {
+    public void setShipCountry(java.lang.String[] shipCountry) {
+        this.shipCountry = shipCountry;
+    }
+
+
+    /**
+     * Gets the shipCounty value for this TransactionSearchBasic.
+     * 
+     * @return shipCounty
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchStringField getShipCounty() {
         return shipCounty;
     }
 
-    /**
-     * 设置shipCounty属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchStringField }
-     *     
-     */
-    public void setShipCounty(SearchStringField value) {
-        this.shipCounty = value;
-    }
 
     /**
-     * 获取shipDate属性的值。
+     * Sets the shipCounty value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchDateField }
-     *     
+     * @param shipCounty
      */
-    public SearchDateField getShipDate() {
+    public void setShipCounty(com.netsuite.webservices.platform.core_2018_2.SearchStringField shipCounty) {
+        this.shipCounty = shipCounty;
+    }
+
+
+    /**
+     * Gets the shipDate value for this TransactionSearchBasic.
+     * 
+     * @return shipDate
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchDateField getShipDate() {
         return shipDate;
     }
 
-    /**
-     * 设置shipDate属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchDateField }
-     *     
-     */
-    public void setShipDate(SearchDateField value) {
-        this.shipDate = value;
-    }
 
     /**
-     * 获取shipGroup属性的值。
+     * Sets the shipDate value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchLongField }
-     *     
+     * @param shipDate
      */
-    public SearchLongField getShipGroup() {
+    public void setShipDate(com.netsuite.webservices.platform.core_2018_2.SearchDateField shipDate) {
+        this.shipDate = shipDate;
+    }
+
+
+    /**
+     * Gets the shipGroup value for this TransactionSearchBasic.
+     * 
+     * @return shipGroup
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchLongField getShipGroup() {
         return shipGroup;
     }
 
-    /**
-     * 设置shipGroup属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchLongField }
-     *     
-     */
-    public void setShipGroup(SearchLongField value) {
-        this.shipGroup = value;
-    }
 
     /**
-     * 获取shipMethod属性的值。
+     * Sets the shipGroup value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchMultiSelectField }
-     *     
+     * @param shipGroup
      */
-    public SearchMultiSelectField getShipMethod() {
+    public void setShipGroup(com.netsuite.webservices.platform.core_2018_2.SearchLongField shipGroup) {
+        this.shipGroup = shipGroup;
+    }
+
+
+    /**
+     * Gets the shipMethod value for this TransactionSearchBasic.
+     * 
+     * @return shipMethod
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef[] getShipMethod() {
         return shipMethod;
     }
 
-    /**
-     * 设置shipMethod属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchMultiSelectField }
-     *     
-     */
-    public void setShipMethod(SearchMultiSelectField value) {
-        this.shipMethod = value;
-    }
 
     /**
-     * 获取shipPhone属性的值。
+     * Sets the shipMethod value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchStringField }
-     *     
+     * @param shipMethod
      */
-    public SearchStringField getShipPhone() {
+    public void setShipMethod(com.netsuite.webservices.platform.core_2018_2.RecordRef[] shipMethod) {
+        this.shipMethod = shipMethod;
+    }
+
+
+    /**
+     * Gets the shipPhone value for this TransactionSearchBasic.
+     * 
+     * @return shipPhone
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchStringField getShipPhone() {
         return shipPhone;
     }
 
-    /**
-     * 设置shipPhone属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchStringField }
-     *     
-     */
-    public void setShipPhone(SearchStringField value) {
-        this.shipPhone = value;
-    }
 
     /**
-     * 获取shipping属性的值。
+     * Sets the shipPhone value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchBooleanField }
-     *     
+     * @param shipPhone
      */
-    public SearchBooleanField getShipping() {
+    public void setShipPhone(com.netsuite.webservices.platform.core_2018_2.SearchStringField shipPhone) {
+        this.shipPhone = shipPhone;
+    }
+
+
+    /**
+     * Gets the shipping value for this TransactionSearchBasic.
+     * 
+     * @return shipping
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchBooleanField getShipping() {
         return shipping;
     }
 
-    /**
-     * 设置shipping属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchBooleanField }
-     *     
-     */
-    public void setShipping(SearchBooleanField value) {
-        this.shipping = value;
-    }
 
     /**
-     * 获取shipRecvStatus属性的值。
+     * Sets the shipping value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchBooleanField }
-     *     
+     * @param shipping
      */
-    public SearchBooleanField getShipRecvStatus() {
+    public void setShipping(com.netsuite.webservices.platform.core_2018_2.SearchBooleanField shipping) {
+        this.shipping = shipping;
+    }
+
+
+    /**
+     * Gets the shipRecvStatus value for this TransactionSearchBasic.
+     * 
+     * @return shipRecvStatus
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchBooleanField getShipRecvStatus() {
         return shipRecvStatus;
     }
 
-    /**
-     * 设置shipRecvStatus属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchBooleanField }
-     *     
-     */
-    public void setShipRecvStatus(SearchBooleanField value) {
-        this.shipRecvStatus = value;
-    }
 
     /**
-     * 获取shipRecvStatusLine属性的值。
+     * Sets the shipRecvStatus value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchBooleanField }
-     *     
+     * @param shipRecvStatus
      */
-    public SearchBooleanField getShipRecvStatusLine() {
+    public void setShipRecvStatus(com.netsuite.webservices.platform.core_2018_2.SearchBooleanField shipRecvStatus) {
+        this.shipRecvStatus = shipRecvStatus;
+    }
+
+
+    /**
+     * Gets the shipRecvStatusLine value for this TransactionSearchBasic.
+     * 
+     * @return shipRecvStatusLine
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchBooleanField getShipRecvStatusLine() {
         return shipRecvStatusLine;
     }
 
-    /**
-     * 设置shipRecvStatusLine属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchBooleanField }
-     *     
-     */
-    public void setShipRecvStatusLine(SearchBooleanField value) {
-        this.shipRecvStatusLine = value;
-    }
 
     /**
-     * 获取shipState属性的值。
+     * Sets the shipRecvStatusLine value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchMultiSelectField }
-     *     
+     * @param shipRecvStatusLine
      */
-    public SearchMultiSelectField getShipState() {
+    public void setShipRecvStatusLine(com.netsuite.webservices.platform.core_2018_2.SearchBooleanField shipRecvStatusLine) {
+        this.shipRecvStatusLine = shipRecvStatusLine;
+    }
+
+
+    /**
+     * Gets the shipState value for this TransactionSearchBasic.
+     * 
+     * @return shipState
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef[] getShipState() {
         return shipState;
     }
 
-    /**
-     * 设置shipState属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchMultiSelectField }
-     *     
-     */
-    public void setShipState(SearchMultiSelectField value) {
-        this.shipState = value;
-    }
 
     /**
-     * 获取shipTo属性的值。
+     * Sets the shipState value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchMultiSelectField }
-     *     
+     * @param shipState
      */
-    public SearchMultiSelectField getShipTo() {
+    public void setShipState(com.netsuite.webservices.platform.core_2018_2.RecordRef[] shipState) {
+        this.shipState = shipState;
+    }
+
+
+    /**
+     * Gets the shipTo value for this TransactionSearchBasic.
+     * 
+     * @return shipTo
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef[] getShipTo() {
         return shipTo;
     }
 
-    /**
-     * 设置shipTo属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchMultiSelectField }
-     *     
-     */
-    public void setShipTo(SearchMultiSelectField value) {
-        this.shipTo = value;
-    }
 
     /**
-     * 获取shipZip属性的值。
+     * Sets the shipTo value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchStringField }
-     *     
+     * @param shipTo
      */
-    public SearchStringField getShipZip() {
+    public void setShipTo(com.netsuite.webservices.platform.core_2018_2.RecordRef[] shipTo) {
+        this.shipTo = shipTo;
+    }
+
+
+    /**
+     * Gets the shipZip value for this TransactionSearchBasic.
+     * 
+     * @return shipZip
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchStringField getShipZip() {
         return shipZip;
     }
 
-    /**
-     * 设置shipZip属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchStringField }
-     *     
-     */
-    public void setShipZip(SearchStringField value) {
-        this.shipZip = value;
-    }
 
     /**
-     * 获取source属性的值。
+     * Sets the shipZip value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchEnumMultiSelectField }
-     *     
+     * @param shipZip
      */
-    public SearchEnumMultiSelectField getSource() {
+    public void setShipZip(com.netsuite.webservices.platform.core_2018_2.SearchStringField shipZip) {
+        this.shipZip = shipZip;
+    }
+
+
+    /**
+     * Gets the source value for this TransactionSearchBasic.
+     * 
+     * @return source
+     */
+    public java.lang.String[] getSource() {
         return source;
     }
 
-    /**
-     * 设置source属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchEnumMultiSelectField }
-     *     
-     */
-    public void setSource(SearchEnumMultiSelectField value) {
-        this.source = value;
-    }
 
     /**
-     * 获取startDate属性的值。
+     * Sets the source value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchDateField }
-     *     
+     * @param source
      */
-    public SearchDateField getStartDate() {
+    public void setSource(java.lang.String[] source) {
+        this.source = source;
+    }
+
+
+    /**
+     * Gets the startDate value for this TransactionSearchBasic.
+     * 
+     * @return startDate
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchDateField getStartDate() {
         return startDate;
     }
 
-    /**
-     * 设置startDate属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchDateField }
-     *     
-     */
-    public void setStartDate(SearchDateField value) {
-        this.startDate = value;
-    }
 
     /**
-     * 获取statistical属性的值。
+     * Sets the startDate value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchBooleanField }
-     *     
+     * @param startDate
      */
-    public SearchBooleanField getStatistical() {
+    public void setStartDate(com.netsuite.webservices.platform.core_2018_2.SearchDateField startDate) {
+        this.startDate = startDate;
+    }
+
+
+    /**
+     * Gets the statistical value for this TransactionSearchBasic.
+     * 
+     * @return statistical
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchBooleanField getStatistical() {
         return statistical;
     }
 
-    /**
-     * 设置statistical属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchBooleanField }
-     *     
-     */
-    public void setStatistical(SearchBooleanField value) {
-        this.statistical = value;
-    }
 
     /**
-     * 获取status属性的值。
+     * Sets the statistical value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchEnumMultiSelectField }
-     *     
+     * @param statistical
      */
-    public SearchEnumMultiSelectField getStatus() {
+    public void setStatistical(com.netsuite.webservices.platform.core_2018_2.SearchBooleanField statistical) {
+        this.statistical = statistical;
+    }
+
+
+    /**
+     * Gets the status value for this TransactionSearchBasic.
+     * 
+     * @return status
+     */
+    public java.lang.String[] getStatus() {
         return status;
     }
 
-    /**
-     * 设置status属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchEnumMultiSelectField }
-     *     
-     */
-    public void setStatus(SearchEnumMultiSelectField value) {
-        this.status = value;
-    }
 
     /**
-     * 获取subscription属性的值。
+     * Sets the status value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchMultiSelectField }
-     *     
+     * @param status
      */
-    public SearchMultiSelectField getSubscription() {
+    public void setStatus(java.lang.String[] status) {
+        this.status = status;
+    }
+
+
+    /**
+     * Gets the subscription value for this TransactionSearchBasic.
+     * 
+     * @return subscription
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef[] getSubscription() {
         return subscription;
     }
 
-    /**
-     * 设置subscription属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchMultiSelectField }
-     *     
-     */
-    public void setSubscription(SearchMultiSelectField value) {
-        this.subscription = value;
-    }
 
     /**
-     * 获取subscriptionLine属性的值。
+     * Sets the subscription value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchMultiSelectField }
-     *     
+     * @param subscription
      */
-    public SearchMultiSelectField getSubscriptionLine() {
+    public void setSubscription(com.netsuite.webservices.platform.core_2018_2.RecordRef[] subscription) {
+        this.subscription = subscription;
+    }
+
+
+    /**
+     * Gets the subscriptionLine value for this TransactionSearchBasic.
+     * 
+     * @return subscriptionLine
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef[] getSubscriptionLine() {
         return subscriptionLine;
     }
 
-    /**
-     * 设置subscriptionLine属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchMultiSelectField }
-     *     
-     */
-    public void setSubscriptionLine(SearchMultiSelectField value) {
-        this.subscriptionLine = value;
-    }
 
     /**
-     * 获取subsidiary属性的值。
+     * Sets the subscriptionLine value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchMultiSelectField }
-     *     
+     * @param subscriptionLine
      */
-    public SearchMultiSelectField getSubsidiary() {
+    public void setSubscriptionLine(com.netsuite.webservices.platform.core_2018_2.RecordRef[] subscriptionLine) {
+        this.subscriptionLine = subscriptionLine;
+    }
+
+
+    /**
+     * Gets the subsidiary value for this TransactionSearchBasic.
+     * 
+     * @return subsidiary
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef[] getSubsidiary() {
         return subsidiary;
     }
 
-    /**
-     * 设置subsidiary属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchMultiSelectField }
-     *     
-     */
-    public void setSubsidiary(SearchMultiSelectField value) {
-        this.subsidiary = value;
-    }
 
     /**
-     * 获取taxItem属性的值。
+     * Sets the subsidiary value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchMultiSelectField }
-     *     
+     * @param subsidiary
      */
-    public SearchMultiSelectField getTaxItem() {
+    public void setSubsidiary(com.netsuite.webservices.platform.core_2018_2.RecordRef[] subsidiary) {
+        this.subsidiary = subsidiary;
+    }
+
+
+    /**
+     * Gets the taxItem value for this TransactionSearchBasic.
+     * 
+     * @return taxItem
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef[] getTaxItem() {
         return taxItem;
     }
 
-    /**
-     * 设置taxItem属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchMultiSelectField }
-     *     
-     */
-    public void setTaxItem(SearchMultiSelectField value) {
-        this.taxItem = value;
-    }
 
     /**
-     * 获取taxLine属性的值。
+     * Sets the taxItem value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchBooleanField }
-     *     
+     * @param taxItem
      */
-    public SearchBooleanField getTaxLine() {
+    public void setTaxItem(com.netsuite.webservices.platform.core_2018_2.RecordRef[] taxItem) {
+        this.taxItem = taxItem;
+    }
+
+
+    /**
+     * Gets the taxLine value for this TransactionSearchBasic.
+     * 
+     * @return taxLine
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchBooleanField getTaxLine() {
         return taxLine;
     }
 
-    /**
-     * 设置taxLine属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchBooleanField }
-     *     
-     */
-    public void setTaxLine(SearchBooleanField value) {
-        this.taxLine = value;
-    }
 
     /**
-     * 获取taxPeriod属性的值。
+     * Sets the taxLine value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param taxLine
      */
-    public RecordRef getTaxPeriod() {
+    public void setTaxLine(com.netsuite.webservices.platform.core_2018_2.SearchBooleanField taxLine) {
+        this.taxLine = taxLine;
+    }
+
+
+    /**
+     * Gets the taxPeriod value for this TransactionSearchBasic.
+     * 
+     * @return taxPeriod
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getTaxPeriod() {
         return taxPeriod;
     }
 
-    /**
-     * 设置taxPeriod属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setTaxPeriod(RecordRef value) {
-        this.taxPeriod = value;
-    }
 
     /**
-     * 获取taxPeriodRelative属性的值。
+     * Sets the taxPeriod value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link PostingPeriodDate }
-     *     
+     * @param taxPeriod
      */
-    public PostingPeriodDate getTaxPeriodRelative() {
+    public void setTaxPeriod(com.netsuite.webservices.platform.core_2018_2.RecordRef taxPeriod) {
+        this.taxPeriod = taxPeriod;
+    }
+
+
+    /**
+     * Gets the taxPeriodRelative value for this TransactionSearchBasic.
+     * 
+     * @return taxPeriodRelative
+     */
+    public com.netsuite.webservices.platform.common_2018_2.types.PostingPeriodDate getTaxPeriodRelative() {
         return taxPeriodRelative;
     }
 
-    /**
-     * 设置taxPeriodRelative属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link PostingPeriodDate }
-     *     
-     */
-    public void setTaxPeriodRelative(PostingPeriodDate value) {
-        this.taxPeriodRelative = value;
-    }
 
     /**
-     * 获取taxRate属性的值。
+     * Sets the taxPeriodRelative value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchDoubleField }
-     *     
+     * @param taxPeriodRelative
      */
-    public SearchDoubleField getTaxRate() {
+    public void setTaxPeriodRelative(com.netsuite.webservices.platform.common_2018_2.types.PostingPeriodDate taxPeriodRelative) {
+        this.taxPeriodRelative = taxPeriodRelative;
+    }
+
+
+    /**
+     * Gets the taxRate value for this TransactionSearchBasic.
+     * 
+     * @return taxRate
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchDoubleField getTaxRate() {
         return taxRate;
     }
 
-    /**
-     * 设置taxRate属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchDoubleField }
-     *     
-     */
-    public void setTaxRate(SearchDoubleField value) {
-        this.taxRate = value;
-    }
 
     /**
-     * 获取terms属性的值。
+     * Sets the taxRate value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchMultiSelectField }
-     *     
+     * @param taxRate
      */
-    public SearchMultiSelectField getTerms() {
+    public void setTaxRate(com.netsuite.webservices.platform.core_2018_2.SearchDoubleField taxRate) {
+        this.taxRate = taxRate;
+    }
+
+
+    /**
+     * Gets the terms value for this TransactionSearchBasic.
+     * 
+     * @return terms
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef[] getTerms() {
         return terms;
     }
 
-    /**
-     * 设置terms属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchMultiSelectField }
-     *     
-     */
-    public void setTerms(SearchMultiSelectField value) {
-        this.terms = value;
-    }
 
     /**
-     * 获取termsOfSale属性的值。
+     * Sets the terms value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchEnumMultiSelectField }
-     *     
+     * @param terms
      */
-    public SearchEnumMultiSelectField getTermsOfSale() {
+    public void setTerms(com.netsuite.webservices.platform.core_2018_2.RecordRef[] terms) {
+        this.terms = terms;
+    }
+
+
+    /**
+     * Gets the termsOfSale value for this TransactionSearchBasic.
+     * 
+     * @return termsOfSale
+     */
+    public java.lang.String[] getTermsOfSale() {
         return termsOfSale;
     }
 
-    /**
-     * 设置termsOfSale属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchEnumMultiSelectField }
-     *     
-     */
-    public void setTermsOfSale(SearchEnumMultiSelectField value) {
-        this.termsOfSale = value;
-    }
 
     /**
-     * 获取title属性的值。
+     * Sets the termsOfSale value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchStringField }
-     *     
+     * @param termsOfSale
      */
-    public SearchStringField getTitle() {
+    public void setTermsOfSale(java.lang.String[] termsOfSale) {
+        this.termsOfSale = termsOfSale;
+    }
+
+
+    /**
+     * Gets the title value for this TransactionSearchBasic.
+     * 
+     * @return title
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchStringField getTitle() {
         return title;
     }
 
-    /**
-     * 设置title属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchStringField }
-     *     
-     */
-    public void setTitle(SearchStringField value) {
-        this.title = value;
-    }
 
     /**
-     * 获取toBeEmailed属性的值。
+     * Sets the title value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchBooleanField }
-     *     
+     * @param title
      */
-    public SearchBooleanField getToBeEmailed() {
+    public void setTitle(com.netsuite.webservices.platform.core_2018_2.SearchStringField title) {
+        this.title = title;
+    }
+
+
+    /**
+     * Gets the toBeEmailed value for this TransactionSearchBasic.
+     * 
+     * @return toBeEmailed
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchBooleanField getToBeEmailed() {
         return toBeEmailed;
     }
 
-    /**
-     * 设置toBeEmailed属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchBooleanField }
-     *     
-     */
-    public void setToBeEmailed(SearchBooleanField value) {
-        this.toBeEmailed = value;
-    }
 
     /**
-     * 获取toBePrinted属性的值。
+     * Sets the toBeEmailed value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchBooleanField }
-     *     
+     * @param toBeEmailed
      */
-    public SearchBooleanField getToBePrinted() {
+    public void setToBeEmailed(com.netsuite.webservices.platform.core_2018_2.SearchBooleanField toBeEmailed) {
+        this.toBeEmailed = toBeEmailed;
+    }
+
+
+    /**
+     * Gets the toBePrinted value for this TransactionSearchBasic.
+     * 
+     * @return toBePrinted
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchBooleanField getToBePrinted() {
         return toBePrinted;
     }
 
-    /**
-     * 设置toBePrinted属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchBooleanField }
-     *     
-     */
-    public void setToBePrinted(SearchBooleanField value) {
-        this.toBePrinted = value;
-    }
 
     /**
-     * 获取toSubsidiary属性的值。
+     * Sets the toBePrinted value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchMultiSelectField }
-     *     
+     * @param toBePrinted
      */
-    public SearchMultiSelectField getToSubsidiary() {
+    public void setToBePrinted(com.netsuite.webservices.platform.core_2018_2.SearchBooleanField toBePrinted) {
+        this.toBePrinted = toBePrinted;
+    }
+
+
+    /**
+     * Gets the toSubsidiary value for this TransactionSearchBasic.
+     * 
+     * @return toSubsidiary
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef[] getToSubsidiary() {
         return toSubsidiary;
     }
 
-    /**
-     * 设置toSubsidiary属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchMultiSelectField }
-     *     
-     */
-    public void setToSubsidiary(SearchMultiSelectField value) {
-        this.toSubsidiary = value;
-    }
 
     /**
-     * 获取totalAmount属性的值。
+     * Sets the toSubsidiary value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchDoubleField }
-     *     
+     * @param toSubsidiary
      */
-    public SearchDoubleField getTotalAmount() {
+    public void setToSubsidiary(com.netsuite.webservices.platform.core_2018_2.RecordRef[] toSubsidiary) {
+        this.toSubsidiary = toSubsidiary;
+    }
+
+
+    /**
+     * Gets the totalAmount value for this TransactionSearchBasic.
+     * 
+     * @return totalAmount
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchDoubleField getTotalAmount() {
         return totalAmount;
     }
 
-    /**
-     * 设置totalAmount属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchDoubleField }
-     *     
-     */
-    public void setTotalAmount(SearchDoubleField value) {
-        this.totalAmount = value;
-    }
 
     /**
-     * 获取trackingNumbers属性的值。
+     * Sets the totalAmount value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchStringField }
-     *     
+     * @param totalAmount
      */
-    public SearchStringField getTrackingNumbers() {
+    public void setTotalAmount(com.netsuite.webservices.platform.core_2018_2.SearchDoubleField totalAmount) {
+        this.totalAmount = totalAmount;
+    }
+
+
+    /**
+     * Gets the trackingNumbers value for this TransactionSearchBasic.
+     * 
+     * @return trackingNumbers
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchStringField getTrackingNumbers() {
         return trackingNumbers;
     }
 
-    /**
-     * 设置trackingNumbers属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchStringField }
-     *     
-     */
-    public void setTrackingNumbers(SearchStringField value) {
-        this.trackingNumbers = value;
-    }
 
     /**
-     * 获取tranCostEstimate属性的值。
+     * Sets the trackingNumbers value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchDoubleField }
-     *     
+     * @param trackingNumbers
      */
-    public SearchDoubleField getTranCostEstimate() {
+    public void setTrackingNumbers(com.netsuite.webservices.platform.core_2018_2.SearchStringField trackingNumbers) {
+        this.trackingNumbers = trackingNumbers;
+    }
+
+
+    /**
+     * Gets the tranCostEstimate value for this TransactionSearchBasic.
+     * 
+     * @return tranCostEstimate
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchDoubleField getTranCostEstimate() {
         return tranCostEstimate;
     }
 
-    /**
-     * 设置tranCostEstimate属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchDoubleField }
-     *     
-     */
-    public void setTranCostEstimate(SearchDoubleField value) {
-        this.tranCostEstimate = value;
-    }
 
     /**
-     * 获取tranDate属性的值。
+     * Sets the tranCostEstimate value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchDateField }
-     *     
+     * @param tranCostEstimate
      */
-    public SearchDateField getTranDate() {
+    public void setTranCostEstimate(com.netsuite.webservices.platform.core_2018_2.SearchDoubleField tranCostEstimate) {
+        this.tranCostEstimate = tranCostEstimate;
+    }
+
+
+    /**
+     * Gets the tranDate value for this TransactionSearchBasic.
+     * 
+     * @return tranDate
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchDateField getTranDate() {
         return tranDate;
     }
 
-    /**
-     * 设置tranDate属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchDateField }
-     *     
-     */
-    public void setTranDate(SearchDateField value) {
-        this.tranDate = value;
-    }
 
     /**
-     * 获取tranEstGrossProfit属性的值。
+     * Sets the tranDate value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchDoubleField }
-     *     
+     * @param tranDate
      */
-    public SearchDoubleField getTranEstGrossProfit() {
+    public void setTranDate(com.netsuite.webservices.platform.core_2018_2.SearchDateField tranDate) {
+        this.tranDate = tranDate;
+    }
+
+
+    /**
+     * Gets the tranEstGrossProfit value for this TransactionSearchBasic.
+     * 
+     * @return tranEstGrossProfit
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchDoubleField getTranEstGrossProfit() {
         return tranEstGrossProfit;
     }
 
-    /**
-     * 设置tranEstGrossProfit属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchDoubleField }
-     *     
-     */
-    public void setTranEstGrossProfit(SearchDoubleField value) {
-        this.tranEstGrossProfit = value;
-    }
 
     /**
-     * 获取tranEstGrossProfitPct属性的值。
+     * Sets the tranEstGrossProfit value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchDoubleField }
-     *     
+     * @param tranEstGrossProfit
      */
-    public SearchDoubleField getTranEstGrossProfitPct() {
+    public void setTranEstGrossProfit(com.netsuite.webservices.platform.core_2018_2.SearchDoubleField tranEstGrossProfit) {
+        this.tranEstGrossProfit = tranEstGrossProfit;
+    }
+
+
+    /**
+     * Gets the tranEstGrossProfitPct value for this TransactionSearchBasic.
+     * 
+     * @return tranEstGrossProfitPct
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchDoubleField getTranEstGrossProfitPct() {
         return tranEstGrossProfitPct;
     }
 
-    /**
-     * 设置tranEstGrossProfitPct属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchDoubleField }
-     *     
-     */
-    public void setTranEstGrossProfitPct(SearchDoubleField value) {
-        this.tranEstGrossProfitPct = value;
-    }
 
     /**
-     * 获取tranFxEstGrossProfit属性的值。
+     * Sets the tranEstGrossProfitPct value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchDoubleField }
-     *     
+     * @param tranEstGrossProfitPct
      */
-    public SearchDoubleField getTranFxEstGrossProfit() {
+    public void setTranEstGrossProfitPct(com.netsuite.webservices.platform.core_2018_2.SearchDoubleField tranEstGrossProfitPct) {
+        this.tranEstGrossProfitPct = tranEstGrossProfitPct;
+    }
+
+
+    /**
+     * Gets the tranFxEstGrossProfit value for this TransactionSearchBasic.
+     * 
+     * @return tranFxEstGrossProfit
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchDoubleField getTranFxEstGrossProfit() {
         return tranFxEstGrossProfit;
     }
 
-    /**
-     * 设置tranFxEstGrossProfit属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchDoubleField }
-     *     
-     */
-    public void setTranFxEstGrossProfit(SearchDoubleField value) {
-        this.tranFxEstGrossProfit = value;
-    }
 
     /**
-     * 获取tranId属性的值。
+     * Sets the tranFxEstGrossProfit value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchStringField }
-     *     
+     * @param tranFxEstGrossProfit
      */
-    public SearchStringField getTranId() {
+    public void setTranFxEstGrossProfit(com.netsuite.webservices.platform.core_2018_2.SearchDoubleField tranFxEstGrossProfit) {
+        this.tranFxEstGrossProfit = tranFxEstGrossProfit;
+    }
+
+
+    /**
+     * Gets the tranId value for this TransactionSearchBasic.
+     * 
+     * @return tranId
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchStringField getTranId() {
         return tranId;
     }
 
-    /**
-     * 设置tranId属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchStringField }
-     *     
-     */
-    public void setTranId(SearchStringField value) {
-        this.tranId = value;
-    }
 
     /**
-     * 获取tranIsVsoeBundle属性的值。
+     * Sets the tranId value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchBooleanField }
-     *     
+     * @param tranId
      */
-    public SearchBooleanField getTranIsVsoeBundle() {
+    public void setTranId(com.netsuite.webservices.platform.core_2018_2.SearchStringField tranId) {
+        this.tranId = tranId;
+    }
+
+
+    /**
+     * Gets the tranIsVsoeBundle value for this TransactionSearchBasic.
+     * 
+     * @return tranIsVsoeBundle
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchBooleanField getTranIsVsoeBundle() {
         return tranIsVsoeBundle;
     }
 
-    /**
-     * 设置tranIsVsoeBundle属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchBooleanField }
-     *     
-     */
-    public void setTranIsVsoeBundle(SearchBooleanField value) {
-        this.tranIsVsoeBundle = value;
-    }
 
     /**
-     * 获取transactionDiscount属性的值。
+     * Sets the tranIsVsoeBundle value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchBooleanField }
-     *     
+     * @param tranIsVsoeBundle
      */
-    public SearchBooleanField getTransactionDiscount() {
+    public void setTranIsVsoeBundle(com.netsuite.webservices.platform.core_2018_2.SearchBooleanField tranIsVsoeBundle) {
+        this.tranIsVsoeBundle = tranIsVsoeBundle;
+    }
+
+
+    /**
+     * Gets the transactionDiscount value for this TransactionSearchBasic.
+     * 
+     * @return transactionDiscount
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchBooleanField getTransactionDiscount() {
         return transactionDiscount;
     }
 
-    /**
-     * 设置transactionDiscount属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchBooleanField }
-     *     
-     */
-    public void setTransactionDiscount(SearchBooleanField value) {
-        this.transactionDiscount = value;
-    }
 
     /**
-     * 获取transactionLineType属性的值。
+     * Sets the transactionDiscount value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchEnumMultiSelectField }
-     *     
+     * @param transactionDiscount
      */
-    public SearchEnumMultiSelectField getTransactionLineType() {
+    public void setTransactionDiscount(com.netsuite.webservices.platform.core_2018_2.SearchBooleanField transactionDiscount) {
+        this.transactionDiscount = transactionDiscount;
+    }
+
+
+    /**
+     * Gets the transactionLineType value for this TransactionSearchBasic.
+     * 
+     * @return transactionLineType
+     */
+    public java.lang.String[] getTransactionLineType() {
         return transactionLineType;
     }
 
-    /**
-     * 设置transactionLineType属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchEnumMultiSelectField }
-     *     
-     */
-    public void setTransactionLineType(SearchEnumMultiSelectField value) {
-        this.transactionLineType = value;
-    }
 
     /**
-     * 获取transactionNumber属性的值。
+     * Sets the transactionLineType value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchStringField }
-     *     
+     * @param transactionLineType
      */
-    public SearchStringField getTransactionNumber() {
+    public void setTransactionLineType(java.lang.String[] transactionLineType) {
+        this.transactionLineType = transactionLineType;
+    }
+
+
+    /**
+     * Gets the transactionNumber value for this TransactionSearchBasic.
+     * 
+     * @return transactionNumber
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchStringField getTransactionNumber() {
         return transactionNumber;
     }
 
-    /**
-     * 设置transactionNumber属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchStringField }
-     *     
-     */
-    public void setTransactionNumber(SearchStringField value) {
-        this.transactionNumber = value;
-    }
 
     /**
-     * 获取transferLocation属性的值。
+     * Sets the transactionNumber value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchMultiSelectField }
-     *     
+     * @param transactionNumber
      */
-    public SearchMultiSelectField getTransferLocation() {
+    public void setTransactionNumber(com.netsuite.webservices.platform.core_2018_2.SearchStringField transactionNumber) {
+        this.transactionNumber = transactionNumber;
+    }
+
+
+    /**
+     * Gets the transferLocation value for this TransactionSearchBasic.
+     * 
+     * @return transferLocation
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef[] getTransferLocation() {
         return transferLocation;
     }
 
-    /**
-     * 设置transferLocation属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchMultiSelectField }
-     *     
-     */
-    public void setTransferLocation(SearchMultiSelectField value) {
-        this.transferLocation = value;
-    }
 
     /**
-     * 获取transferOrderQuantityCommitted属性的值。
+     * Sets the transferLocation value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchDoubleField }
-     *     
+     * @param transferLocation
      */
-    public SearchDoubleField getTransferOrderQuantityCommitted() {
+    public void setTransferLocation(com.netsuite.webservices.platform.core_2018_2.RecordRef[] transferLocation) {
+        this.transferLocation = transferLocation;
+    }
+
+
+    /**
+     * Gets the transferOrderQuantityCommitted value for this TransactionSearchBasic.
+     * 
+     * @return transferOrderQuantityCommitted
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchDoubleField getTransferOrderQuantityCommitted() {
         return transferOrderQuantityCommitted;
     }
 
-    /**
-     * 设置transferOrderQuantityCommitted属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchDoubleField }
-     *     
-     */
-    public void setTransferOrderQuantityCommitted(SearchDoubleField value) {
-        this.transferOrderQuantityCommitted = value;
-    }
 
     /**
-     * 获取transferOrderQuantityPacked属性的值。
+     * Sets the transferOrderQuantityCommitted value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchDoubleField }
-     *     
+     * @param transferOrderQuantityCommitted
      */
-    public SearchDoubleField getTransferOrderQuantityPacked() {
+    public void setTransferOrderQuantityCommitted(com.netsuite.webservices.platform.core_2018_2.SearchDoubleField transferOrderQuantityCommitted) {
+        this.transferOrderQuantityCommitted = transferOrderQuantityCommitted;
+    }
+
+
+    /**
+     * Gets the transferOrderQuantityPacked value for this TransactionSearchBasic.
+     * 
+     * @return transferOrderQuantityPacked
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchDoubleField getTransferOrderQuantityPacked() {
         return transferOrderQuantityPacked;
     }
 
-    /**
-     * 设置transferOrderQuantityPacked属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchDoubleField }
-     *     
-     */
-    public void setTransferOrderQuantityPacked(SearchDoubleField value) {
-        this.transferOrderQuantityPacked = value;
-    }
 
     /**
-     * 获取transferOrderQuantityPicked属性的值。
+     * Sets the transferOrderQuantityPacked value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchDoubleField }
-     *     
+     * @param transferOrderQuantityPacked
      */
-    public SearchDoubleField getTransferOrderQuantityPicked() {
+    public void setTransferOrderQuantityPacked(com.netsuite.webservices.platform.core_2018_2.SearchDoubleField transferOrderQuantityPacked) {
+        this.transferOrderQuantityPacked = transferOrderQuantityPacked;
+    }
+
+
+    /**
+     * Gets the transferOrderQuantityPicked value for this TransactionSearchBasic.
+     * 
+     * @return transferOrderQuantityPicked
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchDoubleField getTransferOrderQuantityPicked() {
         return transferOrderQuantityPicked;
     }
 
-    /**
-     * 设置transferOrderQuantityPicked属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchDoubleField }
-     *     
-     */
-    public void setTransferOrderQuantityPicked(SearchDoubleField value) {
-        this.transferOrderQuantityPicked = value;
-    }
 
     /**
-     * 获取transferOrderQuantityReceived属性的值。
+     * Sets the transferOrderQuantityPicked value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchDoubleField }
-     *     
+     * @param transferOrderQuantityPicked
      */
-    public SearchDoubleField getTransferOrderQuantityReceived() {
+    public void setTransferOrderQuantityPicked(com.netsuite.webservices.platform.core_2018_2.SearchDoubleField transferOrderQuantityPicked) {
+        this.transferOrderQuantityPicked = transferOrderQuantityPicked;
+    }
+
+
+    /**
+     * Gets the transferOrderQuantityReceived value for this TransactionSearchBasic.
+     * 
+     * @return transferOrderQuantityReceived
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchDoubleField getTransferOrderQuantityReceived() {
         return transferOrderQuantityReceived;
     }
 
-    /**
-     * 设置transferOrderQuantityReceived属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchDoubleField }
-     *     
-     */
-    public void setTransferOrderQuantityReceived(SearchDoubleField value) {
-        this.transferOrderQuantityReceived = value;
-    }
 
     /**
-     * 获取transferOrderQuantityShipped属性的值。
+     * Sets the transferOrderQuantityReceived value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchDoubleField }
-     *     
+     * @param transferOrderQuantityReceived
      */
-    public SearchDoubleField getTransferOrderQuantityShipped() {
+    public void setTransferOrderQuantityReceived(com.netsuite.webservices.platform.core_2018_2.SearchDoubleField transferOrderQuantityReceived) {
+        this.transferOrderQuantityReceived = transferOrderQuantityReceived;
+    }
+
+
+    /**
+     * Gets the transferOrderQuantityShipped value for this TransactionSearchBasic.
+     * 
+     * @return transferOrderQuantityShipped
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchDoubleField getTransferOrderQuantityShipped() {
         return transferOrderQuantityShipped;
     }
 
-    /**
-     * 设置transferOrderQuantityShipped属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchDoubleField }
-     *     
-     */
-    public void setTransferOrderQuantityShipped(SearchDoubleField value) {
-        this.transferOrderQuantityShipped = value;
-    }
 
     /**
-     * 获取type属性的值。
+     * Sets the transferOrderQuantityShipped value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchEnumMultiSelectField }
-     *     
+     * @param transferOrderQuantityShipped
      */
-    public SearchEnumMultiSelectField getType() {
+    public void setTransferOrderQuantityShipped(com.netsuite.webservices.platform.core_2018_2.SearchDoubleField transferOrderQuantityShipped) {
+        this.transferOrderQuantityShipped = transferOrderQuantityShipped;
+    }
+
+
+    /**
+     * Gets the type value for this TransactionSearchBasic.
+     * 
+     * @return type
+     */
+    public java.lang.String[] getType() {
         return type;
     }
 
-    /**
-     * 设置type属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchEnumMultiSelectField }
-     *     
-     */
-    public void setType(SearchEnumMultiSelectField value) {
-        this.type = value;
-    }
 
     /**
-     * 获取unit属性的值。
+     * Sets the type value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchMultiSelectField }
-     *     
+     * @param type
      */
-    public SearchMultiSelectField getUnit() {
+    public void setType(java.lang.String[] type) {
+        this.type = type;
+    }
+
+
+    /**
+     * Gets the unit value for this TransactionSearchBasic.
+     * 
+     * @return unit
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef[] getUnit() {
         return unit;
     }
 
-    /**
-     * 设置unit属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchMultiSelectField }
-     *     
-     */
-    public void setUnit(SearchMultiSelectField value) {
-        this.unit = value;
-    }
 
     /**
-     * 获取unitCostOverride属性的值。
+     * Sets the unit value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchDoubleField }
-     *     
+     * @param unit
      */
-    public SearchDoubleField getUnitCostOverride() {
+    public void setUnit(com.netsuite.webservices.platform.core_2018_2.RecordRef[] unit) {
+        this.unit = unit;
+    }
+
+
+    /**
+     * Gets the unitCostOverride value for this TransactionSearchBasic.
+     * 
+     * @return unitCostOverride
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchDoubleField getUnitCostOverride() {
         return unitCostOverride;
     }
 
-    /**
-     * 设置unitCostOverride属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchDoubleField }
-     *     
-     */
-    public void setUnitCostOverride(SearchDoubleField value) {
-        this.unitCostOverride = value;
-    }
 
     /**
-     * 获取unitsType属性的值。
+     * Sets the unitCostOverride value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchMultiSelectField }
-     *     
+     * @param unitCostOverride
      */
-    public SearchMultiSelectField getUnitsType() {
+    public void setUnitCostOverride(com.netsuite.webservices.platform.core_2018_2.SearchDoubleField unitCostOverride) {
+        this.unitCostOverride = unitCostOverride;
+    }
+
+
+    /**
+     * Gets the unitsType value for this TransactionSearchBasic.
+     * 
+     * @return unitsType
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef[] getUnitsType() {
         return unitsType;
     }
 
-    /**
-     * 设置unitsType属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchMultiSelectField }
-     *     
-     */
-    public void setUnitsType(SearchMultiSelectField value) {
-        this.unitsType = value;
-    }
 
     /**
-     * 获取vendType属性的值。
+     * Sets the unitsType value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchMultiSelectField }
-     *     
+     * @param unitsType
      */
-    public SearchMultiSelectField getVendType() {
+    public void setUnitsType(com.netsuite.webservices.platform.core_2018_2.RecordRef[] unitsType) {
+        this.unitsType = unitsType;
+    }
+
+
+    /**
+     * Gets the vendType value for this TransactionSearchBasic.
+     * 
+     * @return vendType
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef[] getVendType() {
         return vendType;
     }
 
-    /**
-     * 设置vendType属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchMultiSelectField }
-     *     
-     */
-    public void setVendType(SearchMultiSelectField value) {
-        this.vendType = value;
-    }
 
     /**
-     * 获取visibleToCustomer属性的值。
+     * Sets the vendType value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchBooleanField }
-     *     
+     * @param vendType
      */
-    public SearchBooleanField getVisibleToCustomer() {
+    public void setVendType(com.netsuite.webservices.platform.core_2018_2.RecordRef[] vendType) {
+        this.vendType = vendType;
+    }
+
+
+    /**
+     * Gets the visibleToCustomer value for this TransactionSearchBasic.
+     * 
+     * @return visibleToCustomer
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchBooleanField getVisibleToCustomer() {
         return visibleToCustomer;
     }
 
-    /**
-     * 设置visibleToCustomer属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchBooleanField }
-     *     
-     */
-    public void setVisibleToCustomer(SearchBooleanField value) {
-        this.visibleToCustomer = value;
-    }
 
     /**
-     * 获取voided属性的值。
+     * Sets the visibleToCustomer value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchBooleanField }
-     *     
+     * @param visibleToCustomer
      */
-    public SearchBooleanField getVoided() {
+    public void setVisibleToCustomer(com.netsuite.webservices.platform.core_2018_2.SearchBooleanField visibleToCustomer) {
+        this.visibleToCustomer = visibleToCustomer;
+    }
+
+
+    /**
+     * Gets the voided value for this TransactionSearchBasic.
+     * 
+     * @return voided
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchBooleanField getVoided() {
         return voided;
     }
 
-    /**
-     * 设置voided属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchBooleanField }
-     *     
-     */
-    public void setVoided(SearchBooleanField value) {
-        this.voided = value;
-    }
 
     /**
-     * 获取vsoeAllocation属性的值。
+     * Sets the voided value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchDoubleField }
-     *     
+     * @param voided
      */
-    public SearchDoubleField getVsoeAllocation() {
+    public void setVoided(com.netsuite.webservices.platform.core_2018_2.SearchBooleanField voided) {
+        this.voided = voided;
+    }
+
+
+    /**
+     * Gets the vsoeAllocation value for this TransactionSearchBasic.
+     * 
+     * @return vsoeAllocation
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchDoubleField getVsoeAllocation() {
         return vsoeAllocation;
     }
 
-    /**
-     * 设置vsoeAllocation属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchDoubleField }
-     *     
-     */
-    public void setVsoeAllocation(SearchDoubleField value) {
-        this.vsoeAllocation = value;
-    }
 
     /**
-     * 获取vsoeAmount属性的值。
+     * Sets the vsoeAllocation value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchDoubleField }
-     *     
+     * @param vsoeAllocation
      */
-    public SearchDoubleField getVsoeAmount() {
+    public void setVsoeAllocation(com.netsuite.webservices.platform.core_2018_2.SearchDoubleField vsoeAllocation) {
+        this.vsoeAllocation = vsoeAllocation;
+    }
+
+
+    /**
+     * Gets the vsoeAmount value for this TransactionSearchBasic.
+     * 
+     * @return vsoeAmount
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchDoubleField getVsoeAmount() {
         return vsoeAmount;
     }
 
-    /**
-     * 设置vsoeAmount属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchDoubleField }
-     *     
-     */
-    public void setVsoeAmount(SearchDoubleField value) {
-        this.vsoeAmount = value;
-    }
 
     /**
-     * 获取vsoeDeferral属性的值。
+     * Sets the vsoeAmount value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchEnumMultiSelectField }
-     *     
+     * @param vsoeAmount
      */
-    public SearchEnumMultiSelectField getVsoeDeferral() {
+    public void setVsoeAmount(com.netsuite.webservices.platform.core_2018_2.SearchDoubleField vsoeAmount) {
+        this.vsoeAmount = vsoeAmount;
+    }
+
+
+    /**
+     * Gets the vsoeDeferral value for this TransactionSearchBasic.
+     * 
+     * @return vsoeDeferral
+     */
+    public java.lang.String[] getVsoeDeferral() {
         return vsoeDeferral;
     }
 
-    /**
-     * 设置vsoeDeferral属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchEnumMultiSelectField }
-     *     
-     */
-    public void setVsoeDeferral(SearchEnumMultiSelectField value) {
-        this.vsoeDeferral = value;
-    }
 
     /**
-     * 获取vsoeDelivered属性的值。
+     * Sets the vsoeDeferral value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchBooleanField }
-     *     
+     * @param vsoeDeferral
      */
-    public SearchBooleanField getVsoeDelivered() {
+    public void setVsoeDeferral(java.lang.String[] vsoeDeferral) {
+        this.vsoeDeferral = vsoeDeferral;
+    }
+
+
+    /**
+     * Gets the vsoeDelivered value for this TransactionSearchBasic.
+     * 
+     * @return vsoeDelivered
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchBooleanField getVsoeDelivered() {
         return vsoeDelivered;
     }
 
-    /**
-     * 设置vsoeDelivered属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchBooleanField }
-     *     
-     */
-    public void setVsoeDelivered(SearchBooleanField value) {
-        this.vsoeDelivered = value;
-    }
 
     /**
-     * 获取vsoePermitDiscount属性的值。
+     * Sets the vsoeDelivered value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchEnumMultiSelectField }
-     *     
+     * @param vsoeDelivered
      */
-    public SearchEnumMultiSelectField getVsoePermitDiscount() {
+    public void setVsoeDelivered(com.netsuite.webservices.platform.core_2018_2.SearchBooleanField vsoeDelivered) {
+        this.vsoeDelivered = vsoeDelivered;
+    }
+
+
+    /**
+     * Gets the vsoePermitDiscount value for this TransactionSearchBasic.
+     * 
+     * @return vsoePermitDiscount
+     */
+    public java.lang.String[] getVsoePermitDiscount() {
         return vsoePermitDiscount;
     }
 
-    /**
-     * 设置vsoePermitDiscount属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchEnumMultiSelectField }
-     *     
-     */
-    public void setVsoePermitDiscount(SearchEnumMultiSelectField value) {
-        this.vsoePermitDiscount = value;
-    }
 
     /**
-     * 获取vsoePrice属性的值。
+     * Sets the vsoePermitDiscount value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchDoubleField }
-     *     
+     * @param vsoePermitDiscount
      */
-    public SearchDoubleField getVsoePrice() {
+    public void setVsoePermitDiscount(java.lang.String[] vsoePermitDiscount) {
+        this.vsoePermitDiscount = vsoePermitDiscount;
+    }
+
+
+    /**
+     * Gets the vsoePrice value for this TransactionSearchBasic.
+     * 
+     * @return vsoePrice
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchDoubleField getVsoePrice() {
         return vsoePrice;
     }
 
-    /**
-     * 设置vsoePrice属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchDoubleField }
-     *     
-     */
-    public void setVsoePrice(SearchDoubleField value) {
-        this.vsoePrice = value;
-    }
 
     /**
-     * 获取webSite属性的值。
+     * Sets the vsoePrice value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchMultiSelectField }
-     *     
+     * @param vsoePrice
      */
-    public SearchMultiSelectField getWebSite() {
+    public void setVsoePrice(com.netsuite.webservices.platform.core_2018_2.SearchDoubleField vsoePrice) {
+        this.vsoePrice = vsoePrice;
+    }
+
+
+    /**
+     * Gets the webSite value for this TransactionSearchBasic.
+     * 
+     * @return webSite
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef[] getWebSite() {
         return webSite;
     }
 
-    /**
-     * 设置webSite属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchMultiSelectField }
-     *     
-     */
-    public void setWebSite(SearchMultiSelectField value) {
-        this.webSite = value;
-    }
 
     /**
-     * 获取customFieldList属性的值。
+     * Sets the webSite value for this TransactionSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchCustomFieldList }
-     *     
+     * @param webSite
      */
-    public SearchCustomFieldList getCustomFieldList() {
+    public void setWebSite(com.netsuite.webservices.platform.core_2018_2.RecordRef[] webSite) {
+        this.webSite = webSite;
+    }
+
+
+    /**
+     * Gets the customFieldList value for this TransactionSearchBasic.
+     * 
+     * @return customFieldList
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchCustomField[] getCustomFieldList() {
         return customFieldList;
     }
 
+
     /**
-     * 设置customFieldList属性的值。
+     * Sets the customFieldList value for this TransactionSearchBasic.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchCustomFieldList }
-     *     
+     * @param customFieldList
      */
-    public void setCustomFieldList(SearchCustomFieldList value) {
-        this.customFieldList = value;
+    public void setCustomFieldList(com.netsuite.webservices.platform.core_2018_2.SearchCustomField[] customFieldList) {
+        this.customFieldList = customFieldList;
+    }
+
+    private java.lang.Object __equalsCalc = null;
+    public synchronized boolean equals(java.lang.Object obj) {
+        if (!(obj instanceof TransactionSearchBasic)) return false;
+        TransactionSearchBasic other = (TransactionSearchBasic) obj;
+        if (obj == null) return false;
+        if (this == obj) return true;
+        if (__equalsCalc != null) {
+            return (__equalsCalc == obj);
+        }
+        __equalsCalc = obj;
+        boolean _equals;
+        _equals = super.equals(obj) && 
+            ((this.account==null && other.getAccount()==null) || 
+             (this.account!=null &&
+              java.util.Arrays.equals(this.account, other.getAccount()))) &&
+            ((this.accountType==null && other.getAccountType()==null) || 
+             (this.accountType!=null &&
+              java.util.Arrays.equals(this.accountType, other.getAccountType()))) &&
+            ((this.actualShipDate==null && other.getActualShipDate()==null) || 
+             (this.actualShipDate!=null &&
+              this.actualShipDate.equals(other.getActualShipDate()))) &&
+            ((this.altSalesAmount==null && other.getAltSalesAmount()==null) || 
+             (this.altSalesAmount!=null &&
+              this.altSalesAmount.equals(other.getAltSalesAmount()))) &&
+            ((this.altSalesNetAmount==null && other.getAltSalesNetAmount()==null) || 
+             (this.altSalesNetAmount!=null &&
+              this.altSalesNetAmount.equals(other.getAltSalesNetAmount()))) &&
+            ((this.amount==null && other.getAmount()==null) || 
+             (this.amount!=null &&
+              this.amount.equals(other.getAmount()))) &&
+            ((this.amountPaid==null && other.getAmountPaid()==null) || 
+             (this.amountPaid!=null &&
+              this.amountPaid.equals(other.getAmountPaid()))) &&
+            ((this.amountRemaining==null && other.getAmountRemaining()==null) || 
+             (this.amountRemaining!=null &&
+              this.amountRemaining.equals(other.getAmountRemaining()))) &&
+            ((this.amountUnbilled==null && other.getAmountUnbilled()==null) || 
+             (this.amountUnbilled!=null &&
+              this.amountUnbilled.equals(other.getAmountUnbilled()))) &&
+            ((this.anyLineItem==null && other.getAnyLineItem()==null) || 
+             (this.anyLineItem!=null &&
+              java.util.Arrays.equals(this.anyLineItem, other.getAnyLineItem()))) &&
+            ((this.appliedToForeignAmount==null && other.getAppliedToForeignAmount()==null) || 
+             (this.appliedToForeignAmount!=null &&
+              this.appliedToForeignAmount.equals(other.getAppliedToForeignAmount()))) &&
+            ((this.appliedToIsFxVariance==null && other.getAppliedToIsFxVariance()==null) || 
+             (this.appliedToIsFxVariance!=null &&
+              this.appliedToIsFxVariance.equals(other.getAppliedToIsFxVariance()))) &&
+            ((this.appliedToLinkAmount==null && other.getAppliedToLinkAmount()==null) || 
+             (this.appliedToLinkAmount!=null &&
+              this.appliedToLinkAmount.equals(other.getAppliedToLinkAmount()))) &&
+            ((this.appliedToLinkType==null && other.getAppliedToLinkType()==null) || 
+             (this.appliedToLinkType!=null &&
+              java.util.Arrays.equals(this.appliedToLinkType, other.getAppliedToLinkType()))) &&
+            ((this.appliedToTransaction==null && other.getAppliedToTransaction()==null) || 
+             (this.appliedToTransaction!=null &&
+              java.util.Arrays.equals(this.appliedToTransaction, other.getAppliedToTransaction()))) &&
+            ((this.applyingForeignAmount==null && other.getApplyingForeignAmount()==null) || 
+             (this.applyingForeignAmount!=null &&
+              this.applyingForeignAmount.equals(other.getApplyingForeignAmount()))) &&
+            ((this.applyingIsFxVariance==null && other.getApplyingIsFxVariance()==null) || 
+             (this.applyingIsFxVariance!=null &&
+              this.applyingIsFxVariance.equals(other.getApplyingIsFxVariance()))) &&
+            ((this.applyingLinkAmount==null && other.getApplyingLinkAmount()==null) || 
+             (this.applyingLinkAmount!=null &&
+              this.applyingLinkAmount.equals(other.getApplyingLinkAmount()))) &&
+            ((this.applyingLinkType==null && other.getApplyingLinkType()==null) || 
+             (this.applyingLinkType!=null &&
+              java.util.Arrays.equals(this.applyingLinkType, other.getApplyingLinkType()))) &&
+            ((this.applyingTransaction==null && other.getApplyingTransaction()==null) || 
+             (this.applyingTransaction!=null &&
+              java.util.Arrays.equals(this.applyingTransaction, other.getApplyingTransaction()))) &&
+            ((this.approvalStatus==null && other.getApprovalStatus()==null) || 
+             (this.approvalStatus!=null &&
+              java.util.Arrays.equals(this.approvalStatus, other.getApprovalStatus()))) &&
+            ((this.authCode==null && other.getAuthCode()==null) || 
+             (this.authCode!=null &&
+              this.authCode.equals(other.getAuthCode()))) &&
+            ((this.autoCalculateLag==null && other.getAutoCalculateLag()==null) || 
+             (this.autoCalculateLag!=null &&
+              this.autoCalculateLag.equals(other.getAutoCalculateLag()))) &&
+            ((this.avsStreetMatch==null && other.getAvsStreetMatch()==null) || 
+             (this.avsStreetMatch!=null &&
+              java.util.Arrays.equals(this.avsStreetMatch, other.getAvsStreetMatch()))) &&
+            ((this.avsZipMatch==null && other.getAvsZipMatch()==null) || 
+             (this.avsZipMatch!=null &&
+              java.util.Arrays.equals(this.avsZipMatch, other.getAvsZipMatch()))) &&
+            ((this.billable==null && other.getBillable()==null) || 
+             (this.billable!=null &&
+              this.billable.equals(other.getBillable()))) &&
+            ((this.billAddress==null && other.getBillAddress()==null) || 
+             (this.billAddress!=null &&
+              this.billAddress.equals(other.getBillAddress()))) &&
+            ((this.billAddressee==null && other.getBillAddressee()==null) || 
+             (this.billAddressee!=null &&
+              this.billAddressee.equals(other.getBillAddressee()))) &&
+            ((this.billAttention==null && other.getBillAttention()==null) || 
+             (this.billAttention!=null &&
+              this.billAttention.equals(other.getBillAttention()))) &&
+            ((this.billCity==null && other.getBillCity()==null) || 
+             (this.billCity!=null &&
+              this.billCity.equals(other.getBillCity()))) &&
+            ((this.billCountry==null && other.getBillCountry()==null) || 
+             (this.billCountry!=null &&
+              java.util.Arrays.equals(this.billCountry, other.getBillCountry()))) &&
+            ((this.billCounty==null && other.getBillCounty()==null) || 
+             (this.billCounty!=null &&
+              this.billCounty.equals(other.getBillCounty()))) &&
+            ((this.billedDate==null && other.getBilledDate()==null) || 
+             (this.billedDate!=null &&
+              this.billedDate.equals(other.getBilledDate()))) &&
+            ((this.billingAccount==null && other.getBillingAccount()==null) || 
+             (this.billingAccount!=null &&
+              java.util.Arrays.equals(this.billingAccount, other.getBillingAccount()))) &&
+            ((this.billingSchedule==null && other.getBillingSchedule()==null) || 
+             (this.billingSchedule!=null &&
+              java.util.Arrays.equals(this.billingSchedule, other.getBillingSchedule()))) &&
+            ((this.billingStatus==null && other.getBillingStatus()==null) || 
+             (this.billingStatus!=null &&
+              this.billingStatus.equals(other.getBillingStatus()))) &&
+            ((this.billingTransaction==null && other.getBillingTransaction()==null) || 
+             (this.billingTransaction!=null &&
+              java.util.Arrays.equals(this.billingTransaction, other.getBillingTransaction()))) &&
+            ((this.billPhone==null && other.getBillPhone()==null) || 
+             (this.billPhone!=null &&
+              this.billPhone.equals(other.getBillPhone()))) &&
+            ((this.billState==null && other.getBillState()==null) || 
+             (this.billState!=null &&
+              this.billState.equals(other.getBillState()))) &&
+            ((this.billVarianceStatus==null && other.getBillVarianceStatus()==null) || 
+             (this.billVarianceStatus!=null &&
+              java.util.Arrays.equals(this.billVarianceStatus, other.getBillVarianceStatus()))) &&
+            ((this.billZip==null && other.getBillZip()==null) || 
+             (this.billZip!=null &&
+              this.billZip.equals(other.getBillZip()))) &&
+            ((this.binNumber==null && other.getBinNumber()==null) || 
+             (this.binNumber!=null &&
+              this.binNumber.equals(other.getBinNumber()))) &&
+            ((this.binNumberQuantity==null && other.getBinNumberQuantity()==null) || 
+             (this.binNumberQuantity!=null &&
+              this.binNumberQuantity.equals(other.getBinNumberQuantity()))) &&
+            ((this.bomQuantity==null && other.getBomQuantity()==null) || 
+             (this.bomQuantity!=null &&
+              this.bomQuantity.equals(other.getBomQuantity()))) &&
+            ((this.bookSpecificTransaction==null && other.getBookSpecificTransaction()==null) || 
+             (this.bookSpecificTransaction!=null &&
+              this.bookSpecificTransaction.equals(other.getBookSpecificTransaction()))) &&
+            ((this.buildEntireAssembly==null && other.getBuildEntireAssembly()==null) || 
+             (this.buildEntireAssembly!=null &&
+              this.buildEntireAssembly.equals(other.getBuildEntireAssembly()))) &&
+            ((this.buildVariance==null && other.getBuildVariance()==null) || 
+             (this.buildVariance!=null &&
+              this.buildVariance.equals(other.getBuildVariance()))) &&
+            ((this.built==null && other.getBuilt()==null) || 
+             (this.built!=null &&
+              this.built.equals(other.getBuilt()))) &&
+            ((this.canHaveStackablePromotions==null && other.getCanHaveStackablePromotions()==null) || 
+             (this.canHaveStackablePromotions!=null &&
+              this.canHaveStackablePromotions.equals(other.getCanHaveStackablePromotions()))) &&
+            ((this.catchUpPeriod==null && other.getCatchUpPeriod()==null) || 
+             (this.catchUpPeriod!=null &&
+              java.util.Arrays.equals(this.catchUpPeriod, other.getCatchUpPeriod()))) &&
+            ((this.ccCustomerCode==null && other.getCcCustomerCode()==null) || 
+             (this.ccCustomerCode!=null &&
+              this.ccCustomerCode.equals(other.getCcCustomerCode()))) &&
+            ((this.ccExpireDate==null && other.getCcExpireDate()==null) || 
+             (this.ccExpireDate!=null &&
+              this.ccExpireDate.equals(other.getCcExpireDate()))) &&
+            ((this.ccName==null && other.getCcName()==null) || 
+             (this.ccName!=null &&
+              this.ccName.equals(other.getCcName()))) &&
+            ((this.ccNumber==null && other.getCcNumber()==null) || 
+             (this.ccNumber!=null &&
+              this.ccNumber.equals(other.getCcNumber()))) &&
+            ((this.chargeType==null && other.getChargeType()==null) || 
+             (this.chargeType!=null &&
+              java.util.Arrays.equals(this.chargeType, other.getChargeType()))) &&
+            ((this._class==null && other.get_class()==null) || 
+             (this._class!=null &&
+              java.util.Arrays.equals(this._class, other.get_class()))) &&
+            ((this.cleared==null && other.getCleared()==null) || 
+             (this.cleared!=null &&
+              this.cleared.equals(other.getCleared()))) &&
+            ((this.closed==null && other.getClosed()==null) || 
+             (this.closed!=null &&
+              this.closed.equals(other.getClosed()))) &&
+            ((this.closeDate==null && other.getCloseDate()==null) || 
+             (this.closeDate!=null &&
+              this.closeDate.equals(other.getCloseDate()))) &&
+            ((this.cogs==null && other.getCogs()==null) || 
+             (this.cogs!=null &&
+              this.cogs.equals(other.getCogs()))) &&
+            ((this.commissionEffectiveDate==null && other.getCommissionEffectiveDate()==null) || 
+             (this.commissionEffectiveDate!=null &&
+              this.commissionEffectiveDate.equals(other.getCommissionEffectiveDate()))) &&
+            ((this.commit==null && other.getCommit()==null) || 
+             (this.commit!=null &&
+              java.util.Arrays.equals(this.commit, other.getCommit()))) &&
+            ((this.componentYield==null && other.getComponentYield()==null) || 
+             (this.componentYield!=null &&
+              this.componentYield.equals(other.getComponentYield()))) &&
+            ((this.confirmationNumber==null && other.getConfirmationNumber()==null) || 
+             (this.confirmationNumber!=null &&
+              this.confirmationNumber.equals(other.getConfirmationNumber()))) &&
+            ((this.contribution==null && other.getContribution()==null) || 
+             (this.contribution!=null &&
+              this.contribution.equals(other.getContribution()))) &&
+            ((this.costComponentAmount==null && other.getCostComponentAmount()==null) || 
+             (this.costComponentAmount!=null &&
+              this.costComponentAmount.equals(other.getCostComponentAmount()))) &&
+            ((this.costComponentCategory==null && other.getCostComponentCategory()==null) || 
+             (this.costComponentCategory!=null &&
+              java.util.Arrays.equals(this.costComponentCategory, other.getCostComponentCategory()))) &&
+            ((this.costComponentItem==null && other.getCostComponentItem()==null) || 
+             (this.costComponentItem!=null &&
+              java.util.Arrays.equals(this.costComponentItem, other.getCostComponentItem()))) &&
+            ((this.costComponentQuantity==null && other.getCostComponentQuantity()==null) || 
+             (this.costComponentQuantity!=null &&
+              this.costComponentQuantity.equals(other.getCostComponentQuantity()))) &&
+            ((this.costComponentStandardCost==null && other.getCostComponentStandardCost()==null) || 
+             (this.costComponentStandardCost!=null &&
+              this.costComponentStandardCost.equals(other.getCostComponentStandardCost()))) &&
+            ((this.costEstimate==null && other.getCostEstimate()==null) || 
+             (this.costEstimate!=null &&
+              this.costEstimate.equals(other.getCostEstimate()))) &&
+            ((this.costEstimateRate==null && other.getCostEstimateRate()==null) || 
+             (this.costEstimateRate!=null &&
+              this.costEstimateRate.equals(other.getCostEstimateRate()))) &&
+            ((this.costEstimateType==null && other.getCostEstimateType()==null) || 
+             (this.costEstimateType!=null &&
+              java.util.Arrays.equals(this.costEstimateType, other.getCostEstimateType()))) &&
+            ((this.createdBy==null && other.getCreatedBy()==null) || 
+             (this.createdBy!=null &&
+              java.util.Arrays.equals(this.createdBy, other.getCreatedBy()))) &&
+            ((this.createdFrom==null && other.getCreatedFrom()==null) || 
+             (this.createdFrom!=null &&
+              java.util.Arrays.equals(this.createdFrom, other.getCreatedFrom()))) &&
+            ((this.creditAmount==null && other.getCreditAmount()==null) || 
+             (this.creditAmount!=null &&
+              this.creditAmount.equals(other.getCreditAmount()))) &&
+            ((this.cscMatch==null && other.getCscMatch()==null) || 
+             (this.cscMatch!=null &&
+              java.util.Arrays.equals(this.cscMatch, other.getCscMatch()))) &&
+            ((this.currency==null && other.getCurrency()==null) || 
+             (this.currency!=null &&
+              java.util.Arrays.equals(this.currency, other.getCurrency()))) &&
+            ((this.customerSubOf==null && other.getCustomerSubOf()==null) || 
+             (this.customerSubOf!=null &&
+              java.util.Arrays.equals(this.customerSubOf, other.getCustomerSubOf()))) &&
+            ((this.customForm==null && other.getCustomForm()==null) || 
+             (this.customForm!=null &&
+              java.util.Arrays.equals(this.customForm, other.getCustomForm()))) &&
+            ((this.customGL==null && other.getCustomGL()==null) || 
+             (this.customGL!=null &&
+              this.customGL.equals(other.getCustomGL()))) &&
+            ((this.custType==null && other.getCustType()==null) || 
+             (this.custType!=null &&
+              java.util.Arrays.equals(this.custType, other.getCustType()))) &&
+            ((this.dateCreated==null && other.getDateCreated()==null) || 
+             (this.dateCreated!=null &&
+              this.dateCreated.equals(other.getDateCreated()))) &&
+            ((this.daysOpen==null && other.getDaysOpen()==null) || 
+             (this.daysOpen!=null &&
+              this.daysOpen.equals(other.getDaysOpen()))) &&
+            ((this.daysOverdue==null && other.getDaysOverdue()==null) || 
+             (this.daysOverdue!=null &&
+              this.daysOverdue.equals(other.getDaysOverdue()))) &&
+            ((this.debitAmount==null && other.getDebitAmount()==null) || 
+             (this.debitAmount!=null &&
+              this.debitAmount.equals(other.getDebitAmount()))) &&
+            ((this.deferredRevenue==null && other.getDeferredRevenue()==null) || 
+             (this.deferredRevenue!=null &&
+              this.deferredRevenue.equals(other.getDeferredRevenue()))) &&
+            ((this.deferRevRec==null && other.getDeferRevRec()==null) || 
+             (this.deferRevRec!=null &&
+              this.deferRevRec.equals(other.getDeferRevRec()))) &&
+            ((this.department==null && other.getDepartment()==null) || 
+             (this.department!=null &&
+              java.util.Arrays.equals(this.department, other.getDepartment()))) &&
+            ((this.depositDate==null && other.getDepositDate()==null) || 
+             (this.depositDate!=null &&
+              this.depositDate.equals(other.getDepositDate()))) &&
+            ((this.depositTransaction==null && other.getDepositTransaction()==null) || 
+             (this.depositTransaction!=null &&
+              java.util.Arrays.equals(this.depositTransaction, other.getDepositTransaction()))) &&
+            ((this.drAccount==null && other.getDrAccount()==null) || 
+             (this.drAccount!=null &&
+              java.util.Arrays.equals(this.drAccount, other.getDrAccount()))) &&
+            ((this.dueDate==null && other.getDueDate()==null) || 
+             (this.dueDate!=null &&
+              this.dueDate.equals(other.getDueDate()))) &&
+            ((this.email==null && other.getEmail()==null) || 
+             (this.email!=null &&
+              this.email.equals(other.getEmail()))) &&
+            ((this.employee==null && other.getEmployee()==null) || 
+             (this.employee!=null &&
+              java.util.Arrays.equals(this.employee, other.getEmployee()))) &&
+            ((this.endDate==null && other.getEndDate()==null) || 
+             (this.endDate!=null &&
+              this.endDate.equals(other.getEndDate()))) &&
+            ((this.entity==null && other.getEntity()==null) || 
+             (this.entity!=null &&
+              java.util.Arrays.equals(this.entity, other.getEntity()))) &&
+            ((this.entityStatus==null && other.getEntityStatus()==null) || 
+             (this.entityStatus!=null &&
+              java.util.Arrays.equals(this.entityStatus, other.getEntityStatus()))) &&
+            ((this.estGrossProfit==null && other.getEstGrossProfit()==null) || 
+             (this.estGrossProfit!=null &&
+              this.estGrossProfit.equals(other.getEstGrossProfit()))) &&
+            ((this.estGrossProfitPct==null && other.getEstGrossProfitPct()==null) || 
+             (this.estGrossProfitPct!=null &&
+              this.estGrossProfitPct.equals(other.getEstGrossProfitPct()))) &&
+            ((this.exchangeRate==null && other.getExchangeRate()==null) || 
+             (this.exchangeRate!=null &&
+              this.exchangeRate.equals(other.getExchangeRate()))) &&
+            ((this.excludeCommission==null && other.getExcludeCommission()==null) || 
+             (this.excludeCommission!=null &&
+              this.excludeCommission.equals(other.getExcludeCommission()))) &&
+            ((this.excludeFromRateRequest==null && other.getExcludeFromRateRequest()==null) || 
+             (this.excludeFromRateRequest!=null &&
+              this.excludeFromRateRequest.equals(other.getExcludeFromRateRequest()))) &&
+            ((this.expectedCloseDate==null && other.getExpectedCloseDate()==null) || 
+             (this.expectedCloseDate!=null &&
+              this.expectedCloseDate.equals(other.getExpectedCloseDate()))) &&
+            ((this.expectedReceiptDate==null && other.getExpectedReceiptDate()==null) || 
+             (this.expectedReceiptDate!=null &&
+              this.expectedReceiptDate.equals(other.getExpectedReceiptDate()))) &&
+            ((this.expenseCategory==null && other.getExpenseCategory()==null) || 
+             (this.expenseCategory!=null &&
+              java.util.Arrays.equals(this.expenseCategory, other.getExpenseCategory()))) &&
+            ((this.expenseDate==null && other.getExpenseDate()==null) || 
+             (this.expenseDate!=null &&
+              this.expenseDate.equals(other.getExpenseDate()))) &&
+            ((this.externalId==null && other.getExternalId()==null) || 
+             (this.externalId!=null &&
+              java.util.Arrays.equals(this.externalId, other.getExternalId()))) &&
+            ((this.externalIdString==null && other.getExternalIdString()==null) || 
+             (this.externalIdString!=null &&
+              this.externalIdString.equals(other.getExternalIdString()))) &&
+            ((this.finChrg==null && other.getFinChrg()==null) || 
+             (this.finChrg!=null &&
+              this.finChrg.equals(other.getFinChrg()))) &&
+            ((this.firmed==null && other.getFirmed()==null) || 
+             (this.firmed!=null &&
+              this.firmed.equals(other.getFirmed()))) &&
+            ((this.forecastType==null && other.getForecastType()==null) || 
+             (this.forecastType!=null &&
+              java.util.Arrays.equals(this.forecastType, other.getForecastType()))) &&
+            ((this.fulfillingTransaction==null && other.getFulfillingTransaction()==null) || 
+             (this.fulfillingTransaction!=null &&
+              java.util.Arrays.equals(this.fulfillingTransaction, other.getFulfillingTransaction()))) &&
+            ((this.fxAccount==null && other.getFxAccount()==null) || 
+             (this.fxAccount!=null &&
+              java.util.Arrays.equals(this.fxAccount, other.getFxAccount()))) &&
+            ((this.fxAmount==null && other.getFxAmount()==null) || 
+             (this.fxAmount!=null &&
+              this.fxAmount.equals(other.getFxAmount()))) &&
+            ((this.fxCostEstimate==null && other.getFxCostEstimate()==null) || 
+             (this.fxCostEstimate!=null &&
+              this.fxCostEstimate.equals(other.getFxCostEstimate()))) &&
+            ((this.fxCostEstimateRate==null && other.getFxCostEstimateRate()==null) || 
+             (this.fxCostEstimateRate!=null &&
+              this.fxCostEstimateRate.equals(other.getFxCostEstimateRate()))) &&
+            ((this.fxEstGrossProfit==null && other.getFxEstGrossProfit()==null) || 
+             (this.fxEstGrossProfit!=null &&
+              this.fxEstGrossProfit.equals(other.getFxEstGrossProfit()))) &&
+            ((this.fxTranCostEstimate==null && other.getFxTranCostEstimate()==null) || 
+             (this.fxTranCostEstimate!=null &&
+              this.fxTranCostEstimate.equals(other.getFxTranCostEstimate()))) &&
+            ((this.fxVsoeAllocation==null && other.getFxVsoeAllocation()==null) || 
+             (this.fxVsoeAllocation!=null &&
+              this.fxVsoeAllocation.equals(other.getFxVsoeAllocation()))) &&
+            ((this.fxVsoeAmount==null && other.getFxVsoeAmount()==null) || 
+             (this.fxVsoeAmount!=null &&
+              this.fxVsoeAmount.equals(other.getFxVsoeAmount()))) &&
+            ((this.fxVsoePrice==null && other.getFxVsoePrice()==null) || 
+             (this.fxVsoePrice!=null &&
+              this.fxVsoePrice.equals(other.getFxVsoePrice()))) &&
+            ((this.gcoAvailabelToCharge==null && other.getGcoAvailabelToCharge()==null) || 
+             (this.gcoAvailabelToCharge!=null &&
+              this.gcoAvailabelToCharge.equals(other.getGcoAvailabelToCharge()))) &&
+            ((this.gcoAvailableToRefund==null && other.getGcoAvailableToRefund()==null) || 
+             (this.gcoAvailableToRefund!=null &&
+              this.gcoAvailableToRefund.equals(other.getGcoAvailableToRefund()))) &&
+            ((this.gcoAvsStreetMatch==null && other.getGcoAvsStreetMatch()==null) || 
+             (this.gcoAvsStreetMatch!=null &&
+              java.util.Arrays.equals(this.gcoAvsStreetMatch, other.getGcoAvsStreetMatch()))) &&
+            ((this.gcoAvsZipMatch==null && other.getGcoAvsZipMatch()==null) || 
+             (this.gcoAvsZipMatch!=null &&
+              java.util.Arrays.equals(this.gcoAvsZipMatch, other.getGcoAvsZipMatch()))) &&
+            ((this.gcoBuyerAccountAge==null && other.getGcoBuyerAccountAge()==null) || 
+             (this.gcoBuyerAccountAge!=null &&
+              this.gcoBuyerAccountAge.equals(other.getGcoBuyerAccountAge()))) &&
+            ((this.gcoBuyerIp==null && other.getGcoBuyerIp()==null) || 
+             (this.gcoBuyerIp!=null &&
+              this.gcoBuyerIp.equals(other.getGcoBuyerIp()))) &&
+            ((this.gcoChargeAmount==null && other.getGcoChargeAmount()==null) || 
+             (this.gcoChargeAmount!=null &&
+              this.gcoChargeAmount.equals(other.getGcoChargeAmount()))) &&
+            ((this.gcoChargebackAmount==null && other.getGcoChargebackAmount()==null) || 
+             (this.gcoChargebackAmount!=null &&
+              this.gcoChargebackAmount.equals(other.getGcoChargebackAmount()))) &&
+            ((this.gcoConfirmedChargedTotal==null && other.getGcoConfirmedChargedTotal()==null) || 
+             (this.gcoConfirmedChargedTotal!=null &&
+              this.gcoConfirmedChargedTotal.equals(other.getGcoConfirmedChargedTotal()))) &&
+            ((this.gcoConfirmedRefundedTotal==null && other.getGcoConfirmedRefundedTotal()==null) || 
+             (this.gcoConfirmedRefundedTotal!=null &&
+              this.gcoConfirmedRefundedTotal.equals(other.getGcoConfirmedRefundedTotal()))) &&
+            ((this.gcoCreditcardNumber==null && other.getGcoCreditcardNumber()==null) || 
+             (this.gcoCreditcardNumber!=null &&
+              this.gcoCreditcardNumber.equals(other.getGcoCreditcardNumber()))) &&
+            ((this.gcoCscMatch==null && other.getGcoCscMatch()==null) || 
+             (this.gcoCscMatch!=null &&
+              java.util.Arrays.equals(this.gcoCscMatch, other.getGcoCscMatch()))) &&
+            ((this.gcoFinancialState==null && other.getGcoFinancialState()==null) || 
+             (this.gcoFinancialState!=null &&
+              this.gcoFinancialState.equals(other.getGcoFinancialState()))) &&
+            ((this.gcoFulfillmentState==null && other.getGcoFulfillmentState()==null) || 
+             (this.gcoFulfillmentState!=null &&
+              this.gcoFulfillmentState.equals(other.getGcoFulfillmentState()))) &&
+            ((this.gcoOrderId==null && other.getGcoOrderId()==null) || 
+             (this.gcoOrderId!=null &&
+              this.gcoOrderId.equals(other.getGcoOrderId()))) &&
+            ((this.gcoOrderTotal==null && other.getGcoOrderTotal()==null) || 
+             (this.gcoOrderTotal!=null &&
+              this.gcoOrderTotal.equals(other.getGcoOrderTotal()))) &&
+            ((this.gcoPromotionAmount==null && other.getGcoPromotionAmount()==null) || 
+             (this.gcoPromotionAmount!=null &&
+              this.gcoPromotionAmount.equals(other.getGcoPromotionAmount()))) &&
+            ((this.gcoPromotionName==null && other.getGcoPromotionName()==null) || 
+             (this.gcoPromotionName!=null &&
+              this.gcoPromotionName.equals(other.getGcoPromotionName()))) &&
+            ((this.gcoRefundAmount==null && other.getGcoRefundAmount()==null) || 
+             (this.gcoRefundAmount!=null &&
+              this.gcoRefundAmount.equals(other.getGcoRefundAmount()))) &&
+            ((this.gcoShippingTotal==null && other.getGcoShippingTotal()==null) || 
+             (this.gcoShippingTotal!=null &&
+              this.gcoShippingTotal.equals(other.getGcoShippingTotal()))) &&
+            ((this.gcoStateChangedDetail==null && other.getGcoStateChangedDetail()==null) || 
+             (this.gcoStateChangedDetail!=null &&
+              this.gcoStateChangedDetail.equals(other.getGcoStateChangedDetail()))) &&
+            ((this.giftCertificate==null && other.getGiftCertificate()==null) || 
+             (this.giftCertificate!=null &&
+              this.giftCertificate.equals(other.getGiftCertificate()))) &&
+            ((this.grossAmount==null && other.getGrossAmount()==null) || 
+             (this.grossAmount!=null &&
+              this.grossAmount.equals(other.getGrossAmount()))) &&
+            ((this.includeInForecast==null && other.getIncludeInForecast()==null) || 
+             (this.includeInForecast!=null &&
+              this.includeInForecast.equals(other.getIncludeInForecast()))) &&
+            ((this.incoterm==null && other.getIncoterm()==null) || 
+             (this.incoterm!=null &&
+              java.util.Arrays.equals(this.incoterm, other.getIncoterm()))) &&
+            ((this.intercoStatus==null && other.getIntercoStatus()==null) || 
+             (this.intercoStatus!=null &&
+              java.util.Arrays.equals(this.intercoStatus, other.getIntercoStatus()))) &&
+            ((this.intercoTransaction==null && other.getIntercoTransaction()==null) || 
+             (this.intercoTransaction!=null &&
+              java.util.Arrays.equals(this.intercoTransaction, other.getIntercoTransaction()))) &&
+            ((this.internalId==null && other.getInternalId()==null) || 
+             (this.internalId!=null &&
+              java.util.Arrays.equals(this.internalId, other.getInternalId()))) &&
+            ((this.internalIdNumber==null && other.getInternalIdNumber()==null) || 
+             (this.internalIdNumber!=null &&
+              this.internalIdNumber.equals(other.getInternalIdNumber()))) &&
+            ((this.inVsoeBundle==null && other.getInVsoeBundle()==null) || 
+             (this.inVsoeBundle!=null &&
+              this.inVsoeBundle.equals(other.getInVsoeBundle()))) &&
+            ((this.isAllocation==null && other.getIsAllocation()==null) || 
+             (this.isAllocation!=null &&
+              this.isAllocation.equals(other.getIsAllocation()))) &&
+            ((this.isBackflush==null && other.getIsBackflush()==null) || 
+             (this.isBackflush!=null &&
+              this.isBackflush.equals(other.getIsBackflush()))) &&
+            ((this.isGcoChargeback==null && other.getIsGcoChargeback()==null) || 
+             (this.isGcoChargeback!=null &&
+              this.isGcoChargeback.equals(other.getIsGcoChargeback()))) &&
+            ((this.isGcoChargeConfirmed==null && other.getIsGcoChargeConfirmed()==null) || 
+             (this.isGcoChargeConfirmed!=null &&
+              this.isGcoChargeConfirmed.equals(other.getIsGcoChargeConfirmed()))) &&
+            ((this.isGcoPaymentGuaranteed==null && other.getIsGcoPaymentGuaranteed()==null) || 
+             (this.isGcoPaymentGuaranteed!=null &&
+              this.isGcoPaymentGuaranteed.equals(other.getIsGcoPaymentGuaranteed()))) &&
+            ((this.isGcoRefundConfirmed==null && other.getIsGcoRefundConfirmed()==null) || 
+             (this.isGcoRefundConfirmed!=null &&
+              this.isGcoRefundConfirmed.equals(other.getIsGcoRefundConfirmed()))) &&
+            ((this.isInsideDelivery==null && other.getIsInsideDelivery()==null) || 
+             (this.isInsideDelivery!=null &&
+              this.isInsideDelivery.equals(other.getIsInsideDelivery()))) &&
+            ((this.isInsidePickup==null && other.getIsInsidePickup()==null) || 
+             (this.isInsidePickup!=null &&
+              this.isInsidePickup.equals(other.getIsInsidePickup()))) &&
+            ((this.isIntercompanyAdjustment==null && other.getIsIntercompanyAdjustment()==null) || 
+             (this.isIntercompanyAdjustment!=null &&
+              this.isIntercompanyAdjustment.equals(other.getIsIntercompanyAdjustment()))) &&
+            ((this.isMultiShipTo==null && other.getIsMultiShipTo()==null) || 
+             (this.isMultiShipTo!=null &&
+              this.isMultiShipTo.equals(other.getIsMultiShipTo()))) &&
+            ((this.isPayPalMeth==null && other.getIsPayPalMeth()==null) || 
+             (this.isPayPalMeth!=null &&
+              this.isPayPalMeth.equals(other.getIsPayPalMeth()))) &&
+            ((this.isReversal==null && other.getIsReversal()==null) || 
+             (this.isReversal!=null &&
+              this.isReversal.equals(other.getIsReversal()))) &&
+            ((this.isRevRecTransaction==null && other.getIsRevRecTransaction()==null) || 
+             (this.isRevRecTransaction!=null &&
+              this.isRevRecTransaction.equals(other.getIsRevRecTransaction()))) &&
+            ((this.isScrap==null && other.getIsScrap()==null) || 
+             (this.isScrap!=null &&
+              this.isScrap.equals(other.getIsScrap()))) &&
+            ((this.isShipAddress==null && other.getIsShipAddress()==null) || 
+             (this.isShipAddress!=null &&
+              this.isShipAddress.equals(other.getIsShipAddress()))) &&
+            ((this.isTransferPriceCosting==null && other.getIsTransferPriceCosting()==null) || 
+             (this.isTransferPriceCosting!=null &&
+              this.isTransferPriceCosting.equals(other.getIsTransferPriceCosting()))) &&
+            ((this.isVsoeAlloc==null && other.getIsVsoeAlloc()==null) || 
+             (this.isVsoeAlloc!=null &&
+              this.isVsoeAlloc.equals(other.getIsVsoeAlloc()))) &&
+            ((this.isWip==null && other.getIsWip()==null) || 
+             (this.isWip!=null &&
+              this.isWip.equals(other.getIsWip()))) &&
+            ((this.item==null && other.getItem()==null) || 
+             (this.item!=null &&
+              java.util.Arrays.equals(this.item, other.getItem()))) &&
+            ((this.itemFulfillmentChoice==null && other.getItemFulfillmentChoice()==null) || 
+             (this.itemFulfillmentChoice!=null &&
+              java.util.Arrays.equals(this.itemFulfillmentChoice, other.getItemFulfillmentChoice()))) &&
+            ((this.itemRevision==null && other.getItemRevision()==null) || 
+             (this.itemRevision!=null &&
+              java.util.Arrays.equals(this.itemRevision, other.getItemRevision()))) &&
+            ((this.itemSubOf==null && other.getItemSubOf()==null) || 
+             (this.itemSubOf!=null &&
+              java.util.Arrays.equals(this.itemSubOf, other.getItemSubOf()))) &&
+            ((this.landedCostPerLine==null && other.getLandedCostPerLine()==null) || 
+             (this.landedCostPerLine!=null &&
+              this.landedCostPerLine.equals(other.getLandedCostPerLine()))) &&
+            ((this.lastModifiedDate==null && other.getLastModifiedDate()==null) || 
+             (this.lastModifiedDate!=null &&
+              this.lastModifiedDate.equals(other.getLastModifiedDate()))) &&
+            ((this.leadSource==null && other.getLeadSource()==null) || 
+             (this.leadSource!=null &&
+              java.util.Arrays.equals(this.leadSource, other.getLeadSource()))) &&
+            ((this.lineUniqueKey==null && other.getLineUniqueKey()==null) || 
+             (this.lineUniqueKey!=null &&
+              this.lineUniqueKey.equals(other.getLineUniqueKey()))) &&
+            ((this.location==null && other.getLocation()==null) || 
+             (this.location!=null &&
+              java.util.Arrays.equals(this.location, other.getLocation()))) &&
+            ((this.locationAutoAssigned==null && other.getLocationAutoAssigned()==null) || 
+             (this.locationAutoAssigned!=null &&
+              this.locationAutoAssigned.equals(other.getLocationAutoAssigned()))) &&
+            ((this.mainLine==null && other.getMainLine()==null) || 
+             (this.mainLine!=null &&
+              this.mainLine.equals(other.getMainLine()))) &&
+            ((this.mainName==null && other.getMainName()==null) || 
+             (this.mainName!=null &&
+              java.util.Arrays.equals(this.mainName, other.getMainName()))) &&
+            ((this.manufacturingRouting==null && other.getManufacturingRouting()==null) || 
+             (this.manufacturingRouting!=null &&
+              java.util.Arrays.equals(this.manufacturingRouting, other.getManufacturingRouting()))) &&
+            ((this.matchBillToReceipt==null && other.getMatchBillToReceipt()==null) || 
+             (this.matchBillToReceipt!=null &&
+              this.matchBillToReceipt.equals(other.getMatchBillToReceipt()))) &&
+            ((this.memo==null && other.getMemo()==null) || 
+             (this.memo!=null &&
+              this.memo.equals(other.getMemo()))) &&
+            ((this.memoMain==null && other.getMemoMain()==null) || 
+             (this.memoMain!=null &&
+              this.memoMain.equals(other.getMemoMain()))) &&
+            ((this.memorized==null && other.getMemorized()==null) || 
+             (this.memorized!=null &&
+              this.memorized.equals(other.getMemorized()))) &&
+            ((this.merchantAccount==null && other.getMerchantAccount()==null) || 
+             (this.merchantAccount!=null &&
+              this.merchantAccount.equals(other.getMerchantAccount()))) &&
+            ((this.message==null && other.getMessage()==null) || 
+             (this.message!=null &&
+              this.message.equals(other.getMessage()))) &&
+            ((this.multiSubsidiary==null && other.getMultiSubsidiary()==null) || 
+             (this.multiSubsidiary!=null &&
+              this.multiSubsidiary.equals(other.getMultiSubsidiary()))) &&
+            ((this.nameText==null && other.getNameText()==null) || 
+             (this.nameText!=null &&
+              this.nameText.equals(other.getNameText()))) &&
+            ((this.netAmount==null && other.getNetAmount()==null) || 
+             (this.netAmount!=null &&
+              this.netAmount.equals(other.getNetAmount()))) &&
+            ((this.nextApprover==null && other.getNextApprover()==null) || 
+             (this.nextApprover!=null &&
+              java.util.Arrays.equals(this.nextApprover, other.getNextApprover()))) &&
+            ((this.nextBillDate==null && other.getNextBillDate()==null) || 
+             (this.nextBillDate!=null &&
+              this.nextBillDate.equals(other.getNextBillDate()))) &&
+            ((this.noAutoAssignLocation==null && other.getNoAutoAssignLocation()==null) || 
+             (this.noAutoAssignLocation!=null &&
+              this.noAutoAssignLocation.equals(other.getNoAutoAssignLocation()))) &&
+            ((this.nonReimbursable==null && other.getNonReimbursable()==null) || 
+             (this.nonReimbursable!=null &&
+              this.nonReimbursable.equals(other.getNonReimbursable()))) &&
+            ((this.number==null && other.getNumber()==null) || 
+             (this.number!=null &&
+              this.number.equals(other.getNumber()))) &&
+            ((this.oneTimeTotal==null && other.getOneTimeTotal()==null) || 
+             (this.oneTimeTotal!=null &&
+              this.oneTimeTotal.equals(other.getOneTimeTotal()))) &&
+            ((this.opportunity==null && other.getOpportunity()==null) || 
+             (this.opportunity!=null &&
+              java.util.Arrays.equals(this.opportunity, other.getOpportunity()))) &&
+            ((this.orderPriority==null && other.getOrderPriority()==null) || 
+             (this.orderPriority!=null &&
+              this.orderPriority.equals(other.getOrderPriority()))) &&
+            ((this.otherRefNum==null && other.getOtherRefNum()==null) || 
+             (this.otherRefNum!=null &&
+              this.otherRefNum.equals(other.getOtherRefNum()))) &&
+            ((this.otherRefNumNonDeposit==null && other.getOtherRefNumNonDeposit()==null) || 
+             (this.otherRefNumNonDeposit!=null &&
+              this.otherRefNumNonDeposit.equals(other.getOtherRefNumNonDeposit()))) &&
+            ((this.overheadParentItem==null && other.getOverheadParentItem()==null) || 
+             (this.overheadParentItem!=null &&
+              java.util.Arrays.equals(this.overheadParentItem, other.getOverheadParentItem()))) &&
+            ((this.packageCount==null && other.getPackageCount()==null) || 
+             (this.packageCount!=null &&
+              this.packageCount.equals(other.getPackageCount()))) &&
+            ((this.paidTransaction==null && other.getPaidTransaction()==null) || 
+             (this.paidTransaction!=null &&
+              java.util.Arrays.equals(this.paidTransaction, other.getPaidTransaction()))) &&
+            ((this.parent==null && other.getParent()==null) || 
+             (this.parent!=null &&
+              this.parent.equals(other.getParent()))) &&
+            ((this.partner==null && other.getPartner()==null) || 
+             (this.partner!=null &&
+              java.util.Arrays.equals(this.partner, other.getPartner()))) &&
+            ((this.partnerContribution==null && other.getPartnerContribution()==null) || 
+             (this.partnerContribution!=null &&
+              this.partnerContribution.equals(other.getPartnerContribution()))) &&
+            ((this.partnerRole==null && other.getPartnerRole()==null) || 
+             (this.partnerRole!=null &&
+              java.util.Arrays.equals(this.partnerRole, other.getPartnerRole()))) &&
+            ((this.partnerTeamMember==null && other.getPartnerTeamMember()==null) || 
+             (this.partnerTeamMember!=null &&
+              java.util.Arrays.equals(this.partnerTeamMember, other.getPartnerTeamMember()))) &&
+            ((this.payingTransaction==null && other.getPayingTransaction()==null) || 
+             (this.payingTransaction!=null &&
+              java.util.Arrays.equals(this.payingTransaction, other.getPayingTransaction()))) &&
+            ((this.paymentApproved==null && other.getPaymentApproved()==null) || 
+             (this.paymentApproved!=null &&
+              this.paymentApproved.equals(other.getPaymentApproved()))) &&
+            ((this.paymentEventDate==null && other.getPaymentEventDate()==null) || 
+             (this.paymentEventDate!=null &&
+              this.paymentEventDate.equals(other.getPaymentEventDate()))) &&
+            ((this.paymentEventHoldReason==null && other.getPaymentEventHoldReason()==null) || 
+             (this.paymentEventHoldReason!=null &&
+              java.util.Arrays.equals(this.paymentEventHoldReason, other.getPaymentEventHoldReason()))) &&
+            ((this.paymentEventPurchaseCardUsed==null && other.getPaymentEventPurchaseCardUsed()==null) || 
+             (this.paymentEventPurchaseCardUsed!=null &&
+              this.paymentEventPurchaseCardUsed.equals(other.getPaymentEventPurchaseCardUsed()))) &&
+            ((this.paymentEventPurchaseDataSent==null && other.getPaymentEventPurchaseDataSent()==null) || 
+             (this.paymentEventPurchaseDataSent!=null &&
+              this.paymentEventPurchaseDataSent.equals(other.getPaymentEventPurchaseDataSent()))) &&
+            ((this.paymentEventResult==null && other.getPaymentEventResult()==null) || 
+             (this.paymentEventResult!=null &&
+              java.util.Arrays.equals(this.paymentEventResult, other.getPaymentEventResult()))) &&
+            ((this.paymentEventType==null && other.getPaymentEventType()==null) || 
+             (this.paymentEventType!=null &&
+              java.util.Arrays.equals(this.paymentEventType, other.getPaymentEventType()))) &&
+            ((this.paymentHold==null && other.getPaymentHold()==null) || 
+             (this.paymentHold!=null &&
+              this.paymentHold.equals(other.getPaymentHold()))) &&
+            ((this.paymentMethod==null && other.getPaymentMethod()==null) || 
+             (this.paymentMethod!=null &&
+              java.util.Arrays.equals(this.paymentMethod, other.getPaymentMethod()))) &&
+            ((this.payPalPending==null && other.getPayPalPending()==null) || 
+             (this.payPalPending!=null &&
+              this.payPalPending.equals(other.getPayPalPending()))) &&
+            ((this.payPalStatus==null && other.getPayPalStatus()==null) || 
+             (this.payPalStatus!=null &&
+              this.payPalStatus.equals(other.getPayPalStatus()))) &&
+            ((this.payPalTranId==null && other.getPayPalTranId()==null) || 
+             (this.payPalTranId!=null &&
+              this.payPalTranId.equals(other.getPayPalTranId()))) &&
+            ((this.pnRefNum==null && other.getPnRefNum()==null) || 
+             (this.pnRefNum!=null &&
+              this.pnRefNum.equals(other.getPnRefNum()))) &&
+            ((this.poAsText==null && other.getPoAsText()==null) || 
+             (this.poAsText!=null &&
+              this.poAsText.equals(other.getPoAsText()))) &&
+            ((this.posting==null && other.getPosting()==null) || 
+             (this.posting!=null &&
+              this.posting.equals(other.getPosting()))) &&
+            ((this.postingPeriod==null && other.getPostingPeriod()==null) || 
+             (this.postingPeriod!=null &&
+              this.postingPeriod.equals(other.getPostingPeriod()))) &&
+            ((this.postingPeriodRelative==null && other.getPostingPeriodRelative()==null) || 
+             (this.postingPeriodRelative!=null &&
+              this.postingPeriodRelative.equals(other.getPostingPeriodRelative()))) &&
+            ((this.priceLevel==null && other.getPriceLevel()==null) || 
+             (this.priceLevel!=null &&
+              java.util.Arrays.equals(this.priceLevel, other.getPriceLevel()))) &&
+            ((this.printedPickingTicket==null && other.getPrintedPickingTicket()==null) || 
+             (this.printedPickingTicket!=null &&
+              this.printedPickingTicket.equals(other.getPrintedPickingTicket()))) &&
+            ((this.probability==null && other.getProbability()==null) || 
+             (this.probability!=null &&
+              this.probability.equals(other.getProbability()))) &&
+            ((this.projectedAmount==null && other.getProjectedAmount()==null) || 
+             (this.projectedAmount!=null &&
+              this.projectedAmount.equals(other.getProjectedAmount()))) &&
+            ((this.projectTask==null && other.getProjectTask()==null) || 
+             (this.projectTask!=null &&
+              java.util.Arrays.equals(this.projectTask, other.getProjectTask()))) &&
+            ((this.promoCode==null && other.getPromoCode()==null) || 
+             (this.promoCode!=null &&
+              java.util.Arrays.equals(this.promoCode, other.getPromoCode()))) &&
+            ((this.purchaseOrder==null && other.getPurchaseOrder()==null) || 
+             (this.purchaseOrder!=null &&
+              java.util.Arrays.equals(this.purchaseOrder, other.getPurchaseOrder()))) &&
+            ((this.quantity==null && other.getQuantity()==null) || 
+             (this.quantity!=null &&
+              this.quantity.equals(other.getQuantity()))) &&
+            ((this.quantityBilled==null && other.getQuantityBilled()==null) || 
+             (this.quantityBilled!=null &&
+              this.quantityBilled.equals(other.getQuantityBilled()))) &&
+            ((this.quantityCommitted==null && other.getQuantityCommitted()==null) || 
+             (this.quantityCommitted!=null &&
+              this.quantityCommitted.equals(other.getQuantityCommitted()))) &&
+            ((this.quantityPacked==null && other.getQuantityPacked()==null) || 
+             (this.quantityPacked!=null &&
+              this.quantityPacked.equals(other.getQuantityPacked()))) &&
+            ((this.quantityPicked==null && other.getQuantityPicked()==null) || 
+             (this.quantityPicked!=null &&
+              this.quantityPicked.equals(other.getQuantityPicked()))) &&
+            ((this.quantityRevCommitted==null && other.getQuantityRevCommitted()==null) || 
+             (this.quantityRevCommitted!=null &&
+              this.quantityRevCommitted.equals(other.getQuantityRevCommitted()))) &&
+            ((this.quantityShipRecv==null && other.getQuantityShipRecv()==null) || 
+             (this.quantityShipRecv!=null &&
+              this.quantityShipRecv.equals(other.getQuantityShipRecv()))) &&
+            ((this.recognizedRevenue==null && other.getRecognizedRevenue()==null) || 
+             (this.recognizedRevenue!=null &&
+              this.recognizedRevenue.equals(other.getRecognizedRevenue()))) &&
+            ((this.recordType==null && other.getRecordType()==null) || 
+             (this.recordType!=null &&
+              this.recordType.equals(other.getRecordType()))) &&
+            ((this.recurAnnuallyTotal==null && other.getRecurAnnuallyTotal()==null) || 
+             (this.recurAnnuallyTotal!=null &&
+              this.recurAnnuallyTotal.equals(other.getRecurAnnuallyTotal()))) &&
+            ((this.recurMonthlyTotal==null && other.getRecurMonthlyTotal()==null) || 
+             (this.recurMonthlyTotal!=null &&
+              this.recurMonthlyTotal.equals(other.getRecurMonthlyTotal()))) &&
+            ((this.recurQuarterlyTotal==null && other.getRecurQuarterlyTotal()==null) || 
+             (this.recurQuarterlyTotal!=null &&
+              this.recurQuarterlyTotal.equals(other.getRecurQuarterlyTotal()))) &&
+            ((this.recurringBill==null && other.getRecurringBill()==null) || 
+             (this.recurringBill!=null &&
+              this.recurringBill.equals(other.getRecurringBill()))) &&
+            ((this.recurWeeklyTotal==null && other.getRecurWeeklyTotal()==null) || 
+             (this.recurWeeklyTotal!=null &&
+              this.recurWeeklyTotal.equals(other.getRecurWeeklyTotal()))) &&
+            ((this.refNumber==null && other.getRefNumber()==null) || 
+             (this.refNumber!=null &&
+              this.refNumber.equals(other.getRefNumber()))) &&
+            ((this.revCommitStatus==null && other.getRevCommitStatus()==null) || 
+             (this.revCommitStatus!=null &&
+              java.util.Arrays.equals(this.revCommitStatus, other.getRevCommitStatus()))) &&
+            ((this.revCommittingStatus==null && other.getRevCommittingStatus()==null) || 
+             (this.revCommittingStatus!=null &&
+              this.revCommittingStatus.equals(other.getRevCommittingStatus()))) &&
+            ((this.revCommittingTransaction==null && other.getRevCommittingTransaction()==null) || 
+             (this.revCommittingTransaction!=null &&
+              java.util.Arrays.equals(this.revCommittingTransaction, other.getRevCommittingTransaction()))) &&
+            ((this.revenueStatus==null && other.getRevenueStatus()==null) || 
+             (this.revenueStatus!=null &&
+              java.util.Arrays.equals(this.revenueStatus, other.getRevenueStatus()))) &&
+            ((this.reversalDate==null && other.getReversalDate()==null) || 
+             (this.reversalDate!=null &&
+              this.reversalDate.equals(other.getReversalDate()))) &&
+            ((this.reversalNumber==null && other.getReversalNumber()==null) || 
+             (this.reversalNumber!=null &&
+              this.reversalNumber.equals(other.getReversalNumber()))) &&
+            ((this.revRecEndDate==null && other.getRevRecEndDate()==null) || 
+             (this.revRecEndDate!=null &&
+              this.revRecEndDate.equals(other.getRevRecEndDate()))) &&
+            ((this.revRecOnRevCommitment==null && other.getRevRecOnRevCommitment()==null) || 
+             (this.revRecOnRevCommitment!=null &&
+              this.revRecOnRevCommitment.equals(other.getRevRecOnRevCommitment()))) &&
+            ((this.revRecStartDate==null && other.getRevRecStartDate()==null) || 
+             (this.revRecStartDate!=null &&
+              this.revRecStartDate.equals(other.getRevRecStartDate()))) &&
+            ((this.revRecTermInMonths==null && other.getRevRecTermInMonths()==null) || 
+             (this.revRecTermInMonths!=null &&
+              this.revRecTermInMonths.equals(other.getRevRecTermInMonths()))) &&
+            ((this.salesEffectiveDate==null && other.getSalesEffectiveDate()==null) || 
+             (this.salesEffectiveDate!=null &&
+              this.salesEffectiveDate.equals(other.getSalesEffectiveDate()))) &&
+            ((this.salesOrder==null && other.getSalesOrder()==null) || 
+             (this.salesOrder!=null &&
+              java.util.Arrays.equals(this.salesOrder, other.getSalesOrder()))) &&
+            ((this.salesRep==null && other.getSalesRep()==null) || 
+             (this.salesRep!=null &&
+              java.util.Arrays.equals(this.salesRep, other.getSalesRep()))) &&
+            ((this.salesTeamMember==null && other.getSalesTeamMember()==null) || 
+             (this.salesTeamMember!=null &&
+              java.util.Arrays.equals(this.salesTeamMember, other.getSalesTeamMember()))) &&
+            ((this.salesTeamRole==null && other.getSalesTeamRole()==null) || 
+             (this.salesTeamRole!=null &&
+              java.util.Arrays.equals(this.salesTeamRole, other.getSalesTeamRole()))) &&
+            ((this.schedulingMethod==null && other.getSchedulingMethod()==null) || 
+             (this.schedulingMethod!=null &&
+              java.util.Arrays.equals(this.schedulingMethod, other.getSchedulingMethod()))) &&
+            ((this.serialNumber==null && other.getSerialNumber()==null) || 
+             (this.serialNumber!=null &&
+              this.serialNumber.equals(other.getSerialNumber()))) &&
+            ((this.serialNumberCost==null && other.getSerialNumberCost()==null) || 
+             (this.serialNumberCost!=null &&
+              this.serialNumberCost.equals(other.getSerialNumberCost()))) &&
+            ((this.serialNumberCostAdjustment==null && other.getSerialNumberCostAdjustment()==null) || 
+             (this.serialNumberCostAdjustment!=null &&
+              this.serialNumberCostAdjustment.equals(other.getSerialNumberCostAdjustment()))) &&
+            ((this.serialNumberQuantity==null && other.getSerialNumberQuantity()==null) || 
+             (this.serialNumberQuantity!=null &&
+              this.serialNumberQuantity.equals(other.getSerialNumberQuantity()))) &&
+            ((this.serialNumbers==null && other.getSerialNumbers()==null) || 
+             (this.serialNumbers!=null &&
+              this.serialNumbers.equals(other.getSerialNumbers()))) &&
+            ((this.shipAddress==null && other.getShipAddress()==null) || 
+             (this.shipAddress!=null &&
+              this.shipAddress.equals(other.getShipAddress()))) &&
+            ((this.shipAddressee==null && other.getShipAddressee()==null) || 
+             (this.shipAddressee!=null &&
+              this.shipAddressee.equals(other.getShipAddressee()))) &&
+            ((this.shipAttention==null && other.getShipAttention()==null) || 
+             (this.shipAttention!=null &&
+              this.shipAttention.equals(other.getShipAttention()))) &&
+            ((this.shipCarrier==null && other.getShipCarrier()==null) || 
+             (this.shipCarrier!=null &&
+              java.util.Arrays.equals(this.shipCarrier, other.getShipCarrier()))) &&
+            ((this.shipCity==null && other.getShipCity()==null) || 
+             (this.shipCity!=null &&
+              this.shipCity.equals(other.getShipCity()))) &&
+            ((this.shipComplete==null && other.getShipComplete()==null) || 
+             (this.shipComplete!=null &&
+              this.shipComplete.equals(other.getShipComplete()))) &&
+            ((this.shipCountry==null && other.getShipCountry()==null) || 
+             (this.shipCountry!=null &&
+              java.util.Arrays.equals(this.shipCountry, other.getShipCountry()))) &&
+            ((this.shipCounty==null && other.getShipCounty()==null) || 
+             (this.shipCounty!=null &&
+              this.shipCounty.equals(other.getShipCounty()))) &&
+            ((this.shipDate==null && other.getShipDate()==null) || 
+             (this.shipDate!=null &&
+              this.shipDate.equals(other.getShipDate()))) &&
+            ((this.shipGroup==null && other.getShipGroup()==null) || 
+             (this.shipGroup!=null &&
+              this.shipGroup.equals(other.getShipGroup()))) &&
+            ((this.shipMethod==null && other.getShipMethod()==null) || 
+             (this.shipMethod!=null &&
+              java.util.Arrays.equals(this.shipMethod, other.getShipMethod()))) &&
+            ((this.shipPhone==null && other.getShipPhone()==null) || 
+             (this.shipPhone!=null &&
+              this.shipPhone.equals(other.getShipPhone()))) &&
+            ((this.shipping==null && other.getShipping()==null) || 
+             (this.shipping!=null &&
+              this.shipping.equals(other.getShipping()))) &&
+            ((this.shipRecvStatus==null && other.getShipRecvStatus()==null) || 
+             (this.shipRecvStatus!=null &&
+              this.shipRecvStatus.equals(other.getShipRecvStatus()))) &&
+            ((this.shipRecvStatusLine==null && other.getShipRecvStatusLine()==null) || 
+             (this.shipRecvStatusLine!=null &&
+              this.shipRecvStatusLine.equals(other.getShipRecvStatusLine()))) &&
+            ((this.shipState==null && other.getShipState()==null) || 
+             (this.shipState!=null &&
+              java.util.Arrays.equals(this.shipState, other.getShipState()))) &&
+            ((this.shipTo==null && other.getShipTo()==null) || 
+             (this.shipTo!=null &&
+              java.util.Arrays.equals(this.shipTo, other.getShipTo()))) &&
+            ((this.shipZip==null && other.getShipZip()==null) || 
+             (this.shipZip!=null &&
+              this.shipZip.equals(other.getShipZip()))) &&
+            ((this.source==null && other.getSource()==null) || 
+             (this.source!=null &&
+              java.util.Arrays.equals(this.source, other.getSource()))) &&
+            ((this.startDate==null && other.getStartDate()==null) || 
+             (this.startDate!=null &&
+              this.startDate.equals(other.getStartDate()))) &&
+            ((this.statistical==null && other.getStatistical()==null) || 
+             (this.statistical!=null &&
+              this.statistical.equals(other.getStatistical()))) &&
+            ((this.status==null && other.getStatus()==null) || 
+             (this.status!=null &&
+              java.util.Arrays.equals(this.status, other.getStatus()))) &&
+            ((this.subscription==null && other.getSubscription()==null) || 
+             (this.subscription!=null &&
+              java.util.Arrays.equals(this.subscription, other.getSubscription()))) &&
+            ((this.subscriptionLine==null && other.getSubscriptionLine()==null) || 
+             (this.subscriptionLine!=null &&
+              java.util.Arrays.equals(this.subscriptionLine, other.getSubscriptionLine()))) &&
+            ((this.subsidiary==null && other.getSubsidiary()==null) || 
+             (this.subsidiary!=null &&
+              java.util.Arrays.equals(this.subsidiary, other.getSubsidiary()))) &&
+            ((this.taxItem==null && other.getTaxItem()==null) || 
+             (this.taxItem!=null &&
+              java.util.Arrays.equals(this.taxItem, other.getTaxItem()))) &&
+            ((this.taxLine==null && other.getTaxLine()==null) || 
+             (this.taxLine!=null &&
+              this.taxLine.equals(other.getTaxLine()))) &&
+            ((this.taxPeriod==null && other.getTaxPeriod()==null) || 
+             (this.taxPeriod!=null &&
+              this.taxPeriod.equals(other.getTaxPeriod()))) &&
+            ((this.taxPeriodRelative==null && other.getTaxPeriodRelative()==null) || 
+             (this.taxPeriodRelative!=null &&
+              this.taxPeriodRelative.equals(other.getTaxPeriodRelative()))) &&
+            ((this.taxRate==null && other.getTaxRate()==null) || 
+             (this.taxRate!=null &&
+              this.taxRate.equals(other.getTaxRate()))) &&
+            ((this.terms==null && other.getTerms()==null) || 
+             (this.terms!=null &&
+              java.util.Arrays.equals(this.terms, other.getTerms()))) &&
+            ((this.termsOfSale==null && other.getTermsOfSale()==null) || 
+             (this.termsOfSale!=null &&
+              java.util.Arrays.equals(this.termsOfSale, other.getTermsOfSale()))) &&
+            ((this.title==null && other.getTitle()==null) || 
+             (this.title!=null &&
+              this.title.equals(other.getTitle()))) &&
+            ((this.toBeEmailed==null && other.getToBeEmailed()==null) || 
+             (this.toBeEmailed!=null &&
+              this.toBeEmailed.equals(other.getToBeEmailed()))) &&
+            ((this.toBePrinted==null && other.getToBePrinted()==null) || 
+             (this.toBePrinted!=null &&
+              this.toBePrinted.equals(other.getToBePrinted()))) &&
+            ((this.toSubsidiary==null && other.getToSubsidiary()==null) || 
+             (this.toSubsidiary!=null &&
+              java.util.Arrays.equals(this.toSubsidiary, other.getToSubsidiary()))) &&
+            ((this.totalAmount==null && other.getTotalAmount()==null) || 
+             (this.totalAmount!=null &&
+              this.totalAmount.equals(other.getTotalAmount()))) &&
+            ((this.trackingNumbers==null && other.getTrackingNumbers()==null) || 
+             (this.trackingNumbers!=null &&
+              this.trackingNumbers.equals(other.getTrackingNumbers()))) &&
+            ((this.tranCostEstimate==null && other.getTranCostEstimate()==null) || 
+             (this.tranCostEstimate!=null &&
+              this.tranCostEstimate.equals(other.getTranCostEstimate()))) &&
+            ((this.tranDate==null && other.getTranDate()==null) || 
+             (this.tranDate!=null &&
+              this.tranDate.equals(other.getTranDate()))) &&
+            ((this.tranEstGrossProfit==null && other.getTranEstGrossProfit()==null) || 
+             (this.tranEstGrossProfit!=null &&
+              this.tranEstGrossProfit.equals(other.getTranEstGrossProfit()))) &&
+            ((this.tranEstGrossProfitPct==null && other.getTranEstGrossProfitPct()==null) || 
+             (this.tranEstGrossProfitPct!=null &&
+              this.tranEstGrossProfitPct.equals(other.getTranEstGrossProfitPct()))) &&
+            ((this.tranFxEstGrossProfit==null && other.getTranFxEstGrossProfit()==null) || 
+             (this.tranFxEstGrossProfit!=null &&
+              this.tranFxEstGrossProfit.equals(other.getTranFxEstGrossProfit()))) &&
+            ((this.tranId==null && other.getTranId()==null) || 
+             (this.tranId!=null &&
+              this.tranId.equals(other.getTranId()))) &&
+            ((this.tranIsVsoeBundle==null && other.getTranIsVsoeBundle()==null) || 
+             (this.tranIsVsoeBundle!=null &&
+              this.tranIsVsoeBundle.equals(other.getTranIsVsoeBundle()))) &&
+            ((this.transactionDiscount==null && other.getTransactionDiscount()==null) || 
+             (this.transactionDiscount!=null &&
+              this.transactionDiscount.equals(other.getTransactionDiscount()))) &&
+            ((this.transactionLineType==null && other.getTransactionLineType()==null) || 
+             (this.transactionLineType!=null &&
+              java.util.Arrays.equals(this.transactionLineType, other.getTransactionLineType()))) &&
+            ((this.transactionNumber==null && other.getTransactionNumber()==null) || 
+             (this.transactionNumber!=null &&
+              this.transactionNumber.equals(other.getTransactionNumber()))) &&
+            ((this.transferLocation==null && other.getTransferLocation()==null) || 
+             (this.transferLocation!=null &&
+              java.util.Arrays.equals(this.transferLocation, other.getTransferLocation()))) &&
+            ((this.transferOrderQuantityCommitted==null && other.getTransferOrderQuantityCommitted()==null) || 
+             (this.transferOrderQuantityCommitted!=null &&
+              this.transferOrderQuantityCommitted.equals(other.getTransferOrderQuantityCommitted()))) &&
+            ((this.transferOrderQuantityPacked==null && other.getTransferOrderQuantityPacked()==null) || 
+             (this.transferOrderQuantityPacked!=null &&
+              this.transferOrderQuantityPacked.equals(other.getTransferOrderQuantityPacked()))) &&
+            ((this.transferOrderQuantityPicked==null && other.getTransferOrderQuantityPicked()==null) || 
+             (this.transferOrderQuantityPicked!=null &&
+              this.transferOrderQuantityPicked.equals(other.getTransferOrderQuantityPicked()))) &&
+            ((this.transferOrderQuantityReceived==null && other.getTransferOrderQuantityReceived()==null) || 
+             (this.transferOrderQuantityReceived!=null &&
+              this.transferOrderQuantityReceived.equals(other.getTransferOrderQuantityReceived()))) &&
+            ((this.transferOrderQuantityShipped==null && other.getTransferOrderQuantityShipped()==null) || 
+             (this.transferOrderQuantityShipped!=null &&
+              this.transferOrderQuantityShipped.equals(other.getTransferOrderQuantityShipped()))) &&
+            ((this.type==null && other.getType()==null) || 
+             (this.type!=null &&
+              java.util.Arrays.equals(this.type, other.getType()))) &&
+            ((this.unit==null && other.getUnit()==null) || 
+             (this.unit!=null &&
+              java.util.Arrays.equals(this.unit, other.getUnit()))) &&
+            ((this.unitCostOverride==null && other.getUnitCostOverride()==null) || 
+             (this.unitCostOverride!=null &&
+              this.unitCostOverride.equals(other.getUnitCostOverride()))) &&
+            ((this.unitsType==null && other.getUnitsType()==null) || 
+             (this.unitsType!=null &&
+              java.util.Arrays.equals(this.unitsType, other.getUnitsType()))) &&
+            ((this.vendType==null && other.getVendType()==null) || 
+             (this.vendType!=null &&
+              java.util.Arrays.equals(this.vendType, other.getVendType()))) &&
+            ((this.visibleToCustomer==null && other.getVisibleToCustomer()==null) || 
+             (this.visibleToCustomer!=null &&
+              this.visibleToCustomer.equals(other.getVisibleToCustomer()))) &&
+            ((this.voided==null && other.getVoided()==null) || 
+             (this.voided!=null &&
+              this.voided.equals(other.getVoided()))) &&
+            ((this.vsoeAllocation==null && other.getVsoeAllocation()==null) || 
+             (this.vsoeAllocation!=null &&
+              this.vsoeAllocation.equals(other.getVsoeAllocation()))) &&
+            ((this.vsoeAmount==null && other.getVsoeAmount()==null) || 
+             (this.vsoeAmount!=null &&
+              this.vsoeAmount.equals(other.getVsoeAmount()))) &&
+            ((this.vsoeDeferral==null && other.getVsoeDeferral()==null) || 
+             (this.vsoeDeferral!=null &&
+              java.util.Arrays.equals(this.vsoeDeferral, other.getVsoeDeferral()))) &&
+            ((this.vsoeDelivered==null && other.getVsoeDelivered()==null) || 
+             (this.vsoeDelivered!=null &&
+              this.vsoeDelivered.equals(other.getVsoeDelivered()))) &&
+            ((this.vsoePermitDiscount==null && other.getVsoePermitDiscount()==null) || 
+             (this.vsoePermitDiscount!=null &&
+              java.util.Arrays.equals(this.vsoePermitDiscount, other.getVsoePermitDiscount()))) &&
+            ((this.vsoePrice==null && other.getVsoePrice()==null) || 
+             (this.vsoePrice!=null &&
+              this.vsoePrice.equals(other.getVsoePrice()))) &&
+            ((this.webSite==null && other.getWebSite()==null) || 
+             (this.webSite!=null &&
+              java.util.Arrays.equals(this.webSite, other.getWebSite()))) &&
+            ((this.customFieldList==null && other.getCustomFieldList()==null) || 
+             (this.customFieldList!=null &&
+              java.util.Arrays.equals(this.customFieldList, other.getCustomFieldList())));
+        __equalsCalc = null;
+        return _equals;
+    }
+
+    private boolean __hashCodeCalc = false;
+    public synchronized int hashCode() {
+        if (__hashCodeCalc) {
+            return 0;
+        }
+        __hashCodeCalc = true;
+        int _hashCode = super.hashCode();
+        if (getAccount() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getAccount());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getAccount(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getAccountType() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getAccountType());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getAccountType(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getActualShipDate() != null) {
+            _hashCode += getActualShipDate().hashCode();
+        }
+        if (getAltSalesAmount() != null) {
+            _hashCode += getAltSalesAmount().hashCode();
+        }
+        if (getAltSalesNetAmount() != null) {
+            _hashCode += getAltSalesNetAmount().hashCode();
+        }
+        if (getAmount() != null) {
+            _hashCode += getAmount().hashCode();
+        }
+        if (getAmountPaid() != null) {
+            _hashCode += getAmountPaid().hashCode();
+        }
+        if (getAmountRemaining() != null) {
+            _hashCode += getAmountRemaining().hashCode();
+        }
+        if (getAmountUnbilled() != null) {
+            _hashCode += getAmountUnbilled().hashCode();
+        }
+        if (getAnyLineItem() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getAnyLineItem());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getAnyLineItem(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getAppliedToForeignAmount() != null) {
+            _hashCode += getAppliedToForeignAmount().hashCode();
+        }
+        if (getAppliedToIsFxVariance() != null) {
+            _hashCode += getAppliedToIsFxVariance().hashCode();
+        }
+        if (getAppliedToLinkAmount() != null) {
+            _hashCode += getAppliedToLinkAmount().hashCode();
+        }
+        if (getAppliedToLinkType() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getAppliedToLinkType());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getAppliedToLinkType(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getAppliedToTransaction() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getAppliedToTransaction());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getAppliedToTransaction(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getApplyingForeignAmount() != null) {
+            _hashCode += getApplyingForeignAmount().hashCode();
+        }
+        if (getApplyingIsFxVariance() != null) {
+            _hashCode += getApplyingIsFxVariance().hashCode();
+        }
+        if (getApplyingLinkAmount() != null) {
+            _hashCode += getApplyingLinkAmount().hashCode();
+        }
+        if (getApplyingLinkType() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getApplyingLinkType());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getApplyingLinkType(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getApplyingTransaction() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getApplyingTransaction());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getApplyingTransaction(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getApprovalStatus() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getApprovalStatus());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getApprovalStatus(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getAuthCode() != null) {
+            _hashCode += getAuthCode().hashCode();
+        }
+        if (getAutoCalculateLag() != null) {
+            _hashCode += getAutoCalculateLag().hashCode();
+        }
+        if (getAvsStreetMatch() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getAvsStreetMatch());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getAvsStreetMatch(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getAvsZipMatch() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getAvsZipMatch());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getAvsZipMatch(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getBillable() != null) {
+            _hashCode += getBillable().hashCode();
+        }
+        if (getBillAddress() != null) {
+            _hashCode += getBillAddress().hashCode();
+        }
+        if (getBillAddressee() != null) {
+            _hashCode += getBillAddressee().hashCode();
+        }
+        if (getBillAttention() != null) {
+            _hashCode += getBillAttention().hashCode();
+        }
+        if (getBillCity() != null) {
+            _hashCode += getBillCity().hashCode();
+        }
+        if (getBillCountry() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getBillCountry());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getBillCountry(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getBillCounty() != null) {
+            _hashCode += getBillCounty().hashCode();
+        }
+        if (getBilledDate() != null) {
+            _hashCode += getBilledDate().hashCode();
+        }
+        if (getBillingAccount() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getBillingAccount());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getBillingAccount(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getBillingSchedule() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getBillingSchedule());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getBillingSchedule(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getBillingStatus() != null) {
+            _hashCode += getBillingStatus().hashCode();
+        }
+        if (getBillingTransaction() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getBillingTransaction());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getBillingTransaction(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getBillPhone() != null) {
+            _hashCode += getBillPhone().hashCode();
+        }
+        if (getBillState() != null) {
+            _hashCode += getBillState().hashCode();
+        }
+        if (getBillVarianceStatus() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getBillVarianceStatus());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getBillVarianceStatus(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getBillZip() != null) {
+            _hashCode += getBillZip().hashCode();
+        }
+        if (getBinNumber() != null) {
+            _hashCode += getBinNumber().hashCode();
+        }
+        if (getBinNumberQuantity() != null) {
+            _hashCode += getBinNumberQuantity().hashCode();
+        }
+        if (getBomQuantity() != null) {
+            _hashCode += getBomQuantity().hashCode();
+        }
+        if (getBookSpecificTransaction() != null) {
+            _hashCode += getBookSpecificTransaction().hashCode();
+        }
+        if (getBuildEntireAssembly() != null) {
+            _hashCode += getBuildEntireAssembly().hashCode();
+        }
+        if (getBuildVariance() != null) {
+            _hashCode += getBuildVariance().hashCode();
+        }
+        if (getBuilt() != null) {
+            _hashCode += getBuilt().hashCode();
+        }
+        if (getCanHaveStackablePromotions() != null) {
+            _hashCode += getCanHaveStackablePromotions().hashCode();
+        }
+        if (getCatchUpPeriod() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getCatchUpPeriod());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getCatchUpPeriod(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getCcCustomerCode() != null) {
+            _hashCode += getCcCustomerCode().hashCode();
+        }
+        if (getCcExpireDate() != null) {
+            _hashCode += getCcExpireDate().hashCode();
+        }
+        if (getCcName() != null) {
+            _hashCode += getCcName().hashCode();
+        }
+        if (getCcNumber() != null) {
+            _hashCode += getCcNumber().hashCode();
+        }
+        if (getChargeType() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getChargeType());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getChargeType(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (get_class() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(get_class());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(get_class(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getCleared() != null) {
+            _hashCode += getCleared().hashCode();
+        }
+        if (getClosed() != null) {
+            _hashCode += getClosed().hashCode();
+        }
+        if (getCloseDate() != null) {
+            _hashCode += getCloseDate().hashCode();
+        }
+        if (getCogs() != null) {
+            _hashCode += getCogs().hashCode();
+        }
+        if (getCommissionEffectiveDate() != null) {
+            _hashCode += getCommissionEffectiveDate().hashCode();
+        }
+        if (getCommit() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getCommit());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getCommit(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getComponentYield() != null) {
+            _hashCode += getComponentYield().hashCode();
+        }
+        if (getConfirmationNumber() != null) {
+            _hashCode += getConfirmationNumber().hashCode();
+        }
+        if (getContribution() != null) {
+            _hashCode += getContribution().hashCode();
+        }
+        if (getCostComponentAmount() != null) {
+            _hashCode += getCostComponentAmount().hashCode();
+        }
+        if (getCostComponentCategory() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getCostComponentCategory());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getCostComponentCategory(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getCostComponentItem() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getCostComponentItem());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getCostComponentItem(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getCostComponentQuantity() != null) {
+            _hashCode += getCostComponentQuantity().hashCode();
+        }
+        if (getCostComponentStandardCost() != null) {
+            _hashCode += getCostComponentStandardCost().hashCode();
+        }
+        if (getCostEstimate() != null) {
+            _hashCode += getCostEstimate().hashCode();
+        }
+        if (getCostEstimateRate() != null) {
+            _hashCode += getCostEstimateRate().hashCode();
+        }
+        if (getCostEstimateType() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getCostEstimateType());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getCostEstimateType(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getCreatedBy() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getCreatedBy());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getCreatedBy(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getCreatedFrom() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getCreatedFrom());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getCreatedFrom(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getCreditAmount() != null) {
+            _hashCode += getCreditAmount().hashCode();
+        }
+        if (getCscMatch() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getCscMatch());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getCscMatch(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getCurrency() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getCurrency());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getCurrency(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getCustomerSubOf() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getCustomerSubOf());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getCustomerSubOf(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getCustomForm() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getCustomForm());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getCustomForm(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getCustomGL() != null) {
+            _hashCode += getCustomGL().hashCode();
+        }
+        if (getCustType() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getCustType());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getCustType(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getDateCreated() != null) {
+            _hashCode += getDateCreated().hashCode();
+        }
+        if (getDaysOpen() != null) {
+            _hashCode += getDaysOpen().hashCode();
+        }
+        if (getDaysOverdue() != null) {
+            _hashCode += getDaysOverdue().hashCode();
+        }
+        if (getDebitAmount() != null) {
+            _hashCode += getDebitAmount().hashCode();
+        }
+        if (getDeferredRevenue() != null) {
+            _hashCode += getDeferredRevenue().hashCode();
+        }
+        if (getDeferRevRec() != null) {
+            _hashCode += getDeferRevRec().hashCode();
+        }
+        if (getDepartment() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getDepartment());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getDepartment(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getDepositDate() != null) {
+            _hashCode += getDepositDate().hashCode();
+        }
+        if (getDepositTransaction() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getDepositTransaction());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getDepositTransaction(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getDrAccount() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getDrAccount());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getDrAccount(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getDueDate() != null) {
+            _hashCode += getDueDate().hashCode();
+        }
+        if (getEmail() != null) {
+            _hashCode += getEmail().hashCode();
+        }
+        if (getEmployee() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getEmployee());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getEmployee(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getEndDate() != null) {
+            _hashCode += getEndDate().hashCode();
+        }
+        if (getEntity() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getEntity());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getEntity(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getEntityStatus() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getEntityStatus());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getEntityStatus(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getEstGrossProfit() != null) {
+            _hashCode += getEstGrossProfit().hashCode();
+        }
+        if (getEstGrossProfitPct() != null) {
+            _hashCode += getEstGrossProfitPct().hashCode();
+        }
+        if (getExchangeRate() != null) {
+            _hashCode += getExchangeRate().hashCode();
+        }
+        if (getExcludeCommission() != null) {
+            _hashCode += getExcludeCommission().hashCode();
+        }
+        if (getExcludeFromRateRequest() != null) {
+            _hashCode += getExcludeFromRateRequest().hashCode();
+        }
+        if (getExpectedCloseDate() != null) {
+            _hashCode += getExpectedCloseDate().hashCode();
+        }
+        if (getExpectedReceiptDate() != null) {
+            _hashCode += getExpectedReceiptDate().hashCode();
+        }
+        if (getExpenseCategory() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getExpenseCategory());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getExpenseCategory(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getExpenseDate() != null) {
+            _hashCode += getExpenseDate().hashCode();
+        }
+        if (getExternalId() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getExternalId());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getExternalId(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getExternalIdString() != null) {
+            _hashCode += getExternalIdString().hashCode();
+        }
+        if (getFinChrg() != null) {
+            _hashCode += getFinChrg().hashCode();
+        }
+        if (getFirmed() != null) {
+            _hashCode += getFirmed().hashCode();
+        }
+        if (getForecastType() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getForecastType());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getForecastType(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getFulfillingTransaction() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getFulfillingTransaction());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getFulfillingTransaction(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getFxAccount() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getFxAccount());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getFxAccount(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getFxAmount() != null) {
+            _hashCode += getFxAmount().hashCode();
+        }
+        if (getFxCostEstimate() != null) {
+            _hashCode += getFxCostEstimate().hashCode();
+        }
+        if (getFxCostEstimateRate() != null) {
+            _hashCode += getFxCostEstimateRate().hashCode();
+        }
+        if (getFxEstGrossProfit() != null) {
+            _hashCode += getFxEstGrossProfit().hashCode();
+        }
+        if (getFxTranCostEstimate() != null) {
+            _hashCode += getFxTranCostEstimate().hashCode();
+        }
+        if (getFxVsoeAllocation() != null) {
+            _hashCode += getFxVsoeAllocation().hashCode();
+        }
+        if (getFxVsoeAmount() != null) {
+            _hashCode += getFxVsoeAmount().hashCode();
+        }
+        if (getFxVsoePrice() != null) {
+            _hashCode += getFxVsoePrice().hashCode();
+        }
+        if (getGcoAvailabelToCharge() != null) {
+            _hashCode += getGcoAvailabelToCharge().hashCode();
+        }
+        if (getGcoAvailableToRefund() != null) {
+            _hashCode += getGcoAvailableToRefund().hashCode();
+        }
+        if (getGcoAvsStreetMatch() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getGcoAvsStreetMatch());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getGcoAvsStreetMatch(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getGcoAvsZipMatch() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getGcoAvsZipMatch());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getGcoAvsZipMatch(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getGcoBuyerAccountAge() != null) {
+            _hashCode += getGcoBuyerAccountAge().hashCode();
+        }
+        if (getGcoBuyerIp() != null) {
+            _hashCode += getGcoBuyerIp().hashCode();
+        }
+        if (getGcoChargeAmount() != null) {
+            _hashCode += getGcoChargeAmount().hashCode();
+        }
+        if (getGcoChargebackAmount() != null) {
+            _hashCode += getGcoChargebackAmount().hashCode();
+        }
+        if (getGcoConfirmedChargedTotal() != null) {
+            _hashCode += getGcoConfirmedChargedTotal().hashCode();
+        }
+        if (getGcoConfirmedRefundedTotal() != null) {
+            _hashCode += getGcoConfirmedRefundedTotal().hashCode();
+        }
+        if (getGcoCreditcardNumber() != null) {
+            _hashCode += getGcoCreditcardNumber().hashCode();
+        }
+        if (getGcoCscMatch() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getGcoCscMatch());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getGcoCscMatch(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getGcoFinancialState() != null) {
+            _hashCode += getGcoFinancialState().hashCode();
+        }
+        if (getGcoFulfillmentState() != null) {
+            _hashCode += getGcoFulfillmentState().hashCode();
+        }
+        if (getGcoOrderId() != null) {
+            _hashCode += getGcoOrderId().hashCode();
+        }
+        if (getGcoOrderTotal() != null) {
+            _hashCode += getGcoOrderTotal().hashCode();
+        }
+        if (getGcoPromotionAmount() != null) {
+            _hashCode += getGcoPromotionAmount().hashCode();
+        }
+        if (getGcoPromotionName() != null) {
+            _hashCode += getGcoPromotionName().hashCode();
+        }
+        if (getGcoRefundAmount() != null) {
+            _hashCode += getGcoRefundAmount().hashCode();
+        }
+        if (getGcoShippingTotal() != null) {
+            _hashCode += getGcoShippingTotal().hashCode();
+        }
+        if (getGcoStateChangedDetail() != null) {
+            _hashCode += getGcoStateChangedDetail().hashCode();
+        }
+        if (getGiftCertificate() != null) {
+            _hashCode += getGiftCertificate().hashCode();
+        }
+        if (getGrossAmount() != null) {
+            _hashCode += getGrossAmount().hashCode();
+        }
+        if (getIncludeInForecast() != null) {
+            _hashCode += getIncludeInForecast().hashCode();
+        }
+        if (getIncoterm() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getIncoterm());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getIncoterm(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getIntercoStatus() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getIntercoStatus());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getIntercoStatus(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getIntercoTransaction() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getIntercoTransaction());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getIntercoTransaction(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getInternalId() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getInternalId());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getInternalId(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getInternalIdNumber() != null) {
+            _hashCode += getInternalIdNumber().hashCode();
+        }
+        if (getInVsoeBundle() != null) {
+            _hashCode += getInVsoeBundle().hashCode();
+        }
+        if (getIsAllocation() != null) {
+            _hashCode += getIsAllocation().hashCode();
+        }
+        if (getIsBackflush() != null) {
+            _hashCode += getIsBackflush().hashCode();
+        }
+        if (getIsGcoChargeback() != null) {
+            _hashCode += getIsGcoChargeback().hashCode();
+        }
+        if (getIsGcoChargeConfirmed() != null) {
+            _hashCode += getIsGcoChargeConfirmed().hashCode();
+        }
+        if (getIsGcoPaymentGuaranteed() != null) {
+            _hashCode += getIsGcoPaymentGuaranteed().hashCode();
+        }
+        if (getIsGcoRefundConfirmed() != null) {
+            _hashCode += getIsGcoRefundConfirmed().hashCode();
+        }
+        if (getIsInsideDelivery() != null) {
+            _hashCode += getIsInsideDelivery().hashCode();
+        }
+        if (getIsInsidePickup() != null) {
+            _hashCode += getIsInsidePickup().hashCode();
+        }
+        if (getIsIntercompanyAdjustment() != null) {
+            _hashCode += getIsIntercompanyAdjustment().hashCode();
+        }
+        if (getIsMultiShipTo() != null) {
+            _hashCode += getIsMultiShipTo().hashCode();
+        }
+        if (getIsPayPalMeth() != null) {
+            _hashCode += getIsPayPalMeth().hashCode();
+        }
+        if (getIsReversal() != null) {
+            _hashCode += getIsReversal().hashCode();
+        }
+        if (getIsRevRecTransaction() != null) {
+            _hashCode += getIsRevRecTransaction().hashCode();
+        }
+        if (getIsScrap() != null) {
+            _hashCode += getIsScrap().hashCode();
+        }
+        if (getIsShipAddress() != null) {
+            _hashCode += getIsShipAddress().hashCode();
+        }
+        if (getIsTransferPriceCosting() != null) {
+            _hashCode += getIsTransferPriceCosting().hashCode();
+        }
+        if (getIsVsoeAlloc() != null) {
+            _hashCode += getIsVsoeAlloc().hashCode();
+        }
+        if (getIsWip() != null) {
+            _hashCode += getIsWip().hashCode();
+        }
+        if (getItem() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getItem());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getItem(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getItemFulfillmentChoice() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getItemFulfillmentChoice());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getItemFulfillmentChoice(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getItemRevision() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getItemRevision());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getItemRevision(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getItemSubOf() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getItemSubOf());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getItemSubOf(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getLandedCostPerLine() != null) {
+            _hashCode += getLandedCostPerLine().hashCode();
+        }
+        if (getLastModifiedDate() != null) {
+            _hashCode += getLastModifiedDate().hashCode();
+        }
+        if (getLeadSource() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getLeadSource());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getLeadSource(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getLineUniqueKey() != null) {
+            _hashCode += getLineUniqueKey().hashCode();
+        }
+        if (getLocation() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getLocation());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getLocation(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getLocationAutoAssigned() != null) {
+            _hashCode += getLocationAutoAssigned().hashCode();
+        }
+        if (getMainLine() != null) {
+            _hashCode += getMainLine().hashCode();
+        }
+        if (getMainName() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getMainName());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getMainName(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getManufacturingRouting() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getManufacturingRouting());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getManufacturingRouting(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getMatchBillToReceipt() != null) {
+            _hashCode += getMatchBillToReceipt().hashCode();
+        }
+        if (getMemo() != null) {
+            _hashCode += getMemo().hashCode();
+        }
+        if (getMemoMain() != null) {
+            _hashCode += getMemoMain().hashCode();
+        }
+        if (getMemorized() != null) {
+            _hashCode += getMemorized().hashCode();
+        }
+        if (getMerchantAccount() != null) {
+            _hashCode += getMerchantAccount().hashCode();
+        }
+        if (getMessage() != null) {
+            _hashCode += getMessage().hashCode();
+        }
+        if (getMultiSubsidiary() != null) {
+            _hashCode += getMultiSubsidiary().hashCode();
+        }
+        if (getNameText() != null) {
+            _hashCode += getNameText().hashCode();
+        }
+        if (getNetAmount() != null) {
+            _hashCode += getNetAmount().hashCode();
+        }
+        if (getNextApprover() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getNextApprover());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getNextApprover(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getNextBillDate() != null) {
+            _hashCode += getNextBillDate().hashCode();
+        }
+        if (getNoAutoAssignLocation() != null) {
+            _hashCode += getNoAutoAssignLocation().hashCode();
+        }
+        if (getNonReimbursable() != null) {
+            _hashCode += getNonReimbursable().hashCode();
+        }
+        if (getNumber() != null) {
+            _hashCode += getNumber().hashCode();
+        }
+        if (getOneTimeTotal() != null) {
+            _hashCode += getOneTimeTotal().hashCode();
+        }
+        if (getOpportunity() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getOpportunity());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getOpportunity(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getOrderPriority() != null) {
+            _hashCode += getOrderPriority().hashCode();
+        }
+        if (getOtherRefNum() != null) {
+            _hashCode += getOtherRefNum().hashCode();
+        }
+        if (getOtherRefNumNonDeposit() != null) {
+            _hashCode += getOtherRefNumNonDeposit().hashCode();
+        }
+        if (getOverheadParentItem() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getOverheadParentItem());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getOverheadParentItem(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getPackageCount() != null) {
+            _hashCode += getPackageCount().hashCode();
+        }
+        if (getPaidTransaction() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getPaidTransaction());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getPaidTransaction(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getParent() != null) {
+            _hashCode += getParent().hashCode();
+        }
+        if (getPartner() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getPartner());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getPartner(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getPartnerContribution() != null) {
+            _hashCode += getPartnerContribution().hashCode();
+        }
+        if (getPartnerRole() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getPartnerRole());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getPartnerRole(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getPartnerTeamMember() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getPartnerTeamMember());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getPartnerTeamMember(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getPayingTransaction() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getPayingTransaction());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getPayingTransaction(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getPaymentApproved() != null) {
+            _hashCode += getPaymentApproved().hashCode();
+        }
+        if (getPaymentEventDate() != null) {
+            _hashCode += getPaymentEventDate().hashCode();
+        }
+        if (getPaymentEventHoldReason() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getPaymentEventHoldReason());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getPaymentEventHoldReason(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getPaymentEventPurchaseCardUsed() != null) {
+            _hashCode += getPaymentEventPurchaseCardUsed().hashCode();
+        }
+        if (getPaymentEventPurchaseDataSent() != null) {
+            _hashCode += getPaymentEventPurchaseDataSent().hashCode();
+        }
+        if (getPaymentEventResult() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getPaymentEventResult());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getPaymentEventResult(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getPaymentEventType() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getPaymentEventType());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getPaymentEventType(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getPaymentHold() != null) {
+            _hashCode += getPaymentHold().hashCode();
+        }
+        if (getPaymentMethod() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getPaymentMethod());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getPaymentMethod(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getPayPalPending() != null) {
+            _hashCode += getPayPalPending().hashCode();
+        }
+        if (getPayPalStatus() != null) {
+            _hashCode += getPayPalStatus().hashCode();
+        }
+        if (getPayPalTranId() != null) {
+            _hashCode += getPayPalTranId().hashCode();
+        }
+        if (getPnRefNum() != null) {
+            _hashCode += getPnRefNum().hashCode();
+        }
+        if (getPoAsText() != null) {
+            _hashCode += getPoAsText().hashCode();
+        }
+        if (getPosting() != null) {
+            _hashCode += getPosting().hashCode();
+        }
+        if (getPostingPeriod() != null) {
+            _hashCode += getPostingPeriod().hashCode();
+        }
+        if (getPostingPeriodRelative() != null) {
+            _hashCode += getPostingPeriodRelative().hashCode();
+        }
+        if (getPriceLevel() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getPriceLevel());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getPriceLevel(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getPrintedPickingTicket() != null) {
+            _hashCode += getPrintedPickingTicket().hashCode();
+        }
+        if (getProbability() != null) {
+            _hashCode += getProbability().hashCode();
+        }
+        if (getProjectedAmount() != null) {
+            _hashCode += getProjectedAmount().hashCode();
+        }
+        if (getProjectTask() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getProjectTask());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getProjectTask(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getPromoCode() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getPromoCode());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getPromoCode(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getPurchaseOrder() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getPurchaseOrder());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getPurchaseOrder(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getQuantity() != null) {
+            _hashCode += getQuantity().hashCode();
+        }
+        if (getQuantityBilled() != null) {
+            _hashCode += getQuantityBilled().hashCode();
+        }
+        if (getQuantityCommitted() != null) {
+            _hashCode += getQuantityCommitted().hashCode();
+        }
+        if (getQuantityPacked() != null) {
+            _hashCode += getQuantityPacked().hashCode();
+        }
+        if (getQuantityPicked() != null) {
+            _hashCode += getQuantityPicked().hashCode();
+        }
+        if (getQuantityRevCommitted() != null) {
+            _hashCode += getQuantityRevCommitted().hashCode();
+        }
+        if (getQuantityShipRecv() != null) {
+            _hashCode += getQuantityShipRecv().hashCode();
+        }
+        if (getRecognizedRevenue() != null) {
+            _hashCode += getRecognizedRevenue().hashCode();
+        }
+        if (getRecordType() != null) {
+            _hashCode += getRecordType().hashCode();
+        }
+        if (getRecurAnnuallyTotal() != null) {
+            _hashCode += getRecurAnnuallyTotal().hashCode();
+        }
+        if (getRecurMonthlyTotal() != null) {
+            _hashCode += getRecurMonthlyTotal().hashCode();
+        }
+        if (getRecurQuarterlyTotal() != null) {
+            _hashCode += getRecurQuarterlyTotal().hashCode();
+        }
+        if (getRecurringBill() != null) {
+            _hashCode += getRecurringBill().hashCode();
+        }
+        if (getRecurWeeklyTotal() != null) {
+            _hashCode += getRecurWeeklyTotal().hashCode();
+        }
+        if (getRefNumber() != null) {
+            _hashCode += getRefNumber().hashCode();
+        }
+        if (getRevCommitStatus() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getRevCommitStatus());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getRevCommitStatus(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getRevCommittingStatus() != null) {
+            _hashCode += getRevCommittingStatus().hashCode();
+        }
+        if (getRevCommittingTransaction() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getRevCommittingTransaction());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getRevCommittingTransaction(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getRevenueStatus() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getRevenueStatus());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getRevenueStatus(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getReversalDate() != null) {
+            _hashCode += getReversalDate().hashCode();
+        }
+        if (getReversalNumber() != null) {
+            _hashCode += getReversalNumber().hashCode();
+        }
+        if (getRevRecEndDate() != null) {
+            _hashCode += getRevRecEndDate().hashCode();
+        }
+        if (getRevRecOnRevCommitment() != null) {
+            _hashCode += getRevRecOnRevCommitment().hashCode();
+        }
+        if (getRevRecStartDate() != null) {
+            _hashCode += getRevRecStartDate().hashCode();
+        }
+        if (getRevRecTermInMonths() != null) {
+            _hashCode += getRevRecTermInMonths().hashCode();
+        }
+        if (getSalesEffectiveDate() != null) {
+            _hashCode += getSalesEffectiveDate().hashCode();
+        }
+        if (getSalesOrder() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getSalesOrder());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getSalesOrder(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getSalesRep() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getSalesRep());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getSalesRep(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getSalesTeamMember() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getSalesTeamMember());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getSalesTeamMember(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getSalesTeamRole() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getSalesTeamRole());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getSalesTeamRole(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getSchedulingMethod() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getSchedulingMethod());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getSchedulingMethod(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getSerialNumber() != null) {
+            _hashCode += getSerialNumber().hashCode();
+        }
+        if (getSerialNumberCost() != null) {
+            _hashCode += getSerialNumberCost().hashCode();
+        }
+        if (getSerialNumberCostAdjustment() != null) {
+            _hashCode += getSerialNumberCostAdjustment().hashCode();
+        }
+        if (getSerialNumberQuantity() != null) {
+            _hashCode += getSerialNumberQuantity().hashCode();
+        }
+        if (getSerialNumbers() != null) {
+            _hashCode += getSerialNumbers().hashCode();
+        }
+        if (getShipAddress() != null) {
+            _hashCode += getShipAddress().hashCode();
+        }
+        if (getShipAddressee() != null) {
+            _hashCode += getShipAddressee().hashCode();
+        }
+        if (getShipAttention() != null) {
+            _hashCode += getShipAttention().hashCode();
+        }
+        if (getShipCarrier() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getShipCarrier());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getShipCarrier(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getShipCity() != null) {
+            _hashCode += getShipCity().hashCode();
+        }
+        if (getShipComplete() != null) {
+            _hashCode += getShipComplete().hashCode();
+        }
+        if (getShipCountry() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getShipCountry());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getShipCountry(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getShipCounty() != null) {
+            _hashCode += getShipCounty().hashCode();
+        }
+        if (getShipDate() != null) {
+            _hashCode += getShipDate().hashCode();
+        }
+        if (getShipGroup() != null) {
+            _hashCode += getShipGroup().hashCode();
+        }
+        if (getShipMethod() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getShipMethod());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getShipMethod(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getShipPhone() != null) {
+            _hashCode += getShipPhone().hashCode();
+        }
+        if (getShipping() != null) {
+            _hashCode += getShipping().hashCode();
+        }
+        if (getShipRecvStatus() != null) {
+            _hashCode += getShipRecvStatus().hashCode();
+        }
+        if (getShipRecvStatusLine() != null) {
+            _hashCode += getShipRecvStatusLine().hashCode();
+        }
+        if (getShipState() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getShipState());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getShipState(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getShipTo() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getShipTo());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getShipTo(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getShipZip() != null) {
+            _hashCode += getShipZip().hashCode();
+        }
+        if (getSource() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getSource());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getSource(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getStartDate() != null) {
+            _hashCode += getStartDate().hashCode();
+        }
+        if (getStatistical() != null) {
+            _hashCode += getStatistical().hashCode();
+        }
+        if (getStatus() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getStatus());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getStatus(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getSubscription() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getSubscription());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getSubscription(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getSubscriptionLine() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getSubscriptionLine());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getSubscriptionLine(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getSubsidiary() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getSubsidiary());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getSubsidiary(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getTaxItem() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getTaxItem());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getTaxItem(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getTaxLine() != null) {
+            _hashCode += getTaxLine().hashCode();
+        }
+        if (getTaxPeriod() != null) {
+            _hashCode += getTaxPeriod().hashCode();
+        }
+        if (getTaxPeriodRelative() != null) {
+            _hashCode += getTaxPeriodRelative().hashCode();
+        }
+        if (getTaxRate() != null) {
+            _hashCode += getTaxRate().hashCode();
+        }
+        if (getTerms() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getTerms());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getTerms(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getTermsOfSale() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getTermsOfSale());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getTermsOfSale(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getTitle() != null) {
+            _hashCode += getTitle().hashCode();
+        }
+        if (getToBeEmailed() != null) {
+            _hashCode += getToBeEmailed().hashCode();
+        }
+        if (getToBePrinted() != null) {
+            _hashCode += getToBePrinted().hashCode();
+        }
+        if (getToSubsidiary() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getToSubsidiary());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getToSubsidiary(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getTotalAmount() != null) {
+            _hashCode += getTotalAmount().hashCode();
+        }
+        if (getTrackingNumbers() != null) {
+            _hashCode += getTrackingNumbers().hashCode();
+        }
+        if (getTranCostEstimate() != null) {
+            _hashCode += getTranCostEstimate().hashCode();
+        }
+        if (getTranDate() != null) {
+            _hashCode += getTranDate().hashCode();
+        }
+        if (getTranEstGrossProfit() != null) {
+            _hashCode += getTranEstGrossProfit().hashCode();
+        }
+        if (getTranEstGrossProfitPct() != null) {
+            _hashCode += getTranEstGrossProfitPct().hashCode();
+        }
+        if (getTranFxEstGrossProfit() != null) {
+            _hashCode += getTranFxEstGrossProfit().hashCode();
+        }
+        if (getTranId() != null) {
+            _hashCode += getTranId().hashCode();
+        }
+        if (getTranIsVsoeBundle() != null) {
+            _hashCode += getTranIsVsoeBundle().hashCode();
+        }
+        if (getTransactionDiscount() != null) {
+            _hashCode += getTransactionDiscount().hashCode();
+        }
+        if (getTransactionLineType() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getTransactionLineType());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getTransactionLineType(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getTransactionNumber() != null) {
+            _hashCode += getTransactionNumber().hashCode();
+        }
+        if (getTransferLocation() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getTransferLocation());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getTransferLocation(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getTransferOrderQuantityCommitted() != null) {
+            _hashCode += getTransferOrderQuantityCommitted().hashCode();
+        }
+        if (getTransferOrderQuantityPacked() != null) {
+            _hashCode += getTransferOrderQuantityPacked().hashCode();
+        }
+        if (getTransferOrderQuantityPicked() != null) {
+            _hashCode += getTransferOrderQuantityPicked().hashCode();
+        }
+        if (getTransferOrderQuantityReceived() != null) {
+            _hashCode += getTransferOrderQuantityReceived().hashCode();
+        }
+        if (getTransferOrderQuantityShipped() != null) {
+            _hashCode += getTransferOrderQuantityShipped().hashCode();
+        }
+        if (getType() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getType());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getType(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getUnit() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getUnit());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getUnit(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getUnitCostOverride() != null) {
+            _hashCode += getUnitCostOverride().hashCode();
+        }
+        if (getUnitsType() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getUnitsType());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getUnitsType(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getVendType() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getVendType());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getVendType(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getVisibleToCustomer() != null) {
+            _hashCode += getVisibleToCustomer().hashCode();
+        }
+        if (getVoided() != null) {
+            _hashCode += getVoided().hashCode();
+        }
+        if (getVsoeAllocation() != null) {
+            _hashCode += getVsoeAllocation().hashCode();
+        }
+        if (getVsoeAmount() != null) {
+            _hashCode += getVsoeAmount().hashCode();
+        }
+        if (getVsoeDeferral() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getVsoeDeferral());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getVsoeDeferral(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getVsoeDelivered() != null) {
+            _hashCode += getVsoeDelivered().hashCode();
+        }
+        if (getVsoePermitDiscount() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getVsoePermitDiscount());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getVsoePermitDiscount(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getVsoePrice() != null) {
+            _hashCode += getVsoePrice().hashCode();
+        }
+        if (getWebSite() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getWebSite());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getWebSite(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getCustomFieldList() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getCustomFieldList());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getCustomFieldList(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        __hashCodeCalc = false;
+        return _hashCode;
+    }
+
+    // Type metadata
+    private static org.apache.axis.description.TypeDesc typeDesc =
+        new org.apache.axis.description.TypeDesc(TransactionSearchBasic.class, true);
+
+    static {
+        typeDesc.setXmlType(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "TransactionSearchBasic"));
+        org.apache.axis.description.ElementDesc elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("account");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "account"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "searchValue"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("accountType");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "accountType"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "searchValue"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("actualShipDate");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "actualShipDate"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchDateField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("altSalesAmount");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "altSalesAmount"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchDoubleField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("altSalesNetAmount");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "altSalesNetAmount"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchDoubleField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("amount");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "amount"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchDoubleField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("amountPaid");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "amountPaid"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchDoubleField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("amountRemaining");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "amountRemaining"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchDoubleField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("amountUnbilled");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "amountUnbilled"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchDoubleField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("anyLineItem");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "anyLineItem"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "searchValue"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("appliedToForeignAmount");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "appliedToForeignAmount"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchDoubleField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("appliedToIsFxVariance");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "appliedToIsFxVariance"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchBooleanField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("appliedToLinkAmount");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "appliedToLinkAmount"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchDoubleField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("appliedToLinkType");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "appliedToLinkType"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "searchValue"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("appliedToTransaction");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "appliedToTransaction"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "searchValue"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("applyingForeignAmount");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "applyingForeignAmount"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchDoubleField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("applyingIsFxVariance");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "applyingIsFxVariance"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchBooleanField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("applyingLinkAmount");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "applyingLinkAmount"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchDoubleField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("applyingLinkType");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "applyingLinkType"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "searchValue"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("applyingTransaction");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "applyingTransaction"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "searchValue"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("approvalStatus");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "approvalStatus"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "searchValue"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("authCode");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "authCode"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchStringField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("autoCalculateLag");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "autoCalculateLag"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchBooleanField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("avsStreetMatch");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "avsStreetMatch"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "searchValue"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("avsZipMatch");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "avsZipMatch"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "searchValue"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("billable");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "billable"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchBooleanField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("billAddress");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "billAddress"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchStringField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("billAddressee");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "billAddressee"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchStringField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("billAttention");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "billAttention"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchStringField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("billCity");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "billCity"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchStringField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("billCountry");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "billCountry"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "searchValue"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("billCounty");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "billCounty"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchStringField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("billedDate");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "billedDate"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchDateField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("billingAccount");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "billingAccount"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "searchValue"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("billingSchedule");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "billingSchedule"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "searchValue"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("billingStatus");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "billingStatus"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchBooleanField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("billingTransaction");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "billingTransaction"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "searchValue"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("billPhone");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "billPhone"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchStringField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("billState");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "billState"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchStringField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("billVarianceStatus");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "billVarianceStatus"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "searchValue"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("billZip");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "billZip"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchStringField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("binNumber");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "binNumber"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchStringField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("binNumberQuantity");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "binNumberQuantity"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchDoubleField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("bomQuantity");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "bomQuantity"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchDoubleField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("bookSpecificTransaction");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "bookSpecificTransaction"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchBooleanField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("buildEntireAssembly");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "buildEntireAssembly"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchBooleanField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("buildVariance");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "buildVariance"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchDoubleField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("built");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "built"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchDoubleField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("canHaveStackablePromotions");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "canHaveStackablePromotions"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchBooleanField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("catchUpPeriod");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "catchUpPeriod"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "searchValue"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("ccCustomerCode");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "ccCustomerCode"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchStringField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("ccExpireDate");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "ccExpireDate"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchDateField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("ccName");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "ccName"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchStringField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("ccNumber");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "ccNumber"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchStringField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("chargeType");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "chargeType"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "searchValue"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("_class");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "class"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "searchValue"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("cleared");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "cleared"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchBooleanField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("closed");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "closed"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchBooleanField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("closeDate");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "closeDate"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchDateField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("cogs");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "cogs"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchBooleanField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("commissionEffectiveDate");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "commissionEffectiveDate"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchDateField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("commit");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "commit"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "searchValue"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("componentYield");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "componentYield"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchDoubleField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("confirmationNumber");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "confirmationNumber"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchStringField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("contribution");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "contribution"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchLongField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("costComponentAmount");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "costComponentAmount"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchDoubleField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("costComponentCategory");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "costComponentCategory"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "searchValue"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("costComponentItem");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "costComponentItem"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "searchValue"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("costComponentQuantity");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "costComponentQuantity"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchDoubleField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("costComponentStandardCost");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "costComponentStandardCost"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchDoubleField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("costEstimate");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "costEstimate"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchDoubleField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("costEstimateRate");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "costEstimateRate"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchDoubleField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("costEstimateType");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "costEstimateType"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "searchValue"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("createdBy");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "createdBy"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "searchValue"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("createdFrom");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "createdFrom"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "searchValue"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("creditAmount");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "creditAmount"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchDoubleField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("cscMatch");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "cscMatch"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "searchValue"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("currency");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "currency"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "searchValue"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("customerSubOf");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "customerSubOf"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "searchValue"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("customForm");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "customForm"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "searchValue"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("customGL");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "customGL"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchBooleanField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("custType");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "custType"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "searchValue"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("dateCreated");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "dateCreated"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchDateField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("daysOpen");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "daysOpen"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchLongField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("daysOverdue");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "daysOverdue"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchLongField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("debitAmount");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "debitAmount"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchDoubleField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("deferredRevenue");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "deferredRevenue"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchDoubleField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("deferRevRec");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "deferRevRec"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchBooleanField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("department");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "department"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "searchValue"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("depositDate");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "depositDate"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchDateField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("depositTransaction");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "depositTransaction"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "searchValue"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("drAccount");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "drAccount"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "searchValue"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("dueDate");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "dueDate"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchDateField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("email");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "email"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchStringField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("employee");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "employee"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "searchValue"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("endDate");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "endDate"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchDateField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("entity");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "entity"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "searchValue"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("entityStatus");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "entityStatus"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "searchValue"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("estGrossProfit");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "estGrossProfit"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchDoubleField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("estGrossProfitPct");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "estGrossProfitPct"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchDoubleField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("exchangeRate");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "exchangeRate"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchDoubleField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("excludeCommission");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "excludeCommission"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchBooleanField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("excludeFromRateRequest");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "excludeFromRateRequest"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchBooleanField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("expectedCloseDate");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "expectedCloseDate"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchDateField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("expectedReceiptDate");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "expectedReceiptDate"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchDateField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("expenseCategory");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "expenseCategory"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "searchValue"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("expenseDate");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "expenseDate"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchDateField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("externalId");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "externalId"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "searchValue"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("externalIdString");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "externalIdString"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchStringField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("finChrg");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "finChrg"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchBooleanField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("firmed");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "firmed"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchBooleanField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("forecastType");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "forecastType"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "searchValue"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("fulfillingTransaction");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "fulfillingTransaction"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "searchValue"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("fxAccount");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "fxAccount"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "searchValue"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("fxAmount");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "fxAmount"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchDoubleField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("fxCostEstimate");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "fxCostEstimate"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchDoubleField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("fxCostEstimateRate");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "fxCostEstimateRate"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchDoubleField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("fxEstGrossProfit");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "fxEstGrossProfit"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchDoubleField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("fxTranCostEstimate");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "fxTranCostEstimate"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchDoubleField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("fxVsoeAllocation");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "fxVsoeAllocation"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchDoubleField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("fxVsoeAmount");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "fxVsoeAmount"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchDoubleField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("fxVsoePrice");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "fxVsoePrice"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchDoubleField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("gcoAvailabelToCharge");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "gcoAvailabelToCharge"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchBooleanField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("gcoAvailableToRefund");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "gcoAvailableToRefund"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchBooleanField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("gcoAvsStreetMatch");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "gcoAvsStreetMatch"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "searchValue"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("gcoAvsZipMatch");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "gcoAvsZipMatch"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "searchValue"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("gcoBuyerAccountAge");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "gcoBuyerAccountAge"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchLongField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("gcoBuyerIp");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "gcoBuyerIp"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchStringField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("gcoChargeAmount");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "gcoChargeAmount"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchDoubleField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("gcoChargebackAmount");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "gcoChargebackAmount"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchDoubleField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("gcoConfirmedChargedTotal");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "gcoConfirmedChargedTotal"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchDoubleField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("gcoConfirmedRefundedTotal");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "gcoConfirmedRefundedTotal"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchDoubleField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("gcoCreditcardNumber");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "gcoCreditcardNumber"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchStringField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("gcoCscMatch");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "gcoCscMatch"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "searchValue"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("gcoFinancialState");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "gcoFinancialState"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchStringField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("gcoFulfillmentState");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "gcoFulfillmentState"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchStringField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("gcoOrderId");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "gcoOrderId"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchStringField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("gcoOrderTotal");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "gcoOrderTotal"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchDoubleField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("gcoPromotionAmount");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "gcoPromotionAmount"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchDoubleField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("gcoPromotionName");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "gcoPromotionName"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchStringField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("gcoRefundAmount");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "gcoRefundAmount"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchDoubleField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("gcoShippingTotal");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "gcoShippingTotal"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchDoubleField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("gcoStateChangedDetail");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "gcoStateChangedDetail"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchStringField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("giftCertificate");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "giftCertificate"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchStringField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("grossAmount");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "grossAmount"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchDoubleField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("includeInForecast");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "includeInForecast"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchBooleanField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("incoterm");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "incoterm"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "searchValue"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("intercoStatus");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "intercoStatus"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "searchValue"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("intercoTransaction");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "intercoTransaction"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "searchValue"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("internalId");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "internalId"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "searchValue"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("internalIdNumber");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "internalIdNumber"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchLongField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("inVsoeBundle");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "inVsoeBundle"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchBooleanField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("isAllocation");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "isAllocation"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchBooleanField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("isBackflush");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "isBackflush"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchBooleanField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("isGcoChargeback");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "isGcoChargeback"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchBooleanField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("isGcoChargeConfirmed");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "isGcoChargeConfirmed"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchBooleanField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("isGcoPaymentGuaranteed");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "isGcoPaymentGuaranteed"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchBooleanField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("isGcoRefundConfirmed");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "isGcoRefundConfirmed"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchBooleanField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("isInsideDelivery");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "isInsideDelivery"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchBooleanField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("isInsidePickup");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "isInsidePickup"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchBooleanField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("isIntercompanyAdjustment");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "isIntercompanyAdjustment"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchBooleanField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("isMultiShipTo");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "isMultiShipTo"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchBooleanField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("isPayPalMeth");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "isPayPalMeth"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchBooleanField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("isReversal");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "isReversal"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchBooleanField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("isRevRecTransaction");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "isRevRecTransaction"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchBooleanField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("isScrap");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "isScrap"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchBooleanField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("isShipAddress");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "isShipAddress"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchBooleanField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("isTransferPriceCosting");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "isTransferPriceCosting"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchBooleanField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("isVsoeAlloc");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "isVsoeAlloc"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchBooleanField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("isWip");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "isWip"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchBooleanField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("item");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "item"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "searchValue"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("itemFulfillmentChoice");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "itemFulfillmentChoice"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "searchValue"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("itemRevision");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "itemRevision"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "searchValue"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("itemSubOf");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "itemSubOf"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "searchValue"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("landedCostPerLine");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "landedCostPerLine"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchBooleanField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("lastModifiedDate");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "lastModifiedDate"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchDateField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("leadSource");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "leadSource"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "searchValue"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("lineUniqueKey");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "lineUniqueKey"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchLongField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("location");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "location"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "searchValue"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("locationAutoAssigned");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "locationAutoAssigned"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchBooleanField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("mainLine");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "mainLine"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchBooleanField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("mainName");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "mainName"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "searchValue"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("manufacturingRouting");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "manufacturingRouting"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "searchValue"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("matchBillToReceipt");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "matchBillToReceipt"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchBooleanField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("memo");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "memo"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchStringField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("memoMain");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "memoMain"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchStringField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("memorized");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "memorized"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchBooleanField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("merchantAccount");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "merchantAccount"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchStringField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("message");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "message"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchStringField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("multiSubsidiary");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "multiSubsidiary"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchBooleanField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("nameText");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "nameText"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchStringField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("netAmount");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "netAmount"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchDoubleField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("nextApprover");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "nextApprover"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "searchValue"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("nextBillDate");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "nextBillDate"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchDateField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("noAutoAssignLocation");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "noAutoAssignLocation"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchBooleanField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("nonReimbursable");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "nonReimbursable"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchBooleanField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("number");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "number"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchLongField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("oneTimeTotal");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "oneTimeTotal"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchDoubleField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("opportunity");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "opportunity"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "searchValue"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("orderPriority");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "orderPriority"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchDoubleField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("otherRefNum");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "otherRefNum"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchTextNumberField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("otherRefNumNonDeposit");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "otherRefNumNonDeposit"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchTextNumberField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("overheadParentItem");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "overheadParentItem"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "searchValue"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("packageCount");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "packageCount"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchLongField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("paidTransaction");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "paidTransaction"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "searchValue"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("parent");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "parent"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchLongField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("partner");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "partner"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "searchValue"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("partnerContribution");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "partnerContribution"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchLongField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("partnerRole");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "partnerRole"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "searchValue"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("partnerTeamMember");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "partnerTeamMember"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "searchValue"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("payingTransaction");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "payingTransaction"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "searchValue"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("paymentApproved");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "paymentApproved"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchBooleanField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("paymentEventDate");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "paymentEventDate"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchDateField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("paymentEventHoldReason");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "paymentEventHoldReason"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "searchValue"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("paymentEventPurchaseCardUsed");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "paymentEventPurchaseCardUsed"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchBooleanField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("paymentEventPurchaseDataSent");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "paymentEventPurchaseDataSent"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchBooleanField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("paymentEventResult");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "paymentEventResult"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "searchValue"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("paymentEventType");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "paymentEventType"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "searchValue"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("paymentHold");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "paymentHold"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchBooleanField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("paymentMethod");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "paymentMethod"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "searchValue"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("payPalPending");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "payPalPending"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchBooleanField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("payPalStatus");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "payPalStatus"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchStringField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("payPalTranId");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "payPalTranId"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchStringField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("pnRefNum");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "pnRefNum"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchStringField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("poAsText");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "poAsText"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchStringField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("posting");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "posting"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchBooleanField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("postingPeriod");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "postingPeriod"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("postingPeriodRelative");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "postingPeriodRelative"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:types.common_2018_2.platform.webservices.netsuite.com", "PostingPeriodDate"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("priceLevel");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "priceLevel"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "searchValue"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("printedPickingTicket");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "printedPickingTicket"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchBooleanField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("probability");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "probability"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchLongField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("projectedAmount");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "projectedAmount"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchDoubleField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("projectTask");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "projectTask"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "searchValue"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("promoCode");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "promoCode"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "searchValue"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("purchaseOrder");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "purchaseOrder"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "searchValue"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("quantity");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "quantity"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchDoubleField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("quantityBilled");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "quantityBilled"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchDoubleField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("quantityCommitted");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "quantityCommitted"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchDoubleField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("quantityPacked");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "quantityPacked"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchDoubleField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("quantityPicked");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "quantityPicked"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchDoubleField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("quantityRevCommitted");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "quantityRevCommitted"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchDoubleField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("quantityShipRecv");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "quantityShipRecv"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchDoubleField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("recognizedRevenue");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "recognizedRevenue"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchDoubleField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("recordType");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "recordType"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchStringField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("recurAnnuallyTotal");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "recurAnnuallyTotal"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchDoubleField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("recurMonthlyTotal");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "recurMonthlyTotal"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchDoubleField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("recurQuarterlyTotal");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "recurQuarterlyTotal"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchDoubleField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("recurringBill");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "recurringBill"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchBooleanField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("recurWeeklyTotal");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "recurWeeklyTotal"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchDoubleField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("refNumber");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "refNumber"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchLongField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("revCommitStatus");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "revCommitStatus"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "searchValue"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("revCommittingStatus");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "revCommittingStatus"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchBooleanField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("revCommittingTransaction");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "revCommittingTransaction"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "searchValue"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("revenueStatus");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "revenueStatus"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "searchValue"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("reversalDate");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "reversalDate"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchDateField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("reversalNumber");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "reversalNumber"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchStringField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("revRecEndDate");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "revRecEndDate"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchDateField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("revRecOnRevCommitment");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "revRecOnRevCommitment"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchBooleanField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("revRecStartDate");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "revRecStartDate"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchDateField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("revRecTermInMonths");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "revRecTermInMonths"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchLongField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("salesEffectiveDate");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "salesEffectiveDate"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchDateField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("salesOrder");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "salesOrder"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "searchValue"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("salesRep");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "salesRep"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "searchValue"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("salesTeamMember");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "salesTeamMember"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "searchValue"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("salesTeamRole");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "salesTeamRole"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "searchValue"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("schedulingMethod");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "schedulingMethod"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "searchValue"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("serialNumber");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "serialNumber"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchStringField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("serialNumberCost");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "serialNumberCost"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchDoubleField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("serialNumberCostAdjustment");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "serialNumberCostAdjustment"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchDoubleField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("serialNumberQuantity");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "serialNumberQuantity"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchDoubleField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("serialNumbers");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "serialNumbers"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchStringField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("shipAddress");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "shipAddress"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchStringField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("shipAddressee");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "shipAddressee"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchStringField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("shipAttention");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "shipAttention"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchStringField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("shipCarrier");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "shipCarrier"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "searchValue"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("shipCity");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "shipCity"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchStringField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("shipComplete");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "shipComplete"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchBooleanField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("shipCountry");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "shipCountry"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "searchValue"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("shipCounty");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "shipCounty"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchStringField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("shipDate");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "shipDate"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchDateField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("shipGroup");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "shipGroup"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchLongField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("shipMethod");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "shipMethod"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "searchValue"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("shipPhone");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "shipPhone"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchStringField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("shipping");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "shipping"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchBooleanField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("shipRecvStatus");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "shipRecvStatus"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchBooleanField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("shipRecvStatusLine");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "shipRecvStatusLine"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchBooleanField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("shipState");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "shipState"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "searchValue"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("shipTo");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "shipTo"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "searchValue"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("shipZip");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "shipZip"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchStringField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("source");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "source"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "searchValue"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("startDate");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "startDate"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchDateField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("statistical");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "statistical"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchBooleanField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("status");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "status"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "searchValue"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("subscription");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "subscription"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "searchValue"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("subscriptionLine");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "subscriptionLine"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "searchValue"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("subsidiary");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "subsidiary"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "searchValue"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("taxItem");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "taxItem"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "searchValue"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("taxLine");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "taxLine"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchBooleanField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("taxPeriod");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "taxPeriod"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("taxPeriodRelative");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "taxPeriodRelative"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:types.common_2018_2.platform.webservices.netsuite.com", "PostingPeriodDate"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("taxRate");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "taxRate"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchDoubleField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("terms");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "terms"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "searchValue"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("termsOfSale");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "termsOfSale"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "searchValue"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("title");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "title"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchStringField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("toBeEmailed");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "toBeEmailed"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchBooleanField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("toBePrinted");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "toBePrinted"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchBooleanField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("toSubsidiary");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "toSubsidiary"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "searchValue"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("totalAmount");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "totalAmount"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchDoubleField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("trackingNumbers");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "trackingNumbers"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchStringField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("tranCostEstimate");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "tranCostEstimate"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchDoubleField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("tranDate");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "tranDate"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchDateField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("tranEstGrossProfit");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "tranEstGrossProfit"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchDoubleField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("tranEstGrossProfitPct");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "tranEstGrossProfitPct"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchDoubleField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("tranFxEstGrossProfit");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "tranFxEstGrossProfit"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchDoubleField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("tranId");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "tranId"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchStringField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("tranIsVsoeBundle");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "tranIsVsoeBundle"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchBooleanField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("transactionDiscount");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "transactionDiscount"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchBooleanField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("transactionLineType");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "transactionLineType"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "searchValue"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("transactionNumber");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "transactionNumber"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchStringField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("transferLocation");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "transferLocation"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "searchValue"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("transferOrderQuantityCommitted");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "transferOrderQuantityCommitted"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchDoubleField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("transferOrderQuantityPacked");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "transferOrderQuantityPacked"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchDoubleField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("transferOrderQuantityPicked");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "transferOrderQuantityPicked"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchDoubleField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("transferOrderQuantityReceived");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "transferOrderQuantityReceived"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchDoubleField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("transferOrderQuantityShipped");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "transferOrderQuantityShipped"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchDoubleField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("type");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "type"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "searchValue"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("unit");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "unit"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "searchValue"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("unitCostOverride");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "unitCostOverride"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchDoubleField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("unitsType");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "unitsType"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "searchValue"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("vendType");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "vendType"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "searchValue"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("visibleToCustomer");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "visibleToCustomer"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchBooleanField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("voided");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "voided"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchBooleanField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("vsoeAllocation");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "vsoeAllocation"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchDoubleField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("vsoeAmount");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "vsoeAmount"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchDoubleField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("vsoeDeferral");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "vsoeDeferral"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "searchValue"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("vsoeDelivered");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "vsoeDelivered"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchBooleanField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("vsoePermitDiscount");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "vsoePermitDiscount"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "searchValue"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("vsoePrice");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "vsoePrice"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchDoubleField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("webSite");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "webSite"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "searchValue"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("customFieldList");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "customFieldList"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchCustomField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "customField"));
+        typeDesc.addFieldDesc(elemField);
+    }
+
+    /**
+     * Return type metadata object
+     */
+    public static org.apache.axis.description.TypeDesc getTypeDesc() {
+        return typeDesc;
+    }
+
+    /**
+     * Get Custom Serializer
+     */
+    public static org.apache.axis.encoding.Serializer getSerializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanSerializer(
+            _javaType, _xmlType, typeDesc);
+    }
+
+    /**
+     * Get Custom Deserializer
+     */
+    public static org.apache.axis.encoding.Deserializer getDeserializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanDeserializer(
+            _javaType, _xmlType, typeDesc);
     }
 
 }

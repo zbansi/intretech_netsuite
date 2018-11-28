@@ -1,502 +1,747 @@
+/**
+ * Bom.java
+ *
+ * This file was auto-generated from WSDL
+ * by the Apache Axis 1.4 Jul 28, 2010 (04:07:04 PDT) WSDL2Java emitter.
+ */
 
 package com.netsuite.webservices.lists.accounting_2018_2;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlAttribute;
-import javax.xml.bind.annotation.XmlSchemaType;
-import javax.xml.bind.annotation.XmlType;
-import javax.xml.datatype.XMLGregorianCalendar;
-import com.netsuite.webservices.platform.core_2018_2.CustomFieldList;
-import com.netsuite.webservices.platform.core_2018_2.Record;
-import com.netsuite.webservices.platform.core_2018_2.RecordRef;
-import com.netsuite.webservices.platform.core_2018_2.RecordRefList;
+public class Bom  extends com.netsuite.webservices.platform.core_2018_2.Record  implements java.io.Serializable {
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef customForm;
 
+    private java.lang.String name;
 
-/**
- * <p>Bom complex type的 Java 类。
- * 
- * <p>以下模式片段指定包含在此类中的预期内容。
- * 
- * <pre>
- * &lt;complexType name="Bom">
- *   &lt;complexContent>
- *     &lt;extension base="{urn:core_2018_2.platform.webservices.netsuite.com}Record">
- *       &lt;sequence>
- *         &lt;element name="customForm" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="name" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="usedOnAssembly" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         &lt;element name="createdDate" type="{http://www.w3.org/2001/XMLSchema}dateTime" minOccurs="0"/>
- *         &lt;element name="isInactive" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         &lt;element name="useComponentYield" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         &lt;element name="memo" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="legacyBomForAssembly" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="availableForAllAssemblies" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         &lt;element name="restrictToAssembliesList" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRefList" minOccurs="0"/>
- *         &lt;element name="availableForAllLocations" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         &lt;element name="restrictToLocationsList" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRefList" minOccurs="0"/>
- *         &lt;element name="subsidiaryList" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRefList" minOccurs="0"/>
- *         &lt;element name="includeChildren" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         &lt;element name="customFieldList" type="{urn:core_2018_2.platform.webservices.netsuite.com}CustomFieldList" minOccurs="0"/>
- *       &lt;/sequence>
- *       &lt;attribute name="internalId" type="{http://www.w3.org/2001/XMLSchema}string" />
- *       &lt;attribute name="externalId" type="{http://www.w3.org/2001/XMLSchema}string" />
- *     &lt;/extension>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
- */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "Bom", propOrder = {
-    "customForm",
-    "name",
-    "usedOnAssembly",
-    "createdDate",
-    "isInactive",
-    "useComponentYield",
-    "memo",
-    "legacyBomForAssembly",
-    "availableForAllAssemblies",
-    "restrictToAssembliesList",
-    "availableForAllLocations",
-    "restrictToLocationsList",
-    "subsidiaryList",
-    "includeChildren",
-    "customFieldList"
-})
-public class Bom
-    extends Record
-{
+    private java.lang.Boolean usedOnAssembly;
 
-    protected RecordRef customForm;
-    protected String name;
-    protected Boolean usedOnAssembly;
-    @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar createdDate;
-    protected Boolean isInactive;
-    protected Boolean useComponentYield;
-    protected String memo;
-    protected RecordRef legacyBomForAssembly;
-    protected Boolean availableForAllAssemblies;
-    protected RecordRefList restrictToAssembliesList;
-    protected Boolean availableForAllLocations;
-    protected RecordRefList restrictToLocationsList;
-    protected RecordRefList subsidiaryList;
-    protected Boolean includeChildren;
-    protected CustomFieldList customFieldList;
-    @XmlAttribute(name = "internalId")
-    protected String internalId;
-    @XmlAttribute(name = "externalId")
-    protected String externalId;
+    private java.util.Calendar createdDate;
+
+    private java.lang.Boolean isInactive;
+
+    private java.lang.Boolean useComponentYield;
+
+    private java.lang.String memo;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef legacyBomForAssembly;
+
+    private java.lang.Boolean availableForAllAssemblies;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef[] restrictToAssembliesList;
+
+    private java.lang.Boolean availableForAllLocations;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef[] restrictToLocationsList;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef[] subsidiaryList;
+
+    private java.lang.Boolean includeChildren;
+
+    private com.netsuite.webservices.platform.core_2018_2.CustomFieldRef[] customFieldList;
+
+    private java.lang.String internalId;  // attribute
+
+    private java.lang.String externalId;  // attribute
+
+    public Bom() {
+    }
+
+    public Bom(
+           java.lang.String[] nullFieldList,
+           java.lang.String internalId,
+           java.lang.String externalId,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef customForm,
+           java.lang.String name,
+           java.lang.Boolean usedOnAssembly,
+           java.util.Calendar createdDate,
+           java.lang.Boolean isInactive,
+           java.lang.Boolean useComponentYield,
+           java.lang.String memo,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef legacyBomForAssembly,
+           java.lang.Boolean availableForAllAssemblies,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef[] restrictToAssembliesList,
+           java.lang.Boolean availableForAllLocations,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef[] restrictToLocationsList,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef[] subsidiaryList,
+           java.lang.Boolean includeChildren,
+           com.netsuite.webservices.platform.core_2018_2.CustomFieldRef[] customFieldList) {
+        super(
+            nullFieldList);
+        this.internalId = internalId;
+        this.externalId = externalId;
+        this.customForm = customForm;
+        this.name = name;
+        this.usedOnAssembly = usedOnAssembly;
+        this.createdDate = createdDate;
+        this.isInactive = isInactive;
+        this.useComponentYield = useComponentYield;
+        this.memo = memo;
+        this.legacyBomForAssembly = legacyBomForAssembly;
+        this.availableForAllAssemblies = availableForAllAssemblies;
+        this.restrictToAssembliesList = restrictToAssembliesList;
+        this.availableForAllLocations = availableForAllLocations;
+        this.restrictToLocationsList = restrictToLocationsList;
+        this.subsidiaryList = subsidiaryList;
+        this.includeChildren = includeChildren;
+        this.customFieldList = customFieldList;
+    }
+
 
     /**
-     * 获取customForm属性的值。
+     * Gets the customForm value for this Bom.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @return customForm
      */
-    public RecordRef getCustomForm() {
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getCustomForm() {
         return customForm;
     }
 
-    /**
-     * 设置customForm属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setCustomForm(RecordRef value) {
-        this.customForm = value;
-    }
 
     /**
-     * 获取name属性的值。
+     * Sets the customForm value for this Bom.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param customForm
      */
-    public String getName() {
+    public void setCustomForm(com.netsuite.webservices.platform.core_2018_2.RecordRef customForm) {
+        this.customForm = customForm;
+    }
+
+
+    /**
+     * Gets the name value for this Bom.
+     * 
+     * @return name
+     */
+    public java.lang.String getName() {
         return name;
     }
 
-    /**
-     * 设置name属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setName(String value) {
-        this.name = value;
-    }
 
     /**
-     * 获取usedOnAssembly属性的值。
+     * Sets the name value for this Bom.
      * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
+     * @param name
      */
-    public Boolean isUsedOnAssembly() {
+    public void setName(java.lang.String name) {
+        this.name = name;
+    }
+
+
+    /**
+     * Gets the usedOnAssembly value for this Bom.
+     * 
+     * @return usedOnAssembly
+     */
+    public java.lang.Boolean getUsedOnAssembly() {
         return usedOnAssembly;
     }
 
-    /**
-     * 设置usedOnAssembly属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
-     */
-    public void setUsedOnAssembly(Boolean value) {
-        this.usedOnAssembly = value;
-    }
 
     /**
-     * 获取createdDate属性的值。
+     * Sets the usedOnAssembly value for this Bom.
      * 
-     * @return
-     *     possible object is
-     *     {@link XMLGregorianCalendar }
-     *     
+     * @param usedOnAssembly
      */
-    public XMLGregorianCalendar getCreatedDate() {
+    public void setUsedOnAssembly(java.lang.Boolean usedOnAssembly) {
+        this.usedOnAssembly = usedOnAssembly;
+    }
+
+
+    /**
+     * Gets the createdDate value for this Bom.
+     * 
+     * @return createdDate
+     */
+    public java.util.Calendar getCreatedDate() {
         return createdDate;
     }
 
-    /**
-     * 设置createdDate属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link XMLGregorianCalendar }
-     *     
-     */
-    public void setCreatedDate(XMLGregorianCalendar value) {
-        this.createdDate = value;
-    }
 
     /**
-     * 获取isInactive属性的值。
+     * Sets the createdDate value for this Bom.
      * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
+     * @param createdDate
      */
-    public Boolean isIsInactive() {
+    public void setCreatedDate(java.util.Calendar createdDate) {
+        this.createdDate = createdDate;
+    }
+
+
+    /**
+     * Gets the isInactive value for this Bom.
+     * 
+     * @return isInactive
+     */
+    public java.lang.Boolean getIsInactive() {
         return isInactive;
     }
 
-    /**
-     * 设置isInactive属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
-     */
-    public void setIsInactive(Boolean value) {
-        this.isInactive = value;
-    }
 
     /**
-     * 获取useComponentYield属性的值。
+     * Sets the isInactive value for this Bom.
      * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
+     * @param isInactive
      */
-    public Boolean isUseComponentYield() {
+    public void setIsInactive(java.lang.Boolean isInactive) {
+        this.isInactive = isInactive;
+    }
+
+
+    /**
+     * Gets the useComponentYield value for this Bom.
+     * 
+     * @return useComponentYield
+     */
+    public java.lang.Boolean getUseComponentYield() {
         return useComponentYield;
     }
 
-    /**
-     * 设置useComponentYield属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
-     */
-    public void setUseComponentYield(Boolean value) {
-        this.useComponentYield = value;
-    }
 
     /**
-     * 获取memo属性的值。
+     * Sets the useComponentYield value for this Bom.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param useComponentYield
      */
-    public String getMemo() {
+    public void setUseComponentYield(java.lang.Boolean useComponentYield) {
+        this.useComponentYield = useComponentYield;
+    }
+
+
+    /**
+     * Gets the memo value for this Bom.
+     * 
+     * @return memo
+     */
+    public java.lang.String getMemo() {
         return memo;
     }
 
-    /**
-     * 设置memo属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setMemo(String value) {
-        this.memo = value;
-    }
 
     /**
-     * 获取legacyBomForAssembly属性的值。
+     * Sets the memo value for this Bom.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param memo
      */
-    public RecordRef getLegacyBomForAssembly() {
+    public void setMemo(java.lang.String memo) {
+        this.memo = memo;
+    }
+
+
+    /**
+     * Gets the legacyBomForAssembly value for this Bom.
+     * 
+     * @return legacyBomForAssembly
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getLegacyBomForAssembly() {
         return legacyBomForAssembly;
     }
 
-    /**
-     * 设置legacyBomForAssembly属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setLegacyBomForAssembly(RecordRef value) {
-        this.legacyBomForAssembly = value;
-    }
 
     /**
-     * 获取availableForAllAssemblies属性的值。
+     * Sets the legacyBomForAssembly value for this Bom.
      * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
+     * @param legacyBomForAssembly
      */
-    public Boolean isAvailableForAllAssemblies() {
+    public void setLegacyBomForAssembly(com.netsuite.webservices.platform.core_2018_2.RecordRef legacyBomForAssembly) {
+        this.legacyBomForAssembly = legacyBomForAssembly;
+    }
+
+
+    /**
+     * Gets the availableForAllAssemblies value for this Bom.
+     * 
+     * @return availableForAllAssemblies
+     */
+    public java.lang.Boolean getAvailableForAllAssemblies() {
         return availableForAllAssemblies;
     }
 
-    /**
-     * 设置availableForAllAssemblies属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
-     */
-    public void setAvailableForAllAssemblies(Boolean value) {
-        this.availableForAllAssemblies = value;
-    }
 
     /**
-     * 获取restrictToAssembliesList属性的值。
+     * Sets the availableForAllAssemblies value for this Bom.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRefList }
-     *     
+     * @param availableForAllAssemblies
      */
-    public RecordRefList getRestrictToAssembliesList() {
+    public void setAvailableForAllAssemblies(java.lang.Boolean availableForAllAssemblies) {
+        this.availableForAllAssemblies = availableForAllAssemblies;
+    }
+
+
+    /**
+     * Gets the restrictToAssembliesList value for this Bom.
+     * 
+     * @return restrictToAssembliesList
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef[] getRestrictToAssembliesList() {
         return restrictToAssembliesList;
     }
 
-    /**
-     * 设置restrictToAssembliesList属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRefList }
-     *     
-     */
-    public void setRestrictToAssembliesList(RecordRefList value) {
-        this.restrictToAssembliesList = value;
-    }
 
     /**
-     * 获取availableForAllLocations属性的值。
+     * Sets the restrictToAssembliesList value for this Bom.
      * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
+     * @param restrictToAssembliesList
      */
-    public Boolean isAvailableForAllLocations() {
+    public void setRestrictToAssembliesList(com.netsuite.webservices.platform.core_2018_2.RecordRef[] restrictToAssembliesList) {
+        this.restrictToAssembliesList = restrictToAssembliesList;
+    }
+
+
+    /**
+     * Gets the availableForAllLocations value for this Bom.
+     * 
+     * @return availableForAllLocations
+     */
+    public java.lang.Boolean getAvailableForAllLocations() {
         return availableForAllLocations;
     }
 
-    /**
-     * 设置availableForAllLocations属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
-     */
-    public void setAvailableForAllLocations(Boolean value) {
-        this.availableForAllLocations = value;
-    }
 
     /**
-     * 获取restrictToLocationsList属性的值。
+     * Sets the availableForAllLocations value for this Bom.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRefList }
-     *     
+     * @param availableForAllLocations
      */
-    public RecordRefList getRestrictToLocationsList() {
+    public void setAvailableForAllLocations(java.lang.Boolean availableForAllLocations) {
+        this.availableForAllLocations = availableForAllLocations;
+    }
+
+
+    /**
+     * Gets the restrictToLocationsList value for this Bom.
+     * 
+     * @return restrictToLocationsList
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef[] getRestrictToLocationsList() {
         return restrictToLocationsList;
     }
 
-    /**
-     * 设置restrictToLocationsList属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRefList }
-     *     
-     */
-    public void setRestrictToLocationsList(RecordRefList value) {
-        this.restrictToLocationsList = value;
-    }
 
     /**
-     * 获取subsidiaryList属性的值。
+     * Sets the restrictToLocationsList value for this Bom.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRefList }
-     *     
+     * @param restrictToLocationsList
      */
-    public RecordRefList getSubsidiaryList() {
+    public void setRestrictToLocationsList(com.netsuite.webservices.platform.core_2018_2.RecordRef[] restrictToLocationsList) {
+        this.restrictToLocationsList = restrictToLocationsList;
+    }
+
+
+    /**
+     * Gets the subsidiaryList value for this Bom.
+     * 
+     * @return subsidiaryList
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef[] getSubsidiaryList() {
         return subsidiaryList;
     }
 
-    /**
-     * 设置subsidiaryList属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRefList }
-     *     
-     */
-    public void setSubsidiaryList(RecordRefList value) {
-        this.subsidiaryList = value;
-    }
 
     /**
-     * 获取includeChildren属性的值。
+     * Sets the subsidiaryList value for this Bom.
      * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
+     * @param subsidiaryList
      */
-    public Boolean isIncludeChildren() {
+    public void setSubsidiaryList(com.netsuite.webservices.platform.core_2018_2.RecordRef[] subsidiaryList) {
+        this.subsidiaryList = subsidiaryList;
+    }
+
+
+    /**
+     * Gets the includeChildren value for this Bom.
+     * 
+     * @return includeChildren
+     */
+    public java.lang.Boolean getIncludeChildren() {
         return includeChildren;
     }
 
-    /**
-     * 设置includeChildren属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
-     */
-    public void setIncludeChildren(Boolean value) {
-        this.includeChildren = value;
-    }
 
     /**
-     * 获取customFieldList属性的值。
+     * Sets the includeChildren value for this Bom.
      * 
-     * @return
-     *     possible object is
-     *     {@link CustomFieldList }
-     *     
+     * @param includeChildren
      */
-    public CustomFieldList getCustomFieldList() {
+    public void setIncludeChildren(java.lang.Boolean includeChildren) {
+        this.includeChildren = includeChildren;
+    }
+
+
+    /**
+     * Gets the customFieldList value for this Bom.
+     * 
+     * @return customFieldList
+     */
+    public com.netsuite.webservices.platform.core_2018_2.CustomFieldRef[] getCustomFieldList() {
         return customFieldList;
     }
 
-    /**
-     * 设置customFieldList属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link CustomFieldList }
-     *     
-     */
-    public void setCustomFieldList(CustomFieldList value) {
-        this.customFieldList = value;
-    }
 
     /**
-     * 获取internalId属性的值。
+     * Sets the customFieldList value for this Bom.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param customFieldList
      */
-    public String getInternalId() {
+    public void setCustomFieldList(com.netsuite.webservices.platform.core_2018_2.CustomFieldRef[] customFieldList) {
+        this.customFieldList = customFieldList;
+    }
+
+
+    /**
+     * Gets the internalId value for this Bom.
+     * 
+     * @return internalId
+     */
+    public java.lang.String getInternalId() {
         return internalId;
     }
 
-    /**
-     * 设置internalId属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setInternalId(String value) {
-        this.internalId = value;
-    }
 
     /**
-     * 获取externalId属性的值。
+     * Sets the internalId value for this Bom.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param internalId
      */
-    public String getExternalId() {
+    public void setInternalId(java.lang.String internalId) {
+        this.internalId = internalId;
+    }
+
+
+    /**
+     * Gets the externalId value for this Bom.
+     * 
+     * @return externalId
+     */
+    public java.lang.String getExternalId() {
         return externalId;
     }
 
+
     /**
-     * 设置externalId属性的值。
+     * Sets the externalId value for this Bom.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     * @param externalId
      */
-    public void setExternalId(String value) {
-        this.externalId = value;
+    public void setExternalId(java.lang.String externalId) {
+        this.externalId = externalId;
+    }
+
+    private java.lang.Object __equalsCalc = null;
+    public synchronized boolean equals(java.lang.Object obj) {
+        if (!(obj instanceof Bom)) return false;
+        Bom other = (Bom) obj;
+        if (obj == null) return false;
+        if (this == obj) return true;
+        if (__equalsCalc != null) {
+            return (__equalsCalc == obj);
+        }
+        __equalsCalc = obj;
+        boolean _equals;
+        _equals = super.equals(obj) && 
+            ((this.customForm==null && other.getCustomForm()==null) || 
+             (this.customForm!=null &&
+              this.customForm.equals(other.getCustomForm()))) &&
+            ((this.name==null && other.getName()==null) || 
+             (this.name!=null &&
+              this.name.equals(other.getName()))) &&
+            ((this.usedOnAssembly==null && other.getUsedOnAssembly()==null) || 
+             (this.usedOnAssembly!=null &&
+              this.usedOnAssembly.equals(other.getUsedOnAssembly()))) &&
+            ((this.createdDate==null && other.getCreatedDate()==null) || 
+             (this.createdDate!=null &&
+              this.createdDate.equals(other.getCreatedDate()))) &&
+            ((this.isInactive==null && other.getIsInactive()==null) || 
+             (this.isInactive!=null &&
+              this.isInactive.equals(other.getIsInactive()))) &&
+            ((this.useComponentYield==null && other.getUseComponentYield()==null) || 
+             (this.useComponentYield!=null &&
+              this.useComponentYield.equals(other.getUseComponentYield()))) &&
+            ((this.memo==null && other.getMemo()==null) || 
+             (this.memo!=null &&
+              this.memo.equals(other.getMemo()))) &&
+            ((this.legacyBomForAssembly==null && other.getLegacyBomForAssembly()==null) || 
+             (this.legacyBomForAssembly!=null &&
+              this.legacyBomForAssembly.equals(other.getLegacyBomForAssembly()))) &&
+            ((this.availableForAllAssemblies==null && other.getAvailableForAllAssemblies()==null) || 
+             (this.availableForAllAssemblies!=null &&
+              this.availableForAllAssemblies.equals(other.getAvailableForAllAssemblies()))) &&
+            ((this.restrictToAssembliesList==null && other.getRestrictToAssembliesList()==null) || 
+             (this.restrictToAssembliesList!=null &&
+              java.util.Arrays.equals(this.restrictToAssembliesList, other.getRestrictToAssembliesList()))) &&
+            ((this.availableForAllLocations==null && other.getAvailableForAllLocations()==null) || 
+             (this.availableForAllLocations!=null &&
+              this.availableForAllLocations.equals(other.getAvailableForAllLocations()))) &&
+            ((this.restrictToLocationsList==null && other.getRestrictToLocationsList()==null) || 
+             (this.restrictToLocationsList!=null &&
+              java.util.Arrays.equals(this.restrictToLocationsList, other.getRestrictToLocationsList()))) &&
+            ((this.subsidiaryList==null && other.getSubsidiaryList()==null) || 
+             (this.subsidiaryList!=null &&
+              java.util.Arrays.equals(this.subsidiaryList, other.getSubsidiaryList()))) &&
+            ((this.includeChildren==null && other.getIncludeChildren()==null) || 
+             (this.includeChildren!=null &&
+              this.includeChildren.equals(other.getIncludeChildren()))) &&
+            ((this.customFieldList==null && other.getCustomFieldList()==null) || 
+             (this.customFieldList!=null &&
+              java.util.Arrays.equals(this.customFieldList, other.getCustomFieldList()))) &&
+            ((this.internalId==null && other.getInternalId()==null) || 
+             (this.internalId!=null &&
+              this.internalId.equals(other.getInternalId()))) &&
+            ((this.externalId==null && other.getExternalId()==null) || 
+             (this.externalId!=null &&
+              this.externalId.equals(other.getExternalId())));
+        __equalsCalc = null;
+        return _equals;
+    }
+
+    private boolean __hashCodeCalc = false;
+    public synchronized int hashCode() {
+        if (__hashCodeCalc) {
+            return 0;
+        }
+        __hashCodeCalc = true;
+        int _hashCode = super.hashCode();
+        if (getCustomForm() != null) {
+            _hashCode += getCustomForm().hashCode();
+        }
+        if (getName() != null) {
+            _hashCode += getName().hashCode();
+        }
+        if (getUsedOnAssembly() != null) {
+            _hashCode += getUsedOnAssembly().hashCode();
+        }
+        if (getCreatedDate() != null) {
+            _hashCode += getCreatedDate().hashCode();
+        }
+        if (getIsInactive() != null) {
+            _hashCode += getIsInactive().hashCode();
+        }
+        if (getUseComponentYield() != null) {
+            _hashCode += getUseComponentYield().hashCode();
+        }
+        if (getMemo() != null) {
+            _hashCode += getMemo().hashCode();
+        }
+        if (getLegacyBomForAssembly() != null) {
+            _hashCode += getLegacyBomForAssembly().hashCode();
+        }
+        if (getAvailableForAllAssemblies() != null) {
+            _hashCode += getAvailableForAllAssemblies().hashCode();
+        }
+        if (getRestrictToAssembliesList() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getRestrictToAssembliesList());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getRestrictToAssembliesList(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getAvailableForAllLocations() != null) {
+            _hashCode += getAvailableForAllLocations().hashCode();
+        }
+        if (getRestrictToLocationsList() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getRestrictToLocationsList());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getRestrictToLocationsList(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getSubsidiaryList() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getSubsidiaryList());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getSubsidiaryList(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getIncludeChildren() != null) {
+            _hashCode += getIncludeChildren().hashCode();
+        }
+        if (getCustomFieldList() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getCustomFieldList());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getCustomFieldList(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getInternalId() != null) {
+            _hashCode += getInternalId().hashCode();
+        }
+        if (getExternalId() != null) {
+            _hashCode += getExternalId().hashCode();
+        }
+        __hashCodeCalc = false;
+        return _hashCode;
+    }
+
+    // Type metadata
+    private static org.apache.axis.description.TypeDesc typeDesc =
+        new org.apache.axis.description.TypeDesc(Bom.class, true);
+
+    static {
+        typeDesc.setXmlType(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "Bom"));
+        org.apache.axis.description.AttributeDesc attrField = new org.apache.axis.description.AttributeDesc();
+        attrField.setFieldName("internalId");
+        attrField.setXmlName(new javax.xml.namespace.QName("", "internalId"));
+        attrField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        typeDesc.addFieldDesc(attrField);
+        attrField = new org.apache.axis.description.AttributeDesc();
+        attrField.setFieldName("externalId");
+        attrField.setXmlName(new javax.xml.namespace.QName("", "externalId"));
+        attrField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        typeDesc.addFieldDesc(attrField);
+        org.apache.axis.description.ElementDesc elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("customForm");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "customForm"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("name");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "name"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("usedOnAssembly");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "usedOnAssembly"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("createdDate");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "createdDate"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "dateTime"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("isInactive");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "isInactive"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("useComponentYield");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "useComponentYield"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("memo");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "memo"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("legacyBomForAssembly");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "legacyBomForAssembly"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("availableForAllAssemblies");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "availableForAllAssemblies"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("restrictToAssembliesList");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "restrictToAssembliesList"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "recordRef"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("availableForAllLocations");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "availableForAllLocations"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("restrictToLocationsList");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "restrictToLocationsList"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "recordRef"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("subsidiaryList");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "subsidiaryList"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "recordRef"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("includeChildren");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "includeChildren"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("customFieldList");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "customFieldList"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "CustomFieldRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "customField"));
+        typeDesc.addFieldDesc(elemField);
+    }
+
+    /**
+     * Return type metadata object
+     */
+    public static org.apache.axis.description.TypeDesc getTypeDesc() {
+        return typeDesc;
+    }
+
+    /**
+     * Get Custom Serializer
+     */
+    public static org.apache.axis.encoding.Serializer getSerializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanSerializer(
+            _javaType, _xmlType, typeDesc);
+    }
+
+    /**
+     * Get Custom Deserializer
+     */
+    public static org.apache.axis.encoding.Deserializer getDeserializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanDeserializer(
+            _javaType, _xmlType, typeDesc);
     }
 
 }

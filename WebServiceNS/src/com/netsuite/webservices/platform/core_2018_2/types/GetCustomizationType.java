@@ -1,78 +1,88 @@
+/**
+ * GetCustomizationType.java
+ *
+ * This file was auto-generated from WSDL
+ * by the Apache Axis 1.4 Jul 28, 2010 (04:07:04 PDT) WSDL2Java emitter.
+ */
 
 package com.netsuite.webservices.platform.core_2018_2.types;
 
-import javax.xml.bind.annotation.XmlEnum;
-import javax.xml.bind.annotation.XmlEnumValue;
-import javax.xml.bind.annotation.XmlType;
+public class GetCustomizationType implements java.io.Serializable {
+    private java.lang.String _value_;
+    private static java.util.HashMap _table_ = new java.util.HashMap();
 
-
-/**
- * <p>GetCustomizationType的 Java 类。
- * 
- * <p>以下模式片段指定包含在此类中的预期内容。
- * <p>
- * <pre>
- * &lt;simpleType name="GetCustomizationType">
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     &lt;enumeration value="crmCustomField"/>
- *     &lt;enumeration value="customList"/>
- *     &lt;enumeration value="customRecordType"/>
- *     &lt;enumeration value="customTransactionType"/>
- *     &lt;enumeration value="entityCustomField"/>
- *     &lt;enumeration value="itemCustomField"/>
- *     &lt;enumeration value="itemNumberCustomField"/>
- *     &lt;enumeration value="itemOptionCustomField"/>
- *     &lt;enumeration value="otherCustomField"/>
- *     &lt;enumeration value="transactionBodyCustomField"/>
- *     &lt;enumeration value="transactionColumnCustomField"/>
- *   &lt;/restriction>
- * &lt;/simpleType>
- * </pre>
- * 
- */
-@XmlType(name = "GetCustomizationType", namespace = "urn:types.core_2018_2.platform.webservices.netsuite.com")
-@XmlEnum
-public enum GetCustomizationType {
-
-    @XmlEnumValue("crmCustomField")
-    CRM_CUSTOM_FIELD("crmCustomField"),
-    @XmlEnumValue("customList")
-    CUSTOM_LIST("customList"),
-    @XmlEnumValue("customRecordType")
-    CUSTOM_RECORD_TYPE("customRecordType"),
-    @XmlEnumValue("customTransactionType")
-    CUSTOM_TRANSACTION_TYPE("customTransactionType"),
-    @XmlEnumValue("entityCustomField")
-    ENTITY_CUSTOM_FIELD("entityCustomField"),
-    @XmlEnumValue("itemCustomField")
-    ITEM_CUSTOM_FIELD("itemCustomField"),
-    @XmlEnumValue("itemNumberCustomField")
-    ITEM_NUMBER_CUSTOM_FIELD("itemNumberCustomField"),
-    @XmlEnumValue("itemOptionCustomField")
-    ITEM_OPTION_CUSTOM_FIELD("itemOptionCustomField"),
-    @XmlEnumValue("otherCustomField")
-    OTHER_CUSTOM_FIELD("otherCustomField"),
-    @XmlEnumValue("transactionBodyCustomField")
-    TRANSACTION_BODY_CUSTOM_FIELD("transactionBodyCustomField"),
-    @XmlEnumValue("transactionColumnCustomField")
-    TRANSACTION_COLUMN_CUSTOM_FIELD("transactionColumnCustomField");
-    private final String value;
-
-    GetCustomizationType(String v) {
-        value = v;
+    // Constructor
+    protected GetCustomizationType(java.lang.String value) {
+        _value_ = value;
+        _table_.put(_value_,this);
     }
 
-    public String value() {
-        return value;
+    public static final java.lang.String _crmCustomField = "crmCustomField";
+    public static final java.lang.String _customList = "customList";
+    public static final java.lang.String _customRecordType = "customRecordType";
+    public static final java.lang.String _customTransactionType = "customTransactionType";
+    public static final java.lang.String _entityCustomField = "entityCustomField";
+    public static final java.lang.String _itemCustomField = "itemCustomField";
+    public static final java.lang.String _itemNumberCustomField = "itemNumberCustomField";
+    public static final java.lang.String _itemOptionCustomField = "itemOptionCustomField";
+    public static final java.lang.String _otherCustomField = "otherCustomField";
+    public static final java.lang.String _transactionBodyCustomField = "transactionBodyCustomField";
+    public static final java.lang.String _transactionColumnCustomField = "transactionColumnCustomField";
+    public static final GetCustomizationType crmCustomField = new GetCustomizationType(_crmCustomField);
+    public static final GetCustomizationType customList = new GetCustomizationType(_customList);
+    public static final GetCustomizationType customRecordType = new GetCustomizationType(_customRecordType);
+    public static final GetCustomizationType customTransactionType = new GetCustomizationType(_customTransactionType);
+    public static final GetCustomizationType entityCustomField = new GetCustomizationType(_entityCustomField);
+    public static final GetCustomizationType itemCustomField = new GetCustomizationType(_itemCustomField);
+    public static final GetCustomizationType itemNumberCustomField = new GetCustomizationType(_itemNumberCustomField);
+    public static final GetCustomizationType itemOptionCustomField = new GetCustomizationType(_itemOptionCustomField);
+    public static final GetCustomizationType otherCustomField = new GetCustomizationType(_otherCustomField);
+    public static final GetCustomizationType transactionBodyCustomField = new GetCustomizationType(_transactionBodyCustomField);
+    public static final GetCustomizationType transactionColumnCustomField = new GetCustomizationType(_transactionColumnCustomField);
+    public java.lang.String getValue() { return _value_;}
+    public static GetCustomizationType fromValue(java.lang.String value)
+          throws java.lang.IllegalArgumentException {
+        GetCustomizationType enumeration = (GetCustomizationType)
+            _table_.get(value);
+        if (enumeration==null) throw new java.lang.IllegalArgumentException();
+        return enumeration;
     }
+    public static GetCustomizationType fromString(java.lang.String value)
+          throws java.lang.IllegalArgumentException {
+        return fromValue(value);
+    }
+    public boolean equals(java.lang.Object obj) {return (obj == this);}
+    public int hashCode() { return toString().hashCode();}
+    public java.lang.String toString() { return _value_;}
+    public java.lang.Object readResolve() throws java.io.ObjectStreamException { return fromValue(_value_);}
+    public static org.apache.axis.encoding.Serializer getSerializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new org.apache.axis.encoding.ser.EnumSerializer(
+            _javaType, _xmlType);
+    }
+    public static org.apache.axis.encoding.Deserializer getDeserializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new org.apache.axis.encoding.ser.EnumDeserializer(
+            _javaType, _xmlType);
+    }
+    // Type metadata
+    private static org.apache.axis.description.TypeDesc typeDesc =
+        new org.apache.axis.description.TypeDesc(GetCustomizationType.class);
 
-    public static GetCustomizationType fromValue(String v) {
-        for (GetCustomizationType c: GetCustomizationType.values()) {
-            if (c.value.equals(v)) {
-                return c;
-            }
-        }
-        throw new IllegalArgumentException(v);
+    static {
+        typeDesc.setXmlType(new javax.xml.namespace.QName("urn:types.core_2018_2.platform.webservices.netsuite.com", "GetCustomizationType"));
+    }
+    /**
+     * Return type metadata object
+     */
+    public static org.apache.axis.description.TypeDesc getTypeDesc() {
+        return typeDesc;
     }
 
 }

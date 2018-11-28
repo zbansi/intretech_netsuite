@@ -1,1484 +1,2071 @@
+/**
+ * CreditMemoItem.java
+ *
+ * This file was auto-generated from WSDL
+ * by the Apache Axis 1.4 Jul 28, 2010 (04:07:04 PDT) WSDL2Java emitter.
+ */
 
 package com.netsuite.webservices.transactions.customers_2018_2;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlSchemaType;
-import javax.xml.bind.annotation.XmlType;
-import javax.xml.datatype.XMLGregorianCalendar;
-import com.netsuite.webservices.platform.common_2018_2.InventoryDetail;
-import com.netsuite.webservices.platform.common_2018_2.types.ItemCostEstimateType;
-import com.netsuite.webservices.platform.common_2018_2.types.ShippingCarrier;
-import com.netsuite.webservices.platform.common_2018_2.types.VsoeDeferral;
-import com.netsuite.webservices.platform.common_2018_2.types.VsoePermitDiscount;
-import com.netsuite.webservices.platform.common_2018_2.types.VsoeSopGroup;
-import com.netsuite.webservices.platform.core_2018_2.CustomFieldList;
-import com.netsuite.webservices.platform.core_2018_2.RecordRef;
-import com.netsuite.webservices.platform.core_2018_2.RecordRefList;
+public class CreditMemoItem  implements java.io.Serializable {
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef job;
 
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef item;
 
-/**
- * <p>CreditMemoItem complex type的 Java 类。
- * 
- * <p>以下模式片段指定包含在此类中的预期内容。
- * 
- * <pre>
- * &lt;complexType name="CreditMemoItem">
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element name="job" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="item" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="orderLine" type="{http://www.w3.org/2001/XMLSchema}long" minOccurs="0"/>
- *         &lt;element name="line" type="{http://www.w3.org/2001/XMLSchema}long" minOccurs="0"/>
- *         &lt;element name="quantity" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
- *         &lt;element name="description" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="binNumbers" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="price" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="rate" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="amount" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
- *         &lt;element name="isTaxable" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         &lt;element name="options" type="{urn:core_2018_2.platform.webservices.netsuite.com}CustomFieldList" minOccurs="0"/>
- *         &lt;element name="shipAddress" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="shipCarrier" type="{urn:types.common_2018_2.platform.webservices.netsuite.com}ShippingCarrier" minOccurs="0"/>
- *         &lt;element name="shipMethod" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="taxCode" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="taxRate1" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
- *         &lt;element name="taxRate2" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
- *         &lt;element name="tax1Amt" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
- *         &lt;element name="grossAmt" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
- *         &lt;element name="department" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="class" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="location" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="costEstimateType" type="{urn:types.common_2018_2.platform.webservices.netsuite.com}ItemCostEstimateType" minOccurs="0"/>
- *         &lt;element name="costEstimate" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
- *         &lt;element name="taxDetailsReference" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="revRecSchedule" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="revRecStartDate" type="{http://www.w3.org/2001/XMLSchema}dateTime" minOccurs="0"/>
- *         &lt;element name="revRecTermInMonths" type="{http://www.w3.org/2001/XMLSchema}long" minOccurs="0"/>
- *         &lt;element name="revRecEndDate" type="{http://www.w3.org/2001/XMLSchema}dateTime" minOccurs="0"/>
- *         &lt;element name="units" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="inventoryDetail" type="{urn:common_2018_2.platform.webservices.netsuite.com}InventoryDetail" minOccurs="0"/>
- *         &lt;element name="serialNumbers" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="deferRevRec" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         &lt;element name="giftCertFrom" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="giftCertRecipientName" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="giftCertRecipientEmail" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="giftCertMessage" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="taxAmount" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
- *         &lt;element name="giftCertNumber" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="vsoeSopGroup" type="{urn:types.common_2018_2.platform.webservices.netsuite.com}VsoeSopGroup" minOccurs="0"/>
- *         &lt;element name="vsoeIsEstimate" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         &lt;element name="vsoePrice" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
- *         &lt;element name="vsoeAmount" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
- *         &lt;element name="vsoeAllocation" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
- *         &lt;element name="vsoeDeferral" type="{urn:types.common_2018_2.platform.webservices.netsuite.com}VsoeDeferral" minOccurs="0"/>
- *         &lt;element name="vsoePermitDiscount" type="{urn:types.common_2018_2.platform.webservices.netsuite.com}VsoePermitDiscount" minOccurs="0"/>
- *         &lt;element name="vsoeDelivered" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         &lt;element name="catchUpPeriod" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="chargeType" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="subscriptionLine" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="chargesList" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRefList" minOccurs="0"/>
- *         &lt;element name="customFieldList" type="{urn:core_2018_2.platform.webservices.netsuite.com}CustomFieldList" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
- */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "CreditMemoItem", propOrder = {
-    "job",
-    "item",
-    "orderLine",
-    "line",
-    "quantity",
-    "description",
-    "binNumbers",
-    "price",
-    "rate",
-    "amount",
-    "isTaxable",
-    "options",
-    "shipAddress",
-    "shipCarrier",
-    "shipMethod",
-    "taxCode",
-    "taxRate1",
-    "taxRate2",
-    "tax1Amt",
-    "grossAmt",
-    "department",
-    "clazz",
-    "location",
-    "costEstimateType",
-    "costEstimate",
-    "taxDetailsReference",
-    "revRecSchedule",
-    "revRecStartDate",
-    "revRecTermInMonths",
-    "revRecEndDate",
-    "units",
-    "inventoryDetail",
-    "serialNumbers",
-    "deferRevRec",
-    "giftCertFrom",
-    "giftCertRecipientName",
-    "giftCertRecipientEmail",
-    "giftCertMessage",
-    "taxAmount",
-    "giftCertNumber",
-    "vsoeSopGroup",
-    "vsoeIsEstimate",
-    "vsoePrice",
-    "vsoeAmount",
-    "vsoeAllocation",
-    "vsoeDeferral",
-    "vsoePermitDiscount",
-    "vsoeDelivered",
-    "catchUpPeriod",
-    "chargeType",
-    "subscriptionLine",
-    "chargesList",
-    "customFieldList"
-})
-public class CreditMemoItem {
+    private java.lang.Long orderLine;
 
-    protected RecordRef job;
-    protected RecordRef item;
-    protected Long orderLine;
-    protected Long line;
-    protected Double quantity;
-    protected String description;
-    protected String binNumbers;
-    protected RecordRef price;
-    protected String rate;
-    protected Double amount;
-    protected Boolean isTaxable;
-    protected CustomFieldList options;
-    protected RecordRef shipAddress;
-    @XmlSchemaType(name = "string")
-    protected ShippingCarrier shipCarrier;
-    protected RecordRef shipMethod;
-    protected RecordRef taxCode;
-    protected Double taxRate1;
-    protected Double taxRate2;
-    protected Double tax1Amt;
-    protected Double grossAmt;
-    protected RecordRef department;
-    @XmlElement(name = "class")
-    protected RecordRef clazz;
-    protected RecordRef location;
-    @XmlSchemaType(name = "string")
-    protected ItemCostEstimateType costEstimateType;
-    protected Double costEstimate;
-    protected String taxDetailsReference;
-    protected RecordRef revRecSchedule;
-    @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar revRecStartDate;
-    protected Long revRecTermInMonths;
-    @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar revRecEndDate;
-    protected RecordRef units;
-    protected InventoryDetail inventoryDetail;
-    protected String serialNumbers;
-    protected Boolean deferRevRec;
-    protected String giftCertFrom;
-    protected String giftCertRecipientName;
-    protected String giftCertRecipientEmail;
-    protected String giftCertMessage;
-    protected Double taxAmount;
-    protected String giftCertNumber;
-    @XmlSchemaType(name = "string")
-    protected VsoeSopGroup vsoeSopGroup;
-    protected Boolean vsoeIsEstimate;
-    protected Double vsoePrice;
-    protected Double vsoeAmount;
-    protected Double vsoeAllocation;
-    @XmlSchemaType(name = "string")
-    protected VsoeDeferral vsoeDeferral;
-    @XmlSchemaType(name = "string")
-    protected VsoePermitDiscount vsoePermitDiscount;
-    protected Boolean vsoeDelivered;
-    protected RecordRef catchUpPeriod;
-    protected RecordRef chargeType;
-    protected RecordRef subscriptionLine;
-    protected RecordRefList chargesList;
-    protected CustomFieldList customFieldList;
+    private java.lang.Long line;
+
+    private java.lang.Double quantity;
+
+    private java.lang.String description;
+
+    private java.lang.String binNumbers;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef price;
+
+    private java.lang.String rate;
+
+    private java.lang.Double amount;
+
+    private java.lang.Boolean isTaxable;
+
+    private com.netsuite.webservices.platform.core_2018_2.CustomFieldRef[] options;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef shipAddress;
+
+    private com.netsuite.webservices.platform.common_2018_2.types.ShippingCarrier shipCarrier;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef shipMethod;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef taxCode;
+
+    private java.lang.Double taxRate1;
+
+    private java.lang.Double taxRate2;
+
+    private java.lang.Double tax1Amt;
+
+    private java.lang.Double grossAmt;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef department;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef _class;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef location;
+
+    private com.netsuite.webservices.platform.common_2018_2.types.ItemCostEstimateType costEstimateType;
+
+    private java.lang.Double costEstimate;
+
+    private java.lang.String taxDetailsReference;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef revRecSchedule;
+
+    private java.util.Calendar revRecStartDate;
+
+    private java.lang.Long revRecTermInMonths;
+
+    private java.util.Calendar revRecEndDate;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef units;
+
+    private com.netsuite.webservices.platform.common_2018_2.InventoryDetail inventoryDetail;
+
+    private java.lang.String serialNumbers;
+
+    private java.lang.Boolean deferRevRec;
+
+    private java.lang.String giftCertFrom;
+
+    private java.lang.String giftCertRecipientName;
+
+    private java.lang.String giftCertRecipientEmail;
+
+    private java.lang.String giftCertMessage;
+
+    private java.lang.Double taxAmount;
+
+    private java.lang.String giftCertNumber;
+
+    private com.netsuite.webservices.platform.common_2018_2.types.VsoeSopGroup vsoeSopGroup;
+
+    private java.lang.Boolean vsoeIsEstimate;
+
+    private java.lang.Double vsoePrice;
+
+    private java.lang.Double vsoeAmount;
+
+    private java.lang.Double vsoeAllocation;
+
+    private com.netsuite.webservices.platform.common_2018_2.types.VsoeDeferral vsoeDeferral;
+
+    private com.netsuite.webservices.platform.common_2018_2.types.VsoePermitDiscount vsoePermitDiscount;
+
+    private java.lang.Boolean vsoeDelivered;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef catchUpPeriod;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef chargeType;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef subscriptionLine;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef[] chargesList;
+
+    private com.netsuite.webservices.platform.core_2018_2.CustomFieldRef[] customFieldList;
+
+    public CreditMemoItem() {
+    }
+
+    public CreditMemoItem(
+           com.netsuite.webservices.platform.core_2018_2.RecordRef job,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef item,
+           java.lang.Long orderLine,
+           java.lang.Long line,
+           java.lang.Double quantity,
+           java.lang.String description,
+           java.lang.String binNumbers,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef price,
+           java.lang.String rate,
+           java.lang.Double amount,
+           java.lang.Boolean isTaxable,
+           com.netsuite.webservices.platform.core_2018_2.CustomFieldRef[] options,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef shipAddress,
+           com.netsuite.webservices.platform.common_2018_2.types.ShippingCarrier shipCarrier,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef shipMethod,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef taxCode,
+           java.lang.Double taxRate1,
+           java.lang.Double taxRate2,
+           java.lang.Double tax1Amt,
+           java.lang.Double grossAmt,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef department,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef _class,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef location,
+           com.netsuite.webservices.platform.common_2018_2.types.ItemCostEstimateType costEstimateType,
+           java.lang.Double costEstimate,
+           java.lang.String taxDetailsReference,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef revRecSchedule,
+           java.util.Calendar revRecStartDate,
+           java.lang.Long revRecTermInMonths,
+           java.util.Calendar revRecEndDate,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef units,
+           com.netsuite.webservices.platform.common_2018_2.InventoryDetail inventoryDetail,
+           java.lang.String serialNumbers,
+           java.lang.Boolean deferRevRec,
+           java.lang.String giftCertFrom,
+           java.lang.String giftCertRecipientName,
+           java.lang.String giftCertRecipientEmail,
+           java.lang.String giftCertMessage,
+           java.lang.Double taxAmount,
+           java.lang.String giftCertNumber,
+           com.netsuite.webservices.platform.common_2018_2.types.VsoeSopGroup vsoeSopGroup,
+           java.lang.Boolean vsoeIsEstimate,
+           java.lang.Double vsoePrice,
+           java.lang.Double vsoeAmount,
+           java.lang.Double vsoeAllocation,
+           com.netsuite.webservices.platform.common_2018_2.types.VsoeDeferral vsoeDeferral,
+           com.netsuite.webservices.platform.common_2018_2.types.VsoePermitDiscount vsoePermitDiscount,
+           java.lang.Boolean vsoeDelivered,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef catchUpPeriod,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef chargeType,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef subscriptionLine,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef[] chargesList,
+           com.netsuite.webservices.platform.core_2018_2.CustomFieldRef[] customFieldList) {
+           this.job = job;
+           this.item = item;
+           this.orderLine = orderLine;
+           this.line = line;
+           this.quantity = quantity;
+           this.description = description;
+           this.binNumbers = binNumbers;
+           this.price = price;
+           this.rate = rate;
+           this.amount = amount;
+           this.isTaxable = isTaxable;
+           this.options = options;
+           this.shipAddress = shipAddress;
+           this.shipCarrier = shipCarrier;
+           this.shipMethod = shipMethod;
+           this.taxCode = taxCode;
+           this.taxRate1 = taxRate1;
+           this.taxRate2 = taxRate2;
+           this.tax1Amt = tax1Amt;
+           this.grossAmt = grossAmt;
+           this.department = department;
+           this._class = _class;
+           this.location = location;
+           this.costEstimateType = costEstimateType;
+           this.costEstimate = costEstimate;
+           this.taxDetailsReference = taxDetailsReference;
+           this.revRecSchedule = revRecSchedule;
+           this.revRecStartDate = revRecStartDate;
+           this.revRecTermInMonths = revRecTermInMonths;
+           this.revRecEndDate = revRecEndDate;
+           this.units = units;
+           this.inventoryDetail = inventoryDetail;
+           this.serialNumbers = serialNumbers;
+           this.deferRevRec = deferRevRec;
+           this.giftCertFrom = giftCertFrom;
+           this.giftCertRecipientName = giftCertRecipientName;
+           this.giftCertRecipientEmail = giftCertRecipientEmail;
+           this.giftCertMessage = giftCertMessage;
+           this.taxAmount = taxAmount;
+           this.giftCertNumber = giftCertNumber;
+           this.vsoeSopGroup = vsoeSopGroup;
+           this.vsoeIsEstimate = vsoeIsEstimate;
+           this.vsoePrice = vsoePrice;
+           this.vsoeAmount = vsoeAmount;
+           this.vsoeAllocation = vsoeAllocation;
+           this.vsoeDeferral = vsoeDeferral;
+           this.vsoePermitDiscount = vsoePermitDiscount;
+           this.vsoeDelivered = vsoeDelivered;
+           this.catchUpPeriod = catchUpPeriod;
+           this.chargeType = chargeType;
+           this.subscriptionLine = subscriptionLine;
+           this.chargesList = chargesList;
+           this.customFieldList = customFieldList;
+    }
+
 
     /**
-     * 获取job属性的值。
+     * Gets the job value for this CreditMemoItem.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @return job
      */
-    public RecordRef getJob() {
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getJob() {
         return job;
     }
 
-    /**
-     * 设置job属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setJob(RecordRef value) {
-        this.job = value;
-    }
 
     /**
-     * 获取item属性的值。
+     * Sets the job value for this CreditMemoItem.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param job
      */
-    public RecordRef getItem() {
+    public void setJob(com.netsuite.webservices.platform.core_2018_2.RecordRef job) {
+        this.job = job;
+    }
+
+
+    /**
+     * Gets the item value for this CreditMemoItem.
+     * 
+     * @return item
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getItem() {
         return item;
     }
 
-    /**
-     * 设置item属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setItem(RecordRef value) {
-        this.item = value;
-    }
 
     /**
-     * 获取orderLine属性的值。
+     * Sets the item value for this CreditMemoItem.
      * 
-     * @return
-     *     possible object is
-     *     {@link Long }
-     *     
+     * @param item
      */
-    public Long getOrderLine() {
+    public void setItem(com.netsuite.webservices.platform.core_2018_2.RecordRef item) {
+        this.item = item;
+    }
+
+
+    /**
+     * Gets the orderLine value for this CreditMemoItem.
+     * 
+     * @return orderLine
+     */
+    public java.lang.Long getOrderLine() {
         return orderLine;
     }
 
-    /**
-     * 设置orderLine属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Long }
-     *     
-     */
-    public void setOrderLine(Long value) {
-        this.orderLine = value;
-    }
 
     /**
-     * 获取line属性的值。
+     * Sets the orderLine value for this CreditMemoItem.
      * 
-     * @return
-     *     possible object is
-     *     {@link Long }
-     *     
+     * @param orderLine
      */
-    public Long getLine() {
+    public void setOrderLine(java.lang.Long orderLine) {
+        this.orderLine = orderLine;
+    }
+
+
+    /**
+     * Gets the line value for this CreditMemoItem.
+     * 
+     * @return line
+     */
+    public java.lang.Long getLine() {
         return line;
     }
 
-    /**
-     * 设置line属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Long }
-     *     
-     */
-    public void setLine(Long value) {
-        this.line = value;
-    }
 
     /**
-     * 获取quantity属性的值。
+     * Sets the line value for this CreditMemoItem.
      * 
-     * @return
-     *     possible object is
-     *     {@link Double }
-     *     
+     * @param line
      */
-    public Double getQuantity() {
+    public void setLine(java.lang.Long line) {
+        this.line = line;
+    }
+
+
+    /**
+     * Gets the quantity value for this CreditMemoItem.
+     * 
+     * @return quantity
+     */
+    public java.lang.Double getQuantity() {
         return quantity;
     }
 
-    /**
-     * 设置quantity属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Double }
-     *     
-     */
-    public void setQuantity(Double value) {
-        this.quantity = value;
-    }
 
     /**
-     * 获取description属性的值。
+     * Sets the quantity value for this CreditMemoItem.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param quantity
      */
-    public String getDescription() {
+    public void setQuantity(java.lang.Double quantity) {
+        this.quantity = quantity;
+    }
+
+
+    /**
+     * Gets the description value for this CreditMemoItem.
+     * 
+     * @return description
+     */
+    public java.lang.String getDescription() {
         return description;
     }
 
-    /**
-     * 设置description属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setDescription(String value) {
-        this.description = value;
-    }
 
     /**
-     * 获取binNumbers属性的值。
+     * Sets the description value for this CreditMemoItem.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param description
      */
-    public String getBinNumbers() {
+    public void setDescription(java.lang.String description) {
+        this.description = description;
+    }
+
+
+    /**
+     * Gets the binNumbers value for this CreditMemoItem.
+     * 
+     * @return binNumbers
+     */
+    public java.lang.String getBinNumbers() {
         return binNumbers;
     }
 
-    /**
-     * 设置binNumbers属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setBinNumbers(String value) {
-        this.binNumbers = value;
-    }
 
     /**
-     * 获取price属性的值。
+     * Sets the binNumbers value for this CreditMemoItem.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param binNumbers
      */
-    public RecordRef getPrice() {
+    public void setBinNumbers(java.lang.String binNumbers) {
+        this.binNumbers = binNumbers;
+    }
+
+
+    /**
+     * Gets the price value for this CreditMemoItem.
+     * 
+     * @return price
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getPrice() {
         return price;
     }
 
-    /**
-     * 设置price属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setPrice(RecordRef value) {
-        this.price = value;
-    }
 
     /**
-     * 获取rate属性的值。
+     * Sets the price value for this CreditMemoItem.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param price
      */
-    public String getRate() {
+    public void setPrice(com.netsuite.webservices.platform.core_2018_2.RecordRef price) {
+        this.price = price;
+    }
+
+
+    /**
+     * Gets the rate value for this CreditMemoItem.
+     * 
+     * @return rate
+     */
+    public java.lang.String getRate() {
         return rate;
     }
 
-    /**
-     * 设置rate属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setRate(String value) {
-        this.rate = value;
-    }
 
     /**
-     * 获取amount属性的值。
+     * Sets the rate value for this CreditMemoItem.
      * 
-     * @return
-     *     possible object is
-     *     {@link Double }
-     *     
+     * @param rate
      */
-    public Double getAmount() {
+    public void setRate(java.lang.String rate) {
+        this.rate = rate;
+    }
+
+
+    /**
+     * Gets the amount value for this CreditMemoItem.
+     * 
+     * @return amount
+     */
+    public java.lang.Double getAmount() {
         return amount;
     }
 
-    /**
-     * 设置amount属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Double }
-     *     
-     */
-    public void setAmount(Double value) {
-        this.amount = value;
-    }
 
     /**
-     * 获取isTaxable属性的值。
+     * Sets the amount value for this CreditMemoItem.
      * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
+     * @param amount
      */
-    public Boolean isIsTaxable() {
+    public void setAmount(java.lang.Double amount) {
+        this.amount = amount;
+    }
+
+
+    /**
+     * Gets the isTaxable value for this CreditMemoItem.
+     * 
+     * @return isTaxable
+     */
+    public java.lang.Boolean getIsTaxable() {
         return isTaxable;
     }
 
-    /**
-     * 设置isTaxable属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
-     */
-    public void setIsTaxable(Boolean value) {
-        this.isTaxable = value;
-    }
 
     /**
-     * 获取options属性的值。
+     * Sets the isTaxable value for this CreditMemoItem.
      * 
-     * @return
-     *     possible object is
-     *     {@link CustomFieldList }
-     *     
+     * @param isTaxable
      */
-    public CustomFieldList getOptions() {
+    public void setIsTaxable(java.lang.Boolean isTaxable) {
+        this.isTaxable = isTaxable;
+    }
+
+
+    /**
+     * Gets the options value for this CreditMemoItem.
+     * 
+     * @return options
+     */
+    public com.netsuite.webservices.platform.core_2018_2.CustomFieldRef[] getOptions() {
         return options;
     }
 
-    /**
-     * 设置options属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link CustomFieldList }
-     *     
-     */
-    public void setOptions(CustomFieldList value) {
-        this.options = value;
-    }
 
     /**
-     * 获取shipAddress属性的值。
+     * Sets the options value for this CreditMemoItem.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param options
      */
-    public RecordRef getShipAddress() {
+    public void setOptions(com.netsuite.webservices.platform.core_2018_2.CustomFieldRef[] options) {
+        this.options = options;
+    }
+
+
+    /**
+     * Gets the shipAddress value for this CreditMemoItem.
+     * 
+     * @return shipAddress
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getShipAddress() {
         return shipAddress;
     }
 
-    /**
-     * 设置shipAddress属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setShipAddress(RecordRef value) {
-        this.shipAddress = value;
-    }
 
     /**
-     * 获取shipCarrier属性的值。
+     * Sets the shipAddress value for this CreditMemoItem.
      * 
-     * @return
-     *     possible object is
-     *     {@link ShippingCarrier }
-     *     
+     * @param shipAddress
      */
-    public ShippingCarrier getShipCarrier() {
+    public void setShipAddress(com.netsuite.webservices.platform.core_2018_2.RecordRef shipAddress) {
+        this.shipAddress = shipAddress;
+    }
+
+
+    /**
+     * Gets the shipCarrier value for this CreditMemoItem.
+     * 
+     * @return shipCarrier
+     */
+    public com.netsuite.webservices.platform.common_2018_2.types.ShippingCarrier getShipCarrier() {
         return shipCarrier;
     }
 
-    /**
-     * 设置shipCarrier属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link ShippingCarrier }
-     *     
-     */
-    public void setShipCarrier(ShippingCarrier value) {
-        this.shipCarrier = value;
-    }
 
     /**
-     * 获取shipMethod属性的值。
+     * Sets the shipCarrier value for this CreditMemoItem.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param shipCarrier
      */
-    public RecordRef getShipMethod() {
+    public void setShipCarrier(com.netsuite.webservices.platform.common_2018_2.types.ShippingCarrier shipCarrier) {
+        this.shipCarrier = shipCarrier;
+    }
+
+
+    /**
+     * Gets the shipMethod value for this CreditMemoItem.
+     * 
+     * @return shipMethod
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getShipMethod() {
         return shipMethod;
     }
 
-    /**
-     * 设置shipMethod属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setShipMethod(RecordRef value) {
-        this.shipMethod = value;
-    }
 
     /**
-     * 获取taxCode属性的值。
+     * Sets the shipMethod value for this CreditMemoItem.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param shipMethod
      */
-    public RecordRef getTaxCode() {
+    public void setShipMethod(com.netsuite.webservices.platform.core_2018_2.RecordRef shipMethod) {
+        this.shipMethod = shipMethod;
+    }
+
+
+    /**
+     * Gets the taxCode value for this CreditMemoItem.
+     * 
+     * @return taxCode
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getTaxCode() {
         return taxCode;
     }
 
-    /**
-     * 设置taxCode属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setTaxCode(RecordRef value) {
-        this.taxCode = value;
-    }
 
     /**
-     * 获取taxRate1属性的值。
+     * Sets the taxCode value for this CreditMemoItem.
      * 
-     * @return
-     *     possible object is
-     *     {@link Double }
-     *     
+     * @param taxCode
      */
-    public Double getTaxRate1() {
+    public void setTaxCode(com.netsuite.webservices.platform.core_2018_2.RecordRef taxCode) {
+        this.taxCode = taxCode;
+    }
+
+
+    /**
+     * Gets the taxRate1 value for this CreditMemoItem.
+     * 
+     * @return taxRate1
+     */
+    public java.lang.Double getTaxRate1() {
         return taxRate1;
     }
 
-    /**
-     * 设置taxRate1属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Double }
-     *     
-     */
-    public void setTaxRate1(Double value) {
-        this.taxRate1 = value;
-    }
 
     /**
-     * 获取taxRate2属性的值。
+     * Sets the taxRate1 value for this CreditMemoItem.
      * 
-     * @return
-     *     possible object is
-     *     {@link Double }
-     *     
+     * @param taxRate1
      */
-    public Double getTaxRate2() {
+    public void setTaxRate1(java.lang.Double taxRate1) {
+        this.taxRate1 = taxRate1;
+    }
+
+
+    /**
+     * Gets the taxRate2 value for this CreditMemoItem.
+     * 
+     * @return taxRate2
+     */
+    public java.lang.Double getTaxRate2() {
         return taxRate2;
     }
 
-    /**
-     * 设置taxRate2属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Double }
-     *     
-     */
-    public void setTaxRate2(Double value) {
-        this.taxRate2 = value;
-    }
 
     /**
-     * 获取tax1Amt属性的值。
+     * Sets the taxRate2 value for this CreditMemoItem.
      * 
-     * @return
-     *     possible object is
-     *     {@link Double }
-     *     
+     * @param taxRate2
      */
-    public Double getTax1Amt() {
+    public void setTaxRate2(java.lang.Double taxRate2) {
+        this.taxRate2 = taxRate2;
+    }
+
+
+    /**
+     * Gets the tax1Amt value for this CreditMemoItem.
+     * 
+     * @return tax1Amt
+     */
+    public java.lang.Double getTax1Amt() {
         return tax1Amt;
     }
 
-    /**
-     * 设置tax1Amt属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Double }
-     *     
-     */
-    public void setTax1Amt(Double value) {
-        this.tax1Amt = value;
-    }
 
     /**
-     * 获取grossAmt属性的值。
+     * Sets the tax1Amt value for this CreditMemoItem.
      * 
-     * @return
-     *     possible object is
-     *     {@link Double }
-     *     
+     * @param tax1Amt
      */
-    public Double getGrossAmt() {
+    public void setTax1Amt(java.lang.Double tax1Amt) {
+        this.tax1Amt = tax1Amt;
+    }
+
+
+    /**
+     * Gets the grossAmt value for this CreditMemoItem.
+     * 
+     * @return grossAmt
+     */
+    public java.lang.Double getGrossAmt() {
         return grossAmt;
     }
 
-    /**
-     * 设置grossAmt属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Double }
-     *     
-     */
-    public void setGrossAmt(Double value) {
-        this.grossAmt = value;
-    }
 
     /**
-     * 获取department属性的值。
+     * Sets the grossAmt value for this CreditMemoItem.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param grossAmt
      */
-    public RecordRef getDepartment() {
+    public void setGrossAmt(java.lang.Double grossAmt) {
+        this.grossAmt = grossAmt;
+    }
+
+
+    /**
+     * Gets the department value for this CreditMemoItem.
+     * 
+     * @return department
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getDepartment() {
         return department;
     }
 
-    /**
-     * 设置department属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setDepartment(RecordRef value) {
-        this.department = value;
-    }
 
     /**
-     * 获取clazz属性的值。
+     * Sets the department value for this CreditMemoItem.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param department
      */
-    public RecordRef getClazz() {
-        return clazz;
+    public void setDepartment(com.netsuite.webservices.platform.core_2018_2.RecordRef department) {
+        this.department = department;
     }
 
-    /**
-     * 设置clazz属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setClazz(RecordRef value) {
-        this.clazz = value;
-    }
 
     /**
-     * 获取location属性的值。
+     * Gets the _class value for this CreditMemoItem.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @return _class
      */
-    public RecordRef getLocation() {
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef get_class() {
+        return _class;
+    }
+
+
+    /**
+     * Sets the _class value for this CreditMemoItem.
+     * 
+     * @param _class
+     */
+    public void set_class(com.netsuite.webservices.platform.core_2018_2.RecordRef _class) {
+        this._class = _class;
+    }
+
+
+    /**
+     * Gets the location value for this CreditMemoItem.
+     * 
+     * @return location
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getLocation() {
         return location;
     }
 
-    /**
-     * 设置location属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setLocation(RecordRef value) {
-        this.location = value;
-    }
 
     /**
-     * 获取costEstimateType属性的值。
+     * Sets the location value for this CreditMemoItem.
      * 
-     * @return
-     *     possible object is
-     *     {@link ItemCostEstimateType }
-     *     
+     * @param location
      */
-    public ItemCostEstimateType getCostEstimateType() {
+    public void setLocation(com.netsuite.webservices.platform.core_2018_2.RecordRef location) {
+        this.location = location;
+    }
+
+
+    /**
+     * Gets the costEstimateType value for this CreditMemoItem.
+     * 
+     * @return costEstimateType
+     */
+    public com.netsuite.webservices.platform.common_2018_2.types.ItemCostEstimateType getCostEstimateType() {
         return costEstimateType;
     }
 
-    /**
-     * 设置costEstimateType属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link ItemCostEstimateType }
-     *     
-     */
-    public void setCostEstimateType(ItemCostEstimateType value) {
-        this.costEstimateType = value;
-    }
 
     /**
-     * 获取costEstimate属性的值。
+     * Sets the costEstimateType value for this CreditMemoItem.
      * 
-     * @return
-     *     possible object is
-     *     {@link Double }
-     *     
+     * @param costEstimateType
      */
-    public Double getCostEstimate() {
+    public void setCostEstimateType(com.netsuite.webservices.platform.common_2018_2.types.ItemCostEstimateType costEstimateType) {
+        this.costEstimateType = costEstimateType;
+    }
+
+
+    /**
+     * Gets the costEstimate value for this CreditMemoItem.
+     * 
+     * @return costEstimate
+     */
+    public java.lang.Double getCostEstimate() {
         return costEstimate;
     }
 
-    /**
-     * 设置costEstimate属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Double }
-     *     
-     */
-    public void setCostEstimate(Double value) {
-        this.costEstimate = value;
-    }
 
     /**
-     * 获取taxDetailsReference属性的值。
+     * Sets the costEstimate value for this CreditMemoItem.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param costEstimate
      */
-    public String getTaxDetailsReference() {
+    public void setCostEstimate(java.lang.Double costEstimate) {
+        this.costEstimate = costEstimate;
+    }
+
+
+    /**
+     * Gets the taxDetailsReference value for this CreditMemoItem.
+     * 
+     * @return taxDetailsReference
+     */
+    public java.lang.String getTaxDetailsReference() {
         return taxDetailsReference;
     }
 
-    /**
-     * 设置taxDetailsReference属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setTaxDetailsReference(String value) {
-        this.taxDetailsReference = value;
-    }
 
     /**
-     * 获取revRecSchedule属性的值。
+     * Sets the taxDetailsReference value for this CreditMemoItem.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param taxDetailsReference
      */
-    public RecordRef getRevRecSchedule() {
+    public void setTaxDetailsReference(java.lang.String taxDetailsReference) {
+        this.taxDetailsReference = taxDetailsReference;
+    }
+
+
+    /**
+     * Gets the revRecSchedule value for this CreditMemoItem.
+     * 
+     * @return revRecSchedule
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getRevRecSchedule() {
         return revRecSchedule;
     }
 
-    /**
-     * 设置revRecSchedule属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setRevRecSchedule(RecordRef value) {
-        this.revRecSchedule = value;
-    }
 
     /**
-     * 获取revRecStartDate属性的值。
+     * Sets the revRecSchedule value for this CreditMemoItem.
      * 
-     * @return
-     *     possible object is
-     *     {@link XMLGregorianCalendar }
-     *     
+     * @param revRecSchedule
      */
-    public XMLGregorianCalendar getRevRecStartDate() {
+    public void setRevRecSchedule(com.netsuite.webservices.platform.core_2018_2.RecordRef revRecSchedule) {
+        this.revRecSchedule = revRecSchedule;
+    }
+
+
+    /**
+     * Gets the revRecStartDate value for this CreditMemoItem.
+     * 
+     * @return revRecStartDate
+     */
+    public java.util.Calendar getRevRecStartDate() {
         return revRecStartDate;
     }
 
-    /**
-     * 设置revRecStartDate属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link XMLGregorianCalendar }
-     *     
-     */
-    public void setRevRecStartDate(XMLGregorianCalendar value) {
-        this.revRecStartDate = value;
-    }
 
     /**
-     * 获取revRecTermInMonths属性的值。
+     * Sets the revRecStartDate value for this CreditMemoItem.
      * 
-     * @return
-     *     possible object is
-     *     {@link Long }
-     *     
+     * @param revRecStartDate
      */
-    public Long getRevRecTermInMonths() {
+    public void setRevRecStartDate(java.util.Calendar revRecStartDate) {
+        this.revRecStartDate = revRecStartDate;
+    }
+
+
+    /**
+     * Gets the revRecTermInMonths value for this CreditMemoItem.
+     * 
+     * @return revRecTermInMonths
+     */
+    public java.lang.Long getRevRecTermInMonths() {
         return revRecTermInMonths;
     }
 
-    /**
-     * 设置revRecTermInMonths属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Long }
-     *     
-     */
-    public void setRevRecTermInMonths(Long value) {
-        this.revRecTermInMonths = value;
-    }
 
     /**
-     * 获取revRecEndDate属性的值。
+     * Sets the revRecTermInMonths value for this CreditMemoItem.
      * 
-     * @return
-     *     possible object is
-     *     {@link XMLGregorianCalendar }
-     *     
+     * @param revRecTermInMonths
      */
-    public XMLGregorianCalendar getRevRecEndDate() {
+    public void setRevRecTermInMonths(java.lang.Long revRecTermInMonths) {
+        this.revRecTermInMonths = revRecTermInMonths;
+    }
+
+
+    /**
+     * Gets the revRecEndDate value for this CreditMemoItem.
+     * 
+     * @return revRecEndDate
+     */
+    public java.util.Calendar getRevRecEndDate() {
         return revRecEndDate;
     }
 
-    /**
-     * 设置revRecEndDate属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link XMLGregorianCalendar }
-     *     
-     */
-    public void setRevRecEndDate(XMLGregorianCalendar value) {
-        this.revRecEndDate = value;
-    }
 
     /**
-     * 获取units属性的值。
+     * Sets the revRecEndDate value for this CreditMemoItem.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param revRecEndDate
      */
-    public RecordRef getUnits() {
+    public void setRevRecEndDate(java.util.Calendar revRecEndDate) {
+        this.revRecEndDate = revRecEndDate;
+    }
+
+
+    /**
+     * Gets the units value for this CreditMemoItem.
+     * 
+     * @return units
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getUnits() {
         return units;
     }
 
-    /**
-     * 设置units属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setUnits(RecordRef value) {
-        this.units = value;
-    }
 
     /**
-     * 获取inventoryDetail属性的值。
+     * Sets the units value for this CreditMemoItem.
      * 
-     * @return
-     *     possible object is
-     *     {@link InventoryDetail }
-     *     
+     * @param units
      */
-    public InventoryDetail getInventoryDetail() {
+    public void setUnits(com.netsuite.webservices.platform.core_2018_2.RecordRef units) {
+        this.units = units;
+    }
+
+
+    /**
+     * Gets the inventoryDetail value for this CreditMemoItem.
+     * 
+     * @return inventoryDetail
+     */
+    public com.netsuite.webservices.platform.common_2018_2.InventoryDetail getInventoryDetail() {
         return inventoryDetail;
     }
 
-    /**
-     * 设置inventoryDetail属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link InventoryDetail }
-     *     
-     */
-    public void setInventoryDetail(InventoryDetail value) {
-        this.inventoryDetail = value;
-    }
 
     /**
-     * 获取serialNumbers属性的值。
+     * Sets the inventoryDetail value for this CreditMemoItem.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param inventoryDetail
      */
-    public String getSerialNumbers() {
+    public void setInventoryDetail(com.netsuite.webservices.platform.common_2018_2.InventoryDetail inventoryDetail) {
+        this.inventoryDetail = inventoryDetail;
+    }
+
+
+    /**
+     * Gets the serialNumbers value for this CreditMemoItem.
+     * 
+     * @return serialNumbers
+     */
+    public java.lang.String getSerialNumbers() {
         return serialNumbers;
     }
 
-    /**
-     * 设置serialNumbers属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setSerialNumbers(String value) {
-        this.serialNumbers = value;
-    }
 
     /**
-     * 获取deferRevRec属性的值。
+     * Sets the serialNumbers value for this CreditMemoItem.
      * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
+     * @param serialNumbers
      */
-    public Boolean isDeferRevRec() {
+    public void setSerialNumbers(java.lang.String serialNumbers) {
+        this.serialNumbers = serialNumbers;
+    }
+
+
+    /**
+     * Gets the deferRevRec value for this CreditMemoItem.
+     * 
+     * @return deferRevRec
+     */
+    public java.lang.Boolean getDeferRevRec() {
         return deferRevRec;
     }
 
-    /**
-     * 设置deferRevRec属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
-     */
-    public void setDeferRevRec(Boolean value) {
-        this.deferRevRec = value;
-    }
 
     /**
-     * 获取giftCertFrom属性的值。
+     * Sets the deferRevRec value for this CreditMemoItem.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param deferRevRec
      */
-    public String getGiftCertFrom() {
+    public void setDeferRevRec(java.lang.Boolean deferRevRec) {
+        this.deferRevRec = deferRevRec;
+    }
+
+
+    /**
+     * Gets the giftCertFrom value for this CreditMemoItem.
+     * 
+     * @return giftCertFrom
+     */
+    public java.lang.String getGiftCertFrom() {
         return giftCertFrom;
     }
 
-    /**
-     * 设置giftCertFrom属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setGiftCertFrom(String value) {
-        this.giftCertFrom = value;
-    }
 
     /**
-     * 获取giftCertRecipientName属性的值。
+     * Sets the giftCertFrom value for this CreditMemoItem.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param giftCertFrom
      */
-    public String getGiftCertRecipientName() {
+    public void setGiftCertFrom(java.lang.String giftCertFrom) {
+        this.giftCertFrom = giftCertFrom;
+    }
+
+
+    /**
+     * Gets the giftCertRecipientName value for this CreditMemoItem.
+     * 
+     * @return giftCertRecipientName
+     */
+    public java.lang.String getGiftCertRecipientName() {
         return giftCertRecipientName;
     }
 
-    /**
-     * 设置giftCertRecipientName属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setGiftCertRecipientName(String value) {
-        this.giftCertRecipientName = value;
-    }
 
     /**
-     * 获取giftCertRecipientEmail属性的值。
+     * Sets the giftCertRecipientName value for this CreditMemoItem.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param giftCertRecipientName
      */
-    public String getGiftCertRecipientEmail() {
+    public void setGiftCertRecipientName(java.lang.String giftCertRecipientName) {
+        this.giftCertRecipientName = giftCertRecipientName;
+    }
+
+
+    /**
+     * Gets the giftCertRecipientEmail value for this CreditMemoItem.
+     * 
+     * @return giftCertRecipientEmail
+     */
+    public java.lang.String getGiftCertRecipientEmail() {
         return giftCertRecipientEmail;
     }
 
-    /**
-     * 设置giftCertRecipientEmail属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setGiftCertRecipientEmail(String value) {
-        this.giftCertRecipientEmail = value;
-    }
 
     /**
-     * 获取giftCertMessage属性的值。
+     * Sets the giftCertRecipientEmail value for this CreditMemoItem.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param giftCertRecipientEmail
      */
-    public String getGiftCertMessage() {
+    public void setGiftCertRecipientEmail(java.lang.String giftCertRecipientEmail) {
+        this.giftCertRecipientEmail = giftCertRecipientEmail;
+    }
+
+
+    /**
+     * Gets the giftCertMessage value for this CreditMemoItem.
+     * 
+     * @return giftCertMessage
+     */
+    public java.lang.String getGiftCertMessage() {
         return giftCertMessage;
     }
 
-    /**
-     * 设置giftCertMessage属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setGiftCertMessage(String value) {
-        this.giftCertMessage = value;
-    }
 
     /**
-     * 获取taxAmount属性的值。
+     * Sets the giftCertMessage value for this CreditMemoItem.
      * 
-     * @return
-     *     possible object is
-     *     {@link Double }
-     *     
+     * @param giftCertMessage
      */
-    public Double getTaxAmount() {
+    public void setGiftCertMessage(java.lang.String giftCertMessage) {
+        this.giftCertMessage = giftCertMessage;
+    }
+
+
+    /**
+     * Gets the taxAmount value for this CreditMemoItem.
+     * 
+     * @return taxAmount
+     */
+    public java.lang.Double getTaxAmount() {
         return taxAmount;
     }
 
-    /**
-     * 设置taxAmount属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Double }
-     *     
-     */
-    public void setTaxAmount(Double value) {
-        this.taxAmount = value;
-    }
 
     /**
-     * 获取giftCertNumber属性的值。
+     * Sets the taxAmount value for this CreditMemoItem.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param taxAmount
      */
-    public String getGiftCertNumber() {
+    public void setTaxAmount(java.lang.Double taxAmount) {
+        this.taxAmount = taxAmount;
+    }
+
+
+    /**
+     * Gets the giftCertNumber value for this CreditMemoItem.
+     * 
+     * @return giftCertNumber
+     */
+    public java.lang.String getGiftCertNumber() {
         return giftCertNumber;
     }
 
-    /**
-     * 设置giftCertNumber属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setGiftCertNumber(String value) {
-        this.giftCertNumber = value;
-    }
 
     /**
-     * 获取vsoeSopGroup属性的值。
+     * Sets the giftCertNumber value for this CreditMemoItem.
      * 
-     * @return
-     *     possible object is
-     *     {@link VsoeSopGroup }
-     *     
+     * @param giftCertNumber
      */
-    public VsoeSopGroup getVsoeSopGroup() {
+    public void setGiftCertNumber(java.lang.String giftCertNumber) {
+        this.giftCertNumber = giftCertNumber;
+    }
+
+
+    /**
+     * Gets the vsoeSopGroup value for this CreditMemoItem.
+     * 
+     * @return vsoeSopGroup
+     */
+    public com.netsuite.webservices.platform.common_2018_2.types.VsoeSopGroup getVsoeSopGroup() {
         return vsoeSopGroup;
     }
 
-    /**
-     * 设置vsoeSopGroup属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link VsoeSopGroup }
-     *     
-     */
-    public void setVsoeSopGroup(VsoeSopGroup value) {
-        this.vsoeSopGroup = value;
-    }
 
     /**
-     * 获取vsoeIsEstimate属性的值。
+     * Sets the vsoeSopGroup value for this CreditMemoItem.
      * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
+     * @param vsoeSopGroup
      */
-    public Boolean isVsoeIsEstimate() {
+    public void setVsoeSopGroup(com.netsuite.webservices.platform.common_2018_2.types.VsoeSopGroup vsoeSopGroup) {
+        this.vsoeSopGroup = vsoeSopGroup;
+    }
+
+
+    /**
+     * Gets the vsoeIsEstimate value for this CreditMemoItem.
+     * 
+     * @return vsoeIsEstimate
+     */
+    public java.lang.Boolean getVsoeIsEstimate() {
         return vsoeIsEstimate;
     }
 
-    /**
-     * 设置vsoeIsEstimate属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
-     */
-    public void setVsoeIsEstimate(Boolean value) {
-        this.vsoeIsEstimate = value;
-    }
 
     /**
-     * 获取vsoePrice属性的值。
+     * Sets the vsoeIsEstimate value for this CreditMemoItem.
      * 
-     * @return
-     *     possible object is
-     *     {@link Double }
-     *     
+     * @param vsoeIsEstimate
      */
-    public Double getVsoePrice() {
+    public void setVsoeIsEstimate(java.lang.Boolean vsoeIsEstimate) {
+        this.vsoeIsEstimate = vsoeIsEstimate;
+    }
+
+
+    /**
+     * Gets the vsoePrice value for this CreditMemoItem.
+     * 
+     * @return vsoePrice
+     */
+    public java.lang.Double getVsoePrice() {
         return vsoePrice;
     }
 
-    /**
-     * 设置vsoePrice属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Double }
-     *     
-     */
-    public void setVsoePrice(Double value) {
-        this.vsoePrice = value;
-    }
 
     /**
-     * 获取vsoeAmount属性的值。
+     * Sets the vsoePrice value for this CreditMemoItem.
      * 
-     * @return
-     *     possible object is
-     *     {@link Double }
-     *     
+     * @param vsoePrice
      */
-    public Double getVsoeAmount() {
+    public void setVsoePrice(java.lang.Double vsoePrice) {
+        this.vsoePrice = vsoePrice;
+    }
+
+
+    /**
+     * Gets the vsoeAmount value for this CreditMemoItem.
+     * 
+     * @return vsoeAmount
+     */
+    public java.lang.Double getVsoeAmount() {
         return vsoeAmount;
     }
 
-    /**
-     * 设置vsoeAmount属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Double }
-     *     
-     */
-    public void setVsoeAmount(Double value) {
-        this.vsoeAmount = value;
-    }
 
     /**
-     * 获取vsoeAllocation属性的值。
+     * Sets the vsoeAmount value for this CreditMemoItem.
      * 
-     * @return
-     *     possible object is
-     *     {@link Double }
-     *     
+     * @param vsoeAmount
      */
-    public Double getVsoeAllocation() {
+    public void setVsoeAmount(java.lang.Double vsoeAmount) {
+        this.vsoeAmount = vsoeAmount;
+    }
+
+
+    /**
+     * Gets the vsoeAllocation value for this CreditMemoItem.
+     * 
+     * @return vsoeAllocation
+     */
+    public java.lang.Double getVsoeAllocation() {
         return vsoeAllocation;
     }
 
-    /**
-     * 设置vsoeAllocation属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Double }
-     *     
-     */
-    public void setVsoeAllocation(Double value) {
-        this.vsoeAllocation = value;
-    }
 
     /**
-     * 获取vsoeDeferral属性的值。
+     * Sets the vsoeAllocation value for this CreditMemoItem.
      * 
-     * @return
-     *     possible object is
-     *     {@link VsoeDeferral }
-     *     
+     * @param vsoeAllocation
      */
-    public VsoeDeferral getVsoeDeferral() {
+    public void setVsoeAllocation(java.lang.Double vsoeAllocation) {
+        this.vsoeAllocation = vsoeAllocation;
+    }
+
+
+    /**
+     * Gets the vsoeDeferral value for this CreditMemoItem.
+     * 
+     * @return vsoeDeferral
+     */
+    public com.netsuite.webservices.platform.common_2018_2.types.VsoeDeferral getVsoeDeferral() {
         return vsoeDeferral;
     }
 
-    /**
-     * 设置vsoeDeferral属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link VsoeDeferral }
-     *     
-     */
-    public void setVsoeDeferral(VsoeDeferral value) {
-        this.vsoeDeferral = value;
-    }
 
     /**
-     * 获取vsoePermitDiscount属性的值。
+     * Sets the vsoeDeferral value for this CreditMemoItem.
      * 
-     * @return
-     *     possible object is
-     *     {@link VsoePermitDiscount }
-     *     
+     * @param vsoeDeferral
      */
-    public VsoePermitDiscount getVsoePermitDiscount() {
+    public void setVsoeDeferral(com.netsuite.webservices.platform.common_2018_2.types.VsoeDeferral vsoeDeferral) {
+        this.vsoeDeferral = vsoeDeferral;
+    }
+
+
+    /**
+     * Gets the vsoePermitDiscount value for this CreditMemoItem.
+     * 
+     * @return vsoePermitDiscount
+     */
+    public com.netsuite.webservices.platform.common_2018_2.types.VsoePermitDiscount getVsoePermitDiscount() {
         return vsoePermitDiscount;
     }
 
-    /**
-     * 设置vsoePermitDiscount属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link VsoePermitDiscount }
-     *     
-     */
-    public void setVsoePermitDiscount(VsoePermitDiscount value) {
-        this.vsoePermitDiscount = value;
-    }
 
     /**
-     * 获取vsoeDelivered属性的值。
+     * Sets the vsoePermitDiscount value for this CreditMemoItem.
      * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
+     * @param vsoePermitDiscount
      */
-    public Boolean isVsoeDelivered() {
+    public void setVsoePermitDiscount(com.netsuite.webservices.platform.common_2018_2.types.VsoePermitDiscount vsoePermitDiscount) {
+        this.vsoePermitDiscount = vsoePermitDiscount;
+    }
+
+
+    /**
+     * Gets the vsoeDelivered value for this CreditMemoItem.
+     * 
+     * @return vsoeDelivered
+     */
+    public java.lang.Boolean getVsoeDelivered() {
         return vsoeDelivered;
     }
 
-    /**
-     * 设置vsoeDelivered属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
-     */
-    public void setVsoeDelivered(Boolean value) {
-        this.vsoeDelivered = value;
-    }
 
     /**
-     * 获取catchUpPeriod属性的值。
+     * Sets the vsoeDelivered value for this CreditMemoItem.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param vsoeDelivered
      */
-    public RecordRef getCatchUpPeriod() {
+    public void setVsoeDelivered(java.lang.Boolean vsoeDelivered) {
+        this.vsoeDelivered = vsoeDelivered;
+    }
+
+
+    /**
+     * Gets the catchUpPeriod value for this CreditMemoItem.
+     * 
+     * @return catchUpPeriod
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getCatchUpPeriod() {
         return catchUpPeriod;
     }
 
-    /**
-     * 设置catchUpPeriod属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setCatchUpPeriod(RecordRef value) {
-        this.catchUpPeriod = value;
-    }
 
     /**
-     * 获取chargeType属性的值。
+     * Sets the catchUpPeriod value for this CreditMemoItem.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param catchUpPeriod
      */
-    public RecordRef getChargeType() {
+    public void setCatchUpPeriod(com.netsuite.webservices.platform.core_2018_2.RecordRef catchUpPeriod) {
+        this.catchUpPeriod = catchUpPeriod;
+    }
+
+
+    /**
+     * Gets the chargeType value for this CreditMemoItem.
+     * 
+     * @return chargeType
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getChargeType() {
         return chargeType;
     }
 
-    /**
-     * 设置chargeType属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setChargeType(RecordRef value) {
-        this.chargeType = value;
-    }
 
     /**
-     * 获取subscriptionLine属性的值。
+     * Sets the chargeType value for this CreditMemoItem.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param chargeType
      */
-    public RecordRef getSubscriptionLine() {
+    public void setChargeType(com.netsuite.webservices.platform.core_2018_2.RecordRef chargeType) {
+        this.chargeType = chargeType;
+    }
+
+
+    /**
+     * Gets the subscriptionLine value for this CreditMemoItem.
+     * 
+     * @return subscriptionLine
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getSubscriptionLine() {
         return subscriptionLine;
     }
 
-    /**
-     * 设置subscriptionLine属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setSubscriptionLine(RecordRef value) {
-        this.subscriptionLine = value;
-    }
 
     /**
-     * 获取chargesList属性的值。
+     * Sets the subscriptionLine value for this CreditMemoItem.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRefList }
-     *     
+     * @param subscriptionLine
      */
-    public RecordRefList getChargesList() {
+    public void setSubscriptionLine(com.netsuite.webservices.platform.core_2018_2.RecordRef subscriptionLine) {
+        this.subscriptionLine = subscriptionLine;
+    }
+
+
+    /**
+     * Gets the chargesList value for this CreditMemoItem.
+     * 
+     * @return chargesList
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef[] getChargesList() {
         return chargesList;
     }
 
-    /**
-     * 设置chargesList属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRefList }
-     *     
-     */
-    public void setChargesList(RecordRefList value) {
-        this.chargesList = value;
-    }
 
     /**
-     * 获取customFieldList属性的值。
+     * Sets the chargesList value for this CreditMemoItem.
      * 
-     * @return
-     *     possible object is
-     *     {@link CustomFieldList }
-     *     
+     * @param chargesList
      */
-    public CustomFieldList getCustomFieldList() {
+    public void setChargesList(com.netsuite.webservices.platform.core_2018_2.RecordRef[] chargesList) {
+        this.chargesList = chargesList;
+    }
+
+
+    /**
+     * Gets the customFieldList value for this CreditMemoItem.
+     * 
+     * @return customFieldList
+     */
+    public com.netsuite.webservices.platform.core_2018_2.CustomFieldRef[] getCustomFieldList() {
         return customFieldList;
     }
 
+
     /**
-     * 设置customFieldList属性的值。
+     * Sets the customFieldList value for this CreditMemoItem.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link CustomFieldList }
-     *     
+     * @param customFieldList
      */
-    public void setCustomFieldList(CustomFieldList value) {
-        this.customFieldList = value;
+    public void setCustomFieldList(com.netsuite.webservices.platform.core_2018_2.CustomFieldRef[] customFieldList) {
+        this.customFieldList = customFieldList;
+    }
+
+    private java.lang.Object __equalsCalc = null;
+    public synchronized boolean equals(java.lang.Object obj) {
+        if (!(obj instanceof CreditMemoItem)) return false;
+        CreditMemoItem other = (CreditMemoItem) obj;
+        if (obj == null) return false;
+        if (this == obj) return true;
+        if (__equalsCalc != null) {
+            return (__equalsCalc == obj);
+        }
+        __equalsCalc = obj;
+        boolean _equals;
+        _equals = true && 
+            ((this.job==null && other.getJob()==null) || 
+             (this.job!=null &&
+              this.job.equals(other.getJob()))) &&
+            ((this.item==null && other.getItem()==null) || 
+             (this.item!=null &&
+              this.item.equals(other.getItem()))) &&
+            ((this.orderLine==null && other.getOrderLine()==null) || 
+             (this.orderLine!=null &&
+              this.orderLine.equals(other.getOrderLine()))) &&
+            ((this.line==null && other.getLine()==null) || 
+             (this.line!=null &&
+              this.line.equals(other.getLine()))) &&
+            ((this.quantity==null && other.getQuantity()==null) || 
+             (this.quantity!=null &&
+              this.quantity.equals(other.getQuantity()))) &&
+            ((this.description==null && other.getDescription()==null) || 
+             (this.description!=null &&
+              this.description.equals(other.getDescription()))) &&
+            ((this.binNumbers==null && other.getBinNumbers()==null) || 
+             (this.binNumbers!=null &&
+              this.binNumbers.equals(other.getBinNumbers()))) &&
+            ((this.price==null && other.getPrice()==null) || 
+             (this.price!=null &&
+              this.price.equals(other.getPrice()))) &&
+            ((this.rate==null && other.getRate()==null) || 
+             (this.rate!=null &&
+              this.rate.equals(other.getRate()))) &&
+            ((this.amount==null && other.getAmount()==null) || 
+             (this.amount!=null &&
+              this.amount.equals(other.getAmount()))) &&
+            ((this.isTaxable==null && other.getIsTaxable()==null) || 
+             (this.isTaxable!=null &&
+              this.isTaxable.equals(other.getIsTaxable()))) &&
+            ((this.options==null && other.getOptions()==null) || 
+             (this.options!=null &&
+              java.util.Arrays.equals(this.options, other.getOptions()))) &&
+            ((this.shipAddress==null && other.getShipAddress()==null) || 
+             (this.shipAddress!=null &&
+              this.shipAddress.equals(other.getShipAddress()))) &&
+            ((this.shipCarrier==null && other.getShipCarrier()==null) || 
+             (this.shipCarrier!=null &&
+              this.shipCarrier.equals(other.getShipCarrier()))) &&
+            ((this.shipMethod==null && other.getShipMethod()==null) || 
+             (this.shipMethod!=null &&
+              this.shipMethod.equals(other.getShipMethod()))) &&
+            ((this.taxCode==null && other.getTaxCode()==null) || 
+             (this.taxCode!=null &&
+              this.taxCode.equals(other.getTaxCode()))) &&
+            ((this.taxRate1==null && other.getTaxRate1()==null) || 
+             (this.taxRate1!=null &&
+              this.taxRate1.equals(other.getTaxRate1()))) &&
+            ((this.taxRate2==null && other.getTaxRate2()==null) || 
+             (this.taxRate2!=null &&
+              this.taxRate2.equals(other.getTaxRate2()))) &&
+            ((this.tax1Amt==null && other.getTax1Amt()==null) || 
+             (this.tax1Amt!=null &&
+              this.tax1Amt.equals(other.getTax1Amt()))) &&
+            ((this.grossAmt==null && other.getGrossAmt()==null) || 
+             (this.grossAmt!=null &&
+              this.grossAmt.equals(other.getGrossAmt()))) &&
+            ((this.department==null && other.getDepartment()==null) || 
+             (this.department!=null &&
+              this.department.equals(other.getDepartment()))) &&
+            ((this._class==null && other.get_class()==null) || 
+             (this._class!=null &&
+              this._class.equals(other.get_class()))) &&
+            ((this.location==null && other.getLocation()==null) || 
+             (this.location!=null &&
+              this.location.equals(other.getLocation()))) &&
+            ((this.costEstimateType==null && other.getCostEstimateType()==null) || 
+             (this.costEstimateType!=null &&
+              this.costEstimateType.equals(other.getCostEstimateType()))) &&
+            ((this.costEstimate==null && other.getCostEstimate()==null) || 
+             (this.costEstimate!=null &&
+              this.costEstimate.equals(other.getCostEstimate()))) &&
+            ((this.taxDetailsReference==null && other.getTaxDetailsReference()==null) || 
+             (this.taxDetailsReference!=null &&
+              this.taxDetailsReference.equals(other.getTaxDetailsReference()))) &&
+            ((this.revRecSchedule==null && other.getRevRecSchedule()==null) || 
+             (this.revRecSchedule!=null &&
+              this.revRecSchedule.equals(other.getRevRecSchedule()))) &&
+            ((this.revRecStartDate==null && other.getRevRecStartDate()==null) || 
+             (this.revRecStartDate!=null &&
+              this.revRecStartDate.equals(other.getRevRecStartDate()))) &&
+            ((this.revRecTermInMonths==null && other.getRevRecTermInMonths()==null) || 
+             (this.revRecTermInMonths!=null &&
+              this.revRecTermInMonths.equals(other.getRevRecTermInMonths()))) &&
+            ((this.revRecEndDate==null && other.getRevRecEndDate()==null) || 
+             (this.revRecEndDate!=null &&
+              this.revRecEndDate.equals(other.getRevRecEndDate()))) &&
+            ((this.units==null && other.getUnits()==null) || 
+             (this.units!=null &&
+              this.units.equals(other.getUnits()))) &&
+            ((this.inventoryDetail==null && other.getInventoryDetail()==null) || 
+             (this.inventoryDetail!=null &&
+              this.inventoryDetail.equals(other.getInventoryDetail()))) &&
+            ((this.serialNumbers==null && other.getSerialNumbers()==null) || 
+             (this.serialNumbers!=null &&
+              this.serialNumbers.equals(other.getSerialNumbers()))) &&
+            ((this.deferRevRec==null && other.getDeferRevRec()==null) || 
+             (this.deferRevRec!=null &&
+              this.deferRevRec.equals(other.getDeferRevRec()))) &&
+            ((this.giftCertFrom==null && other.getGiftCertFrom()==null) || 
+             (this.giftCertFrom!=null &&
+              this.giftCertFrom.equals(other.getGiftCertFrom()))) &&
+            ((this.giftCertRecipientName==null && other.getGiftCertRecipientName()==null) || 
+             (this.giftCertRecipientName!=null &&
+              this.giftCertRecipientName.equals(other.getGiftCertRecipientName()))) &&
+            ((this.giftCertRecipientEmail==null && other.getGiftCertRecipientEmail()==null) || 
+             (this.giftCertRecipientEmail!=null &&
+              this.giftCertRecipientEmail.equals(other.getGiftCertRecipientEmail()))) &&
+            ((this.giftCertMessage==null && other.getGiftCertMessage()==null) || 
+             (this.giftCertMessage!=null &&
+              this.giftCertMessage.equals(other.getGiftCertMessage()))) &&
+            ((this.taxAmount==null && other.getTaxAmount()==null) || 
+             (this.taxAmount!=null &&
+              this.taxAmount.equals(other.getTaxAmount()))) &&
+            ((this.giftCertNumber==null && other.getGiftCertNumber()==null) || 
+             (this.giftCertNumber!=null &&
+              this.giftCertNumber.equals(other.getGiftCertNumber()))) &&
+            ((this.vsoeSopGroup==null && other.getVsoeSopGroup()==null) || 
+             (this.vsoeSopGroup!=null &&
+              this.vsoeSopGroup.equals(other.getVsoeSopGroup()))) &&
+            ((this.vsoeIsEstimate==null && other.getVsoeIsEstimate()==null) || 
+             (this.vsoeIsEstimate!=null &&
+              this.vsoeIsEstimate.equals(other.getVsoeIsEstimate()))) &&
+            ((this.vsoePrice==null && other.getVsoePrice()==null) || 
+             (this.vsoePrice!=null &&
+              this.vsoePrice.equals(other.getVsoePrice()))) &&
+            ((this.vsoeAmount==null && other.getVsoeAmount()==null) || 
+             (this.vsoeAmount!=null &&
+              this.vsoeAmount.equals(other.getVsoeAmount()))) &&
+            ((this.vsoeAllocation==null && other.getVsoeAllocation()==null) || 
+             (this.vsoeAllocation!=null &&
+              this.vsoeAllocation.equals(other.getVsoeAllocation()))) &&
+            ((this.vsoeDeferral==null && other.getVsoeDeferral()==null) || 
+             (this.vsoeDeferral!=null &&
+              this.vsoeDeferral.equals(other.getVsoeDeferral()))) &&
+            ((this.vsoePermitDiscount==null && other.getVsoePermitDiscount()==null) || 
+             (this.vsoePermitDiscount!=null &&
+              this.vsoePermitDiscount.equals(other.getVsoePermitDiscount()))) &&
+            ((this.vsoeDelivered==null && other.getVsoeDelivered()==null) || 
+             (this.vsoeDelivered!=null &&
+              this.vsoeDelivered.equals(other.getVsoeDelivered()))) &&
+            ((this.catchUpPeriod==null && other.getCatchUpPeriod()==null) || 
+             (this.catchUpPeriod!=null &&
+              this.catchUpPeriod.equals(other.getCatchUpPeriod()))) &&
+            ((this.chargeType==null && other.getChargeType()==null) || 
+             (this.chargeType!=null &&
+              this.chargeType.equals(other.getChargeType()))) &&
+            ((this.subscriptionLine==null && other.getSubscriptionLine()==null) || 
+             (this.subscriptionLine!=null &&
+              this.subscriptionLine.equals(other.getSubscriptionLine()))) &&
+            ((this.chargesList==null && other.getChargesList()==null) || 
+             (this.chargesList!=null &&
+              java.util.Arrays.equals(this.chargesList, other.getChargesList()))) &&
+            ((this.customFieldList==null && other.getCustomFieldList()==null) || 
+             (this.customFieldList!=null &&
+              java.util.Arrays.equals(this.customFieldList, other.getCustomFieldList())));
+        __equalsCalc = null;
+        return _equals;
+    }
+
+    private boolean __hashCodeCalc = false;
+    public synchronized int hashCode() {
+        if (__hashCodeCalc) {
+            return 0;
+        }
+        __hashCodeCalc = true;
+        int _hashCode = 1;
+        if (getJob() != null) {
+            _hashCode += getJob().hashCode();
+        }
+        if (getItem() != null) {
+            _hashCode += getItem().hashCode();
+        }
+        if (getOrderLine() != null) {
+            _hashCode += getOrderLine().hashCode();
+        }
+        if (getLine() != null) {
+            _hashCode += getLine().hashCode();
+        }
+        if (getQuantity() != null) {
+            _hashCode += getQuantity().hashCode();
+        }
+        if (getDescription() != null) {
+            _hashCode += getDescription().hashCode();
+        }
+        if (getBinNumbers() != null) {
+            _hashCode += getBinNumbers().hashCode();
+        }
+        if (getPrice() != null) {
+            _hashCode += getPrice().hashCode();
+        }
+        if (getRate() != null) {
+            _hashCode += getRate().hashCode();
+        }
+        if (getAmount() != null) {
+            _hashCode += getAmount().hashCode();
+        }
+        if (getIsTaxable() != null) {
+            _hashCode += getIsTaxable().hashCode();
+        }
+        if (getOptions() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getOptions());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getOptions(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getShipAddress() != null) {
+            _hashCode += getShipAddress().hashCode();
+        }
+        if (getShipCarrier() != null) {
+            _hashCode += getShipCarrier().hashCode();
+        }
+        if (getShipMethod() != null) {
+            _hashCode += getShipMethod().hashCode();
+        }
+        if (getTaxCode() != null) {
+            _hashCode += getTaxCode().hashCode();
+        }
+        if (getTaxRate1() != null) {
+            _hashCode += getTaxRate1().hashCode();
+        }
+        if (getTaxRate2() != null) {
+            _hashCode += getTaxRate2().hashCode();
+        }
+        if (getTax1Amt() != null) {
+            _hashCode += getTax1Amt().hashCode();
+        }
+        if (getGrossAmt() != null) {
+            _hashCode += getGrossAmt().hashCode();
+        }
+        if (getDepartment() != null) {
+            _hashCode += getDepartment().hashCode();
+        }
+        if (get_class() != null) {
+            _hashCode += get_class().hashCode();
+        }
+        if (getLocation() != null) {
+            _hashCode += getLocation().hashCode();
+        }
+        if (getCostEstimateType() != null) {
+            _hashCode += getCostEstimateType().hashCode();
+        }
+        if (getCostEstimate() != null) {
+            _hashCode += getCostEstimate().hashCode();
+        }
+        if (getTaxDetailsReference() != null) {
+            _hashCode += getTaxDetailsReference().hashCode();
+        }
+        if (getRevRecSchedule() != null) {
+            _hashCode += getRevRecSchedule().hashCode();
+        }
+        if (getRevRecStartDate() != null) {
+            _hashCode += getRevRecStartDate().hashCode();
+        }
+        if (getRevRecTermInMonths() != null) {
+            _hashCode += getRevRecTermInMonths().hashCode();
+        }
+        if (getRevRecEndDate() != null) {
+            _hashCode += getRevRecEndDate().hashCode();
+        }
+        if (getUnits() != null) {
+            _hashCode += getUnits().hashCode();
+        }
+        if (getInventoryDetail() != null) {
+            _hashCode += getInventoryDetail().hashCode();
+        }
+        if (getSerialNumbers() != null) {
+            _hashCode += getSerialNumbers().hashCode();
+        }
+        if (getDeferRevRec() != null) {
+            _hashCode += getDeferRevRec().hashCode();
+        }
+        if (getGiftCertFrom() != null) {
+            _hashCode += getGiftCertFrom().hashCode();
+        }
+        if (getGiftCertRecipientName() != null) {
+            _hashCode += getGiftCertRecipientName().hashCode();
+        }
+        if (getGiftCertRecipientEmail() != null) {
+            _hashCode += getGiftCertRecipientEmail().hashCode();
+        }
+        if (getGiftCertMessage() != null) {
+            _hashCode += getGiftCertMessage().hashCode();
+        }
+        if (getTaxAmount() != null) {
+            _hashCode += getTaxAmount().hashCode();
+        }
+        if (getGiftCertNumber() != null) {
+            _hashCode += getGiftCertNumber().hashCode();
+        }
+        if (getVsoeSopGroup() != null) {
+            _hashCode += getVsoeSopGroup().hashCode();
+        }
+        if (getVsoeIsEstimate() != null) {
+            _hashCode += getVsoeIsEstimate().hashCode();
+        }
+        if (getVsoePrice() != null) {
+            _hashCode += getVsoePrice().hashCode();
+        }
+        if (getVsoeAmount() != null) {
+            _hashCode += getVsoeAmount().hashCode();
+        }
+        if (getVsoeAllocation() != null) {
+            _hashCode += getVsoeAllocation().hashCode();
+        }
+        if (getVsoeDeferral() != null) {
+            _hashCode += getVsoeDeferral().hashCode();
+        }
+        if (getVsoePermitDiscount() != null) {
+            _hashCode += getVsoePermitDiscount().hashCode();
+        }
+        if (getVsoeDelivered() != null) {
+            _hashCode += getVsoeDelivered().hashCode();
+        }
+        if (getCatchUpPeriod() != null) {
+            _hashCode += getCatchUpPeriod().hashCode();
+        }
+        if (getChargeType() != null) {
+            _hashCode += getChargeType().hashCode();
+        }
+        if (getSubscriptionLine() != null) {
+            _hashCode += getSubscriptionLine().hashCode();
+        }
+        if (getChargesList() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getChargesList());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getChargesList(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getCustomFieldList() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getCustomFieldList());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getCustomFieldList(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        __hashCodeCalc = false;
+        return _hashCode;
+    }
+
+    // Type metadata
+    private static org.apache.axis.description.TypeDesc typeDesc =
+        new org.apache.axis.description.TypeDesc(CreditMemoItem.class, true);
+
+    static {
+        typeDesc.setXmlType(new javax.xml.namespace.QName("urn:customers_2018_2.transactions.webservices.netsuite.com", "CreditMemoItem"));
+        org.apache.axis.description.ElementDesc elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("job");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:customers_2018_2.transactions.webservices.netsuite.com", "job"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("item");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:customers_2018_2.transactions.webservices.netsuite.com", "item"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("orderLine");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:customers_2018_2.transactions.webservices.netsuite.com", "orderLine"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "long"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("line");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:customers_2018_2.transactions.webservices.netsuite.com", "line"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "long"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("quantity");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:customers_2018_2.transactions.webservices.netsuite.com", "quantity"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "double"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("description");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:customers_2018_2.transactions.webservices.netsuite.com", "description"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("binNumbers");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:customers_2018_2.transactions.webservices.netsuite.com", "binNumbers"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("price");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:customers_2018_2.transactions.webservices.netsuite.com", "price"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("rate");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:customers_2018_2.transactions.webservices.netsuite.com", "rate"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("amount");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:customers_2018_2.transactions.webservices.netsuite.com", "amount"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "double"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("isTaxable");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:customers_2018_2.transactions.webservices.netsuite.com", "isTaxable"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("options");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:customers_2018_2.transactions.webservices.netsuite.com", "options"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "CustomFieldRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "customField"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("shipAddress");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:customers_2018_2.transactions.webservices.netsuite.com", "shipAddress"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("shipCarrier");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:customers_2018_2.transactions.webservices.netsuite.com", "shipCarrier"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:types.common_2018_2.platform.webservices.netsuite.com", "ShippingCarrier"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("shipMethod");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:customers_2018_2.transactions.webservices.netsuite.com", "shipMethod"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("taxCode");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:customers_2018_2.transactions.webservices.netsuite.com", "taxCode"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("taxRate1");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:customers_2018_2.transactions.webservices.netsuite.com", "taxRate1"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "double"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("taxRate2");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:customers_2018_2.transactions.webservices.netsuite.com", "taxRate2"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "double"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("tax1Amt");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:customers_2018_2.transactions.webservices.netsuite.com", "tax1Amt"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "double"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("grossAmt");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:customers_2018_2.transactions.webservices.netsuite.com", "grossAmt"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "double"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("department");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:customers_2018_2.transactions.webservices.netsuite.com", "department"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("_class");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:customers_2018_2.transactions.webservices.netsuite.com", "class"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("location");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:customers_2018_2.transactions.webservices.netsuite.com", "location"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("costEstimateType");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:customers_2018_2.transactions.webservices.netsuite.com", "costEstimateType"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:types.common_2018_2.platform.webservices.netsuite.com", "ItemCostEstimateType"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("costEstimate");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:customers_2018_2.transactions.webservices.netsuite.com", "costEstimate"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "double"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("taxDetailsReference");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:customers_2018_2.transactions.webservices.netsuite.com", "taxDetailsReference"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("revRecSchedule");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:customers_2018_2.transactions.webservices.netsuite.com", "revRecSchedule"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("revRecStartDate");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:customers_2018_2.transactions.webservices.netsuite.com", "revRecStartDate"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "dateTime"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("revRecTermInMonths");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:customers_2018_2.transactions.webservices.netsuite.com", "revRecTermInMonths"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "long"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("revRecEndDate");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:customers_2018_2.transactions.webservices.netsuite.com", "revRecEndDate"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "dateTime"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("units");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:customers_2018_2.transactions.webservices.netsuite.com", "units"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("inventoryDetail");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:customers_2018_2.transactions.webservices.netsuite.com", "inventoryDetail"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "InventoryDetail"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("serialNumbers");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:customers_2018_2.transactions.webservices.netsuite.com", "serialNumbers"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("deferRevRec");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:customers_2018_2.transactions.webservices.netsuite.com", "deferRevRec"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("giftCertFrom");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:customers_2018_2.transactions.webservices.netsuite.com", "giftCertFrom"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("giftCertRecipientName");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:customers_2018_2.transactions.webservices.netsuite.com", "giftCertRecipientName"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("giftCertRecipientEmail");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:customers_2018_2.transactions.webservices.netsuite.com", "giftCertRecipientEmail"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("giftCertMessage");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:customers_2018_2.transactions.webservices.netsuite.com", "giftCertMessage"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("taxAmount");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:customers_2018_2.transactions.webservices.netsuite.com", "taxAmount"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "double"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("giftCertNumber");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:customers_2018_2.transactions.webservices.netsuite.com", "giftCertNumber"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("vsoeSopGroup");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:customers_2018_2.transactions.webservices.netsuite.com", "vsoeSopGroup"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:types.common_2018_2.platform.webservices.netsuite.com", "VsoeSopGroup"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("vsoeIsEstimate");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:customers_2018_2.transactions.webservices.netsuite.com", "vsoeIsEstimate"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("vsoePrice");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:customers_2018_2.transactions.webservices.netsuite.com", "vsoePrice"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "double"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("vsoeAmount");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:customers_2018_2.transactions.webservices.netsuite.com", "vsoeAmount"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "double"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("vsoeAllocation");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:customers_2018_2.transactions.webservices.netsuite.com", "vsoeAllocation"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "double"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("vsoeDeferral");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:customers_2018_2.transactions.webservices.netsuite.com", "vsoeDeferral"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:types.common_2018_2.platform.webservices.netsuite.com", "VsoeDeferral"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("vsoePermitDiscount");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:customers_2018_2.transactions.webservices.netsuite.com", "vsoePermitDiscount"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:types.common_2018_2.platform.webservices.netsuite.com", "VsoePermitDiscount"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("vsoeDelivered");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:customers_2018_2.transactions.webservices.netsuite.com", "vsoeDelivered"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("catchUpPeriod");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:customers_2018_2.transactions.webservices.netsuite.com", "catchUpPeriod"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("chargeType");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:customers_2018_2.transactions.webservices.netsuite.com", "chargeType"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("subscriptionLine");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:customers_2018_2.transactions.webservices.netsuite.com", "subscriptionLine"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("chargesList");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:customers_2018_2.transactions.webservices.netsuite.com", "chargesList"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "recordRef"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("customFieldList");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:customers_2018_2.transactions.webservices.netsuite.com", "customFieldList"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "CustomFieldRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "customField"));
+        typeDesc.addFieldDesc(elemField);
+    }
+
+    /**
+     * Return type metadata object
+     */
+    public static org.apache.axis.description.TypeDesc getTypeDesc() {
+        return typeDesc;
+    }
+
+    /**
+     * Get Custom Serializer
+     */
+    public static org.apache.axis.encoding.Serializer getSerializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanSerializer(
+            _javaType, _xmlType, typeDesc);
+    }
+
+    /**
+     * Get Custom Deserializer
+     */
+    public static org.apache.axis.encoding.Deserializer getDeserializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanDeserializer(
+            _javaType, _xmlType, typeDesc);
     }
 
 }

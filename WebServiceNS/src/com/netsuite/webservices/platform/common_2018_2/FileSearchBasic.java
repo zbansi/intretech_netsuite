@@ -1,501 +1,757 @@
+/**
+ * FileSearchBasic.java
+ *
+ * This file was auto-generated from WSDL
+ * by the Apache Axis 1.4 Jul 28, 2010 (04:07:04 PDT) WSDL2Java emitter.
+ */
 
 package com.netsuite.webservices.platform.common_2018_2;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlType;
-import com.netsuite.webservices.platform.core_2018_2.SearchBooleanField;
-import com.netsuite.webservices.platform.core_2018_2.SearchDateField;
-import com.netsuite.webservices.platform.core_2018_2.SearchEnumMultiSelectField;
-import com.netsuite.webservices.platform.core_2018_2.SearchLongField;
-import com.netsuite.webservices.platform.core_2018_2.SearchMultiSelectField;
-import com.netsuite.webservices.platform.core_2018_2.SearchRecordBasic;
-import com.netsuite.webservices.platform.core_2018_2.SearchStringField;
+public class FileSearchBasic  extends com.netsuite.webservices.platform.core_2018_2.SearchRecordBasic  implements java.io.Serializable {
+    private com.netsuite.webservices.platform.core_2018_2.SearchBooleanField availableWithoutLogin;
 
+    private com.netsuite.webservices.platform.core_2018_2.SearchDateField created;
 
-/**
- * <p>FileSearchBasic complex type的 Java 类。
- * 
- * <p>以下模式片段指定包含在此类中的预期内容。
- * 
- * <pre>
- * &lt;complexType name="FileSearchBasic">
- *   &lt;complexContent>
- *     &lt;extension base="{urn:core_2018_2.platform.webservices.netsuite.com}SearchRecordBasic">
- *       &lt;sequence>
- *         &lt;element name="availableWithoutLogin" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchBooleanField" minOccurs="0"/>
- *         &lt;element name="created" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchDateField" minOccurs="0"/>
- *         &lt;element name="dateViewed" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchDateField" minOccurs="0"/>
- *         &lt;element name="description" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchStringField" minOccurs="0"/>
- *         &lt;element name="documentSize" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchLongField" minOccurs="0"/>
- *         &lt;element name="externalId" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchMultiSelectField" minOccurs="0"/>
- *         &lt;element name="externalIdString" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchStringField" minOccurs="0"/>
- *         &lt;element name="fileType" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchEnumMultiSelectField" minOccurs="0"/>
- *         &lt;element name="folder" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchMultiSelectField" minOccurs="0"/>
- *         &lt;element name="internalId" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchMultiSelectField" minOccurs="0"/>
- *         &lt;element name="internalIdNumber" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchLongField" minOccurs="0"/>
- *         &lt;element name="isAvailable" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchBooleanField" minOccurs="0"/>
- *         &lt;element name="isLink" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchBooleanField" minOccurs="0"/>
- *         &lt;element name="modified" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchDateField" minOccurs="0"/>
- *         &lt;element name="name" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchStringField" minOccurs="0"/>
- *         &lt;element name="owner" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchMultiSelectField" minOccurs="0"/>
- *         &lt;element name="url" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchStringField" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/extension>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
- */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "FileSearchBasic", propOrder = {
-    "availableWithoutLogin",
-    "created",
-    "dateViewed",
-    "description",
-    "documentSize",
-    "externalId",
-    "externalIdString",
-    "fileType",
-    "folder",
-    "internalId",
-    "internalIdNumber",
-    "isAvailable",
-    "isLink",
-    "modified",
-    "name",
-    "owner",
-    "url"
-})
-public class FileSearchBasic
-    extends SearchRecordBasic
-{
+    private com.netsuite.webservices.platform.core_2018_2.SearchDateField dateViewed;
 
-    protected SearchBooleanField availableWithoutLogin;
-    protected SearchDateField created;
-    protected SearchDateField dateViewed;
-    protected SearchStringField description;
-    protected SearchLongField documentSize;
-    protected SearchMultiSelectField externalId;
-    protected SearchStringField externalIdString;
-    protected SearchEnumMultiSelectField fileType;
-    protected SearchMultiSelectField folder;
-    protected SearchMultiSelectField internalId;
-    protected SearchLongField internalIdNumber;
-    protected SearchBooleanField isAvailable;
-    protected SearchBooleanField isLink;
-    protected SearchDateField modified;
-    protected SearchStringField name;
-    protected SearchMultiSelectField owner;
-    protected SearchStringField url;
+    private com.netsuite.webservices.platform.core_2018_2.SearchStringField description;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchLongField documentSize;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef[] externalId;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchStringField externalIdString;
+
+    private java.lang.String[] fileType;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef[] folder;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef[] internalId;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchLongField internalIdNumber;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchBooleanField isAvailable;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchBooleanField isLink;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchDateField modified;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchStringField name;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef[] owner;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchStringField url;
+
+    public FileSearchBasic() {
+    }
+
+    public FileSearchBasic(
+           com.netsuite.webservices.platform.core_2018_2.SearchBooleanField availableWithoutLogin,
+           com.netsuite.webservices.platform.core_2018_2.SearchDateField created,
+           com.netsuite.webservices.platform.core_2018_2.SearchDateField dateViewed,
+           com.netsuite.webservices.platform.core_2018_2.SearchStringField description,
+           com.netsuite.webservices.platform.core_2018_2.SearchLongField documentSize,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef[] externalId,
+           com.netsuite.webservices.platform.core_2018_2.SearchStringField externalIdString,
+           java.lang.String[] fileType,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef[] folder,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef[] internalId,
+           com.netsuite.webservices.platform.core_2018_2.SearchLongField internalIdNumber,
+           com.netsuite.webservices.platform.core_2018_2.SearchBooleanField isAvailable,
+           com.netsuite.webservices.platform.core_2018_2.SearchBooleanField isLink,
+           com.netsuite.webservices.platform.core_2018_2.SearchDateField modified,
+           com.netsuite.webservices.platform.core_2018_2.SearchStringField name,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef[] owner,
+           com.netsuite.webservices.platform.core_2018_2.SearchStringField url) {
+        this.availableWithoutLogin = availableWithoutLogin;
+        this.created = created;
+        this.dateViewed = dateViewed;
+        this.description = description;
+        this.documentSize = documentSize;
+        this.externalId = externalId;
+        this.externalIdString = externalIdString;
+        this.fileType = fileType;
+        this.folder = folder;
+        this.internalId = internalId;
+        this.internalIdNumber = internalIdNumber;
+        this.isAvailable = isAvailable;
+        this.isLink = isLink;
+        this.modified = modified;
+        this.name = name;
+        this.owner = owner;
+        this.url = url;
+    }
+
 
     /**
-     * 获取availableWithoutLogin属性的值。
+     * Gets the availableWithoutLogin value for this FileSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchBooleanField }
-     *     
+     * @return availableWithoutLogin
      */
-    public SearchBooleanField getAvailableWithoutLogin() {
+    public com.netsuite.webservices.platform.core_2018_2.SearchBooleanField getAvailableWithoutLogin() {
         return availableWithoutLogin;
     }
 
-    /**
-     * 设置availableWithoutLogin属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchBooleanField }
-     *     
-     */
-    public void setAvailableWithoutLogin(SearchBooleanField value) {
-        this.availableWithoutLogin = value;
-    }
 
     /**
-     * 获取created属性的值。
+     * Sets the availableWithoutLogin value for this FileSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchDateField }
-     *     
+     * @param availableWithoutLogin
      */
-    public SearchDateField getCreated() {
+    public void setAvailableWithoutLogin(com.netsuite.webservices.platform.core_2018_2.SearchBooleanField availableWithoutLogin) {
+        this.availableWithoutLogin = availableWithoutLogin;
+    }
+
+
+    /**
+     * Gets the created value for this FileSearchBasic.
+     * 
+     * @return created
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchDateField getCreated() {
         return created;
     }
 
-    /**
-     * 设置created属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchDateField }
-     *     
-     */
-    public void setCreated(SearchDateField value) {
-        this.created = value;
-    }
 
     /**
-     * 获取dateViewed属性的值。
+     * Sets the created value for this FileSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchDateField }
-     *     
+     * @param created
      */
-    public SearchDateField getDateViewed() {
+    public void setCreated(com.netsuite.webservices.platform.core_2018_2.SearchDateField created) {
+        this.created = created;
+    }
+
+
+    /**
+     * Gets the dateViewed value for this FileSearchBasic.
+     * 
+     * @return dateViewed
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchDateField getDateViewed() {
         return dateViewed;
     }
 
-    /**
-     * 设置dateViewed属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchDateField }
-     *     
-     */
-    public void setDateViewed(SearchDateField value) {
-        this.dateViewed = value;
-    }
 
     /**
-     * 获取description属性的值。
+     * Sets the dateViewed value for this FileSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchStringField }
-     *     
+     * @param dateViewed
      */
-    public SearchStringField getDescription() {
+    public void setDateViewed(com.netsuite.webservices.platform.core_2018_2.SearchDateField dateViewed) {
+        this.dateViewed = dateViewed;
+    }
+
+
+    /**
+     * Gets the description value for this FileSearchBasic.
+     * 
+     * @return description
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchStringField getDescription() {
         return description;
     }
 
-    /**
-     * 设置description属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchStringField }
-     *     
-     */
-    public void setDescription(SearchStringField value) {
-        this.description = value;
-    }
 
     /**
-     * 获取documentSize属性的值。
+     * Sets the description value for this FileSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchLongField }
-     *     
+     * @param description
      */
-    public SearchLongField getDocumentSize() {
+    public void setDescription(com.netsuite.webservices.platform.core_2018_2.SearchStringField description) {
+        this.description = description;
+    }
+
+
+    /**
+     * Gets the documentSize value for this FileSearchBasic.
+     * 
+     * @return documentSize
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchLongField getDocumentSize() {
         return documentSize;
     }
 
-    /**
-     * 设置documentSize属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchLongField }
-     *     
-     */
-    public void setDocumentSize(SearchLongField value) {
-        this.documentSize = value;
-    }
 
     /**
-     * 获取externalId属性的值。
+     * Sets the documentSize value for this FileSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchMultiSelectField }
-     *     
+     * @param documentSize
      */
-    public SearchMultiSelectField getExternalId() {
+    public void setDocumentSize(com.netsuite.webservices.platform.core_2018_2.SearchLongField documentSize) {
+        this.documentSize = documentSize;
+    }
+
+
+    /**
+     * Gets the externalId value for this FileSearchBasic.
+     * 
+     * @return externalId
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef[] getExternalId() {
         return externalId;
     }
 
-    /**
-     * 设置externalId属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchMultiSelectField }
-     *     
-     */
-    public void setExternalId(SearchMultiSelectField value) {
-        this.externalId = value;
-    }
 
     /**
-     * 获取externalIdString属性的值。
+     * Sets the externalId value for this FileSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchStringField }
-     *     
+     * @param externalId
      */
-    public SearchStringField getExternalIdString() {
+    public void setExternalId(com.netsuite.webservices.platform.core_2018_2.RecordRef[] externalId) {
+        this.externalId = externalId;
+    }
+
+
+    /**
+     * Gets the externalIdString value for this FileSearchBasic.
+     * 
+     * @return externalIdString
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchStringField getExternalIdString() {
         return externalIdString;
     }
 
-    /**
-     * 设置externalIdString属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchStringField }
-     *     
-     */
-    public void setExternalIdString(SearchStringField value) {
-        this.externalIdString = value;
-    }
 
     /**
-     * 获取fileType属性的值。
+     * Sets the externalIdString value for this FileSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchEnumMultiSelectField }
-     *     
+     * @param externalIdString
      */
-    public SearchEnumMultiSelectField getFileType() {
+    public void setExternalIdString(com.netsuite.webservices.platform.core_2018_2.SearchStringField externalIdString) {
+        this.externalIdString = externalIdString;
+    }
+
+
+    /**
+     * Gets the fileType value for this FileSearchBasic.
+     * 
+     * @return fileType
+     */
+    public java.lang.String[] getFileType() {
         return fileType;
     }
 
-    /**
-     * 设置fileType属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchEnumMultiSelectField }
-     *     
-     */
-    public void setFileType(SearchEnumMultiSelectField value) {
-        this.fileType = value;
-    }
 
     /**
-     * 获取folder属性的值。
+     * Sets the fileType value for this FileSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchMultiSelectField }
-     *     
+     * @param fileType
      */
-    public SearchMultiSelectField getFolder() {
+    public void setFileType(java.lang.String[] fileType) {
+        this.fileType = fileType;
+    }
+
+
+    /**
+     * Gets the folder value for this FileSearchBasic.
+     * 
+     * @return folder
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef[] getFolder() {
         return folder;
     }
 
-    /**
-     * 设置folder属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchMultiSelectField }
-     *     
-     */
-    public void setFolder(SearchMultiSelectField value) {
-        this.folder = value;
-    }
 
     /**
-     * 获取internalId属性的值。
+     * Sets the folder value for this FileSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchMultiSelectField }
-     *     
+     * @param folder
      */
-    public SearchMultiSelectField getInternalId() {
+    public void setFolder(com.netsuite.webservices.platform.core_2018_2.RecordRef[] folder) {
+        this.folder = folder;
+    }
+
+
+    /**
+     * Gets the internalId value for this FileSearchBasic.
+     * 
+     * @return internalId
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef[] getInternalId() {
         return internalId;
     }
 
-    /**
-     * 设置internalId属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchMultiSelectField }
-     *     
-     */
-    public void setInternalId(SearchMultiSelectField value) {
-        this.internalId = value;
-    }
 
     /**
-     * 获取internalIdNumber属性的值。
+     * Sets the internalId value for this FileSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchLongField }
-     *     
+     * @param internalId
      */
-    public SearchLongField getInternalIdNumber() {
+    public void setInternalId(com.netsuite.webservices.platform.core_2018_2.RecordRef[] internalId) {
+        this.internalId = internalId;
+    }
+
+
+    /**
+     * Gets the internalIdNumber value for this FileSearchBasic.
+     * 
+     * @return internalIdNumber
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchLongField getInternalIdNumber() {
         return internalIdNumber;
     }
 
-    /**
-     * 设置internalIdNumber属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchLongField }
-     *     
-     */
-    public void setInternalIdNumber(SearchLongField value) {
-        this.internalIdNumber = value;
-    }
 
     /**
-     * 获取isAvailable属性的值。
+     * Sets the internalIdNumber value for this FileSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchBooleanField }
-     *     
+     * @param internalIdNumber
      */
-    public SearchBooleanField getIsAvailable() {
+    public void setInternalIdNumber(com.netsuite.webservices.platform.core_2018_2.SearchLongField internalIdNumber) {
+        this.internalIdNumber = internalIdNumber;
+    }
+
+
+    /**
+     * Gets the isAvailable value for this FileSearchBasic.
+     * 
+     * @return isAvailable
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchBooleanField getIsAvailable() {
         return isAvailable;
     }
 
-    /**
-     * 设置isAvailable属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchBooleanField }
-     *     
-     */
-    public void setIsAvailable(SearchBooleanField value) {
-        this.isAvailable = value;
-    }
 
     /**
-     * 获取isLink属性的值。
+     * Sets the isAvailable value for this FileSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchBooleanField }
-     *     
+     * @param isAvailable
      */
-    public SearchBooleanField getIsLink() {
+    public void setIsAvailable(com.netsuite.webservices.platform.core_2018_2.SearchBooleanField isAvailable) {
+        this.isAvailable = isAvailable;
+    }
+
+
+    /**
+     * Gets the isLink value for this FileSearchBasic.
+     * 
+     * @return isLink
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchBooleanField getIsLink() {
         return isLink;
     }
 
-    /**
-     * 设置isLink属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchBooleanField }
-     *     
-     */
-    public void setIsLink(SearchBooleanField value) {
-        this.isLink = value;
-    }
 
     /**
-     * 获取modified属性的值。
+     * Sets the isLink value for this FileSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchDateField }
-     *     
+     * @param isLink
      */
-    public SearchDateField getModified() {
+    public void setIsLink(com.netsuite.webservices.platform.core_2018_2.SearchBooleanField isLink) {
+        this.isLink = isLink;
+    }
+
+
+    /**
+     * Gets the modified value for this FileSearchBasic.
+     * 
+     * @return modified
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchDateField getModified() {
         return modified;
     }
 
-    /**
-     * 设置modified属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchDateField }
-     *     
-     */
-    public void setModified(SearchDateField value) {
-        this.modified = value;
-    }
 
     /**
-     * 获取name属性的值。
+     * Sets the modified value for this FileSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchStringField }
-     *     
+     * @param modified
      */
-    public SearchStringField getName() {
+    public void setModified(com.netsuite.webservices.platform.core_2018_2.SearchDateField modified) {
+        this.modified = modified;
+    }
+
+
+    /**
+     * Gets the name value for this FileSearchBasic.
+     * 
+     * @return name
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchStringField getName() {
         return name;
     }
 
-    /**
-     * 设置name属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchStringField }
-     *     
-     */
-    public void setName(SearchStringField value) {
-        this.name = value;
-    }
 
     /**
-     * 获取owner属性的值。
+     * Sets the name value for this FileSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchMultiSelectField }
-     *     
+     * @param name
      */
-    public SearchMultiSelectField getOwner() {
+    public void setName(com.netsuite.webservices.platform.core_2018_2.SearchStringField name) {
+        this.name = name;
+    }
+
+
+    /**
+     * Gets the owner value for this FileSearchBasic.
+     * 
+     * @return owner
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef[] getOwner() {
         return owner;
     }
 
-    /**
-     * 设置owner属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchMultiSelectField }
-     *     
-     */
-    public void setOwner(SearchMultiSelectField value) {
-        this.owner = value;
-    }
 
     /**
-     * 获取url属性的值。
+     * Sets the owner value for this FileSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchStringField }
-     *     
+     * @param owner
      */
-    public SearchStringField getUrl() {
+    public void setOwner(com.netsuite.webservices.platform.core_2018_2.RecordRef[] owner) {
+        this.owner = owner;
+    }
+
+
+    /**
+     * Gets the url value for this FileSearchBasic.
+     * 
+     * @return url
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchStringField getUrl() {
         return url;
     }
 
+
     /**
-     * 设置url属性的值。
+     * Sets the url value for this FileSearchBasic.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchStringField }
-     *     
+     * @param url
      */
-    public void setUrl(SearchStringField value) {
-        this.url = value;
+    public void setUrl(com.netsuite.webservices.platform.core_2018_2.SearchStringField url) {
+        this.url = url;
+    }
+
+    private java.lang.Object __equalsCalc = null;
+    public synchronized boolean equals(java.lang.Object obj) {
+        if (!(obj instanceof FileSearchBasic)) return false;
+        FileSearchBasic other = (FileSearchBasic) obj;
+        if (obj == null) return false;
+        if (this == obj) return true;
+        if (__equalsCalc != null) {
+            return (__equalsCalc == obj);
+        }
+        __equalsCalc = obj;
+        boolean _equals;
+        _equals = super.equals(obj) && 
+            ((this.availableWithoutLogin==null && other.getAvailableWithoutLogin()==null) || 
+             (this.availableWithoutLogin!=null &&
+              this.availableWithoutLogin.equals(other.getAvailableWithoutLogin()))) &&
+            ((this.created==null && other.getCreated()==null) || 
+             (this.created!=null &&
+              this.created.equals(other.getCreated()))) &&
+            ((this.dateViewed==null && other.getDateViewed()==null) || 
+             (this.dateViewed!=null &&
+              this.dateViewed.equals(other.getDateViewed()))) &&
+            ((this.description==null && other.getDescription()==null) || 
+             (this.description!=null &&
+              this.description.equals(other.getDescription()))) &&
+            ((this.documentSize==null && other.getDocumentSize()==null) || 
+             (this.documentSize!=null &&
+              this.documentSize.equals(other.getDocumentSize()))) &&
+            ((this.externalId==null && other.getExternalId()==null) || 
+             (this.externalId!=null &&
+              java.util.Arrays.equals(this.externalId, other.getExternalId()))) &&
+            ((this.externalIdString==null && other.getExternalIdString()==null) || 
+             (this.externalIdString!=null &&
+              this.externalIdString.equals(other.getExternalIdString()))) &&
+            ((this.fileType==null && other.getFileType()==null) || 
+             (this.fileType!=null &&
+              java.util.Arrays.equals(this.fileType, other.getFileType()))) &&
+            ((this.folder==null && other.getFolder()==null) || 
+             (this.folder!=null &&
+              java.util.Arrays.equals(this.folder, other.getFolder()))) &&
+            ((this.internalId==null && other.getInternalId()==null) || 
+             (this.internalId!=null &&
+              java.util.Arrays.equals(this.internalId, other.getInternalId()))) &&
+            ((this.internalIdNumber==null && other.getInternalIdNumber()==null) || 
+             (this.internalIdNumber!=null &&
+              this.internalIdNumber.equals(other.getInternalIdNumber()))) &&
+            ((this.isAvailable==null && other.getIsAvailable()==null) || 
+             (this.isAvailable!=null &&
+              this.isAvailable.equals(other.getIsAvailable()))) &&
+            ((this.isLink==null && other.getIsLink()==null) || 
+             (this.isLink!=null &&
+              this.isLink.equals(other.getIsLink()))) &&
+            ((this.modified==null && other.getModified()==null) || 
+             (this.modified!=null &&
+              this.modified.equals(other.getModified()))) &&
+            ((this.name==null && other.getName()==null) || 
+             (this.name!=null &&
+              this.name.equals(other.getName()))) &&
+            ((this.owner==null && other.getOwner()==null) || 
+             (this.owner!=null &&
+              java.util.Arrays.equals(this.owner, other.getOwner()))) &&
+            ((this.url==null && other.getUrl()==null) || 
+             (this.url!=null &&
+              this.url.equals(other.getUrl())));
+        __equalsCalc = null;
+        return _equals;
+    }
+
+    private boolean __hashCodeCalc = false;
+    public synchronized int hashCode() {
+        if (__hashCodeCalc) {
+            return 0;
+        }
+        __hashCodeCalc = true;
+        int _hashCode = super.hashCode();
+        if (getAvailableWithoutLogin() != null) {
+            _hashCode += getAvailableWithoutLogin().hashCode();
+        }
+        if (getCreated() != null) {
+            _hashCode += getCreated().hashCode();
+        }
+        if (getDateViewed() != null) {
+            _hashCode += getDateViewed().hashCode();
+        }
+        if (getDescription() != null) {
+            _hashCode += getDescription().hashCode();
+        }
+        if (getDocumentSize() != null) {
+            _hashCode += getDocumentSize().hashCode();
+        }
+        if (getExternalId() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getExternalId());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getExternalId(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getExternalIdString() != null) {
+            _hashCode += getExternalIdString().hashCode();
+        }
+        if (getFileType() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getFileType());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getFileType(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getFolder() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getFolder());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getFolder(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getInternalId() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getInternalId());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getInternalId(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getInternalIdNumber() != null) {
+            _hashCode += getInternalIdNumber().hashCode();
+        }
+        if (getIsAvailable() != null) {
+            _hashCode += getIsAvailable().hashCode();
+        }
+        if (getIsLink() != null) {
+            _hashCode += getIsLink().hashCode();
+        }
+        if (getModified() != null) {
+            _hashCode += getModified().hashCode();
+        }
+        if (getName() != null) {
+            _hashCode += getName().hashCode();
+        }
+        if (getOwner() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getOwner());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getOwner(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getUrl() != null) {
+            _hashCode += getUrl().hashCode();
+        }
+        __hashCodeCalc = false;
+        return _hashCode;
+    }
+
+    // Type metadata
+    private static org.apache.axis.description.TypeDesc typeDesc =
+        new org.apache.axis.description.TypeDesc(FileSearchBasic.class, true);
+
+    static {
+        typeDesc.setXmlType(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "FileSearchBasic"));
+        org.apache.axis.description.ElementDesc elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("availableWithoutLogin");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "availableWithoutLogin"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchBooleanField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("created");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "created"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchDateField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("dateViewed");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "dateViewed"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchDateField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("description");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "description"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchStringField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("documentSize");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "documentSize"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchLongField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("externalId");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "externalId"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "searchValue"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("externalIdString");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "externalIdString"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchStringField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("fileType");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "fileType"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "searchValue"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("folder");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "folder"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "searchValue"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("internalId");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "internalId"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "searchValue"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("internalIdNumber");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "internalIdNumber"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchLongField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("isAvailable");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "isAvailable"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchBooleanField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("isLink");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "isLink"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchBooleanField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("modified");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "modified"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchDateField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("name");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "name"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchStringField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("owner");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "owner"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "searchValue"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("url");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "url"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchStringField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+    }
+
+    /**
+     * Return type metadata object
+     */
+    public static org.apache.axis.description.TypeDesc getTypeDesc() {
+        return typeDesc;
+    }
+
+    /**
+     * Get Custom Serializer
+     */
+    public static org.apache.axis.encoding.Serializer getSerializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanSerializer(
+            _javaType, _xmlType, typeDesc);
+    }
+
+    /**
+     * Get Custom Deserializer
+     */
+    public static org.apache.axis.encoding.Deserializer getDeserializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanDeserializer(
+            _javaType, _xmlType, typeDesc);
     }
 
 }

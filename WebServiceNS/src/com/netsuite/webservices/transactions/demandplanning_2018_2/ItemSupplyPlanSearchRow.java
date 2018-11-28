@@ -1,183 +1,285 @@
+/**
+ * ItemSupplyPlanSearchRow.java
+ *
+ * This file was auto-generated from WSDL
+ * by the Apache Axis 1.4 Jul 28, 2010 (04:07:04 PDT) WSDL2Java emitter.
+ */
 
 package com.netsuite.webservices.transactions.demandplanning_2018_2;
 
-import java.util.ArrayList;
-import java.util.List;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlType;
-import com.netsuite.webservices.platform.common_2018_2.CustomSearchRowBasic;
-import com.netsuite.webservices.platform.common_2018_2.EmployeeSearchRowBasic;
-import com.netsuite.webservices.platform.common_2018_2.ItemSearchRowBasic;
-import com.netsuite.webservices.platform.common_2018_2.ItemSupplyPlanSearchRowBasic;
-import com.netsuite.webservices.platform.common_2018_2.LocationSearchRowBasic;
-import com.netsuite.webservices.platform.core_2018_2.SearchRow;
+public class ItemSupplyPlanSearchRow  extends com.netsuite.webservices.platform.core_2018_2.SearchRow  implements java.io.Serializable {
+    private com.netsuite.webservices.platform.common_2018_2.ItemSupplyPlanSearchRowBasic basic;
 
+    private com.netsuite.webservices.platform.common_2018_2.ItemSearchRowBasic itemJoin;
 
-/**
- * <p>ItemSupplyPlanSearchRow complex type的 Java 类。
- * 
- * <p>以下模式片段指定包含在此类中的预期内容。
- * 
- * <pre>
- * &lt;complexType name="ItemSupplyPlanSearchRow">
- *   &lt;complexContent>
- *     &lt;extension base="{urn:core_2018_2.platform.webservices.netsuite.com}SearchRow">
- *       &lt;sequence>
- *         &lt;element name="basic" type="{urn:common_2018_2.platform.webservices.netsuite.com}ItemSupplyPlanSearchRowBasic" minOccurs="0"/>
- *         &lt;element name="itemJoin" type="{urn:common_2018_2.platform.webservices.netsuite.com}ItemSearchRowBasic" minOccurs="0"/>
- *         &lt;element name="locationJoin" type="{urn:common_2018_2.platform.webservices.netsuite.com}LocationSearchRowBasic" minOccurs="0"/>
- *         &lt;element name="userJoin" type="{urn:common_2018_2.platform.webservices.netsuite.com}EmployeeSearchRowBasic" minOccurs="0"/>
- *         &lt;element name="customSearchJoin" type="{urn:common_2018_2.platform.webservices.netsuite.com}CustomSearchRowBasic" maxOccurs="unbounded" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/extension>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
- */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "ItemSupplyPlanSearchRow", propOrder = {
-    "basic",
-    "itemJoin",
-    "locationJoin",
-    "userJoin",
-    "customSearchJoin"
-})
-public class ItemSupplyPlanSearchRow
-    extends SearchRow
-{
+    private com.netsuite.webservices.platform.common_2018_2.LocationSearchRowBasic locationJoin;
 
-    protected ItemSupplyPlanSearchRowBasic basic;
-    protected ItemSearchRowBasic itemJoin;
-    protected LocationSearchRowBasic locationJoin;
-    protected EmployeeSearchRowBasic userJoin;
-    protected List<CustomSearchRowBasic> customSearchJoin;
+    private com.netsuite.webservices.platform.common_2018_2.EmployeeSearchRowBasic userJoin;
+
+    private com.netsuite.webservices.platform.common_2018_2.CustomSearchRowBasic[] customSearchJoin;
+
+    public ItemSupplyPlanSearchRow() {
+    }
+
+    public ItemSupplyPlanSearchRow(
+           com.netsuite.webservices.platform.common_2018_2.ItemSupplyPlanSearchRowBasic basic,
+           com.netsuite.webservices.platform.common_2018_2.ItemSearchRowBasic itemJoin,
+           com.netsuite.webservices.platform.common_2018_2.LocationSearchRowBasic locationJoin,
+           com.netsuite.webservices.platform.common_2018_2.EmployeeSearchRowBasic userJoin,
+           com.netsuite.webservices.platform.common_2018_2.CustomSearchRowBasic[] customSearchJoin) {
+        this.basic = basic;
+        this.itemJoin = itemJoin;
+        this.locationJoin = locationJoin;
+        this.userJoin = userJoin;
+        this.customSearchJoin = customSearchJoin;
+    }
+
 
     /**
-     * 获取basic属性的值。
+     * Gets the basic value for this ItemSupplyPlanSearchRow.
      * 
-     * @return
-     *     possible object is
-     *     {@link ItemSupplyPlanSearchRowBasic }
-     *     
+     * @return basic
      */
-    public ItemSupplyPlanSearchRowBasic getBasic() {
+    public com.netsuite.webservices.platform.common_2018_2.ItemSupplyPlanSearchRowBasic getBasic() {
         return basic;
     }
 
-    /**
-     * 设置basic属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link ItemSupplyPlanSearchRowBasic }
-     *     
-     */
-    public void setBasic(ItemSupplyPlanSearchRowBasic value) {
-        this.basic = value;
-    }
 
     /**
-     * 获取itemJoin属性的值。
+     * Sets the basic value for this ItemSupplyPlanSearchRow.
      * 
-     * @return
-     *     possible object is
-     *     {@link ItemSearchRowBasic }
-     *     
+     * @param basic
      */
-    public ItemSearchRowBasic getItemJoin() {
+    public void setBasic(com.netsuite.webservices.platform.common_2018_2.ItemSupplyPlanSearchRowBasic basic) {
+        this.basic = basic;
+    }
+
+
+    /**
+     * Gets the itemJoin value for this ItemSupplyPlanSearchRow.
+     * 
+     * @return itemJoin
+     */
+    public com.netsuite.webservices.platform.common_2018_2.ItemSearchRowBasic getItemJoin() {
         return itemJoin;
     }
 
-    /**
-     * 设置itemJoin属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link ItemSearchRowBasic }
-     *     
-     */
-    public void setItemJoin(ItemSearchRowBasic value) {
-        this.itemJoin = value;
-    }
 
     /**
-     * 获取locationJoin属性的值。
+     * Sets the itemJoin value for this ItemSupplyPlanSearchRow.
      * 
-     * @return
-     *     possible object is
-     *     {@link LocationSearchRowBasic }
-     *     
+     * @param itemJoin
      */
-    public LocationSearchRowBasic getLocationJoin() {
+    public void setItemJoin(com.netsuite.webservices.platform.common_2018_2.ItemSearchRowBasic itemJoin) {
+        this.itemJoin = itemJoin;
+    }
+
+
+    /**
+     * Gets the locationJoin value for this ItemSupplyPlanSearchRow.
+     * 
+     * @return locationJoin
+     */
+    public com.netsuite.webservices.platform.common_2018_2.LocationSearchRowBasic getLocationJoin() {
         return locationJoin;
     }
 
-    /**
-     * 设置locationJoin属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link LocationSearchRowBasic }
-     *     
-     */
-    public void setLocationJoin(LocationSearchRowBasic value) {
-        this.locationJoin = value;
-    }
 
     /**
-     * 获取userJoin属性的值。
+     * Sets the locationJoin value for this ItemSupplyPlanSearchRow.
      * 
-     * @return
-     *     possible object is
-     *     {@link EmployeeSearchRowBasic }
-     *     
+     * @param locationJoin
      */
-    public EmployeeSearchRowBasic getUserJoin() {
+    public void setLocationJoin(com.netsuite.webservices.platform.common_2018_2.LocationSearchRowBasic locationJoin) {
+        this.locationJoin = locationJoin;
+    }
+
+
+    /**
+     * Gets the userJoin value for this ItemSupplyPlanSearchRow.
+     * 
+     * @return userJoin
+     */
+    public com.netsuite.webservices.platform.common_2018_2.EmployeeSearchRowBasic getUserJoin() {
         return userJoin;
     }
 
+
     /**
-     * 设置userJoin属性的值。
+     * Sets the userJoin value for this ItemSupplyPlanSearchRow.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link EmployeeSearchRowBasic }
-     *     
+     * @param userJoin
      */
-    public void setUserJoin(EmployeeSearchRowBasic value) {
-        this.userJoin = value;
+    public void setUserJoin(com.netsuite.webservices.platform.common_2018_2.EmployeeSearchRowBasic userJoin) {
+        this.userJoin = userJoin;
+    }
+
+
+    /**
+     * Gets the customSearchJoin value for this ItemSupplyPlanSearchRow.
+     * 
+     * @return customSearchJoin
+     */
+    public com.netsuite.webservices.platform.common_2018_2.CustomSearchRowBasic[] getCustomSearchJoin() {
+        return customSearchJoin;
+    }
+
+
+    /**
+     * Sets the customSearchJoin value for this ItemSupplyPlanSearchRow.
+     * 
+     * @param customSearchJoin
+     */
+    public void setCustomSearchJoin(com.netsuite.webservices.platform.common_2018_2.CustomSearchRowBasic[] customSearchJoin) {
+        this.customSearchJoin = customSearchJoin;
+    }
+
+    public com.netsuite.webservices.platform.common_2018_2.CustomSearchRowBasic getCustomSearchJoin(int i) {
+        return this.customSearchJoin[i];
+    }
+
+    public void setCustomSearchJoin(int i, com.netsuite.webservices.platform.common_2018_2.CustomSearchRowBasic _value) {
+        this.customSearchJoin[i] = _value;
+    }
+
+    private java.lang.Object __equalsCalc = null;
+    public synchronized boolean equals(java.lang.Object obj) {
+        if (!(obj instanceof ItemSupplyPlanSearchRow)) return false;
+        ItemSupplyPlanSearchRow other = (ItemSupplyPlanSearchRow) obj;
+        if (obj == null) return false;
+        if (this == obj) return true;
+        if (__equalsCalc != null) {
+            return (__equalsCalc == obj);
+        }
+        __equalsCalc = obj;
+        boolean _equals;
+        _equals = super.equals(obj) && 
+            ((this.basic==null && other.getBasic()==null) || 
+             (this.basic!=null &&
+              this.basic.equals(other.getBasic()))) &&
+            ((this.itemJoin==null && other.getItemJoin()==null) || 
+             (this.itemJoin!=null &&
+              this.itemJoin.equals(other.getItemJoin()))) &&
+            ((this.locationJoin==null && other.getLocationJoin()==null) || 
+             (this.locationJoin!=null &&
+              this.locationJoin.equals(other.getLocationJoin()))) &&
+            ((this.userJoin==null && other.getUserJoin()==null) || 
+             (this.userJoin!=null &&
+              this.userJoin.equals(other.getUserJoin()))) &&
+            ((this.customSearchJoin==null && other.getCustomSearchJoin()==null) || 
+             (this.customSearchJoin!=null &&
+              java.util.Arrays.equals(this.customSearchJoin, other.getCustomSearchJoin())));
+        __equalsCalc = null;
+        return _equals;
+    }
+
+    private boolean __hashCodeCalc = false;
+    public synchronized int hashCode() {
+        if (__hashCodeCalc) {
+            return 0;
+        }
+        __hashCodeCalc = true;
+        int _hashCode = super.hashCode();
+        if (getBasic() != null) {
+            _hashCode += getBasic().hashCode();
+        }
+        if (getItemJoin() != null) {
+            _hashCode += getItemJoin().hashCode();
+        }
+        if (getLocationJoin() != null) {
+            _hashCode += getLocationJoin().hashCode();
+        }
+        if (getUserJoin() != null) {
+            _hashCode += getUserJoin().hashCode();
+        }
+        if (getCustomSearchJoin() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getCustomSearchJoin());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getCustomSearchJoin(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        __hashCodeCalc = false;
+        return _hashCode;
+    }
+
+    // Type metadata
+    private static org.apache.axis.description.TypeDesc typeDesc =
+        new org.apache.axis.description.TypeDesc(ItemSupplyPlanSearchRow.class, true);
+
+    static {
+        typeDesc.setXmlType(new javax.xml.namespace.QName("urn:demandplanning_2018_2.transactions.webservices.netsuite.com", "ItemSupplyPlanSearchRow"));
+        org.apache.axis.description.ElementDesc elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("basic");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:demandplanning_2018_2.transactions.webservices.netsuite.com", "basic"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "ItemSupplyPlanSearchRowBasic"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("itemJoin");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:demandplanning_2018_2.transactions.webservices.netsuite.com", "itemJoin"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "ItemSearchRowBasic"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("locationJoin");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:demandplanning_2018_2.transactions.webservices.netsuite.com", "locationJoin"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "LocationSearchRowBasic"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("userJoin");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:demandplanning_2018_2.transactions.webservices.netsuite.com", "userJoin"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "EmployeeSearchRowBasic"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("customSearchJoin");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:demandplanning_2018_2.transactions.webservices.netsuite.com", "customSearchJoin"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "CustomSearchRowBasic"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
     }
 
     /**
-     * Gets the value of the customSearchJoin property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the customSearchJoin property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getCustomSearchJoin().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link CustomSearchRowBasic }
-     * 
-     * 
+     * Return type metadata object
      */
-    public List<CustomSearchRowBasic> getCustomSearchJoin() {
-        if (customSearchJoin == null) {
-            customSearchJoin = new ArrayList<CustomSearchRowBasic>();
-        }
-        return this.customSearchJoin;
+    public static org.apache.axis.description.TypeDesc getTypeDesc() {
+        return typeDesc;
+    }
+
+    /**
+     * Get Custom Serializer
+     */
+    public static org.apache.axis.encoding.Serializer getSerializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanSerializer(
+            _javaType, _xmlType, typeDesc);
+    }
+
+    /**
+     * Get Custom Deserializer
+     */
+    public static org.apache.axis.encoding.Deserializer getDeserializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanDeserializer(
+            _javaType, _xmlType, typeDesc);
     }
 
 }

@@ -1,57 +1,74 @@
+/**
+ * LandedCostSource.java
+ *
+ * This file was auto-generated from WSDL
+ * by the Apache Axis 1.4 Jul 28, 2010 (04:07:04 PDT) WSDL2Java emitter.
+ */
 
 package com.netsuite.webservices.platform.common_2018_2.types;
 
-import javax.xml.bind.annotation.XmlEnum;
-import javax.xml.bind.annotation.XmlEnumValue;
-import javax.xml.bind.annotation.XmlType;
+public class LandedCostSource implements java.io.Serializable {
+    private java.lang.String _value_;
+    private static java.util.HashMap _table_ = new java.util.HashMap();
 
-
-/**
- * <p>LandedCostSource的 Java 类。
- * 
- * <p>以下模式片段指定包含在此类中的预期内容。
- * <p>
- * <pre>
- * &lt;simpleType name="LandedCostSource">
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     &lt;enumeration value="_manual"/>
- *     &lt;enumeration value="_otherTransaction"/>
- *     &lt;enumeration value="_otherTransactionExcludeTax"/>
- *     &lt;enumeration value="_thisTransaction"/>
- *   &lt;/restriction>
- * &lt;/simpleType>
- * </pre>
- * 
- */
-@XmlType(name = "LandedCostSource", namespace = "urn:types.common_2018_2.platform.webservices.netsuite.com")
-@XmlEnum
-public enum LandedCostSource {
-
-    @XmlEnumValue("_manual")
-    MANUAL("_manual"),
-    @XmlEnumValue("_otherTransaction")
-    OTHER_TRANSACTION("_otherTransaction"),
-    @XmlEnumValue("_otherTransactionExcludeTax")
-    OTHER_TRANSACTION_EXCLUDE_TAX("_otherTransactionExcludeTax"),
-    @XmlEnumValue("_thisTransaction")
-    THIS_TRANSACTION("_thisTransaction");
-    private final String value;
-
-    LandedCostSource(String v) {
-        value = v;
+    // Constructor
+    protected LandedCostSource(java.lang.String value) {
+        _value_ = value;
+        _table_.put(_value_,this);
     }
 
-    public String value() {
-        return value;
+    public static final java.lang.String __manual = "_manual";
+    public static final java.lang.String __otherTransaction = "_otherTransaction";
+    public static final java.lang.String __otherTransactionExcludeTax = "_otherTransactionExcludeTax";
+    public static final java.lang.String __thisTransaction = "_thisTransaction";
+    public static final LandedCostSource _manual = new LandedCostSource(__manual);
+    public static final LandedCostSource _otherTransaction = new LandedCostSource(__otherTransaction);
+    public static final LandedCostSource _otherTransactionExcludeTax = new LandedCostSource(__otherTransactionExcludeTax);
+    public static final LandedCostSource _thisTransaction = new LandedCostSource(__thisTransaction);
+    public java.lang.String getValue() { return _value_;}
+    public static LandedCostSource fromValue(java.lang.String value)
+          throws java.lang.IllegalArgumentException {
+        LandedCostSource enumeration = (LandedCostSource)
+            _table_.get(value);
+        if (enumeration==null) throw new java.lang.IllegalArgumentException();
+        return enumeration;
     }
+    public static LandedCostSource fromString(java.lang.String value)
+          throws java.lang.IllegalArgumentException {
+        return fromValue(value);
+    }
+    public boolean equals(java.lang.Object obj) {return (obj == this);}
+    public int hashCode() { return toString().hashCode();}
+    public java.lang.String toString() { return _value_;}
+    public java.lang.Object readResolve() throws java.io.ObjectStreamException { return fromValue(_value_);}
+    public static org.apache.axis.encoding.Serializer getSerializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new org.apache.axis.encoding.ser.EnumSerializer(
+            _javaType, _xmlType);
+    }
+    public static org.apache.axis.encoding.Deserializer getDeserializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new org.apache.axis.encoding.ser.EnumDeserializer(
+            _javaType, _xmlType);
+    }
+    // Type metadata
+    private static org.apache.axis.description.TypeDesc typeDesc =
+        new org.apache.axis.description.TypeDesc(LandedCostSource.class);
 
-    public static LandedCostSource fromValue(String v) {
-        for (LandedCostSource c: LandedCostSource.values()) {
-            if (c.value.equals(v)) {
-                return c;
-            }
-        }
-        throw new IllegalArgumentException(v);
+    static {
+        typeDesc.setXmlType(new javax.xml.namespace.QName("urn:types.common_2018_2.platform.webservices.netsuite.com", "LandedCostSource"));
+    }
+    /**
+     * Return type metadata object
+     */
+    public static org.apache.axis.description.TypeDesc getTypeDesc() {
+        return typeDesc;
     }
 
 }

@@ -1,169 +1,268 @@
+/**
+ * OpportunityCompetitors.java
+ *
+ * This file was auto-generated from WSDL
+ * by the Apache Axis 1.4 Jul 28, 2010 (04:07:04 PDT) WSDL2Java emitter.
+ */
 
 package com.netsuite.webservices.transactions.sales_2018_2;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlType;
-import com.netsuite.webservices.platform.core_2018_2.RecordRef;
+public class OpportunityCompetitors  implements java.io.Serializable {
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef competitor;
 
+    private java.lang.String url;
 
-/**
- * <p>OpportunityCompetitors complex type的 Java 类。
- * 
- * <p>以下模式片段指定包含在此类中的预期内容。
- * 
- * <pre>
- * &lt;complexType name="OpportunityCompetitors">
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element name="competitor" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="url" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="notes" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="strategy" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="winner" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
- */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "OpportunityCompetitors", propOrder = {
-    "competitor",
-    "url",
-    "notes",
-    "strategy",
-    "winner"
-})
-public class OpportunityCompetitors {
+    private java.lang.String notes;
 
-    protected RecordRef competitor;
-    protected String url;
-    protected String notes;
-    protected String strategy;
-    protected Boolean winner;
+    private java.lang.String strategy;
+
+    private java.lang.Boolean winner;
+
+    public OpportunityCompetitors() {
+    }
+
+    public OpportunityCompetitors(
+           com.netsuite.webservices.platform.core_2018_2.RecordRef competitor,
+           java.lang.String url,
+           java.lang.String notes,
+           java.lang.String strategy,
+           java.lang.Boolean winner) {
+           this.competitor = competitor;
+           this.url = url;
+           this.notes = notes;
+           this.strategy = strategy;
+           this.winner = winner;
+    }
+
 
     /**
-     * 获取competitor属性的值。
+     * Gets the competitor value for this OpportunityCompetitors.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @return competitor
      */
-    public RecordRef getCompetitor() {
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getCompetitor() {
         return competitor;
     }
 
-    /**
-     * 设置competitor属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setCompetitor(RecordRef value) {
-        this.competitor = value;
-    }
 
     /**
-     * 获取url属性的值。
+     * Sets the competitor value for this OpportunityCompetitors.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param competitor
      */
-    public String getUrl() {
+    public void setCompetitor(com.netsuite.webservices.platform.core_2018_2.RecordRef competitor) {
+        this.competitor = competitor;
+    }
+
+
+    /**
+     * Gets the url value for this OpportunityCompetitors.
+     * 
+     * @return url
+     */
+    public java.lang.String getUrl() {
         return url;
     }
 
-    /**
-     * 设置url属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setUrl(String value) {
-        this.url = value;
-    }
 
     /**
-     * 获取notes属性的值。
+     * Sets the url value for this OpportunityCompetitors.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param url
      */
-    public String getNotes() {
+    public void setUrl(java.lang.String url) {
+        this.url = url;
+    }
+
+
+    /**
+     * Gets the notes value for this OpportunityCompetitors.
+     * 
+     * @return notes
+     */
+    public java.lang.String getNotes() {
         return notes;
     }
 
-    /**
-     * 设置notes属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setNotes(String value) {
-        this.notes = value;
-    }
 
     /**
-     * 获取strategy属性的值。
+     * Sets the notes value for this OpportunityCompetitors.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param notes
      */
-    public String getStrategy() {
+    public void setNotes(java.lang.String notes) {
+        this.notes = notes;
+    }
+
+
+    /**
+     * Gets the strategy value for this OpportunityCompetitors.
+     * 
+     * @return strategy
+     */
+    public java.lang.String getStrategy() {
         return strategy;
     }
 
-    /**
-     * 设置strategy属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setStrategy(String value) {
-        this.strategy = value;
-    }
 
     /**
-     * 获取winner属性的值。
+     * Sets the strategy value for this OpportunityCompetitors.
      * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
+     * @param strategy
      */
-    public Boolean isWinner() {
+    public void setStrategy(java.lang.String strategy) {
+        this.strategy = strategy;
+    }
+
+
+    /**
+     * Gets the winner value for this OpportunityCompetitors.
+     * 
+     * @return winner
+     */
+    public java.lang.Boolean getWinner() {
         return winner;
     }
 
+
     /**
-     * 设置winner属性的值。
+     * Sets the winner value for this OpportunityCompetitors.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
+     * @param winner
      */
-    public void setWinner(Boolean value) {
-        this.winner = value;
+    public void setWinner(java.lang.Boolean winner) {
+        this.winner = winner;
+    }
+
+    private java.lang.Object __equalsCalc = null;
+    public synchronized boolean equals(java.lang.Object obj) {
+        if (!(obj instanceof OpportunityCompetitors)) return false;
+        OpportunityCompetitors other = (OpportunityCompetitors) obj;
+        if (obj == null) return false;
+        if (this == obj) return true;
+        if (__equalsCalc != null) {
+            return (__equalsCalc == obj);
+        }
+        __equalsCalc = obj;
+        boolean _equals;
+        _equals = true && 
+            ((this.competitor==null && other.getCompetitor()==null) || 
+             (this.competitor!=null &&
+              this.competitor.equals(other.getCompetitor()))) &&
+            ((this.url==null && other.getUrl()==null) || 
+             (this.url!=null &&
+              this.url.equals(other.getUrl()))) &&
+            ((this.notes==null && other.getNotes()==null) || 
+             (this.notes!=null &&
+              this.notes.equals(other.getNotes()))) &&
+            ((this.strategy==null && other.getStrategy()==null) || 
+             (this.strategy!=null &&
+              this.strategy.equals(other.getStrategy()))) &&
+            ((this.winner==null && other.getWinner()==null) || 
+             (this.winner!=null &&
+              this.winner.equals(other.getWinner())));
+        __equalsCalc = null;
+        return _equals;
+    }
+
+    private boolean __hashCodeCalc = false;
+    public synchronized int hashCode() {
+        if (__hashCodeCalc) {
+            return 0;
+        }
+        __hashCodeCalc = true;
+        int _hashCode = 1;
+        if (getCompetitor() != null) {
+            _hashCode += getCompetitor().hashCode();
+        }
+        if (getUrl() != null) {
+            _hashCode += getUrl().hashCode();
+        }
+        if (getNotes() != null) {
+            _hashCode += getNotes().hashCode();
+        }
+        if (getStrategy() != null) {
+            _hashCode += getStrategy().hashCode();
+        }
+        if (getWinner() != null) {
+            _hashCode += getWinner().hashCode();
+        }
+        __hashCodeCalc = false;
+        return _hashCode;
+    }
+
+    // Type metadata
+    private static org.apache.axis.description.TypeDesc typeDesc =
+        new org.apache.axis.description.TypeDesc(OpportunityCompetitors.class, true);
+
+    static {
+        typeDesc.setXmlType(new javax.xml.namespace.QName("urn:sales_2018_2.transactions.webservices.netsuite.com", "OpportunityCompetitors"));
+        org.apache.axis.description.ElementDesc elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("competitor");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:sales_2018_2.transactions.webservices.netsuite.com", "competitor"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("url");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:sales_2018_2.transactions.webservices.netsuite.com", "url"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("notes");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:sales_2018_2.transactions.webservices.netsuite.com", "notes"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("strategy");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:sales_2018_2.transactions.webservices.netsuite.com", "strategy"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("winner");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:sales_2018_2.transactions.webservices.netsuite.com", "winner"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+    }
+
+    /**
+     * Return type metadata object
+     */
+    public static org.apache.axis.description.TypeDesc getTypeDesc() {
+        return typeDesc;
+    }
+
+    /**
+     * Get Custom Serializer
+     */
+    public static org.apache.axis.encoding.Serializer getSerializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanSerializer(
+            _javaType, _xmlType, typeDesc);
+    }
+
+    /**
+     * Get Custom Deserializer
+     */
+    public static org.apache.axis.encoding.Deserializer getDeserializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanDeserializer(
+            _javaType, _xmlType, typeDesc);
     }
 
 }

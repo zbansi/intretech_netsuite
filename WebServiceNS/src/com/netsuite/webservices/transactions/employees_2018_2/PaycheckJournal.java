@@ -1,640 +1,950 @@
+/**
+ * PaycheckJournal.java
+ *
+ * This file was auto-generated from WSDL
+ * by the Apache Axis 1.4 Jul 28, 2010 (04:07:04 PDT) WSDL2Java emitter.
+ */
 
 package com.netsuite.webservices.transactions.employees_2018_2;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlAttribute;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlSchemaType;
-import javax.xml.bind.annotation.XmlType;
-import javax.xml.datatype.XMLGregorianCalendar;
-import com.netsuite.webservices.platform.core_2018_2.CustomFieldList;
-import com.netsuite.webservices.platform.core_2018_2.Record;
-import com.netsuite.webservices.platform.core_2018_2.RecordRef;
+public class PaycheckJournal  extends com.netsuite.webservices.platform.core_2018_2.Record  implements java.io.Serializable {
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef subsidiary;
 
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef currency;
 
-/**
- * <p>PaycheckJournal complex type的 Java 类。
- * 
- * <p>以下模式片段指定包含在此类中的预期内容。
- * 
- * <pre>
- * &lt;complexType name="PaycheckJournal">
- *   &lt;complexContent>
- *     &lt;extension base="{urn:core_2018_2.platform.webservices.netsuite.com}Record">
- *       &lt;sequence>
- *         &lt;element name="subsidiary" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="currency" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="exchangeRate" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
- *         &lt;element name="createdDate" type="{http://www.w3.org/2001/XMLSchema}dateTime" minOccurs="0"/>
- *         &lt;element name="lastModifiedDate" type="{http://www.w3.org/2001/XMLSchema}dateTime" minOccurs="0"/>
- *         &lt;element name="customForm" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="tranId" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="employee" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="tranDate" type="{http://www.w3.org/2001/XMLSchema}dateTime" minOccurs="0"/>
- *         &lt;element name="postingPeriod" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="account" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="department" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="class" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="location" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="companyContributionList" type="{urn:employees_2018_2.transactions.webservices.netsuite.com}PaycheckJournalCompanyContributionList" minOccurs="0"/>
- *         &lt;element name="deductionList" type="{urn:employees_2018_2.transactions.webservices.netsuite.com}PaycheckJournalDeductionList" minOccurs="0"/>
- *         &lt;element name="employeeTaxList" type="{urn:employees_2018_2.transactions.webservices.netsuite.com}PaycheckJournalEmployeeTaxList" minOccurs="0"/>
- *         &lt;element name="companyTaxList" type="{urn:employees_2018_2.transactions.webservices.netsuite.com}PaycheckJournalCompanyTaxList" minOccurs="0"/>
- *         &lt;element name="earningList" type="{urn:employees_2018_2.transactions.webservices.netsuite.com}PaycheckJournalEarningList" minOccurs="0"/>
- *         &lt;element name="customFieldList" type="{urn:core_2018_2.platform.webservices.netsuite.com}CustomFieldList" minOccurs="0"/>
- *       &lt;/sequence>
- *       &lt;attribute name="internalId" type="{http://www.w3.org/2001/XMLSchema}string" />
- *       &lt;attribute name="externalId" type="{http://www.w3.org/2001/XMLSchema}string" />
- *     &lt;/extension>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
- */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "PaycheckJournal", propOrder = {
-    "subsidiary",
-    "currency",
-    "exchangeRate",
-    "createdDate",
-    "lastModifiedDate",
-    "customForm",
-    "tranId",
-    "employee",
-    "tranDate",
-    "postingPeriod",
-    "account",
-    "department",
-    "clazz",
-    "location",
-    "companyContributionList",
-    "deductionList",
-    "employeeTaxList",
-    "companyTaxList",
-    "earningList",
-    "customFieldList"
-})
-public class PaycheckJournal
-    extends Record
-{
+    private java.lang.Double exchangeRate;
 
-    protected RecordRef subsidiary;
-    protected RecordRef currency;
-    protected Double exchangeRate;
-    @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar createdDate;
-    @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar lastModifiedDate;
-    protected RecordRef customForm;
-    protected String tranId;
-    protected RecordRef employee;
-    @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar tranDate;
-    protected RecordRef postingPeriod;
-    protected RecordRef account;
-    protected RecordRef department;
-    @XmlElement(name = "class")
-    protected RecordRef clazz;
-    protected RecordRef location;
-    protected PaycheckJournalCompanyContributionList companyContributionList;
-    protected PaycheckJournalDeductionList deductionList;
-    protected PaycheckJournalEmployeeTaxList employeeTaxList;
-    protected PaycheckJournalCompanyTaxList companyTaxList;
-    protected PaycheckJournalEarningList earningList;
-    protected CustomFieldList customFieldList;
-    @XmlAttribute(name = "internalId")
-    protected String internalId;
-    @XmlAttribute(name = "externalId")
-    protected String externalId;
+    private java.util.Calendar createdDate;
+
+    private java.util.Calendar lastModifiedDate;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef customForm;
+
+    private java.lang.String tranId;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef employee;
+
+    private java.util.Calendar tranDate;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef postingPeriod;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef account;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef department;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef _class;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef location;
+
+    private com.netsuite.webservices.transactions.employees_2018_2.PaycheckJournalCompanyContribution[] companyContributionList;
+
+    private com.netsuite.webservices.transactions.employees_2018_2.PaycheckJournalDeduction[] deductionList;
+
+    private com.netsuite.webservices.transactions.employees_2018_2.PaycheckJournalEmployeeTax[] employeeTaxList;
+
+    private com.netsuite.webservices.transactions.employees_2018_2.PaycheckJournalCompanyTax[] companyTaxList;
+
+    private com.netsuite.webservices.transactions.employees_2018_2.PaycheckJournalEarning[] earningList;
+
+    private com.netsuite.webservices.platform.core_2018_2.CustomFieldRef[] customFieldList;
+
+    private java.lang.String internalId;  // attribute
+
+    private java.lang.String externalId;  // attribute
+
+    public PaycheckJournal() {
+    }
+
+    public PaycheckJournal(
+           java.lang.String[] nullFieldList,
+           java.lang.String internalId,
+           java.lang.String externalId,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef subsidiary,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef currency,
+           java.lang.Double exchangeRate,
+           java.util.Calendar createdDate,
+           java.util.Calendar lastModifiedDate,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef customForm,
+           java.lang.String tranId,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef employee,
+           java.util.Calendar tranDate,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef postingPeriod,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef account,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef department,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef _class,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef location,
+           com.netsuite.webservices.transactions.employees_2018_2.PaycheckJournalCompanyContribution[] companyContributionList,
+           com.netsuite.webservices.transactions.employees_2018_2.PaycheckJournalDeduction[] deductionList,
+           com.netsuite.webservices.transactions.employees_2018_2.PaycheckJournalEmployeeTax[] employeeTaxList,
+           com.netsuite.webservices.transactions.employees_2018_2.PaycheckJournalCompanyTax[] companyTaxList,
+           com.netsuite.webservices.transactions.employees_2018_2.PaycheckJournalEarning[] earningList,
+           com.netsuite.webservices.platform.core_2018_2.CustomFieldRef[] customFieldList) {
+        super(
+            nullFieldList);
+        this.internalId = internalId;
+        this.externalId = externalId;
+        this.subsidiary = subsidiary;
+        this.currency = currency;
+        this.exchangeRate = exchangeRate;
+        this.createdDate = createdDate;
+        this.lastModifiedDate = lastModifiedDate;
+        this.customForm = customForm;
+        this.tranId = tranId;
+        this.employee = employee;
+        this.tranDate = tranDate;
+        this.postingPeriod = postingPeriod;
+        this.account = account;
+        this.department = department;
+        this._class = _class;
+        this.location = location;
+        this.companyContributionList = companyContributionList;
+        this.deductionList = deductionList;
+        this.employeeTaxList = employeeTaxList;
+        this.companyTaxList = companyTaxList;
+        this.earningList = earningList;
+        this.customFieldList = customFieldList;
+    }
+
 
     /**
-     * 获取subsidiary属性的值。
+     * Gets the subsidiary value for this PaycheckJournal.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @return subsidiary
      */
-    public RecordRef getSubsidiary() {
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getSubsidiary() {
         return subsidiary;
     }
 
-    /**
-     * 设置subsidiary属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setSubsidiary(RecordRef value) {
-        this.subsidiary = value;
-    }
 
     /**
-     * 获取currency属性的值。
+     * Sets the subsidiary value for this PaycheckJournal.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param subsidiary
      */
-    public RecordRef getCurrency() {
+    public void setSubsidiary(com.netsuite.webservices.platform.core_2018_2.RecordRef subsidiary) {
+        this.subsidiary = subsidiary;
+    }
+
+
+    /**
+     * Gets the currency value for this PaycheckJournal.
+     * 
+     * @return currency
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getCurrency() {
         return currency;
     }
 
-    /**
-     * 设置currency属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setCurrency(RecordRef value) {
-        this.currency = value;
-    }
 
     /**
-     * 获取exchangeRate属性的值。
+     * Sets the currency value for this PaycheckJournal.
      * 
-     * @return
-     *     possible object is
-     *     {@link Double }
-     *     
+     * @param currency
      */
-    public Double getExchangeRate() {
+    public void setCurrency(com.netsuite.webservices.platform.core_2018_2.RecordRef currency) {
+        this.currency = currency;
+    }
+
+
+    /**
+     * Gets the exchangeRate value for this PaycheckJournal.
+     * 
+     * @return exchangeRate
+     */
+    public java.lang.Double getExchangeRate() {
         return exchangeRate;
     }
 
-    /**
-     * 设置exchangeRate属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Double }
-     *     
-     */
-    public void setExchangeRate(Double value) {
-        this.exchangeRate = value;
-    }
 
     /**
-     * 获取createdDate属性的值。
+     * Sets the exchangeRate value for this PaycheckJournal.
      * 
-     * @return
-     *     possible object is
-     *     {@link XMLGregorianCalendar }
-     *     
+     * @param exchangeRate
      */
-    public XMLGregorianCalendar getCreatedDate() {
+    public void setExchangeRate(java.lang.Double exchangeRate) {
+        this.exchangeRate = exchangeRate;
+    }
+
+
+    /**
+     * Gets the createdDate value for this PaycheckJournal.
+     * 
+     * @return createdDate
+     */
+    public java.util.Calendar getCreatedDate() {
         return createdDate;
     }
 
-    /**
-     * 设置createdDate属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link XMLGregorianCalendar }
-     *     
-     */
-    public void setCreatedDate(XMLGregorianCalendar value) {
-        this.createdDate = value;
-    }
 
     /**
-     * 获取lastModifiedDate属性的值。
+     * Sets the createdDate value for this PaycheckJournal.
      * 
-     * @return
-     *     possible object is
-     *     {@link XMLGregorianCalendar }
-     *     
+     * @param createdDate
      */
-    public XMLGregorianCalendar getLastModifiedDate() {
+    public void setCreatedDate(java.util.Calendar createdDate) {
+        this.createdDate = createdDate;
+    }
+
+
+    /**
+     * Gets the lastModifiedDate value for this PaycheckJournal.
+     * 
+     * @return lastModifiedDate
+     */
+    public java.util.Calendar getLastModifiedDate() {
         return lastModifiedDate;
     }
 
-    /**
-     * 设置lastModifiedDate属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link XMLGregorianCalendar }
-     *     
-     */
-    public void setLastModifiedDate(XMLGregorianCalendar value) {
-        this.lastModifiedDate = value;
-    }
 
     /**
-     * 获取customForm属性的值。
+     * Sets the lastModifiedDate value for this PaycheckJournal.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param lastModifiedDate
      */
-    public RecordRef getCustomForm() {
+    public void setLastModifiedDate(java.util.Calendar lastModifiedDate) {
+        this.lastModifiedDate = lastModifiedDate;
+    }
+
+
+    /**
+     * Gets the customForm value for this PaycheckJournal.
+     * 
+     * @return customForm
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getCustomForm() {
         return customForm;
     }
 
-    /**
-     * 设置customForm属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setCustomForm(RecordRef value) {
-        this.customForm = value;
-    }
 
     /**
-     * 获取tranId属性的值。
+     * Sets the customForm value for this PaycheckJournal.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param customForm
      */
-    public String getTranId() {
+    public void setCustomForm(com.netsuite.webservices.platform.core_2018_2.RecordRef customForm) {
+        this.customForm = customForm;
+    }
+
+
+    /**
+     * Gets the tranId value for this PaycheckJournal.
+     * 
+     * @return tranId
+     */
+    public java.lang.String getTranId() {
         return tranId;
     }
 
-    /**
-     * 设置tranId属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setTranId(String value) {
-        this.tranId = value;
-    }
 
     /**
-     * 获取employee属性的值。
+     * Sets the tranId value for this PaycheckJournal.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param tranId
      */
-    public RecordRef getEmployee() {
+    public void setTranId(java.lang.String tranId) {
+        this.tranId = tranId;
+    }
+
+
+    /**
+     * Gets the employee value for this PaycheckJournal.
+     * 
+     * @return employee
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getEmployee() {
         return employee;
     }
 
-    /**
-     * 设置employee属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setEmployee(RecordRef value) {
-        this.employee = value;
-    }
 
     /**
-     * 获取tranDate属性的值。
+     * Sets the employee value for this PaycheckJournal.
      * 
-     * @return
-     *     possible object is
-     *     {@link XMLGregorianCalendar }
-     *     
+     * @param employee
      */
-    public XMLGregorianCalendar getTranDate() {
+    public void setEmployee(com.netsuite.webservices.platform.core_2018_2.RecordRef employee) {
+        this.employee = employee;
+    }
+
+
+    /**
+     * Gets the tranDate value for this PaycheckJournal.
+     * 
+     * @return tranDate
+     */
+    public java.util.Calendar getTranDate() {
         return tranDate;
     }
 
-    /**
-     * 设置tranDate属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link XMLGregorianCalendar }
-     *     
-     */
-    public void setTranDate(XMLGregorianCalendar value) {
-        this.tranDate = value;
-    }
 
     /**
-     * 获取postingPeriod属性的值。
+     * Sets the tranDate value for this PaycheckJournal.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param tranDate
      */
-    public RecordRef getPostingPeriod() {
+    public void setTranDate(java.util.Calendar tranDate) {
+        this.tranDate = tranDate;
+    }
+
+
+    /**
+     * Gets the postingPeriod value for this PaycheckJournal.
+     * 
+     * @return postingPeriod
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getPostingPeriod() {
         return postingPeriod;
     }
 
-    /**
-     * 设置postingPeriod属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setPostingPeriod(RecordRef value) {
-        this.postingPeriod = value;
-    }
 
     /**
-     * 获取account属性的值。
+     * Sets the postingPeriod value for this PaycheckJournal.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param postingPeriod
      */
-    public RecordRef getAccount() {
+    public void setPostingPeriod(com.netsuite.webservices.platform.core_2018_2.RecordRef postingPeriod) {
+        this.postingPeriod = postingPeriod;
+    }
+
+
+    /**
+     * Gets the account value for this PaycheckJournal.
+     * 
+     * @return account
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getAccount() {
         return account;
     }
 
-    /**
-     * 设置account属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setAccount(RecordRef value) {
-        this.account = value;
-    }
 
     /**
-     * 获取department属性的值。
+     * Sets the account value for this PaycheckJournal.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param account
      */
-    public RecordRef getDepartment() {
+    public void setAccount(com.netsuite.webservices.platform.core_2018_2.RecordRef account) {
+        this.account = account;
+    }
+
+
+    /**
+     * Gets the department value for this PaycheckJournal.
+     * 
+     * @return department
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getDepartment() {
         return department;
     }
 
-    /**
-     * 设置department属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setDepartment(RecordRef value) {
-        this.department = value;
-    }
 
     /**
-     * 获取clazz属性的值。
+     * Sets the department value for this PaycheckJournal.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param department
      */
-    public RecordRef getClazz() {
-        return clazz;
+    public void setDepartment(com.netsuite.webservices.platform.core_2018_2.RecordRef department) {
+        this.department = department;
     }
 
-    /**
-     * 设置clazz属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setClazz(RecordRef value) {
-        this.clazz = value;
-    }
 
     /**
-     * 获取location属性的值。
+     * Gets the _class value for this PaycheckJournal.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @return _class
      */
-    public RecordRef getLocation() {
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef get_class() {
+        return _class;
+    }
+
+
+    /**
+     * Sets the _class value for this PaycheckJournal.
+     * 
+     * @param _class
+     */
+    public void set_class(com.netsuite.webservices.platform.core_2018_2.RecordRef _class) {
+        this._class = _class;
+    }
+
+
+    /**
+     * Gets the location value for this PaycheckJournal.
+     * 
+     * @return location
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getLocation() {
         return location;
     }
 
-    /**
-     * 设置location属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setLocation(RecordRef value) {
-        this.location = value;
-    }
 
     /**
-     * 获取companyContributionList属性的值。
+     * Sets the location value for this PaycheckJournal.
      * 
-     * @return
-     *     possible object is
-     *     {@link PaycheckJournalCompanyContributionList }
-     *     
+     * @param location
      */
-    public PaycheckJournalCompanyContributionList getCompanyContributionList() {
+    public void setLocation(com.netsuite.webservices.platform.core_2018_2.RecordRef location) {
+        this.location = location;
+    }
+
+
+    /**
+     * Gets the companyContributionList value for this PaycheckJournal.
+     * 
+     * @return companyContributionList
+     */
+    public com.netsuite.webservices.transactions.employees_2018_2.PaycheckJournalCompanyContribution[] getCompanyContributionList() {
         return companyContributionList;
     }
 
-    /**
-     * 设置companyContributionList属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link PaycheckJournalCompanyContributionList }
-     *     
-     */
-    public void setCompanyContributionList(PaycheckJournalCompanyContributionList value) {
-        this.companyContributionList = value;
-    }
 
     /**
-     * 获取deductionList属性的值。
+     * Sets the companyContributionList value for this PaycheckJournal.
      * 
-     * @return
-     *     possible object is
-     *     {@link PaycheckJournalDeductionList }
-     *     
+     * @param companyContributionList
      */
-    public PaycheckJournalDeductionList getDeductionList() {
+    public void setCompanyContributionList(com.netsuite.webservices.transactions.employees_2018_2.PaycheckJournalCompanyContribution[] companyContributionList) {
+        this.companyContributionList = companyContributionList;
+    }
+
+
+    /**
+     * Gets the deductionList value for this PaycheckJournal.
+     * 
+     * @return deductionList
+     */
+    public com.netsuite.webservices.transactions.employees_2018_2.PaycheckJournalDeduction[] getDeductionList() {
         return deductionList;
     }
 
-    /**
-     * 设置deductionList属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link PaycheckJournalDeductionList }
-     *     
-     */
-    public void setDeductionList(PaycheckJournalDeductionList value) {
-        this.deductionList = value;
-    }
 
     /**
-     * 获取employeeTaxList属性的值。
+     * Sets the deductionList value for this PaycheckJournal.
      * 
-     * @return
-     *     possible object is
-     *     {@link PaycheckJournalEmployeeTaxList }
-     *     
+     * @param deductionList
      */
-    public PaycheckJournalEmployeeTaxList getEmployeeTaxList() {
+    public void setDeductionList(com.netsuite.webservices.transactions.employees_2018_2.PaycheckJournalDeduction[] deductionList) {
+        this.deductionList = deductionList;
+    }
+
+
+    /**
+     * Gets the employeeTaxList value for this PaycheckJournal.
+     * 
+     * @return employeeTaxList
+     */
+    public com.netsuite.webservices.transactions.employees_2018_2.PaycheckJournalEmployeeTax[] getEmployeeTaxList() {
         return employeeTaxList;
     }
 
-    /**
-     * 设置employeeTaxList属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link PaycheckJournalEmployeeTaxList }
-     *     
-     */
-    public void setEmployeeTaxList(PaycheckJournalEmployeeTaxList value) {
-        this.employeeTaxList = value;
-    }
 
     /**
-     * 获取companyTaxList属性的值。
+     * Sets the employeeTaxList value for this PaycheckJournal.
      * 
-     * @return
-     *     possible object is
-     *     {@link PaycheckJournalCompanyTaxList }
-     *     
+     * @param employeeTaxList
      */
-    public PaycheckJournalCompanyTaxList getCompanyTaxList() {
+    public void setEmployeeTaxList(com.netsuite.webservices.transactions.employees_2018_2.PaycheckJournalEmployeeTax[] employeeTaxList) {
+        this.employeeTaxList = employeeTaxList;
+    }
+
+
+    /**
+     * Gets the companyTaxList value for this PaycheckJournal.
+     * 
+     * @return companyTaxList
+     */
+    public com.netsuite.webservices.transactions.employees_2018_2.PaycheckJournalCompanyTax[] getCompanyTaxList() {
         return companyTaxList;
     }
 
-    /**
-     * 设置companyTaxList属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link PaycheckJournalCompanyTaxList }
-     *     
-     */
-    public void setCompanyTaxList(PaycheckJournalCompanyTaxList value) {
-        this.companyTaxList = value;
-    }
 
     /**
-     * 获取earningList属性的值。
+     * Sets the companyTaxList value for this PaycheckJournal.
      * 
-     * @return
-     *     possible object is
-     *     {@link PaycheckJournalEarningList }
-     *     
+     * @param companyTaxList
      */
-    public PaycheckJournalEarningList getEarningList() {
+    public void setCompanyTaxList(com.netsuite.webservices.transactions.employees_2018_2.PaycheckJournalCompanyTax[] companyTaxList) {
+        this.companyTaxList = companyTaxList;
+    }
+
+
+    /**
+     * Gets the earningList value for this PaycheckJournal.
+     * 
+     * @return earningList
+     */
+    public com.netsuite.webservices.transactions.employees_2018_2.PaycheckJournalEarning[] getEarningList() {
         return earningList;
     }
 
-    /**
-     * 设置earningList属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link PaycheckJournalEarningList }
-     *     
-     */
-    public void setEarningList(PaycheckJournalEarningList value) {
-        this.earningList = value;
-    }
 
     /**
-     * 获取customFieldList属性的值。
+     * Sets the earningList value for this PaycheckJournal.
      * 
-     * @return
-     *     possible object is
-     *     {@link CustomFieldList }
-     *     
+     * @param earningList
      */
-    public CustomFieldList getCustomFieldList() {
+    public void setEarningList(com.netsuite.webservices.transactions.employees_2018_2.PaycheckJournalEarning[] earningList) {
+        this.earningList = earningList;
+    }
+
+
+    /**
+     * Gets the customFieldList value for this PaycheckJournal.
+     * 
+     * @return customFieldList
+     */
+    public com.netsuite.webservices.platform.core_2018_2.CustomFieldRef[] getCustomFieldList() {
         return customFieldList;
     }
 
-    /**
-     * 设置customFieldList属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link CustomFieldList }
-     *     
-     */
-    public void setCustomFieldList(CustomFieldList value) {
-        this.customFieldList = value;
-    }
 
     /**
-     * 获取internalId属性的值。
+     * Sets the customFieldList value for this PaycheckJournal.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param customFieldList
      */
-    public String getInternalId() {
+    public void setCustomFieldList(com.netsuite.webservices.platform.core_2018_2.CustomFieldRef[] customFieldList) {
+        this.customFieldList = customFieldList;
+    }
+
+
+    /**
+     * Gets the internalId value for this PaycheckJournal.
+     * 
+     * @return internalId
+     */
+    public java.lang.String getInternalId() {
         return internalId;
     }
 
-    /**
-     * 设置internalId属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setInternalId(String value) {
-        this.internalId = value;
-    }
 
     /**
-     * 获取externalId属性的值。
+     * Sets the internalId value for this PaycheckJournal.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param internalId
      */
-    public String getExternalId() {
+    public void setInternalId(java.lang.String internalId) {
+        this.internalId = internalId;
+    }
+
+
+    /**
+     * Gets the externalId value for this PaycheckJournal.
+     * 
+     * @return externalId
+     */
+    public java.lang.String getExternalId() {
         return externalId;
     }
 
+
     /**
-     * 设置externalId属性的值。
+     * Sets the externalId value for this PaycheckJournal.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     * @param externalId
      */
-    public void setExternalId(String value) {
-        this.externalId = value;
+    public void setExternalId(java.lang.String externalId) {
+        this.externalId = externalId;
+    }
+
+    private java.lang.Object __equalsCalc = null;
+    public synchronized boolean equals(java.lang.Object obj) {
+        if (!(obj instanceof PaycheckJournal)) return false;
+        PaycheckJournal other = (PaycheckJournal) obj;
+        if (obj == null) return false;
+        if (this == obj) return true;
+        if (__equalsCalc != null) {
+            return (__equalsCalc == obj);
+        }
+        __equalsCalc = obj;
+        boolean _equals;
+        _equals = super.equals(obj) && 
+            ((this.subsidiary==null && other.getSubsidiary()==null) || 
+             (this.subsidiary!=null &&
+              this.subsidiary.equals(other.getSubsidiary()))) &&
+            ((this.currency==null && other.getCurrency()==null) || 
+             (this.currency!=null &&
+              this.currency.equals(other.getCurrency()))) &&
+            ((this.exchangeRate==null && other.getExchangeRate()==null) || 
+             (this.exchangeRate!=null &&
+              this.exchangeRate.equals(other.getExchangeRate()))) &&
+            ((this.createdDate==null && other.getCreatedDate()==null) || 
+             (this.createdDate!=null &&
+              this.createdDate.equals(other.getCreatedDate()))) &&
+            ((this.lastModifiedDate==null && other.getLastModifiedDate()==null) || 
+             (this.lastModifiedDate!=null &&
+              this.lastModifiedDate.equals(other.getLastModifiedDate()))) &&
+            ((this.customForm==null && other.getCustomForm()==null) || 
+             (this.customForm!=null &&
+              this.customForm.equals(other.getCustomForm()))) &&
+            ((this.tranId==null && other.getTranId()==null) || 
+             (this.tranId!=null &&
+              this.tranId.equals(other.getTranId()))) &&
+            ((this.employee==null && other.getEmployee()==null) || 
+             (this.employee!=null &&
+              this.employee.equals(other.getEmployee()))) &&
+            ((this.tranDate==null && other.getTranDate()==null) || 
+             (this.tranDate!=null &&
+              this.tranDate.equals(other.getTranDate()))) &&
+            ((this.postingPeriod==null && other.getPostingPeriod()==null) || 
+             (this.postingPeriod!=null &&
+              this.postingPeriod.equals(other.getPostingPeriod()))) &&
+            ((this.account==null && other.getAccount()==null) || 
+             (this.account!=null &&
+              this.account.equals(other.getAccount()))) &&
+            ((this.department==null && other.getDepartment()==null) || 
+             (this.department!=null &&
+              this.department.equals(other.getDepartment()))) &&
+            ((this._class==null && other.get_class()==null) || 
+             (this._class!=null &&
+              this._class.equals(other.get_class()))) &&
+            ((this.location==null && other.getLocation()==null) || 
+             (this.location!=null &&
+              this.location.equals(other.getLocation()))) &&
+            ((this.companyContributionList==null && other.getCompanyContributionList()==null) || 
+             (this.companyContributionList!=null &&
+              java.util.Arrays.equals(this.companyContributionList, other.getCompanyContributionList()))) &&
+            ((this.deductionList==null && other.getDeductionList()==null) || 
+             (this.deductionList!=null &&
+              java.util.Arrays.equals(this.deductionList, other.getDeductionList()))) &&
+            ((this.employeeTaxList==null && other.getEmployeeTaxList()==null) || 
+             (this.employeeTaxList!=null &&
+              java.util.Arrays.equals(this.employeeTaxList, other.getEmployeeTaxList()))) &&
+            ((this.companyTaxList==null && other.getCompanyTaxList()==null) || 
+             (this.companyTaxList!=null &&
+              java.util.Arrays.equals(this.companyTaxList, other.getCompanyTaxList()))) &&
+            ((this.earningList==null && other.getEarningList()==null) || 
+             (this.earningList!=null &&
+              java.util.Arrays.equals(this.earningList, other.getEarningList()))) &&
+            ((this.customFieldList==null && other.getCustomFieldList()==null) || 
+             (this.customFieldList!=null &&
+              java.util.Arrays.equals(this.customFieldList, other.getCustomFieldList()))) &&
+            ((this.internalId==null && other.getInternalId()==null) || 
+             (this.internalId!=null &&
+              this.internalId.equals(other.getInternalId()))) &&
+            ((this.externalId==null && other.getExternalId()==null) || 
+             (this.externalId!=null &&
+              this.externalId.equals(other.getExternalId())));
+        __equalsCalc = null;
+        return _equals;
+    }
+
+    private boolean __hashCodeCalc = false;
+    public synchronized int hashCode() {
+        if (__hashCodeCalc) {
+            return 0;
+        }
+        __hashCodeCalc = true;
+        int _hashCode = super.hashCode();
+        if (getSubsidiary() != null) {
+            _hashCode += getSubsidiary().hashCode();
+        }
+        if (getCurrency() != null) {
+            _hashCode += getCurrency().hashCode();
+        }
+        if (getExchangeRate() != null) {
+            _hashCode += getExchangeRate().hashCode();
+        }
+        if (getCreatedDate() != null) {
+            _hashCode += getCreatedDate().hashCode();
+        }
+        if (getLastModifiedDate() != null) {
+            _hashCode += getLastModifiedDate().hashCode();
+        }
+        if (getCustomForm() != null) {
+            _hashCode += getCustomForm().hashCode();
+        }
+        if (getTranId() != null) {
+            _hashCode += getTranId().hashCode();
+        }
+        if (getEmployee() != null) {
+            _hashCode += getEmployee().hashCode();
+        }
+        if (getTranDate() != null) {
+            _hashCode += getTranDate().hashCode();
+        }
+        if (getPostingPeriod() != null) {
+            _hashCode += getPostingPeriod().hashCode();
+        }
+        if (getAccount() != null) {
+            _hashCode += getAccount().hashCode();
+        }
+        if (getDepartment() != null) {
+            _hashCode += getDepartment().hashCode();
+        }
+        if (get_class() != null) {
+            _hashCode += get_class().hashCode();
+        }
+        if (getLocation() != null) {
+            _hashCode += getLocation().hashCode();
+        }
+        if (getCompanyContributionList() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getCompanyContributionList());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getCompanyContributionList(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getDeductionList() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getDeductionList());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getDeductionList(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getEmployeeTaxList() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getEmployeeTaxList());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getEmployeeTaxList(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getCompanyTaxList() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getCompanyTaxList());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getCompanyTaxList(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getEarningList() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getEarningList());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getEarningList(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getCustomFieldList() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getCustomFieldList());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getCustomFieldList(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getInternalId() != null) {
+            _hashCode += getInternalId().hashCode();
+        }
+        if (getExternalId() != null) {
+            _hashCode += getExternalId().hashCode();
+        }
+        __hashCodeCalc = false;
+        return _hashCode;
+    }
+
+    // Type metadata
+    private static org.apache.axis.description.TypeDesc typeDesc =
+        new org.apache.axis.description.TypeDesc(PaycheckJournal.class, true);
+
+    static {
+        typeDesc.setXmlType(new javax.xml.namespace.QName("urn:employees_2018_2.transactions.webservices.netsuite.com", "PaycheckJournal"));
+        org.apache.axis.description.AttributeDesc attrField = new org.apache.axis.description.AttributeDesc();
+        attrField.setFieldName("internalId");
+        attrField.setXmlName(new javax.xml.namespace.QName("", "internalId"));
+        attrField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        typeDesc.addFieldDesc(attrField);
+        attrField = new org.apache.axis.description.AttributeDesc();
+        attrField.setFieldName("externalId");
+        attrField.setXmlName(new javax.xml.namespace.QName("", "externalId"));
+        attrField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        typeDesc.addFieldDesc(attrField);
+        org.apache.axis.description.ElementDesc elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("subsidiary");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:employees_2018_2.transactions.webservices.netsuite.com", "subsidiary"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("currency");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:employees_2018_2.transactions.webservices.netsuite.com", "currency"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("exchangeRate");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:employees_2018_2.transactions.webservices.netsuite.com", "exchangeRate"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "double"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("createdDate");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:employees_2018_2.transactions.webservices.netsuite.com", "createdDate"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "dateTime"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("lastModifiedDate");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:employees_2018_2.transactions.webservices.netsuite.com", "lastModifiedDate"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "dateTime"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("customForm");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:employees_2018_2.transactions.webservices.netsuite.com", "customForm"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("tranId");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:employees_2018_2.transactions.webservices.netsuite.com", "tranId"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("employee");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:employees_2018_2.transactions.webservices.netsuite.com", "employee"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("tranDate");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:employees_2018_2.transactions.webservices.netsuite.com", "tranDate"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "dateTime"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("postingPeriod");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:employees_2018_2.transactions.webservices.netsuite.com", "postingPeriod"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("account");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:employees_2018_2.transactions.webservices.netsuite.com", "account"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("department");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:employees_2018_2.transactions.webservices.netsuite.com", "department"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("_class");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:employees_2018_2.transactions.webservices.netsuite.com", "class"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("location");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:employees_2018_2.transactions.webservices.netsuite.com", "location"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("companyContributionList");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:employees_2018_2.transactions.webservices.netsuite.com", "companyContributionList"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:employees_2018_2.transactions.webservices.netsuite.com", "PaycheckJournalCompanyContribution"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:employees_2018_2.transactions.webservices.netsuite.com", "paycheckJournalCompanyContribution"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("deductionList");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:employees_2018_2.transactions.webservices.netsuite.com", "deductionList"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:employees_2018_2.transactions.webservices.netsuite.com", "PaycheckJournalDeduction"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:employees_2018_2.transactions.webservices.netsuite.com", "paycheckJournalDeduction"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("employeeTaxList");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:employees_2018_2.transactions.webservices.netsuite.com", "employeeTaxList"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:employees_2018_2.transactions.webservices.netsuite.com", "PaycheckJournalEmployeeTax"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:employees_2018_2.transactions.webservices.netsuite.com", "paycheckJournalEmployeeTax"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("companyTaxList");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:employees_2018_2.transactions.webservices.netsuite.com", "companyTaxList"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:employees_2018_2.transactions.webservices.netsuite.com", "PaycheckJournalCompanyTax"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:employees_2018_2.transactions.webservices.netsuite.com", "paycheckJournalCompanyTax"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("earningList");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:employees_2018_2.transactions.webservices.netsuite.com", "earningList"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:employees_2018_2.transactions.webservices.netsuite.com", "PaycheckJournalEarning"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:employees_2018_2.transactions.webservices.netsuite.com", "paycheckJournalEarning"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("customFieldList");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:employees_2018_2.transactions.webservices.netsuite.com", "customFieldList"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "CustomFieldRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "customField"));
+        typeDesc.addFieldDesc(elemField);
+    }
+
+    /**
+     * Return type metadata object
+     */
+    public static org.apache.axis.description.TypeDesc getTypeDesc() {
+        return typeDesc;
+    }
+
+    /**
+     * Get Custom Serializer
+     */
+    public static org.apache.axis.encoding.Serializer getSerializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanSerializer(
+            _javaType, _xmlType, typeDesc);
+    }
+
+    /**
+     * Get Custom Deserializer
+     */
+    public static org.apache.axis.encoding.Deserializer getDeserializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanDeserializer(
+            _javaType, _xmlType, typeDesc);
     }
 
 }

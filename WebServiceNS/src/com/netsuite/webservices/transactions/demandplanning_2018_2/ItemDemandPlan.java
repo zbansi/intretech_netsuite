@@ -1,452 +1,655 @@
+/**
+ * ItemDemandPlan.java
+ *
+ * This file was auto-generated from WSDL
+ * by the Apache Axis 1.4 Jul 28, 2010 (04:07:04 PDT) WSDL2Java emitter.
+ */
 
 package com.netsuite.webservices.transactions.demandplanning_2018_2;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlAttribute;
-import javax.xml.bind.annotation.XmlSchemaType;
-import javax.xml.bind.annotation.XmlType;
-import javax.xml.datatype.XMLGregorianCalendar;
-import com.netsuite.webservices.platform.core_2018_2.CustomFieldList;
-import com.netsuite.webservices.platform.core_2018_2.Record;
-import com.netsuite.webservices.platform.core_2018_2.RecordRef;
-import com.netsuite.webservices.transactions.demandplanning_2018_2.types.DemandPlanCalendarType;
-import com.netsuite.webservices.transactions.demandplanning_2018_2.types.DemandPlanMonth;
+public class ItemDemandPlan  extends com.netsuite.webservices.platform.core_2018_2.Record  implements java.io.Serializable {
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef customForm;
 
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef subsidiary;
 
-/**
- * <p>ItemDemandPlan complex type的 Java 类。
- * 
- * <p>以下模式片段指定包含在此类中的预期内容。
- * 
- * <pre>
- * &lt;complexType name="ItemDemandPlan">
- *   &lt;complexContent>
- *     &lt;extension base="{urn:core_2018_2.platform.webservices.netsuite.com}Record">
- *       &lt;sequence>
- *         &lt;element name="customForm" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="subsidiary" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="location" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="item" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="units" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="memo" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="year" type="{http://www.w3.org/2001/XMLSchema}long" minOccurs="0"/>
- *         &lt;element name="month" type="{urn:types.demandplanning_2018_2.transactions.webservices.netsuite.com}DemandPlanMonth" minOccurs="0"/>
- *         &lt;element name="startDate" type="{http://www.w3.org/2001/XMLSchema}dateTime" minOccurs="0"/>
- *         &lt;element name="endDate" type="{http://www.w3.org/2001/XMLSchema}dateTime" minOccurs="0"/>
- *         &lt;element name="demandPlanCalendarType" type="{urn:types.demandplanning_2018_2.transactions.webservices.netsuite.com}DemandPlanCalendarType" minOccurs="0"/>
- *         &lt;element name="demandPlanMatrix" type="{urn:demandplanning_2018_2.transactions.webservices.netsuite.com}DemandPlanMatrix" minOccurs="0"/>
- *         &lt;element name="customFieldList" type="{urn:core_2018_2.platform.webservices.netsuite.com}CustomFieldList" minOccurs="0"/>
- *       &lt;/sequence>
- *       &lt;attribute name="internalId" type="{http://www.w3.org/2001/XMLSchema}string" />
- *       &lt;attribute name="externalId" type="{http://www.w3.org/2001/XMLSchema}string" />
- *     &lt;/extension>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
- */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "ItemDemandPlan", propOrder = {
-    "customForm",
-    "subsidiary",
-    "location",
-    "item",
-    "units",
-    "memo",
-    "year",
-    "month",
-    "startDate",
-    "endDate",
-    "demandPlanCalendarType",
-    "demandPlanMatrix",
-    "customFieldList"
-})
-public class ItemDemandPlan
-    extends Record
-{
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef location;
 
-    protected RecordRef customForm;
-    protected RecordRef subsidiary;
-    protected RecordRef location;
-    protected RecordRef item;
-    protected RecordRef units;
-    protected String memo;
-    protected Long year;
-    @XmlSchemaType(name = "string")
-    protected DemandPlanMonth month;
-    @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar startDate;
-    @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar endDate;
-    @XmlSchemaType(name = "string")
-    protected DemandPlanCalendarType demandPlanCalendarType;
-    protected DemandPlanMatrix demandPlanMatrix;
-    protected CustomFieldList customFieldList;
-    @XmlAttribute(name = "internalId")
-    protected String internalId;
-    @XmlAttribute(name = "externalId")
-    protected String externalId;
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef item;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef units;
+
+    private java.lang.String memo;
+
+    private java.lang.Long year;
+
+    private com.netsuite.webservices.transactions.demandplanning_2018_2.types.DemandPlanMonth month;
+
+    private java.util.Calendar startDate;
+
+    private java.util.Calendar endDate;
+
+    private com.netsuite.webservices.transactions.demandplanning_2018_2.types.DemandPlanCalendarType demandPlanCalendarType;
+
+    private com.netsuite.webservices.transactions.demandplanning_2018_2.DemandPlan[] demandPlanMatrix;
+
+    private com.netsuite.webservices.platform.core_2018_2.CustomFieldRef[] customFieldList;
+
+    private java.lang.String internalId;  // attribute
+
+    private java.lang.String externalId;  // attribute
+
+    public ItemDemandPlan() {
+    }
+
+    public ItemDemandPlan(
+           java.lang.String[] nullFieldList,
+           java.lang.String internalId,
+           java.lang.String externalId,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef customForm,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef subsidiary,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef location,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef item,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef units,
+           java.lang.String memo,
+           java.lang.Long year,
+           com.netsuite.webservices.transactions.demandplanning_2018_2.types.DemandPlanMonth month,
+           java.util.Calendar startDate,
+           java.util.Calendar endDate,
+           com.netsuite.webservices.transactions.demandplanning_2018_2.types.DemandPlanCalendarType demandPlanCalendarType,
+           com.netsuite.webservices.transactions.demandplanning_2018_2.DemandPlan[] demandPlanMatrix,
+           com.netsuite.webservices.platform.core_2018_2.CustomFieldRef[] customFieldList) {
+        super(
+            nullFieldList);
+        this.internalId = internalId;
+        this.externalId = externalId;
+        this.customForm = customForm;
+        this.subsidiary = subsidiary;
+        this.location = location;
+        this.item = item;
+        this.units = units;
+        this.memo = memo;
+        this.year = year;
+        this.month = month;
+        this.startDate = startDate;
+        this.endDate = endDate;
+        this.demandPlanCalendarType = demandPlanCalendarType;
+        this.demandPlanMatrix = demandPlanMatrix;
+        this.customFieldList = customFieldList;
+    }
+
 
     /**
-     * 获取customForm属性的值。
+     * Gets the customForm value for this ItemDemandPlan.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @return customForm
      */
-    public RecordRef getCustomForm() {
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getCustomForm() {
         return customForm;
     }
 
-    /**
-     * 设置customForm属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setCustomForm(RecordRef value) {
-        this.customForm = value;
-    }
 
     /**
-     * 获取subsidiary属性的值。
+     * Sets the customForm value for this ItemDemandPlan.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param customForm
      */
-    public RecordRef getSubsidiary() {
+    public void setCustomForm(com.netsuite.webservices.platform.core_2018_2.RecordRef customForm) {
+        this.customForm = customForm;
+    }
+
+
+    /**
+     * Gets the subsidiary value for this ItemDemandPlan.
+     * 
+     * @return subsidiary
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getSubsidiary() {
         return subsidiary;
     }
 
-    /**
-     * 设置subsidiary属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setSubsidiary(RecordRef value) {
-        this.subsidiary = value;
-    }
 
     /**
-     * 获取location属性的值。
+     * Sets the subsidiary value for this ItemDemandPlan.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param subsidiary
      */
-    public RecordRef getLocation() {
+    public void setSubsidiary(com.netsuite.webservices.platform.core_2018_2.RecordRef subsidiary) {
+        this.subsidiary = subsidiary;
+    }
+
+
+    /**
+     * Gets the location value for this ItemDemandPlan.
+     * 
+     * @return location
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getLocation() {
         return location;
     }
 
-    /**
-     * 设置location属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setLocation(RecordRef value) {
-        this.location = value;
-    }
 
     /**
-     * 获取item属性的值。
+     * Sets the location value for this ItemDemandPlan.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param location
      */
-    public RecordRef getItem() {
+    public void setLocation(com.netsuite.webservices.platform.core_2018_2.RecordRef location) {
+        this.location = location;
+    }
+
+
+    /**
+     * Gets the item value for this ItemDemandPlan.
+     * 
+     * @return item
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getItem() {
         return item;
     }
 
-    /**
-     * 设置item属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setItem(RecordRef value) {
-        this.item = value;
-    }
 
     /**
-     * 获取units属性的值。
+     * Sets the item value for this ItemDemandPlan.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param item
      */
-    public RecordRef getUnits() {
+    public void setItem(com.netsuite.webservices.platform.core_2018_2.RecordRef item) {
+        this.item = item;
+    }
+
+
+    /**
+     * Gets the units value for this ItemDemandPlan.
+     * 
+     * @return units
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getUnits() {
         return units;
     }
 
-    /**
-     * 设置units属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setUnits(RecordRef value) {
-        this.units = value;
-    }
 
     /**
-     * 获取memo属性的值。
+     * Sets the units value for this ItemDemandPlan.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param units
      */
-    public String getMemo() {
+    public void setUnits(com.netsuite.webservices.platform.core_2018_2.RecordRef units) {
+        this.units = units;
+    }
+
+
+    /**
+     * Gets the memo value for this ItemDemandPlan.
+     * 
+     * @return memo
+     */
+    public java.lang.String getMemo() {
         return memo;
     }
 
-    /**
-     * 设置memo属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setMemo(String value) {
-        this.memo = value;
-    }
 
     /**
-     * 获取year属性的值。
+     * Sets the memo value for this ItemDemandPlan.
      * 
-     * @return
-     *     possible object is
-     *     {@link Long }
-     *     
+     * @param memo
      */
-    public Long getYear() {
+    public void setMemo(java.lang.String memo) {
+        this.memo = memo;
+    }
+
+
+    /**
+     * Gets the year value for this ItemDemandPlan.
+     * 
+     * @return year
+     */
+    public java.lang.Long getYear() {
         return year;
     }
 
-    /**
-     * 设置year属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Long }
-     *     
-     */
-    public void setYear(Long value) {
-        this.year = value;
-    }
 
     /**
-     * 获取month属性的值。
+     * Sets the year value for this ItemDemandPlan.
      * 
-     * @return
-     *     possible object is
-     *     {@link DemandPlanMonth }
-     *     
+     * @param year
      */
-    public DemandPlanMonth getMonth() {
+    public void setYear(java.lang.Long year) {
+        this.year = year;
+    }
+
+
+    /**
+     * Gets the month value for this ItemDemandPlan.
+     * 
+     * @return month
+     */
+    public com.netsuite.webservices.transactions.demandplanning_2018_2.types.DemandPlanMonth getMonth() {
         return month;
     }
 
-    /**
-     * 设置month属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link DemandPlanMonth }
-     *     
-     */
-    public void setMonth(DemandPlanMonth value) {
-        this.month = value;
-    }
 
     /**
-     * 获取startDate属性的值。
+     * Sets the month value for this ItemDemandPlan.
      * 
-     * @return
-     *     possible object is
-     *     {@link XMLGregorianCalendar }
-     *     
+     * @param month
      */
-    public XMLGregorianCalendar getStartDate() {
+    public void setMonth(com.netsuite.webservices.transactions.demandplanning_2018_2.types.DemandPlanMonth month) {
+        this.month = month;
+    }
+
+
+    /**
+     * Gets the startDate value for this ItemDemandPlan.
+     * 
+     * @return startDate
+     */
+    public java.util.Calendar getStartDate() {
         return startDate;
     }
 
-    /**
-     * 设置startDate属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link XMLGregorianCalendar }
-     *     
-     */
-    public void setStartDate(XMLGregorianCalendar value) {
-        this.startDate = value;
-    }
 
     /**
-     * 获取endDate属性的值。
+     * Sets the startDate value for this ItemDemandPlan.
      * 
-     * @return
-     *     possible object is
-     *     {@link XMLGregorianCalendar }
-     *     
+     * @param startDate
      */
-    public XMLGregorianCalendar getEndDate() {
+    public void setStartDate(java.util.Calendar startDate) {
+        this.startDate = startDate;
+    }
+
+
+    /**
+     * Gets the endDate value for this ItemDemandPlan.
+     * 
+     * @return endDate
+     */
+    public java.util.Calendar getEndDate() {
         return endDate;
     }
 
-    /**
-     * 设置endDate属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link XMLGregorianCalendar }
-     *     
-     */
-    public void setEndDate(XMLGregorianCalendar value) {
-        this.endDate = value;
-    }
 
     /**
-     * 获取demandPlanCalendarType属性的值。
+     * Sets the endDate value for this ItemDemandPlan.
      * 
-     * @return
-     *     possible object is
-     *     {@link DemandPlanCalendarType }
-     *     
+     * @param endDate
      */
-    public DemandPlanCalendarType getDemandPlanCalendarType() {
+    public void setEndDate(java.util.Calendar endDate) {
+        this.endDate = endDate;
+    }
+
+
+    /**
+     * Gets the demandPlanCalendarType value for this ItemDemandPlan.
+     * 
+     * @return demandPlanCalendarType
+     */
+    public com.netsuite.webservices.transactions.demandplanning_2018_2.types.DemandPlanCalendarType getDemandPlanCalendarType() {
         return demandPlanCalendarType;
     }
 
-    /**
-     * 设置demandPlanCalendarType属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link DemandPlanCalendarType }
-     *     
-     */
-    public void setDemandPlanCalendarType(DemandPlanCalendarType value) {
-        this.demandPlanCalendarType = value;
-    }
 
     /**
-     * 获取demandPlanMatrix属性的值。
+     * Sets the demandPlanCalendarType value for this ItemDemandPlan.
      * 
-     * @return
-     *     possible object is
-     *     {@link DemandPlanMatrix }
-     *     
+     * @param demandPlanCalendarType
      */
-    public DemandPlanMatrix getDemandPlanMatrix() {
+    public void setDemandPlanCalendarType(com.netsuite.webservices.transactions.demandplanning_2018_2.types.DemandPlanCalendarType demandPlanCalendarType) {
+        this.demandPlanCalendarType = demandPlanCalendarType;
+    }
+
+
+    /**
+     * Gets the demandPlanMatrix value for this ItemDemandPlan.
+     * 
+     * @return demandPlanMatrix
+     */
+    public com.netsuite.webservices.transactions.demandplanning_2018_2.DemandPlan[] getDemandPlanMatrix() {
         return demandPlanMatrix;
     }
 
-    /**
-     * 设置demandPlanMatrix属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link DemandPlanMatrix }
-     *     
-     */
-    public void setDemandPlanMatrix(DemandPlanMatrix value) {
-        this.demandPlanMatrix = value;
-    }
 
     /**
-     * 获取customFieldList属性的值。
+     * Sets the demandPlanMatrix value for this ItemDemandPlan.
      * 
-     * @return
-     *     possible object is
-     *     {@link CustomFieldList }
-     *     
+     * @param demandPlanMatrix
      */
-    public CustomFieldList getCustomFieldList() {
+    public void setDemandPlanMatrix(com.netsuite.webservices.transactions.demandplanning_2018_2.DemandPlan[] demandPlanMatrix) {
+        this.demandPlanMatrix = demandPlanMatrix;
+    }
+
+
+    /**
+     * Gets the customFieldList value for this ItemDemandPlan.
+     * 
+     * @return customFieldList
+     */
+    public com.netsuite.webservices.platform.core_2018_2.CustomFieldRef[] getCustomFieldList() {
         return customFieldList;
     }
 
-    /**
-     * 设置customFieldList属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link CustomFieldList }
-     *     
-     */
-    public void setCustomFieldList(CustomFieldList value) {
-        this.customFieldList = value;
-    }
 
     /**
-     * 获取internalId属性的值。
+     * Sets the customFieldList value for this ItemDemandPlan.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param customFieldList
      */
-    public String getInternalId() {
+    public void setCustomFieldList(com.netsuite.webservices.platform.core_2018_2.CustomFieldRef[] customFieldList) {
+        this.customFieldList = customFieldList;
+    }
+
+
+    /**
+     * Gets the internalId value for this ItemDemandPlan.
+     * 
+     * @return internalId
+     */
+    public java.lang.String getInternalId() {
         return internalId;
     }
 
-    /**
-     * 设置internalId属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setInternalId(String value) {
-        this.internalId = value;
-    }
 
     /**
-     * 获取externalId属性的值。
+     * Sets the internalId value for this ItemDemandPlan.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param internalId
      */
-    public String getExternalId() {
+    public void setInternalId(java.lang.String internalId) {
+        this.internalId = internalId;
+    }
+
+
+    /**
+     * Gets the externalId value for this ItemDemandPlan.
+     * 
+     * @return externalId
+     */
+    public java.lang.String getExternalId() {
         return externalId;
     }
 
+
     /**
-     * 设置externalId属性的值。
+     * Sets the externalId value for this ItemDemandPlan.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     * @param externalId
      */
-    public void setExternalId(String value) {
-        this.externalId = value;
+    public void setExternalId(java.lang.String externalId) {
+        this.externalId = externalId;
+    }
+
+    private java.lang.Object __equalsCalc = null;
+    public synchronized boolean equals(java.lang.Object obj) {
+        if (!(obj instanceof ItemDemandPlan)) return false;
+        ItemDemandPlan other = (ItemDemandPlan) obj;
+        if (obj == null) return false;
+        if (this == obj) return true;
+        if (__equalsCalc != null) {
+            return (__equalsCalc == obj);
+        }
+        __equalsCalc = obj;
+        boolean _equals;
+        _equals = super.equals(obj) && 
+            ((this.customForm==null && other.getCustomForm()==null) || 
+             (this.customForm!=null &&
+              this.customForm.equals(other.getCustomForm()))) &&
+            ((this.subsidiary==null && other.getSubsidiary()==null) || 
+             (this.subsidiary!=null &&
+              this.subsidiary.equals(other.getSubsidiary()))) &&
+            ((this.location==null && other.getLocation()==null) || 
+             (this.location!=null &&
+              this.location.equals(other.getLocation()))) &&
+            ((this.item==null && other.getItem()==null) || 
+             (this.item!=null &&
+              this.item.equals(other.getItem()))) &&
+            ((this.units==null && other.getUnits()==null) || 
+             (this.units!=null &&
+              this.units.equals(other.getUnits()))) &&
+            ((this.memo==null && other.getMemo()==null) || 
+             (this.memo!=null &&
+              this.memo.equals(other.getMemo()))) &&
+            ((this.year==null && other.getYear()==null) || 
+             (this.year!=null &&
+              this.year.equals(other.getYear()))) &&
+            ((this.month==null && other.getMonth()==null) || 
+             (this.month!=null &&
+              this.month.equals(other.getMonth()))) &&
+            ((this.startDate==null && other.getStartDate()==null) || 
+             (this.startDate!=null &&
+              this.startDate.equals(other.getStartDate()))) &&
+            ((this.endDate==null && other.getEndDate()==null) || 
+             (this.endDate!=null &&
+              this.endDate.equals(other.getEndDate()))) &&
+            ((this.demandPlanCalendarType==null && other.getDemandPlanCalendarType()==null) || 
+             (this.demandPlanCalendarType!=null &&
+              this.demandPlanCalendarType.equals(other.getDemandPlanCalendarType()))) &&
+            ((this.demandPlanMatrix==null && other.getDemandPlanMatrix()==null) || 
+             (this.demandPlanMatrix!=null &&
+              java.util.Arrays.equals(this.demandPlanMatrix, other.getDemandPlanMatrix()))) &&
+            ((this.customFieldList==null && other.getCustomFieldList()==null) || 
+             (this.customFieldList!=null &&
+              java.util.Arrays.equals(this.customFieldList, other.getCustomFieldList()))) &&
+            ((this.internalId==null && other.getInternalId()==null) || 
+             (this.internalId!=null &&
+              this.internalId.equals(other.getInternalId()))) &&
+            ((this.externalId==null && other.getExternalId()==null) || 
+             (this.externalId!=null &&
+              this.externalId.equals(other.getExternalId())));
+        __equalsCalc = null;
+        return _equals;
+    }
+
+    private boolean __hashCodeCalc = false;
+    public synchronized int hashCode() {
+        if (__hashCodeCalc) {
+            return 0;
+        }
+        __hashCodeCalc = true;
+        int _hashCode = super.hashCode();
+        if (getCustomForm() != null) {
+            _hashCode += getCustomForm().hashCode();
+        }
+        if (getSubsidiary() != null) {
+            _hashCode += getSubsidiary().hashCode();
+        }
+        if (getLocation() != null) {
+            _hashCode += getLocation().hashCode();
+        }
+        if (getItem() != null) {
+            _hashCode += getItem().hashCode();
+        }
+        if (getUnits() != null) {
+            _hashCode += getUnits().hashCode();
+        }
+        if (getMemo() != null) {
+            _hashCode += getMemo().hashCode();
+        }
+        if (getYear() != null) {
+            _hashCode += getYear().hashCode();
+        }
+        if (getMonth() != null) {
+            _hashCode += getMonth().hashCode();
+        }
+        if (getStartDate() != null) {
+            _hashCode += getStartDate().hashCode();
+        }
+        if (getEndDate() != null) {
+            _hashCode += getEndDate().hashCode();
+        }
+        if (getDemandPlanCalendarType() != null) {
+            _hashCode += getDemandPlanCalendarType().hashCode();
+        }
+        if (getDemandPlanMatrix() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getDemandPlanMatrix());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getDemandPlanMatrix(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getCustomFieldList() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getCustomFieldList());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getCustomFieldList(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getInternalId() != null) {
+            _hashCode += getInternalId().hashCode();
+        }
+        if (getExternalId() != null) {
+            _hashCode += getExternalId().hashCode();
+        }
+        __hashCodeCalc = false;
+        return _hashCode;
+    }
+
+    // Type metadata
+    private static org.apache.axis.description.TypeDesc typeDesc =
+        new org.apache.axis.description.TypeDesc(ItemDemandPlan.class, true);
+
+    static {
+        typeDesc.setXmlType(new javax.xml.namespace.QName("urn:demandplanning_2018_2.transactions.webservices.netsuite.com", "ItemDemandPlan"));
+        org.apache.axis.description.AttributeDesc attrField = new org.apache.axis.description.AttributeDesc();
+        attrField.setFieldName("internalId");
+        attrField.setXmlName(new javax.xml.namespace.QName("", "internalId"));
+        attrField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        typeDesc.addFieldDesc(attrField);
+        attrField = new org.apache.axis.description.AttributeDesc();
+        attrField.setFieldName("externalId");
+        attrField.setXmlName(new javax.xml.namespace.QName("", "externalId"));
+        attrField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        typeDesc.addFieldDesc(attrField);
+        org.apache.axis.description.ElementDesc elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("customForm");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:demandplanning_2018_2.transactions.webservices.netsuite.com", "customForm"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("subsidiary");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:demandplanning_2018_2.transactions.webservices.netsuite.com", "subsidiary"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("location");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:demandplanning_2018_2.transactions.webservices.netsuite.com", "location"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("item");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:demandplanning_2018_2.transactions.webservices.netsuite.com", "item"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("units");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:demandplanning_2018_2.transactions.webservices.netsuite.com", "units"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("memo");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:demandplanning_2018_2.transactions.webservices.netsuite.com", "memo"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("year");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:demandplanning_2018_2.transactions.webservices.netsuite.com", "year"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "long"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("month");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:demandplanning_2018_2.transactions.webservices.netsuite.com", "month"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:types.demandplanning_2018_2.transactions.webservices.netsuite.com", "DemandPlanMonth"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("startDate");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:demandplanning_2018_2.transactions.webservices.netsuite.com", "startDate"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "dateTime"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("endDate");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:demandplanning_2018_2.transactions.webservices.netsuite.com", "endDate"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "dateTime"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("demandPlanCalendarType");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:demandplanning_2018_2.transactions.webservices.netsuite.com", "demandPlanCalendarType"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:types.demandplanning_2018_2.transactions.webservices.netsuite.com", "DemandPlanCalendarType"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("demandPlanMatrix");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:demandplanning_2018_2.transactions.webservices.netsuite.com", "demandPlanMatrix"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:demandplanning_2018_2.transactions.webservices.netsuite.com", "DemandPlan"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:demandplanning_2018_2.transactions.webservices.netsuite.com", "demandPlan"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("customFieldList");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:demandplanning_2018_2.transactions.webservices.netsuite.com", "customFieldList"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "CustomFieldRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "customField"));
+        typeDesc.addFieldDesc(elemField);
+    }
+
+    /**
+     * Return type metadata object
+     */
+    public static org.apache.axis.description.TypeDesc getTypeDesc() {
+        return typeDesc;
+    }
+
+    /**
+     * Get Custom Serializer
+     */
+    public static org.apache.axis.encoding.Serializer getSerializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanSerializer(
+            _javaType, _xmlType, typeDesc);
+    }
+
+    /**
+     * Get Custom Deserializer
+     */
+    public static org.apache.axis.encoding.Deserializer getDeserializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanDeserializer(
+            _javaType, _xmlType, typeDesc);
     }
 
 }

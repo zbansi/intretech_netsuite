@@ -1,648 +1,1101 @@
+/**
+ * BudgetSearchRowBasic.java
+ *
+ * This file was auto-generated from WSDL
+ * by the Apache Axis 1.4 Jul 28, 2010 (04:07:04 PDT) WSDL2Java emitter.
+ */
 
 package com.netsuite.webservices.platform.common_2018_2;
 
-import java.util.ArrayList;
-import java.util.List;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlType;
-import com.netsuite.webservices.platform.core_2018_2.SearchColumnBooleanField;
-import com.netsuite.webservices.platform.core_2018_2.SearchColumnCustomFieldList;
-import com.netsuite.webservices.platform.core_2018_2.SearchColumnDoubleField;
-import com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField;
-import com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField;
-import com.netsuite.webservices.platform.core_2018_2.SearchRowBasic;
+public class BudgetSearchRowBasic  extends com.netsuite.webservices.platform.core_2018_2.SearchRowBasic  implements java.io.Serializable {
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] account;
 
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnDoubleField[] amount;
 
-/**
- * <p>BudgetSearchRowBasic complex type的 Java 类。
- * 
- * <p>以下模式片段指定包含在此类中的预期内容。
- * 
- * <pre>
- * &lt;complexType name="BudgetSearchRowBasic">
- *   &lt;complexContent>
- *     &lt;extension base="{urn:core_2018_2.platform.webservices.netsuite.com}SearchRowBasic">
- *       &lt;sequence>
- *         &lt;element name="account" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnStringField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="amount" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnDoubleField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="category" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnStringField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="class" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnStringField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="classnohierarchy" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnStringField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="currency" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnStringField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="customer" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnStringField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="department" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnStringField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="departmentnohierarchy" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnStringField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="global" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnBooleanField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="internalId" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnSelectField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="item" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnStringField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="location" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnStringField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="locationnohierarchy" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnStringField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="subsidiary" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnStringField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="subsidiarynohierarchy" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnStringField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="year" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnStringField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="year2" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnStringField" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="customFieldList" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchColumnCustomFieldList" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/extension>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
- */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "BudgetSearchRowBasic", propOrder = {
-    "account",
-    "amount",
-    "category",
-    "clazz",
-    "classnohierarchy",
-    "currency",
-    "customer",
-    "department",
-    "departmentnohierarchy",
-    "global",
-    "internalId",
-    "item",
-    "location",
-    "locationnohierarchy",
-    "subsidiary",
-    "subsidiarynohierarchy",
-    "year",
-    "year2",
-    "customFieldList"
-})
-public class BudgetSearchRowBasic
-    extends SearchRowBasic
-{
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] category;
 
-    protected List<SearchColumnStringField> account;
-    protected List<SearchColumnDoubleField> amount;
-    protected List<SearchColumnStringField> category;
-    @XmlElement(name = "class")
-    protected List<SearchColumnStringField> clazz;
-    protected List<SearchColumnStringField> classnohierarchy;
-    protected List<SearchColumnStringField> currency;
-    protected List<SearchColumnStringField> customer;
-    protected List<SearchColumnStringField> department;
-    protected List<SearchColumnStringField> departmentnohierarchy;
-    protected List<SearchColumnBooleanField> global;
-    protected List<SearchColumnSelectField> internalId;
-    protected List<SearchColumnStringField> item;
-    protected List<SearchColumnStringField> location;
-    protected List<SearchColumnStringField> locationnohierarchy;
-    protected List<SearchColumnStringField> subsidiary;
-    protected List<SearchColumnStringField> subsidiarynohierarchy;
-    protected List<SearchColumnStringField> year;
-    protected List<SearchColumnStringField> year2;
-    protected SearchColumnCustomFieldList customFieldList;
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] _class;
 
-    /**
-     * Gets the value of the account property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the account property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getAccount().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnStringField }
-     * 
-     * 
-     */
-    public List<SearchColumnStringField> getAccount() {
-        if (account == null) {
-            account = new ArrayList<SearchColumnStringField>();
-        }
-        return this.account;
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] classnohierarchy;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] currency;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] customer;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] department;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] departmentnohierarchy;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnBooleanField[] global;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] internalId;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] item;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] location;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] locationnohierarchy;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] subsidiary;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] subsidiarynohierarchy;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] year;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] year2;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchColumnCustomField[] customFieldList;
+
+    public BudgetSearchRowBasic() {
     }
 
-    /**
-     * Gets the value of the amount property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the amount property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getAmount().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnDoubleField }
-     * 
-     * 
-     */
-    public List<SearchColumnDoubleField> getAmount() {
-        if (amount == null) {
-            amount = new ArrayList<SearchColumnDoubleField>();
-        }
-        return this.amount;
+    public BudgetSearchRowBasic(
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] account,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnDoubleField[] amount,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] category,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] _class,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] classnohierarchy,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] currency,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] customer,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] department,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] departmentnohierarchy,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnBooleanField[] global,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] internalId,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] item,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] location,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] locationnohierarchy,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] subsidiary,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] subsidiarynohierarchy,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] year,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] year2,
+           com.netsuite.webservices.platform.core_2018_2.SearchColumnCustomField[] customFieldList) {
+        this.account = account;
+        this.amount = amount;
+        this.category = category;
+        this._class = _class;
+        this.classnohierarchy = classnohierarchy;
+        this.currency = currency;
+        this.customer = customer;
+        this.department = department;
+        this.departmentnohierarchy = departmentnohierarchy;
+        this.global = global;
+        this.internalId = internalId;
+        this.item = item;
+        this.location = location;
+        this.locationnohierarchy = locationnohierarchy;
+        this.subsidiary = subsidiary;
+        this.subsidiarynohierarchy = subsidiarynohierarchy;
+        this.year = year;
+        this.year2 = year2;
+        this.customFieldList = customFieldList;
     }
 
-    /**
-     * Gets the value of the category property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the category property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getCategory().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnStringField }
-     * 
-     * 
-     */
-    public List<SearchColumnStringField> getCategory() {
-        if (category == null) {
-            category = new ArrayList<SearchColumnStringField>();
-        }
-        return this.category;
-    }
 
     /**
-     * Gets the value of the clazz property.
+     * Gets the account value for this BudgetSearchRowBasic.
      * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the clazz property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getClazz().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnStringField }
-     * 
-     * 
+     * @return account
      */
-    public List<SearchColumnStringField> getClazz() {
-        if (clazz == null) {
-            clazz = new ArrayList<SearchColumnStringField>();
-        }
-        return this.clazz;
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] getAccount() {
+        return account;
     }
 
-    /**
-     * Gets the value of the classnohierarchy property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the classnohierarchy property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getClassnohierarchy().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnStringField }
-     * 
-     * 
-     */
-    public List<SearchColumnStringField> getClassnohierarchy() {
-        if (classnohierarchy == null) {
-            classnohierarchy = new ArrayList<SearchColumnStringField>();
-        }
-        return this.classnohierarchy;
-    }
 
     /**
-     * Gets the value of the currency property.
+     * Sets the account value for this BudgetSearchRowBasic.
      * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the currency property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getCurrency().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnStringField }
-     * 
-     * 
+     * @param account
      */
-    public List<SearchColumnStringField> getCurrency() {
-        if (currency == null) {
-            currency = new ArrayList<SearchColumnStringField>();
-        }
-        return this.currency;
+    public void setAccount(com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] account) {
+        this.account = account;
     }
 
-    /**
-     * Gets the value of the customer property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the customer property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getCustomer().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnStringField }
-     * 
-     * 
-     */
-    public List<SearchColumnStringField> getCustomer() {
-        if (customer == null) {
-            customer = new ArrayList<SearchColumnStringField>();
-        }
-        return this.customer;
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField getAccount(int i) {
+        return this.account[i];
     }
 
-    /**
-     * Gets the value of the department property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the department property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getDepartment().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnStringField }
-     * 
-     * 
-     */
-    public List<SearchColumnStringField> getDepartment() {
-        if (department == null) {
-            department = new ArrayList<SearchColumnStringField>();
-        }
-        return this.department;
+    public void setAccount(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField _value) {
+        this.account[i] = _value;
     }
 
-    /**
-     * Gets the value of the departmentnohierarchy property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the departmentnohierarchy property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getDepartmentnohierarchy().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnStringField }
-     * 
-     * 
-     */
-    public List<SearchColumnStringField> getDepartmentnohierarchy() {
-        if (departmentnohierarchy == null) {
-            departmentnohierarchy = new ArrayList<SearchColumnStringField>();
-        }
-        return this.departmentnohierarchy;
-    }
 
     /**
-     * Gets the value of the global property.
+     * Gets the amount value for this BudgetSearchRowBasic.
      * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the global property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getGlobal().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnBooleanField }
-     * 
-     * 
+     * @return amount
      */
-    public List<SearchColumnBooleanField> getGlobal() {
-        if (global == null) {
-            global = new ArrayList<SearchColumnBooleanField>();
-        }
-        return this.global;
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnDoubleField[] getAmount() {
+        return amount;
     }
 
-    /**
-     * Gets the value of the internalId property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the internalId property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getInternalId().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnSelectField }
-     * 
-     * 
-     */
-    public List<SearchColumnSelectField> getInternalId() {
-        if (internalId == null) {
-            internalId = new ArrayList<SearchColumnSelectField>();
-        }
-        return this.internalId;
-    }
 
     /**
-     * Gets the value of the item property.
+     * Sets the amount value for this BudgetSearchRowBasic.
      * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the item property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getItem().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnStringField }
-     * 
-     * 
+     * @param amount
      */
-    public List<SearchColumnStringField> getItem() {
-        if (item == null) {
-            item = new ArrayList<SearchColumnStringField>();
-        }
-        return this.item;
+    public void setAmount(com.netsuite.webservices.platform.core_2018_2.SearchColumnDoubleField[] amount) {
+        this.amount = amount;
     }
 
-    /**
-     * Gets the value of the location property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the location property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getLocation().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnStringField }
-     * 
-     * 
-     */
-    public List<SearchColumnStringField> getLocation() {
-        if (location == null) {
-            location = new ArrayList<SearchColumnStringField>();
-        }
-        return this.location;
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnDoubleField getAmount(int i) {
+        return this.amount[i];
     }
 
-    /**
-     * Gets the value of the locationnohierarchy property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the locationnohierarchy property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getLocationnohierarchy().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnStringField }
-     * 
-     * 
-     */
-    public List<SearchColumnStringField> getLocationnohierarchy() {
-        if (locationnohierarchy == null) {
-            locationnohierarchy = new ArrayList<SearchColumnStringField>();
-        }
-        return this.locationnohierarchy;
+    public void setAmount(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnDoubleField _value) {
+        this.amount[i] = _value;
     }
 
-    /**
-     * Gets the value of the subsidiary property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the subsidiary property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getSubsidiary().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnStringField }
-     * 
-     * 
-     */
-    public List<SearchColumnStringField> getSubsidiary() {
-        if (subsidiary == null) {
-            subsidiary = new ArrayList<SearchColumnStringField>();
-        }
-        return this.subsidiary;
-    }
 
     /**
-     * Gets the value of the subsidiarynohierarchy property.
+     * Gets the category value for this BudgetSearchRowBasic.
      * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the subsidiarynohierarchy property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getSubsidiarynohierarchy().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnStringField }
-     * 
-     * 
+     * @return category
      */
-    public List<SearchColumnStringField> getSubsidiarynohierarchy() {
-        if (subsidiarynohierarchy == null) {
-            subsidiarynohierarchy = new ArrayList<SearchColumnStringField>();
-        }
-        return this.subsidiarynohierarchy;
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] getCategory() {
+        return category;
     }
 
-    /**
-     * Gets the value of the year property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the year property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getYear().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnStringField }
-     * 
-     * 
-     */
-    public List<SearchColumnStringField> getYear() {
-        if (year == null) {
-            year = new ArrayList<SearchColumnStringField>();
-        }
-        return this.year;
-    }
 
     /**
-     * Gets the value of the year2 property.
+     * Sets the category value for this BudgetSearchRowBasic.
      * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the year2 property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getYear2().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SearchColumnStringField }
-     * 
-     * 
+     * @param category
      */
-    public List<SearchColumnStringField> getYear2() {
-        if (year2 == null) {
-            year2 = new ArrayList<SearchColumnStringField>();
-        }
-        return this.year2;
+    public void setCategory(com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] category) {
+        this.category = category;
     }
 
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField getCategory(int i) {
+        return this.category[i];
+    }
+
+    public void setCategory(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField _value) {
+        this.category[i] = _value;
+    }
+
+
     /**
-     * 获取customFieldList属性的值。
+     * Gets the _class value for this BudgetSearchRowBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchColumnCustomFieldList }
-     *     
+     * @return _class
      */
-    public SearchColumnCustomFieldList getCustomFieldList() {
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] get_class() {
+        return _class;
+    }
+
+
+    /**
+     * Sets the _class value for this BudgetSearchRowBasic.
+     * 
+     * @param _class
+     */
+    public void set_class(com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] _class) {
+        this._class = _class;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField get_class(int i) {
+        return this._class[i];
+    }
+
+    public void set_class(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField _value) {
+        this._class[i] = _value;
+    }
+
+
+    /**
+     * Gets the classnohierarchy value for this BudgetSearchRowBasic.
+     * 
+     * @return classnohierarchy
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] getClassnohierarchy() {
+        return classnohierarchy;
+    }
+
+
+    /**
+     * Sets the classnohierarchy value for this BudgetSearchRowBasic.
+     * 
+     * @param classnohierarchy
+     */
+    public void setClassnohierarchy(com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] classnohierarchy) {
+        this.classnohierarchy = classnohierarchy;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField getClassnohierarchy(int i) {
+        return this.classnohierarchy[i];
+    }
+
+    public void setClassnohierarchy(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField _value) {
+        this.classnohierarchy[i] = _value;
+    }
+
+
+    /**
+     * Gets the currency value for this BudgetSearchRowBasic.
+     * 
+     * @return currency
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] getCurrency() {
+        return currency;
+    }
+
+
+    /**
+     * Sets the currency value for this BudgetSearchRowBasic.
+     * 
+     * @param currency
+     */
+    public void setCurrency(com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] currency) {
+        this.currency = currency;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField getCurrency(int i) {
+        return this.currency[i];
+    }
+
+    public void setCurrency(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField _value) {
+        this.currency[i] = _value;
+    }
+
+
+    /**
+     * Gets the customer value for this BudgetSearchRowBasic.
+     * 
+     * @return customer
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] getCustomer() {
+        return customer;
+    }
+
+
+    /**
+     * Sets the customer value for this BudgetSearchRowBasic.
+     * 
+     * @param customer
+     */
+    public void setCustomer(com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] customer) {
+        this.customer = customer;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField getCustomer(int i) {
+        return this.customer[i];
+    }
+
+    public void setCustomer(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField _value) {
+        this.customer[i] = _value;
+    }
+
+
+    /**
+     * Gets the department value for this BudgetSearchRowBasic.
+     * 
+     * @return department
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] getDepartment() {
+        return department;
+    }
+
+
+    /**
+     * Sets the department value for this BudgetSearchRowBasic.
+     * 
+     * @param department
+     */
+    public void setDepartment(com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] department) {
+        this.department = department;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField getDepartment(int i) {
+        return this.department[i];
+    }
+
+    public void setDepartment(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField _value) {
+        this.department[i] = _value;
+    }
+
+
+    /**
+     * Gets the departmentnohierarchy value for this BudgetSearchRowBasic.
+     * 
+     * @return departmentnohierarchy
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] getDepartmentnohierarchy() {
+        return departmentnohierarchy;
+    }
+
+
+    /**
+     * Sets the departmentnohierarchy value for this BudgetSearchRowBasic.
+     * 
+     * @param departmentnohierarchy
+     */
+    public void setDepartmentnohierarchy(com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] departmentnohierarchy) {
+        this.departmentnohierarchy = departmentnohierarchy;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField getDepartmentnohierarchy(int i) {
+        return this.departmentnohierarchy[i];
+    }
+
+    public void setDepartmentnohierarchy(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField _value) {
+        this.departmentnohierarchy[i] = _value;
+    }
+
+
+    /**
+     * Gets the global value for this BudgetSearchRowBasic.
+     * 
+     * @return global
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnBooleanField[] getGlobal() {
+        return global;
+    }
+
+
+    /**
+     * Sets the global value for this BudgetSearchRowBasic.
+     * 
+     * @param global
+     */
+    public void setGlobal(com.netsuite.webservices.platform.core_2018_2.SearchColumnBooleanField[] global) {
+        this.global = global;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnBooleanField getGlobal(int i) {
+        return this.global[i];
+    }
+
+    public void setGlobal(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnBooleanField _value) {
+        this.global[i] = _value;
+    }
+
+
+    /**
+     * Gets the internalId value for this BudgetSearchRowBasic.
+     * 
+     * @return internalId
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] getInternalId() {
+        return internalId;
+    }
+
+
+    /**
+     * Sets the internalId value for this BudgetSearchRowBasic.
+     * 
+     * @param internalId
+     */
+    public void setInternalId(com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField[] internalId) {
+        this.internalId = internalId;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField getInternalId(int i) {
+        return this.internalId[i];
+    }
+
+    public void setInternalId(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnSelectField _value) {
+        this.internalId[i] = _value;
+    }
+
+
+    /**
+     * Gets the item value for this BudgetSearchRowBasic.
+     * 
+     * @return item
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] getItem() {
+        return item;
+    }
+
+
+    /**
+     * Sets the item value for this BudgetSearchRowBasic.
+     * 
+     * @param item
+     */
+    public void setItem(com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] item) {
+        this.item = item;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField getItem(int i) {
+        return this.item[i];
+    }
+
+    public void setItem(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField _value) {
+        this.item[i] = _value;
+    }
+
+
+    /**
+     * Gets the location value for this BudgetSearchRowBasic.
+     * 
+     * @return location
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] getLocation() {
+        return location;
+    }
+
+
+    /**
+     * Sets the location value for this BudgetSearchRowBasic.
+     * 
+     * @param location
+     */
+    public void setLocation(com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] location) {
+        this.location = location;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField getLocation(int i) {
+        return this.location[i];
+    }
+
+    public void setLocation(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField _value) {
+        this.location[i] = _value;
+    }
+
+
+    /**
+     * Gets the locationnohierarchy value for this BudgetSearchRowBasic.
+     * 
+     * @return locationnohierarchy
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] getLocationnohierarchy() {
+        return locationnohierarchy;
+    }
+
+
+    /**
+     * Sets the locationnohierarchy value for this BudgetSearchRowBasic.
+     * 
+     * @param locationnohierarchy
+     */
+    public void setLocationnohierarchy(com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] locationnohierarchy) {
+        this.locationnohierarchy = locationnohierarchy;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField getLocationnohierarchy(int i) {
+        return this.locationnohierarchy[i];
+    }
+
+    public void setLocationnohierarchy(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField _value) {
+        this.locationnohierarchy[i] = _value;
+    }
+
+
+    /**
+     * Gets the subsidiary value for this BudgetSearchRowBasic.
+     * 
+     * @return subsidiary
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] getSubsidiary() {
+        return subsidiary;
+    }
+
+
+    /**
+     * Sets the subsidiary value for this BudgetSearchRowBasic.
+     * 
+     * @param subsidiary
+     */
+    public void setSubsidiary(com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] subsidiary) {
+        this.subsidiary = subsidiary;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField getSubsidiary(int i) {
+        return this.subsidiary[i];
+    }
+
+    public void setSubsidiary(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField _value) {
+        this.subsidiary[i] = _value;
+    }
+
+
+    /**
+     * Gets the subsidiarynohierarchy value for this BudgetSearchRowBasic.
+     * 
+     * @return subsidiarynohierarchy
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] getSubsidiarynohierarchy() {
+        return subsidiarynohierarchy;
+    }
+
+
+    /**
+     * Sets the subsidiarynohierarchy value for this BudgetSearchRowBasic.
+     * 
+     * @param subsidiarynohierarchy
+     */
+    public void setSubsidiarynohierarchy(com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] subsidiarynohierarchy) {
+        this.subsidiarynohierarchy = subsidiarynohierarchy;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField getSubsidiarynohierarchy(int i) {
+        return this.subsidiarynohierarchy[i];
+    }
+
+    public void setSubsidiarynohierarchy(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField _value) {
+        this.subsidiarynohierarchy[i] = _value;
+    }
+
+
+    /**
+     * Gets the year value for this BudgetSearchRowBasic.
+     * 
+     * @return year
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] getYear() {
+        return year;
+    }
+
+
+    /**
+     * Sets the year value for this BudgetSearchRowBasic.
+     * 
+     * @param year
+     */
+    public void setYear(com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] year) {
+        this.year = year;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField getYear(int i) {
+        return this.year[i];
+    }
+
+    public void setYear(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField _value) {
+        this.year[i] = _value;
+    }
+
+
+    /**
+     * Gets the year2 value for this BudgetSearchRowBasic.
+     * 
+     * @return year2
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] getYear2() {
+        return year2;
+    }
+
+
+    /**
+     * Sets the year2 value for this BudgetSearchRowBasic.
+     * 
+     * @param year2
+     */
+    public void setYear2(com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField[] year2) {
+        this.year2 = year2;
+    }
+
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField getYear2(int i) {
+        return this.year2[i];
+    }
+
+    public void setYear2(int i, com.netsuite.webservices.platform.core_2018_2.SearchColumnStringField _value) {
+        this.year2[i] = _value;
+    }
+
+
+    /**
+     * Gets the customFieldList value for this BudgetSearchRowBasic.
+     * 
+     * @return customFieldList
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchColumnCustomField[] getCustomFieldList() {
         return customFieldList;
     }
 
+
     /**
-     * 设置customFieldList属性的值。
+     * Sets the customFieldList value for this BudgetSearchRowBasic.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchColumnCustomFieldList }
-     *     
+     * @param customFieldList
      */
-    public void setCustomFieldList(SearchColumnCustomFieldList value) {
-        this.customFieldList = value;
+    public void setCustomFieldList(com.netsuite.webservices.platform.core_2018_2.SearchColumnCustomField[] customFieldList) {
+        this.customFieldList = customFieldList;
+    }
+
+    private java.lang.Object __equalsCalc = null;
+    public synchronized boolean equals(java.lang.Object obj) {
+        if (!(obj instanceof BudgetSearchRowBasic)) return false;
+        BudgetSearchRowBasic other = (BudgetSearchRowBasic) obj;
+        if (obj == null) return false;
+        if (this == obj) return true;
+        if (__equalsCalc != null) {
+            return (__equalsCalc == obj);
+        }
+        __equalsCalc = obj;
+        boolean _equals;
+        _equals = super.equals(obj) && 
+            ((this.account==null && other.getAccount()==null) || 
+             (this.account!=null &&
+              java.util.Arrays.equals(this.account, other.getAccount()))) &&
+            ((this.amount==null && other.getAmount()==null) || 
+             (this.amount!=null &&
+              java.util.Arrays.equals(this.amount, other.getAmount()))) &&
+            ((this.category==null && other.getCategory()==null) || 
+             (this.category!=null &&
+              java.util.Arrays.equals(this.category, other.getCategory()))) &&
+            ((this._class==null && other.get_class()==null) || 
+             (this._class!=null &&
+              java.util.Arrays.equals(this._class, other.get_class()))) &&
+            ((this.classnohierarchy==null && other.getClassnohierarchy()==null) || 
+             (this.classnohierarchy!=null &&
+              java.util.Arrays.equals(this.classnohierarchy, other.getClassnohierarchy()))) &&
+            ((this.currency==null && other.getCurrency()==null) || 
+             (this.currency!=null &&
+              java.util.Arrays.equals(this.currency, other.getCurrency()))) &&
+            ((this.customer==null && other.getCustomer()==null) || 
+             (this.customer!=null &&
+              java.util.Arrays.equals(this.customer, other.getCustomer()))) &&
+            ((this.department==null && other.getDepartment()==null) || 
+             (this.department!=null &&
+              java.util.Arrays.equals(this.department, other.getDepartment()))) &&
+            ((this.departmentnohierarchy==null && other.getDepartmentnohierarchy()==null) || 
+             (this.departmentnohierarchy!=null &&
+              java.util.Arrays.equals(this.departmentnohierarchy, other.getDepartmentnohierarchy()))) &&
+            ((this.global==null && other.getGlobal()==null) || 
+             (this.global!=null &&
+              java.util.Arrays.equals(this.global, other.getGlobal()))) &&
+            ((this.internalId==null && other.getInternalId()==null) || 
+             (this.internalId!=null &&
+              java.util.Arrays.equals(this.internalId, other.getInternalId()))) &&
+            ((this.item==null && other.getItem()==null) || 
+             (this.item!=null &&
+              java.util.Arrays.equals(this.item, other.getItem()))) &&
+            ((this.location==null && other.getLocation()==null) || 
+             (this.location!=null &&
+              java.util.Arrays.equals(this.location, other.getLocation()))) &&
+            ((this.locationnohierarchy==null && other.getLocationnohierarchy()==null) || 
+             (this.locationnohierarchy!=null &&
+              java.util.Arrays.equals(this.locationnohierarchy, other.getLocationnohierarchy()))) &&
+            ((this.subsidiary==null && other.getSubsidiary()==null) || 
+             (this.subsidiary!=null &&
+              java.util.Arrays.equals(this.subsidiary, other.getSubsidiary()))) &&
+            ((this.subsidiarynohierarchy==null && other.getSubsidiarynohierarchy()==null) || 
+             (this.subsidiarynohierarchy!=null &&
+              java.util.Arrays.equals(this.subsidiarynohierarchy, other.getSubsidiarynohierarchy()))) &&
+            ((this.year==null && other.getYear()==null) || 
+             (this.year!=null &&
+              java.util.Arrays.equals(this.year, other.getYear()))) &&
+            ((this.year2==null && other.getYear2()==null) || 
+             (this.year2!=null &&
+              java.util.Arrays.equals(this.year2, other.getYear2()))) &&
+            ((this.customFieldList==null && other.getCustomFieldList()==null) || 
+             (this.customFieldList!=null &&
+              java.util.Arrays.equals(this.customFieldList, other.getCustomFieldList())));
+        __equalsCalc = null;
+        return _equals;
+    }
+
+    private boolean __hashCodeCalc = false;
+    public synchronized int hashCode() {
+        if (__hashCodeCalc) {
+            return 0;
+        }
+        __hashCodeCalc = true;
+        int _hashCode = super.hashCode();
+        if (getAccount() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getAccount());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getAccount(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getAmount() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getAmount());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getAmount(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getCategory() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getCategory());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getCategory(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (get_class() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(get_class());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(get_class(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getClassnohierarchy() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getClassnohierarchy());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getClassnohierarchy(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getCurrency() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getCurrency());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getCurrency(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getCustomer() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getCustomer());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getCustomer(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getDepartment() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getDepartment());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getDepartment(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getDepartmentnohierarchy() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getDepartmentnohierarchy());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getDepartmentnohierarchy(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getGlobal() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getGlobal());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getGlobal(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getInternalId() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getInternalId());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getInternalId(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getItem() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getItem());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getItem(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getLocation() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getLocation());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getLocation(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getLocationnohierarchy() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getLocationnohierarchy());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getLocationnohierarchy(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getSubsidiary() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getSubsidiary());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getSubsidiary(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getSubsidiarynohierarchy() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getSubsidiarynohierarchy());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getSubsidiarynohierarchy(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getYear() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getYear());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getYear(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getYear2() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getYear2());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getYear2(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getCustomFieldList() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getCustomFieldList());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getCustomFieldList(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        __hashCodeCalc = false;
+        return _hashCode;
+    }
+
+    // Type metadata
+    private static org.apache.axis.description.TypeDesc typeDesc =
+        new org.apache.axis.description.TypeDesc(BudgetSearchRowBasic.class, true);
+
+    static {
+        typeDesc.setXmlType(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "BudgetSearchRowBasic"));
+        org.apache.axis.description.ElementDesc elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("account");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "account"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnStringField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("amount");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "amount"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnDoubleField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("category");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "category"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnStringField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("_class");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "class"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnStringField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("classnohierarchy");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "classnohierarchy"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnStringField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("currency");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "currency"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnStringField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("customer");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "customer"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnStringField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("department");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "department"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnStringField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("departmentnohierarchy");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "departmentnohierarchy"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnStringField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("global");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "global"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnBooleanField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("internalId");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "internalId"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnSelectField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("item");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "item"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnStringField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("location");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "location"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnStringField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("locationnohierarchy");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "locationnohierarchy"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnStringField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("subsidiary");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "subsidiary"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnStringField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("subsidiarynohierarchy");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "subsidiarynohierarchy"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnStringField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("year");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "year"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnStringField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("year2");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "year2"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnStringField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("customFieldList");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "customFieldList"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchColumnCustomField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "customField"));
+        typeDesc.addFieldDesc(elemField);
+    }
+
+    /**
+     * Return type metadata object
+     */
+    public static org.apache.axis.description.TypeDesc getTypeDesc() {
+        return typeDesc;
+    }
+
+    /**
+     * Get Custom Serializer
+     */
+    public static org.apache.axis.encoding.Serializer getSerializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanSerializer(
+            _javaType, _xmlType, typeDesc);
+    }
+
+    /**
+     * Get Custom Deserializer
+     */
+    public static org.apache.axis.encoding.Deserializer getDeserializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanDeserializer(
+            _javaType, _xmlType, typeDesc);
     }
 
 }

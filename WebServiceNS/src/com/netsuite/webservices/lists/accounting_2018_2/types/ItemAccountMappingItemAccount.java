@@ -1,135 +1,126 @@
+/**
+ * ItemAccountMappingItemAccount.java
+ *
+ * This file was auto-generated from WSDL
+ * by the Apache Axis 1.4 Jul 28, 2010 (04:07:04 PDT) WSDL2Java emitter.
+ */
 
 package com.netsuite.webservices.lists.accounting_2018_2.types;
 
-import javax.xml.bind.annotation.XmlEnum;
-import javax.xml.bind.annotation.XmlEnumValue;
-import javax.xml.bind.annotation.XmlType;
+public class ItemAccountMappingItemAccount implements java.io.Serializable {
+    private java.lang.String _value_;
+    private static java.util.HashMap _table_ = new java.util.HashMap();
 
-
-/**
- * <p>ItemAccountMappingItemAccount的 Java 类。
- * 
- * <p>以下模式片段指定包含在此类中的预期内容。
- * <p>
- * <pre>
- * &lt;simpleType name="ItemAccountMappingItemAccount">
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     &lt;enumeration value="_asset"/>
- *     &lt;enumeration value="_costOfGoods"/>
- *     &lt;enumeration value="_customerReturnVariance"/>
- *     &lt;enumeration value="_deferral"/>
- *     &lt;enumeration value="_deferredRevenue"/>
- *     &lt;enumeration value="_discount"/>
- *     &lt;enumeration value="_dropShipExpense"/>
- *     &lt;enumeration value="_exchangeRateVariance"/>
- *     &lt;enumeration value="_expense"/>
- *     &lt;enumeration value="_foreignCurrencyAdjustmentRevenueAccount"/>
- *     &lt;enumeration value="_gainLoss"/>
- *     &lt;enumeration value="_income"/>
- *     &lt;enumeration value="_intercompanyCostOfGoods"/>
- *     &lt;enumeration value="_intercompanyDeferredRevenue"/>
- *     &lt;enumeration value="_intercompanyExpense"/>
- *     &lt;enumeration value="_intercompanyIncome"/>
- *     &lt;enumeration value="_liability"/>
- *     &lt;enumeration value="_markup"/>
- *     &lt;enumeration value="_payment"/>
- *     &lt;enumeration value="_priceVariance"/>
- *     &lt;enumeration value="_productionPriceVariance"/>
- *     &lt;enumeration value="_productionQuantityVariance"/>
- *     &lt;enumeration value="_purchasePriceVariance"/>
- *     &lt;enumeration value="_quantityVariance"/>
- *     &lt;enumeration value="_scrap"/>
- *     &lt;enumeration value="_unbuildVariance"/>
- *     &lt;enumeration value="_vendorReturnVariance"/>
- *     &lt;enumeration value="_wipVariance"/>
- *     &lt;enumeration value="_workInProcess"/>
- *     &lt;enumeration value="_writeOff"/>
- *   &lt;/restriction>
- * &lt;/simpleType>
- * </pre>
- * 
- */
-@XmlType(name = "ItemAccountMappingItemAccount", namespace = "urn:types.accounting_2018_2.lists.webservices.netsuite.com")
-@XmlEnum
-public enum ItemAccountMappingItemAccount {
-
-    @XmlEnumValue("_asset")
-    ASSET("_asset"),
-    @XmlEnumValue("_costOfGoods")
-    COST_OF_GOODS("_costOfGoods"),
-    @XmlEnumValue("_customerReturnVariance")
-    CUSTOMER_RETURN_VARIANCE("_customerReturnVariance"),
-    @XmlEnumValue("_deferral")
-    DEFERRAL("_deferral"),
-    @XmlEnumValue("_deferredRevenue")
-    DEFERRED_REVENUE("_deferredRevenue"),
-    @XmlEnumValue("_discount")
-    DISCOUNT("_discount"),
-    @XmlEnumValue("_dropShipExpense")
-    DROP_SHIP_EXPENSE("_dropShipExpense"),
-    @XmlEnumValue("_exchangeRateVariance")
-    EXCHANGE_RATE_VARIANCE("_exchangeRateVariance"),
-    @XmlEnumValue("_expense")
-    EXPENSE("_expense"),
-    @XmlEnumValue("_foreignCurrencyAdjustmentRevenueAccount")
-    FOREIGN_CURRENCY_ADJUSTMENT_REVENUE_ACCOUNT("_foreignCurrencyAdjustmentRevenueAccount"),
-    @XmlEnumValue("_gainLoss")
-    GAIN_LOSS("_gainLoss"),
-    @XmlEnumValue("_income")
-    INCOME("_income"),
-    @XmlEnumValue("_intercompanyCostOfGoods")
-    INTERCOMPANY_COST_OF_GOODS("_intercompanyCostOfGoods"),
-    @XmlEnumValue("_intercompanyDeferredRevenue")
-    INTERCOMPANY_DEFERRED_REVENUE("_intercompanyDeferredRevenue"),
-    @XmlEnumValue("_intercompanyExpense")
-    INTERCOMPANY_EXPENSE("_intercompanyExpense"),
-    @XmlEnumValue("_intercompanyIncome")
-    INTERCOMPANY_INCOME("_intercompanyIncome"),
-    @XmlEnumValue("_liability")
-    LIABILITY("_liability"),
-    @XmlEnumValue("_markup")
-    MARKUP("_markup"),
-    @XmlEnumValue("_payment")
-    PAYMENT("_payment"),
-    @XmlEnumValue("_priceVariance")
-    PRICE_VARIANCE("_priceVariance"),
-    @XmlEnumValue("_productionPriceVariance")
-    PRODUCTION_PRICE_VARIANCE("_productionPriceVariance"),
-    @XmlEnumValue("_productionQuantityVariance")
-    PRODUCTION_QUANTITY_VARIANCE("_productionQuantityVariance"),
-    @XmlEnumValue("_purchasePriceVariance")
-    PURCHASE_PRICE_VARIANCE("_purchasePriceVariance"),
-    @XmlEnumValue("_quantityVariance")
-    QUANTITY_VARIANCE("_quantityVariance"),
-    @XmlEnumValue("_scrap")
-    SCRAP("_scrap"),
-    @XmlEnumValue("_unbuildVariance")
-    UNBUILD_VARIANCE("_unbuildVariance"),
-    @XmlEnumValue("_vendorReturnVariance")
-    VENDOR_RETURN_VARIANCE("_vendorReturnVariance"),
-    @XmlEnumValue("_wipVariance")
-    WIP_VARIANCE("_wipVariance"),
-    @XmlEnumValue("_workInProcess")
-    WORK_IN_PROCESS("_workInProcess"),
-    @XmlEnumValue("_writeOff")
-    WRITE_OFF("_writeOff");
-    private final String value;
-
-    ItemAccountMappingItemAccount(String v) {
-        value = v;
+    // Constructor
+    protected ItemAccountMappingItemAccount(java.lang.String value) {
+        _value_ = value;
+        _table_.put(_value_,this);
     }
 
-    public String value() {
-        return value;
+    public static final java.lang.String __asset = "_asset";
+    public static final java.lang.String __costOfGoods = "_costOfGoods";
+    public static final java.lang.String __customerReturnVariance = "_customerReturnVariance";
+    public static final java.lang.String __deferral = "_deferral";
+    public static final java.lang.String __deferredRevenue = "_deferredRevenue";
+    public static final java.lang.String __discount = "_discount";
+    public static final java.lang.String __dropShipExpense = "_dropShipExpense";
+    public static final java.lang.String __exchangeRateVariance = "_exchangeRateVariance";
+    public static final java.lang.String __expense = "_expense";
+    public static final java.lang.String __foreignCurrencyAdjustmentRevenueAccount = "_foreignCurrencyAdjustmentRevenueAccount";
+    public static final java.lang.String __gainLoss = "_gainLoss";
+    public static final java.lang.String __income = "_income";
+    public static final java.lang.String __intercompanyCostOfGoods = "_intercompanyCostOfGoods";
+    public static final java.lang.String __intercompanyDeferredRevenue = "_intercompanyDeferredRevenue";
+    public static final java.lang.String __intercompanyExpense = "_intercompanyExpense";
+    public static final java.lang.String __intercompanyIncome = "_intercompanyIncome";
+    public static final java.lang.String __liability = "_liability";
+    public static final java.lang.String __markup = "_markup";
+    public static final java.lang.String __payment = "_payment";
+    public static final java.lang.String __priceVariance = "_priceVariance";
+    public static final java.lang.String __productionPriceVariance = "_productionPriceVariance";
+    public static final java.lang.String __productionQuantityVariance = "_productionQuantityVariance";
+    public static final java.lang.String __purchasePriceVariance = "_purchasePriceVariance";
+    public static final java.lang.String __quantityVariance = "_quantityVariance";
+    public static final java.lang.String __scrap = "_scrap";
+    public static final java.lang.String __unbuildVariance = "_unbuildVariance";
+    public static final java.lang.String __vendorReturnVariance = "_vendorReturnVariance";
+    public static final java.lang.String __wipVariance = "_wipVariance";
+    public static final java.lang.String __workInProcess = "_workInProcess";
+    public static final java.lang.String __writeOff = "_writeOff";
+    public static final ItemAccountMappingItemAccount _asset = new ItemAccountMappingItemAccount(__asset);
+    public static final ItemAccountMappingItemAccount _costOfGoods = new ItemAccountMappingItemAccount(__costOfGoods);
+    public static final ItemAccountMappingItemAccount _customerReturnVariance = new ItemAccountMappingItemAccount(__customerReturnVariance);
+    public static final ItemAccountMappingItemAccount _deferral = new ItemAccountMappingItemAccount(__deferral);
+    public static final ItemAccountMappingItemAccount _deferredRevenue = new ItemAccountMappingItemAccount(__deferredRevenue);
+    public static final ItemAccountMappingItemAccount _discount = new ItemAccountMappingItemAccount(__discount);
+    public static final ItemAccountMappingItemAccount _dropShipExpense = new ItemAccountMappingItemAccount(__dropShipExpense);
+    public static final ItemAccountMappingItemAccount _exchangeRateVariance = new ItemAccountMappingItemAccount(__exchangeRateVariance);
+    public static final ItemAccountMappingItemAccount _expense = new ItemAccountMappingItemAccount(__expense);
+    public static final ItemAccountMappingItemAccount _foreignCurrencyAdjustmentRevenueAccount = new ItemAccountMappingItemAccount(__foreignCurrencyAdjustmentRevenueAccount);
+    public static final ItemAccountMappingItemAccount _gainLoss = new ItemAccountMappingItemAccount(__gainLoss);
+    public static final ItemAccountMappingItemAccount _income = new ItemAccountMappingItemAccount(__income);
+    public static final ItemAccountMappingItemAccount _intercompanyCostOfGoods = new ItemAccountMappingItemAccount(__intercompanyCostOfGoods);
+    public static final ItemAccountMappingItemAccount _intercompanyDeferredRevenue = new ItemAccountMappingItemAccount(__intercompanyDeferredRevenue);
+    public static final ItemAccountMappingItemAccount _intercompanyExpense = new ItemAccountMappingItemAccount(__intercompanyExpense);
+    public static final ItemAccountMappingItemAccount _intercompanyIncome = new ItemAccountMappingItemAccount(__intercompanyIncome);
+    public static final ItemAccountMappingItemAccount _liability = new ItemAccountMappingItemAccount(__liability);
+    public static final ItemAccountMappingItemAccount _markup = new ItemAccountMappingItemAccount(__markup);
+    public static final ItemAccountMappingItemAccount _payment = new ItemAccountMappingItemAccount(__payment);
+    public static final ItemAccountMappingItemAccount _priceVariance = new ItemAccountMappingItemAccount(__priceVariance);
+    public static final ItemAccountMappingItemAccount _productionPriceVariance = new ItemAccountMappingItemAccount(__productionPriceVariance);
+    public static final ItemAccountMappingItemAccount _productionQuantityVariance = new ItemAccountMappingItemAccount(__productionQuantityVariance);
+    public static final ItemAccountMappingItemAccount _purchasePriceVariance = new ItemAccountMappingItemAccount(__purchasePriceVariance);
+    public static final ItemAccountMappingItemAccount _quantityVariance = new ItemAccountMappingItemAccount(__quantityVariance);
+    public static final ItemAccountMappingItemAccount _scrap = new ItemAccountMappingItemAccount(__scrap);
+    public static final ItemAccountMappingItemAccount _unbuildVariance = new ItemAccountMappingItemAccount(__unbuildVariance);
+    public static final ItemAccountMappingItemAccount _vendorReturnVariance = new ItemAccountMappingItemAccount(__vendorReturnVariance);
+    public static final ItemAccountMappingItemAccount _wipVariance = new ItemAccountMappingItemAccount(__wipVariance);
+    public static final ItemAccountMappingItemAccount _workInProcess = new ItemAccountMappingItemAccount(__workInProcess);
+    public static final ItemAccountMappingItemAccount _writeOff = new ItemAccountMappingItemAccount(__writeOff);
+    public java.lang.String getValue() { return _value_;}
+    public static ItemAccountMappingItemAccount fromValue(java.lang.String value)
+          throws java.lang.IllegalArgumentException {
+        ItemAccountMappingItemAccount enumeration = (ItemAccountMappingItemAccount)
+            _table_.get(value);
+        if (enumeration==null) throw new java.lang.IllegalArgumentException();
+        return enumeration;
     }
+    public static ItemAccountMappingItemAccount fromString(java.lang.String value)
+          throws java.lang.IllegalArgumentException {
+        return fromValue(value);
+    }
+    public boolean equals(java.lang.Object obj) {return (obj == this);}
+    public int hashCode() { return toString().hashCode();}
+    public java.lang.String toString() { return _value_;}
+    public java.lang.Object readResolve() throws java.io.ObjectStreamException { return fromValue(_value_);}
+    public static org.apache.axis.encoding.Serializer getSerializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new org.apache.axis.encoding.ser.EnumSerializer(
+            _javaType, _xmlType);
+    }
+    public static org.apache.axis.encoding.Deserializer getDeserializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new org.apache.axis.encoding.ser.EnumDeserializer(
+            _javaType, _xmlType);
+    }
+    // Type metadata
+    private static org.apache.axis.description.TypeDesc typeDesc =
+        new org.apache.axis.description.TypeDesc(ItemAccountMappingItemAccount.class);
 
-    public static ItemAccountMappingItemAccount fromValue(String v) {
-        for (ItemAccountMappingItemAccount c: ItemAccountMappingItemAccount.values()) {
-            if (c.value.equals(v)) {
-                return c;
-            }
-        }
-        throw new IllegalArgumentException(v);
+    static {
+        typeDesc.setXmlType(new javax.xml.namespace.QName("urn:types.accounting_2018_2.lists.webservices.netsuite.com", "ItemAccountMappingItemAccount"));
+    }
+    /**
+     * Return type metadata object
+     */
+    public static org.apache.axis.description.TypeDesc getTypeDesc() {
+        return typeDesc;
     }
 
 }

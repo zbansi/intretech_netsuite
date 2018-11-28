@@ -1,824 +1,1165 @@
+/**
+ * JournalEntryLine.java
+ *
+ * This file was auto-generated from WSDL
+ * by the Apache Axis 1.4 Jul 28, 2010 (04:07:04 PDT) WSDL2Java emitter.
+ */
 
 package com.netsuite.webservices.transactions.general_2018_2;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlSchemaType;
-import javax.xml.bind.annotation.XmlType;
-import javax.xml.datatype.XMLGregorianCalendar;
-import com.netsuite.webservices.platform.core_2018_2.CustomFieldList;
-import com.netsuite.webservices.platform.core_2018_2.RecordRef;
+public class JournalEntryLine  implements java.io.Serializable {
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef account;
 
+    private java.lang.Long line;
 
-/**
- * <p>JournalEntryLine complex type的 Java 类。
- * 
- * <p>以下模式片段指定包含在此类中的预期内容。
- * 
- * <pre>
- * &lt;complexType name="JournalEntryLine">
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element name="account" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="line" type="{http://www.w3.org/2001/XMLSchema}long" minOccurs="0"/>
- *         &lt;element name="debit" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
- *         &lt;element name="credit" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
- *         &lt;element name="taxAccount" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="lineTaxCode" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="lineTaxRate" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
- *         &lt;element name="debitTax" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
- *         &lt;element name="creditTax" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
- *         &lt;element name="taxBasis" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
- *         &lt;element name="totalAmount" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
- *         &lt;element name="taxCode" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="memo" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="taxRate1" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
- *         &lt;element name="entity" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="grossAmt" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
- *         &lt;element name="department" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="class" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="location" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="revenueRecognitionRule" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="eliminate" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         &lt;element name="schedule" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="startDate" type="{http://www.w3.org/2001/XMLSchema}dateTime" minOccurs="0"/>
- *         &lt;element name="endDate" type="{http://www.w3.org/2001/XMLSchema}dateTime" minOccurs="0"/>
- *         &lt;element name="residual" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="scheduleNum" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="tax1Amt" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
- *         &lt;element name="tax1Acct" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="customFieldList" type="{urn:core_2018_2.platform.webservices.netsuite.com}CustomFieldList" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
- */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "JournalEntryLine", propOrder = {
-    "account",
-    "line",
-    "debit",
-    "credit",
-    "taxAccount",
-    "lineTaxCode",
-    "lineTaxRate",
-    "debitTax",
-    "creditTax",
-    "taxBasis",
-    "totalAmount",
-    "taxCode",
-    "memo",
-    "taxRate1",
-    "entity",
-    "grossAmt",
-    "department",
-    "clazz",
-    "location",
-    "revenueRecognitionRule",
-    "eliminate",
-    "schedule",
-    "startDate",
-    "endDate",
-    "residual",
-    "scheduleNum",
-    "tax1Amt",
-    "tax1Acct",
-    "customFieldList"
-})
-public class JournalEntryLine {
+    private java.lang.Double debit;
 
-    protected RecordRef account;
-    protected Long line;
-    protected Double debit;
-    protected Double credit;
-    protected RecordRef taxAccount;
-    protected RecordRef lineTaxCode;
-    protected Double lineTaxRate;
-    protected Double debitTax;
-    protected Double creditTax;
-    protected Double taxBasis;
-    protected Double totalAmount;
-    protected RecordRef taxCode;
-    protected String memo;
-    protected Double taxRate1;
-    protected RecordRef entity;
-    protected Double grossAmt;
-    protected RecordRef department;
-    @XmlElement(name = "class")
-    protected RecordRef clazz;
-    protected RecordRef location;
-    protected RecordRef revenueRecognitionRule;
-    protected Boolean eliminate;
-    protected RecordRef schedule;
-    @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar startDate;
-    @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar endDate;
-    protected String residual;
-    protected RecordRef scheduleNum;
-    protected Double tax1Amt;
-    protected RecordRef tax1Acct;
-    protected CustomFieldList customFieldList;
+    private java.lang.Double credit;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef taxAccount;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef lineTaxCode;
+
+    private java.lang.Double lineTaxRate;
+
+    private java.lang.Double debitTax;
+
+    private java.lang.Double creditTax;
+
+    private java.lang.Double taxBasis;
+
+    private java.lang.Double totalAmount;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef taxCode;
+
+    private java.lang.String memo;
+
+    private java.lang.Double taxRate1;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef entity;
+
+    private java.lang.Double grossAmt;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef department;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef _class;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef location;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef revenueRecognitionRule;
+
+    private java.lang.Boolean eliminate;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef schedule;
+
+    private java.util.Calendar startDate;
+
+    private java.util.Calendar endDate;
+
+    private java.lang.String residual;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef scheduleNum;
+
+    private java.lang.Double tax1Amt;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef tax1Acct;
+
+    private com.netsuite.webservices.platform.core_2018_2.CustomFieldRef[] customFieldList;
+
+    public JournalEntryLine() {
+    }
+
+    public JournalEntryLine(
+           com.netsuite.webservices.platform.core_2018_2.RecordRef account,
+           java.lang.Long line,
+           java.lang.Double debit,
+           java.lang.Double credit,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef taxAccount,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef lineTaxCode,
+           java.lang.Double lineTaxRate,
+           java.lang.Double debitTax,
+           java.lang.Double creditTax,
+           java.lang.Double taxBasis,
+           java.lang.Double totalAmount,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef taxCode,
+           java.lang.String memo,
+           java.lang.Double taxRate1,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef entity,
+           java.lang.Double grossAmt,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef department,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef _class,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef location,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef revenueRecognitionRule,
+           java.lang.Boolean eliminate,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef schedule,
+           java.util.Calendar startDate,
+           java.util.Calendar endDate,
+           java.lang.String residual,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef scheduleNum,
+           java.lang.Double tax1Amt,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef tax1Acct,
+           com.netsuite.webservices.platform.core_2018_2.CustomFieldRef[] customFieldList) {
+           this.account = account;
+           this.line = line;
+           this.debit = debit;
+           this.credit = credit;
+           this.taxAccount = taxAccount;
+           this.lineTaxCode = lineTaxCode;
+           this.lineTaxRate = lineTaxRate;
+           this.debitTax = debitTax;
+           this.creditTax = creditTax;
+           this.taxBasis = taxBasis;
+           this.totalAmount = totalAmount;
+           this.taxCode = taxCode;
+           this.memo = memo;
+           this.taxRate1 = taxRate1;
+           this.entity = entity;
+           this.grossAmt = grossAmt;
+           this.department = department;
+           this._class = _class;
+           this.location = location;
+           this.revenueRecognitionRule = revenueRecognitionRule;
+           this.eliminate = eliminate;
+           this.schedule = schedule;
+           this.startDate = startDate;
+           this.endDate = endDate;
+           this.residual = residual;
+           this.scheduleNum = scheduleNum;
+           this.tax1Amt = tax1Amt;
+           this.tax1Acct = tax1Acct;
+           this.customFieldList = customFieldList;
+    }
+
 
     /**
-     * 获取account属性的值。
+     * Gets the account value for this JournalEntryLine.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @return account
      */
-    public RecordRef getAccount() {
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getAccount() {
         return account;
     }
 
-    /**
-     * 设置account属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setAccount(RecordRef value) {
-        this.account = value;
-    }
 
     /**
-     * 获取line属性的值。
+     * Sets the account value for this JournalEntryLine.
      * 
-     * @return
-     *     possible object is
-     *     {@link Long }
-     *     
+     * @param account
      */
-    public Long getLine() {
+    public void setAccount(com.netsuite.webservices.platform.core_2018_2.RecordRef account) {
+        this.account = account;
+    }
+
+
+    /**
+     * Gets the line value for this JournalEntryLine.
+     * 
+     * @return line
+     */
+    public java.lang.Long getLine() {
         return line;
     }
 
-    /**
-     * 设置line属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Long }
-     *     
-     */
-    public void setLine(Long value) {
-        this.line = value;
-    }
 
     /**
-     * 获取debit属性的值。
+     * Sets the line value for this JournalEntryLine.
      * 
-     * @return
-     *     possible object is
-     *     {@link Double }
-     *     
+     * @param line
      */
-    public Double getDebit() {
+    public void setLine(java.lang.Long line) {
+        this.line = line;
+    }
+
+
+    /**
+     * Gets the debit value for this JournalEntryLine.
+     * 
+     * @return debit
+     */
+    public java.lang.Double getDebit() {
         return debit;
     }
 
-    /**
-     * 设置debit属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Double }
-     *     
-     */
-    public void setDebit(Double value) {
-        this.debit = value;
-    }
 
     /**
-     * 获取credit属性的值。
+     * Sets the debit value for this JournalEntryLine.
      * 
-     * @return
-     *     possible object is
-     *     {@link Double }
-     *     
+     * @param debit
      */
-    public Double getCredit() {
+    public void setDebit(java.lang.Double debit) {
+        this.debit = debit;
+    }
+
+
+    /**
+     * Gets the credit value for this JournalEntryLine.
+     * 
+     * @return credit
+     */
+    public java.lang.Double getCredit() {
         return credit;
     }
 
-    /**
-     * 设置credit属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Double }
-     *     
-     */
-    public void setCredit(Double value) {
-        this.credit = value;
-    }
 
     /**
-     * 获取taxAccount属性的值。
+     * Sets the credit value for this JournalEntryLine.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param credit
      */
-    public RecordRef getTaxAccount() {
+    public void setCredit(java.lang.Double credit) {
+        this.credit = credit;
+    }
+
+
+    /**
+     * Gets the taxAccount value for this JournalEntryLine.
+     * 
+     * @return taxAccount
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getTaxAccount() {
         return taxAccount;
     }
 
-    /**
-     * 设置taxAccount属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setTaxAccount(RecordRef value) {
-        this.taxAccount = value;
-    }
 
     /**
-     * 获取lineTaxCode属性的值。
+     * Sets the taxAccount value for this JournalEntryLine.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param taxAccount
      */
-    public RecordRef getLineTaxCode() {
+    public void setTaxAccount(com.netsuite.webservices.platform.core_2018_2.RecordRef taxAccount) {
+        this.taxAccount = taxAccount;
+    }
+
+
+    /**
+     * Gets the lineTaxCode value for this JournalEntryLine.
+     * 
+     * @return lineTaxCode
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getLineTaxCode() {
         return lineTaxCode;
     }
 
-    /**
-     * 设置lineTaxCode属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setLineTaxCode(RecordRef value) {
-        this.lineTaxCode = value;
-    }
 
     /**
-     * 获取lineTaxRate属性的值。
+     * Sets the lineTaxCode value for this JournalEntryLine.
      * 
-     * @return
-     *     possible object is
-     *     {@link Double }
-     *     
+     * @param lineTaxCode
      */
-    public Double getLineTaxRate() {
+    public void setLineTaxCode(com.netsuite.webservices.platform.core_2018_2.RecordRef lineTaxCode) {
+        this.lineTaxCode = lineTaxCode;
+    }
+
+
+    /**
+     * Gets the lineTaxRate value for this JournalEntryLine.
+     * 
+     * @return lineTaxRate
+     */
+    public java.lang.Double getLineTaxRate() {
         return lineTaxRate;
     }
 
-    /**
-     * 设置lineTaxRate属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Double }
-     *     
-     */
-    public void setLineTaxRate(Double value) {
-        this.lineTaxRate = value;
-    }
 
     /**
-     * 获取debitTax属性的值。
+     * Sets the lineTaxRate value for this JournalEntryLine.
      * 
-     * @return
-     *     possible object is
-     *     {@link Double }
-     *     
+     * @param lineTaxRate
      */
-    public Double getDebitTax() {
+    public void setLineTaxRate(java.lang.Double lineTaxRate) {
+        this.lineTaxRate = lineTaxRate;
+    }
+
+
+    /**
+     * Gets the debitTax value for this JournalEntryLine.
+     * 
+     * @return debitTax
+     */
+    public java.lang.Double getDebitTax() {
         return debitTax;
     }
 
-    /**
-     * 设置debitTax属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Double }
-     *     
-     */
-    public void setDebitTax(Double value) {
-        this.debitTax = value;
-    }
 
     /**
-     * 获取creditTax属性的值。
+     * Sets the debitTax value for this JournalEntryLine.
      * 
-     * @return
-     *     possible object is
-     *     {@link Double }
-     *     
+     * @param debitTax
      */
-    public Double getCreditTax() {
+    public void setDebitTax(java.lang.Double debitTax) {
+        this.debitTax = debitTax;
+    }
+
+
+    /**
+     * Gets the creditTax value for this JournalEntryLine.
+     * 
+     * @return creditTax
+     */
+    public java.lang.Double getCreditTax() {
         return creditTax;
     }
 
-    /**
-     * 设置creditTax属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Double }
-     *     
-     */
-    public void setCreditTax(Double value) {
-        this.creditTax = value;
-    }
 
     /**
-     * 获取taxBasis属性的值。
+     * Sets the creditTax value for this JournalEntryLine.
      * 
-     * @return
-     *     possible object is
-     *     {@link Double }
-     *     
+     * @param creditTax
      */
-    public Double getTaxBasis() {
+    public void setCreditTax(java.lang.Double creditTax) {
+        this.creditTax = creditTax;
+    }
+
+
+    /**
+     * Gets the taxBasis value for this JournalEntryLine.
+     * 
+     * @return taxBasis
+     */
+    public java.lang.Double getTaxBasis() {
         return taxBasis;
     }
 
-    /**
-     * 设置taxBasis属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Double }
-     *     
-     */
-    public void setTaxBasis(Double value) {
-        this.taxBasis = value;
-    }
 
     /**
-     * 获取totalAmount属性的值。
+     * Sets the taxBasis value for this JournalEntryLine.
      * 
-     * @return
-     *     possible object is
-     *     {@link Double }
-     *     
+     * @param taxBasis
      */
-    public Double getTotalAmount() {
+    public void setTaxBasis(java.lang.Double taxBasis) {
+        this.taxBasis = taxBasis;
+    }
+
+
+    /**
+     * Gets the totalAmount value for this JournalEntryLine.
+     * 
+     * @return totalAmount
+     */
+    public java.lang.Double getTotalAmount() {
         return totalAmount;
     }
 
-    /**
-     * 设置totalAmount属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Double }
-     *     
-     */
-    public void setTotalAmount(Double value) {
-        this.totalAmount = value;
-    }
 
     /**
-     * 获取taxCode属性的值。
+     * Sets the totalAmount value for this JournalEntryLine.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param totalAmount
      */
-    public RecordRef getTaxCode() {
+    public void setTotalAmount(java.lang.Double totalAmount) {
+        this.totalAmount = totalAmount;
+    }
+
+
+    /**
+     * Gets the taxCode value for this JournalEntryLine.
+     * 
+     * @return taxCode
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getTaxCode() {
         return taxCode;
     }
 
-    /**
-     * 设置taxCode属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setTaxCode(RecordRef value) {
-        this.taxCode = value;
-    }
 
     /**
-     * 获取memo属性的值。
+     * Sets the taxCode value for this JournalEntryLine.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param taxCode
      */
-    public String getMemo() {
+    public void setTaxCode(com.netsuite.webservices.platform.core_2018_2.RecordRef taxCode) {
+        this.taxCode = taxCode;
+    }
+
+
+    /**
+     * Gets the memo value for this JournalEntryLine.
+     * 
+     * @return memo
+     */
+    public java.lang.String getMemo() {
         return memo;
     }
 
-    /**
-     * 设置memo属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setMemo(String value) {
-        this.memo = value;
-    }
 
     /**
-     * 获取taxRate1属性的值。
+     * Sets the memo value for this JournalEntryLine.
      * 
-     * @return
-     *     possible object is
-     *     {@link Double }
-     *     
+     * @param memo
      */
-    public Double getTaxRate1() {
+    public void setMemo(java.lang.String memo) {
+        this.memo = memo;
+    }
+
+
+    /**
+     * Gets the taxRate1 value for this JournalEntryLine.
+     * 
+     * @return taxRate1
+     */
+    public java.lang.Double getTaxRate1() {
         return taxRate1;
     }
 
-    /**
-     * 设置taxRate1属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Double }
-     *     
-     */
-    public void setTaxRate1(Double value) {
-        this.taxRate1 = value;
-    }
 
     /**
-     * 获取entity属性的值。
+     * Sets the taxRate1 value for this JournalEntryLine.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param taxRate1
      */
-    public RecordRef getEntity() {
+    public void setTaxRate1(java.lang.Double taxRate1) {
+        this.taxRate1 = taxRate1;
+    }
+
+
+    /**
+     * Gets the entity value for this JournalEntryLine.
+     * 
+     * @return entity
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getEntity() {
         return entity;
     }
 
-    /**
-     * 设置entity属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setEntity(RecordRef value) {
-        this.entity = value;
-    }
 
     /**
-     * 获取grossAmt属性的值。
+     * Sets the entity value for this JournalEntryLine.
      * 
-     * @return
-     *     possible object is
-     *     {@link Double }
-     *     
+     * @param entity
      */
-    public Double getGrossAmt() {
+    public void setEntity(com.netsuite.webservices.platform.core_2018_2.RecordRef entity) {
+        this.entity = entity;
+    }
+
+
+    /**
+     * Gets the grossAmt value for this JournalEntryLine.
+     * 
+     * @return grossAmt
+     */
+    public java.lang.Double getGrossAmt() {
         return grossAmt;
     }
 
-    /**
-     * 设置grossAmt属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Double }
-     *     
-     */
-    public void setGrossAmt(Double value) {
-        this.grossAmt = value;
-    }
 
     /**
-     * 获取department属性的值。
+     * Sets the grossAmt value for this JournalEntryLine.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param grossAmt
      */
-    public RecordRef getDepartment() {
+    public void setGrossAmt(java.lang.Double grossAmt) {
+        this.grossAmt = grossAmt;
+    }
+
+
+    /**
+     * Gets the department value for this JournalEntryLine.
+     * 
+     * @return department
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getDepartment() {
         return department;
     }
 
-    /**
-     * 设置department属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setDepartment(RecordRef value) {
-        this.department = value;
-    }
 
     /**
-     * 获取clazz属性的值。
+     * Sets the department value for this JournalEntryLine.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param department
      */
-    public RecordRef getClazz() {
-        return clazz;
+    public void setDepartment(com.netsuite.webservices.platform.core_2018_2.RecordRef department) {
+        this.department = department;
     }
 
-    /**
-     * 设置clazz属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setClazz(RecordRef value) {
-        this.clazz = value;
-    }
 
     /**
-     * 获取location属性的值。
+     * Gets the _class value for this JournalEntryLine.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @return _class
      */
-    public RecordRef getLocation() {
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef get_class() {
+        return _class;
+    }
+
+
+    /**
+     * Sets the _class value for this JournalEntryLine.
+     * 
+     * @param _class
+     */
+    public void set_class(com.netsuite.webservices.platform.core_2018_2.RecordRef _class) {
+        this._class = _class;
+    }
+
+
+    /**
+     * Gets the location value for this JournalEntryLine.
+     * 
+     * @return location
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getLocation() {
         return location;
     }
 
-    /**
-     * 设置location属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setLocation(RecordRef value) {
-        this.location = value;
-    }
 
     /**
-     * 获取revenueRecognitionRule属性的值。
+     * Sets the location value for this JournalEntryLine.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param location
      */
-    public RecordRef getRevenueRecognitionRule() {
+    public void setLocation(com.netsuite.webservices.platform.core_2018_2.RecordRef location) {
+        this.location = location;
+    }
+
+
+    /**
+     * Gets the revenueRecognitionRule value for this JournalEntryLine.
+     * 
+     * @return revenueRecognitionRule
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getRevenueRecognitionRule() {
         return revenueRecognitionRule;
     }
 
-    /**
-     * 设置revenueRecognitionRule属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setRevenueRecognitionRule(RecordRef value) {
-        this.revenueRecognitionRule = value;
-    }
 
     /**
-     * 获取eliminate属性的值。
+     * Sets the revenueRecognitionRule value for this JournalEntryLine.
      * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
+     * @param revenueRecognitionRule
      */
-    public Boolean isEliminate() {
+    public void setRevenueRecognitionRule(com.netsuite.webservices.platform.core_2018_2.RecordRef revenueRecognitionRule) {
+        this.revenueRecognitionRule = revenueRecognitionRule;
+    }
+
+
+    /**
+     * Gets the eliminate value for this JournalEntryLine.
+     * 
+     * @return eliminate
+     */
+    public java.lang.Boolean getEliminate() {
         return eliminate;
     }
 
-    /**
-     * 设置eliminate属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
-     */
-    public void setEliminate(Boolean value) {
-        this.eliminate = value;
-    }
 
     /**
-     * 获取schedule属性的值。
+     * Sets the eliminate value for this JournalEntryLine.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param eliminate
      */
-    public RecordRef getSchedule() {
+    public void setEliminate(java.lang.Boolean eliminate) {
+        this.eliminate = eliminate;
+    }
+
+
+    /**
+     * Gets the schedule value for this JournalEntryLine.
+     * 
+     * @return schedule
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getSchedule() {
         return schedule;
     }
 
-    /**
-     * 设置schedule属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setSchedule(RecordRef value) {
-        this.schedule = value;
-    }
 
     /**
-     * 获取startDate属性的值。
+     * Sets the schedule value for this JournalEntryLine.
      * 
-     * @return
-     *     possible object is
-     *     {@link XMLGregorianCalendar }
-     *     
+     * @param schedule
      */
-    public XMLGregorianCalendar getStartDate() {
+    public void setSchedule(com.netsuite.webservices.platform.core_2018_2.RecordRef schedule) {
+        this.schedule = schedule;
+    }
+
+
+    /**
+     * Gets the startDate value for this JournalEntryLine.
+     * 
+     * @return startDate
+     */
+    public java.util.Calendar getStartDate() {
         return startDate;
     }
 
-    /**
-     * 设置startDate属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link XMLGregorianCalendar }
-     *     
-     */
-    public void setStartDate(XMLGregorianCalendar value) {
-        this.startDate = value;
-    }
 
     /**
-     * 获取endDate属性的值。
+     * Sets the startDate value for this JournalEntryLine.
      * 
-     * @return
-     *     possible object is
-     *     {@link XMLGregorianCalendar }
-     *     
+     * @param startDate
      */
-    public XMLGregorianCalendar getEndDate() {
+    public void setStartDate(java.util.Calendar startDate) {
+        this.startDate = startDate;
+    }
+
+
+    /**
+     * Gets the endDate value for this JournalEntryLine.
+     * 
+     * @return endDate
+     */
+    public java.util.Calendar getEndDate() {
         return endDate;
     }
 
-    /**
-     * 设置endDate属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link XMLGregorianCalendar }
-     *     
-     */
-    public void setEndDate(XMLGregorianCalendar value) {
-        this.endDate = value;
-    }
 
     /**
-     * 获取residual属性的值。
+     * Sets the endDate value for this JournalEntryLine.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param endDate
      */
-    public String getResidual() {
+    public void setEndDate(java.util.Calendar endDate) {
+        this.endDate = endDate;
+    }
+
+
+    /**
+     * Gets the residual value for this JournalEntryLine.
+     * 
+     * @return residual
+     */
+    public java.lang.String getResidual() {
         return residual;
     }
 
-    /**
-     * 设置residual属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setResidual(String value) {
-        this.residual = value;
-    }
 
     /**
-     * 获取scheduleNum属性的值。
+     * Sets the residual value for this JournalEntryLine.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param residual
      */
-    public RecordRef getScheduleNum() {
+    public void setResidual(java.lang.String residual) {
+        this.residual = residual;
+    }
+
+
+    /**
+     * Gets the scheduleNum value for this JournalEntryLine.
+     * 
+     * @return scheduleNum
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getScheduleNum() {
         return scheduleNum;
     }
 
-    /**
-     * 设置scheduleNum属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setScheduleNum(RecordRef value) {
-        this.scheduleNum = value;
-    }
 
     /**
-     * 获取tax1Amt属性的值。
+     * Sets the scheduleNum value for this JournalEntryLine.
      * 
-     * @return
-     *     possible object is
-     *     {@link Double }
-     *     
+     * @param scheduleNum
      */
-    public Double getTax1Amt() {
+    public void setScheduleNum(com.netsuite.webservices.platform.core_2018_2.RecordRef scheduleNum) {
+        this.scheduleNum = scheduleNum;
+    }
+
+
+    /**
+     * Gets the tax1Amt value for this JournalEntryLine.
+     * 
+     * @return tax1Amt
+     */
+    public java.lang.Double getTax1Amt() {
         return tax1Amt;
     }
 
-    /**
-     * 设置tax1Amt属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Double }
-     *     
-     */
-    public void setTax1Amt(Double value) {
-        this.tax1Amt = value;
-    }
 
     /**
-     * 获取tax1Acct属性的值。
+     * Sets the tax1Amt value for this JournalEntryLine.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param tax1Amt
      */
-    public RecordRef getTax1Acct() {
+    public void setTax1Amt(java.lang.Double tax1Amt) {
+        this.tax1Amt = tax1Amt;
+    }
+
+
+    /**
+     * Gets the tax1Acct value for this JournalEntryLine.
+     * 
+     * @return tax1Acct
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getTax1Acct() {
         return tax1Acct;
     }
 
-    /**
-     * 设置tax1Acct属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setTax1Acct(RecordRef value) {
-        this.tax1Acct = value;
-    }
 
     /**
-     * 获取customFieldList属性的值。
+     * Sets the tax1Acct value for this JournalEntryLine.
      * 
-     * @return
-     *     possible object is
-     *     {@link CustomFieldList }
-     *     
+     * @param tax1Acct
      */
-    public CustomFieldList getCustomFieldList() {
+    public void setTax1Acct(com.netsuite.webservices.platform.core_2018_2.RecordRef tax1Acct) {
+        this.tax1Acct = tax1Acct;
+    }
+
+
+    /**
+     * Gets the customFieldList value for this JournalEntryLine.
+     * 
+     * @return customFieldList
+     */
+    public com.netsuite.webservices.platform.core_2018_2.CustomFieldRef[] getCustomFieldList() {
         return customFieldList;
     }
 
+
     /**
-     * 设置customFieldList属性的值。
+     * Sets the customFieldList value for this JournalEntryLine.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link CustomFieldList }
-     *     
+     * @param customFieldList
      */
-    public void setCustomFieldList(CustomFieldList value) {
-        this.customFieldList = value;
+    public void setCustomFieldList(com.netsuite.webservices.platform.core_2018_2.CustomFieldRef[] customFieldList) {
+        this.customFieldList = customFieldList;
+    }
+
+    private java.lang.Object __equalsCalc = null;
+    public synchronized boolean equals(java.lang.Object obj) {
+        if (!(obj instanceof JournalEntryLine)) return false;
+        JournalEntryLine other = (JournalEntryLine) obj;
+        if (obj == null) return false;
+        if (this == obj) return true;
+        if (__equalsCalc != null) {
+            return (__equalsCalc == obj);
+        }
+        __equalsCalc = obj;
+        boolean _equals;
+        _equals = true && 
+            ((this.account==null && other.getAccount()==null) || 
+             (this.account!=null &&
+              this.account.equals(other.getAccount()))) &&
+            ((this.line==null && other.getLine()==null) || 
+             (this.line!=null &&
+              this.line.equals(other.getLine()))) &&
+            ((this.debit==null && other.getDebit()==null) || 
+             (this.debit!=null &&
+              this.debit.equals(other.getDebit()))) &&
+            ((this.credit==null && other.getCredit()==null) || 
+             (this.credit!=null &&
+              this.credit.equals(other.getCredit()))) &&
+            ((this.taxAccount==null && other.getTaxAccount()==null) || 
+             (this.taxAccount!=null &&
+              this.taxAccount.equals(other.getTaxAccount()))) &&
+            ((this.lineTaxCode==null && other.getLineTaxCode()==null) || 
+             (this.lineTaxCode!=null &&
+              this.lineTaxCode.equals(other.getLineTaxCode()))) &&
+            ((this.lineTaxRate==null && other.getLineTaxRate()==null) || 
+             (this.lineTaxRate!=null &&
+              this.lineTaxRate.equals(other.getLineTaxRate()))) &&
+            ((this.debitTax==null && other.getDebitTax()==null) || 
+             (this.debitTax!=null &&
+              this.debitTax.equals(other.getDebitTax()))) &&
+            ((this.creditTax==null && other.getCreditTax()==null) || 
+             (this.creditTax!=null &&
+              this.creditTax.equals(other.getCreditTax()))) &&
+            ((this.taxBasis==null && other.getTaxBasis()==null) || 
+             (this.taxBasis!=null &&
+              this.taxBasis.equals(other.getTaxBasis()))) &&
+            ((this.totalAmount==null && other.getTotalAmount()==null) || 
+             (this.totalAmount!=null &&
+              this.totalAmount.equals(other.getTotalAmount()))) &&
+            ((this.taxCode==null && other.getTaxCode()==null) || 
+             (this.taxCode!=null &&
+              this.taxCode.equals(other.getTaxCode()))) &&
+            ((this.memo==null && other.getMemo()==null) || 
+             (this.memo!=null &&
+              this.memo.equals(other.getMemo()))) &&
+            ((this.taxRate1==null && other.getTaxRate1()==null) || 
+             (this.taxRate1!=null &&
+              this.taxRate1.equals(other.getTaxRate1()))) &&
+            ((this.entity==null && other.getEntity()==null) || 
+             (this.entity!=null &&
+              this.entity.equals(other.getEntity()))) &&
+            ((this.grossAmt==null && other.getGrossAmt()==null) || 
+             (this.grossAmt!=null &&
+              this.grossAmt.equals(other.getGrossAmt()))) &&
+            ((this.department==null && other.getDepartment()==null) || 
+             (this.department!=null &&
+              this.department.equals(other.getDepartment()))) &&
+            ((this._class==null && other.get_class()==null) || 
+             (this._class!=null &&
+              this._class.equals(other.get_class()))) &&
+            ((this.location==null && other.getLocation()==null) || 
+             (this.location!=null &&
+              this.location.equals(other.getLocation()))) &&
+            ((this.revenueRecognitionRule==null && other.getRevenueRecognitionRule()==null) || 
+             (this.revenueRecognitionRule!=null &&
+              this.revenueRecognitionRule.equals(other.getRevenueRecognitionRule()))) &&
+            ((this.eliminate==null && other.getEliminate()==null) || 
+             (this.eliminate!=null &&
+              this.eliminate.equals(other.getEliminate()))) &&
+            ((this.schedule==null && other.getSchedule()==null) || 
+             (this.schedule!=null &&
+              this.schedule.equals(other.getSchedule()))) &&
+            ((this.startDate==null && other.getStartDate()==null) || 
+             (this.startDate!=null &&
+              this.startDate.equals(other.getStartDate()))) &&
+            ((this.endDate==null && other.getEndDate()==null) || 
+             (this.endDate!=null &&
+              this.endDate.equals(other.getEndDate()))) &&
+            ((this.residual==null && other.getResidual()==null) || 
+             (this.residual!=null &&
+              this.residual.equals(other.getResidual()))) &&
+            ((this.scheduleNum==null && other.getScheduleNum()==null) || 
+             (this.scheduleNum!=null &&
+              this.scheduleNum.equals(other.getScheduleNum()))) &&
+            ((this.tax1Amt==null && other.getTax1Amt()==null) || 
+             (this.tax1Amt!=null &&
+              this.tax1Amt.equals(other.getTax1Amt()))) &&
+            ((this.tax1Acct==null && other.getTax1Acct()==null) || 
+             (this.tax1Acct!=null &&
+              this.tax1Acct.equals(other.getTax1Acct()))) &&
+            ((this.customFieldList==null && other.getCustomFieldList()==null) || 
+             (this.customFieldList!=null &&
+              java.util.Arrays.equals(this.customFieldList, other.getCustomFieldList())));
+        __equalsCalc = null;
+        return _equals;
+    }
+
+    private boolean __hashCodeCalc = false;
+    public synchronized int hashCode() {
+        if (__hashCodeCalc) {
+            return 0;
+        }
+        __hashCodeCalc = true;
+        int _hashCode = 1;
+        if (getAccount() != null) {
+            _hashCode += getAccount().hashCode();
+        }
+        if (getLine() != null) {
+            _hashCode += getLine().hashCode();
+        }
+        if (getDebit() != null) {
+            _hashCode += getDebit().hashCode();
+        }
+        if (getCredit() != null) {
+            _hashCode += getCredit().hashCode();
+        }
+        if (getTaxAccount() != null) {
+            _hashCode += getTaxAccount().hashCode();
+        }
+        if (getLineTaxCode() != null) {
+            _hashCode += getLineTaxCode().hashCode();
+        }
+        if (getLineTaxRate() != null) {
+            _hashCode += getLineTaxRate().hashCode();
+        }
+        if (getDebitTax() != null) {
+            _hashCode += getDebitTax().hashCode();
+        }
+        if (getCreditTax() != null) {
+            _hashCode += getCreditTax().hashCode();
+        }
+        if (getTaxBasis() != null) {
+            _hashCode += getTaxBasis().hashCode();
+        }
+        if (getTotalAmount() != null) {
+            _hashCode += getTotalAmount().hashCode();
+        }
+        if (getTaxCode() != null) {
+            _hashCode += getTaxCode().hashCode();
+        }
+        if (getMemo() != null) {
+            _hashCode += getMemo().hashCode();
+        }
+        if (getTaxRate1() != null) {
+            _hashCode += getTaxRate1().hashCode();
+        }
+        if (getEntity() != null) {
+            _hashCode += getEntity().hashCode();
+        }
+        if (getGrossAmt() != null) {
+            _hashCode += getGrossAmt().hashCode();
+        }
+        if (getDepartment() != null) {
+            _hashCode += getDepartment().hashCode();
+        }
+        if (get_class() != null) {
+            _hashCode += get_class().hashCode();
+        }
+        if (getLocation() != null) {
+            _hashCode += getLocation().hashCode();
+        }
+        if (getRevenueRecognitionRule() != null) {
+            _hashCode += getRevenueRecognitionRule().hashCode();
+        }
+        if (getEliminate() != null) {
+            _hashCode += getEliminate().hashCode();
+        }
+        if (getSchedule() != null) {
+            _hashCode += getSchedule().hashCode();
+        }
+        if (getStartDate() != null) {
+            _hashCode += getStartDate().hashCode();
+        }
+        if (getEndDate() != null) {
+            _hashCode += getEndDate().hashCode();
+        }
+        if (getResidual() != null) {
+            _hashCode += getResidual().hashCode();
+        }
+        if (getScheduleNum() != null) {
+            _hashCode += getScheduleNum().hashCode();
+        }
+        if (getTax1Amt() != null) {
+            _hashCode += getTax1Amt().hashCode();
+        }
+        if (getTax1Acct() != null) {
+            _hashCode += getTax1Acct().hashCode();
+        }
+        if (getCustomFieldList() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getCustomFieldList());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getCustomFieldList(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        __hashCodeCalc = false;
+        return _hashCode;
+    }
+
+    // Type metadata
+    private static org.apache.axis.description.TypeDesc typeDesc =
+        new org.apache.axis.description.TypeDesc(JournalEntryLine.class, true);
+
+    static {
+        typeDesc.setXmlType(new javax.xml.namespace.QName("urn:general_2018_2.transactions.webservices.netsuite.com", "JournalEntryLine"));
+        org.apache.axis.description.ElementDesc elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("account");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:general_2018_2.transactions.webservices.netsuite.com", "account"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("line");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:general_2018_2.transactions.webservices.netsuite.com", "line"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "long"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("debit");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:general_2018_2.transactions.webservices.netsuite.com", "debit"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "double"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("credit");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:general_2018_2.transactions.webservices.netsuite.com", "credit"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "double"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("taxAccount");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:general_2018_2.transactions.webservices.netsuite.com", "taxAccount"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("lineTaxCode");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:general_2018_2.transactions.webservices.netsuite.com", "lineTaxCode"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("lineTaxRate");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:general_2018_2.transactions.webservices.netsuite.com", "lineTaxRate"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "double"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("debitTax");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:general_2018_2.transactions.webservices.netsuite.com", "debitTax"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "double"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("creditTax");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:general_2018_2.transactions.webservices.netsuite.com", "creditTax"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "double"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("taxBasis");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:general_2018_2.transactions.webservices.netsuite.com", "taxBasis"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "double"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("totalAmount");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:general_2018_2.transactions.webservices.netsuite.com", "totalAmount"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "double"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("taxCode");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:general_2018_2.transactions.webservices.netsuite.com", "taxCode"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("memo");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:general_2018_2.transactions.webservices.netsuite.com", "memo"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("taxRate1");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:general_2018_2.transactions.webservices.netsuite.com", "taxRate1"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "double"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("entity");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:general_2018_2.transactions.webservices.netsuite.com", "entity"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("grossAmt");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:general_2018_2.transactions.webservices.netsuite.com", "grossAmt"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "double"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("department");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:general_2018_2.transactions.webservices.netsuite.com", "department"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("_class");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:general_2018_2.transactions.webservices.netsuite.com", "class"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("location");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:general_2018_2.transactions.webservices.netsuite.com", "location"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("revenueRecognitionRule");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:general_2018_2.transactions.webservices.netsuite.com", "revenueRecognitionRule"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("eliminate");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:general_2018_2.transactions.webservices.netsuite.com", "eliminate"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("schedule");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:general_2018_2.transactions.webservices.netsuite.com", "schedule"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("startDate");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:general_2018_2.transactions.webservices.netsuite.com", "startDate"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "dateTime"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("endDate");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:general_2018_2.transactions.webservices.netsuite.com", "endDate"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "dateTime"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("residual");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:general_2018_2.transactions.webservices.netsuite.com", "residual"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("scheduleNum");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:general_2018_2.transactions.webservices.netsuite.com", "scheduleNum"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("tax1Amt");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:general_2018_2.transactions.webservices.netsuite.com", "tax1Amt"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "double"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("tax1Acct");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:general_2018_2.transactions.webservices.netsuite.com", "tax1Acct"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("customFieldList");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:general_2018_2.transactions.webservices.netsuite.com", "customFieldList"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "CustomFieldRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "customField"));
+        typeDesc.addFieldDesc(elemField);
+    }
+
+    /**
+     * Return type metadata object
+     */
+    public static org.apache.axis.description.TypeDesc getTypeDesc() {
+        return typeDesc;
+    }
+
+    /**
+     * Get Custom Serializer
+     */
+    public static org.apache.axis.encoding.Serializer getSerializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanSerializer(
+            _javaType, _xmlType, typeDesc);
+    }
+
+    /**
+     * Get Custom Deserializer
+     */
+    public static org.apache.axis.encoding.Deserializer getDeserializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanDeserializer(
+            _javaType, _xmlType, typeDesc);
     }
 
 }

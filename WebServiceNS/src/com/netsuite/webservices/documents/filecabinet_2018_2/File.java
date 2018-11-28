@@ -1,887 +1,1246 @@
+/**
+ * File.java
+ *
+ * This file was auto-generated from WSDL
+ * by the Apache Axis 1.4 Jul 28, 2010 (04:07:04 PDT) WSDL2Java emitter.
+ */
 
 package com.netsuite.webservices.documents.filecabinet_2018_2;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlAttribute;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlSchemaType;
-import javax.xml.bind.annotation.XmlType;
-import javax.xml.datatype.XMLGregorianCalendar;
-import com.netsuite.webservices.documents.filecabinet_2018_2.types.FileAttachFrom;
-import com.netsuite.webservices.documents.filecabinet_2018_2.types.FileEncoding;
-import com.netsuite.webservices.documents.filecabinet_2018_2.types.MediaType;
-import com.netsuite.webservices.documents.filecabinet_2018_2.types.TextFileEncoding;
-import com.netsuite.webservices.platform.core_2018_2.Record;
-import com.netsuite.webservices.platform.core_2018_2.RecordRef;
+public class File  extends com.netsuite.webservices.platform.core_2018_2.Record  implements java.io.Serializable {
+    private java.lang.String name;
 
+    private com.netsuite.webservices.documents.filecabinet_2018_2.types.FileAttachFrom attachFrom;
 
-/**
- * <p>File complex type的 Java 类。
- * 
- * <p>以下模式片段指定包含在此类中的预期内容。
- * 
- * <pre>
- * &lt;complexType name="File">
- *   &lt;complexContent>
- *     &lt;extension base="{urn:core_2018_2.platform.webservices.netsuite.com}Record">
- *       &lt;sequence>
- *         &lt;element name="name" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="attachFrom" type="{urn:types.filecabinet_2018_2.documents.webservices.netsuite.com}FileAttachFrom" minOccurs="0"/>
- *         &lt;element name="mediaTypeName" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="fileType" type="{urn:types.filecabinet_2018_2.documents.webservices.netsuite.com}MediaType" minOccurs="0"/>
- *         &lt;element name="content" type="{http://www.w3.org/2001/XMLSchema}base64Binary" minOccurs="0"/>
- *         &lt;element name="folder" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="fileSize" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
- *         &lt;element name="url" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="urlComponent" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="mediaFile" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="textFileEncoding" type="{urn:types.filecabinet_2018_2.documents.webservices.netsuite.com}TextFileEncoding" minOccurs="0"/>
- *         &lt;element name="description" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="encoding" type="{urn:types.filecabinet_2018_2.documents.webservices.netsuite.com}FileEncoding" minOccurs="0"/>
- *         &lt;element name="altTagCaption" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="isOnline" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         &lt;element name="isInactive" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         &lt;element name="class" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="bundleable" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         &lt;element name="department" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="hideInBundle" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         &lt;element name="isPrivate" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         &lt;element name="owner" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="caption" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="storeDisplayThumbnail" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="siteDescription" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="featuredDescription" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="lastModifiedDate" type="{http://www.w3.org/2001/XMLSchema}dateTime" minOccurs="0"/>
- *         &lt;element name="createdDate" type="{http://www.w3.org/2001/XMLSchema}dateTime" minOccurs="0"/>
- *         &lt;element name="siteCategoryList" type="{urn:filecabinet_2018_2.documents.webservices.netsuite.com}FileSiteCategoryList" minOccurs="0"/>
- *       &lt;/sequence>
- *       &lt;attribute name="internalId" type="{http://www.w3.org/2001/XMLSchema}string" />
- *       &lt;attribute name="externalId" type="{http://www.w3.org/2001/XMLSchema}string" />
- *     &lt;/extension>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
- */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "File", propOrder = {
-    "name",
-    "attachFrom",
-    "mediaTypeName",
-    "fileType",
-    "content",
-    "folder",
-    "fileSize",
-    "url",
-    "urlComponent",
-    "mediaFile",
-    "textFileEncoding",
-    "description",
-    "encoding",
-    "altTagCaption",
-    "isOnline",
-    "isInactive",
-    "clazz",
-    "bundleable",
-    "department",
-    "hideInBundle",
-    "isPrivate",
-    "owner",
-    "caption",
-    "storeDisplayThumbnail",
-    "siteDescription",
-    "featuredDescription",
-    "lastModifiedDate",
-    "createdDate",
-    "siteCategoryList"
-})
-public class File
-    extends Record
-{
+    private java.lang.String mediaTypeName;
 
-    protected String name;
-    @XmlSchemaType(name = "string")
-    protected FileAttachFrom attachFrom;
-    protected String mediaTypeName;
-    @XmlSchemaType(name = "string")
-    protected MediaType fileType;
-    protected byte[] content;
-    protected RecordRef folder;
-    protected Double fileSize;
-    protected String url;
-    protected String urlComponent;
-    protected RecordRef mediaFile;
-    @XmlSchemaType(name = "string")
-    protected TextFileEncoding textFileEncoding;
-    protected String description;
-    @XmlSchemaType(name = "string")
-    protected FileEncoding encoding;
-    protected String altTagCaption;
-    protected Boolean isOnline;
-    protected Boolean isInactive;
-    @XmlElement(name = "class")
-    protected String clazz;
-    protected Boolean bundleable;
-    protected String department;
-    protected Boolean hideInBundle;
-    protected Boolean isPrivate;
-    protected RecordRef owner;
-    protected String caption;
-    protected RecordRef storeDisplayThumbnail;
-    protected String siteDescription;
-    protected String featuredDescription;
-    @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar lastModifiedDate;
-    @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar createdDate;
-    protected FileSiteCategoryList siteCategoryList;
-    @XmlAttribute(name = "internalId")
-    protected String internalId;
-    @XmlAttribute(name = "externalId")
-    protected String externalId;
+    private com.netsuite.webservices.documents.filecabinet_2018_2.types.MediaType fileType;
+
+    private byte[] content;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef folder;
+
+    private java.lang.Double fileSize;
+
+    private java.lang.String url;
+
+    private java.lang.String urlComponent;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef mediaFile;
+
+    private com.netsuite.webservices.documents.filecabinet_2018_2.types.TextFileEncoding textFileEncoding;
+
+    private java.lang.String description;
+
+    private com.netsuite.webservices.documents.filecabinet_2018_2.types.FileEncoding encoding;
+
+    private java.lang.String altTagCaption;
+
+    private java.lang.Boolean isOnline;
+
+    private java.lang.Boolean isInactive;
+
+    private java.lang.String _class;
+
+    private java.lang.Boolean bundleable;
+
+    private java.lang.String department;
+
+    private java.lang.Boolean hideInBundle;
+
+    private java.lang.Boolean isPrivate;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef owner;
+
+    private java.lang.String caption;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef storeDisplayThumbnail;
+
+    private java.lang.String siteDescription;
+
+    private java.lang.String featuredDescription;
+
+    private java.util.Calendar lastModifiedDate;
+
+    private java.util.Calendar createdDate;
+
+    private com.netsuite.webservices.documents.filecabinet_2018_2.FileSiteCategory[] siteCategoryList;
+
+    private java.lang.String internalId;  // attribute
+
+    private java.lang.String externalId;  // attribute
+
+    public File() {
+    }
+
+    public File(
+           java.lang.String[] nullFieldList,
+           java.lang.String internalId,
+           java.lang.String externalId,
+           java.lang.String name,
+           com.netsuite.webservices.documents.filecabinet_2018_2.types.FileAttachFrom attachFrom,
+           java.lang.String mediaTypeName,
+           com.netsuite.webservices.documents.filecabinet_2018_2.types.MediaType fileType,
+           byte[] content,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef folder,
+           java.lang.Double fileSize,
+           java.lang.String url,
+           java.lang.String urlComponent,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef mediaFile,
+           com.netsuite.webservices.documents.filecabinet_2018_2.types.TextFileEncoding textFileEncoding,
+           java.lang.String description,
+           com.netsuite.webservices.documents.filecabinet_2018_2.types.FileEncoding encoding,
+           java.lang.String altTagCaption,
+           java.lang.Boolean isOnline,
+           java.lang.Boolean isInactive,
+           java.lang.String _class,
+           java.lang.Boolean bundleable,
+           java.lang.String department,
+           java.lang.Boolean hideInBundle,
+           java.lang.Boolean isPrivate,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef owner,
+           java.lang.String caption,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef storeDisplayThumbnail,
+           java.lang.String siteDescription,
+           java.lang.String featuredDescription,
+           java.util.Calendar lastModifiedDate,
+           java.util.Calendar createdDate,
+           com.netsuite.webservices.documents.filecabinet_2018_2.FileSiteCategory[] siteCategoryList) {
+        super(
+            nullFieldList);
+        this.internalId = internalId;
+        this.externalId = externalId;
+        this.name = name;
+        this.attachFrom = attachFrom;
+        this.mediaTypeName = mediaTypeName;
+        this.fileType = fileType;
+        this.content = content;
+        this.folder = folder;
+        this.fileSize = fileSize;
+        this.url = url;
+        this.urlComponent = urlComponent;
+        this.mediaFile = mediaFile;
+        this.textFileEncoding = textFileEncoding;
+        this.description = description;
+        this.encoding = encoding;
+        this.altTagCaption = altTagCaption;
+        this.isOnline = isOnline;
+        this.isInactive = isInactive;
+        this._class = _class;
+        this.bundleable = bundleable;
+        this.department = department;
+        this.hideInBundle = hideInBundle;
+        this.isPrivate = isPrivate;
+        this.owner = owner;
+        this.caption = caption;
+        this.storeDisplayThumbnail = storeDisplayThumbnail;
+        this.siteDescription = siteDescription;
+        this.featuredDescription = featuredDescription;
+        this.lastModifiedDate = lastModifiedDate;
+        this.createdDate = createdDate;
+        this.siteCategoryList = siteCategoryList;
+    }
+
 
     /**
-     * 获取name属性的值。
+     * Gets the name value for this File.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @return name
      */
-    public String getName() {
+    public java.lang.String getName() {
         return name;
     }
 
-    /**
-     * 设置name属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setName(String value) {
-        this.name = value;
-    }
 
     /**
-     * 获取attachFrom属性的值。
+     * Sets the name value for this File.
      * 
-     * @return
-     *     possible object is
-     *     {@link FileAttachFrom }
-     *     
+     * @param name
      */
-    public FileAttachFrom getAttachFrom() {
+    public void setName(java.lang.String name) {
+        this.name = name;
+    }
+
+
+    /**
+     * Gets the attachFrom value for this File.
+     * 
+     * @return attachFrom
+     */
+    public com.netsuite.webservices.documents.filecabinet_2018_2.types.FileAttachFrom getAttachFrom() {
         return attachFrom;
     }
 
-    /**
-     * 设置attachFrom属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link FileAttachFrom }
-     *     
-     */
-    public void setAttachFrom(FileAttachFrom value) {
-        this.attachFrom = value;
-    }
 
     /**
-     * 获取mediaTypeName属性的值。
+     * Sets the attachFrom value for this File.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param attachFrom
      */
-    public String getMediaTypeName() {
+    public void setAttachFrom(com.netsuite.webservices.documents.filecabinet_2018_2.types.FileAttachFrom attachFrom) {
+        this.attachFrom = attachFrom;
+    }
+
+
+    /**
+     * Gets the mediaTypeName value for this File.
+     * 
+     * @return mediaTypeName
+     */
+    public java.lang.String getMediaTypeName() {
         return mediaTypeName;
     }
 
-    /**
-     * 设置mediaTypeName属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setMediaTypeName(String value) {
-        this.mediaTypeName = value;
-    }
 
     /**
-     * 获取fileType属性的值。
+     * Sets the mediaTypeName value for this File.
      * 
-     * @return
-     *     possible object is
-     *     {@link MediaType }
-     *     
+     * @param mediaTypeName
      */
-    public MediaType getFileType() {
+    public void setMediaTypeName(java.lang.String mediaTypeName) {
+        this.mediaTypeName = mediaTypeName;
+    }
+
+
+    /**
+     * Gets the fileType value for this File.
+     * 
+     * @return fileType
+     */
+    public com.netsuite.webservices.documents.filecabinet_2018_2.types.MediaType getFileType() {
         return fileType;
     }
 
-    /**
-     * 设置fileType属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link MediaType }
-     *     
-     */
-    public void setFileType(MediaType value) {
-        this.fileType = value;
-    }
 
     /**
-     * 获取content属性的值。
+     * Sets the fileType value for this File.
      * 
-     * @return
-     *     possible object is
-     *     byte[]
+     * @param fileType
+     */
+    public void setFileType(com.netsuite.webservices.documents.filecabinet_2018_2.types.MediaType fileType) {
+        this.fileType = fileType;
+    }
+
+
+    /**
+     * Gets the content value for this File.
+     * 
+     * @return content
      */
     public byte[] getContent() {
         return content;
     }
 
-    /**
-     * 设置content属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     byte[]
-     */
-    public void setContent(byte[] value) {
-        this.content = value;
-    }
 
     /**
-     * 获取folder属性的值。
+     * Sets the content value for this File.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param content
      */
-    public RecordRef getFolder() {
+    public void setContent(byte[] content) {
+        this.content = content;
+    }
+
+
+    /**
+     * Gets the folder value for this File.
+     * 
+     * @return folder
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getFolder() {
         return folder;
     }
 
-    /**
-     * 设置folder属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setFolder(RecordRef value) {
-        this.folder = value;
-    }
 
     /**
-     * 获取fileSize属性的值。
+     * Sets the folder value for this File.
      * 
-     * @return
-     *     possible object is
-     *     {@link Double }
-     *     
+     * @param folder
      */
-    public Double getFileSize() {
+    public void setFolder(com.netsuite.webservices.platform.core_2018_2.RecordRef folder) {
+        this.folder = folder;
+    }
+
+
+    /**
+     * Gets the fileSize value for this File.
+     * 
+     * @return fileSize
+     */
+    public java.lang.Double getFileSize() {
         return fileSize;
     }
 
-    /**
-     * 设置fileSize属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Double }
-     *     
-     */
-    public void setFileSize(Double value) {
-        this.fileSize = value;
-    }
 
     /**
-     * 获取url属性的值。
+     * Sets the fileSize value for this File.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param fileSize
      */
-    public String getUrl() {
+    public void setFileSize(java.lang.Double fileSize) {
+        this.fileSize = fileSize;
+    }
+
+
+    /**
+     * Gets the url value for this File.
+     * 
+     * @return url
+     */
+    public java.lang.String getUrl() {
         return url;
     }
 
-    /**
-     * 设置url属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setUrl(String value) {
-        this.url = value;
-    }
 
     /**
-     * 获取urlComponent属性的值。
+     * Sets the url value for this File.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param url
      */
-    public String getUrlComponent() {
+    public void setUrl(java.lang.String url) {
+        this.url = url;
+    }
+
+
+    /**
+     * Gets the urlComponent value for this File.
+     * 
+     * @return urlComponent
+     */
+    public java.lang.String getUrlComponent() {
         return urlComponent;
     }
 
-    /**
-     * 设置urlComponent属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setUrlComponent(String value) {
-        this.urlComponent = value;
-    }
 
     /**
-     * 获取mediaFile属性的值。
+     * Sets the urlComponent value for this File.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param urlComponent
      */
-    public RecordRef getMediaFile() {
+    public void setUrlComponent(java.lang.String urlComponent) {
+        this.urlComponent = urlComponent;
+    }
+
+
+    /**
+     * Gets the mediaFile value for this File.
+     * 
+     * @return mediaFile
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getMediaFile() {
         return mediaFile;
     }
 
-    /**
-     * 设置mediaFile属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setMediaFile(RecordRef value) {
-        this.mediaFile = value;
-    }
 
     /**
-     * 获取textFileEncoding属性的值。
+     * Sets the mediaFile value for this File.
      * 
-     * @return
-     *     possible object is
-     *     {@link TextFileEncoding }
-     *     
+     * @param mediaFile
      */
-    public TextFileEncoding getTextFileEncoding() {
+    public void setMediaFile(com.netsuite.webservices.platform.core_2018_2.RecordRef mediaFile) {
+        this.mediaFile = mediaFile;
+    }
+
+
+    /**
+     * Gets the textFileEncoding value for this File.
+     * 
+     * @return textFileEncoding
+     */
+    public com.netsuite.webservices.documents.filecabinet_2018_2.types.TextFileEncoding getTextFileEncoding() {
         return textFileEncoding;
     }
 
-    /**
-     * 设置textFileEncoding属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link TextFileEncoding }
-     *     
-     */
-    public void setTextFileEncoding(TextFileEncoding value) {
-        this.textFileEncoding = value;
-    }
 
     /**
-     * 获取description属性的值。
+     * Sets the textFileEncoding value for this File.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param textFileEncoding
      */
-    public String getDescription() {
+    public void setTextFileEncoding(com.netsuite.webservices.documents.filecabinet_2018_2.types.TextFileEncoding textFileEncoding) {
+        this.textFileEncoding = textFileEncoding;
+    }
+
+
+    /**
+     * Gets the description value for this File.
+     * 
+     * @return description
+     */
+    public java.lang.String getDescription() {
         return description;
     }
 
-    /**
-     * 设置description属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setDescription(String value) {
-        this.description = value;
-    }
 
     /**
-     * 获取encoding属性的值。
+     * Sets the description value for this File.
      * 
-     * @return
-     *     possible object is
-     *     {@link FileEncoding }
-     *     
+     * @param description
      */
-    public FileEncoding getEncoding() {
+    public void setDescription(java.lang.String description) {
+        this.description = description;
+    }
+
+
+    /**
+     * Gets the encoding value for this File.
+     * 
+     * @return encoding
+     */
+    public com.netsuite.webservices.documents.filecabinet_2018_2.types.FileEncoding getEncoding() {
         return encoding;
     }
 
-    /**
-     * 设置encoding属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link FileEncoding }
-     *     
-     */
-    public void setEncoding(FileEncoding value) {
-        this.encoding = value;
-    }
 
     /**
-     * 获取altTagCaption属性的值。
+     * Sets the encoding value for this File.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param encoding
      */
-    public String getAltTagCaption() {
+    public void setEncoding(com.netsuite.webservices.documents.filecabinet_2018_2.types.FileEncoding encoding) {
+        this.encoding = encoding;
+    }
+
+
+    /**
+     * Gets the altTagCaption value for this File.
+     * 
+     * @return altTagCaption
+     */
+    public java.lang.String getAltTagCaption() {
         return altTagCaption;
     }
 
-    /**
-     * 设置altTagCaption属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setAltTagCaption(String value) {
-        this.altTagCaption = value;
-    }
 
     /**
-     * 获取isOnline属性的值。
+     * Sets the altTagCaption value for this File.
      * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
+     * @param altTagCaption
      */
-    public Boolean isIsOnline() {
+    public void setAltTagCaption(java.lang.String altTagCaption) {
+        this.altTagCaption = altTagCaption;
+    }
+
+
+    /**
+     * Gets the isOnline value for this File.
+     * 
+     * @return isOnline
+     */
+    public java.lang.Boolean getIsOnline() {
         return isOnline;
     }
 
-    /**
-     * 设置isOnline属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
-     */
-    public void setIsOnline(Boolean value) {
-        this.isOnline = value;
-    }
 
     /**
-     * 获取isInactive属性的值。
+     * Sets the isOnline value for this File.
      * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
+     * @param isOnline
      */
-    public Boolean isIsInactive() {
+    public void setIsOnline(java.lang.Boolean isOnline) {
+        this.isOnline = isOnline;
+    }
+
+
+    /**
+     * Gets the isInactive value for this File.
+     * 
+     * @return isInactive
+     */
+    public java.lang.Boolean getIsInactive() {
         return isInactive;
     }
 
-    /**
-     * 设置isInactive属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
-     */
-    public void setIsInactive(Boolean value) {
-        this.isInactive = value;
-    }
 
     /**
-     * 获取clazz属性的值。
+     * Sets the isInactive value for this File.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param isInactive
      */
-    public String getClazz() {
-        return clazz;
+    public void setIsInactive(java.lang.Boolean isInactive) {
+        this.isInactive = isInactive;
     }
 
-    /**
-     * 设置clazz属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setClazz(String value) {
-        this.clazz = value;
-    }
 
     /**
-     * 获取bundleable属性的值。
+     * Gets the _class value for this File.
      * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
+     * @return _class
      */
-    public Boolean isBundleable() {
+    public java.lang.String get_class() {
+        return _class;
+    }
+
+
+    /**
+     * Sets the _class value for this File.
+     * 
+     * @param _class
+     */
+    public void set_class(java.lang.String _class) {
+        this._class = _class;
+    }
+
+
+    /**
+     * Gets the bundleable value for this File.
+     * 
+     * @return bundleable
+     */
+    public java.lang.Boolean getBundleable() {
         return bundleable;
     }
 
-    /**
-     * 设置bundleable属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
-     */
-    public void setBundleable(Boolean value) {
-        this.bundleable = value;
-    }
 
     /**
-     * 获取department属性的值。
+     * Sets the bundleable value for this File.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param bundleable
      */
-    public String getDepartment() {
+    public void setBundleable(java.lang.Boolean bundleable) {
+        this.bundleable = bundleable;
+    }
+
+
+    /**
+     * Gets the department value for this File.
+     * 
+     * @return department
+     */
+    public java.lang.String getDepartment() {
         return department;
     }
 
-    /**
-     * 设置department属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setDepartment(String value) {
-        this.department = value;
-    }
 
     /**
-     * 获取hideInBundle属性的值。
+     * Sets the department value for this File.
      * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
+     * @param department
      */
-    public Boolean isHideInBundle() {
+    public void setDepartment(java.lang.String department) {
+        this.department = department;
+    }
+
+
+    /**
+     * Gets the hideInBundle value for this File.
+     * 
+     * @return hideInBundle
+     */
+    public java.lang.Boolean getHideInBundle() {
         return hideInBundle;
     }
 
-    /**
-     * 设置hideInBundle属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
-     */
-    public void setHideInBundle(Boolean value) {
-        this.hideInBundle = value;
-    }
 
     /**
-     * 获取isPrivate属性的值。
+     * Sets the hideInBundle value for this File.
      * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
+     * @param hideInBundle
      */
-    public Boolean isIsPrivate() {
+    public void setHideInBundle(java.lang.Boolean hideInBundle) {
+        this.hideInBundle = hideInBundle;
+    }
+
+
+    /**
+     * Gets the isPrivate value for this File.
+     * 
+     * @return isPrivate
+     */
+    public java.lang.Boolean getIsPrivate() {
         return isPrivate;
     }
 
-    /**
-     * 设置isPrivate属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
-     */
-    public void setIsPrivate(Boolean value) {
-        this.isPrivate = value;
-    }
 
     /**
-     * 获取owner属性的值。
+     * Sets the isPrivate value for this File.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param isPrivate
      */
-    public RecordRef getOwner() {
+    public void setIsPrivate(java.lang.Boolean isPrivate) {
+        this.isPrivate = isPrivate;
+    }
+
+
+    /**
+     * Gets the owner value for this File.
+     * 
+     * @return owner
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getOwner() {
         return owner;
     }
 
-    /**
-     * 设置owner属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setOwner(RecordRef value) {
-        this.owner = value;
-    }
 
     /**
-     * 获取caption属性的值。
+     * Sets the owner value for this File.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param owner
      */
-    public String getCaption() {
+    public void setOwner(com.netsuite.webservices.platform.core_2018_2.RecordRef owner) {
+        this.owner = owner;
+    }
+
+
+    /**
+     * Gets the caption value for this File.
+     * 
+     * @return caption
+     */
+    public java.lang.String getCaption() {
         return caption;
     }
 
-    /**
-     * 设置caption属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setCaption(String value) {
-        this.caption = value;
-    }
 
     /**
-     * 获取storeDisplayThumbnail属性的值。
+     * Sets the caption value for this File.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param caption
      */
-    public RecordRef getStoreDisplayThumbnail() {
+    public void setCaption(java.lang.String caption) {
+        this.caption = caption;
+    }
+
+
+    /**
+     * Gets the storeDisplayThumbnail value for this File.
+     * 
+     * @return storeDisplayThumbnail
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getStoreDisplayThumbnail() {
         return storeDisplayThumbnail;
     }
 
-    /**
-     * 设置storeDisplayThumbnail属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setStoreDisplayThumbnail(RecordRef value) {
-        this.storeDisplayThumbnail = value;
-    }
 
     /**
-     * 获取siteDescription属性的值。
+     * Sets the storeDisplayThumbnail value for this File.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param storeDisplayThumbnail
      */
-    public String getSiteDescription() {
+    public void setStoreDisplayThumbnail(com.netsuite.webservices.platform.core_2018_2.RecordRef storeDisplayThumbnail) {
+        this.storeDisplayThumbnail = storeDisplayThumbnail;
+    }
+
+
+    /**
+     * Gets the siteDescription value for this File.
+     * 
+     * @return siteDescription
+     */
+    public java.lang.String getSiteDescription() {
         return siteDescription;
     }
 
-    /**
-     * 设置siteDescription属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setSiteDescription(String value) {
-        this.siteDescription = value;
-    }
 
     /**
-     * 获取featuredDescription属性的值。
+     * Sets the siteDescription value for this File.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param siteDescription
      */
-    public String getFeaturedDescription() {
+    public void setSiteDescription(java.lang.String siteDescription) {
+        this.siteDescription = siteDescription;
+    }
+
+
+    /**
+     * Gets the featuredDescription value for this File.
+     * 
+     * @return featuredDescription
+     */
+    public java.lang.String getFeaturedDescription() {
         return featuredDescription;
     }
 
-    /**
-     * 设置featuredDescription属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setFeaturedDescription(String value) {
-        this.featuredDescription = value;
-    }
 
     /**
-     * 获取lastModifiedDate属性的值。
+     * Sets the featuredDescription value for this File.
      * 
-     * @return
-     *     possible object is
-     *     {@link XMLGregorianCalendar }
-     *     
+     * @param featuredDescription
      */
-    public XMLGregorianCalendar getLastModifiedDate() {
+    public void setFeaturedDescription(java.lang.String featuredDescription) {
+        this.featuredDescription = featuredDescription;
+    }
+
+
+    /**
+     * Gets the lastModifiedDate value for this File.
+     * 
+     * @return lastModifiedDate
+     */
+    public java.util.Calendar getLastModifiedDate() {
         return lastModifiedDate;
     }
 
-    /**
-     * 设置lastModifiedDate属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link XMLGregorianCalendar }
-     *     
-     */
-    public void setLastModifiedDate(XMLGregorianCalendar value) {
-        this.lastModifiedDate = value;
-    }
 
     /**
-     * 获取createdDate属性的值。
+     * Sets the lastModifiedDate value for this File.
      * 
-     * @return
-     *     possible object is
-     *     {@link XMLGregorianCalendar }
-     *     
+     * @param lastModifiedDate
      */
-    public XMLGregorianCalendar getCreatedDate() {
+    public void setLastModifiedDate(java.util.Calendar lastModifiedDate) {
+        this.lastModifiedDate = lastModifiedDate;
+    }
+
+
+    /**
+     * Gets the createdDate value for this File.
+     * 
+     * @return createdDate
+     */
+    public java.util.Calendar getCreatedDate() {
         return createdDate;
     }
 
-    /**
-     * 设置createdDate属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link XMLGregorianCalendar }
-     *     
-     */
-    public void setCreatedDate(XMLGregorianCalendar value) {
-        this.createdDate = value;
-    }
 
     /**
-     * 获取siteCategoryList属性的值。
+     * Sets the createdDate value for this File.
      * 
-     * @return
-     *     possible object is
-     *     {@link FileSiteCategoryList }
-     *     
+     * @param createdDate
      */
-    public FileSiteCategoryList getSiteCategoryList() {
+    public void setCreatedDate(java.util.Calendar createdDate) {
+        this.createdDate = createdDate;
+    }
+
+
+    /**
+     * Gets the siteCategoryList value for this File.
+     * 
+     * @return siteCategoryList
+     */
+    public com.netsuite.webservices.documents.filecabinet_2018_2.FileSiteCategory[] getSiteCategoryList() {
         return siteCategoryList;
     }
 
-    /**
-     * 设置siteCategoryList属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link FileSiteCategoryList }
-     *     
-     */
-    public void setSiteCategoryList(FileSiteCategoryList value) {
-        this.siteCategoryList = value;
-    }
 
     /**
-     * 获取internalId属性的值。
+     * Sets the siteCategoryList value for this File.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param siteCategoryList
      */
-    public String getInternalId() {
+    public void setSiteCategoryList(com.netsuite.webservices.documents.filecabinet_2018_2.FileSiteCategory[] siteCategoryList) {
+        this.siteCategoryList = siteCategoryList;
+    }
+
+
+    /**
+     * Gets the internalId value for this File.
+     * 
+     * @return internalId
+     */
+    public java.lang.String getInternalId() {
         return internalId;
     }
 
-    /**
-     * 设置internalId属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setInternalId(String value) {
-        this.internalId = value;
-    }
 
     /**
-     * 获取externalId属性的值。
+     * Sets the internalId value for this File.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param internalId
      */
-    public String getExternalId() {
+    public void setInternalId(java.lang.String internalId) {
+        this.internalId = internalId;
+    }
+
+
+    /**
+     * Gets the externalId value for this File.
+     * 
+     * @return externalId
+     */
+    public java.lang.String getExternalId() {
         return externalId;
     }
 
+
     /**
-     * 设置externalId属性的值。
+     * Sets the externalId value for this File.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     * @param externalId
      */
-    public void setExternalId(String value) {
-        this.externalId = value;
+    public void setExternalId(java.lang.String externalId) {
+        this.externalId = externalId;
+    }
+
+    private java.lang.Object __equalsCalc = null;
+    public synchronized boolean equals(java.lang.Object obj) {
+        if (!(obj instanceof File)) return false;
+        File other = (File) obj;
+        if (obj == null) return false;
+        if (this == obj) return true;
+        if (__equalsCalc != null) {
+            return (__equalsCalc == obj);
+        }
+        __equalsCalc = obj;
+        boolean _equals;
+        _equals = super.equals(obj) && 
+            ((this.name==null && other.getName()==null) || 
+             (this.name!=null &&
+              this.name.equals(other.getName()))) &&
+            ((this.attachFrom==null && other.getAttachFrom()==null) || 
+             (this.attachFrom!=null &&
+              this.attachFrom.equals(other.getAttachFrom()))) &&
+            ((this.mediaTypeName==null && other.getMediaTypeName()==null) || 
+             (this.mediaTypeName!=null &&
+              this.mediaTypeName.equals(other.getMediaTypeName()))) &&
+            ((this.fileType==null && other.getFileType()==null) || 
+             (this.fileType!=null &&
+              this.fileType.equals(other.getFileType()))) &&
+            ((this.content==null && other.getContent()==null) || 
+             (this.content!=null &&
+              java.util.Arrays.equals(this.content, other.getContent()))) &&
+            ((this.folder==null && other.getFolder()==null) || 
+             (this.folder!=null &&
+              this.folder.equals(other.getFolder()))) &&
+            ((this.fileSize==null && other.getFileSize()==null) || 
+             (this.fileSize!=null &&
+              this.fileSize.equals(other.getFileSize()))) &&
+            ((this.url==null && other.getUrl()==null) || 
+             (this.url!=null &&
+              this.url.equals(other.getUrl()))) &&
+            ((this.urlComponent==null && other.getUrlComponent()==null) || 
+             (this.urlComponent!=null &&
+              this.urlComponent.equals(other.getUrlComponent()))) &&
+            ((this.mediaFile==null && other.getMediaFile()==null) || 
+             (this.mediaFile!=null &&
+              this.mediaFile.equals(other.getMediaFile()))) &&
+            ((this.textFileEncoding==null && other.getTextFileEncoding()==null) || 
+             (this.textFileEncoding!=null &&
+              this.textFileEncoding.equals(other.getTextFileEncoding()))) &&
+            ((this.description==null && other.getDescription()==null) || 
+             (this.description!=null &&
+              this.description.equals(other.getDescription()))) &&
+            ((this.encoding==null && other.getEncoding()==null) || 
+             (this.encoding!=null &&
+              this.encoding.equals(other.getEncoding()))) &&
+            ((this.altTagCaption==null && other.getAltTagCaption()==null) || 
+             (this.altTagCaption!=null &&
+              this.altTagCaption.equals(other.getAltTagCaption()))) &&
+            ((this.isOnline==null && other.getIsOnline()==null) || 
+             (this.isOnline!=null &&
+              this.isOnline.equals(other.getIsOnline()))) &&
+            ((this.isInactive==null && other.getIsInactive()==null) || 
+             (this.isInactive!=null &&
+              this.isInactive.equals(other.getIsInactive()))) &&
+            ((this._class==null && other.get_class()==null) || 
+             (this._class!=null &&
+              this._class.equals(other.get_class()))) &&
+            ((this.bundleable==null && other.getBundleable()==null) || 
+             (this.bundleable!=null &&
+              this.bundleable.equals(other.getBundleable()))) &&
+            ((this.department==null && other.getDepartment()==null) || 
+             (this.department!=null &&
+              this.department.equals(other.getDepartment()))) &&
+            ((this.hideInBundle==null && other.getHideInBundle()==null) || 
+             (this.hideInBundle!=null &&
+              this.hideInBundle.equals(other.getHideInBundle()))) &&
+            ((this.isPrivate==null && other.getIsPrivate()==null) || 
+             (this.isPrivate!=null &&
+              this.isPrivate.equals(other.getIsPrivate()))) &&
+            ((this.owner==null && other.getOwner()==null) || 
+             (this.owner!=null &&
+              this.owner.equals(other.getOwner()))) &&
+            ((this.caption==null && other.getCaption()==null) || 
+             (this.caption!=null &&
+              this.caption.equals(other.getCaption()))) &&
+            ((this.storeDisplayThumbnail==null && other.getStoreDisplayThumbnail()==null) || 
+             (this.storeDisplayThumbnail!=null &&
+              this.storeDisplayThumbnail.equals(other.getStoreDisplayThumbnail()))) &&
+            ((this.siteDescription==null && other.getSiteDescription()==null) || 
+             (this.siteDescription!=null &&
+              this.siteDescription.equals(other.getSiteDescription()))) &&
+            ((this.featuredDescription==null && other.getFeaturedDescription()==null) || 
+             (this.featuredDescription!=null &&
+              this.featuredDescription.equals(other.getFeaturedDescription()))) &&
+            ((this.lastModifiedDate==null && other.getLastModifiedDate()==null) || 
+             (this.lastModifiedDate!=null &&
+              this.lastModifiedDate.equals(other.getLastModifiedDate()))) &&
+            ((this.createdDate==null && other.getCreatedDate()==null) || 
+             (this.createdDate!=null &&
+              this.createdDate.equals(other.getCreatedDate()))) &&
+            ((this.siteCategoryList==null && other.getSiteCategoryList()==null) || 
+             (this.siteCategoryList!=null &&
+              java.util.Arrays.equals(this.siteCategoryList, other.getSiteCategoryList()))) &&
+            ((this.internalId==null && other.getInternalId()==null) || 
+             (this.internalId!=null &&
+              this.internalId.equals(other.getInternalId()))) &&
+            ((this.externalId==null && other.getExternalId()==null) || 
+             (this.externalId!=null &&
+              this.externalId.equals(other.getExternalId())));
+        __equalsCalc = null;
+        return _equals;
+    }
+
+    private boolean __hashCodeCalc = false;
+    public synchronized int hashCode() {
+        if (__hashCodeCalc) {
+            return 0;
+        }
+        __hashCodeCalc = true;
+        int _hashCode = super.hashCode();
+        if (getName() != null) {
+            _hashCode += getName().hashCode();
+        }
+        if (getAttachFrom() != null) {
+            _hashCode += getAttachFrom().hashCode();
+        }
+        if (getMediaTypeName() != null) {
+            _hashCode += getMediaTypeName().hashCode();
+        }
+        if (getFileType() != null) {
+            _hashCode += getFileType().hashCode();
+        }
+        if (getContent() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getContent());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getContent(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getFolder() != null) {
+            _hashCode += getFolder().hashCode();
+        }
+        if (getFileSize() != null) {
+            _hashCode += getFileSize().hashCode();
+        }
+        if (getUrl() != null) {
+            _hashCode += getUrl().hashCode();
+        }
+        if (getUrlComponent() != null) {
+            _hashCode += getUrlComponent().hashCode();
+        }
+        if (getMediaFile() != null) {
+            _hashCode += getMediaFile().hashCode();
+        }
+        if (getTextFileEncoding() != null) {
+            _hashCode += getTextFileEncoding().hashCode();
+        }
+        if (getDescription() != null) {
+            _hashCode += getDescription().hashCode();
+        }
+        if (getEncoding() != null) {
+            _hashCode += getEncoding().hashCode();
+        }
+        if (getAltTagCaption() != null) {
+            _hashCode += getAltTagCaption().hashCode();
+        }
+        if (getIsOnline() != null) {
+            _hashCode += getIsOnline().hashCode();
+        }
+        if (getIsInactive() != null) {
+            _hashCode += getIsInactive().hashCode();
+        }
+        if (get_class() != null) {
+            _hashCode += get_class().hashCode();
+        }
+        if (getBundleable() != null) {
+            _hashCode += getBundleable().hashCode();
+        }
+        if (getDepartment() != null) {
+            _hashCode += getDepartment().hashCode();
+        }
+        if (getHideInBundle() != null) {
+            _hashCode += getHideInBundle().hashCode();
+        }
+        if (getIsPrivate() != null) {
+            _hashCode += getIsPrivate().hashCode();
+        }
+        if (getOwner() != null) {
+            _hashCode += getOwner().hashCode();
+        }
+        if (getCaption() != null) {
+            _hashCode += getCaption().hashCode();
+        }
+        if (getStoreDisplayThumbnail() != null) {
+            _hashCode += getStoreDisplayThumbnail().hashCode();
+        }
+        if (getSiteDescription() != null) {
+            _hashCode += getSiteDescription().hashCode();
+        }
+        if (getFeaturedDescription() != null) {
+            _hashCode += getFeaturedDescription().hashCode();
+        }
+        if (getLastModifiedDate() != null) {
+            _hashCode += getLastModifiedDate().hashCode();
+        }
+        if (getCreatedDate() != null) {
+            _hashCode += getCreatedDate().hashCode();
+        }
+        if (getSiteCategoryList() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getSiteCategoryList());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getSiteCategoryList(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getInternalId() != null) {
+            _hashCode += getInternalId().hashCode();
+        }
+        if (getExternalId() != null) {
+            _hashCode += getExternalId().hashCode();
+        }
+        __hashCodeCalc = false;
+        return _hashCode;
+    }
+
+    // Type metadata
+    private static org.apache.axis.description.TypeDesc typeDesc =
+        new org.apache.axis.description.TypeDesc(File.class, true);
+
+    static {
+        typeDesc.setXmlType(new javax.xml.namespace.QName("urn:filecabinet_2018_2.documents.webservices.netsuite.com", "File"));
+        org.apache.axis.description.AttributeDesc attrField = new org.apache.axis.description.AttributeDesc();
+        attrField.setFieldName("internalId");
+        attrField.setXmlName(new javax.xml.namespace.QName("", "internalId"));
+        attrField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        typeDesc.addFieldDesc(attrField);
+        attrField = new org.apache.axis.description.AttributeDesc();
+        attrField.setFieldName("externalId");
+        attrField.setXmlName(new javax.xml.namespace.QName("", "externalId"));
+        attrField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        typeDesc.addFieldDesc(attrField);
+        org.apache.axis.description.ElementDesc elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("name");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:filecabinet_2018_2.documents.webservices.netsuite.com", "name"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("attachFrom");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:filecabinet_2018_2.documents.webservices.netsuite.com", "attachFrom"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:types.filecabinet_2018_2.documents.webservices.netsuite.com", "FileAttachFrom"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("mediaTypeName");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:filecabinet_2018_2.documents.webservices.netsuite.com", "mediaTypeName"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("fileType");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:filecabinet_2018_2.documents.webservices.netsuite.com", "fileType"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:types.filecabinet_2018_2.documents.webservices.netsuite.com", "MediaType"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("content");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:filecabinet_2018_2.documents.webservices.netsuite.com", "content"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "base64Binary"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("folder");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:filecabinet_2018_2.documents.webservices.netsuite.com", "folder"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("fileSize");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:filecabinet_2018_2.documents.webservices.netsuite.com", "fileSize"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "double"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("url");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:filecabinet_2018_2.documents.webservices.netsuite.com", "url"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("urlComponent");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:filecabinet_2018_2.documents.webservices.netsuite.com", "urlComponent"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("mediaFile");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:filecabinet_2018_2.documents.webservices.netsuite.com", "mediaFile"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("textFileEncoding");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:filecabinet_2018_2.documents.webservices.netsuite.com", "textFileEncoding"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:types.filecabinet_2018_2.documents.webservices.netsuite.com", "TextFileEncoding"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("description");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:filecabinet_2018_2.documents.webservices.netsuite.com", "description"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("encoding");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:filecabinet_2018_2.documents.webservices.netsuite.com", "encoding"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:types.filecabinet_2018_2.documents.webservices.netsuite.com", "FileEncoding"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("altTagCaption");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:filecabinet_2018_2.documents.webservices.netsuite.com", "altTagCaption"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("isOnline");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:filecabinet_2018_2.documents.webservices.netsuite.com", "isOnline"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("isInactive");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:filecabinet_2018_2.documents.webservices.netsuite.com", "isInactive"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("_class");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:filecabinet_2018_2.documents.webservices.netsuite.com", "class"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("bundleable");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:filecabinet_2018_2.documents.webservices.netsuite.com", "bundleable"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("department");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:filecabinet_2018_2.documents.webservices.netsuite.com", "department"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("hideInBundle");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:filecabinet_2018_2.documents.webservices.netsuite.com", "hideInBundle"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("isPrivate");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:filecabinet_2018_2.documents.webservices.netsuite.com", "isPrivate"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("owner");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:filecabinet_2018_2.documents.webservices.netsuite.com", "owner"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("caption");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:filecabinet_2018_2.documents.webservices.netsuite.com", "caption"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("storeDisplayThumbnail");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:filecabinet_2018_2.documents.webservices.netsuite.com", "storeDisplayThumbnail"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("siteDescription");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:filecabinet_2018_2.documents.webservices.netsuite.com", "siteDescription"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("featuredDescription");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:filecabinet_2018_2.documents.webservices.netsuite.com", "featuredDescription"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("lastModifiedDate");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:filecabinet_2018_2.documents.webservices.netsuite.com", "lastModifiedDate"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "dateTime"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("createdDate");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:filecabinet_2018_2.documents.webservices.netsuite.com", "createdDate"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "dateTime"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("siteCategoryList");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:filecabinet_2018_2.documents.webservices.netsuite.com", "siteCategoryList"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:filecabinet_2018_2.documents.webservices.netsuite.com", "FileSiteCategory"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:filecabinet_2018_2.documents.webservices.netsuite.com", "siteCategory"));
+        typeDesc.addFieldDesc(elemField);
+    }
+
+    /**
+     * Return type metadata object
+     */
+    public static org.apache.axis.description.TypeDesc getTypeDesc() {
+        return typeDesc;
+    }
+
+    /**
+     * Get Custom Serializer
+     */
+    public static org.apache.axis.encoding.Serializer getSerializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanSerializer(
+            _javaType, _xmlType, typeDesc);
+    }
+
+    /**
+     * Get Custom Deserializer
+     */
+    public static org.apache.axis.encoding.Deserializer getDeserializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanDeserializer(
+            _javaType, _xmlType, typeDesc);
     }
 
 }

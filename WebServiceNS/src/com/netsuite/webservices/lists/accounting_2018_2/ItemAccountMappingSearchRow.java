@@ -1,266 +1,396 @@
+/**
+ * ItemAccountMappingSearchRow.java
+ *
+ * This file was auto-generated from WSDL
+ * by the Apache Axis 1.4 Jul 28, 2010 (04:07:04 PDT) WSDL2Java emitter.
+ */
 
 package com.netsuite.webservices.lists.accounting_2018_2;
 
-import java.util.ArrayList;
-import java.util.List;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlType;
-import com.netsuite.webservices.platform.common_2018_2.AccountSearchRowBasic;
-import com.netsuite.webservices.platform.common_2018_2.ClassificationSearchRowBasic;
-import com.netsuite.webservices.platform.common_2018_2.CustomSearchRowBasic;
-import com.netsuite.webservices.platform.common_2018_2.DepartmentSearchRowBasic;
-import com.netsuite.webservices.platform.common_2018_2.ItemAccountMappingSearchRowBasic;
-import com.netsuite.webservices.platform.common_2018_2.LocationSearchRowBasic;
-import com.netsuite.webservices.platform.common_2018_2.SubsidiarySearchRowBasic;
-import com.netsuite.webservices.platform.core_2018_2.SearchRow;
+public class ItemAccountMappingSearchRow  extends com.netsuite.webservices.platform.core_2018_2.SearchRow  implements java.io.Serializable {
+    private com.netsuite.webservices.platform.common_2018_2.ItemAccountMappingSearchRowBasic basic;
 
+    private com.netsuite.webservices.platform.common_2018_2.ClassificationSearchRowBasic classJoin;
 
-/**
- * <p>ItemAccountMappingSearchRow complex type的 Java 类。
- * 
- * <p>以下模式片段指定包含在此类中的预期内容。
- * 
- * <pre>
- * &lt;complexType name="ItemAccountMappingSearchRow">
- *   &lt;complexContent>
- *     &lt;extension base="{urn:core_2018_2.platform.webservices.netsuite.com}SearchRow">
- *       &lt;sequence>
- *         &lt;element name="basic" type="{urn:common_2018_2.platform.webservices.netsuite.com}ItemAccountMappingSearchRowBasic" minOccurs="0"/>
- *         &lt;element name="classJoin" type="{urn:common_2018_2.platform.webservices.netsuite.com}ClassificationSearchRowBasic" minOccurs="0"/>
- *         &lt;element name="departmentJoin" type="{urn:common_2018_2.platform.webservices.netsuite.com}DepartmentSearchRowBasic" minOccurs="0"/>
- *         &lt;element name="destinationAccountJoin" type="{urn:common_2018_2.platform.webservices.netsuite.com}AccountSearchRowBasic" minOccurs="0"/>
- *         &lt;element name="locationJoin" type="{urn:common_2018_2.platform.webservices.netsuite.com}LocationSearchRowBasic" minOccurs="0"/>
- *         &lt;element name="sourceAccountJoin" type="{urn:common_2018_2.platform.webservices.netsuite.com}AccountSearchRowBasic" minOccurs="0"/>
- *         &lt;element name="subsidiaryJoin" type="{urn:common_2018_2.platform.webservices.netsuite.com}SubsidiarySearchRowBasic" minOccurs="0"/>
- *         &lt;element name="customSearchJoin" type="{urn:common_2018_2.platform.webservices.netsuite.com}CustomSearchRowBasic" maxOccurs="unbounded" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/extension>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
- */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "ItemAccountMappingSearchRow", propOrder = {
-    "basic",
-    "classJoin",
-    "departmentJoin",
-    "destinationAccountJoin",
-    "locationJoin",
-    "sourceAccountJoin",
-    "subsidiaryJoin",
-    "customSearchJoin"
-})
-public class ItemAccountMappingSearchRow
-    extends SearchRow
-{
+    private com.netsuite.webservices.platform.common_2018_2.DepartmentSearchRowBasic departmentJoin;
 
-    protected ItemAccountMappingSearchRowBasic basic;
-    protected ClassificationSearchRowBasic classJoin;
-    protected DepartmentSearchRowBasic departmentJoin;
-    protected AccountSearchRowBasic destinationAccountJoin;
-    protected LocationSearchRowBasic locationJoin;
-    protected AccountSearchRowBasic sourceAccountJoin;
-    protected SubsidiarySearchRowBasic subsidiaryJoin;
-    protected List<CustomSearchRowBasic> customSearchJoin;
+    private com.netsuite.webservices.platform.common_2018_2.AccountSearchRowBasic destinationAccountJoin;
+
+    private com.netsuite.webservices.platform.common_2018_2.LocationSearchRowBasic locationJoin;
+
+    private com.netsuite.webservices.platform.common_2018_2.AccountSearchRowBasic sourceAccountJoin;
+
+    private com.netsuite.webservices.platform.common_2018_2.SubsidiarySearchRowBasic subsidiaryJoin;
+
+    private com.netsuite.webservices.platform.common_2018_2.CustomSearchRowBasic[] customSearchJoin;
+
+    public ItemAccountMappingSearchRow() {
+    }
+
+    public ItemAccountMappingSearchRow(
+           com.netsuite.webservices.platform.common_2018_2.ItemAccountMappingSearchRowBasic basic,
+           com.netsuite.webservices.platform.common_2018_2.ClassificationSearchRowBasic classJoin,
+           com.netsuite.webservices.platform.common_2018_2.DepartmentSearchRowBasic departmentJoin,
+           com.netsuite.webservices.platform.common_2018_2.AccountSearchRowBasic destinationAccountJoin,
+           com.netsuite.webservices.platform.common_2018_2.LocationSearchRowBasic locationJoin,
+           com.netsuite.webservices.platform.common_2018_2.AccountSearchRowBasic sourceAccountJoin,
+           com.netsuite.webservices.platform.common_2018_2.SubsidiarySearchRowBasic subsidiaryJoin,
+           com.netsuite.webservices.platform.common_2018_2.CustomSearchRowBasic[] customSearchJoin) {
+        this.basic = basic;
+        this.classJoin = classJoin;
+        this.departmentJoin = departmentJoin;
+        this.destinationAccountJoin = destinationAccountJoin;
+        this.locationJoin = locationJoin;
+        this.sourceAccountJoin = sourceAccountJoin;
+        this.subsidiaryJoin = subsidiaryJoin;
+        this.customSearchJoin = customSearchJoin;
+    }
+
 
     /**
-     * 获取basic属性的值。
+     * Gets the basic value for this ItemAccountMappingSearchRow.
      * 
-     * @return
-     *     possible object is
-     *     {@link ItemAccountMappingSearchRowBasic }
-     *     
+     * @return basic
      */
-    public ItemAccountMappingSearchRowBasic getBasic() {
+    public com.netsuite.webservices.platform.common_2018_2.ItemAccountMappingSearchRowBasic getBasic() {
         return basic;
     }
 
-    /**
-     * 设置basic属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link ItemAccountMappingSearchRowBasic }
-     *     
-     */
-    public void setBasic(ItemAccountMappingSearchRowBasic value) {
-        this.basic = value;
-    }
 
     /**
-     * 获取classJoin属性的值。
+     * Sets the basic value for this ItemAccountMappingSearchRow.
      * 
-     * @return
-     *     possible object is
-     *     {@link ClassificationSearchRowBasic }
-     *     
+     * @param basic
      */
-    public ClassificationSearchRowBasic getClassJoin() {
+    public void setBasic(com.netsuite.webservices.platform.common_2018_2.ItemAccountMappingSearchRowBasic basic) {
+        this.basic = basic;
+    }
+
+
+    /**
+     * Gets the classJoin value for this ItemAccountMappingSearchRow.
+     * 
+     * @return classJoin
+     */
+    public com.netsuite.webservices.platform.common_2018_2.ClassificationSearchRowBasic getClassJoin() {
         return classJoin;
     }
 
-    /**
-     * 设置classJoin属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link ClassificationSearchRowBasic }
-     *     
-     */
-    public void setClassJoin(ClassificationSearchRowBasic value) {
-        this.classJoin = value;
-    }
 
     /**
-     * 获取departmentJoin属性的值。
+     * Sets the classJoin value for this ItemAccountMappingSearchRow.
      * 
-     * @return
-     *     possible object is
-     *     {@link DepartmentSearchRowBasic }
-     *     
+     * @param classJoin
      */
-    public DepartmentSearchRowBasic getDepartmentJoin() {
+    public void setClassJoin(com.netsuite.webservices.platform.common_2018_2.ClassificationSearchRowBasic classJoin) {
+        this.classJoin = classJoin;
+    }
+
+
+    /**
+     * Gets the departmentJoin value for this ItemAccountMappingSearchRow.
+     * 
+     * @return departmentJoin
+     */
+    public com.netsuite.webservices.platform.common_2018_2.DepartmentSearchRowBasic getDepartmentJoin() {
         return departmentJoin;
     }
 
-    /**
-     * 设置departmentJoin属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link DepartmentSearchRowBasic }
-     *     
-     */
-    public void setDepartmentJoin(DepartmentSearchRowBasic value) {
-        this.departmentJoin = value;
-    }
 
     /**
-     * 获取destinationAccountJoin属性的值。
+     * Sets the departmentJoin value for this ItemAccountMappingSearchRow.
      * 
-     * @return
-     *     possible object is
-     *     {@link AccountSearchRowBasic }
-     *     
+     * @param departmentJoin
      */
-    public AccountSearchRowBasic getDestinationAccountJoin() {
+    public void setDepartmentJoin(com.netsuite.webservices.platform.common_2018_2.DepartmentSearchRowBasic departmentJoin) {
+        this.departmentJoin = departmentJoin;
+    }
+
+
+    /**
+     * Gets the destinationAccountJoin value for this ItemAccountMappingSearchRow.
+     * 
+     * @return destinationAccountJoin
+     */
+    public com.netsuite.webservices.platform.common_2018_2.AccountSearchRowBasic getDestinationAccountJoin() {
         return destinationAccountJoin;
     }
 
-    /**
-     * 设置destinationAccountJoin属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link AccountSearchRowBasic }
-     *     
-     */
-    public void setDestinationAccountJoin(AccountSearchRowBasic value) {
-        this.destinationAccountJoin = value;
-    }
 
     /**
-     * 获取locationJoin属性的值。
+     * Sets the destinationAccountJoin value for this ItemAccountMappingSearchRow.
      * 
-     * @return
-     *     possible object is
-     *     {@link LocationSearchRowBasic }
-     *     
+     * @param destinationAccountJoin
      */
-    public LocationSearchRowBasic getLocationJoin() {
+    public void setDestinationAccountJoin(com.netsuite.webservices.platform.common_2018_2.AccountSearchRowBasic destinationAccountJoin) {
+        this.destinationAccountJoin = destinationAccountJoin;
+    }
+
+
+    /**
+     * Gets the locationJoin value for this ItemAccountMappingSearchRow.
+     * 
+     * @return locationJoin
+     */
+    public com.netsuite.webservices.platform.common_2018_2.LocationSearchRowBasic getLocationJoin() {
         return locationJoin;
     }
 
-    /**
-     * 设置locationJoin属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link LocationSearchRowBasic }
-     *     
-     */
-    public void setLocationJoin(LocationSearchRowBasic value) {
-        this.locationJoin = value;
-    }
 
     /**
-     * 获取sourceAccountJoin属性的值。
+     * Sets the locationJoin value for this ItemAccountMappingSearchRow.
      * 
-     * @return
-     *     possible object is
-     *     {@link AccountSearchRowBasic }
-     *     
+     * @param locationJoin
      */
-    public AccountSearchRowBasic getSourceAccountJoin() {
+    public void setLocationJoin(com.netsuite.webservices.platform.common_2018_2.LocationSearchRowBasic locationJoin) {
+        this.locationJoin = locationJoin;
+    }
+
+
+    /**
+     * Gets the sourceAccountJoin value for this ItemAccountMappingSearchRow.
+     * 
+     * @return sourceAccountJoin
+     */
+    public com.netsuite.webservices.platform.common_2018_2.AccountSearchRowBasic getSourceAccountJoin() {
         return sourceAccountJoin;
     }
 
-    /**
-     * 设置sourceAccountJoin属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link AccountSearchRowBasic }
-     *     
-     */
-    public void setSourceAccountJoin(AccountSearchRowBasic value) {
-        this.sourceAccountJoin = value;
-    }
 
     /**
-     * 获取subsidiaryJoin属性的值。
+     * Sets the sourceAccountJoin value for this ItemAccountMappingSearchRow.
      * 
-     * @return
-     *     possible object is
-     *     {@link SubsidiarySearchRowBasic }
-     *     
+     * @param sourceAccountJoin
      */
-    public SubsidiarySearchRowBasic getSubsidiaryJoin() {
+    public void setSourceAccountJoin(com.netsuite.webservices.platform.common_2018_2.AccountSearchRowBasic sourceAccountJoin) {
+        this.sourceAccountJoin = sourceAccountJoin;
+    }
+
+
+    /**
+     * Gets the subsidiaryJoin value for this ItemAccountMappingSearchRow.
+     * 
+     * @return subsidiaryJoin
+     */
+    public com.netsuite.webservices.platform.common_2018_2.SubsidiarySearchRowBasic getSubsidiaryJoin() {
         return subsidiaryJoin;
     }
 
+
     /**
-     * 设置subsidiaryJoin属性的值。
+     * Sets the subsidiaryJoin value for this ItemAccountMappingSearchRow.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link SubsidiarySearchRowBasic }
-     *     
+     * @param subsidiaryJoin
      */
-    public void setSubsidiaryJoin(SubsidiarySearchRowBasic value) {
-        this.subsidiaryJoin = value;
+    public void setSubsidiaryJoin(com.netsuite.webservices.platform.common_2018_2.SubsidiarySearchRowBasic subsidiaryJoin) {
+        this.subsidiaryJoin = subsidiaryJoin;
+    }
+
+
+    /**
+     * Gets the customSearchJoin value for this ItemAccountMappingSearchRow.
+     * 
+     * @return customSearchJoin
+     */
+    public com.netsuite.webservices.platform.common_2018_2.CustomSearchRowBasic[] getCustomSearchJoin() {
+        return customSearchJoin;
+    }
+
+
+    /**
+     * Sets the customSearchJoin value for this ItemAccountMappingSearchRow.
+     * 
+     * @param customSearchJoin
+     */
+    public void setCustomSearchJoin(com.netsuite.webservices.platform.common_2018_2.CustomSearchRowBasic[] customSearchJoin) {
+        this.customSearchJoin = customSearchJoin;
+    }
+
+    public com.netsuite.webservices.platform.common_2018_2.CustomSearchRowBasic getCustomSearchJoin(int i) {
+        return this.customSearchJoin[i];
+    }
+
+    public void setCustomSearchJoin(int i, com.netsuite.webservices.platform.common_2018_2.CustomSearchRowBasic _value) {
+        this.customSearchJoin[i] = _value;
+    }
+
+    private java.lang.Object __equalsCalc = null;
+    public synchronized boolean equals(java.lang.Object obj) {
+        if (!(obj instanceof ItemAccountMappingSearchRow)) return false;
+        ItemAccountMappingSearchRow other = (ItemAccountMappingSearchRow) obj;
+        if (obj == null) return false;
+        if (this == obj) return true;
+        if (__equalsCalc != null) {
+            return (__equalsCalc == obj);
+        }
+        __equalsCalc = obj;
+        boolean _equals;
+        _equals = super.equals(obj) && 
+            ((this.basic==null && other.getBasic()==null) || 
+             (this.basic!=null &&
+              this.basic.equals(other.getBasic()))) &&
+            ((this.classJoin==null && other.getClassJoin()==null) || 
+             (this.classJoin!=null &&
+              this.classJoin.equals(other.getClassJoin()))) &&
+            ((this.departmentJoin==null && other.getDepartmentJoin()==null) || 
+             (this.departmentJoin!=null &&
+              this.departmentJoin.equals(other.getDepartmentJoin()))) &&
+            ((this.destinationAccountJoin==null && other.getDestinationAccountJoin()==null) || 
+             (this.destinationAccountJoin!=null &&
+              this.destinationAccountJoin.equals(other.getDestinationAccountJoin()))) &&
+            ((this.locationJoin==null && other.getLocationJoin()==null) || 
+             (this.locationJoin!=null &&
+              this.locationJoin.equals(other.getLocationJoin()))) &&
+            ((this.sourceAccountJoin==null && other.getSourceAccountJoin()==null) || 
+             (this.sourceAccountJoin!=null &&
+              this.sourceAccountJoin.equals(other.getSourceAccountJoin()))) &&
+            ((this.subsidiaryJoin==null && other.getSubsidiaryJoin()==null) || 
+             (this.subsidiaryJoin!=null &&
+              this.subsidiaryJoin.equals(other.getSubsidiaryJoin()))) &&
+            ((this.customSearchJoin==null && other.getCustomSearchJoin()==null) || 
+             (this.customSearchJoin!=null &&
+              java.util.Arrays.equals(this.customSearchJoin, other.getCustomSearchJoin())));
+        __equalsCalc = null;
+        return _equals;
+    }
+
+    private boolean __hashCodeCalc = false;
+    public synchronized int hashCode() {
+        if (__hashCodeCalc) {
+            return 0;
+        }
+        __hashCodeCalc = true;
+        int _hashCode = super.hashCode();
+        if (getBasic() != null) {
+            _hashCode += getBasic().hashCode();
+        }
+        if (getClassJoin() != null) {
+            _hashCode += getClassJoin().hashCode();
+        }
+        if (getDepartmentJoin() != null) {
+            _hashCode += getDepartmentJoin().hashCode();
+        }
+        if (getDestinationAccountJoin() != null) {
+            _hashCode += getDestinationAccountJoin().hashCode();
+        }
+        if (getLocationJoin() != null) {
+            _hashCode += getLocationJoin().hashCode();
+        }
+        if (getSourceAccountJoin() != null) {
+            _hashCode += getSourceAccountJoin().hashCode();
+        }
+        if (getSubsidiaryJoin() != null) {
+            _hashCode += getSubsidiaryJoin().hashCode();
+        }
+        if (getCustomSearchJoin() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getCustomSearchJoin());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getCustomSearchJoin(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        __hashCodeCalc = false;
+        return _hashCode;
+    }
+
+    // Type metadata
+    private static org.apache.axis.description.TypeDesc typeDesc =
+        new org.apache.axis.description.TypeDesc(ItemAccountMappingSearchRow.class, true);
+
+    static {
+        typeDesc.setXmlType(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "ItemAccountMappingSearchRow"));
+        org.apache.axis.description.ElementDesc elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("basic");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "basic"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "ItemAccountMappingSearchRowBasic"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("classJoin");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "classJoin"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "ClassificationSearchRowBasic"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("departmentJoin");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "departmentJoin"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "DepartmentSearchRowBasic"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("destinationAccountJoin");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "destinationAccountJoin"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "AccountSearchRowBasic"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("locationJoin");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "locationJoin"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "LocationSearchRowBasic"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("sourceAccountJoin");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "sourceAccountJoin"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "AccountSearchRowBasic"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("subsidiaryJoin");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "subsidiaryJoin"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "SubsidiarySearchRowBasic"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("customSearchJoin");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "customSearchJoin"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "CustomSearchRowBasic"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
     }
 
     /**
-     * Gets the value of the customSearchJoin property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the customSearchJoin property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getCustomSearchJoin().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link CustomSearchRowBasic }
-     * 
-     * 
+     * Return type metadata object
      */
-    public List<CustomSearchRowBasic> getCustomSearchJoin() {
-        if (customSearchJoin == null) {
-            customSearchJoin = new ArrayList<CustomSearchRowBasic>();
-        }
-        return this.customSearchJoin;
+    public static org.apache.axis.description.TypeDesc getTypeDesc() {
+        return typeDesc;
+    }
+
+    /**
+     * Get Custom Serializer
+     */
+    public static org.apache.axis.encoding.Serializer getSerializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanSerializer(
+            _javaType, _xmlType, typeDesc);
+    }
+
+    /**
+     * Get Custom Deserializer
+     */
+    public static org.apache.axis.encoding.Deserializer getDeserializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanDeserializer(
+            _javaType, _xmlType, typeDesc);
     }
 
 }

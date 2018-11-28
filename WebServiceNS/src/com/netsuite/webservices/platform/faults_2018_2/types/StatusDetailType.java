@@ -1,40 +1,72 @@
+/**
+ * StatusDetailType.java
+ *
+ * This file was auto-generated from WSDL
+ * by the Apache Axis 1.4 Jul 28, 2010 (04:07:04 PDT) WSDL2Java emitter.
+ */
 
 package com.netsuite.webservices.platform.faults_2018_2.types;
 
-import javax.xml.bind.annotation.XmlEnum;
-import javax.xml.bind.annotation.XmlType;
+public class StatusDetailType implements java.io.Serializable {
+    private java.lang.String _value_;
+    private static java.util.HashMap _table_ = new java.util.HashMap();
 
-
-/**
- * <p>StatusDetailType的 Java 类。
- * 
- * <p>以下模式片段指定包含在此类中的预期内容。
- * <p>
- * <pre>
- * &lt;simpleType name="StatusDetailType">
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     &lt;enumeration value="ERROR"/>
- *     &lt;enumeration value="WARN"/>
- *     &lt;enumeration value="INFO"/>
- *   &lt;/restriction>
- * &lt;/simpleType>
- * </pre>
- * 
- */
-@XmlType(name = "StatusDetailType", namespace = "urn:types.faults_2018_2.platform.webservices.netsuite.com")
-@XmlEnum
-public enum StatusDetailType {
-
-    ERROR,
-    WARN,
-    INFO;
-
-    public String value() {
-        return name();
+    // Constructor
+    protected StatusDetailType(java.lang.String value) {
+        _value_ = value;
+        _table_.put(_value_,this);
     }
 
-    public static StatusDetailType fromValue(String v) {
-        return valueOf(v);
+    public static final java.lang.String _ERROR = "ERROR";
+    public static final java.lang.String _WARN = "WARN";
+    public static final java.lang.String _INFO = "INFO";
+    public static final StatusDetailType ERROR = new StatusDetailType(_ERROR);
+    public static final StatusDetailType WARN = new StatusDetailType(_WARN);
+    public static final StatusDetailType INFO = new StatusDetailType(_INFO);
+    public java.lang.String getValue() { return _value_;}
+    public static StatusDetailType fromValue(java.lang.String value)
+          throws java.lang.IllegalArgumentException {
+        StatusDetailType enumeration = (StatusDetailType)
+            _table_.get(value);
+        if (enumeration==null) throw new java.lang.IllegalArgumentException();
+        return enumeration;
+    }
+    public static StatusDetailType fromString(java.lang.String value)
+          throws java.lang.IllegalArgumentException {
+        return fromValue(value);
+    }
+    public boolean equals(java.lang.Object obj) {return (obj == this);}
+    public int hashCode() { return toString().hashCode();}
+    public java.lang.String toString() { return _value_;}
+    public java.lang.Object readResolve() throws java.io.ObjectStreamException { return fromValue(_value_);}
+    public static org.apache.axis.encoding.Serializer getSerializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new org.apache.axis.encoding.ser.EnumSerializer(
+            _javaType, _xmlType);
+    }
+    public static org.apache.axis.encoding.Deserializer getDeserializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new org.apache.axis.encoding.ser.EnumDeserializer(
+            _javaType, _xmlType);
+    }
+    // Type metadata
+    private static org.apache.axis.description.TypeDesc typeDesc =
+        new org.apache.axis.description.TypeDesc(StatusDetailType.class);
+
+    static {
+        typeDesc.setXmlType(new javax.xml.namespace.QName("urn:types.faults_2018_2.platform.webservices.netsuite.com", "StatusDetailType"));
+    }
+    /**
+     * Return type metadata object
+     */
+    public static org.apache.axis.description.TypeDesc getTypeDesc() {
+        return typeDesc;
     }
 
 }

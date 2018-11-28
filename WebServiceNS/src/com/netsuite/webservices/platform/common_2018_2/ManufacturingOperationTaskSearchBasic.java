@@ -1,853 +1,1274 @@
+/**
+ * ManufacturingOperationTaskSearchBasic.java
+ *
+ * This file was auto-generated from WSDL
+ * by the Apache Axis 1.4 Jul 28, 2010 (04:07:04 PDT) WSDL2Java emitter.
+ */
 
 package com.netsuite.webservices.platform.common_2018_2;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlType;
-import com.netsuite.webservices.platform.core_2018_2.SearchCustomFieldList;
-import com.netsuite.webservices.platform.core_2018_2.SearchDateField;
-import com.netsuite.webservices.platform.core_2018_2.SearchDoubleField;
-import com.netsuite.webservices.platform.core_2018_2.SearchEnumMultiSelectField;
-import com.netsuite.webservices.platform.core_2018_2.SearchLongField;
-import com.netsuite.webservices.platform.core_2018_2.SearchMultiSelectField;
-import com.netsuite.webservices.platform.core_2018_2.SearchRecordBasic;
-import com.netsuite.webservices.platform.core_2018_2.SearchStringField;
+public class ManufacturingOperationTaskSearchBasic  extends com.netsuite.webservices.platform.core_2018_2.SearchRecordBasic  implements java.io.Serializable {
+    private com.netsuite.webservices.platform.core_2018_2.SearchDoubleField actualRunTime;
 
+    private com.netsuite.webservices.platform.core_2018_2.SearchDoubleField actualSetupTime;
 
-/**
- * <p>ManufacturingOperationTaskSearchBasic complex type的 Java 类。
- * 
- * <p>以下模式片段指定包含在此类中的预期内容。
- * 
- * <pre>
- * &lt;complexType name="ManufacturingOperationTaskSearchBasic">
- *   &lt;complexContent>
- *     &lt;extension base="{urn:core_2018_2.platform.webservices.netsuite.com}SearchRecordBasic">
- *       &lt;sequence>
- *         &lt;element name="actualRunTime" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchDoubleField" minOccurs="0"/>
- *         &lt;element name="actualSetupTime" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchDoubleField" minOccurs="0"/>
- *         &lt;element name="completedQuantity" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchDoubleField" minOccurs="0"/>
- *         &lt;element name="endDate" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchDateField" minOccurs="0"/>
- *         &lt;element name="estimatedWork" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchDoubleField" minOccurs="0"/>
- *         &lt;element name="externalId" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchMultiSelectField" minOccurs="0"/>
- *         &lt;element name="externalIdString" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchStringField" minOccurs="0"/>
- *         &lt;element name="id" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchLongField" minOccurs="0"/>
- *         &lt;element name="inputQuantity" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchDoubleField" minOccurs="0"/>
- *         &lt;element name="internalId" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchMultiSelectField" minOccurs="0"/>
- *         &lt;element name="internalIdNumber" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchLongField" minOccurs="0"/>
- *         &lt;element name="laborResources" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchLongField" minOccurs="0"/>
- *         &lt;element name="lagAmount" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchDoubleField" minOccurs="0"/>
- *         &lt;element name="lagType" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchEnumMultiSelectField" minOccurs="0"/>
- *         &lt;element name="lagUnits" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchStringField" minOccurs="0"/>
- *         &lt;element name="machineResources" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchLongField" minOccurs="0"/>
- *         &lt;element name="manufacturingCostTemplate" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchMultiSelectField" minOccurs="0"/>
- *         &lt;element name="manufacturingWorkCenter" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchMultiSelectField" minOccurs="0"/>
- *         &lt;element name="name" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchStringField" minOccurs="0"/>
- *         &lt;element name="order" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchDoubleField" minOccurs="0"/>
- *         &lt;element name="predecessor" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchMultiSelectField" minOccurs="0"/>
- *         &lt;element name="remainingQuantity" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchDoubleField" minOccurs="0"/>
- *         &lt;element name="runRate" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchDoubleField" minOccurs="0"/>
- *         &lt;element name="runTime" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchDoubleField" minOccurs="0"/>
- *         &lt;element name="sequence" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchLongField" minOccurs="0"/>
- *         &lt;element name="setupTime" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchDoubleField" minOccurs="0"/>
- *         &lt;element name="startDate" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchDateField" minOccurs="0"/>
- *         &lt;element name="status" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchMultiSelectField" minOccurs="0"/>
- *         &lt;element name="workOrder" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchMultiSelectField" minOccurs="0"/>
- *         &lt;element name="customFieldList" type="{urn:core_2018_2.platform.webservices.netsuite.com}SearchCustomFieldList" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/extension>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
- */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "ManufacturingOperationTaskSearchBasic", propOrder = {
-    "actualRunTime",
-    "actualSetupTime",
-    "completedQuantity",
-    "endDate",
-    "estimatedWork",
-    "externalId",
-    "externalIdString",
-    "id",
-    "inputQuantity",
-    "internalId",
-    "internalIdNumber",
-    "laborResources",
-    "lagAmount",
-    "lagType",
-    "lagUnits",
-    "machineResources",
-    "manufacturingCostTemplate",
-    "manufacturingWorkCenter",
-    "name",
-    "order",
-    "predecessor",
-    "remainingQuantity",
-    "runRate",
-    "runTime",
-    "sequence",
-    "setupTime",
-    "startDate",
-    "status",
-    "workOrder",
-    "customFieldList"
-})
-public class ManufacturingOperationTaskSearchBasic
-    extends SearchRecordBasic
-{
+    private com.netsuite.webservices.platform.core_2018_2.SearchDoubleField completedQuantity;
 
-    protected SearchDoubleField actualRunTime;
-    protected SearchDoubleField actualSetupTime;
-    protected SearchDoubleField completedQuantity;
-    protected SearchDateField endDate;
-    protected SearchDoubleField estimatedWork;
-    protected SearchMultiSelectField externalId;
-    protected SearchStringField externalIdString;
-    protected SearchLongField id;
-    protected SearchDoubleField inputQuantity;
-    protected SearchMultiSelectField internalId;
-    protected SearchLongField internalIdNumber;
-    protected SearchLongField laborResources;
-    protected SearchDoubleField lagAmount;
-    protected SearchEnumMultiSelectField lagType;
-    protected SearchStringField lagUnits;
-    protected SearchLongField machineResources;
-    protected SearchMultiSelectField manufacturingCostTemplate;
-    protected SearchMultiSelectField manufacturingWorkCenter;
-    protected SearchStringField name;
-    protected SearchDoubleField order;
-    protected SearchMultiSelectField predecessor;
-    protected SearchDoubleField remainingQuantity;
-    protected SearchDoubleField runRate;
-    protected SearchDoubleField runTime;
-    protected SearchLongField sequence;
-    protected SearchDoubleField setupTime;
-    protected SearchDateField startDate;
-    protected SearchMultiSelectField status;
-    protected SearchMultiSelectField workOrder;
-    protected SearchCustomFieldList customFieldList;
+    private com.netsuite.webservices.platform.core_2018_2.SearchDateField endDate;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchDoubleField estimatedWork;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef[] externalId;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchStringField externalIdString;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchLongField id;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchDoubleField inputQuantity;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef[] internalId;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchLongField internalIdNumber;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchLongField laborResources;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchDoubleField lagAmount;
+
+    private java.lang.String[] lagType;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchStringField lagUnits;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchLongField machineResources;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef[] manufacturingCostTemplate;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef[] manufacturingWorkCenter;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchStringField name;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchDoubleField order;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef[] predecessor;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchDoubleField remainingQuantity;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchDoubleField runRate;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchDoubleField runTime;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchLongField sequence;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchDoubleField setupTime;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchDateField startDate;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef[] status;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef[] workOrder;
+
+    private com.netsuite.webservices.platform.core_2018_2.SearchCustomField[] customFieldList;
+
+    public ManufacturingOperationTaskSearchBasic() {
+    }
+
+    public ManufacturingOperationTaskSearchBasic(
+           com.netsuite.webservices.platform.core_2018_2.SearchDoubleField actualRunTime,
+           com.netsuite.webservices.platform.core_2018_2.SearchDoubleField actualSetupTime,
+           com.netsuite.webservices.platform.core_2018_2.SearchDoubleField completedQuantity,
+           com.netsuite.webservices.platform.core_2018_2.SearchDateField endDate,
+           com.netsuite.webservices.platform.core_2018_2.SearchDoubleField estimatedWork,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef[] externalId,
+           com.netsuite.webservices.platform.core_2018_2.SearchStringField externalIdString,
+           com.netsuite.webservices.platform.core_2018_2.SearchLongField id,
+           com.netsuite.webservices.platform.core_2018_2.SearchDoubleField inputQuantity,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef[] internalId,
+           com.netsuite.webservices.platform.core_2018_2.SearchLongField internalIdNumber,
+           com.netsuite.webservices.platform.core_2018_2.SearchLongField laborResources,
+           com.netsuite.webservices.platform.core_2018_2.SearchDoubleField lagAmount,
+           java.lang.String[] lagType,
+           com.netsuite.webservices.platform.core_2018_2.SearchStringField lagUnits,
+           com.netsuite.webservices.platform.core_2018_2.SearchLongField machineResources,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef[] manufacturingCostTemplate,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef[] manufacturingWorkCenter,
+           com.netsuite.webservices.platform.core_2018_2.SearchStringField name,
+           com.netsuite.webservices.platform.core_2018_2.SearchDoubleField order,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef[] predecessor,
+           com.netsuite.webservices.platform.core_2018_2.SearchDoubleField remainingQuantity,
+           com.netsuite.webservices.platform.core_2018_2.SearchDoubleField runRate,
+           com.netsuite.webservices.platform.core_2018_2.SearchDoubleField runTime,
+           com.netsuite.webservices.platform.core_2018_2.SearchLongField sequence,
+           com.netsuite.webservices.platform.core_2018_2.SearchDoubleField setupTime,
+           com.netsuite.webservices.platform.core_2018_2.SearchDateField startDate,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef[] status,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef[] workOrder,
+           com.netsuite.webservices.platform.core_2018_2.SearchCustomField[] customFieldList) {
+        this.actualRunTime = actualRunTime;
+        this.actualSetupTime = actualSetupTime;
+        this.completedQuantity = completedQuantity;
+        this.endDate = endDate;
+        this.estimatedWork = estimatedWork;
+        this.externalId = externalId;
+        this.externalIdString = externalIdString;
+        this.id = id;
+        this.inputQuantity = inputQuantity;
+        this.internalId = internalId;
+        this.internalIdNumber = internalIdNumber;
+        this.laborResources = laborResources;
+        this.lagAmount = lagAmount;
+        this.lagType = lagType;
+        this.lagUnits = lagUnits;
+        this.machineResources = machineResources;
+        this.manufacturingCostTemplate = manufacturingCostTemplate;
+        this.manufacturingWorkCenter = manufacturingWorkCenter;
+        this.name = name;
+        this.order = order;
+        this.predecessor = predecessor;
+        this.remainingQuantity = remainingQuantity;
+        this.runRate = runRate;
+        this.runTime = runTime;
+        this.sequence = sequence;
+        this.setupTime = setupTime;
+        this.startDate = startDate;
+        this.status = status;
+        this.workOrder = workOrder;
+        this.customFieldList = customFieldList;
+    }
+
 
     /**
-     * 获取actualRunTime属性的值。
+     * Gets the actualRunTime value for this ManufacturingOperationTaskSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchDoubleField }
-     *     
+     * @return actualRunTime
      */
-    public SearchDoubleField getActualRunTime() {
+    public com.netsuite.webservices.platform.core_2018_2.SearchDoubleField getActualRunTime() {
         return actualRunTime;
     }
 
-    /**
-     * 设置actualRunTime属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchDoubleField }
-     *     
-     */
-    public void setActualRunTime(SearchDoubleField value) {
-        this.actualRunTime = value;
-    }
 
     /**
-     * 获取actualSetupTime属性的值。
+     * Sets the actualRunTime value for this ManufacturingOperationTaskSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchDoubleField }
-     *     
+     * @param actualRunTime
      */
-    public SearchDoubleField getActualSetupTime() {
+    public void setActualRunTime(com.netsuite.webservices.platform.core_2018_2.SearchDoubleField actualRunTime) {
+        this.actualRunTime = actualRunTime;
+    }
+
+
+    /**
+     * Gets the actualSetupTime value for this ManufacturingOperationTaskSearchBasic.
+     * 
+     * @return actualSetupTime
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchDoubleField getActualSetupTime() {
         return actualSetupTime;
     }
 
-    /**
-     * 设置actualSetupTime属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchDoubleField }
-     *     
-     */
-    public void setActualSetupTime(SearchDoubleField value) {
-        this.actualSetupTime = value;
-    }
 
     /**
-     * 获取completedQuantity属性的值。
+     * Sets the actualSetupTime value for this ManufacturingOperationTaskSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchDoubleField }
-     *     
+     * @param actualSetupTime
      */
-    public SearchDoubleField getCompletedQuantity() {
+    public void setActualSetupTime(com.netsuite.webservices.platform.core_2018_2.SearchDoubleField actualSetupTime) {
+        this.actualSetupTime = actualSetupTime;
+    }
+
+
+    /**
+     * Gets the completedQuantity value for this ManufacturingOperationTaskSearchBasic.
+     * 
+     * @return completedQuantity
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchDoubleField getCompletedQuantity() {
         return completedQuantity;
     }
 
-    /**
-     * 设置completedQuantity属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchDoubleField }
-     *     
-     */
-    public void setCompletedQuantity(SearchDoubleField value) {
-        this.completedQuantity = value;
-    }
 
     /**
-     * 获取endDate属性的值。
+     * Sets the completedQuantity value for this ManufacturingOperationTaskSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchDateField }
-     *     
+     * @param completedQuantity
      */
-    public SearchDateField getEndDate() {
+    public void setCompletedQuantity(com.netsuite.webservices.platform.core_2018_2.SearchDoubleField completedQuantity) {
+        this.completedQuantity = completedQuantity;
+    }
+
+
+    /**
+     * Gets the endDate value for this ManufacturingOperationTaskSearchBasic.
+     * 
+     * @return endDate
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchDateField getEndDate() {
         return endDate;
     }
 
-    /**
-     * 设置endDate属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchDateField }
-     *     
-     */
-    public void setEndDate(SearchDateField value) {
-        this.endDate = value;
-    }
 
     /**
-     * 获取estimatedWork属性的值。
+     * Sets the endDate value for this ManufacturingOperationTaskSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchDoubleField }
-     *     
+     * @param endDate
      */
-    public SearchDoubleField getEstimatedWork() {
+    public void setEndDate(com.netsuite.webservices.platform.core_2018_2.SearchDateField endDate) {
+        this.endDate = endDate;
+    }
+
+
+    /**
+     * Gets the estimatedWork value for this ManufacturingOperationTaskSearchBasic.
+     * 
+     * @return estimatedWork
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchDoubleField getEstimatedWork() {
         return estimatedWork;
     }
 
-    /**
-     * 设置estimatedWork属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchDoubleField }
-     *     
-     */
-    public void setEstimatedWork(SearchDoubleField value) {
-        this.estimatedWork = value;
-    }
 
     /**
-     * 获取externalId属性的值。
+     * Sets the estimatedWork value for this ManufacturingOperationTaskSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchMultiSelectField }
-     *     
+     * @param estimatedWork
      */
-    public SearchMultiSelectField getExternalId() {
+    public void setEstimatedWork(com.netsuite.webservices.platform.core_2018_2.SearchDoubleField estimatedWork) {
+        this.estimatedWork = estimatedWork;
+    }
+
+
+    /**
+     * Gets the externalId value for this ManufacturingOperationTaskSearchBasic.
+     * 
+     * @return externalId
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef[] getExternalId() {
         return externalId;
     }
 
-    /**
-     * 设置externalId属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchMultiSelectField }
-     *     
-     */
-    public void setExternalId(SearchMultiSelectField value) {
-        this.externalId = value;
-    }
 
     /**
-     * 获取externalIdString属性的值。
+     * Sets the externalId value for this ManufacturingOperationTaskSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchStringField }
-     *     
+     * @param externalId
      */
-    public SearchStringField getExternalIdString() {
+    public void setExternalId(com.netsuite.webservices.platform.core_2018_2.RecordRef[] externalId) {
+        this.externalId = externalId;
+    }
+
+
+    /**
+     * Gets the externalIdString value for this ManufacturingOperationTaskSearchBasic.
+     * 
+     * @return externalIdString
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchStringField getExternalIdString() {
         return externalIdString;
     }
 
-    /**
-     * 设置externalIdString属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchStringField }
-     *     
-     */
-    public void setExternalIdString(SearchStringField value) {
-        this.externalIdString = value;
-    }
 
     /**
-     * 获取id属性的值。
+     * Sets the externalIdString value for this ManufacturingOperationTaskSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchLongField }
-     *     
+     * @param externalIdString
      */
-    public SearchLongField getId() {
+    public void setExternalIdString(com.netsuite.webservices.platform.core_2018_2.SearchStringField externalIdString) {
+        this.externalIdString = externalIdString;
+    }
+
+
+    /**
+     * Gets the id value for this ManufacturingOperationTaskSearchBasic.
+     * 
+     * @return id
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchLongField getId() {
         return id;
     }
 
-    /**
-     * 设置id属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchLongField }
-     *     
-     */
-    public void setId(SearchLongField value) {
-        this.id = value;
-    }
 
     /**
-     * 获取inputQuantity属性的值。
+     * Sets the id value for this ManufacturingOperationTaskSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchDoubleField }
-     *     
+     * @param id
      */
-    public SearchDoubleField getInputQuantity() {
+    public void setId(com.netsuite.webservices.platform.core_2018_2.SearchLongField id) {
+        this.id = id;
+    }
+
+
+    /**
+     * Gets the inputQuantity value for this ManufacturingOperationTaskSearchBasic.
+     * 
+     * @return inputQuantity
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchDoubleField getInputQuantity() {
         return inputQuantity;
     }
 
-    /**
-     * 设置inputQuantity属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchDoubleField }
-     *     
-     */
-    public void setInputQuantity(SearchDoubleField value) {
-        this.inputQuantity = value;
-    }
 
     /**
-     * 获取internalId属性的值。
+     * Sets the inputQuantity value for this ManufacturingOperationTaskSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchMultiSelectField }
-     *     
+     * @param inputQuantity
      */
-    public SearchMultiSelectField getInternalId() {
+    public void setInputQuantity(com.netsuite.webservices.platform.core_2018_2.SearchDoubleField inputQuantity) {
+        this.inputQuantity = inputQuantity;
+    }
+
+
+    /**
+     * Gets the internalId value for this ManufacturingOperationTaskSearchBasic.
+     * 
+     * @return internalId
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef[] getInternalId() {
         return internalId;
     }
 
-    /**
-     * 设置internalId属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchMultiSelectField }
-     *     
-     */
-    public void setInternalId(SearchMultiSelectField value) {
-        this.internalId = value;
-    }
 
     /**
-     * 获取internalIdNumber属性的值。
+     * Sets the internalId value for this ManufacturingOperationTaskSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchLongField }
-     *     
+     * @param internalId
      */
-    public SearchLongField getInternalIdNumber() {
+    public void setInternalId(com.netsuite.webservices.platform.core_2018_2.RecordRef[] internalId) {
+        this.internalId = internalId;
+    }
+
+
+    /**
+     * Gets the internalIdNumber value for this ManufacturingOperationTaskSearchBasic.
+     * 
+     * @return internalIdNumber
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchLongField getInternalIdNumber() {
         return internalIdNumber;
     }
 
-    /**
-     * 设置internalIdNumber属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchLongField }
-     *     
-     */
-    public void setInternalIdNumber(SearchLongField value) {
-        this.internalIdNumber = value;
-    }
 
     /**
-     * 获取laborResources属性的值。
+     * Sets the internalIdNumber value for this ManufacturingOperationTaskSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchLongField }
-     *     
+     * @param internalIdNumber
      */
-    public SearchLongField getLaborResources() {
+    public void setInternalIdNumber(com.netsuite.webservices.platform.core_2018_2.SearchLongField internalIdNumber) {
+        this.internalIdNumber = internalIdNumber;
+    }
+
+
+    /**
+     * Gets the laborResources value for this ManufacturingOperationTaskSearchBasic.
+     * 
+     * @return laborResources
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchLongField getLaborResources() {
         return laborResources;
     }
 
-    /**
-     * 设置laborResources属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchLongField }
-     *     
-     */
-    public void setLaborResources(SearchLongField value) {
-        this.laborResources = value;
-    }
 
     /**
-     * 获取lagAmount属性的值。
+     * Sets the laborResources value for this ManufacturingOperationTaskSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchDoubleField }
-     *     
+     * @param laborResources
      */
-    public SearchDoubleField getLagAmount() {
+    public void setLaborResources(com.netsuite.webservices.platform.core_2018_2.SearchLongField laborResources) {
+        this.laborResources = laborResources;
+    }
+
+
+    /**
+     * Gets the lagAmount value for this ManufacturingOperationTaskSearchBasic.
+     * 
+     * @return lagAmount
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchDoubleField getLagAmount() {
         return lagAmount;
     }
 
-    /**
-     * 设置lagAmount属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchDoubleField }
-     *     
-     */
-    public void setLagAmount(SearchDoubleField value) {
-        this.lagAmount = value;
-    }
 
     /**
-     * 获取lagType属性的值。
+     * Sets the lagAmount value for this ManufacturingOperationTaskSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchEnumMultiSelectField }
-     *     
+     * @param lagAmount
      */
-    public SearchEnumMultiSelectField getLagType() {
+    public void setLagAmount(com.netsuite.webservices.platform.core_2018_2.SearchDoubleField lagAmount) {
+        this.lagAmount = lagAmount;
+    }
+
+
+    /**
+     * Gets the lagType value for this ManufacturingOperationTaskSearchBasic.
+     * 
+     * @return lagType
+     */
+    public java.lang.String[] getLagType() {
         return lagType;
     }
 
-    /**
-     * 设置lagType属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchEnumMultiSelectField }
-     *     
-     */
-    public void setLagType(SearchEnumMultiSelectField value) {
-        this.lagType = value;
-    }
 
     /**
-     * 获取lagUnits属性的值。
+     * Sets the lagType value for this ManufacturingOperationTaskSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchStringField }
-     *     
+     * @param lagType
      */
-    public SearchStringField getLagUnits() {
+    public void setLagType(java.lang.String[] lagType) {
+        this.lagType = lagType;
+    }
+
+
+    /**
+     * Gets the lagUnits value for this ManufacturingOperationTaskSearchBasic.
+     * 
+     * @return lagUnits
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchStringField getLagUnits() {
         return lagUnits;
     }
 
-    /**
-     * 设置lagUnits属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchStringField }
-     *     
-     */
-    public void setLagUnits(SearchStringField value) {
-        this.lagUnits = value;
-    }
 
     /**
-     * 获取machineResources属性的值。
+     * Sets the lagUnits value for this ManufacturingOperationTaskSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchLongField }
-     *     
+     * @param lagUnits
      */
-    public SearchLongField getMachineResources() {
+    public void setLagUnits(com.netsuite.webservices.platform.core_2018_2.SearchStringField lagUnits) {
+        this.lagUnits = lagUnits;
+    }
+
+
+    /**
+     * Gets the machineResources value for this ManufacturingOperationTaskSearchBasic.
+     * 
+     * @return machineResources
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchLongField getMachineResources() {
         return machineResources;
     }
 
-    /**
-     * 设置machineResources属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchLongField }
-     *     
-     */
-    public void setMachineResources(SearchLongField value) {
-        this.machineResources = value;
-    }
 
     /**
-     * 获取manufacturingCostTemplate属性的值。
+     * Sets the machineResources value for this ManufacturingOperationTaskSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchMultiSelectField }
-     *     
+     * @param machineResources
      */
-    public SearchMultiSelectField getManufacturingCostTemplate() {
+    public void setMachineResources(com.netsuite.webservices.platform.core_2018_2.SearchLongField machineResources) {
+        this.machineResources = machineResources;
+    }
+
+
+    /**
+     * Gets the manufacturingCostTemplate value for this ManufacturingOperationTaskSearchBasic.
+     * 
+     * @return manufacturingCostTemplate
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef[] getManufacturingCostTemplate() {
         return manufacturingCostTemplate;
     }
 
-    /**
-     * 设置manufacturingCostTemplate属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchMultiSelectField }
-     *     
-     */
-    public void setManufacturingCostTemplate(SearchMultiSelectField value) {
-        this.manufacturingCostTemplate = value;
-    }
 
     /**
-     * 获取manufacturingWorkCenter属性的值。
+     * Sets the manufacturingCostTemplate value for this ManufacturingOperationTaskSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchMultiSelectField }
-     *     
+     * @param manufacturingCostTemplate
      */
-    public SearchMultiSelectField getManufacturingWorkCenter() {
+    public void setManufacturingCostTemplate(com.netsuite.webservices.platform.core_2018_2.RecordRef[] manufacturingCostTemplate) {
+        this.manufacturingCostTemplate = manufacturingCostTemplate;
+    }
+
+
+    /**
+     * Gets the manufacturingWorkCenter value for this ManufacturingOperationTaskSearchBasic.
+     * 
+     * @return manufacturingWorkCenter
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef[] getManufacturingWorkCenter() {
         return manufacturingWorkCenter;
     }
 
-    /**
-     * 设置manufacturingWorkCenter属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchMultiSelectField }
-     *     
-     */
-    public void setManufacturingWorkCenter(SearchMultiSelectField value) {
-        this.manufacturingWorkCenter = value;
-    }
 
     /**
-     * 获取name属性的值。
+     * Sets the manufacturingWorkCenter value for this ManufacturingOperationTaskSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchStringField }
-     *     
+     * @param manufacturingWorkCenter
      */
-    public SearchStringField getName() {
+    public void setManufacturingWorkCenter(com.netsuite.webservices.platform.core_2018_2.RecordRef[] manufacturingWorkCenter) {
+        this.manufacturingWorkCenter = manufacturingWorkCenter;
+    }
+
+
+    /**
+     * Gets the name value for this ManufacturingOperationTaskSearchBasic.
+     * 
+     * @return name
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchStringField getName() {
         return name;
     }
 
-    /**
-     * 设置name属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchStringField }
-     *     
-     */
-    public void setName(SearchStringField value) {
-        this.name = value;
-    }
 
     /**
-     * 获取order属性的值。
+     * Sets the name value for this ManufacturingOperationTaskSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchDoubleField }
-     *     
+     * @param name
      */
-    public SearchDoubleField getOrder() {
+    public void setName(com.netsuite.webservices.platform.core_2018_2.SearchStringField name) {
+        this.name = name;
+    }
+
+
+    /**
+     * Gets the order value for this ManufacturingOperationTaskSearchBasic.
+     * 
+     * @return order
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchDoubleField getOrder() {
         return order;
     }
 
-    /**
-     * 设置order属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchDoubleField }
-     *     
-     */
-    public void setOrder(SearchDoubleField value) {
-        this.order = value;
-    }
 
     /**
-     * 获取predecessor属性的值。
+     * Sets the order value for this ManufacturingOperationTaskSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchMultiSelectField }
-     *     
+     * @param order
      */
-    public SearchMultiSelectField getPredecessor() {
+    public void setOrder(com.netsuite.webservices.platform.core_2018_2.SearchDoubleField order) {
+        this.order = order;
+    }
+
+
+    /**
+     * Gets the predecessor value for this ManufacturingOperationTaskSearchBasic.
+     * 
+     * @return predecessor
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef[] getPredecessor() {
         return predecessor;
     }
 
-    /**
-     * 设置predecessor属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchMultiSelectField }
-     *     
-     */
-    public void setPredecessor(SearchMultiSelectField value) {
-        this.predecessor = value;
-    }
 
     /**
-     * 获取remainingQuantity属性的值。
+     * Sets the predecessor value for this ManufacturingOperationTaskSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchDoubleField }
-     *     
+     * @param predecessor
      */
-    public SearchDoubleField getRemainingQuantity() {
+    public void setPredecessor(com.netsuite.webservices.platform.core_2018_2.RecordRef[] predecessor) {
+        this.predecessor = predecessor;
+    }
+
+
+    /**
+     * Gets the remainingQuantity value for this ManufacturingOperationTaskSearchBasic.
+     * 
+     * @return remainingQuantity
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchDoubleField getRemainingQuantity() {
         return remainingQuantity;
     }
 
-    /**
-     * 设置remainingQuantity属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchDoubleField }
-     *     
-     */
-    public void setRemainingQuantity(SearchDoubleField value) {
-        this.remainingQuantity = value;
-    }
 
     /**
-     * 获取runRate属性的值。
+     * Sets the remainingQuantity value for this ManufacturingOperationTaskSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchDoubleField }
-     *     
+     * @param remainingQuantity
      */
-    public SearchDoubleField getRunRate() {
+    public void setRemainingQuantity(com.netsuite.webservices.platform.core_2018_2.SearchDoubleField remainingQuantity) {
+        this.remainingQuantity = remainingQuantity;
+    }
+
+
+    /**
+     * Gets the runRate value for this ManufacturingOperationTaskSearchBasic.
+     * 
+     * @return runRate
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchDoubleField getRunRate() {
         return runRate;
     }
 
-    /**
-     * 设置runRate属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchDoubleField }
-     *     
-     */
-    public void setRunRate(SearchDoubleField value) {
-        this.runRate = value;
-    }
 
     /**
-     * 获取runTime属性的值。
+     * Sets the runRate value for this ManufacturingOperationTaskSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchDoubleField }
-     *     
+     * @param runRate
      */
-    public SearchDoubleField getRunTime() {
+    public void setRunRate(com.netsuite.webservices.platform.core_2018_2.SearchDoubleField runRate) {
+        this.runRate = runRate;
+    }
+
+
+    /**
+     * Gets the runTime value for this ManufacturingOperationTaskSearchBasic.
+     * 
+     * @return runTime
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchDoubleField getRunTime() {
         return runTime;
     }
 
-    /**
-     * 设置runTime属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchDoubleField }
-     *     
-     */
-    public void setRunTime(SearchDoubleField value) {
-        this.runTime = value;
-    }
 
     /**
-     * 获取sequence属性的值。
+     * Sets the runTime value for this ManufacturingOperationTaskSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchLongField }
-     *     
+     * @param runTime
      */
-    public SearchLongField getSequence() {
+    public void setRunTime(com.netsuite.webservices.platform.core_2018_2.SearchDoubleField runTime) {
+        this.runTime = runTime;
+    }
+
+
+    /**
+     * Gets the sequence value for this ManufacturingOperationTaskSearchBasic.
+     * 
+     * @return sequence
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchLongField getSequence() {
         return sequence;
     }
 
-    /**
-     * 设置sequence属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchLongField }
-     *     
-     */
-    public void setSequence(SearchLongField value) {
-        this.sequence = value;
-    }
 
     /**
-     * 获取setupTime属性的值。
+     * Sets the sequence value for this ManufacturingOperationTaskSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchDoubleField }
-     *     
+     * @param sequence
      */
-    public SearchDoubleField getSetupTime() {
+    public void setSequence(com.netsuite.webservices.platform.core_2018_2.SearchLongField sequence) {
+        this.sequence = sequence;
+    }
+
+
+    /**
+     * Gets the setupTime value for this ManufacturingOperationTaskSearchBasic.
+     * 
+     * @return setupTime
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchDoubleField getSetupTime() {
         return setupTime;
     }
 
-    /**
-     * 设置setupTime属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchDoubleField }
-     *     
-     */
-    public void setSetupTime(SearchDoubleField value) {
-        this.setupTime = value;
-    }
 
     /**
-     * 获取startDate属性的值。
+     * Sets the setupTime value for this ManufacturingOperationTaskSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchDateField }
-     *     
+     * @param setupTime
      */
-    public SearchDateField getStartDate() {
+    public void setSetupTime(com.netsuite.webservices.platform.core_2018_2.SearchDoubleField setupTime) {
+        this.setupTime = setupTime;
+    }
+
+
+    /**
+     * Gets the startDate value for this ManufacturingOperationTaskSearchBasic.
+     * 
+     * @return startDate
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchDateField getStartDate() {
         return startDate;
     }
 
-    /**
-     * 设置startDate属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchDateField }
-     *     
-     */
-    public void setStartDate(SearchDateField value) {
-        this.startDate = value;
-    }
 
     /**
-     * 获取status属性的值。
+     * Sets the startDate value for this ManufacturingOperationTaskSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchMultiSelectField }
-     *     
+     * @param startDate
      */
-    public SearchMultiSelectField getStatus() {
+    public void setStartDate(com.netsuite.webservices.platform.core_2018_2.SearchDateField startDate) {
+        this.startDate = startDate;
+    }
+
+
+    /**
+     * Gets the status value for this ManufacturingOperationTaskSearchBasic.
+     * 
+     * @return status
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef[] getStatus() {
         return status;
     }
 
-    /**
-     * 设置status属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchMultiSelectField }
-     *     
-     */
-    public void setStatus(SearchMultiSelectField value) {
-        this.status = value;
-    }
 
     /**
-     * 获取workOrder属性的值。
+     * Sets the status value for this ManufacturingOperationTaskSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchMultiSelectField }
-     *     
+     * @param status
      */
-    public SearchMultiSelectField getWorkOrder() {
+    public void setStatus(com.netsuite.webservices.platform.core_2018_2.RecordRef[] status) {
+        this.status = status;
+    }
+
+
+    /**
+     * Gets the workOrder value for this ManufacturingOperationTaskSearchBasic.
+     * 
+     * @return workOrder
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef[] getWorkOrder() {
         return workOrder;
     }
 
-    /**
-     * 设置workOrder属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchMultiSelectField }
-     *     
-     */
-    public void setWorkOrder(SearchMultiSelectField value) {
-        this.workOrder = value;
-    }
 
     /**
-     * 获取customFieldList属性的值。
+     * Sets the workOrder value for this ManufacturingOperationTaskSearchBasic.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchCustomFieldList }
-     *     
+     * @param workOrder
      */
-    public SearchCustomFieldList getCustomFieldList() {
+    public void setWorkOrder(com.netsuite.webservices.platform.core_2018_2.RecordRef[] workOrder) {
+        this.workOrder = workOrder;
+    }
+
+
+    /**
+     * Gets the customFieldList value for this ManufacturingOperationTaskSearchBasic.
+     * 
+     * @return customFieldList
+     */
+    public com.netsuite.webservices.platform.core_2018_2.SearchCustomField[] getCustomFieldList() {
         return customFieldList;
     }
 
+
     /**
-     * 设置customFieldList属性的值。
+     * Sets the customFieldList value for this ManufacturingOperationTaskSearchBasic.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchCustomFieldList }
-     *     
+     * @param customFieldList
      */
-    public void setCustomFieldList(SearchCustomFieldList value) {
-        this.customFieldList = value;
+    public void setCustomFieldList(com.netsuite.webservices.platform.core_2018_2.SearchCustomField[] customFieldList) {
+        this.customFieldList = customFieldList;
+    }
+
+    private java.lang.Object __equalsCalc = null;
+    public synchronized boolean equals(java.lang.Object obj) {
+        if (!(obj instanceof ManufacturingOperationTaskSearchBasic)) return false;
+        ManufacturingOperationTaskSearchBasic other = (ManufacturingOperationTaskSearchBasic) obj;
+        if (obj == null) return false;
+        if (this == obj) return true;
+        if (__equalsCalc != null) {
+            return (__equalsCalc == obj);
+        }
+        __equalsCalc = obj;
+        boolean _equals;
+        _equals = super.equals(obj) && 
+            ((this.actualRunTime==null && other.getActualRunTime()==null) || 
+             (this.actualRunTime!=null &&
+              this.actualRunTime.equals(other.getActualRunTime()))) &&
+            ((this.actualSetupTime==null && other.getActualSetupTime()==null) || 
+             (this.actualSetupTime!=null &&
+              this.actualSetupTime.equals(other.getActualSetupTime()))) &&
+            ((this.completedQuantity==null && other.getCompletedQuantity()==null) || 
+             (this.completedQuantity!=null &&
+              this.completedQuantity.equals(other.getCompletedQuantity()))) &&
+            ((this.endDate==null && other.getEndDate()==null) || 
+             (this.endDate!=null &&
+              this.endDate.equals(other.getEndDate()))) &&
+            ((this.estimatedWork==null && other.getEstimatedWork()==null) || 
+             (this.estimatedWork!=null &&
+              this.estimatedWork.equals(other.getEstimatedWork()))) &&
+            ((this.externalId==null && other.getExternalId()==null) || 
+             (this.externalId!=null &&
+              java.util.Arrays.equals(this.externalId, other.getExternalId()))) &&
+            ((this.externalIdString==null && other.getExternalIdString()==null) || 
+             (this.externalIdString!=null &&
+              this.externalIdString.equals(other.getExternalIdString()))) &&
+            ((this.id==null && other.getId()==null) || 
+             (this.id!=null &&
+              this.id.equals(other.getId()))) &&
+            ((this.inputQuantity==null && other.getInputQuantity()==null) || 
+             (this.inputQuantity!=null &&
+              this.inputQuantity.equals(other.getInputQuantity()))) &&
+            ((this.internalId==null && other.getInternalId()==null) || 
+             (this.internalId!=null &&
+              java.util.Arrays.equals(this.internalId, other.getInternalId()))) &&
+            ((this.internalIdNumber==null && other.getInternalIdNumber()==null) || 
+             (this.internalIdNumber!=null &&
+              this.internalIdNumber.equals(other.getInternalIdNumber()))) &&
+            ((this.laborResources==null && other.getLaborResources()==null) || 
+             (this.laborResources!=null &&
+              this.laborResources.equals(other.getLaborResources()))) &&
+            ((this.lagAmount==null && other.getLagAmount()==null) || 
+             (this.lagAmount!=null &&
+              this.lagAmount.equals(other.getLagAmount()))) &&
+            ((this.lagType==null && other.getLagType()==null) || 
+             (this.lagType!=null &&
+              java.util.Arrays.equals(this.lagType, other.getLagType()))) &&
+            ((this.lagUnits==null && other.getLagUnits()==null) || 
+             (this.lagUnits!=null &&
+              this.lagUnits.equals(other.getLagUnits()))) &&
+            ((this.machineResources==null && other.getMachineResources()==null) || 
+             (this.machineResources!=null &&
+              this.machineResources.equals(other.getMachineResources()))) &&
+            ((this.manufacturingCostTemplate==null && other.getManufacturingCostTemplate()==null) || 
+             (this.manufacturingCostTemplate!=null &&
+              java.util.Arrays.equals(this.manufacturingCostTemplate, other.getManufacturingCostTemplate()))) &&
+            ((this.manufacturingWorkCenter==null && other.getManufacturingWorkCenter()==null) || 
+             (this.manufacturingWorkCenter!=null &&
+              java.util.Arrays.equals(this.manufacturingWorkCenter, other.getManufacturingWorkCenter()))) &&
+            ((this.name==null && other.getName()==null) || 
+             (this.name!=null &&
+              this.name.equals(other.getName()))) &&
+            ((this.order==null && other.getOrder()==null) || 
+             (this.order!=null &&
+              this.order.equals(other.getOrder()))) &&
+            ((this.predecessor==null && other.getPredecessor()==null) || 
+             (this.predecessor!=null &&
+              java.util.Arrays.equals(this.predecessor, other.getPredecessor()))) &&
+            ((this.remainingQuantity==null && other.getRemainingQuantity()==null) || 
+             (this.remainingQuantity!=null &&
+              this.remainingQuantity.equals(other.getRemainingQuantity()))) &&
+            ((this.runRate==null && other.getRunRate()==null) || 
+             (this.runRate!=null &&
+              this.runRate.equals(other.getRunRate()))) &&
+            ((this.runTime==null && other.getRunTime()==null) || 
+             (this.runTime!=null &&
+              this.runTime.equals(other.getRunTime()))) &&
+            ((this.sequence==null && other.getSequence()==null) || 
+             (this.sequence!=null &&
+              this.sequence.equals(other.getSequence()))) &&
+            ((this.setupTime==null && other.getSetupTime()==null) || 
+             (this.setupTime!=null &&
+              this.setupTime.equals(other.getSetupTime()))) &&
+            ((this.startDate==null && other.getStartDate()==null) || 
+             (this.startDate!=null &&
+              this.startDate.equals(other.getStartDate()))) &&
+            ((this.status==null && other.getStatus()==null) || 
+             (this.status!=null &&
+              java.util.Arrays.equals(this.status, other.getStatus()))) &&
+            ((this.workOrder==null && other.getWorkOrder()==null) || 
+             (this.workOrder!=null &&
+              java.util.Arrays.equals(this.workOrder, other.getWorkOrder()))) &&
+            ((this.customFieldList==null && other.getCustomFieldList()==null) || 
+             (this.customFieldList!=null &&
+              java.util.Arrays.equals(this.customFieldList, other.getCustomFieldList())));
+        __equalsCalc = null;
+        return _equals;
+    }
+
+    private boolean __hashCodeCalc = false;
+    public synchronized int hashCode() {
+        if (__hashCodeCalc) {
+            return 0;
+        }
+        __hashCodeCalc = true;
+        int _hashCode = super.hashCode();
+        if (getActualRunTime() != null) {
+            _hashCode += getActualRunTime().hashCode();
+        }
+        if (getActualSetupTime() != null) {
+            _hashCode += getActualSetupTime().hashCode();
+        }
+        if (getCompletedQuantity() != null) {
+            _hashCode += getCompletedQuantity().hashCode();
+        }
+        if (getEndDate() != null) {
+            _hashCode += getEndDate().hashCode();
+        }
+        if (getEstimatedWork() != null) {
+            _hashCode += getEstimatedWork().hashCode();
+        }
+        if (getExternalId() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getExternalId());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getExternalId(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getExternalIdString() != null) {
+            _hashCode += getExternalIdString().hashCode();
+        }
+        if (getId() != null) {
+            _hashCode += getId().hashCode();
+        }
+        if (getInputQuantity() != null) {
+            _hashCode += getInputQuantity().hashCode();
+        }
+        if (getInternalId() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getInternalId());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getInternalId(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getInternalIdNumber() != null) {
+            _hashCode += getInternalIdNumber().hashCode();
+        }
+        if (getLaborResources() != null) {
+            _hashCode += getLaborResources().hashCode();
+        }
+        if (getLagAmount() != null) {
+            _hashCode += getLagAmount().hashCode();
+        }
+        if (getLagType() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getLagType());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getLagType(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getLagUnits() != null) {
+            _hashCode += getLagUnits().hashCode();
+        }
+        if (getMachineResources() != null) {
+            _hashCode += getMachineResources().hashCode();
+        }
+        if (getManufacturingCostTemplate() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getManufacturingCostTemplate());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getManufacturingCostTemplate(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getManufacturingWorkCenter() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getManufacturingWorkCenter());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getManufacturingWorkCenter(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getName() != null) {
+            _hashCode += getName().hashCode();
+        }
+        if (getOrder() != null) {
+            _hashCode += getOrder().hashCode();
+        }
+        if (getPredecessor() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getPredecessor());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getPredecessor(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getRemainingQuantity() != null) {
+            _hashCode += getRemainingQuantity().hashCode();
+        }
+        if (getRunRate() != null) {
+            _hashCode += getRunRate().hashCode();
+        }
+        if (getRunTime() != null) {
+            _hashCode += getRunTime().hashCode();
+        }
+        if (getSequence() != null) {
+            _hashCode += getSequence().hashCode();
+        }
+        if (getSetupTime() != null) {
+            _hashCode += getSetupTime().hashCode();
+        }
+        if (getStartDate() != null) {
+            _hashCode += getStartDate().hashCode();
+        }
+        if (getStatus() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getStatus());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getStatus(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getWorkOrder() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getWorkOrder());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getWorkOrder(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getCustomFieldList() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getCustomFieldList());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getCustomFieldList(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        __hashCodeCalc = false;
+        return _hashCode;
+    }
+
+    // Type metadata
+    private static org.apache.axis.description.TypeDesc typeDesc =
+        new org.apache.axis.description.TypeDesc(ManufacturingOperationTaskSearchBasic.class, true);
+
+    static {
+        typeDesc.setXmlType(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "ManufacturingOperationTaskSearchBasic"));
+        org.apache.axis.description.ElementDesc elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("actualRunTime");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "actualRunTime"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchDoubleField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("actualSetupTime");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "actualSetupTime"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchDoubleField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("completedQuantity");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "completedQuantity"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchDoubleField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("endDate");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "endDate"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchDateField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("estimatedWork");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "estimatedWork"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchDoubleField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("externalId");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "externalId"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "searchValue"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("externalIdString");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "externalIdString"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchStringField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("id");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "id"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchLongField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("inputQuantity");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "inputQuantity"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchDoubleField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("internalId");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "internalId"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "searchValue"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("internalIdNumber");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "internalIdNumber"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchLongField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("laborResources");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "laborResources"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchLongField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("lagAmount");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "lagAmount"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchDoubleField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("lagType");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "lagType"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "searchValue"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("lagUnits");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "lagUnits"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchStringField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("machineResources");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "machineResources"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchLongField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("manufacturingCostTemplate");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "manufacturingCostTemplate"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "searchValue"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("manufacturingWorkCenter");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "manufacturingWorkCenter"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "searchValue"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("name");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "name"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchStringField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("order");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "order"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchDoubleField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("predecessor");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "predecessor"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "searchValue"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("remainingQuantity");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "remainingQuantity"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchDoubleField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("runRate");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "runRate"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchDoubleField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("runTime");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "runTime"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchDoubleField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("sequence");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "sequence"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchLongField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("setupTime");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "setupTime"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchDoubleField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("startDate");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "startDate"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchDateField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("status");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "status"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "searchValue"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("workOrder");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "workOrder"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "searchValue"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("customFieldList");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "customFieldList"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchCustomField"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "customField"));
+        typeDesc.addFieldDesc(elemField);
+    }
+
+    /**
+     * Return type metadata object
+     */
+    public static org.apache.axis.description.TypeDesc getTypeDesc() {
+        return typeDesc;
+    }
+
+    /**
+     * Get Custom Serializer
+     */
+    public static org.apache.axis.encoding.Serializer getSerializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanSerializer(
+            _javaType, _xmlType, typeDesc);
+    }
+
+    /**
+     * Get Custom Deserializer
+     */
+    public static org.apache.axis.encoding.Deserializer getDeserializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanDeserializer(
+            _javaType, _xmlType, typeDesc);
     }
 
 }

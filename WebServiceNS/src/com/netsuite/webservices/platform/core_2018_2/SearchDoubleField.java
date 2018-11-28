@@ -1,116 +1,192 @@
+/**
+ * SearchDoubleField.java
+ *
+ * This file was auto-generated from WSDL
+ * by the Apache Axis 1.4 Jul 28, 2010 (04:07:04 PDT) WSDL2Java emitter.
+ */
 
 package com.netsuite.webservices.platform.core_2018_2;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlAttribute;
-import javax.xml.bind.annotation.XmlType;
-import com.netsuite.webservices.platform.core_2018_2.types.SearchDoubleFieldOperator;
+public class SearchDoubleField  implements java.io.Serializable {
+    private java.lang.Double searchValue;
 
+    private java.lang.Double searchValue2;
 
-/**
- * <p>SearchDoubleField complex type的 Java 类。
- * 
- * <p>以下模式片段指定包含在此类中的预期内容。
- * 
- * <pre>
- * &lt;complexType name="SearchDoubleField">
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element name="searchValue" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
- *         &lt;element name="searchValue2" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
- *       &lt;/sequence>
- *       &lt;attribute name="operator" type="{urn:types.core_2018_2.platform.webservices.netsuite.com}SearchDoubleFieldOperator" />
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
- */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "SearchDoubleField", propOrder = {
-    "searchValue",
-    "searchValue2"
-})
-public class SearchDoubleField {
+    private com.netsuite.webservices.platform.core_2018_2.types.SearchDoubleFieldOperator operator;  // attribute
 
-    protected Double searchValue;
-    protected Double searchValue2;
-    @XmlAttribute(name = "operator")
-    protected SearchDoubleFieldOperator operator;
+    public SearchDoubleField() {
+    }
+
+    public SearchDoubleField(
+           java.lang.Double searchValue,
+           java.lang.Double searchValue2,
+           com.netsuite.webservices.platform.core_2018_2.types.SearchDoubleFieldOperator operator) {
+           this.searchValue = searchValue;
+           this.searchValue2 = searchValue2;
+           this.operator = operator;
+    }
+
 
     /**
-     * 获取searchValue属性的值。
+     * Gets the searchValue value for this SearchDoubleField.
      * 
-     * @return
-     *     possible object is
-     *     {@link Double }
-     *     
+     * @return searchValue
      */
-    public Double getSearchValue() {
+    public java.lang.Double getSearchValue() {
         return searchValue;
     }
 
-    /**
-     * 设置searchValue属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Double }
-     *     
-     */
-    public void setSearchValue(Double value) {
-        this.searchValue = value;
-    }
 
     /**
-     * 获取searchValue2属性的值。
+     * Sets the searchValue value for this SearchDoubleField.
      * 
-     * @return
-     *     possible object is
-     *     {@link Double }
-     *     
+     * @param searchValue
      */
-    public Double getSearchValue2() {
+    public void setSearchValue(java.lang.Double searchValue) {
+        this.searchValue = searchValue;
+    }
+
+
+    /**
+     * Gets the searchValue2 value for this SearchDoubleField.
+     * 
+     * @return searchValue2
+     */
+    public java.lang.Double getSearchValue2() {
         return searchValue2;
     }
 
-    /**
-     * 设置searchValue2属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Double }
-     *     
-     */
-    public void setSearchValue2(Double value) {
-        this.searchValue2 = value;
-    }
 
     /**
-     * 获取operator属性的值。
+     * Sets the searchValue2 value for this SearchDoubleField.
      * 
-     * @return
-     *     possible object is
-     *     {@link SearchDoubleFieldOperator }
-     *     
+     * @param searchValue2
      */
-    public SearchDoubleFieldOperator getOperator() {
+    public void setSearchValue2(java.lang.Double searchValue2) {
+        this.searchValue2 = searchValue2;
+    }
+
+
+    /**
+     * Gets the operator value for this SearchDoubleField.
+     * 
+     * @return operator
+     */
+    public com.netsuite.webservices.platform.core_2018_2.types.SearchDoubleFieldOperator getOperator() {
         return operator;
     }
 
+
     /**
-     * 设置operator属性的值。
+     * Sets the operator value for this SearchDoubleField.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link SearchDoubleFieldOperator }
-     *     
+     * @param operator
      */
-    public void setOperator(SearchDoubleFieldOperator value) {
-        this.operator = value;
+    public void setOperator(com.netsuite.webservices.platform.core_2018_2.types.SearchDoubleFieldOperator operator) {
+        this.operator = operator;
+    }
+
+    private java.lang.Object __equalsCalc = null;
+    public synchronized boolean equals(java.lang.Object obj) {
+        if (!(obj instanceof SearchDoubleField)) return false;
+        SearchDoubleField other = (SearchDoubleField) obj;
+        if (obj == null) return false;
+        if (this == obj) return true;
+        if (__equalsCalc != null) {
+            return (__equalsCalc == obj);
+        }
+        __equalsCalc = obj;
+        boolean _equals;
+        _equals = true && 
+            ((this.searchValue==null && other.getSearchValue()==null) || 
+             (this.searchValue!=null &&
+              this.searchValue.equals(other.getSearchValue()))) &&
+            ((this.searchValue2==null && other.getSearchValue2()==null) || 
+             (this.searchValue2!=null &&
+              this.searchValue2.equals(other.getSearchValue2()))) &&
+            ((this.operator==null && other.getOperator()==null) || 
+             (this.operator!=null &&
+              this.operator.equals(other.getOperator())));
+        __equalsCalc = null;
+        return _equals;
+    }
+
+    private boolean __hashCodeCalc = false;
+    public synchronized int hashCode() {
+        if (__hashCodeCalc) {
+            return 0;
+        }
+        __hashCodeCalc = true;
+        int _hashCode = 1;
+        if (getSearchValue() != null) {
+            _hashCode += getSearchValue().hashCode();
+        }
+        if (getSearchValue2() != null) {
+            _hashCode += getSearchValue2().hashCode();
+        }
+        if (getOperator() != null) {
+            _hashCode += getOperator().hashCode();
+        }
+        __hashCodeCalc = false;
+        return _hashCode;
+    }
+
+    // Type metadata
+    private static org.apache.axis.description.TypeDesc typeDesc =
+        new org.apache.axis.description.TypeDesc(SearchDoubleField.class, true);
+
+    static {
+        typeDesc.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "SearchDoubleField"));
+        org.apache.axis.description.AttributeDesc attrField = new org.apache.axis.description.AttributeDesc();
+        attrField.setFieldName("operator");
+        attrField.setXmlName(new javax.xml.namespace.QName("", "operator"));
+        attrField.setXmlType(new javax.xml.namespace.QName("urn:types.core_2018_2.platform.webservices.netsuite.com", "SearchDoubleFieldOperator"));
+        typeDesc.addFieldDesc(attrField);
+        org.apache.axis.description.ElementDesc elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("searchValue");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "searchValue"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "double"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("searchValue2");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "searchValue2"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "double"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+    }
+
+    /**
+     * Return type metadata object
+     */
+    public static org.apache.axis.description.TypeDesc getTypeDesc() {
+        return typeDesc;
+    }
+
+    /**
+     * Get Custom Serializer
+     */
+    public static org.apache.axis.encoding.Serializer getSerializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanSerializer(
+            _javaType, _xmlType, typeDesc);
+    }
+
+    /**
+     * Get Custom Deserializer
+     */
+    public static org.apache.axis.encoding.Deserializer getDeserializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanDeserializer(
+            _javaType, _xmlType, typeDesc);
     }
 
 }

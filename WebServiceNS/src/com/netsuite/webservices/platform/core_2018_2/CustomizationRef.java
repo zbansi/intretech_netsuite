@@ -1,60 +1,127 @@
+/**
+ * CustomizationRef.java
+ *
+ * This file was auto-generated from WSDL
+ * by the Apache Axis 1.4 Jul 28, 2010 (04:07:04 PDT) WSDL2Java emitter.
+ */
 
 package com.netsuite.webservices.platform.core_2018_2;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlAttribute;
-import javax.xml.bind.annotation.XmlType;
+public class CustomizationRef  extends com.netsuite.webservices.platform.core_2018_2.RecordRef  implements java.io.Serializable {
+    private java.lang.String scriptId;  // attribute
 
+    public CustomizationRef() {
+    }
 
-/**
- * <p>CustomizationRef complex type的 Java 类。
- * 
- * <p>以下模式片段指定包含在此类中的预期内容。
- * 
- * <pre>
- * &lt;complexType name="CustomizationRef">
- *   &lt;complexContent>
- *     &lt;extension base="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef">
- *       &lt;attribute name="scriptId" type="{http://www.w3.org/2001/XMLSchema}string" />
- *     &lt;/extension>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
- */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "CustomizationRef")
-public class CustomizationRef
-    extends RecordRef
-{
+    public CustomizationRef(
+           java.lang.String name,
+           java.lang.String internalId,
+           java.lang.String externalId,
+           com.netsuite.webservices.platform.core_2018_2.types.RecordType type,
+           java.lang.String scriptId) {
+        super(
+            name,
+            internalId,
+            externalId,
+            type);
+        this.scriptId = scriptId;
+    }
 
-    @XmlAttribute(name = "scriptId")
-    protected String scriptId;
 
     /**
-     * 获取scriptId属性的值。
+     * Gets the scriptId value for this CustomizationRef.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @return scriptId
      */
-    public String getScriptId() {
+    public java.lang.String getScriptId() {
         return scriptId;
     }
 
+
     /**
-     * 设置scriptId属性的值。
+     * Sets the scriptId value for this CustomizationRef.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     * @param scriptId
      */
-    public void setScriptId(String value) {
-        this.scriptId = value;
+    public void setScriptId(java.lang.String scriptId) {
+        this.scriptId = scriptId;
+    }
+
+    private java.lang.Object __equalsCalc = null;
+    public synchronized boolean equals(java.lang.Object obj) {
+        if (!(obj instanceof CustomizationRef)) return false;
+        CustomizationRef other = (CustomizationRef) obj;
+        if (obj == null) return false;
+        if (this == obj) return true;
+        if (__equalsCalc != null) {
+            return (__equalsCalc == obj);
+        }
+        __equalsCalc = obj;
+        boolean _equals;
+        _equals = super.equals(obj) && 
+            ((this.scriptId==null && other.getScriptId()==null) || 
+             (this.scriptId!=null &&
+              this.scriptId.equals(other.getScriptId())));
+        __equalsCalc = null;
+        return _equals;
+    }
+
+    private boolean __hashCodeCalc = false;
+    public synchronized int hashCode() {
+        if (__hashCodeCalc) {
+            return 0;
+        }
+        __hashCodeCalc = true;
+        int _hashCode = super.hashCode();
+        if (getScriptId() != null) {
+            _hashCode += getScriptId().hashCode();
+        }
+        __hashCodeCalc = false;
+        return _hashCode;
+    }
+
+    // Type metadata
+    private static org.apache.axis.description.TypeDesc typeDesc =
+        new org.apache.axis.description.TypeDesc(CustomizationRef.class, true);
+
+    static {
+        typeDesc.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "CustomizationRef"));
+        org.apache.axis.description.AttributeDesc attrField = new org.apache.axis.description.AttributeDesc();
+        attrField.setFieldName("scriptId");
+        attrField.setXmlName(new javax.xml.namespace.QName("", "scriptId"));
+        attrField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        typeDesc.addFieldDesc(attrField);
+    }
+
+    /**
+     * Return type metadata object
+     */
+    public static org.apache.axis.description.TypeDesc getTypeDesc() {
+        return typeDesc;
+    }
+
+    /**
+     * Get Custom Serializer
+     */
+    public static org.apache.axis.encoding.Serializer getSerializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanSerializer(
+            _javaType, _xmlType, typeDesc);
+    }
+
+    /**
+     * Get Custom Deserializer
+     */
+    public static org.apache.axis.encoding.Deserializer getDeserializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanDeserializer(
+            _javaType, _xmlType, typeDesc);
     }
 
 }

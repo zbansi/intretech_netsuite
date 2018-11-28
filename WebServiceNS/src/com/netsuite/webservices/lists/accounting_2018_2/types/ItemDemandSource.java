@@ -1,57 +1,74 @@
+/**
+ * ItemDemandSource.java
+ *
+ * This file was auto-generated from WSDL
+ * by the Apache Axis 1.4 Jul 28, 2010 (04:07:04 PDT) WSDL2Java emitter.
+ */
 
 package com.netsuite.webservices.lists.accounting_2018_2.types;
 
-import javax.xml.bind.annotation.XmlEnum;
-import javax.xml.bind.annotation.XmlEnumValue;
-import javax.xml.bind.annotation.XmlType;
+public class ItemDemandSource implements java.io.Serializable {
+    private java.lang.String _value_;
+    private static java.util.HashMap _table_ = new java.util.HashMap();
 
-
-/**
- * <p>ItemDemandSource的 Java 类。
- * 
- * <p>以下模式片段指定包含在此类中的预期内容。
- * <p>
- * <pre>
- * &lt;simpleType name="ItemDemandSource">
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     &lt;enumeration value="_enteredAndPlannedOrders"/>
- *     &lt;enumeration value="_forecastAndOrders"/>
- *     &lt;enumeration value="_forecastConsumption"/>
- *     &lt;enumeration value="_forecastFromDemandPlan"/>
- *   &lt;/restriction>
- * &lt;/simpleType>
- * </pre>
- * 
- */
-@XmlType(name = "ItemDemandSource", namespace = "urn:types.accounting_2018_2.lists.webservices.netsuite.com")
-@XmlEnum
-public enum ItemDemandSource {
-
-    @XmlEnumValue("_enteredAndPlannedOrders")
-    ENTERED_AND_PLANNED_ORDERS("_enteredAndPlannedOrders"),
-    @XmlEnumValue("_forecastAndOrders")
-    FORECAST_AND_ORDERS("_forecastAndOrders"),
-    @XmlEnumValue("_forecastConsumption")
-    FORECAST_CONSUMPTION("_forecastConsumption"),
-    @XmlEnumValue("_forecastFromDemandPlan")
-    FORECAST_FROM_DEMAND_PLAN("_forecastFromDemandPlan");
-    private final String value;
-
-    ItemDemandSource(String v) {
-        value = v;
+    // Constructor
+    protected ItemDemandSource(java.lang.String value) {
+        _value_ = value;
+        _table_.put(_value_,this);
     }
 
-    public String value() {
-        return value;
+    public static final java.lang.String __enteredAndPlannedOrders = "_enteredAndPlannedOrders";
+    public static final java.lang.String __forecastAndOrders = "_forecastAndOrders";
+    public static final java.lang.String __forecastConsumption = "_forecastConsumption";
+    public static final java.lang.String __forecastFromDemandPlan = "_forecastFromDemandPlan";
+    public static final ItemDemandSource _enteredAndPlannedOrders = new ItemDemandSource(__enteredAndPlannedOrders);
+    public static final ItemDemandSource _forecastAndOrders = new ItemDemandSource(__forecastAndOrders);
+    public static final ItemDemandSource _forecastConsumption = new ItemDemandSource(__forecastConsumption);
+    public static final ItemDemandSource _forecastFromDemandPlan = new ItemDemandSource(__forecastFromDemandPlan);
+    public java.lang.String getValue() { return _value_;}
+    public static ItemDemandSource fromValue(java.lang.String value)
+          throws java.lang.IllegalArgumentException {
+        ItemDemandSource enumeration = (ItemDemandSource)
+            _table_.get(value);
+        if (enumeration==null) throw new java.lang.IllegalArgumentException();
+        return enumeration;
     }
+    public static ItemDemandSource fromString(java.lang.String value)
+          throws java.lang.IllegalArgumentException {
+        return fromValue(value);
+    }
+    public boolean equals(java.lang.Object obj) {return (obj == this);}
+    public int hashCode() { return toString().hashCode();}
+    public java.lang.String toString() { return _value_;}
+    public java.lang.Object readResolve() throws java.io.ObjectStreamException { return fromValue(_value_);}
+    public static org.apache.axis.encoding.Serializer getSerializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new org.apache.axis.encoding.ser.EnumSerializer(
+            _javaType, _xmlType);
+    }
+    public static org.apache.axis.encoding.Deserializer getDeserializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new org.apache.axis.encoding.ser.EnumDeserializer(
+            _javaType, _xmlType);
+    }
+    // Type metadata
+    private static org.apache.axis.description.TypeDesc typeDesc =
+        new org.apache.axis.description.TypeDesc(ItemDemandSource.class);
 
-    public static ItemDemandSource fromValue(String v) {
-        for (ItemDemandSource c: ItemDemandSource.values()) {
-            if (c.value.equals(v)) {
-                return c;
-            }
-        }
-        throw new IllegalArgumentException(v);
+    static {
+        typeDesc.setXmlType(new javax.xml.namespace.QName("urn:types.accounting_2018_2.lists.webservices.netsuite.com", "ItemDemandSource"));
+    }
+    /**
+     * Return type metadata object
+     */
+    public static org.apache.axis.description.TypeDesc getTypeDesc() {
+        return typeDesc;
     }
 
 }

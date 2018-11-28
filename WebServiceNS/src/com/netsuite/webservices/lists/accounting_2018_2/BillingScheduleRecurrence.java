@@ -1,228 +1,342 @@
+/**
+ * BillingScheduleRecurrence.java
+ *
+ * This file was auto-generated from WSDL
+ * by the Apache Axis 1.4 Jul 28, 2010 (04:07:04 PDT) WSDL2Java emitter.
+ */
 
 package com.netsuite.webservices.lists.accounting_2018_2;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlSchemaType;
-import javax.xml.bind.annotation.XmlType;
-import javax.xml.datatype.XMLGregorianCalendar;
-import com.netsuite.webservices.lists.accounting_2018_2.types.BillingScheduleRecurrenceRecurrenceUnits;
-import com.netsuite.webservices.platform.core_2018_2.RecordRef;
+public class BillingScheduleRecurrence  implements java.io.Serializable {
+    private java.lang.Long recurrenceId;
 
+    private java.lang.Long count;
 
-/**
- * <p>BillingScheduleRecurrence complex type的 Java 类。
- * 
- * <p>以下模式片段指定包含在此类中的预期内容。
- * 
- * <pre>
- * &lt;complexType name="BillingScheduleRecurrence">
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element name="recurrenceId" type="{http://www.w3.org/2001/XMLSchema}long" minOccurs="0"/>
- *         &lt;element name="count" type="{http://www.w3.org/2001/XMLSchema}long" minOccurs="0"/>
- *         &lt;element name="units" type="{urn:types.accounting_2018_2.lists.webservices.netsuite.com}BillingScheduleRecurrenceRecurrenceUnits" minOccurs="0"/>
- *         &lt;element name="relativeToPrevious" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         &lt;element name="recurrenceDate" type="{http://www.w3.org/2001/XMLSchema}dateTime" minOccurs="0"/>
- *         &lt;element name="amount" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
- *         &lt;element name="paymentTerms" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
- */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "BillingScheduleRecurrence", propOrder = {
-    "recurrenceId",
-    "count",
-    "units",
-    "relativeToPrevious",
-    "recurrenceDate",
-    "amount",
-    "paymentTerms"
-})
-public class BillingScheduleRecurrence {
+    private com.netsuite.webservices.lists.accounting_2018_2.types.BillingScheduleRecurrenceRecurrenceUnits units;
 
-    protected Long recurrenceId;
-    protected Long count;
-    @XmlSchemaType(name = "string")
-    protected BillingScheduleRecurrenceRecurrenceUnits units;
-    protected Boolean relativeToPrevious;
-    @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar recurrenceDate;
-    protected Double amount;
-    protected RecordRef paymentTerms;
+    private java.lang.Boolean relativeToPrevious;
+
+    private java.util.Calendar recurrenceDate;
+
+    private java.lang.Double amount;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef paymentTerms;
+
+    public BillingScheduleRecurrence() {
+    }
+
+    public BillingScheduleRecurrence(
+           java.lang.Long recurrenceId,
+           java.lang.Long count,
+           com.netsuite.webservices.lists.accounting_2018_2.types.BillingScheduleRecurrenceRecurrenceUnits units,
+           java.lang.Boolean relativeToPrevious,
+           java.util.Calendar recurrenceDate,
+           java.lang.Double amount,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef paymentTerms) {
+           this.recurrenceId = recurrenceId;
+           this.count = count;
+           this.units = units;
+           this.relativeToPrevious = relativeToPrevious;
+           this.recurrenceDate = recurrenceDate;
+           this.amount = amount;
+           this.paymentTerms = paymentTerms;
+    }
+
 
     /**
-     * 获取recurrenceId属性的值。
+     * Gets the recurrenceId value for this BillingScheduleRecurrence.
      * 
-     * @return
-     *     possible object is
-     *     {@link Long }
-     *     
+     * @return recurrenceId
      */
-    public Long getRecurrenceId() {
+    public java.lang.Long getRecurrenceId() {
         return recurrenceId;
     }
 
-    /**
-     * 设置recurrenceId属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Long }
-     *     
-     */
-    public void setRecurrenceId(Long value) {
-        this.recurrenceId = value;
-    }
 
     /**
-     * 获取count属性的值。
+     * Sets the recurrenceId value for this BillingScheduleRecurrence.
      * 
-     * @return
-     *     possible object is
-     *     {@link Long }
-     *     
+     * @param recurrenceId
      */
-    public Long getCount() {
+    public void setRecurrenceId(java.lang.Long recurrenceId) {
+        this.recurrenceId = recurrenceId;
+    }
+
+
+    /**
+     * Gets the count value for this BillingScheduleRecurrence.
+     * 
+     * @return count
+     */
+    public java.lang.Long getCount() {
         return count;
     }
 
-    /**
-     * 设置count属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Long }
-     *     
-     */
-    public void setCount(Long value) {
-        this.count = value;
-    }
 
     /**
-     * 获取units属性的值。
+     * Sets the count value for this BillingScheduleRecurrence.
      * 
-     * @return
-     *     possible object is
-     *     {@link BillingScheduleRecurrenceRecurrenceUnits }
-     *     
+     * @param count
      */
-    public BillingScheduleRecurrenceRecurrenceUnits getUnits() {
+    public void setCount(java.lang.Long count) {
+        this.count = count;
+    }
+
+
+    /**
+     * Gets the units value for this BillingScheduleRecurrence.
+     * 
+     * @return units
+     */
+    public com.netsuite.webservices.lists.accounting_2018_2.types.BillingScheduleRecurrenceRecurrenceUnits getUnits() {
         return units;
     }
 
-    /**
-     * 设置units属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link BillingScheduleRecurrenceRecurrenceUnits }
-     *     
-     */
-    public void setUnits(BillingScheduleRecurrenceRecurrenceUnits value) {
-        this.units = value;
-    }
 
     /**
-     * 获取relativeToPrevious属性的值。
+     * Sets the units value for this BillingScheduleRecurrence.
      * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
+     * @param units
      */
-    public Boolean isRelativeToPrevious() {
+    public void setUnits(com.netsuite.webservices.lists.accounting_2018_2.types.BillingScheduleRecurrenceRecurrenceUnits units) {
+        this.units = units;
+    }
+
+
+    /**
+     * Gets the relativeToPrevious value for this BillingScheduleRecurrence.
+     * 
+     * @return relativeToPrevious
+     */
+    public java.lang.Boolean getRelativeToPrevious() {
         return relativeToPrevious;
     }
 
-    /**
-     * 设置relativeToPrevious属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
-     */
-    public void setRelativeToPrevious(Boolean value) {
-        this.relativeToPrevious = value;
-    }
 
     /**
-     * 获取recurrenceDate属性的值。
+     * Sets the relativeToPrevious value for this BillingScheduleRecurrence.
      * 
-     * @return
-     *     possible object is
-     *     {@link XMLGregorianCalendar }
-     *     
+     * @param relativeToPrevious
      */
-    public XMLGregorianCalendar getRecurrenceDate() {
+    public void setRelativeToPrevious(java.lang.Boolean relativeToPrevious) {
+        this.relativeToPrevious = relativeToPrevious;
+    }
+
+
+    /**
+     * Gets the recurrenceDate value for this BillingScheduleRecurrence.
+     * 
+     * @return recurrenceDate
+     */
+    public java.util.Calendar getRecurrenceDate() {
         return recurrenceDate;
     }
 
-    /**
-     * 设置recurrenceDate属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link XMLGregorianCalendar }
-     *     
-     */
-    public void setRecurrenceDate(XMLGregorianCalendar value) {
-        this.recurrenceDate = value;
-    }
 
     /**
-     * 获取amount属性的值。
+     * Sets the recurrenceDate value for this BillingScheduleRecurrence.
      * 
-     * @return
-     *     possible object is
-     *     {@link Double }
-     *     
+     * @param recurrenceDate
      */
-    public Double getAmount() {
+    public void setRecurrenceDate(java.util.Calendar recurrenceDate) {
+        this.recurrenceDate = recurrenceDate;
+    }
+
+
+    /**
+     * Gets the amount value for this BillingScheduleRecurrence.
+     * 
+     * @return amount
+     */
+    public java.lang.Double getAmount() {
         return amount;
     }
 
-    /**
-     * 设置amount属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Double }
-     *     
-     */
-    public void setAmount(Double value) {
-        this.amount = value;
-    }
 
     /**
-     * 获取paymentTerms属性的值。
+     * Sets the amount value for this BillingScheduleRecurrence.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param amount
      */
-    public RecordRef getPaymentTerms() {
+    public void setAmount(java.lang.Double amount) {
+        this.amount = amount;
+    }
+
+
+    /**
+     * Gets the paymentTerms value for this BillingScheduleRecurrence.
+     * 
+     * @return paymentTerms
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getPaymentTerms() {
         return paymentTerms;
     }
 
+
     /**
-     * 设置paymentTerms属性的值。
+     * Sets the paymentTerms value for this BillingScheduleRecurrence.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
+     * @param paymentTerms
      */
-    public void setPaymentTerms(RecordRef value) {
-        this.paymentTerms = value;
+    public void setPaymentTerms(com.netsuite.webservices.platform.core_2018_2.RecordRef paymentTerms) {
+        this.paymentTerms = paymentTerms;
+    }
+
+    private java.lang.Object __equalsCalc = null;
+    public synchronized boolean equals(java.lang.Object obj) {
+        if (!(obj instanceof BillingScheduleRecurrence)) return false;
+        BillingScheduleRecurrence other = (BillingScheduleRecurrence) obj;
+        if (obj == null) return false;
+        if (this == obj) return true;
+        if (__equalsCalc != null) {
+            return (__equalsCalc == obj);
+        }
+        __equalsCalc = obj;
+        boolean _equals;
+        _equals = true && 
+            ((this.recurrenceId==null && other.getRecurrenceId()==null) || 
+             (this.recurrenceId!=null &&
+              this.recurrenceId.equals(other.getRecurrenceId()))) &&
+            ((this.count==null && other.getCount()==null) || 
+             (this.count!=null &&
+              this.count.equals(other.getCount()))) &&
+            ((this.units==null && other.getUnits()==null) || 
+             (this.units!=null &&
+              this.units.equals(other.getUnits()))) &&
+            ((this.relativeToPrevious==null && other.getRelativeToPrevious()==null) || 
+             (this.relativeToPrevious!=null &&
+              this.relativeToPrevious.equals(other.getRelativeToPrevious()))) &&
+            ((this.recurrenceDate==null && other.getRecurrenceDate()==null) || 
+             (this.recurrenceDate!=null &&
+              this.recurrenceDate.equals(other.getRecurrenceDate()))) &&
+            ((this.amount==null && other.getAmount()==null) || 
+             (this.amount!=null &&
+              this.amount.equals(other.getAmount()))) &&
+            ((this.paymentTerms==null && other.getPaymentTerms()==null) || 
+             (this.paymentTerms!=null &&
+              this.paymentTerms.equals(other.getPaymentTerms())));
+        __equalsCalc = null;
+        return _equals;
+    }
+
+    private boolean __hashCodeCalc = false;
+    public synchronized int hashCode() {
+        if (__hashCodeCalc) {
+            return 0;
+        }
+        __hashCodeCalc = true;
+        int _hashCode = 1;
+        if (getRecurrenceId() != null) {
+            _hashCode += getRecurrenceId().hashCode();
+        }
+        if (getCount() != null) {
+            _hashCode += getCount().hashCode();
+        }
+        if (getUnits() != null) {
+            _hashCode += getUnits().hashCode();
+        }
+        if (getRelativeToPrevious() != null) {
+            _hashCode += getRelativeToPrevious().hashCode();
+        }
+        if (getRecurrenceDate() != null) {
+            _hashCode += getRecurrenceDate().hashCode();
+        }
+        if (getAmount() != null) {
+            _hashCode += getAmount().hashCode();
+        }
+        if (getPaymentTerms() != null) {
+            _hashCode += getPaymentTerms().hashCode();
+        }
+        __hashCodeCalc = false;
+        return _hashCode;
+    }
+
+    // Type metadata
+    private static org.apache.axis.description.TypeDesc typeDesc =
+        new org.apache.axis.description.TypeDesc(BillingScheduleRecurrence.class, true);
+
+    static {
+        typeDesc.setXmlType(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "BillingScheduleRecurrence"));
+        org.apache.axis.description.ElementDesc elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("recurrenceId");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "recurrenceId"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "long"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("count");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "count"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "long"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("units");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "units"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:types.accounting_2018_2.lists.webservices.netsuite.com", "BillingScheduleRecurrenceRecurrenceUnits"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("relativeToPrevious");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "relativeToPrevious"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("recurrenceDate");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "recurrenceDate"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "dateTime"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("amount");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "amount"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "double"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("paymentTerms");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2018_2.lists.webservices.netsuite.com", "paymentTerms"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+    }
+
+    /**
+     * Return type metadata object
+     */
+    public static org.apache.axis.description.TypeDesc getTypeDesc() {
+        return typeDesc;
+    }
+
+    /**
+     * Get Custom Serializer
+     */
+    public static org.apache.axis.encoding.Serializer getSerializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanSerializer(
+            _javaType, _xmlType, typeDesc);
+    }
+
+    /**
+     * Get Custom Deserializer
+     */
+    public static org.apache.axis.encoding.Deserializer getDeserializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanDeserializer(
+            _javaType, _xmlType, typeDesc);
     }
 
 }

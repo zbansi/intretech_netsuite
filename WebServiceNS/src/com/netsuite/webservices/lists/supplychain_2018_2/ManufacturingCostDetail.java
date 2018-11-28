@@ -1,142 +1,231 @@
+/**
+ * ManufacturingCostDetail.java
+ *
+ * This file was auto-generated from WSDL
+ * by the Apache Axis 1.4 Jul 28, 2010 (04:07:04 PDT) WSDL2Java emitter.
+ */
 
 package com.netsuite.webservices.lists.supplychain_2018_2;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlType;
-import com.netsuite.webservices.platform.core_2018_2.RecordRef;
+public class ManufacturingCostDetail  implements java.io.Serializable {
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef costCategory;
 
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef item;
 
-/**
- * <p>ManufacturingCostDetail complex type的 Java 类。
- * 
- * <p>以下模式片段指定包含在此类中的预期内容。
- * 
- * <pre>
- * &lt;complexType name="ManufacturingCostDetail">
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element name="costCategory" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="item" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="fixedRate" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
- *         &lt;element name="runRate" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
- */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "ManufacturingCostDetail", propOrder = {
-    "costCategory",
-    "item",
-    "fixedRate",
-    "runRate"
-})
-public class ManufacturingCostDetail {
+    private java.lang.Double fixedRate;
 
-    protected RecordRef costCategory;
-    protected RecordRef item;
-    protected Double fixedRate;
-    protected Double runRate;
+    private java.lang.Double runRate;
+
+    public ManufacturingCostDetail() {
+    }
+
+    public ManufacturingCostDetail(
+           com.netsuite.webservices.platform.core_2018_2.RecordRef costCategory,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef item,
+           java.lang.Double fixedRate,
+           java.lang.Double runRate) {
+           this.costCategory = costCategory;
+           this.item = item;
+           this.fixedRate = fixedRate;
+           this.runRate = runRate;
+    }
+
 
     /**
-     * 获取costCategory属性的值。
+     * Gets the costCategory value for this ManufacturingCostDetail.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @return costCategory
      */
-    public RecordRef getCostCategory() {
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getCostCategory() {
         return costCategory;
     }
 
-    /**
-     * 设置costCategory属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setCostCategory(RecordRef value) {
-        this.costCategory = value;
-    }
 
     /**
-     * 获取item属性的值。
+     * Sets the costCategory value for this ManufacturingCostDetail.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param costCategory
      */
-    public RecordRef getItem() {
+    public void setCostCategory(com.netsuite.webservices.platform.core_2018_2.RecordRef costCategory) {
+        this.costCategory = costCategory;
+    }
+
+
+    /**
+     * Gets the item value for this ManufacturingCostDetail.
+     * 
+     * @return item
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getItem() {
         return item;
     }
 
-    /**
-     * 设置item属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setItem(RecordRef value) {
-        this.item = value;
-    }
 
     /**
-     * 获取fixedRate属性的值。
+     * Sets the item value for this ManufacturingCostDetail.
      * 
-     * @return
-     *     possible object is
-     *     {@link Double }
-     *     
+     * @param item
      */
-    public Double getFixedRate() {
+    public void setItem(com.netsuite.webservices.platform.core_2018_2.RecordRef item) {
+        this.item = item;
+    }
+
+
+    /**
+     * Gets the fixedRate value for this ManufacturingCostDetail.
+     * 
+     * @return fixedRate
+     */
+    public java.lang.Double getFixedRate() {
         return fixedRate;
     }
 
-    /**
-     * 设置fixedRate属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Double }
-     *     
-     */
-    public void setFixedRate(Double value) {
-        this.fixedRate = value;
-    }
 
     /**
-     * 获取runRate属性的值。
+     * Sets the fixedRate value for this ManufacturingCostDetail.
      * 
-     * @return
-     *     possible object is
-     *     {@link Double }
-     *     
+     * @param fixedRate
      */
-    public Double getRunRate() {
+    public void setFixedRate(java.lang.Double fixedRate) {
+        this.fixedRate = fixedRate;
+    }
+
+
+    /**
+     * Gets the runRate value for this ManufacturingCostDetail.
+     * 
+     * @return runRate
+     */
+    public java.lang.Double getRunRate() {
         return runRate;
     }
 
+
     /**
-     * 设置runRate属性的值。
+     * Sets the runRate value for this ManufacturingCostDetail.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link Double }
-     *     
+     * @param runRate
      */
-    public void setRunRate(Double value) {
-        this.runRate = value;
+    public void setRunRate(java.lang.Double runRate) {
+        this.runRate = runRate;
+    }
+
+    private java.lang.Object __equalsCalc = null;
+    public synchronized boolean equals(java.lang.Object obj) {
+        if (!(obj instanceof ManufacturingCostDetail)) return false;
+        ManufacturingCostDetail other = (ManufacturingCostDetail) obj;
+        if (obj == null) return false;
+        if (this == obj) return true;
+        if (__equalsCalc != null) {
+            return (__equalsCalc == obj);
+        }
+        __equalsCalc = obj;
+        boolean _equals;
+        _equals = true && 
+            ((this.costCategory==null && other.getCostCategory()==null) || 
+             (this.costCategory!=null &&
+              this.costCategory.equals(other.getCostCategory()))) &&
+            ((this.item==null && other.getItem()==null) || 
+             (this.item!=null &&
+              this.item.equals(other.getItem()))) &&
+            ((this.fixedRate==null && other.getFixedRate()==null) || 
+             (this.fixedRate!=null &&
+              this.fixedRate.equals(other.getFixedRate()))) &&
+            ((this.runRate==null && other.getRunRate()==null) || 
+             (this.runRate!=null &&
+              this.runRate.equals(other.getRunRate())));
+        __equalsCalc = null;
+        return _equals;
+    }
+
+    private boolean __hashCodeCalc = false;
+    public synchronized int hashCode() {
+        if (__hashCodeCalc) {
+            return 0;
+        }
+        __hashCodeCalc = true;
+        int _hashCode = 1;
+        if (getCostCategory() != null) {
+            _hashCode += getCostCategory().hashCode();
+        }
+        if (getItem() != null) {
+            _hashCode += getItem().hashCode();
+        }
+        if (getFixedRate() != null) {
+            _hashCode += getFixedRate().hashCode();
+        }
+        if (getRunRate() != null) {
+            _hashCode += getRunRate().hashCode();
+        }
+        __hashCodeCalc = false;
+        return _hashCode;
+    }
+
+    // Type metadata
+    private static org.apache.axis.description.TypeDesc typeDesc =
+        new org.apache.axis.description.TypeDesc(ManufacturingCostDetail.class, true);
+
+    static {
+        typeDesc.setXmlType(new javax.xml.namespace.QName("urn:supplychain_2018_2.lists.webservices.netsuite.com", "ManufacturingCostDetail"));
+        org.apache.axis.description.ElementDesc elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("costCategory");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:supplychain_2018_2.lists.webservices.netsuite.com", "costCategory"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("item");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:supplychain_2018_2.lists.webservices.netsuite.com", "item"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("fixedRate");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:supplychain_2018_2.lists.webservices.netsuite.com", "fixedRate"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "double"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("runRate");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:supplychain_2018_2.lists.webservices.netsuite.com", "runRate"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "double"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+    }
+
+    /**
+     * Return type metadata object
+     */
+    public static org.apache.axis.description.TypeDesc getTypeDesc() {
+        return typeDesc;
+    }
+
+    /**
+     * Get Custom Serializer
+     */
+    public static org.apache.axis.encoding.Serializer getSerializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanSerializer(
+            _javaType, _xmlType, typeDesc);
+    }
+
+    /**
+     * Get Custom Deserializer
+     */
+    public static org.apache.axis.encoding.Deserializer getDeserializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanDeserializer(
+            _javaType, _xmlType, typeDesc);
     }
 
 }

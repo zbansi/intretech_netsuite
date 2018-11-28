@@ -1,120 +1,194 @@
+/**
+ * FileSearchRow.java
+ *
+ * This file was auto-generated from WSDL
+ * by the Apache Axis 1.4 Jul 28, 2010 (04:07:04 PDT) WSDL2Java emitter.
+ */
 
 package com.netsuite.webservices.documents.filecabinet_2018_2;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlType;
-import com.netsuite.webservices.platform.common_2018_2.CustomerSearchRowBasic;
-import com.netsuite.webservices.platform.common_2018_2.EmployeeSearchRowBasic;
-import com.netsuite.webservices.platform.common_2018_2.FileSearchRowBasic;
-import com.netsuite.webservices.platform.core_2018_2.SearchRow;
+public class FileSearchRow  extends com.netsuite.webservices.platform.core_2018_2.SearchRow  implements java.io.Serializable {
+    private com.netsuite.webservices.platform.common_2018_2.FileSearchRowBasic basic;
 
+    private com.netsuite.webservices.platform.common_2018_2.CustomerSearchRowBasic shopperJoin;
 
-/**
- * <p>FileSearchRow complex type的 Java 类。
- * 
- * <p>以下模式片段指定包含在此类中的预期内容。
- * 
- * <pre>
- * &lt;complexType name="FileSearchRow">
- *   &lt;complexContent>
- *     &lt;extension base="{urn:core_2018_2.platform.webservices.netsuite.com}SearchRow">
- *       &lt;sequence>
- *         &lt;element name="basic" type="{urn:common_2018_2.platform.webservices.netsuite.com}FileSearchRowBasic" minOccurs="0"/>
- *         &lt;element name="shopperJoin" type="{urn:common_2018_2.platform.webservices.netsuite.com}CustomerSearchRowBasic" minOccurs="0"/>
- *         &lt;element name="userJoin" type="{urn:common_2018_2.platform.webservices.netsuite.com}EmployeeSearchRowBasic" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/extension>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
- */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "FileSearchRow", propOrder = {
-    "basic",
-    "shopperJoin",
-    "userJoin"
-})
-public class FileSearchRow
-    extends SearchRow
-{
+    private com.netsuite.webservices.platform.common_2018_2.EmployeeSearchRowBasic userJoin;
 
-    protected FileSearchRowBasic basic;
-    protected CustomerSearchRowBasic shopperJoin;
-    protected EmployeeSearchRowBasic userJoin;
+    public FileSearchRow() {
+    }
+
+    public FileSearchRow(
+           com.netsuite.webservices.platform.common_2018_2.FileSearchRowBasic basic,
+           com.netsuite.webservices.platform.common_2018_2.CustomerSearchRowBasic shopperJoin,
+           com.netsuite.webservices.platform.common_2018_2.EmployeeSearchRowBasic userJoin) {
+        this.basic = basic;
+        this.shopperJoin = shopperJoin;
+        this.userJoin = userJoin;
+    }
+
 
     /**
-     * 获取basic属性的值。
+     * Gets the basic value for this FileSearchRow.
      * 
-     * @return
-     *     possible object is
-     *     {@link FileSearchRowBasic }
-     *     
+     * @return basic
      */
-    public FileSearchRowBasic getBasic() {
+    public com.netsuite.webservices.platform.common_2018_2.FileSearchRowBasic getBasic() {
         return basic;
     }
 
-    /**
-     * 设置basic属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link FileSearchRowBasic }
-     *     
-     */
-    public void setBasic(FileSearchRowBasic value) {
-        this.basic = value;
-    }
 
     /**
-     * 获取shopperJoin属性的值。
+     * Sets the basic value for this FileSearchRow.
      * 
-     * @return
-     *     possible object is
-     *     {@link CustomerSearchRowBasic }
-     *     
+     * @param basic
      */
-    public CustomerSearchRowBasic getShopperJoin() {
+    public void setBasic(com.netsuite.webservices.platform.common_2018_2.FileSearchRowBasic basic) {
+        this.basic = basic;
+    }
+
+
+    /**
+     * Gets the shopperJoin value for this FileSearchRow.
+     * 
+     * @return shopperJoin
+     */
+    public com.netsuite.webservices.platform.common_2018_2.CustomerSearchRowBasic getShopperJoin() {
         return shopperJoin;
     }
 
-    /**
-     * 设置shopperJoin属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link CustomerSearchRowBasic }
-     *     
-     */
-    public void setShopperJoin(CustomerSearchRowBasic value) {
-        this.shopperJoin = value;
-    }
 
     /**
-     * 获取userJoin属性的值。
+     * Sets the shopperJoin value for this FileSearchRow.
      * 
-     * @return
-     *     possible object is
-     *     {@link EmployeeSearchRowBasic }
-     *     
+     * @param shopperJoin
      */
-    public EmployeeSearchRowBasic getUserJoin() {
+    public void setShopperJoin(com.netsuite.webservices.platform.common_2018_2.CustomerSearchRowBasic shopperJoin) {
+        this.shopperJoin = shopperJoin;
+    }
+
+
+    /**
+     * Gets the userJoin value for this FileSearchRow.
+     * 
+     * @return userJoin
+     */
+    public com.netsuite.webservices.platform.common_2018_2.EmployeeSearchRowBasic getUserJoin() {
         return userJoin;
     }
 
+
     /**
-     * 设置userJoin属性的值。
+     * Sets the userJoin value for this FileSearchRow.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link EmployeeSearchRowBasic }
-     *     
+     * @param userJoin
      */
-    public void setUserJoin(EmployeeSearchRowBasic value) {
-        this.userJoin = value;
+    public void setUserJoin(com.netsuite.webservices.platform.common_2018_2.EmployeeSearchRowBasic userJoin) {
+        this.userJoin = userJoin;
+    }
+
+    private java.lang.Object __equalsCalc = null;
+    public synchronized boolean equals(java.lang.Object obj) {
+        if (!(obj instanceof FileSearchRow)) return false;
+        FileSearchRow other = (FileSearchRow) obj;
+        if (obj == null) return false;
+        if (this == obj) return true;
+        if (__equalsCalc != null) {
+            return (__equalsCalc == obj);
+        }
+        __equalsCalc = obj;
+        boolean _equals;
+        _equals = super.equals(obj) && 
+            ((this.basic==null && other.getBasic()==null) || 
+             (this.basic!=null &&
+              this.basic.equals(other.getBasic()))) &&
+            ((this.shopperJoin==null && other.getShopperJoin()==null) || 
+             (this.shopperJoin!=null &&
+              this.shopperJoin.equals(other.getShopperJoin()))) &&
+            ((this.userJoin==null && other.getUserJoin()==null) || 
+             (this.userJoin!=null &&
+              this.userJoin.equals(other.getUserJoin())));
+        __equalsCalc = null;
+        return _equals;
+    }
+
+    private boolean __hashCodeCalc = false;
+    public synchronized int hashCode() {
+        if (__hashCodeCalc) {
+            return 0;
+        }
+        __hashCodeCalc = true;
+        int _hashCode = super.hashCode();
+        if (getBasic() != null) {
+            _hashCode += getBasic().hashCode();
+        }
+        if (getShopperJoin() != null) {
+            _hashCode += getShopperJoin().hashCode();
+        }
+        if (getUserJoin() != null) {
+            _hashCode += getUserJoin().hashCode();
+        }
+        __hashCodeCalc = false;
+        return _hashCode;
+    }
+
+    // Type metadata
+    private static org.apache.axis.description.TypeDesc typeDesc =
+        new org.apache.axis.description.TypeDesc(FileSearchRow.class, true);
+
+    static {
+        typeDesc.setXmlType(new javax.xml.namespace.QName("urn:filecabinet_2018_2.documents.webservices.netsuite.com", "FileSearchRow"));
+        org.apache.axis.description.ElementDesc elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("basic");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:filecabinet_2018_2.documents.webservices.netsuite.com", "basic"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "FileSearchRowBasic"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("shopperJoin");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:filecabinet_2018_2.documents.webservices.netsuite.com", "shopperJoin"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "CustomerSearchRowBasic"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("userJoin");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:filecabinet_2018_2.documents.webservices.netsuite.com", "userJoin"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "EmployeeSearchRowBasic"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+    }
+
+    /**
+     * Return type metadata object
+     */
+    public static org.apache.axis.description.TypeDesc getTypeDesc() {
+        return typeDesc;
+    }
+
+    /**
+     * Get Custom Serializer
+     */
+    public static org.apache.axis.encoding.Serializer getSerializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanSerializer(
+            _javaType, _xmlType, typeDesc);
+    }
+
+    /**
+     * Get Custom Deserializer
+     */
+    public static org.apache.axis.encoding.Deserializer getDeserializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanDeserializer(
+            _javaType, _xmlType, typeDesc);
     }
 
 }

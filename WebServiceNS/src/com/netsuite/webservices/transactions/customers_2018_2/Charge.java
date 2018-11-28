@@ -1,858 +1,1192 @@
+/**
+ * Charge.java
+ *
+ * This file was auto-generated from WSDL
+ * by the Apache Axis 1.4 Jul 28, 2010 (04:07:04 PDT) WSDL2Java emitter.
+ */
 
 package com.netsuite.webservices.transactions.customers_2018_2;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlAttribute;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlSchemaType;
-import javax.xml.bind.annotation.XmlType;
-import javax.xml.datatype.XMLGregorianCalendar;
-import com.netsuite.webservices.platform.core_2018_2.Record;
-import com.netsuite.webservices.platform.core_2018_2.RecordRef;
-import com.netsuite.webservices.transactions.customers_2018_2.types.ChargeStage;
-import com.netsuite.webservices.transactions.customers_2018_2.types.ChargeUse;
+public class Charge  extends com.netsuite.webservices.platform.core_2018_2.Record  implements java.io.Serializable {
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef customForm;
 
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef salesOrder;
 
-/**
- * <p>Charge complex type的 Java 类。
- * 
- * <p>以下模式片段指定包含在此类中的预期内容。
- * 
- * <pre>
- * &lt;complexType name="Charge">
- *   &lt;complexContent>
- *     &lt;extension base="{urn:core_2018_2.platform.webservices.netsuite.com}Record">
- *       &lt;sequence>
- *         &lt;element name="customForm" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="salesOrder" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="billTo" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="billingAccount" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="stage" type="{urn:types.customers_2018_2.transactions.webservices.netsuite.com}ChargeStage" minOccurs="0"/>
- *         &lt;element name="chargeDate" type="{http://www.w3.org/2001/XMLSchema}dateTime" minOccurs="0"/>
- *         &lt;element name="use" type="{urn:types.customers_2018_2.transactions.webservices.netsuite.com}ChargeUse" minOccurs="0"/>
- *         &lt;element name="chargeType" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="projectTask" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="description" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="createdDate" type="{http://www.w3.org/2001/XMLSchema}dateTime" minOccurs="0"/>
- *         &lt;element name="timeRecord" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="rate" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="quantity" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
- *         &lt;element name="amount" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
- *         &lt;element name="billingItem" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="currency" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="transaction" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="transactionLine" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="class" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="department" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="location" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="salesOrderLine" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="subscriptionLine" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="invoice" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="invoiceLine" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="rule" type="{urn:core_2018_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
- *         &lt;element name="runId" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *       &lt;/sequence>
- *       &lt;attribute name="internalId" type="{http://www.w3.org/2001/XMLSchema}string" />
- *       &lt;attribute name="externalId" type="{http://www.w3.org/2001/XMLSchema}string" />
- *     &lt;/extension>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
- */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "Charge", propOrder = {
-    "customForm",
-    "salesOrder",
-    "billTo",
-    "billingAccount",
-    "stage",
-    "chargeDate",
-    "use",
-    "chargeType",
-    "projectTask",
-    "description",
-    "createdDate",
-    "timeRecord",
-    "rate",
-    "quantity",
-    "amount",
-    "billingItem",
-    "currency",
-    "transaction",
-    "transactionLine",
-    "clazz",
-    "department",
-    "location",
-    "salesOrderLine",
-    "subscriptionLine",
-    "invoice",
-    "invoiceLine",
-    "rule",
-    "runId"
-})
-public class Charge
-    extends Record
-{
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef billTo;
 
-    protected RecordRef customForm;
-    protected RecordRef salesOrder;
-    protected RecordRef billTo;
-    protected RecordRef billingAccount;
-    @XmlSchemaType(name = "string")
-    protected ChargeStage stage;
-    @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar chargeDate;
-    @XmlSchemaType(name = "string")
-    protected ChargeUse use;
-    protected RecordRef chargeType;
-    protected RecordRef projectTask;
-    protected String description;
-    @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar createdDate;
-    protected RecordRef timeRecord;
-    protected String rate;
-    protected Double quantity;
-    protected Double amount;
-    protected RecordRef billingItem;
-    protected RecordRef currency;
-    protected RecordRef transaction;
-    protected RecordRef transactionLine;
-    @XmlElement(name = "class")
-    protected RecordRef clazz;
-    protected RecordRef department;
-    protected RecordRef location;
-    protected RecordRef salesOrderLine;
-    protected RecordRef subscriptionLine;
-    protected RecordRef invoice;
-    protected RecordRef invoiceLine;
-    protected RecordRef rule;
-    protected String runId;
-    @XmlAttribute(name = "internalId")
-    protected String internalId;
-    @XmlAttribute(name = "externalId")
-    protected String externalId;
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef billingAccount;
+
+    private com.netsuite.webservices.transactions.customers_2018_2.types.ChargeStage stage;
+
+    private java.util.Calendar chargeDate;
+
+    private com.netsuite.webservices.transactions.customers_2018_2.types.ChargeUse use;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef chargeType;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef projectTask;
+
+    private java.lang.String description;
+
+    private java.util.Calendar createdDate;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef timeRecord;
+
+    private java.lang.String rate;
+
+    private java.lang.Double quantity;
+
+    private java.lang.Double amount;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef billingItem;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef currency;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef transaction;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef transactionLine;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef _class;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef department;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef location;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef salesOrderLine;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef subscriptionLine;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef invoice;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef invoiceLine;
+
+    private com.netsuite.webservices.platform.core_2018_2.RecordRef rule;
+
+    private java.lang.String runId;
+
+    private java.lang.String internalId;  // attribute
+
+    private java.lang.String externalId;  // attribute
+
+    public Charge() {
+    }
+
+    public Charge(
+           java.lang.String[] nullFieldList,
+           java.lang.String internalId,
+           java.lang.String externalId,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef customForm,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef salesOrder,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef billTo,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef billingAccount,
+           com.netsuite.webservices.transactions.customers_2018_2.types.ChargeStage stage,
+           java.util.Calendar chargeDate,
+           com.netsuite.webservices.transactions.customers_2018_2.types.ChargeUse use,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef chargeType,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef projectTask,
+           java.lang.String description,
+           java.util.Calendar createdDate,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef timeRecord,
+           java.lang.String rate,
+           java.lang.Double quantity,
+           java.lang.Double amount,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef billingItem,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef currency,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef transaction,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef transactionLine,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef _class,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef department,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef location,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef salesOrderLine,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef subscriptionLine,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef invoice,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef invoiceLine,
+           com.netsuite.webservices.platform.core_2018_2.RecordRef rule,
+           java.lang.String runId) {
+        super(
+            nullFieldList);
+        this.internalId = internalId;
+        this.externalId = externalId;
+        this.customForm = customForm;
+        this.salesOrder = salesOrder;
+        this.billTo = billTo;
+        this.billingAccount = billingAccount;
+        this.stage = stage;
+        this.chargeDate = chargeDate;
+        this.use = use;
+        this.chargeType = chargeType;
+        this.projectTask = projectTask;
+        this.description = description;
+        this.createdDate = createdDate;
+        this.timeRecord = timeRecord;
+        this.rate = rate;
+        this.quantity = quantity;
+        this.amount = amount;
+        this.billingItem = billingItem;
+        this.currency = currency;
+        this.transaction = transaction;
+        this.transactionLine = transactionLine;
+        this._class = _class;
+        this.department = department;
+        this.location = location;
+        this.salesOrderLine = salesOrderLine;
+        this.subscriptionLine = subscriptionLine;
+        this.invoice = invoice;
+        this.invoiceLine = invoiceLine;
+        this.rule = rule;
+        this.runId = runId;
+    }
+
 
     /**
-     * 获取customForm属性的值。
+     * Gets the customForm value for this Charge.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @return customForm
      */
-    public RecordRef getCustomForm() {
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getCustomForm() {
         return customForm;
     }
 
-    /**
-     * 设置customForm属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setCustomForm(RecordRef value) {
-        this.customForm = value;
-    }
 
     /**
-     * 获取salesOrder属性的值。
+     * Sets the customForm value for this Charge.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param customForm
      */
-    public RecordRef getSalesOrder() {
+    public void setCustomForm(com.netsuite.webservices.platform.core_2018_2.RecordRef customForm) {
+        this.customForm = customForm;
+    }
+
+
+    /**
+     * Gets the salesOrder value for this Charge.
+     * 
+     * @return salesOrder
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getSalesOrder() {
         return salesOrder;
     }
 
-    /**
-     * 设置salesOrder属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setSalesOrder(RecordRef value) {
-        this.salesOrder = value;
-    }
 
     /**
-     * 获取billTo属性的值。
+     * Sets the salesOrder value for this Charge.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param salesOrder
      */
-    public RecordRef getBillTo() {
+    public void setSalesOrder(com.netsuite.webservices.platform.core_2018_2.RecordRef salesOrder) {
+        this.salesOrder = salesOrder;
+    }
+
+
+    /**
+     * Gets the billTo value for this Charge.
+     * 
+     * @return billTo
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getBillTo() {
         return billTo;
     }
 
-    /**
-     * 设置billTo属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setBillTo(RecordRef value) {
-        this.billTo = value;
-    }
 
     /**
-     * 获取billingAccount属性的值。
+     * Sets the billTo value for this Charge.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param billTo
      */
-    public RecordRef getBillingAccount() {
+    public void setBillTo(com.netsuite.webservices.platform.core_2018_2.RecordRef billTo) {
+        this.billTo = billTo;
+    }
+
+
+    /**
+     * Gets the billingAccount value for this Charge.
+     * 
+     * @return billingAccount
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getBillingAccount() {
         return billingAccount;
     }
 
-    /**
-     * 设置billingAccount属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setBillingAccount(RecordRef value) {
-        this.billingAccount = value;
-    }
 
     /**
-     * 获取stage属性的值。
+     * Sets the billingAccount value for this Charge.
      * 
-     * @return
-     *     possible object is
-     *     {@link ChargeStage }
-     *     
+     * @param billingAccount
      */
-    public ChargeStage getStage() {
+    public void setBillingAccount(com.netsuite.webservices.platform.core_2018_2.RecordRef billingAccount) {
+        this.billingAccount = billingAccount;
+    }
+
+
+    /**
+     * Gets the stage value for this Charge.
+     * 
+     * @return stage
+     */
+    public com.netsuite.webservices.transactions.customers_2018_2.types.ChargeStage getStage() {
         return stage;
     }
 
-    /**
-     * 设置stage属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link ChargeStage }
-     *     
-     */
-    public void setStage(ChargeStage value) {
-        this.stage = value;
-    }
 
     /**
-     * 获取chargeDate属性的值。
+     * Sets the stage value for this Charge.
      * 
-     * @return
-     *     possible object is
-     *     {@link XMLGregorianCalendar }
-     *     
+     * @param stage
      */
-    public XMLGregorianCalendar getChargeDate() {
+    public void setStage(com.netsuite.webservices.transactions.customers_2018_2.types.ChargeStage stage) {
+        this.stage = stage;
+    }
+
+
+    /**
+     * Gets the chargeDate value for this Charge.
+     * 
+     * @return chargeDate
+     */
+    public java.util.Calendar getChargeDate() {
         return chargeDate;
     }
 
-    /**
-     * 设置chargeDate属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link XMLGregorianCalendar }
-     *     
-     */
-    public void setChargeDate(XMLGregorianCalendar value) {
-        this.chargeDate = value;
-    }
 
     /**
-     * 获取use属性的值。
+     * Sets the chargeDate value for this Charge.
      * 
-     * @return
-     *     possible object is
-     *     {@link ChargeUse }
-     *     
+     * @param chargeDate
      */
-    public ChargeUse getUse() {
+    public void setChargeDate(java.util.Calendar chargeDate) {
+        this.chargeDate = chargeDate;
+    }
+
+
+    /**
+     * Gets the use value for this Charge.
+     * 
+     * @return use
+     */
+    public com.netsuite.webservices.transactions.customers_2018_2.types.ChargeUse getUse() {
         return use;
     }
 
-    /**
-     * 设置use属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link ChargeUse }
-     *     
-     */
-    public void setUse(ChargeUse value) {
-        this.use = value;
-    }
 
     /**
-     * 获取chargeType属性的值。
+     * Sets the use value for this Charge.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param use
      */
-    public RecordRef getChargeType() {
+    public void setUse(com.netsuite.webservices.transactions.customers_2018_2.types.ChargeUse use) {
+        this.use = use;
+    }
+
+
+    /**
+     * Gets the chargeType value for this Charge.
+     * 
+     * @return chargeType
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getChargeType() {
         return chargeType;
     }
 
-    /**
-     * 设置chargeType属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setChargeType(RecordRef value) {
-        this.chargeType = value;
-    }
 
     /**
-     * 获取projectTask属性的值。
+     * Sets the chargeType value for this Charge.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param chargeType
      */
-    public RecordRef getProjectTask() {
+    public void setChargeType(com.netsuite.webservices.platform.core_2018_2.RecordRef chargeType) {
+        this.chargeType = chargeType;
+    }
+
+
+    /**
+     * Gets the projectTask value for this Charge.
+     * 
+     * @return projectTask
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getProjectTask() {
         return projectTask;
     }
 
-    /**
-     * 设置projectTask属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setProjectTask(RecordRef value) {
-        this.projectTask = value;
-    }
 
     /**
-     * 获取description属性的值。
+     * Sets the projectTask value for this Charge.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param projectTask
      */
-    public String getDescription() {
+    public void setProjectTask(com.netsuite.webservices.platform.core_2018_2.RecordRef projectTask) {
+        this.projectTask = projectTask;
+    }
+
+
+    /**
+     * Gets the description value for this Charge.
+     * 
+     * @return description
+     */
+    public java.lang.String getDescription() {
         return description;
     }
 
-    /**
-     * 设置description属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setDescription(String value) {
-        this.description = value;
-    }
 
     /**
-     * 获取createdDate属性的值。
+     * Sets the description value for this Charge.
      * 
-     * @return
-     *     possible object is
-     *     {@link XMLGregorianCalendar }
-     *     
+     * @param description
      */
-    public XMLGregorianCalendar getCreatedDate() {
+    public void setDescription(java.lang.String description) {
+        this.description = description;
+    }
+
+
+    /**
+     * Gets the createdDate value for this Charge.
+     * 
+     * @return createdDate
+     */
+    public java.util.Calendar getCreatedDate() {
         return createdDate;
     }
 
-    /**
-     * 设置createdDate属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link XMLGregorianCalendar }
-     *     
-     */
-    public void setCreatedDate(XMLGregorianCalendar value) {
-        this.createdDate = value;
-    }
 
     /**
-     * 获取timeRecord属性的值。
+     * Sets the createdDate value for this Charge.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param createdDate
      */
-    public RecordRef getTimeRecord() {
+    public void setCreatedDate(java.util.Calendar createdDate) {
+        this.createdDate = createdDate;
+    }
+
+
+    /**
+     * Gets the timeRecord value for this Charge.
+     * 
+     * @return timeRecord
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getTimeRecord() {
         return timeRecord;
     }
 
-    /**
-     * 设置timeRecord属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setTimeRecord(RecordRef value) {
-        this.timeRecord = value;
-    }
 
     /**
-     * 获取rate属性的值。
+     * Sets the timeRecord value for this Charge.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param timeRecord
      */
-    public String getRate() {
+    public void setTimeRecord(com.netsuite.webservices.platform.core_2018_2.RecordRef timeRecord) {
+        this.timeRecord = timeRecord;
+    }
+
+
+    /**
+     * Gets the rate value for this Charge.
+     * 
+     * @return rate
+     */
+    public java.lang.String getRate() {
         return rate;
     }
 
-    /**
-     * 设置rate属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setRate(String value) {
-        this.rate = value;
-    }
 
     /**
-     * 获取quantity属性的值。
+     * Sets the rate value for this Charge.
      * 
-     * @return
-     *     possible object is
-     *     {@link Double }
-     *     
+     * @param rate
      */
-    public Double getQuantity() {
+    public void setRate(java.lang.String rate) {
+        this.rate = rate;
+    }
+
+
+    /**
+     * Gets the quantity value for this Charge.
+     * 
+     * @return quantity
+     */
+    public java.lang.Double getQuantity() {
         return quantity;
     }
 
-    /**
-     * 设置quantity属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Double }
-     *     
-     */
-    public void setQuantity(Double value) {
-        this.quantity = value;
-    }
 
     /**
-     * 获取amount属性的值。
+     * Sets the quantity value for this Charge.
      * 
-     * @return
-     *     possible object is
-     *     {@link Double }
-     *     
+     * @param quantity
      */
-    public Double getAmount() {
+    public void setQuantity(java.lang.Double quantity) {
+        this.quantity = quantity;
+    }
+
+
+    /**
+     * Gets the amount value for this Charge.
+     * 
+     * @return amount
+     */
+    public java.lang.Double getAmount() {
         return amount;
     }
 
-    /**
-     * 设置amount属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Double }
-     *     
-     */
-    public void setAmount(Double value) {
-        this.amount = value;
-    }
 
     /**
-     * 获取billingItem属性的值。
+     * Sets the amount value for this Charge.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param amount
      */
-    public RecordRef getBillingItem() {
+    public void setAmount(java.lang.Double amount) {
+        this.amount = amount;
+    }
+
+
+    /**
+     * Gets the billingItem value for this Charge.
+     * 
+     * @return billingItem
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getBillingItem() {
         return billingItem;
     }
 
-    /**
-     * 设置billingItem属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setBillingItem(RecordRef value) {
-        this.billingItem = value;
-    }
 
     /**
-     * 获取currency属性的值。
+     * Sets the billingItem value for this Charge.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param billingItem
      */
-    public RecordRef getCurrency() {
+    public void setBillingItem(com.netsuite.webservices.platform.core_2018_2.RecordRef billingItem) {
+        this.billingItem = billingItem;
+    }
+
+
+    /**
+     * Gets the currency value for this Charge.
+     * 
+     * @return currency
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getCurrency() {
         return currency;
     }
 
-    /**
-     * 设置currency属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setCurrency(RecordRef value) {
-        this.currency = value;
-    }
 
     /**
-     * 获取transaction属性的值。
+     * Sets the currency value for this Charge.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param currency
      */
-    public RecordRef getTransaction() {
+    public void setCurrency(com.netsuite.webservices.platform.core_2018_2.RecordRef currency) {
+        this.currency = currency;
+    }
+
+
+    /**
+     * Gets the transaction value for this Charge.
+     * 
+     * @return transaction
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getTransaction() {
         return transaction;
     }
 
-    /**
-     * 设置transaction属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setTransaction(RecordRef value) {
-        this.transaction = value;
-    }
 
     /**
-     * 获取transactionLine属性的值。
+     * Sets the transaction value for this Charge.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param transaction
      */
-    public RecordRef getTransactionLine() {
+    public void setTransaction(com.netsuite.webservices.platform.core_2018_2.RecordRef transaction) {
+        this.transaction = transaction;
+    }
+
+
+    /**
+     * Gets the transactionLine value for this Charge.
+     * 
+     * @return transactionLine
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getTransactionLine() {
         return transactionLine;
     }
 
-    /**
-     * 设置transactionLine属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setTransactionLine(RecordRef value) {
-        this.transactionLine = value;
-    }
 
     /**
-     * 获取clazz属性的值。
+     * Sets the transactionLine value for this Charge.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param transactionLine
      */
-    public RecordRef getClazz() {
-        return clazz;
+    public void setTransactionLine(com.netsuite.webservices.platform.core_2018_2.RecordRef transactionLine) {
+        this.transactionLine = transactionLine;
     }
 
-    /**
-     * 设置clazz属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setClazz(RecordRef value) {
-        this.clazz = value;
-    }
 
     /**
-     * 获取department属性的值。
+     * Gets the _class value for this Charge.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @return _class
      */
-    public RecordRef getDepartment() {
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef get_class() {
+        return _class;
+    }
+
+
+    /**
+     * Sets the _class value for this Charge.
+     * 
+     * @param _class
+     */
+    public void set_class(com.netsuite.webservices.platform.core_2018_2.RecordRef _class) {
+        this._class = _class;
+    }
+
+
+    /**
+     * Gets the department value for this Charge.
+     * 
+     * @return department
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getDepartment() {
         return department;
     }
 
-    /**
-     * 设置department属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setDepartment(RecordRef value) {
-        this.department = value;
-    }
 
     /**
-     * 获取location属性的值。
+     * Sets the department value for this Charge.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param department
      */
-    public RecordRef getLocation() {
+    public void setDepartment(com.netsuite.webservices.platform.core_2018_2.RecordRef department) {
+        this.department = department;
+    }
+
+
+    /**
+     * Gets the location value for this Charge.
+     * 
+     * @return location
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getLocation() {
         return location;
     }
 
-    /**
-     * 设置location属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setLocation(RecordRef value) {
-        this.location = value;
-    }
 
     /**
-     * 获取salesOrderLine属性的值。
+     * Sets the location value for this Charge.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param location
      */
-    public RecordRef getSalesOrderLine() {
+    public void setLocation(com.netsuite.webservices.platform.core_2018_2.RecordRef location) {
+        this.location = location;
+    }
+
+
+    /**
+     * Gets the salesOrderLine value for this Charge.
+     * 
+     * @return salesOrderLine
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getSalesOrderLine() {
         return salesOrderLine;
     }
 
-    /**
-     * 设置salesOrderLine属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setSalesOrderLine(RecordRef value) {
-        this.salesOrderLine = value;
-    }
 
     /**
-     * 获取subscriptionLine属性的值。
+     * Sets the salesOrderLine value for this Charge.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param salesOrderLine
      */
-    public RecordRef getSubscriptionLine() {
+    public void setSalesOrderLine(com.netsuite.webservices.platform.core_2018_2.RecordRef salesOrderLine) {
+        this.salesOrderLine = salesOrderLine;
+    }
+
+
+    /**
+     * Gets the subscriptionLine value for this Charge.
+     * 
+     * @return subscriptionLine
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getSubscriptionLine() {
         return subscriptionLine;
     }
 
-    /**
-     * 设置subscriptionLine属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setSubscriptionLine(RecordRef value) {
-        this.subscriptionLine = value;
-    }
 
     /**
-     * 获取invoice属性的值。
+     * Sets the subscriptionLine value for this Charge.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param subscriptionLine
      */
-    public RecordRef getInvoice() {
+    public void setSubscriptionLine(com.netsuite.webservices.platform.core_2018_2.RecordRef subscriptionLine) {
+        this.subscriptionLine = subscriptionLine;
+    }
+
+
+    /**
+     * Gets the invoice value for this Charge.
+     * 
+     * @return invoice
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getInvoice() {
         return invoice;
     }
 
-    /**
-     * 设置invoice属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setInvoice(RecordRef value) {
-        this.invoice = value;
-    }
 
     /**
-     * 获取invoiceLine属性的值。
+     * Sets the invoice value for this Charge.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param invoice
      */
-    public RecordRef getInvoiceLine() {
+    public void setInvoice(com.netsuite.webservices.platform.core_2018_2.RecordRef invoice) {
+        this.invoice = invoice;
+    }
+
+
+    /**
+     * Gets the invoiceLine value for this Charge.
+     * 
+     * @return invoiceLine
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getInvoiceLine() {
         return invoiceLine;
     }
 
-    /**
-     * 设置invoiceLine属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setInvoiceLine(RecordRef value) {
-        this.invoiceLine = value;
-    }
 
     /**
-     * 获取rule属性的值。
+     * Sets the invoiceLine value for this Charge.
      * 
-     * @return
-     *     possible object is
-     *     {@link RecordRef }
-     *     
+     * @param invoiceLine
      */
-    public RecordRef getRule() {
+    public void setInvoiceLine(com.netsuite.webservices.platform.core_2018_2.RecordRef invoiceLine) {
+        this.invoiceLine = invoiceLine;
+    }
+
+
+    /**
+     * Gets the rule value for this Charge.
+     * 
+     * @return rule
+     */
+    public com.netsuite.webservices.platform.core_2018_2.RecordRef getRule() {
         return rule;
     }
 
-    /**
-     * 设置rule属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RecordRef }
-     *     
-     */
-    public void setRule(RecordRef value) {
-        this.rule = value;
-    }
 
     /**
-     * 获取runId属性的值。
+     * Sets the rule value for this Charge.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param rule
      */
-    public String getRunId() {
+    public void setRule(com.netsuite.webservices.platform.core_2018_2.RecordRef rule) {
+        this.rule = rule;
+    }
+
+
+    /**
+     * Gets the runId value for this Charge.
+     * 
+     * @return runId
+     */
+    public java.lang.String getRunId() {
         return runId;
     }
 
-    /**
-     * 设置runId属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setRunId(String value) {
-        this.runId = value;
-    }
 
     /**
-     * 获取internalId属性的值。
+     * Sets the runId value for this Charge.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param runId
      */
-    public String getInternalId() {
+    public void setRunId(java.lang.String runId) {
+        this.runId = runId;
+    }
+
+
+    /**
+     * Gets the internalId value for this Charge.
+     * 
+     * @return internalId
+     */
+    public java.lang.String getInternalId() {
         return internalId;
     }
 
-    /**
-     * 设置internalId属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setInternalId(String value) {
-        this.internalId = value;
-    }
 
     /**
-     * 获取externalId属性的值。
+     * Sets the internalId value for this Charge.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @param internalId
      */
-    public String getExternalId() {
+    public void setInternalId(java.lang.String internalId) {
+        this.internalId = internalId;
+    }
+
+
+    /**
+     * Gets the externalId value for this Charge.
+     * 
+     * @return externalId
+     */
+    public java.lang.String getExternalId() {
         return externalId;
     }
 
+
     /**
-     * 设置externalId属性的值。
+     * Sets the externalId value for this Charge.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     * @param externalId
      */
-    public void setExternalId(String value) {
-        this.externalId = value;
+    public void setExternalId(java.lang.String externalId) {
+        this.externalId = externalId;
+    }
+
+    private java.lang.Object __equalsCalc = null;
+    public synchronized boolean equals(java.lang.Object obj) {
+        if (!(obj instanceof Charge)) return false;
+        Charge other = (Charge) obj;
+        if (obj == null) return false;
+        if (this == obj) return true;
+        if (__equalsCalc != null) {
+            return (__equalsCalc == obj);
+        }
+        __equalsCalc = obj;
+        boolean _equals;
+        _equals = super.equals(obj) && 
+            ((this.customForm==null && other.getCustomForm()==null) || 
+             (this.customForm!=null &&
+              this.customForm.equals(other.getCustomForm()))) &&
+            ((this.salesOrder==null && other.getSalesOrder()==null) || 
+             (this.salesOrder!=null &&
+              this.salesOrder.equals(other.getSalesOrder()))) &&
+            ((this.billTo==null && other.getBillTo()==null) || 
+             (this.billTo!=null &&
+              this.billTo.equals(other.getBillTo()))) &&
+            ((this.billingAccount==null && other.getBillingAccount()==null) || 
+             (this.billingAccount!=null &&
+              this.billingAccount.equals(other.getBillingAccount()))) &&
+            ((this.stage==null && other.getStage()==null) || 
+             (this.stage!=null &&
+              this.stage.equals(other.getStage()))) &&
+            ((this.chargeDate==null && other.getChargeDate()==null) || 
+             (this.chargeDate!=null &&
+              this.chargeDate.equals(other.getChargeDate()))) &&
+            ((this.use==null && other.getUse()==null) || 
+             (this.use!=null &&
+              this.use.equals(other.getUse()))) &&
+            ((this.chargeType==null && other.getChargeType()==null) || 
+             (this.chargeType!=null &&
+              this.chargeType.equals(other.getChargeType()))) &&
+            ((this.projectTask==null && other.getProjectTask()==null) || 
+             (this.projectTask!=null &&
+              this.projectTask.equals(other.getProjectTask()))) &&
+            ((this.description==null && other.getDescription()==null) || 
+             (this.description!=null &&
+              this.description.equals(other.getDescription()))) &&
+            ((this.createdDate==null && other.getCreatedDate()==null) || 
+             (this.createdDate!=null &&
+              this.createdDate.equals(other.getCreatedDate()))) &&
+            ((this.timeRecord==null && other.getTimeRecord()==null) || 
+             (this.timeRecord!=null &&
+              this.timeRecord.equals(other.getTimeRecord()))) &&
+            ((this.rate==null && other.getRate()==null) || 
+             (this.rate!=null &&
+              this.rate.equals(other.getRate()))) &&
+            ((this.quantity==null && other.getQuantity()==null) || 
+             (this.quantity!=null &&
+              this.quantity.equals(other.getQuantity()))) &&
+            ((this.amount==null && other.getAmount()==null) || 
+             (this.amount!=null &&
+              this.amount.equals(other.getAmount()))) &&
+            ((this.billingItem==null && other.getBillingItem()==null) || 
+             (this.billingItem!=null &&
+              this.billingItem.equals(other.getBillingItem()))) &&
+            ((this.currency==null && other.getCurrency()==null) || 
+             (this.currency!=null &&
+              this.currency.equals(other.getCurrency()))) &&
+            ((this.transaction==null && other.getTransaction()==null) || 
+             (this.transaction!=null &&
+              this.transaction.equals(other.getTransaction()))) &&
+            ((this.transactionLine==null && other.getTransactionLine()==null) || 
+             (this.transactionLine!=null &&
+              this.transactionLine.equals(other.getTransactionLine()))) &&
+            ((this._class==null && other.get_class()==null) || 
+             (this._class!=null &&
+              this._class.equals(other.get_class()))) &&
+            ((this.department==null && other.getDepartment()==null) || 
+             (this.department!=null &&
+              this.department.equals(other.getDepartment()))) &&
+            ((this.location==null && other.getLocation()==null) || 
+             (this.location!=null &&
+              this.location.equals(other.getLocation()))) &&
+            ((this.salesOrderLine==null && other.getSalesOrderLine()==null) || 
+             (this.salesOrderLine!=null &&
+              this.salesOrderLine.equals(other.getSalesOrderLine()))) &&
+            ((this.subscriptionLine==null && other.getSubscriptionLine()==null) || 
+             (this.subscriptionLine!=null &&
+              this.subscriptionLine.equals(other.getSubscriptionLine()))) &&
+            ((this.invoice==null && other.getInvoice()==null) || 
+             (this.invoice!=null &&
+              this.invoice.equals(other.getInvoice()))) &&
+            ((this.invoiceLine==null && other.getInvoiceLine()==null) || 
+             (this.invoiceLine!=null &&
+              this.invoiceLine.equals(other.getInvoiceLine()))) &&
+            ((this.rule==null && other.getRule()==null) || 
+             (this.rule!=null &&
+              this.rule.equals(other.getRule()))) &&
+            ((this.runId==null && other.getRunId()==null) || 
+             (this.runId!=null &&
+              this.runId.equals(other.getRunId()))) &&
+            ((this.internalId==null && other.getInternalId()==null) || 
+             (this.internalId!=null &&
+              this.internalId.equals(other.getInternalId()))) &&
+            ((this.externalId==null && other.getExternalId()==null) || 
+             (this.externalId!=null &&
+              this.externalId.equals(other.getExternalId())));
+        __equalsCalc = null;
+        return _equals;
+    }
+
+    private boolean __hashCodeCalc = false;
+    public synchronized int hashCode() {
+        if (__hashCodeCalc) {
+            return 0;
+        }
+        __hashCodeCalc = true;
+        int _hashCode = super.hashCode();
+        if (getCustomForm() != null) {
+            _hashCode += getCustomForm().hashCode();
+        }
+        if (getSalesOrder() != null) {
+            _hashCode += getSalesOrder().hashCode();
+        }
+        if (getBillTo() != null) {
+            _hashCode += getBillTo().hashCode();
+        }
+        if (getBillingAccount() != null) {
+            _hashCode += getBillingAccount().hashCode();
+        }
+        if (getStage() != null) {
+            _hashCode += getStage().hashCode();
+        }
+        if (getChargeDate() != null) {
+            _hashCode += getChargeDate().hashCode();
+        }
+        if (getUse() != null) {
+            _hashCode += getUse().hashCode();
+        }
+        if (getChargeType() != null) {
+            _hashCode += getChargeType().hashCode();
+        }
+        if (getProjectTask() != null) {
+            _hashCode += getProjectTask().hashCode();
+        }
+        if (getDescription() != null) {
+            _hashCode += getDescription().hashCode();
+        }
+        if (getCreatedDate() != null) {
+            _hashCode += getCreatedDate().hashCode();
+        }
+        if (getTimeRecord() != null) {
+            _hashCode += getTimeRecord().hashCode();
+        }
+        if (getRate() != null) {
+            _hashCode += getRate().hashCode();
+        }
+        if (getQuantity() != null) {
+            _hashCode += getQuantity().hashCode();
+        }
+        if (getAmount() != null) {
+            _hashCode += getAmount().hashCode();
+        }
+        if (getBillingItem() != null) {
+            _hashCode += getBillingItem().hashCode();
+        }
+        if (getCurrency() != null) {
+            _hashCode += getCurrency().hashCode();
+        }
+        if (getTransaction() != null) {
+            _hashCode += getTransaction().hashCode();
+        }
+        if (getTransactionLine() != null) {
+            _hashCode += getTransactionLine().hashCode();
+        }
+        if (get_class() != null) {
+            _hashCode += get_class().hashCode();
+        }
+        if (getDepartment() != null) {
+            _hashCode += getDepartment().hashCode();
+        }
+        if (getLocation() != null) {
+            _hashCode += getLocation().hashCode();
+        }
+        if (getSalesOrderLine() != null) {
+            _hashCode += getSalesOrderLine().hashCode();
+        }
+        if (getSubscriptionLine() != null) {
+            _hashCode += getSubscriptionLine().hashCode();
+        }
+        if (getInvoice() != null) {
+            _hashCode += getInvoice().hashCode();
+        }
+        if (getInvoiceLine() != null) {
+            _hashCode += getInvoiceLine().hashCode();
+        }
+        if (getRule() != null) {
+            _hashCode += getRule().hashCode();
+        }
+        if (getRunId() != null) {
+            _hashCode += getRunId().hashCode();
+        }
+        if (getInternalId() != null) {
+            _hashCode += getInternalId().hashCode();
+        }
+        if (getExternalId() != null) {
+            _hashCode += getExternalId().hashCode();
+        }
+        __hashCodeCalc = false;
+        return _hashCode;
+    }
+
+    // Type metadata
+    private static org.apache.axis.description.TypeDesc typeDesc =
+        new org.apache.axis.description.TypeDesc(Charge.class, true);
+
+    static {
+        typeDesc.setXmlType(new javax.xml.namespace.QName("urn:customers_2018_2.transactions.webservices.netsuite.com", "Charge"));
+        org.apache.axis.description.AttributeDesc attrField = new org.apache.axis.description.AttributeDesc();
+        attrField.setFieldName("internalId");
+        attrField.setXmlName(new javax.xml.namespace.QName("", "internalId"));
+        attrField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        typeDesc.addFieldDesc(attrField);
+        attrField = new org.apache.axis.description.AttributeDesc();
+        attrField.setFieldName("externalId");
+        attrField.setXmlName(new javax.xml.namespace.QName("", "externalId"));
+        attrField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        typeDesc.addFieldDesc(attrField);
+        org.apache.axis.description.ElementDesc elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("customForm");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:customers_2018_2.transactions.webservices.netsuite.com", "customForm"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("salesOrder");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:customers_2018_2.transactions.webservices.netsuite.com", "salesOrder"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("billTo");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:customers_2018_2.transactions.webservices.netsuite.com", "billTo"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("billingAccount");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:customers_2018_2.transactions.webservices.netsuite.com", "billingAccount"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("stage");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:customers_2018_2.transactions.webservices.netsuite.com", "stage"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:types.customers_2018_2.transactions.webservices.netsuite.com", "ChargeStage"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("chargeDate");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:customers_2018_2.transactions.webservices.netsuite.com", "chargeDate"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "dateTime"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("use");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:customers_2018_2.transactions.webservices.netsuite.com", "use"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:types.customers_2018_2.transactions.webservices.netsuite.com", "ChargeUse"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("chargeType");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:customers_2018_2.transactions.webservices.netsuite.com", "chargeType"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("projectTask");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:customers_2018_2.transactions.webservices.netsuite.com", "projectTask"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("description");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:customers_2018_2.transactions.webservices.netsuite.com", "description"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("createdDate");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:customers_2018_2.transactions.webservices.netsuite.com", "createdDate"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "dateTime"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("timeRecord");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:customers_2018_2.transactions.webservices.netsuite.com", "timeRecord"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("rate");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:customers_2018_2.transactions.webservices.netsuite.com", "rate"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("quantity");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:customers_2018_2.transactions.webservices.netsuite.com", "quantity"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "double"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("amount");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:customers_2018_2.transactions.webservices.netsuite.com", "amount"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "double"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("billingItem");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:customers_2018_2.transactions.webservices.netsuite.com", "billingItem"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("currency");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:customers_2018_2.transactions.webservices.netsuite.com", "currency"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("transaction");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:customers_2018_2.transactions.webservices.netsuite.com", "transaction"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("transactionLine");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:customers_2018_2.transactions.webservices.netsuite.com", "transactionLine"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("_class");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:customers_2018_2.transactions.webservices.netsuite.com", "class"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("department");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:customers_2018_2.transactions.webservices.netsuite.com", "department"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("location");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:customers_2018_2.transactions.webservices.netsuite.com", "location"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("salesOrderLine");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:customers_2018_2.transactions.webservices.netsuite.com", "salesOrderLine"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("subscriptionLine");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:customers_2018_2.transactions.webservices.netsuite.com", "subscriptionLine"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("invoice");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:customers_2018_2.transactions.webservices.netsuite.com", "invoice"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("invoiceLine");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:customers_2018_2.transactions.webservices.netsuite.com", "invoiceLine"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("rule");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:customers_2018_2.transactions.webservices.netsuite.com", "rule"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "RecordRef"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("runId");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:customers_2018_2.transactions.webservices.netsuite.com", "runId"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+    }
+
+    /**
+     * Return type metadata object
+     */
+    public static org.apache.axis.description.TypeDesc getTypeDesc() {
+        return typeDesc;
+    }
+
+    /**
+     * Get Custom Serializer
+     */
+    public static org.apache.axis.encoding.Serializer getSerializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanSerializer(
+            _javaType, _xmlType, typeDesc);
+    }
+
+    /**
+     * Get Custom Deserializer
+     */
+    public static org.apache.axis.encoding.Deserializer getDeserializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanDeserializer(
+            _javaType, _xmlType, typeDesc);
     }
 
 }
