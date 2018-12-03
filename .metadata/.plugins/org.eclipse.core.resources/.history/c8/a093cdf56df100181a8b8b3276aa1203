@@ -1,7 +1,0 @@
-package com.bansi.ws.nscux;
-
-import com.netsuite.webservices.*;
-public class CuxClient {
-	NetSuiteServiceLocator service = new NetSuiteServiceLocator();
-
-}
