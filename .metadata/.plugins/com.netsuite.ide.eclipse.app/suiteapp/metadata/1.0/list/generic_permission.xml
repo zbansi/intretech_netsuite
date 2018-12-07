@@ -1,4 +1,4 @@
-<list id='generic_permission'>
+<list id="generic_permission">
 	<value>ADMI_ACCOUNTING</value>
 	<value>ADMI_ACCOUNTINGBOOK</value>
 	<value>ADMI_ACCOUNTINGLIST</value>
@@ -6,6 +6,9 @@
 	<value>ADMI_ACCTSETUP</value>
 	<value>ADMI_ACH</value>
 	<value>ADMI_ADMIN</value>
+	<value>ADMI_ADMINDOCSEU</value>
+	<value>ADMI_ADMINDOCSNA</value>
+	<value>ADMI_ADMINDOCSOTHER</value>
 	<value>ADMI_ADVANCED_ORDER_MANAGEMENT</value>
 	<value>ADMI_ADVANCED_TEMPLATES</value>
 	<value>ADMI_ALLOWNONGLCHANGES</value>
@@ -14,6 +17,7 @@
 	<value>ADMI_APP_DEPLOYMENT</value>
 	<value>ADMI_AUDITLOGIN</value>
 	<value>ADMI_BACKUPEXPORT</value>
+	<value>ADMI_BANK_CONNECTIVITY_CONFIG</value>
 	<value>ADMI_BILLINGINFO</value>
 	<value>ADMI_BILLPAYSETUP</value>
 	<value>ADMI_BLCGA</value>
@@ -92,6 +96,7 @@
 	<value>ADMI_ESCALATIONTERRITORY</value>
 	<value>ADMI_EXPORTIIF</value>
 	<value>ADMI_FEATURES</value>
+	<value>ADMI_FFTEXCEPTIONREASON</value>
 	<value>ADMI_FINCHARGEPREF</value>
 	<value>ADMI_GAINLOSSACCTMAPPING</value>
 	<value>ADMI_GLOBALACCOUNTMAPPING</value>
@@ -104,6 +109,7 @@
 	<value>ADMI_ISSUESETUP</value>
 	<value>ADMI_ISSUESHOWSTOPPER</value>
 	<value>ADMI_ITEMACCOUNTMAPPING</value>
+	<value>ADMI_KERNEL</value>
 	<value>ADMI_KNOWLEDGEBASE</value>
 	<value>ADMI_KPIREPORT</value>
 	<value>ADMI_LOCATIONCOSTINGGROUP</value>
@@ -118,6 +124,7 @@
 	<value>ADMI_MHLEVEL</value>
 	<value>ADMI_MHNODE</value>
 	<value>ADMI_MHVERSION</value>
+	<value>ADMI_MIGRATEREVARRNGANDPLAN</value>
 	<value>ADMI_MOBILE_ACCESS</value>
 	<value>ADMI_OFFLINECLIENT</value>
 	<value>ADMI_OPENIDSSO</value>
@@ -160,7 +167,7 @@
 	<value>ADMI_SUITESIGNON</value>
 	<value>ADMI_SUPPORTSETUP</value>
 	<value>ADMI_SWAPPRICES</value>
-	<value>ADMI_SYNCHRONIZATIONSETUP</value>
+	<value>ADMI_TAXMIGRATION</value>
 	<value>ADMI_TAXPERIODS</value>
 	<value>ADMI_TEAMSELLINGCONTRIBUTION</value>
 	<value>ADMI_TELEPHONY_SETUP</value>
@@ -229,17 +236,19 @@
 	<value>LIST_DISTRIBUTIONNETWORK</value>
 	<value>LIST_EMAILTEMPLATE</value>
 	<value>LIST_EMPLOYEE</value>
-	<value>LIST_EMPLOYEE_RECORD</value>
-	<value>LIST_EMPLOYEE_SELF</value>
-	<value>LIST_EMPLOYEE_ADMINISTRATION</value>
-	<value>LIST_EMPLOYEE_CONFIDENTIAL</value>
-	<value>LIST_EMPLOYEE_PUBLIC</value>
 	<value>LIST_EMPLOYEECHANGEREASON</value>
 	<value>LIST_EMPLOYEEEFFECTIVEDATING</value>
 	<value>LIST_EMPLOYEESEPARATION</value>
 	<value>LIST_EMPLOYEESSN</value>
+	<value>LIST_EMPLOYEE_ADMINISTRATION</value>
+	<value>LIST_EMPLOYEE_CONFIDENTIAL</value>
+	<value>LIST_EMPLOYEE_PUBLIC</value>
+	<value>LIST_EMPLOYEE_RECORD</value>
+	<value>LIST_EMPLOYEE_SELF</value>
 	<value>LIST_ENTITY_DUPLICATES</value>
 	<value>LIST_EVENT</value>
+	<value>LIST_EXPENSEAMORTIZATIONRULE</value>
+	<value>LIST_EXPENSEPLAN</value>
 	<value>LIST_EXPORT</value>
 	<value>LIST_FAIRVALUEDIMENSION</value>
 	<value>LIST_FAIRVALUEFORMULA</value>
@@ -253,6 +262,7 @@
 	<value>LIST_GENERICRESOURCE</value>
 	<value>LIST_GLLINESAUDITLOG</value>
 	<value>LIST_GLLINESAUDITLOGSEG</value>
+	<value>LIST_GLOBALINVTRELATIONSHIP</value>
 	<value>LIST_GOVERNMENTISSUEDIDTYPE</value>
 	<value>LIST_HCMJOB</value>
 	<value>LIST_HCMPOSITION</value>
@@ -324,6 +334,7 @@
 	<value>LIST_SALESCAMPAIGN</value>
 	<value>LIST_SALESROLE</value>
 	<value>LIST_SCHEDULEMASSUPDATES</value>
+	<value>LIST_SCSNAPSHOT</value>
 	<value>LIST_SHIPITEM</value>
 	<value>LIST_SHIPPARTPACKAGE</value>
 	<value>LIST_SHIPPARTREGISTRATION</value>
@@ -383,8 +394,8 @@
 	<value>REPO_940</value>
 	<value>REPO_941</value>
 	<value>REPO_ACCOUNTDETAIL</value>
-	<value>REPO_ANALYTICS</value>
 	<value>REPO_AMORTIZATION</value>
+	<value>REPO_ANALYTICS</value>
 	<value>REPO_AP</value>
 	<value>REPO_AR</value>
 	<value>REPO_AUTHPARTNERCOMMISSION</value>
@@ -415,6 +426,7 @@
 	<value>REPO_PAYROLLLIAB</value>
 	<value>REPO_PAYROLLSTATEWITHHOLD</value>
 	<value>REPO_PAYROLLW2</value>
+	<value>REPO_PERIODENDFINANCIALS</value>
 	<value>REPO_PROJECT_ACCOUNTING</value>
 	<value>REPO_PSTSUMMARY</value>
 	<value>REPO_PURCHASEORDER</value>
@@ -443,6 +455,7 @@
 	<value>REPO_W4</value>
 	<value>REPO_WEBSITE</value>
 	<value>REPO_WEBSTORE</value>
+	<value>REPO_WORKFORCEANALYTICS</value>
 	<value>TRAN_ADJUSTMENTJOURNAL</value>
 	<value>TRAN_ALLOCSCHEDULE</value>
 	<value>TRAN_AMENDW4</value>
@@ -501,7 +514,7 @@
 	<value>TRAN_INVCOUNT</value>
 	<value>TRAN_INVDISTR</value>
 	<value>TRAN_INVREVAL</value>
-	<value>TRAN_INVSTATUSCHANGE</value>
+	<value>TRAN_STATCHNG</value>
 	<value>TRAN_INVTRNFR</value>
 	<value>TRAN_INVWKSHT</value>
 	<value>TRAN_ITEMRCPT</value>
@@ -521,6 +534,7 @@
 	<value>TRAN_PAYMENTEVENT</value>
 	<value>TRAN_PAYROLLRUN</value>
 	<value>TRAN_PCHKJRNL</value>
+	<value>TRAN_PEJRNL</value>
 	<value>TRAN_POSTPERIODS</value>
 	<value>TRAN_POSTVENDORBILLVARIANCE</value>
 	<value>TRAN_PRICELIST</value>
@@ -595,4 +609,3 @@
 	<value>TRAN_XMLDETAIL</value>
 	<value>TRAN_YTDADJST</value>
 </list>
- 

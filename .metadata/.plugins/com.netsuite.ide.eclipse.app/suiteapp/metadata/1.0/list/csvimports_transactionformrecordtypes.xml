@@ -4,7 +4,6 @@
 	<value>CREDITCARDCHARGE</value>
 	<value>CREDITMEMO</value>
 	<value>CUSTOMERPAYMENT</value>
-	<value>CUSTOMTRANSACTION</value>
 	<value>ESTIMATE</value>
 	<value>EXPENSEREPORT</value>
 	<value>INTERCOMPANYJOURNALENTRY</value>

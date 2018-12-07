@@ -37,19 +37,19 @@
 		<xsd:attribute name="appliesforfieldvalue" type="xsd:string"/>
 	</xsd:complexType>
 
-    <xsd:complexType name="recordtype">
-        <xsd:choice maxOccurs="unbounded" minOccurs="0"> 
+	<xsd:complexType name="recordtype">
+		<xsd:choice maxOccurs="unbounded" minOccurs="0">
 			<xsd:element name="attribute" type="attribute" maxOccurs="unbounded" minOccurs="1" />
 			<xsd:element name="feature" type="xsd:string" maxOccurs="1" minOccurs="0"/>
 			<xsd:element name="customfield" type="customfield" maxOccurs="1" minOccurs="0" />
-            <xsd:element name="field" type="field" maxOccurs="unbounded" minOccurs="1" />
-            <xsd:element name="subrecordtypegroup" type="subrecordtypegroup" maxOccurs="unbounded" minOccurs="0" />
+			<xsd:element name="field" type="field" maxOccurs="unbounded" minOccurs="1" />
+			<xsd:element name="subrecordtypegroup" type="subrecordtypegroup" maxOccurs="unbounded" minOccurs="0" />
 			<xsd:element name="fieldset" type="fieldset" maxOccurs="unbounded" minOccurs="0" />
 			<xsd:element name="fragment" type="fragment" maxOccurs="unbounded" minOccurs="0" />
 			<xsd:element name="datafile" type="datafile" maxOccurs="unbounded" minOccurs="0" />
-        </xsd:choice>
-        <xsd:attribute name="name" type="xsd:string" /> 
-    </xsd:complexType>
+		</xsd:choice>
+		<xsd:attribute name="name" type="xsd:string" />
+	</xsd:complexType>
 
 	<xsd:complexType name="mediatype">
 		<xsd:choice maxOccurs="unbounded" minOccurs="0">
@@ -60,23 +60,23 @@
 	</xsd:complexType>
 
 	<!-- This should be split into multiple field types to correctly handle attribute relevance and types -->
-    <xsd:complexType name="field">
-        <xsd:sequence>
+	<xsd:complexType name="field">
+		<xsd:sequence>
 			<xsd:element name="mandatoriness" type="mandatoriness" maxOccurs="1" minOccurs="0" />
 			<xsd:element name="availability" type="availability" maxOccurs="1" minOccurs="0" />
-        </xsd:sequence>
-        <xsd:attribute name="name" type="xsd:string"/>
-        <xsd:attribute name="type" type="xsd:string"/>
+		</xsd:sequence>
+		<xsd:attribute name="name" type="xsd:string"/>
+		<xsd:attribute name="type" type="xsd:string"/>
 		<xsd:attribute name="min" type="xsd:string"/>
 		<xsd:attribute name="max" type="xsd:string"/>
 		<xsd:attribute name="feature" type="xsd:string"/>
-        <xsd:attribute name="values" type="xsd:string"/>
+		<xsd:attribute name="values" type="xsd:string"/>
 		<xsd:attribute name="length" type="xsd:string"/>
-        <xsd:attribute name="refs" type="xsd:string"/>
-        <xsd:attribute name="mandatory" type="xsd:boolean"/>
-        <xsd:attribute name="default" type="xsd:string"/>
-        <xsd:attribute name="allowedFileExtensions" type="xsd:string"/>
-        <xsd:attribute name="multiple" type="xsd:boolean"/>
+		<xsd:attribute name="refs" type="xsd:string"/>
+		<xsd:attribute name="mandatory" type="xsd:boolean"/>
+		<xsd:attribute name="default" type="xsd:string"/>
+		<xsd:attribute name="allowedFileExtensions" type="xsd:string"/>
+		<xsd:attribute name="multiple" type="xsd:boolean"/>
 		<xsd:attribute name="refsonly" type="xsd:boolean"/>
 		<xsd:attribute name="accountspecific" type="accountspecific"/>
 	</xsd:complexType>
@@ -125,21 +125,21 @@
 	<xsd:complexType name="subrecordtypegroup">
 		<xsd:choice maxOccurs="unbounded" minOccurs="0">
 			<xsd:element name="attribute" type="attribute" maxOccurs="unbounded" minOccurs="0" />
-            <xsd:sequence>
-                <xsd:element name="subrecordtype" type="subrecordtype" maxOccurs="unbounded" minOccurs="1"/>
-            </xsd:sequence>
-        </xsd:choice>
-        <xsd:attribute name="name" type="xsd:string"/>
+			<xsd:sequence>
+				<xsd:element name="subrecordtype" type="subrecordtype" maxOccurs="unbounded" minOccurs="1"/>
+			</xsd:sequence>
+		</xsd:choice>
+		<xsd:attribute name="name" type="xsd:string"/>
 		<xsd:attribute name="multiple" type="xsd:boolean"/>
-    </xsd:complexType>
+	</xsd:complexType>
 
-    <xsd:complexType name="subrecordtype">
-        <xsd:choice maxOccurs="unbounded" minOccurs="0">
+	<xsd:complexType name="subrecordtype">
+		<xsd:choice maxOccurs="unbounded" minOccurs="0">
 			<xsd:element name="attribute" type="attribute" maxOccurs="unbounded" minOccurs="1" />
 			<xsd:element name="feature" type="xsd:string" maxOccurs="1" minOccurs="0"/>
-            <xsd:element name="customfield" type="customfield" maxOccurs="1" minOccurs="0"/>
-            <xsd:element name="field" type="field" maxOccurs="unbounded" minOccurs="1"/>
-            <xsd:element name="subrecordtypegroup" type="subrecordtypegroup" maxOccurs="unbounded" minOccurs="0"/>
+			<xsd:element name="customfield" type="customfield" maxOccurs="1" minOccurs="0"/>
+			<xsd:element name="field" type="field" maxOccurs="unbounded" minOccurs="1"/>
+			<xsd:element name="subrecordtypegroup" type="subrecordtypegroup" maxOccurs="unbounded" minOccurs="0"/>
 			<xsd:element name="fieldset" type="fieldset" maxOccurs="unbounded" minOccurs="0" />
 			<xsd:element name="fragment" type="fragment" maxOccurs="unbounded" minOccurs="0" />
             <xsd:sequence>
@@ -157,13 +157,13 @@
 	</xsd:complexType>
 
 	<xsd:complexType name="fragment">
-			<xsd:sequence>
+		<xsd:sequence>
 			<xsd:element name="field" type="field" maxOccurs="unbounded" minOccurs="0" />
 			<xsd:element name="fieldset" type="fieldset" maxOccurs="unbounded" minOccurs="0" />
 			<xsd:element name="fragment" type="fragment" maxOccurs="unbounded" minOccurs="0" />
 			<xsd:element name="mandatoriness" type="mandatoriness" maxOccurs="1" minOccurs="0" />
 			<xsd:element name="availability" type="availability" maxOccurs="1" minOccurs="0" />
-			</xsd:sequence>
+		</xsd:sequence>
 		<xsd:attribute name="name" type="xsd:string"/>
 		<xsd:attribute name="type" type="xsd:string"/>
 	</xsd:complexType>

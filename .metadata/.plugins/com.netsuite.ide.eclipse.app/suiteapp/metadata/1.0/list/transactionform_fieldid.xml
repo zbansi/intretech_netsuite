@@ -96,6 +96,7 @@
 	<value>HANDLINGCOST</value>
 	<value>HANDLINGTAX1RATE</value>
 	<value>HANDLINGTAX2RATE</value>
+	<value>HANDLINGTAXAMOUNT</value>
 	<value>HANDLINGTAXCODE</value>
 	<value>IGNOREAVS</value>
 	<value>IGNORECSC</value>
@@ -105,6 +106,7 @@
 	<value>INTERCOTRANSACTION</value>
 	<value>IPADDRESS</value>
 	<value>IPADDRESSCOUNTRY</value>
+	<value>ISCROSSSUBTRANSACTION</value>
 	<value>ISMULTISHIPTO</value>
 	<value>ISRECURRINGPAYMENT</value>
 	<value>ISTAXABLE</value>
@@ -170,6 +172,7 @@
 	<value>SHIPPINGCOST</value>
 	<value>SHIPPINGTAX1RATE</value>
 	<value>SHIPPINGTAX2RATE</value>
+	<value>SHIPPINGTAXAMOUNT</value>
 	<value>SHIPPINGTAXCODE</value>
 	<value>SHIPTO</value>
 	<value>SOFTDESCRIPTOR</value>

@@ -1,27 +1,3 @@
-<!--
-WITH dateRangeTypes AS (
-  SELECT sKey, sDefaultName, upper(replace(regexp_replace(regexp_replace(sDefaultName, ' |\(|\)', '_'), '_$|''', ''), '-', 'TO')) AS sNormalizedKey
-  FROM ReportDateRange
-  WHERE skey NOT IN ('CUSTOM','RELATIVE')
-  AND sDefaultName IS NOT NULL
-  AND bKpiReportOnly='T'
-),
-periodRangeTypes AS (
-  SELECT sKey, upper(replace(sName, ' ', '_')) AS sNormalizedKey
-  FROM ReportPeriodRange
-)
-SELECT dr.sKey, dr.sNormalizedKey
-FROM dateRangeTypes dr LEFT JOIN periodRangeTypes pr ON (pr.sKey = dr.sKey)
-WHERE pr.sKey IS NULL
-ORDER BY
-  CASE
-  WHEN regexp_instr(dr.sKey, 'R.?.AGO[0-9]*') > 0
-  THEN 'zzz'
-    ||DECODE(SUBSTR(dr.sKey,instr(dr.sKey, 'AGO') - 1, 1), 'D', 1, 'W', 2, 'M', 3, 'Q', 4, 'H', 5, 6)
-    ||TO_CHAR(to_number(SUBSTR(dr.sKey, instr(dr.sKey, 'AGO') + 3)), '99')
-  ELSE dr.sDefaultName
-  END;
--->
 <list id="kpi_ranges_daterange_report">
 	<value internal="M4LY">APRIL_LAST_YEAR</value>
 	<value internal="M4LYTD">APRIL_LAST_YEAR_TO_DATE</value>

@@ -4,7 +4,7 @@ Following query fetched from custcategory, custrecord, gotopage request handler,
 without the parts related to edition that are dependent on user login.
 -->
 <list id='generic_task'>
-	<value feature="ADVTAXENGINE">ADMI_ACCOUNTCLOSE</value>  <!-- Close Account -->
+	<value>ADMI_ACCOUNTCLOSE</value>  <!-- Close Account -->
 	<value>ADMI_ACCOUNTMOBILITY</value>  <!-- Account Mobility Tasks -->
 	<value>ADMI_ACCTSETUP</value>  <!-- Accounting Preferences -->
 	<value>ADMI_ACHSETUP</value>  <!-- Set Up ACH Processing -->
@@ -12,7 +12,6 @@ without the parts related to edition that are dependent on user login.
 	<value>ADMI_ADP</value>  <!-- ADP Set Up -->
 	<value>ADMI_ADVINVENTORYSETUP</value>  <!-- Inventory Management Preferences -->
 	<value>ADMI_ALLOW_LOGIN</value>  <!-- NetSuite Support Login -->
-	<value>ADMI_ALTERNATIVEPAYMENTS</value>  <!-- Alternative Payments -->
 	<value>ADMI_BACKUP</value>  <!-- Full CSV Export -->
 	<value>ADMI_BASSETUP</value>  <!-- Set Up Business Activity Statement -->
 	<value>ADMI_BILLINGEVENTS</value>  <!-- View Billing Information -->
@@ -157,6 +156,7 @@ without the parts related to edition that are dependent on user login.
 	<value>EDIT_PUBLISHERAPP</value>  <!-- New Application -->
 	<value>EDIT_RECLASSJESCHEDULE</value>  <!-- Schedule Reclassification Journal Entries -->
 	<value>EDIT_REVRECJESCHEDULE</value>  <!-- Schedule Revenue Recognition Journal Entries -->
+	<value>EDIT_AMORTJESCHEDULE</value>  <!-- Schedule Amortization Journal Entries -->
 	<value>EDIT_SUBSCRIPTION</value>  <!-- Create Subscriptions -->
 	<value>EDIT_SUITEAPPLIST</value>
 	<value>EDIT_SUPPORTCASE</value>  <!-- New Cases -->

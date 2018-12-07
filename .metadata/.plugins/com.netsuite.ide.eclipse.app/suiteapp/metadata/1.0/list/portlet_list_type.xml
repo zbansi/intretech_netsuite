@@ -20,6 +20,7 @@
 	<value internal="Budget">BUDGET</value>
 	<value internal="BudgetExchangeRate" feature="SUBSANDMULTICURRANDMULTBUDGETS">BUDGETEXCHANGERATE</value>
 	<value internal="BulkProcErrors">BULKPROCERRORS</value>
+	<value internal="BusinessEventHistory" feature="ASYNCBIZEVENTSPROCESSING">BUSINESSEVENTHISTORY</value>
 	<value internal="CCTran">CCTRAN</value>
 	<value internal="Calendar">CALENDAR</value>
 	<value internal="Call">CALL</value>
@@ -30,6 +31,8 @@
 	<value internal="ChargeRun" feature="CHARGEBASEDBILLING">CHARGERUN</value>
 	<value internal="Class">CLASS</value>
 	<value internal="ClassSegmentMapping" feature="MULTIBOOKCLASS">CLASSSEGMENTMAPPING</value>
+	<value internal="ComSearchGroupSyn" feature="COMMERCESEARCHSYNONYMS">COMSEARCHGROUPSYN</value>
+	<value internal="ComSearchOneWaySyn" feature="COMMERCESEARCHSYNONYMS">COMSEARCHONEWAYSYN</value>
 	<value internal="CommitOrderSchedule">COMMITORDERSCHEDULE</value>
 	<value internal="Competitor" feature="SFA">COMPETITOR</value>
 	<value internal="ConsolExchangeRate" feature="SUBSIDIARIESANDMULTICURRENCY">CONSOLEXCHANGERATE</value>
@@ -45,11 +48,13 @@
 	<value internal="EmployeeChangeReason" feature="EFFECTIVEDATING">EMPLOYEECHANGEREASON</value>
 	<value internal="EntityAccountMapping" feature="COACLASSIFICATIONMANAGEMENT">ENTITYACCOUNTMAPPING</value>
 	<value internal="EntityMseSubsidiary" feature="SUBSIDIARIES">ENTITYMSESUBSIDIARY</value>
+	<value internal="ExpenseAmortizationRule" feature="ADVANCEDEXPENSEMANAGEMENT">EXPENSEAMORTIZATIONRULE</value>
+	<value internal="ExpensePlan" feature="ADVANCEDEXPENSEMANAGEMENT">EXPENSEPLAN</value>
 	<value internal="FairValueFormula" feature="ADVANCEDREVENUERECOGNITION">FAIRVALUEFORMULA</value>
 	<value internal="FairValuePrice" feature="ADVANCEDREVENUERECOGNITION">FAIRVALUEPRICE</value>
 	<value internal="FixedAmountProjectRevenueRule" feature="CHARGEBASEDBILLINGANDADVREVREC">FIXEDAMOUNTPROJECTREVENUERULE</value>
 	<value internal="Forecast">FORECAST</value>
-	<value internal="GainLossAcctMapping" feature="GAINLOSSACCTMAPPING">GAINLOSSACCTMAPPING</value>
+	<value internal="FulfillmentExceptionReason" feature="FULFILLMENTREQUEST">FULFILLMENTEXCEPTIONREASON</value>
 	<value internal="GatewayNotification" feature="CCTRACKING">GATEWAYNOTIFICATION</value>
 	<value internal="GenericResource" feature="ADVANCEDJOBS">GENERICRESOURCE</value>
 	<value internal="GiftCertificate" feature="GIFTCERTIFICATES">GIFTCERTIFICATE</value>
@@ -83,7 +88,7 @@
 	<value internal="MfgOperationTask" feature="MFGROUTING">MFGOPERATIONTASK</value>
 	<value internal="MfgRouting" feature="MFGROUTING">MFGROUTING</value>
 	<value internal="MseSubsidiary" feature="SUBSIDIARIES">MSESUBSIDIARY</value>
-	<value internal="NewsItem">NEWSITEM</value>
+	<value internal="NewsItem" feature="EMPLOYEECENTERPUBLISHING">NEWSITEM</value>
 	<value internal="Nexus">NEXUS</value>
 	<value internal="Notification" feature="NEWEMAILALERT">NOTIFICATION</value>
 	<value internal="OAuthToken" feature="TBA">OAUTHTOKEN</value>
