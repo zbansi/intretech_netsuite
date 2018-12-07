@@ -1,12 +1,3 @@
-<!--
-SELECT '  <value'||decode(kFeature, null, '', kFeature, ' feature="'||kFeature||'"')||'>'||sKey||'</value>'
-FROM snapshottype
-WHERE bCustomerCenterOnly = 'F'
-AND bCustomerDashboardOnly = 'F'
-AND bProjectDashboardOnly = 'F'
-AND sKey = 'CUSTOM' OR skey LIKE 'CUSTOM_' OR skey LIKE 'CUSTOM__'
-ORDER BY sKey;
--->
 <list id='kpi_snapshots_custom'>
 	<value>CUSTOM</value>
 	<value>CUSTOM10</value>

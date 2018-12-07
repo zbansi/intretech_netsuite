@@ -1,20 +1,3 @@
-<!--
-WITH dateRangeTypes AS (
-  SELECT sKey, upper(replace(regexp_replace(regexp_replace(sDefaultName, ' |\(|\)', '_'), '_$|''', ''), '-', 'TO')) AS sNormalizedKey
-  FROM ReportDateRange
-  WHERE skey NOT IN ('CUSTOM','RELATIVE')
-  AND sDefaultName IS NOT NULL
-  AND bKpiReportOnly='F'
-),
-periodRangeTypes AS (
-  SELECT sKey, upper(replace(sName, ' ', '_')) AS sNormalizedKey
-  FROM ReportPeriodRange
-)
-SELECT dr.sKey, dr.sNormalizedKey
-FROM dateRangeTypes dr LEFT JOIN periodRangeTypes pr ON (pr.sKey = dr.sKey)
-WHERE pr.sKey IS NULL
-ORDER BY dr.sNormalizedKey;
--->
 <list id="kpi_ranges_daterange">
 	<value internal="FHBL">FISCAL_HALF_BEFORE_LAST</value>
 	<value internal="FHBLTD">FISCAL_HALF_BEFORE_LAST_TO_DATE</value>

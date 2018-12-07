@@ -10,8 +10,8 @@
 	<value feature="INVENTORY">INVENTORY</value>
 	<value feature="ACCOUNTING">LONGTERMLIAB</value>
 	<value feature="ACCOUNTING">NETCASHFLOW</value>
-	<value feature="BUSINESS">NEWBUSINESS</value>
-	<value feature="BUSINESS">NEWCUSTOMERS</value>
+	<value>NEWBUSINESS</value>
+	<value>NEWCUSTOMERS</value>
 	<value feature="ACCOUNTING">OPERATINGEXPENSES</value>
 	<value feature="ACCOUNTING">OPERCASHFLOW</value>
 	<value feature="ACCOUNTING">OTHERASSET</value>

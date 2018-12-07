@@ -24,7 +24,6 @@
 	<value>ADVTAXENGINE</value>
 	<value>ADVWEBREPORTS</value>
 	<value>ADVWEBSEARCH</value>
-	<value>ALTERNATIVEPAYMENTS</value>
 	<value>ALTSALESAMOUNT</value>
 	<value>AMORTIZATION</value>
 	<value>APPDEFPKG</value>
@@ -220,6 +219,7 @@
 	<value>TELEPHONY</value>
 	<value>TERMINATIONREASONTRACKING</value>
 	<value>TIMEBASEDPRICING</value>
+	<value>TIMEBASEDPRICINGSUITEAPP</value>
 	<value>TIMEOFFMANAGEMENT</value>
 	<value>TIMESHEETS</value>
 	<value>TIMETRACKING</value>

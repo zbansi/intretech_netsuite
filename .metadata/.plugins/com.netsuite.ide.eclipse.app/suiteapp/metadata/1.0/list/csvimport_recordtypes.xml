@@ -1,101 +1,100 @@
 <list id='csvimport_recordtypes'>
-	   <value>ACCOUNT</value>
-	   <value>ADVINTERCOMPANYJOURNALENTRY</value>
-	   <value>ASSEMBLYITEM</value>
-	   <value>BILLINGACCOUNT</value>
-	   <value>BIN</value>
+	   <value feature="ACCOUNTING">ACCOUNT</value>
+	   <value feature="SUBSIDIARIES">ADVINTERCOMPANYJOURNALENTRY</value>
+	   <value feature="ASSEMBLIES">ASSEMBLYITEM</value>
+	   <value feature="BILLINGACCOUNTS">BILLINGACCOUNT</value>
+	   <value feature="BINMANAGEMENT">BIN</value>
 	   <value>CALENDAREVENT</value>
-	   <value>CASHSALE</value>
-	   <value>CLASSIFICATION</value>
-	   <value>CONSOLIDATEDEXCHANGERATE</value>
+	   <value feature="ACCOUNTING">CASHSALE</value>
+	   <value feature="CLASSES">CLASSIFICATION</value>
+	   <value feature="SUBSIDIARIESANDMULTICURRENCY">CONSOLIDATEDEXCHANGERATE</value>
 	   <value>CONTACT</value>
-	   <value>CREDITCARDCHARGE</value>
-	   <value>CREDITCARDREFUND</value>
-	   <value>CREDITMEMO</value>
-	   <value>CURRENCYRATE</value>
+	   <value feature="ACCOUNTING">CREDITCARDCHARGE</value>
+	   <value feature="ACCOUNTING">CREDITCARDREFUND</value>
+	   <value feature="RECEIVABLES">CREDITMEMO</value>
+	   <value feature="MULTICURRENCY">CURRENCYRATE</value>
 	   <value>CUSTOMER</value>
 	   <value>CUSTOMERANDCONTACT</value>
-	   <value>CUSTOMERPAYMENT</value>
-	   <value>CUSTOMLIST</value>
-	   <value>CUSTOMRECORD</value>
-	   <value>CUSTOMSEGMENT</value>
-	   <value>CUSTOMTRANSACTION</value>
-	   <value>DEPARTMENT</value>
+	   <value feature="RECEIVABLES">CUSTOMERPAYMENT</value>
+	   <value feature="CUSTOMRECORDS">CUSTOMLIST</value>
+	   <value feature="CUSTOMRECORDS">CUSTOMRECORD</value>
+	   <value feature="CUSTOMTRANSACTIONS">CUSTOMTRANSACTION</value>
+	   <value feature="DEPARTMENTS">DEPARTMENT</value>
 	   <value>DESCRIPTIONITEM</value>
-	   <value>DISCOUNTITEM</value>
+	   <value feature="ACCOUNTING">DISCOUNTITEM</value>
 	   <value>EMPLOYEE</value>
-	   <value>ESTIMATE</value>
-	   <value>EXPENSECATEGORY</value>
-	   <value>EXPENSEREPORT</value>
-	   <value>FAIRVALUEPRICE</value>
-	   <value>GLOBALACCOUNTMAPPING</value>
-	   <value>HCMJOB</value>
-	   <value>INTERCOMPANYJOURNALENTRY</value>
-	   <value>INVENTORYADJUSTMENT</value>
-	   <value>INVENTORYCOSTREVALUATION</value>
-	   <value>INVENTORYITEM</value>
-	   <value>INVENTORYTRANSFER</value>
-	   <value>INVOICE</value>
-	   <value>ISSUE</value>
-	   <value>ITEMACCOUNTMAPPING</value>
-	   <value>ITEMDEMANDPLAN</value>
+	   <value feature="ESTIMATES">ESTIMATE</value>
+	   <value feature="EXPREPORTS">EXPENSECATEGORY</value>
+	   <value feature="EXPREPORTS">EXPENSEREPORT</value>
+	   <value feature="ADVANCEDREVENUERECOGNITION">FAIRVALUEPRICE</value>
+	   <value feature="COACLASSIFICATIONMANAGEMENT">GLOBALACCOUNTMAPPING</value>
+	   <value feature="JOBMANAGEMENT">HCMJOB</value>
+	   <value feature="OLDINTERCOMPANYJOURNAL">INTERCOMPANYJOURNALENTRY</value>
+	   <value feature="INVENTORY">INVENTORYADJUSTMENT</value>
+	   <value feature="STANDARDCOSTING">INVENTORYCOSTREVALUATION</value>
+	   <value feature="INVENTORY">INVENTORYITEM</value>
+	   <value feature="MULTILOCINVT">INVENTORYTRANSFER</value>
+	   <value feature="RECEIVABLES">INVOICE</value>
+	   <value feature="ISSUEDB">ISSUE</value>
+	   <value feature="COACLASSIFICATIONMANAGEMENT">ITEMACCOUNTMAPPING</value>
+	   <value feature="ITEMDEMANDPLANNING">ITEMDEMANDPLAN</value>
 	   <value>ITEMGROUP</value>
-	   <value>ITEMREVISION</value>
-	   <value>ITEMSUPPLYPLAN</value>
-	   <value>JOB</value>
-	   <value>JOURNALENTRY</value>
+	   <value feature="ASSEMBLIES">ITEMREVISION</value>
+	   <value feature="ITEMDEMANDPLANNING">ITEMSUPPLYPLAN</value>
+	   <value feature="JOBS">JOB</value>
+	   <value feature="BUSINESS">JOURNALENTRY</value>
 	   <value>KITITEM</value>
-	   <value>LEAD</value>
+	   <value feature="SFA">LEAD</value>
 	   <value>LEADANDCONTACT</value>
-	   <value>LOCATION</value>
-	   <value>LOTNUMBEREDASSEMBLYITEM</value>
-	   <value>LOTNUMBEREDINVENTORYITEM</value>
-	   <value>MANUFACTURINGCOSTTEMPLATE</value>
-	   <value>MANUFACTURINGROUTING</value>
-	   <value>MARKUPITEM</value>
-	   <value>MESSAGE</value>
+	   <value feature="LOCATIONS">LOCATION</value>
+	   <value feature="ASSEMBLIES">LOTNUMBEREDASSEMBLYITEM</value>
+	   <value feature="LOTNUMBEREDINVENTORY">LOTNUMBEREDINVENTORYITEM</value>
+	   <value feature="MFGROUTING">MANUFACTURINGCOSTTEMPLATE</value>
+	   <value feature="MFGROUTING">MANUFACTURINGROUTING</value>
+	   <value feature="ACCOUNTING">MARKUPITEM</value>
+	   <value feature="CRM">MESSAGE</value>
 	   <value>NONINVENTORYPURCHASEITEM</value>
 	   <value>NONINVENTORYRESALEITEM</value>
 	   <value>NONINVENTORYSALEITEM</value>
-	   <value>NOTE</value>
-	   <value>OPPORTUNITY</value>
+	   <value feature="CRM">NOTE</value>
+	   <value feature="OPPORTUNITIES">OPPORTUNITY</value>
 	   <value>OTHERCHARGEPURCHASEITEM</value>
 	   <value>OTHERCHARGERESALEITEM</value>
 	   <value>OTHERCHARGESALEITEM</value>
-	   <value>PARTNER</value>
-	   <value>PAYCHECK</value>
-	   <value>PAYMENTITEM</value>
+	   <value feature="PRM">PARTNER</value>
+	   <value feature="ENHANCEDPREMIERPAYROLL">PAYCHECK</value>
+	   <value feature="ACCOUNTING">PAYMENTITEM</value>
 	   <value>PHONECALL</value>
-	   <value>PRICEBOOK</value>
-	   <value>PRICEPLAN</value>
-	   <value>PROSPECT</value>
+	   <value feature="SUBSCRIPTIONBILLING">PRICEBOOK</value>
+	   <value feature="SUBSCRIPTIONBILLING">PRICEPLAN</value>
+	   <value feature="SFA">PROSPECT</value>
 	   <value>PROSPECTANDCONTACT</value>
-	   <value>PURCHASEORDER</value>
-	   <value>RETURNAUTHORIZATION</value>
-	   <value>SALESORDER</value>
-	   <value>SERIALIZEDASSEMBLYITEM</value>
-	   <value>SERIALIZEDINVENTORYITEM</value>
+	   <value feature="PURCHASEORDERS">PURCHASEORDER</value>
+	   <value feature="RETURNAUTHS">RETURNAUTHORIZATION</value>
+	   <value feature="SALESORDERS">SALESORDER</value>
+	   <value feature="ASSEMBLIES">SERIALIZEDASSEMBLYITEM</value>
+	   <value feature="SERIALIZEDINVENTORY">SERIALIZEDINVENTORYITEM</value>
 	   <value>SERVICEPURCHASEITEM</value>
 	   <value>SERVICERESALEITEM</value>
 	   <value>SERVICESALEITEM</value>
 	   <value>SITECATEGORY</value>
-	   <value>SOLUTION</value>
-	   <value>STATISTICALJOURNALENTRY</value>
-	   <value>SUBSCRIPTION</value>
-	   <value>SUBSCRIPTIONCHANGEORDER</value>
-	   <value>SUBSCRIPTIONLINE</value>
-	   <value>SUBSCRIPTIONPLAN</value>
+	   <value feature="KNOWLEDGEBASE">SOLUTION</value>
+	   <value feature="STATACCOUNTING">STATISTICALJOURNALENTRY</value>
+	   <value feature="SUBSCRIPTIONBILLING">SUBSCRIPTION</value>
+	   <value feature="SUBSCRIPTIONBILLING">SUBSCRIPTIONCHANGEORDER</value>
+	   <value feature="SUBSCRIPTIONBILLING">SUBSCRIPTIONLINE</value>
+	   <value feature="SUBSCRIPTIONBILLING">SUBSCRIPTIONPLAN</value>
 	   <value>SUBTOTALITEM</value>
-	   <value>SUPPORTCASE</value>
+	   <value feature="SUPPORT">SUPPORTCASE</value>
 	   <value>TASK</value>
-	   <value>TIMEBILL</value>
-	   <value>TIMEOFFCHANGE</value>
-	   <value>TIMESHEET</value>
-	   <value>TOPIC</value>
-	   <value>USAGE</value>
-	   <value>VENDOR</value>
-	   <value>VENDORBILL</value>
-	   <value>VENDORCREDIT</value>
-	   <value>VENDORPAYMENT</value>
-	   <value>VENDORRETURNAUTHORIZATION</value>
+	   <value feature="TIMETRACKING">TIMEBILL</value>
+	   <value feature="TIMEOFFMANAGEMENT">TIMEOFFCHANGE</value>
+	   <value feature="TIMESHEETRECORDANY">TIMESHEET</value>
+	   <value feature="KNOWLEDGEBASE">TOPIC</value>
+	   <value feature="ADVSUBSCRIPTIONBILLING">USAGE</value>
+	   <value feature="ACCOUNTING">VENDOR</value>
+	   <value feature="PAYABLES">VENDORBILL</value>
+	   <value feature="PAYABLES">VENDORCREDIT</value>
+	   <value feature="PAYABLES">VENDORPAYMENT</value>
+	   <value feature="VENDORRETURNAUTHS">VENDORRETURNAUTHORIZATION</value>
 </list>

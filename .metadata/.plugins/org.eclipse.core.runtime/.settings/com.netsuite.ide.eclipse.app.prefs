@@ -3,5 +3,5 @@ com.netsuite.fileBackup=true
 com.netsuite.initialize=done
 com.netsuite.new.record.browser=false
 com.netsuite.username=Bansi
-com.netsuite.version=2018.1.2
+com.netsuite.version=2018.2.0
 eclipse.preferences.version=1
