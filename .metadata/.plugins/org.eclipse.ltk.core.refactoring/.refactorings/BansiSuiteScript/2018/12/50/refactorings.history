@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;BansiSuiteScript/FileCabinet/SuiteScripts/Workflow Action&apos; to &apos;WorkflowAction&apos;" description="Rename resource &apos;Workflow Action&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="FileCabinet/SuiteScripts/Workflow Action" name="WorkflowAction" stamp="1544428968730" updateReferences="true"/>
+</session>
