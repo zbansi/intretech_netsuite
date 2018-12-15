@@ -1,0 +1,19 @@
+/**
+ * @NApiVersion 2.x
+ * @NScriptType clientScript
+ */
+
+define(['N/http'], function(){
+	function fieldChanged(type, name, linenum){
+		try{
+			if (name == 'custpage_status_bs') {
+				var url = window.location.href;
+				url += '&status=' + nlapiGetFieldValue('custpage_status');
+				window.location.href = url;
+			}
+	}catch(ex){
+		
+	}
+	}
+	return {filedChanged : filedChanged};
+});
