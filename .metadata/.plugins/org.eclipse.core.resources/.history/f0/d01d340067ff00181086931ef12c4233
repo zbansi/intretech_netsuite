@@ -1,0 +1,29 @@
+/**
+ * @NApiVersion 2.x
+ * @NScriptType Client Script
+ * @author YQ12681 Bansi ZHU
+ * Description 获取字段id
+ */
+
+define(['N/error'], function(e){
+	pageInit(type){
+		try{
+		alert('');
+		log.debug({title:'Success', details:'警告弹出正常'}	);
+		} catch(ex) {
+			log.error({title:ex.name,details:ex.message});
+		}
+	};
+	
+	fieldChanged(type, name, linenum){};
+	
+	return {
+		pageInit: '',
+		fieldChanged: ''
+		
+		
+	};
+	
+	
+});
+
