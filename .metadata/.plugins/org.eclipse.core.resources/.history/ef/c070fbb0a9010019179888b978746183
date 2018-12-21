@@ -1,0 +1,15 @@
+/**
+ * @NApiVersion 2.x
+ * @NScriptType ClientScript
+ * @author YQ12681
+ */
+
+define([ '' ], function() {
+	pageInit(type){
+
+	}
+
+	return {
+		pageInit : pageInit
+	};
+});

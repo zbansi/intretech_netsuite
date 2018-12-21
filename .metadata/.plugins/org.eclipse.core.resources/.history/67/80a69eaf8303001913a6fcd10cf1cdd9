@@ -1,0 +1,18 @@
+/**
+ * @NApiVersion 2.x
+ * @NScriptType Suitelet
+ * @author 朱焱龙
+ */
+define([ 'N/record', 'N/ui/serverWidget', 'N/search' ], function(record, ui,
+		search) {
+	function onRequest(params) {
+		var request = params.request;
+		var response = params.response;
+		var form = ui.createForm({});
+
+	}
+
+	return ({
+		onRequest : onRequest
+	})
+});

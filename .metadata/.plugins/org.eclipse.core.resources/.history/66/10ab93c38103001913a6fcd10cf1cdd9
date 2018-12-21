@@ -1,0 +1,10 @@
+/**
+ *@NApiVersion 2.x
+ *@NScriptType Suitelet 
+ *@author 朱焱龙
+ */
+define([], function(){
+	function onRequest(params){
+		
+	}
+});

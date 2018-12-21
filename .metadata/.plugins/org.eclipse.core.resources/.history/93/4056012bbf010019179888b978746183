@@ -1,0 +1,26 @@
+/**
+ * @NApiVersion 2.x
+ * @NScriptType UserEvent
+ * @author YQ12681
+ */
+
+define([ '' ], function() {
+	beforeSubmit(context)// context. newRecord,type,form,request
+	{
+		var status = context.form.getField({
+			id : 'custrecord_yq_workorder_status_bs'
+		});
+
+		// 如果工单状态已审批加载下推下按钮
+		if (status === 'NEW' & context.type == 'view')
+			context.form.addButton({
+				id : 'custpage_generate_mao',
+				label : '生成领料单'
+			});
+
+	}
+
+	return {
+		beforeLoad : beforeLoad
+	};
+});

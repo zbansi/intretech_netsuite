@@ -1,0 +1,14 @@
+/**
+ * @NApiVersion 2.x
+ * @NScriptType UserEventScript
+ * @author YQ12681
+ */
+define([''],function(){
+	function beforeLoad(){
+		
+	}
+	
+	return ({
+		beforeLoad : beforeLoad
+	});
+});

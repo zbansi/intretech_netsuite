@@ -1,0 +1,16 @@
+/**
+ * @NApiVersion 2.x
+ * @NScriptType Suitelet
+ * @author 朱焱龙
+ */
+define([ 'N/record' ], function() {
+	function onRequest(params) {
+		var request = params.request;
+		var response = params.response;
+
+	}
+
+	return ({
+		onRequest : onRequest
+	})
+});
