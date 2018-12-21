@@ -12,15 +12,19 @@
         <file name="configuration.json" hideInBundle="false" isOnline="false" textFileEncoding="_utf8"/>
       </folder>
     </folder>
-    <file name="BsPrintMAO.js" hideInBundle="false" isOnline="false" textFileEncoding="_utf8"/>
-    <file name="BsPrintMAOSuitelet.js" hideInBundle="false" isOnline="false" textFileEncoding="_utf8"/>
-    <file name="CreateMAOBs.js" hideInBundle="false" isOnline="false" textFileEncoding="_utf8"/>
+    <folder name="cux_eg_mao_batch_print">
+      <file name="MAOPrintStatusFieldChangedBs.js" hideInBundle="false" isOnline="false" textFileEncoding="_utf8"/>
+      <file name="MaterialApplyOrderPrintSuiteletBS.js" hideInBundle="false" isOnline="false" textFileEncoding="_utf8"/>
+    </folder>
+    <folder name="cux_eg_wo_to_mao">
+      <file name="BsPrintMAO.js" hideInBundle="false" isOnline="false" textFileEncoding="_utf8"/>
+      <file name="BsPrintMAOSuitelet.js" hideInBundle="false" isOnline="false" textFileEncoding="_utf8"/>
+      <file name="CreateMAOBs.js" hideInBundle="false" isOnline="false" textFileEncoding="_utf8"/>
+      <file name="MAOCreateFromWO.js" hideInBundle="false" isOnline="false" textFileEncoding="_utf8"/>
+      <file name="WorkOrderToMaterialApplyBs.js" hideInBundle="false" isOnline="false" textFileEncoding="_utf8"/>
+      <file name="configuration.json" hideInBundle="false" isOnline="false" textFileEncoding="_utf8"/>
+    </folder>
     <file name="FiledChangedCleintBs.js" hideInBundle="false" isOnline="false" textFileEncoding="_utf8"/>
-    <file name="MAOCreateFromWO.js" hideInBundle="false" isOnline="false" textFileEncoding="_utf8"/>
-    <file name="MAOPrintStatusFieldChangedBs.js" hideInBundle="false" isOnline="false" textFileEncoding="_utf8"/>
-    <file name="SalesOrderPrintSuiteletBS.js" hideInBundle="false" isOnline="false" textFileEncoding="_utf8"/>
-    <file name="WorkOrderToMaterialApplyBs.js" hideInBundle="false" isOnline="false" textFileEncoding="_utf8"/>
-    <file name="configuration.json" hideInBundle="false" isOnline="false" textFileEncoding="_utf8"/>
     <file name="maoSaveSearchCreate.js" hideInBundle="false" isOnline="false" textFileEncoding="_utf8"/>
   </folder>
 </project>

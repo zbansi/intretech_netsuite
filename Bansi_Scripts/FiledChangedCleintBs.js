@@ -1,9 +1,11 @@
 /**
  * @NApiVersion 2.x
  * @NScriptType ClientScript
- * @author YQ12681 Bansi ZHU Description 获取字段id
+ * @author YQ12681 Bansi ZHU 
  */
-
+////////////Function Description///////////////
+//获取字段id
+//////////////////////////////////////////////
 define([ 'N/error' ], function(e) {
 	function pageInit(type) {
 		try {
