@@ -2,6 +2,12 @@
  * @NApiVersion 2.x
  * @author YQ12681
  */
+////////////////////////Description///////////////////////
+//
+// 定义【打印领料单】的方法
+// 此方法解析脚本记录id和部署id, 生成一个对suitelet的调用URL
+//
+/////////////////////////////////////////////////////////
 define([ 'N/url', 'N/currentRecord' ], function(url, currentRecord) {
 	return ({
 		bs_print_mao : function() {

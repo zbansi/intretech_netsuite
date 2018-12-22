@@ -2,6 +2,12 @@
  * @NApiVersion 2.x
  * @author YQ12681
  */
+////////////////Description//////////////
+//
+// 定义【生成领料单】按钮的方法
+// 此方法生成并打开一个新URL
+//
+////////////////////////////////////////
 define([ 'N/url', 'N/currentRecord' ], function(url, currentRecord) {
 	return ({
 		create_mao_url : function() {

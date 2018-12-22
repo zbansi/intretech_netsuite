@@ -8,8 +8,10 @@
 // #1 当领料单批量打印页面字段'状态'变更时，为url添加参数
 //
 ////////////////////////////////////////////////////
-define([ 'N/error' ], function(error) {
-	var statusValue;
+define([ 'N/error', 'N/currentRecord' ], function(error, currentRecord) {
+	var statusValue = currentRecord.get().getValue({
+		fieldId : 'custpage_status_bs'
+	});
 	function fieldChanged(context) {
 		try {
 			if (context.fieldId == 'custpage_status_bs') {
@@ -84,17 +86,16 @@ define([ 'N/error' ], function(error) {
 		return domain + '?' + url;
 	}
 
-	/*function pageInit(context) {
+	function pageInit(context) {
 		// 重定向后,选择状态值不变
 		context.currentRecord.setValue({
 			fieldId : 'custpage_status_bs',
 			value : statusValue
 		});
 	}
-	*/
 
 	return {
-		fieldChanged : fieldChanged
-	//,pageInit : pageInit
+		fieldChanged : fieldChanged,
+		pageInit : pageInit
 	};
 });

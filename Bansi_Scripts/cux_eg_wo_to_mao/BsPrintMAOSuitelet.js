@@ -3,6 +3,12 @@
  * @NScriptType Suitelet
  * @author YQ12681
  */
+////////////////////Description////////////////////
+//
+//此Suitelet接收请求参数领料单Id(maoId)
+//并输出PDF预览响应
+//
+//////////////////////////////////////////////////
 define(
 		[ 'N/record', 'N/render' ],
 		function(record, render) {

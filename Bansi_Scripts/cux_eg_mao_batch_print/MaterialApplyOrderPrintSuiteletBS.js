@@ -149,8 +149,8 @@ define([ 'N/ui/serverWidget', 'N/search' ], function(ui, search) {
 			// 创建saved search
 			try {
 
-				/*
-				var sr = search.create({
+				
+				/*var sr = search.create({
 					type : 'customrecord_yq_material_apply_bansi',
 					// filters : flt,
 					columns : [ 'name', 'custrecord_yq_apply_date_bansi',

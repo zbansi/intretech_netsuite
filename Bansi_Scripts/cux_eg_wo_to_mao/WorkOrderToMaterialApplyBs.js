@@ -40,7 +40,7 @@ define([], function() {
 
 			// 如果工单状态已审批加载<生成领料单>按钮
 			try {
-				if (status === 'APPROVED') {
+				if (status === '已批准') {
 
 					context.form.clientScriptModulePath = './CreateMAOBs.js';
 					context.form.addButton({

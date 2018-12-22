@@ -101,7 +101,7 @@ define(
 						fieldId : 'custrecord_yq_ma_status_bansi'
 					});
 					try {
-						if (status == 'APPROVED') {
+						if (status == '已批准') {
 							form.clientScriptModulePath = './BsPrintMAO.js';
 							form.addButton({
 								id : 'custpage_print_mao',
