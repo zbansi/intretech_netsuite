@@ -1,0 +1,18 @@
+/**
+ * @NApiVersion 2.x
+ * @NScriptType ClientScript
+ * @author YQ12681
+ */
+
+define([ '' ], function() {
+	pageInit(context)
+	{ context.addButton({
+		
+	});
+
+	}
+
+	return {
+		pageInit : pageInit
+	};
+});

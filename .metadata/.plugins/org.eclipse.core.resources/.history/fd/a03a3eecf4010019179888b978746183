@@ -1,0 +1,19 @@
+/**
+ * @NApiVersion 2.x
+ * @NScriptType UserEventScript
+ * @author YQ12681
+ */
+define([''],function(){
+	function beforeLoad(context){
+		var type = context.type;
+		var form = context.form;
+		if(type == context.UserEventType.CREATE){
+			var woid = context.request.woid;
+			
+		}
+	}
+	
+	return ({
+		beforeLoad : beforeLoad
+	});
+});

@@ -1,0 +1,27 @@
+/**
+ * @NApiVersion 2.x
+ * @author YQ12681
+ */
+define([ 'N/url', 'N/currentRecord' ], function(url, currentRecord) {
+	return ({
+		bs_print_mao : function() {
+			try {
+				var u = url.resolveRecord({
+					recordType : 'customrecord_yq_material_apply_bansi',
+					recordId : '',
+					isEditMode : true
+				});
+				log.debug({
+					title : 'Success',
+					details : 'url解析成功'
+				});
+			} catch (e1) {
+				log.debug({
+					title : e1.name,
+					details : e1.message
+				});
+			}
+			window.open(u);
+		}
+		});
+});

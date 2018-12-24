@@ -1,0 +1,26 @@
+/**
+ * @NApiVersion 2.x
+ * @NScriptType Suitelet
+ * @author 朱焱龙
+ */
+define([ 'N/record', 'N/ui/serverWidget', 'N/search' ], function(record, ui,
+		search) {
+	function onRequest(params) {
+		var request = params.request;
+		var response = params.response;
+
+		if (request.getMethod() === 'GET') {
+			var form = ui.createForm({
+				title : '客户化记录查询'
+			});
+
+		} else {
+		}
+
+		response.writePage(form);
+	}
+
+	return ({
+		onRequest : onRequest
+	})
+});

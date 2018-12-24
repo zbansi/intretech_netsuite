@@ -1,0 +1,44 @@
+/**
+ * @NApiVersion 2.x
+ * @NScriptType UserEventScript
+ * @NModuleScope SameAccount
+ * @author YQ12681
+ */
+
+define([], function() {
+	function beforeLoad(context) {
+		// context. newRecord,type,form,request
+
+		//getText不能用于beforeLoad?
+		var status = context.newRecord.getText({
+			fieldId : 'custrecord_yq_workorder_status_bs'
+		});
+
+		// 如果工单状态已审批加载<生成领料单>按钮		
+		try {
+			if (status === 'APPROVED'
+					& context.type == context.UserEventType.VIEW) {
+
+				context.form.clientScriptModulePath = './CreateMAOBs.js';
+				context.form.addButton({
+					id : 'custpage_generate_mao',
+					label : '生成领料单',
+					functionName : 'create_mao_url'
+				});
+			}
+			log.debug({
+				title : 'Success',
+				details : '添加-生成领料单-按钮成功！ status = ' + status
+			});
+		} catch (ex) {
+			log.debug({
+				title : ex.name,
+				details : ex.message
+			});
+		}
+	}
+
+	return {
+		beforeLoad : beforeLoad
+	};
+});

@@ -1,0 +1,18 @@
+/**
+ * @NApiVersion 2.x
+ * @author YQ12681
+ */
+require([ 'N/url', 'N/currentRecord' ], function(url, cr) {
+	return ({
+		create_mao_url : function createMAO() {
+			var url = resolveRecord({
+				recordType : 'customrecord_yq_material_apply_bansi',
+				recordId : '9',
+				isEditMode : true
+			});
+			var woid = cr.CurrentRecord.id;
+
+			window.location.href = url + '&woid=' + woid;
+		}
+	});
+});

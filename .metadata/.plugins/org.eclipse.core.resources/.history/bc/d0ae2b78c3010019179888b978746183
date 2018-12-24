@@ -1,0 +1,12 @@
+/**
+ * @NApiVersion 2.x createMAO.js
+ */
+function createMAO(woid) {
+	var url = nlapiResolveURL({
+		recordType : 'RECORD',
+		recordId : 'customrecorddemo_lingliao',
+		isEditMode : true
+	});
+
+	window.location.href = url + '&woid=' + woid;
+}
