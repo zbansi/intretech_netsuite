@@ -1,0 +1,5 @@
+{ "baseUrl": "/SuiteScripts/Bansi_Scripts/cux_eg_mao_batch_print",
+	"paths": {
+		"urlUpdate" : "urlUpdate"
+		}
+}

@@ -15,9 +15,10 @@
 //
 // ////////////////////////////////////////////////////////
 define(
-		[ 'N/ui/serverWidget', 'N/search' ],
-		function(ui, search) {
+		[ 'N/ui/serverWidget', 'N/search', 'N/record', 'N/render' ],
+		function(ui, search, record, render) {
 			function onRequest(context) {
+				// if method = GET，调用Suitelet输出或刷新图形界面
 				if (context.request.method === 'GET') {
 					// #1 新建表单
 					var form = ui.createForm({
@@ -28,7 +29,7 @@ define(
 						//两种调用客户端脚本的方式
 						//form.clientScriptFileId = 30
 						//相对路径 相对当前文件同目录
-						//form.clientScriptModulePath = './MAOPrintStatusFieldChangedBs.js';
+						form.clientScriptModulePath = './MAOPrintStatusFieldChangedBs.js';
 						log
 								.debug({
 									title : 'Success',
@@ -65,13 +66,19 @@ define(
 					else if (status == 'None_Approved')
 						statusField.defaultValue = 'None_Approved';
 
-					form.clientScriptModulePath = './BsBatchPrintMAO.js';
+					//form.clientScriptModulePath = './BsBatchPrintMAO.js';
+
 					// 添加打印按钮
 					// Suitelet不能调用含currentRecord模块的脚本,可以用http模块
-					form.addButton({
+
+					/*form.addButton({
 						id : 'custpage_print',
 						label : '批量打印',
 						functionName : 'bs_batch_print_mao'
+					});
+					*/
+					form.addSubmitButton({
+						label : '批量打印'
 					});
 
 					// 创建子列表
@@ -99,6 +106,11 @@ define(
 						id : 'custpage_checkbox',
 						label : '选择',
 						type : ui.FieldType.CHECKBOX
+					});
+					slt.addField({
+						id : 'custpage_mtl_id',
+						label : '领料单Id',
+						type : ui.FieldType.TEXT
 					});
 					slt.addField({
 						id : 'custpage_mtl_num',
@@ -190,6 +202,7 @@ define(
 										{
 											type : 'customrecord_yq_material_apply_bansi',
 											columns : [
+													'internalid',
 													'name',
 													'custrecord_yq_apply_date_bansi',
 													'custrecord_yq_material_apply_dept_bansi',
@@ -230,6 +243,9 @@ define(
 							var i = 0;
 							searchResult
 									.each(function(result) {
+										var mtlId = result.getValue({
+											name : 'internalid'
+										});
 										var mtlNum = result.getValue({
 											name : 'name'
 										});
@@ -251,6 +267,11 @@ define(
 
 										// Note that line indexing begins at 0
 										// with SuiteScript 2.0
+										slt.setSublistValue({
+											id : 'custpage_mtl_id',
+											line : i,
+											value : mtlId
+										});
 										slt.setSublistValue({
 											id : 'custpage_mtl_num',
 											line : i,
@@ -294,7 +315,73 @@ define(
 
 					// 子列表根据筛选条件动态加载销售订单
 					context.response.writePage(form);
-				} else if (context.request.method === 'POST') {
+				}
+				// if method != GET，获取当前页面被选择的领料申请ID，将其详细信息循环打印
+				else {
+					try {
+						var count = context.request.getLineCount({
+							group : 'custpage_slt'
+						});
+
+						var maoIdArray = [];
+						for (var i = 1; i <= count; i++) {
+							if (context.request.getSublistValue({
+								group : 'custpage_slt',
+								name : 'custpage_checkbox',
+								line : i
+							}) == 'T') {
+								var eachMaoId = context.request
+										.getSublistValue({
+											group : 'custpage_slt',
+											name : 'custpage_mtl_id',
+											line : i
+										});
+								maoIdArray.push(eachMaoId);
+							}
+						}
+						log.debug({
+							title : 'Success',
+							details : 'count = ' + count + ' maoIdArray= '
+									+ JSON.stringify(maoIdArray)
+						});
+
+						var xmlStr = '';
+						//xml定义打印模板
+						xmlStr += '<?xml version="1.0"?><!DOCTYPE pdf PUBLIC "-//big.faceless.org//report" "report-1.1.dtd">';
+						xmlStr += '<pdf>';
+						//加载领料申请记录到模板
+						for (var i = 0; i < maoIdArray.length; i++) {
+							var rec = record.load({
+								type : 'customrecord_yq_material_apply_bansi',
+								id : maoIdArray[i]
+							});
+							var maoNumber = rec.getText('name');
+							//模板数据循环
+							xmlStr += '<head>';
+							xmlStr += '</head>';
+							xmlStr += '<body padding="0.5in 0.5in 0.5in 0.5in" size="Letter">';
+							xmlStr += '<table style="width: 100%; font-size: 10pt;">';
+							xmlStr += '<tr><td>' + maoNumber + '</td></tr>';
+							xmlStr += '</table></body>';
+						}
+						xmlStr += '</pdf>'
+						//xml转成pdf文件
+						var pdfFile = render.xmlToPdf({
+							xmlString : xmlStr
+						});
+
+						//输出文件
+						context.response.writeFile({
+							file : pdfFile,
+							isInline : true
+						});
+
+					} catch (e1) {
+						log.debug({
+							title : e1.name,
+							details : e1.message
+						});
+					}
 
 				}
 

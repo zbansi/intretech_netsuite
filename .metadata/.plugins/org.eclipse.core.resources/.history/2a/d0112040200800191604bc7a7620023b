@@ -1,11 +1,11 @@
 /**
- * urlUpdate.js
+ * UrlUpdate.js
  * 
  * @NApiVersion 2.x
  * @NModuleScope Public
  * @author YQ12681 Bansi
  */
-define([], function() {
+define(function() {
 	function urlToParameters(url) {
 		var words = url.split('?');
 		var paramArray2 = [];

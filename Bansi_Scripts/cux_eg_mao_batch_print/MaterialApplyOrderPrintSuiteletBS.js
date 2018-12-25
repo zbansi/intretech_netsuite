@@ -10,14 +10,16 @@
 // #2 创建1个已保存领料单搜索，将结果加载到新页面
 // #3 新页面可以根据筛选字段动态加载领料单记录
 //
-// currentRecord不能用@NAmdConfig 
-// /SuiteScripts/Bansi_Scripts/configuration.json
+// currentRecord不能用在suitelet中,也不能用以下模块化方式调用加载了
+// currentRecord的ClientScript
+// @NAmdConfig /SuiteScripts/Bansi_Scripts/configuration.json
 //
 // ////////////////////////////////////////////////////////
 define(
 		[ 'N/ui/serverWidget', 'N/search', 'N/record', 'N/render' ],
 		function(ui, search, record, render) {
 			function onRequest(context) {
+				// if method = GET，调用Suitelet输出或刷新图形界面
 				if (context.request.method === 'GET') {
 					// #1 新建表单
 					var form = ui.createForm({
@@ -135,7 +137,7 @@ define(
 					// 创建筛选器
 					try {
 						var flt = [];
-						if (status == 'Approved') {
+						if (status == 'Approved' || !status) {
 
 							/*
 							 * flt.push(search.createFilter({ name :
@@ -314,7 +316,9 @@ define(
 
 					// 子列表根据筛选条件动态加载销售订单
 					context.response.writePage(form);
-				} else {
+				}
+				// if method != GET，获取当前页面被选择的领料申请ID，将其详细信息循环打印
+				else {
 					try {
 						var count = context.request.getLineCount({
 							group : 'custpage_slt'
@@ -343,11 +347,9 @@ define(
 						});
 
 						var xmlStr = '';
-
 						//xml定义打印模板
 						xmlStr += '<?xml version="1.0"?><!DOCTYPE pdf PUBLIC "-//big.faceless.org//report" "report-1.1.dtd">';
 						xmlStr += '<pdf>';
-
 						//加载领料申请记录到模板
 						for (var i = 0; i < maoIdArray.length; i++) {
 							var rec = record.load({
@@ -355,16 +357,13 @@ define(
 								id : maoIdArray[i]
 							});
 							var maoNumber = rec.getText('name');
-
 							//模板数据循环
-
 							xmlStr += '<head>';
 							xmlStr += '</head>';
 							xmlStr += '<body padding="0.5in 0.5in 0.5in 0.5in" size="Letter">';
 							xmlStr += '<table style="width: 100%; font-size: 10pt;">';
 							xmlStr += '<tr><td>' + maoNumber + '</td></tr>';
 							xmlStr += '</table></body>';
-
 						}
 						xmlStr += '</pdf>'
 						//xml转成pdf文件

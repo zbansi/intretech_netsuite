@@ -1,6 +1,8 @@
 /**
  * @NApiVersion 2.x
  * @NScriptType ClientScript
+ * @NAmdConfig ./BatchPrintConfig.json
+ * 
  * @author YQ12681 Bansi
  */
 ////////////////////Description//////////////////////
@@ -13,9 +15,9 @@
 // 下面调用的是本地的urlUpate.js,不需要@NAmdConfig
 // define([ 'N/error', 'N/currentRecord', 'N/https', './urlUpdate' ], function(
 //
-// 下面调用的是/SuiteScripts/Bansi_Scripts/lib下的urlUpate.js,需要@NAmdConfig
+// 下面调用的是/SuiteScripts/Bansi_Scripts/lib下的urlUpate.js
 // define([ 'N/error', 'N/currentRecord', 'N/https', 'urlUpdate' ], function(
-define([ 'N/error', 'N/currentRecord', 'N/https', './urlUpdate' ], function(
+define([ 'N/error', 'N/currentRecord', 'N/https', 'urlUpdate' ], function(
 		error, currentRecord, https, urlUpdate) {
 	var statusValue = currentRecord.get().getValue({
 		fieldId : 'custpage_status_bs'

@@ -1,5 +1,5 @@
 /**
- * UrlUpdate.js
+ * urlUpdate.js
  * 
  * @NApiVersion 2.x
  * @NModuleScope Public

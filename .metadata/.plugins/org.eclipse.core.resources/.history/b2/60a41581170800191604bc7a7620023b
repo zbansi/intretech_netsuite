@@ -124,7 +124,7 @@ define(
 					// 创建筛选器
 					try {
 						var flt = [];
-						if (status == 'Approved' || !status) {
+						if (status == 'Approved') {
 
 							/*
 							 * flt.push(search.createFilter({ name :

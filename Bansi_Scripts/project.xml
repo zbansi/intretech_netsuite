@@ -16,6 +16,7 @@
       </folder>
     </folder>
     <folder name="cux_eg_mao_batch_print">
+      <file name="BatchPrintConfig.json" hideInBundle="false" isOnline="false" textFileEncoding="_utf8"/>
       <file name="BsBatchPrintMAO.bk" hideInBundle="false" isOnline="false" textFileEncoding="_utf8"/>
       <file name="MAOPrintStatusFieldChangedBs.bk" hideInBundle="false" isOnline="false" textFileEncoding="_utf8"/>
       <file name="MaterialApplyOrderPrintSuiteletBS.bk" hideInBundle="false" isOnline="false" textFileEncoding="_utf8"/>
