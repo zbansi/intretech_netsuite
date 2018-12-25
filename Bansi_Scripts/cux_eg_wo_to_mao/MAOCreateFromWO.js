@@ -13,7 +13,7 @@
 //////////////////////////////////////////////////////
 define(
 		[ 'N/record' ],
-		function(record) {
+		function(record, batchPrint) {
 			function beforeLoad(context) {
 				var maoRecord = context.newRecord;
 				var type = context.type;
@@ -101,8 +101,9 @@ define(
 						fieldId : 'custrecord_yq_ma_status_bansi'
 					});
 					try {
-						if (status == '已批准') {
-							form.clientScriptModulePath = './BsPrintMAO.js';
+						if (status == '已批准' || status == 'APPROVED') {
+							//绝对路径是文件柜完整路径
+							form.clientScriptModulePath = '/SuiteScripts/Bansi_Scripts/lib/BsPrintMAO.js';
 							form.addButton({
 								id : 'custpage_print_mao',
 								label : '打印领料单',

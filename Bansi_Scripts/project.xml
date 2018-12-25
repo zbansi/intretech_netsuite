@@ -1,6 +1,9 @@
 <project info="SuiteCloud IDE generated file, do not edit." setAttributesOnUpdate="false">
   <folder name="Bansi_Scripts">
     <folder name="SampleScripts">
+      <folder name="Client" bundleable="false" exclude="false">
+        <file name="FiledChangedCleintBs.js" hideInBundle="false" isOnline="false" textFileEncoding="_utf8"/>
+      </folder>
       <folder name="Suitelet">
         <file name="SuiteletSamp01SendEmail.js" hideInBundle="false" isOnline="false" textFileEncoding="_utf8"/>
         <file name="SuiteletSamp02CallRESTlet.js" hideInBundle="false" isOnline="false" textFileEncoding="_utf8"/>
@@ -13,18 +16,22 @@
       </folder>
     </folder>
     <folder name="cux_eg_mao_batch_print">
-      <file name="MAOPrintStatusFieldChangedBs.js" hideInBundle="false" isOnline="false" textFileEncoding="_utf8"/>
-      <file name="MaterialApplyOrderPrintSuiteletBS.js" hideInBundle="false" isOnline="false" textFileEncoding="_utf8"/>
+      <file name="BsBatchPrintMAO.bk" hideInBundle="false" isOnline="false" textFileEncoding="_utf8"/>
+      <file name="MAOPrintStatusFieldChangedBs.bk" hideInBundle="false" isOnline="false" textFileEncoding="_utf8"/>
+      <file name="MaterialApplyOrderPrintSuiteletBS.bk" hideInBundle="false" isOnline="false" textFileEncoding="_utf8"/>
+      <file name="urlUpdate.js" hideInBundle="false" isOnline="false" textFileEncoding="_utf8"/>
     </folder>
     <folder name="cux_eg_wo_to_mao">
-      <file name="BsPrintMAO.js" hideInBundle="false" isOnline="false" textFileEncoding="_utf8"/>
       <file name="BsPrintMAOSuitelet.js" hideInBundle="false" isOnline="false" textFileEncoding="_utf8"/>
       <file name="CreateMAOBs.js" hideInBundle="false" isOnline="false" textFileEncoding="_utf8"/>
       <file name="MAOCreateFromWO.js" hideInBundle="false" isOnline="false" textFileEncoding="_utf8"/>
       <file name="WorkOrderToMaterialApplyBs.js" hideInBundle="false" isOnline="false" textFileEncoding="_utf8"/>
-      <file name="configuration.json" hideInBundle="false" isOnline="false" textFileEncoding="_utf8"/>
     </folder>
-    <file name="FiledChangedCleintBs.js" hideInBundle="false" isOnline="false" textFileEncoding="_utf8"/>
-    <file name="maoSaveSearchCreate.js" hideInBundle="false" isOnline="false" textFileEncoding="_utf8"/>
+    <folder name="lib">
+      <file name="BsPrintMAO.js" hideInBundle="false" isOnline="false" textFileEncoding="_utf8"/>
+      <file name="maoSaveSearchCreate.js" hideInBundle="false" isOnline="false" textFileEncoding="_utf8"/>
+      <file name="urlUpdate.js" hideInBundle="false" isOnline="false" textFileEncoding="_utf8"/>
+    </folder>
+    <file name="configuration.json" hideInBundle="false" isOnline="false" textFileEncoding="_utf8"/>
   </folder>
 </project>

@@ -1,13 +1,13 @@
 /**
  * @NApiVersion 2.x
- * @NScriptType suitelet
+ * @NScriptType Suitelet
  * @NAmdConfig ./configuration.json
  * 
  * Sample 2.0 Suitelet to invoke restlet using Token-based Authentication
  */
 define(
-		[ 'N/https', 'oauth', 'cryptojs' ],
-		function(https, oauth, cryptojs) {
+		[ 'N/https', 'N/crypto', 'oauth', 'cryptojs' ],
+		function(https, crypto, oauth, cryptojs) {
 			function testRequest(context) {
 				if (context.request.method == 'GET') {
 					var requestUrl = 'https://5144758-sb1.restlets.api.netsuite.com/app/site/hosting/restlet.nl?script=24&deploy=1';// REST Endpoint URL
