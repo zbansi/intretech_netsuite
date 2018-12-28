@@ -13,7 +13,7 @@
 //////////////////////////////////////////////////////
 define(
 		[ 'N/record' ],
-		function(record, batchPrint) {
+		function(record) {
 			function beforeLoad(context) {
 				var maoRecord = context.newRecord;
 				var type = context.type;
@@ -81,15 +81,16 @@ define(
 																'custrecord_yq_workorder_detail_qty_bs',
 																i));
 							}
-
+							log.debug({
+								title : 'Success',
+								details : '赋值成功：woid = ' + woid
+										+ ', warehouse = ' + warehouse
+										+ ', clerk = ' + clerk
+										+ ', workshop = ' + workshop
+										+ ', sublist = ' + rec.getSublist()
+							});
 						}
-						log.debug({
-							title : 'Success',
-							details : '赋值成功：woid = ' + woid + ', warehouse = '
-									+ warehouse + ', clerk = ' + clerk
-									+ ', workshop = ' + workshop
-									+ ', sublist = ' + rec.getSublist()
-						});
+
 					} catch (e1) {
 						log.debug({
 							title : e1.name,

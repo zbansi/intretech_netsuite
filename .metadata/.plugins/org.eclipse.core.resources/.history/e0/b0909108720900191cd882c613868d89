@@ -1,0 +1,13 @@
+/*******************************************************************************
+ * @NApiVerison 2.x
+ * @NScriptType Suitelet
+ * @author YQ12681
+ */
+define(['N/record'], function(record) {
+	function onRequest(context) {
+	}
+
+	return {
+		onRequest : onRequest
+	}
+});

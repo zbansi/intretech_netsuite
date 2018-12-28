@@ -14,11 +14,9 @@ require([ 'N/task', 'N/runtime', 'N/email' ], function(task, runtime, email) {
 		// the deploymentId parameter to use the script ID of the deployment
 		// record
 		// for your map/reduce script.
-		var mrTask = task.create({
-			taskType : task.TaskType.MAP_REDUCE,
-			scriptId : mapReduceScriptId,
-			deploymentId : 'customdeploy_mapreducesamp01'
-		});
+		var mrTask = task.create({ taskType : task.TaskType.MAP_REDUCE,
+		scriptId : mapReduceScriptId,
+		deploymentId : 'customdeploy_mapreducesamp01' });
 		// The following statement submits the map/reduce task.
 		var mrTaskId = mrTask.submit();
 		// The following code checks the task's status. Update the authorId
@@ -29,12 +27,10 @@ require([ 'N/task', 'N/runtime', 'N/email' ], function(task, runtime, email) {
 		if (taskStatus.status === 'FAILED') {
 			var authorId = -5;
 			var recipientEmail = '377132229@qq.com';
-			email.send({
-				author : authorId,
-				recipients : recipientEmail,
-				subject : 'Failure executing map/reduce job!',
-				body : 'Map reduce task: ' + mapReduceScriptId + ' has failed.'
-			});
+			email.send({ author : authorId,
+			recipients : recipientEmail,
+			subject : 'Failure executing map/reduce job!',
+			body : 'Map reduce task: ' + mapReduceScriptId + ' has failed.' });
 		}
 	}
 	submitMapReduceDeployment();

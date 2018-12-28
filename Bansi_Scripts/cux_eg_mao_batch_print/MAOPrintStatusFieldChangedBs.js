@@ -15,11 +15,14 @@
 //
 // 下面调用的是/SuiteScripts/Bansi_Scripts/lib下的urlUpate.js,需要@NAmdConfig
 // define([ 'N/error', 'N/currentRecord', 'N/https', 'urlUpdate' ], function(
-define([ 'N/error', 'N/currentRecord', 'N/https', './urlUpdate' ], function(
-		error, currentRecord, https, urlUpdate) {
-	var statusValue = currentRecord.get().getValue({
-		fieldId : 'custpage_status_bs'
-	});
+define([ 'N/error', 'N/https', './urlUpdate' ],
+/**
+ * @param {error} error
+ * @param {https} https
+ * @param {urlUpdate} urlUpdate
+ */
+function(error, https, urlUpdate) {
+
 	function fieldChanged(context) {
 		try {
 			if (context.fieldId == 'custpage_status_bs') {
@@ -30,31 +33,21 @@ define([ 'N/error', 'N/currentRecord', 'N/https', './urlUpdate' ], function(
 				var oldParamsArray = urlUpdate.urlToParameters(url);
 				var newParam = [];
 				newParam.push("status");
-				statusValue = context.currentRecord.getValue({
-					fieldId : 'custpage_status_bs'
-				});
+				var statusValue = context.currentRecord.getValue({ fieldId : 'custpage_status_bs' });
 				newParam.push(statusValue);
-				var currentParamsArray = urlUpdate.updateParameters(
-						oldParamsArray, newParam);
-				var newUrl = urlUpdate.paramsArrayToURL(baseUrl,
-						currentParamsArray);
+				var currentParamsArray = urlUpdate.updateParameters(oldParamsArray, newParam);
+				var newUrl = urlUpdate.paramsArrayToURL(baseUrl, currentParamsArray);
 
 				window.location.href = newUrl;
 
-				log.debug({
-					title : 'Success',
-					details : 'url重定向成功' + context.fieldId
-				});
+				log.debug({ title : 'Success',
+				details : 'url重定向成功' + context.fieldId });
 			}
 		} catch (ex) {
-			log.debug({
-				title : ex.name,
-				details : ex.message
-			})
+			log.debug({ title : ex.name,
+			details : ex.message })
 		}
 	}
 
-	return {
-		fieldChanged : fieldChanged
-	};
+	return { fieldChanged : fieldChanged };
 });
