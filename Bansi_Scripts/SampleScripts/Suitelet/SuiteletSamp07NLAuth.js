@@ -1,6 +1,6 @@
 /**
  * @NApiVersion 2.x
- * @NScriptType suitelet
+ * @NScriptType Suitelet
  * 
  * Sample 2.0 Suitelet to invoke restlet using UC Authentication
  */

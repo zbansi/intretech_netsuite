@@ -1,30 +1,214 @@
 <project info="SuiteCloud IDE generated file, do not edit." setAttributesOnUpdate="false">
-  <folder name="Bansi_Scripts">
-    <folder name="SampleScripts">
-      <folder name="Suitelet">
-        <file name="SuiteletSamp01SendEmail.js" hideInBundle="false" isOnline="false" textFileEncoding="_utf8"/>
-        <file name="SuiteletSamp02CallRESTlet.js" hideInBundle="false" isOnline="false" textFileEncoding="_utf8"/>
-        <file name="SuiteletSamp03UIwithRequire.js" hideInBundle="false" isOnline="false" textFileEncoding="_utf8"/>
-        <file name="SuiteletSamp04FormSublist.js" hideInBundle="false" isOnline="false" textFileEncoding="_utf8"/>
-        <file name="SuiteletSamp05CustomerSurvey.js" hideInBundle="false" isOnline="false" textFileEncoding="_utf8"/>
-        <file name="SuiteletSamp06Oauth.js" hideInBundle="false" isOnline="false" textFileEncoding="_utf8"/>
-        <file name="SuiteletSamp07NLAuth.js" hideInBundle="false" isOnline="false" textFileEncoding="_utf8"/>
-        <file name="configuration.json" hideInBundle="false" isOnline="false" textFileEncoding="_utf8"/>
+  <folder name="Bansi_Scripts" bundleable="true">
+    <folder name="CUX_PUB_METADATA" bundleable="true">
+      <file name="cux_pub_metadata_retrieve.js" bundleable="true"/>
+    </folder>
+    <folder name="SampleScripts" bundleable="true">
+      <folder name="BundleInstallation" bundleable="true">
+        <file name="BundleInstallSamp01.js" bundleable="true"/>
+      </folder>
+      <folder name="Client" bundleable="true">
+        <file name="ClientSamp01CallRESTlet.js" bundleable="true"/>
+        <file name="ClientSamp02SalesOrder.js" bundleable="true"/>
+        <file name="FiledChangedCleintBs.js" bundleable="true" hideInBundle="false" isOnline="false" textFileEncoding="_utf8"/>
+      </folder>
+      <folder name="Custom" bundleable="true">
+        <file name="Script.js" bundleable="true"/>
+        <file name="phoneCall.js" bundleable="true"/>
+      </folder>
+      <folder name="MapReduce" bundleable="true">
+        <file name="MapReduceSamp01.js" bundleable="true"/>
+        <file name="MapReduceSamp01Deploy.js" bundleable="true"/>
+      </folder>
+      <folder name="MassUpdate" bundleable="true">
+        <file name="MassUpdateScriptSamp01.js" bundleable="true"/>
+      </folder>
+      <folder name="Portlet" bundleable="true">
+        <file name="PortletSamp01.js" bundleable="true"/>
+        <file name="PortletSamp02.js" bundleable="true"/>
+        <file name="PortletSamp03.js" bundleable="true"/>
+        <file name="PortletSamp04.js" bundleable="true"/>
+      </folder>
+      <folder name="RESTlet" bundleable="true">
+        <file name="RESTletSamp01HelloWorld.js" bundleable="true"/>
+        <file name="RESTletSamp01bHelloWorld.js" bundleable="true"/>
+        <file name="RESTletSamp02GDPP.js" bundleable="true"/>
+        <file name="RESTletSamp03AddMutiRecords.js" bundleable="true"/>
+        <file name="RESTletSamp04MptScheduledScript.js" bundleable="true"/>
+      </folder>
+      <folder name="Scheduled" bundleable="true">
+        <file name="ScheduledScriptSamp01.js" bundleable="true"/>
+      </folder>
+      <folder name="Suitelet" bundleable="true">
+        <folder name="crypto_lib" bundleable="true">
+          <folder name="components" bundleable="true">
+            <file name="aes-min.js" bundleable="true"/>
+            <file name="aes.js" bundleable="true"/>
+            <file name="cipher-core-min.js" bundleable="true"/>
+            <file name="cipher-core.js" bundleable="true"/>
+            <file name="core-min.js" bundleable="true"/>
+            <file name="core.js" bundleable="true"/>
+            <file name="enc-base64-min.js" bundleable="true"/>
+            <file name="enc-base64.js" bundleable="true"/>
+            <file name="enc-utf16-min.js" bundleable="true"/>
+            <file name="enc-utf16.js" bundleable="true"/>
+            <file name="evpkdf-min.js" bundleable="true"/>
+            <file name="evpkdf.js" bundleable="true"/>
+            <file name="format-hex-min.js" bundleable="true"/>
+            <file name="format-hex.js" bundleable="true"/>
+            <file name="hmac-min.js" bundleable="true"/>
+            <file name="hmac.js" bundleable="true"/>
+            <file name="lib-typedarrays-min.js" bundleable="true"/>
+            <file name="lib-typedarrays.js" bundleable="true"/>
+            <file name="md5-min.js" bundleable="true"/>
+            <file name="md5.js" bundleable="true"/>
+            <file name="mode-cfb-min.js" bundleable="true"/>
+            <file name="mode-cfb.js" bundleable="true"/>
+            <file name="mode-ctr-min.js" bundleable="true"/>
+            <file name="mode-ctr.js" bundleable="true"/>
+            <file name="mode-ecb-min.js" bundleable="true"/>
+            <file name="mode-ecb.js" bundleable="true"/>
+            <file name="mode-ofb-min.js" bundleable="true"/>
+            <file name="mode-ofb.js" bundleable="true"/>
+            <file name="pad-ansix923-min.js" bundleable="true"/>
+            <file name="pad-ansix923.js" bundleable="true"/>
+            <file name="pad-iso10126-min.js" bundleable="true"/>
+            <file name="pad-iso10126.js" bundleable="true"/>
+            <file name="pad-iso97971-min.js" bundleable="true"/>
+            <file name="pad-iso97971.js" bundleable="true"/>
+            <file name="pad-nopadding-min.js" bundleable="true"/>
+            <file name="pad-nopadding.js" bundleable="true"/>
+            <file name="pad-zeropadding-min.js" bundleable="true"/>
+            <file name="pad-zeropadding.js" bundleable="true"/>
+            <file name="pbkdf2-min.js" bundleable="true"/>
+            <file name="pbkdf2.js" bundleable="true"/>
+            <file name="rabbit-legacy-min.js" bundleable="true"/>
+            <file name="rabbit-legacy.js" bundleable="true"/>
+            <file name="rabbit-min.js" bundleable="true"/>
+            <file name="rabbit.js" bundleable="true"/>
+            <file name="rc4-min.js" bundleable="true"/>
+            <file name="rc4.js" bundleable="true"/>
+            <file name="ripemd160-min.js" bundleable="true"/>
+            <file name="ripemd160.js" bundleable="true"/>
+            <file name="sha1-min.js" bundleable="true"/>
+            <file name="sha1.js" bundleable="true"/>
+            <file name="sha224-min.js" bundleable="true"/>
+            <file name="sha224.js" bundleable="true"/>
+            <file name="sha256-min.js" bundleable="true"/>
+            <file name="sha256.js" bundleable="true"/>
+            <file name="sha3-min.js" bundleable="true"/>
+            <file name="sha3.js" bundleable="true"/>
+            <file name="sha384-min.js" bundleable="true"/>
+            <file name="sha384.js" bundleable="true"/>
+            <file name="sha512-min.js" bundleable="true"/>
+            <file name="sha512.js" bundleable="true"/>
+            <file name="tripledes-min.js" bundleable="true"/>
+            <file name="tripledes.js" bundleable="true"/>
+            <file name="x64-core-min.js" bundleable="true"/>
+            <file name="x64-core.js" bundleable="true"/>
+          </folder>
+          <folder name="rollups" bundleable="true">
+            <file name="aes.js" bundleable="true"/>
+            <file name="hmac-md5.js" bundleable="true"/>
+            <file name="hmac-ripemd160.js" bundleable="true"/>
+            <file name="hmac-sha1.js" bundleable="true"/>
+            <file name="hmac-sha224.js" bundleable="true"/>
+            <file name="hmac-sha256.js" bundleable="true"/>
+            <file name="hmac-sha3.js" bundleable="true"/>
+            <file name="hmac-sha384.js" bundleable="true"/>
+            <file name="hmac-sha512.js" bundleable="true"/>
+            <file name="md5.js" bundleable="true"/>
+            <file name="pbkdf2.js" bundleable="true"/>
+            <file name="rabbit-legacy.js" bundleable="true"/>
+            <file name="rabbit.js" bundleable="true"/>
+            <file name="rc4.js" bundleable="true"/>
+            <file name="ripemd160.js" bundleable="true"/>
+            <file name="sha1.js" bundleable="true"/>
+            <file name="sha224.js" bundleable="true"/>
+            <file name="sha256.js" bundleable="true"/>
+            <file name="sha3.js" bundleable="true"/>
+            <file name="sha384.js" bundleable="true"/>
+            <file name="sha512.js" bundleable="true"/>
+            <file name="tripledes.js" bundleable="true"/>
+          </folder>
+        </folder>
+        <folder name="oauth_valid" bundleable="true">
+          <folder name="test" bundleable="true">
+            <folder name="options" bundleable="true">
+              <file name="consumer.js" bundleable="true"/>
+              <file name="last_ampersand.js" bundleable="true"/>
+              <file name="multiple_values.js" bundleable="true"/>
+              <file name="multiple_values_qs.js" bundleable="true"/>
+              <file name="nonce_length.js" bundleable="true"/>
+              <file name="parameter_seperator.js" bundleable="true"/>
+              <file name="realm.js" bundleable="true"/>
+              <file name="signature_method.js" bundleable="true"/>
+            </folder>
+            <folder name="services" bundleable="true">
+              <file name="bitbucket.js" bundleable="true"/>
+              <file name="flickr.js" bundleable="true"/>
+              <file name="linkedin.js" bundleable="true"/>
+              <file name="openbank.js" bundleable="true"/>
+              <file name="twitter.js" bundleable="true"/>
+            </folder>
+            <file name="README.md" bundleable="true"/>
+            <file name="getParameterString.js" bundleable="true"/>
+            <file name="mocha.opts" bundleable="true"/>
+            <file name="oauth_body_hash.js" bundleable="true"/>
+            <file name="twitter_sample_data.js" bundleable="true"/>
+          </folder>
+          <file name="LICENSE" bundleable="true"/>
+          <file name="Makefile" bundleable="true"/>
+          <file name="Node.js" bundleable="true"/>
+          <file name="README.md" bundleable="true"/>
+          <file name="oauth-1.0a.d.ts" bundleable="true"/>
+          <file name="oauth-1.0a.js" bundleable="true"/>
+          <file name="package.json" bundleable="true"/>
+        </folder>
+        <file name="SuiteletSamp01SendEmail.js" bundleable="true" hideInBundle="false" isOnline="false" textFileEncoding="_utf8"/>
+        <file name="SuiteletSamp02CallRESTlet.js" bundleable="true" hideInBundle="false" isOnline="false" textFileEncoding="_utf8"/>
+        <file name="SuiteletSamp03UIwithRequire.js" bundleable="true" hideInBundle="false" isOnline="false" textFileEncoding="_utf8"/>
+        <file name="SuiteletSamp04FormSublist.js" bundleable="true" hideInBundle="false" isOnline="false" textFileEncoding="_utf8"/>
+        <file name="SuiteletSamp05CustomerSurvey.js" bundleable="true" hideInBundle="false" isOnline="false" textFileEncoding="_utf8"/>
+        <file name="SuiteletSamp06Oauth.js" bundleable="true" hideInBundle="false" isOnline="false" textFileEncoding="_utf8"/>
+        <file name="SuiteletSamp07NLAuth.js" bundleable="true" hideInBundle="false" isOnline="false" textFileEncoding="_utf8"/>
+        <file name="configuration.json" bundleable="true" hideInBundle="false" isOnline="false" textFileEncoding="_utf8"/>
+      </folder>
+      <folder name="UserEvent" bundleable="true">
+        <file name="UserEventSamp01.js" bundleable="true"/>
+        <file name="UserEventSamp02CreateTask.js" bundleable="true"/>
+        <file name="UserEventSamp03DeployNonInvItem.js" bundleable="true"/>
+      </folder>
+      <folder name="WorkflowAction" bundleable="true">
+        <file name="WorkflowActionScriptSamp01.js" bundleable="true"/>
       </folder>
     </folder>
-    <folder name="cux_eg_mao_batch_print">
-      <file name="MAOPrintStatusFieldChangedBs.js" hideInBundle="false" isOnline="false" textFileEncoding="_utf8"/>
-      <file name="MaterialApplyOrderPrintSuiteletBS.js" hideInBundle="false" isOnline="false" textFileEncoding="_utf8"/>
+    <folder name="cux_eg_interface" bundleable="true">
+      <file name="ItemSyncInterface.js" bundleable="false" hideInBundle="false" isOnline="false" textFileEncoding="_utf8">
+        <description></description>
+        <altTagCaption></altTagCaption>
+      </file>
     </folder>
-    <folder name="cux_eg_wo_to_mao">
-      <file name="BsPrintMAO.js" hideInBundle="false" isOnline="false" textFileEncoding="_utf8"/>
-      <file name="BsPrintMAOSuitelet.js" hideInBundle="false" isOnline="false" textFileEncoding="_utf8"/>
-      <file name="CreateMAOBs.js" hideInBundle="false" isOnline="false" textFileEncoding="_utf8"/>
-      <file name="MAOCreateFromWO.js" hideInBundle="false" isOnline="false" textFileEncoding="_utf8"/>
-      <file name="WorkOrderToMaterialApplyBs.js" hideInBundle="false" isOnline="false" textFileEncoding="_utf8"/>
-      <file name="configuration.json" hideInBundle="false" isOnline="false" textFileEncoding="_utf8"/>
+    <folder name="cux_eg_mao_batch_print" bundleable="true">
+      <file name="BatchPrintConfig.json" bundleable="true" hideInBundle="false" isOnline="false" textFileEncoding="_utf8"/>
+      <file name="BsBatchPrintMAO.bk" bundleable="true" hideInBundle="false" isOnline="false" textFileEncoding="_utf8"/>
+      <file name="MAOPrintStatusFieldChangedBs.bk" bundleable="true" hideInBundle="false" isOnline="false" textFileEncoding="_utf8"/>
+      <file name="MAOPrintStatusFieldChangedBs.js" bundleable="true"/>
+      <file name="MaterialApplyOrderPrintSuiteletBS.bk" bundleable="true" hideInBundle="false" isOnline="false" textFileEncoding="_utf8"/>
+      <file name="MaterialApplyOrderPrintSuiteletBS.js" bundleable="true"/>
+      <file name="urlUpdate.js" bundleable="true" hideInBundle="false" isOnline="false" textFileEncoding="_utf8"/>
     </folder>
-    <file name="FiledChangedCleintBs.js" hideInBundle="false" isOnline="false" textFileEncoding="_utf8"/>
-    <file name="maoSaveSearchCreate.js" hideInBundle="false" isOnline="false" textFileEncoding="_utf8"/>
+    <folder name="cux_eg_wo_to_mao" bundleable="true">
+      <file name="BsPrintMAOSuitelet.js" bundleable="true" hideInBundle="false" isOnline="false" textFileEncoding="_utf8"/>
+      <file name="CreateMAOBs.js" bundleable="true" hideInBundle="false" isOnline="false" textFileEncoding="_utf8"/>
+      <file name="MAOCreateFromWO.js" bundleable="true" hideInBundle="false" isOnline="false" textFileEncoding="_utf8"/>
+      <file name="WorkOrderToMaterialApplyBs.js" bundleable="true" hideInBundle="false" isOnline="false" textFileEncoding="_utf8"/>
+    </folder>
+    <folder name="lib" bundleable="true">
+      <file name="BsPrintMAO.js" bundleable="true" hideInBundle="false" isOnline="false" textFileEncoding="_utf8"/>
+      <file name="maoSaveSearchCreate.js" bundleable="true" hideInBundle="false" isOnline="false" textFileEncoding="_utf8"/>
+      <file name="urlUpdate.js" bundleable="true" hideInBundle="false" isOnline="false" textFileEncoding="_utf8"/>
+    </folder>
+    <file name="configuration.json" bundleable="true" hideInBundle="false" isOnline="false" textFileEncoding="_utf8"/>
   </folder>
 </project>

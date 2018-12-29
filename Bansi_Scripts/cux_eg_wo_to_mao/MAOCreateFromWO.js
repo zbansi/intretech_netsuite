@@ -81,15 +81,16 @@ define(
 																'custrecord_yq_workorder_detail_qty_bs',
 																i));
 							}
-
+							log.debug({
+								title : 'Success',
+								details : '赋值成功：woid = ' + woid
+										+ ', warehouse = ' + warehouse
+										+ ', clerk = ' + clerk
+										+ ', workshop = ' + workshop
+										+ ', sublist = ' + rec.getSublist()
+							});
 						}
-						log.debug({
-							title : 'Success',
-							details : '赋值成功：woid = ' + woid + ', warehouse = '
-									+ warehouse + ', clerk = ' + clerk
-									+ ', workshop = ' + workshop
-									+ ', sublist = ' + rec.getSublist()
-						});
+
 					} catch (e1) {
 						log.debug({
 							title : e1.name,
@@ -101,8 +102,9 @@ define(
 						fieldId : 'custrecord_yq_ma_status_bansi'
 					});
 					try {
-						if (status == '已批准') {
-							form.clientScriptModulePath = './BsPrintMAO.js';
+						if (status == '已批准' || status == 'APPROVED') {
+							//绝对路径是文件柜完整路径
+							form.clientScriptModulePath = '/SuiteScripts/Bansi_Scripts/lib/BsPrintMAO.js';
 							form.addButton({
 								id : 'custpage_print_mao',
 								label : '打印领料单',

@@ -1,0 +1,8 @@
+/**
+ * @NApiVersion 2.x
+ * @NScriptType MassUpdateScript
+ * @author YQ12681
+ */
+define(['N/record'], function(record){
+	
+})

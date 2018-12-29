@@ -1,0 +1,20 @@
+package com.bansi.eai.consumer;
+
+import java.util.ArrayList;
+
+public class ConsumerTest {
+	public static void main(String[] args) {
+		String web1 = "http://www.oschina.net/";
+		String web2 = "http://news.baidu.com/";
+		String web3 = "https://linux.cn/";
+		String web4 = "http://www.taobao.com/";
+		ArrayList<String> websites = new ArrayList<String>();
+		websites.add(web1);
+		websites.add(web2);
+		websites.add(web3);
+		websites.add(web4);
+		GetHttpHeader showHttpHeaders = new GetHttpHeader(websites);
+		showHttpHeaders.getHeaders();
+
+	}
+}

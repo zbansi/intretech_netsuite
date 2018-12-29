@@ -2,22 +2,24 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="authHead" key="selection"/>
+		<item value="" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
-			<item value="authHead"/>
-			<item value="is required"/>
-			<item value="function is required"/>
-			<item value="HmacSHA256"/>
-			<item value="cryptojs"/>
-			<item value="request"/>
-			<item value="setScript"/>
-			<item value="custpage_status"/>
+			<item value="rema"/>
+			<item value="recma"/>
+			<item value="custpage_no"/>
+			<item value="setSublistvalue"/>
+			<item value="clientScriptFileId"/>
+			<item value="clientScriptModulePath"/>
+			<item value="custrecord_yq_ma_status_bansi"/>
+			<item value="nlobjSearchFilter"/>
 		</list>
 		<list key="replacehistory">
+			<item value="baseUrl"/>
+			<item value=""/>
 			<item value="2018_2"/>
 		</list>
 	</section>
@@ -25,7 +27,7 @@
 		<item value="273" key="DIALOG_WIDTH"/>
 		<item value="1|微软雅黑|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|微软雅黑" key="DIALOG_FONT_NAME"/>
 		<item value="399" key="DIALOG_HEIGHT"/>
-		<item value="1407" key="DIALOG_X_ORIGIN"/>
-		<item value="247" key="DIALOG_Y_ORIGIN"/>
+		<item value="1353" key="DIALOG_X_ORIGIN"/>
+		<item value="395" key="DIALOG_Y_ORIGIN"/>
 	</section>
 </section>

@@ -1,0 +1,7 @@
+{ "baseUrl": "/SuiteScripts/Bansi_Scripts/lib",
+	"paths": {
+		"batchPrint": "BsPrintMAO",
+		"bsmaoSearch" : "maoSaveSearchCreate",
+		"urlUpdate" : "urlUpdate"
+		}
+}

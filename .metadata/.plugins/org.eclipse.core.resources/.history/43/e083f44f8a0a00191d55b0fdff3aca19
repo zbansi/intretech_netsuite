@@ -1,0 +1,65 @@
+/**
+ * @NApiVersion 2.x
+ * @NScriptType Suitelet
+ * @NModuleScope SameAccount
+ * @author YQ12681
+ */
+/////////////////////////物料主数据接口///////////////////////
+//
+// 输出一个text文件
+//
+//////////////////////////////////////////////////////////
+define([ 'N/record', 'N/ui/serverWidget', 'N/search', 'N/file' ],
+/**
+ * @param {record} record
+ * @param {serverWidget} serverWidget
+ * @param {search} search
+ * @param {file} file
+ */
+function(record, serverWidget, search, file) {
+	/**
+	 * Definition of the Suitelet script trigger point.
+	 * 
+	 * @param {Object} context
+	 * @param {ServerRequest} context.request - Encapsulation of the incoming request
+	 * @param {ServerResponse} context.response - Encapsulation of the Suitelet response
+	 * @Since 2015.2
+	 */
+	function onRequest(context) {
+		if (context.request.method == 'GET') {
+			try {
+				var form = serverWidget.createForm({ title : 'NS --> OA 物料主数据同步' });
+				var submitButton = form.addSubmitButton({ label : '提交' });
+				var outputField = form.addField({ id : 'custpage_output',
+				label : '输出文本',
+				type : serverWidget.FieldType.LONGTEXT });
+				var flt = [];
+				var itemRec = search.load({ id : 'customsearch_eai_mst_item_oa' }).run().getRange({ start : 0,
+				end : 100 });
+				var output = JSON.stringify(itemRec);
+				outputField.setHelpText({ help : '该字段显示接口输出消息',
+				showInlineForAssistant : true });
+				outputField.defaultValue = output;
+				context.response.writePage(form);
+
+			} catch (err) {
+				log.debug({ title : err.name,
+				details : err.message });
+			}
+		} else {
+
+			var fileObj = file.create({ name : 'letter_count_result.txt',
+			fileType : file.Type.PLAINTEXT,
+			contents : output });
+			fileObj.folder = -15;
+			var fileId = fileObj.save();
+			log.audit({ title : 'Id of new file record',
+			details : fileId });
+			context.response.writeFile({ file : fileObj,
+			isInline : false });
+		}
+
+	}
+
+	return { onRequest : onRequest }
+});
