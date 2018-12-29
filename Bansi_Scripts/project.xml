@@ -183,7 +183,12 @@
         <file name="WorkflowActionScriptSamp01.js" bundleable="true"/>
       </folder>
     </folder>
-    <folder name="cux_eg_interface" bundleable="true"/>
+    <folder name="cux_eg_interface" bundleable="true">
+      <file name="ItemSyncInterface.js" bundleable="false" hideInBundle="false" isOnline="false" textFileEncoding="_utf8">
+        <description></description>
+        <altTagCaption></altTagCaption>
+      </file>
+    </folder>
     <folder name="cux_eg_mao_batch_print" bundleable="true">
       <file name="BatchPrintConfig.json" bundleable="true" hideInBundle="false" isOnline="false" textFileEncoding="_utf8"/>
       <file name="BsBatchPrintMAO.bk" bundleable="true" hideInBundle="false" isOnline="false" textFileEncoding="_utf8"/>

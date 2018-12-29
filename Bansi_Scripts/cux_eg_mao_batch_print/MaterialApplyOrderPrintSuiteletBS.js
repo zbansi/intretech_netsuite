@@ -263,16 +263,25 @@ function(ui, search, record, render) {
 				xmlStr += '<pdf>';
 				//加载领料申请记录到模板
 				for (var i = 0; i < maoIdArray.length; i++) {
-					var rec = record.load({ type : 'customrecord_yq_material_apply_bansi',
-					id : maoIdArray[i] });
-					var maoNumber = rec.getText('name');
-					//模板数据循环
-					xmlStr += '<head>';
-					xmlStr += '</head>';
-					xmlStr += '<body padding="0.5in 0.5in 0.5in 0.5in" size="Letter">';
-					xmlStr += '<table style="width: 100%; font-size: 10pt;">';
-					xmlStr += '<tr><td>' + maoNumber + '</td></tr>';
-					xmlStr += '</table></body>';
+					var rec = null;
+					try {
+						rec = record.load({ type : 'customrecord_yq_material_apply_bansi',
+						id : maoIdArray[i] });
+					} catch (err) {
+						if (err.name == 'RCRD_LOCKED_BY_WF') {
+							continue;
+						}
+					}
+					if (rec) {
+						var maoNumber = rec.getText('name');
+						//模板数据循环
+						xmlStr += '<head>';
+						xmlStr += '</head>';
+						xmlStr += '<body padding="0.5in 0.5in 0.5in 0.5in" size="Letter">';
+						xmlStr += '<table style="width: 100%; font-size: 10pt;">';
+						xmlStr += '<tr><td>' + maoNumber + '</td></tr>';
+						xmlStr += '</table></body>';
+					}
 				}
 				xmlStr += '</pdf>'
 				//xml转成pdf文件

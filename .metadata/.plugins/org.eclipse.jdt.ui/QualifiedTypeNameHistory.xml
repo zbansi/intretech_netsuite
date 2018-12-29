@@ -40,4 +40,15 @@
 <fullyQualifiedTypeName name="com.netsuite.webservices.platform.core_2017_1.RecordRef"/>
 <fullyQualifiedTypeName name="com.netsuite.webservices.platform_2017_1.NetSuitePortType"/>
 <fullyQualifiedTypeName name="com.netsuite.webservices.platform_2018_2.NetSuitePortType"/>
+<fullyQualifiedTypeName name="java.net.UnknownHostException"/>
+<fullyQualifiedTypeName name="java.io.InputStream"/>
+<fullyQualifiedTypeName name="java.net.URL"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="java.io.UnsupportedEncodingException"/>
+<fullyQualifiedTypeName name="java.util.HashMap"/>
+<fullyQualifiedTypeName name="java.util.Map"/>
+<fullyQualifiedTypeName name="javax.xml.bind.DatatypeConverter"/>
+<fullyQualifiedTypeName name="com.alibaba.fastjson.JSON"/>
+<fullyQualifiedTypeName name="com.alibaba.fastjson.JSONObject"/>
+<fullyQualifiedTypeName name="org.apache.http.HttpRequest"/>
 </qualifiedTypeNameHistroy>
