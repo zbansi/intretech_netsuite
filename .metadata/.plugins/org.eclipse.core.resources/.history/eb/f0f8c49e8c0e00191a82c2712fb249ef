@@ -1,0 +1,237 @@
+/**
+ * @NApiVersion 2.x
+ * @NScriptType Suitelet
+ * @NModuleScope SameAccount
+ * @author YQ12681
+ */
+/////////////////////////物料主数据接口///////////////////////
+//
+// 输出一个text文件
+//
+//////////////////////////////////////////////////////////
+define([ 'N/record', 'N/ui/serverWidget', 'N/search', 'N/file', 'N/runtime', 'N/config', 'N/format' ],
+/**
+ * @param {record} record
+ * @param {serverWidget} serverWidget
+ * @param {search} search
+ * @param {file} file
+ * @param {runtime} runtime
+ * @param {config} config
+ * @param {format} format
+ */
+function(record, serverWidget, search, file, runtime, config, format) {
+	/**
+	 * Definition of the Suitelet script trigger point.
+	 * 
+	 * @param {Object} context
+	 * @param {ServerRequest} context.request - Encapsulation of the incoming request
+	 * @param {ServerResponse} context.response - Encapsulation of the Suitelet response
+	 * @Since 2015.2
+	 */
+	function onRequest(context) {
+
+		//获取用户首选项
+		var userPreferences = config.load(config.Type.USER_PREFERENCES);
+		// get time and date format
+		var dateFormat = userPreferences.getValue('dateformat');
+		var timeFormat = userPreferences.getValue('timeformat');
+		/* Date()默认是太平洋时区GMT-8
+		Using new Date() on any server side script will only return the date/time based on the Pacific Time zone. 
+		Using new Date() on client side will return the date/time based on the user's system time (not user preference).
+		 */
+		//获取最后一次同步时间(太平洋时区)
+		var lastSyncDate = runtime.getCurrentScript().getParameter("custscript_itemsync_inf_last_update_date");
+		//是否增量同步参数
+		var dataSyncType = runtime.getCurrentScript().getParameter("custscript_itemsync_inf_allorincrement");
+
+		/*if (context.request.method == 'GET') {
+			try {
+				var form = serverWidget.createForm({ title : 'NS --> OA 物料主数据同步' });
+				var submitButton = form.addSubmitButton({ label : '提交' });
+				var outputField = form.addField({ id : 'custpage_output',
+				label : '输出文本',
+				type : serverWidget.FieldType.LONGTEXT });
+				var flt = [];
+				var itemRec = search.load({ id : 'customsearch_eai_mst_item_oa' }).run().getRange({ start : 0,
+				end : 100 });
+				var output = JSON.stringify(itemRec);
+				outputField.setHelpText({ help : '该字段显示接口输出消息',
+				showInlineForAssistant : true });
+				outputField.defaultValue = output;
+				context.response.writePage(form);
+
+			} catch (err) {
+				log.debug({ title : err.name,
+				details : err.message });
+			}
+		} else {}*/
+
+		//var itemRec = search.load({ id : 'customsearch_eai_mst_item_oa' }).run().getRange({ start : 0,
+		//end : 100 });
+		//格式化成字符串
+		var lastSyncDateStr = format.format({
+			value : lastSyncDate,
+			type : format.Type.DATETIME
+		});
+
+		var dateTimeArray = lastSyncDateStr.split(' ');
+		var dateArray = dateTimeArray[0].split('/');
+		var timeArray = dateTimeArray[1].split(':');
+		var yy = dateArray[2].slice(2, 4);
+		var mon = dateArray[0];
+		var da = dateArray[1];
+
+		var h = timeArray[0];
+		var m = timeArray[1];
+		/*
+				var yy = lastSyncDateBJ.getYear() - 100; //获取当前两位年份   
+				var mon = lastSyncDateBJ.getMonth() + 1; //获取当前月份   
+				var da = lastSyncDateBJ.getDate(); //获取当前日   
+
+				var h = lastSyncDateBJ.getHours(); //获取小时   
+				var m = lastSyncDateBJ.getMinutes(); //获取分钟   
+		*/
+		var dateSplitChar = '/';
+		var timeSplitChar = ':';
+		var lastSyncDatex = mon + dateSplitChar + da + dateSplitChar + yy + '  ' + h + timeSplitChar + m;
+
+		var itemRec = null;
+		try {
+			if (dataSyncType == '1') {
+				itemRec = search.load({
+					id : 'customsearch_eai_mst_item_oa'
+				}).run().getRange({
+					start : 0,
+					end : 100
+				});
+			} else if (dataSyncType == '2') {
+
+				var filters = [];
+				filters[0] = search.createFilter({
+					name : 'created',
+					operator : search.Operator.ONORAFTER,
+					values : lastSyncDatex
+				});
+				filters[1] = search.createFilter({
+					name : 'isinactive',
+					operator : search.Operator.EQUALTO,
+					values : 'N'
+				});
+
+				var columns = [];
+				columns[0] = search.createColumn({
+					name : 'internalid'
+				});
+				columns[1] = search.createColumn({
+					name : 'itemid'
+				});
+				columns[2] = search.createColumn({
+					name : 'category'
+				});
+				columns[3] = search.createColumn({
+					name : 'purchaseunit'
+				});
+				columns[4] = search.createColumn({
+					name : 'location'
+
+				});
+				columns[5] = search.createColumn({
+					name : 'created'
+				});
+				/////////////////////////////////
+				itemRec = search.create({
+					type : 'item',
+					//filters : [ [ 'isinactive', search.Operator.EQUALTO, 'N' ], 'and', [ 'created', search.Operator.BEFORE, lastSyncDate ] ],
+					//columns: ['','','','']
+					filters : filters,
+					columns : columns
+				}).run().getRange({
+					start : 0,
+					end : 100
+				});
+			}
+		} catch (error) {
+			log.debug({
+				title : error.name,
+				details : error.message
+			});
+		}
+		var output = JSON.stringify(itemRec);
+		var fileObj = file.create({
+			name : 'yq_ns_eai_oa_itemdata_output.txt',
+			fileType : file.Type.PLAINTEXT,
+			contents : output
+		});
+
+		/*fileObj.folder = -15;
+		var fileId = fileObj.save();
+		log.audit({ title : 'Id of new file record',
+		details : fileId });
+		 */
+		try {
+			//load参数的id注意是internalId不是ID
+			var scriptRecord = record.load({
+				type : 'scriptdeployment',
+				id : 67
+			});
+			var date = new Date();
+			/*var year = date.getFullYear(); //获取当前年份   
+			var mon = zeroPad((date.getMonth() + 1), 2); //获取当前月份   
+			var da = zeroPad(date.getDate(), 2); //获取当前日   
+			var day = date.getDay(); //获取当前星期几   
+			var h = zeroPad(date.getHours(), 2); //获取小时   
+			var m = zeroPad(date.getMinutes(), 2); //获取分钟   
+			var s = zeroPad(date.getSeconds(), 2); //获取秒   
+			var dateSplitChar = '/';
+			var timeSplitChar = ':';
+			var dateStr = format.format({ value : year + dateSplitChar + mon + dateSplitChar + da + '  ' + h + timeSplitChar + m + timeSplitChar + s,
+			type : format.Type.DATETIMETZ });
+			 */
+			var dateStr = format.format({
+				value : date,
+				type : format.Type.DATETIMETZ,
+				timezone : format.Timezone.ASIA_HONG_KONG
+			});
+
+			var datex = format.parse({
+				value : dateStr,
+				type : format.Type.DATETIMETZ,
+				timezone : format.Timezone.ASIA_HONG_KONG
+			});
+
+			scriptRecord.setValue({
+				fieldId : 'custscript_itemsync_inf_last_update_date',
+				value : datex
+			});
+			scriptRecord.save();
+			log.debug({
+				title : 'Success',
+				details : 'scriptRecord = ' + JSON.stringify(scriptRecord) + '\n' + ' lastSyncDate = ' + lastSyncDate + '\n' + 'lastSyncDateStr = '
+						+ lastSyncDateStr + '\n' + ' lastSyncDatex = ' + lastSyncDatex + '\n' + ' date = ' + date + ' dateStr = ' + dateStr + '\n'
+						+ ' datex = ' + datex
+			});
+		} catch (err) {
+			log.debug({
+				title : err.name,
+				details : err.message
+			});
+		}
+		context.response.writeFile({
+			file : fileObj,
+			isInline : false
+		});
+	}
+
+	//补充0以至固定位数
+	function zeroPad(number, count) {
+		var numberString = String(number);
+		while (numberString.length < count) {
+			numberString = "0" + numberString;
+		}
+		return numberString;
+	}
+
+	return {
+		onRequest : onRequest
+	}
+});

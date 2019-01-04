@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="WebServiceNS" basedir="." default="compile">
+
+	<!-- properies -->
+	<property name="webContent.dir" value="WebContent" />
+	<property name="src.dir" value="src" />
+	<property name="report.dir" value="report" />
+	<property name="classes.dir" value="classes" />
+	<property name="lib.dir" value="lib" />
+	<property name="master.home" value="lib" />
+	<property name="axis.home" value="lib" />
+	<property name="dist.dir" value="dist" />
+	<property name="doc.dir" value="doc" />
+	<property name="client.dir" value="client" />
+	<property name="server.dir" value="server" />
+	<property name="compile.dir" value="${webContent.dir}/WEB-INF/classes" />
+	<property name="sayhi.wsdl.url" value="http://localhost:7775/wstest/service/sayhi?wsdl" />
+	<property name="ns201701.wsdl.url" value="https://webservices.netsuite.com/wsdl/v2017_1_0/netsuite.wsdl" />
+	<property name="ns201802.wsdl.url" value="https://webservices.netsuite.com/wsdl/v2018_2_0/netsuite.wsdl" />
+
+	<!-- 定义classpath -->
+	<path id="master.classpath">
+			<fileset dir="${axis.home}">
+				<include name="**/*.jar" />
+			</fileset>
+			<!-- <pathelement path="${classes.dir}"/> -->
+	</path>
+	<path id="axis.classpath">
+		<fileset dir="${axis.home}">
+			<include name="**/*.jar" />
+		</fileset>
+		<!-- <pathelement path="${classes.dir}"/> -->
+	</path>
+
+	<taskdef resource="axis-tasks.properties" classpathref="axis.classpath" />
+
+
+	<!-- 初始化任务 -->
+	<target name="init">
+	</target>
+
+	<!-- 编译 -->
+	<target name="compile" depends="init" description="compile the source files">
+		<mkdir dir="${classes.dir}" />
+		<javac srcdir="${src.dir}" destdir="${classes.dir}" target="1.8">
+			<classpath refid="master.classpath" />
+		</javac>
+	</target>
+
+	<!-- 测试 -->
+	<target name="test" depends="compile" description="run junit test">
+		<mkdir dir="${report.dir}" />
+		<junit printsummary="on" haltonfailure="false" failureproperty="tests.failed" showoutput="true">
+			<classpath refid="master.classpath" />
+			<formatter type="plain" />
+			<batchtest todir="${report.dir}">
+				<fileset dir="${classes.dir}">
+					<include name="**/*Test.*" />
+				</fileset>
+			</batchtest>
+		</junit>
+		<fail if="tests.failed">
+	***********************************************************
+	**** One or more tests failed! Check the output ... ****
+	***********************************************************
+	</fail>
+	</target>
+
+	<!-- 打包成jar -->
+	<target name="pack" depends="test" description="make .jar file">
+		<mkdir dir="${dist.dir}" />
+		<jar destfile="${dist.dir}/hello.jar" basedir="${classes.dir}">
+			<exclude name="**/*Test.*" />
+			<exclude name="**/Test*.*" />
+		</jar>
+	</target>
+
+	<!-- 输出api文档 -->
+	<target name="doc" depends="pack" description="create api doc">
+		<mkdir dir="${doc.dir}" />
+		<javadoc destdir="${doc.dir}" author="true" version="true" use="true" windowtitle="Test API">
+			<packageset dir="${src.dir}" defaultexcludes="yes">
+				<include name="example/**" />
+			</packageset>
+			<doctitle>
+				<![CDATA[<h1>Hello, test</h1>]]></doctitle>
+		<bottom>
+			<![CDATA[<i>All Rights Reserved.</i>]]></bottom>
+	<tag name="todo" scope="all" description="To do:" />
+</javadoc>
+</target>
+
+
+<echo message="wsdl2javaAll          -->java文件生成All,java2wsdl -Ddir=com/bansi/ws/example -Dwsdl=sayhi.wsdl" />
+
+
+<target name="generate.interfaces.sayhi" description="Generates client interfaces using Axis">
+<echo>Generating sayhi clinet interfaces using Apache Axis</echo>
+<axis-wsdl2java timeout="120000" output="${src.dir}" verbose="true" url="${sayhi.wsdl.url}" all="true" wrapArrays="ture">
+	<mapping namespace="http://axis.apache.org/ns/interop" package="interop">
+	</mapping>
+</axis-wsdl2java>
+</target>
+<target name="generate.interfaces.ns201802" description="Generates client interfaces using Axis">
+<echo>Generating netsuite 201802 client interfaces using Apache Axis</echo>
+<axis-wsdl2java timeout="120000" output="${src.dir}" verbose="true" url="${ns201802.wsdl.url}" all="true" wrapArrays="ture">
+	<mapping namespace="http://axis.apache.org/ns/interop" package="interop">
+	</mapping>
+</axis-wsdl2java>
+</target>
+<target name="generate.interfaces.ns201701" description="Generates client interfaces using Axis">
+<echo>Generating netsuite 201701 client interfaces using Apache Axis</echo>
+<axis-wsdl2java timeout="120000" output="${src.dir}" verbose="true" url="${ns201701.wsdl.url}" all="true" wrapArrays="ture">
+	<mapping namespace="http://axis.apache.org/ns/interop" package="interop">
+	</mapping>
+</axis-wsdl2java>
+</target>
+</project>

@@ -1,10 +1,6 @@
 package com.netsuite.prototypes;
 
-import com.netsuite.webservices.lists.employees_2018_2.Employee;
-import com.netsuite.webservices.platform.core_2018_2.RecordRef;
-import com.netsuite.webservices.platform.core_2018_2.types.RecordType;
-import com.netsuite.webservices.platform_2018_2.NetSuitePortType;
-import com.netsuite.webservices.platform_2018_2.NetSuiteServiceLocator;
+
 
 /***
  * Example showing how to get web services domain pointing to the account's data
@@ -13,16 +9,20 @@ import com.netsuite.webservices.platform_2018_2.NetSuiteServiceLocator;
  ***/
 public class AXISClient {
 	private static final String ENDPOINT_VERSION = "NetSuitePort_2018_2";
-	private static final String ACCOUNT = "123456";
-	private static final String PASSWORD = "123456@netsuite.com";
-	private static final String EMAIL = "passwd";
-	NetSuitePortType _port;
+	private static final String ACCOUNT = "5144758_SB1";
+	private static final String PASSWORD = "OIZO715710iie";
+	private static final String EMAIL = "xmzyl@intretech.com";
+	private NetSuitePortType _port;
 
 	public AXISClient(String acct, String email, String passwd) throws Exception {
+		//1. Locate the NetSuite service.
 		NetSuiteServiceLocator service = new NetSuiteServiceLocator();
+		//2. Enable support for multiple cookie management.
+		service.setMaintainSession( true );
 		GetRESTDomain restHelper = new GetRESTDomain();
 		String wsDomain = restHelper.getDataCenterUrls(acct, email, passwd).webservicesDomain;
 		service.setNetSuitePortEndpointAddress(wsDomain + "/services/" + ENDPOINT_VERSION);
+		//3. Get the NetSuite port.
 		_port = service.getNetSuitePort();
 		// initialize _port - authentication// ...
 	}

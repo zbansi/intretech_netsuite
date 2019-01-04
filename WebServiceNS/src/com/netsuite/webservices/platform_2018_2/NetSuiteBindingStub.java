@@ -2938,6 +2938,7 @@ public class NetSuiteBindingStub extends org.apache.axis.client.Stub implements 
         addBindings13();
         addBindings14();
         addBindings15();
+        addBindings16();
     }
 
     private void addBindings0() {
@@ -5734,6 +5735,20 @@ public class NetSuiteBindingStub extends org.apache.axis.client.Stub implements 
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
 
+            qName = new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "EntityTaxRegistrationSearchBasic");
+            cachedSerQNames.add(qName);
+            cls = com.netsuite.webservices.platform.common_2018_2.EntityTaxRegistrationSearchBasic.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
+            qName = new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "EntityTaxRegistrationSearchRowBasic");
+            cachedSerQNames.add(qName);
+            cls = com.netsuite.webservices.platform.common_2018_2.EntityTaxRegistrationSearchRowBasic.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
             qName = new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "ExpenseCategorySearchBasic");
             cachedSerQNames.add(qName);
             cls = com.netsuite.webservices.platform.common_2018_2.ExpenseCategorySearchBasic.class;
@@ -5897,20 +5912,6 @@ public class NetSuiteBindingStub extends org.apache.axis.client.Stub implements 
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
 
-            qName = new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "InventoryNumberBinSearchRowBasic");
-            cachedSerQNames.add(qName);
-            cls = com.netsuite.webservices.platform.common_2018_2.InventoryNumberBinSearchRowBasic.class;
-            cachedSerClasses.add(cls);
-            cachedSerFactories.add(beansf);
-            cachedDeserFactories.add(beandf);
-
-            qName = new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "InventoryNumberSearchBasic");
-            cachedSerQNames.add(qName);
-            cls = com.netsuite.webservices.platform.common_2018_2.InventoryNumberSearchBasic.class;
-            cachedSerClasses.add(cls);
-            cachedSerFactories.add(beansf);
-            cachedDeserFactories.add(beandf);
-
     }
     private void addBindings4() {
             java.lang.Class cls;
@@ -5926,6 +5927,20 @@ public class NetSuiteBindingStub extends org.apache.axis.client.Stub implements 
             java.lang.Class simpledf = org.apache.axis.encoding.ser.SimpleDeserializerFactory.class;
             java.lang.Class simplelistsf = org.apache.axis.encoding.ser.SimpleListSerializerFactory.class;
             java.lang.Class simplelistdf = org.apache.axis.encoding.ser.SimpleListDeserializerFactory.class;
+            qName = new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "InventoryNumberBinSearchRowBasic");
+            cachedSerQNames.add(qName);
+            cls = com.netsuite.webservices.platform.common_2018_2.InventoryNumberBinSearchRowBasic.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
+            qName = new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "InventoryNumberSearchBasic");
+            cachedSerQNames.add(qName);
+            cls = com.netsuite.webservices.platform.common_2018_2.InventoryNumberSearchBasic.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
             qName = new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "InventoryNumberSearchRowBasic");
             cachedSerQNames.add(qName);
             cls = com.netsuite.webservices.platform.common_2018_2.InventoryNumberSearchRowBasic.class;
@@ -6616,6 +6631,21 @@ public class NetSuiteBindingStub extends org.apache.axis.client.Stub implements 
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
 
+    }
+    private void addBindings5() {
+            java.lang.Class cls;
+            javax.xml.namespace.QName qName;
+            javax.xml.namespace.QName qName2;
+            java.lang.Class beansf = org.apache.axis.encoding.ser.BeanSerializerFactory.class;
+            java.lang.Class beandf = org.apache.axis.encoding.ser.BeanDeserializerFactory.class;
+            java.lang.Class enumsf = org.apache.axis.encoding.ser.EnumSerializerFactory.class;
+            java.lang.Class enumdf = org.apache.axis.encoding.ser.EnumDeserializerFactory.class;
+            java.lang.Class arraysf = org.apache.axis.encoding.ser.ArraySerializerFactory.class;
+            java.lang.Class arraydf = org.apache.axis.encoding.ser.ArrayDeserializerFactory.class;
+            java.lang.Class simplesf = org.apache.axis.encoding.ser.SimpleSerializerFactory.class;
+            java.lang.Class simpledf = org.apache.axis.encoding.ser.SimpleDeserializerFactory.class;
+            java.lang.Class simplelistsf = org.apache.axis.encoding.ser.SimpleListSerializerFactory.class;
+            java.lang.Class simplelistdf = org.apache.axis.encoding.ser.SimpleListDeserializerFactory.class;
             qName = new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "TaxDetailSearchRowBasic");
             cachedSerQNames.add(qName);
             cls = com.netsuite.webservices.platform.common_2018_2.TaxDetailSearchRowBasic.class;
@@ -6632,21 +6662,6 @@ public class NetSuiteBindingStub extends org.apache.axis.client.Stub implements 
             cachedSerFactories.add(new org.apache.axis.encoding.ser.ArraySerializerFactory(qName, qName2));
             cachedDeserFactories.add(new org.apache.axis.encoding.ser.ArrayDeserializerFactory());
 
-    }
-    private void addBindings5() {
-            java.lang.Class cls;
-            javax.xml.namespace.QName qName;
-            javax.xml.namespace.QName qName2;
-            java.lang.Class beansf = org.apache.axis.encoding.ser.BeanSerializerFactory.class;
-            java.lang.Class beandf = org.apache.axis.encoding.ser.BeanDeserializerFactory.class;
-            java.lang.Class enumsf = org.apache.axis.encoding.ser.EnumSerializerFactory.class;
-            java.lang.Class enumdf = org.apache.axis.encoding.ser.EnumDeserializerFactory.class;
-            java.lang.Class arraysf = org.apache.axis.encoding.ser.ArraySerializerFactory.class;
-            java.lang.Class arraydf = org.apache.axis.encoding.ser.ArrayDeserializerFactory.class;
-            java.lang.Class simplesf = org.apache.axis.encoding.ser.SimpleSerializerFactory.class;
-            java.lang.Class simpledf = org.apache.axis.encoding.ser.SimpleDeserializerFactory.class;
-            java.lang.Class simplelistsf = org.apache.axis.encoding.ser.SimpleListSerializerFactory.class;
-            java.lang.Class simplelistdf = org.apache.axis.encoding.ser.SimpleListDeserializerFactory.class;
             qName = new javax.xml.namespace.QName("urn:common_2018_2.platform.webservices.netsuite.com", "TaxGroupSearchBasic");
             cachedSerQNames.add(qName);
             cls = com.netsuite.webservices.platform.common_2018_2.TaxGroupSearchBasic.class;
@@ -7357,20 +7372,6 @@ public class NetSuiteBindingStub extends org.apache.axis.client.Stub implements 
             cachedSerFactories.add(new org.apache.axis.encoding.ser.ArraySerializerFactory(qName, qName2));
             cachedDeserFactories.add(new org.apache.axis.encoding.ser.ArrayDeserializerFactory());
 
-            qName = new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "Passport");
-            cachedSerQNames.add(qName);
-            cls = com.netsuite.webservices.platform.core_2018_2.Passport.class;
-            cachedSerClasses.add(cls);
-            cachedSerFactories.add(beansf);
-            cachedDeserFactories.add(beandf);
-
-            qName = new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "PostingTransactionSummary");
-            cachedSerQNames.add(qName);
-            cls = com.netsuite.webservices.platform.core_2018_2.PostingTransactionSummary.class;
-            cachedSerClasses.add(cls);
-            cachedSerFactories.add(beansf);
-            cachedDeserFactories.add(beandf);
-
     }
     private void addBindings6() {
             java.lang.Class cls;
@@ -7386,6 +7387,20 @@ public class NetSuiteBindingStub extends org.apache.axis.client.Stub implements 
             java.lang.Class simpledf = org.apache.axis.encoding.ser.SimpleDeserializerFactory.class;
             java.lang.Class simplelistsf = org.apache.axis.encoding.ser.SimpleListSerializerFactory.class;
             java.lang.Class simplelistdf = org.apache.axis.encoding.ser.SimpleListDeserializerFactory.class;
+            qName = new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "Passport");
+            cachedSerQNames.add(qName);
+            cls = com.netsuite.webservices.platform.core_2018_2.Passport.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
+            qName = new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "PostingTransactionSummary");
+            cachedSerQNames.add(qName);
+            cls = com.netsuite.webservices.platform.core_2018_2.PostingTransactionSummary.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
             qName = new javax.xml.namespace.QName("urn:core_2018_2.platform.webservices.netsuite.com", "PostingTransactionSummaryField");
             cachedSerQNames.add(qName);
             cls = com.netsuite.webservices.platform.core_2018_2.PostingTransactionSummaryField.class;
@@ -8120,20 +8135,6 @@ public class NetSuiteBindingStub extends org.apache.axis.client.Stub implements 
             cachedSerFactories.add(new org.apache.axis.encoding.ser.ArraySerializerFactory(qName, qName2));
             cachedDeserFactories.add(new org.apache.axis.encoding.ser.ArrayDeserializerFactory());
 
-            qName = new javax.xml.namespace.QName("urn:customers_2018_2.transactions.webservices.netsuite.com", "ReturnAuthorization");
-            cachedSerQNames.add(qName);
-            cls = com.netsuite.webservices.transactions.customers_2018_2.ReturnAuthorization.class;
-            cachedSerClasses.add(cls);
-            cachedSerFactories.add(beansf);
-            cachedDeserFactories.add(beandf);
-
-            qName = new javax.xml.namespace.QName("urn:customers_2018_2.transactions.webservices.netsuite.com", "ReturnAuthorizationItem");
-            cachedSerQNames.add(qName);
-            cls = com.netsuite.webservices.transactions.customers_2018_2.ReturnAuthorizationItem.class;
-            cachedSerClasses.add(cls);
-            cachedSerFactories.add(beansf);
-            cachedDeserFactories.add(beandf);
-
     }
     private void addBindings7() {
             java.lang.Class cls;
@@ -8149,6 +8150,20 @@ public class NetSuiteBindingStub extends org.apache.axis.client.Stub implements 
             java.lang.Class simpledf = org.apache.axis.encoding.ser.SimpleDeserializerFactory.class;
             java.lang.Class simplelistsf = org.apache.axis.encoding.ser.SimpleListSerializerFactory.class;
             java.lang.Class simplelistdf = org.apache.axis.encoding.ser.SimpleListDeserializerFactory.class;
+            qName = new javax.xml.namespace.QName("urn:customers_2018_2.transactions.webservices.netsuite.com", "ReturnAuthorization");
+            cachedSerQNames.add(qName);
+            cls = com.netsuite.webservices.transactions.customers_2018_2.ReturnAuthorization.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
+            qName = new javax.xml.namespace.QName("urn:customers_2018_2.transactions.webservices.netsuite.com", "ReturnAuthorizationItem");
+            cachedSerQNames.add(qName);
+            cls = com.netsuite.webservices.transactions.customers_2018_2.ReturnAuthorizationItem.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
             qName = new javax.xml.namespace.QName("urn:customers_2018_2.transactions.webservices.netsuite.com", "ReturnAuthorizationItemList");
             cachedSerQNames.add(qName);
             cls = com.netsuite.webservices.transactions.customers_2018_2.ReturnAuthorizationItem[].class;
@@ -8909,6 +8924,21 @@ public class NetSuiteBindingStub extends org.apache.axis.client.Stub implements 
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
 
+    }
+    private void addBindings8() {
+            java.lang.Class cls;
+            javax.xml.namespace.QName qName;
+            javax.xml.namespace.QName qName2;
+            java.lang.Class beansf = org.apache.axis.encoding.ser.BeanSerializerFactory.class;
+            java.lang.Class beandf = org.apache.axis.encoding.ser.BeanDeserializerFactory.class;
+            java.lang.Class enumsf = org.apache.axis.encoding.ser.EnumSerializerFactory.class;
+            java.lang.Class enumdf = org.apache.axis.encoding.ser.EnumDeserializerFactory.class;
+            java.lang.Class arraysf = org.apache.axis.encoding.ser.ArraySerializerFactory.class;
+            java.lang.Class arraydf = org.apache.axis.encoding.ser.ArrayDeserializerFactory.class;
+            java.lang.Class simplesf = org.apache.axis.encoding.ser.SimpleSerializerFactory.class;
+            java.lang.Class simpledf = org.apache.axis.encoding.ser.SimpleDeserializerFactory.class;
+            java.lang.Class simplelistsf = org.apache.axis.encoding.ser.SimpleListSerializerFactory.class;
+            java.lang.Class simplelistdf = org.apache.axis.encoding.ser.SimpleListDeserializerFactory.class;
             qName = new javax.xml.namespace.QName("urn:employees_2018_2.lists.webservices.netsuite.com", "EmployeeAccruedTime");
             cachedSerQNames.add(qName);
             cls = com.netsuite.webservices.lists.employees_2018_2.EmployeeAccruedTime.class;
@@ -8925,21 +8955,6 @@ public class NetSuiteBindingStub extends org.apache.axis.client.Stub implements 
             cachedSerFactories.add(new org.apache.axis.encoding.ser.ArraySerializerFactory(qName, qName2));
             cachedDeserFactories.add(new org.apache.axis.encoding.ser.ArrayDeserializerFactory());
 
-    }
-    private void addBindings8() {
-            java.lang.Class cls;
-            javax.xml.namespace.QName qName;
-            javax.xml.namespace.QName qName2;
-            java.lang.Class beansf = org.apache.axis.encoding.ser.BeanSerializerFactory.class;
-            java.lang.Class beandf = org.apache.axis.encoding.ser.BeanDeserializerFactory.class;
-            java.lang.Class enumsf = org.apache.axis.encoding.ser.EnumSerializerFactory.class;
-            java.lang.Class enumdf = org.apache.axis.encoding.ser.EnumDeserializerFactory.class;
-            java.lang.Class arraysf = org.apache.axis.encoding.ser.ArraySerializerFactory.class;
-            java.lang.Class arraydf = org.apache.axis.encoding.ser.ArrayDeserializerFactory.class;
-            java.lang.Class simplesf = org.apache.axis.encoding.ser.SimpleSerializerFactory.class;
-            java.lang.Class simpledf = org.apache.axis.encoding.ser.SimpleDeserializerFactory.class;
-            java.lang.Class simplelistsf = org.apache.axis.encoding.ser.SimpleListSerializerFactory.class;
-            java.lang.Class simplelistdf = org.apache.axis.encoding.ser.SimpleListDeserializerFactory.class;
             qName = new javax.xml.namespace.QName("urn:employees_2018_2.lists.webservices.netsuite.com", "EmployeeAddressbook");
             cachedSerQNames.add(qName);
             cls = com.netsuite.webservices.lists.employees_2018_2.EmployeeAddressbook.class;
@@ -9680,20 +9695,6 @@ public class NetSuiteBindingStub extends org.apache.axis.client.Stub implements 
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
 
-            qName = new javax.xml.namespace.QName("urn:filecabinet_2018_2.documents.webservices.netsuite.com", "FileSearchAdvanced");
-            cachedSerQNames.add(qName);
-            cls = com.netsuite.webservices.documents.filecabinet_2018_2.FileSearchAdvanced.class;
-            cachedSerClasses.add(cls);
-            cachedSerFactories.add(beansf);
-            cachedDeserFactories.add(beandf);
-
-            qName = new javax.xml.namespace.QName("urn:filecabinet_2018_2.documents.webservices.netsuite.com", "FileSearchRow");
-            cachedSerQNames.add(qName);
-            cls = com.netsuite.webservices.documents.filecabinet_2018_2.FileSearchRow.class;
-            cachedSerClasses.add(cls);
-            cachedSerFactories.add(beansf);
-            cachedDeserFactories.add(beandf);
-
     }
     private void addBindings9() {
             java.lang.Class cls;
@@ -9709,6 +9710,20 @@ public class NetSuiteBindingStub extends org.apache.axis.client.Stub implements 
             java.lang.Class simpledf = org.apache.axis.encoding.ser.SimpleDeserializerFactory.class;
             java.lang.Class simplelistsf = org.apache.axis.encoding.ser.SimpleListSerializerFactory.class;
             java.lang.Class simplelistdf = org.apache.axis.encoding.ser.SimpleListDeserializerFactory.class;
+            qName = new javax.xml.namespace.QName("urn:filecabinet_2018_2.documents.webservices.netsuite.com", "FileSearchAdvanced");
+            cachedSerQNames.add(qName);
+            cls = com.netsuite.webservices.documents.filecabinet_2018_2.FileSearchAdvanced.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
+            qName = new javax.xml.namespace.QName("urn:filecabinet_2018_2.documents.webservices.netsuite.com", "FileSearchRow");
+            cachedSerQNames.add(qName);
+            cls = com.netsuite.webservices.documents.filecabinet_2018_2.FileSearchRow.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
             qName = new javax.xml.namespace.QName("urn:filecabinet_2018_2.documents.webservices.netsuite.com", "FileSiteCategory");
             cachedSerQNames.add(qName);
             cls = com.netsuite.webservices.documents.filecabinet_2018_2.FileSiteCategory.class;
@@ -10451,6 +10466,21 @@ public class NetSuiteBindingStub extends org.apache.axis.client.Stub implements 
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
 
+    }
+    private void addBindings10() {
+            java.lang.Class cls;
+            javax.xml.namespace.QName qName;
+            javax.xml.namespace.QName qName2;
+            java.lang.Class beansf = org.apache.axis.encoding.ser.BeanSerializerFactory.class;
+            java.lang.Class beandf = org.apache.axis.encoding.ser.BeanDeserializerFactory.class;
+            java.lang.Class enumsf = org.apache.axis.encoding.ser.EnumSerializerFactory.class;
+            java.lang.Class enumdf = org.apache.axis.encoding.ser.EnumDeserializerFactory.class;
+            java.lang.Class arraysf = org.apache.axis.encoding.ser.ArraySerializerFactory.class;
+            java.lang.Class arraydf = org.apache.axis.encoding.ser.ArrayDeserializerFactory.class;
+            java.lang.Class simplesf = org.apache.axis.encoding.ser.SimpleSerializerFactory.class;
+            java.lang.Class simpledf = org.apache.axis.encoding.ser.SimpleDeserializerFactory.class;
+            java.lang.Class simplelistsf = org.apache.axis.encoding.ser.SimpleListSerializerFactory.class;
+            java.lang.Class simplelistdf = org.apache.axis.encoding.ser.SimpleListDeserializerFactory.class;
             qName = new javax.xml.namespace.QName("urn:marketing_2018_2.lists.webservices.netsuite.com", "PromotionCodePartnersList");
             cachedSerQNames.add(qName);
             cls = com.netsuite.webservices.lists.marketing_2018_2.PromotionCodePartners[].class;
@@ -10467,21 +10497,6 @@ public class NetSuiteBindingStub extends org.apache.axis.client.Stub implements 
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
 
-    }
-    private void addBindings10() {
-            java.lang.Class cls;
-            javax.xml.namespace.QName qName;
-            javax.xml.namespace.QName qName2;
-            java.lang.Class beansf = org.apache.axis.encoding.ser.BeanSerializerFactory.class;
-            java.lang.Class beandf = org.apache.axis.encoding.ser.BeanDeserializerFactory.class;
-            java.lang.Class enumsf = org.apache.axis.encoding.ser.EnumSerializerFactory.class;
-            java.lang.Class enumdf = org.apache.axis.encoding.ser.EnumDeserializerFactory.class;
-            java.lang.Class arraysf = org.apache.axis.encoding.ser.ArraySerializerFactory.class;
-            java.lang.Class arraydf = org.apache.axis.encoding.ser.ArrayDeserializerFactory.class;
-            java.lang.Class simplesf = org.apache.axis.encoding.ser.SimpleSerializerFactory.class;
-            java.lang.Class simpledf = org.apache.axis.encoding.ser.SimpleDeserializerFactory.class;
-            java.lang.Class simplelistsf = org.apache.axis.encoding.ser.SimpleListSerializerFactory.class;
-            java.lang.Class simplelistdf = org.apache.axis.encoding.ser.SimpleListDeserializerFactory.class;
             qName = new javax.xml.namespace.QName("urn:marketing_2018_2.lists.webservices.netsuite.com", "PromotionCodeSearchAdvanced");
             cachedSerQNames.add(qName);
             cls = com.netsuite.webservices.lists.marketing_2018_2.PromotionCodeSearchAdvanced.class;
@@ -10642,6 +10657,22 @@ public class NetSuiteBindingStub extends org.apache.axis.client.Stub implements 
             cachedSerClasses.add(cls);
             qName = new javax.xml.namespace.QName("urn:purchases_2018_2.transactions.webservices.netsuite.com", "InboundShipmentItems");
             qName2 = new javax.xml.namespace.QName("urn:purchases_2018_2.transactions.webservices.netsuite.com", "inboundShipmentItems");
+            cachedSerFactories.add(new org.apache.axis.encoding.ser.ArraySerializerFactory(qName, qName2));
+            cachedDeserFactories.add(new org.apache.axis.encoding.ser.ArrayDeserializerFactory());
+
+            qName = new javax.xml.namespace.QName("urn:purchases_2018_2.transactions.webservices.netsuite.com", "InboundShipmentLandedCost");
+            cachedSerQNames.add(qName);
+            cls = com.netsuite.webservices.transactions.purchases_2018_2.InboundShipmentLandedCost.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
+            qName = new javax.xml.namespace.QName("urn:purchases_2018_2.transactions.webservices.netsuite.com", "InboundShipmentLandedCostList");
+            cachedSerQNames.add(qName);
+            cls = com.netsuite.webservices.transactions.purchases_2018_2.InboundShipmentLandedCost[].class;
+            cachedSerClasses.add(cls);
+            qName = new javax.xml.namespace.QName("urn:purchases_2018_2.transactions.webservices.netsuite.com", "InboundShipmentLandedCost");
+            qName2 = new javax.xml.namespace.QName("urn:purchases_2018_2.transactions.webservices.netsuite.com", "inboundShipmentLandedCost");
             cachedSerFactories.add(new org.apache.axis.encoding.ser.ArraySerializerFactory(qName, qName2));
             cachedDeserFactories.add(new org.apache.axis.encoding.ser.ArrayDeserializerFactory());
 
@@ -11210,6 +11241,21 @@ public class NetSuiteBindingStub extends org.apache.axis.client.Stub implements 
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
 
+    }
+    private void addBindings11() {
+            java.lang.Class cls;
+            javax.xml.namespace.QName qName;
+            javax.xml.namespace.QName qName2;
+            java.lang.Class beansf = org.apache.axis.encoding.ser.BeanSerializerFactory.class;
+            java.lang.Class beandf = org.apache.axis.encoding.ser.BeanDeserializerFactory.class;
+            java.lang.Class enumsf = org.apache.axis.encoding.ser.EnumSerializerFactory.class;
+            java.lang.Class enumdf = org.apache.axis.encoding.ser.EnumDeserializerFactory.class;
+            java.lang.Class arraysf = org.apache.axis.encoding.ser.ArraySerializerFactory.class;
+            java.lang.Class arraydf = org.apache.axis.encoding.ser.ArrayDeserializerFactory.class;
+            java.lang.Class simplesf = org.apache.axis.encoding.ser.SimpleSerializerFactory.class;
+            java.lang.Class simpledf = org.apache.axis.encoding.ser.SimpleDeserializerFactory.class;
+            java.lang.Class simplelistsf = org.apache.axis.encoding.ser.SimpleListSerializerFactory.class;
+            java.lang.Class simplelistdf = org.apache.axis.encoding.ser.SimpleListDeserializerFactory.class;
             qName = new javax.xml.namespace.QName("urn:relationships_2018_2.lists.webservices.netsuite.com", "CustomerStatus");
             cachedSerQNames.add(qName);
             cls = com.netsuite.webservices.lists.relationships_2018_2.CustomerStatus.class;
@@ -11238,21 +11284,22 @@ public class NetSuiteBindingStub extends org.apache.axis.client.Stub implements 
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
 
-    }
-    private void addBindings11() {
-            java.lang.Class cls;
-            javax.xml.namespace.QName qName;
-            javax.xml.namespace.QName qName2;
-            java.lang.Class beansf = org.apache.axis.encoding.ser.BeanSerializerFactory.class;
-            java.lang.Class beandf = org.apache.axis.encoding.ser.BeanDeserializerFactory.class;
-            java.lang.Class enumsf = org.apache.axis.encoding.ser.EnumSerializerFactory.class;
-            java.lang.Class enumdf = org.apache.axis.encoding.ser.EnumDeserializerFactory.class;
-            java.lang.Class arraysf = org.apache.axis.encoding.ser.ArraySerializerFactory.class;
-            java.lang.Class arraydf = org.apache.axis.encoding.ser.ArrayDeserializerFactory.class;
-            java.lang.Class simplesf = org.apache.axis.encoding.ser.SimpleSerializerFactory.class;
-            java.lang.Class simpledf = org.apache.axis.encoding.ser.SimpleDeserializerFactory.class;
-            java.lang.Class simplelistsf = org.apache.axis.encoding.ser.SimpleListSerializerFactory.class;
-            java.lang.Class simplelistdf = org.apache.axis.encoding.ser.SimpleListDeserializerFactory.class;
+            qName = new javax.xml.namespace.QName("urn:relationships_2018_2.lists.webservices.netsuite.com", "CustomerTaxRegistration");
+            cachedSerQNames.add(qName);
+            cls = com.netsuite.webservices.lists.relationships_2018_2.CustomerTaxRegistration.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
+            qName = new javax.xml.namespace.QName("urn:relationships_2018_2.lists.webservices.netsuite.com", "CustomerTaxRegistrationList");
+            cachedSerQNames.add(qName);
+            cls = com.netsuite.webservices.lists.relationships_2018_2.CustomerTaxRegistration[].class;
+            cachedSerClasses.add(cls);
+            qName = new javax.xml.namespace.QName("urn:relationships_2018_2.lists.webservices.netsuite.com", "CustomerTaxRegistration");
+            qName2 = new javax.xml.namespace.QName("urn:relationships_2018_2.lists.webservices.netsuite.com", "customerTaxRegistration");
+            cachedSerFactories.add(new org.apache.axis.encoding.ser.ArraySerializerFactory(qName, qName2));
+            cachedDeserFactories.add(new org.apache.axis.encoding.ser.ArrayDeserializerFactory());
+
             qName = new javax.xml.namespace.QName("urn:relationships_2018_2.lists.webservices.netsuite.com", "EntityGroup");
             cachedSerQNames.add(qName);
             cls = com.netsuite.webservices.lists.relationships_2018_2.EntityGroup.class;
@@ -11535,6 +11582,22 @@ public class NetSuiteBindingStub extends org.apache.axis.client.Stub implements 
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
 
+            qName = new javax.xml.namespace.QName("urn:relationships_2018_2.lists.webservices.netsuite.com", "PartnerTaxRegistration");
+            cachedSerQNames.add(qName);
+            cls = com.netsuite.webservices.lists.relationships_2018_2.PartnerTaxRegistration.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
+            qName = new javax.xml.namespace.QName("urn:relationships_2018_2.lists.webservices.netsuite.com", "PartnerTaxRegistrationList");
+            cachedSerQNames.add(qName);
+            cls = com.netsuite.webservices.lists.relationships_2018_2.PartnerTaxRegistration[].class;
+            cachedSerClasses.add(cls);
+            qName = new javax.xml.namespace.QName("urn:relationships_2018_2.lists.webservices.netsuite.com", "PartnerTaxRegistration");
+            qName2 = new javax.xml.namespace.QName("urn:relationships_2018_2.lists.webservices.netsuite.com", "partnerTaxRegistration");
+            cachedSerFactories.add(new org.apache.axis.encoding.ser.ArraySerializerFactory(qName, qName2));
+            cachedDeserFactories.add(new org.apache.axis.encoding.ser.ArrayDeserializerFactory());
+
             qName = new javax.xml.namespace.QName("urn:relationships_2018_2.lists.webservices.netsuite.com", "Subscriptions");
             cachedSerQNames.add(qName);
             cls = com.netsuite.webservices.lists.relationships_2018_2.Subscriptions.class;
@@ -11642,6 +11705,22 @@ public class NetSuiteBindingStub extends org.apache.axis.client.Stub implements 
             cachedSerClasses.add(cls);
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
+
+            qName = new javax.xml.namespace.QName("urn:relationships_2018_2.lists.webservices.netsuite.com", "VendorTaxRegistration");
+            cachedSerQNames.add(qName);
+            cls = com.netsuite.webservices.lists.relationships_2018_2.VendorTaxRegistration.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
+            qName = new javax.xml.namespace.QName("urn:relationships_2018_2.lists.webservices.netsuite.com", "VendorTaxRegistrationList");
+            cachedSerQNames.add(qName);
+            cls = com.netsuite.webservices.lists.relationships_2018_2.VendorTaxRegistration[].class;
+            cachedSerClasses.add(cls);
+            qName = new javax.xml.namespace.QName("urn:relationships_2018_2.lists.webservices.netsuite.com", "VendorTaxRegistration");
+            qName2 = new javax.xml.namespace.QName("urn:relationships_2018_2.lists.webservices.netsuite.com", "vendorTaxRegistration");
+            cachedSerFactories.add(new org.apache.axis.encoding.ser.ArraySerializerFactory(qName, qName2));
+            cachedDeserFactories.add(new org.apache.axis.encoding.ser.ArrayDeserializerFactory());
 
             qName = new javax.xml.namespace.QName("urn:sales_2018_2.transactions.webservices.netsuite.com", "AccountingTransactionSearch");
             cachedSerQNames.add(qName);
@@ -11947,6 +12026,21 @@ public class NetSuiteBindingStub extends org.apache.axis.client.Stub implements 
             cachedSerFactories.add(new org.apache.axis.encoding.ser.ArraySerializerFactory(qName, qName2));
             cachedDeserFactories.add(new org.apache.axis.encoding.ser.ArrayDeserializerFactory());
 
+    }
+    private void addBindings12() {
+            java.lang.Class cls;
+            javax.xml.namespace.QName qName;
+            javax.xml.namespace.QName qName2;
+            java.lang.Class beansf = org.apache.axis.encoding.ser.BeanSerializerFactory.class;
+            java.lang.Class beandf = org.apache.axis.encoding.ser.BeanDeserializerFactory.class;
+            java.lang.Class enumsf = org.apache.axis.encoding.ser.EnumSerializerFactory.class;
+            java.lang.Class enumdf = org.apache.axis.encoding.ser.EnumDeserializerFactory.class;
+            java.lang.Class arraysf = org.apache.axis.encoding.ser.ArraySerializerFactory.class;
+            java.lang.Class arraydf = org.apache.axis.encoding.ser.ArrayDeserializerFactory.class;
+            java.lang.Class simplesf = org.apache.axis.encoding.ser.SimpleSerializerFactory.class;
+            java.lang.Class simpledf = org.apache.axis.encoding.ser.SimpleDeserializerFactory.class;
+            java.lang.Class simplelistsf = org.apache.axis.encoding.ser.SimpleListSerializerFactory.class;
+            java.lang.Class simplelistdf = org.apache.axis.encoding.ser.SimpleListDeserializerFactory.class;
             qName = new javax.xml.namespace.QName("urn:sales_2018_2.transactions.webservices.netsuite.com", "ItemFulfillment");
             cachedSerQNames.add(qName);
             cls = com.netsuite.webservices.transactions.sales_2018_2.ItemFulfillment.class;
@@ -12025,21 +12119,6 @@ public class NetSuiteBindingStub extends org.apache.axis.client.Stub implements 
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
 
-    }
-    private void addBindings12() {
-            java.lang.Class cls;
-            javax.xml.namespace.QName qName;
-            javax.xml.namespace.QName qName2;
-            java.lang.Class beansf = org.apache.axis.encoding.ser.BeanSerializerFactory.class;
-            java.lang.Class beandf = org.apache.axis.encoding.ser.BeanDeserializerFactory.class;
-            java.lang.Class enumsf = org.apache.axis.encoding.ser.EnumSerializerFactory.class;
-            java.lang.Class enumdf = org.apache.axis.encoding.ser.EnumDeserializerFactory.class;
-            java.lang.Class arraysf = org.apache.axis.encoding.ser.ArraySerializerFactory.class;
-            java.lang.Class arraydf = org.apache.axis.encoding.ser.ArrayDeserializerFactory.class;
-            java.lang.Class simplesf = org.apache.axis.encoding.ser.SimpleSerializerFactory.class;
-            java.lang.Class simpledf = org.apache.axis.encoding.ser.SimpleDeserializerFactory.class;
-            java.lang.Class simplelistsf = org.apache.axis.encoding.ser.SimpleListSerializerFactory.class;
-            java.lang.Class simplelistdf = org.apache.axis.encoding.ser.SimpleListDeserializerFactory.class;
             qName = new javax.xml.namespace.QName("urn:sales_2018_2.transactions.webservices.netsuite.com", "ItemFulfillmentPackageUspsList");
             cachedSerQNames.add(qName);
             cls = com.netsuite.webservices.transactions.sales_2018_2.ItemFulfillmentPackageUsps[].class;
@@ -12724,6 +12803,21 @@ public class NetSuiteBindingStub extends org.apache.axis.client.Stub implements 
             cachedSerFactories.add(new org.apache.axis.encoding.ser.ArraySerializerFactory(qName, qName2));
             cachedDeserFactories.add(new org.apache.axis.encoding.ser.ArrayDeserializerFactory());
 
+    }
+    private void addBindings13() {
+            java.lang.Class cls;
+            javax.xml.namespace.QName qName;
+            javax.xml.namespace.QName qName2;
+            java.lang.Class beansf = org.apache.axis.encoding.ser.BeanSerializerFactory.class;
+            java.lang.Class beandf = org.apache.axis.encoding.ser.BeanDeserializerFactory.class;
+            java.lang.Class enumsf = org.apache.axis.encoding.ser.EnumSerializerFactory.class;
+            java.lang.Class enumdf = org.apache.axis.encoding.ser.EnumDeserializerFactory.class;
+            java.lang.Class arraysf = org.apache.axis.encoding.ser.ArraySerializerFactory.class;
+            java.lang.Class arraydf = org.apache.axis.encoding.ser.ArrayDeserializerFactory.class;
+            java.lang.Class simplesf = org.apache.axis.encoding.ser.SimpleSerializerFactory.class;
+            java.lang.Class simpledf = org.apache.axis.encoding.ser.SimpleDeserializerFactory.class;
+            java.lang.Class simplelistsf = org.apache.axis.encoding.ser.SimpleListSerializerFactory.class;
+            java.lang.Class simplelistdf = org.apache.axis.encoding.ser.SimpleListDeserializerFactory.class;
             qName = new javax.xml.namespace.QName("urn:support_2018_2.lists.webservices.netsuite.com", "IssueSearch");
             cachedSerQNames.add(qName);
             cls = com.netsuite.webservices.lists.support_2018_2.IssueSearch.class;
@@ -12796,21 +12890,6 @@ public class NetSuiteBindingStub extends org.apache.axis.client.Stub implements 
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
 
-    }
-    private void addBindings13() {
-            java.lang.Class cls;
-            javax.xml.namespace.QName qName;
-            javax.xml.namespace.QName qName2;
-            java.lang.Class beansf = org.apache.axis.encoding.ser.BeanSerializerFactory.class;
-            java.lang.Class beandf = org.apache.axis.encoding.ser.BeanDeserializerFactory.class;
-            java.lang.Class enumsf = org.apache.axis.encoding.ser.EnumSerializerFactory.class;
-            java.lang.Class enumdf = org.apache.axis.encoding.ser.EnumDeserializerFactory.class;
-            java.lang.Class arraysf = org.apache.axis.encoding.ser.ArraySerializerFactory.class;
-            java.lang.Class arraydf = org.apache.axis.encoding.ser.ArrayDeserializerFactory.class;
-            java.lang.Class simplesf = org.apache.axis.encoding.ser.SimpleSerializerFactory.class;
-            java.lang.Class simpledf = org.apache.axis.encoding.ser.SimpleDeserializerFactory.class;
-            java.lang.Class simplelistsf = org.apache.axis.encoding.ser.SimpleListSerializerFactory.class;
-            java.lang.Class simplelistdf = org.apache.axis.encoding.ser.SimpleListDeserializerFactory.class;
             qName = new javax.xml.namespace.QName("urn:support_2018_2.lists.webservices.netsuite.com", "SolutionsList");
             cachedSerQNames.add(qName);
             cls = com.netsuite.webservices.lists.support_2018_2.Solutions[].class;
@@ -13453,6 +13532,21 @@ public class NetSuiteBindingStub extends org.apache.axis.client.Stub implements 
             cachedSerFactories.add(enumsf);
             cachedDeserFactories.add(enumdf);
 
+    }
+    private void addBindings14() {
+            java.lang.Class cls;
+            javax.xml.namespace.QName qName;
+            javax.xml.namespace.QName qName2;
+            java.lang.Class beansf = org.apache.axis.encoding.ser.BeanSerializerFactory.class;
+            java.lang.Class beandf = org.apache.axis.encoding.ser.BeanDeserializerFactory.class;
+            java.lang.Class enumsf = org.apache.axis.encoding.ser.EnumSerializerFactory.class;
+            java.lang.Class enumdf = org.apache.axis.encoding.ser.EnumDeserializerFactory.class;
+            java.lang.Class arraysf = org.apache.axis.encoding.ser.ArraySerializerFactory.class;
+            java.lang.Class arraydf = org.apache.axis.encoding.ser.ArrayDeserializerFactory.class;
+            java.lang.Class simplesf = org.apache.axis.encoding.ser.SimpleSerializerFactory.class;
+            java.lang.Class simpledf = org.apache.axis.encoding.ser.SimpleDeserializerFactory.class;
+            java.lang.Class simplelistsf = org.apache.axis.encoding.ser.SimpleListSerializerFactory.class;
+            java.lang.Class simplelistdf = org.apache.axis.encoding.ser.SimpleListDeserializerFactory.class;
             qName = new javax.xml.namespace.QName("urn:types.common_2018_2.platform.webservices.netsuite.com", "GlobalSubscriptionStatus");
             cachedSerQNames.add(qName);
             cls = com.netsuite.webservices.platform.common_2018_2.types.GlobalSubscriptionStatus.class;
@@ -13523,21 +13617,6 @@ public class NetSuiteBindingStub extends org.apache.axis.client.Stub implements 
             cachedSerFactories.add(enumsf);
             cachedDeserFactories.add(enumdf);
 
-    }
-    private void addBindings14() {
-            java.lang.Class cls;
-            javax.xml.namespace.QName qName;
-            javax.xml.namespace.QName qName2;
-            java.lang.Class beansf = org.apache.axis.encoding.ser.BeanSerializerFactory.class;
-            java.lang.Class beandf = org.apache.axis.encoding.ser.BeanDeserializerFactory.class;
-            java.lang.Class enumsf = org.apache.axis.encoding.ser.EnumSerializerFactory.class;
-            java.lang.Class enumdf = org.apache.axis.encoding.ser.EnumDeserializerFactory.class;
-            java.lang.Class arraysf = org.apache.axis.encoding.ser.ArraySerializerFactory.class;
-            java.lang.Class arraydf = org.apache.axis.encoding.ser.ArrayDeserializerFactory.class;
-            java.lang.Class simplesf = org.apache.axis.encoding.ser.SimpleSerializerFactory.class;
-            java.lang.Class simpledf = org.apache.axis.encoding.ser.SimpleDeserializerFactory.class;
-            java.lang.Class simplelistsf = org.apache.axis.encoding.ser.SimpleListSerializerFactory.class;
-            java.lang.Class simplelistdf = org.apache.axis.encoding.ser.SimpleListDeserializerFactory.class;
             qName = new javax.xml.namespace.QName("urn:types.common_2018_2.platform.webservices.netsuite.com", "PresentationItemType");
             cachedSerQNames.add(qName);
             cls = com.netsuite.webservices.platform.common_2018_2.types.PresentationItemType.class;
@@ -13993,6 +14072,13 @@ public class NetSuiteBindingStub extends org.apache.axis.client.Stub implements 
             cachedSerFactories.add(enumsf);
             cachedDeserFactories.add(enumdf);
 
+            qName = new javax.xml.namespace.QName("urn:types.employees_2018_2.lists.webservices.netsuite.com", "PayrollItemAccountCategory");
+            cachedSerQNames.add(qName);
+            cls = com.netsuite.webservices.lists.employees_2018_2.types.PayrollItemAccountCategory.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(enumsf);
+            cachedDeserFactories.add(enumdf);
+
             qName = new javax.xml.namespace.QName("urn:types.employees_2018_2.lists.webservices.netsuite.com", "PayrollItemItemTypeNoHierarchy");
             cachedSerQNames.add(qName);
             cls = com.netsuite.webservices.lists.employees_2018_2.types.PayrollItemItemTypeNoHierarchy.class;
@@ -14161,6 +14247,21 @@ public class NetSuiteBindingStub extends org.apache.axis.client.Stub implements 
             cachedSerFactories.add(enumsf);
             cachedDeserFactories.add(enumdf);
 
+    }
+    private void addBindings15() {
+            java.lang.Class cls;
+            javax.xml.namespace.QName qName;
+            javax.xml.namespace.QName qName2;
+            java.lang.Class beansf = org.apache.axis.encoding.ser.BeanSerializerFactory.class;
+            java.lang.Class beandf = org.apache.axis.encoding.ser.BeanDeserializerFactory.class;
+            java.lang.Class enumsf = org.apache.axis.encoding.ser.EnumSerializerFactory.class;
+            java.lang.Class enumdf = org.apache.axis.encoding.ser.EnumDeserializerFactory.class;
+            java.lang.Class arraysf = org.apache.axis.encoding.ser.ArraySerializerFactory.class;
+            java.lang.Class arraydf = org.apache.axis.encoding.ser.ArrayDeserializerFactory.class;
+            java.lang.Class simplesf = org.apache.axis.encoding.ser.SimpleSerializerFactory.class;
+            java.lang.Class simpledf = org.apache.axis.encoding.ser.SimpleDeserializerFactory.class;
+            java.lang.Class simplelistsf = org.apache.axis.encoding.ser.SimpleListSerializerFactory.class;
+            java.lang.Class simplelistdf = org.apache.axis.encoding.ser.SimpleListDeserializerFactory.class;
             qName = new javax.xml.namespace.QName("urn:types.marketing_2018_2.lists.webservices.netsuite.com", "CampaignStatus");
             cachedSerQNames.add(qName);
             cls = com.netsuite.webservices.lists.marketing_2018_2.types.CampaignStatus.class;
@@ -14178,6 +14279,13 @@ public class NetSuiteBindingStub extends org.apache.axis.client.Stub implements 
             qName = new javax.xml.namespace.QName("urn:types.marketing_2018_2.lists.webservices.netsuite.com", "PromotionCodeUseType");
             cachedSerQNames.add(qName);
             cls = com.netsuite.webservices.lists.marketing_2018_2.types.PromotionCodeUseType.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(enumsf);
+            cachedDeserFactories.add(enumdf);
+
+            qName = new javax.xml.namespace.QName("urn:types.purchases_2018_2.transactions.webservices.netsuite.com", "InboundShipmentLandedCostAllocationMethod");
+            cachedSerQNames.add(qName);
+            cls = com.netsuite.webservices.transactions.purchases_2018_2.types.InboundShipmentLandedCostAllocationMethod.class;
             cachedSerClasses.add(cls);
             cachedSerFactories.add(enumsf);
             cachedDeserFactories.add(enumdf);
@@ -14238,21 +14346,6 @@ public class NetSuiteBindingStub extends org.apache.axis.client.Stub implements 
             cachedSerFactories.add(enumsf);
             cachedDeserFactories.add(enumdf);
 
-    }
-    private void addBindings15() {
-            java.lang.Class cls;
-            javax.xml.namespace.QName qName;
-            javax.xml.namespace.QName qName2;
-            java.lang.Class beansf = org.apache.axis.encoding.ser.BeanSerializerFactory.class;
-            java.lang.Class beandf = org.apache.axis.encoding.ser.BeanDeserializerFactory.class;
-            java.lang.Class enumsf = org.apache.axis.encoding.ser.EnumSerializerFactory.class;
-            java.lang.Class enumdf = org.apache.axis.encoding.ser.EnumDeserializerFactory.class;
-            java.lang.Class arraysf = org.apache.axis.encoding.ser.ArraySerializerFactory.class;
-            java.lang.Class arraydf = org.apache.axis.encoding.ser.ArrayDeserializerFactory.class;
-            java.lang.Class simplesf = org.apache.axis.encoding.ser.SimpleSerializerFactory.class;
-            java.lang.Class simpledf = org.apache.axis.encoding.ser.SimpleDeserializerFactory.class;
-            java.lang.Class simplelistsf = org.apache.axis.encoding.ser.SimpleListSerializerFactory.class;
-            java.lang.Class simplelistdf = org.apache.axis.encoding.ser.SimpleListDeserializerFactory.class;
             qName = new javax.xml.namespace.QName("urn:types.relationships_2018_2.lists.webservices.netsuite.com", "CustomerNegativeNumberFormat");
             cachedSerQNames.add(qName);
             cls = com.netsuite.webservices.lists.relationships_2018_2.types.CustomerNegativeNumberFormat.class;
@@ -14871,6 +14964,21 @@ public class NetSuiteBindingStub extends org.apache.axis.client.Stub implements 
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
 
+    }
+    private void addBindings16() {
+            java.lang.Class cls;
+            javax.xml.namespace.QName qName;
+            javax.xml.namespace.QName qName2;
+            java.lang.Class beansf = org.apache.axis.encoding.ser.BeanSerializerFactory.class;
+            java.lang.Class beandf = org.apache.axis.encoding.ser.BeanDeserializerFactory.class;
+            java.lang.Class enumsf = org.apache.axis.encoding.ser.EnumSerializerFactory.class;
+            java.lang.Class enumdf = org.apache.axis.encoding.ser.EnumDeserializerFactory.class;
+            java.lang.Class arraysf = org.apache.axis.encoding.ser.ArraySerializerFactory.class;
+            java.lang.Class arraydf = org.apache.axis.encoding.ser.ArrayDeserializerFactory.class;
+            java.lang.Class simplesf = org.apache.axis.encoding.ser.SimpleSerializerFactory.class;
+            java.lang.Class simpledf = org.apache.axis.encoding.ser.SimpleDeserializerFactory.class;
+            java.lang.Class simplelistsf = org.apache.axis.encoding.ser.SimpleListSerializerFactory.class;
+            java.lang.Class simplelistdf = org.apache.axis.encoding.ser.SimpleListDeserializerFactory.class;
             qName = new javax.xml.namespace.QName("urn:website_2018_2.lists.webservices.netsuite.com", "SiteCategoryTranslationList");
             cachedSerQNames.add(qName);
             cls = com.netsuite.webservices.lists.website_2018_2.SiteCategoryTranslation[].class;
