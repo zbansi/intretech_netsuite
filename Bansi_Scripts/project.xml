@@ -1,5 +1,5 @@
 <project info="SuiteCloud IDE generated file, do not edit." setAttributesOnUpdate="false">
-  <folder name="Bansi_Scripts" bundleable="true">
+  <folder name="Bansi_Scripts">
     <folder name="CUX_PUB_METADATA" bundleable="true">
       <file name="cux_pub_metadata_retrieve.js" bundleable="true"/>
     </folder>
@@ -183,7 +183,7 @@
         <file name="WorkflowActionScriptSamp01.js" bundleable="true"/>
       </folder>
     </folder>
-    <folder name="cux_eg_interface" bundleable="true">
+    <folder name="cux_eg_interface">
       <file name="ItemSyncInterface.js" bundleable="false" hideInBundle="false" isOnline="false" textFileEncoding="_utf8">
         <description></description>
         <altTagCaption></altTagCaption>

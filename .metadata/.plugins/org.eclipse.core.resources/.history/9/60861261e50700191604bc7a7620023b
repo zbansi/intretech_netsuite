@@ -1,6 +1,0 @@
-{ "baseUrl": "/SuiteScripts/Bansi_Scripts/lib",
-	"paths": {
-		"batchPrint": "BsPrintMAO.js",
-		"bsmaosearch" : "maoSaveSearchCreate.js"
-		}
-}

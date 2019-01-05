@@ -1,5 +1,0 @@
-{ "baseUrl": "/SuiteScripts/Bansi_Scripts/lib",
-	"paths": {
-		"urlUpdate" : "urlUpdate"
-		}
-}

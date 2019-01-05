@@ -1,6 +1,0 @@
-{ "baseUrl": "/SuiteScripts/Bansi_Scripts/lib",
-	"paths": {
-		"batchPrint": "BsPrintMAO",	
-		"urlUpdate" : "urlUpdate"
-		}
-}

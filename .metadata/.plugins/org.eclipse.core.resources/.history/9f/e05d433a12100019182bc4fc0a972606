@@ -1,0 +1,11 @@
+package com.bansi.webservices.samples;
+
+public final class Messages {
+	public static final String EMPTY_STRING = "";
+	public static final String GETTING_URL = "Getting URL using getDataCenterUrls() operation...";
+	public static final String ERROR_PREFIX="";
+	public static final String INFO_PREFIX="";
+	public static final String WARNING_PREFIX="";
+	private Messages() {
+	};
+}

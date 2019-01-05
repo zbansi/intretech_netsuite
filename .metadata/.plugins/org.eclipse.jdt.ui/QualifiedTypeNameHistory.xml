@@ -1,9 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="javax.xml.bind.annotation.XmlType"/>
-<fullyQualifiedTypeName name="javax.xml.bind.annotation.XmlAccessorType"/>
-<fullyQualifiedTypeName name="com.bansi.ws.example.Score"/>
-<fullyQualifiedTypeName name="javax.jws.WebMethod"/>
 <fullyQualifiedTypeName name="org.omg.CORBA.PUBLIC_MEMBER"/>
 <fullyQualifiedTypeName name="com.bansi.ws.example.Hello"/>
 <fullyQualifiedTypeName name="java.nio.charset.MalformedInputException"/>
@@ -34,15 +30,8 @@
 <fullyQualifiedTypeName name="com.netsuite.webservices.lists.relationships_2017_1.Customer"/>
 <fullyQualifiedTypeName name="com.netsuite.webservices.platform.core_2018_2.Status"/>
 <fullyQualifiedTypeName name="com.netsuite.webservices.platform.core_2017_1.StatusDetail"/>
-<fullyQualifiedTypeName name="com.netsuite.webservices.platform.core_2017_1.types.RecordType"/>
-<fullyQualifiedTypeName name="com.netsuite.webservices.lists.employees_2017_1.Employee"/>
-<fullyQualifiedTypeName name="com.netsuite.webservices.platform_2017_1.NetSuiteServiceLocator"/>
-<fullyQualifiedTypeName name="com.netsuite.webservices.platform.core_2017_1.RecordRef"/>
-<fullyQualifiedTypeName name="com.netsuite.webservices.platform_2017_1.NetSuitePortType"/>
-<fullyQualifiedTypeName name="com.netsuite.webservices.platform_2018_2.NetSuitePortType"/>
 <fullyQualifiedTypeName name="java.net.UnknownHostException"/>
 <fullyQualifiedTypeName name="java.io.InputStream"/>
-<fullyQualifiedTypeName name="java.net.URL"/>
 <fullyQualifiedTypeName name="java.util.ArrayList"/>
 <fullyQualifiedTypeName name="java.io.UnsupportedEncodingException"/>
 <fullyQualifiedTypeName name="java.util.HashMap"/>
@@ -51,4 +40,24 @@
 <fullyQualifiedTypeName name="com.alibaba.fastjson.JSON"/>
 <fullyQualifiedTypeName name="com.alibaba.fastjson.JSONObject"/>
 <fullyQualifiedTypeName name="org.apache.http.HttpRequest"/>
+<fullyQualifiedTypeName name="com.netsuite.webservices.platform.core_2017_1.RecordRef"/>
+<fullyQualifiedTypeName name="com.netsuite.webservices.platform.core_2017_1.types.RecordType"/>
+<fullyQualifiedTypeName name="com.netsuite.webservices.lists.employees_2017_1.Employee"/>
+<fullyQualifiedTypeName name="org.json.simple.parser.JSONParser"/>
+<fullyQualifiedTypeName name="org.json.simple.parser.ParseException"/>
+<fullyQualifiedTypeName name="org.json.simple.JSONArray"/>
+<fullyQualifiedTypeName name="org.json.simple.JSONObject"/>
+<fullyQualifiedTypeName name="com.netsuite.webservices.platform_2017_1.NetSuitePortType"/>
+<fullyQualifiedTypeName name="com.netsuite.webservices.platform_2017_1.NetSuiteServiceLocator"/>
+<fullyQualifiedTypeName name="com.netsuite.webservices.platform_2018_2.NetSuitePortType"/>
+<fullyQualifiedTypeName name="com.netsuite.webservices.platform.core_2018_2.types.RecordType"/>
+<fullyQualifiedTypeName name="com.netsuite.webservices.lists.employees_2018_2.Employee"/>
+<fullyQualifiedTypeName name="com.netsuite.webservices.platform_2018_2.NetSuiteServiceLocator"/>
+<fullyQualifiedTypeName name="com.netsuite.webservices.platform.core_2018_2.Passport"/>
+<fullyQualifiedTypeName name="com.netsuite.webservices.platform_2018_2.NetSuiteBindingStub"/>
+<fullyQualifiedTypeName name="com.netsuite.webservices.platform.core_2018_2.RecordRef"/>
+<fullyQualifiedTypeName name="java.net.URL"/>
+<fullyQualifiedTypeName name="com.netsuite.webservices.general.communication_2018_2.Message"/>
+<fullyQualifiedTypeName name="com.netsuite.webservices.platform.messages_2018_2.WriteResponse"/>
+<fullyQualifiedTypeName name="java.util.Properties"/>
 </qualifiedTypeNameHistroy>

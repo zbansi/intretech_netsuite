@@ -1,5 +1,0 @@
-package com.bansi.eai.consumer;
-
-public @interface RequestMapping {
-
-}

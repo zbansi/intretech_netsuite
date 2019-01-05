@@ -1,6 +1,0 @@
-{ 
-	"paths": {
-		"batchPrint": "/SuiteScripts/Bansi_Scripts/lib/BsPrintMAO",	
-		"urlUpdate" : "/SuiteScripts/Bansi_Scripts/lib/urlUpdate"
-		}
-}

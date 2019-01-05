@@ -1,0 +1,84 @@
+package com.netsuite.prototypes;
+
+import java.net.URL;
+
+import com.netsuite.webservices.general.communication_2018_2.Message;
+import com.netsuite.webservices.platform.core_2018_2.Passport;
+import com.netsuite.webservices.platform.core_2018_2.RecordRef;
+import com.netsuite.webservices.platform.messages_2018_2.WriteResponse;
+import com.netsuite.webservices.platform_2018_2.NetSuiteBindingStub;
+import com.netsuite.webservices.platform_2018_2.NetSuiteServiceLocator;
+
+public class SupportCase {
+	private static boolean MAINTAIN_SESSION = false;
+	 public static void main(String[] args) throws Exception {
+	  NetSuiteServiceLocator service = null;
+	  NetSuiteBindingStub port = null;
+	  Passport passport = new Passport();
+	  passport.setAccount(NSCredentials.ACCOUNT);
+	  passport.setEmail(NSCredentials.USER_NAME);
+	  passport.setPassword(NSCredentials.USER_PWD);
+	  RecordRef role = new RecordRef();
+	  role.setInternalId(NSCredentials.ROLE);
+	  passport.setRole(role);
+	  try {
+	   service = new NetSuiteServiceLocator();
+	   port = new NetSuiteBindingStub(new URL(service.getNetSuitePortAddress()), service);
+	   port.setHeader(service.getServiceName().getNamespaceURI(), "passport", passport);
+	   service.setMaintainSession(MAINTAIN_SESSION);
+	  } catch (Exception ex) {
+	   ex.printStackTrace();
+	  }
+	  
+	  SupportCase supportCase = new SupportCase();
+	  
+	  supportCase.setTitle("Subject");
+	  
+	  RecordRef company = new RecordRef();
+	  company.setInternalId("4"); // Set to Internal Id of Company/Customer
+	  supportCase.setCompany(company);
+	  supportCase.setEmailForm(false);
+	  
+	  WriteResponse writeResponse = port.add(supportCase);
+	  
+	  if(writeResponse.getStatus().isIsSuccess()){
+	   
+	   RecordRef activity = (RecordRef)writeResponse.getBaseRef();
+	   
+	   RecordRef author = new RecordRef();
+	   author.setInternalId("-5");
+	   
+	   Message message = new Message();  
+	   message.setActivity(activity);
+	   message.setAuthor(author);
+	   message.setRecipient(author);
+	   message.setMessage("test message");
+	   message.setSubject("test subject");
+	    
+	   MessageMediaItemList mediaItemList = new MessageMediaItemList();
+	   File[] mediaItem = new File[1];
+	   mediaItem[0] = new File();
+	   mediaItem[0].setContent("hello world".getBytes()); // replace with byte string of File
+	   mediaItem[0].setFileType(MediaType._MISCTEXT);
+	   mediaItem[0].setName("hello.txt");
+	      
+	   mediaItemList.setMediaItem(mediaItem);
+	   message.setMediaItemList(mediaItemList);
+	   
+	   WriteResponse writeresponse = port.add(message);
+	   
+	   showStatus(writeresponse.getStatus());
+	   
+	  }  
+	 }
+	 public static boolean showStatus(Status status) {
+	  StatusDetail[] statusDetails = status.getStatusDetail();
+	  if (statusDetails != null) {
+	   for (int i = 0; i < statusDetails.length; i++) {
+	    StatusDetail statusDetail = statusDetails[i];
+	    System.out.println("Status Details: Type: " + statusDetail.getType().getValue() + " Code: " + statusDetail.getCode().getValue() + " Message:" + statusDetail.getMessage());
+	   }
+	  }
+	  return status.isIsSuccess();
+	 }
+}
