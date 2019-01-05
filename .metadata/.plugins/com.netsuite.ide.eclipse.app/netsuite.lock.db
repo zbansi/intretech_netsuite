@@ -1,14 +1,4 @@
 #FileLock
-<<<<<<< HEAD
-<<<<<<< HEAD
-#Mon Dec 24 08:41:49 CST 2018
-id=167dda91d148500989dac3791f341ddde4b7d0082ee
-=======
-#Sat Dec 29 08:12:18 CST 2018
-id=167f74de5be002b40cf8298e82d1ad782e6ee02bff9
->>>>>>> dev
-=======
-#Sat Jan 05 08:32:46 CST 2019
-id=1681b6d248f676670e8d710129893b047dceb70dd0b
->>>>>>> dev
+#Sat Jan 05 09:56:34 CST 2019
+id=1681bb9ddd82a985c05815d53f6d635aa0c73d3570e
 method=file
