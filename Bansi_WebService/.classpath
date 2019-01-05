@@ -19,5 +19,9 @@
 	<classpathentry kind="lib" path="lib/NSJavaClient2017-2/suitetalk-client-v2017_2-2.0.0.jar"/>
 	<classpathentry kind="lib" path="lib/log4j-1.2.8.jar"/>
 	<classpathentry kind="lib" path="lib/log4j.properties"/>
+	<classpathentry kind="lib" path="lib/org.apache.commons.httpclient_3.1.0.v201012070820.jar"/>
+	<classpathentry kind="lib" path="lib/org.apache.commons.codec_1.6.0.v201305230611.jar"/>
+	<classpathentry kind="lib" path="lib/javax.annotation-api-1.3.2.jar"/>
+	<classpathentry kind="lib" path="lib/jsr305-3.0.2.jar" sourcepath="D:/Bansi/java_lib/jsr305/jsr305-3.0.2-sources.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
