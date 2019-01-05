@@ -46,6 +46,7 @@ public final class Messages {
     public static final String UPLOAD_FILE = "Upload a File";
     public static final String GET_SELECT_FIELD_VALUES = "Get Select Field Values";
     public static final String DELETE_ALL_RECORDS = "Delete all the records above? [y/N]";
+    public static final String GET_ITEM_RECORDS = "Get item records which updated or created since last update time"; 
 
     public static final String CUSTOM_FIELDS_WARNING = "In order to populate custom fields, ensure that these fields already exist for the customer record.";
     public static final String CUSTOM_FIELD_STRING = "String (maps to one of Free-Form Text, Text Area, etc. in UI)";
