@@ -2,12 +2,13 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="" key="selection"/>
+		<item value="Item" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="item"/>
 			<item value="Session"/>
 			<item value="MaintainSession"/>
 			<item value="setMaintainSession"/>
@@ -15,7 +16,6 @@
 			<item value="axis-tasks.properties"/>
 			<item value="lastSyncDatex"/>
 			<item value="cryptojs"/>
-			<item value="context"/>
 		</list>
 		<list key="replacehistory">
 			<item value="baseUrl"/>
