@@ -1,6 +1,9 @@
 package com.netsuite.prototypes;
 
-
+import com.netsuite.webservices.lists.employees_2018_2.Employee;
+import com.netsuite.webservices.platform.core_2018_2.RecordRef;
+import com.netsuite.webservices.platform_2018_2.NetSuitePortType;
+import com.netsuite.webservices.platform_2018_2.NetSuiteServiceLocator;
 
 /***
  * Example showing how to get web services domain pointing to the account's data
@@ -18,7 +21,7 @@ public class AXISClient {
 		//1. Locate the NetSuite service.
 		NetSuiteServiceLocator service = new NetSuiteServiceLocator();
 		//2. Enable support for multiple cookie management.
-		service.setMaintainSession( true );
+		service.setMaintainSession(true);
 		GetRESTDomain restHelper = new GetRESTDomain();
 		String wsDomain = restHelper.getDataCenterUrls(acct, email, passwd).webservicesDomain;
 		service.setNetSuitePortEndpointAddress(wsDomain + "/services/" + ENDPOINT_VERSION);

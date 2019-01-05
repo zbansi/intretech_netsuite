@@ -22,7 +22,7 @@
 	<classpathentry kind="lib" path="lib/mailapi_1_3_1.jar"/>
 	<classpathentry kind="lib" path="lib/saaj.jar"/>
 	<classpathentry kind="lib" path="lib/wsdl4j-1.5.1.jar"/>
-	<classpathentry kind="lib" path="lib/json-simple-1.1.1.jar" sourcepath="D:/Bansi/java_lib/json-simple/json_simple-1.1-all.zip"/>
+	<classpathentry kind="lib" path="lib/json-simple-1.1.1.jar"/>
 	<classpathentry kind="con" path="org.eclipse.m2e.MAVEN2_CLASSPATH_CONTAINER">
 		<attributes>
 			<attribute name="maven.pomderived" value="true"/>

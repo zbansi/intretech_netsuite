@@ -49,15 +49,15 @@
 <fullyQualifiedTypeName name="org.json.simple.JSONObject"/>
 <fullyQualifiedTypeName name="com.netsuite.webservices.platform_2017_1.NetSuitePortType"/>
 <fullyQualifiedTypeName name="com.netsuite.webservices.platform_2017_1.NetSuiteServiceLocator"/>
-<fullyQualifiedTypeName name="com.netsuite.webservices.platform_2018_2.NetSuitePortType"/>
 <fullyQualifiedTypeName name="com.netsuite.webservices.platform.core_2018_2.types.RecordType"/>
-<fullyQualifiedTypeName name="com.netsuite.webservices.lists.employees_2018_2.Employee"/>
-<fullyQualifiedTypeName name="com.netsuite.webservices.platform_2018_2.NetSuiteServiceLocator"/>
 <fullyQualifiedTypeName name="com.netsuite.webservices.platform.core_2018_2.Passport"/>
 <fullyQualifiedTypeName name="com.netsuite.webservices.platform_2018_2.NetSuiteBindingStub"/>
-<fullyQualifiedTypeName name="com.netsuite.webservices.platform.core_2018_2.RecordRef"/>
 <fullyQualifiedTypeName name="java.net.URL"/>
 <fullyQualifiedTypeName name="com.netsuite.webservices.general.communication_2018_2.Message"/>
 <fullyQualifiedTypeName name="com.netsuite.webservices.platform.messages_2018_2.WriteResponse"/>
 <fullyQualifiedTypeName name="java.util.Properties"/>
+<fullyQualifiedTypeName name="com.netsuite.webservices.platform_2018_2.NetSuitePortType"/>
+<fullyQualifiedTypeName name="com.netsuite.webservices.platform_2018_2.NetSuiteServiceLocator"/>
+<fullyQualifiedTypeName name="com.netsuite.webservices.lists.employees_2018_2.Employee"/>
+<fullyQualifiedTypeName name="com.netsuite.webservices.platform.core_2018_2.RecordRef"/>
 </qualifiedTypeNameHistroy>

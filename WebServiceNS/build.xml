@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project name="WebServiceNS" basedir="."
-	default="init">
+	default="compile">
 
 	<!-- properies -->
 	<property name="webContent.dir" value="WebContent" />
 	<property name="src.dir" value="src" />
 	<property name="report.dir" value="report" />
-	<property name="classes.dir" value="classes" />
+	<property name="classes.dir" value="bin" />
 	<property name="lib.dir" value="lib" />
 	<property name="eclipse_plugins.dir" value="d:/eclipse/plugins" />
 	<property name="master.home" value="lib" />
