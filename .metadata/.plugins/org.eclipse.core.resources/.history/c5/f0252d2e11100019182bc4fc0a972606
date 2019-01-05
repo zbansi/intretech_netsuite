@@ -1,0 +1,8 @@
+package com.bansi.webservices.samples;
+
+public final class Messages {
+	public static final String EMPTY_STRING = "";
+
+	private Messages() {
+	};
+}
