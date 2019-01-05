@@ -5522,3 +5522,30 @@ This warning can be switched off on the Team > Git > Confirmations and Warnings 
 
 !ENTRY org.eclipse.jdt.core 4 0 2019-01-05 15:43:40.368
 !MESSAGE Invalid ZIP archive: lib/log4j.properties [in Bansi_WebService]
+
+!ENTRY org.eclipse.jdt.core 4 0 2019-01-05 15:57:24.091
+!MESSAGE Invalid ZIP archive: lib/log4j.properties [in Bansi_WebService]
+
+!ENTRY org.eclipse.jdt.core 4 0 2019-01-05 15:59:18.426
+!MESSAGE Invalid ZIP archive: lib/log4j.properties [in Bansi_WebService]
+
+!ENTRY org.eclipse.jdt.core 4 0 2019-01-05 15:59:18.452
+!MESSAGE Invalid ZIP archive: lib/log4j.properties [in Bansi_WebService]
+
+!ENTRY org.eclipse.jdt.core 4 0 2019-01-05 15:59:40.515
+!MESSAGE Invalid ZIP archive: lib/log4j.properties [in Bansi_WebService]
+
+!ENTRY org.eclipse.jdt.core 4 0 2019-01-05 16:00:13.425
+!MESSAGE Invalid ZIP archive: lib/log4j.properties [in Bansi_WebService]
+
+!ENTRY org.eclipse.jdt.core 4 0 2019-01-05 16:00:13.434
+!MESSAGE Invalid ZIP archive: lib/log4j.properties [in Bansi_WebService]
+
+!ENTRY org.eclipse.jdt.core 4 0 2019-01-05 16:00:17.122
+!MESSAGE Invalid ZIP archive: lib/log4j.properties [in Bansi_WebService]
+
+!ENTRY org.eclipse.jdt.core 4 0 2019-01-05 16:00:33.731
+!MESSAGE Invalid ZIP archive: lib/log4j.properties [in Bansi_WebService]
+
+!ENTRY org.eclipse.jdt.core 4 0 2019-01-05 16:00:53.967
+!MESSAGE Invalid ZIP archive: lib/log4j.properties [in Bansi_WebService]

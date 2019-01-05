@@ -83,7 +83,7 @@ public class GetRESTDomain {
 			System.out.print("Password     : ");
 			String password = ns._br.readLine().trim();
 			try {
-				//方法getDataCenterUrls()是在12.2端点中引入的，自12.2开始，应使用getDataCenterUrls()
+				//锟斤拷锟斤拷2012.2锟酵革拷锟竭版本锟侥端点，应使锟斤拷getDataCenterUrls 锟斤拷锟斤拷
 				URLTriplet urls = ns.getDataCenterUrls(account, email, password);
 				System.out.println("\nREST domain URL        : " + urls.restDomain + "\n");
 				System.out.println("\nWeb services domain URL: " + urls.webservicesDomain + "\n");
