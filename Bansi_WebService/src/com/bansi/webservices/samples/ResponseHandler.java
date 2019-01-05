@@ -1,6 +1,7 @@
 package com.bansi.webservices.samples;
 
 import com.netsuite.suitetalk.proxy.v2017_2.lists.accounting.InventoryItem;
+import com.netsuite.suitetalk.proxy.v2017_2.lists.accounting.LotNumberedInventoryItem;
 import com.netsuite.suitetalk.proxy.v2017_2.lists.relationships.Customer;
 import com.netsuite.suitetalk.proxy.v2017_2.platform.common.TransactionSearchRowBasic;
 import com.netsuite.suitetalk.proxy.v2017_2.platform.core.CustomRecordRef;
@@ -138,6 +139,15 @@ public final class ResponseHandler {
         } else {
             printError(ITEM_WAS_NOT_ADDED, item.getItemId(), getErrorMessage(response));
         }
+    }
+    
+    public static void processLotNumberedInventoryItemReadResponse(ReadResponse response) {
+        if (!response.getStatus().isIsSuccess()) {
+            printError(response.getStatus().getStatusDetail()[0].getMessage());
+            return;
+        }
+        printWithEmptyLine(RETRIEVED_RECORD);
+        printMap(new Fields((LotNumberedInventoryItem) response.getRecord()));
     }
 
     public static void processSalesOrderWriteResponse(WriteResponse response) {

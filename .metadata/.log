@@ -5415,3 +5415,110 @@ Caused by: java.lang.NoClassDefFoundError: javax.wsdl.Definition
 
 !ENTRY org.eclipse.jdt.core 4 0 2019-01-05 13:33:30.664
 !MESSAGE Invalid ZIP archive: lib/log4j.properties [in Bansi_WebService]
+
+!ENTRY org.eclipse.jdt.core 4 0 2019-01-05 13:59:16.011
+!MESSAGE Invalid ZIP archive: lib/log4j.properties [in Bansi_WebService]
+
+!ENTRY org.eclipse.recommenders.types.rcp 1 4 2019-01-05 14:32:14.059
+!MESSAGE Full project indexing required:
+  [+] C:\Program Files\Java\jdk1.8.0_181\jre\lib\charsets.jar
+  [+] C:\Program Files\Java\jdk1.8.0_181\jre\lib\ext\access-bridge-64.jar
+  [+] C:\Program Files\Java\jdk1.8.0_181\jre\lib\ext\cldrdata.jar
+  [+] C:\Program Files\Java\jdk1.8.0_181\jre\lib\ext\dnsns.jar
+  [+] C:\Program Files\Java\jdk1.8.0_181\jre\lib\ext\jaccess.jar
+  [+] C:\Program Files\Java\jdk1.8.0_181\jre\lib\ext\jfxrt.jar
+  [+] C:\Program Files\Java\jdk1.8.0_181\jre\lib\ext\localedata.jar
+  [+] C:\Program Files\Java\jdk1.8.0_181\jre\lib\ext\nashorn.jar
+  [+] C:\Program Files\Java\jdk1.8.0_181\jre\lib\ext\sunec.jar
+  [+] C:\Program Files\Java\jdk1.8.0_181\jre\lib\ext\sunjce_provider.jar
+  [+] C:\Program Files\Java\jdk1.8.0_181\jre\lib\ext\sunmscapi.jar
+  [+] C:\Program Files\Java\jdk1.8.0_181\jre\lib\ext\sunpkcs11.jar
+  [+] C:\Program Files\Java\jdk1.8.0_181\jre\lib\ext\zipfs.jar
+  [+] C:\Program Files\Java\jdk1.8.0_181\jre\lib\jce.jar
+  [+] C:\Program Files\Java\jdk1.8.0_181\jre\lib\jfr.jar
+  [+] C:\Program Files\Java\jdk1.8.0_181\jre\lib\jsse.jar
+  [+] C:\Program Files\Java\jdk1.8.0_181\jre\lib\resources.jar
+  [+] C:\Program Files\Java\jdk1.8.0_181\jre\lib\rt.jar
+  [+] D:\workspaceNS\Bansi_WebService\lib\axis-ant.jar
+  [+] D:\workspaceNS\Bansi_WebService\lib\axis.jar
+  [+] D:\workspaceNS\Bansi_WebService\lib\commons-discovery-0.2.jar
+  [+] D:\workspaceNS\Bansi_WebService\lib\commons-logging-1.2.jar
+  [+] D:\workspaceNS\Bansi_WebService\lib\javax.activation-api-1.2.0.jar
+  [+] D:\workspaceNS\Bansi_WebService\lib\javax.mail_1.4.0.v201005080615.jar
+  [+] D:\workspaceNS\Bansi_WebService\lib\javax.xml.rpc-api-1.1.2.jar
+  [+] D:\workspaceNS\Bansi_WebService\lib\json-simple-1.1.1.jar
+  [+] D:\workspaceNS\Bansi_WebService\lib\jsr305-3.0.2.jar
+  [+] D:\workspaceNS\Bansi_WebService\lib\log4j-1.2.8.jar
+  [+] D:\workspaceNS\Bansi_WebService\lib\log4j.properties
+  [+] D:\workspaceNS\Bansi_WebService\lib\org.apache.commons.codec_1.6.0.v201305230611.jar
+  [+] D:\workspaceNS\Bansi_WebService\lib\org.apache.commons.httpclient_3.1.0.v201012070820.jar
+  [+] D:\workspaceNS\Bansi_WebService\lib\suitetalk-axis-proxy-v2017_2-1.0.0-sources.jar
+  [+] D:\workspaceNS\Bansi_WebService\lib\suitetalk-axis-proxy-v2017_2-1.0.0.jar
+  [+] D:\workspaceNS\Bansi_WebService\lib\suitetalk-client-common-1.0.0-sources.jar
+  [+] D:\workspaceNS\Bansi_WebService\lib\suitetalk-client-common-1.0.0.jar
+  [+] D:\workspaceNS\Bansi_WebService\lib\suitetalk-client-v2017_2-2.0.0-sources.jar
+  [+] D:\workspaceNS\Bansi_WebService\lib\suitetalk-client-v2017_2-2.0.0.jar
+  [+] D:\workspaceNS\Bansi_WebService\lib\wsdl4j-1.5.1.jar
+
+!STACK 0
+org.eclipse.recommenders.utils.Logs$LogTraceException
+	at org.eclipse.recommenders.utils.Logs$LogTraceException.newTrace(Logs.java:381)
+	at org.eclipse.recommenders.utils.Logs.log(Logs.java:134)
+	at org.eclipse.recommenders.internal.types.rcp.ProjectTypesIndex.needsRebuild(ProjectTypesIndex.java:167)
+	at org.eclipse.recommenders.internal.types.rcp.ProjectTypesIndex.startUp(ProjectTypesIndex.java:122)
+	at com.google.common.util.concurrent.AbstractIdleService$2$1.run(AbstractIdleService.java:54)
+	at com.google.common.util.concurrent.Callables$3.run(Callables.java:93)
+	at java.lang.Thread.run(Thread.java:748)
+
+!ENTRY org.eclipse.jdt.core 4 0 2019-01-05 14:40:26.906
+!MESSAGE Invalid ZIP archive: lib/log4j.properties [in Bansi_WebService]
+
+!ENTRY org.eclipse.jdt.core 4 0 2019-01-05 14:40:27.009
+!MESSAGE Invalid ZIP archive: lib/log4j.properties [in Bansi_WebService]
+
+!ENTRY org.eclipse.jdt.core 4 0 2019-01-05 14:40:53.608
+!MESSAGE Invalid ZIP archive: lib/log4j.properties [in Bansi_WebService]
+
+!ENTRY org.eclipse.jdt.core 4 0 2019-01-05 14:41:16.854
+!MESSAGE Invalid ZIP archive: lib/log4j.properties [in Bansi_WebService]
+
+!ENTRY org.eclipse.jdt.core 4 0 2019-01-05 14:43:16.351
+!MESSAGE Invalid ZIP archive: lib/log4j.properties [in Bansi_WebService]
+!SESSION 2019-01-05 15:34:31.021 -----------------------------------------------
+eclipse.buildId=4.5.2.M20160212-1500
+java.version=1.8.0_181
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=zh_CN
+Framework arguments:  -product org.eclipse.epp.package.jee.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.jee.product
+
+!ENTRY org.eclipse.jface 2 0 2019-01-05 15:34:41.364
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2019-01-05 15:34:41.364
+!MESSAGE A conflict occurred for ALT+CTRL+T:
+Binding(ALT+CTRL+T,
+	ParameterizedCommand(Command(org.eclipse.tm.terminal.connector.local.command.launch,Open Local Terminal on Selection,
+		,
+		Category(org.eclipse.tm.terminal.view.ui.commands.category,Terminal Commands,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@fe38d1e,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(ALT+CTRL+T,
+	ParameterizedCommand(Command(pl.szpinda.plugin.tomcat.commands.tomcatStartStop,Tomcat start,stop,
+		,
+		Category(pl.szpinda.plugin.tomcat.commands.category.key,Tomcat keys,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@1a4564a2,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+
+!ENTRY org.eclipse.egit.ui 2 0 2019-01-05 15:34:48.488
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\YQ12681'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.eclipse.jdt.core 4 0 2019-01-05 15:43:40.368
+!MESSAGE Invalid ZIP archive: lib/log4j.properties [in Bansi_WebService]

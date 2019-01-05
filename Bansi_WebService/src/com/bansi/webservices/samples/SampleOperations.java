@@ -77,6 +77,8 @@ import static com.bansi.webservices.samples.utils.StringUtils.getListItems;
 import static com.bansi.webservices.samples.utils.StringUtils.getRandomString;
 import static java.lang.String.format;
 
+import com.netsuite.suitetalk.proxy.v2017_2.platform.core.SearchRecord;
+
 /**
  * <p>Displays a list of all sample operations and invokes the selected operation by the user.</p>
  * <p>© 2017 NetSuite Inc. All rights reserved.</p>
@@ -99,6 +101,8 @@ public class SampleOperations {
 	public SampleOperations(WsClient client) {
 		this.client = client;
 		// All possible sample operations
+		getItemRecords();
+		getItem();
 		addCustomer();
 		addCustomerWithCustomFields();
 		updateCustomer();
@@ -108,7 +112,6 @@ public class SampleOperations {
 		getListOfCustomers();
 		deleteListOfCustomers();
 		addInventoryItem();
-		getItemRecords();
 		addSalesOrder();
 		updateSalesOrder();
 		fulfillSalesOrder();
@@ -145,58 +148,39 @@ public class SampleOperations {
 		printWithEmptyLine(PRESS_TO_QUIT);
 		readLine();
 	}
+
 	/**
 	 * Demonstrates how to search an Inventory Item record from NetSuite.
 	 */
-	private void getItemRecords(){
+	private void getItemRecords() {
 		SAMPLE_OPERATIONS.put(GET_ITEM_RECORDS, () -> {
-			printWithEmptyLine(ENTER_CUSTOMER_INFORMATION);
+			printWithEmptyLine(ENTER_ITEM_SYNC_METHOD);
 
-			String customerName = readLine(getIndentedString(CUSTOMER_NAME));
-			List<Customer> customers = searchForCustomers(customerName);
-			if (customers.isEmpty()) {
-				printError(NO_CUSTOMERS_FOUND, customerName);
-				return;
-			}
-
-			// Search sales order for all found customers
-			SearchMultiSelectField entities = new SearchMultiSelectField();
-			entities.setOperator(SearchMultiSelectFieldOperator.anyOf);
-			entities.setSearchValue(
-					customers.stream().map(customer -> createRecordRef(customer.getInternalId(), RecordType.customer)).toArray(RecordRef[]::new));
-
-			TransactionSearchBasic transactionSearchBasic = new TransactionSearchBasic();
-			transactionSearchBasic.setType(new SearchEnumMultiSelectField(new String[] { RecordType._salesOrder }, SearchEnumMultiSelectFieldOperator.anyOf));
-			transactionSearchBasic.setEntity(entities);
-
-			// We want to returned also list of items so we need to set the following preference
-			client.setBodyFieldsOnly(false);
-
-			// Set smaller page size in order to demonstrate how searchMoreWithId() operation works
-			client.setPageSize(PAGE_SIZE);
-
+			String itemSyncMethod = readLine(ITEM_SYNC_METHOD);
 			printSendingRequestMessage();
 
-			// Search for sales orders
-			SearchResult searchResult = client.callSearch(transactionSearchBasic);
-			final String jobId = client.getLastJobId();
+			if (itemSyncMethod == "All") {
 
-			processSearchResult(searchResult, customerName);
+			} else if (itemSyncMethod == "Increase") {
 
-			// Get next pages of the search result
-			if (isSuccessfulSearchResult(searchResult)) {
-				for (int i = 2; i <= searchResult.getTotalPages(); i++) {
-					printSendingRequestMessage();
-					processSearchResult(client.callSearchMoreWithId(jobId, i), customerName);
-				}
 			}
 
-			// We can revert search preferences to the default values now
-			client.setBodyFieldsOnly(true);
-			client.setPageSize(DEFAULT_PAGE_SIZE);
 		});
 	}
-	
+
+	private void getItem() {
+		SAMPLE_OPERATIONS.put(GET_ITEM, () -> {
+			printWithEmptyLine(ENTER_ITEM_NUMBER);
+
+			String internalId = readLine(ITEM_NUMBER);
+			printSendingRequestMessage();
+
+			// Invoke the get() operation to retrieve the record
+			ReadResponse response = client.callGetRecord(createRecordRef(internalId, RecordType.lotNumberedInventoryItem));
+			// Process the response
+			processLotNumberedInventoryItemReadResponse(response);
+		});
+	}
 
 	/**
 	 * Demonstrates how to add a Customer record into NetSuite using the {@code add()} operation.
@@ -603,7 +587,6 @@ public class SampleOperations {
 			processItemWriteResponse(response, inventoryItem);
 		});
 	}
-	
 
 	/**
 	 * Demonstrates how to add a Sales Order record into NetSuite using the {@code add()} operation.

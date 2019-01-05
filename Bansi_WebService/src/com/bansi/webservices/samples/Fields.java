@@ -1,5 +1,6 @@
 package com.bansi.webservices.samples;
 
+import com.netsuite.suitetalk.proxy.v2017_2.lists.accounting.LotNumberedInventoryItem;
 import com.netsuite.suitetalk.proxy.v2017_2.lists.relationships.Customer;
 import com.netsuite.suitetalk.proxy.v2017_2.platform.core.RecordRef;
 import com.netsuite.suitetalk.proxy.v2017_2.platform.messages.WriteResponse;
@@ -46,6 +47,15 @@ public class Fields extends LinkedHashMap<String, String> {
         put(ENTITY_STATUS, customer.getEntityStatus().getName());
         put(IS_INACTIVE, String.valueOf(customer.getIsInactive()));
         put(DATE_CREATED, customer.getDateCreated().getTime().toString());
+    }
+    
+    public Fields(LotNumberedInventoryItem lotNumberedInventoryItem) {
+        super();
+        put(INTERNAL_ID, lotNumberedInventoryItem.getInternalId());
+        put(EXTERNAL_ID, lotNumberedInventoryItem.getExternalId()); 
+        put(PURCHASE_DESCRIPTION, lotNumberedInventoryItem.getPurchaseDescription());
+        put(IS_INACTIVE, String.valueOf(lotNumberedInventoryItem.getIsInactive()));
+        put(DATE_CREATED, lotNumberedInventoryItem.getCreatedDate().getTime().toString());
     }
 
     public Fields(WriteResponse response, Customer customer) {

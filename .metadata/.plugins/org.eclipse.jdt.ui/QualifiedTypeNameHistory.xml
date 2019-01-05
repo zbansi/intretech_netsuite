@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="org.omg.CORBA.PUBLIC_MEMBER"/>
 <fullyQualifiedTypeName name="com.bansi.ws.example.Hello"/>
 <fullyQualifiedTypeName name="java.nio.charset.MalformedInputException"/>
 <fullyQualifiedTypeName name="java.lang.Void"/>
@@ -49,7 +48,6 @@
 <fullyQualifiedTypeName name="org.json.simple.JSONObject"/>
 <fullyQualifiedTypeName name="com.netsuite.webservices.platform_2017_1.NetSuitePortType"/>
 <fullyQualifiedTypeName name="com.netsuite.webservices.platform_2017_1.NetSuiteServiceLocator"/>
-<fullyQualifiedTypeName name="com.netsuite.webservices.platform.core_2018_2.types.RecordType"/>
 <fullyQualifiedTypeName name="com.netsuite.webservices.platform.core_2018_2.Passport"/>
 <fullyQualifiedTypeName name="com.netsuite.webservices.platform_2018_2.NetSuiteBindingStub"/>
 <fullyQualifiedTypeName name="java.net.URL"/>
@@ -60,4 +58,6 @@
 <fullyQualifiedTypeName name="com.netsuite.webservices.platform_2018_2.NetSuiteServiceLocator"/>
 <fullyQualifiedTypeName name="com.netsuite.webservices.lists.employees_2018_2.Employee"/>
 <fullyQualifiedTypeName name="com.netsuite.webservices.platform.core_2018_2.RecordRef"/>
+<fullyQualifiedTypeName name="com.netsuite.webservices.platform.core_2018_2.types.RecordType"/>
+<fullyQualifiedTypeName name="com.netsuite.suitetalk.proxy.v2017_2.lists.accounting.LotNumberedInventoryItem"/>
 </qualifiedTypeNameHistroy>
