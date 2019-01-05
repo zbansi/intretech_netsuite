@@ -4847,3 +4847,571 @@ This warning can be switched off on the Team > Git > Confirmations and Warnings 
 
 !ENTRY org.eclipse.jdt.core 4 0 2019-01-05 12:55:23.311
 !MESSAGE Invalid ZIP archive: lib/log4j.properties [in Bansi_WebService]
+
+!ENTRY org.eclipse.jdt.core 4 0 2019-01-05 13:00:21.090
+!MESSAGE Invalid ZIP archive: lib/log4j.properties [in WebServiceNS]
+
+!ENTRY com.netsuite.ide.eclipse.app 4 0 2019-01-05 13:12:37.706
+!MESSAGE Unhandled node type in BindingHelper.getObjectType = 45
+
+!ENTRY com.netsuite.ide.eclipse.app 4 0 2019-01-05 13:12:37.712
+!MESSAGE Unhandled node type in BindingHelper.getObjectType = 45
+
+!ENTRY org.eclipse.ant.launching 4 0 2019-01-05 13:12:46.619
+!MESSAGE Ant Build Failed
+!STACK 1
+org.eclipse.core.runtime.CoreException: D:\workspaceNS\WebServiceNS\build.xml:40: taskdef A class needed by class org.apache.axis.tools.ant.axis.AdminClientTask cannot be found: javax/xml/rpc/ServiceException
+ using the classloader AntClassLoader[D:\workspaceNS\WebServiceNS\lib\axis-ant.jar;D:\workspaceNS\WebServiceNS\lib\axis.jar]
+	at org.eclipse.ant.core.AntRunner.handleInvocationTargetException(AntRunner.java:448)
+	at org.eclipse.ant.core.AntRunner.run(AntRunner.java:380)
+	at org.eclipse.ant.internal.launching.launchConfigurations.AntLaunchDelegate.runInSameVM(AntLaunchDelegate.java:290)
+	at org.eclipse.ant.internal.launching.launchConfigurations.AntLaunchDelegate.launch(AntLaunchDelegate.java:249)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:885)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:739)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:731)
+	at org.eclipse.core.externaltools.internal.model.ExternalToolBuilder.launchBuild(ExternalToolBuilder.java:183)
+	at org.eclipse.core.externaltools.internal.model.ExternalToolBuilder.doBuildBasedOnScope(ExternalToolBuilder.java:171)
+	at org.eclipse.core.externaltools.internal.model.ExternalToolBuilder.build(ExternalToolBuilder.java:90)
+	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:734)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:205)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:245)
+	at org.eclipse.core.internal.events.BuildManager$1.run(BuildManager.java:300)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:303)
+	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:359)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:382)
+	at org.eclipse.core.internal.resources.Workspace.buildInternal(Workspace.java:486)
+	at org.eclipse.core.internal.resources.Workspace.build(Workspace.java:398)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:859)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:739)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1039)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1256)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+Caused by: D:\workspaceNS\WebServiceNS\build.xml:40: taskdef A class needed by class org.apache.axis.tools.ant.axis.AdminClientTask cannot be found: javax/xml/rpc/ServiceException
+ using the classloader AntClassLoader[D:\workspaceNS\WebServiceNS\lib\axis-ant.jar;D:\workspaceNS\WebServiceNS\lib\axis.jar]
+	at org.apache.tools.ant.taskdefs.Definer.addDefinition(Definer.java:612)
+	at org.apache.tools.ant.taskdefs.Definer.loadProperties(Definer.java:408)
+	at org.apache.tools.ant.taskdefs.Definer.execute(Definer.java:264)
+	at org.apache.tools.ant.UnknownElement.execute(UnknownElement.java:293)
+	at sun.reflect.GeneratedMethodAccessor87.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.tools.ant.dispatch.DispatchUtils.execute(DispatchUtils.java:106)
+	at org.apache.tools.ant.Task.perform(Task.java:348)
+	at org.apache.tools.ant.Target.execute(Target.java:435)
+	at org.apache.tools.ant.helper.ProjectHelper2.parse(ProjectHelper2.java:180)
+	at org.eclipse.ant.internal.core.ant.InternalAntRunner.parseBuildFile(InternalAntRunner.java:387)
+	at org.eclipse.ant.internal.core.ant.InternalAntRunner.run(InternalAntRunner.java:675)
+	at org.eclipse.ant.internal.core.ant.InternalAntRunner.run(InternalAntRunner.java:527)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.eclipse.ant.core.AntRunner.run(AntRunner.java:371)
+	... 24 more
+Caused by: java.lang.NoClassDefFoundError: javax/xml/rpc/ServiceException
+	at java.lang.Class.forName0(Native Method)
+	at java.lang.Class.forName(Class.java:348)
+	at org.apache.tools.ant.taskdefs.Definer.addDefinition(Definer.java:579)
+	... 42 more
+Caused by: java.lang.ClassNotFoundException: javax.xml.rpc.ServiceException
+	at org.apache.tools.ant.AntClassLoader.findClassInComponents(AntClassLoader.java:1388)
+	at org.apache.tools.ant.AntClassLoader.findClass(AntClassLoader.java:1337)
+	at org.apache.tools.ant.AntClassLoader.loadClass(AntClassLoader.java:1089)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:357)
+	... 45 more
+!SUBENTRY 1 org.eclipse.ant.core 4 1 2019-01-05 13:12:46.620
+!MESSAGE D:\workspaceNS\WebServiceNS\build.xml:40: taskdef A class needed by class org.apache.axis.tools.ant.axis.AdminClientTask cannot be found: javax/xml/rpc/ServiceException
+ using the classloader AntClassLoader[D:\workspaceNS\WebServiceNS\lib\axis-ant.jar;D:\workspaceNS\WebServiceNS\lib\axis.jar]
+!STACK 0
+D:\workspaceNS\WebServiceNS\build.xml:40: taskdef A class needed by class org.apache.axis.tools.ant.axis.AdminClientTask cannot be found: javax/xml/rpc/ServiceException
+ using the classloader AntClassLoader[D:\workspaceNS\WebServiceNS\lib\axis-ant.jar;D:\workspaceNS\WebServiceNS\lib\axis.jar]
+	at org.apache.tools.ant.taskdefs.Definer.addDefinition(Definer.java:612)
+	at org.apache.tools.ant.taskdefs.Definer.loadProperties(Definer.java:408)
+	at org.apache.tools.ant.taskdefs.Definer.execute(Definer.java:264)
+	at org.apache.tools.ant.UnknownElement.execute(UnknownElement.java:293)
+	at sun.reflect.GeneratedMethodAccessor87.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.tools.ant.dispatch.DispatchUtils.execute(DispatchUtils.java:106)
+	at org.apache.tools.ant.Task.perform(Task.java:348)
+	at org.apache.tools.ant.Target.execute(Target.java:435)
+	at org.apache.tools.ant.helper.ProjectHelper2.parse(ProjectHelper2.java:180)
+	at org.eclipse.ant.internal.core.ant.InternalAntRunner.parseBuildFile(InternalAntRunner.java:387)
+	at org.eclipse.ant.internal.core.ant.InternalAntRunner.run(InternalAntRunner.java:675)
+	at org.eclipse.ant.internal.core.ant.InternalAntRunner.run(InternalAntRunner.java:527)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.eclipse.ant.core.AntRunner.run(AntRunner.java:371)
+	at org.eclipse.ant.internal.launching.launchConfigurations.AntLaunchDelegate.runInSameVM(AntLaunchDelegate.java:290)
+	at org.eclipse.ant.internal.launching.launchConfigurations.AntLaunchDelegate.launch(AntLaunchDelegate.java:249)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:885)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:739)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:731)
+	at org.eclipse.core.externaltools.internal.model.ExternalToolBuilder.launchBuild(ExternalToolBuilder.java:183)
+	at org.eclipse.core.externaltools.internal.model.ExternalToolBuilder.doBuildBasedOnScope(ExternalToolBuilder.java:171)
+	at org.eclipse.core.externaltools.internal.model.ExternalToolBuilder.build(ExternalToolBuilder.java:90)
+	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:734)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:205)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:245)
+	at org.eclipse.core.internal.events.BuildManager$1.run(BuildManager.java:300)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:303)
+	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:359)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:382)
+	at org.eclipse.core.internal.resources.Workspace.buildInternal(Workspace.java:486)
+	at org.eclipse.core.internal.resources.Workspace.build(Workspace.java:398)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:859)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:739)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1039)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1256)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+Caused by: java.lang.NoClassDefFoundError: javax/xml/rpc/ServiceException
+	at java.lang.Class.forName0(Native Method)
+	at java.lang.Class.forName(Class.java:348)
+	at org.apache.tools.ant.taskdefs.Definer.addDefinition(Definer.java:579)
+	... 42 more
+Caused by: java.lang.ClassNotFoundException: javax.xml.rpc.ServiceException
+	at org.apache.tools.ant.AntClassLoader.findClassInComponents(AntClassLoader.java:1388)
+	at org.apache.tools.ant.AntClassLoader.findClass(AntClassLoader.java:1337)
+	at org.apache.tools.ant.AntClassLoader.loadClass(AntClassLoader.java:1089)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:357)
+	... 45 more
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2019-01-05 13:12:47.375
+!MESSAGE Using platform encoding (GBK actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2019-01-05 13:12:47.382
+!MESSAGE Using platform encoding (GBK actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.ant.launching 4 0 2019-01-05 13:13:41.745
+!MESSAGE Ant Build Failed
+!STACK 1
+org.eclipse.core.runtime.CoreException: D:\workspaceNS\WebServiceNS\build.xml:117: WSDL processing error for https://webservices.netsuite.com/wsdl/v2018_2_0/netsuite.wsdl :
+ org.apache.commons.logging.LogFactory
+	at org.eclipse.ant.core.AntRunner.handleInvocationTargetException(AntRunner.java:448)
+	at org.eclipse.ant.core.AntRunner.run(AntRunner.java:380)
+	at org.eclipse.ant.internal.launching.launchConfigurations.AntLaunchDelegate.runInSameVM(AntLaunchDelegate.java:290)
+	at org.eclipse.ant.internal.launching.launchConfigurations.AntLaunchDelegate.launch(AntLaunchDelegate.java:249)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:885)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:739)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:731)
+	at org.eclipse.core.externaltools.internal.model.ExternalToolBuilder.launchBuild(ExternalToolBuilder.java:183)
+	at org.eclipse.core.externaltools.internal.model.ExternalToolBuilder.doBuildBasedOnScope(ExternalToolBuilder.java:171)
+	at org.eclipse.core.externaltools.internal.model.ExternalToolBuilder.build(ExternalToolBuilder.java:90)
+	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:734)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:205)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:245)
+	at org.eclipse.core.internal.events.BuildManager$1.run(BuildManager.java:300)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:303)
+	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:359)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:382)
+	at org.eclipse.core.internal.resources.Workspace.buildInternal(Workspace.java:486)
+	at org.eclipse.core.internal.resources.Workspace.build(Workspace.java:398)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:859)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:739)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1039)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1256)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+Caused by: D:\workspaceNS\WebServiceNS\build.xml:117: WSDL processing error for https://webservices.netsuite.com/wsdl/v2018_2_0/netsuite.wsdl :
+ org.apache.commons.logging.LogFactory
+	at org.apache.axis.tools.ant.wsdl.Wsdl2javaAntTask.execute(Wsdl2javaAntTask.java:304)
+	at org.apache.tools.ant.UnknownElement.execute(UnknownElement.java:293)
+	at sun.reflect.GeneratedMethodAccessor97.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.tools.ant.dispatch.DispatchUtils.execute(DispatchUtils.java:106)
+	at org.apache.tools.ant.Task.perform(Task.java:348)
+	at org.apache.tools.ant.Target.execute(Target.java:435)
+	at org.apache.tools.ant.Target.performTasks(Target.java:456)
+	at org.apache.tools.ant.Project.executeSortedTargets(Project.java:1405)
+	at org.apache.tools.ant.Project.executeTarget(Project.java:1376)
+	at org.apache.tools.ant.helper.DefaultExecutor.executeTargets(DefaultExecutor.java:41)
+	at org.eclipse.ant.internal.core.ant.EclipseDefaultExecutor.executeTargets(EclipseDefaultExecutor.java:36)
+	at org.apache.tools.ant.Project.executeTargets(Project.java:1260)
+	at org.eclipse.ant.internal.core.ant.InternalAntRunner.run(InternalAntRunner.java:705)
+	at org.eclipse.ant.internal.core.ant.InternalAntRunner.run(InternalAntRunner.java:527)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.eclipse.ant.core.AntRunner.run(AntRunner.java:371)
+	... 24 more
+Caused by: java.lang.NoClassDefFoundError: org.apache.commons.logging.LogFactory
+	at org.apache.axis.components.logger.LogFactory.class$(LogFactory.java:45)
+	at org.apache.axis.components.logger.LogFactory$1.run(LogFactory.java:45)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at org.apache.axis.components.logger.LogFactory.getLogFactory(LogFactory.java:41)
+	at org.apache.axis.components.logger.LogFactory.<clinit>(LogFactory.java:33)
+	at org.apache.axis.encoding.TypeMappingImpl.<clinit>(TypeMappingImpl.java:77)
+	at org.apache.axis.encoding.TypeMappingRegistryImpl.<init>(TypeMappingRegistryImpl.java:155)
+	at org.apache.axis.encoding.TypeMappingRegistryImpl.<init>(TypeMappingRegistryImpl.java:149)
+	at org.apache.axis.wsdl.toJava.Emitter.<init>(Emitter.java:144)
+	at org.apache.axis.tools.ant.wsdl.Wsdl2javaAntTask.createEmitter(Wsdl2javaAntTask.java:615)
+	at org.apache.axis.tools.ant.wsdl.Wsdl2javaAntTask.execute(Wsdl2javaAntTask.java:211)
+	... 44 more
+!SUBENTRY 1 org.eclipse.ant.core 4 1 2019-01-05 13:13:41.746
+!MESSAGE D:\workspaceNS\WebServiceNS\build.xml:117: WSDL processing error for https://webservices.netsuite.com/wsdl/v2018_2_0/netsuite.wsdl :
+ org.apache.commons.logging.LogFactory
+!STACK 0
+D:\workspaceNS\WebServiceNS\build.xml:117: WSDL processing error for https://webservices.netsuite.com/wsdl/v2018_2_0/netsuite.wsdl :
+ org.apache.commons.logging.LogFactory
+	at org.apache.axis.tools.ant.wsdl.Wsdl2javaAntTask.execute(Wsdl2javaAntTask.java:304)
+	at org.apache.tools.ant.UnknownElement.execute(UnknownElement.java:293)
+	at sun.reflect.GeneratedMethodAccessor97.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.tools.ant.dispatch.DispatchUtils.execute(DispatchUtils.java:106)
+	at org.apache.tools.ant.Task.perform(Task.java:348)
+	at org.apache.tools.ant.Target.execute(Target.java:435)
+	at org.apache.tools.ant.Target.performTasks(Target.java:456)
+	at org.apache.tools.ant.Project.executeSortedTargets(Project.java:1405)
+	at org.apache.tools.ant.Project.executeTarget(Project.java:1376)
+	at org.apache.tools.ant.helper.DefaultExecutor.executeTargets(DefaultExecutor.java:41)
+	at org.eclipse.ant.internal.core.ant.EclipseDefaultExecutor.executeTargets(EclipseDefaultExecutor.java:36)
+	at org.apache.tools.ant.Project.executeTargets(Project.java:1260)
+	at org.eclipse.ant.internal.core.ant.InternalAntRunner.run(InternalAntRunner.java:705)
+	at org.eclipse.ant.internal.core.ant.InternalAntRunner.run(InternalAntRunner.java:527)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.eclipse.ant.core.AntRunner.run(AntRunner.java:371)
+	at org.eclipse.ant.internal.launching.launchConfigurations.AntLaunchDelegate.runInSameVM(AntLaunchDelegate.java:290)
+	at org.eclipse.ant.internal.launching.launchConfigurations.AntLaunchDelegate.launch(AntLaunchDelegate.java:249)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:885)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:739)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:731)
+	at org.eclipse.core.externaltools.internal.model.ExternalToolBuilder.launchBuild(ExternalToolBuilder.java:183)
+	at org.eclipse.core.externaltools.internal.model.ExternalToolBuilder.doBuildBasedOnScope(ExternalToolBuilder.java:171)
+	at org.eclipse.core.externaltools.internal.model.ExternalToolBuilder.build(ExternalToolBuilder.java:90)
+	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:734)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:205)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:245)
+	at org.eclipse.core.internal.events.BuildManager$1.run(BuildManager.java:300)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:303)
+	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:359)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:382)
+	at org.eclipse.core.internal.resources.Workspace.buildInternal(Workspace.java:486)
+	at org.eclipse.core.internal.resources.Workspace.build(Workspace.java:398)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:859)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:739)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1039)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1256)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+Caused by: java.lang.NoClassDefFoundError: org.apache.commons.logging.LogFactory
+	at org.apache.axis.components.logger.LogFactory.class$(LogFactory.java:45)
+	at org.apache.axis.components.logger.LogFactory$1.run(LogFactory.java:45)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at org.apache.axis.components.logger.LogFactory.getLogFactory(LogFactory.java:41)
+	at org.apache.axis.components.logger.LogFactory.<clinit>(LogFactory.java:33)
+	at org.apache.axis.encoding.TypeMappingImpl.<clinit>(TypeMappingImpl.java:77)
+	at org.apache.axis.encoding.TypeMappingRegistryImpl.<init>(TypeMappingRegistryImpl.java:155)
+	at org.apache.axis.encoding.TypeMappingRegistryImpl.<init>(TypeMappingRegistryImpl.java:149)
+	at org.apache.axis.wsdl.toJava.Emitter.<init>(Emitter.java:144)
+	at org.apache.axis.tools.ant.wsdl.Wsdl2javaAntTask.createEmitter(Wsdl2javaAntTask.java:615)
+	at org.apache.axis.tools.ant.wsdl.Wsdl2javaAntTask.execute(Wsdl2javaAntTask.java:211)
+	... 44 more
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2019-01-05 13:13:41.764
+!MESSAGE Using platform encoding (GBK actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2019-01-05 13:13:41.768
+!MESSAGE Using platform encoding (GBK actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.ant.launching 4 0 2019-01-05 13:15:41.614
+!MESSAGE Ant Build Failed
+!STACK 1
+org.eclipse.core.runtime.CoreException: D:\workspaceNS\WebServiceNS\build.xml:112: WSDL processing error for https://webservices.netsuite.com/wsdl/v2018_2_0/netsuite.wsdl :
+ org/apache/commons/discovery/tools/DiscoverSingleton
+	at org.eclipse.ant.core.AntRunner.handleInvocationTargetException(AntRunner.java:448)
+	at org.eclipse.ant.core.AntRunner.run(AntRunner.java:380)
+	at org.eclipse.ant.internal.launching.launchConfigurations.AntLaunchDelegate.runInSameVM(AntLaunchDelegate.java:290)
+	at org.eclipse.ant.internal.launching.launchConfigurations.AntLaunchDelegate.launch(AntLaunchDelegate.java:249)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:885)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:739)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:731)
+	at org.eclipse.core.externaltools.internal.model.ExternalToolBuilder.launchBuild(ExternalToolBuilder.java:183)
+	at org.eclipse.core.externaltools.internal.model.ExternalToolBuilder.doBuildBasedOnScope(ExternalToolBuilder.java:171)
+	at org.eclipse.core.externaltools.internal.model.ExternalToolBuilder.build(ExternalToolBuilder.java:90)
+	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:734)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:205)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:245)
+	at org.eclipse.core.internal.events.BuildManager$1.run(BuildManager.java:300)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:303)
+	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:359)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:382)
+	at org.eclipse.core.internal.resources.Workspace.buildInternal(Workspace.java:486)
+	at org.eclipse.core.internal.resources.Workspace.build(Workspace.java:398)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:859)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:739)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1039)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1256)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+Caused by: D:\workspaceNS\WebServiceNS\build.xml:112: WSDL processing error for https://webservices.netsuite.com/wsdl/v2018_2_0/netsuite.wsdl :
+ org/apache/commons/discovery/tools/DiscoverSingleton
+	at org.apache.axis.tools.ant.wsdl.Wsdl2javaAntTask.execute(Wsdl2javaAntTask.java:304)
+	at org.apache.tools.ant.UnknownElement.execute(UnknownElement.java:293)
+	at sun.reflect.GeneratedMethodAccessor105.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.tools.ant.dispatch.DispatchUtils.execute(DispatchUtils.java:106)
+	at org.apache.tools.ant.Task.perform(Task.java:348)
+	at org.apache.tools.ant.Target.execute(Target.java:435)
+	at org.apache.tools.ant.Target.performTasks(Target.java:456)
+	at org.apache.tools.ant.Project.executeSortedTargets(Project.java:1405)
+	at org.apache.tools.ant.Project.executeTarget(Project.java:1376)
+	at org.apache.tools.ant.helper.DefaultExecutor.executeTargets(DefaultExecutor.java:41)
+	at org.eclipse.ant.internal.core.ant.EclipseDefaultExecutor.executeTargets(EclipseDefaultExecutor.java:36)
+	at org.apache.tools.ant.Project.executeTargets(Project.java:1260)
+	at org.eclipse.ant.internal.core.ant.InternalAntRunner.run(InternalAntRunner.java:705)
+	at org.eclipse.ant.internal.core.ant.InternalAntRunner.run(InternalAntRunner.java:527)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.eclipse.ant.core.AntRunner.run(AntRunner.java:371)
+	... 24 more
+Caused by: java.lang.NoClassDefFoundError: org/apache/commons/discovery/tools/DiscoverSingleton
+	at org.apache.axis.components.logger.LogFactory$1.run(LogFactory.java:45)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at org.apache.axis.components.logger.LogFactory.getLogFactory(LogFactory.java:41)
+	at org.apache.axis.components.logger.LogFactory.<clinit>(LogFactory.java:33)
+	at org.apache.axis.encoding.TypeMappingImpl.<clinit>(TypeMappingImpl.java:77)
+	at org.apache.axis.encoding.TypeMappingRegistryImpl.<init>(TypeMappingRegistryImpl.java:155)
+	at org.apache.axis.encoding.TypeMappingRegistryImpl.<init>(TypeMappingRegistryImpl.java:149)
+	at org.apache.axis.wsdl.toJava.Emitter.<init>(Emitter.java:144)
+	at org.apache.axis.tools.ant.wsdl.Wsdl2javaAntTask.createEmitter(Wsdl2javaAntTask.java:615)
+	at org.apache.axis.tools.ant.wsdl.Wsdl2javaAntTask.execute(Wsdl2javaAntTask.java:211)
+	... 44 more
+Caused by: java.lang.ClassNotFoundException: org.apache.commons.discovery.tools.DiscoverSingleton
+	at org.apache.tools.ant.AntClassLoader.findClassInComponents(AntClassLoader.java:1388)
+	at org.apache.tools.ant.AntClassLoader.findClass(AntClassLoader.java:1337)
+	at org.apache.tools.ant.AntClassLoader.loadClass(AntClassLoader.java:1089)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:357)
+	... 54 more
+!SUBENTRY 1 org.eclipse.ant.core 4 1 2019-01-05 13:15:41.615
+!MESSAGE D:\workspaceNS\WebServiceNS\build.xml:112: WSDL processing error for https://webservices.netsuite.com/wsdl/v2018_2_0/netsuite.wsdl :
+ org/apache/commons/discovery/tools/DiscoverSingleton
+!STACK 0
+D:\workspaceNS\WebServiceNS\build.xml:112: WSDL processing error for https://webservices.netsuite.com/wsdl/v2018_2_0/netsuite.wsdl :
+ org/apache/commons/discovery/tools/DiscoverSingleton
+	at org.apache.axis.tools.ant.wsdl.Wsdl2javaAntTask.execute(Wsdl2javaAntTask.java:304)
+	at org.apache.tools.ant.UnknownElement.execute(UnknownElement.java:293)
+	at sun.reflect.GeneratedMethodAccessor105.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.tools.ant.dispatch.DispatchUtils.execute(DispatchUtils.java:106)
+	at org.apache.tools.ant.Task.perform(Task.java:348)
+	at org.apache.tools.ant.Target.execute(Target.java:435)
+	at org.apache.tools.ant.Target.performTasks(Target.java:456)
+	at org.apache.tools.ant.Project.executeSortedTargets(Project.java:1405)
+	at org.apache.tools.ant.Project.executeTarget(Project.java:1376)
+	at org.apache.tools.ant.helper.DefaultExecutor.executeTargets(DefaultExecutor.java:41)
+	at org.eclipse.ant.internal.core.ant.EclipseDefaultExecutor.executeTargets(EclipseDefaultExecutor.java:36)
+	at org.apache.tools.ant.Project.executeTargets(Project.java:1260)
+	at org.eclipse.ant.internal.core.ant.InternalAntRunner.run(InternalAntRunner.java:705)
+	at org.eclipse.ant.internal.core.ant.InternalAntRunner.run(InternalAntRunner.java:527)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.eclipse.ant.core.AntRunner.run(AntRunner.java:371)
+	at org.eclipse.ant.internal.launching.launchConfigurations.AntLaunchDelegate.runInSameVM(AntLaunchDelegate.java:290)
+	at org.eclipse.ant.internal.launching.launchConfigurations.AntLaunchDelegate.launch(AntLaunchDelegate.java:249)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:885)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:739)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:731)
+	at org.eclipse.core.externaltools.internal.model.ExternalToolBuilder.launchBuild(ExternalToolBuilder.java:183)
+	at org.eclipse.core.externaltools.internal.model.ExternalToolBuilder.doBuildBasedOnScope(ExternalToolBuilder.java:171)
+	at org.eclipse.core.externaltools.internal.model.ExternalToolBuilder.build(ExternalToolBuilder.java:90)
+	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:734)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:205)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:245)
+	at org.eclipse.core.internal.events.BuildManager$1.run(BuildManager.java:300)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:303)
+	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:359)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:382)
+	at org.eclipse.core.internal.resources.Workspace.buildInternal(Workspace.java:486)
+	at org.eclipse.core.internal.resources.Workspace.build(Workspace.java:398)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:859)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:739)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1039)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1256)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+Caused by: java.lang.NoClassDefFoundError: org/apache/commons/discovery/tools/DiscoverSingleton
+	at org.apache.axis.components.logger.LogFactory$1.run(LogFactory.java:45)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at org.apache.axis.components.logger.LogFactory.getLogFactory(LogFactory.java:41)
+	at org.apache.axis.components.logger.LogFactory.<clinit>(LogFactory.java:33)
+	at org.apache.axis.encoding.TypeMappingImpl.<clinit>(TypeMappingImpl.java:77)
+	at org.apache.axis.encoding.TypeMappingRegistryImpl.<init>(TypeMappingRegistryImpl.java:155)
+	at org.apache.axis.encoding.TypeMappingRegistryImpl.<init>(TypeMappingRegistryImpl.java:149)
+	at org.apache.axis.wsdl.toJava.Emitter.<init>(Emitter.java:144)
+	at org.apache.axis.tools.ant.wsdl.Wsdl2javaAntTask.createEmitter(Wsdl2javaAntTask.java:615)
+	at org.apache.axis.tools.ant.wsdl.Wsdl2javaAntTask.execute(Wsdl2javaAntTask.java:211)
+	... 44 more
+Caused by: java.lang.ClassNotFoundException: org.apache.commons.discovery.tools.DiscoverSingleton
+	at org.apache.tools.ant.AntClassLoader.findClassInComponents(AntClassLoader.java:1388)
+	at org.apache.tools.ant.AntClassLoader.findClass(AntClassLoader.java:1337)
+	at org.apache.tools.ant.AntClassLoader.loadClass(AntClassLoader.java:1089)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:357)
+	... 54 more
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2019-01-05 13:15:41.624
+!MESSAGE Using platform encoding (GBK actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2019-01-05 13:15:41.633
+!MESSAGE Using platform encoding (GBK actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.ant.launching 4 0 2019-01-05 13:16:09.308
+!MESSAGE Ant Build Failed
+!STACK 1
+org.eclipse.core.runtime.CoreException: D:\workspaceNS\WebServiceNS\build.xml:112: WSDL processing error for https://webservices.netsuite.com/wsdl/v2018_2_0/netsuite.wsdl :
+ javax.wsdl.Definition
+	at org.eclipse.ant.core.AntRunner.handleInvocationTargetException(AntRunner.java:448)
+	at org.eclipse.ant.core.AntRunner.run(AntRunner.java:380)
+	at org.eclipse.ant.internal.launching.launchConfigurations.AntLaunchDelegate.runInSameVM(AntLaunchDelegate.java:290)
+	at org.eclipse.ant.internal.launching.launchConfigurations.AntLaunchDelegate.launch(AntLaunchDelegate.java:249)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:885)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:739)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:731)
+	at org.eclipse.core.externaltools.internal.model.ExternalToolBuilder.launchBuild(ExternalToolBuilder.java:183)
+	at org.eclipse.core.externaltools.internal.model.ExternalToolBuilder.doBuildBasedOnScope(ExternalToolBuilder.java:171)
+	at org.eclipse.core.externaltools.internal.model.ExternalToolBuilder.build(ExternalToolBuilder.java:90)
+	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:734)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:205)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:245)
+	at org.eclipse.core.internal.events.BuildManager$1.run(BuildManager.java:300)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:303)
+	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:359)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:382)
+	at org.eclipse.core.internal.resources.Workspace.buildInternal(Workspace.java:486)
+	at org.eclipse.core.internal.resources.Workspace.build(Workspace.java:398)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:859)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:739)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1039)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1256)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+Caused by: D:\workspaceNS\WebServiceNS\build.xml:112: WSDL processing error for https://webservices.netsuite.com/wsdl/v2018_2_0/netsuite.wsdl :
+ javax.wsdl.Definition
+	at org.apache.axis.tools.ant.wsdl.Wsdl2javaAntTask.execute(Wsdl2javaAntTask.java:304)
+	at org.apache.tools.ant.UnknownElement.execute(UnknownElement.java:293)
+	at sun.reflect.GeneratedMethodAccessor112.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.tools.ant.dispatch.DispatchUtils.execute(DispatchUtils.java:106)
+	at org.apache.tools.ant.Task.perform(Task.java:348)
+	at org.apache.tools.ant.Target.execute(Target.java:435)
+	at org.apache.tools.ant.Target.performTasks(Target.java:456)
+	at org.apache.tools.ant.Project.executeSortedTargets(Project.java:1405)
+	at org.apache.tools.ant.Project.executeTarget(Project.java:1376)
+	at org.apache.tools.ant.helper.DefaultExecutor.executeTargets(DefaultExecutor.java:41)
+	at org.eclipse.ant.internal.core.ant.EclipseDefaultExecutor.executeTargets(EclipseDefaultExecutor.java:36)
+	at org.apache.tools.ant.Project.executeTargets(Project.java:1260)
+	at org.eclipse.ant.internal.core.ant.InternalAntRunner.run(InternalAntRunner.java:705)
+	at org.eclipse.ant.internal.core.ant.InternalAntRunner.run(InternalAntRunner.java:527)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.eclipse.ant.core.AntRunner.run(AntRunner.java:371)
+	... 24 more
+Caused by: java.lang.NoClassDefFoundError: javax.wsdl.Definition
+	at org.apache.axis.wsdl.toJava.JavaGeneratorFactory.class$(JavaGeneratorFactory.java:68)
+	at org.apache.axis.wsdl.toJava.JavaGeneratorFactory.addDefinitionGenerators(JavaGeneratorFactory.java:179)
+	at org.apache.axis.wsdl.toJava.JavaGeneratorFactory.addGenerators(JavaGeneratorFactory.java:133)
+	at org.apache.axis.wsdl.toJava.JavaGeneratorFactory.<init>(JavaGeneratorFactory.java:111)
+	at org.apache.axis.wsdl.toJava.Emitter.<init>(Emitter.java:159)
+	at org.apache.axis.tools.ant.wsdl.Wsdl2javaAntTask.createEmitter(Wsdl2javaAntTask.java:615)
+	at org.apache.axis.tools.ant.wsdl.Wsdl2javaAntTask.execute(Wsdl2javaAntTask.java:211)
+	... 44 more
+!SUBENTRY 1 org.eclipse.ant.core 4 1 2019-01-05 13:16:09.308
+!MESSAGE D:\workspaceNS\WebServiceNS\build.xml:112: WSDL processing error for https://webservices.netsuite.com/wsdl/v2018_2_0/netsuite.wsdl :
+ javax.wsdl.Definition
+!STACK 0
+D:\workspaceNS\WebServiceNS\build.xml:112: WSDL processing error for https://webservices.netsuite.com/wsdl/v2018_2_0/netsuite.wsdl :
+ javax.wsdl.Definition
+	at org.apache.axis.tools.ant.wsdl.Wsdl2javaAntTask.execute(Wsdl2javaAntTask.java:304)
+	at org.apache.tools.ant.UnknownElement.execute(UnknownElement.java:293)
+	at sun.reflect.GeneratedMethodAccessor112.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.tools.ant.dispatch.DispatchUtils.execute(DispatchUtils.java:106)
+	at org.apache.tools.ant.Task.perform(Task.java:348)
+	at org.apache.tools.ant.Target.execute(Target.java:435)
+	at org.apache.tools.ant.Target.performTasks(Target.java:456)
+	at org.apache.tools.ant.Project.executeSortedTargets(Project.java:1405)
+	at org.apache.tools.ant.Project.executeTarget(Project.java:1376)
+	at org.apache.tools.ant.helper.DefaultExecutor.executeTargets(DefaultExecutor.java:41)
+	at org.eclipse.ant.internal.core.ant.EclipseDefaultExecutor.executeTargets(EclipseDefaultExecutor.java:36)
+	at org.apache.tools.ant.Project.executeTargets(Project.java:1260)
+	at org.eclipse.ant.internal.core.ant.InternalAntRunner.run(InternalAntRunner.java:705)
+	at org.eclipse.ant.internal.core.ant.InternalAntRunner.run(InternalAntRunner.java:527)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.eclipse.ant.core.AntRunner.run(AntRunner.java:371)
+	at org.eclipse.ant.internal.launching.launchConfigurations.AntLaunchDelegate.runInSameVM(AntLaunchDelegate.java:290)
+	at org.eclipse.ant.internal.launching.launchConfigurations.AntLaunchDelegate.launch(AntLaunchDelegate.java:249)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:885)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:739)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:731)
+	at org.eclipse.core.externaltools.internal.model.ExternalToolBuilder.launchBuild(ExternalToolBuilder.java:183)
+	at org.eclipse.core.externaltools.internal.model.ExternalToolBuilder.doBuildBasedOnScope(ExternalToolBuilder.java:171)
+	at org.eclipse.core.externaltools.internal.model.ExternalToolBuilder.build(ExternalToolBuilder.java:90)
+	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:734)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:205)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:245)
+	at org.eclipse.core.internal.events.BuildManager$1.run(BuildManager.java:300)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:303)
+	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:359)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:382)
+	at org.eclipse.core.internal.resources.Workspace.buildInternal(Workspace.java:486)
+	at org.eclipse.core.internal.resources.Workspace.build(Workspace.java:398)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:859)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:739)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1039)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1256)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+Caused by: java.lang.NoClassDefFoundError: javax.wsdl.Definition
+	at org.apache.axis.wsdl.toJava.JavaGeneratorFactory.class$(JavaGeneratorFactory.java:68)
+	at org.apache.axis.wsdl.toJava.JavaGeneratorFactory.addDefinitionGenerators(JavaGeneratorFactory.java:179)
+	at org.apache.axis.wsdl.toJava.JavaGeneratorFactory.addGenerators(JavaGeneratorFactory.java:133)
+	at org.apache.axis.wsdl.toJava.JavaGeneratorFactory.<init>(JavaGeneratorFactory.java:111)
+	at org.apache.axis.wsdl.toJava.Emitter.<init>(Emitter.java:159)
+	at org.apache.axis.tools.ant.wsdl.Wsdl2javaAntTask.createEmitter(Wsdl2javaAntTask.java:615)
+	at org.apache.axis.tools.ant.wsdl.Wsdl2javaAntTask.execute(Wsdl2javaAntTask.java:211)
+	... 44 more
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2019-01-05 13:16:09.317
+!MESSAGE Using platform encoding (GBK actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2019-01-05 13:16:09.318
+!MESSAGE Using platform encoding (GBK actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2019-01-05 13:18:46.845
+!MESSAGE Using platform encoding (GBK actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2019-01-05 13:18:46.856
+!MESSAGE Using platform encoding (GBK actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.jdt.core 4 0 2019-01-05 13:33:30.664
+!MESSAGE Invalid ZIP archive: lib/log4j.properties [in Bansi_WebService]

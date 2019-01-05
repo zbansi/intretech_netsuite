@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project name="WebServiceNS" basedir="."
-	default="compile">
+	default="generate.interfaces.ns201802">
 
 	<!-- properies -->
 	<property name="webContent.dir" value="WebContent" />
@@ -96,11 +96,6 @@
 			<tag name="todo" scope="all" description="To do:" />
 		</javadoc>
 	</target>
-
-
-	<echo
-		message="wsdl2javaAll          -->java文件生成All,java2wsdl -Ddir=com/bansi/ws/example -Dwsdl=sayhi.wsdl" />
-
 
 	<target name="generate.interfaces.sayhi" description="Generates client interfaces using Axis">
 		<echo>Generating sayhi clinet interfaces using Apache Axis</echo>
