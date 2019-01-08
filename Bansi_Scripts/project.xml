@@ -195,7 +195,10 @@
       <file name="MAOPrintStatusFieldChangedBs.bk" bundleable="true" hideInBundle="false" isOnline="false" textFileEncoding="_utf8"/>
       <file name="MAOPrintStatusFieldChangedBs.js" bundleable="true"/>
       <file name="MaterialApplyOrderPrintSuiteletBS.bk" bundleable="true" hideInBundle="false" isOnline="false" textFileEncoding="_utf8"/>
-      <file name="MaterialApplyOrderPrintSuiteletBS.js" bundleable="true"/>
+      <file name="MaterialApplyOrderPrintSuiteletBS.js" bundleable="true" hideInBundle="false" isOnline="false" textFileEncoding="_utf8">
+        <description></description>
+        <altTagCaption></altTagCaption>
+      </file>
       <file name="urlUpdate.js" bundleable="true" hideInBundle="false" isOnline="false" textFileEncoding="_utf8"/>
     </folder>
     <folder name="cux_eg_wo_to_mao" bundleable="true">

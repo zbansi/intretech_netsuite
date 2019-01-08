@@ -60,8 +60,8 @@ define([ 'N/record', 'N/error' ], function(record, error) {
 	}
 	
 	return {
-		get : _get,
-		delete : _delete,
+		'get' : _get,
+		'delete' : _delete,
 		post : post,
 		put : put
 	};
