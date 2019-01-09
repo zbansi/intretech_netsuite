@@ -7,7 +7,7 @@
 			<macro id="nlheader">
 				<table class="header" style="width: 100%;">
 					<tr>
-						<td align="right">
+						<td align="center">
 							<span class="title">¡Ï¡œ…Í«Îµ•</span>
 						</td>
 					</tr>
@@ -16,7 +16,7 @@
 			<macro id="nlfooter">
 				<table class="footer" style="width: 100%;">
 					<tr>
-						<td align="right">
+						<td align="center">
 							<pagenumber/> of <totalpages/>
 						</td>
 					</tr>
@@ -28,6 +28,7 @@
 						}
 						table {
 						font-size: 9pt;
+						border: 1;
 						table-layout: fixed;
 						}
 						        th {

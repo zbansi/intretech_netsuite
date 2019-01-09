@@ -118,9 +118,9 @@ function(record, render, search) {
 				l_table_body = l_table_body.replace('TEXT01', l_row_num);
 				l_table_body = l_table_body.replace('TEXT02', itemRec[i].getValue('itemid')); 
 				l_table_body = l_table_body.replace('TEXT03', itemRec[i].getValue('purchasedescription'));
-				l_table_body = l_table_body.replace('TEXT04', itemRec[i].getValue('location')); 
-				l_table_body = l_table_body.replace('TEXT05', itemRec[i].getValue('manufacturer')); 
-				l_table_body = l_table_body.replace('TEXT06', itemRec[i].getValue('unitstype')); 
+				l_table_body = l_table_body.replace('TEXT04', itemRec[i].getValue('purchaseunit')); 
+				l_table_body = l_table_body.replace('TEXT05', itemRec[i].getValue('stockdescription')); 
+				l_table_body = l_table_body.replace('TEXT06', itemRec[i].getValue('stockunit')); 
 				l_table_body = l_table_body.replace('TEXT07', itemRec[i].getValue('cost')); 
 				xmlStr += l_table_body;
 			}*/
@@ -133,19 +133,19 @@ function(record, render, search) {
 				l_row_num = l_row_num + 1;
 				var l_table_body = g_table_body;
 				l_table_body = l_table_body.replace('TEXT01', l_row_num);
-				l_table_body = l_table_body.replace('TEXT02', result.getValue('itemid'));
-				l_table_body = l_table_body.replace('TEXT03', result.getValue('purchasedescription'));
-				l_table_body = l_table_body.replace('TEXT04', result.getText('location'));
-				l_table_body = l_table_body.replace('TEXT05', result.getText('manufacturer'));
-				l_table_body = l_table_body.replace('TEXT06', result.getText('unitstype'));
-				l_table_body = l_table_body.replace('TEXT07', result.getValue('cost'));
+				l_table_body = l_table_body.replace('TEXT02', result.getValue('itemid')); 
+				l_table_body = l_table_body.replace('TEXT03', result.getValue('purchasedescription')); 
+				l_table_body = l_table_body.replace('TEXT04', result.getValue('purchaseunit')); 
+				l_table_body = l_table_body.replace('TEXT05', result.getValue('stockdescription')); 
+				l_table_body = l_table_body.replace('TEXT06', result.getValue('stockunit')); 
+				l_table_body = l_table_body.replace('TEXT07', result.getValue('cost')); 
 				xmlStr += l_table_body;
 			});
 			*/
 			//推荐:分页加载
 			var itemPageData = search.create({
 				type : 'item',
-				columns : [ 'itemid', 'purchasedescription', 'location', 'manufacturer', 'unitstype', 'cost' ]
+				columns : [ 'itemid', 'purchasedescription', 'purchaseunit', 'stockdescription', 'stockunit', 'cost' ]
 			}).runPaged();
 			itemPageData.pageRanges.forEach(function(pageRange) {
 				var myPage = itemPageData.fetch({
@@ -157,9 +157,9 @@ function(record, render, search) {
 					l_table_body = l_table_body.replace('TEXT01', l_row_num);
 					l_table_body = l_table_body.replace('TEXT02', result.getValue('itemid'));
 					l_table_body = l_table_body.replace('TEXT03', result.getValue('purchasedescription'));
-					l_table_body = l_table_body.replace('TEXT04', result.getText('location'));
-					l_table_body = l_table_body.replace('TEXT05', result.getText('manufacturer'));
-					l_table_body = l_table_body.replace('TEXT06', result.getText('unitstype'));
+					l_table_body = l_table_body.replace('TEXT04', result.getValue('location'));
+					l_table_body = l_table_body.replace('TEXT05', result.getValue('manufacturer'));
+					l_table_body = l_table_body.replace('TEXT06', result.getValue('unitstype'));
 					l_table_body = l_table_body.replace('TEXT07', result.getValue('cost'));
 					xmlStr += l_table_body;
 				})

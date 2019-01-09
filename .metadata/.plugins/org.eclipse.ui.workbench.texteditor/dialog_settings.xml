@@ -2,20 +2,20 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="set" key="selection"/>
+		<item value="HEADERID" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="HEADERID"/>
+			<item value=" ,"/>
 			<item value="set"/>
 			<item value="setvalue"/>
 			<item value="result"/>
 			<item value="SQL"/>
 			<item value="body"/>
 			<item value="--"/>
-			<item value="REPLACE(l_table_body,"/>
-			<item value="               &lt;"/>
 		</list>
 		<list key="replacehistory">
 			<item value="//"/>
