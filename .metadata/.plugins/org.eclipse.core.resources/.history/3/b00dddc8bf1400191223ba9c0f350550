@@ -1,0 +1,16 @@
+/**
+ * @NApiVersion 2.x
+ */
+define([], function() {
+    return {
+        consumer: {
+            public: 'a4fca249a4ec7d7be1f85b4f9177ad79756df96415c1ad08439592984fed2ab5',
+            secret: 'a56ede1ee3ea34d0fa85b112568f3d178c63e72a6fe20819bb2463d0d8d081d4'
+        },
+        token: {
+            public: 'e0e754dd5542f58fed363616fea11803d4910e4a1350835001f0b9f0fa3e6d25',
+            secret: '754086c49441d2b4a218349ab89e5fc15e850024db7346b5401efac3c02d8b55'
+        },
+        realm: '1234567'
+    }
+});
