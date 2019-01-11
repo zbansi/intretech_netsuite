@@ -10301,3 +10301,137 @@ You do not have permissions to set a value for element bundleable due to one of 
 You do not have permissions to set a value for element bundleable due to one of the following reasons: 1) The field is read-only; 2) An associated feature is disabled; 3) The field is available either when a record is created or updated, but not in both cases.. 
 	- /Bansi_Scripts/SampleScripts
 	- /Bansi_Scripts/SampleScripts/Suitelet
+!SESSION 2019-01-11 09:56:37.287 -----------------------------------------------
+eclipse.buildId=4.5.2.M20160212-1500
+java.version=1.8.0_181
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=zh_CN
+Framework arguments:  -product org.eclipse.epp.package.jee.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.jee.product
+
+!ENTRY org.eclipse.jface 2 0 2019-01-11 09:56:50.946
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2019-01-11 09:56:50.946
+!MESSAGE A conflict occurred for ALT+CTRL+T:
+Binding(ALT+CTRL+T,
+	ParameterizedCommand(Command(org.eclipse.tm.terminal.connector.local.command.launch,Open Local Terminal on Selection,
+		,
+		Category(org.eclipse.tm.terminal.view.ui.commands.category,Terminal Commands,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@4b20a8e4,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(ALT+CTRL+T,
+	ParameterizedCommand(Command(pl.szpinda.plugin.tomcat.commands.tomcatStartStop,Tomcat start,stop,
+		,
+		Category(pl.szpinda.plugin.tomcat.commands.category.key,Tomcat keys,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@6ad4ef13,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+
+!ENTRY org.eclipse.egit.ui 2 0 2019-01-11 09:56:59.021
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\YQ12681'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY com.netsuite.ide.eclipse.app 4 0 2019-01-11 10:15:36.441
+!MESSAGE The following file(s) were not uploaded:
+You do not have permissions to set a value for element bundleable due to one of the following reasons: 1) The field is read-only; 2) An associated feature is disabled; 3) The field is available either when a record is created or updated, but not in both cases.. 
+	- /Bansi_Scripts/SampleScripts
+	- /Bansi_Scripts/SampleScripts/Suitelet
+
+!ENTRY com.netsuite.ide.eclipse.app 4 0 2019-01-11 10:22:43.689
+!MESSAGE The following file(s) were not uploaded:
+You do not have permissions to set a value for element bundleable due to one of the following reasons: 1) The field is read-only; 2) An associated feature is disabled; 3) The field is available either when a record is created or updated, but not in both cases.. 
+	- /Bansi_Scripts/SampleScripts
+	- /Bansi_Scripts/SampleScripts/Suitelet
+
+!ENTRY com.netsuite.ide.eclipse.app 4 0 2019-01-11 10:28:30.416
+!MESSAGE The following file(s) were not uploaded:
+You do not have permissions to set a value for element bundleable due to one of the following reasons: 1) The field is read-only; 2) An associated feature is disabled; 3) The field is available either when a record is created or updated, but not in both cases.. 
+	- /Bansi_Scripts/SampleScripts
+	- /Bansi_Scripts/SampleScripts/Suitelet
+
+!ENTRY com.netsuite.ide.eclipse.app 4 0 2019-01-11 10:33:23.953
+!MESSAGE The following file(s) were not uploaded:
+You do not have permissions to set a value for element bundleable due to one of the following reasons: 1) The field is read-only; 2) An associated feature is disabled; 3) The field is available either when a record is created or updated, but not in both cases.. 
+	- /Bansi_Scripts/SampleScripts
+	- /Bansi_Scripts/SampleScripts/Suitelet
+
+!ENTRY com.netsuite.ide.eclipse.app 4 0 2019-01-11 10:41:21.681
+!MESSAGE The following file(s) were not uploaded:
+You do not have permissions to set a value for element bundleable due to one of the following reasons: 1) The field is read-only; 2) An associated feature is disabled; 3) The field is available either when a record is created or updated, but not in both cases.. 
+	- /Bansi_Scripts/SampleScripts
+	- /Bansi_Scripts/SampleScripts/Suitelet
+
+!ENTRY com.netsuite.ide.eclipse.app 4 0 2019-01-11 10:41:42.613
+!MESSAGE The following file(s) were not uploaded:
+You do not have permissions to set a value for element bundleable due to one of the following reasons: 1) The field is read-only; 2) An associated feature is disabled; 3) The field is available either when a record is created or updated, but not in both cases.. 
+	- /Bansi_Scripts/SampleScripts
+	- /Bansi_Scripts/SampleScripts/Suitelet
+
+!ENTRY com.netsuite.ide.eclipse.app 4 0 2019-01-11 10:42:19.390
+!MESSAGE The following file(s) were not uploaded:
+You do not have permissions to set a value for element bundleable due to one of the following reasons: 1) The field is read-only; 2) An associated feature is disabled; 3) The field is available either when a record is created or updated, but not in both cases.. 
+	- /Bansi_Scripts/SampleScripts
+	- /Bansi_Scripts/SampleScripts/Suitelet
+
+!ENTRY com.netsuite.ide.eclipse.app 4 0 2019-01-11 10:44:02.007
+!MESSAGE The following file(s) were not uploaded:
+You do not have permissions to set a value for element bundleable due to one of the following reasons: 1) The field is read-only; 2) An associated feature is disabled; 3) The field is available either when a record is created or updated, but not in both cases.. 
+	- /Bansi_Scripts/SampleScripts
+	- /Bansi_Scripts/SampleScripts/Suitelet
+
+!ENTRY com.netsuite.ide.eclipse.app 4 0 2019-01-11 11:06:26.946
+!MESSAGE The following file(s) were not uploaded:
+You do not have permissions to set a value for element bundleable due to one of the following reasons: 1) The field is read-only; 2) An associated feature is disabled; 3) The field is available either when a record is created or updated, but not in both cases.. 
+	- /Bansi_Scripts/SampleScripts
+	- /Bansi_Scripts/SampleScripts/Suitelet
+
+!ENTRY com.netsuite.ide.eclipse.app 4 0 2019-01-11 11:07:44.980
+!MESSAGE The following file(s) were not uploaded:
+You do not have permissions to set a value for element bundleable due to one of the following reasons: 1) The field is read-only; 2) An associated feature is disabled; 3) The field is available either when a record is created or updated, but not in both cases.. 
+	- /Bansi_Scripts/SampleScripts
+	- /Bansi_Scripts/SampleScripts/Suitelet
+
+!ENTRY com.netsuite.ide.eclipse.app 4 0 2019-01-11 11:08:45.426
+!MESSAGE The following file(s) were not uploaded:
+You do not have permissions to set a value for element bundleable due to one of the following reasons: 1) The field is read-only; 2) An associated feature is disabled; 3) The field is available either when a record is created or updated, but not in both cases.. 
+	- /Bansi_Scripts/SampleScripts
+	- /Bansi_Scripts/SampleScripts/Suitelet
+
+!ENTRY com.netsuite.ide.eclipse.app 4 0 2019-01-11 11:14:15.097
+!MESSAGE The following file(s) were not uploaded:
+You do not have permissions to set a value for element bundleable due to one of the following reasons: 1) The field is read-only; 2) An associated feature is disabled; 3) The field is available either when a record is created or updated, but not in both cases.. 
+	- /Bansi_Scripts/SampleScripts
+	- /Bansi_Scripts/SampleScripts/Suitelet
+
+!ENTRY com.netsuite.ide.eclipse.app 4 0 2019-01-11 11:26:07.764
+!MESSAGE The following file(s) were not uploaded:
+You do not have permissions to set a value for element bundleable due to one of the following reasons: 1) The field is read-only; 2) An associated feature is disabled; 3) The field is available either when a record is created or updated, but not in both cases.. 
+	- /Bansi_Scripts/SampleScripts
+	- /Bansi_Scripts/SampleScripts/Suitelet
+
+!ENTRY com.netsuite.ide.eclipse.app 4 0 2019-01-11 11:29:19.519
+!MESSAGE The following file(s) were not uploaded:
+You do not have permissions to set a value for element bundleable due to one of the following reasons: 1) The field is read-only; 2) An associated feature is disabled; 3) The field is available either when a record is created or updated, but not in both cases.. 
+	- /Bansi_Scripts/SampleScripts
+	- /Bansi_Scripts/SampleScripts/Suitelet
+
+!ENTRY com.netsuite.ide.eclipse.app 4 0 2019-01-11 11:29:36.001
+!MESSAGE The following file(s) were not uploaded:
+You do not have permissions to set a value for element bundleable due to one of the following reasons: 1) The field is read-only; 2) An associated feature is disabled; 3) The field is available either when a record is created or updated, but not in both cases.. 
+	- /Bansi_Scripts/SampleScripts
+	- /Bansi_Scripts/SampleScripts/Suitelet
+
+!ENTRY com.netsuite.ide.eclipse.app 1 0 2019-01-11 11:29:53.680
+!MESSAGE SuiteScript debugger started.
+
+!ENTRY com.netsuite.ide.eclipse.app 4 0 2019-01-11 11:32:13.593
+!MESSAGE The following file(s) were not uploaded:
+You do not have permissions to set a value for element bundleable due to one of the following reasons: 1) The field is read-only; 2) An associated feature is disabled; 3) The field is available either when a record is created or updated, but not in both cases.. 
+	- /Bansi_Scripts/SampleScripts
+	- /Bansi_Scripts/SampleScripts/Suitelet

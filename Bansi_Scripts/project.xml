@@ -133,37 +133,8 @@
           </folder>
         </folder>
         <folder name="oauth_valid" bundleable="true">
-          <folder name="test" bundleable="true">
-            <folder name="options" bundleable="true">
-              <file name="consumer.js" bundleable="true"/>
-              <file name="last_ampersand.js" bundleable="true"/>
-              <file name="multiple_values.js" bundleable="true"/>
-              <file name="multiple_values_qs.js" bundleable="true"/>
-              <file name="nonce_length.js" bundleable="true"/>
-              <file name="parameter_seperator.js" bundleable="true"/>
-              <file name="realm.js" bundleable="true"/>
-              <file name="signature_method.js" bundleable="true"/>
-            </folder>
-            <folder name="services" bundleable="true">
-              <file name="bitbucket.js" bundleable="true"/>
-              <file name="flickr.js" bundleable="true"/>
-              <file name="linkedin.js" bundleable="true"/>
-              <file name="openbank.js" bundleable="true"/>
-              <file name="twitter.js" bundleable="true"/>
-            </folder>
-            <file name="README.md" bundleable="true"/>
-            <file name="getParameterString.js" bundleable="true"/>
-            <file name="mocha.opts" bundleable="true"/>
-            <file name="oauth_body_hash.js" bundleable="true"/>
-            <file name="twitter_sample_data.js" bundleable="true"/>
-          </folder>
-          <file name="LICENSE" bundleable="true"/>
-          <file name="Makefile" bundleable="true"/>
-          <file name="Node.js" bundleable="true"/>
           <file name="README.md" bundleable="true"/>
-          <file name="oauth-1.0a.d.ts" bundleable="true"/>
           <file name="oauth-1.0a.js" bundleable="true"/>
-          <file name="package.json" bundleable="true"/>
         </folder>
         <file name="SuiteletSamp01SendEmail.js" bundleable="true" hideInBundle="false" isOnline="false" textFileEncoding="_utf8"/>
         <file name="SuiteletSamp02CallRESTlet.js" bundleable="true" hideInBundle="false" isOnline="false" textFileEncoding="_utf8"/>

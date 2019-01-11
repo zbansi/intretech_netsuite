@@ -19,14 +19,14 @@ define(
 						tokenKey : secret.token.public,
 						tokenSecret : secret.token.secret
 					});
-					
+
 					var methodGET = 'GET';
-				    var headersGET = oauth.getHeaders({
-				        url: url,
-				        method: methodGET,
-				        tokenKey: secret.token.public,
-				        tokenSecret: secret.token.secret
-				    });
+					var headersGET = oauth.getHeaders({
+						url : url,
+						method : methodGET,
+						tokenKey : secret.token.public,
+						tokenSecret : secret.token.secret
+					});
 
 					var body = {
 						datum1 : 'datum1',
@@ -42,7 +42,6 @@ define(
 					});
 					log.debug('response', JSON.stringify(restResponsePUT));
 					log.debug('headers', headersPUT);
-					
 
 					headersGET['Content-Type'] = 'application/json';
 					var restResponseGET = https.get({
@@ -53,12 +52,14 @@ define(
 					log.debug('headers', headersGET);
 
 					var html = '<html><body>' + 'Calling: ' + url + '<br><br>'
-							+ 'Full header stack:<br>'
+							+ 'Full headerPUT stack:<br>'
 							+ JSON.stringify(headersPUT) + '<br><br>'
 							+ 'Payload:<br>' + JSON.stringify(body)
-							+ '<br><br>' + 'Response:<br>' + restResponsePUT.body
-							+ '<br><br>' + JSON.stringify(headersGET)
-							+ '<br><br>' + '<br><br>' + 'Response:<br>'
+							+ '<br><br>' + 'ResponsePUT:<br>'
+							+ restResponsePUT.body + '<br><br>'
+							+ 'Full headerGET stack:<br>' + '<br><br>'
+							+ JSON.stringify(headersGET) + '<br><br>'
+							+ '<br><br>' + 'ResponseGET:<br>'
 							+ restResponseGET.body
 
 							+ '</body></html>';
