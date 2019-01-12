@@ -1,0 +1,21 @@
+#-----------------------------------------------------------------------------
+# Configuration
+#-----------------------------------------------------------------------------
+
+# Web Services URL
+wsUrl=https://webservices.netsuite.com/services/NetSuitePort_2018_2
+
+# If set to true and TBA is not used, the user will be prompted for login parameters
+promptForLogin=false
+
+#-----------------------------------------------------------------------------
+# Login parameters
+#-----------------------------------------------------------------------------
+
+# Login field values
+email=377132229@qq.com
+password=Welcome123
+account=5144758_SB1
+roleId=1002
+applicationId=3B1D754B-DDCB-42DA-85FD-3E8016A26448
+useTba=false

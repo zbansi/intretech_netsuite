@@ -53,8 +53,8 @@ public final class Messages {
 	public static final String ITEM_SYNC_METHOD = "Sync method of item to be retrieved.[All/Increase]";
 
 	public static final String GET_ITEM = "Get an item of the internal id";
-	public static final String ENTER_ITEM_NUMBER = "Please enter the following Item number.";
-	public static final String ITEM_NUMBER = "Sync method of item to be retrieved.";
+	public static final String ENTER_ITEM_NUMBER = "Please enter the following Item.";
+	public static final String ITEM_NUMBER = "Internalid of item to be retrieved.";
 	
 	////////////////////
 	public static final String CUSTOM_FIELDS_WARNING = "In order to populate custom fields, ensure that these fields already exist for the customer record.";
