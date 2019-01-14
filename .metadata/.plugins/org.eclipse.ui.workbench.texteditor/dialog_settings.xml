@@ -2,12 +2,13 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="crypto" key="selection"/>
+		<item value="&apos;" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="`"/>
 			<item value="crypto"/>
 			<item value="http.get"/>
 			<item value="get"/>
@@ -15,9 +16,9 @@
 			<item value=" ,"/>
 			<item value="set"/>
 			<item value="setvalue"/>
-			<item value="result"/>
 		</list>
 		<list key="replacehistory">
+			<item value="&apos;"/>
 			<item value="//"/>
 			<item value="l_table_body.replace("/>
 			<item value="&apos;&lt;"/>
