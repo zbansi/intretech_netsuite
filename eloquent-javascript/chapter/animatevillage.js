@@ -39,7 +39,7 @@
       this.map.src = "img/village2x.png"
       this.map.style.cssText = "vertical-align: -8px"
       this.robotElt = this.node.appendChild(doc.createElement("div"))
-      this.robotElt.style.cssText = `position: absolute; transition: left ${0.8 / speed}s, top ${0.8 / speed}s;`
+      this.robotElt.style.cssText = 'position: absolute; transition: left ${0.8 / speed}s, top ${0.8 / speed}s;'
       let robotPic = this.robotElt.appendChild(doc.createElement("img"))
       robotPic.src = "img/robot_moving2x.gif"
       this.parcels = []
@@ -64,7 +64,7 @@
       this.robotElt.style.top = (pos.y - 38) + "px"
       this.robotElt.style.left = (pos.x - 16) + "px"
 
-      this.text.textContent = ` Turn ${this.turn} `
+      this.text.textContent = ' Turn ${this.turn} '
     }
 
     updateParcels() {
@@ -98,7 +98,7 @@
       this.updateView()
       if (this.worldState.parcels.length == 0) {
         this.button.remove()
-        this.text.textContent = ` Finished after ${this.turn} turns`
+        this.text.textContent = ' Finished after ${this.turn} turns'
         this.robotElt.firstChild.src = "img/robot_idle2x.png"
       } else {
         this.schedule()
