@@ -160,4 +160,64 @@ route) {
     };
 }
 
-console.log(JSON.stringify(findRoute(roadGraph, 'Post Office', 'Daria\'s House')));
+function yourRobot({place, parcels}, memory){
+	if(memory.length == 0){
+		for(let i = 0; i<parcels.length; i++){
+		  let parcel = parcels[i];
+		    if (parcel.place != place) {
+		      route[i] = findRoute(roadGraph, place, parcel.place);
+		    } else {
+		      route[i] = findRoute(roadGraph, place, parcel.address);
+		    }
+		}
+	}
+	var min =1000;
+	var m = null;
+	for(let j= 0; j<route.length; j++){		
+		if(route[j].length<= min){
+			min = route[j].length;
+			m = j;
+		}
+	}
+	memory = route[m];
+	
+	
+	  return {direction: memory[0], memory: memory.slice(1)};
+}
+
+function findYourRoute(graph, from, to) {
+    let work = [{
+        at: from,
+        route: []
+    }];
+    for (let i = 0; i < work.length; i++) {
+        console.log('\n loop:' + i + ' \n');
+        
+        let {
+            at,
+            route
+        } = work[i];
+        console.log('work[i]xxxxxxx' + JSON.stringify(work[i]));
+
+        console.log('\n subloop:graph[at]xxxxx' + JSON.stringify(graph[at]) + 'xxx\n');
+        for (let place of graph[at]) {
+
+            console.log('xxxxx' + place + 'xxxxxxxxxxxxxxxxxxxxxxx\n');
+            if (place == to) {
+
+                console.log(place + '====' + to + 'xxxx' + 'yeahhhhh \n');
+                return route.concat(place);
+            }
+            if (!work.some(w = >w.at == place)) {
+                work.push({
+                    at: place,
+                    route: route.concat(place)
+                });
+            }
+            console.log('work:xxxxx' + JSON.stringify(work));
+            console.log('route:xxxxx' + JSON.stringify(route));
+        }
+    }
+}
+
+console.log(JSON.stringify(findYourRoute(roadGraph, 'Post Office', 'Daria\'s House')));

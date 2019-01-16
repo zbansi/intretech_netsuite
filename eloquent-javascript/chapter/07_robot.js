@@ -134,11 +134,12 @@ function yourRobot({place, parcels}, memory){
 		    }
 		}
 	}
-	for(let j= 0; j<route.length; j++){
-		a =1;
-		if(route[j].length<= a){
+	var min =1000;
+	var m = null;
+	for(let j= 0; j<route.length; j++){		
+		if(route[j].length<= min){
+			min = route[j].length;
 			m = j;
-			a = route[j];
 		}
 	}
 	memory = route[m];
@@ -153,7 +154,9 @@ function findYourRoute(graph, from, to) {
         route: []
     }];
     for (let i = 0; i < work.length; i++) {
-        console.log('\n loop:' + i + ' \n') let {
+        console.log('\n loop:' + i + ' \n');
+        
+        let {
             at,
             route
         } = work[i];
