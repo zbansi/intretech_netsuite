@@ -1,0 +1,4 @@
+/**
+ * http://usejsdoc.org/
+ */
+["a","b","c"].forEach(a=>console.log(a));

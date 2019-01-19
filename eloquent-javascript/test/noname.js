@@ -1,0 +1,28 @@
+class PGroup {
+  // Your code here
+	var empty ;
+	
+	function add(){
+		
+		
+	}
+	
+	function delete(){
+		
+	}
+	
+	function has(){
+		
+	}
+}
+
+let a = PGroup.empty.add("a");
+let ab = a.add("b");
+let b = ab.delete("a");
+
+console.log(b.has("b"));
+// ¡ú true
+console.log(a.has("b"));
+// ¡ú false
+console.log(b.has("a"));
+// ¡ú false

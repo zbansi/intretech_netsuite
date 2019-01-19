@@ -1,7 +1,0 @@
-{
-	"paths": {
-		"oauth": "./oauth_valid/oauth-1.0a",
-		"cryptojs": "./crypto_lib/rollups/hmac-sha256"
-		"enc-base64" "./crypto_lib/components/enc-base64"		
-		}
-}
