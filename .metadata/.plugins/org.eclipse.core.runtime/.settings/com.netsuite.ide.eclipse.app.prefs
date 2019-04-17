@@ -2,6 +2,7 @@ com.netsuite.dateFormat=yyyy/mm/dd
 com.netsuite.fileBackup=true
 com.netsuite.initialize=done
 com.netsuite.new.record.browser=false
+com.netsuite.suiteapp.lastPublisherId=com.intretech
 com.netsuite.username=Bansi
 com.netsuite.version=2018.2.1
 eclipse.preferences.version=1

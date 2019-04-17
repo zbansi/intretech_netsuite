@@ -1,0 +1,30 @@
+<suiteappindex>
+  <scriptids/>
+  <files>
+    <file name="FileCabinet/SuiteApps/com.intretech.customermap/suitelet_customerSearchForm.js"/>
+    <file name="deploy.xml"/>
+    <file name="manifest.xml"/>
+  </files>
+  <customfields/>
+  <customlists/>
+  <deployfiles>
+    <deployfile path="deploy.xml">
+      <deployfileobjectpaths>
+        <deployfileobjectpath>~/Objects/*</deployfileobjectpath>
+      </deployfileobjectpaths>
+      <deployfilefilepaths>
+        <deployfilefilepath>~/FileCabinet/SuiteApps/com.intretech.customermap/*</deployfilefilepath>
+      </deployfilefilepaths>
+    </deployfile>
+  </deployfiles>
+  <attributefiles>
+    <attributefile parentFile="FileCabinet/SuiteApps/com.intretech.customermap/suitelet_customerSearchForm.js" bundleable="F" hideinbundle="F"/>
+  </attributefiles>
+  <manifestfile>
+    <dependencies>
+      <applications/>
+    </dependencies>
+  </manifestfile>
+  <deploymentpreferences/>
+  <customsegments/>
+</suiteappindex>

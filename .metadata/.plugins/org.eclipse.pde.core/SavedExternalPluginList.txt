@@ -1,7 +1,9 @@
-# List of external plug-in models previously loaded. Timestamp: 1546660061502
+# List of external plug-in models previously loaded. Timestamp: 1555291851588
 file:/D:/eclipse/plugins/ch.qos.logback.classic_1.0.7.v20121108-1250.jar
 file:/D:/eclipse/plugins/ch.qos.logback.core_1.0.7.v20121108-1250.jar
 file:/D:/eclipse/plugins/ch.qos.logback.slf4j_1.0.7.v201505121915.jar
+file:/D:/eclipse/plugins/com.eclipsesource.jshint_0.10.1.20160216-0911.jar
+file:/D:/eclipse/plugins/com.eclipsesource.jshint.ui_0.10.1.20160216-0911.jar
 file:/D:/eclipse/plugins/com.google.gson_2.2.4.v201311231704.jar
 file:/D:/eclipse/plugins/com.google.guava_15.0.0.v201403281430.jar
 file:/D:/eclipse/plugins/com.google.inject_3.0.0.v201312141243.jar
@@ -15,7 +17,10 @@ file:/D:/eclipse/plugins/com.netsuite.ide.eclipse.debugger_2018.2.1.jar
 file:/D:/eclipse/plugins/com.netsuite.ide.eclipse.help_2018.2.1.jar
 file:/D:/eclipse/plugins/com.netsuite.ide.eclipse.lib_2018.2.1.jar
 file:/D:/eclipse/plugins/com.netsuite.ide.eclipse.ws_2018.2.1/
+file:/D:/eclipse/plugins/com.palantir.typescript_1.8.0.v20160504-1733/
 file:/D:/eclipse/plugins/com.sun.el_2.2.0.v201303151357.jar
+file:/D:/eclipse/plugins/de.bastiankrol.startexplorer_1.7.0.201509091830.jar
+file:/D:/eclipse/plugins/gitaddon.core_1.0.0.20140303-0606.jar
 file:/D:/eclipse/plugins/java_cup.runtime_0.10.0.v201005080400.jar
 file:/D:/eclipse/plugins/javaewah_0.7.9.v201401101600.jar
 file:/D:/eclipse/plugins/javax.activation_1.1.0.v201211130549.jar
@@ -34,6 +39,9 @@ file:/D:/eclipse/plugins/javax.xml.rpc_1.1.0.v201209140446/
 file:/D:/eclipse/plugins/javax.xml.soap_1.2.0.v201005080501/
 file:/D:/eclipse/plugins/javax.xml.stream_1.0.1.v201004272200.jar
 file:/D:/eclipse/plugins/javax.xml.ws_2.1.0.v200902101523.jar
+file:/D:/eclipse/plugins/minimal-json_0.9.4.jar
+file:/D:/eclipse/plugins/minimatch.java_1.1.0.jar
+file:/D:/eclipse/plugins/net.i2p.crypto.eddsa_0.3.0.v20181102-1323.jar
 file:/D:/eclipse/plugins/net.sf.eclipse.tomcat_9.1.3.jar
 file:/D:/eclipse/plugins/net.sourceforge.lpg.lpgjavaruntime_1.1.0.v201004271650.jar
 file:/D:/eclipse/plugins/org.apache.ant_1.9.6.v201510161327/
@@ -74,6 +82,11 @@ file:/D:/eclipse/plugins/org.apache.xerces_2.9.0.v201101211617.jar
 file:/D:/eclipse/plugins/org.apache.xml.resolver_1.2.0.v201005080400.jar
 file:/D:/eclipse/plugins/org.apache.xml.serializer_2.7.1.v201005080400.jar
 file:/D:/eclipse/plugins/org.apache.xmlrpc_3.0.0.v20100427-1100.jar
+file:/D:/eclipse/plugins/org.chromium.debug_0.3.9.201509250223.jar
+file:/D:/eclipse/plugins/org.chromium.debug.core_0.3.9.201509250223.jar
+file:/D:/eclipse/plugins/org.chromium.debug.ui_0.3.9.201509250223.jar
+file:/D:/eclipse/plugins/org.chromium.sdk_0.3.9.201509250223.jar
+file:/D:/eclipse/plugins/org.chromium.sdk.wip.eclipse_0.3.9.201509250223.jar
 file:/D:/eclipse/plugins/org.eclipse.aether.api_1.0.1.v20141111.jar
 file:/D:/eclipse/plugins/org.eclipse.aether.connector.basic_1.0.1.v20141111.jar
 file:/D:/eclipse/plugins/org.eclipse.aether.impl_1.0.1.v20141111.jar
@@ -914,10 +927,18 @@ file:/D:/eclipse/plugins/org.eclipse.wtp.xml.capabilities_1.0.100.v201005102000.
 file:/D:/eclipse/plugins/org.eclipse.xsd_2.11.0.v20160208-0841.jar
 file:/D:/eclipse/plugins/org.eclipse.xsd.edit_2.8.0.v20160208-0841.jar
 file:/D:/eclipse/plugins/org.hamcrest.core_1.3.0.v201303031735.jar
+file:/D:/eclipse/plugins/org.insightech.er_1.0.0.v20150619-0219.jar
 file:/D:/eclipse/plugins/org.jdom_1.1.1.v201101151400.jar
 file:/D:/eclipse/plugins/org.jsoup_1.7.2.v201411291515.jar
 file:/D:/eclipse/plugins/org.junit_4.12.0.v201504281640/
+file:/D:/eclipse/plugins/org.mozilla.javascript_1.7.5.v201504281450.jar
 file:/D:/eclipse/plugins/org.mozilla.javascript_1.7.4.v201504221540.jar
+file:/D:/eclipse/plugins/org.nodeclipse.bundle.coffee_1.6.3.jar
+file:/D:/eclipse/plugins/org.nodeclipse.bundle.express_3.2.5.jar
+file:/D:/eclipse/plugins/org.nodeclipse.debug_1.0.2.201509250223.jar
+file:/D:/eclipse/plugins/org.nodeclipse.help_1.0.2.201509250223.jar
+file:/D:/eclipse/plugins/org.nodeclipse.pluginslist.core_1.0.2.201509250223.jar
+file:/D:/eclipse/plugins/org.nodeclipse.ui_1.0.2.201509250223.jar
 file:/D:/eclipse/plugins/org.objectweb.asm_5.0.1.v201404251740.jar
 file:/D:/eclipse/plugins/org.objectweb.asm.tree_5.0.1.v201404251740.jar
 file:/D:/eclipse/plugins/org.sat4j.core_2.3.5.v201308161310.jar
@@ -931,3 +952,17 @@ file:/D:/eclipse/plugins/org.w3c.css.sac_1.3.1.v200903091627.jar
 file:/D:/eclipse/plugins/org.w3c.dom.events_3.0.0.draft20060413_v201105210656.jar
 file:/D:/eclipse/plugins/org.w3c.dom.smil_1.0.1.v200903091627.jar
 file:/D:/eclipse/plugins/org.w3c.dom.svg_1.1.0.v201011041433.jar
+file:/D:/eclipse/plugins/pm.eclipse.editbox_0.70.0.201508180438.jar
+file:/D:/eclipse/plugins/tern.core_1.1.0.201511082254.jar
+file:/D:/eclipse/plugins/tern.eclipse_1.1.0.201511082254.jar
+file:/D:/eclipse/plugins/tern.eclipse.ide.core_1.1.0.201511082254.jar
+file:/D:/eclipse/plugins/tern.eclipse.ide.jsdt.core_1.1.0.201511082254.jar
+file:/D:/eclipse/plugins/tern.eclipse.ide.jsdt.ui_1.1.0.201511082254.jar
+file:/D:/eclipse/plugins/tern.eclipse.ide.server.nodejs.core_1.1.0.201511082254.jar
+file:/D:/eclipse/plugins/tern.eclipse.ide.server.nodejs.ui_1.1.0.201511082254.jar
+file:/D:/eclipse/plugins/tern.eclipse.ide.ui_1.1.0.201511082254.jar
+file:/D:/eclipse/plugins/tern.server.nodejs_1.1.0.201511082254.jar
+file:/D:/eclipse/plugins/ternjs_1.1.0.201511082254/
+file:/D:/eclipse/plugins/com.eclipsesource.jshint.source_0.10.1.20160216-0911.jar
+file:/D:/eclipse/plugins/com.eclipsesource.jshint.ui.source_0.10.1.20160216-0911.jar
+file:/D:/eclipse/plugins/org.mozilla.javascript.source_1.7.5.v201504281450.jar

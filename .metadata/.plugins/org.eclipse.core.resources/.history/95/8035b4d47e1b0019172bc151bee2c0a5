@@ -1,8 +1,0 @@
-/**
- * http://usejsdoc.org/
- */
-function greaterThan(n){
-	return m => m>n;
-}
-
-console.log(greaterThan(10));

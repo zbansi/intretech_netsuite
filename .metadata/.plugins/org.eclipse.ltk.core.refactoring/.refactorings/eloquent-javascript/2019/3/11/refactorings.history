@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;eloquent-javascript/chapter/RegExp.js&apos; to &apos;09_RegExp.js&apos;" description="Rename resource &apos;RegExp.js&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="chapter/RegExp.js" name="09_RegExp.js" stamp="1552472100091" updateReferences="true"/>
+</session>
