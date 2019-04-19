@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy 1 elements(s) to &apos;cux_eg_interface&apos;&#x0D;&#x0A;- Original project: &apos;Bansi_Scripts&apos;&#x0D;&#x0A;- Destination element: &apos;cux_eg_interface&apos;&#x0D;&#x0A;- Original element: &apos;ItemSyncInterfaceRESTlet.js&apos;" description="Copy file" element1="cux_eg_interface/ItemSyncInterfaceRESTlet.js" files="1" flags="589830" folders="0" id="org.eclipse.wst.jsdt.ui.copy" log="cux_eg_interface/ItemSyncInterfaceRESTlet.js&#x09;true&#x09;true&#x09;CustomrecordYqWorkorderBsSync.js" policy="org.eclipse.wst.jsdt.ui.copyResources" stamp="1555651155215" target="/Bansi_Scripts/cux_eg_interface" units="0" version="1.0"/>
+</session>

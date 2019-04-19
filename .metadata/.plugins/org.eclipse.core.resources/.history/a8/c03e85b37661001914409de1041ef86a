@@ -1,0 +1,6 @@
+let a = [{value: 'a', text: 'a1'},{value: 'b', text: 'b2'},{value: 'c', text: 'c3'}];
+function test(c){
+	return this.value == 'a';
+}
+console.log(a.filter(c=>c.value=='a'));
+console.log(a.filter(test(c)));

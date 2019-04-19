@@ -21,6 +21,7 @@ define(
 					var requestUrl = 'https://5144758-sb1.restlets.api.netsuite.com/app/site/hosting/restlet.nl?script=24&deploy=1';// REST
 
 					// //////////// TOKEN-BASED AUTHENTICATION///////////
+					//集成名称 EAI_BS_TEST 访问令牌授权角色 CUX_超级用户
 					// client credentials
 					var consumerKey = 'a4fca249a4ec7d7be1f85b4f9177ad79756df96415c1ad08439592984fed2ab5';
 					var consumerSecret = 'a56ede1ee3ea34d0fa85b112568f3d178c63e72a6fe20819bb2463d0d8d081d4';

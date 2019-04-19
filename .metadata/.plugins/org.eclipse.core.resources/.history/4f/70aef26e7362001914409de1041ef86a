@@ -1,0 +1,50 @@
+package com.bansi.eai.consumer.util;
+
+import java.io.UnsupportedEncodingException;
+import java.util.HashMap;
+import java.util.Map;
+
+import javax.xml.bind.DatatypeConverter;
+
+public class HttpClientNS {
+
+	public static void main(String args[]) {
+		// 物料主数据查询Suitelet EXTERNAL URL for end point
+		String url = "https://forms.eu1.netsuite.com/app/site/hosting/scriptlet.nl?script=55&deploy=1&compid=5144758_SB1&h=7a7fa4443278bf5defc6";
+		// 物料主数据查询RESTlet EXTERNAL URL for end point
+		String urlNLAuth = "https://5144758-sb1.restlets.api.netsuite.com/app/site/hosting/restlet.nl?script=286&deploy=1";
+				//"https://5144758-sb1.restlets.api.netsuite.com/app/site/hosting/restlet.nl?script=74&deploy=1";
+
+		// 存储相关的header值
+		Map<String, String> header = new HashMap<String, String>();
+
+		// username:password--->访问的用户名，密码,并使用base64进行加密，将加密的字节信息转化为string类型，encoding--->token
+		/*
+		String encoding = null;
+		try {
+			encoding = DatatypeConverter.printBase64Binary("kermit:kermit".getBytes("UTF-8"));
+		} catch (UnsupportedEncodingException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		header.put("Authorization", "Basic " + encoding);
+		*/
+		String realm = "5144758_SB1"; // REALM
+		String email = "xmzyl@intretech.com";//"377132229@qq.com";
+		String signature = "ZYLOIZO715710iie";//"Welcome123";
+		int roleId = -3;//1002;//用户角色需要访问货品的权限
+
+		header.put("Content-Type", "application/json");
+		header.put("Authorization",
+				"NLAuth nlauth_account=" + realm + ", nlauth_email=" + email + ", nlauth_signature=" + signature + ", nlauth_role=" + roleId);
+
+		//调用Suitelet
+		String response = HttpClientUtil.sendHttp(HttpRequestMethodEnum.HttpGet, url, null, null);
+		//调用RESTlet
+		String responseNLAuth = HttpClientUtil.sendHttp(HttpRequestMethodEnum.HttpGet, urlNLAuth, null, header);
+		// System.out.println(JSON.toJSONString(JSONObject.parseObject(response),
+		// true));
+		System.out.println("Suitelet: " + response);
+		System.out.println("RESTlet: " + responseNLAuth);
+	}
+}

@@ -12,7 +12,8 @@ public class HttpClientNS {
 		// 物料主数据查询Suitelet EXTERNAL URL for end point
 		String url = "https://forms.eu1.netsuite.com/app/site/hosting/scriptlet.nl?script=55&deploy=1&compid=5144758_SB1&h=7a7fa4443278bf5defc6";
 		// 物料主数据查询RESTlet EXTERNAL URL for end point
-		String urlNLAuth = "https://5144758-sb1.restlets.api.netsuite.com/app/site/hosting/restlet.nl?script=74&deploy=1";
+		String urlNLAuth = "https://5144758-sb1.restlets.api.netsuite.com/app/site/hosting/restlet.nl?script=286&deploy=1";
+				//"https://5144758-sb1.restlets.api.netsuite.com/app/site/hosting/restlet.nl?script=74&deploy=1";
 
 		// 存储相关的header值
 		Map<String, String> header = new HashMap<String, String>();
@@ -31,7 +32,7 @@ public class HttpClientNS {
 		String realm = "5144758_SB1"; // REALM
 		String email = "377132229@qq.com";
 		String signature = "Welcome123";
-		int roleId = 1002;//用户角色需要访问货品的权限
+		int roleId = 1002;//3 admim 1002 sync_admin 用户角色需要访问货品的权限
 
 		header.put("Content-Type", "application/json");
 		header.put("Authorization",
