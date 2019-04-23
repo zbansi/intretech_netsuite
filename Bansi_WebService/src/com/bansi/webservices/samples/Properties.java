@@ -20,7 +20,7 @@ import static java.lang.Boolean.parseBoolean;
 
 /**
  * <p>This class provides access to all properties in nsclient.properties file.</p>
- * <p>© 2017 NetSuite Inc. All rights reserved.</p>
+ * <p>2017 Intretech Inc. All rights reserved.</p>
  */
 public class Properties extends java.util.Properties {
 

@@ -1,3 +1,4 @@
+//:prototypes/GetRESTDomain.java
 package com.bansi.webservices.prototypes;
 
 import javax.net.ssl.HttpsURLConnection;
@@ -11,7 +12,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.URL;
-
+//Sample Java Call to the REST roles Service
 public class GetRESTDomain {
 	private BufferedReader _br = null;
 

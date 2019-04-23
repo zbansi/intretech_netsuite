@@ -13,7 +13,7 @@ import static com.bansi.webservices.samples.utils.PrintUtils.printInfoWithEmptyL
 
 /**
  * <p>Factory for creating fully initialized web services client.</p>
- * <p> </p>
+ * <p> 2017 Intretech Inc. All rights reserved. </p>
  */
 public final class WsClientFactory {
 

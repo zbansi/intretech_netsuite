@@ -50,11 +50,14 @@ public final class Messages {
 	////////////bansi add/////////////////
 	public static final String GET_ITEM_RECORDS = "Get item records which updated or created since last update time";
 	public static final String ENTER_ITEM_SYNC_METHOD = "Please enter the following Item Sync method.";
+	public static final String ENTER_ITEM_SAVED_SEARCH_ID = "Please enter the following Item Saved Search Id.";
 	public static final String ITEM_SYNC_METHOD = "Sync method of item to be retrieved.[All/Increase]";
+	public static final String ITEM_SAVED_SEARCH_ID = "Saved Search Id to be retrieved.";
 
 	public static final String GET_ITEM = "Get an item of the internal id";
 	public static final String ENTER_ITEM_NUMBER = "Please enter the following Item.";
 	public static final String ITEM_NUMBER = "Internalid of item to be retrieved.";
+	
 	
 	////////////////////
 	public static final String CUSTOM_FIELDS_WARNING = "In order to populate custom fields, ensure that these fields already exist for the customer record.";

@@ -21,6 +21,7 @@ function(record, search, runtime, format) {
 	 * @since 2015.1
 	 */
 	function doGet(requestParams) {
+
 		//最近同步时间
 		var lastSyncDate = runtime.getCurrentScript().getParameter(
 				"custscript_systemlog_last_date");
@@ -28,12 +29,13 @@ function(record, search, runtime, format) {
 		var dataSyncType = runtime.getCurrentScript().getParameter(
 				"custscript_systemlog_all_or_in");
 		if (!lastSyncDate) {
+			//GMT-8
 			var dateNow = new Date().getTime();
 			var tempDateinit = dateNow - 100 * 365 * 24 * 60 * 60 * 1000;
 			var dateInit = new Date(tempDateinit);
 			lastSyncDate = dateInit;
 		}
-		//格式化成字符串，并且由GMT-8转换为本地时间格式GMT+8（不知道为什么可以转换）
+		//格式化成字符串，并且由GMT-8转换为本地时间格式GMT+8
 		//NS UI：与用户首选项设置的格式有关 YYYY/MM/DD hh:mm:ss  2019/01/02 21:10:24
 		//eclipse: 默认日期格式 M/d/yyyy hh:mm:ss 1/4/2019 8:58:18
 		var lastSyncDateStr = format.format({
@@ -42,8 +44,8 @@ function(record, search, runtime, format) {
 		});
 
 		//将原日期格式转换成可以匹配条件比较的yy/MM/dd H:mm格式
-		//NS UI:Invalid date value 2019/01/02 21:10:24 (must match yy/MM/dd H:mm)
-		//eclipse调用：Invalid date value 1/2/2019 21:11:14 (must match M/d/yy H:mm)
+		//NS UI e.g. date value 2019/01/02 21:10:24 (must match yy/MM/dd H:mm)
+		//eclipse e.g. date value 1/2/2019 21:11:14 (must match M/d/yy H:mm)
 
 		var dateTimeArray = lastSyncDateStr.split(' ');
 		var dateArray = dateTimeArray[0].split('/');
@@ -67,8 +69,9 @@ function(record, search, runtime, format) {
 		}
 		var lastSyncDatex = mon + dateSplitChar + da + dateSplitChar + yy
 				+ '  ' + h + timeSplitChar + m;
-		var updatedRec = [];//Object.create(null);
-		var deletedRec = [];//Object.create(null);
+		var updatedRec = [];
+		var deletedRec = [];
+
 		try {
 			var updatedRecColumns = [];
 			var columnsName = [ 'author', 'direction', 'externalid',
@@ -91,20 +94,10 @@ function(record, search, runtime, format) {
 			updatedRecFilters[1] = search.createFilter({
 				name : 'recordtype',
 				operator : search.Operator.IS,
-				//接受的格式为M/d/yy H:mm
 				values : 'item'
 			});
 
 			if (dataSyncType == '1') {//全量同步
-				/*
-				updatedRec = search.create({
-					type : 'note',
-					columns : updatedRecColumns
-				}).run().getRange({
-					start : 0,
-					end : 10000
-				});
-				*/
 				var updatedPagedData = search.create({
 					type : 'note',
 					//filters : updatedRecFilters,
@@ -115,9 +108,8 @@ function(record, search, runtime, format) {
 						index : pageRange.index
 					});
 					myPage.data.forEach(function(result) {
-						//deletedRec = {...deletedRec,...result};
 						updatedRec.push(result);
-					})
+					});
 				});
 
 			} else if (dataSyncType == '2') {//增量同步				
@@ -133,9 +125,13 @@ function(record, search, runtime, format) {
 					myPage.data.forEach(function(result) {
 						//deletedRec = {...deletedRec,...result};
 						updatedRec.push(result);
-					})
+					});
 				});
 			}
+			log.debug({
+				title : 'Success1',
+				details : 'updatedRec success! ***** ' + updatedRec.length
+			});
 		} catch (error) {
 			log.debug({
 				title : error.name,
@@ -170,19 +166,7 @@ function(record, search, runtime, format) {
 			});
 
 			if (dataSyncType == '1') {//全量同步
-				/*
-				deletedRec = search.create({
-					type : 'deletedrecord',
-					//filters : deletedRecFilters,
-					columns : deletedRecColumns
 
-				}).run().getRange({
-					//No more than 1000 search results may be requested at one time from nlobjSearchResultSet.getResults(). 
-					//Please narrow your range, or use nlobjSearchResultSet.forEachResult() instead.	
-					start : 0,
-					end : 10000
-				});
-				*/
 				var deletedPagedData = search.create({
 					type : 'deletedrecord',
 					//filters : deletedRecFilters,
@@ -196,7 +180,7 @@ function(record, search, runtime, format) {
 					myPage.data.forEach(function(result) {
 						//deletedRec = {...deletedRec,...result};
 						deletedRec.push(result);
-					})
+					});
 				});
 			} else if (dataSyncType == '2') {//增量同步
 
@@ -212,9 +196,13 @@ function(record, search, runtime, format) {
 					myPage.data.forEach(function(result) {
 						//deletedRec = {...deletedRec,...result};
 						deletedRec.push(result);
-					})
+					});
 				});
 			}
+			log.debug({
+				title : 'Success2',
+				details : 'deletedRec success! ***** ' + deletedRec.length
+			});
 		} catch (error) {
 			log.debug({
 				title : error.name,
@@ -223,11 +211,11 @@ function(record, search, runtime, format) {
 		}
 
 		try {
-			//load参数的id注意是internalId不是ID
-			//customdeploy_eg_item_sync_interface
+			//load参数的id注意是deployment的internalId而不是ID
+			//customdeploy_eai_systemlog_sync_if
 			var scriptRecord = record.load({
 				type : 'scriptdeployment',
-				id : 286
+				id : 443
 			});
 			var date = new Date();
 
@@ -258,18 +246,16 @@ function(record, search, runtime, format) {
 						+ ' date = ' + date + ' dateStr = ' + dateStr + '\n'
 						+ ' datex = ' + datex
 			});
-		} catch (err) {
+		} catch (error) {
 			log.debug({
-				title : err.name,
-				details : err.message
+				title : error.name,
+				details : error.message
 			});
 		}
-
-		return {
-			updatedRec : updatedRec,
-			deletedRec : deletedRec
-		};
-
+		return JSON.stringify({
+			'updatedRec' : updatedRec,
+			'deletedRec' : deletedRec
+		});
 	}
 
 	/**

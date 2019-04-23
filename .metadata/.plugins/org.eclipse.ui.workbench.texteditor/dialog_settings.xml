@@ -2,20 +2,20 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="custscript_systemlog_all_or_in" key="selection"/>
+		<item value="callGetSavedSearch" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="callGetSavedSearch"/>
+			<item value="updatedRec"/>
+			<item value="format"/>
 			<item value="custscript_systemlog_all_or_in"/>
 			<item value="custscript_systemlog_last_date"/>
 			<item value="config"/>
 			<item value="custpage_checkbox"/>
 			<item value="custpage_status_bs"/>
-			<item value="address"/>
-			<item value="goalOrientedRobot"/>
-			<item value="`"/>
 		</list>
 		<list key="replacehistory">
 			<item value="&apos;"/>

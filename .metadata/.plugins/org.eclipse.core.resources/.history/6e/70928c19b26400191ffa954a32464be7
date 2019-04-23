@@ -1,0 +1,13 @@
+/*
+ * NApiVersion 2.x
+ */
+require([ 'N/record', 'N/log' ], function(record, log) {
+	//create and save Lot Numbered Inventory Item
+	function createAndSaveInventoryItemRecord(item) {
+		var itemData = {};
+		var itemRecord = record.create({
+			type : record.Type.lotnumberedinventoryitem,
+			isDynamic : true
+		});
+	}
+});

@@ -1,0 +1,81 @@
+/*
+ * NApiVersion 2.x
+ */
+require([ 'N/record' ], function(record) {
+	//create and save BOM and BOM Reversion
+	function createAndSaveBomRecord(bomContent) {
+		bomContent.forEach(function(bomData) {
+			var bomRecord = record.create({
+				type : record.Type.BOM,
+				isDynamic : true
+			});
+			for ( var key in bomData) {
+				if (bomData.hasOwnProperty(key)) {
+					bomRecord.setValue({
+						fieldId : key,
+						value : bomData[key]
+					});
+				}
+			}
+
+			var bomId = bomRecord.save({
+				enableSourcing : false,
+				ignoreMandatoryFields : false
+			});
+		});
+	}
+
+	function createAndSaveBomReversionRecord(bomRevisionContent) {
+		bomRevisionContent.forEach(function(bomRevisionData) {
+			var bomRevisionRecord = record.create({
+				type : record.Type.BOM_REVISION,
+				isDynamic : true
+			});
+			for ( var key in bomRevisionData) {
+				if (bomRevisionData.hasOwnProperty(key)) {
+					bomRevisionRecord.setValue({
+						fieldId : key,
+						value : bomRevisionData[key]
+					});
+				}
+			}
+
+			var bomId = bomRecord.save({
+				enableSourcing : false,
+				ignoreMandatoryFields : false
+			});
+		});
+	}
+
+	var bomContent = [ {
+		'availableforallassemblies' : false,
+		'availableforalllocations' : true,
+		'includechildren' : true,
+		'memo' : '',
+		'name' : '',
+		'restricttoassemblies' : '',
+
+		'subsidiary' : '1',
+		'usecomponentyield' : true,
+		'usedonassembly' : true
+	}, {
+		'availableforallassemblies' : false,
+		'availableforalllocations' : true,
+		'includechildren' : true,
+		'memo' : '',
+		'name' : '',
+		'restricttoassemblies' : '',
+
+		'subsidiary' : '1',
+		'usecomponentyield' : true,
+		'usedonassembly' : true
+
+	} ];
+	var bomRevisionContent = [ {
+
+	}, {
+
+	} ];
+	createAndSaveBomRecord(bomContent);
+	createAndSaveBomReversionRecord(bomRevisionContent);
+});

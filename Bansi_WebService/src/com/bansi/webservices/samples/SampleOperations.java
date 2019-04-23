@@ -5,6 +5,7 @@ import com.netsuite.suitetalk.client.v2017_2.utils.Utils;
 import com.netsuite.suitetalk.proxy.v2017_2.documents.filecabinet.File;
 import com.netsuite.suitetalk.proxy.v2017_2.documents.filecabinet.types.FileAttachFrom;
 import com.netsuite.suitetalk.proxy.v2017_2.lists.accounting.InventoryItem;
+import com.netsuite.suitetalk.proxy.v2017_2.lists.accounting.ItemSearchAdvanced;
 import com.netsuite.suitetalk.proxy.v2017_2.lists.accounting.Price;
 import com.netsuite.suitetalk.proxy.v2017_2.lists.accounting.PriceList;
 import com.netsuite.suitetalk.proxy.v2017_2.lists.accounting.Pricing;
@@ -77,11 +78,9 @@ import static com.bansi.webservices.samples.utils.StringUtils.getListItems;
 import static com.bansi.webservices.samples.utils.StringUtils.getRandomString;
 import static java.lang.String.format;
 
-import com.netsuite.suitetalk.proxy.v2017_2.platform.core.SearchRecord;
-
 /**
  * <p>Displays a list of all sample operations and invokes the selected operation by the user.</p>
- * <p>© 2017 NetSuite Inc. All rights reserved.</p>
+ * <p>2017 Intretech Inc. All rights reserved.</p>
  */
 @ParametersAreNonnullByDefault
 public class SampleOperations {
@@ -101,8 +100,10 @@ public class SampleOperations {
 	public SampleOperations(WsClient client) {
 		this.client = client;
 		// All possible sample operations
-		getItemRecords();
+		addInventoryItem();
+		getOtherChargePurchaseItemRecords();
 		getItem();
+
 		addCustomer();
 		addCustomerWithCustomFields();
 		updateCustomer();
@@ -111,15 +112,17 @@ public class SampleOperations {
 		getCustomer();
 		getListOfCustomers();
 		deleteListOfCustomers();
-		addInventoryItem();
+
 		addSalesOrder();
 		updateSalesOrder();
 		fulfillSalesOrder();
 		searchSalesOrders();
 		advancedSearchSalesOrders();
+
 		addCustomRecord();
 		searchCustomRecord();
 		deleteCustomRecord();
+
 		getOtherListValues();
 		uploadFile();
 		getSelectFieldValues();
@@ -152,18 +155,29 @@ public class SampleOperations {
 	/**
 	 * Demonstrates how to search an Inventory Item record from NetSuite.
 	 */
-	private void getItemRecords() {
+	private void getOtherChargePurchaseItemRecords() {
 		SAMPLE_OPERATIONS.put(GET_ITEM_RECORDS, () -> {
-			printWithEmptyLine(ENTER_ITEM_SYNC_METHOD);
-
-			String itemSyncMethod = readLine(ITEM_SYNC_METHOD);
+			//printWithEmptyLine(ENTER_ITEM_SYNC_METHOD);
+			//String itemSyncMethod = readLine(ITEM_SYNC_METHOD);			
+			//printWithEmptyLine(ENTER_ITEM_SAVED_SEARCH_ID);
+			//String savedSearchId = readLine(ITEM_SAVED_SEARCH_ID);	
 			printSendingRequestMessage();
+			//if (itemSyncMethod == "All") {
+			// create search object
+			ItemSearchAdvanced itemSearch = new ItemSearchAdvanced();
+			//set saved search id
+			itemSearch.setSavedSearchId("274");
 
-			if (itemSyncMethod == "All") {
+			// perform the search			
+			List<?> result = client.search(itemSearch);
+			
 
-			} else if (itemSyncMethod == "Increase") {
+			// Process the response
+			processOtherChargePurchaseItemReadResponse(result);
 
-			}
+			//} else if (itemSyncMethod == "Increase") {
+
+			//}
 
 		});
 	}

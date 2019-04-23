@@ -1,0 +1,9 @@
+/*
+ * NApiVersion 2.x
+ */
+require([ 'N/record', 'N/log' ], function(record, log) {
+	//create and save Lot Numbered Inventory Item
+	function createAndSaveInventoryItemRecord(item) {
+
+	}
+});

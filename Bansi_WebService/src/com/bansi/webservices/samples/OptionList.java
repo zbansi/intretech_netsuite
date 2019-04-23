@@ -13,7 +13,7 @@ import static com.bansi.webservices.samples.utils.PrintUtils.printInvalidChoiceM
 
 /**
  * <p>This class represents a list of options. A user can choose from this options or quit.</p>
- * <p>© 2017 NetSuite Inc. All rights reserved.</p>
+ * <p>2017 Intretech Inc. All rights reserved.</p>
  */
 public class OptionList<T> {
 

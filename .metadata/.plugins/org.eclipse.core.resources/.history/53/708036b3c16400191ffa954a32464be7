@@ -1,0 +1,26 @@
+/*
+ * NApiVersion 2.x
+ */
+require([ 'N/record', 'N/log' ], function(record, log) {
+	//create and save Lot Numbered Inventory Item
+	function createAndSaveInventoryItemRecord(item) {
+		var itemData = {
+			'atpmethod' : '',
+			'costcategory' : '',
+			'itemid' : '',
+			'revrecforecastrule' : '',
+			'taxschedule' : ''
+		};
+		var itemRecord = record.create({
+			type : record.Type.LOT_NUMBERED_INVENTORY_ITEM,
+			isDynamic : true
+		});
+
+		itemRecord.setValue({});
+		var itemId = itemRecord.save({
+			enableSourcing : false,
+			ignoreMandatoryFields : false
+		});
+	}
+	createAndSaveInventoryItemRecord();
+});

@@ -12,9 +12,9 @@ import com.netsuite.webservices.platform_2018_2.NetSuiteServiceLocator;
  * getDataCenterUrls() was introduced in the 12.2 endpoint).
  ***/
 public class AXISClient {
-	private static final String ENDPOINT_VERSION = "NetSuitePort_2018_2";
+	private static final String ENDPOINT_VERSION = "NetSuitePort_2019_1";
 	private static final String ACCOUNT = "5144758_SB1";
-	private static final String PASSWORD = "OIZO715710iie";
+	private static final String PASSWORD = "ZYLOIZO715710iie";
 	private static final String EMAIL = "xmzyl@intretech.com";
 	private NetSuitePortType _port;
 
@@ -36,7 +36,7 @@ public class AXISClient {
 		// _port points to the correct data center. Perform operations as
 		// usual.// ...
 		RecordRef rr = new RecordRef();
-		rr.setInternalId("25");
+		rr.setInternalId("671");
 		rr.setType(RecordType.employee);
 		Employee e = (Employee) client._port.get(rr).getRecord();
 		System.out.println(e.getFirstName() + " " + e.getLastName());

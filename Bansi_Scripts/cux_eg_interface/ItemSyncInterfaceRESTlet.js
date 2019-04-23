@@ -23,9 +23,11 @@ function(record, search, runtime, config, format) {
 	 */
 	function doGet(requestParams) {
 		//最近同步时间
-		var lastSyncDate = runtime.getCurrentScript().getParameter("custscript_itemsync_last_datetime");
+		var lastSyncDate = runtime.getCurrentScript().getParameter(
+				"custscript_itemsync_last_datetime");
 		//是否增量同步参数
-		var dataSyncType = runtime.getCurrentScript().getParameter("custscript_itemsync_all_or_increment");
+		var dataSyncType = runtime.getCurrentScript().getParameter(
+				"custscript_itemsync_all_or_increment");
 		if (!lastSyncDate) {
 			var dateNow = new Date().getTime();
 			var tempDateinit = dateNow - 100 * 365 * 24 * 60 * 60 * 1000;
@@ -64,8 +66,9 @@ function(record, search, runtime, config, format) {
 			mon = dateArray[0];
 			da = dateArray[1];
 		}
-		var lastSyncDatex = mon + dateSplitChar + da + dateSplitChar + yy + '  ' + h + timeSplitChar + m;
-		var itemRec = null;
+		var lastSyncDatex = mon + dateSplitChar + da + dateSplitChar + yy
+				+ '  ' + h + timeSplitChar + m;
+		var itemRec = Object.create(null);
 		try {
 			if (dataSyncType == '1') {
 				itemRec = search.load({
@@ -155,8 +158,11 @@ function(record, search, runtime, config, format) {
 			scriptRecord.save();
 			log.debug({
 				title : 'Success',
-				details : 'scriptRecord = ' + JSON.stringify(scriptRecord) + '\n' + ' lastSyncDate = ' + lastSyncDate + '\n' + 'lastSyncDateStr = '
-						+ lastSyncDateStr + '\n' + ' lastSyncDatex = ' + lastSyncDatex + '\n' + ' date = ' + date + ' dateStr = ' + dateStr + '\n'
+				details : 'scriptRecord = ' + JSON.stringify(scriptRecord)
+						+ '\n' + ' lastSyncDate = ' + lastSyncDate + '\n'
+						+ 'lastSyncDateStr = ' + lastSyncDateStr + '\n'
+						+ ' lastSyncDatex = ' + lastSyncDatex + '\n'
+						+ ' date = ' + date + ' dateStr = ' + dateStr + '\n'
 						+ ' datex = ' + datex
 			});
 		} catch (err) {
@@ -166,7 +172,7 @@ function(record, search, runtime, config, format) {
 			});
 		}
 
-		return itemRec;
+		return JSON.stringify(itemRec);
 
 	}
 

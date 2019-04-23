@@ -18,7 +18,7 @@ import static com.bansi.webservices.samples.utils.PrintUtils.printError;
  * and invoke operations.</p>
  * <p>Please see the README on how to compile and run. Note that the {@code nsclient.properties} file must exist
  * in the installed root directory for this application to run.</p>
- * <p>© 2017 NetSuite Inc. All rights reserved.</p>
+ * <p>2017 Intretech Inc. All rights reserved.</p>
  */
 public class SampleApplication {
 

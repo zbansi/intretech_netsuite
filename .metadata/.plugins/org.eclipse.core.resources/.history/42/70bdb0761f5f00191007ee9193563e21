@@ -1,7 +1,0 @@
-<manifest projecttype="SUITEAPP">
-  <publisherid>com.intretech</publisherid>
-  <projectid>customermap</projectid>
-  <projectname>customermap</projectname>
-  <projectversion>0.0.0</projectversion>
-  <frameworkversion>1.0</frameworkversion>
-</manifest>

@@ -2,9 +2,11 @@ package com.bansi.webservices.samples;
 
 import com.netsuite.suitetalk.proxy.v2017_2.lists.accounting.InventoryItem;
 import com.netsuite.suitetalk.proxy.v2017_2.lists.accounting.LotNumberedInventoryItem;
+import com.netsuite.suitetalk.proxy.v2017_2.lists.accounting.OtherChargePurchaseItem;
 import com.netsuite.suitetalk.proxy.v2017_2.lists.relationships.Customer;
 import com.netsuite.suitetalk.proxy.v2017_2.platform.common.TransactionSearchRowBasic;
 import com.netsuite.suitetalk.proxy.v2017_2.platform.core.CustomRecordRef;
+import com.netsuite.suitetalk.proxy.v2017_2.platform.core.GetSavedSearchResult;
 import com.netsuite.suitetalk.proxy.v2017_2.platform.core.Record;
 import com.netsuite.suitetalk.proxy.v2017_2.platform.core.RecordRef;
 import com.netsuite.suitetalk.proxy.v2017_2.platform.core.SearchResult;
@@ -34,7 +36,7 @@ import static com.bansi.webservices.samples.utils.PrintUtils.*;
 
 /**
  * <p>This class contains static procedures for processing all needed kinds of responses.</p>
- * <p>© 2017 NetSuite Inc. All rights reserved.</p>
+ * <p>2017 Intretech Inc. All rights reserved.</p>
  */
 @ParametersAreNonnullByDefault
 public final class ResponseHandler {
@@ -139,6 +141,12 @@ public final class ResponseHandler {
         } else {
             printError(ITEM_WAS_NOT_ADDED, item.getItemId(), getErrorMessage(response));
         }
+    }
+    
+    public static void processOtherChargePurchaseItemReadResponse(List<?> response) {
+        
+        printWithEmptyLine(RETRIEVED_RECORD);
+        printMap(new Fields((OtherChargePurchaseItem) response));
     }
     
     public static void processLotNumberedInventoryItemReadResponse(ReadResponse response) {

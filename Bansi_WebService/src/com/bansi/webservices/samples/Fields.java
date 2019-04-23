@@ -1,6 +1,7 @@
 package com.bansi.webservices.samples;
 
 import com.netsuite.suitetalk.proxy.v2017_2.lists.accounting.LotNumberedInventoryItem;
+import com.netsuite.suitetalk.proxy.v2017_2.lists.accounting.OtherChargePurchaseItem;
 import com.netsuite.suitetalk.proxy.v2017_2.lists.relationships.Customer;
 import com.netsuite.suitetalk.proxy.v2017_2.platform.core.RecordRef;
 import com.netsuite.suitetalk.proxy.v2017_2.platform.messages.WriteResponse;
@@ -17,7 +18,7 @@ import static com.bansi.webservices.samples.Messages.*;
 /**
  * <p>This is type of map which converts particular objects to map of the fields. It can be simply printed
  * using {@link com.netsuite.webservices.samples.utils.PrintUtils#printMap(Map)} method.</p>
- * <p>© 2017 NetSuite Inc. All rights reserved.</p>
+ * <p>2017 Intretech Inc. All rights reserved.</p>
  */
 @ParametersAreNonnullByDefault
 public class Fields extends LinkedHashMap<String, String> {
@@ -57,6 +58,16 @@ public class Fields extends LinkedHashMap<String, String> {
         put(IS_INACTIVE, String.valueOf(lotNumberedInventoryItem.getIsInactive()));
         put(DATE_CREATED, lotNumberedInventoryItem.getCreatedDate().getTime().toString());
     }
+    
+    public Fields(OtherChargePurchaseItem otherChargePurchaseItem) {
+        super();
+        put(INTERNAL_ID, otherChargePurchaseItem.getInternalId());
+        put(EXTERNAL_ID, otherChargePurchaseItem.getExternalId()); 
+        put(PURCHASE_DESCRIPTION, otherChargePurchaseItem.getPurchaseDescription());
+        put(IS_INACTIVE, String.valueOf(otherChargePurchaseItem.getIsInactive()));
+        put(DATE_CREATED, otherChargePurchaseItem.getCreatedDate().getTime().toString());
+    }
+    
 
     public Fields(WriteResponse response, Customer customer) {
         super();
