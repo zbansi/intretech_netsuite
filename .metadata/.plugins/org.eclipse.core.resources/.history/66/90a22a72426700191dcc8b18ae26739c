@@ -1,0 +1,8 @@
+package com.bansi.webservices.samples;
+
+import com.netsuite.suitetalk.client.common.contract.WebServicesSoapClient;
+
+public class WsClient_2019_1 extends WsCoreClient_2019_1 implements WebServicesSoapClient {
+	
+
+}

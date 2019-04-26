@@ -1,0 +1,18 @@
+package com.bansi.webservices.prototypes;
+
+public void testDataCenterUrlsPublic() throws Exception
+{
+    NLWsClient c = new NLWsClient();   
+    c.initPort();
+    String account = "1326288";
+ 
+ 
+    System.out.println("Account: " + account);
+    DataCenterUrls urls = c.getPort().getDataCenterUrls(account).getDataCenterUrls();
+ 
+ 
+    System.out.println("\tREST domain: " + urls.getRestDomain());
+    System.out.println("\tWeb services domain: " + urls.getWebservicesDomain());
+    System.out.println("\tSystem domain: " + urls.getSystemDomain());
+    System.out.println();
+}

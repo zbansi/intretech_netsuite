@@ -1,0 +1,109 @@
+package com.netsuite.suitetalk.client.common.authentication;
+
+import javax.annotation.*;
+import com.netsuite.suitetalk.client.common.utils.*;
+import java.util.concurrent.*;
+
+@ParametersAreNonnullByDefault
+public class OAuthPassport
+{
+    private static final String DEFAULT_SIGNATURE_METHOD = "PLAINTEXT";
+    private static final String HTTP_HEADER_NAME = "Authorization";
+    private String token;
+    private String consumerKey;
+    private String nonce;
+    private Long timestamp;
+    private String signatureMethod;
+    private String signature;
+    private boolean automaticallyUpdated;
+    
+    public OAuthPassport() {
+    }
+    
+    public OAuthPassport(final String consumerKey, final String token, @Nullable final String nonce, @Nullable final Long timestamp, final String signatureMethod, final String signature) {
+        this.consumerKey = consumerKey;
+        this.token = token;
+        this.nonce = nonce;
+        this.timestamp = timestamp;
+        this.signatureMethod = signatureMethod;
+        this.signature = signature;
+        this.automaticallyUpdated = false;
+    }
+    
+    public OAuthPassport(final String consumerKey, final String token, final String signatureMethod, final String signature) {
+        this(consumerKey, token, null, null, signatureMethod, signature);
+        this.automaticallyUpdated = true;
+    }
+    
+    public OAuthPassport(final String consumerKey, final String token, final String signature) {
+        this(consumerKey, token, "PLAINTEXT", signature);
+    }
+    
+    public String getConsumerKey() {
+        return this.consumerKey;
+    }
+    
+    public void setConsumerKey(final String consumerKey) {
+        this.consumerKey = consumerKey;
+    }
+    
+    public String getToken() {
+        return this.token;
+    }
+    
+    public void setToken(final String token) {
+        this.token = token;
+    }
+    
+    public String getNonce() {
+        return this.nonce;
+    }
+    
+    public void setNonce(final String nonce) {
+        this.nonce = nonce;
+    }
+    
+    public Long getTimestamp() {
+        return this.timestamp;
+    }
+    
+    public void setTimestamp(final Long timestamp) {
+        this.timestamp = timestamp;
+    }
+    
+    public String getSignatureMethod() {
+        return this.signatureMethod;
+    }
+    
+    public void setSignatureMethod(final String signatureMethod) {
+        this.signatureMethod = signatureMethod;
+    }
+    
+    public String getSignature() {
+        return this.signature;
+    }
+    
+    public void setSignature(final String signature) {
+        this.signature = signature;
+    }
+    
+    public boolean isAutomaticallyUpdated() {
+        return this.automaticallyUpdated;
+    }
+    
+    public void setAutomaticallyUpdated(final boolean automaticallyUpdated) {
+        this.automaticallyUpdated = automaticallyUpdated;
+    }
+    
+    public String getOAuthHttpHeaderName() {
+        return "Authorization";
+    }
+    
+    public String getOAuthHttpHeaderValue() {
+        if (this.isAutomaticallyUpdated()) {
+            this.setNonce(CommonUtils.getRandomNonce());
+            this.setTimestamp(TimeUnit.MILLISECONDS.toSeconds(System.currentTimeMillis()));
+        }
+        return "OAuth oauth_consumer_key=\"" + this.getConsumerKey() + "\", oauth_token=\"" + this.getToken() + "\", oauth_nonce=\"" + this.getNonce() + "\", oauth_timestamp=\"" + this.getTimestamp() + "\", oauth_signature_method=\"" + this.getSignatureMethod() + "\", oauth_signature=\"" + this.getSignature() + '\"';
+    }
+}

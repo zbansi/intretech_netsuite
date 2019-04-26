@@ -1,0 +1,51 @@
+package com.bansi.webservices.myclient;
+
+import com.bansi.webservices.samples.io.Logger;
+import com.netsuite.webservices.platform.core_2019_1.DataCenterUrls;
+import com.netsuite.webservices.platform_2019_1.NetSuitePortType;
+import com.netsuite.webservices.platform_2019_1.NetSuiteServiceLocator;
+
+public class NLWsClient {
+	private static final String ENDPOINT_VERSION = "NetSuitePort_2019_1";
+
+	private NetSuitePortType _port;
+	private static final Logger LOG = Logger.getInstance();
+
+	public NLWsClient() throws Exception {
+
+		//1. Locate the NetSuite service.
+		NetSuiteServiceLocator service = new NetSuiteServiceLocator();
+		
+		//2. Enable support for multiple cookie management.
+		service.setMaintainSession(true);
+		_port = service.getNetSuitePort();
+
+	}
+
+	// initialize _port - authentication// ...
+	public void initPort() {
+
+	}
+
+	public NetSuitePortType getPort() {
+		return _port;
+
+	}
+	
+	 public static void main(String[] args) throws Exception
+	   {
+	       NLWsClient c = new NLWsClient();
+	       c.initPort();
+	       String account = "5399033_SB1";
+	    
+	    
+	       System.out.println("Account: " + account);
+	       DataCenterUrls urls = c.getPort().getDataCenterUrls(account).getDataCenterUrls();
+	    
+	    
+	       System.out.println("\tREST domain: " + urls.getRestDomain());
+	       System.out.println("\tWeb services domain: " + urls.getWebservicesDomain());
+	       System.out.println("\tSystem domain: " + urls.getSystemDomain());
+	       System.out.println();
+	   }
+}

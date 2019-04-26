@@ -131,6 +131,8 @@
             <file name="sha512.js" bundleable="true"/>
             <file name="tripledes.js" bundleable="true"/>
           </folder>
+          <file name="README.md" bundleable="true"/>
+          <file name="oauth-1.0a.js" bundleable="true"/>
         </folder>
         <folder name="oauth_valid" bundleable="true">
           <file name="README.md" bundleable="true"/>

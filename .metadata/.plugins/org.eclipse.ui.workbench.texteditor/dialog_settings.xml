@@ -2,36 +2,37 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="callGetSavedSearch" key="selection"/>
+		<item value="processLotNumberedItemWriteResponse" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
-			<item value="callGetSavedSearch"/>
-			<item value="updatedRec"/>
-			<item value="format"/>
-			<item value="custscript_systemlog_all_or_in"/>
-			<item value="custscript_systemlog_last_date"/>
-			<item value="config"/>
-			<item value="custpage_checkbox"/>
-			<item value="custpage_status_bs"/>
+			<item value="processLotNumberedItemWriteResponse"/>
+			<item value="processOtherChargePurchaseItemSearchResponse"/>
+			<item value="advancedSearchSalesOrders"/>
+			<item value="addressBookList"/>
+			<item value="CustomFieldList"/>
+			<item value="SalesOrderItemList"/>
+			<item value=".getStatus().isIsSuccess()"/>
+			<item value="ParsingUtils"/>
 		</list>
 		<list key="replacehistory">
-			<item value="&apos;"/>
-			<item value="//"/>
-			<item value="l_table_body.replace("/>
-			<item value="&apos;&lt;"/>
-			<item value="baseUrl"/>
-			<item value=""/>
-			<item value="2018_2"/>
+			<item value=".getStatus()[0].getAfterSubmitFailed()"/>
+			<item value=".getStatus()[0]."/>
+			<item value="ParsingUtils_2019_1"/>
+			<item value="PrintUtils_2019_1"/>
+			<item value="transactions.sales_2019_1."/>
+			<item value="platform.core_2019_1."/>
+			<item value="platform.common_2019_1."/>
+			<item value="lists.marketing_2019_1."/>
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
 		<item value="273" key="DIALOG_WIDTH"/>
 		<item value="1|微软雅黑|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|微软雅黑" key="DIALOG_FONT_NAME"/>
 		<item value="399" key="DIALOG_HEIGHT"/>
-		<item value="1279" key="DIALOG_X_ORIGIN"/>
-		<item value="289" key="DIALOG_Y_ORIGIN"/>
+		<item value="229" key="DIALOG_X_ORIGIN"/>
+		<item value="187" key="DIALOG_Y_ORIGIN"/>
 	</section>
 </section>

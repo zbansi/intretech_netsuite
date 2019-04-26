@@ -1,0 +1,33 @@
+package com.bansi.webservices.myclient;
+
+import com.bansi.webservices.samples.io.Logger;
+import com.netsuite.webservices.platform_2019_1.NetSuitePortType;
+import com.netsuite.webservices.platform_2019_1.NetSuiteServiceLocator;
+
+public class NLWsClient {
+	private static final String ENDPOINT_VERSION = "NetSuitePort_2019_1";
+
+	private NetSuitePortType _port;
+	private static final Logger LOG = Logger.getInstance();
+
+	public NLWsClient() throws Exception {
+
+		//1. Locate the NetSuite service.
+		NetSuiteServiceLocator service = new NetSuiteServiceLocator();
+		//NetSuiteServiceLocator service = new DataCenterAwareNetSuiteServiceLocator(_properties.getProperty("login.acct"));
+		//2. Enable support for multiple cookie management.
+		service.setMaintainSession(true);
+		_port = service.getNetSuitePort();
+
+	}
+
+	// initialize _port - authentication// ...
+	private void initPort() {
+
+	}
+
+	private NetSuitePortType getPort() {
+		return _port;
+
+	}
+}

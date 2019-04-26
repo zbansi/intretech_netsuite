@@ -1,0 +1,69 @@
+package com.netsuite.suitetalk.client.common.utils;
+
+import javax.annotation.*;
+import org.bouncycastle.jce.provider.*;
+import java.nio.file.*;
+import java.io.*;
+import java.security.*;
+import java.security.spec.*;
+
+@ParametersAreNonnullByDefault
+public final class SsoUtils
+{
+    private static final BouncyCastleProvider BOUNCY_CASTLE_PROVIDER;
+    
+    public static byte[] getToken(final String partnerAccount, final String partnerUserId, final String encryptionKeyFilePath) {
+        try {
+            return encrypt(Files.readAllBytes(Paths.get(encryptionKeyFilePath, new String[0])), getToken(partnerAccount, partnerUserId));
+        }
+        catch (IOException e) {
+            throw new IllegalArgumentException("File " + encryptionKeyFilePath + " cannot be read", e);
+        }
+    }
+    
+    public static byte[] getToken(final String partnerAccount, final String partnerUserId) {
+        return CommonUtils.concatenateStrings(" ", partnerAccount, partnerUserId, String.valueOf(System.currentTimeMillis())).getBytes();
+    }
+    
+    public static String getTokenAsString(final String partnerAccount, final String partnerUserId, final String encryptionKeyFilePath) {
+        return CommonUtils.bytesToHexString(getToken(partnerAccount, partnerUserId, encryptionKeyFilePath));
+    }
+    
+    public static String getTokenAsString(final String partnerAccount, final String partnerUserId) {
+        return CommonUtils.bytesToHexString(getToken(partnerAccount, partnerUserId));
+    }
+    
+    public static byte[] encrypt(final byte[] privateKey, final byte[] data) {
+        try {
+            final Signature signature = Signature.getInstance("NONEwithRSA");
+            signature.initSign(getPrivateKey(privateKey));
+            signature.update(data);
+            return signature.sign();
+        }
+        catch (NoSuchAlgorithmException | SignatureException | InvalidKeyException ex2) {
+            final GeneralSecurityException ex;
+            final GeneralSecurityException e = ex;
+            throw new IllegalStateException("Signing data with private key was not successful", e);
+        }
+    }
+    
+    public static PrivateKey getPrivateKey(final byte[] privateKey) {
+        if (Security.getProvider(SsoUtils.BOUNCY_CASTLE_PROVIDER.getName()) == null) {
+            Security.addProvider((Provider)SsoUtils.BOUNCY_CASTLE_PROVIDER);
+        }
+        try {
+            final KeyFactory keyFactory = KeyFactory.getInstance("RSA");
+            final PKCS8EncodedKeySpec privateKeySpec = new PKCS8EncodedKeySpec(privateKey);
+            return keyFactory.generatePrivate(privateKeySpec);
+        }
+        catch (NoSuchAlgorithmException | InvalidKeySpecException ex2) {
+            final GeneralSecurityException ex;
+            final GeneralSecurityException e = ex;
+            throw new IllegalStateException("Private key generation failed", e);
+        }
+    }
+    
+    static {
+        BOUNCY_CASTLE_PROVIDER = new BouncyCastleProvider();
+    }
+}

@@ -1,0 +1,91 @@
+package com.netsuite.suitetalk.client.common.authentication;
+
+import java.io.*;
+import com.netsuite.suitetalk.client.common.utils.*;
+
+public class SsoPassport
+{
+    private String authenticationToken;
+    private String partnerId;
+    private String partnerAccount;
+    private String partnerUserId;
+    private File encryptionKeyFile;
+    private boolean calculatedAuthenticationToken;
+    
+    public SsoPassport() {
+    }
+    
+    public SsoPassport(final String authenticationToken, final String partnerId, final String partnerAccount, final String partnerUserId) {
+        this.authenticationToken = authenticationToken;
+        this.partnerId = partnerId;
+        this.partnerAccount = partnerAccount;
+        this.partnerUserId = partnerUserId;
+        this.calculatedAuthenticationToken = false;
+    }
+    
+    public SsoPassport(final String partnerId, final String partnerAccount, final String partnerUserId) {
+        this.partnerId = partnerId;
+        this.partnerAccount = partnerAccount;
+        this.partnerUserId = partnerUserId;
+        this.calculatedAuthenticationToken = true;
+    }
+    
+    public SsoPassport(final String partnerId, final String partnerAccount, final String partnerUserId, final File encryptionKeyFile) {
+        this(partnerId, partnerAccount, partnerUserId);
+        this.encryptionKeyFile = encryptionKeyFile;
+    }
+    
+    public String getAuthenticationToken() {
+        if (!this.isAuthenticationTokenCalculated()) {
+            return this.authenticationToken;
+        }
+        if (this.encryptionKeyFile != null) {
+            return SsoUtils.getTokenAsString(this.partnerAccount, this.partnerUserId, this.encryptionKeyFile.getAbsolutePath());
+        }
+        return SsoUtils.getTokenAsString(this.partnerAccount, this.partnerUserId);
+    }
+    
+    public void setAuthenticationToken(final String authenticationToken) {
+        this.authenticationToken = authenticationToken;
+    }
+    
+    public String getPartnerId() {
+        return this.partnerId;
+    }
+    
+    public void setPartnerId(final String partnerId) {
+        this.partnerId = partnerId;
+    }
+    
+    public String getPartnerAccount() {
+        return this.partnerAccount;
+    }
+    
+    public void setPartnerAccount(final String partnerAccount) {
+        this.partnerAccount = partnerAccount;
+    }
+    
+    public String getPartnerUserId() {
+        return this.partnerUserId;
+    }
+    
+    public void setPartnerUserId(final String partnerUserId) {
+        this.partnerUserId = partnerUserId;
+    }
+    
+    public File getEncryptionKeyFile() {
+        return this.encryptionKeyFile;
+    }
+    
+    public void setEncryptionKeyFile(final File encryptionKeyFile) {
+        this.encryptionKeyFile = encryptionKeyFile;
+    }
+    
+    public boolean isAuthenticationTokenCalculated() {
+        return this.calculatedAuthenticationToken;
+    }
+    
+    public void setAuthenticationTokenCalculated(final boolean calculatedAuthenticationToken) {
+        this.calculatedAuthenticationToken = calculatedAuthenticationToken;
+    }
+}

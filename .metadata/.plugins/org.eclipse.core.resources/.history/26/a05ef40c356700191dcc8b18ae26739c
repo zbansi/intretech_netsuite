@@ -1,0 +1,16 @@
+package com.netsuite.suitetalk.client.common.contract;
+
+public interface Preferences
+{
+    void setDisableMandatoryCustomFieldValidation(final boolean p0);
+    
+    void setDisableSystemNotesForCustomFields(final boolean p0);
+    
+    void setIgnoreReadOnlyFields(final boolean p0);
+    
+    default void setRunServerSuiteScriptAndWorkflowTriggers(final boolean runServerSuiteScriptAndWorkflowTriggers) {
+        throw new UnsupportedOperationException("Preference runServerSuiteScriptAndWorkflowTriggers is only available from endpoint 2016.2.");
+    }
+    
+    void setWarningAsError(final boolean p0);
+}

@@ -1,0 +1,112 @@
+package com.netsuite.suitetalk.client.v2017_2.utils;
+
+import com.netsuite.suitetalk.client.common.authentication.*;
+import com.netsuite.suitetalk.proxy.v2017_2.platform.core.types.*;
+import java.lang.reflect.*;
+import java.util.stream.*;
+import java.util.*;
+import com.netsuite.suitetalk.proxy.v2017_2.platform.core.*;
+import com.netsuite.suitetalk.proxy.v2017_2.platform.messages.*;
+
+public final class Utils
+{
+    public static com.netsuite.suitetalk.proxy.v2017_2.platform.core.Passport convertPassport(final Passport passport) {
+        final com.netsuite.suitetalk.proxy.v2017_2.platform.core.Passport endpointPassport = new com.netsuite.suitetalk.proxy.v2017_2.platform.core.Passport();
+        endpointPassport.setEmail(passport.getEmail());
+        endpointPassport.setPassword(passport.getPassword());
+        endpointPassport.setAccount(passport.getAccount());
+        endpointPassport.setRole(createRecordRef(passport.getRole()));
+        return endpointPassport;
+    }
+    
+    public static com.netsuite.suitetalk.proxy.v2017_2.platform.core.SsoPassport convertSsoPassport(final SsoPassport ssoPassport) {
+        final com.netsuite.suitetalk.proxy.v2017_2.platform.core.SsoPassport endpointSsoPassport = new com.netsuite.suitetalk.proxy.v2017_2.platform.core.SsoPassport();
+        endpointSsoPassport.setAuthenticationToken(ssoPassport.getAuthenticationToken());
+        endpointSsoPassport.setPartnerId(ssoPassport.getPartnerId());
+        endpointSsoPassport.setPartnerAccount(ssoPassport.getPartnerAccount());
+        endpointSsoPassport.setPartnerUserId(ssoPassport.getPartnerUserId());
+        return endpointSsoPassport;
+    }
+    
+    public static com.netsuite.suitetalk.proxy.v2017_2.platform.core.TokenPassport convertTokenPassport(final TokenPassport tokenPassport) {
+        final com.netsuite.suitetalk.proxy.v2017_2.platform.core.TokenPassport endpointTokenPassport = new com.netsuite.suitetalk.proxy.v2017_2.platform.core.TokenPassport();
+        endpointTokenPassport.setAccount(tokenPassport.getAccount());
+        endpointTokenPassport.setConsumerKey(tokenPassport.getConsumerKey());
+        endpointTokenPassport.setToken(tokenPassport.getToken());
+        endpointTokenPassport.setNonce(tokenPassport.getNonce());
+        endpointTokenPassport.setTimestamp(tokenPassport.getTimestamp());
+        final TokenPassportSignature signature = new TokenPassportSignature();
+        signature.setAlgorithm(tokenPassport.getSignatureAlgorithm().getNetSuiteFormat());
+        signature.set_value(tokenPassport.getSignature());
+        endpointTokenPassport.setSignature(signature);
+        return endpointTokenPassport;
+    }
+    
+    public static RecordRef createRecordRef(final String internalId) {
+        final RecordRef recordRef = new RecordRef();
+        recordRef.setInternalId(internalId);
+        return recordRef;
+    }
+    
+    public static RecordRef createRecordRef(final String internalId, final RecordType recordType) {
+        final RecordRef recordRef = createRecordRef(internalId);
+        recordRef.setType(recordType);
+        return recordRef;
+    }
+    
+    public static RecordRef createRecordRefWithExternalId(final String externalId, final RecordType recordType) {
+        final RecordRef recordRef = new RecordRef();
+        recordRef.setExternalId(externalId);
+        recordRef.setType(recordType);
+        return recordRef;
+    }
+    
+    public static String getInternalId(final BaseRef baseRef) {
+        try {
+            final Method getInternalIdMethod = baseRef.getClass().getMethod("getInternalId", (Class<?>[])new Class[0]);
+            return (String)getInternalIdMethod.invoke(baseRef, new Object[0]);
+        }
+        catch (NoSuchMethodException e2) {
+            throw new UnsupportedOperationException("Cannot call getInternalId() on " + baseRef.getClass().getName());
+        }
+        catch (InvocationTargetException | IllegalAccessException ex2) {
+            final ReflectiveOperationException ex;
+            final ReflectiveOperationException e = ex;
+            throw new IllegalStateException(e);
+        }
+    }
+    
+    public static List<String> getInternalIds(final WriteResponseList writeResponseList) {
+        return Arrays.stream(writeResponseList.getWriteResponse()).map(writeResponse -> {
+            if (writeResponse == null || !writeResponse.getStatus().isIsSuccess()) {
+                return null;
+            }
+            else {
+                return getInternalId(writeResponse.getBaseRef());
+            }
+        }).collect((Collector<? super Object, ?, List<String>>)Collectors.toList());
+    }
+    
+    public static List<Boolean> getSuccess(final WriteResponseList writeResponseList) {
+        return Arrays.stream(writeResponseList.getWriteResponse()).map(writeResponse -> writeResponse != null && writeResponse.getStatus().isIsSuccess()).collect((Collector<? super Object, ?, List<Boolean>>)Collectors.toList());
+    }
+    
+    public static List<Record> getRecords(final ReadResponseList readResponseList) {
+        return Arrays.stream(readResponseList.getReadResponse()).map(readResponse -> (readResponse == null) ? null : readResponse.getRecord()).collect((Collector<? super Object, ?, List<Record>>)Collectors.toList());
+    }
+    
+    public static List<?> getSearchResults(final SearchResult searchResult) {
+        if (searchResult == null || searchResult.getStatus() == null || !searchResult.getStatus().isIsSuccess()) {
+            return null;
+        }
+        if (searchResult.getTotalRecords() == 0) {
+            return Collections.emptyList();
+        }
+        final RecordList recordList = searchResult.getRecordList();
+        final SearchRowList searchRowList = searchResult.getSearchRowList();
+        if (recordList == null && searchRowList == null) {
+            return null;
+        }
+        return Arrays.asList((Object[])((searchRowList != null) ? searchRowList.getSearchRow() : recordList.getRecord()));
+    }
+}

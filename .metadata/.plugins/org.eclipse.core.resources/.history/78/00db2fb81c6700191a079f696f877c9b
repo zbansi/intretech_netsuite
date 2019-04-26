@@ -1,0 +1,313 @@
+package com.netsuite.suitetalk.client.v2017_2;
+
+import com.netsuite.suitetalk.client.common.contract.*;
+import org.apache.log4j.*;
+import com.netsuite.suitetalk.proxy.v2017_2.platform.*;
+import org.apache.commons.httpclient.*;
+import com.netsuite.suitetalk.client.common.authentication.*;
+import org.apache.axis.configuration.*;
+import com.netsuite.suitetalk.client.common.utils.*;
+import org.apache.axis.client.*;
+import com.netsuite.suitetalk.client.common.*;
+import java.net.*;
+import javax.xml.rpc.*;
+import java.util.stream.*;
+import org.apache.axis.message.*;
+import javax.annotation.*;
+import java.util.function.*;
+import javax.xml.namespace.*;
+import com.netsuite.suitetalk.client.v2017_2.utils.*;
+import org.apache.axis.*;
+import org.apache.axis.transport.http.*;
+import java.util.*;
+import javax.xml.soap.*;
+
+@ParametersAreNonnullByDefault
+public class WsCoreClient implements Authentication, EndpointInfo, SoapHeaderHandler, HttpHeaderHandler
+{
+    private static final Logger LOG;
+    private final NetSuitePortType port;
+    private final NetSuiteServiceLocator locator;
+    private final URL endpointUrl;
+    private final EndpointVersion endpointVersion;
+    private final String messagesUrn;
+    protected final List<MimeHeader> requestHttpHeaders;
+    private final List<MimeHeader> responseHttpHeaders;
+    private HttpVersion httpProtocolVersion;
+    private Passport passport;
+    private SsoPassport ssoPassport;
+    private TokenPassport tokenPassport;
+    private OAuthPassport oAuthPassport;
+    
+    public WsCoreClient(final URL endpointUrl) {
+        this.requestHttpHeaders = new ArrayList<MimeHeader>();
+        this.responseHttpHeaders = new ArrayList<MimeHeader>();
+        this.httpProtocolVersion = HttpVersion.HTTP_1_1;
+        final SimpleProvider engineConfiguration = new SimpleProvider();
+        engineConfiguration.deployTransport("http", (Handler)new SimpleTargetedChain((Handler)new RequestHandler(), (Handler)new CommonsHTTPSender(), (Handler)new ResponseHandler()));
+        this.locator = new NetSuiteServiceLocator((EngineConfiguration)engineConfiguration);
+        final String serviceName = this.locator.getNetSuitePortAddress().split("/services/")[1];
+        final String endpointVersionAsString = serviceName.substring("NetSuitePort_".length());
+        this.endpointVersion = new EndpointVersion(endpointVersionAsString);
+        this.messagesUrn = CommonUtils.getMessagesUrn(this.endpointVersion);
+        final String query = (endpointUrl.getQuery() == null) ? "" : ('?' + endpointUrl.getQuery());
+        try {
+            this.endpointUrl = new URL(endpointUrl, "/services/" + serviceName + query);
+            this.port = this.locator.getNetSuitePort(this.endpointUrl);
+            final Stub stub = (Stub)this.port;
+            stub.setTimeout(Constants.DEFAULT_HTTP_SOCKET_TIMEOUT);
+            stub.setMaintainSession(true);
+        }
+        catch (MalformedURLException | ServiceException ex2) {
+            final Exception ex;
+            final Exception e = ex;
+            throw new RuntimeException(e);
+        }
+    }
+    
+    public NetSuitePortType getPort() {
+        return this.port;
+    }
+    
+    protected Stub getStub() {
+        return (Stub)this.getPort();
+    }
+    
+    protected NetSuiteServiceLocator getLocator() {
+        return this.locator;
+    }
+    
+    public URL getEndpointUrl() {
+        return this.endpointUrl;
+    }
+    
+    public EndpointVersion getEndpointVersion() {
+        return this.endpointVersion;
+    }
+    
+    public String getMessagesUrn() {
+        return this.messagesUrn;
+    }
+    
+    public HttpVersion getHttpProtocolVersion() {
+        return this.httpProtocolVersion;
+    }
+    
+    public void setHttpProtocolVersion(final HttpVersion httpProtocolVersion) {
+        this.httpProtocolVersion = httpProtocolVersion;
+    }
+    
+    public void setHttpHeader(final String name, final String value) {
+        this.requestHttpHeaders.add(new MimeHeader(name, value));
+    }
+    
+    public void unsetHttpHeader(final String name) {
+        this.requestHttpHeaders.removeAll(this.requestHttpHeaders.stream().filter(header -> header.getName().equals(name)).collect((Collector<? super Object, ?, List<? super Object>>)Collectors.toList()));
+    }
+    
+    public boolean isHttpHeaderSet(final String name) {
+        for (final MimeHeader header : this.requestHttpHeaders) {
+            if (header.getName().equals(name)) {
+                return true;
+            }
+        }
+        return false;
+    }
+    
+    public List<MimeHeader> getHttpHeaders() {
+        return Collections.unmodifiableList((List<? extends MimeHeader>)this.requestHttpHeaders);
+    }
+    
+    public void clearHttpHeaders() {
+        this.requestHttpHeaders.clear();
+    }
+    
+    public List<MimeHeader> getResponseHttpHeaders() {
+        return Collections.unmodifiableList((List<? extends MimeHeader>)this.responseHttpHeaders);
+    }
+    
+    public List<String> getResponseHttpHeader(final String name) {
+        return this.getResponseHttpHeaders().stream().filter(header -> header.getName().equals(name)).map((Function<? super Object, ?>)MimeHeader::getValue).collect((Collector<? super Object, ?, List<String>>)Collectors.toList());
+    }
+    
+    public SOAPHeaderElement getSoapHeader(final String namespace, final String headerName) {
+        return this.getStub().getHeader(namespace, headerName);
+    }
+    
+    public synchronized void addSoapHeader(@Nullable final String namespace, final String headerName, final Object value) {
+        this.getStub().setHeader((namespace == null) ? "" : namespace, headerName, value);
+    }
+    
+    public void addSoapHeader(final String headerName, final Object value) {
+        this.addSoapHeader(this.getMessagesUrn(), headerName, value);
+    }
+    
+    public void removeSoapHeader(@Nullable final String namespace, final String headerName) {
+        if (CommonUtils.isEmptyString(headerName)) {
+            return;
+        }
+        final String headerNamespace = (namespace == null) ? "" : namespace;
+        if (!this.isSoapHeaderSet(headerNamespace, headerName)) {
+            return;
+        }
+        final Stub stub = this.getStub();
+        final SOAPHeaderElement[] headers = stub.getHeaders();
+        final String s;
+        final List<SOAPHeaderElement> remainingHeaders = Arrays.stream(headers).filter(header -> !headerName.equals(header.getLocalName()) || !s.equals(header.getNamespaceURI())).collect((Collector<? super SOAPHeaderElement, ?, List<SOAPHeaderElement>>)Collectors.toList());
+        synchronized (this) {
+            stub.clearHeaders();
+            remainingHeaders.forEach(stub::setHeader);
+        }
+    }
+    
+    public void removeSoapHeader(final String headerName) {
+        this.removeSoapHeader(this.getMessagesUrn(), headerName);
+    }
+    
+    public boolean isSoapHeaderSet(final String namespace, final String headerName) {
+        return this.getStub().getHeader(namespace, headerName) != null;
+    }
+    
+    public boolean isSoapHeaderSet(final String headerName) {
+        return this.isSoapHeaderSet(this.getMessagesUrn(), headerName);
+    }
+    
+    protected void replaceSoapHeader(final String headerName, final Object value) {
+        this.removeSoapHeader(headerName);
+        this.addSoapHeader(headerName, value);
+    }
+    
+    protected void updateTokenPassportInMessage(final MessageContext messageContext, final TokenPassport tokenPassport) {
+        final QName tokenPassportQName = new QName(this.getMessagesUrn(), "tokenPassport");
+        try {
+            final SOAPHeader soapHeader = messageContext.getCurrentMessage().getSOAPHeader();
+            if (tokenPassport.isAutomaticallyUpdated()) {
+                tokenPassport.update();
+            }
+            soapHeader.addChildElement((SOAPElement)new SOAPHeaderElement(tokenPassportQName, (Object)Utils.convertTokenPassport(tokenPassport)));
+        }
+        catch (SOAPException e) {
+            e.printStackTrace();
+        }
+    }
+    
+    public Passport getPassport() {
+        return this.passport;
+    }
+    
+    public void setPassport(final Passport passport) {
+        this.passport = passport;
+    }
+    
+    public void unsetPassport() {
+        this.setRequestLevelCredentials(false);
+        this.passport = null;
+    }
+    
+    public void setRequestLevelCredentials(final boolean useRequestLevelCredentials) {
+        if (useRequestLevelCredentials && this.passport == null) {
+            throw new IllegalStateException("Passport must be set before setting Request-Level Credentials");
+        }
+        if (useRequestLevelCredentials) {
+            this.replaceSoapHeader("passport", Utils.convertPassport(this.passport));
+        }
+        else {
+            this.removeSoapHeader("passport");
+        }
+    }
+    
+    public void setRequestLevelCredentials(final Passport passport) {
+        this.setPassport(passport);
+        this.setRequestLevelCredentials(true);
+    }
+    
+    public SsoPassport getSsoPassport() {
+        return this.ssoPassport;
+    }
+    
+    public void setSsoPassport(final SsoPassport ssoPassport) {
+        this.ssoPassport = ssoPassport;
+    }
+    
+    public void unsetSsoPassport() {
+        this.ssoPassport = null;
+        this.removeSoapHeader("ssoPassport");
+    }
+    
+    public TokenPassport getTokenPassport() {
+        return this.tokenPassport;
+    }
+    
+    public void setTokenPassport(final TokenPassport tokenPassport) {
+        this.tokenPassport = tokenPassport;
+    }
+    
+    public void unsetTokenPassport() {
+        this.tokenPassport = null;
+    }
+    
+    public OAuthPassport getOAuthPassport() {
+        return this.oAuthPassport;
+    }
+    
+    public void setOAuthPassport(final OAuthPassport oAuthPassport) {
+        this.oAuthPassport = oAuthPassport;
+    }
+    
+    public void unsetOAuthPassport() {
+        this.oAuthPassport = null;
+    }
+    
+    public void setAutomaticSessionManagement(final boolean automaticSessionManagement) {
+        this.getStub().setMaintainSession(automaticSessionManagement);
+    }
+    
+    protected static void logMessage(final Message message, final boolean isRequest) throws AxisFault {
+        if (message != null && message.getSOAPPartAsString() != null) {
+            WsCoreClient.LOG.info((Object)CommonUtils.getLogMessage(message.getSOAPPartAsString(), isRequest));
+        }
+    }
+    
+    static {
+        LOG = Logger.getLogger((Class)WsCoreClient.class);
+    }
+    
+    private class RequestHandler extends SimpleTargetedChain
+    {
+        public void invoke(final MessageContext messageContext) throws AxisFault {
+            messageContext.setProperty("axis.transport.version", (Object)(HttpVersion.HTTP_1_1.equals(WsCoreClient.this.getHttpProtocolVersion()) ? HTTPConstants.HEADER_PROTOCOL_V11 : HTTPConstants.HEADER_PROTOCOL_V10));
+            final List<MimeHeader> mimeHeaders = new ArrayList<MimeHeader>(WsCoreClient.this.requestHttpHeaders);
+            if (WsCoreClient.this.oAuthPassport != null) {
+                mimeHeaders.add(new MimeHeader(WsCoreClient.this.oAuthPassport.getOAuthHttpHeaderName(), WsCoreClient.this.oAuthPassport.getOAuthHttpHeaderValue()));
+            }
+            if (!mimeHeaders.isEmpty()) {
+                final Hashtable<String, String> headersMap = new Hashtable<String, String>(mimeHeaders.size());
+                final String s;
+                mimeHeaders.forEach(header -> s = headersMap.put(header.getName(), header.getValue()));
+                messageContext.setProperty("HTTP-Request-Headers", (Object)headersMap);
+            }
+            if (WsCoreClient.this.tokenPassport != null) {
+                WsCoreClient.this.updateTokenPassportInMessage(messageContext, WsCoreClient.this.tokenPassport);
+            }
+            WsCoreClient.logMessage(messageContext.getRequestMessage(), true);
+            super.invoke(messageContext);
+        }
+    }
+    
+    private class ResponseHandler extends SimpleTargetedChain
+    {
+        public void invoke(final MessageContext messageContext) throws AxisFault {
+            WsCoreClient.this.responseHttpHeaders.clear();
+            final Message responseMessage = messageContext.getResponseMessage();
+            if (responseMessage != null) {
+                final MimeHeaders headers = responseMessage.getMimeHeaders();
+                final Iterator headersIterator = headers.getAllHeaders();
+                while (headersIterator.hasNext()) {
+                    WsCoreClient.this.responseHttpHeaders.add(headersIterator.next());
+                }
+            }
+            WsCoreClient.logMessage(messageContext.getResponseMessage(), false);
+            super.invoke(messageContext);
+        }
+    }
+}

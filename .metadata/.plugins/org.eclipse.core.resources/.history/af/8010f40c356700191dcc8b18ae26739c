@@ -1,0 +1,14 @@
+package com.netsuite.suitetalk.client.common.contract;
+
+import javax.xml.soap.*;
+
+public interface SoapHeaderHandler
+{
+    void addSoapHeader(final String p0, final String p1, final Object p2);
+    
+    SOAPHeaderElement getSoapHeader(final String p0, final String p1);
+    
+    void removeSoapHeader(final String p0, final String p1);
+    
+    boolean isSoapHeaderSet(final String p0, final String p1);
+}

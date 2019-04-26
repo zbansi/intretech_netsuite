@@ -1,0 +1,10 @@
+package com.netsuite.suitetalk.client.common.contract;
+
+public interface HttpHeaderHandler
+{
+    void setHttpHeader(final String p0, final String p1);
+    
+    void unsetHttpHeader(final String p0);
+    
+    boolean isHttpHeaderSet(final String p0);
+}

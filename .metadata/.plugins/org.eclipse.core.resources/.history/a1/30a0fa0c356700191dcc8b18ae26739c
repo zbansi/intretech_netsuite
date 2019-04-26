@@ -1,0 +1,70 @@
+package com.netsuite.suitetalk.client.common;
+
+import javax.annotation.*;
+import java.util.regex.*;
+
+@ParametersAreNonnullByDefault
+public class EndpointVersion implements Comparable<EndpointVersion>
+{
+    private static final Pattern ENDPOINT_VERSION_PATTERN;
+    private final String version;
+    
+    public EndpointVersion(final String endpointVersion) {
+        if (!EndpointVersion.ENDPOINT_VERSION_PATTERN.matcher(endpointVersion).matches()) {
+            throw new IllegalArgumentException("Provided endpoint version is not valid. It must match regular expression " + EndpointVersion.ENDPOINT_VERSION_PATTERN.toString());
+        }
+        this.version = endpointVersion;
+    }
+    
+    public String getStringValue() {
+        return this.version;
+    }
+    
+    public double getNumericValue() {
+        return Double.parseDouble(this.version.replace("_", "."));
+    }
+    
+    public boolean isLessThan(final EndpointVersion endpointVersion) {
+        return this.compareTo(endpointVersion) < 0;
+    }
+    
+    public boolean isLessThanOrEqualTo(final EndpointVersion endpointVersion) {
+        return this.compareTo(endpointVersion) <= 0;
+    }
+    
+    public boolean isEqualTo(final EndpointVersion endpointVersion) {
+        return this.compareTo(endpointVersion) == 0;
+    }
+    
+    public boolean isGreaterThanOrEqualTo(final EndpointVersion endpointVersion) {
+        return this.compareTo(endpointVersion) >= 0;
+    }
+    
+    public boolean isGreaterThan(final EndpointVersion endpointVersion) {
+        return this.compareTo(endpointVersion) > 0;
+    }
+    
+    @Override
+    public String toString() {
+        return this.version;
+    }
+    
+    @Override
+    public int compareTo(final EndpointVersion anotherEndpointVersion) {
+        return this.version.compareTo(anotherEndpointVersion.version);
+    }
+    
+    @Override
+    public boolean equals(final Object obj) {
+        return obj instanceof EndpointVersion && this.version.equals(((EndpointVersion)obj).version);
+    }
+    
+    @Override
+    public int hashCode() {
+        return 31 * this.version.hashCode();
+    }
+    
+    static {
+        ENDPOINT_VERSION_PATTERN = Pattern.compile("\\d{4}_\\d");
+    }
+}

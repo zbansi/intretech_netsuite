@@ -1,0 +1,14 @@
+package com.bansi.webservices.samples;
+
+import java.net.URL;
+
+import com.netsuite.suitetalk.client.v2017_2.WsCoreClient;
+
+public class WsCoreClient_2019_1 extends WsCoreClient{
+
+	public WsCoreClient_2019_1(URL endpointUrl) {
+		super(endpointUrl);
+		// TODO Auto-generated constructor stub
+	}
+
+}

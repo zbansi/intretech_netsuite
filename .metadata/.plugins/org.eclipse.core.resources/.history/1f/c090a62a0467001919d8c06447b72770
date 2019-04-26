@@ -1,0 +1,214 @@
+package com.intretech.suitetalk.client.common.authentication;
+
+import javax.annotation.Nullable;
+import javax.annotation.ParametersAreNonnullByDefault;
+import java.util.concurrent.TimeUnit;
+
+import static com.netsuite.suitetalk.client.common.utils.CommonUtils.getRandomNonce;
+
+/**
+ * <p>This class holds all necessary information for OAuth authentication.</p>
+ * <p>&copy; 2017 NetSuite Inc.</p>
+ */
+@ParametersAreNonnullByDefault
+public class OAuthPassport {
+
+    private static final String DEFAULT_SIGNATURE_METHOD = "PLAINTEXT";
+    private static final String HTTP_HEADER_NAME = "Authorization";
+
+    private String token;
+    private String consumerKey;
+    private String nonce;
+    private Long timestamp;
+    private String signatureMethod;
+    private String signature;
+
+    private boolean automaticallyUpdated;
+
+    /**
+     * Constructor.
+     */
+    public OAuthPassport() {
+    }
+
+    /**
+     * Constructor.
+     *
+     * @param consumerKey     Consumer key
+     * @param token           Token
+     * @param nonce           Random unique string
+     * @param timestamp       Current timestamp
+     * @param signatureMethod Signature method (e.g. PLAINTEXT)
+     * @param signature       Signature
+     */
+    public OAuthPassport(String consumerKey, String token,
+                         @Nullable String nonce, @Nullable Long timestamp,
+                         String signatureMethod, String signature) {
+        this.consumerKey = consumerKey;
+        this.token = token;
+        this.nonce = nonce;
+        this.timestamp = timestamp;
+        this.signatureMethod = signatureMethod;
+        this.signature = signature;
+        automaticallyUpdated = false;
+    }
+
+    /**
+     * Constructor.
+     *
+     * @param consumerKey     Consumer key
+     * @param token           Token
+     * @param signatureMethod Signature method (e.g. PLAINTEXT)
+     * @param signature       Signature
+     */
+    public OAuthPassport(String consumerKey, String token, String signatureMethod, String signature) {
+        this(consumerKey, token, null, null, signatureMethod, signature);
+        automaticallyUpdated = true;
+    }
+
+    /**
+     * Constructor.
+     *
+     * @param consumerKey Consumer key
+     * @param token       Token
+     * @param signature   Signature
+     */
+    public OAuthPassport(String consumerKey, String token, String signature) {
+        this(consumerKey, token, DEFAULT_SIGNATURE_METHOD, signature);
+    }
+
+    /**
+     * @return Consumer key
+     */
+    public String getConsumerKey() {
+        return consumerKey;
+    }
+
+    /**
+     * Sets consumer key.
+     *
+     * @param consumerKey Consumer key to be set
+     */
+    public void setConsumerKey(String consumerKey) {
+        this.consumerKey = consumerKey;
+    }
+
+    /**
+     * @return Token
+     */
+    public String getToken() {
+        return token;
+    }
+
+    /**
+     * Sets token.
+     *
+     * @param token Token to be set
+     */
+    public void setToken(String token) {
+        this.token = token;
+    }
+
+    /**
+     * @return Currently set nonce (random unique string)
+     */
+    public String getNonce() {
+        return nonce;
+    }
+
+    /**
+     * Sets nonce.
+     *
+     * @param nonce Random unique number identifying the request
+     */
+    public void setNonce(String nonce) {
+        this.nonce = nonce;
+    }
+
+    /**
+     * @return Currently set timestamp
+     */
+    public Long getTimestamp() {
+        return timestamp;
+    }
+
+    /**
+     * Sets timestamp.
+     *
+     * @param timestamp Current timestamp in seconds
+     */
+    public void setTimestamp(Long timestamp) {
+        this.timestamp = timestamp;
+    }
+
+    /**
+     * @return Currently set signature method
+     */
+    public String getSignatureMethod() {
+        return signatureMethod;
+    }
+
+    /**
+     * Sets signature method.
+     *
+     * @param signatureMethod Signature method (e.g. PLAINTEXT)
+     */
+    public void setSignatureMethod(String signatureMethod) {
+        this.signatureMethod = signatureMethod;
+    }
+
+    /**
+     * @return Current signature
+     */
+    public String getSignature() {
+        return signature;
+    }
+
+    /**
+     * Sets signature.
+     *
+     * @param signature Signature
+     */
+    public void setSignature(String signature) {
+        this.signature = signature;
+    }
+
+    /**
+     * @return {@code true} if the nonce and timestamp are automatically set, {@code false} otherwise
+     */
+    public boolean isAutomaticallyUpdated() {
+        return automaticallyUpdated;
+    }
+
+    /**
+     * Sets if nonce and timestamp should be automatically set.
+     *
+     * @param automaticallyUpdated If {@code true} then nonce and timestamp are automatically set
+     */
+    public void setAutomaticallyUpdated(boolean automaticallyUpdated) {
+        this.automaticallyUpdated = automaticallyUpdated;
+    }
+
+    /**
+     * @return Name of the HTTP header which should be used for OAuth authentication
+     */
+    public String getOAuthHttpHeaderName() {
+        return HTTP_HEADER_NAME;
+    }
+
+    /**
+     * @return Value for HTTP header used for OAuth authentication
+     */
+    public String getOAuthHttpHeaderValue() {
+        if (isAutomaticallyUpdated()) {
+            setNonce(getRandomNonce());
+            setTimestamp(TimeUnit.MILLISECONDS.toSeconds(System.currentTimeMillis()));
+        }
+        return "OAuth oauth_consumer_key=\"" + getConsumerKey()
+                + "\", oauth_token=\"" + getToken()
+                + "\", oauth_nonce=\"" + getNonce()
+                + "\", oauth_timestamp=\"" + getTimestamp()
+                + "\", oauth_signature_method=\"" + getSignatureMethod()
+                + "\", oauth_signature=\"" + getSignature() + '"';
+    }
+}

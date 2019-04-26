@@ -34,6 +34,7 @@ public final class Messages {
 	public static final String GET_LIST_OF_CUSTOMERS = "Get a List of Customers (Internal IDs required)";
 	public static final String DELETE_LIST_OF_CUSTOMERS = "Delete a List of Customers (Internal IDs required)";
 	public static final String ADD_INVENTORY_ITEM = "Add an Inventory Item";
+	public static final String ADD_LOTNUMBERED_INVENTORY_ITEM = "Add an Lot Numbered Inventory Item";
 	public static final String ADD_SALES_ORDER = "Add a Sales Order";
 	public static final String UPDATE_SALES_ORDER = "Update a Sales Order to Add a New Items (Internal ID required)";
 	public static final String FULFILL_SALES_ORDER = "Fulfill a Sales Order (Internal ID required)";
@@ -57,8 +58,10 @@ public final class Messages {
 	public static final String GET_ITEM = "Get an item of the internal id";
 	public static final String ENTER_ITEM_NUMBER = "Please enter the following Item.";
 	public static final String ITEM_NUMBER = "Internalid of item to be retrieved.";
-	
-	
+
+	public static final String ADD_BOM = "Add an BOM";
+	public static final String ENTER_INFORMATION_FOR_BOM = "Please enter following information for :";
+
 	////////////////////
 	public static final String CUSTOM_FIELDS_WARNING = "In order to populate custom fields, ensure that these fields already exist for the customer record.";
 	public static final String CUSTOM_FIELD_STRING = "String (maps to one of Free-Form Text, Text Area, etc. in UI)";
@@ -151,6 +154,8 @@ public final class Messages {
 	public static final String EXTERNAL_ID = "External ID";
 	////bansi add///
 	public static final String PURCHASE_DESCRIPTION = "purchase description";
+	public static final String BOM_SUCCESSFULLY_ADDED = "The BOM '%s' has been added successfully.";
+	public static final String BOM_WAS_NOT_ADDED = "The BOM '%1$s' was not added: %2$s";
 	////////////
 	public static final String ENTITY_ID = "Entity ID";
 	public static final String ENTITY_NAME = "Entity Name (optional depending on your account configuration)";
@@ -185,6 +190,8 @@ public final class Messages {
 	public static final String TOTAL_PAGES = "Total Pages";
 	public static final String PAGE_SIZE = "Page Size";
 	public static final String PAGE_INDEX = "Current Page Index";
+
+	public static final String BOM_NAME = "BOM Name";
 
 	// Error messages
 	public static final String ERROR = "Error";

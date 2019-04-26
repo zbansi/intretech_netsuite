@@ -1,0 +1,5 @@
+package com.intretech.suitetalk.client.v2019_1;
+
+public class WsClient {
+
+}
