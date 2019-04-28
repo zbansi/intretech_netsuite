@@ -72,12 +72,15 @@ function(record, search, runtime, format) {
 		var updatedRec = [];
 		var deletedRec = [];
 
+		/*
+		 * 获取新增和更新记录 system_note
+		 */
 		try {
 			var updatedRecColumns = [];
-			var columnsName = [ 'author', 'direction', 'externalid',
-					'formulacurrency', 'formuladate', 'formuladatetime',
-					'formulanumeric', 'formulapercent', 'formulatext',
-					'internalid', 'note', 'notedate', 'notetype', 'title' ];
+			var columnsName = [ 'date', 'recordtype', 'recordid', 'role',
+					'record', 'context', 'type', 'field', 'oldvalue',
+					'newvalue' ];
+
 			for (var i = 0; i < columnsName.length; i++) {
 				updatedRecColumns.push(search.createColumn({
 					name : columnsName[i]
@@ -85,21 +88,21 @@ function(record, search, runtime, format) {
 			}
 
 			var updatedRecFilters = [];
-			updatedRecFilters[0] = search.createFilter({
-				name : 'notedate',
-				operator : search.Operator.ONORAFTER,
-				//接受的格式为M/d/yy H:mm
-				values : lastSyncDatex
-			});
-			updatedRecFilters[1] = search.createFilter({
+			updatedRecFilters.push(search.createFilter({
 				name : 'recordtype',
 				operator : search.Operator.IS,
-				values : 'item'
-			});
+				values : 'customrecord_yq_workorder_bs'
+			}));
+
+			//			updatedRecFilters.push(search.createFilter({
+			//				name : 'role',
+			//				operator : search.Operator.IS,
+			//				values : '1001'
+			//			}));
 
 			if (dataSyncType == '1') {//全量同步
 				var updatedPagedData = search.create({
-					type : 'note',
+					type : search.Type.SYSTEM_NOTE,
 					//filters : updatedRecFilters,
 					columns : updatedRecColumns
 				}).runPaged();
@@ -112,9 +115,16 @@ function(record, search, runtime, format) {
 					});
 				});
 
-			} else if (dataSyncType == '2') {//增量同步				
+			} else if (dataSyncType == '2') {//增量同步	
+
+				updatedRecFilters.push(search.createFilter({
+					name : 'date',
+					operator : search.Operator.ONORAFTER,
+					//接受的格式为M/d/yy H:mm
+					values : lastSyncDatex
+				}));
 				var updatedPagedData = search.create({
-					type : 'note',
+					type : search.Type.SYSTEM_NOTE,
 					filters : updatedRecFilters,
 					columns : updatedRecColumns
 				}).runPaged();
@@ -139,13 +149,16 @@ function(record, search, runtime, format) {
 			});
 		}
 
+		/*
+		 * 获取删除记录 deleted_record
+		 */
 		try {
 			var deletedRecFilters = [];
+
 			deletedRecFilters.push(search.createFilter({
-				name : 'deleteddate',
-				operator : search.Operator.ONORAFTER,
-				//接受的格式为M/d/yy H:mm
-				values : lastSyncDatex
+				name : 'recordtype',
+				operator : search.Operator.IS,
+				values : 'customrecord_yq_workorder_bs'
 			}));
 
 			var deletedRecColumns = [];
@@ -168,7 +181,7 @@ function(record, search, runtime, format) {
 			if (dataSyncType == '1') {//全量同步
 
 				var deletedPagedData = search.create({
-					type : 'deletedrecord',
+					type : search.Type.DELETED_RECORD,
 					//filters : deletedRecFilters,
 					columns : deletedRecColumns
 
@@ -183,9 +196,14 @@ function(record, search, runtime, format) {
 					});
 				});
 			} else if (dataSyncType == '2') {//增量同步
-
+				deletedRecFilters.push(search.createFilter({
+					name : 'deleteddate',
+					operator : search.Operator.ONORAFTER,
+					//接受的格式为M/d/yy H:mm
+					values : lastSyncDatex
+				}));
 				var deletedPagedData = search.create({
-					type : 'deletedrecord',
+					type : search.Type.DELETED_RECORD,
 					filters : deletedRecFilters,
 					columns : deletedRecColumns
 				}).runPaged();

@@ -160,10 +160,10 @@ public final class PrintUtils {
 		printMapInline(fields);
 	}
 
-	public static void printItemSearchRowList(SearchRowList rowList) {
+	public static void printItemSearchRowList(ItemSearchRow[] rowList) {
 
-		for (int i = 0; i < rowList.getSearchRow().length; i++) {
-			ItemSearchRow row = (ItemSearchRow) rowList.getSearchRow()[i];
+		for (int i = 0; i < rowList.length; i++) {
+			ItemSearchRow row = rowList[i];
 			ItemSearchRowBasic basic = row.getBasic();
 			SearchColumnStringField itemId = basic.getItemId(i);
 			LOG.info("Item Id: " + itemId.getSearchValue());

@@ -841,8 +841,11 @@ public class SampleOperations_2019_1 {
 			}
 
 			// Search sales order for all found customers
-			SearchColumnMultiSelectCustomField entities = new SearchColumnMultiSelectCustomField();
-			entities.setOperator(SearchMultiSelectFieldOperator.anyOf);
+			SearchEnumMultiSelectCustomField entities = new SearchEnumMultiSelectCustomField();
+			entities.setOperator(SearchEnumMultiSelectFieldOperator.anyOf);
+			
+			//entities.setSearchValue(customers.stream().map(customer->));
+			
 			entities.setSearchValue(
 					customers.stream().map(customer -> createRecordRef(customer.getInternalId(), RecordType.customer)).toArray(RecordRef[]::new));
 
