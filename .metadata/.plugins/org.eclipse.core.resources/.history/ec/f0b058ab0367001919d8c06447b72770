@@ -1,5 +1,0 @@
-package com.intretech.suitetalk.client.common.authentication;
-
-public class OAuthPassport {
-
-}

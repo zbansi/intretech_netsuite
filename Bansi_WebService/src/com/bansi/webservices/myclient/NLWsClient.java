@@ -45,11 +45,11 @@ public class NLWsClient {
 		System.out.println();
 
 		//±¨´í SESSION_TIMED_OUT
-		RecordRef rr = new RecordRef();
-		rr.setInternalId("1");
-		rr.setType(RecordType.customer);
-		Customer b = (Customer) c._port.get(rr).getRecord();
-		System.out.println(b.getCompanyName());
+//		RecordRef rr = new RecordRef();
+//		rr.setInternalId("1");
+//		rr.setType(RecordType.customer);
+//		Customer b = (Customer) c._port.get(rr).getRecord();
+//		System.out.println(b.getCompanyName());
 	}
 
 	/**

@@ -1,0 +1,7 @@
+
+/*
+ * 将一个类数组字符串转换成数组，比如"['a','b','c']"=>['a','b','c'] 
+ */
+function stringToArray(arrayStr) {
+	
+}

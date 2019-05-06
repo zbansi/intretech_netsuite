@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project name="WebServiceNS" basedir="."
-	default="generate.interfaces.ns201901">
+	default="">
 
 	<!-- properies -->
 	<property name="webContent.dir" value="WebContent" />

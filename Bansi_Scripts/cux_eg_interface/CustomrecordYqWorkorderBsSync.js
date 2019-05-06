@@ -270,6 +270,9 @@ function(record, search, runtime, format) {
 				details : error.message
 			});
 		}
+		var scriptObj = runtime.getCurrentScript();
+		log.debug("Remaining governance units: "
+				+ scriptObj.getRemainingUsage());
 		return JSON.stringify({
 			'updatedRec' : updatedRec,
 			'deletedRec' : deletedRec
