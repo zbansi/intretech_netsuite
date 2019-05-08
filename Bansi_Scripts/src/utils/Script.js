@@ -1,17 +1,15 @@
-
 /*
  * 将一个类数组字符串转换成数组，比如"['a','b','c']"=>['a','b','c'] 
  */
 function stringToArray(arrayStr) {
-	var filterListStr="";
+	var filterListStr = "";
 	var filterRegExp = /\b.+\b/;
 	var fenceRegExp1 = /(\],)+|(,\[)+/;
 	var fenceRegExp2 = /,/;
 	try {
-		
+
 		//去除空格和引号
-		 filterListStr = filterListStr.replace(
-				/[""''\s]/g, '');
+		filterListStr = filterListStr.replace(/[""''\s]/g, '');
 		//去除首尾方括号 将字符串转换成单个元素数组
 		var filterList = filterRegExp.exec(filterListStr);//返回数组
 		log.debug({
@@ -48,5 +46,8 @@ function stringToArray(arrayStr) {
 			details : filterList
 		});
 
+	} catch (e) {
+	}
+	
 	
 }
