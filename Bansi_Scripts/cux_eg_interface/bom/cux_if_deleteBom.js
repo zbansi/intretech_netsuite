@@ -10,8 +10,15 @@
 //	DELETE
 //
 //////////////////////////////////////////////////////////
-define([ 'N/record', 'N/search', 'N/runtime', 'dao' ], function(record, search,
-		runtime, dao) {
+define([ 'N/record', 'N/search', 'N/runtime', 'dao' ],
+/**
+ * @param {record} record
+ * @param {search} search
+ * @param {runtime} runtime
+ * @param {dao} dao
+ */
+
+function(record, search, runtime, dao) {
 	/**
 	 * Function called upon sending a DELETE request to the RESTlet.
 	 * 
@@ -20,26 +27,72 @@ define([ 'N/record', 'N/search', 'N/runtime', 'dao' ], function(record, search,
 	 *          'application/json'
 	 * @since 2015.2
 	 */
-	/* DELETE Method 报文传参格式
-	 * recordType: string
-	 * recordId: string 多个id以逗号分隔			 * 
-	 */
+	/*
+		requestParams.bomAndRevisionNames: "65;66:v1,v2;67;68:v1"
+	*/
 	function doDelete(requestParams) {
 		log.debug({
 			title : "deleteRequestParams: ",
 			details : requestParams
 		});
 		try {
-			var deleteResult = dao.deleteRecords(requestParams.recordType,
-					requestParams.recordId.split(","));
-			//					var deleteRecordId = dao.deleteRecord(
-			//							requestParams.recordType, requestParams.recordId);
+
+			var bomAndRevisionList = [];
+			var deleteBomResult = [];
+			var deleteBomRevisionResult = [];
+			bomAndRevisionList = requestParams.bomAndRevisionNames.split(";")
+					.map(function(a) {
+						return a.split(":");
+					}).map(function(b) {
+						return b.map(function(c) {
+							return c.split(",");
+						});
+					});
+
 			log.debug({
-				title : 'addSuccess',
-				details : deleteResult
+				title : "bomAndRevisionList: ",
+				details : bomAndRevisionList
+			});
+
+			if (bomAndRevisionList.length == 0)
+				throw "requestParams bomAndRevisionNames error!";
+
+			bomAndRevisionList.forEach(function(e) {
+				log.debug({
+					title : "array: ",
+					details : e
+				});
+				var bomHeaderId = dao.getBomHeaderRecordId(e[0][0]);
+				if (e.length == 1) {
+					deleteBomResult.push(dao.deleteRecord(record.Type.BOM,
+							bomHeaderId));
+				} else {
+					
+					var bomRevisionIds = e[1].map(function(n) {
+						return dao.getBomRevisionRecordId(e[0][0], n)
+					});
+					
+					log.debug({
+						title : "bomRevisionIds: ",
+						details : bomRevisionIds
+					});
+
+					deleteBomRevisionResult.push(dao.deleteRecords(
+							record.Type.BOM_REVISION, bomRevisionIds));
+				}
+			});
+
+			log.debug({
+				title : 'deleteSuccess',
+				details : {
+					deletedBOMId : deleteBomResult,
+					deletedBOMRevisionId : deleteBomRevisionResult
+				}
 			});
 			return {
-				deletedBOMId : deleteResult
+				isSuccess : true,
+				deletedBOMId : deleteBomResult,
+				deletedBOMRevisionId : deleteBomRevisionResult
 			};
 
 		} catch (e) {

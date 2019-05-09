@@ -10,8 +10,14 @@
 //	PUT
 //
 //////////////////////////////////////////////////////////
-define([ 'N/record', 'N/search', 'N/runtime', 'dao' ], function(record, search,
-		runtime, dao) {
+define([ 'N/record', 'N/search', 'N/runtime', 'dao' ],
+/**
+ * @param {record} record
+ * @param {search} search
+ * @param {runtime} runtime
+ * @param {dao} dao
+ */
+function(record, search, runtime, dao) {
 
 	/**
 	 * Function called upon sending a PUT request to the RESTlet.
