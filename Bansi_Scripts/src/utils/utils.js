@@ -8,6 +8,10 @@
 define([],
 
 function() {
+
+	/**
+	 * filterExpressionString e.g. filterExpressionStr = "[['name','operator','value']]"
+	 */
 	function filterExpressionString2Array(filterExpressionStr) {
 
 		var filterList = [];
@@ -44,7 +48,28 @@ function() {
 			return filterList;
 		}
 	}
+
+	/*
+	 * 将一个类数组字符串转换成数组，比如"['a','b','c']"=>['a','b','c'] 
+	 */
+	function string2Array(arrayString) {
+		return eval("(" + arrayString + ")");
+		//2nd method
+		//		eval("var array = " + arrayString);
+		//		return array;
+	}
+
+	/*
+	 * 将一个JSON对象字符串转换成JSON对象，比如"{'key': 'value'}"=>{'key': 'value'}
+	 */
+	function string2JSONObject(JSONObjectString) {
+		eval("var jsonObject = " + JSONObjectString);
+		return jsonObject;
+	}
+
 	return {
-		'filterExpressionString2Array' : filterExpressionString2Array
+		'filterExpressionString2Array' : filterExpressionString2Array,
+		'string2Array' : string2Array,
+		'string2JSONObject' : string2JSONObject
 	};
 });

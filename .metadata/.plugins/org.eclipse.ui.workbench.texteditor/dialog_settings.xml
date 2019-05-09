@@ -2,12 +2,13 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="" key="selection"/>
+		<item value="setColumns" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="setColumns"/>
 			<item value="deleteResult"/>
 			<item value="getBomRevisionRecordId"/>
 			<item value="dao"/>
@@ -15,7 +16,6 @@
 			<item value="processLotNumberedItemWriteResponse"/>
 			<item value="processOtherChargePurchaseItemSearchResponse"/>
 			<item value="advancedSearchSalesOrders"/>
-			<item value="addressBookList"/>
 		</list>
 		<list key="replacehistory">
 			<item value=".getStatus()[0].getAfterSubmitFailed()"/>

@@ -6,12 +6,13 @@
  */
 
 define(
-		[ 'N/record', 'N/search' ],
+		[ 'N/record', 'N/search', '../utils/search_columns' ],
 		/**
 		 * @param {record} record
 		 * @param {search} search
+		 * @param {search_columns} columnset
 		 */
-		function(record, search) {
+		function(record, search, columnset) {
 
 			function getSearchResultSet(recordType, filterList, columnList) {
 				var pagedData = search.create({
@@ -252,19 +253,10 @@ define(
 				//			isor:'false',
 				//			leftparens:1,
 				//			rightparens:1
-				//		}));
-				log.debug({
-					title : 'filters dao 1',
-					details : filters
-				});
-				if (filterList.length > 0) {
+				//		}));				
+				if (filterList && filterList.length > 0) {
 					filters.push("and");
 					filters = filters.concat(filterList);
-
-					log.debug({
-						title : 'filters dao 2',
-						details : filters
-					});
 				}
 				var columnList = [ 'createddate', 'effectivestartdate',
 						'effectiveenddate', 'externalid', 'internalid',
@@ -339,21 +331,18 @@ define(
 				});
 
 				return resultSet;
-
 			}
 
 			function getWorkorderData(filterList) {
 
 				var filters = [ [ 'recordtype', 'is', 'workorder' ], 'and',
 						[ 'mainline', 'is', 'T' ] ];
-				if (filterList.length > 0) {
+				if (filterList && filterList.length > 0) {
 					filters.push("and");
 					filters = filters.concat(filterList);
 				}
 
-				var columnList = [ 'item', 'itemrevision', 'iswip', 'status',
-						'trandate', 'startdate', 'enddate', 'quantity',
-						'quantityuom', 'unit', 'firmed', 'memo' ];
+				var columnList = columnset.setColumns(search.Type.WORK_ORDER);
 
 				var columns = [];
 				columns.push(search.createColumn({
@@ -368,13 +357,275 @@ define(
 
 				columnList.forEach(function(e) {
 					columns.push(search.createColumn({
-						name : e,
+						name : e
 					}));
 				});
 				columns.push(search.createColumn({
 					name : 'name',
 					join : 'revision'
 				}));
+
+				var pagedData = search.create({
+					type : search.Type.TRANSACTION,
+					filters : filters,
+					columns : columns
+				}).runPaged();
+
+				var resultSet = [];
+				pagedData.pageRanges.forEach(function(pageRange) {
+					var page = pagedData.fetch({
+						index : pageRange.index
+					});
+					page.data.forEach(function(result) {
+						resultSet.push(result);
+					});
+				});
+
+				return resultSet;
+
+			}
+			function getSalesorderData(filterList) {
+
+				var filters = [ [ 'recordtype', 'is', 'salesorder' ] ];
+				if (filterList && filterList.length > 0) {
+					filters.push("and");
+					filters = filters.concat(filterList);
+				}
+
+				var columnList = columnset.setColumns(search.Type.SALES_ORDER);
+
+				var columns = [];
+				columns.push(search.createColumn({
+					name : 'name',
+					join : 'location'
+				}));
+
+				columns.push(search.createColumn({
+					name : 'name',
+					join : 'subsidiary'
+				}));
+
+				columns.push(search.createColumn({
+					name : 'itemid',
+					join : 'item'
+				}));
+
+				columnList.forEach(function(e) {
+					columns.push(search.createColumn({
+						name : e
+					}));
+				});
+
+				var pagedData = search.create({
+					type : search.Type.TRANSACTION,
+					filters : filters,
+					columns : columns
+				}).runPaged();
+
+				var resultSet = [];
+				pagedData.pageRanges.forEach(function(pageRange) {
+					var page = pagedData.fetch({
+						index : pageRange.index
+					});
+					page.data.forEach(function(result) {
+						resultSet.push(result);
+					});
+				});
+
+				return resultSet;
+
+			}
+			function getSalesorderFulfillment(filterList) {
+
+				var filters = [ [ 'recordtype', 'is', 'itemfulfillment' ] ];
+				if (filterList && filterList.length > 0) {
+					filters.push("and");
+					filters = filters.concat(filterList);
+				}
+
+				var columnList = columnset.setColumns(search.Type.ITEM_FULFILLMENT);
+
+				var columns = [];
+				columns.push(search.createColumn({
+					name : 'name',
+					join : 'location'
+				}));
+
+				columns.push(search.createColumn({
+					name : 'name',
+					join : 'subsidiary'
+				}));
+
+				columns.push(search.createColumn({
+					name : 'itemid',
+					join : 'item'
+				}));
+
+				columnList.forEach(function(e) {
+					columns.push(search.createColumn({
+						name : e
+					}));
+				});
+
+				var pagedData = search.create({
+					type : search.Type.TRANSACTION,
+					filters : filters,
+					columns : columns
+				}).runPaged();
+
+				var resultSet = [];
+				pagedData.pageRanges.forEach(function(pageRange) {
+					var page = pagedData.fetch({
+						index : pageRange.index
+					});
+					page.data.forEach(function(result) {
+						resultSet.push(result);
+					});
+				});
+
+				return resultSet;
+
+			}
+			
+
+			function getWorkorderIssue(filterList) {
+
+				var filters = [ [ 'recordtype', 'is', 'workorderissue' ] ];
+				if (filterList && filterList.length > 0) {
+					filters.push("and");
+					filters = filters.concat(filterList);
+				}
+
+				var columnList = columnset
+						.setColumns(search.Type.WORK_ORDER_ISSUE);
+
+				var columns = [];
+				columns.push(search.createColumn({
+					name : 'name',
+					join : 'location'
+				}));
+
+				columns.push(search.createColumn({
+					name : 'name',
+					join : 'subsidiary'
+				}));
+
+				columns.push(search.createColumn({
+					name : 'itemid',
+					join : 'item'
+				}));
+
+				columnList.forEach(function(e) {
+					columns.push(search.createColumn({
+						name : e
+					}));
+				});
+
+				var pagedData = search.create({
+					type : search.Type.TRANSACTION,
+					filters : filters,
+					columns : columns
+				}).runPaged();
+
+				var resultSet = [];
+				pagedData.pageRanges.forEach(function(pageRange) {
+					var page = pagedData.fetch({
+						index : pageRange.index
+					});
+					page.data.forEach(function(result) {
+						resultSet.push(result);
+					});
+				});
+
+				return resultSet;
+
+			}
+			
+			function getWorkorderCompletion(filterList) {
+
+				var filters = [ [ 'recordtype', 'is', 'workorderissue' ] ];
+				if (filterList && filterList.length > 0) {
+					filters.push("and");
+					filters = filters.concat(filterList);
+				}
+
+				var columnList = columnset
+						.setColumns(search.Type.WORK_ORDER_COMPLETION);
+
+				var columns = [];
+				columns.push(search.createColumn({
+					name : 'name',
+					join : 'location'
+				}));
+
+				columns.push(search.createColumn({
+					name : 'name',
+					join : 'subsidiary'
+				}));
+
+				columns.push(search.createColumn({
+					name : 'itemid',
+					join : 'item'
+				}));
+
+				columnList.forEach(function(e) {
+					columns.push(search.createColumn({
+						name : e
+					}));
+				});
+
+				var pagedData = search.create({
+					type : search.Type.TRANSACTION,
+					filters : filters,
+					columns : columns
+				}).runPaged();
+
+				var resultSet = [];
+				pagedData.pageRanges.forEach(function(pageRange) {
+					var page = pagedData.fetch({
+						index : pageRange.index
+					});
+					page.data.forEach(function(result) {
+						resultSet.push(result);
+					});
+				});
+
+				return resultSet;
+
+			}
+			
+			function getWorkorderClose(filterList) {
+
+				var filters = [ [ 'recordtype', 'is', 'workorderclose' ] ];
+				if (filterList && filterList.length > 0) {
+					filters.push("and");
+					filters = filters.concat(filterList);
+				}
+
+				var columnList = columnset
+						.setColumns(search.Type.WORK_ORDER_CLOSE);
+
+				var columns = [];
+				columns.push(search.createColumn({
+					name : 'name',
+					join : 'location'
+				}));
+
+				columns.push(search.createColumn({
+					name : 'name',
+					join : 'subsidiary'
+				}));
+
+				columns.push(search.createColumn({
+					name : 'itemid',
+					join : 'item'
+				}));
+
+				columnList.forEach(function(e) {
+					columns.push(search.createColumn({
+						name : e
+					}));
+				});
 
 				var pagedData = search.create({
 					type : search.Type.TRANSACTION,
@@ -405,6 +656,11 @@ define(
 				'createAndSaveBomReversionRecord' : createAndSaveBomReversionRecord,
 				'createAndSaveBomAllRecord' : createAndSaveBomAllRecord,
 				'getBOMAllData' : getBOMAllData,
-				'getWorkorderData' : getWorkorderData
+				'getWorkorderData' : getWorkorderData,
+				'getSalesorderData' : getSalesorderData,
+				'getSalesorderFulfillment' : getSalesorderFulfillment,
+				'getWorkorderIssue' : getWorkorderIssue,
+				'getWorkorderCompletion':getWorkorderCompletion,
+				'getWorkorderClose':getWorkorderClose
 			};
 		});
