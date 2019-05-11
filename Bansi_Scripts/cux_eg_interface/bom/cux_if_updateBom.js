@@ -57,7 +57,7 @@ function(record, search, runtime, dao) {
 					value : 'bomRecord post api test'
 				});
 				*/
-
+				//record.Type.BOM无nlapiSubmitField
 				var id = record.submitFields({
 					type : record.Type.BOM,
 					id : bomHeaderId,

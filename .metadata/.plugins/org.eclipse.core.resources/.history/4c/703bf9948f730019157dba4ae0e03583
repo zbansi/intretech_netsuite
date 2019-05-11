@@ -1,0 +1,47 @@
+require([ 'N/record' ], function(record) {
+	function createAndSaveSalesOrderFulfillment(salesOrderId, items) {
+		var rec = record.transform({
+			fromType : 'salesorder',
+			fromId : salesOrderId,
+			toType : 'itemfulfillment',
+			isDynamic : true
+		});
+
+		for ( var itemIndex in items) {
+			rec.selectNewLine({
+				sublistId : 'item'
+			});
+
+			for ( var key in items[itemIndex]) {
+				if (items[itemIndex].hasOwnProperty(key)) {
+					rec.setCurrentSublistValue({
+						sublistId : 'item',
+						fieldId : key,
+						value : items[itemIndex][key]
+					});
+				}
+			}
+
+			rec.commitLine({
+				sublistId : 'item'
+			});
+		}
+
+		return rec.save({
+			enableSourcing : false,
+			ignoreMandatoryFields : false
+		});
+	}
+
+	var itemFulfillment = createAndSaveSalesOrderFulfillment({
+		'tranid' : 1,
+		'name' : 'Rev.1',
+		'effectivestartdate' : new Date('1/1/2017')
+	}, [ {
+		'item' : 63,
+		'bomquantity' : 1
+	}, {
+		'item' : 62,
+		'bomquantity' : 2
+	} ])
+});

@@ -744,6 +744,15 @@ define(
 				'getInventoryTransfer' : getInventoryTransfer,
 				'getInventoryAdjustment' : getInventoryAdjustment,
 				'getPurchaseOrder' : getPurchaseOrder,
-				'getItemReceipt' : getItemReceipt
+				'getItemReceipt' : getItemReceipt,
+				//createAndSaveTransaction
+				'createAndSaveSalesOrderFulfillment' : createAndSaveSalesOrderFulfillment,
+				'createAndSaveWorkOrderIssue' : createAndSaveWorkOrderIssue,
+				'createAndSaveWorkOrderCompletion' : createAndSaveWorkOrderCompletion,
+				'createAndSaveWorkOrderClose' : createAndSaveWorkOrderClose,
+				'createAndSaveItemReceipt' : createAndSaveItemReceipt,
+				'createAndSaveInventoryTransfer' : createAndSaveInventoryTransfer,
+				'createAndSaveInventoryAdjustment' : createAndSaveInventoryAdjustment
+
 			};
 		});

@@ -67,9 +67,23 @@ function() {
 		return jsonObject;
 	}
 
+	/**
+	 * doValidation
+	 */
+	function doValidation(args, argNames, methodName) {
+		for (var i = 0; i < args.length; i++)
+			if (!args[i] && args[i] !== 0)
+				throw error.create({
+					name : 'MISSING_REQ_ARG',
+					message : 'Missing a required argument: [' + argNames[i]
+							+ '] for method: ' + methodName
+				});
+	}
+
 	return {
 		'filterExpressionString2Array' : filterExpressionString2Array,
 		'string2Array' : string2Array,
-		'string2JSONObject' : string2JSONObject
+		'string2JSONObject' : string2JSONObject,
+		'doValidation' : doValidation
 	};
 });

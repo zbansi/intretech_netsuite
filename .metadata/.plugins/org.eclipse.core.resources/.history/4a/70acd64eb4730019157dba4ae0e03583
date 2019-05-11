@@ -1,0 +1,77 @@
+/*
+ * "The item fulfillment record is partially scriptable — it can be updated, deleted, and searched using
+SuiteScript. It cannot be created or copied."
+ */
+
+require([ 'N/record' ], function(record) {
+	function createAndSaveSalesOrderFulfillment(salesOrderId, items) {
+		var rec = record.transform({
+			fromType : record.Type.SALES_ORDER,
+			fromId : salesOrderId,
+			toType : record.Type.ITEM_FULFILLMENT,
+			isDynamic : true
+		});
+
+		for ( var itemIndex in items) {
+			rec.selectNewLine({
+				sublistId : 'item'
+			});
+
+			for ( var key in items[itemIndex]) {
+				if (items[itemIndex].hasOwnProperty(key)) {
+					rec.setCurrentSublistValue({
+						sublistId : 'item',
+						fieldId : key,
+						value : items[itemIndex][key]
+					});
+				}
+			}
+
+			var subrec = rec.getSublistSubrecord({
+				sublistId : 'item',
+				line : 0,
+				fieldId : 'inventorydetail'
+			});
+			// Insert a line in the subrecord's inventory assignment sublist.
+			subrec.insertLine({
+				sublistId : 'inventoryassignment',
+				line : 0
+			});
+			subrec.setSublistValue({
+				sublistId : 'inventoryassignment',
+				fieldId : 'quantity',
+				line : 0,
+				value : 1
+			});
+			// Set the lot number for the item. Although this value is
+			// hardcoded, you do not have to change it, because it doesn't
+			// reference a record in your account. For the purpose of this
+			// sample, the value can be any string.
+			subrec.setSublistValue({
+				sublistId : 'inventoryassignment',
+				fieldId : 'receiptinventorynumber',
+				line : 0,
+				value : '01234'
+			});
+		}
+		rec.commitLine({
+			sublistId : 'item'
+		});
+
+		return rec.save({
+			enableSourcing : false,
+			ignoreMandatoryFields : false
+		});
+	}
+
+	var itemFulfillment = createAndSaveSalesOrderFulfillment({
+		'salesOrderId' : 19306
+	}, [ {
+		'item' : 63,
+		'location' : 1,
+		'quantity' : 1
+	}, {
+		'item' : 62,
+		'bomquantity' : 2
+	} ])
+});
