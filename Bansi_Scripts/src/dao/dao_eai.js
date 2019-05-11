@@ -333,7 +333,7 @@ define(
 				return resultSet;
 			}
 
-			function getWorkorderData(filterList) {
+			function getWorkOrderData(filterList) {
 
 				var filters = [ [ 'recordtype', 'is', 'workorder' ], 'and',
 						[ 'mainline', 'is', 'T' ] ];
@@ -343,27 +343,11 @@ define(
 				}
 
 				var columnList = columnset.setColumns(search.Type.WORK_ORDER);
-
+				var joinColumns = columnset
+						.setJoinColumns(search.Type.WORK_ORDER);
 				var columns = [];
-				columns.push(search.createColumn({
-					name : 'name',
-					join : 'location'
-				}));
-
-				columns.push(search.createColumn({
-					name : 'name',
-					join : 'subsidiary'
-				}));
-
-				columnList.forEach(function(e) {
-					columns.push(search.createColumn({
-						name : e
-					}));
-				});
-				columns.push(search.createColumn({
-					name : 'name',
-					join : 'revision'
-				}));
+				columns = columns.concat(columnList);
+				columns = columns.concat(joinColumns);
 
 				var pagedData = search.create({
 					type : search.Type.TRANSACTION,
@@ -384,7 +368,7 @@ define(
 				return resultSet;
 
 			}
-			function getSalesorderData(filterList) {
+			function getSalesOrderData(filterList) {
 
 				var filters = [ [ 'recordtype', 'is', 'salesorder' ] ];
 				if (filterList && filterList.length > 0) {
@@ -393,28 +377,11 @@ define(
 				}
 
 				var columnList = columnset.setColumns(search.Type.SALES_ORDER);
-
+				var joinColumns = columnset
+						.setJoinColumns(search.Type.SALES_ORDER);
 				var columns = [];
-				columns.push(search.createColumn({
-					name : 'name',
-					join : 'location'
-				}));
-
-				columns.push(search.createColumn({
-					name : 'name',
-					join : 'subsidiary'
-				}));
-
-				columns.push(search.createColumn({
-					name : 'itemid',
-					join : 'item'
-				}));
-
-				columnList.forEach(function(e) {
-					columns.push(search.createColumn({
-						name : e
-					}));
-				});
+				columns = columns.concat(columnList);
+				columns = columns.concat(joinColumns);
 
 				var pagedData = search.create({
 					type : search.Type.TRANSACTION,
@@ -435,7 +402,7 @@ define(
 				return resultSet;
 
 			}
-			function getSalesorderFulfillment(filterList) {
+			function getSalesOrderFulfillment(filterList) {
 
 				var filters = [ [ 'recordtype', 'is', 'itemfulfillment' ] ];
 				if (filterList && filterList.length > 0) {
@@ -443,29 +410,13 @@ define(
 					filters = filters.concat(filterList);
 				}
 
-				var columnList = columnset.setColumns(search.Type.ITEM_FULFILLMENT);
-
+				var columnList = columnset
+						.setColumns(search.Type.ITEM_FULFILLMENT);
+				var joinColumns = columnset
+						.setJoinColumns(search.Type.ITEM_FULFILLMENT);
 				var columns = [];
-				columns.push(search.createColumn({
-					name : 'name',
-					join : 'location'
-				}));
-
-				columns.push(search.createColumn({
-					name : 'name',
-					join : 'subsidiary'
-				}));
-
-				columns.push(search.createColumn({
-					name : 'itemid',
-					join : 'item'
-				}));
-
-				columnList.forEach(function(e) {
-					columns.push(search.createColumn({
-						name : e
-					}));
-				});
+				columns = columns.concat(columnList);
+				columns = columns.concat(joinColumns);
 
 				var pagedData = search.create({
 					type : search.Type.TRANSACTION,
@@ -486,9 +437,8 @@ define(
 				return resultSet;
 
 			}
-			
 
-			function getWorkorderIssue(filterList) {
+			function getWorkOrderIssue(filterList) {
 
 				var filters = [ [ 'recordtype', 'is', 'workorderissue' ] ];
 				if (filterList && filterList.length > 0) {
@@ -498,28 +448,11 @@ define(
 
 				var columnList = columnset
 						.setColumns(search.Type.WORK_ORDER_ISSUE);
-
+				var joinColumns = columnset
+						.setJoinColumns(search.Type.WORK_ORDER_ISSUE);
 				var columns = [];
-				columns.push(search.createColumn({
-					name : 'name',
-					join : 'location'
-				}));
-
-				columns.push(search.createColumn({
-					name : 'name',
-					join : 'subsidiary'
-				}));
-
-				columns.push(search.createColumn({
-					name : 'itemid',
-					join : 'item'
-				}));
-
-				columnList.forEach(function(e) {
-					columns.push(search.createColumn({
-						name : e
-					}));
-				});
+				columns = columns.concat(columnList);
+				columns = columns.concat(joinColumns);
 
 				var pagedData = search.create({
 					type : search.Type.TRANSACTION,
@@ -540,8 +473,8 @@ define(
 				return resultSet;
 
 			}
-			
-			function getWorkorderCompletion(filterList) {
+
+			function getWorkOrderCompletion(filterList) {
 
 				var filters = [ [ 'recordtype', 'is', 'workorderissue' ] ];
 				if (filterList && filterList.length > 0) {
@@ -551,28 +484,11 @@ define(
 
 				var columnList = columnset
 						.setColumns(search.Type.WORK_ORDER_COMPLETION);
-
+				var joinColumns = columnset
+						.setJoinColumns(search.Type.WORK_ORDER_COMPLETION);
 				var columns = [];
-				columns.push(search.createColumn({
-					name : 'name',
-					join : 'location'
-				}));
-
-				columns.push(search.createColumn({
-					name : 'name',
-					join : 'subsidiary'
-				}));
-
-				columns.push(search.createColumn({
-					name : 'itemid',
-					join : 'item'
-				}));
-
-				columnList.forEach(function(e) {
-					columns.push(search.createColumn({
-						name : e
-					}));
-				});
+				columns = columns.concat(columnList);
+				columns = columns.concat(joinColumns);
 
 				var pagedData = search.create({
 					type : search.Type.TRANSACTION,
@@ -593,8 +509,8 @@ define(
 				return resultSet;
 
 			}
-			
-			function getWorkorderClose(filterList) {
+
+			function getWorkOrderClose(filterList) {
 
 				var filters = [ [ 'recordtype', 'is', 'workorderclose' ] ];
 				if (filterList && filterList.length > 0) {
@@ -604,28 +520,190 @@ define(
 
 				var columnList = columnset
 						.setColumns(search.Type.WORK_ORDER_CLOSE);
-
+				var joinColumns = columnset
+						.setJoinColumns(search.Type.WORK_ORDER_CLOSE);
 				var columns = [];
-				columns.push(search.createColumn({
-					name : 'name',
-					join : 'location'
-				}));
+				columns = columns.concat(columnList);
+				columns = columns.concat(joinColumns);
 
-				columns.push(search.createColumn({
-					name : 'name',
-					join : 'subsidiary'
-				}));
+				var pagedData = search.create({
+					type : search.Type.TRANSACTION,
+					filters : filters,
+					columns : columns
+				}).runPaged();
 
-				columns.push(search.createColumn({
-					name : 'itemid',
-					join : 'item'
-				}));
-
-				columnList.forEach(function(e) {
-					columns.push(search.createColumn({
-						name : e
-					}));
+				var resultSet = [];
+				pagedData.pageRanges.forEach(function(pageRange) {
+					var page = pagedData.fetch({
+						index : pageRange.index
+					});
+					page.data.forEach(function(result) {
+						resultSet.push(result);
+					});
 				});
+
+				return resultSet;
+
+			}
+
+			function getTransferOrder(filterList) {
+
+				var filters = [ [ 'recordtype', 'is', 'transferorder' ] ];
+				if (filterList && filterList.length > 0) {
+					filters.push("and");
+					filters = filters.concat(filterList);
+				}
+
+				var columnList = columnset
+						.setColumns(search.Type.TRANSFER_ORDER);
+				var joinColumns = columnset
+						.setJoinColumns(search.Type.TRANSFER_ORDER);
+				var columns = [];
+				columns = columns.concat(columnList);
+				columns = columns.concat(joinColumns);
+
+				var pagedData = search.create({
+					type : search.Type.TRANSACTION,
+					filters : filters,
+					columns : columns
+				}).runPaged();
+
+				var resultSet = [];
+				pagedData.pageRanges.forEach(function(pageRange) {
+					var page = pagedData.fetch({
+						index : pageRange.index
+					});
+					page.data.forEach(function(result) {
+						resultSet.push(result);
+					});
+				});
+
+				return resultSet;
+
+			}
+
+			function getInventoryTransfer(filterList) {
+
+				var filters = [ [ 'recordtype', 'is', 'inventorytransfer' ] ];
+				if (filterList && filterList.length > 0) {
+					filters.push("and");
+					filters = filters.concat(filterList);
+				}
+
+				var columnList = columnset
+						.setColumns(search.Type.INVENTORY_TRANSFER);
+				var joinColumns = columnset
+						.setJoinColumns(search.Type.INVENTORY_TRANSFER);
+				var columns = [];
+				columns = columns.concat(columnList);
+				columns = columns.concat(joinColumns);
+
+				var pagedData = search.create({
+					type : search.Type.TRANSACTION,
+					filters : filters,
+					columns : columns
+				}).runPaged();
+
+				var resultSet = [];
+				pagedData.pageRanges.forEach(function(pageRange) {
+					var page = pagedData.fetch({
+						index : pageRange.index
+					});
+					page.data.forEach(function(result) {
+						resultSet.push(result);
+					});
+				});
+
+				return resultSet;
+
+			}
+
+			function getInventoryAdjustment(filterList) {
+
+				var filters = [ [ 'recordtype', 'is', 'inventoryadjustment' ] ];
+				if (filterList && filterList.length > 0) {
+					filters.push("and");
+					filters = filters.concat(filterList);
+				}
+
+				var columnList = columnset
+						.setColumns(search.Type.INVENTORY_ADJUSTMENT);
+				var joinColumns = columnset
+						.setJoinColumns(search.Type.INVENTORY_ADJUSTMENT);
+				var columns = [];
+				columns = columns.concat(columnList);
+				columns = columns.concat(joinColumns);
+
+				var pagedData = search.create({
+					type : search.Type.TRANSACTION,
+					filters : filters,
+					columns : columns
+				}).runPaged();
+
+				var resultSet = [];
+				pagedData.pageRanges.forEach(function(pageRange) {
+					var page = pagedData.fetch({
+						index : pageRange.index
+					});
+					page.data.forEach(function(result) {
+						resultSet.push(result);
+					});
+				});
+
+				return resultSet;
+
+			}
+
+			function getPurchaseOrder(filterList) {
+
+				var filters = [ [ 'recordtype', 'is', 'purchaseorder' ] ];
+				if (filterList && filterList.length > 0) {
+					filters.push("and");
+					filters = filters.concat(filterList);
+				}
+
+				var columnList = columnset
+						.setColumns(search.Type.PURCHASE_ORDER);
+				var joinColumns = columnset
+						.setJoinColumns(search.Type.PURCHASE_ORDER);
+				var columns = [];
+				columns = columns.concat(columnList);
+				columns = columns.concat(joinColumns);
+
+				var pagedData = search.create({
+					type : search.Type.TRANSACTION,
+					filters : filters,
+					columns : columns
+				}).runPaged();
+
+				var resultSet = [];
+				pagedData.pageRanges.forEach(function(pageRange) {
+					var page = pagedData.fetch({
+						index : pageRange.index
+					});
+					page.data.forEach(function(result) {
+						resultSet.push(result);
+					});
+				});
+
+				return resultSet;
+
+			}
+
+			function getItemReceipt(filterList) {
+
+				var filters = [ [ 'recordtype', 'is', 'itemreceipt' ] ];
+				if (filterList && filterList.length > 0) {
+					filters.push("and");
+					filters = filters.concat(filterList);
+				}
+
+				var columnList = columnset.setColumns(search.Type.ITEM_RECEIPT);
+				var joinColumns = columnset
+						.setJoinColumns(search.Type.ITEM_RECEIPT);
+				var columns = [];
+				columns = columns.concat(columnList);
+				columns = columns.concat(joinColumns);
 
 				var pagedData = search.create({
 					type : search.Type.TRANSACTION,
@@ -656,11 +734,16 @@ define(
 				'createAndSaveBomReversionRecord' : createAndSaveBomReversionRecord,
 				'createAndSaveBomAllRecord' : createAndSaveBomAllRecord,
 				'getBOMAllData' : getBOMAllData,
-				'getWorkorderData' : getWorkorderData,
-				'getSalesorderData' : getSalesorderData,
-				'getSalesorderFulfillment' : getSalesorderFulfillment,
-				'getWorkorderIssue' : getWorkorderIssue,
-				'getWorkorderCompletion':getWorkorderCompletion,
-				'getWorkorderClose':getWorkorderClose
+				'getWorkOrderData' : getWorkOrderData,
+				'getSalesOrderData' : getSalesOrderData,
+				'getSalesOrderFulfillment' : getSalesOrderFulfillment,
+				'getWorkOrderIssue' : getWorkOrderIssue,
+				'getWorkOrderCompletion' : getWorkOrderCompletion,
+				'getWorkOrderClose' : getWorkOrderClose,
+				'getTransferOrder' : getTransferOrder,
+				'getInventoryTransfer' : getInventoryTransfer,
+				'getInventoryAdjustment' : getInventoryAdjustment,
+				'getPurchaseOrder' : getPurchaseOrder,
+				'getItemReceipt' : getItemReceipt
 			};
 		});

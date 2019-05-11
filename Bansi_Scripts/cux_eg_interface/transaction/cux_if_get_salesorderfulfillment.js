@@ -42,7 +42,7 @@ function(record, search, runtime, dao, utils) {
 			if (requestParams.filterList)
 				filterList = utils.string2Array(requestParams.filterList);
 			return {
-				"resultSet" : dao.getSalesorderFulfillment(filterList)
+				"resultSet" : dao.getSalesOrderFulfillment(filterList)
 			};
 		} catch (e) {
 			log.debug({
