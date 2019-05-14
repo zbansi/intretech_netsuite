@@ -1,0 +1,36 @@
+{
+	"transactionData": [{
+			"subsidiary": "1",
+			"account": "241",
+			"adjlocation": "1",
+			"postingperiod": "126",
+			"memo": "TEST",
+			"item": [{
+					"line": 0,
+					"item": "10",
+					"location": "1",
+					"adjustqtyby": -2,
+					"details": [{
+							"issueinventorynumber": "38",
+							"binnumber": "1",
+							"inventorystatus": "1",
+							"quantity": -2
+						}
+					]
+				}, {
+					"line": 1,
+					"item": "10",
+					"location": "1",
+					"adjustqtyby": 3,
+					"details": [{
+							"receiptinventorynumber": "38",
+							"binnumber": "1",
+							"inventorystatus": "1",
+							"quantity": 3
+						}
+					]
+				}
+			]
+		}
+	]
+}

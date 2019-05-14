@@ -1,0 +1,36 @@
+{
+	"transactionData": [{
+			"subsidiary": "1",
+			"location": "1",
+			"transferlocation": "6",
+			"postingperiod": "126",
+			"memo": "TEST",
+			"inventory": [{
+					"item": "10",
+					"adjustqtyby": 2,
+					"inventorydetail": [{
+							"issueinventorynumber": "38",
+							"binnumber": "1",
+							"tobinnumber": "10",
+							"inventorystatus": "1",
+							"toinventorystatus": "1",
+							"quantity": 2
+						}
+					]
+				}, {
+					"item": "10",
+					"adjustqtyby": 3,
+					"inventorydetail": [{
+							"issueinventorynumber": "38",
+							"binnumber": "1",
+							"tobinnumber": "10",
+							"inventorystatus": "1",
+							"toinventorystatus": "1",
+							"quantity": 3
+						}
+					]
+				}
+			]
+		}
+	]
+}

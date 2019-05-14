@@ -1,0 +1,161 @@
+/*
+ * "The item fulfillment record is partially scriptable — it can be updated, deleted, and searched using
+SuiteScript. It cannot be created or copied."
+ */
+
+require([ 'N/record' ], function(record) {
+	/**
+	 * context.transactionData
+	 */
+	function createAndSaveInventoryTransfer(context) {
+		var transactionResult = [];
+		var rec = record.create({
+			type : record.Type.INVENTORY_TRANSFER,
+			isDynamic : true
+		});
+		var transactionData = context.transactionData;
+
+		transactionData.forEach(function(transaction) {
+			for ( var key in transaction) {
+				if (transaction.hasOwnProperty(key) && key != 'item') {
+					rec.setValue({
+						fieldId : key,
+						value : transaction[key]
+					});
+				} else if (transaction.hasOwnProperty(key) && key == 'item') {
+					var j = 0;
+					rec.selectNewLine({
+						sublistId : 'item'
+					});
+					transaction.item.forEach(function(line) {
+						rec.setCurrentSublistValue({
+							sublistId : 'item',
+							fieldId : 'location',
+							value : line.location,
+							line : j
+						});
+						rec.setCurrentSublistValue({
+							sublistId : 'item',
+							fieldId : 'quantity',
+							value : line.quantity,
+							line : j
+						});
+						rec.setCurrentSublistValue({
+							sublistId : 'item',
+							fieldId : 'item',
+							value : line.item,
+							line : j
+						});
+
+						log.debug({
+							title : 'rec',
+							details : rec
+						});
+
+						var subrec = rec.getCurrentSublistSubrecord({
+							sublistId : 'item',
+							line : j,
+							fieldId : 'inventorydetail'
+						});
+
+						log.debug({
+							title : 'subrec ',
+							details : subrec
+						});
+						j++;
+						var i = 0;
+						subrec.selectNewLine({
+							sublistId : 'inventoryassignment'
+						});
+						line.details.forEach(function(detail) {
+							subrec.setCurrentSublistValue({
+								sublistId : 'inventoryassignment',
+								fieldId : 'issueinventorynumber',
+								value : detail.lotnumber,
+								line : i
+							});
+							//14 'BS-P190101'
+							//140 20190315-1
+							subrec.setCurrentSublistValue({
+								sublistId : 'inventoryassignment',
+								fieldId : 'binnumber',
+								value : detail.binnumber,
+								line : i
+							});
+							//1 FG001_成品库
+							//10 'SHIPPING_发货区'
+							subrec.setCurrentSublistValue({
+								sublistId : 'inventoryassignment',
+								fieldId : 'inventorystatus',
+								value : detail.status,
+								line : i
+							});
+							//1 GOOD
+							subrec.setCurrentSublistValue({
+								sublistId : 'inventoryassignment',
+								fieldId : 'quantity',
+								value : detail.quantity,
+								line : i
+							});
+							i++;
+						});
+					});
+				}
+
+			}
+			var transId = rec.save({
+				enableSourcing : false,
+				ignoreMandatoryFields : true
+			});
+			log.debug({
+				title : 'transId ',
+				details : transId
+			});
+			transactionResult.push(transId);
+		});
+
+		return {
+			"isSuccess" : true,
+			"transactionResult" : transactionResult
+		}
+		log.debug({
+			title : 'transactionResult ',
+			details : transactionResult
+		});
+	}
+
+	var transactionData = {
+		"transactionData" : [ {
+			"subsidiary" : "1",
+			"location" : "1",
+			"transferlocation" : "6",
+			"postingperiod" : "126",
+			"memo" : "TEST",
+			"item" : [ {
+				"line" : 0,
+				"item" : "10",
+				"quantity" : 2,
+				"location" : "1",
+				"details" : [ {
+					"binnumber" : "1",
+					"lotnumber" : "38",
+					"status" : "1",
+					"quantity" : 2
+				} ]
+			}, {
+				"line" : 1,
+				"item" : "10",
+				"quantity" : 3,
+				"location" : "1",
+				"details" : [ {
+					"binnumber" : "1",
+					"lotnumber" : "38",
+					"status" : "1",
+					"quantity" : 3
+				} ]
+			} ]
+		} ]
+	};
+
+	var itemFulfillment = createAndSaveInventoryTransfer(transactionData);
+});

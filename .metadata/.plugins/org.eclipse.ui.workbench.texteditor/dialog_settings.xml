@@ -2,12 +2,13 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="order" key="selection"/>
+		<item value="createAndSaveOrderTransaction" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="createAndSaveTransaction"/>
 			<item value="order"/>
 			<item value="setColumns"/>
 			<item value="deleteResult"/>
@@ -15,9 +16,9 @@
 			<item value="dao"/>
 			<item value="success"/>
 			<item value="processLotNumberedItemWriteResponse"/>
-			<item value="processOtherChargePurchaseItemSearchResponse"/>
 		</list>
 		<list key="replacehistory">
+			<item value="createAndSaveOrderTransaction"/>
 			<item value="Order"/>
 			<item value=".getStatus()[0].getAfterSubmitFailed()"/>
 			<item value=".getStatus()[0]."/>
@@ -25,7 +26,6 @@
 			<item value="PrintUtils_2019_1"/>
 			<item value="transactions.sales_2019_1."/>
 			<item value="platform.core_2019_1."/>
-			<item value="platform.common_2019_1."/>
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">

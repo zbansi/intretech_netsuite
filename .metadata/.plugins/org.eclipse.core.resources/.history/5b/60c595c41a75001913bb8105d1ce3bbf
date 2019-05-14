@@ -1,0 +1,80 @@
+{
+	fulfillData: [{
+			saleorder: 1,
+			item: [{
+					line: 1,
+					item: 10
+					quantity: 2,
+					location: FG,
+					details: [{
+							binnumber: A01,
+							lotnumber: a,
+							status: good,
+							quantity: 1
+						}, {
+							binnumber: B01,
+							lotnumber: b,
+							status: good,
+							quantity: 1
+						}
+					]
+				}, {
+					line: 2,
+					item: 10,
+					quantity: 2,
+					location: FG,
+					details: [{
+							binnumber: A01,
+							lotnumber: a,
+							status: good,
+							quantity: 1
+						}, {
+							binnumber: B01,
+							lotnumber: b,
+							status: good,
+							quantity: 1
+						}
+					]
+				}
+			]
+		}, {
+			saleorder: 2,
+			item: [{
+					line: 1,
+					item: 10
+					quantity: 2,
+					location: FG,
+					details: [{
+							binnumber: A01,
+							lotnumber: a,
+							status: good,
+							quantity: 1
+						}, {
+							binnumber: B01,
+							lotnumber: b,
+							status: good,
+							quantity: 1
+						}
+					]
+				}, {
+					line: 2,
+					item: 10,
+					quantity: 2,
+					location: FG,
+					details: [{
+							binnumber: A01,
+							lotnumber: a,
+							status: good,
+							quantity: 1
+						}, {
+							binnumber: B01,
+							lotnumber: b,
+							status: good,
+							quantity: 1
+						}
+					]
+				}
+			]
+		}
+	]
+}

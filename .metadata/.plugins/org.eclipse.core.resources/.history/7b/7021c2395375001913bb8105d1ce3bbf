@@ -1,0 +1,43 @@
+{
+    "transactionData": [
+        {
+            "subsidiary": "1", 
+            "location": "1", 
+            "transferlocation": "6", 
+            "postingperiod": "126", 
+            "memo": "TEST", 
+            "item": [
+                {
+                    "line": 0, 
+                    "item": "10", 
+                    "quantity": 2, 
+                    "details": [
+                        {
+                            "lotnumber": "38", 
+                            "binnumber": "1", 
+                            "tobinnumber": "10", 
+                            "status": "1", 
+                            "tostatus": "1", 
+                            "quantity": 2
+                        }
+                    ]
+                }, 
+                {
+                    "line": 1, 
+                    "item": "10", 
+                    "quantity": 3, 
+                    "details": [
+                        {
+                            "lotnumber": "38", 
+                            "binnumber": "1", 
+                            "tobinnumber": "10", 
+                            "status": "1", 
+                            "tostatus": "1", 
+                            "quantity": 3
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

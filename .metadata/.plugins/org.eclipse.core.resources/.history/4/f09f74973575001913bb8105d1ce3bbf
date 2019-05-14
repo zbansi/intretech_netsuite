@@ -1,0 +1,94 @@
+{
+    "fulfillData": [
+        {
+            "saleorder": "SO0001", 
+            "item": [
+                {
+                    "line": 1, 
+                    "item": "ABC", 
+                    "quantity": 2, 
+                    "location": "FG", 
+                    "details": [
+                        {
+                            "binnumber": "A01", 
+                            "lotnumber": "a", 
+                            "status": "good", 
+                            "quantity": 1
+                        }, 
+                        {
+                            "binnumber": "B01", 
+                            "lotnumber": "b", 
+                            "status": "good", 
+                            "quantity": 1
+                        }
+                    ]
+                }, 
+                {
+                    "line": 2, 
+                    "item": "DEF", 
+                    "quantity": 2, 
+                    "location": "FG", 
+                    "details": [
+                        {
+                            "binnumber": "A01", 
+                            "lotnumber": "a", 
+                            "status": "good", 
+                            "quantity": 1
+                        }, 
+                        {
+                            "binnumber": "B01", 
+                            "lotnumber": "b", 
+                            "status": "good", 
+                            "quantity": 1
+                        }
+                    ]
+                }
+            ]
+        }, 
+        {
+            "saleorder": "SO0002", 
+            "item": [
+                {
+                    "line": 1, 
+                    "item": "ADB", 
+                    "quantity": 2, 
+                    "location": "FG", 
+                    "details": [
+                        {
+                            "binnumber": "A01", 
+                            "lotnumber": "a", 
+                            "status": "good", 
+                            "quantity": 1
+                        }, 
+                        {
+                            "binnumber": "B01", 
+                            "lotnumber": "b", 
+                            "status": "good", 
+                            "quantity": 1
+                        }
+                    ]
+                }, 
+                {
+                    "line": 2, 
+                    "item": "XYZ", 
+                    "quantity": 2, 
+                    "location": "FG", 
+                    "details": [
+                        {
+                            "binnumber": "A01", 
+                            "lotnumber": "a", 
+                            "status": "good", 
+                            "quantity": 1
+                        }, 
+                        {
+                            "binnumber": "B01", 
+                            "lotnumber": "b", 
+                            "status": "good", 
+                            "quantity": 1
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
