@@ -22,7 +22,7 @@ public class NetSuiteServiceLocator extends org.apache.axis.client.Service imple
     }
 
     // Use to get a proxy class for NetSuitePort
-    private java.lang.String NetSuitePort_address = "https://webservices.netsuite.com/services/NetSuitePort_2019_1";
+    private java.lang.String NetSuitePort_address = "http://webservices.netsuite.com/services/NetSuitePort_2019_1";
 
     public java.lang.String getNetSuitePortAddress() {
         return NetSuitePort_address;

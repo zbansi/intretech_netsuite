@@ -253,8 +253,8 @@ public class StatusDetailCodeType implements java.io.Serializable {
     public static final java.lang.String _CANT_UPDATE_PRODUCT_FEED = "CANT_UPDATE_PRODUCT_FEED";
     public static final java.lang.String _CANT_UPDATE_RECRD_HAS_CHANGED = "CANT_UPDATE_RECRD_HAS_CHANGED";
     public static final java.lang.String _CANT_UPDATE_RECUR_EVENT = "CANT_UPDATE_RECUR_EVENT";
-    public static final java.lang.String _CANT_UPDATE_ROOT_CATEGORY = "CANT_UPDATE_ROOT_CATEGORY";
     public static final java.lang.String _CANT_UPDATE_STATUS_TYPE = "CANT_UPDATE_STATUS_TYPE";
+    public static final java.lang.String _CANT_UPDATE_THIS_WEBSITE_CATEGORY = "CANT_UPDATE_THIS_WEBSITE_CATEGORY";
     public static final java.lang.String _CANT_VERIFY_CARD = "CANT_VERIFY_CARD";
     public static final java.lang.String _CANT_VOID_TRANS = "CANT_VOID_TRANS";
     public static final java.lang.String _CARD_EXPIRED = "CARD_EXPIRED";
@@ -479,6 +479,7 @@ public class StatusDetailCodeType implements java.io.Serializable {
     public static final java.lang.String _FINANCE_CHARGE_SET_PREFS = "FINANCE_CHARGE_SET_PREFS";
     public static final java.lang.String _FIRST_LAST_NAMES_REQD = "FIRST_LAST_NAMES_REQD";
     public static final java.lang.String _FIRST_QTY_BUCKET_MUST_BE_ZERO = "FIRST_QTY_BUCKET_MUST_BE_ZERO";
+    public static final java.lang.String _FLD_CANNOT_BE_EMPTY = "FLD_CANNOT_BE_EMPTY";
     public static final java.lang.String _FLD_VALUE_REQD = "FLD_VALUE_REQD";
     public static final java.lang.String _FLD_VALUE_TOO_LARGE = "FLD_VALUE_TOO_LARGE";
     public static final java.lang.String _FOLDER_ALREADY_EXISTS = "FOLDER_ALREADY_EXISTS";
@@ -536,6 +537,7 @@ public class StatusDetailCodeType implements java.io.Serializable {
     public static final java.lang.String _INVALID_ADDRESS_OR_SHIPPER_NO = "INVALID_ADDRESS_OR_SHIPPER_NO";
     public static final java.lang.String _INVALID_ADJUSTMENT_ACCT = "INVALID_ADJUSTMENT_ACCT";
     public static final java.lang.String _INVALID_AES_FTSR_EXEMPTN_NUM = "INVALID_AES_FTSR_EXEMPTN_NUM";
+    public static final java.lang.String _INVALID_ALGORITHM = "INVALID_ALGORITHM";
     public static final java.lang.String _INVALID_ALLOCTN_METHOD = "INVALID_ALLOCTN_METHOD";
     public static final java.lang.String _INVALID_AMORTZN_ACCT = "INVALID_AMORTZN_ACCT";
     public static final java.lang.String _INVALID_AMT = "INVALID_AMT";
@@ -564,6 +566,7 @@ public class StatusDetailCodeType implements java.io.Serializable {
     public static final java.lang.String _INVALID_CC_EMAIL_ADDRESS = "INVALID_CC_EMAIL_ADDRESS";
     public static final java.lang.String _INVALID_CC_NUM = "INVALID_CC_NUM";
     public static final java.lang.String _INVALID_CERT = "INVALID_CERT";
+    public static final java.lang.String _INVALID_CERTIFICATE_TYPE = "INVALID_CERTIFICATE_TYPE";
     public static final java.lang.String _INVALID_CERT_AUTH = "INVALID_CERT_AUTH";
     public static final java.lang.String _INVALID_CHANGE_LIST = "INVALID_CHANGE_LIST";
     public static final java.lang.String _INVALID_CHARS_IN_EMAIL = "INVALID_CHARS_IN_EMAIL";
@@ -592,7 +595,6 @@ public class StatusDetailCodeType implements java.io.Serializable {
     public static final java.lang.String _INVALID_CURR_CODE = "INVALID_CURR_CODE";
     public static final java.lang.String _INVALID_CUSTOMER_RCRD = "INVALID_CUSTOMER_RCRD";
     public static final java.lang.String _INVALID_DATA = "INVALID_DATA";
-    public static final java.lang.String _INVALID_DATA_FORMAT = "INVALID_DATA_FORMAT";
     public static final java.lang.String _INVALID_DATE = "INVALID_DATE";
     public static final java.lang.String _INVALID_DATE_FORMAT = "INVALID_DATE_FORMAT";
     public static final java.lang.String _INVALID_DATE_RANGE = "INVALID_DATE_RANGE";
@@ -755,6 +757,7 @@ public class StatusDetailCodeType implements java.io.Serializable {
     public static final java.lang.String _INVALID_REQUEST = "INVALID_REQUEST";
     public static final java.lang.String _INVALID_RESOURCE_TIME = "INVALID_RESOURCE_TIME";
     public static final java.lang.String _INVALID_RESULT_SUMMARY_FUNC = "INVALID_RESULT_SUMMARY_FUNC";
+    public static final java.lang.String _INVALID_RETURN_DATA_FORMAT = "INVALID_RETURN_DATA_FORMAT";
     public static final java.lang.String _INVALID_RETURN_DATA_OBJECT = "INVALID_RETURN_DATA_OBJECT";
     public static final java.lang.String _INVALID_REV_REC_DATE_RANGE = "INVALID_REV_REC_DATE_RANGE";
     public static final java.lang.String _INVALID_ROLE = "INVALID_ROLE";
@@ -793,6 +796,8 @@ public class StatusDetailCodeType implements java.io.Serializable {
     public static final java.lang.String _INVALID_SHIP_GRP = "INVALID_SHIP_GRP";
     public static final java.lang.String _INVALID_SHIP_SRVC = "INVALID_SHIP_SRVC";
     public static final java.lang.String _INVALID_SHIP_TO_SATE = "INVALID_SHIP_TO_SATE";
+    public static final java.lang.String _INVALID_SIGNATURE = "INVALID_SIGNATURE";
+    public static final java.lang.String _INVALID_SIGNATURE_TAG = "INVALID_SIGNATURE_TAG";
     public static final java.lang.String _INVALID_SITE_CSTM_FILE = "INVALID_SITE_CSTM_FILE";
     public static final java.lang.String _INVALID_SOAP_HEADER = "INVALID_SOAP_HEADER";
     public static final java.lang.String _INVALID_SRCH = "INVALID_SRCH";
@@ -829,6 +834,7 @@ public class StatusDetailCodeType implements java.io.Serializable {
     public static final java.lang.String _INVALID_TRANS_COMPNT = "INVALID_TRANS_COMPNT";
     public static final java.lang.String _INVALID_TRANS_ID = "INVALID_TRANS_ID";
     public static final java.lang.String _INVALID_TRANS_SUB_ACCT = "INVALID_TRANS_SUB_ACCT";
+    public static final java.lang.String _INVALID_TRANS_SUB_ACCT_FOR_PAYROLL_ITEM = "INVALID_TRANS_SUB_ACCT_FOR_PAYROLL_ITEM";
     public static final java.lang.String _INVALID_TRANS_SUB_CLASS = "INVALID_TRANS_SUB_CLASS";
     public static final java.lang.String _INVALID_TRANS_SUB_DEPT = "INVALID_TRANS_SUB_DEPT";
     public static final java.lang.String _INVALID_TRANS_SUB_ENTITY = "INVALID_TRANS_SUB_ENTITY";
@@ -1078,6 +1084,8 @@ public class StatusDetailCodeType implements java.io.Serializable {
     public static final java.lang.String _RATE_REQUEST_SHPMNT_REQD = "RATE_REQUEST_SHPMNT_REQD";
     public static final java.lang.String _RATE_SRVC_UNAVAILBL = "RATE_SRVC_UNAVAILBL";
     public static final java.lang.String _RCRD_DELETED_SINCE_RETRIEVED = "RCRD_DELETED_SINCE_RETRIEVED";
+    public static final java.lang.String _RCRD_DRFT_DSNT_EXIST = "RCRD_DRFT_DSNT_EXIST";
+    public static final java.lang.String _RCRD_DRFT_INVALID_TTL = "RCRD_DRFT_INVALID_TTL";
     public static final java.lang.String _RCRD_DSNT_EXIST = "RCRD_DSNT_EXIST";
     public static final java.lang.String _RCRD_EDITED_SINCE_RETRIEVED = "RCRD_EDITED_SINCE_RETRIEVED";
     public static final java.lang.String _RCRD_HAS_BEEN_CHANGED = "RCRD_HAS_BEEN_CHANGED";
@@ -1140,6 +1148,7 @@ public class StatusDetailCodeType implements java.io.Serializable {
     public static final java.lang.String _SHIP_SETUP_REQD = "SHIP_SETUP_REQD";
     public static final java.lang.String _SHIP_TALBE_UNBALNCD = "SHIP_TALBE_UNBALNCD";
     public static final java.lang.String _SHIP_USER_ERROR = "SHIP_USER_ERROR";
+    public static final java.lang.String _SIGNATURE_VERIFICATION_FAILED = "SIGNATURE_VERIFICATION_FAILED";
     public static final java.lang.String _SINGLE_VALUE_REQD = "SINGLE_VALUE_REQD";
     public static final java.lang.String _SITEMAP_GEN_ERROR = "SITEMAP_GEN_ERROR";
     public static final java.lang.String _SITE_DOMAIN_NAME_REQD = "SITE_DOMAIN_NAME_REQD";
@@ -1170,7 +1179,9 @@ public class StatusDetailCodeType implements java.io.Serializable {
     public static final java.lang.String _SSS_INVALID_LOG_TYPE = "SSS_INVALID_LOG_TYPE";
     public static final java.lang.String _SSS_INVALID_MACRO_ID = "SSS_INVALID_MACRO_ID";
     public static final java.lang.String _SSS_INVALID_PORTLET_INTERVAL = "SSS_INVALID_PORTLET_INTERVAL";
+    public static final java.lang.String _SSS_INVALID_READ_SIZE = "SSS_INVALID_READ_SIZE";
     public static final java.lang.String _SSS_INVALID_SCRIPTLET_ID = "SSS_INVALID_SCRIPTLET_ID";
+    public static final java.lang.String _SSS_INVALID_SEGMENT_SEPARATOR = "SSS_INVALID_SEGMENT_SEPARATOR";
     public static final java.lang.String _SSS_INVALID_SRCH_COL = "SSS_INVALID_SRCH_COL";
     public static final java.lang.String _SSS_INVALID_SRCH_COLUMN_JOIN = "SSS_INVALID_SRCH_COLUMN_JOIN";
     public static final java.lang.String _SSS_INVALID_SRCH_COLUMN_SUM = "SSS_INVALID_SRCH_COLUMN_SUM";
@@ -1201,6 +1212,7 @@ public class StatusDetailCodeType implements java.io.Serializable {
     public static final java.lang.String _SSS_SEARCH_TIMEOUT = "SSS_SEARCH_TIMEOUT";
     public static final java.lang.String _SSS_SSO_CONFIG_REQD = "SSS_SSO_CONFIG_REQD";
     public static final java.lang.String _SSS_STACK_FRAME_DEPTH_EXCEEDED = "SSS_STACK_FRAME_DEPTH_EXCEEDED";
+    public static final java.lang.String _SSS_TAG_CANNOT_BE_EMPTY = "SSS_TAG_CANNOT_BE_EMPTY";
     public static final java.lang.String _SSS_TIME_LIMIT_EXCEEDED = "SSS_TIME_LIMIT_EXCEEDED";
     public static final java.lang.String _SSS_TRANSACTION_REQD = "SSS_TRANSACTION_REQD";
     public static final java.lang.String _SSS_TRANS_IN_PROGRESS = "SSS_TRANS_IN_PROGRESS";
@@ -1274,6 +1286,7 @@ public class StatusDetailCodeType implements java.io.Serializable {
     public static final java.lang.String _UNDEFINED_TAX_PRD = "UNDEFINED_TAX_PRD";
     public static final java.lang.String _UNEXPECTED_ERROR = "UNEXPECTED_ERROR";
     public static final java.lang.String _UNEXPECTED_FAILURE = "UNEXPECTED_FAILURE";
+    public static final java.lang.String _UNEXPECTED_PROBLEM_LOADING_RECORD = "UNEXPECTED_PROBLEM_LOADING_RECORD";
     public static final java.lang.String _UNIQUE_CUST_EMAIL_REQD = "UNIQUE_CUST_EMAIL_REQD";
     public static final java.lang.String _UNIQUE_CUST_ID_REQD = "UNIQUE_CUST_ID_REQD";
     public static final java.lang.String _UNIQUE_ENTITY_NAME_REQD = "UNIQUE_ENTITY_NAME_REQD";
@@ -1293,7 +1306,6 @@ public class StatusDetailCodeType implements java.io.Serializable {
     public static final java.lang.String _UNSUBSCRIBE_REQD = "UNSUBSCRIBE_REQD";
     public static final java.lang.String _UNSUPPORTED_METHOD = "UNSUPPORTED_METHOD";
     public static final java.lang.String _UNSUPPORTED_WS_VERSION = "UNSUPPORTED_WS_VERSION";
-    public static final java.lang.String _UNSUPRTD_DOC_TYP = "UNSUPRTD_DOC_TYP";
     public static final java.lang.String _UPDATE_DISALLWD = "UPDATE_DISALLWD";
     public static final java.lang.String _UPDATE_PRICE_AMT_REQD = "UPDATE_PRICE_AMT_REQD";
     public static final java.lang.String _UPGRADE_WS_VERSION = "UPGRADE_WS_VERSION";
@@ -1597,8 +1609,8 @@ public class StatusDetailCodeType implements java.io.Serializable {
     public static final StatusDetailCodeType CANT_UPDATE_PRODUCT_FEED = new StatusDetailCodeType(_CANT_UPDATE_PRODUCT_FEED);
     public static final StatusDetailCodeType CANT_UPDATE_RECRD_HAS_CHANGED = new StatusDetailCodeType(_CANT_UPDATE_RECRD_HAS_CHANGED);
     public static final StatusDetailCodeType CANT_UPDATE_RECUR_EVENT = new StatusDetailCodeType(_CANT_UPDATE_RECUR_EVENT);
-    public static final StatusDetailCodeType CANT_UPDATE_ROOT_CATEGORY = new StatusDetailCodeType(_CANT_UPDATE_ROOT_CATEGORY);
     public static final StatusDetailCodeType CANT_UPDATE_STATUS_TYPE = new StatusDetailCodeType(_CANT_UPDATE_STATUS_TYPE);
+    public static final StatusDetailCodeType CANT_UPDATE_THIS_WEBSITE_CATEGORY = new StatusDetailCodeType(_CANT_UPDATE_THIS_WEBSITE_CATEGORY);
     public static final StatusDetailCodeType CANT_VERIFY_CARD = new StatusDetailCodeType(_CANT_VERIFY_CARD);
     public static final StatusDetailCodeType CANT_VOID_TRANS = new StatusDetailCodeType(_CANT_VOID_TRANS);
     public static final StatusDetailCodeType CARD_EXPIRED = new StatusDetailCodeType(_CARD_EXPIRED);
@@ -1823,6 +1835,7 @@ public class StatusDetailCodeType implements java.io.Serializable {
     public static final StatusDetailCodeType FINANCE_CHARGE_SET_PREFS = new StatusDetailCodeType(_FINANCE_CHARGE_SET_PREFS);
     public static final StatusDetailCodeType FIRST_LAST_NAMES_REQD = new StatusDetailCodeType(_FIRST_LAST_NAMES_REQD);
     public static final StatusDetailCodeType FIRST_QTY_BUCKET_MUST_BE_ZERO = new StatusDetailCodeType(_FIRST_QTY_BUCKET_MUST_BE_ZERO);
+    public static final StatusDetailCodeType FLD_CANNOT_BE_EMPTY = new StatusDetailCodeType(_FLD_CANNOT_BE_EMPTY);
     public static final StatusDetailCodeType FLD_VALUE_REQD = new StatusDetailCodeType(_FLD_VALUE_REQD);
     public static final StatusDetailCodeType FLD_VALUE_TOO_LARGE = new StatusDetailCodeType(_FLD_VALUE_TOO_LARGE);
     public static final StatusDetailCodeType FOLDER_ALREADY_EXISTS = new StatusDetailCodeType(_FOLDER_ALREADY_EXISTS);
@@ -1880,6 +1893,7 @@ public class StatusDetailCodeType implements java.io.Serializable {
     public static final StatusDetailCodeType INVALID_ADDRESS_OR_SHIPPER_NO = new StatusDetailCodeType(_INVALID_ADDRESS_OR_SHIPPER_NO);
     public static final StatusDetailCodeType INVALID_ADJUSTMENT_ACCT = new StatusDetailCodeType(_INVALID_ADJUSTMENT_ACCT);
     public static final StatusDetailCodeType INVALID_AES_FTSR_EXEMPTN_NUM = new StatusDetailCodeType(_INVALID_AES_FTSR_EXEMPTN_NUM);
+    public static final StatusDetailCodeType INVALID_ALGORITHM = new StatusDetailCodeType(_INVALID_ALGORITHM);
     public static final StatusDetailCodeType INVALID_ALLOCTN_METHOD = new StatusDetailCodeType(_INVALID_ALLOCTN_METHOD);
     public static final StatusDetailCodeType INVALID_AMORTZN_ACCT = new StatusDetailCodeType(_INVALID_AMORTZN_ACCT);
     public static final StatusDetailCodeType INVALID_AMT = new StatusDetailCodeType(_INVALID_AMT);
@@ -1908,6 +1922,7 @@ public class StatusDetailCodeType implements java.io.Serializable {
     public static final StatusDetailCodeType INVALID_CC_EMAIL_ADDRESS = new StatusDetailCodeType(_INVALID_CC_EMAIL_ADDRESS);
     public static final StatusDetailCodeType INVALID_CC_NUM = new StatusDetailCodeType(_INVALID_CC_NUM);
     public static final StatusDetailCodeType INVALID_CERT = new StatusDetailCodeType(_INVALID_CERT);
+    public static final StatusDetailCodeType INVALID_CERTIFICATE_TYPE = new StatusDetailCodeType(_INVALID_CERTIFICATE_TYPE);
     public static final StatusDetailCodeType INVALID_CERT_AUTH = new StatusDetailCodeType(_INVALID_CERT_AUTH);
     public static final StatusDetailCodeType INVALID_CHANGE_LIST = new StatusDetailCodeType(_INVALID_CHANGE_LIST);
     public static final StatusDetailCodeType INVALID_CHARS_IN_EMAIL = new StatusDetailCodeType(_INVALID_CHARS_IN_EMAIL);
@@ -1936,7 +1951,6 @@ public class StatusDetailCodeType implements java.io.Serializable {
     public static final StatusDetailCodeType INVALID_CURR_CODE = new StatusDetailCodeType(_INVALID_CURR_CODE);
     public static final StatusDetailCodeType INVALID_CUSTOMER_RCRD = new StatusDetailCodeType(_INVALID_CUSTOMER_RCRD);
     public static final StatusDetailCodeType INVALID_DATA = new StatusDetailCodeType(_INVALID_DATA);
-    public static final StatusDetailCodeType INVALID_DATA_FORMAT = new StatusDetailCodeType(_INVALID_DATA_FORMAT);
     public static final StatusDetailCodeType INVALID_DATE = new StatusDetailCodeType(_INVALID_DATE);
     public static final StatusDetailCodeType INVALID_DATE_FORMAT = new StatusDetailCodeType(_INVALID_DATE_FORMAT);
     public static final StatusDetailCodeType INVALID_DATE_RANGE = new StatusDetailCodeType(_INVALID_DATE_RANGE);
@@ -2099,6 +2113,7 @@ public class StatusDetailCodeType implements java.io.Serializable {
     public static final StatusDetailCodeType INVALID_REQUEST = new StatusDetailCodeType(_INVALID_REQUEST);
     public static final StatusDetailCodeType INVALID_RESOURCE_TIME = new StatusDetailCodeType(_INVALID_RESOURCE_TIME);
     public static final StatusDetailCodeType INVALID_RESULT_SUMMARY_FUNC = new StatusDetailCodeType(_INVALID_RESULT_SUMMARY_FUNC);
+    public static final StatusDetailCodeType INVALID_RETURN_DATA_FORMAT = new StatusDetailCodeType(_INVALID_RETURN_DATA_FORMAT);
     public static final StatusDetailCodeType INVALID_RETURN_DATA_OBJECT = new StatusDetailCodeType(_INVALID_RETURN_DATA_OBJECT);
     public static final StatusDetailCodeType INVALID_REV_REC_DATE_RANGE = new StatusDetailCodeType(_INVALID_REV_REC_DATE_RANGE);
     public static final StatusDetailCodeType INVALID_ROLE = new StatusDetailCodeType(_INVALID_ROLE);
@@ -2137,6 +2152,8 @@ public class StatusDetailCodeType implements java.io.Serializable {
     public static final StatusDetailCodeType INVALID_SHIP_GRP = new StatusDetailCodeType(_INVALID_SHIP_GRP);
     public static final StatusDetailCodeType INVALID_SHIP_SRVC = new StatusDetailCodeType(_INVALID_SHIP_SRVC);
     public static final StatusDetailCodeType INVALID_SHIP_TO_SATE = new StatusDetailCodeType(_INVALID_SHIP_TO_SATE);
+    public static final StatusDetailCodeType INVALID_SIGNATURE = new StatusDetailCodeType(_INVALID_SIGNATURE);
+    public static final StatusDetailCodeType INVALID_SIGNATURE_TAG = new StatusDetailCodeType(_INVALID_SIGNATURE_TAG);
     public static final StatusDetailCodeType INVALID_SITE_CSTM_FILE = new StatusDetailCodeType(_INVALID_SITE_CSTM_FILE);
     public static final StatusDetailCodeType INVALID_SOAP_HEADER = new StatusDetailCodeType(_INVALID_SOAP_HEADER);
     public static final StatusDetailCodeType INVALID_SRCH = new StatusDetailCodeType(_INVALID_SRCH);
@@ -2173,6 +2190,7 @@ public class StatusDetailCodeType implements java.io.Serializable {
     public static final StatusDetailCodeType INVALID_TRANS_COMPNT = new StatusDetailCodeType(_INVALID_TRANS_COMPNT);
     public static final StatusDetailCodeType INVALID_TRANS_ID = new StatusDetailCodeType(_INVALID_TRANS_ID);
     public static final StatusDetailCodeType INVALID_TRANS_SUB_ACCT = new StatusDetailCodeType(_INVALID_TRANS_SUB_ACCT);
+    public static final StatusDetailCodeType INVALID_TRANS_SUB_ACCT_FOR_PAYROLL_ITEM = new StatusDetailCodeType(_INVALID_TRANS_SUB_ACCT_FOR_PAYROLL_ITEM);
     public static final StatusDetailCodeType INVALID_TRANS_SUB_CLASS = new StatusDetailCodeType(_INVALID_TRANS_SUB_CLASS);
     public static final StatusDetailCodeType INVALID_TRANS_SUB_DEPT = new StatusDetailCodeType(_INVALID_TRANS_SUB_DEPT);
     public static final StatusDetailCodeType INVALID_TRANS_SUB_ENTITY = new StatusDetailCodeType(_INVALID_TRANS_SUB_ENTITY);
@@ -2422,6 +2440,8 @@ public class StatusDetailCodeType implements java.io.Serializable {
     public static final StatusDetailCodeType RATE_REQUEST_SHPMNT_REQD = new StatusDetailCodeType(_RATE_REQUEST_SHPMNT_REQD);
     public static final StatusDetailCodeType RATE_SRVC_UNAVAILBL = new StatusDetailCodeType(_RATE_SRVC_UNAVAILBL);
     public static final StatusDetailCodeType RCRD_DELETED_SINCE_RETRIEVED = new StatusDetailCodeType(_RCRD_DELETED_SINCE_RETRIEVED);
+    public static final StatusDetailCodeType RCRD_DRFT_DSNT_EXIST = new StatusDetailCodeType(_RCRD_DRFT_DSNT_EXIST);
+    public static final StatusDetailCodeType RCRD_DRFT_INVALID_TTL = new StatusDetailCodeType(_RCRD_DRFT_INVALID_TTL);
     public static final StatusDetailCodeType RCRD_DSNT_EXIST = new StatusDetailCodeType(_RCRD_DSNT_EXIST);
     public static final StatusDetailCodeType RCRD_EDITED_SINCE_RETRIEVED = new StatusDetailCodeType(_RCRD_EDITED_SINCE_RETRIEVED);
     public static final StatusDetailCodeType RCRD_HAS_BEEN_CHANGED = new StatusDetailCodeType(_RCRD_HAS_BEEN_CHANGED);
@@ -2484,6 +2504,7 @@ public class StatusDetailCodeType implements java.io.Serializable {
     public static final StatusDetailCodeType SHIP_SETUP_REQD = new StatusDetailCodeType(_SHIP_SETUP_REQD);
     public static final StatusDetailCodeType SHIP_TALBE_UNBALNCD = new StatusDetailCodeType(_SHIP_TALBE_UNBALNCD);
     public static final StatusDetailCodeType SHIP_USER_ERROR = new StatusDetailCodeType(_SHIP_USER_ERROR);
+    public static final StatusDetailCodeType SIGNATURE_VERIFICATION_FAILED = new StatusDetailCodeType(_SIGNATURE_VERIFICATION_FAILED);
     public static final StatusDetailCodeType SINGLE_VALUE_REQD = new StatusDetailCodeType(_SINGLE_VALUE_REQD);
     public static final StatusDetailCodeType SITEMAP_GEN_ERROR = new StatusDetailCodeType(_SITEMAP_GEN_ERROR);
     public static final StatusDetailCodeType SITE_DOMAIN_NAME_REQD = new StatusDetailCodeType(_SITE_DOMAIN_NAME_REQD);
@@ -2514,7 +2535,9 @@ public class StatusDetailCodeType implements java.io.Serializable {
     public static final StatusDetailCodeType SSS_INVALID_LOG_TYPE = new StatusDetailCodeType(_SSS_INVALID_LOG_TYPE);
     public static final StatusDetailCodeType SSS_INVALID_MACRO_ID = new StatusDetailCodeType(_SSS_INVALID_MACRO_ID);
     public static final StatusDetailCodeType SSS_INVALID_PORTLET_INTERVAL = new StatusDetailCodeType(_SSS_INVALID_PORTLET_INTERVAL);
+    public static final StatusDetailCodeType SSS_INVALID_READ_SIZE = new StatusDetailCodeType(_SSS_INVALID_READ_SIZE);
     public static final StatusDetailCodeType SSS_INVALID_SCRIPTLET_ID = new StatusDetailCodeType(_SSS_INVALID_SCRIPTLET_ID);
+    public static final StatusDetailCodeType SSS_INVALID_SEGMENT_SEPARATOR = new StatusDetailCodeType(_SSS_INVALID_SEGMENT_SEPARATOR);
     public static final StatusDetailCodeType SSS_INVALID_SRCH_COL = new StatusDetailCodeType(_SSS_INVALID_SRCH_COL);
     public static final StatusDetailCodeType SSS_INVALID_SRCH_COLUMN_JOIN = new StatusDetailCodeType(_SSS_INVALID_SRCH_COLUMN_JOIN);
     public static final StatusDetailCodeType SSS_INVALID_SRCH_COLUMN_SUM = new StatusDetailCodeType(_SSS_INVALID_SRCH_COLUMN_SUM);
@@ -2545,6 +2568,7 @@ public class StatusDetailCodeType implements java.io.Serializable {
     public static final StatusDetailCodeType SSS_SEARCH_TIMEOUT = new StatusDetailCodeType(_SSS_SEARCH_TIMEOUT);
     public static final StatusDetailCodeType SSS_SSO_CONFIG_REQD = new StatusDetailCodeType(_SSS_SSO_CONFIG_REQD);
     public static final StatusDetailCodeType SSS_STACK_FRAME_DEPTH_EXCEEDED = new StatusDetailCodeType(_SSS_STACK_FRAME_DEPTH_EXCEEDED);
+    public static final StatusDetailCodeType SSS_TAG_CANNOT_BE_EMPTY = new StatusDetailCodeType(_SSS_TAG_CANNOT_BE_EMPTY);
     public static final StatusDetailCodeType SSS_TIME_LIMIT_EXCEEDED = new StatusDetailCodeType(_SSS_TIME_LIMIT_EXCEEDED);
     public static final StatusDetailCodeType SSS_TRANSACTION_REQD = new StatusDetailCodeType(_SSS_TRANSACTION_REQD);
     public static final StatusDetailCodeType SSS_TRANS_IN_PROGRESS = new StatusDetailCodeType(_SSS_TRANS_IN_PROGRESS);
@@ -2618,6 +2642,7 @@ public class StatusDetailCodeType implements java.io.Serializable {
     public static final StatusDetailCodeType UNDEFINED_TAX_PRD = new StatusDetailCodeType(_UNDEFINED_TAX_PRD);
     public static final StatusDetailCodeType UNEXPECTED_ERROR = new StatusDetailCodeType(_UNEXPECTED_ERROR);
     public static final StatusDetailCodeType UNEXPECTED_FAILURE = new StatusDetailCodeType(_UNEXPECTED_FAILURE);
+    public static final StatusDetailCodeType UNEXPECTED_PROBLEM_LOADING_RECORD = new StatusDetailCodeType(_UNEXPECTED_PROBLEM_LOADING_RECORD);
     public static final StatusDetailCodeType UNIQUE_CUST_EMAIL_REQD = new StatusDetailCodeType(_UNIQUE_CUST_EMAIL_REQD);
     public static final StatusDetailCodeType UNIQUE_CUST_ID_REQD = new StatusDetailCodeType(_UNIQUE_CUST_ID_REQD);
     public static final StatusDetailCodeType UNIQUE_ENTITY_NAME_REQD = new StatusDetailCodeType(_UNIQUE_ENTITY_NAME_REQD);
@@ -2637,7 +2662,6 @@ public class StatusDetailCodeType implements java.io.Serializable {
     public static final StatusDetailCodeType UNSUBSCRIBE_REQD = new StatusDetailCodeType(_UNSUBSCRIBE_REQD);
     public static final StatusDetailCodeType UNSUPPORTED_METHOD = new StatusDetailCodeType(_UNSUPPORTED_METHOD);
     public static final StatusDetailCodeType UNSUPPORTED_WS_VERSION = new StatusDetailCodeType(_UNSUPPORTED_WS_VERSION);
-    public static final StatusDetailCodeType UNSUPRTD_DOC_TYP = new StatusDetailCodeType(_UNSUPRTD_DOC_TYP);
     public static final StatusDetailCodeType UPDATE_DISALLWD = new StatusDetailCodeType(_UPDATE_DISALLWD);
     public static final StatusDetailCodeType UPDATE_PRICE_AMT_REQD = new StatusDetailCodeType(_UPDATE_PRICE_AMT_REQD);
     public static final StatusDetailCodeType UPGRADE_WS_VERSION = new StatusDetailCodeType(_UPGRADE_WS_VERSION);

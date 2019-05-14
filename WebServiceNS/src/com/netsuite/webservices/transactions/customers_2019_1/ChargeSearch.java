@@ -30,6 +30,8 @@ public class ChargeSearch  extends com.netsuite.webservices.platform.core_2019_1
 
     private com.netsuite.webservices.platform.common_2019_1.TransactionSearchBasic transactionJoin;
 
+    private com.netsuite.webservices.platform.common_2019_1.UsageSearchBasic usageJoin;
+
     private com.netsuite.webservices.platform.common_2019_1.EmployeeSearchBasic userJoin;
 
     private com.netsuite.webservices.platform.common_2019_1.CustomSearchJoin[] customSearchJoin;
@@ -49,6 +51,7 @@ public class ChargeSearch  extends com.netsuite.webservices.platform.core_2019_1
            com.netsuite.webservices.platform.common_2019_1.TransactionSearchBasic salesOrderJoin,
            com.netsuite.webservices.platform.common_2019_1.TimeBillSearchBasic timeJoin,
            com.netsuite.webservices.platform.common_2019_1.TransactionSearchBasic transactionJoin,
+           com.netsuite.webservices.platform.common_2019_1.UsageSearchBasic usageJoin,
            com.netsuite.webservices.platform.common_2019_1.EmployeeSearchBasic userJoin,
            com.netsuite.webservices.platform.common_2019_1.CustomSearchJoin[] customSearchJoin) {
         this.basic = basic;
@@ -62,6 +65,7 @@ public class ChargeSearch  extends com.netsuite.webservices.platform.core_2019_1
         this.salesOrderJoin = salesOrderJoin;
         this.timeJoin = timeJoin;
         this.transactionJoin = transactionJoin;
+        this.usageJoin = usageJoin;
         this.userJoin = userJoin;
         this.customSearchJoin = customSearchJoin;
     }
@@ -288,6 +292,26 @@ public class ChargeSearch  extends com.netsuite.webservices.platform.core_2019_1
 
 
     /**
+     * Gets the usageJoin value for this ChargeSearch.
+     * 
+     * @return usageJoin
+     */
+    public com.netsuite.webservices.platform.common_2019_1.UsageSearchBasic getUsageJoin() {
+        return usageJoin;
+    }
+
+
+    /**
+     * Sets the usageJoin value for this ChargeSearch.
+     * 
+     * @param usageJoin
+     */
+    public void setUsageJoin(com.netsuite.webservices.platform.common_2019_1.UsageSearchBasic usageJoin) {
+        this.usageJoin = usageJoin;
+    }
+
+
+    /**
      * Gets the userJoin value for this ChargeSearch.
      * 
      * @return userJoin
@@ -379,6 +403,9 @@ public class ChargeSearch  extends com.netsuite.webservices.platform.core_2019_1
             ((this.transactionJoin==null && other.getTransactionJoin()==null) || 
              (this.transactionJoin!=null &&
               this.transactionJoin.equals(other.getTransactionJoin()))) &&
+            ((this.usageJoin==null && other.getUsageJoin()==null) || 
+             (this.usageJoin!=null &&
+              this.usageJoin.equals(other.getUsageJoin()))) &&
             ((this.userJoin==null && other.getUserJoin()==null) || 
              (this.userJoin!=null &&
               this.userJoin.equals(other.getUserJoin()))) &&
@@ -428,6 +455,9 @@ public class ChargeSearch  extends com.netsuite.webservices.platform.core_2019_1
         }
         if (getTransactionJoin() != null) {
             _hashCode += getTransactionJoin().hashCode();
+        }
+        if (getUsageJoin() != null) {
+            _hashCode += getUsageJoin().hashCode();
         }
         if (getUserJoin() != null) {
             _hashCode += getUserJoin().hashCode();
@@ -527,6 +557,13 @@ public class ChargeSearch  extends com.netsuite.webservices.platform.core_2019_1
         elemField.setFieldName("transactionJoin");
         elemField.setXmlName(new javax.xml.namespace.QName("urn:customers_2019_1.transactions.webservices.netsuite.com", "transactionJoin"));
         elemField.setXmlType(new javax.xml.namespace.QName("urn:common_2019_1.platform.webservices.netsuite.com", "TransactionSearchBasic"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("usageJoin");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:customers_2019_1.transactions.webservices.netsuite.com", "usageJoin"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:common_2019_1.platform.webservices.netsuite.com", "UsageSearchBasic"));
         elemField.setMinOccurs(0);
         elemField.setNillable(false);
         typeDesc.addFieldDesc(elemField);

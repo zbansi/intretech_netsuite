@@ -10,6 +10,8 @@ package com.netsuite.webservices.transactions.sales_2019_1;
 public class UsageSearchRow  extends com.netsuite.webservices.platform.core_2019_1.SearchRow  implements java.io.Serializable {
     private com.netsuite.webservices.platform.common_2019_1.UsageSearchRowBasic basic;
 
+    private com.netsuite.webservices.platform.common_2019_1.ChargeSearchRowBasic chargeJoin;
+
     private com.netsuite.webservices.platform.common_2019_1.CustomerSearchRowBasic customerJoin;
 
     private com.netsuite.webservices.platform.common_2019_1.ItemSearchRowBasic itemJoin;
@@ -21,10 +23,12 @@ public class UsageSearchRow  extends com.netsuite.webservices.platform.core_2019
 
     public UsageSearchRow(
            com.netsuite.webservices.platform.common_2019_1.UsageSearchRowBasic basic,
+           com.netsuite.webservices.platform.common_2019_1.ChargeSearchRowBasic chargeJoin,
            com.netsuite.webservices.platform.common_2019_1.CustomerSearchRowBasic customerJoin,
            com.netsuite.webservices.platform.common_2019_1.ItemSearchRowBasic itemJoin,
            com.netsuite.webservices.platform.common_2019_1.ItemSearchRowBasic subscriptionPlanJoin) {
         this.basic = basic;
+        this.chargeJoin = chargeJoin;
         this.customerJoin = customerJoin;
         this.itemJoin = itemJoin;
         this.subscriptionPlanJoin = subscriptionPlanJoin;
@@ -48,6 +52,26 @@ public class UsageSearchRow  extends com.netsuite.webservices.platform.core_2019
      */
     public void setBasic(com.netsuite.webservices.platform.common_2019_1.UsageSearchRowBasic basic) {
         this.basic = basic;
+    }
+
+
+    /**
+     * Gets the chargeJoin value for this UsageSearchRow.
+     * 
+     * @return chargeJoin
+     */
+    public com.netsuite.webservices.platform.common_2019_1.ChargeSearchRowBasic getChargeJoin() {
+        return chargeJoin;
+    }
+
+
+    /**
+     * Sets the chargeJoin value for this UsageSearchRow.
+     * 
+     * @param chargeJoin
+     */
+    public void setChargeJoin(com.netsuite.webservices.platform.common_2019_1.ChargeSearchRowBasic chargeJoin) {
+        this.chargeJoin = chargeJoin;
     }
 
 
@@ -125,6 +149,9 @@ public class UsageSearchRow  extends com.netsuite.webservices.platform.core_2019
             ((this.basic==null && other.getBasic()==null) || 
              (this.basic!=null &&
               this.basic.equals(other.getBasic()))) &&
+            ((this.chargeJoin==null && other.getChargeJoin()==null) || 
+             (this.chargeJoin!=null &&
+              this.chargeJoin.equals(other.getChargeJoin()))) &&
             ((this.customerJoin==null && other.getCustomerJoin()==null) || 
              (this.customerJoin!=null &&
               this.customerJoin.equals(other.getCustomerJoin()))) &&
@@ -147,6 +174,9 @@ public class UsageSearchRow  extends com.netsuite.webservices.platform.core_2019
         int _hashCode = super.hashCode();
         if (getBasic() != null) {
             _hashCode += getBasic().hashCode();
+        }
+        if (getChargeJoin() != null) {
+            _hashCode += getChargeJoin().hashCode();
         }
         if (getCustomerJoin() != null) {
             _hashCode += getCustomerJoin().hashCode();
@@ -171,6 +201,13 @@ public class UsageSearchRow  extends com.netsuite.webservices.platform.core_2019
         elemField.setFieldName("basic");
         elemField.setXmlName(new javax.xml.namespace.QName("urn:sales_2019_1.transactions.webservices.netsuite.com", "basic"));
         elemField.setXmlType(new javax.xml.namespace.QName("urn:common_2019_1.platform.webservices.netsuite.com", "UsageSearchRowBasic"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("chargeJoin");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:sales_2019_1.transactions.webservices.netsuite.com", "chargeJoin"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:common_2019_1.platform.webservices.netsuite.com", "ChargeSearchRowBasic"));
         elemField.setMinOccurs(0);
         elemField.setNillable(false);
         typeDesc.addFieldDesc(elemField);

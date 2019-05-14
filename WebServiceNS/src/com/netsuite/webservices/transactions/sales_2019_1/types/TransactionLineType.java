@@ -31,6 +31,9 @@ public class TransactionLineType implements java.io.Serializable {
     public static final java.lang.String __nonReimbursuableExpenseOffset = "_nonReimbursuableExpenseOffset";
     public static final java.lang.String __nonReimbursuableExpenseOriginal = "_nonReimbursuableExpenseOriginal";
     public static final java.lang.String __ownershipTransfer = "_ownershipTransfer";
+    public static final java.lang.String __personalExpensesNettingLine = "_personalExpensesNettingLine";
+    public static final java.lang.String __personalExpensesTheExpenseLine = "_personalExpensesTheExpenseLine";
+    public static final java.lang.String __pickingLine = "_pickingLine";
     public static final java.lang.String __productionPriceVariance = "_productionPriceVariance";
     public static final java.lang.String __productionQuantityVariance = "_productionQuantityVariance";
     public static final java.lang.String __purchasePriceVariance = "_purchasePriceVariance";
@@ -40,6 +43,7 @@ public class TransactionLineType implements java.io.Serializable {
     public static final java.lang.String __scrap = "_scrap";
     public static final java.lang.String __shipping = "_shipping";
     public static final java.lang.String __snapshotQuantity = "_snapshotQuantity";
+    public static final java.lang.String __stagingLine = "_stagingLine";
     public static final java.lang.String __totalBillVariance = "_totalBillVariance";
     public static final java.lang.String __unbuildVariance = "_unbuildVariance";
     public static final java.lang.String __workInProcess = "_workInProcess";
@@ -58,6 +62,9 @@ public class TransactionLineType implements java.io.Serializable {
     public static final TransactionLineType _nonReimbursuableExpenseOffset = new TransactionLineType(__nonReimbursuableExpenseOffset);
     public static final TransactionLineType _nonReimbursuableExpenseOriginal = new TransactionLineType(__nonReimbursuableExpenseOriginal);
     public static final TransactionLineType _ownershipTransfer = new TransactionLineType(__ownershipTransfer);
+    public static final TransactionLineType _personalExpensesNettingLine = new TransactionLineType(__personalExpensesNettingLine);
+    public static final TransactionLineType _personalExpensesTheExpenseLine = new TransactionLineType(__personalExpensesTheExpenseLine);
+    public static final TransactionLineType _pickingLine = new TransactionLineType(__pickingLine);
     public static final TransactionLineType _productionPriceVariance = new TransactionLineType(__productionPriceVariance);
     public static final TransactionLineType _productionQuantityVariance = new TransactionLineType(__productionQuantityVariance);
     public static final TransactionLineType _purchasePriceVariance = new TransactionLineType(__purchasePriceVariance);
@@ -67,6 +74,7 @@ public class TransactionLineType implements java.io.Serializable {
     public static final TransactionLineType _scrap = new TransactionLineType(__scrap);
     public static final TransactionLineType _shipping = new TransactionLineType(__shipping);
     public static final TransactionLineType _snapshotQuantity = new TransactionLineType(__snapshotQuantity);
+    public static final TransactionLineType _stagingLine = new TransactionLineType(__stagingLine);
     public static final TransactionLineType _totalBillVariance = new TransactionLineType(__totalBillVariance);
     public static final TransactionLineType _unbuildVariance = new TransactionLineType(__unbuildVariance);
     public static final TransactionLineType _workInProcess = new TransactionLineType(__workInProcess);

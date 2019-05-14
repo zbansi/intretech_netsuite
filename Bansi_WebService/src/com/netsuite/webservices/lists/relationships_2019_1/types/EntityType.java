@@ -27,6 +27,7 @@ public class EntityType implements java.io.Serializable {
     public static final java.lang.String __job = "_job";
     public static final java.lang.String __otherName = "_otherName";
     public static final java.lang.String __partner = "_partner";
+    public static final java.lang.String __resourceGroup = "_resourceGroup";
     public static final java.lang.String __vendor = "_vendor";
     public static final EntityType _company = new EntityType(__company);
     public static final EntityType _contact = new EntityType(__contact);
@@ -38,6 +39,7 @@ public class EntityType implements java.io.Serializable {
     public static final EntityType _job = new EntityType(__job);
     public static final EntityType _otherName = new EntityType(__otherName);
     public static final EntityType _partner = new EntityType(__partner);
+    public static final EntityType _resourceGroup = new EntityType(__resourceGroup);
     public static final EntityType _vendor = new EntityType(__vendor);
     public java.lang.String getValue() { return _value_;}
     public static EntityType fromValue(java.lang.String value)

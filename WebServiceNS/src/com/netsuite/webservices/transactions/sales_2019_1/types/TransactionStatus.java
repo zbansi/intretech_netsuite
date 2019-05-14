@@ -20,6 +20,7 @@ public class TransactionStatus implements java.io.Serializable {
     public static final java.lang.String __billCancelled = "_billCancelled";
     public static final java.lang.String __billOpen = "_billOpen";
     public static final java.lang.String __billPaidInFull = "_billPaidInFull";
+    public static final java.lang.String __billPaymentApproved = "_billPaymentApproved";
     public static final java.lang.String __billPaymentConfirmed = "_billPaymentConfirmed";
     public static final java.lang.String __billPaymentDeclined = "_billPaymentDeclined";
     public static final java.lang.String __billPaymentInTransit = "_billPaymentInTransit";
@@ -89,6 +90,9 @@ public class TransactionStatus implements java.io.Serializable {
     public static final java.lang.String __paymentNotDeposited = "_paymentNotDeposited";
     public static final java.lang.String __paymentUnapprovedPayment = "_paymentUnapprovedPayment";
     public static final java.lang.String __payrollLiabilityCheckVoided = "_payrollLiabilityCheckVoided";
+    public static final java.lang.String __periodEndJournalApprovedForPosting = "_periodEndJournalApprovedForPosting";
+    public static final java.lang.String __periodEndJournalPendingApproval = "_periodEndJournalPendingApproval";
+    public static final java.lang.String __periodEndJournalRejected = "_periodEndJournalRejected";
     public static final java.lang.String __purchaseOrderClosed = "_purchaseOrderClosed";
     public static final java.lang.String __purchaseOrderFullyBilled = "_purchaseOrderFullyBilled";
     public static final java.lang.String __purchaseOrderPartiallyReceived = "_purchaseOrderPartiallyReceived";
@@ -96,6 +100,7 @@ public class TransactionStatus implements java.io.Serializable {
     public static final java.lang.String __purchaseOrderPendingBillingPartiallyReceived = "_purchaseOrderPendingBillingPartiallyReceived";
     public static final java.lang.String __purchaseOrderPendingReceipt = "_purchaseOrderPendingReceipt";
     public static final java.lang.String __purchaseOrderPendingSupervisorApproval = "_purchaseOrderPendingSupervisorApproval";
+    public static final java.lang.String __purchaseOrderPlanned = "_purchaseOrderPlanned";
     public static final java.lang.String __purchaseOrderRejectedBySupervisor = "_purchaseOrderRejectedBySupervisor";
     public static final java.lang.String __requisitionCancelled = "_requisitionCancelled";
     public static final java.lang.String __requisitionClosed = "_requisitionClosed";
@@ -160,6 +165,7 @@ public class TransactionStatus implements java.io.Serializable {
     public static final TransactionStatus _billCancelled = new TransactionStatus(__billCancelled);
     public static final TransactionStatus _billOpen = new TransactionStatus(__billOpen);
     public static final TransactionStatus _billPaidInFull = new TransactionStatus(__billPaidInFull);
+    public static final TransactionStatus _billPaymentApproved = new TransactionStatus(__billPaymentApproved);
     public static final TransactionStatus _billPaymentConfirmed = new TransactionStatus(__billPaymentConfirmed);
     public static final TransactionStatus _billPaymentDeclined = new TransactionStatus(__billPaymentDeclined);
     public static final TransactionStatus _billPaymentInTransit = new TransactionStatus(__billPaymentInTransit);
@@ -229,6 +235,9 @@ public class TransactionStatus implements java.io.Serializable {
     public static final TransactionStatus _paymentNotDeposited = new TransactionStatus(__paymentNotDeposited);
     public static final TransactionStatus _paymentUnapprovedPayment = new TransactionStatus(__paymentUnapprovedPayment);
     public static final TransactionStatus _payrollLiabilityCheckVoided = new TransactionStatus(__payrollLiabilityCheckVoided);
+    public static final TransactionStatus _periodEndJournalApprovedForPosting = new TransactionStatus(__periodEndJournalApprovedForPosting);
+    public static final TransactionStatus _periodEndJournalPendingApproval = new TransactionStatus(__periodEndJournalPendingApproval);
+    public static final TransactionStatus _periodEndJournalRejected = new TransactionStatus(__periodEndJournalRejected);
     public static final TransactionStatus _purchaseOrderClosed = new TransactionStatus(__purchaseOrderClosed);
     public static final TransactionStatus _purchaseOrderFullyBilled = new TransactionStatus(__purchaseOrderFullyBilled);
     public static final TransactionStatus _purchaseOrderPartiallyReceived = new TransactionStatus(__purchaseOrderPartiallyReceived);
@@ -236,6 +245,7 @@ public class TransactionStatus implements java.io.Serializable {
     public static final TransactionStatus _purchaseOrderPendingBillingPartiallyReceived = new TransactionStatus(__purchaseOrderPendingBillingPartiallyReceived);
     public static final TransactionStatus _purchaseOrderPendingReceipt = new TransactionStatus(__purchaseOrderPendingReceipt);
     public static final TransactionStatus _purchaseOrderPendingSupervisorApproval = new TransactionStatus(__purchaseOrderPendingSupervisorApproval);
+    public static final TransactionStatus _purchaseOrderPlanned = new TransactionStatus(__purchaseOrderPlanned);
     public static final TransactionStatus _purchaseOrderRejectedBySupervisor = new TransactionStatus(__purchaseOrderRejectedBySupervisor);
     public static final TransactionStatus _requisitionCancelled = new TransactionStatus(__requisitionCancelled);
     public static final TransactionStatus _requisitionClosed = new TransactionStatus(__requisitionClosed);

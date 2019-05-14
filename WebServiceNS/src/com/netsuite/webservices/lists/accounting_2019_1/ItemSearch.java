@@ -10,6 +10,8 @@ package com.netsuite.webservices.lists.accounting_2019_1;
 public class ItemSearch  extends com.netsuite.webservices.platform.core_2019_1.SearchRecord  implements java.io.Serializable {
     private com.netsuite.webservices.platform.common_2019_1.ItemSearchBasic basic;
 
+    private com.netsuite.webservices.platform.common_2019_1.RevRecTemplateSearchBasic accountingBookRevRecScheduleJoin;
+
     private com.netsuite.webservices.platform.common_2019_1.AssemblyItemBomSearchBasic assemblyItemBillOfMaterialsJoin;
 
     private com.netsuite.webservices.platform.common_2019_1.BinSearchBasic binNumberJoin;
@@ -59,6 +61,7 @@ public class ItemSearch  extends com.netsuite.webservices.platform.core_2019_1.S
 
     public ItemSearch(
            com.netsuite.webservices.platform.common_2019_1.ItemSearchBasic basic,
+           com.netsuite.webservices.platform.common_2019_1.RevRecTemplateSearchBasic accountingBookRevRecScheduleJoin,
            com.netsuite.webservices.platform.common_2019_1.AssemblyItemBomSearchBasic assemblyItemBillOfMaterialsJoin,
            com.netsuite.webservices.platform.common_2019_1.BinSearchBasic binNumberJoin,
            com.netsuite.webservices.platform.common_2019_1.ItemBinNumberSearchBasic binOnHandJoin,
@@ -82,6 +85,7 @@ public class ItemSearch  extends com.netsuite.webservices.platform.core_2019_1.S
            com.netsuite.webservices.platform.common_2019_1.VendorSearchBasic vendorJoin,
            com.netsuite.webservices.platform.common_2019_1.CustomSearchJoin[] customSearchJoin) {
         this.basic = basic;
+        this.accountingBookRevRecScheduleJoin = accountingBookRevRecScheduleJoin;
         this.assemblyItemBillOfMaterialsJoin = assemblyItemBillOfMaterialsJoin;
         this.binNumberJoin = binNumberJoin;
         this.binOnHandJoin = binOnHandJoin;
@@ -124,6 +128,26 @@ public class ItemSearch  extends com.netsuite.webservices.platform.core_2019_1.S
      */
     public void setBasic(com.netsuite.webservices.platform.common_2019_1.ItemSearchBasic basic) {
         this.basic = basic;
+    }
+
+
+    /**
+     * Gets the accountingBookRevRecScheduleJoin value for this ItemSearch.
+     * 
+     * @return accountingBookRevRecScheduleJoin
+     */
+    public com.netsuite.webservices.platform.common_2019_1.RevRecTemplateSearchBasic getAccountingBookRevRecScheduleJoin() {
+        return accountingBookRevRecScheduleJoin;
+    }
+
+
+    /**
+     * Sets the accountingBookRevRecScheduleJoin value for this ItemSearch.
+     * 
+     * @param accountingBookRevRecScheduleJoin
+     */
+    public void setAccountingBookRevRecScheduleJoin(com.netsuite.webservices.platform.common_2019_1.RevRecTemplateSearchBasic accountingBookRevRecScheduleJoin) {
+        this.accountingBookRevRecScheduleJoin = accountingBookRevRecScheduleJoin;
     }
 
 
@@ -589,6 +613,9 @@ public class ItemSearch  extends com.netsuite.webservices.platform.core_2019_1.S
             ((this.basic==null && other.getBasic()==null) || 
              (this.basic!=null &&
               this.basic.equals(other.getBasic()))) &&
+            ((this.accountingBookRevRecScheduleJoin==null && other.getAccountingBookRevRecScheduleJoin()==null) || 
+             (this.accountingBookRevRecScheduleJoin!=null &&
+              this.accountingBookRevRecScheduleJoin.equals(other.getAccountingBookRevRecScheduleJoin()))) &&
             ((this.assemblyItemBillOfMaterialsJoin==null && other.getAssemblyItemBillOfMaterialsJoin()==null) || 
              (this.assemblyItemBillOfMaterialsJoin!=null &&
               this.assemblyItemBillOfMaterialsJoin.equals(other.getAssemblyItemBillOfMaterialsJoin()))) &&
@@ -668,6 +695,9 @@ public class ItemSearch  extends com.netsuite.webservices.platform.core_2019_1.S
         int _hashCode = super.hashCode();
         if (getBasic() != null) {
             _hashCode += getBasic().hashCode();
+        }
+        if (getAccountingBookRevRecScheduleJoin() != null) {
+            _hashCode += getAccountingBookRevRecScheduleJoin().hashCode();
         }
         if (getAssemblyItemBillOfMaterialsJoin() != null) {
             _hashCode += getAssemblyItemBillOfMaterialsJoin().hashCode();
@@ -757,6 +787,13 @@ public class ItemSearch  extends com.netsuite.webservices.platform.core_2019_1.S
         elemField.setFieldName("basic");
         elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2019_1.lists.webservices.netsuite.com", "basic"));
         elemField.setXmlType(new javax.xml.namespace.QName("urn:common_2019_1.platform.webservices.netsuite.com", "ItemSearchBasic"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("accountingBookRevRecScheduleJoin");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2019_1.lists.webservices.netsuite.com", "accountingBookRevRecScheduleJoin"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:common_2019_1.platform.webservices.netsuite.com", "RevRecTemplateSearchBasic"));
         elemField.setMinOccurs(0);
         elemField.setNillable(false);
         typeDesc.addFieldDesc(elemField);

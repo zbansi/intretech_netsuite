@@ -10,27 +10,27 @@ package com.netsuite.webservices.lists.accounting_2019_1;
 public class BomSearchRow  extends com.netsuite.webservices.platform.core_2019_1.SearchRow  implements java.io.Serializable {
     private com.netsuite.webservices.platform.common_2019_1.BomSearchRowBasic basic;
 
+    private com.netsuite.webservices.platform.common_2019_1.AssemblyItemBomSearchRowBasic assemblyItemJoin;
+
     private com.netsuite.webservices.platform.common_2019_1.BomRevisionSearchRowBasic revisionJoin;
 
     private com.netsuite.webservices.platform.common_2019_1.TransactionSearchRowBasic transactionJoin;
 
-    private com.netsuite.webservices.platform.common_2019_1.AssemblyItemBomSearchRowBasic assemblyItemJoin;
-
-    private com.netsuite.webservices.platform.common_2019_1.CustomSearchJoin[] customSearchJoin;
+    private com.netsuite.webservices.platform.common_2019_1.CustomSearchRowBasic[] customSearchJoin;
 
     public BomSearchRow() {
     }
 
     public BomSearchRow(
            com.netsuite.webservices.platform.common_2019_1.BomSearchRowBasic basic,
+           com.netsuite.webservices.platform.common_2019_1.AssemblyItemBomSearchRowBasic assemblyItemJoin,
            com.netsuite.webservices.platform.common_2019_1.BomRevisionSearchRowBasic revisionJoin,
            com.netsuite.webservices.platform.common_2019_1.TransactionSearchRowBasic transactionJoin,
-           com.netsuite.webservices.platform.common_2019_1.AssemblyItemBomSearchRowBasic assemblyItemJoin,
-           com.netsuite.webservices.platform.common_2019_1.CustomSearchJoin[] customSearchJoin) {
+           com.netsuite.webservices.platform.common_2019_1.CustomSearchRowBasic[] customSearchJoin) {
         this.basic = basic;
+        this.assemblyItemJoin = assemblyItemJoin;
         this.revisionJoin = revisionJoin;
         this.transactionJoin = transactionJoin;
-        this.assemblyItemJoin = assemblyItemJoin;
         this.customSearchJoin = customSearchJoin;
     }
 
@@ -52,6 +52,26 @@ public class BomSearchRow  extends com.netsuite.webservices.platform.core_2019_1
      */
     public void setBasic(com.netsuite.webservices.platform.common_2019_1.BomSearchRowBasic basic) {
         this.basic = basic;
+    }
+
+
+    /**
+     * Gets the assemblyItemJoin value for this BomSearchRow.
+     * 
+     * @return assemblyItemJoin
+     */
+    public com.netsuite.webservices.platform.common_2019_1.AssemblyItemBomSearchRowBasic getAssemblyItemJoin() {
+        return assemblyItemJoin;
+    }
+
+
+    /**
+     * Sets the assemblyItemJoin value for this BomSearchRow.
+     * 
+     * @param assemblyItemJoin
+     */
+    public void setAssemblyItemJoin(com.netsuite.webservices.platform.common_2019_1.AssemblyItemBomSearchRowBasic assemblyItemJoin) {
+        this.assemblyItemJoin = assemblyItemJoin;
     }
 
 
@@ -96,31 +116,11 @@ public class BomSearchRow  extends com.netsuite.webservices.platform.core_2019_1
 
 
     /**
-     * Gets the assemblyItemJoin value for this BomSearchRow.
-     * 
-     * @return assemblyItemJoin
-     */
-    public com.netsuite.webservices.platform.common_2019_1.AssemblyItemBomSearchRowBasic getAssemblyItemJoin() {
-        return assemblyItemJoin;
-    }
-
-
-    /**
-     * Sets the assemblyItemJoin value for this BomSearchRow.
-     * 
-     * @param assemblyItemJoin
-     */
-    public void setAssemblyItemJoin(com.netsuite.webservices.platform.common_2019_1.AssemblyItemBomSearchRowBasic assemblyItemJoin) {
-        this.assemblyItemJoin = assemblyItemJoin;
-    }
-
-
-    /**
      * Gets the customSearchJoin value for this BomSearchRow.
      * 
      * @return customSearchJoin
      */
-    public com.netsuite.webservices.platform.common_2019_1.CustomSearchJoin[] getCustomSearchJoin() {
+    public com.netsuite.webservices.platform.common_2019_1.CustomSearchRowBasic[] getCustomSearchJoin() {
         return customSearchJoin;
     }
 
@@ -130,15 +130,15 @@ public class BomSearchRow  extends com.netsuite.webservices.platform.core_2019_1
      * 
      * @param customSearchJoin
      */
-    public void setCustomSearchJoin(com.netsuite.webservices.platform.common_2019_1.CustomSearchJoin[] customSearchJoin) {
+    public void setCustomSearchJoin(com.netsuite.webservices.platform.common_2019_1.CustomSearchRowBasic[] customSearchJoin) {
         this.customSearchJoin = customSearchJoin;
     }
 
-    public com.netsuite.webservices.platform.common_2019_1.CustomSearchJoin getCustomSearchJoin(int i) {
+    public com.netsuite.webservices.platform.common_2019_1.CustomSearchRowBasic getCustomSearchJoin(int i) {
         return this.customSearchJoin[i];
     }
 
-    public void setCustomSearchJoin(int i, com.netsuite.webservices.platform.common_2019_1.CustomSearchJoin _value) {
+    public void setCustomSearchJoin(int i, com.netsuite.webservices.platform.common_2019_1.CustomSearchRowBasic _value) {
         this.customSearchJoin[i] = _value;
     }
 
@@ -157,15 +157,15 @@ public class BomSearchRow  extends com.netsuite.webservices.platform.core_2019_1
             ((this.basic==null && other.getBasic()==null) || 
              (this.basic!=null &&
               this.basic.equals(other.getBasic()))) &&
+            ((this.assemblyItemJoin==null && other.getAssemblyItemJoin()==null) || 
+             (this.assemblyItemJoin!=null &&
+              this.assemblyItemJoin.equals(other.getAssemblyItemJoin()))) &&
             ((this.revisionJoin==null && other.getRevisionJoin()==null) || 
              (this.revisionJoin!=null &&
               this.revisionJoin.equals(other.getRevisionJoin()))) &&
             ((this.transactionJoin==null && other.getTransactionJoin()==null) || 
              (this.transactionJoin!=null &&
               this.transactionJoin.equals(other.getTransactionJoin()))) &&
-            ((this.assemblyItemJoin==null && other.getAssemblyItemJoin()==null) || 
-             (this.assemblyItemJoin!=null &&
-              this.assemblyItemJoin.equals(other.getAssemblyItemJoin()))) &&
             ((this.customSearchJoin==null && other.getCustomSearchJoin()==null) || 
              (this.customSearchJoin!=null &&
               java.util.Arrays.equals(this.customSearchJoin, other.getCustomSearchJoin())));
@@ -183,14 +183,14 @@ public class BomSearchRow  extends com.netsuite.webservices.platform.core_2019_1
         if (getBasic() != null) {
             _hashCode += getBasic().hashCode();
         }
+        if (getAssemblyItemJoin() != null) {
+            _hashCode += getAssemblyItemJoin().hashCode();
+        }
         if (getRevisionJoin() != null) {
             _hashCode += getRevisionJoin().hashCode();
         }
         if (getTransactionJoin() != null) {
             _hashCode += getTransactionJoin().hashCode();
-        }
-        if (getAssemblyItemJoin() != null) {
-            _hashCode += getAssemblyItemJoin().hashCode();
         }
         if (getCustomSearchJoin() != null) {
             for (int i=0;
@@ -221,6 +221,13 @@ public class BomSearchRow  extends com.netsuite.webservices.platform.core_2019_1
         elemField.setNillable(false);
         typeDesc.addFieldDesc(elemField);
         elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("assemblyItemJoin");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2019_1.lists.webservices.netsuite.com", "assemblyItemJoin"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:common_2019_1.platform.webservices.netsuite.com", "AssemblyItemBomSearchRowBasic"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("revisionJoin");
         elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2019_1.lists.webservices.netsuite.com", "revisionJoin"));
         elemField.setXmlType(new javax.xml.namespace.QName("urn:common_2019_1.platform.webservices.netsuite.com", "BomRevisionSearchRowBasic"));
@@ -235,16 +242,9 @@ public class BomSearchRow  extends com.netsuite.webservices.platform.core_2019_1
         elemField.setNillable(false);
         typeDesc.addFieldDesc(elemField);
         elemField = new org.apache.axis.description.ElementDesc();
-        elemField.setFieldName("assemblyItemJoin");
-        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2019_1.lists.webservices.netsuite.com", "assemblyItemJoin"));
-        elemField.setXmlType(new javax.xml.namespace.QName("urn:common_2019_1.platform.webservices.netsuite.com", "AssemblyItemBomSearchRowBasic"));
-        elemField.setMinOccurs(0);
-        elemField.setNillable(false);
-        typeDesc.addFieldDesc(elemField);
-        elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("customSearchJoin");
         elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2019_1.lists.webservices.netsuite.com", "customSearchJoin"));
-        elemField.setXmlType(new javax.xml.namespace.QName("urn:common_2019_1.platform.webservices.netsuite.com", "CustomSearchJoin"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:common_2019_1.platform.webservices.netsuite.com", "CustomSearchRowBasic"));
         elemField.setMinOccurs(0);
         elemField.setNillable(false);
         elemField.setMaxOccursUnbounded(true);

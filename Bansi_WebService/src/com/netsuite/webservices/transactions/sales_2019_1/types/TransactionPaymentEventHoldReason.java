@@ -24,6 +24,7 @@ public class TransactionPaymentEventHoldReason implements java.io.Serializable {
     public static final java.lang.String __confirmationOfTheOperationIsPending = "_confirmationOfTheOperationIsPending";
     public static final java.lang.String __externalFraudRejection = "_externalFraudRejection";
     public static final java.lang.String __externalFraudReview = "_externalFraudReview";
+    public static final java.lang.String __failedToPrimeDevice = "_failedToPrimeDevice";
     public static final java.lang.String __fatalError = "_fatalError";
     public static final java.lang.String __forwardedToPayerAuthentication = "_forwardedToPayerAuthentication";
     public static final java.lang.String __forwardRequested = "_forwardRequested";
@@ -48,6 +49,7 @@ public class TransactionPaymentEventHoldReason implements java.io.Serializable {
     public static final TransactionPaymentEventHoldReason _confirmationOfTheOperationIsPending = new TransactionPaymentEventHoldReason(__confirmationOfTheOperationIsPending);
     public static final TransactionPaymentEventHoldReason _externalFraudRejection = new TransactionPaymentEventHoldReason(__externalFraudRejection);
     public static final TransactionPaymentEventHoldReason _externalFraudReview = new TransactionPaymentEventHoldReason(__externalFraudReview);
+    public static final TransactionPaymentEventHoldReason _failedToPrimeDevice = new TransactionPaymentEventHoldReason(__failedToPrimeDevice);
     public static final TransactionPaymentEventHoldReason _fatalError = new TransactionPaymentEventHoldReason(__fatalError);
     public static final TransactionPaymentEventHoldReason _forwardedToPayerAuthentication = new TransactionPaymentEventHoldReason(__forwardedToPayerAuthentication);
     public static final TransactionPaymentEventHoldReason _forwardRequested = new TransactionPaymentEventHoldReason(__forwardRequested);

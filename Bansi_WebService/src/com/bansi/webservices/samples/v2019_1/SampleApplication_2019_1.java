@@ -5,7 +5,7 @@ package com.bansi.webservices.samples.v2019_1;
 
 import org.apache.axis.AxisFault;
 
-import com.bansi.webservices.samples.v2017_2.Properties;
+import com.bansi.webservices.samples.v2019_1.Properties;
 
 import java.io.IOException;
 import java.net.MalformedURLException;

@@ -63,6 +63,8 @@ public class PermissionCode implements java.io.Serializable {
     public static final java.lang.String __backupYourData = "_backupYourData";
     public static final java.lang.String __balanceLocationCostingGroupAccounts = "_balanceLocationCostingGroupAccounts";
     public static final java.lang.String __balanceSheet = "_balanceSheet";
+    public static final java.lang.String __balanceTransactionsBySegments = "_balanceTransactionsBySegments";
+    public static final java.lang.String __balancingJournals = "_balancingJournals";
     public static final java.lang.String __bankAccountRegisters = "_bankAccountRegisters";
     public static final java.lang.String __bankConnectivityPlugInConfiguration = "_bankConnectivityPlugInConfiguration";
     public static final java.lang.String __basicGovernmentIssuedIds = "_basicGovernmentIssuedIds";
@@ -91,6 +93,8 @@ public class PermissionCode implements java.io.Serializable {
     public static final java.lang.String __cashFlowStatement = "_cashFlowStatement";
     public static final java.lang.String __cashSale = "_cashSale";
     public static final java.lang.String __cashSaleRefund = "_cashSaleRefund";
+    public static final java.lang.String __certificateAccess = "_certificateAccess";
+    public static final java.lang.String __certificateManagement = "_certificateManagement";
     public static final java.lang.String __changeEmailOrPassword = "_changeEmailOrPassword";
     public static final java.lang.String __changeRole = "_changeRole";
     public static final java.lang.String __chargeRule = "_chargeRule";
@@ -109,7 +113,6 @@ public class PermissionCode implements java.io.Serializable {
     public static final java.lang.String __commitPayroll = "_commitPayroll";
     public static final java.lang.String __companies = "_companies";
     public static final java.lang.String __companyInformation = "_companyInformation";
-    public static final java.lang.String __companyPreferences = "_companyPreferences";
     public static final java.lang.String __competitors = "_competitors";
     public static final java.lang.String __componentWhereUsed = "_componentWhereUsed";
     public static final java.lang.String __contactRoles = "_contactRoles";
@@ -129,6 +132,7 @@ public class PermissionCode implements java.io.Serializable {
     public static final java.lang.String __createConsolidationCompany = "_createConsolidationCompany";
     public static final java.lang.String __createFiscalCalendar = "_createFiscalCalendar";
     public static final java.lang.String __createInventoryCounts = "_createInventoryCounts";
+    public static final java.lang.String __createJobsFromSalesTransactions = "_createJobsFromSalesTransactions";
     public static final java.lang.String __creditCard = "_creditCard";
     public static final java.lang.String __creditCardProcessing = "_creditCardProcessing";
     public static final java.lang.String __creditCardRefund = "_creditCardRefund";
@@ -169,6 +173,7 @@ public class PermissionCode implements java.io.Serializable {
     public static final java.lang.String __customizePage = "_customizePage";
     public static final java.lang.String __customLists = "_customLists";
     public static final java.lang.String __customPDFLayouts = "_customPDFLayouts";
+    public static final java.lang.String __customRecognitionEventType = "_customRecognitionEventType";
     public static final java.lang.String __customRecordEntries = "_customRecordEntries";
     public static final java.lang.String __customRecordTypes = "_customRecordTypes";
     public static final java.lang.String __customSegments = "_customSegments";
@@ -203,6 +208,7 @@ public class PermissionCode implements java.io.Serializable {
     public static final java.lang.String __eftStatus = "_eftStatus";
     public static final java.lang.String __emailReports = "_emailReports";
     public static final java.lang.String __emailTemplate = "_emailTemplate";
+    public static final java.lang.String __employeeAccessTab = "_employeeAccessTab";
     public static final java.lang.String __employeeAdministration = "_employeeAdministration";
     public static final java.lang.String __employeeCenterPublishing = "_employeeCenterPublishing";
     public static final java.lang.String __employeeChangeReason = "_employeeChangeReason";
@@ -244,10 +250,10 @@ public class PermissionCode implements java.io.Serializable {
     public static final java.lang.String __fairValuePrice = "_fairValuePrice";
     public static final java.lang.String __faxMessages = "_faxMessages";
     public static final java.lang.String __faxTemplate = "_faxTemplate";
-    public static final java.lang.String __features = "_features";
     public static final java.lang.String __financeCharge = "_financeCharge";
     public static final java.lang.String __financeChargePreferences = "_financeChargePreferences";
     public static final java.lang.String __financialHistory = "_financialHistory";
+    public static final java.lang.String __financialInstitutionRecords = "_financialInstitutionRecords";
     public static final java.lang.String __financialStatementLayouts = "_financialStatementLayouts";
     public static final java.lang.String __financialStatements = "_financialStatements";
     public static final java.lang.String __financialStatementSections = "_financialStatementSections";
@@ -270,7 +276,6 @@ public class PermissionCode implements java.io.Serializable {
     public static final java.lang.String __generateRevenueCommitmentReversals = "_generateRevenueCommitmentReversals";
     public static final java.lang.String __generateSingleOrderRevenueContracts = "_generateSingleOrderRevenueContracts";
     public static final java.lang.String __generateStatements = "_generateStatements";
-    public static final java.lang.String __genericAdminPermission = "_genericAdminPermission";
     public static final java.lang.String __genericResources = "_genericResources";
     public static final java.lang.String __globalAccountMapping = "_globalAccountMapping";
     public static final java.lang.String __globalInventoryRelationship = "_globalInventoryRelationship";
@@ -305,6 +310,8 @@ public class PermissionCode implements java.io.Serializable {
     public static final java.lang.String __itemCategoryLayouts = "_itemCategoryLayouts";
     public static final java.lang.String __itemDemandPlan = "_itemDemandPlan";
     public static final java.lang.String __itemFulfillment = "_itemFulfillment";
+    public static final java.lang.String __itemProcessFamily = "_itemProcessFamily";
+    public static final java.lang.String __itemProcessGroup = "_itemProcessGroup";
     public static final java.lang.String __itemReceipt = "_itemReceipt";
     public static final java.lang.String __itemRevenueCategory = "_itemRevenueCategory";
     public static final java.lang.String __itemRevisions = "_itemRevisions";
@@ -323,7 +330,6 @@ public class PermissionCode implements java.io.Serializable {
     public static final java.lang.String __leadSnapshotReminders = "_leadSnapshotReminders";
     public static final java.lang.String __letterMessages = "_letterMessages";
     public static final java.lang.String __letterTemplate = "_letterTemplate";
-    public static final java.lang.String __loadSampleData = "_loadSampleData";
     public static final java.lang.String __locationCostingGroup = "_locationCostingGroup";
     public static final java.lang.String __locationMapping = "_locationMapping";
     public static final java.lang.String __locations = "_locations";
@@ -337,6 +343,7 @@ public class PermissionCode implements java.io.Serializable {
     public static final java.lang.String __managePayroll = "_managePayroll";
     public static final java.lang.String __manageRoles = "_manageRoles";
     public static final java.lang.String __manageTaxReportingPeriods = "_manageTaxReportingPeriods";
+    public static final java.lang.String __manageTranslation = "_manageTranslation";
     public static final java.lang.String __manageUsers = "_manageUsers";
     public static final java.lang.String __manufacturingCostTemplate = "_manufacturingCostTemplate";
     public static final java.lang.String __manufacturingRouting = "_manufacturingRouting";
@@ -377,6 +384,7 @@ public class PermissionCode implements java.io.Serializable {
     public static final java.lang.String __otherIncomeRegisters = "_otherIncomeRegisters";
     public static final java.lang.String __otherLists = "_otherLists";
     public static final java.lang.String __otherNames = "_otherNames";
+    public static final java.lang.String __outboundRequest = "_outboundRequest";
     public static final java.lang.String __outlookIntegration = "_outlookIntegration";
     public static final java.lang.String __outlookIntegration3 = "_outlookIntegration3";
     public static final java.lang.String __overrideEstimatedCostOnTransactions = "_overrideEstimatedCostOnTransactions";
@@ -416,6 +424,8 @@ public class PermissionCode implements java.io.Serializable {
     public static final java.lang.String __persistSearch = "_persistSearch";
     public static final java.lang.String __phasedProcesses = "_phasedProcesses";
     public static final java.lang.String __phoneCalls = "_phoneCalls";
+    public static final java.lang.String __pickStrategy = "_pickStrategy";
+    public static final java.lang.String __pickTask = "_pickTask";
     public static final java.lang.String __plannedRevenue = "_plannedRevenue";
     public static final java.lang.String __plannedStandardCost = "_plannedStandardCost";
     public static final java.lang.String __positions = "_positions";
@@ -471,6 +481,8 @@ public class PermissionCode implements java.io.Serializable {
     public static final java.lang.String __resourceAllocationApproval = "_resourceAllocationApproval";
     public static final java.lang.String __resourceAllocationReports = "_resourceAllocationReports";
     public static final java.lang.String __resourceAllocations = "_resourceAllocations";
+    public static final java.lang.String __resourceGroups = "_resourceGroups";
+    public static final java.lang.String __restWebServices = "_restWebServices";
     public static final java.lang.String __returnAuthApproval = "_returnAuthApproval";
     public static final java.lang.String __returnAuthorization = "_returnAuthorization";
     public static final java.lang.String __returnAuthorizationReports = "_returnAuthorizationReports";
@@ -488,7 +500,6 @@ public class PermissionCode implements java.io.Serializable {
     public static final java.lang.String __revenueRecognitionRule = "_revenueRecognitionRule";
     public static final java.lang.String __revenueRecognitionSchedules = "_revenueRecognitionSchedules";
     public static final java.lang.String __reviewCustomGlPlugInExecutions = "_reviewCustomGlPlugInExecutions";
-    public static final java.lang.String __roles = "_roles";
     public static final java.lang.String __runPayroll = "_runPayroll";
     public static final java.lang.String __sales = "_sales";
     public static final java.lang.String __salesByPartner = "_salesByPartner";
@@ -530,13 +541,13 @@ public class PermissionCode implements java.io.Serializable {
     public static final java.lang.String __shippingPartnerRegistration = "_shippingPartnerRegistration";
     public static final java.lang.String __shippingPartnerShipment = "_shippingPartnerShipment";
     public static final java.lang.String __shortcuts = "_shortcuts";
+    public static final java.lang.String __siteSearch = "_siteSearch";
     public static final java.lang.String __standardCostVersion = "_standardCostVersion";
     public static final java.lang.String __statementCharge = "_statementCharge";
     public static final java.lang.String __statisticalAccountRegisters = "_statisticalAccountRegisters";
     public static final java.lang.String __storeCategories = "_storeCategories";
     public static final java.lang.String __storeContentCategories = "_storeContentCategories";
     public static final java.lang.String __storeContentItems = "_storeContentItems";
-    public static final java.lang.String __storeLogoUpload = "_storeLogoUpload";
     public static final java.lang.String __storePickupFulfillment = "_storePickupFulfillment";
     public static final java.lang.String __storeTabs = "_storeTabs";
     public static final java.lang.String __subscriptionPlan = "_subscriptionPlan";
@@ -547,7 +558,7 @@ public class PermissionCode implements java.io.Serializable {
     public static final java.lang.String __suiteAnalyticsWorkbook = "_suiteAnalyticsWorkbook";
     public static final java.lang.String __suiteAppDeployment = "_suiteAppDeployment";
     public static final java.lang.String __suiteAppManagement = "_suiteAppManagement";
-    public static final java.lang.String __suiteBundler = "_suiteBundler";
+    public static final java.lang.String __suiteAppMarketplace = "_suiteAppMarketplace";
     public static final java.lang.String __suiteBundlerAuditTrail = "_suiteBundlerAuditTrail";
     public static final java.lang.String __suiteBundlerUpgrades = "_suiteBundlerUpgrades";
     public static final java.lang.String __suiteScript = "_suiteScript";
@@ -570,6 +581,7 @@ public class PermissionCode implements java.io.Serializable {
     public static final java.lang.String __systemEmailTemplate = "_systemEmailTemplate";
     public static final java.lang.String __systemStatus = "_systemStatus";
     public static final java.lang.String __tableauWorkbookExport = "_tableauWorkbookExport";
+    public static final java.lang.String __talentAdministration = "_talentAdministration";
     public static final java.lang.String __tasks = "_tasks";
     public static final java.lang.String __tax = "_tax";
     public static final java.lang.String __taxDetailsTab = "_taxDetailsTab";
@@ -627,6 +639,7 @@ public class PermissionCode implements java.io.Serializable {
     public static final java.lang.String __viewPaymentEvents = "_viewPaymentEvents";
     public static final java.lang.String __viewUnencryptedCreditCards = "_viewUnencryptedCreditCards";
     public static final java.lang.String __viewWebServicesLogs = "_viewWebServicesLogs";
+    public static final java.lang.String __wave = "_wave";
     public static final java.lang.String __webServices = "_webServices";
     public static final java.lang.String __webSiteExternalPublisher = "_webSiteExternalPublisher";
     public static final java.lang.String __webSiteManagement = "_webSiteManagement";
@@ -641,6 +654,7 @@ public class PermissionCode implements java.io.Serializable {
     public static final java.lang.String __workOrderCompletion = "_workOrderCompletion";
     public static final java.lang.String __workOrderIssue = "_workOrderIssue";
     public static final java.lang.String __workplaces = "_workplaces";
+    public static final java.lang.String __zone = "_zone";
     public static final PermissionCode _accessPaymentAuditLog = new PermissionCode(__accessPaymentAuditLog);
     public static final PermissionCode _accessTokenManagement = new PermissionCode(__accessTokenManagement);
     public static final PermissionCode _accountDetail = new PermissionCode(__accountDetail);
@@ -687,6 +701,8 @@ public class PermissionCode implements java.io.Serializable {
     public static final PermissionCode _backupYourData = new PermissionCode(__backupYourData);
     public static final PermissionCode _balanceLocationCostingGroupAccounts = new PermissionCode(__balanceLocationCostingGroupAccounts);
     public static final PermissionCode _balanceSheet = new PermissionCode(__balanceSheet);
+    public static final PermissionCode _balanceTransactionsBySegments = new PermissionCode(__balanceTransactionsBySegments);
+    public static final PermissionCode _balancingJournals = new PermissionCode(__balancingJournals);
     public static final PermissionCode _bankAccountRegisters = new PermissionCode(__bankAccountRegisters);
     public static final PermissionCode _bankConnectivityPlugInConfiguration = new PermissionCode(__bankConnectivityPlugInConfiguration);
     public static final PermissionCode _basicGovernmentIssuedIds = new PermissionCode(__basicGovernmentIssuedIds);
@@ -715,6 +731,8 @@ public class PermissionCode implements java.io.Serializable {
     public static final PermissionCode _cashFlowStatement = new PermissionCode(__cashFlowStatement);
     public static final PermissionCode _cashSale = new PermissionCode(__cashSale);
     public static final PermissionCode _cashSaleRefund = new PermissionCode(__cashSaleRefund);
+    public static final PermissionCode _certificateAccess = new PermissionCode(__certificateAccess);
+    public static final PermissionCode _certificateManagement = new PermissionCode(__certificateManagement);
     public static final PermissionCode _changeEmailOrPassword = new PermissionCode(__changeEmailOrPassword);
     public static final PermissionCode _changeRole = new PermissionCode(__changeRole);
     public static final PermissionCode _chargeRule = new PermissionCode(__chargeRule);
@@ -733,7 +751,6 @@ public class PermissionCode implements java.io.Serializable {
     public static final PermissionCode _commitPayroll = new PermissionCode(__commitPayroll);
     public static final PermissionCode _companies = new PermissionCode(__companies);
     public static final PermissionCode _companyInformation = new PermissionCode(__companyInformation);
-    public static final PermissionCode _companyPreferences = new PermissionCode(__companyPreferences);
     public static final PermissionCode _competitors = new PermissionCode(__competitors);
     public static final PermissionCode _componentWhereUsed = new PermissionCode(__componentWhereUsed);
     public static final PermissionCode _contactRoles = new PermissionCode(__contactRoles);
@@ -753,6 +770,7 @@ public class PermissionCode implements java.io.Serializable {
     public static final PermissionCode _createConsolidationCompany = new PermissionCode(__createConsolidationCompany);
     public static final PermissionCode _createFiscalCalendar = new PermissionCode(__createFiscalCalendar);
     public static final PermissionCode _createInventoryCounts = new PermissionCode(__createInventoryCounts);
+    public static final PermissionCode _createJobsFromSalesTransactions = new PermissionCode(__createJobsFromSalesTransactions);
     public static final PermissionCode _creditCard = new PermissionCode(__creditCard);
     public static final PermissionCode _creditCardProcessing = new PermissionCode(__creditCardProcessing);
     public static final PermissionCode _creditCardRefund = new PermissionCode(__creditCardRefund);
@@ -793,6 +811,7 @@ public class PermissionCode implements java.io.Serializable {
     public static final PermissionCode _customizePage = new PermissionCode(__customizePage);
     public static final PermissionCode _customLists = new PermissionCode(__customLists);
     public static final PermissionCode _customPDFLayouts = new PermissionCode(__customPDFLayouts);
+    public static final PermissionCode _customRecognitionEventType = new PermissionCode(__customRecognitionEventType);
     public static final PermissionCode _customRecordEntries = new PermissionCode(__customRecordEntries);
     public static final PermissionCode _customRecordTypes = new PermissionCode(__customRecordTypes);
     public static final PermissionCode _customSegments = new PermissionCode(__customSegments);
@@ -827,6 +846,7 @@ public class PermissionCode implements java.io.Serializable {
     public static final PermissionCode _eftStatus = new PermissionCode(__eftStatus);
     public static final PermissionCode _emailReports = new PermissionCode(__emailReports);
     public static final PermissionCode _emailTemplate = new PermissionCode(__emailTemplate);
+    public static final PermissionCode _employeeAccessTab = new PermissionCode(__employeeAccessTab);
     public static final PermissionCode _employeeAdministration = new PermissionCode(__employeeAdministration);
     public static final PermissionCode _employeeCenterPublishing = new PermissionCode(__employeeCenterPublishing);
     public static final PermissionCode _employeeChangeReason = new PermissionCode(__employeeChangeReason);
@@ -868,10 +888,10 @@ public class PermissionCode implements java.io.Serializable {
     public static final PermissionCode _fairValuePrice = new PermissionCode(__fairValuePrice);
     public static final PermissionCode _faxMessages = new PermissionCode(__faxMessages);
     public static final PermissionCode _faxTemplate = new PermissionCode(__faxTemplate);
-    public static final PermissionCode _features = new PermissionCode(__features);
     public static final PermissionCode _financeCharge = new PermissionCode(__financeCharge);
     public static final PermissionCode _financeChargePreferences = new PermissionCode(__financeChargePreferences);
     public static final PermissionCode _financialHistory = new PermissionCode(__financialHistory);
+    public static final PermissionCode _financialInstitutionRecords = new PermissionCode(__financialInstitutionRecords);
     public static final PermissionCode _financialStatementLayouts = new PermissionCode(__financialStatementLayouts);
     public static final PermissionCode _financialStatements = new PermissionCode(__financialStatements);
     public static final PermissionCode _financialStatementSections = new PermissionCode(__financialStatementSections);
@@ -894,7 +914,6 @@ public class PermissionCode implements java.io.Serializable {
     public static final PermissionCode _generateRevenueCommitmentReversals = new PermissionCode(__generateRevenueCommitmentReversals);
     public static final PermissionCode _generateSingleOrderRevenueContracts = new PermissionCode(__generateSingleOrderRevenueContracts);
     public static final PermissionCode _generateStatements = new PermissionCode(__generateStatements);
-    public static final PermissionCode _genericAdminPermission = new PermissionCode(__genericAdminPermission);
     public static final PermissionCode _genericResources = new PermissionCode(__genericResources);
     public static final PermissionCode _globalAccountMapping = new PermissionCode(__globalAccountMapping);
     public static final PermissionCode _globalInventoryRelationship = new PermissionCode(__globalInventoryRelationship);
@@ -929,6 +948,8 @@ public class PermissionCode implements java.io.Serializable {
     public static final PermissionCode _itemCategoryLayouts = new PermissionCode(__itemCategoryLayouts);
     public static final PermissionCode _itemDemandPlan = new PermissionCode(__itemDemandPlan);
     public static final PermissionCode _itemFulfillment = new PermissionCode(__itemFulfillment);
+    public static final PermissionCode _itemProcessFamily = new PermissionCode(__itemProcessFamily);
+    public static final PermissionCode _itemProcessGroup = new PermissionCode(__itemProcessGroup);
     public static final PermissionCode _itemReceipt = new PermissionCode(__itemReceipt);
     public static final PermissionCode _itemRevenueCategory = new PermissionCode(__itemRevenueCategory);
     public static final PermissionCode _itemRevisions = new PermissionCode(__itemRevisions);
@@ -947,7 +968,6 @@ public class PermissionCode implements java.io.Serializable {
     public static final PermissionCode _leadSnapshotReminders = new PermissionCode(__leadSnapshotReminders);
     public static final PermissionCode _letterMessages = new PermissionCode(__letterMessages);
     public static final PermissionCode _letterTemplate = new PermissionCode(__letterTemplate);
-    public static final PermissionCode _loadSampleData = new PermissionCode(__loadSampleData);
     public static final PermissionCode _locationCostingGroup = new PermissionCode(__locationCostingGroup);
     public static final PermissionCode _locationMapping = new PermissionCode(__locationMapping);
     public static final PermissionCode _locations = new PermissionCode(__locations);
@@ -961,6 +981,7 @@ public class PermissionCode implements java.io.Serializable {
     public static final PermissionCode _managePayroll = new PermissionCode(__managePayroll);
     public static final PermissionCode _manageRoles = new PermissionCode(__manageRoles);
     public static final PermissionCode _manageTaxReportingPeriods = new PermissionCode(__manageTaxReportingPeriods);
+    public static final PermissionCode _manageTranslation = new PermissionCode(__manageTranslation);
     public static final PermissionCode _manageUsers = new PermissionCode(__manageUsers);
     public static final PermissionCode _manufacturingCostTemplate = new PermissionCode(__manufacturingCostTemplate);
     public static final PermissionCode _manufacturingRouting = new PermissionCode(__manufacturingRouting);
@@ -1001,6 +1022,7 @@ public class PermissionCode implements java.io.Serializable {
     public static final PermissionCode _otherIncomeRegisters = new PermissionCode(__otherIncomeRegisters);
     public static final PermissionCode _otherLists = new PermissionCode(__otherLists);
     public static final PermissionCode _otherNames = new PermissionCode(__otherNames);
+    public static final PermissionCode _outboundRequest = new PermissionCode(__outboundRequest);
     public static final PermissionCode _outlookIntegration = new PermissionCode(__outlookIntegration);
     public static final PermissionCode _outlookIntegration3 = new PermissionCode(__outlookIntegration3);
     public static final PermissionCode _overrideEstimatedCostOnTransactions = new PermissionCode(__overrideEstimatedCostOnTransactions);
@@ -1040,6 +1062,8 @@ public class PermissionCode implements java.io.Serializable {
     public static final PermissionCode _persistSearch = new PermissionCode(__persistSearch);
     public static final PermissionCode _phasedProcesses = new PermissionCode(__phasedProcesses);
     public static final PermissionCode _phoneCalls = new PermissionCode(__phoneCalls);
+    public static final PermissionCode _pickStrategy = new PermissionCode(__pickStrategy);
+    public static final PermissionCode _pickTask = new PermissionCode(__pickTask);
     public static final PermissionCode _plannedRevenue = new PermissionCode(__plannedRevenue);
     public static final PermissionCode _plannedStandardCost = new PermissionCode(__plannedStandardCost);
     public static final PermissionCode _positions = new PermissionCode(__positions);
@@ -1095,6 +1119,8 @@ public class PermissionCode implements java.io.Serializable {
     public static final PermissionCode _resourceAllocationApproval = new PermissionCode(__resourceAllocationApproval);
     public static final PermissionCode _resourceAllocationReports = new PermissionCode(__resourceAllocationReports);
     public static final PermissionCode _resourceAllocations = new PermissionCode(__resourceAllocations);
+    public static final PermissionCode _resourceGroups = new PermissionCode(__resourceGroups);
+    public static final PermissionCode _restWebServices = new PermissionCode(__restWebServices);
     public static final PermissionCode _returnAuthApproval = new PermissionCode(__returnAuthApproval);
     public static final PermissionCode _returnAuthorization = new PermissionCode(__returnAuthorization);
     public static final PermissionCode _returnAuthorizationReports = new PermissionCode(__returnAuthorizationReports);
@@ -1112,7 +1138,6 @@ public class PermissionCode implements java.io.Serializable {
     public static final PermissionCode _revenueRecognitionRule = new PermissionCode(__revenueRecognitionRule);
     public static final PermissionCode _revenueRecognitionSchedules = new PermissionCode(__revenueRecognitionSchedules);
     public static final PermissionCode _reviewCustomGlPlugInExecutions = new PermissionCode(__reviewCustomGlPlugInExecutions);
-    public static final PermissionCode _roles = new PermissionCode(__roles);
     public static final PermissionCode _runPayroll = new PermissionCode(__runPayroll);
     public static final PermissionCode _sales = new PermissionCode(__sales);
     public static final PermissionCode _salesByPartner = new PermissionCode(__salesByPartner);
@@ -1154,13 +1179,13 @@ public class PermissionCode implements java.io.Serializable {
     public static final PermissionCode _shippingPartnerRegistration = new PermissionCode(__shippingPartnerRegistration);
     public static final PermissionCode _shippingPartnerShipment = new PermissionCode(__shippingPartnerShipment);
     public static final PermissionCode _shortcuts = new PermissionCode(__shortcuts);
+    public static final PermissionCode _siteSearch = new PermissionCode(__siteSearch);
     public static final PermissionCode _standardCostVersion = new PermissionCode(__standardCostVersion);
     public static final PermissionCode _statementCharge = new PermissionCode(__statementCharge);
     public static final PermissionCode _statisticalAccountRegisters = new PermissionCode(__statisticalAccountRegisters);
     public static final PermissionCode _storeCategories = new PermissionCode(__storeCategories);
     public static final PermissionCode _storeContentCategories = new PermissionCode(__storeContentCategories);
     public static final PermissionCode _storeContentItems = new PermissionCode(__storeContentItems);
-    public static final PermissionCode _storeLogoUpload = new PermissionCode(__storeLogoUpload);
     public static final PermissionCode _storePickupFulfillment = new PermissionCode(__storePickupFulfillment);
     public static final PermissionCode _storeTabs = new PermissionCode(__storeTabs);
     public static final PermissionCode _subscriptionPlan = new PermissionCode(__subscriptionPlan);
@@ -1171,7 +1196,7 @@ public class PermissionCode implements java.io.Serializable {
     public static final PermissionCode _suiteAnalyticsWorkbook = new PermissionCode(__suiteAnalyticsWorkbook);
     public static final PermissionCode _suiteAppDeployment = new PermissionCode(__suiteAppDeployment);
     public static final PermissionCode _suiteAppManagement = new PermissionCode(__suiteAppManagement);
-    public static final PermissionCode _suiteBundler = new PermissionCode(__suiteBundler);
+    public static final PermissionCode _suiteAppMarketplace = new PermissionCode(__suiteAppMarketplace);
     public static final PermissionCode _suiteBundlerAuditTrail = new PermissionCode(__suiteBundlerAuditTrail);
     public static final PermissionCode _suiteBundlerUpgrades = new PermissionCode(__suiteBundlerUpgrades);
     public static final PermissionCode _suiteScript = new PermissionCode(__suiteScript);
@@ -1194,6 +1219,7 @@ public class PermissionCode implements java.io.Serializable {
     public static final PermissionCode _systemEmailTemplate = new PermissionCode(__systemEmailTemplate);
     public static final PermissionCode _systemStatus = new PermissionCode(__systemStatus);
     public static final PermissionCode _tableauWorkbookExport = new PermissionCode(__tableauWorkbookExport);
+    public static final PermissionCode _talentAdministration = new PermissionCode(__talentAdministration);
     public static final PermissionCode _tasks = new PermissionCode(__tasks);
     public static final PermissionCode _tax = new PermissionCode(__tax);
     public static final PermissionCode _taxDetailsTab = new PermissionCode(__taxDetailsTab);
@@ -1251,6 +1277,7 @@ public class PermissionCode implements java.io.Serializable {
     public static final PermissionCode _viewPaymentEvents = new PermissionCode(__viewPaymentEvents);
     public static final PermissionCode _viewUnencryptedCreditCards = new PermissionCode(__viewUnencryptedCreditCards);
     public static final PermissionCode _viewWebServicesLogs = new PermissionCode(__viewWebServicesLogs);
+    public static final PermissionCode _wave = new PermissionCode(__wave);
     public static final PermissionCode _webServices = new PermissionCode(__webServices);
     public static final PermissionCode _webSiteExternalPublisher = new PermissionCode(__webSiteExternalPublisher);
     public static final PermissionCode _webSiteManagement = new PermissionCode(__webSiteManagement);
@@ -1265,6 +1292,7 @@ public class PermissionCode implements java.io.Serializable {
     public static final PermissionCode _workOrderCompletion = new PermissionCode(__workOrderCompletion);
     public static final PermissionCode _workOrderIssue = new PermissionCode(__workOrderIssue);
     public static final PermissionCode _workplaces = new PermissionCode(__workplaces);
+    public static final PermissionCode _zone = new PermissionCode(__zone);
     public java.lang.String getValue() { return _value_;}
     public static PermissionCode fromValue(java.lang.String value)
           throws java.lang.IllegalArgumentException {

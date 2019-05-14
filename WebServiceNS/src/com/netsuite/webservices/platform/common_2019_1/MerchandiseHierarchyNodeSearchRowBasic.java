@@ -12,15 +12,15 @@ public class MerchandiseHierarchyNodeSearchRowBasic  extends com.netsuite.webser
 
     private com.netsuite.webservices.platform.core_2019_1.SearchColumnSelectField[] externalId;
 
-    private com.netsuite.webservices.platform.core_2019_1.SearchColumnStringField[] hierarchyLevel;
+    private com.netsuite.webservices.platform.core_2019_1.SearchColumnSelectField[] hierarchyLevel;
 
-    private com.netsuite.webservices.platform.core_2019_1.SearchColumnStringField[] hierarchyVersion;
+    private com.netsuite.webservices.platform.core_2019_1.SearchColumnSelectField[] hierarchyVersion;
 
     private com.netsuite.webservices.platform.core_2019_1.SearchColumnSelectField[] internalId;
 
     private com.netsuite.webservices.platform.core_2019_1.SearchColumnStringField[] name;
 
-    private com.netsuite.webservices.platform.core_2019_1.SearchColumnStringField[] parentNode;
+    private com.netsuite.webservices.platform.core_2019_1.SearchColumnSelectField[] parentNode;
 
     public MerchandiseHierarchyNodeSearchRowBasic() {
     }
@@ -28,11 +28,11 @@ public class MerchandiseHierarchyNodeSearchRowBasic  extends com.netsuite.webser
     public MerchandiseHierarchyNodeSearchRowBasic(
            com.netsuite.webservices.platform.core_2019_1.SearchColumnStringField[] description,
            com.netsuite.webservices.platform.core_2019_1.SearchColumnSelectField[] externalId,
-           com.netsuite.webservices.platform.core_2019_1.SearchColumnStringField[] hierarchyLevel,
-           com.netsuite.webservices.platform.core_2019_1.SearchColumnStringField[] hierarchyVersion,
+           com.netsuite.webservices.platform.core_2019_1.SearchColumnSelectField[] hierarchyLevel,
+           com.netsuite.webservices.platform.core_2019_1.SearchColumnSelectField[] hierarchyVersion,
            com.netsuite.webservices.platform.core_2019_1.SearchColumnSelectField[] internalId,
            com.netsuite.webservices.platform.core_2019_1.SearchColumnStringField[] name,
-           com.netsuite.webservices.platform.core_2019_1.SearchColumnStringField[] parentNode) {
+           com.netsuite.webservices.platform.core_2019_1.SearchColumnSelectField[] parentNode) {
         this.description = description;
         this.externalId = externalId;
         this.hierarchyLevel = hierarchyLevel;
@@ -104,7 +104,7 @@ public class MerchandiseHierarchyNodeSearchRowBasic  extends com.netsuite.webser
      * 
      * @return hierarchyLevel
      */
-    public com.netsuite.webservices.platform.core_2019_1.SearchColumnStringField[] getHierarchyLevel() {
+    public com.netsuite.webservices.platform.core_2019_1.SearchColumnSelectField[] getHierarchyLevel() {
         return hierarchyLevel;
     }
 
@@ -114,15 +114,15 @@ public class MerchandiseHierarchyNodeSearchRowBasic  extends com.netsuite.webser
      * 
      * @param hierarchyLevel
      */
-    public void setHierarchyLevel(com.netsuite.webservices.platform.core_2019_1.SearchColumnStringField[] hierarchyLevel) {
+    public void setHierarchyLevel(com.netsuite.webservices.platform.core_2019_1.SearchColumnSelectField[] hierarchyLevel) {
         this.hierarchyLevel = hierarchyLevel;
     }
 
-    public com.netsuite.webservices.platform.core_2019_1.SearchColumnStringField getHierarchyLevel(int i) {
+    public com.netsuite.webservices.platform.core_2019_1.SearchColumnSelectField getHierarchyLevel(int i) {
         return this.hierarchyLevel[i];
     }
 
-    public void setHierarchyLevel(int i, com.netsuite.webservices.platform.core_2019_1.SearchColumnStringField _value) {
+    public void setHierarchyLevel(int i, com.netsuite.webservices.platform.core_2019_1.SearchColumnSelectField _value) {
         this.hierarchyLevel[i] = _value;
     }
 
@@ -132,7 +132,7 @@ public class MerchandiseHierarchyNodeSearchRowBasic  extends com.netsuite.webser
      * 
      * @return hierarchyVersion
      */
-    public com.netsuite.webservices.platform.core_2019_1.SearchColumnStringField[] getHierarchyVersion() {
+    public com.netsuite.webservices.platform.core_2019_1.SearchColumnSelectField[] getHierarchyVersion() {
         return hierarchyVersion;
     }
 
@@ -142,15 +142,15 @@ public class MerchandiseHierarchyNodeSearchRowBasic  extends com.netsuite.webser
      * 
      * @param hierarchyVersion
      */
-    public void setHierarchyVersion(com.netsuite.webservices.platform.core_2019_1.SearchColumnStringField[] hierarchyVersion) {
+    public void setHierarchyVersion(com.netsuite.webservices.platform.core_2019_1.SearchColumnSelectField[] hierarchyVersion) {
         this.hierarchyVersion = hierarchyVersion;
     }
 
-    public com.netsuite.webservices.platform.core_2019_1.SearchColumnStringField getHierarchyVersion(int i) {
+    public com.netsuite.webservices.platform.core_2019_1.SearchColumnSelectField getHierarchyVersion(int i) {
         return this.hierarchyVersion[i];
     }
 
-    public void setHierarchyVersion(int i, com.netsuite.webservices.platform.core_2019_1.SearchColumnStringField _value) {
+    public void setHierarchyVersion(int i, com.netsuite.webservices.platform.core_2019_1.SearchColumnSelectField _value) {
         this.hierarchyVersion[i] = _value;
     }
 
@@ -216,7 +216,7 @@ public class MerchandiseHierarchyNodeSearchRowBasic  extends com.netsuite.webser
      * 
      * @return parentNode
      */
-    public com.netsuite.webservices.platform.core_2019_1.SearchColumnStringField[] getParentNode() {
+    public com.netsuite.webservices.platform.core_2019_1.SearchColumnSelectField[] getParentNode() {
         return parentNode;
     }
 
@@ -226,15 +226,15 @@ public class MerchandiseHierarchyNodeSearchRowBasic  extends com.netsuite.webser
      * 
      * @param parentNode
      */
-    public void setParentNode(com.netsuite.webservices.platform.core_2019_1.SearchColumnStringField[] parentNode) {
+    public void setParentNode(com.netsuite.webservices.platform.core_2019_1.SearchColumnSelectField[] parentNode) {
         this.parentNode = parentNode;
     }
 
-    public com.netsuite.webservices.platform.core_2019_1.SearchColumnStringField getParentNode(int i) {
+    public com.netsuite.webservices.platform.core_2019_1.SearchColumnSelectField getParentNode(int i) {
         return this.parentNode[i];
     }
 
-    public void setParentNode(int i, com.netsuite.webservices.platform.core_2019_1.SearchColumnStringField _value) {
+    public void setParentNode(int i, com.netsuite.webservices.platform.core_2019_1.SearchColumnSelectField _value) {
         this.parentNode[i] = _value;
     }
 
@@ -388,7 +388,7 @@ public class MerchandiseHierarchyNodeSearchRowBasic  extends com.netsuite.webser
         elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("hierarchyLevel");
         elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2019_1.platform.webservices.netsuite.com", "hierarchyLevel"));
-        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2019_1.platform.webservices.netsuite.com", "SearchColumnStringField"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2019_1.platform.webservices.netsuite.com", "SearchColumnSelectField"));
         elemField.setMinOccurs(0);
         elemField.setNillable(false);
         elemField.setMaxOccursUnbounded(true);
@@ -396,7 +396,7 @@ public class MerchandiseHierarchyNodeSearchRowBasic  extends com.netsuite.webser
         elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("hierarchyVersion");
         elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2019_1.platform.webservices.netsuite.com", "hierarchyVersion"));
-        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2019_1.platform.webservices.netsuite.com", "SearchColumnStringField"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2019_1.platform.webservices.netsuite.com", "SearchColumnSelectField"));
         elemField.setMinOccurs(0);
         elemField.setNillable(false);
         elemField.setMaxOccursUnbounded(true);
@@ -420,7 +420,7 @@ public class MerchandiseHierarchyNodeSearchRowBasic  extends com.netsuite.webser
         elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("parentNode");
         elemField.setXmlName(new javax.xml.namespace.QName("urn:common_2019_1.platform.webservices.netsuite.com", "parentNode"));
-        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2019_1.platform.webservices.netsuite.com", "SearchColumnStringField"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:core_2019_1.platform.webservices.netsuite.com", "SearchColumnSelectField"));
         elemField.setMinOccurs(0);
         elemField.setNillable(false);
         elemField.setMaxOccursUnbounded(true);

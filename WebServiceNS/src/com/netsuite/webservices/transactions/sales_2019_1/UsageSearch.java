@@ -10,6 +10,8 @@ package com.netsuite.webservices.transactions.sales_2019_1;
 public class UsageSearch  extends com.netsuite.webservices.platform.core_2019_1.SearchRecord  implements java.io.Serializable {
     private com.netsuite.webservices.platform.common_2019_1.UsageSearchBasic basic;
 
+    private com.netsuite.webservices.platform.common_2019_1.ChargeSearchBasic chargeJoin;
+
     private com.netsuite.webservices.platform.common_2019_1.CustomerSearchBasic customerJoin;
 
     private com.netsuite.webservices.platform.common_2019_1.ItemSearchBasic itemJoin;
@@ -21,10 +23,12 @@ public class UsageSearch  extends com.netsuite.webservices.platform.core_2019_1.
 
     public UsageSearch(
            com.netsuite.webservices.platform.common_2019_1.UsageSearchBasic basic,
+           com.netsuite.webservices.platform.common_2019_1.ChargeSearchBasic chargeJoin,
            com.netsuite.webservices.platform.common_2019_1.CustomerSearchBasic customerJoin,
            com.netsuite.webservices.platform.common_2019_1.ItemSearchBasic itemJoin,
            com.netsuite.webservices.platform.common_2019_1.ItemSearchBasic subscriptionPlanJoin) {
         this.basic = basic;
+        this.chargeJoin = chargeJoin;
         this.customerJoin = customerJoin;
         this.itemJoin = itemJoin;
         this.subscriptionPlanJoin = subscriptionPlanJoin;
@@ -48,6 +52,26 @@ public class UsageSearch  extends com.netsuite.webservices.platform.core_2019_1.
      */
     public void setBasic(com.netsuite.webservices.platform.common_2019_1.UsageSearchBasic basic) {
         this.basic = basic;
+    }
+
+
+    /**
+     * Gets the chargeJoin value for this UsageSearch.
+     * 
+     * @return chargeJoin
+     */
+    public com.netsuite.webservices.platform.common_2019_1.ChargeSearchBasic getChargeJoin() {
+        return chargeJoin;
+    }
+
+
+    /**
+     * Sets the chargeJoin value for this UsageSearch.
+     * 
+     * @param chargeJoin
+     */
+    public void setChargeJoin(com.netsuite.webservices.platform.common_2019_1.ChargeSearchBasic chargeJoin) {
+        this.chargeJoin = chargeJoin;
     }
 
 
@@ -125,6 +149,9 @@ public class UsageSearch  extends com.netsuite.webservices.platform.core_2019_1.
             ((this.basic==null && other.getBasic()==null) || 
              (this.basic!=null &&
               this.basic.equals(other.getBasic()))) &&
+            ((this.chargeJoin==null && other.getChargeJoin()==null) || 
+             (this.chargeJoin!=null &&
+              this.chargeJoin.equals(other.getChargeJoin()))) &&
             ((this.customerJoin==null && other.getCustomerJoin()==null) || 
              (this.customerJoin!=null &&
               this.customerJoin.equals(other.getCustomerJoin()))) &&
@@ -147,6 +174,9 @@ public class UsageSearch  extends com.netsuite.webservices.platform.core_2019_1.
         int _hashCode = super.hashCode();
         if (getBasic() != null) {
             _hashCode += getBasic().hashCode();
+        }
+        if (getChargeJoin() != null) {
+            _hashCode += getChargeJoin().hashCode();
         }
         if (getCustomerJoin() != null) {
             _hashCode += getCustomerJoin().hashCode();
@@ -171,6 +201,13 @@ public class UsageSearch  extends com.netsuite.webservices.platform.core_2019_1.
         elemField.setFieldName("basic");
         elemField.setXmlName(new javax.xml.namespace.QName("urn:sales_2019_1.transactions.webservices.netsuite.com", "basic"));
         elemField.setXmlType(new javax.xml.namespace.QName("urn:common_2019_1.platform.webservices.netsuite.com", "UsageSearchBasic"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("chargeJoin");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:sales_2019_1.transactions.webservices.netsuite.com", "chargeJoin"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:common_2019_1.platform.webservices.netsuite.com", "ChargeSearchBasic"));
         elemField.setMinOccurs(0);
         elemField.setNillable(false);
         typeDesc.addFieldDesc(elemField);

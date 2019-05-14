@@ -693,6 +693,40 @@ function(record, search, columnset) {
 		return resultSet;
 
 	}
+	
+	function getItemReceiptRMA(filterList) {
+
+		var filters = [ [ 'recordtype', 'is', 'itemreceipt' ] ];
+		if (filterList && filterList.length > 0) {
+			filters.push("and");
+			filters = filters.concat(filterList);
+		}
+
+		var columnList = columnset.setColumns(search.Type.ITEM_RECEIPT);
+		var joinColumns = columnset.setJoinColumns(search.Type.ITEM_RECEIPT);
+		var columns = [];
+		columns = columns.concat(columnList);
+		columns = columns.concat(joinColumns);
+
+		var pagedData = search.create({
+			type : search.Type.TRANSACTION,
+			filters : filters,
+			columns : columns
+		}).runPaged();
+
+		var resultSet = [];
+		pagedData.pageRanges.forEach(function(pageRange) {
+			var page = pagedData.fetch({
+				index : pageRange.index
+			});
+			page.data.forEach(function(result) {
+				resultSet.push(result);
+			});
+		});
+
+		return resultSet;
+
+	}
 	/*
 	 */
 	function createAndSaveOrderTransaction(fromType, toType, context) {
@@ -941,6 +975,7 @@ function(record, search, columnset) {
 		'getInventoryAdjustment' : getInventoryAdjustment,
 		'getPurchaseOrder' : getPurchaseOrder,
 		'getItemReceipt' : getItemReceipt,
+		'getItemReceiptRMA': getItemReceiptRMA,
 		//createAndSaveOrderTransaction
 		'createAndSaveOrderTransaction' : createAndSaveOrderTransaction,
 		'createAndSaveSalesOrderFulfillment' : createAndSaveSalesOrderFulfillment,

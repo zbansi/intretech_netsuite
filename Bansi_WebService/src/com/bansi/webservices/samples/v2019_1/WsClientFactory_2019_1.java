@@ -2,11 +2,9 @@ package com.bansi.webservices.samples.v2019_1;
 
 //import com.netsuite.suitetalk.client.v2017_2.WsClient;
 //import com.netsuite.suitetalk.proxy.v2017_2.platform.core.GetDataCenterUrlsResult;
-import org.apache.axis.AxisFault;
 
-import com.bansi.webservices.samples.v2017_2.Properties;
+import com.bansi.webservices.samples.v2019_1.Properties;
 import com.netsuite.webservices.platform.core_2019_1.GetDataCenterUrlsResult;
-import com.netsuite.webservices.platform.core_2019_1.StatusDetail;
 
 import java.net.MalformedURLException;
 import java.net.URL;

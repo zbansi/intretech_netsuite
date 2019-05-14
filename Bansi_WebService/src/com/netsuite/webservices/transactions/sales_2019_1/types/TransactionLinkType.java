@@ -75,6 +75,8 @@ public class TransactionLinkType implements java.io.Serializable {
     public static final java.lang.String __transferOrderFulfillmentReceipt = "_transferOrderFulfillmentReceipt";
     public static final java.lang.String __vendorBillVariance = "_vendorBillVariance";
     public static final java.lang.String __vendorRfqToPurchaseContract = "_vendorRfqToPurchaseContract";
+    public static final java.lang.String __waveOrder = "_waveOrder";
+    public static final java.lang.String __waveShipment = "_waveShipment";
     public static final java.lang.String __wipBuild = "_wipBuild";
     public static final java.lang.String __workOrderBuild = "_workOrderBuild";
     public static final TransactionLinkType _advancedCostAmortization = new TransactionLinkType(__advancedCostAmortization);
@@ -135,6 +137,8 @@ public class TransactionLinkType implements java.io.Serializable {
     public static final TransactionLinkType _transferOrderFulfillmentReceipt = new TransactionLinkType(__transferOrderFulfillmentReceipt);
     public static final TransactionLinkType _vendorBillVariance = new TransactionLinkType(__vendorBillVariance);
     public static final TransactionLinkType _vendorRfqToPurchaseContract = new TransactionLinkType(__vendorRfqToPurchaseContract);
+    public static final TransactionLinkType _waveOrder = new TransactionLinkType(__waveOrder);
+    public static final TransactionLinkType _waveShipment = new TransactionLinkType(__waveShipment);
     public static final TransactionLinkType _wipBuild = new TransactionLinkType(__wipBuild);
     public static final TransactionLinkType _workOrderBuild = new TransactionLinkType(__workOrderBuild);
     public java.lang.String getValue() { return _value_;}

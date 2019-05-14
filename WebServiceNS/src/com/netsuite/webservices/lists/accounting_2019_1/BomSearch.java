@@ -10,11 +10,11 @@ package com.netsuite.webservices.lists.accounting_2019_1;
 public class BomSearch  extends com.netsuite.webservices.platform.core_2019_1.SearchRecord  implements java.io.Serializable {
     private com.netsuite.webservices.platform.common_2019_1.BomSearchBasic basic;
 
+    private com.netsuite.webservices.platform.common_2019_1.AssemblyItemBomSearchBasic assemblyItemJoin;
+
     private com.netsuite.webservices.platform.common_2019_1.BomRevisionSearchBasic revisionJoin;
 
     private com.netsuite.webservices.platform.common_2019_1.TransactionSearchBasic transactionJoin;
-
-    private com.netsuite.webservices.platform.common_2019_1.AssemblyItemBomSearchBasic assemblyItemJoin;
 
     private com.netsuite.webservices.platform.common_2019_1.CustomSearchJoin[] customSearchJoin;
 
@@ -23,14 +23,14 @@ public class BomSearch  extends com.netsuite.webservices.platform.core_2019_1.Se
 
     public BomSearch(
            com.netsuite.webservices.platform.common_2019_1.BomSearchBasic basic,
+           com.netsuite.webservices.platform.common_2019_1.AssemblyItemBomSearchBasic assemblyItemJoin,
            com.netsuite.webservices.platform.common_2019_1.BomRevisionSearchBasic revisionJoin,
            com.netsuite.webservices.platform.common_2019_1.TransactionSearchBasic transactionJoin,
-           com.netsuite.webservices.platform.common_2019_1.AssemblyItemBomSearchBasic assemblyItemJoin,
            com.netsuite.webservices.platform.common_2019_1.CustomSearchJoin[] customSearchJoin) {
         this.basic = basic;
+        this.assemblyItemJoin = assemblyItemJoin;
         this.revisionJoin = revisionJoin;
         this.transactionJoin = transactionJoin;
-        this.assemblyItemJoin = assemblyItemJoin;
         this.customSearchJoin = customSearchJoin;
     }
 
@@ -52,6 +52,26 @@ public class BomSearch  extends com.netsuite.webservices.platform.core_2019_1.Se
      */
     public void setBasic(com.netsuite.webservices.platform.common_2019_1.BomSearchBasic basic) {
         this.basic = basic;
+    }
+
+
+    /**
+     * Gets the assemblyItemJoin value for this BomSearch.
+     * 
+     * @return assemblyItemJoin
+     */
+    public com.netsuite.webservices.platform.common_2019_1.AssemblyItemBomSearchBasic getAssemblyItemJoin() {
+        return assemblyItemJoin;
+    }
+
+
+    /**
+     * Sets the assemblyItemJoin value for this BomSearch.
+     * 
+     * @param assemblyItemJoin
+     */
+    public void setAssemblyItemJoin(com.netsuite.webservices.platform.common_2019_1.AssemblyItemBomSearchBasic assemblyItemJoin) {
+        this.assemblyItemJoin = assemblyItemJoin;
     }
 
 
@@ -92,26 +112,6 @@ public class BomSearch  extends com.netsuite.webservices.platform.core_2019_1.Se
      */
     public void setTransactionJoin(com.netsuite.webservices.platform.common_2019_1.TransactionSearchBasic transactionJoin) {
         this.transactionJoin = transactionJoin;
-    }
-
-
-    /**
-     * Gets the assemblyItemJoin value for this BomSearch.
-     * 
-     * @return assemblyItemJoin
-     */
-    public com.netsuite.webservices.platform.common_2019_1.AssemblyItemBomSearchBasic getAssemblyItemJoin() {
-        return assemblyItemJoin;
-    }
-
-
-    /**
-     * Sets the assemblyItemJoin value for this BomSearch.
-     * 
-     * @param assemblyItemJoin
-     */
-    public void setAssemblyItemJoin(com.netsuite.webservices.platform.common_2019_1.AssemblyItemBomSearchBasic assemblyItemJoin) {
-        this.assemblyItemJoin = assemblyItemJoin;
     }
 
 
@@ -157,15 +157,15 @@ public class BomSearch  extends com.netsuite.webservices.platform.core_2019_1.Se
             ((this.basic==null && other.getBasic()==null) || 
              (this.basic!=null &&
               this.basic.equals(other.getBasic()))) &&
+            ((this.assemblyItemJoin==null && other.getAssemblyItemJoin()==null) || 
+             (this.assemblyItemJoin!=null &&
+              this.assemblyItemJoin.equals(other.getAssemblyItemJoin()))) &&
             ((this.revisionJoin==null && other.getRevisionJoin()==null) || 
              (this.revisionJoin!=null &&
               this.revisionJoin.equals(other.getRevisionJoin()))) &&
             ((this.transactionJoin==null && other.getTransactionJoin()==null) || 
              (this.transactionJoin!=null &&
               this.transactionJoin.equals(other.getTransactionJoin()))) &&
-            ((this.assemblyItemJoin==null && other.getAssemblyItemJoin()==null) || 
-             (this.assemblyItemJoin!=null &&
-              this.assemblyItemJoin.equals(other.getAssemblyItemJoin()))) &&
             ((this.customSearchJoin==null && other.getCustomSearchJoin()==null) || 
              (this.customSearchJoin!=null &&
               java.util.Arrays.equals(this.customSearchJoin, other.getCustomSearchJoin())));
@@ -183,14 +183,14 @@ public class BomSearch  extends com.netsuite.webservices.platform.core_2019_1.Se
         if (getBasic() != null) {
             _hashCode += getBasic().hashCode();
         }
+        if (getAssemblyItemJoin() != null) {
+            _hashCode += getAssemblyItemJoin().hashCode();
+        }
         if (getRevisionJoin() != null) {
             _hashCode += getRevisionJoin().hashCode();
         }
         if (getTransactionJoin() != null) {
             _hashCode += getTransactionJoin().hashCode();
-        }
-        if (getAssemblyItemJoin() != null) {
-            _hashCode += getAssemblyItemJoin().hashCode();
         }
         if (getCustomSearchJoin() != null) {
             for (int i=0;
@@ -221,6 +221,13 @@ public class BomSearch  extends com.netsuite.webservices.platform.core_2019_1.Se
         elemField.setNillable(false);
         typeDesc.addFieldDesc(elemField);
         elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("assemblyItemJoin");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2019_1.lists.webservices.netsuite.com", "assemblyItemJoin"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:common_2019_1.platform.webservices.netsuite.com", "AssemblyItemBomSearchBasic"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("revisionJoin");
         elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2019_1.lists.webservices.netsuite.com", "revisionJoin"));
         elemField.setXmlType(new javax.xml.namespace.QName("urn:common_2019_1.platform.webservices.netsuite.com", "BomRevisionSearchBasic"));
@@ -231,13 +238,6 @@ public class BomSearch  extends com.netsuite.webservices.platform.core_2019_1.Se
         elemField.setFieldName("transactionJoin");
         elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2019_1.lists.webservices.netsuite.com", "transactionJoin"));
         elemField.setXmlType(new javax.xml.namespace.QName("urn:common_2019_1.platform.webservices.netsuite.com", "TransactionSearchBasic"));
-        elemField.setMinOccurs(0);
-        elemField.setNillable(false);
-        typeDesc.addFieldDesc(elemField);
-        elemField = new org.apache.axis.description.ElementDesc();
-        elemField.setFieldName("assemblyItemJoin");
-        elemField.setXmlName(new javax.xml.namespace.QName("urn:accounting_2019_1.lists.webservices.netsuite.com", "assemblyItemJoin"));
-        elemField.setXmlType(new javax.xml.namespace.QName("urn:common_2019_1.platform.webservices.netsuite.com", "AssemblyItemBomSearchBasic"));
         elemField.setMinOccurs(0);
         elemField.setNillable(false);
         typeDesc.addFieldDesc(elemField);
