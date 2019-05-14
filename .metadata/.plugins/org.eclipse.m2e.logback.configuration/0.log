@@ -1060,3 +1060,4 @@
 2019-04-29 14:56:20,494 [Worker-431] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Changed resources require a complete clean of filtered resources of seckill
 2019-04-29 14:56:20,499 [Worker-431] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Executing resource filtering for seckill
 2019-04-29 14:56:20,579 [Worker-431] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (GBK actually) to copy filtered resources, i.e. build is platform dependent!
+2019-05-14 15:11:51,483 [Worker-6] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Cleaning filtered folder for seckill

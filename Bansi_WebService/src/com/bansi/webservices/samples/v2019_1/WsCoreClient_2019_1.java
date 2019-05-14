@@ -56,7 +56,7 @@ import static com.bansi.webservices.samples.v2019_1.Utils.convertTokenPassport;
  * port to NetSuite which all possible remote operations can be called on.</p>
  * <p>&copy; 2017 NetSuite Inc.</p>
  *
- * @version 2017.2
+ * @version 2019.1
  */
 @ParametersAreNonnullByDefault
 public class WsCoreClient_2019_1 implements Authentication, EndpointInfo, SoapHeaderHandler, HttpHeaderHandler {

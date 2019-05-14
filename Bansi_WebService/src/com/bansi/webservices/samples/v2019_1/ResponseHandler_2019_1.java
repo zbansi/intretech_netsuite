@@ -50,6 +50,7 @@ public final class ResponseHandler_2019_1 {
 			printError(FAILED_SAVING_CUSTOMER + response.getStatus().getStatusDetail(0).getMessage());
 		}
 		*/
+		
 		if (response.getStatus()[0].getAfterSubmitFailed()) {
 			printWithEmptyLine(SUCCESSFUL_SAVING_CUSTOMER);
 			printMap(new Fields(response, customer));

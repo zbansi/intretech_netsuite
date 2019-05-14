@@ -1,0 +1,5 @@
+package com.netsuite.webservices.platform.core_2019_1;
+
+public class SearchEnumMultiSelectField {
+
+}

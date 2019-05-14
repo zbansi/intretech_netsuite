@@ -841,17 +841,26 @@ public class SampleOperations_2019_1 {
 			}
 
 			// Search sales order for all found customers
-			SearchEnumMultiSelectCustomField entities = new SearchEnumMultiSelectCustomField();
-			entities.setOperator(SearchEnumMultiSelectFieldOperator.anyOf);
+			/*modified by Bansi  2019/5/14
+			SearchMultiSelectField entities = new SearchMultiSelectField();
+			entities.setOperator(SearchMultiSelectFieldOperator.anyOf);
 			
 			//entities.setSearchValue(customers.stream().map(customer->));
 			
 			entities.setSearchValue(
 					customers.stream().map(customer -> createRecordRef(customer.getInternalId(), RecordType.customer)).toArray(RecordRef[]::new));
-
+			*/
 			TransactionSearchBasic transactionSearchBasic = new TransactionSearchBasic();
-			transactionSearchBasic.setType(new SearchEnumMultiSelectField(new String[] { RecordType._salesOrder }, SearchEnumMultiSelectFieldOperator.anyOf));
+			/* modified by Bansi 2019/5/14
+			transactionSearchBasic.setType(new SearchEnumMultiSelectField(
+					new String[] { RecordType._salesOrder }, SearchEnumMultiSelectFieldOperator.anyOf));
 			transactionSearchBasic.setEntity(entities);
+			*/
+
+			RecordRef[] entitiess = customers.stream().map(customer -> createRecordRef(customer.getInternalId(), RecordType.customer))
+					.toArray(RecordRef[]::new);
+			transactionSearchBasic.setType(new String[] { RecordType._salesOrder });
+			transactionSearchBasic.setEntity(entitiess);
 
 			// We want to returned also list of items so we need to set the following preference
 			client.setBodyFieldsOnly(false);
@@ -888,12 +897,16 @@ public class SampleOperations_2019_1 {
 		SAMPLE_OPERATIONS.put(ADVANCED_SEARCH_SALES_ORDERS, () -> {
 			printEmptyLine();
 
-			SearchEnumMultiSelectCustomField recordType = new SearchEnumMultiSelectCustomField();
+			/*
+			SearchEnumMultiSelectField recordType = new SearchEnumMultiSelectField();
 			recordType.setOperator(SearchEnumMultiSelectFieldOperator.anyOf);
-			recordType.setSearchValue(new String[]{RecordType._salesOrder});
-
+			recordType.setSearchValue(new String[] { RecordType._salesOrder });
+			*/
 			TransactionSearchBasic transactionSearchBasic = new TransactionSearchBasic();
-			transactionSearchBasic.setType(recordType);
+			//--modified by Bansi 20190514 
+			//transactionSearchBasic.setType(recordType.getSearchValue());
+			transactionSearchBasic.setType(new String[] { RecordType._salesOrder });
+
 			// In order to have a particular sales order in search result just once, set the following field.
 			transactionSearchBasic.setMainLine(new SearchBooleanField(true));
 
@@ -907,10 +920,16 @@ public class SampleOperations_2019_1 {
 
 			final List<String> customerIds = getListItems(readLine(ENTER_CUSTOMER_INTERNAL_ID_FOR_SALES_ORDER_SEARCH));
 			if (!customerIds.isEmpty()) {
-				SearchEnumMultiSelectCustomField entityField = new SearchEnumMultiSelectCustomField();
+				//SearchColumnEnumSelectField
+				/* modified by Bansi at 2019/5/14 am
+				SearchEnumMultiSelectField entityField = new SearchEnumMultiSelectField();
 				entityField.setOperator(SearchEnumMultiSelectFieldOperator.anyOf);
+				
 				entityField.setSearchValue(customerIds.stream().map(Utils::createRecordRef).toArray(RecordRef[]::new));
 				transactionSearchBasic.setEntity(entityField);
+				*/
+				RecordRef[] entities = customerIds.stream().map(Utils::createRecordRef).toArray(RecordRef[]::new);
+				transactionSearchBasic.setEntity(entities);
 			}
 
 			// Apply search criteria

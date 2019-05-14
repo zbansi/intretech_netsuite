@@ -1,6 +1,5 @@
 package com.bansi.webservices.samples.v2019_1;
 
-import com.bansi.webservices.samples.v2017_2.Properties;
 import com.netsuite.suitetalk.client.common.authentication.OAuthPassport;
 import com.netsuite.suitetalk.client.common.authentication.Passport;
 import com.netsuite.suitetalk.client.common.authentication.SsoPassport;
