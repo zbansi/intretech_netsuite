@@ -9,7 +9,6 @@ import com.netsuite.webservices.platform.common_2019_1.ItemSearchRowBasic;
 import com.netsuite.webservices.platform.core_2019_1.Record;
 import com.netsuite.webservices.platform.core_2019_1.SearchColumnStringField;
 import com.netsuite.webservices.platform.core_2019_1.SearchResult;
-import com.netsuite.webservices.platform.core_2019_1.SearchRowList;
 import com.netsuite.webservices.transactions.sales_2019_1.SalesOrder;
 import com.netsuite.webservices.transactions.sales_2019_1.SalesOrderItem;
 

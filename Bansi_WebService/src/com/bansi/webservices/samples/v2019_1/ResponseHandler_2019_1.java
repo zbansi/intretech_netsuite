@@ -8,6 +8,7 @@ import com.netsuite.webservices.platform.core_2019_1.CustomRecordRef;
 import com.netsuite.webservices.platform.core_2019_1.Record;
 import com.netsuite.webservices.platform.core_2019_1.RecordRef;
 import com.netsuite.webservices.platform.core_2019_1.SearchResult;
+import com.netsuite.webservices.platform.core_2019_1.StatusDetail;
 import com.netsuite.webservices.platform.messages_2019_1.ReadResponse;
 import com.netsuite.webservices.platform.messages_2019_1.ReadResponseList;
 import com.netsuite.webservices.platform.messages_2019_1.WriteResponse;
@@ -50,8 +51,11 @@ public final class ResponseHandler_2019_1 {
 			printError(FAILED_SAVING_CUSTOMER + response.getStatus().getStatusDetail(0).getMessage());
 		}
 		*/
-		
-		if (response.getStatus()[0].getAfterSubmitFailed()) {
+		Boolean isIsSuccess = true;
+		for (StatusDetail sd : response.getStatus()) {
+			isIsSuccess = !sd.getAfterSubmitFailed() && isIsSuccess;
+		}
+		if (isIsSuccess) {
 			printWithEmptyLine(SUCCESSFUL_SAVING_CUSTOMER);
 			printMap(new Fields(response, customer));
 		} else {
@@ -67,7 +71,11 @@ public final class ResponseHandler_2019_1 {
 		for (int i = 0; i < responses.length; i++) {
 			final WriteResponse response = responses[i];
 			final Customer customer = customers.get(i);
-			if (response.getStatus()[0].getAfterSubmitFailed()) {
+			Boolean isIsSuccess = true;
+			for (StatusDetail sd : response.getStatus()) {
+				isIsSuccess = !sd.getAfterSubmitFailed() && isIsSuccess;
+			}
+			if (isIsSuccess) {
 				successfulResponses.put(response, customer);
 			} else {
 				failedResponses.put(response, customer);
@@ -103,7 +111,11 @@ public final class ResponseHandler_2019_1 {
 	}
 
 	public static void processCustomerReadResponse(ReadResponse response) {
-		if (!response.getStatus()[0].getAfterSubmitFailed()) {
+		Boolean isIsSuccess = true;
+		for (StatusDetail sd : response.getStatus()) {
+			isIsSuccess = !sd.getAfterSubmitFailed() && isIsSuccess;
+		}
+		if (isIsSuccess) {
 			printError(response.getStatus()[0].getMessage());
 			return;
 		}
@@ -117,7 +129,11 @@ public final class ResponseHandler_2019_1 {
 		for (int i = 0; i < responses.length; i++) {
 			final ReadResponse response = responses[i];
 			printWithEmptyLine(getIndentedString(CUSTOMER_WITH_INDEX), i + 1);
-			if (response.getStatus()[0].getAfterSubmitFailed()) {
+			Boolean isIsSuccess = true;
+			for (StatusDetail sd : response.getStatus()) {
+				isIsSuccess = !sd.getAfterSubmitFailed() && isIsSuccess;
+			}
+			if (isIsSuccess) {
 				printMap(new Fields((Customer) response.getRecord()));
 			} else {
 				final String internalId = recordRefs[i].getInternalId();
@@ -133,7 +149,11 @@ public final class ResponseHandler_2019_1 {
 		for (int i = 0; i < responses.length; i++) {
 			printWithEmptyLine(getIndentedString(CUSTOMER_WITH_INDEX), i + 1);
 			final WriteResponse response = responses[i];
-			if (response.getStatus()[0].getAfterSubmitFailed()) {
+			Boolean isIsSuccess = true;
+			for (StatusDetail sd : response.getStatus()) {
+				isIsSuccess = !sd.getAfterSubmitFailed() && isIsSuccess;
+			}
+			if (isIsSuccess) {
 				printMap(new Fields(getInternalId(response)));
 			} else {
 				printMap(new Fields(recordRefs[i].getInternalId(), getErrorMessage(response)));
@@ -142,27 +162,37 @@ public final class ResponseHandler_2019_1 {
 	}
 
 	public static void processItemWriteResponse(WriteResponse response, InventoryItem item) {
-		if (response.getStatus()[0].getAfterSubmitFailed()) {
+		Boolean isIsSuccess = true;
+		for (StatusDetail sd : response.getStatus()) {
+			isIsSuccess = !sd.getAfterSubmitFailed() && isIsSuccess;
+		}
+		if (isIsSuccess) {
 			printWithEmptyLine(ITEM_SUCCESSFULLY_ADDED, item.getItemId());
 			printMap(new Fields(getInternalId(response)));
 		} else {
 			printError(ITEM_WAS_NOT_ADDED, item.getItemId(), getErrorMessage(response));
 		}
 	}
-	
+
 	public static void processBomWriteResponse(WriteResponse response, Bom bom) {
-		if (response.getStatus()[0].getAfterSubmitFailed()) {
+		Boolean isIsSuccess = true;
+		for (StatusDetail sd : response.getStatus()) {
+			isIsSuccess = !sd.getAfterSubmitFailed() && isIsSuccess;
+		}
+		if (isIsSuccess) {
 			printWithEmptyLine(BOM_SUCCESSFULLY_ADDED, bom.getName());
 			printMap(new Fields(getInternalId(response)));
 		} else {
 			printError(BOM_WAS_NOT_ADDED, bom.getName(), getErrorMessage(response));
 		}
 	}
-	
-	
-	
+
 	public static void processLotNumberedItemWriteResponse(WriteResponse response, LotNumberedInventoryItem item) {
-		if (response.getStatus()[0].getAfterSubmitFailed()) {
+		Boolean isIsSuccess = true;
+		for (StatusDetail sd : response.getStatus()) {
+			isIsSuccess = !sd.getAfterSubmitFailed() && isIsSuccess;
+		}
+		if (isIsSuccess) {
 			printWithEmptyLine(ITEM_SUCCESSFULLY_ADDED, item.getItemId());
 			printMap(new Fields(getInternalId(response)));
 		} else {
@@ -179,8 +209,12 @@ public final class ResponseHandler_2019_1 {
 	}
 
 	public static void processLotNumberedInventoryItemReadResponse(ReadResponse response) {
-		if (!response.getStatus()[0].getAfterSubmitFailed()) {
-			printError(response.getStatus()[0].getMessage());
+		Boolean isIsSuccess = true;
+		for (StatusDetail sd : response.getStatus()) {
+			isIsSuccess = !sd.getAfterSubmitFailed() && isIsSuccess;
+		}
+		if (!isIsSuccess) {
+			printError("lotnumbered inventoryitem read failed", getErrorMessage(response));
 			return;
 		}
 		printWithEmptyLine(RETRIEVED_RECORD);
@@ -188,7 +222,11 @@ public final class ResponseHandler_2019_1 {
 	}
 
 	public static void processSalesOrderWriteResponse(WriteResponse response) {
-		if (response.getStatus()[0].getAfterSubmitFailed()) {
+		Boolean isIsSuccess = true;
+		for (StatusDetail sd : response.getStatus()) {
+			isIsSuccess = !sd.getAfterSubmitFailed() && isIsSuccess;
+		}
+		if (isIsSuccess) {
 			printWithEmptyLine(SALES_ORDER_CREATED_OR_UPDATED_SUCCESSFULLY);
 			printMap(new Fields(getInternalId(response)));
 		} else {
@@ -197,7 +235,11 @@ public final class ResponseHandler_2019_1 {
 	}
 
 	public static ItemFulfillment processInitializeReadResponse(ReadResponse response) {
-		if (response.getStatus()[0].getAfterSubmitFailed()) {
+		Boolean isIsSuccess = true;
+		for (StatusDetail sd : response.getStatus()) {
+			isIsSuccess = !sd.getAfterSubmitFailed() && isIsSuccess;
+		}
+		if (isIsSuccess) {
 			printWithEmptyLine(ITEM_FULFILLMENT_RETRIEVED);
 			return (ItemFulfillment) response.getRecord();
 		}
@@ -206,7 +248,11 @@ public final class ResponseHandler_2019_1 {
 	}
 
 	public static void processItemFulfillmentWriteResponse(WriteResponse response, String salesOrderInternalId) {
-		if (response.getStatus()[0].getAfterSubmitFailed()) {
+		Boolean isIsSuccess = true;
+		for (StatusDetail sd : response.getStatus()) {
+			isIsSuccess = !sd.getAfterSubmitFailed() && isIsSuccess;
+		}
+		if (isIsSuccess) {
 			printWithEmptyLine(SALES_ORDER_FULFILLED, salesOrderInternalId, getInternalId(response));
 		} else {
 			printError(SALES_ORDER_NOT_FULFILLED, getErrorMessage(response));
@@ -214,7 +260,11 @@ public final class ResponseHandler_2019_1 {
 	}
 
 	public static void processCustomRecordWriteResponse(WriteResponse response, CustomRecord customRecord) {
-		if (response.getStatus()[0].getAfterSubmitFailed()) {
+		Boolean isIsSuccess = true;
+		for (StatusDetail sd : response.getStatus()) {
+			isIsSuccess = !sd.getAfterSubmitFailed() && isIsSuccess;
+		}
+		if (isIsSuccess) {
 			printWithEmptyLine(CUSTOM_RECORD_SUCCESSFULLY_ADDED);
 			customRecord.setInternalId(((CustomRecordRef) response.getBaseRef()).getInternalId());
 			printMap(new Fields(customRecord));
@@ -224,7 +274,11 @@ public final class ResponseHandler_2019_1 {
 	}
 
 	public static void processCustomRecordWriteResponse(WriteResponse response) {
-		if (response.getStatus()[0].getAfterSubmitFailed()) {
+		Boolean isIsSuccess = true;
+		for (StatusDetail sd : response.getStatus()) {
+			isIsSuccess = !sd.getAfterSubmitFailed() && isIsSuccess;
+		}
+		if (isIsSuccess) {
 			printWithEmptyLine(CUSTOM_RECORD_SUCCESSFULLY_DELETED);
 			CustomRecordRef customRecordRef = (CustomRecordRef) response.getBaseRef();
 			Fields fields = new Fields();
@@ -237,7 +291,11 @@ public final class ResponseHandler_2019_1 {
 	}
 
 	public static void processFileUploadWriteResponse(WriteResponse response) {
-		if (response.getStatus()[0].getAfterSubmitFailed()) {
+		Boolean isIsSuccess = true;
+		for (StatusDetail sd : response.getStatus()) {
+			isIsSuccess = !sd.getAfterSubmitFailed() && isIsSuccess;
+		}
+		if (isIsSuccess) {
 			printWithEmptyLine(FILE_UPLOADED);
 			printMap(new Fields(getInternalId(response)));
 		} else {
@@ -247,7 +305,12 @@ public final class ResponseHandler_2019_1 {
 
 	public static void processSearchResult(SearchResult searchResult, @Nullable String customerName) {
 		final boolean isCustomerNameNull = customerName == null;
-		if (searchResult == null || (searchResult.getStatus()[0].getAfterSubmitFailed() && searchResult.getTotalRecords() == 0)) {
+		Boolean isIsSuccess = true;
+		for (StatusDetail sd : searchResult.getStatus()) {
+			isIsSuccess = !sd.getAfterSubmitFailed() && isIsSuccess;
+		}
+
+		if (searchResult == null || (isIsSuccess && searchResult.getTotalRecords() == 0)) {
 			if (isCustomerNameNull) {
 				printWithEmptyLine(NO_SALES_ORDERS_FOUND);
 			} else {
@@ -255,7 +318,7 @@ public final class ResponseHandler_2019_1 {
 			}
 			return;
 		}
-		if (searchResult.getStatus()[0].getAfterSubmitFailed()) {
+		if (isIsSuccess) {
 			final int currentPageIndex = searchResult.getPageIndex();
 			final int firstIndexOnCurrentPage = calculateFirstIndexOnPage(searchResult.getPageSize(), currentPageIndex);
 
@@ -290,11 +353,15 @@ public final class ResponseHandler_2019_1 {
 	}
 
 	public static void processSearchResult(SearchResult searchResult) {
-		if (searchResult == null || (searchResult.getStatus()[0].getAfterSubmitFailed() && searchResult.getTotalRecords() == 0)) {
+		Boolean isIsSuccess = true;
+		for (StatusDetail sd : searchResult.getStatus()) {
+			isIsSuccess = !sd.getAfterSubmitFailed() && isIsSuccess;
+		}
+		if (searchResult == null || (isIsSuccess && searchResult.getTotalRecords() == 0)) {
 			printWithEmptyLine(NO_CUSTOM_RECORDS_FOUND);
 			return;
 		}
-		if (searchResult.getStatus()[0].getAfterSubmitFailed()) {
+		if (isIsSuccess) {
 			final int currentPageIndex = searchResult.getPageIndex();
 			final int firstIndexOnCurrentPage = calculateFirstIndexOnPage(searchResult.getPageSize(), currentPageIndex);
 

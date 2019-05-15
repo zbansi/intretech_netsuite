@@ -51,7 +51,6 @@
 <fullyQualifiedTypeName name="com.netsuite.suitetalk.client.v2017_2.WsCoreClient"/>
 <fullyQualifiedTypeName name="com.netsuite.suitetalk.client.common.contract.WebServicesSoapClient"/>
 <fullyQualifiedTypeName name="com.netsuite.webservices.platform.core_2019_1.SearchRow"/>
-<fullyQualifiedTypeName name="com.netsuite.webservices.platform.core_2019_1.StatusDetail"/>
 <fullyQualifiedTypeName name="com.netsuite.webservices.platform.core_2019_1.GetDataCenterUrlsResult"/>
 <fullyQualifiedTypeName name="com.bansi.webservices.samples.Utils"/>
 <fullyQualifiedTypeName name="com.bansi.webservices.samples.Properties"/>
@@ -60,4 +59,5 @@
 <fullyQualifiedTypeName name="com.bansi.webservices.samples.utils_2019_1.PrintUtils"/>
 <fullyQualifiedTypeName name="com.netsuite.webservices.platform.core_2019_1.types.SearchDateFieldOperator"/>
 <fullyQualifiedTypeName name="com.netsuite.webservices.platform.core_2019_1.types.SearchEnumMultiSelectFieldOperator"/>
+<fullyQualifiedTypeName name="com.netsuite.webservices.platform.core_2019_1.StatusDetail"/>
 </qualifiedTypeNameHistroy>
