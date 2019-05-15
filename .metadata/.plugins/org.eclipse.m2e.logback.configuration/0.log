@@ -1219,3 +1219,7 @@ org.eclipse.core.runtime.CoreException: Launch configuration SalesforceExample r
 2019-05-15 06:56:11,848 [Worker-394] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\workspaceNS\WebServiceNS\src\main\resources
 2019-05-15 06:56:11,849 [Worker-394] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (GBK actually) to copy filtered resources, i.e. build is platform dependent!
 2019-05-15 06:56:11,850 [Worker-394] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\workspaceNS\WebServiceNS\src\test\resources
+2019-05-15 08:39:33,438 [Worker-11] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (GBK actually) to copy filtered resources, i.e. build is platform dependent!
+2019-05-15 08:39:33,608 [Worker-11] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\workspaceNS\WebServiceNS\src\main\resources
+2019-05-15 08:39:33,610 [Worker-11] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (GBK actually) to copy filtered resources, i.e. build is platform dependent!
+2019-05-15 08:39:33,611 [Worker-11] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\workspaceNS\WebServiceNS\src\test\resources

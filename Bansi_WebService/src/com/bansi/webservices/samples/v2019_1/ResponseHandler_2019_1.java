@@ -113,10 +113,13 @@ public final class ResponseHandler_2019_1 {
 	public static void processCustomerReadResponse(ReadResponse response) {
 		Boolean isIsSuccess = true;
 		for (StatusDetail sd : response.getStatus()) {
-			isIsSuccess = !sd.getAfterSubmitFailed() && isIsSuccess;
+			if (sd.getAfterSubmitFailed() != null) {
+				isIsSuccess = !sd.getAfterSubmitFailed() && isIsSuccess;
+			} else
+				isIsSuccess = false;
 		}
-		if (isIsSuccess) {
-			printError(response.getStatus()[0].getMessage());
+		if (!isIsSuccess) {
+			printError("read failed: %s", getErrorMessage(response));
 			return;
 		}
 		printWithEmptyLine(RETRIEVED_RECORD);
