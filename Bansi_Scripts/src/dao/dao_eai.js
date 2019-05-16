@@ -693,7 +693,7 @@ function(record, search, columnset) {
 		return resultSet;
 
 	}
-	
+
 	function getItemReceiptRMA(filterList) {
 
 		var filters = [ [ 'recordtype', 'is', 'itemreceipt' ] ];
@@ -751,11 +751,20 @@ function(record, search, columnset) {
 				title : 'rec ',
 				details : rec
 			});
-			transaction.item.forEach(function(item) {
+			var transactionLines = Object.create(null);
+			var sublistId = null;
+			if (transaction.hasOwnProperty('item')) {
+				transactionLines = transaction.item;
+				sublistId = 'item';
+			} else if (transaction.hasOwnProperty('components')) {
+				transactionLines = transaction.components;
+				sublistId = 'components'
+			}
+			transactionLines.forEach(function(item) {
 				for ( var itemKey in item) {
 					if (item.hasOwnProperty(itemKey) && itemKey != 'inventorydetail') {
 						rec.setSublistValue({
-							sublistId : 'item',
+							sublistId : sublistId,
 							fieldId : itemKey,
 							value : item[itemKey],
 							line : itemLine
@@ -763,7 +772,7 @@ function(record, search, columnset) {
 					}
 				}
 				var subrec = rec.getSublistSubrecord({
-					sublistId : 'item',
+					sublistId : sublistId,
 					line : itemLine,
 					fieldId : 'inventorydetail'
 				});
@@ -975,7 +984,7 @@ function(record, search, columnset) {
 		'getInventoryAdjustment' : getInventoryAdjustment,
 		'getPurchaseOrder' : getPurchaseOrder,
 		'getItemReceipt' : getItemReceipt,
-		'getItemReceiptRMA': getItemReceiptRMA,
+		'getItemReceiptRMA' : getItemReceiptRMA,
 		//createAndSaveOrderTransaction
 		'createAndSaveOrderTransaction' : createAndSaveOrderTransaction,
 		'createAndSaveSalesOrderFulfillment' : createAndSaveSalesOrderFulfillment,
