@@ -1,8 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="com.netsuite.webservices.platform_2017_1.NetSuitePortType"/>
-<fullyQualifiedTypeName name="com.netsuite.webservices.platform_2017_1.NetSuiteServiceLocator"/>
-<fullyQualifiedTypeName name="com.netsuite.webservices.platform.core_2018_2.Passport"/>
 <fullyQualifiedTypeName name="com.netsuite.webservices.platform_2018_2.NetSuiteBindingStub"/>
 <fullyQualifiedTypeName name="com.netsuite.webservices.general.communication_2018_2.Message"/>
 <fullyQualifiedTypeName name="com.netsuite.webservices.platform.messages_2018_2.WriteResponse"/>
@@ -60,4 +57,7 @@
 <fullyQualifiedTypeName name="com.netsuite.webservices.lists.accounting_2019_1.ItemSearch"/>
 <fullyQualifiedTypeName name="com.netsuite.webservices.platform.messages_2019_1.SearchPreferences"/>
 <fullyQualifiedTypeName name="com.netsuite.webservices.platform.common_2019_1.ItemSearchBasic"/>
+<fullyQualifiedTypeName name="com.netsuite.webservices.lists.accounting_2019_1.BomRevisionComponent"/>
+<fullyQualifiedTypeName name="com.netsuite.webservices.lists.accounting_2019_1.BomRevision"/>
+<fullyQualifiedTypeName name="java.util.GregorianCalendar"/>
 </qualifiedTypeNameHistroy>

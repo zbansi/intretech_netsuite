@@ -19,6 +19,7 @@ import com.netsuite.webservices.transactions.sales_2019_1.SalesOrder;
 import com.netsuite.webservices.transactions.sales_2019_1.TransactionSearchRow;
 import com.bansi.webservices.samples.v2019_1.Fields;
 import com.netsuite.webservices.lists.accounting_2019_1.Bom;
+import com.netsuite.webservices.lists.accounting_2019_1.BomRevision;
 
 import javax.annotation.Nullable;
 import javax.annotation.ParametersAreNonnullByDefault;
@@ -192,6 +193,23 @@ public final class ResponseHandler_2019_1 {
 			printMap(new Fields(getInternalId(response)));
 		} else {
 			printError(BOM_WAS_NOT_ADDED, bom.getName(), getErrorMessage(response));
+		}
+	}
+	
+	public static void processBomRevisionWriteResponse(WriteResponse response, BomRevision bomRev) {
+		Boolean isIsSuccess = true;
+		if (response.getStatus() != null) {
+			for (StatusDetail sd : response.getStatus()) {
+				isIsSuccess = !sd.getAfterSubmitFailed() && isIsSuccess;
+			}
+		} else {
+			isIsSuccess = false;
+		}
+		if (isIsSuccess) {
+			printWithEmptyLine(BOM_REVISION_SUCCESSFULLY_ADDED, bomRev.getName());
+			printMap(new Fields(getInternalId(response)));
+		} else {
+			printError(BOM_REVISION_WAS_NOT_ADDED, bomRev.getName(), getErrorMessage(response));
 		}
 	}
 

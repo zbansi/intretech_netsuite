@@ -30,17 +30,15 @@ function(record, search, runtime, dao) {
 	 */
 	function doPost(requestBody) {
 		var scriptObj = runtime.getCurrentScript();
-		log.debug("Remaining governance units: "
-				+ scriptObj.getRemainingUsage());
+		log.debug("Remaining governance units: " + scriptObj.getRemainingUsage());
 		try {
-			var r = dao.createAndSaveBomAllRecord(requestBody);
+			var r = dao.upsertBomAllRecord('POST', requestBody);
 			log.debug({
 				title : 'addSuccess',
 				details : JSON.stringify(r)
 			});
 
-			log.debug("Remaining governance units: "
-					+ scriptObj.getRemainingUsage());
+			log.debug("Remaining governance units: " + scriptObj.getRemainingUsage());
 			return {
 				'isSuccess' : true,
 				'bomData' : r
@@ -50,7 +48,8 @@ function(record, search, runtime, dao) {
 				title : 'Post bom error: ' + e.name,
 				details : e.message
 
-			})
+			});
+			return e;
 		}
 	}
 

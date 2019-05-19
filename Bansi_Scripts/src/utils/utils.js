@@ -75,15 +75,69 @@ function() {
 			if (!args[i] && args[i] !== 0)
 				throw error.create({
 					name : 'MISSING_REQ_ARG',
-					message : 'Missing a required argument: [' + argNames[i]
-							+ '] for method: ' + methodName
+					message : 'Missing a required argument: [' + argNames[i] + '] for method: ' + methodName
 				});
+	}
+
+	/**
+	 * 过滤对象中的""、null、 undefined、test,并返回新对象
+	 * 
+	 * @param {obj} obj
+	 * @param {test} test
+	 */
+	function dealObjectValue(obj, testValue) {
+		var param = Object.create(null);
+		if (obj === null || obj === undefined || obj === "")
+			return param;
+		for ( var key in obj) {
+			if (dataType(obj[key]) === "Object") {
+				param[key] = dealObjectValue(obj[key]);
+			} else if (obj[key] !== null && obj[key] !== undefined && obj[key] !== "" && obj[key] != testValue) {
+				param[key] = obj[key];
+			}
+		}
+		return param;
+
+	}
+
+	/**
+	 * 过滤对象中特定key,并返回新对象
+	 * 
+	 * @param {obj} obj
+	 * @param {test} test
+	 */
+	function dealObjectKey(obj, testKey) {
+		var param = Object.create(null);
+		if (obj === null || obj === undefined || obj === "")
+			return param;
+		for ( var key in obj) {
+			if (key != testKey) {
+				param[key] = obj[key];
+			}
+		}
+		return param;
+	}
+
+	/**
+	 * 判断传入参数的类型，以字符串的形式返回
+	 * 
+	 * @obj: data
+	 */
+	function dataType(obj) {
+		if (obj === null)
+			return "Null";
+		if (obj === undefined)
+			return "Undefined";
+		return Object.prototype.toString.call(obj).slice(8, -1);
 	}
 
 	return {
 		'filterExpressionString2Array' : filterExpressionString2Array,
 		'string2Array' : string2Array,
 		'string2JSONObject' : string2JSONObject,
-		'doValidation' : doValidation
+		'doValidation' : doValidation,
+		'dealObjectValue' : dealObjectValue,
+		'dealObjectKey' : dealObjectKey,
+		'dataType' : dataType
 	};
 });

@@ -10,15 +10,16 @@
 //	DELETE
 //
 //////////////////////////////////////////////////////////
-define([ 'N/record', 'N/search', 'N/runtime', 'dao' ],
+define([ 'N/record', 'N/search', 'N/runtime', 'dao', '../../src/utils/utils' ],
 /**
  * @param {record} record
  * @param {search} search
  * @param {runtime} runtime
  * @param {dao} dao
+ * @param {utils} utils
  */
 
-function(record, search, runtime, dao) {
+function(record, search, runtime, dao, utils) {
 	/**
 	 * Function called upon sending a DELETE request to the RESTlet.
 	 * 
@@ -27,60 +28,77 @@ function(record, search, runtime, dao) {
 	 *          'application/json'
 	 * @since 2015.2
 	 */
-	/*
-		requestParams.bomAndRevisionNames: "65;66:v1,v2;67;68:v1"
-	*/
+
+	//requestParams.type : text,array
+	//requestParams.bomAndRevisionNames 格式
+	//text:  "65;66:v1,v2;67;68:v1" 
+	//array: [{bom:65,assembly:[a1,a2],bomrev:[v1,v2]},{bom:66,assembly:[a3,a4],bomrev:[v1,v2]}]
 	function doDelete(requestParams) {
 		log.debug({
 			title : "deleteRequestParams: ",
 			details : requestParams
 		});
+		var deleteBomResult = [];
+		var deleteBomRevisionResult = [];
 		try {
+			//type 1
+			if (requestParams.type == 'text') {
+				var bomAndRevisionList = [];
 
-			var bomAndRevisionList = [];
-			var deleteBomResult = [];
-			var deleteBomRevisionResult = [];
-			bomAndRevisionList = requestParams.bomAndRevisionNames.split(";")
-					.map(function(a) {
-						return a.split(":");
-					}).map(function(b) {
-						return b.map(function(c) {
-							return c.split(",");
-						});
+				bomAndRevisionList = requestParams.bomAndRevisionNames.split(";").map(function(a) {
+					return a.split(":");
+				}).map(function(b) {
+					return b.map(function(c) {
+						return c.split(",");
 					});
-
-			log.debug({
-				title : "bomAndRevisionList: ",
-				details : bomAndRevisionList
-			});
-
-			if (bomAndRevisionList.length == 0)
-				throw "requestParams bomAndRevisionNames error!";
-
-			bomAndRevisionList.forEach(function(e) {
-				log.debug({
-					title : "array: ",
-					details : e
 				});
-				var bomHeaderId = dao.getBomHeaderRecordId(e[0][0]);
-				if (e.length == 1) {
-					deleteBomResult.push(dao.deleteRecord(record.Type.BOM,
-							bomHeaderId));
-				} else {
-					
-					var bomRevisionIds = e[1].map(function(n) {
-						return dao.getBomRevisionRecordId(e[0][0], n)
-					});
-					
-					log.debug({
-						title : "bomRevisionIds: ",
-						details : bomRevisionIds
-					});
 
-					deleteBomRevisionResult.push(dao.deleteRecords(
-							record.Type.BOM_REVISION, bomRevisionIds));
-				}
-			});
+				log.debug({
+					title : "bomAndRevisionList: ",
+					details : bomAndRevisionList
+				});
+
+				if (bomAndRevisionList.length == 0)
+					throw "requestParams bomAndRevisionNames error!";
+
+				bomAndRevisionList.forEach(function(e) {
+					log.debug({
+						title : "array: ",
+						details : e
+					});
+					var bomHeaderId = dao.getBomHeaderRecordId(e[0][0]);
+					if (e.length == 1) {
+						deleteBomResult.push(dao.deleteRecord(record.Type.BOM, bomHeaderId));
+					} else {
+
+						var bomRevisionIds = e[1].map(function(n) {
+							return dao.getBomRevisionRecordId(e[0][0], n)
+						});
+
+						log.debug({
+							title : "bomRevisionIds: ",
+							details : bomRevisionIds
+						});
+
+						deleteBomRevisionResult.push(dao.deleteRecords(record.Type.BOM_REVISION, bomRevisionIds));
+					}
+				});
+			}
+			//type 2
+			if (requestParams.type == 'array') {
+				var deletedObjList = utils.string2Array(requestParams.bomAndRevisionNames);
+				deletedObjList.forEach(function(obj) {
+					if (obj['bomrev']) {
+						var bomRevisionIds = obj['bomrev'].map(function(bomRev) {
+							return dao.getBomRevisionRecordId(obj['bom'], bomRev)
+						});
+						deleteBomRevisionResult.push(dao.deleteRecords(record.Type.BOM_REVISION, bomRevisionIds));
+					} else {
+						var bomHeaderId = dao.getBomHeaderRecordId(obj['bom']);
+						deleteBomResult.push(dao.deleteRecord(record.Type.BOM, bomHeaderId));
+					}
+				});
+			}
 
 			log.debug({
 				title : 'deleteSuccess',
@@ -100,6 +118,7 @@ function(record, search, runtime, dao) {
 				title : 'delelteError ' + e.name,
 				details : e.message
 			})
+			return e;
 		}
 	}
 

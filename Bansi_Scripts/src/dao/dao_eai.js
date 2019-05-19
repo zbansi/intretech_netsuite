@@ -5,13 +5,15 @@
  * @NModuleScope Public
  */
 
-define([ 'N/record', 'N/search', '../utils/search_columns' ],
+define([ 'N/record', 'N/search', 'N/error', '../utils/search_columns', '../utils/utils' ],
 /**
  * @param {record} record
  * @param {search} search
+ * @param {error} error
  * @param {search_columns} columnset
+ * @param {utils} utils
  */
-function(record, search, columnset) {
+function(record, search, error, columnset, utils) {
 
 	function getSearchResultSet(recordType, filterList, columnList) {
 		var pagedData = search.create({
@@ -71,7 +73,7 @@ function(record, search, columnset) {
 			details : bom
 		});
 
-		return bom[0].id;
+		return bom.length == 0 ? -1 : bom[0].id;
 	}
 
 	function getBomRevisionRecordId(bomName, bomRevisionName) {
@@ -97,137 +99,332 @@ function(record, search, columnset) {
 			end : 1
 		});
 		log.debug({
-			title : 'get bomRevision internalid',
+			title : 'get bomRevision internalid joined bomName',
 			details : bomRevision
 		});
 
-		return bomRevision[0].id;
+		return bomRevision.length == 0 ? -1 : bomRevision[0].id;
 	}
 
-	function createAndSaveBomRecord(bomData) {
+	function getBomRevisionRecordIdJoinBomId(bomId, bomRevisionName) {
+		var filter = [];
 
-		var bomRecord = record.create({
-			type : record.Type.BOM,
-			isDynamic : true
+		filter.push(search.createFilter({
+			name : 'name',
+			operator : search.Operator.IS,
+			values : bomRevisionName
+		}));
+		filter.push(search.createFilter({
+			name : 'internalId',
+			join : 'billofmaterials',
+			operator : search.Operator.IS,
+			values : bomId
+		}));
+
+		var bomRevision = search.create({
+			type : search.Type.BOM_REVISION,
+			filters : filter
+		}).run().getRange({
+			start : 0,
+			end : 1
 		});
-		for ( var key in bomData) {
-			if (bomData.hasOwnProperty(key)) {
-				bomRecord.setValue({
-					fieldId : key,
-					value : bomData[key]
-				});
-			}
-		}
-		try {
-			return bomRecord.save({
-				enableSourcing : false,
-				ignoreMandatoryFields : false
+		log.debug({
+			title : 'get bomRevision internalid joined bomId',
+			details : bomRevision
+		});
+
+		return bomRevision.length == 0 ? -1 : bomRevision[0]['id'];
+	}
+
+	function upsertBomRecord(methodType, bomData) {
+		var existedBomId = getBomHeaderRecordId(bomData.name);
+
+		if ((existedBomId == -1 && methodType == 'POST') || (existedBomId > 0 && methodType == 'PUT')) {
+			log.debug({
+				title : 'existedBomId',
+				details : existedBomId
 			});
-		} catch (e) {
-			if (e.name == 'A_1_WITH_THIS_NAME_ALREADY_EXISTS_PLEASE_USE_ANOTHER') {
-				log.debug({
-					title : 'bom hearder has existed, go on to add bomrevision. ' + e.name,
-					details : e.message
-				});
+			try {
 
-				return getBomHeaderRecordId(bomData.name);
-			} else
-
-				log.debug({
-					title : e.name,
-					details : e.message
-				});
-		}
-
-	}
-
-	function createAndSaveBomReversionRecord(bomRevisionData, bomHeaderId) {
-
-		var bomRevisionRecord = record.create({
-			type : record.Type.BOM_REVISION,
-			isDynamic : true
-		});
-		bomRevisionRecord.setValue({
-			fieldId : 'billofmaterials',
-			value : bomHeaderId
-		});
-		bomRevisionRecord.setValue({
-			fieldId : 'effectivestartdate',
-			value : new Date(978278400000) /*2001/1/1 上午12:00:00*/,
-		});
-		for ( var key in bomRevisionData) {
-			if (bomRevisionData.hasOwnProperty(key) && key != 'componentlist') {
-				bomRevisionRecord.setValue({
-					fieldId : key,
-					value : bomRevisionData[key]
-				});
-			} else if (bomRevisionData.hasOwnProperty(key) && key == 'componentlist') {
-
-				var items = bomRevisionData[key];
-				log.debug({
-					title : 'success',
-					details : items
-				});
-				for ( var itemIndex in items) {
-					bomRevisionRecord.selectNewLine({
-						sublistId : 'component'
+				//create or load a record
+				if (methodType == 'POST') {
+					var bomRecord = record.create({
+						type : record.Type.BOM,
+						isDynamic : true
 					});
-
-					for ( var listkey in items[itemIndex]) {
-						if (items[itemIndex].hasOwnProperty(listkey)) {
-							bomRevisionRecord.setCurrentSublistValue({
-								sublistId : 'component',
-								fieldId : listkey,
-								value : items[itemIndex][listkey]
-							});
-						}
-					}
-
-					bomRevisionRecord.commitLine({
-						sublistId : 'component'
+				} else {
+					var bomRecord = record.load({
+						type : record.Type.BOM,
+						id : existedBomId,
+						isDynamic : true
 					});
 				}
+
+				log.debug({
+					title : 'bomRecord 1',
+					details : bomRecord
+				});
+
+				//set bom value
+				for ( var key in bomData) {
+					if (Object.prototype.hasOwnProperty.call(bomData, key)) {
+
+						bomRecord.setValue({
+							fieldId : key,
+							value : bomData[key]
+						});
+					}
+				}
+
+				log.debug({
+					title : 'bomRecord 2',
+					details : bomRecord
+				});
+
+				var bomId = bomRecord.save({
+					enableSourcing : true,
+					ignoreMandatoryFields : false
+				});
+				return bomId;
+
+			} catch (e) {
+				throw error.create({
+					title : e.name,
+					details : e.message + bomId
+				});
 			}
+
 		}
 
-		try {
-			return bomRevisionRecord.save({
-				enableSourcing : false,
-				ignoreMandatoryFields : false
+		if (existedBomId > 0 && methodType == 'POST')
+			return existedBomId;
+		if (existedBomId == -1 && methodType == 'PUT') {
+			throw error.create({
+				title : 'BOM PUT ERROR',
+				details : 'The updated bom {bomName: ' + bomData.name + '} does not exist.'
 			});
-		} catch (e) {
-			if (e.name == 'THERE_IS_AN_OVERLAP_ON_THE_EFFECTIVE_DATE_BETWEEN_THIS_REVISION_AND_THE_FOLLOWING_REVISIONS__') {
-				log.debug({
-					title : 'bom revision has existed, return its id. ' + e.name,
-					details : e.message
+		}
+
+	}
+
+	function upsertBomReversionRecord(methodType, bomRevisionData, bomHeaderId) {
+		var existedBomRevId = getBomRevisionRecordIdJoinBomId(bomHeaderId, bomRevisionData.name);
+
+		//		var bomName = search.lookupFields({
+		//			type : search.Type.BOM,
+		//			id : bomHeaderId,
+		//			columns : [ 'name' ]
+		//		});
+		//		existedBomRevId = getBomRevisionRecordId(bomName, bomRevisionData.name);
+		if ((existedBomRevId == -1 && methodType == 'POST') || (existedBomRevId > 0 && methodType == 'PUT')) {
+			log.debug({
+				title : 'existedBomRevId',
+				details : existedBomRevId
+			});
+
+			//create or load a record
+			if (methodType == 'POST') {
+				var bomRevisionRecord = record.create({
+					type : record.Type.BOM_REVISION,
+					isDynamic : true
 				});
-				var bomName = search.lookupFields({
-					type : search.Type.BOM,
-					id : bomHeaderId,
-					columns : [ 'name' ]
+			} else {
+				var bomRevisionRecord = record.load({
+					type : record.Type.BOM_REVISION,
+					id : existedBomRevId,
+					isDynamic : true
 				});
-				return getBomRevisionRecordId(bomName, bomRevisionData.name);
-			} else
-				log.debug({
-					title : 'ERROR ' + e.name,
-					details : e.message
+			}
+			log.debug({
+				title : 'bomRevisionRecord 1',
+				details : bomRevisionRecord
+			});
+
+			bomRevisionRecord.setValue({
+				fieldId : 'billofmaterials',
+				value : bomHeaderId
+			});
+			//			bomRevisionRecord.setValue({
+			//				fieldId : 'effectivestartdate',
+			//				value : new Date(978278400000) /*2001/1/1 上午12:00:00*/,
+			//			});
+			log.debug({
+				title : 'bomRevisionRecord 2',
+				details : bomRevisionRecord
+			});
+
+			try {
+				//start set and commit bom revision data
+				for ( var key in bomRevisionData) {
+					if (Object.prototype.hasOwnProperty.call(bomRevisionData, key) && key != 'componentlist') {
+						bomRevisionRecord.setValue({
+							fieldId : key,
+							value : bomRevisionData[key]
+						});
+						log.debug({
+							title : 'bomRevisionRecord 2.1',
+							details : bomRevisionRecord
+						});
+					}
+
+					var test_status = Object.prototype.hasOwnProperty.call(bomRevisionData, key) && key == 'componentlist';
+					log.debug({
+						title : 'test_status',
+						details : test_status
+					});
+					if (Object.prototype.hasOwnProperty.call(bomRevisionData, key) && key == 'componentlist') {
+
+						var items = bomRevisionData[key];
+						log.debug({
+							title : 'component',
+							details : items
+						});
+
+						if (methodType == 'POST') {
+							for ( var itemIndex in items) {
+								bomRevisionRecord.selectNewLine({
+									sublistId : 'component'
+								});
+
+								for ( var listkey in items[itemIndex]) {
+									if (Object.prototype.hasOwnProperty.call(items[itemIndex], listkey)) {
+										bomRevisionRecord.setCurrentSublistValue({
+											sublistId : 'component',
+											fieldId : listkey,
+											value : items[itemIndex][listkey]
+										});
+									}
+								}
+
+								bomRevisionRecord.commitLine({
+									sublistId : 'component'
+								});
+							}
+							log.debug({
+								title : 'bomRevisionRecord 3',
+								details : bomRevisionRecord
+							});
+						}
+						if (methodType == 'PUT') {
+							for ( var itemIndex in items) {
+								var linenum = bomRevisionRecord.findSublistLineWithValue({
+									sublistId : 'component',
+									fieldId : items[itemIndex]['item']
+								});
+								log.debug({
+									title : 'linenum',
+									details : linenum
+								});
+								if (linenum >= 0) {
+									bomRevisionRecord.selectLine({
+										sublistId : 'component',
+										line : linenum
+									});
+								} else {
+									bomRevisionRecord.selectNewLine({
+										sublistId : 'component'
+									});
+								}
+								for ( var listkey in items[itemIndex]) {
+									if (Object.prototype.hasOwnProperty.call(items[itemIndex], listkey)) {
+										bomRevisionRecord.setCurrentSublistValue({
+											sublistId : 'component',
+											fieldId : listkey,
+											value : items[itemIndex][listkey]
+										});
+									}
+								}
+								bomRevisionRecord.commitLine({
+									sublistId : 'component'
+								});
+							}
+
+						}
+
+					}
+				}
+				//end set and commit bom revision data
+
+				return bomRevisionRecord.save({
+					enableSourcing : false,
+					ignoreMandatoryFields : false
 				});
+			} catch (e) {
+				if (e.name == 'THERE_IS_AN_OVERLAP_ON_THE_EFFECTIVE_DATE_BETWEEN_THIS_REVISION_AND_THE_FOLLOWING_REVISIONS__1') {
+					var filter = [];
+					filter.push(search.createFilter({
+						name : 'internalId',
+						join : 'billofmaterials',
+						operator : search.Operator.IS,
+						values : bomHeaderId
+					}));
+					var overlapedBomRevisions = search.create({
+						type : search.Type.BOM_REVISION,
+						filters : filter,
+						columns : [ 'name', 'effectivestartdate', 'effectiveenddate' ]
+					}).run().getRange({
+						start : 0,
+						end : 1
+					});
+					throw error.create({
+						title : e.name,
+						details : e.message + ' OVERLAPED BomRevisions: ' + overlapedBomRevisions
+					});
+
+				} else
+					throw error.create({
+						title : e.name,
+						details : e.message
+					});
+			}
+
+		}
+
+		if (existedBomRevId > 0 && methodType == 'POST') {
+			log.debug({
+				title : 'existedBomRevId > 0 AND method = POST',
+				details : existedBomRevId
+			});
+			return existedBomRevId;
+		}
+		if (existedBomRevId == -1 && methodType == 'PUT') {
+			throw error.create({
+				title : 'BOM Revision PUT ERROR',
+				details : 'The updated bom revision {bomName: ' + bomRevisionData.name + '}  does not exist.'
+			});
+
 		}
 	}
 
-	function createAndSaveBomAllRecord(bomAllContent) {
+	function upsertBomAllRecord(methodType, bomAllContent) {
 		var result = [];
+
 		var bomAllDataList = bomAllContent.bomAllData;
+
 		bomAllDataList.forEach(function(bomAllData) {
 			{
-				var bomData = bomAllData.bomHeader;
+				var bomData = utils.dealObjectKey(bomAllData, "bomRevision");
 				var bomRevisionData = bomAllData.bomRevision;
-				var bomHeaderId = createAndSaveBomRecord(bomData);
-				var bomRevisionId = createAndSaveBomReversionRecord(bomRevisionData, bomHeaderId);
-				result.push({
-					bomHeader : bomHeaderId,
-					bomRevision : bomRevisionId
-				});
+				if (methodType == 'POST') {
+					var bomHeaderId = upsertBomRecord('POST', bomData);
+					var bomRevisionId = upsertBomReversionRecord('POST', bomRevisionData, bomHeaderId);
+
+					result.push({
+						methodType : 'POST',
+						bomHeader : bomHeaderId,
+						bomRevision : bomRevisionId
+					});
+				}
+				if (methodType == 'PUT') {
+					var bomHeaderId = upsertBomRecord('PUT', bomData);
+					var bomRevisionId = upsertBomReversionRecord('PUT', bomRevisionData, bomHeaderId);
+
+					result.push({
+						methodType : 'PUT',
+						bomHeader : bomHeaderId,
+						bomRevision : bomRevisionId
+					});
+				}
 			}
 		});
 		return result;
@@ -969,9 +1166,9 @@ function(record, search, columnset) {
 		'deleteRecord' : deleteRecord,
 		'getBomHeaderRecordId' : getBomHeaderRecordId,
 		'getBomRevisionRecordId' : getBomRevisionRecordId,
-		'createAndSaveBomRecord' : createAndSaveBomRecord,
-		'createAndSaveBomReversionRecord' : createAndSaveBomReversionRecord,
-		'createAndSaveBomAllRecord' : createAndSaveBomAllRecord,
+		'upsertBomRecord' : upsertBomRecord,
+		'upsertBomReversionRecord' : upsertBomReversionRecord,
+		'upsertBomAllRecord' : upsertBomAllRecord,
 		'getBOMAllData' : getBOMAllData,
 		'getWorkOrderData' : getWorkOrderData,
 		'getSalesOrderData' : getSalesOrderData,

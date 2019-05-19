@@ -64,7 +64,10 @@ public final class Messages {
 
 	public static final String ADD_BOM = "Add an BOM";
 	public static final String ENTER_INFORMATION_FOR_BOM = "Please enter following information for :";
-
+	public static final String ADD_BOM_REVISION = "Add an BOM Revision";
+	public static final String ENTER_INFORMATION_FOR_BOM_REVISION = "Please enter following information for :";
+	public static final String UPDATE_BOM = "Update an BOM";
+	
 	////////////////////
 	public static final String CUSTOM_FIELDS_WARNING = "In order to populate custom fields, ensure that these fields already exist for the customer record.";
 	public static final String CUSTOM_FIELD_STRING = "String (maps to one of Free-Form Text, Text Area, etc. in UI)";
@@ -159,6 +162,8 @@ public final class Messages {
 	public static final String PURCHASE_DESCRIPTION = "purchase description";
 	public static final String BOM_SUCCESSFULLY_ADDED = "The BOM '%s' has been added successfully.";
 	public static final String BOM_WAS_NOT_ADDED = "The BOM '%1$s' was not added: %2$s";
+	public static final String BOM_REVISION_SUCCESSFULLY_ADDED = "The BOM Revision '%s' has been added successfully.";
+	public static final String BOM_REVISION_WAS_NOT_ADDED = "The BOM Revision '%1$s' was not added: %2$s";
 	////////////
 	public static final String ENTITY_ID = "Entity ID";
 	public static final String ENTITY_NAME = "Entity Name (optional depending on your account configuration)";

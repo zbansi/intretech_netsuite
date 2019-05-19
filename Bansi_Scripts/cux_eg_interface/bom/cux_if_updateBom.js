@@ -30,93 +30,28 @@ function(record, search, runtime, dao) {
 	 */
 	function doPut(requestBody) {
 
+		var scriptObj = runtime.getCurrentScript();
+		log.debug("Remaining governance units: " + scriptObj.getRemainingUsage());
 		try {
-			if (requestBody)
-				var recordType = requestBody.recordType;
-			if (recordType == null) {
-				throw log.debug({
-					title : 'error',
-					details : 'the requestBody.recordType'
-				});
+			var r = dao.upsertBomAllRecord('PUT', requestBody);
+			log.debug({
+				title : 'addSuccess',
+				details : JSON.stringify(r)
+			});
 
-			} else if (recordType == 'bom') {
-				var bomHeaderId = dao
-						.getBomHeaderRecordId(requestBody.assemblyItemNumber);
-				/*var bomRecord = record.load({
-					type : record.Type.BOM,
-					id : bomHeaderId,
-					isDynamic : true
-				});
-				log.debug({
-					title : 'bomRecord',
-					details : bomRecord
-				});
-
-				bomRecord.setText({
-					fieldId : 'memo',
-					value : 'bomRecord post api test'
-				});
-				*/
-				//record.Type.BOM无nlapiSubmitField
-				var id = record.submitFields({
-					type : record.Type.BOM,
-					id : bomHeaderId,
-					values : {
-						memo : 'ABC'
-					}
-				});
-
-				return {
-					"isSuccess" : true,
-					"id" : id
-				};
-
-			} else if (recordType == 'bomrevision') {
-				var bomHeaderId = dao
-						.getBomHeaderRecordId(requestBody.assemblyItemNumber);
-				var bomRevisionId = dao.getBomRevisionRecordId(
-						requestBody.assemblyItemNumber,
-						requestBody.bomRevisionName);
-				record.submitFields({
-					type : record.Type.BOM_REVISION,
-					id : bomRevisionId,
-					values : {
-						memo : 'ABC'
-					}
-				});
-
-			} else if (recordType == 'components') {
-				var bomHeaderId = dao
-						.getBomHeaderRecordId(requestBody.assemblyItemNumber);
-				var bomRevisionId = dao.getBomRevisionRecordId(
-						requestBody.assemblyItemNumber,
-						requestBody.bomRevisionName);
-				var bomRevisionRecord = record.load({
-					type : 'bomrevision',
-					id : bomRevisionId
-				});
-
-				bomRevisionRecord.selectLine({
-					sublistId : 'components',//多了个s
-					line : 1
-				});
-				bomRevisionRecord.setCurrentSublistValue({
-					sublistId : 'components',
-					fieldId : 'componentyield',
-					value : 99.5
-				});
-				bomRevisionRecord.commitLine({
-					sublistId : 'component'
-				});
-				bomRevisionRecord.save();
+			log.debug("Remaining governance units: " + scriptObj.getRemainingUsage());
+			return {
+				'isSuccess' : true,
+				'bomData' : r
 			}
 		} catch (e) {
 			log.debug({
-				title : 'post error ' + e.name,
+				title : 'PUT bom error: ' + e.name,
 				details : e.message
-			});
-		}
 
+			});
+			return e;
+		}
 	}
 
 	return {

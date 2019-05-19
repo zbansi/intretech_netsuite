@@ -731,6 +731,13 @@ public class WsClient_2019_1 extends WsCoreClient_2019_1 implements WebServicesS
 		
 		return writeResponse;
 	}
+	
+	public WriteResponse addBOMRevisionRecord(Record record) throws RemoteException {
+		WriteResponse writeResponse = callAddRecord(record);
+		
+		
+		return writeResponse;
+	}
 
 	/**
 	 * <p>This method invokes remote operation {@code addList}. The {@code addList} operation is used to add one

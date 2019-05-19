@@ -50,6 +50,9 @@ import com.netsuite.webservices.transactions.sales_2019_1.TransactionSearchAdvan
 import com.netsuite.webservices.transactions.sales_2019_1.TransactionSearchRow;
 import com.netsuite.webservices.transactions.sales_2019_1.types.SalesOrderOrderStatus;
 import com.netsuite.webservices.lists.accounting_2019_1.Bom;
+import com.netsuite.webservices.lists.accounting_2019_1.BomRevision;
+import com.netsuite.webservices.lists.accounting_2019_1.BomRevisionComponent;
+
 import org.apache.axis.AxisFault;
 
 import javax.annotation.ParametersAreNonnullByDefault;
@@ -62,6 +65,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Calendar;
 import java.util.Collections;
+import java.util.GregorianCalendar;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
@@ -112,7 +116,7 @@ public class SampleOperations_2019_1 {
 
 		addBom();
 		addBomRevision();
-		addBomComponent();
+		updateBom();
 
 		addCustomer();
 		addCustomerWithCustomFields();
@@ -351,20 +355,17 @@ public class SampleOperations_2019_1 {
 
 			Bom bomRec = new Bom();
 			bomRec.setName(readLine(getIndentedString(BOM_NAME), null));
-			bomRec.setIsInactive(true);
+			bomRec.setIsInactive(false);
 
-			//restrictToAssemblies
+			//very BOM restrict to an Assembly
 			bomRec.setAvailableForAllAssemblies(false);
-			RecordRef[] restrictToAssembliesList = new RecordRef[1];
-
-			restrictToAssembliesList[0] = new RecordRef();
-
+			RecordRef restrictToAssembliesList = new RecordRef();
 			String assemblyInternalId = readLine(getIndentedString("key in assemblyInternalId"), null);
 			if (!assemblyInternalId.equals("")) {
-				restrictToAssembliesList[0].setInternalId(assemblyInternalId);
+				restrictToAssembliesList = createRecordRef(assemblyInternalId);
 			}
-			restrictToAssembliesList[0].setType(RecordType.assemblyItem);
-			bomRec.setRestrictToAssembliesList(restrictToAssembliesList);
+			restrictToAssembliesList.setType(RecordType.lotNumberedAssemblyItem);
+			bomRec.setRestrictToAssembliesList(new RecordRef[] { restrictToAssembliesList });
 
 			//
 			bomRec.setAvailableForAllLocations(true);
@@ -372,19 +373,63 @@ public class SampleOperations_2019_1 {
 			printSendingRequestMessage();
 
 			WriteResponse response = client.addBOMRecord(bomRec);
-			
+
 			// Process the response
 			processBomWriteResponse(response, bomRec);
 		});
-
 	}
 
 	private void addBomRevision() {
+		SAMPLE_OPERATIONS.put(ADD_BOM_REVISION, () -> {
+			printWithEmptyLine(ENTER_INFORMATION_FOR_BOM_REVISION);
+			RecordRef bomRef = new RecordRef();
+			bomRef.setInternalId("101");
 
+			BomRevisionComponent bomComp = new BomRevisionComponent();
+			bomComp.setItem(createRecordRef("13"));
+			bomComp.setBomQuantity(3.0);
+			bomComp.setComponentYield(99.9);
+			BomRevisionComponent[] compList = new BomRevisionComponent[] { bomComp };
+
+			BomRevision bomRev = new BomRevision();
+			bomRev.setName("List of ingredients - revision 1");
+			bomRev.setIsInactive(true);
+			bomRev.setMemo("New revision");
+			bomRev.setEffectiveStartDate(new GregorianCalendar(2019, 1, 1));
+			bomRev.setBillOfMaterials(bomRef);
+			bomRev.setComponentList(compList);
+			WriteResponse response = client.addBOMRevisionRecord(bomRev);
+			// Process the response
+			processBomRevisionWriteResponse(response, bomRev);
+
+		});
 	}
 
-	private void addBomComponent() {
+	/*
+	 * Test Status: success
+	 */
+	private void updateBom() {
+		SAMPLE_OPERATIONS.put(UPDATE_BOM, () -> {
+			printWithEmptyLine(ENTER_INFORMATION_FOR_BOM);
+			Bom bomRec = new Bom();
+			// Get internal ID and entity ID for update
+			bomRec.setInternalId(readLine(getIndentedString(INTERNAL_ID)).trim());
+			bomRec.setName(readLine(getIndentedString(ENTITY_NAME), null));
+			// Update some fields
+			String randomString = getRandomString();			
+			bomRec.setMemo( randomString + "SuiteTalk test added.");
+			
+			// Add a bom revision
 
+			
+			// Add a component
+			
+			
+			WriteResponse response = client.callUpdateRecord(bomRec);
+			// Process the response
+			processBomWriteResponse(response, bomRec);
+
+		});
 	}
 
 	/**
