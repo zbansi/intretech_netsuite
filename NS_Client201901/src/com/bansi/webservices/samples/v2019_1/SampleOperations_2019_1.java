@@ -18,8 +18,10 @@ import com.netsuite.webservices.lists.relationships_2019_1.CustomerAddressbook;
 import com.netsuite.webservices.lists.relationships_2019_1.CustomerSearch;
 import com.netsuite.webservices.lists.relationships_2019_1.CustomerSearchAdvanced;
 import com.netsuite.webservices.lists.relationships_2019_1.CustomerSearchRow;
+import com.netsuite.webservices.lists.relationships_2019_1.Vendor;
 import com.netsuite.webservices.lists.relationships_2019_1.types.EmailPreference;
 import com.netsuite.webservices.platform.common_2019_1.Address;
+import com.netsuite.webservices.platform.common_2019_1.BomSearchBasic;
 import com.netsuite.webservices.platform.common_2019_1.CustomRecordSearchBasic;
 import com.netsuite.webservices.platform.common_2019_1.CustomerSearchBasic;
 import com.netsuite.webservices.platform.common_2019_1.CustomerSearchRowBasic;
@@ -42,6 +44,9 @@ import com.netsuite.webservices.platform.messages_2019_1.SearchPreferences;
 import com.netsuite.webservices.platform.messages_2019_1.WriteResponse;
 import com.netsuite.webservices.platform.messages_2019_1.WriteResponseList;
 import com.netsuite.webservices.setup.customization_2019_1.CustomRecord;
+import com.netsuite.webservices.transactions.purchases_2019_1.PurchaseOrder;
+import com.netsuite.webservices.transactions.purchases_2019_1.PurchaseOrderItem;
+import com.netsuite.webservices.transactions.purchases_2019_1.types.PurchaseOrderOrderStatus;
 import com.netsuite.webservices.transactions.sales_2019_1.ItemFulfillment;
 import com.netsuite.webservices.transactions.sales_2019_1.SalesOrder;
 import com.netsuite.webservices.transactions.sales_2019_1.SalesOrderItem;
@@ -49,6 +54,7 @@ import com.netsuite.webservices.transactions.sales_2019_1.TransactionSearch;
 import com.netsuite.webservices.transactions.sales_2019_1.TransactionSearchAdvanced;
 import com.netsuite.webservices.transactions.sales_2019_1.TransactionSearchRow;
 import com.netsuite.webservices.transactions.sales_2019_1.types.SalesOrderOrderStatus;
+import com.netsuite.webservices.lists.accounting_2019_1.AssemblyItem;
 import com.netsuite.webservices.lists.accounting_2019_1.Bom;
 import com.netsuite.webservices.lists.accounting_2019_1.BomRevision;
 import com.netsuite.webservices.lists.accounting_2019_1.BomRevisionComponent;
@@ -107,17 +113,24 @@ public class SampleOperations_2019_1 {
 	public SampleOperations_2019_1(WsClient_2019_1 client) {
 		this.client = client;
 		// All possible sample operations
+		//Item
 		addInventoryItem();
 		addLotNumberedInventoryItem();
-		getItem();
+		getInventoryItem();
+		getAssemblyItem();
 		searchItems();
 		searchForSavedSearchItemRecord();
 		searchForLastModifedItemRecord();
-
+		upsertAssemblyItem();
+		deleteAssemblyItem();
+		//BOM
 		addBom();
 		addBomRevision();
 		updateBom();
-
+		getBom();
+		searchBom();
+		deleteBom();
+		//customer
 		addCustomer();
 		addCustomerWithCustomFields();
 		updateCustomer();
@@ -126,12 +139,32 @@ public class SampleOperations_2019_1 {
 		getCustomer();
 		getListOfCustomers();
 		deleteListOfCustomers();
-
+		//vendor
+		addVendor();
+		addVendorWithCustomFields();
+		updateVendor();
+		upsertVendor();
+		updateListOfVendors();
+		getVendor();
+		getListOfVendors();
+		deleteListOfVendors();
+		//sales order
 		addSalesOrder();
 		updateSalesOrder();
-		fulfillSalesOrder();
 		searchSalesOrders();
 		advancedSearchSalesOrders();
+		//sales order transaction
+		fulfillSalesOrder();
+
+		//purchase order
+		addPurchaseOrder();
+		updatePurchaseOrder();
+		searchPurchaseOrders();
+		advancedSearchPurchaseOrders();
+		//purchase order transaction
+		receiptPurchaseOrder();
+
+		//work order
 
 		addCustomRecord();
 		searchCustomRecord();
@@ -232,7 +265,7 @@ public class SampleOperations_2019_1 {
 		});
 	}
 
-	private void getItem() {
+	private void getInventoryItem() {
 		SAMPLE_OPERATIONS.put(GET_ITEM, () -> {
 			printWithEmptyLine(ENTER_ITEM_NUMBER);
 
@@ -243,6 +276,20 @@ public class SampleOperations_2019_1 {
 			ReadResponse response = client.callGetRecord(createRecordRef(internalId, RecordType.lotNumberedInventoryItem));
 			// Process the response
 			processLotNumberedInventoryItemReadResponse(response);
+		});
+	}
+
+	private void getAssemblyItem() {
+		SAMPLE_OPERATIONS.put(GET_ASSEMBLY_ITEM, () -> {
+			printWithEmptyLine(ENTER_ITEM_NUMBER);
+
+			String internalId = readLine(ITEM_NUMBER);
+			printSendingRequestMessage();
+
+			// Invoke the get() operation to retrieve the record
+			ReadResponse response = client.callGetRecord(createRecordRef(internalId, RecordType.assemblyItem));
+			// Process the response
+			//processAssemblyItemReadResponse(response);
 		});
 	}
 
@@ -348,6 +395,66 @@ public class SampleOperations_2019_1 {
 		});
 	}
 
+	private void upsertAssemblyItem() {
+		SAMPLE_OPERATIONS.put(UPSERT_ASSEMBLY_ITEM, () -> {
+			printWithEmptyLine(ENTER_INFORMATION_FOR_ITEM);
+			AssemblyItem item = new AssemblyItem();
+			String externalId = readLine(getIndentedString(EXTERNAL_ID)).trim();
+			item.setExternalId(externalId);
+			String itemId = readLine(getIndentedString(ITEM_NAME)).trim();
+			item.setItemId(itemId);
+			item.setDisplayName("suitetalk test item name: " + getRandomString());
+
+			String costingMethodInput = readLine(getIndentedString(COSTING_METHOD)).trim();
+			ItemCostingMethod itemCostingMethod = null;
+			switch (costingMethodInput) {
+			case "1":
+				itemCostingMethod = ItemCostingMethod._average;
+				break;
+			case "2":
+				itemCostingMethod = ItemCostingMethod._fifo;
+				break;
+			case "3":
+				itemCostingMethod = ItemCostingMethod._lifo;
+				break;
+			}
+			item.setCostingMethod(itemCostingMethod);
+			item.setTaxSchedule(createRecordRef("1"));
+			item.setCogsAccount(createRecordRef("223"));
+			item.setAssetAccount(createRecordRef("242"));
+			printSendingRequestMessage();
+
+			// Invoke add() operation
+			WriteResponse response = client.callUpsertRecord(item);
+
+			// Process the response
+			//processUpsertAssemblyItemWriteResponse(response, item);
+
+		});
+	}
+
+	private void deleteAssemblyItem() {
+		SAMPLE_OPERATIONS.put(DELETE_ASSEMBLY_ITEM, () -> {
+			printWithEmptyLine(ENTER_INFORMATION_FOR_ITEM);
+			RecordRef recRef = new RecordRef();
+			String internalId = readLine(getIndentedString(INTERNAL_ID)).trim();
+			recRef.setInternalId(internalId);
+
+			recRef.setType(RecordType.assemblyItem);
+
+			printSendingRequestMessage();
+
+			// Invoke add() operation
+			WriteResponse response = client.callDeleteRecord(recRef, null);
+
+			// Process the response
+			//processUpsertAssemblyItemWriteResponse(response, item);
+		});
+	}
+
+	/*
+	 * Test Status: setRestrictToAssembliesList 赋值失败
+	 */
 	private void addBom() {
 
 		SAMPLE_OPERATIONS.put(ADD_BOM, () -> {
@@ -360,12 +467,13 @@ public class SampleOperations_2019_1 {
 			//very BOM restrict to an Assembly
 			bomRec.setAvailableForAllAssemblies(false);
 			RecordRef restrictToAssembliesList = new RecordRef();
-			String assemblyInternalId = readLine(getIndentedString("key in assemblyInternalId"), null);
-			if (!assemblyInternalId.equals("")) {
+			String assemblyInternalId = readLine(getIndentedString("key in assemblyInternalId"), "");
+			if (!assemblyInternalId.isEmpty()) {
 				restrictToAssembliesList = createRecordRef(assemblyInternalId);
-			}
-			restrictToAssembliesList.setType(RecordType.lotNumberedAssemblyItem);
-			bomRec.setRestrictToAssembliesList(new RecordRef[] { restrictToAssembliesList });
+				restrictToAssembliesList.setType(RecordType.lotNumberedAssemblyItem);
+				bomRec.setRestrictToAssembliesList(new RecordRef[] { restrictToAssembliesList });
+			} else
+				bomRec.setAvailableForAllAssemblies(false);
 
 			//
 			bomRec.setAvailableForAllLocations(true);
@@ -416,15 +524,13 @@ public class SampleOperations_2019_1 {
 			bomRec.setInternalId(readLine(getIndentedString(INTERNAL_ID)).trim());
 			bomRec.setName(readLine(getIndentedString(ENTITY_NAME), null));
 			// Update some fields
-			String randomString = getRandomString();			
-			bomRec.setMemo( randomString + "SuiteTalk test added.");
-			
+			String randomString = getRandomString();
+			bomRec.setMemo(randomString + " SuiteTalk test added.");
+
 			// Add a bom revision
 
-			
 			// Add a component
-			
-			
+
 			WriteResponse response = client.callUpdateRecord(bomRec);
 			// Process the response
 			processBomWriteResponse(response, bomRec);
@@ -432,6 +538,63 @@ public class SampleOperations_2019_1 {
 		});
 	}
 
+	/*
+	 * Test Status: success
+	 */
+	private void getBom() {
+		SAMPLE_OPERATIONS.put(GET_BOM, () -> {
+			printWithEmptyLine(ENTER_INFORMATION_FOR_BOM);
+			RecordRef bomRec = new RecordRef();
+			// Get internal ID and entity ID for update
+			bomRec.setType(RecordType.bom);
+			bomRec.setInternalId(readLine(getIndentedString(INTERNAL_ID), null));
+
+			ReadResponse response = client.callGetRecord(bomRec);
+			// Process the response
+			//processBomReadResponse(response, bomRec);
+
+		});
+	}
+
+	/*
+	 * Test Status: 
+	 */
+	private void searchBom() {
+		SAMPLE_OPERATIONS.put(SEARCH_BOM, () -> {
+			printWithEmptyLine(ENTER_INFORMATION_FOR_BOM);
+			BomSearchBasic bomsb = new BomSearchBasic();
+			SearchStringField name = new SearchStringField();
+			name.setOperator(SearchStringFieldOperator.contains);
+			name.setSearchValue("test");
+			bomsb.setName(name);
+
+			SearchResult response = client.callSearch(bomsb);
+			// Process the response
+			//processSearchResult(response);
+
+		});
+	}
+
+	/*
+	 * Test Status: success
+	 */
+	private void deleteBom() {
+		SAMPLE_OPERATIONS.put(DELETE_BOM, () -> {
+			printWithEmptyLine(ENTER_INFORMATION_FOR_BOM);
+			RecordRef bomRec = new RecordRef();
+			// Get internal ID and entity ID for update
+			bomRec.setType(RecordType.bom);
+			//不支持external id
+			bomRec.setInternalId(readLine(getIndentedString(INTERNAL_ID), null));
+
+			WriteResponse response = client.callDeleteRecord(bomRec, null);
+			// Process the response
+			//processBomWriteResponse(response, bomRec);
+
+		});
+	}
+
+	//CUSTOMER START
 	/**
 	 * Demonstrates how to add a Customer record into NetSuite using the {@code add()} operation.
 	 */
@@ -443,8 +606,13 @@ public class SampleOperations_2019_1 {
 
 			customer.setCompanyName(readLine(getIndentedString(COMPANY_NAME), null));
 			customer.setEntityId(readLine(getIndentedString(ENTITY_NAME), null));
+			customer.setExternalId(readLine(getIndentedString(EXTERNAL_ID), null));
 			customer.setEmail(readLine(getIndentedString(EMAIL), null));
 			customer.setEmailPreference(EmailPreference._hTML);
+			RecordRef subsidiary = new RecordRef();
+			subsidiary.setInternalId("1");
+			subsidiary.setType(RecordType.subsidiary);
+			customer.setSubsidiary(subsidiary);
 
 			// Set entity status. The internal ID can be obtained from Setup > Sales > Customer Statuses.
 			// The default status is "Closed Won" which has an internal ID of 13.
@@ -452,20 +620,21 @@ public class SampleOperations_2019_1 {
 			customer.setEntityStatus(createRecordRef(statusInternalId));
 
 			// Create address for this customer
+			/*
 			Address address = new Address();
-			address.setAddressee("William Sanders");
-			address.setAttention("William Sanders");
-			address.setAddr1("4765 Sunset Blvd");
-			address.setCity("San Francisco");
-			address.setZip("94131");
-			address.setState("CA");
-			address.setCountry(Country._unitedStates);
+			address.setAddressee("");
+			address.setAttention("");
+			address.setAddr1("Jiahe");
+			address.setCity("Xiamen");
+			address.setZip("361000");
+			address.setState("Fujian Province");
+			address.setCountry(Country._china);
 			address.setAddr1(readLine(getIndentedString(ADDRESS_1), null));
 			address.setAddr2(readLine(getIndentedString(ADDRESS_2), null));
 			address.setAddr3(readLine(getIndentedString(ADDRESS_3), null));
-
+			
 			setCustomerAddress(customer, address, "Shipping Address", true, true);
-
+			*/
 			printSendingRequestMessage();
 
 			// Invoke add() operation
@@ -473,27 +642,6 @@ public class SampleOperations_2019_1 {
 
 			// Process the response
 			processCustomerWriteResponse(response, customer);
-		});
-	}
-
-	/**
-	 * Demonstrates how to add a certain Custom Record into NetSuite.
-	 */
-	private void addCustomRecord() {
-		SAMPLE_OPERATIONS.put(ADD_CUSTOM_RECORD, () -> {
-			printWithEmptyLine(ENTER_CUSTOM_RECORD_DATA_FOR_ADD);
-
-			CustomRecord customRecord = new CustomRecord();
-			customRecord.setRecType(createRecordRef(readLine(getIndentedString(CUSTOM_RECORD_TYPE_ID)).trim()));
-			customRecord.setName(readLine(getIndentedString(NAME)));
-
-			printSendingRequestMessage();
-
-			// Invoke add() operation
-			WriteResponse response = client.callAddRecord(customRecord);
-
-			// Process response
-			processCustomRecordWriteResponse(response, customRecord);
 		});
 	}
 
@@ -548,7 +696,7 @@ public class SampleOperations_2019_1 {
 			Customer customer = new Customer();
 
 			String randomId = getRandomString();
-			customer.setEntityId(randomId + " Custom Inc");
+			//customer.setEntityId(randomId + " Custom Inc");
 			customer.setCompanyName(randomId + " Custom, Inc.");
 
 			printWithEmptyLine(CUSTOM_FIELDS_WARNING);
@@ -606,15 +754,16 @@ public class SampleOperations_2019_1 {
 			customer.setEmail("company" + randomString + "@example.com");
 
 			// Add a billing address
+			/*
 			Address address = new Address();
 			address.setAddr1("4765 Sunset Blvd");
 			address.setCity("San Mateo");
 			address.setZip("94401");
 			address.setState("CA");
 			address.setCountry(Country._unitedStates);
-
+			
 			setCustomerAddress(customer, address, "Billing Address", true, false);
-
+			*/
 			printSendingRequestMessage();
 
 			// Invoke update() operation
@@ -646,6 +795,7 @@ public class SampleOperations_2019_1 {
 			customer.setEntityStatus(createRecordRef(statusInternalId));
 
 			// Create address for this customer
+			/*
 			Address address = new Address();
 			address.setAddressee("William Sanders");
 			address.setAttention("William Sanders");
@@ -654,9 +804,9 @@ public class SampleOperations_2019_1 {
 			address.setZip("94131");
 			address.setState("CA");
 			address.setCountry(Country._unitedStates);
-
+			
 			setCustomerAddress(customer, address, "Shipping Address", false, true);
-
+			*/
 			printSendingRequestMessage();
 
 			// Invoke upsert() operation
@@ -684,7 +834,7 @@ public class SampleOperations_2019_1 {
 				customer.setInternalId(internalIds.get(i));
 
 				// Update name
-				customer.setEntityId(randomString + " XYZ Inc " + (i + 1));
+				//customer.setEntityId(randomString + " XYZ Inc " + (i + 1));
 				customer.setCompanyName(randomString + " XYZ, Inc. " + (i + 1));
 
 				customersToUpdate.add(customer);
@@ -801,7 +951,367 @@ public class SampleOperations_2019_1 {
 			}
 		});
 	}
+	//CUSTOMER END
 
+	//VENDOR START
+	/**
+	 * Demonstrates how to add a Vendor record into NetSuite using the {@code add()} operation.
+	 */
+	private void addVendor() {
+		SAMPLE_OPERATIONS.put(ADD_VENDOR, () -> {
+			printWithEmptyLine(ENTER_VENDOR_INFORMATION + SPACE + FIELDS_ALREADY_POPULATED);
+
+			Vendor vendor = new Vendor();
+
+			vendor.setCompanyName(readLine(getIndentedString(COMPANY_NAME), null));
+			vendor.setEntityId(readLine(getIndentedString(ENTITY_NAME), null));
+			vendor.setExternalId(readLine(getIndentedString(EXTERNAL_ID), null));
+			vendor.setEmail(readLine(getIndentedString(EMAIL), null));
+			vendor.setEmailPreference(EmailPreference._hTML);
+			RecordRef subsidiary = new RecordRef();
+			subsidiary.setInternalId("1");
+			subsidiary.setType(RecordType.subsidiary);
+			vendor.setSubsidiary(subsidiary);
+
+			// Set entity status. The internal ID can be obtained from Setup > Sales > Vendor Statuses.
+			// The default status is "Closed Won" which has an internal ID of 13.
+			String statusInternalId = readLine(getIndentedString(ENTITY_STATUS_INTERNAL_ID), DEFAULT_STATUS_INTERNAL_ID);
+
+			// Create address for this vendor
+			/*
+			Address address = new Address();
+			address.setAddressee("");
+			address.setAttention("");
+			address.setAddr1("Jiahe");
+			address.setCity("Xiamen");
+			address.setZip("361000");
+			address.setState("Fujian Province");
+			address.setCountry(Country._china);
+			address.setAddr1(readLine(getIndentedString(ADDRESS_1), null));
+			address.setAddr2(readLine(getIndentedString(ADDRESS_2), null));
+			address.setAddr3(readLine(getIndentedString(ADDRESS_3), null));
+			
+			setVendorAddress(vendor, address, "Shipping Address", true, true);
+			*/
+			printSendingRequestMessage();
+
+			// Invoke add() operation
+			WriteResponse response = client.callAddRecord(vendor);
+
+			// Process the response
+			processVendorWriteResponse(response, vendor);
+		});
+	}
+
+	/**
+	 * Demonstrates how to use custom fields when adding a Vendor record into NetSuite
+	 * using the {@code add()} operation. The custom fields need to be already created in NetSuite
+	 * and the script IDs for these fields need to be obtained.
+	 */
+	private void addVendorWithCustomFields() {
+		SAMPLE_OPERATIONS.put(ADD_VENDOR_WITH_CUSTOM_FIELDS, () -> {
+
+			// Prepare list of options for populating custom fields
+			final Map<String, Supplier<CustomFieldRef>> customFieldPopulation = new LinkedHashMap<>();
+
+			// For every option, create a custom field of respective type and read and assign value to it.
+
+			customFieldPopulation.put(CUSTOM_FIELD_STRING, () -> {
+				StringCustomFieldRef customFieldRef = new StringCustomFieldRef();
+				customFieldRef.setScriptId(readLine(getIndentedString(SCRIPT_ID)));
+				customFieldRef.setValue(readLine(getIndentedString(CUSTOM_FIELD_VALUE_STRING), "Test Value"));
+				return customFieldRef;
+			});
+
+			customFieldPopulation.put(CUSTOM_FIELD_BOOLEAN, () -> {
+				BooleanCustomFieldRef customFieldRef = new BooleanCustomFieldRef();
+				customFieldRef.setScriptId(readLine(getIndentedString(SCRIPT_ID)));
+				String readValue = readLine(getIndentedString(CUSTOM_FIELD_VALUE_BOOLEAN), TRUE_SHORT_VALUE).trim();
+				customFieldRef.setValue(getBoolean(readValue));
+				return customFieldRef;
+			});
+
+			customFieldPopulation.put(CUSTOM_FIELD_LIST, () -> {
+				SelectCustomFieldRef customFieldRef = new SelectCustomFieldRef();
+				customFieldRef.setScriptId(readLine(getIndentedString(SCRIPT_ID)));
+				ListOrRecordRef listOrRecordRef = new ListOrRecordRef();
+				listOrRecordRef.setInternalId(readLine(getIndentedString(CUSTOM_FIELD_VALUE_LIST)).trim());
+				customFieldRef.setValue(listOrRecordRef);
+				return customFieldRef;
+			});
+
+			customFieldPopulation.put(CUSTOM_FIELD_MULTI_SELECT, () -> {
+				MultiSelectCustomFieldRef customFieldRef = new MultiSelectCustomFieldRef();
+				customFieldRef.setScriptId(readLine(getIndentedString(SCRIPT_ID)));
+				List<String> internalIds = getListItems(readLine(getIndentedString(CUSTOM_FIELD_VALUE_MULTI_SELECT)));
+				ListOrRecordRef[] listOrRecordRefs = internalIds.stream().map(internalId -> new ListOrRecordRef(null, internalId, null, null))
+						.toArray(ListOrRecordRef[]::new);
+				customFieldRef.setValue(listOrRecordRefs);
+				return customFieldRef;
+			});
+
+			// Create vendor and fill its fields
+			Vendor vendor = new Vendor();
+
+			String randomId = getRandomString();
+			//vendor.setEntityId(randomId + " Custom Inc");
+			vendor.setCompanyName(randomId + " Custom, Inc.");
+
+			printWithEmptyLine(CUSTOM_FIELDS_WARNING);
+
+			// Display options for populating custom fields to user
+
+			OptionList<Supplier<CustomFieldRef>> customFieldOptionList = new OptionList<>(MAKE_CUSTOM_FIELD_SELECTION, customFieldPopulation);
+			customFieldOptionList.setQuitOption(QUIT_CHARACTER, QUIT_CUSTOM_FIELDS);
+
+			List<CustomFieldRef> customFieldRefs = new ArrayList<>();
+
+			Supplier<CustomFieldRef> supplier;
+			while ((supplier = customFieldOptionList.displayAndGetUserChoice()) != null) {
+				printEmptyLine();
+				customFieldRefs.add(supplier.get());
+			}
+
+			if (customFieldRefs.isEmpty()) {
+				printError(NO_CUSTOM_FIELDS_SPECIFIED);
+				return;
+			}
+
+			CustomFieldRef[] customFieldList = new CustomFieldRef[customFieldRefs.size()];
+			//customFieldList.setCustomField(customFieldRefs.toArray(new CustomFieldRef[customFieldRefs.size()]));
+
+			vendor.setCustomFieldList(customFieldList);
+
+			printSendingRequestMessage();
+
+			// Invoke add() operation
+			WriteResponse response = client.callAddRecord(vendor);
+
+			// Process the response
+			processVendorWriteResponse(response, vendor);
+		});
+	}
+
+	/**
+	 * Demonstrates how to update an existing Vendor record in NetSuite using the {@code update()} operation
+	 * which uses an internal ID to reference the record to be updated.
+	 */
+	private void updateVendor() {
+		SAMPLE_OPERATIONS.put(UPDATE_VENDOR, () -> {
+			printWithEmptyLine(ENTER_VENDOR_INFORMATION_FOR_UPDATE);
+
+			Vendor vendor = new Vendor();
+
+			// Get internal ID and entity ID for update
+			vendor.setInternalId(readLine(getIndentedString(INTERNAL_ID)).trim());
+			vendor.setEntityId(readLine(getIndentedString(ENTITY_NAME), null));
+
+			// Update some fields
+			String randomString = getRandomString();
+			vendor.setCompanyName(randomString + " Updated Company Name, Inc.");
+			vendor.setEmail("company" + randomString + "@example.com");
+
+			// Add a billing address
+			/*
+			Address address = new Address();
+			address.setAddr1("4765 Sunset Blvd");
+			address.setCity("San Mateo");
+			address.setZip("94401");
+			address.setState("CA");
+			address.setCountry(Country._unitedStates);
+			
+			setVendorAddress(vendor, address, "Billing Address", true, false);
+			*/
+			printSendingRequestMessage();
+
+			// Invoke update() operation
+			WriteResponse response = client.callUpdateRecord(vendor);
+
+			// Process the response
+			processVendorWriteResponse(response, vendor);
+		});
+	}
+
+	/**
+	 * Demonstrates how to Add/Update a Vendor record into NetSuite using the {@code upsert()} operation.
+	 */
+	private void upsertVendor() {
+		SAMPLE_OPERATIONS.put(UPSERT_VENDOR, () -> {
+			printWithEmptyLine(ENTER_VENDOR_INFORMATION + SPACE + FIELDS_ALREADY_POPULATED);
+
+			Vendor vendor = new Vendor();
+
+			vendor.setExternalId(readLine(getIndentedString(EXTERNAL_ID)));
+			vendor.setCompanyName(readLine(getIndentedString(COMPANY_NAME), null));
+			vendor.setEntityId(readLine(getIndentedString(ENTITY_NAME), null));
+			vendor.setEmail(readLine(getIndentedString(EMAIL), null));
+			vendor.setEmailPreference(EmailPreference._hTML);
+
+			// Set entity status. The internal ID can be obtained from Setup > Sales > Vendor Statuses.
+			// The default status is "Closed Won" which has an internal ID of 13.
+			String statusInternalId = readLine(getIndentedString(ENTITY_STATUS_INTERNAL_ID), DEFAULT_STATUS_INTERNAL_ID);
+
+			// Create address for this vendor
+			/*
+			Address address = new Address();
+			address.setAddressee("William Sanders");
+			address.setAttention("William Sanders");
+			address.setAddr1("4765 Sunset Blvd");
+			address.setCity("San Francisco");
+			address.setZip("94131");
+			address.setState("CA");
+			address.setCountry(Country._unitedStates);
+			
+			setVendorAddress(vendor, address, "Shipping Address", false, true);
+			*/
+			printSendingRequestMessage();
+
+			// Invoke upsert() operation
+			WriteResponse response = client.callUpsertRecord(vendor);
+
+			// Process the response
+			processVendorWriteResponse(response, vendor);
+		});
+	}
+
+	/**
+	 * Demonstrates how to update a list of existing vendor records in NetSuite using the updateList() operation.
+	 */
+	private void updateListOfVendors() {
+		SAMPLE_OPERATIONS.put(UPDATE_LIST_OF_VENDORS, () -> {
+			printEmptyLine();
+
+			List<String> internalIds = getListItems(readLine(ENTER_LIST_OF_VENDORS));
+			List<Vendor> vendorsToUpdate = new ArrayList<>(internalIds.size());
+
+			String randomString = getRandomString();
+
+			for (int i = 0; i < internalIds.size(); i++) {
+				Vendor vendor = new Vendor();
+				vendor.setInternalId(internalIds.get(i));
+
+				// Update name
+				//vendor.setEntityId(randomString + " XYZ Inc " + (i + 1));
+				vendor.setCompanyName(randomString + " XYZ, Inc. " + (i + 1));
+
+				vendorsToUpdate.add(vendor);
+			}
+
+			if (vendorsToUpdate.isEmpty()) {
+				printError(NO_VALID_INTERNAL_IDS_FOR_UPDATE_PROVIDED);
+			} else {
+				printSendingRequestMessage();
+
+				// Invoke updateList() operation to update vendors
+				WriteResponseList responseList = client.callUpdateRecords(vendorsToUpdate);
+
+				// Process the response
+				processVendorWriteResponseList(responseList, vendorsToUpdate);
+			}
+		});
+	}
+
+	/**
+	 * Demonstrates how to get an existing record in NetSuite using the get() operation.
+	 * 
+	 * Test Status: failed
+	 */
+	private void getVendor() {
+		SAMPLE_OPERATIONS.put(GET_VENDOR, () -> {
+			printEmptyLine();
+
+			// Prompt for the internal ID
+			String internalId = readLine(INTERNAL_ID_TO_GET);
+
+			printSendingRequestMessage();
+
+			// Invoke the get() operation to retrieve the record
+			ReadResponse response = client.callGetRecord(createRecordRef(internalId, RecordType.vendor));
+
+			// Process the response
+			processVendorReadResponse(response);
+		});
+	}
+
+	/**
+	 * Demonstrates how to get a list of existing records in NetSuite using the getList() operation.
+	 */
+	private void getListOfVendors() {
+		SAMPLE_OPERATIONS.put(GET_LIST_OF_VENDORS, () -> {
+			printEmptyLine();
+
+			// Prompt for list of internal IDs
+			List<String> internalIds = getListItems(readLine(INTERNAL_IDS_TO_GET));
+			if (internalIds.isEmpty()) {
+				printError(NO_VALID_INTERNAL_IDS_FOR_GET_PROVIDED);
+				return;
+			}
+
+			// Create RecordRef for every internal ID
+			RecordRef[] recordRefs = internalIds.stream().map(internalId -> createRecordRef(internalId, RecordType.vendor)).toArray(RecordRef[]::new);
+
+			printSendingRequestMessage();
+
+			// Invoke getList() operation to retrieve the records
+			ReadResponseList responseList = client.callGetRecords(recordRefs);
+
+			// Process the response
+			processVendorReadResponseList(responseList, recordRefs);
+		});
+	}
+
+	/**
+	 * Demonstrates how to delete a list of existing vendor records in NetSuite using the deleteList() operation.
+	 */
+	private void deleteListOfVendors() {
+		SAMPLE_OPERATIONS.put(DELETE_LIST_OF_VENDORS, () -> {
+			printEmptyLine();
+
+			// Prompt for list of internal IDs
+			List<String> internalIds = getListItems(readLine(INTERNAL_IDS_TO_DELETE));
+			if (internalIds.isEmpty()) {
+				printError(NO_VALID_INTERNAL_IDS_FOR_DELETE_PROVIDED);
+				return;
+			}
+
+			// First get the records from NetSuite
+			printInfoWithEmptyLine(CHECKING_EXISTENCE_OF_RECORDS);
+
+			List<Vendor> records = client
+					.getRecords(internalIds.stream().map(internalId -> createRecordRef(internalId, RecordType.vendor)).toArray(RecordRef[]::new))
+					// Filter just non-null records
+					.stream().filter(Objects::nonNull).map(record -> (Vendor) record).collect(Collectors.toList());
+
+			if (records == null || records.isEmpty()) {
+				printError(NO_VALID_INTERNAL_IDS_FOR_DELETE_PROVIDED);
+				return;
+			}
+
+			printWithEmptyLine(FOLLOWING_RECORDS_WILL_BE_DELETED);
+
+			for (int i = 0; i < records.size(); i++) {
+				printWithEmptyLine(getIndentedString(VENDOR_WITH_INDEX), i + 1);
+				printMap(new Fields(records.get(i)));
+			}
+
+			printEmptyLine();
+			boolean isDeletionConfirmed = getBoolean(readLine(DELETE_ALL_RECORDS, "N"));
+
+			if (isDeletionConfirmed) {
+				printSendingRequestMessage();
+				// Invoke deleteList() operation to delete the records
+				RecordRef[] recordRefs = records.stream().map(record -> createRecordRef(record.getInternalId(), RecordType.vendor)).toArray(RecordRef[]::new);
+				WriteResponseList responseList = client.callDeleteRecords(recordRefs);
+				processVendorDeleteList(responseList, recordRefs);
+			} else {
+				printInfoWithEmptyLine(RECORDS_WERE_NOT_DELETED);
+			}
+		});
+	}
+
+	//VENDOR END
+
+	//SALES ORDER START
 	/**
 	 * Demonstrates how to add a Sales Order record into NetSuite using the {@code add()} operation.
 	 */
@@ -1079,6 +1589,308 @@ public class SampleOperations_2019_1 {
 			client.setPageSize(DEFAULT_PAGE_SIZE);
 		});
 	}
+	//SALES ORDER END
+
+	//=================PURCHASE ORDE START=====================
+	/**
+	 * Demonstrates how to add a Purchase Order record into NetSuite using the {@code add()} operation.
+	 */
+	private void addPurchaseOrder() {
+		SAMPLE_OPERATIONS.put(ADD_PURCHASE_ORDER, () -> {
+			printWithEmptyLine(ENTER_VENDOR_INFORMATION);
+
+			SearchStringField entityId = new SearchStringField();
+			entityId.setOperator(SearchStringFieldOperator.is);
+			String vendorName = readLine(getIndentedString(VENDOR_NAME));
+			entityId.setSearchValue(vendorName);
+
+			CustomerSearchBasic vendorSearchBasic = new CustomerSearchBasic();
+			vendorSearchBasic.setEntityId(entityId);
+
+			printSendingRequestMessage();
+
+			List<?> foundCustomers = client.search(vendorSearchBasic);
+			if (foundCustomers == null || foundCustomers.isEmpty()) {
+				printError(PURCHASE_ORDER_VENDOR_NOT_FOUND, vendorName);
+				return;
+			}
+			if (foundCustomers.size() > 1) {
+				printError(PURCHASE_ORDER_MORE_VENDORS_FOUND, vendorName);
+				return;
+			}
+
+			printEmptyLine();
+
+			PurchaseOrder purchaseOrder = new PurchaseOrder();
+			purchaseOrder.setEntity(createRecordRef(((Customer) foundCustomers.get(0)).getInternalId()));
+
+			// Set the transaction date and status
+			purchaseOrder.setTranDate(Calendar.getInstance());
+			purchaseOrder.setOrderStatus(PurchaseOrderOrderStatus._pendingReceipt);
+
+			// Enter the internal IDs of inventory items to be added to this Purchase Order
+			List<String> itemsInternalIds = getListItems(readLine(ENTER_ITEM_IDS_FOR_PURCHASE_ORDER));
+			purchaseOrder.setItemList(getPurchaseOrderItemList(itemsInternalIds));
+
+			printSendingRequestMessage();
+
+			// Invoke add() operation
+			WriteResponse response = client.callAddRecord(purchaseOrder);
+
+			// Process the response
+			processPurchaseOrderWriteResponse(response);
+		});
+	}
+
+	/**
+	 * Demonstrates how to update an existing Purchase Order record in NetSuite using the {@code update()} operation
+	 * which uses an internal ID to reference the record to be updated.
+	 */
+	private void updatePurchaseOrder() {
+		SAMPLE_OPERATIONS.put(UPDATE_PURCHASE_ORDER, () -> {
+			printEmptyLine();
+
+			PurchaseOrder purchaseOrder = new PurchaseOrder();
+
+			// Get internal ID for update
+			purchaseOrder.setInternalId(readLine(ENTER_PURCHASE_ORDER_FOR_UPDATE));
+
+			printEmptyLine();
+
+			// Enter the internal IDs of inventory items to be added to the Purchase Order
+			List<String> itemsInternalIds = getListItems(readLine(ENTER_ITEM_IDS_FOR_PURCHASE_ORDER));
+			PurchaseOrderItem[] purchaseOrderItemList = getPurchaseOrderItemList(itemsInternalIds);
+
+			purchaseOrder.setItemList(purchaseOrderItemList);
+
+			printSendingRequestMessage();
+
+			// Invoke update() operation
+			WriteResponse response = client.callUpdateRecord(purchaseOrder);
+
+			// Process the response
+			processPurchaseOrderWriteResponse(response);
+		});
+	}
+
+	/**
+	 * Demonstrates how to fulfill a Purchase Order using the {@code initialize()} and {@code add()} operations.
+	 */
+	private void receiptPurchaseOrder() {
+		SAMPLE_OPERATIONS.put(RECEIPT_PURCHASE_ORDER, () -> {
+			printEmptyLine();
+
+			InitializeRef initializeRef = new InitializeRef();
+			initializeRef.setType(InitializeRefType.purchaseOrder);
+			// Get internal ID for initialize() operation
+			initializeRef.setInternalId(readLine(ENTER_PURCHASE_ORDER_FOR_FULFILLING));
+
+			InitializeRecord initializeRecord = new InitializeRecord();
+			initializeRecord.setType(InitializeType.itemFulfillment);
+			initializeRecord.setReference(initializeRef);
+
+			printSendingRequestMessage();
+
+			// Perform initialize() operation to get a copy of ItemFulfillment record
+			ReadResponse initializeResponse = client.callInitialize(initializeRecord);
+			ItemFulfillment itemFulfillment = processInitializeReadResponse(initializeResponse);
+			if (itemFulfillment == null) {
+				return;
+			}
+
+			// You can change any desired properties of retrieved Item Fulfillment
+			// itemFulfillment.setTransferLocation(...);
+
+			// Set preference to ignore read-only fields. Some of the fields included in retrieved ItemFulfillment
+			// record cannot be set. Setting this preference solve that problem.
+			client.setIgnoreReadOnlyFields(true);
+
+			printSendingRequestMessage();
+
+			// Store retrieved Item Fulfillment record into NetSuite
+			WriteResponse response = client.callAddRecord(itemFulfillment);
+
+			// Set ignore read-only preference to the default value
+			client.setIgnoreReadOnlyFields(false);
+
+			// Process the response
+			processItemFulfillmentWriteResponse(response, initializeRef.getInternalId());
+		});
+	}
+
+	/**
+	 * Demonstrates how to search for Purchase Orders for a given vendor name.
+	 */
+	private void searchPurchaseOrders() {
+		SAMPLE_OPERATIONS.put(SEARCH_PURCHASE_ORDERS, () -> {
+			printWithEmptyLine(ENTER_VENDOR_INFORMATION);
+
+			String vendorName = readLine(getIndentedString(VENDOR_NAME));
+			List<Customer> vendors = searchForCustomers(vendorName);
+			if (vendors.isEmpty()) {
+				printError(NO_VENDORS_FOUND, vendorName);
+				return;
+			}
+
+			// Search sales order for all found vendors
+			/*modified by Bansi  2019/5/14
+			SearchMultiSelectField entities = new SearchMultiSelectField();
+			entities.setOperator(SearchMultiSelectFieldOperator.anyOf);
+			
+			//entities.setSearchValue(vendors.stream().map(vendor->));
+			
+			entities.setSearchValue(
+					vendors.stream().map(vendor -> createRecordRef(vendor.getInternalId(), RecordType.vendor)).toArray(RecordRef[]::new));
+			*/
+			TransactionSearchBasic transactionSearchBasic = new TransactionSearchBasic();
+			/* modified by Bansi 2019/5/14
+			transactionSearchBasic.setType(new SearchEnumMultiSelectField(
+					new String[] { RecordType._purchaseOrder }, SearchEnumMultiSelectFieldOperator.anyOf));
+			transactionSearchBasic.setEntity(entities);
+			*/
+
+			RecordRef[] entitiess = vendors.stream().map(vendor -> createRecordRef(vendor.getInternalId(), RecordType.vendor)).toArray(RecordRef[]::new);
+			transactionSearchBasic.setType(new String[] { RecordType._purchaseOrder });
+			transactionSearchBasic.setEntity(entitiess);
+
+			// We want to returned also list of items so we need to set the following preference
+			client.setBodyFieldsOnly(false);
+
+			// Set smaller page size in order to demonstrate how searchMoreWithId() operation works
+			client.setPageSize(PAGE_SIZE);
+
+			printSendingRequestMessage();
+
+			// Search for sales orders
+			SearchResult searchResult = client.callSearch(transactionSearchBasic);
+			final String jobId = client.getLastJobId();
+
+			processSearchResult(searchResult, vendorName);
+
+			// Get next pages of the search result
+			if (isSuccessfulSearchResult(searchResult)) {
+				for (int i = 2; i <= searchResult.getTotalPages(); i++) {
+					printSendingRequestMessage();
+					processSearchResult(client.callSearchMoreWithId(jobId, i), vendorName);
+				}
+			}
+
+			// We can revert search preferences to the default values now
+			client.setBodyFieldsOnly(true);
+			client.setPageSize(DEFAULT_PAGE_SIZE);
+		});
+	}
+
+	/**
+	 * Demonstrates how to use advanced search for searching Purchase Orders which belong to a given vendor name.
+	 */
+	private void advancedSearchPurchaseOrders() {
+		SAMPLE_OPERATIONS.put(ADVANCED_SEARCH_PURCHASE_ORDERS, () -> {
+			printEmptyLine();
+
+			/*
+			SearchEnumMultiSelectField recordType = new SearchEnumMultiSelectField();
+			recordType.setOperator(SearchEnumMultiSelectFieldOperator.anyOf);
+			recordType.setSearchValue(new String[] { RecordType._purchaseOrder });
+			*/
+			TransactionSearchBasic transactionSearchBasic = new TransactionSearchBasic();
+			//--modified by Bansi 20190514 
+			//transactionSearchBasic.setType(recordType.getSearchValue());
+			transactionSearchBasic.setType(new String[] { RecordType._purchaseOrder });
+
+			// In order to have a particular sales order in search result just once, set the following field.
+			transactionSearchBasic.setMainLine(new SearchBooleanField(true));
+
+			final String tranId = readLine(ENTER_TRANSACTION_ID);
+			if (!isEmptyString(tranId)) {
+				SearchStringField tranIdField = new SearchStringField();
+				tranIdField.setOperator(SearchStringFieldOperator.is);
+				tranIdField.setSearchValue(tranId);
+				transactionSearchBasic.setTranId(tranIdField);
+			}
+
+			final List<String> vendorIds = getListItems(readLine(ENTER_VENDOR_INTERNAL_ID_FOR_PURCHASE_ORDER_SEARCH));
+			if (!vendorIds.isEmpty()) {
+				//SearchColumnEnumSelectField
+				/* modified by Bansi at 2019/5/14 am
+				SearchEnumMultiSelectField entityField = new SearchEnumMultiSelectField();
+				entityField.setOperator(SearchEnumMultiSelectFieldOperator.anyOf);
+				
+				entityField.setSearchValue(vendorIds.stream().map(Utils::createRecordRef).toArray(RecordRef[]::new));
+				transactionSearchBasic.setEntity(entityField);
+				*/
+				RecordRef[] entities = vendorIds.stream().map(Utils::createRecordRef).toArray(RecordRef[]::new);
+				transactionSearchBasic.setEntity(entities);
+			}
+
+			// Apply search criteria
+			TransactionSearch transactionSearch = new TransactionSearch();
+			transactionSearch.setBasic(transactionSearchBasic);
+
+			// Define columns to be returned
+			TransactionSearchRowBasic transactionSearchRowBasic = new TransactionSearchRowBasic();
+			transactionSearchRowBasic.setInternalId(new SearchColumnSelectField[] { new SearchColumnSelectField() });
+			transactionSearchRowBasic.setTranId(new SearchColumnStringField[] { new SearchColumnStringField() });
+			transactionSearchRowBasic.setDateCreated(new SearchColumnDateField[] { new SearchColumnDateField() });
+			transactionSearchRowBasic.setTotal(new SearchColumnDoubleField[] { new SearchColumnDoubleField() });
+			transactionSearchRowBasic.setEntity(new SearchColumnSelectField[] { new SearchColumnSelectField() });
+
+			TransactionSearchRow transactionSearchRow = new TransactionSearchRow();
+			transactionSearchRow.setBasic(transactionSearchRowBasic);
+
+			TransactionSearchAdvanced transactionSearchAdvanced = new TransactionSearchAdvanced();
+			transactionSearchAdvanced.setCriteria(transactionSearch);
+			transactionSearchAdvanced.setColumns(transactionSearchRow);
+
+			if (isEmptyString(tranId) && vendorIds.isEmpty()) {
+				printInfoWithEmptyLine(NO_SEARCH_CRITERIA_DEFINED);
+			}
+
+			// Set smaller page size in order to demonstrate how searchMoreWithId() operation works
+			client.setPageSize(PAGE_SIZE);
+
+			printSendingRequestMessage();
+
+			SearchResult searchResult = client.callSearch(transactionSearchAdvanced);
+			final String jobId = client.getLastJobId();
+
+			processSearchResult(searchResult, null);
+
+			// Get next pages of the search result
+			if (isSuccessfulSearchResult(searchResult)) {
+				for (int i = 2; i <= searchResult.getTotalPages(); i++) {
+					printSendingRequestMessage();
+					processSearchResult(client.callSearchMoreWithId(jobId, i), null);
+				}
+			}
+
+			// We can revert search preferences to the default values now
+			client.setPageSize(DEFAULT_PAGE_SIZE);
+		});
+	}
+
+	//=================PURCHASE ORDER END======================
+
+	/**
+	 * Demonstrates how to add a certain Custom Record into NetSuite.
+	 */
+	private void addCustomRecord() {
+		SAMPLE_OPERATIONS.put(ADD_CUSTOM_RECORD, () -> {
+			printWithEmptyLine(ENTER_CUSTOM_RECORD_DATA_FOR_ADD);
+
+			CustomRecord customRecord = new CustomRecord();
+			customRecord.setRecType(createRecordRef(readLine(getIndentedString(CUSTOM_RECORD_TYPE_ID)).trim()));
+			customRecord.setName(readLine(getIndentedString(NAME)));
+
+			printSendingRequestMessage();
+
+			// Invoke add() operation
+			WriteResponse response = client.callAddRecord(customRecord);
+
+			// Process response
+			processCustomRecordWriteResponse(response, customRecord);
+		});
+	}
 
 	/**
 	 * Demonstrates how to search for Custom Record. Since Custom Record implementations vary vastly, this search
@@ -1352,6 +2164,33 @@ public class SampleOperations_2019_1 {
 			customer.setInternalId(searchRow.getInternalId(0).getSearchValue().getInternalId());
 			return customer;
 		}).collect(Collectors.toList());
+	}
+
+	private static PurchaseOrderItem[] getPurchaseOrderItemList(List<String> itemsInternalIds) {
+		PurchaseOrderItem[] purchaseOrderItems = new PurchaseOrderItem[itemsInternalIds.size()];
+
+		// Create the sales order items and populate the quantity
+		int i = 0;
+		for (String internalId : itemsInternalIds) {
+			PurchaseOrderItem item = new PurchaseOrderItem();
+			item.setItem(createRecordRef(internalId));
+			String number = null;
+			try {
+				number = readLine(getIndentedString(format(ENTER_QUANTITY_FOR_ITEM, internalId)));
+				item.setQuantity(Double.parseDouble(number));
+			} catch (NumberFormatException nfe) {
+				printError(format(INVALID_NUMBER, number) + SPACE + ITEM_NOT_ADDED_TO_SALES_ORDER);
+				continue;
+			}
+			item.setAmount(1.0);
+
+			purchaseOrderItems[i] = item;
+			i++;
+		}
+
+		PurchaseOrderItem[] purchaseOrderItemList = purchaseOrderItems;
+
+		return purchaseOrderItemList;
 	}
 
 	private boolean isSuccessfulSearchResult(SearchResult searchResult) {

@@ -3,6 +3,7 @@ package com.bansi.webservices.samples.v2019_1;
 import com.netsuite.webservices.lists.accounting_2019_1.InventoryItem;
 import com.netsuite.webservices.lists.accounting_2019_1.LotNumberedInventoryItem;
 import com.netsuite.webservices.lists.relationships_2019_1.Customer;
+import com.netsuite.webservices.lists.relationships_2019_1.Vendor;
 import com.netsuite.webservices.platform.common_2019_1.TransactionSearchRowBasic;
 import com.netsuite.webservices.platform.core_2019_1.CustomRecordRef;
 import com.netsuite.webservices.platform.core_2019_1.Record;
@@ -165,6 +166,131 @@ public final class ResponseHandler_2019_1 {
 			}
 		}
 	}
+	
+	//vendor start
+	public static void processVendorWriteResponse(WriteResponse response, Vendor vendor) {
+		/*
+		if (response.getStatus()[0].getAfterSubmitFailed()) {
+			printWithEmptyLine(SUCCESSFUL_SAVING_VENDOR);
+			printMap(new Fields(response, vendor));
+		} else {
+			printError(FAILED_SAVING_VENDOR + response.getStatus().getStatusDetail(0).getMessage());
+		}
+		*/
+		Boolean isIsSuccess = true;
+		for (StatusDetail sd : response.getStatus()) {
+			isIsSuccess = !sd.getAfterSubmitFailed() && isIsSuccess;
+		}
+		if (isIsSuccess) {
+			printWithEmptyLine(SUCCESSFUL_SAVING_VENDOR);
+			printMap(new Fields(response, vendor));
+		} else {
+			printError(FAILED_SAVING_VENDOR + response.getStatus()[0].getMessage());
+		}
+	}
+
+	public static void processVendorWriteResponseList(WriteResponseList responseList, List<Vendor> vendors) {
+		WriteResponse[] responses = responseList.getWriteResponse();
+		Map<WriteResponse, Vendor> successfulResponses = new LinkedHashMap<>();
+		Map<WriteResponse, Vendor> failedResponses = new LinkedHashMap<>();
+
+		for (int i = 0; i < responses.length; i++) {
+			final WriteResponse response = responses[i];
+			final Vendor vendor = vendors.get(i);
+			Boolean isIsSuccess = true;
+			for (StatusDetail sd : response.getStatus()) {
+				isIsSuccess = !sd.getAfterSubmitFailed() && isIsSuccess;
+			}
+			if (isIsSuccess) {
+				successfulResponses.put(response, vendor);
+			} else {
+				failedResponses.put(response, vendor);
+			}
+		}
+
+		if (successfulResponses.isEmpty()) {
+			printError(NO_VENDORS_UPDATED);
+		} else {
+			printWithEmptyLine(SUCCESSFULLY_UPDATED_VENDORS);
+			for (Map.Entry<WriteResponse, Vendor> entry : successfulResponses.entrySet()) {
+				final Vendor vendor = entry.getValue();
+				Fields fields = new Fields();
+				fields.put(INTERNAL_ID, getInternalId(entry.getKey()));
+				fields.put(ENTITY_ID, vendor.getEntityId());
+				fields.put(COMPANY_NAME, vendor.getCompanyName());
+				printWithEmptyLine(getIndentedString(VENDOR_WITH_INDEX), getVendorsIndex(vendor.getInternalId(), vendors));
+				printMap(fields);
+			}
+		}
+
+		if (!failedResponses.isEmpty()) {
+			printWithEmptyLine(NOT_UPDATED_VENDORS);
+			for (Map.Entry<WriteResponse, Vendor> entry : failedResponses.entrySet()) {
+				final WriteResponse response = entry.getKey();
+				final Vendor vendor = entry.getValue();
+				final String internalId = getInternalId(response);
+				final String errorMessage = getErrorMessage(response);
+				printWithEmptyLine(getIndentedString(VENDOR_WITH_INDEX), getVendorsIndex(vendor.getInternalId(), vendors));
+				printMap(new Fields(internalId, errorMessage));
+			}
+		}
+	}
+
+	public static void processVendorReadResponse(ReadResponse response) {
+		Boolean isIsSuccess = true;
+
+		for (StatusDetail sd : response.getStatus()) {
+			if (sd.getAfterSubmitFailed() != null) {
+				isIsSuccess = !sd.getAfterSubmitFailed() && isIsSuccess;
+			} else
+				isIsSuccess = false;
+		}
+		if (!isIsSuccess) {
+			printError("get vendor failed: %s", getErrorMessage(response));
+			return;
+		}
+		printWithEmptyLine(RETRIEVED_RECORD);
+		printMap(new Fields((Vendor) response.getRecord()));
+	}
+
+	public static void processVendorReadResponseList(ReadResponseList responseList, RecordRef[] recordRefs) {
+		printWithEmptyLine(RETRIEVED_RECORDS);
+		final ReadResponse[] responses = responseList.getReadResponse();
+		for (int i = 0; i < responses.length; i++) {
+			final ReadResponse response = responses[i];
+			printWithEmptyLine(getIndentedString(VENDOR_WITH_INDEX), i + 1);
+			Boolean isIsSuccess = true;
+			for (StatusDetail sd : response.getStatus()) {
+				isIsSuccess = !sd.getAfterSubmitFailed() && isIsSuccess;
+			}
+			if (isIsSuccess) {
+				printMap(new Fields((Vendor) response.getRecord()));
+			} else {
+				final String internalId = recordRefs[i].getInternalId();
+				final String errorMessage = getErrorMessage(response);
+				printMap(new Fields(internalId, errorMessage));
+			}
+		}
+	}
+
+	public static void processVendorDeleteList(WriteResponseList responseList, RecordRef[] recordRefs) {
+		printWithEmptyLine(RECORDS_WERE_DELETED);
+		WriteResponse[] responses = responseList.getWriteResponse();
+		for (int i = 0; i < responses.length; i++) {
+			printWithEmptyLine(getIndentedString(VENDOR_WITH_INDEX), i + 1);
+			final WriteResponse response = responses[i];
+			Boolean isIsSuccess = true;
+			for (StatusDetail sd : response.getStatus()) {
+				isIsSuccess = !sd.getAfterSubmitFailed() && isIsSuccess;
+			}
+			if (isIsSuccess) {
+				printMap(new Fields(getInternalId(response)));
+			} else {
+				printMap(new Fields(recordRefs[i].getInternalId(), getErrorMessage(response)));
+			}
+		}
+	}
+	//vendor end
 
 	public static void processItemWriteResponse(WriteResponse response, InventoryItem item) {
 		Boolean isIsSuccess = true;
@@ -253,6 +379,8 @@ public final class ResponseHandler_2019_1 {
 		printWithEmptyLine(RETRIEVED_RECORD);
 		printMap(new Fields((LotNumberedInventoryItem) response.getRecord()));
 	}
+	
+	
 
 	public static void processSalesOrderWriteResponse(WriteResponse response) {
 		Boolean isIsSuccess = true;
@@ -289,6 +417,19 @@ public final class ResponseHandler_2019_1 {
 			printWithEmptyLine(SALES_ORDER_FULFILLED, salesOrderInternalId, getInternalId(response));
 		} else {
 			printError(SALES_ORDER_NOT_FULFILLED, getErrorMessage(response));
+		}
+	}
+	
+	public static void processPurchaseOrderWriteResponse(WriteResponse response) {
+		Boolean isIsSuccess = true;
+		for (StatusDetail sd : response.getStatus()) {
+			isIsSuccess = !sd.getAfterSubmitFailed() && isIsSuccess;
+		}
+		if (isIsSuccess) {
+			printWithEmptyLine(PURCHASE_ORDER_CREATED_OR_UPDATED_SUCCESSFULLY);
+			printMap(new Fields(getInternalId(response)));
+		} else {
+			printError(PURCHASE_ORDER_NOT_CREATED_OR_UPDATED, getErrorMessage(response));
 		}
 	}
 
@@ -430,6 +571,27 @@ public final class ResponseHandler_2019_1 {
 		}
 		for (int i = 0; i < customers.size(); i++) {
 			if (internalId.equals(customers.get(i).getInternalId())) {
+				return i + 1;
+			}
+		}
+		return invalidIndex;
+	}
+	
+	/**
+	 * This is very ineffective way of finding vendor's index in collection.
+	 * However, we expect just small number of vendors which makes this algorithm good enough.
+	 *
+	 * @param internalId Internal ID of vendor whose index should be found
+	 * @param vendors  List of all vendors
+	 * @return Index of vendor (starting from 1) with given {@code internalId}
+	 */
+	private static int getVendorsIndex(String internalId, List<Vendor> vendors) {
+		final int invalidIndex = -1;
+		if (isEmptyString(internalId)) {
+			return invalidIndex;
+		}
+		for (int i = 0; i < vendors.size(); i++) {
+			if (internalId.equals(vendors.get(i).getInternalId())) {
 				return i + 1;
 			}
 		}

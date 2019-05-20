@@ -33,13 +33,29 @@ public final class Messages {
 	public static final String GET_CUSTOMER = "Get a Customer (Internal ID required)";
 	public static final String GET_LIST_OF_CUSTOMERS = "Get a List of Customers (Internal IDs required)";
 	public static final String DELETE_LIST_OF_CUSTOMERS = "Delete a List of Customers (Internal IDs required)";
+	public static final String ADD_VENDOR = "Add a Vendor";
+	public static final String ADD_VENDOR_WITH_CUSTOM_FIELDS = "Add a Vendor with Custom Fields (CFs must exist)";
+	public static final String UPDATE_VENDOR = "Update a Vendor (Internal ID required)";
+	public static final String UPSERT_VENDOR = "Upsert a Vendor (External ID required)";
+	public static final String UPDATE_LIST_OF_VENDORS = "Update a List of Vendors (Internal IDs required)";
+	public static final String GET_VENDOR = "Get a Vendor (Internal ID required)";
+	public static final String GET_LIST_OF_VENDORS = "Get a List of Vendors (Internal IDs required)";
+	public static final String DELETE_LIST_OF_VENDORS = "Delete a List of Vendors (Internal IDs required)";
 	public static final String ADD_INVENTORY_ITEM = "Add an Inventory Item";
 	public static final String ADD_LOTNUMBERED_INVENTORY_ITEM = "Add an Lot Numbered Inventory Item";
+
 	public static final String ADD_SALES_ORDER = "Add a Sales Order";
 	public static final String UPDATE_SALES_ORDER = "Update a Sales Order to Add a New Items (Internal ID required)";
 	public static final String FULFILL_SALES_ORDER = "Fulfill a Sales Order (Internal ID required)";
 	public static final String SEARCH_SALES_ORDERS = "Search Sales Orders by Customer Entity ID";
 	public static final String ADVANCED_SEARCH_SALES_ORDERS = "Search Sales Orders with Advanced Search";
+
+	public static final String ADD_PURCHASE_ORDER = "Add a Purchase Order";
+	public static final String UPDATE_PURCHASE_ORDER = "Update a Purchase Order to Add a New Items (Internal ID required)";
+	public static final String RECEIPT_PURCHASE_ORDER = "Receipt a Purchase Order (Internal ID required)";
+	public static final String SEARCH_PURCHASE_ORDERS = "Search Purchase Orders by Vendor Entity ID";
+	public static final String ADVANCED_SEARCH_PURCHASE_ORDERS = "Search Purchase Orders with Advanced Search";
+
 	public static final String ADD_CUSTOM_RECORD = "Add a Custom Record (Custom Record type must exist, Internal ID required)";
 	public static final String SEARCH_CUSTOM_RECORD = "Search for a Custom Record (Internal ID required)";
 	public static final String DELETE_CUSTOM_RECORD = "Delete a Custom Record (Internal ID required)";
@@ -58,8 +74,13 @@ public final class Messages {
 	public static final String ITEM_SYNC_METHOD = "Sync method of item to be retrieved.[All/Increase]";
 	public static final String ITEM_SAVED_SEARCH_ID = "Saved Search Id to be retrieved.";
 
-	public static final String GET_ITEM = "Get an item of the internal id";
-	public static final String ENTER_ITEM_NUMBER = "Please enter the following Item.";
+	public static final String GET_ITEM = "Get an inventory item of the internal id";
+	public static final String GET_ASSEMBLY_ITEM = "Get an assembly item of the internal id";
+	public static final String GET_FREIGHT_CHARGED_ITEM = "Get an freight charge item of the internal id";
+	public static final String GET_NOSTOCKED_ITEM = "Get an nostocked item of the internal id";
+	public static final String UPSERT_ASSEMBLY_ITEM = "Update an Assembly Item";
+	public static final String DELETE_ASSEMBLY_ITEM = "Delete an Assembly Item";
+	public static final String ENTER_ITEM_NUMBER = "Please enter the following Item InternalId.";
 	public static final String ITEM_NUMBER = "Internalid of item to be retrieved.";
 
 	public static final String ADD_BOM = "Add an BOM";
@@ -67,7 +88,10 @@ public final class Messages {
 	public static final String ADD_BOM_REVISION = "Add an BOM Revision";
 	public static final String ENTER_INFORMATION_FOR_BOM_REVISION = "Please enter following information for :";
 	public static final String UPDATE_BOM = "Update an BOM";
-	
+	public static final String GET_BOM = "Get an BOM";
+	public static final String SEARCH_BOM = "Serach BOMs";
+	public static final String DELETE_BOM = "Delete an BOM";
+
 	////////////////////
 	public static final String CUSTOM_FIELDS_WARNING = "In order to populate custom fields, ensure that these fields already exist for the customer record.";
 	public static final String CUSTOM_FIELD_STRING = "String (maps to one of Free-Form Text, Text Area, etc. in UI)";
@@ -79,18 +103,24 @@ public final class Messages {
 	public static final String CUSTOM_FIELD_MULTI_SELECT = "Multi-Select List (maps to the Multiple Select type in UI)";
 	public static final String CUSTOM_FIELD_VALUE_MULTI_SELECT = "Values for Custom Field (must be internal IDs, separated by commas)";
 
-	public static final String ENTER_LIST_OF_CUSTOMERS = "Enter internal IDs for Customer records to be updated (separated by commas)";
 	public static final String INTERNAL_ID_TO_GET = "Internal ID of record to be retrieved";
 	public static final String INTERNAL_IDS_TO_GET = "Internal IDs of records to be retrieved (separated by commas)";
 	public static final String INTERNAL_IDS_TO_DELETE = "Internal IDs of records to be deleted (separated by commas)";
 
 	public static final String ENTER_ITEM_IDS_FOR_SALES_ORDER = "Please enter the internal IDs of Inventory Items separated by commas (do not enter discount or subtotal items)";
+	public static final String ENTER_ITEM_IDS_FOR_PURCHASE_ORDER = "Please enter the internal IDs of Inventory Items separated by commas (do not enter discount or subtotal items)";
+
 	public static final String ENTER_QUANTITY_FOR_ITEM = "Please enter quantity for item with internal ID %s";
+
+	public static final String ENTER_TRANSACTION_ID = "Enter the transaction ID (press Enter to skip)";
 
 	public static final String ENTER_SALES_ORDER_FOR_UPDATE = "Enter internal ID of Sales Order to be updated";
 	public static final String ENTER_SALES_ORDER_FOR_FULFILLING = "Enter internal ID of Sales Order to be fulfilled";
-	public static final String ENTER_TRANSACTION_ID = "Enter the transaction ID (press Enter to skip)";
 	public static final String ENTER_CUSTOMER_INTERNAL_ID_FOR_SALES_ORDER_SEARCH = "Enter customer internal IDs (separated by commas, press Enter to skip)";
+
+	public static final String ENTER_PURCHASE_ORDER_FOR_UPDATE = "Enter internal ID of Purchase Order to be updated";
+	public static final String ENTER_PURCHASE_ORDER_FOR_FULFILLING = "Enter internal ID of Purchase Order to be fulfilled";
+	public static final String ENTER_VENDOR_INTERNAL_ID_FOR_PURCHASE_ORDER_SEARCH = "Enter vendor internal IDs (separated by commas, press Enter to skip)";
 
 	public static final String ENTER_CUSTOM_RECORD_DATA_FOR_ADD = "Enter the following information for Custom Record to be added:";
 	public static final String ENTER_CUSTOM_RECORD_DATA_FOR_SEARCH = "Enter the following information for Custom Record to be searched:";
@@ -111,17 +141,30 @@ public final class Messages {
 	public static final String GETTING_URL = "Getting URL using getDataCenterUrls() operation...";
 	public static final String SUCCESSFUL_SAVING_CUSTOMER = "The following customer was added/updated successfully:";
 	public static final String FAILED_SAVING_CUSTOMER = "The customer was not added/updated: ";
+	public static final String SUCCESSFUL_SAVING_VENDOR = "The following vendor was added/updated successfully:";
+	public static final String FAILED_SAVING_VENDOR = "The vendor was not added/updated: ";
 	public static final String SENDING_REQUEST = "Sending request to the server...";
 	public static final String PRESS_TO_CONTINUE = "Press Enter to continue...";
 	public static final String PRESS_TO_QUIT = "Press Enter to quit...";
 	public static final String MAKE_SELECTION = "Please make a selection:";
 	public static final String MAKE_CUSTOM_FIELD_SELECTION = "Select the type of custom field to be populated:";
+
 	public static final String ENTER_CUSTOMER_INFORMATION = "Please enter the following customer information.";
-	public static final String FIELDS_ALREADY_POPULATED = "Note that some fields have already been populated.";
 	public static final String ENTER_CUSTOMER_INFORMATION_FOR_UPDATE = "Please enter the following information for Customer record to be updated:";
 	public static final String SUCCESSFULLY_UPDATED_CUSTOMERS = "The following customers were updated successfully:";
 	public static final String CUSTOMER = "Customer";
 	public static final String CUSTOMER_WITH_INDEX = CUSTOMER + " #%s:";
+	public static final String ENTER_LIST_OF_CUSTOMERS = "Enter internal IDs for Customer records to be updated (separated by commas)";
+
+	public static final String ENTER_VENDOR_INFORMATION = "Please enter the following vendor information.";
+	public static final String ENTER_VENDOR_INFORMATION_FOR_UPDATE = "Please enter the following information for Vendor record to be updated:";
+	public static final String SUCCESSFULLY_UPDATED_VENDORS = "The following vendors were updated successfully:";
+	public static final String VENDOR = "Vendor";
+	public static final String VENDOR_WITH_INDEX = VENDOR + " #%s:";
+	public static final String ENTER_LIST_OF_VENDORS = "Enter internal IDs for Vendors records to be updated (separated by commas)";
+
+	public static final String FIELDS_ALREADY_POPULATED = "Note that some fields have already been populated.";
+
 	public static final String RETRIEVED_RECORD = "Record returned from get() operation:";
 	public static final String RETRIEVED_RECORDS = "Records returned from getList() operation:";
 	public static final String CHECKING_EXISTENCE_OF_RECORDS = "Checking existence of records with provided internal IDs...";
@@ -130,12 +173,21 @@ public final class Messages {
 	public static final String RECORDS_WERE_NOT_DELETED = "The records were not deleted.";
 	public static final String ENTER_INFORMATION_FOR_ITEM = "Please enter following information for Inventory Item:";
 	public static final String ITEM_SUCCESSFULLY_ADDED = "The item '%s' has been added successfully.";
+
 	public static final String SALES_ORDER_CREATED_OR_UPDATED_SUCCESSFULLY = "Sales order created/updated successfully.";
 	public static final String ITEM_FULFILLMENT_RETRIEVED = "Item Fulfillment record was successfully retrieved.";
 	public static final String SALES_ORDER_FULFILLED = "Sales order with internal ID %1$s was successfully fulfilled by Item Fulfillment record with internal ID %2$s.";
 	public static final String NO_SALES_ORDERS_WITH_CUSTOMER_FOUND = "No sales orders were found for customers with name containing '%s'.";
 	public static final String SALES_ORDERS_FOUND = "The following sales orders were found:";
 	public static final String SALES_ORDER_WITH_INDEX = "Sales Order #%s:";
+
+	public static final String PURCHASE_ORDER_CREATED_OR_UPDATED_SUCCESSFULLY = "Purchase order created/updated successfully.";
+	public static final String ITEM_RECEIPT_RETRIEVED = "Item Receipt record was successfully retrieved.";
+	public static final String PURCHASE_ORDER_RECEIPT = "Purchase order with internal ID %1$s was successfully fulfilled by Item Fulfillment record with internal ID %2$s.";
+	public static final String NO_PURCHASE_ORDERS_WITH_VENDOR_FOUND = "No purchase orders were found for customers with name containing '%s'.";
+	public static final String PURCHASE_ORDERS_FOUND = "The following purchase orders were found:";
+	public static final String PURCHASE_ORDER_WITH_INDEX = "Purchase Order #%s:";
+
 	public static final String ITEM_LIST = "Item List:";
 	public static final String NO_SEARCH_CRITERIA_DEFINED = "No search criteria were specified. Searching for all records.";
 	public static final String NO_SALES_ORDERS_FOUND = "No sales orders were found.";
@@ -148,7 +200,7 @@ public final class Messages {
 	public static final String NO_RECORDS_FOUND = "No records were found.";
 	public static final String REQUESTED_LIST_OF_RECORDS = "The requested list for %s returned %d records:";
 	public static final String FILE_UPLOADED = "The file was uploaded successfully:";
-	public static final String VENDOR = "Vendor";
+
 	public static final String INVENTORY_ITEM = "Inventory Item";
 	public static final String ACCOUNT = "Account";
 	public static final String SELECT_RECORD_TYPE_OF_THE_FIELD = "Select the record type containing the select field:";
@@ -158,6 +210,7 @@ public final class Messages {
 	// Field labels
 	public static final String INTERNAL_ID = "Internal ID";
 	public static final String EXTERNAL_ID = "External ID";
+	public static final String ITEM_DISPLAY_NAME = "Item Display Name";
 	////bansi add///
 	public static final String PURCHASE_DESCRIPTION = "purchase description";
 	public static final String BOM_SUCCESSFULLY_ADDED = "The BOM '%s' has been added successfully.";
@@ -169,6 +222,7 @@ public final class Messages {
 	public static final String ENTITY_NAME = "Entity Name (optional depending on your account configuration)";
 	public static final String COMPANY_NAME = "Company Name";
 	public static final String CUSTOMER_NAME = "Customer Name";
+	public static final String VENDOR_NAME = "Vendor Name";
 	public static final String EMAIL = "Email";
 	public static final String PHONE = "Phone";
 	public static final String ENTITY_STATUS = "Status";
@@ -213,18 +267,32 @@ public final class Messages {
 	public static final String NO_VALID_INTERNAL_IDS_FOR_DELETE_PROVIDED = "There were no valid internal IDs provided thus no records were deleted.";
 	public static final String NO_CUSTOMERS_UPDATED = "None of the customers was updated successfully.";
 	public static final String NOT_UPDATED_CUSTOMERS = "The following customers were not updated:";
+	public static final String NO_VENDORS_UPDATED = "None of the vendors was updated successfully.";
+	public static final String NOT_UPDATED_VENDORS = "The following vendors were not updated:";
 	public static final String INVALID_NUMBER = "Invalid number entered (%1$s).";
 	public static final String ITEM_WITHOUT_PRICING_MATRIX = "Item will be created without pricing matrix.";
 	public static final String ITEM_WAS_NOT_ADDED = "The item '%1$s' was not added: %2$s";
+
 	public static final String SALES_ORDER_CUSTOMER_NOT_FOUND = "Sales order was not created because customer with the name '%s' was not found.";
 	public static final String SALES_ORDER_MORE_CUSTOMERS_FOUND = "Sales order was not created because more than one customer with name '%s' were found.";
 	public static final String ITEM_NOT_ADDED_TO_SALES_ORDER = "This item will not be added to this sales order.";
 	public static final String SALES_ORDER_NOT_CREATED_OR_UPDATED = "Sales order was not created/updated: %s";
-	public static final String INITIALIZE_OPERATION_FAILED = "Initialize operation failed: %s";
 	public static final String SALES_ORDER_NOT_FULFILLED = "Sales order was not fulfilled: %s";
+
+	public static final String PURCHASE_ORDER_VENDOR_NOT_FOUND = "Purchase Order was not created because vendor with the name '%s' was not found.";
+	public static final String PURCHASE_ORDER_MORE_VENDORS_FOUND = "Purchase Order was not created because more than one vendor with name '%s' were found.";
+	public static final String ITEM_NOT_ADDED_TO_PURCHASE_ORDER = "This item will not be added to this purchase order.";
+	public static final String PURCHASE_ORDER_NOT_CREATED_OR_UPDATED = "Purchase Order was not created/updated: %s";
+	public static final String PURCHASE_ORDER_NOT_FULFILLED = "Purchase Order was not fulfilled: %s";
+
+	public static final String INITIALIZE_OPERATION_FAILED = "Initialize operation failed: %s";
+
 	public static final String NO_CUSTOMERS_FOUND = "No customers with name '%s' were found.";
+	public static final String NO_VENDORS_FOUND = "No vendors with name '%s' were found.";
+
 	public static final String CUSTOM_RECORD_NOT_ADDED = "Custom Record was not added: %s";
 	public static final String CUSTOM_RECORD_NOT_DELETED = "Custom Record was not deleted: %s";
+
 	public static final String FILE_NOT_UPLOADED = "The file was not uploaded: %s";
 	public static final String SEARCH_FAILED = "Search failed with the following error: %s";
 

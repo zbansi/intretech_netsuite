@@ -1,12 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="com.netsuite.webservices.platform_2018_2.NetSuiteBindingStub"/>
-<fullyQualifiedTypeName name="com.netsuite.webservices.general.communication_2018_2.Message"/>
-<fullyQualifiedTypeName name="com.netsuite.webservices.platform.messages_2018_2.WriteResponse"/>
-<fullyQualifiedTypeName name="java.util.Properties"/>
-<fullyQualifiedTypeName name="com.netsuite.webservices.platform_2018_2.NetSuitePortType"/>
-<fullyQualifiedTypeName name="com.netsuite.webservices.platform_2018_2.NetSuiteServiceLocator"/>
-<fullyQualifiedTypeName name="com.netsuite.webservices.lists.employees_2018_2.Employee"/>
 <fullyQualifiedTypeName name="com.netsuite.webservices.platform.core_2018_2.RecordRef"/>
 <fullyQualifiedTypeName name="com.netsuite.webservices.platform.core_2018_2.types.RecordType"/>
 <fullyQualifiedTypeName name="com.netsuite.suitetalk.proxy.v2017_2.lists.accounting.LotNumberedInventoryItem"/>
@@ -60,4 +53,11 @@
 <fullyQualifiedTypeName name="com.netsuite.webservices.lists.accounting_2019_1.BomRevisionComponent"/>
 <fullyQualifiedTypeName name="com.netsuite.webservices.lists.accounting_2019_1.BomRevision"/>
 <fullyQualifiedTypeName name="java.util.GregorianCalendar"/>
+<fullyQualifiedTypeName name="com.netsuite.webservices.lists.accounting_2019_1.LotNumberedAssemblyItem"/>
+<fullyQualifiedTypeName name="com.netsuite.webservices.lists.accounting_2019_1.AssemblyItem"/>
+<fullyQualifiedTypeName name="com.netsuite.webservices.platform.common_2019_1.BomSearchBasic"/>
+<fullyQualifiedTypeName name="com.netsuite.webservices.lists.relationships_2019_1.Vendor"/>
+<fullyQualifiedTypeName name="com.netsuite.webservices.transactions.purchases_2019_1.PurchaseOrder"/>
+<fullyQualifiedTypeName name="com.netsuite.webservices.transactions.purchases_2019_1.types.PurchaseOrderOrderStatus"/>
+<fullyQualifiedTypeName name="com.netsuite.webservices.transactions.purchases_2019_1.PurchaseOrderItem"/>
 </qualifiedTypeNameHistroy>

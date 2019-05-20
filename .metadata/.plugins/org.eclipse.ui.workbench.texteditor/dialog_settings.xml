@@ -2,37 +2,37 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="string2" key="selection"/>
-		<item value="false" key="casesensitive"/>
+		<item value="Purchase Order" key="selection"/>
+		<item value="true" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
-			<item value="string2"/>
-			<item value="else if"/>
-			<item value="Name"/>
-			<item value="internalidnumber"/>
-			<item value="billofmaterials"/>
-			<item value="null"/>
-			<item value="?"/>
-			<item value="？"/>
+			<item value="Sales Order"/>
+			<item value="customer"/>
+			<item value="SALES_ORDER"/>
+			<item value="ENTER_ITEM_IDS_FOR_"/>
+			<item value="CUSTOMER"/>
+			<item value="_NOT_FOUND"/>
+			<item value="ADD_SALES_ORDER"/>
+			<item value="salesorder"/>
 		</list>
 		<list key="replacehistory">
-			<item value="_2018_2"/>
-			<item value="com.netsuite.webservices.platform.core_2019_1.types."/>
-			<item value="createAndSaveOrderTransaction"/>
-			<item value="Order"/>
-			<item value=".getStatus()[0].getAfterSubmitFailed()"/>
-			<item value=".getStatus()[0]."/>
-			<item value="ParsingUtils_2019_1"/>
-			<item value="PrintUtils_2019_1"/>
+			<item value="Purchase Order"/>
+			<item value="vendor"/>
+			<item value="PURCHASE_ORDER"/>
+			<item value="VENDOR"/>
+			<item value="purchaseorder"/>
+			<item value="Purchaseorder"/>
+			<item value="PurchaseOrder"/>
+			<item value="receiptPurchaseOrder"/>
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
 		<item value="273" key="DIALOG_WIDTH"/>
 		<item value="1|微软雅黑|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|微软雅黑" key="DIALOG_FONT_NAME"/>
 		<item value="399" key="DIALOG_HEIGHT"/>
-		<item value="1563" key="DIALOG_X_ORIGIN"/>
-		<item value="202" key="DIALOG_Y_ORIGIN"/>
+		<item value="957" key="DIALOG_X_ORIGIN"/>
+		<item value="605" key="DIALOG_Y_ORIGIN"/>
 	</section>
 </section>

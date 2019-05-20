@@ -4,6 +4,7 @@ package com.bansi.webservices.samples.v2019_1;
 import com.netsuite.webservices.lists.accounting_2019_1.LotNumberedInventoryItem;
 import com.netsuite.webservices.lists.accounting_2019_1.OtherChargePurchaseItem;
 import com.netsuite.webservices.lists.relationships_2019_1.Customer;
+import com.netsuite.webservices.lists.relationships_2019_1.Vendor;
 import com.netsuite.webservices.platform.core_2019_1.RecordRef;
 import com.netsuite.webservices.platform.messages_2019_1.WriteResponse;
 import com.netsuite.webservices.setup.customization_2019_1.CustomRecord;
@@ -51,6 +52,18 @@ public class Fields extends LinkedHashMap<String, String> {
         put(DATE_CREATED, customer.getDateCreated().getTime().toString());
     }
     
+    public Fields(Vendor vendor) {
+        super();
+        put(INTERNAL_ID, vendor.getInternalId());
+        put(EXTERNAL_ID, vendor.getExternalId());
+        put(ENTITY_ID, vendor.getEntityId());
+        put(COMPANY_NAME, vendor.getCompanyName());
+        put(EMAIL, vendor.getEmail());
+        put(PHONE, vendor.getPhone());
+        put(IS_INACTIVE, String.valueOf(vendor.getIsInactive()));
+        put(DATE_CREATED, vendor.getDateCreated().getTime().toString());
+    }
+    
     public Fields(LotNumberedInventoryItem lotNumberedInventoryItem) {
         super();
         put(INTERNAL_ID, lotNumberedInventoryItem.getInternalId());
@@ -79,6 +92,16 @@ public class Fields extends LinkedHashMap<String, String> {
         put(EMAIL, customer.getEmail());
         put(STATUS_INTERNAL_ID, getStatusKey(customer));
         put(ADDRESS_BOOK_LABEL, getAddressBookLabel(customer));
+    }
+    
+    public Fields(WriteResponse response, Vendor vendor) {
+        super();
+        put(INTERNAL_ID, ((RecordRef) response.getBaseRef()).getInternalId());
+        put(EXTERNAL_ID, ((RecordRef) response.getBaseRef()).getExternalId());
+        put(ENTITY_ID, vendor.getEntityId());
+        put(COMPANY_NAME, vendor.getCompanyName());
+        put(EMAIL, vendor.getEmail());
+        put(ADDRESS_BOOK_LABEL, getVendorAddressBookLabel(vendor));
     }
 
     public Fields(SalesOrder salesOrder, boolean isEntityId) {
@@ -121,5 +144,14 @@ public class Fields extends LinkedHashMap<String, String> {
             return null;
         }
         return customer.getAddressbookList()[i].getLabel();
+    }
+    
+    private static String getVendorAddressBookLabel(Vendor vendor) {
+        final int i = 0;
+        if (vendor.getAddressbookList() == null || vendor.getAddressbookList() == null
+                || vendor.getAddressbookList()[i] == null) {
+            return null;
+        }
+        return vendor.getAddressbookList()[i].getLabel();
     }
 }
