@@ -32,7 +32,7 @@ import java.util.stream.Collectors;
 
 import static com.netsuite.suitetalk.client.common.utils.CommonUtils.isEmptyString;
 import static com.bansi.webservices.samples.Messages.*;
-import static com.bansi.webservices.samples.utils_2019_1.IndentationUtils.getIndentedString;
+import static com.bansi.webservices.samples.utils.IndentationUtils.getIndentedString;
 import static com.bansi.webservices.samples.utils_2019_1.ParsingUtils.getErrorMessage;
 import static com.bansi.webservices.samples.utils_2019_1.ParsingUtils.getInternalId;
 import static com.bansi.webservices.samples.utils_2019_1.PrintUtils.*;

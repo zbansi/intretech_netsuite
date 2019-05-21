@@ -21,8 +21,8 @@ import java.util.Map;
 import static com.netsuite.suitetalk.client.common.utils.CommonUtils.isEmptyString;
 import static com.bansi.webservices.samples.Messages.*;
 import static com.bansi.webservices.samples.io.Console.readLine;
-import static com.bansi.webservices.samples.utils_2019_1.IndentationUtils.getIndentedString;
-import static com.bansi.webservices.samples.utils_2019_1.IndentationUtils.getSuitableIndentation;
+import static com.bansi.webservices.samples.utils.IndentationUtils.getIndentedString;
+import static com.bansi.webservices.samples.utils.IndentationUtils.getSuitableIndentation;
 import static java.lang.String.format;
 import static java.lang.String.valueOf;
 

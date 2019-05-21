@@ -13,8 +13,8 @@ import static com.netsuite.suitetalk.client.common.utils.CommonUtils.composeUrl;
 import static com.bansi.webservices.samples.Messages.PROMPT_FOR_LOGIN_INFORMATION;
 import static com.bansi.webservices.samples.io.Console.readLine;
 import static com.bansi.webservices.samples.io.Console.readPassword;
-import static com.bansi.webservices.samples.utils_2019_1.IndentationUtils.getIndentedString;
 import static com.bansi.webservices.samples.utils_2019_1.PrintUtils.printWithEmptyLine;
+import static com.bansi.webservices.samples.utils.IndentationUtils.getIndentedString;
 import static com.bansi.webservices.samples.utils.StringUtils.getFirstCapitalized;
 import static java.lang.Boolean.parseBoolean;
 

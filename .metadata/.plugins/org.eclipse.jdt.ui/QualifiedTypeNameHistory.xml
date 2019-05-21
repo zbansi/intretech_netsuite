@@ -1,8 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="com.netsuite.webservices.platform.core_2018_2.RecordRef"/>
-<fullyQualifiedTypeName name="com.netsuite.webservices.platform.core_2018_2.types.RecordType"/>
-<fullyQualifiedTypeName name="com.netsuite.suitetalk.proxy.v2017_2.lists.accounting.LotNumberedInventoryItem"/>
 <fullyQualifiedTypeName name="com.netsuite.webservices.platform.messages_2018_2.AsyncAddListResult"/>
 <fullyQualifiedTypeName name="com.netsuite.webservices.platform.core_2018_2.types.SearchRecordType"/>
 <fullyQualifiedTypeName name="com.netsuite.suitetalk.proxy.v2017_2.platform.core.types.SearchRecordType"/>
@@ -60,4 +57,7 @@
 <fullyQualifiedTypeName name="com.netsuite.webservices.transactions.purchases_2019_1.PurchaseOrder"/>
 <fullyQualifiedTypeName name="com.netsuite.webservices.transactions.purchases_2019_1.types.PurchaseOrderOrderStatus"/>
 <fullyQualifiedTypeName name="com.netsuite.webservices.transactions.purchases_2019_1.PurchaseOrderItem"/>
+<fullyQualifiedTypeName name="com.netsuite.webservices.platform.common_2019_1.VendorSearchBasic"/>
+<fullyQualifiedTypeName name="com.netsuite.webservices.lists.relationships_2019_1.VendorSearch"/>
+<fullyQualifiedTypeName name="java.io.FileInputStream"/>
 </qualifiedTypeNameHistroy>

@@ -155,6 +155,10 @@ public final class Messages {
 	public static final String CUSTOMER = "Customer";
 	public static final String CUSTOMER_WITH_INDEX = CUSTOMER + " #%s:";
 	public static final String ENTER_LIST_OF_CUSTOMERS = "Enter internal IDs for Customer records to be updated (separated by commas)";
+	public static final String SEARCH_CUSTOMERS = "Search Customers:";
+	public static final String SEARCH_VENDORS = "Search Vendors:";
+	public static final String ENTER_INFORMATION_FOR_CUSTOMER = "Enter information for customers search:";
+	public static final String ENTER_INFORMATION_FOR_VENDOR = "Enter information for vendors search:";
 
 	public static final String ENTER_VENDOR_INFORMATION = "Please enter the following vendor information.";
 	public static final String ENTER_VENDOR_INFORMATION_FOR_UPDATE = "Please enter the following information for Vendor record to be updated:";

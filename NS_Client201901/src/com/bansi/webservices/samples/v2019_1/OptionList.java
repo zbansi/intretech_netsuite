@@ -7,7 +7,7 @@ import java.util.Map;
 import static com.netsuite.suitetalk.client.common.utils.CommonUtils.isEmptyString;
 import static com.bansi.webservices.samples.Messages.SELECTION;
 import static com.bansi.webservices.samples.io.Console.readLine;
-import static com.bansi.webservices.samples.utils_2019_1.IndentationUtils.getNumberPlaces;
+import static com.bansi.webservices.samples.utils.IndentationUtils.getNumberPlaces;
 import static com.bansi.webservices.samples.utils_2019_1.PrintUtils.print;
 import static com.bansi.webservices.samples.utils_2019_1.PrintUtils.printEmptyLine;
 import static com.bansi.webservices.samples.utils_2019_1.PrintUtils.printInvalidChoiceMessage;

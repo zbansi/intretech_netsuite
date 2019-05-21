@@ -1223,3 +1223,18 @@ org.eclipse.core.runtime.CoreException: Launch configuration SalesforceExample r
 2019-05-15 08:39:33,608 [Worker-11] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\workspaceNS\WebServiceNS\src\main\resources
 2019-05-15 08:39:33,610 [Worker-11] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (GBK actually) to copy filtered resources, i.e. build is platform dependent!
 2019-05-15 08:39:33,611 [Worker-11] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\workspaceNS\WebServiceNS\src\test\resources
+2019-05-21 09:36:02,814 [main] INFO  org.eclipse.jetty.util.log - Logging initialized @60316865ms
+2019-05-21 09:36:02,962 [main] INFO  org.eclipse.jetty.server.Server - jetty-9.2.13.v20150730
+2019-05-21 09:36:03,007 [main] INFO  o.e.j.server.handler.ContextHandler - Started o.e.j.s.ServletContextHandler@5d05be4e{/wse,null,AVAILABLE}
+2019-05-21 09:36:03,042 [main] INFO  o.e.jetty.server.ServerConnector - Started ServerConnector@788272cb{HTTP/1.1}{0.0.0.0:12885}
+2019-05-21 09:36:03,042 [main] INFO  org.eclipse.jetty.server.Server - Started @60317106ms
+2019-05-21 11:09:16,567 [Worker-576] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (GBK actually) to copy filtered resources, i.e. build is platform dependent!
+2019-05-21 11:09:16,651 [Worker-576] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\workspaceNS\WebServiceNS\src\main\resources
+2019-05-21 11:09:16,653 [Worker-576] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (GBK actually) to copy filtered resources, i.e. build is platform dependent!
+2019-05-21 11:09:16,654 [Worker-576] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\workspaceNS\WebServiceNS\src\test\resources
+2019-05-21 11:18:46,601 [Worker-933] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (GBK actually) to copy filtered resources, i.e. build is platform dependent!
+2019-05-21 11:18:46,609 [Worker-933] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\workspaceNS\WebServiceNS\src\main\resources
+2019-05-21 11:18:46,611 [Worker-933] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (GBK actually) to copy filtered resources, i.e. build is platform dependent!
+2019-05-21 11:18:46,612 [Worker-933] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\workspaceNS\WebServiceNS\src\test\resources
+2019-05-21 11:21:09,653 [Framework stop] INFO  o.e.jetty.server.ServerConnector - Stopped ServerConnector@788272cb{HTTP/1.1}{0.0.0.0:0}
+2019-05-21 11:21:09,762 [Framework stop] INFO  o.e.j.server.handler.ContextHandler - Stopped o.e.j.s.ServletContextHandler@5d05be4e{/wse,null,UNAVAILABLE}
