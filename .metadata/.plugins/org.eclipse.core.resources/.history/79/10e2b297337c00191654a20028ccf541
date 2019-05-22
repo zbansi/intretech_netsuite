@@ -1,0 +1,5 @@
+package com.netsuite.webservices.lists.accounting_2019_1;
+
+public class PriceList {
+
+}

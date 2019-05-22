@@ -18,8 +18,8 @@
 	<property name="compile.dir" value="${webContent.dir}/WEB-INF/classes" />
 	<property name="sayhi.wsdl.url"
 		value="http://localhost:7775/wstest/service/sayhi?wsdl" />
-	<property name="ns201701.wsdl.url"
-		value="https://webservices.netsuite.com/wsdl/v2017_1_0/netsuite.wsdl" />
+	<property name="ns201702.wsdl.url"
+		value="https://webservices.netsuite.com/wsdl/v2017_2_0/netsuite.wsdl" />
 	<property name="ns201802.wsdl.url"
 		value="https://webservices.netsuite.com/wsdl/v2018_2_0/netsuite.wsdl" />
 	<property name="ns201901.wsdl.url"
@@ -117,10 +117,10 @@
 			</mapping>
 		</axis-wsdl2java>
 	</target>
-	<target name="generate.interfaces.ns201701" description="Generates client interfaces using Axis">
-		<echo>Generating netsuite 201701 client interfaces using Apache Axis</echo>
+	<target name="generate.interfaces.ns201702" description="Generates client interfaces using Axis">
+		<echo>Generating netsuite 201702 client interfaces using Apache Axis</echo>
 		<axis-wsdl2java timeout="1200000" output="${src.dir}"
-			verbose="true" url="${ns201701.wsdl.url}" all="true" wrapArrays="ture">
+			verbose="true" url="${ns201702.wsdl.url}" all="true" wrapArrays="ture">
 			<mapping namespace="http://axis.apache.org/ns/interop"
 				package="interop">
 			</mapping>

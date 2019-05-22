@@ -26,7 +26,9 @@ public class Bom  extends com.netsuite.webservices.platform.core_2019_1.Record  
 
     private java.lang.Boolean availableForAllAssemblies;
 
-    private com.netsuite.webservices.platform.core_2019_1.RecordRef[] restrictToAssembliesList;
+    //private com.netsuite.webservices.platform.core_2019_1.RecordRef[] restrictToAssembliesList;
+    
+    private com.netsuite.webservices.platform.core_2019_1.RecordRefList restrictToAssembliesList;
 
     private java.lang.Boolean availableForAllLocations;
 
@@ -58,7 +60,8 @@ public class Bom  extends com.netsuite.webservices.platform.core_2019_1.Record  
            java.lang.String memo,
            com.netsuite.webservices.platform.core_2019_1.RecordRef legacyBomForAssembly,
            java.lang.Boolean availableForAllAssemblies,
-           com.netsuite.webservices.platform.core_2019_1.RecordRef[] restrictToAssembliesList,
+           //com.netsuite.webservices.platform.core_2019_1.RecordRef[] restrictToAssembliesList,
+           com.netsuite.webservices.platform.core_2019_1.RecordRefList restrictToAssembliesList,
            java.lang.Boolean availableForAllLocations,
            com.netsuite.webservices.platform.core_2019_1.RecordRef[] restrictToLocationsList,
            com.netsuite.webservices.platform.core_2019_1.RecordRef[] subsidiaryList,
@@ -271,7 +274,16 @@ public class Bom  extends com.netsuite.webservices.platform.core_2019_1.Record  
      * 
      * @return restrictToAssembliesList
      */
-    public com.netsuite.webservices.platform.core_2019_1.RecordRef[] getRestrictToAssembliesList() {
+//    public com.netsuite.webservices.platform.core_2019_1.RecordRef[] getRestrictToAssembliesList() {
+//        return restrictToAssembliesList;
+//    }
+    
+    /**
+     * Gets the restrictToAssembliesList value for this Bom.
+     * 
+     * @return restrictToAssembliesList
+     */
+    public com.netsuite.webservices.platform.core_2019_1.RecordRefList getRestrictToAssembliesList() {
         return restrictToAssembliesList;
     }
 
@@ -281,7 +293,19 @@ public class Bom  extends com.netsuite.webservices.platform.core_2019_1.Record  
      * 
      * @param restrictToAssembliesList
      */
-    public void setRestrictToAssembliesList(com.netsuite.webservices.platform.core_2019_1.RecordRef[] restrictToAssembliesList) {
+//    public void setRestrictToAssembliesList(com.netsuite.webservices.platform.core_2019_1.RecordRef[] restrictToAssembliesList) {
+//        this.restrictToAssembliesList = restrictToAssembliesList;
+//    }
+
+    
+    
+    /**
+     * Sets the restrictToAssembliesList value for this Bom.
+     * 
+     * @param restrictToAssembliesList
+     * add by bansi 20190521
+     */
+    public void setRestrictToAssembliesList(com.netsuite.webservices.platform.core_2019_1.RecordRefList restrictToAssembliesList) {
         this.restrictToAssembliesList = restrictToAssembliesList;
     }
 
@@ -466,7 +490,7 @@ public class Bom  extends com.netsuite.webservices.platform.core_2019_1.Record  
               this.availableForAllAssemblies.equals(other.getAvailableForAllAssemblies()))) &&
             ((this.restrictToAssembliesList==null && other.getRestrictToAssembliesList()==null) || 
              (this.restrictToAssembliesList!=null &&
-              java.util.Arrays.equals(this.restrictToAssembliesList, other.getRestrictToAssembliesList()))) &&
+              java.util.Arrays.equals(this.restrictToAssembliesList.getRecordRef(), other.getRestrictToAssembliesList().getRecordRef()))) &&
             ((this.availableForAllLocations==null && other.getAvailableForAllLocations()==null) || 
              (this.availableForAllLocations!=null &&
               this.availableForAllLocations.equals(other.getAvailableForAllLocations()))) &&

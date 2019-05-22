@@ -1,17 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="com.netsuite.webservices.platform.messages_2018_2.AsyncAddListResult"/>
-<fullyQualifiedTypeName name="com.netsuite.webservices.platform.core_2018_2.types.SearchRecordType"/>
-<fullyQualifiedTypeName name="com.netsuite.suitetalk.proxy.v2017_2.platform.core.types.SearchRecordType"/>
-<fullyQualifiedTypeName name="com.netsuite.suitetalk.proxy.v2017_2.platform.core.GetSavedSearchResult"/>
-<fullyQualifiedTypeName name="com.netsuite.suitetalk.proxy.v2017_2.platform.NetSuiteService"/>
-<fullyQualifiedTypeName name="com.netsuite.suitetalk.proxy.v2017_2.lists.accounting.OtherChargePurchaseItem"/>
-<fullyQualifiedTypeName name="com.netsuite.suitetalk.proxy.v2017_2.setup.customization.CustomRecordSearchAdvanced"/>
-<fullyQualifiedTypeName name="com.netsuite.suitetalk.proxy.v2017_2.lists.accounting.ItemSearch"/>
-<fullyQualifiedTypeName name="com.netsuite.suitetalk.proxy.v2017_2.lists.accounting.ItemSearchAdvanced"/>
-<fullyQualifiedTypeName name="com.netsuite.webservices.platform.core_2019_1.RecordRef"/>
-<fullyQualifiedTypeName name="com.netsuite.webservices.platform.core_2019_1.types.RecordType"/>
-<fullyQualifiedTypeName name="com.netsuite.webservices.lists.employees_2019_1.Employee"/>
 <fullyQualifiedTypeName name="com.netsuite.suitetalk.proxy.v2017_2.platform.core.SearchRow"/>
 <fullyQualifiedTypeName name="com.netsuite.suitetalk.proxy.v2017_2.lists.accounting.ItemSearchRow"/>
 <fullyQualifiedTypeName name="com.netsuite.webservices.platform.common_2019_1.ItemSearchRowBasic"/>
@@ -59,5 +47,17 @@
 <fullyQualifiedTypeName name="com.netsuite.webservices.transactions.purchases_2019_1.PurchaseOrderItem"/>
 <fullyQualifiedTypeName name="com.netsuite.webservices.platform.common_2019_1.VendorSearchBasic"/>
 <fullyQualifiedTypeName name="com.netsuite.webservices.lists.relationships_2019_1.VendorSearch"/>
+<fullyQualifiedTypeName name="org.omg.CORBA.DataInputStream"/>
+<fullyQualifiedTypeName name="java.io.BufferedInputStream"/>
 <fullyQualifiedTypeName name="java.io.FileInputStream"/>
+<fullyQualifiedTypeName name="java.io.BufferedReader"/>
+<fullyQualifiedTypeName name="java.io.InputStreamReader"/>
+<fullyQualifiedTypeName name="net.sf.json.JSONArray"/>
+<fullyQualifiedTypeName name="com.netsuite.suitetalk.proxy.v2017_2.platform.core.RecordRef"/>
+<fullyQualifiedTypeName name="com.netsuite.webservices.platform.core_2019_1.RecordRefList"/>
+<fullyQualifiedTypeName name="com.netsuite.webservices.platform.core_2019_1.RecordRef"/>
+<fullyQualifiedTypeName name="com.netsuite.webservices.platform.core_2019_1.types.RecordType"/>
+<fullyQualifiedTypeName name="com.bansi.webservices.samples.v2019_1.JSONContent"/>
+<fullyQualifiedTypeName name="com.netsuite.webservices.lists.accounting_2019_1.PriceList"/>
+<fullyQualifiedTypeName name="com.netsuite.webservices.lists.accounting_2019_1.PricingMatrix"/>
 </qualifiedTypeNameHistroy>

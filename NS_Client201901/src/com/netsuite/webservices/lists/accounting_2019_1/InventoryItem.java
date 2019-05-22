@@ -374,8 +374,9 @@ public class InventoryItem  extends com.netsuite.webservices.platform.core_2019_
 
     private java.lang.Double preferredStockLevel;
 
-    private com.netsuite.webservices.lists.accounting_2019_1.Pricing[] pricingMatrix;
-
+//    private com.netsuite.webservices.lists.accounting_2019_1.Pricing[] pricingMatrix;
+    private com.netsuite.webservices.lists.accounting_2019_1.PricingMatrix pricingMatrix;
+    
     private com.netsuite.webservices.lists.accounting_2019_1.InventoryItemHierarchyVersions[] hierarchyVersionsList;
 
     private com.netsuite.webservices.lists.accounting_2019_1.ItemAccountingBookDetail[] accountingBookDetailList;
@@ -654,7 +655,8 @@ public class InventoryItem  extends com.netsuite.webservices.platform.core_2019_
            com.netsuite.webservices.lists.accounting_2019_1.types.ItemCostingMethod costingMethod,
            java.lang.String currency,
            java.lang.Double preferredStockLevel,
-           com.netsuite.webservices.lists.accounting_2019_1.Pricing[] pricingMatrix,
+//           com.netsuite.webservices.lists.accounting_2019_1.Pricing[] pricingMatrix,
+           com.netsuite.webservices.lists.accounting_2019_1.PricingMatrix pricingMatrix,
            com.netsuite.webservices.lists.accounting_2019_1.InventoryItemHierarchyVersions[] hierarchyVersionsList,
            com.netsuite.webservices.lists.accounting_2019_1.ItemAccountingBookDetail[] accountingBookDetailList,
            com.netsuite.webservices.platform.core_2019_1.RecordRef purchaseTaxCode,
@@ -4595,20 +4597,24 @@ public class InventoryItem  extends com.netsuite.webservices.platform.core_2019_
      * 
      * @return pricingMatrix
      */
-    public com.netsuite.webservices.lists.accounting_2019_1.Pricing[] getPricingMatrix() {
+//    public com.netsuite.webservices.lists.accounting_2019_1.Pricing[] getPricingMatrix() {
+//        return pricingMatrix;
+//    }
+    public com.netsuite.webservices.lists.accounting_2019_1.PricingMatrix getPricingMatrix() {
         return pricingMatrix;
     }
-
 
     /**
      * Sets the pricingMatrix value for this InventoryItem.
      * 
      * @param pricingMatrix
      */
-    public void setPricingMatrix(com.netsuite.webservices.lists.accounting_2019_1.Pricing[] pricingMatrix) {
+//    public void setPricingMatrix(com.netsuite.webservices.lists.accounting_2019_1.Pricing[] pricingMatrix) {
+//        this.pricingMatrix = pricingMatrix;
+//    }
+    public void setPricingMatrix(com.netsuite.webservices.lists.accounting_2019_1.PricingMatrix pricingMatrix) {
         this.pricingMatrix = pricingMatrix;
     }
-
 
     /**
      * Gets the hierarchyVersionsList value for this InventoryItem.
@@ -6052,7 +6058,8 @@ public class InventoryItem  extends com.netsuite.webservices.platform.core_2019_
               this.preferredStockLevel.equals(other.getPreferredStockLevel()))) &&
             ((this.pricingMatrix==null && other.getPricingMatrix()==null) || 
              (this.pricingMatrix!=null &&
-              java.util.Arrays.equals(this.pricingMatrix, other.getPricingMatrix()))) &&
+//              java.util.Arrays.equals(this.pricingMatrix, other.getPricingMatrix()))) &&
+             java.util.Arrays.equals(this.pricingMatrix.getPricing(), other.getPricingMatrix().getPricing()))) &&
             ((this.hierarchyVersionsList==null && other.getHierarchyVersionsList()==null) || 
              (this.hierarchyVersionsList!=null &&
               java.util.Arrays.equals(this.hierarchyVersionsList, other.getHierarchyVersionsList()))) &&

@@ -14,8 +14,9 @@ public class Pricing  implements java.io.Serializable {
 
     private java.lang.Double discount;
 
-    private com.netsuite.webservices.lists.accounting_2019_1.Price[] priceList;
-
+//    private com.netsuite.webservices.lists.accounting_2019_1.Price[] priceList;
+    private com.netsuite.webservices.lists.accounting_2019_1.PriceList priceList;
+    
     public Pricing() {
     }
 
@@ -23,7 +24,8 @@ public class Pricing  implements java.io.Serializable {
            com.netsuite.webservices.platform.core_2019_1.RecordRef currency,
            com.netsuite.webservices.platform.core_2019_1.RecordRef priceLevel,
            java.lang.Double discount,
-           com.netsuite.webservices.lists.accounting_2019_1.Price[] priceList) {
+//           com.netsuite.webservices.lists.accounting_2019_1.Price[] priceList
+           com.netsuite.webservices.lists.accounting_2019_1.PriceList priceList) {
            this.currency = currency;
            this.priceLevel = priceLevel;
            this.discount = discount;
@@ -96,20 +98,25 @@ public class Pricing  implements java.io.Serializable {
      * 
      * @return priceList
      */
-    public com.netsuite.webservices.lists.accounting_2019_1.Price[] getPriceList() {
-        return priceList;
+//    public com.netsuite.webservices.lists.accounting_2019_1.Price[] getPriceList() {
+//        return priceList;
+//    }
+    public com.netsuite.webservices.lists.accounting_2019_1.PriceList getPriceList() {
+      return priceList;
     }
-
 
     /**
      * Sets the priceList value for this Pricing.
      * 
      * @param priceList
      */
-    public void setPriceList(com.netsuite.webservices.lists.accounting_2019_1.Price[] priceList) {
+//    public void setPriceList(com.netsuite.webservices.lists.accounting_2019_1.Price[] priceList) {
+//        this.priceList = priceList;
+//    }
+    public void setPriceList(com.netsuite.webservices.lists.accounting_2019_1.PriceList priceList) {
         this.priceList = priceList;
     }
-
+    
     private java.lang.Object __equalsCalc = null;
     public synchronized boolean equals(java.lang.Object obj) {
         if (!(obj instanceof Pricing)) return false;
@@ -133,7 +140,8 @@ public class Pricing  implements java.io.Serializable {
               this.discount.equals(other.getDiscount()))) &&
             ((this.priceList==null && other.getPriceList()==null) || 
              (this.priceList!=null &&
-              java.util.Arrays.equals(this.priceList, other.getPriceList())));
+//              java.util.Arrays.equals(this.priceList, other.getPriceList())));
+        	  java.util.Arrays.equals(this.priceList.getPrice(), other.getPriceList().getPrice())));
         __equalsCalc = null;
         return _equals;
     }

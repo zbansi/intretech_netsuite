@@ -4,3 +4,9 @@
 1558400309254	Rename resource 'interfacedata.properties'
 1558401753420	Delete elements
 1558402838865	Delete elements
+1558442878179	Delete element
+1558443859480	Rename resource 'interfacedata.json'
+1558488378395	Rename type 'JSONObject'
+1558488432534	Copy file
+1558488780824	Rename compilation unit 'JSONBomObject.java'
+1558489136640	Rename type 'JSONBomArray'

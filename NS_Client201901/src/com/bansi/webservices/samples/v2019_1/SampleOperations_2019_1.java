@@ -11,7 +11,9 @@ import com.netsuite.webservices.lists.accounting_2019_1.ItemSearch;
 import com.netsuite.webservices.lists.accounting_2019_1.ItemSearchAdvanced;
 import com.netsuite.webservices.lists.accounting_2019_1.LotNumberedInventoryItem;
 import com.netsuite.webservices.lists.accounting_2019_1.Price;
+import com.netsuite.webservices.lists.accounting_2019_1.PriceList;
 import com.netsuite.webservices.lists.accounting_2019_1.Pricing;
+import com.netsuite.webservices.lists.accounting_2019_1.PricingMatrix;
 import com.netsuite.webservices.lists.accounting_2019_1.types.ItemCostingMethod;
 import com.netsuite.webservices.lists.relationships_2019_1.Customer;
 import com.netsuite.webservices.lists.relationships_2019_1.CustomerAddressbook;
@@ -327,30 +329,29 @@ public class SampleOperations_2019_1 {
 			inventoryItem.setCogsAccount(createRecordRef("223"));
 			inventoryItem.setAssetAccount(createRecordRef("242"));
 
-			/*
-						// Setting pricing matrix
-						String number = null;
-						try {
-							Price price = new Price();
-							number = readLine(getIndentedString(BASE_PRICE_WITH_EXAMPLE)).trim();
-							price.setValue(Double.parseDouble(number));
-							number = readLine(getIndentedString(QUANTITY_WITH_EXAMPLE)).trim();
-							price.setQuantity(Double.parseDouble(number));
-			
-							Pricing pricing = new Pricing();
-							pricing.setCurrency(createRecordRef("1"));
-							pricing.setDiscount(0.0);
-							pricing.setPriceLevel(createRecordRef("1"));
-							pricing.setPriceList(new PriceList(new Price[] { price }));
-			
-							PricingMatrix pricingMatrix = new PricingMatrix();
-							pricingMatrix.setPricing(new Pricing[] { pricing });
-			
-							inventoryItem.setPricingMatrix(pricingMatrix);
-						} catch (NumberFormatException nfe) {
-							printError(format(INVALID_NUMBER + SPACE + ITEM_WITHOUT_PRICING_MATRIX, number));
-						}
-			*/
+			// Setting pricing matrix
+			String number = null;
+			try {
+				Price price = new Price();
+				number = readLine(getIndentedString(BASE_PRICE_WITH_EXAMPLE)).trim();
+				price.setValue(Double.parseDouble(number));
+				number = readLine(getIndentedString(QUANTITY_WITH_EXAMPLE)).trim();
+				price.setQuantity(Double.parseDouble(number));
+
+				Pricing pricing = new Pricing();
+				pricing.setCurrency(createRecordRef("1"));
+				pricing.setDiscount(0.0);
+				pricing.setPriceLevel(createRecordRef("1"));
+				pricing.setPriceList(new PriceList(new Price[] { price }));
+
+				PricingMatrix pricingMatrix = new PricingMatrix();
+				pricingMatrix.setPricing(new Pricing[] { pricing });
+
+				inventoryItem.setPricingMatrix(pricingMatrix);
+			} catch (NumberFormatException nfe) {
+				printError(format(INVALID_NUMBER + SPACE + ITEM_WITHOUT_PRICING_MATRIX, number));
+			}
+
 			printSendingRequestMessage();
 
 			// Invoke add() operation
@@ -457,7 +458,7 @@ public class SampleOperations_2019_1 {
 	}
 
 	/*
-	 * Test Status: setRestrictToAssembliesList ¸³ÖµÊ§°Ü
+	 * Test Status: success
 	 */
 	private void addBom() {
 
@@ -468,14 +469,17 @@ public class SampleOperations_2019_1 {
 			bomRec.setName(readLine(getIndentedString(BOM_NAME), null));
 			bomRec.setIsInactive(false);
 
-			//very BOM restrict to an Assembly
+			//very BOM restrict to an Assembly			
 			bomRec.setAvailableForAllAssemblies(false);
-			RecordRef restrictToAssembly = new RecordRef();
+			RecordRef assembly = new RecordRef();
+			RecordRefList restrictToAssembiesList = new RecordRefList();
 			String assemblyInternalId = readLine(getIndentedString("key in assemblyInternalId"), "");
 			if (!assemblyInternalId.isEmpty()) {
-				restrictToAssembly = createRecordRef(assemblyInternalId);
-				restrictToAssembly.setType(RecordType.lotNumberedAssemblyItem);
-				bomRec.setRestrictToAssembliesList(new RecordRef[] { restrictToAssembly });
+				assembly = createRecordRef(assemblyInternalId);
+				assembly.setType(RecordType.lotNumberedAssemblyItem);
+				restrictToAssembiesList.setRecordRef(new RecordRef[] { assembly });
+				bomRec.setRestrictToAssembliesList(restrictToAssembiesList);
+
 			} else
 				bomRec.setAvailableForAllAssemblies(false);
 

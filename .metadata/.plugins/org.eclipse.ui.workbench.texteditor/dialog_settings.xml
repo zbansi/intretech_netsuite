@@ -2,30 +2,30 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="VENDORS" key="selection"/>
+		<item value="PricingMatrix" key="selection"/>
 		<item value="true" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
-			<item value="CUSTOMERS"/>
-			<item value="Sales Order"/>
-			<item value="customer"/>
-			<item value="SALES_ORDER"/>
-			<item value="ENTER_ITEM_IDS_FOR_"/>
-			<item value="CUSTOMER"/>
-			<item value="_NOT_FOUND"/>
-			<item value="ADD_SALES_ORDER"/>
+			<item value="PricingMatrix"/>
+			<item value="accounting_2017_2"/>
+			<item value="com.netsuite.suitetalk.proxy.v2017_2.lists.accounting"/>
+			<item value="2017"/>
+			<item value="com.netsuite.suitetalk.proxy.v2017_2"/>
+			<item value="Fields"/>
+			<item value="Array"/>
+			<item value="java.lang.reflect"/>
 		</list>
 		<list key="replacehistory">
+			<item value="accounting_2019_1"/>
+			<item value="com.netsuite.webservices.lists.accounting_2019_1"/>
+			<item value="com.netsuite.webservices.platform.core_2019_1"/>
+			<item value="com.netsuite.suitetalk.proxy.v2017_2.platform.core"/>
 			<item value="VENDORS"/>
 			<item value="Purchase Order"/>
 			<item value="vendor"/>
 			<item value="PURCHASE_ORDER"/>
-			<item value="VENDOR"/>
-			<item value="purchaseorder"/>
-			<item value="Purchaseorder"/>
-			<item value="PurchaseOrder"/>
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">

@@ -1,0 +1,60 @@
+{
+	"bomAllData": [{
+			"availableForAllAssemblies": false,
+			"availableForAllLocations": true,
+			"includeChildren": true,
+			"memo": "EAI.TEST.190422A01-BOM051701",
+			"name": "EAI.TEST.190422A01-BOM051701",
+			"restricttoassemblies": "572",
+			"subsidiary": "1",
+			"useComponentYield": true,
+			"bomRevision": {
+				"memo": "EAI.TEST.190422A01-BOM v1.0",
+				"name": "v1.0",
+				"effectivestartdate": "",
+				"effectiveenddate": "",
+				"componentlist": [{
+						"bomquantity": 3,
+						"componentyield": 99.8,
+						"item": 368,
+						"itemsource": ""
+					}, {
+						"bomquantity": 5,
+						"componentyield": 100,
+						"item": 369,
+						"itemsource": ""
+					}
+				]
+			}
+		}, {
+			"availableForAllAssemblies": false,
+			"availableForAllLocations": true,
+			"includeChildren": true,
+			"memo": "EAI.TEST.190422A01-eBOM051702",
+			"name": "EAI.TEST.190422A01-eBOM051702",
+			"restricttoassemblies": "572",
+			"subsidiary": "1",
+			"useComponentYield": true,
+			"usedonassembly": true,
+
+			"bomRevision": {
+				"memo": "EAI.TEST.190422A01-eBOM v1.0",
+				"name": "v1.0",
+				"effectivestartdate": "",
+				"effectiveenddate": "",
+				"componentlist": [{
+						"bomquantity": 3,
+						"componentyield": 99.8,
+						"item": 368,
+						"itemsource": ""
+					}, {
+						"bomquantity": 5,
+						"componentyield": 100,
+						"item": 369,
+						"itemsource": ""
+					}
+				]
+			}
+		}
+	]
+}
