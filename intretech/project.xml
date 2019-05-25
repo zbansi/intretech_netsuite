@@ -1,0 +1,111 @@
+<project info="SuiteCloud IDE generated file, do not edit." setAttributesOnUpdate="false">
+  <folder name="intretech">
+    <folder name="src">
+      <folder name="app">
+        <folder name="inv">
+          <file name="cux_if_add_inventory_adjustment.js" hideInBundle="false" isOnline="false" textFileEncoding="_gb18030"/>
+          <file name="cux_if_add_inventory_transfer.js" hideInBundle="false" isOnline="false" textFileEncoding="_gb18030"/>
+          <file name="cux_if_get_inventoryadjustment.js" hideInBundle="false" isOnline="false" textFileEncoding="_utf8"/>
+          <file name="cux_if_get_inventorytransfer.js" hideInBundle="false" isOnline="false" textFileEncoding="_gb18030"/>
+          <file name="cux_if_get_transferorder.js" hideInBundle="false" isOnline="false" textFileEncoding="_utf8"/>
+        </folder>
+        <folder name="mst">
+          <folder name="account">
+            <file name="cux_if_add_accounts.js" hideInBundle="false" isOnline="false" textFileEncoding="_gb18030"/>
+            <file name="cux_if_delete_accounts.js" hideInBundle="false" isOnline="false" textFileEncoding="_gb18030"/>
+            <file name="cux_if_get_accounts.js" hideInBundle="false" isOnline="false" textFileEncoding="_gb18030"/>
+            <file name="cux_if_update_accounts.js" hideInBundle="false" isOnline="false" textFileEncoding="_gb18030"/>
+          </folder>
+          <folder name="bom">
+            <file name="addBom.js" hideInBundle="false" isOnline="false" textFileEncoding="_utf8"/>
+            <file name="addBomRevision.js" hideInBundle="false" isOnline="false" textFileEncoding="_utf8"/>
+            <file name="bomDataPOST.json" hideInBundle="false" isOnline="false" textFileEncoding="_gb18030"/>
+            <file name="bomDataPUT.json" hideInBundle="false" isOnline="false" textFileEncoding="_gb18030"/>
+            <file name="cux_if_BomSync.js" hideInBundle="false" isOnline="false" textFileEncoding="_utf8"/>
+            <file name="cux_if_addBom.js" hideInBundle="false" isOnline="false" textFileEncoding="_utf8"/>
+            <file name="cux_if_bom_ScheduledScript.js" hideInBundle="false" isOnline="false" textFileEncoding="_gb18030"/>
+            <file name="cux_if_bom_mapreduce.js" hideInBundle="false" isOnline="false" textFileEncoding="_utf8"/>
+            <file name="cux_if_deleteBom.js" hideInBundle="false" isOnline="false" textFileEncoding="_utf8"/>
+            <file name="cux_if_getBom.js" hideInBundle="false" isOnline="false" textFileEncoding="_utf8"/>
+            <file name="cux_if_updateBom.js" hideInBundle="false" isOnline="false" textFileEncoding="_utf8"/>
+          </folder>
+          <folder name="customer">
+            <file name="cux_if_add_customer.js" hideInBundle="false" isOnline="false" textFileEncoding="_gb18030"/>
+            <file name="cux_if_delete_customer.js" hideInBundle="false" isOnline="false" textFileEncoding="_gb18030"/>
+            <file name="cux_if_get_customer.js" hideInBundle="false" isOnline="false" textFileEncoding="_gb18030"/>
+            <file name="cux_if_update_customer.js" hideInBundle="false" isOnline="false" textFileEncoding="_gb18030"/>
+          </folder>
+          <folder name="item">
+            <file name="cux_if_add_item.js" hideInBundle="false" isOnline="false" textFileEncoding="_gb18030"/>
+            <file name="cux_if_delete_item.js" hideInBundle="false" isOnline="false" textFileEncoding="_gb18030"/>
+            <file name="cux_if_get_item.js" hideInBundle="false" isOnline="false" textFileEncoding="_gb18030"/>
+            <file name="cux_if_update_itemt.js" hideInBundle="false" isOnline="false" textFileEncoding="_gb18030"/>
+          </folder>
+          <folder name="rtg">
+            <file name="cux_if_add_rtg.js" hideInBundle="false" isOnline="false" textFileEncoding="_gb18030"/>
+            <file name="cux_if_delete_rtg.js" hideInBundle="false" isOnline="false" textFileEncoding="_gb18030"/>
+            <file name="cux_if_get_rtg.js" hideInBundle="false" isOnline="false" textFileEncoding="_gb18030"/>
+            <file name="cux_if_update_rtg.js" hideInBundle="false" isOnline="false" textFileEncoding="_gb18030"/>
+          </folder>
+          <folder name="vender">
+            <file name="cux_if_add_vender.js" hideInBundle="false" isOnline="false" textFileEncoding="_gb18030"/>
+            <file name="cux_if_delete_vender.js" hideInBundle="false" isOnline="false" textFileEncoding="_gb18030"/>
+            <file name="cux_if_get_vender.js" hideInBundle="false" isOnline="false" textFileEncoding="_gb18030"/>
+            <file name="cux_if_update_vendert.js" hideInBundle="false" isOnline="false" textFileEncoding="_gb18030"/>
+          </folder>
+        </folder>
+        <folder name="om">
+          <file name="cux_if_add_ram_itemreceipt.js" hideInBundle="false" isOnline="false" textFileEncoding="_gb18030"/>
+          <file name="cux_if_add_salesorderfulfillment.js" hideInBundle="false" isOnline="false" textFileEncoding="_gb18030"/>
+          <file name="cux_if_get_itemreceipt_rma.js" hideInBundle="false" isOnline="false" textFileEncoding="_utf8"/>
+          <file name="cux_if_get_salesorder.js" hideInBundle="false" isOnline="false" textFileEncoding="_utf8"/>
+          <file name="cux_if_get_salesorderfulfillment.js" hideInBundle="false" isOnline="false" textFileEncoding="_utf8"/>
+        </folder>
+        <folder name="po">
+          <folder name="po-01">
+            <file name="cux_id_add_po.js" hideInBundle="false" isOnline="false" textFileEncoding="_gb18030"/>
+            <file name="cux_if_delete_po.js" hideInBundle="false" isOnline="false" textFileEncoding="_gb18030"/>
+            <file name="cux_if_get_po.js" hideInBundle="false" isOnline="false" textFileEncoding="_gb18030"/>
+            <file name="cux_if_update_po.js" hideInBundle="false" isOnline="false" textFileEncoding="_gb18030"/>
+          </folder>
+          <folder name="po-02">
+            <file name="cux_if_add_po_receipt.js" hideInBundle="false" isOnline="false" textFileEncoding="_gb18030"/>
+            <file name="cux_if_delete_po_receipt.js" hideInBundle="false" isOnline="false" textFileEncoding="_gb18030"/>
+            <file name="cux_if_get_po_receipt.js" hideInBundle="false" isOnline="false" textFileEncoding="_gb18030"/>
+            <file name="cux_if_update_receipt.js" hideInBundle="false" isOnline="false" textFileEncoding="_gb18030"/>
+          </folder>
+          <folder name="po-03">
+            <file name="cux_if_add_po_outbound.js" hideInBundle="false" isOnline="false" textFileEncoding="_gb18030"/>
+            <file name="cux_if_get_po_outbound.js" hideInBundle="false" isOnline="false" textFileEncoding="_gb18030"/>
+          </folder>
+          <file name="cux_if_add_po_itemreceipt.js" hideInBundle="false" isOnline="false" textFileEncoding="_gb18030"/>
+          <file name="cux_if_add_vra_itemfufillment.js" hideInBundle="false" isOnline="false" textFileEncoding="_gb18030"/>
+          <file name="cux_if_get_itemreceipt.js" hideInBundle="false" isOnline="false" textFileEncoding="_utf8"/>
+          <file name="cux_if_get_purchaseorder.js" hideInBundle="false" isOnline="false" textFileEncoding="_utf8"/>
+        </folder>
+        <folder name="wip">
+          <file name="cux_if_add_workordercompletion.js" hideInBundle="false" isOnline="false" textFileEncoding="_gb18030"/>
+          <file name="cux_if_add_workorderissue.js" hideInBundle="false" isOnline="false" textFileEncoding="_gb18030"/>
+          <file name="cux_if_get_workorder.js" hideInBundle="false" isOnline="false" textFileEncoding="_utf8"/>
+          <file name="cux_if_get_workorderclose.js" hideInBundle="false" isOnline="false" textFileEncoding="_utf8"/>
+          <file name="cux_if_get_workordercompletion.js" hideInBundle="false" isOnline="false" textFileEncoding="_utf8"/>
+          <file name="cux_if_get_workorderissue.js" hideInBundle="false" isOnline="false" textFileEncoding="_utf8"/>
+        </folder>
+      </folder>
+      <folder name="dao">
+        <file name="dao_eai.js" hideInBundle="false" isOnline="false" textFileEncoding="_utf8"/>
+      </folder>
+      <folder name="pub">
+        <file name="cux_pub_item_func.js" hideInBundle="false" isOnline="false" textFileEncoding="_gb18030"/>
+        <file name="cux_pub_po_func.js" hideInBundle="false" isOnline="false" textFileEncoding="_gb18030"/>
+        <file name="cux_pub_search.js" hideInBundle="false" isOnline="false" textFileEncoding="_gb18030"/>
+      </folder>
+      <folder name="utils">
+        <file name="search_columns.js" hideInBundle="false" isOnline="false" textFileEncoding="_utf8"/>
+        <file name="utils.js" hideInBundle="false" isOnline="false" textFileEncoding="_utf8"/>
+      </folder>
+    </folder>
+    <file name="config.json" hideInBundle="false" isOnline="false" textFileEncoding="_utf8"/>
+    <file name="configport.json" hideInBundle="false" isOnline="false" textFileEncoding="_gb18030"/>
+  </folder>
+</project>

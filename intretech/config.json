@@ -1,0 +1,7 @@
+{
+	"paths": {
+		"dao": "/SuiteScripts/intretech/src/dao/dao_eai",
+		"utils": "/SuiteScripts/intretech/src/utils/utils",
+		"columnset": "/SuiteScripts/intretech/src/utils/search_columns"
+	}
+}

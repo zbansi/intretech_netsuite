@@ -2,22 +2,23 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="PricingMatrix" key="selection"/>
+		<item value="getBomHeaderRecordId" key="selection"/>
 		<item value="true" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
-		<item value="false" key="wholeword"/>
+		<item value="true" key="wholeword"/>
 		<list key="findhistory">
-			<item value="PricingMatrix"/>
-			<item value="accounting_2017_2"/>
-			<item value="com.netsuite.suitetalk.proxy.v2017_2.lists.accounting"/>
-			<item value="2017"/>
-			<item value="com.netsuite.suitetalk.proxy.v2017_2"/>
-			<item value="Fields"/>
-			<item value="Array"/>
-			<item value="java.lang.reflect"/>
+			<item value="getBomHeaderRecordId"/>
+			<item value="Object.create"/>
+			<item value="Object"/>
+			<item value="upsertBomRecord"/>
+			<item value="upsertBomAllRecord"/>
+			<item value="task"/>
+			<item value="hasOwnProperty"/>
+			<item value="prototype"/>
 		</list>
 		<list key="replacehistory">
+			<item value="discardObject"/>
 			<item value="accounting_2019_1"/>
 			<item value="com.netsuite.webservices.lists.accounting_2019_1"/>
 			<item value="com.netsuite.webservices.platform.core_2019_1"/>
@@ -25,14 +26,13 @@
 			<item value="VENDORS"/>
 			<item value="Purchase Order"/>
 			<item value="vendor"/>
-			<item value="PURCHASE_ORDER"/>
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
 		<item value="273" key="DIALOG_WIDTH"/>
 		<item value="1|微软雅黑|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|微软雅黑" key="DIALOG_FONT_NAME"/>
 		<item value="399" key="DIALOG_HEIGHT"/>
-		<item value="957" key="DIALOG_X_ORIGIN"/>
-		<item value="605" key="DIALOG_Y_ORIGIN"/>
+		<item value="1499" key="DIALOG_X_ORIGIN"/>
+		<item value="178" key="DIALOG_Y_ORIGIN"/>
 	</section>
 </section>

@@ -1,0 +1,42 @@
+{
+	"bomPutData": [{
+			"recordType": "bom",
+			"assemblyItemNumber": "",
+			"values": [{
+					"name": "",
+					"memo": "",
+					"isinactive": "F"
+				}
+			]
+		}, {
+			"recordType": "bomrevision",
+			"assemblyItemNumber": "",
+			"bomRevisionName": "",
+			"values": [{
+					"name": "",
+					"memo": "",
+					"isinactive": "F"
+				}
+			]
+		}, {
+			"recordType": "components",
+			"assemblyItemNumber": "",
+			"bomRevisionName": "",
+			"values": [{
+					"linenumber": "10",
+					"item": "",
+					"bomquantity": "F",
+					"componentyield": "",
+					"itemsource": ""
+				}, {
+					"linenumber": "20",
+					"item": "",
+					"bomquantity": "F",
+					"componentyield": "",
+					"itemsource": ""
+				}
+			]
+		}
+
+	]
+}

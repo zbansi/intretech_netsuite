@@ -1,0 +1,6 @@
+{
+  "paths": {
+    "PPF": "/SuiteScripts/intretech/src/pub/cux_pub_po_func.js",
+    "PMF": "/SuiteScripts/intretech/src/pub/cux_pub_item_func.js"
+  }
+}
