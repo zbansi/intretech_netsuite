@@ -11,7 +11,7 @@ define(['PMF'], function (pmf) {
         var types = pmf.recordTypes("21");
         var quantity = pmf.deleteRecord(context.name, types.itemType, types.searchType, 'name');
 
-        return new Date().getTime() - runStart + 'ms\n成功删除' + quantity + '条记录'
+        return new Date().getTime() - runStart + 'ms\n ' + quantity + 'Records were deleted successfully'
     }
 
     return {

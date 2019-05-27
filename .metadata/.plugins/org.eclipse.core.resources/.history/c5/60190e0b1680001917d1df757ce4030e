@@ -33,21 +33,21 @@ define([ 'N/record', 'N/search', 'N/runtime', 'dao' ], function(record, search,
 			//去除空格
 			var filterListStr = requestParams.filterList.replace(/[""''\s]/g,
 					'');
-			//去除首尾方括叄1�7					
+			//去除首尾方括叄1�7�1�7				
 			filterListStr = filterListStr.replace(/\[{2,10}/g, '');
 			filterListStr = filterListStr.replace(/\]{2,10}/g, '');
 			log.debug({
 				title : 'filterList replace',
 				details : filterListStr
 			});
-			//将字符串转换成单个元素数组1�7
+			//将字符串转换成单个元素数组1�7�1�7
 			filterList = filterRegExp.exec(filterListStr);//返回数组
 			log.debug({
 				title : 'filterRegExp.exec',
 				details : filterList
 			});
 
-			//以右方括号�1�7�号|逗号左方括号为分隔符，将原数组元素映射转换成多个元素丄1�7维数组1�7
+			//以右方括号�1ￄ1�7�号|逗号左方括号为分隔符，将原数组元素映射转换成多个元素丄1�7�1�7�数组1�7�1�7
 			filterList = filterList.map(function(f) {//f是字符串
 				return f.split(fenceRegExp1);
 			});
@@ -55,7 +55,7 @@ define([ 'N/record', 'N/search', 'N/runtime', 'dao' ], function(record, search,
 				title : 'filterList.map1',
 				details : filterList
 			});
-			//过滤掉数组中的1�7"","],",",[",","
+			//过滤掉数组中的1�7�1�7","],",",[",","
 			filterList = filterList[0].filter(function(e) {
 				if (e != "" && e != "]," && e != ",[" && e != ",")
 					return e;
@@ -64,8 +64,8 @@ define([ 'N/record', 'N/search', 'N/runtime', 'dao' ], function(record, search,
 				title : 'filterList filter',
 				details : filterList
 			});
-			//将一维数组中的偶数索引的元素按�1�7�号分隔映射转换成数组1�7
-			filterList = filterList.map(function(f) {//f是数组1�7
+			//将一维数组中的偶数索引的元素按�1ￄ1�7�号分隔映射转换成数组1�7�1�7
+			filterList = filterList.map(function(f) {//f是数组1�7�1�7
 				if (filterList.indexOf(f) % 2)
 					return f;
 				else
@@ -91,7 +91,7 @@ define([ 'N/record', 'N/search', 'N/runtime', 'dao' ], function(record, search,
 				title : 'columnList regexp',
 				details : columnList
 			});
-			columnList = columnList.map(function(f) {//f是数组1�7
+			columnList = columnList.map(function(f) {//f是数组1�7�1�7
 				return f.split(",");
 			})[0];
 

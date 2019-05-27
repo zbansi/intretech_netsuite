@@ -2,12 +2,13 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="getBomHeaderRecordId" key="selection"/>
+		<item value="_utf8" key="selection"/>
 		<item value="true" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="true" key="wholeword"/>
 		<list key="findhistory">
+			<item value="_gb18030"/>
 			<item value="getBomHeaderRecordId"/>
 			<item value="Object.create"/>
 			<item value="Object"/>
@@ -15,9 +16,9 @@
 			<item value="upsertBomAllRecord"/>
 			<item value="task"/>
 			<item value="hasOwnProperty"/>
-			<item value="prototype"/>
 		</list>
 		<list key="replacehistory">
+			<item value="_utf8"/>
 			<item value="discardObject"/>
 			<item value="accounting_2019_1"/>
 			<item value="com.netsuite.webservices.lists.accounting_2019_1"/>
@@ -25,7 +26,6 @@
 			<item value="com.netsuite.suitetalk.proxy.v2017_2.platform.core"/>
 			<item value="VENDORS"/>
 			<item value="Purchase Order"/>
-			<item value="vendor"/>
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">

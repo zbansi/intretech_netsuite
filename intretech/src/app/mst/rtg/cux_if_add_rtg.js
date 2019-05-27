@@ -11,7 +11,7 @@ define(['PMF'], function (pmf) {
         var types = pmf.recordTypes("21");
         var recordId = pmf.createItemMain(context.itemData, types.itemType);
 
-        return new Date().getTime() - runStart + "ms\n创建成功,id:" + recordId
+        return new Date().getTime() - runStart + "ms\nRecords were successfully created,id:" + recordId
     }
 
     return {

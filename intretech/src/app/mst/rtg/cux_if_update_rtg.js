@@ -11,7 +11,7 @@ define(['PMF'], function (pmf) {
         var types = pmf.recordTypes("21");
         pmf.modifyRecord(context.itemData,types.itemType, types.searchType,'name');
 
-        return new Date().getTime() - runStart + "ms\n更新成功"
+        return new Date().getTime() - runStart + "ms\n Update Successfully"
     }
 
     return {

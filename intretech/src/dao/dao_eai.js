@@ -13,7 +13,7 @@ define([ 'N/record', 'N/search', 'N/error', 'N/runtime', 'columnset', 'utils' ],
  * @param {search} search
  * @param {error} error
  * @param {runtime} runtime
- * @param {search_columns} columnset
+ * @param {columnset} columnset
  * @param {utils} utils
  */
 function(record, search, error, runtime, columnset, utils) {
