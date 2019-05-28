@@ -170,7 +170,8 @@ function(runtime, record, error, email, log, utils, dao) {
 		});
 
 		//更新BOM数据,一定要用JSON.parse将数组string编码值转换成对象
-		var result = dao.upsertBomAllRecord('PUT', JSON.parse(context.values[0]));
+		log.audit("method type" + runtime.getCurrentScript().getParameter('custscript_methodtype'));
+		var result = dao.upsertBomAllRecord(runtime.getCurrentScript().getParameter('custscript_methodtype'), JSON.parse(context.values[0]));
 		// end 更新BOM数据
 
 		context.write({

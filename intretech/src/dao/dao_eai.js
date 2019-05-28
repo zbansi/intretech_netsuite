@@ -17,6 +17,31 @@ define([ 'N/record', 'N/search', 'N/error', 'N/runtime', 'columnset', 'utils' ],
  * @param {utils} utils
  */
 function(record, search, error, runtime, columnset, utils) {
+	//create and save BOM and BOM Reversion
+	function getRecordId(recordType, name) {
+
+		if (!name)
+			return -1;
+		else {
+			var filter = [];
+
+			filter.push(search.createFilter({
+				name : 'name',
+				operator : search.Operator.IS,
+				values : name
+			}));
+
+			var recordSet = search.create({
+				type : recordType,
+				filters : filter
+			}).run().getRange({
+				start : 0,
+				end : 1
+			});
+
+			return recordSet.length == 0 ? -1 : recordSet[0].id;
+		}
+	}
 
 	function getSearchResultSet(recordType, filterList, columnList) {
 		var pagedData = search.create({
@@ -447,7 +472,6 @@ function(record, search, error, runtime, columnset, utils) {
 			};
 		}
 		if (methodType == 'PUT') {
-			log.debug("bomData is " + bomData);
 			var bomHeaderId = upsertBomRecord('PUT', bomData);
 			if (bomHeaderId == -1)
 				throw error.create({
@@ -455,12 +479,15 @@ function(record, search, error, runtime, columnset, utils) {
 					details : 'The bom {bomName: ' + bomData.name + '} PUT failed.'
 				});
 			if (!utils.isEmpty(bomRevisionData))
-				var bomRevisionId = upsertBomReversionRecord('PUT', bomRevisionData, bomHeaderId);
+				if (getBomRevisionRecordIdJoinBomId(bomHeaderId, bomRevisionData.name) == -1)
+					var bomRevisionId = upsertBomReversionRecord('POST', bomRevisionData, bomHeaderId);
+				else
+					var bomRevisionId = upsertBomReversionRecord('PUT', bomRevisionData, bomHeaderId);
 
 			result = {
 				methodType : 'PUT',
 				bomHeader : bomHeaderId,
-			//bomRevision : bomRevisionId
+				bomRevision : bomRevisionId
 			};
 		}
 
@@ -489,7 +516,10 @@ function(record, search, error, runtime, columnset, utils) {
 						details : 'The bom {bomName: ' + bomData.name + '} POST failed.'
 					});
 				else if (!utils.isEmpty(bomRevisionData))
-					var bomRevisionId = upsertBomReversionRecord('POST', bomRevisionData, bomHeaderId);
+					if (getBomRevisionRecordIdJoinBomId(bomHeaderId, bomRevisionData.name) == -1)
+						var bomRevisionId = upsertBomReversionRecord('POST', bomRevisionData, bomHeaderId);
+					else
+						var bomRevisionId = upsertBomReversionRecord('PUT', bomRevisionData, bomHeaderId);
 
 				result.push({
 					methodType : 'POST',
@@ -588,6 +618,93 @@ function(record, search, error, runtime, columnset, utils) {
 
 		var pagedData = search.create({
 			type : search.Type.BOM_REVISION, //bomrevision,
+			filters : filters,
+			columns : columns
+		}).runPaged();
+
+		var resultSet = [];
+		pagedData.pageRanges.forEach(function(pageRange) {
+			var page = pagedData.fetch({
+				index : pageRange.index
+			});
+			page.data.forEach(function(result) {
+				resultSet.push(result);
+			});
+		});
+
+		return resultSet;
+	}
+
+	function upsertLocationList(methodType, locationList) {
+		log.debug({
+			title : "locationList",
+			details : locationList
+		});
+		if (locationList.length > 0) {
+			log.debug({
+				title : "locationList length",
+				details : locationList.length
+			});
+			var resultSet = [];
+
+			locationList.forEach(function(locationData) {
+				var exsitedLoactionId = getRecordId(record.Type.LOCATION, locationData.name);
+				if (exsitedLoactionId == -1) {
+					if (methodType == 'POST') {
+						var locationRec = record.create({
+							type : record.Type.LOCATION,
+							isDynamic : true
+						})
+						for ( var key in locationData) {
+							locationRec.setValue({
+								fieldId : key,
+								value : locationData[key]
+							});
+						}
+						var locationId = locationRec.save({
+							enableSourcing : true,
+							ignoreMandatoryFields : false
+						});
+					}
+					if (methodType == 'PUT') {
+						throw error.create("the location you want to update isnot exsited");
+					}
+
+				} else if (methodType == 'PUT') {
+					var locationRec = record.load({
+						type : record.Type.LOCATION,
+						id : exsitedLoactionId,
+						isDynamic : true
+					})
+					for ( var key in locationData) {
+						locationRec.setValue({
+							fieldId : key,
+							value : locationData[key]
+						});
+
+					}
+					var locationId = locationRec.save({
+						enableSourcing : true,
+						ignoreMandatoryFields : false
+					});
+				} else if (methodType == 'POST') {
+					throw error.create("the location you want to PUT has been exsited");
+				}
+				resultSet.push(locationId);
+			});
+			return resultSet;
+		}
+	}
+
+	function getLocationResult(filterList) {
+		var filters = [ [ 'isinactive', 'is', false ] ];
+		if (filterList && filterList.length > 0) {
+			filters.push("and");
+			filters = filters.concat(filterList);
+		}
+		var columns = columnset.setColumns('location');
+		var pagedData = search.create({
+			type : search.Type.LOCATION,
 			filters : filters,
 			columns : columns
 		}).runPaged();
@@ -972,16 +1089,20 @@ function(record, search, error, runtime, columnset, utils) {
 	}
 
 	return {
+		'getRecordId' : getRecordId,
 		'getSearchResultSet' : getSearchResultSet,
 		'deleteRecords' : deleteRecords,
 		'deleteRecord' : deleteRecord,
 		'getBomHeaderRecordId' : getBomHeaderRecordId,
 		'getBomRevisionRecordId' : getBomRevisionRecordId,
+		'getBomRevisionRecordIdJoinBomId' : getBomRevisionRecordIdJoinBomId,
 		'upsertBomRecord' : upsertBomRecord,
 		'upsertBomReversionRecord' : upsertBomReversionRecord,
 		'upsertBomAllRecord' : upsertBomAllRecord,
 		'upsertBomAllRecordList' : upsertBomAllRecordList,
 		'getBOMAllData' : getBOMAllData,
+		'upsertLocationList' : upsertLocationList,
+		'getLocationResult' : getLocationResult,
 
 		//get Transaction Data
 		'getTransactionResult' : getTransactionResult,

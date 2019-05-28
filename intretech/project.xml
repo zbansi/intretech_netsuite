@@ -19,8 +19,6 @@
           <folder name="bom">
             <file name="addBom.js" hideInBundle="false" isOnline="false" textFileEncoding="_utf8"/>
             <file name="addBomRevision.js" hideInBundle="false" isOnline="false" textFileEncoding="_utf8"/>
-            <file name="bomDataPOST.json" hideInBundle="false" isOnline="false" textFileEncoding="_gb18030"/>
-            <file name="bomDataPUT.json" hideInBundle="false" isOnline="false" textFileEncoding="_gb18030"/>
             <file name="cux_if_BomSync.js" hideInBundle="false" isOnline="false" textFileEncoding="_utf8"/>
             <file name="cux_if_addBom.js" hideInBundle="false" isOnline="false" textFileEncoding="_utf8"/>
             <file name="cux_if_bom_ScheduledScript.js" hideInBundle="false" isOnline="false" textFileEncoding="_gb18030"/>
@@ -41,12 +39,7 @@
             <file name="cux_if_get_item.js" hideInBundle="false" isOnline="false" textFileEncoding="_gb18030"/>
             <file name="cux_if_update_itemt.js" hideInBundle="false" isOnline="false" textFileEncoding="_gb18030"/>
           </folder>
-          <folder name="rtg">
-            <file name="cux_if_add_rtg.js" hideInBundle="false" isOnline="false" textFileEncoding="_utf8"/>
-            <file name="cux_if_delete_rtg.js" hideInBundle="false" isOnline="false" textFileEncoding="_utf8"/>
-            <file name="cux_if_get_rtg.js" hideInBundle="false" isOnline="false" textFileEncoding="_utf8"/>
-            <file name="cux_if_update_rtg.js" hideInBundle="false" isOnline="false" textFileEncoding="_utf8"/>
-          </folder>
+          <folder name="rtg"/>
           <folder name="vender">
             <file name="cux_if_add_vender.js" hideInBundle="false" isOnline="false" textFileEncoding="_gb18030"/>
             <file name="cux_if_delete_vender.js" hideInBundle="false" isOnline="false" textFileEncoding="_gb18030"/>

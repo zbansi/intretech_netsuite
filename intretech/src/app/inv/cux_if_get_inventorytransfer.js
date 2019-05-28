@@ -5,7 +5,7 @@
  * @NAmdConfig /SuiteScripts/intretech/config.json
  * @author Zhu Yanlong
  */
-/////////////////////////work order issue接口////////////////////////////
+/////////////////////////inventory transfer 接口////////////////////////////
 //	
 // 	GET
 //	
@@ -32,7 +32,7 @@ function(record, search, runtime, dao, utils) {
 	 */
 	/* GET Method: 请求传参格式
 	 * 
-	 * requestParams.filterList: 混合二维数据，偶数元素是长度2戄1�7�1�7�一维数据（谓词要素），奇数元素是�1ￄ1�7�辑运算笄1�7�1�7
+	 * requestParams.filterList: 混合二维数据，偶数元素是长度2戄1�7�1�7�一维数据（谓词要素），奇数元素是�1ￄ1�7�辑运算笄1�7�1�7
 	 * requestParams.filterList = [ [ 'name', 'is', 'EAI.TEST.190422A01-cBOM' ] ];
 	 * 
 	 */

@@ -34,6 +34,8 @@ function(search) {
 				'startdate', 'enddate', 'quantity', 'quantityuom', 'unit', 'firmed', 'memo', 'shipdate' ];
 		var _itemReceiptSearchColumns = [ 'entity', 'salesrep', 'linesequencenumber', 'item', 'itemrevision', 'pricelevel', 'rate', 'status', 'trandate',
 				'startdate', 'enddate', 'quantity', 'quantityuom', 'unit', 'firmed', 'memo', 'shipdate' ];
+		var _locationSearchColumns = [ 'externalid', 'internalid', 'isinactive', 'locationtype', 'makeinventoryavailable', 'makeinventoryavailablestore',
+				'name', 'subsidiary', 'usesbins' ];
 		var columnList = [];
 		switch (searchType) {
 		case search.Type.SALES_ORDER:
@@ -101,6 +103,12 @@ function(search) {
 			break;
 		case 'itemreceipt':
 			return createColumns(_itemReceiptSearchColumns);
+			break;
+		case search.Type.LOCATION:
+			return createColumns(_locationSearchColumns);
+			break;
+		case 'location':
+			return createColumns(_locationSearchColumns);
 			break;
 		default:
 			break;

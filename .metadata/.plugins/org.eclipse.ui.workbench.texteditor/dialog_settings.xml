@@ -2,20 +2,20 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="_utf8" key="selection"/>
+		<item value="save" key="selection"/>
 		<item value="true" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="true" key="wholeword"/>
 		<list key="findhistory">
+			<item value="save"/>
+			<item value="throws"/>
+			<item value="throw"/>
+			<item value="getBomRevisionRecordIdJoinBomId"/>
+			<item value="bomData is"/>
 			<item value="_gb18030"/>
 			<item value="getBomHeaderRecordId"/>
 			<item value="Object.create"/>
-			<item value="Object"/>
-			<item value="upsertBomRecord"/>
-			<item value="upsertBomAllRecord"/>
-			<item value="task"/>
-			<item value="hasOwnProperty"/>
 		</list>
 		<list key="replacehistory">
 			<item value="_utf8"/>

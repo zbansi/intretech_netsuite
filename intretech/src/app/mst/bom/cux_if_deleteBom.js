@@ -24,15 +24,14 @@ function(record, search, runtime, dao, utils) {
 	 * Function called upon sending a DELETE request to the RESTlet.
 	 * 
 	 * @param {Object} requestParams - Parameters from HTTP request URL; parameters will be passed into function as an Object (for all supported content types)
+	 * @param {String} requestParams.type - text | array
+	 * @param {String} requestParams.bomAndRevisionNames - if text: "65;66:v1,v2;67;68:v1" if array:
+	 *            [{bom:65,assembly:[a1,a2],bomrev:[v1,v2]},{bom:66,assembly:[a3,a4],bomrev:[v1,v2]}]
 	 * @returns {string | Object} HTTP response body; return string when request Content-Type is 'text/plain'; return Object when request Content-Type is
 	 *          'application/json'
 	 * @since 2015.2
 	 */
 
-	//requestParams.type : text,array
-	//requestParams.bomAndRevisionNames 格式
-	//text:  "65;66:v1,v2;67;68:v1" 
-	//array: [{bom:65,assembly:[a1,a2],bomrev:[v1,v2]},{bom:66,assembly:[a3,a4],bomrev:[v1,v2]}]
 	function doDelete(requestParams) {
 		log.debug({
 			title : "deleteRequestParams: ",

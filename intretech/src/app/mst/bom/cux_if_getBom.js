@@ -25,15 +25,11 @@ function(record, search, runtime, dao, utils) {
 	 * Function called upon sending a GET request to the RESTlet.
 	 * 
 	 * @param {Object} requestParams - Parameters from HTTP request URL; parameters will be passed into function as an Object (for all supported content types)
+	 * @param {String} requestParams.filterList - 混合二维数据，偶数元素是长度2或3的一维数据（谓词要素），奇数元素是逻辑运算符 requestParams.filterList = [ [ 'name', 'is', 'EAI.TEST.190422A01-cBOM' ] ];
+	 * 
 	 * @returns {string | Object} HTTP response body; return string when request Content-Type is 'text/plain'; return Object when request Content-Type is
 	 *          'application/json'
 	 * @since 2015.1
-	 */
-	/* GET Method: 报文传参格式
-	 * 
-	 * requestParams.filterList: 混合二维数据，偶数元素是长度2或3的一维数据（谓词要素），奇数元素是逻辑运算符
-	 * requestParams.filterList = [ [ 'name', 'is', 'EAI.TEST.190422A01-cBOM' ] ];
-	 * 
 	 */
 	function doGet(requestParams) {
 		var scriptObj = runtime.getCurrentScript();
@@ -42,9 +38,7 @@ function(record, search, runtime, dao, utils) {
 			details : "Remaining governance units start: " + scriptObj.getRemainingUsage()
 		});
 		var resultSets = [];
-		for (var i = 0; i < 10; i++) {
-			resultSets.push(dao.getBOMAllData(utils.string2Array(requestParams.filterList)));
-		}
+		resultSets.push(dao.getBOMAllData(utils.string2Array(requestParams.filterList)));
 		log.debug({
 			title : 'usage',
 			details : "Remaining governance units end: " + scriptObj.getRemainingUsage()
@@ -52,8 +46,6 @@ function(record, search, runtime, dao, utils) {
 
 		try {
 			return {
-				//				"resultSet" : dao.getBOMAllData(utils
-				//						.string2Array(requestParams.filterList))
 				"resultSet" : resultSets
 			};
 		} catch (e) {
