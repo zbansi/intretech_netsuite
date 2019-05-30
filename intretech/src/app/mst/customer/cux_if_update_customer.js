@@ -7,11 +7,8 @@
 define(['PMF'], function (pmf) {
     function _put(context) {
         var runStart = new Date().getTime();
-
-        var types = pmf.recordTypes("19");
-        var i = pmf.modifyRecord(context.itemData, types.itemType, types.searchType,'companyname');
-
-        return new Date().getTime() - runStart + 'ms\n已更新数据' + i + '条记录'
+        var i = pmf.modifyRecord(context.itemData, 'entityid','customer');
+        return new Date().getTime() - runStart + 'ms,' + i + 'Piece of data has been updated'
     }
 
     return {

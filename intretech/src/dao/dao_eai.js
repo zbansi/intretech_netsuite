@@ -7,7 +7,7 @@
  * @author YQ12681 Zhu Yanlong
  */
 
-define([ 'N/record', 'N/search', 'N/error', 'N/runtime', 'columnset', 'utils' ],
+define([ 'N/record', 'N/search', 'N/error', 'N/runtime', '/SuiteScripts/intretech/src/utils/search_columns', '/SuiteScripts/intretech/src/utils/utils' ],
 /**
  * @param {record} record
  * @param {search} search
@@ -546,8 +546,10 @@ function(record, search, error, runtime, columnset, utils) {
 		});
 		return result;
 	}
-
-	function getBOMAllData(filterList) {
+	/**
+	 * 获取bom revision，及其BOM和组件明细，不含关联的assembly item
+	 */
+	function getBomRevisionData(filterList) {
 		var filters = [ [ 'isinactive', 'is', 'F' ] ];
 
 		//		filters.push(search.createFilter({
@@ -558,63 +560,15 @@ function(record, search, error, runtime, columnset, utils) {
 		//			leftparens:1,
 		//			rightparens:1
 		//		}));				
-		if (filterList && filterList.length > 0) {
+		if (filterList && filterList[0].length > 0) {
 			filters.push("and");
 			filters = filters.concat(filterList);
 		}
-		var columnList = [ 'createddate', 'effectivestartdate', 'effectiveenddate', 'externalid', 'internalid', 'isinactive', 'memo', 'name' ];
 		var columns = [];
-		columns.push(search.createColumn({
-			name : 'name',
-			join : 'billofmaterials'
-		}));
-
-		columns.push(search.createColumn({
-			name : 'isinactive',
-			join : 'billofmaterials'
-		}));
-
-		columnList.forEach(function(e) {
-			columns.push(search.createColumn({
-				name : e,
-			}));
-		});
-
-		//		columns.push(search.createColumn({
-		//			name: 'linenumber',
-		//			join: 'component'
-		//		}));
-		//		
-		columns.push(search.createColumn({
-			name : 'internalid',
-			join : 'component'
-		}));
-
-		columns.push(search.createColumn({
-			name : 'item',
-			join : 'component'
-		}));
-
-		columns.push(search.createColumn({
-			name : 'bomquantity',
-			join : 'component'
-		}));
-
-		columns.push(search.createColumn({
-			name : 'quantity',
-			join : 'component'
-		}));
-
-		columns.push(search.createColumn({
-			name : 'componentyield',
-			join : 'component'
-		}));
-
-		//		columns.push(search.createColumn({
-		//			name: 'unit',
-		//			join: 'component'
-		//		}));
-		//		
+		var columnList = columnset.setColumns(search.Type.BOM_REVISION);
+		var joinColumns = columnset.setJoinColumns(search.Type.BOM_REVISION);
+		columns = columns.concat(columnList);
+		columns = columns.concat(joinColumns);
 
 		var pagedData = search.create({
 			type : search.Type.BOM_REVISION, //bomrevision,
@@ -632,6 +586,188 @@ function(record, search, error, runtime, columnset, utils) {
 			});
 		});
 
+		return resultSet;
+	}
+
+	/**
+	 * 获取bom revision的组件明细
+	 */
+	function getBomRevisionComponents(filterList) {
+		var filters = [ [ 'isinactive', 'is', 'F' ] ];
+		if (filterList && filterList[0].length > 0) {
+			filters.push("and");
+			filters = filters.concat(filterList);
+		}
+		var columns = [];
+
+		var joinColumns = columnset.setJoinColumns(search.Type.BOM_REVISION, 'component');
+		columns = columns.concat(joinColumns);
+
+		var pagedData = search.create({
+			type : search.Type.BOM_REVISION, //bomrevision,
+			filters : filters,
+			columns : columns
+		}).runPaged();
+
+		var resultSet = [];
+		pagedData.pageRanges.forEach(function(pageRange) {
+			var page = pagedData.fetch({
+				index : pageRange.index
+			});
+			page.data.forEach(function(result) {
+				resultSet.push(result);
+			});
+		});
+
+		return resultSet;
+	}
+
+	/**
+	 * 获取主记录AssemblyItem，及其bom，不含版本和组件明细 主记录: item joinid: assemblyitembom
+	 */
+	function getAssemblyBilofMaterials(filterList) {
+		var filters = [ [ 'isinactive', 'is', 'F' ] ];
+		if (filterList && filterList[0].length > 0) {
+			filters.push("and");
+			filters = filters.concat(filterList);
+		}
+		var resultSet = [];
+		var columns = [];
+		var columnList = columnset.setColumns(search.Type.ITEM);
+		var columnJoins = columnset.setColumns(search.Type.ITEM);
+		columns = columns.concat(columnList);
+		columns = columns.concat(columnJoins);
+		var pagedData = search.create({
+			type : search.Type.ITEM,
+			filters : filters,
+			columns : columns
+		}).runPaged();
+
+		var resultSet = [];
+		pagedData.pageRanges.forEach(function(pageRange) {
+			var page = pagedData.fetch({
+				index : pageRange.index
+			});
+			page.data.forEach(function(result) {
+				resultSet.push(result);
+			});
+		});
+		return resultSet;
+	}
+
+	/**
+	 * 获取主记录BOM，及其版本和关联的AssemblyItem
+	 */
+	function getBomAssemblyItemAndRevision() {
+		var filters = [ [ 'isinactive', 'is', 'F' ] ];
+		if (filterList && filterList[0].length > 0) {
+			filters.push("and");
+			filters = filters.concat(filterList);
+		}
+		var resultSet = [];
+		var columns = [];
+		var columnList = columnset.setColumns(search.Type.BOM);
+		var columnJoins = columnset.setColumns(search.Type.BOM);
+		columns = columns.concat(columnList);
+		columns = columns.concat(columnJoins);
+		var pagedData = search.create({
+			type : search.Type.ITEM,
+			filters : filters,
+			columns : columns
+		}).runPaged();
+
+		var resultSet = [];
+		pagedData.pageRanges.forEach(function(pageRange) {
+			var page = pagedData.fetch({
+				index : pageRange.index
+			});
+			page.data.forEach(function(result) {
+				resultSet.push(result);
+			});
+		});
+		return resultSet;
+	}
+
+	/**
+	 * 获取主记录BOM，及其关联的AssemblyItem、版本和组件明细
+	 */
+	function getBomAssemblyItemAndRevisionAndComponet(filterList) {
+		var filters = [ [ 'isinactive', 'is', 'F' ] ];
+		if (filterList && filterList[0].length > 0) {
+			filters.push("and");
+			filters = filters.concat(filterList);
+		}
+		var resultSet = [];
+		var columns = [];
+		var columnList = columnset.setColumns(search.Type.BOM);
+		var columnJoins = columnset.setJoinColumns(search.Type.BOM);
+		columns = columns.concat(columnList);
+		columns = columns.concat(columnJoins);
+		var pagedData = search.create({
+			type : search.Type.BOM,
+			filters : filters,
+			columns : columns
+		}).runPaged();
+
+		var resultSet = [];
+		pagedData.pageRanges.forEach(function(pageRange) {
+			var page = pagedData.fetch({
+				index : pageRange.index
+			});
+			page.data.forEach(function(result) {
+
+				//构建JSON格式的响应报文
+				var bomObj = Object.create(null);
+//				bomObj.assemblyid = result.getValue({
+//					'name' : 'assemblyid',
+//					'joinid' : 'assemblyitem'
+//				});
+//				bomObj.assembly = result.getValue({
+//					'name' : 'assembly',
+//					'joinid' : 'assemblyitem'
+//				});
+//				bomObj['default'] = result.getValue({
+//					'name' : 'default',
+//					'joinid' : 'assemblyitem'
+//				});
+//				bomObj.billofmaterialsid = result.getValue({
+//					'name' : 'billofmaterialsid',
+//					'joinid' : 'assemblyitem'
+//				});
+				bomObj.assemblyid = result.getValue(result.columns[5]);
+				bomObj.assembly = result.getText(result.columns[4]);
+				bomObj['default'] = result.getValue(result.columns[8]);
+				
+				bomObj.bom_id = result.getValue('internalid');
+				bomObj.bom_name = result.getValue('name');
+				
+				bomObj.revision_internalid = result.getValue({
+					'name' : 'internalid',
+					'joinid' : 'revision'
+				});
+				bomObj.revision_name = result.getValue({
+					'name' : 'name',
+					'joinid' : 'revision'
+				});
+
+				//添加版本的组件明细
+				//获取版本id
+				var revisionId = result.getValue({
+					"name" : "internalid",
+					"join" : "revision"
+				});
+				var compFilter = [ 'internalid', 'is' ];
+				compFilter.push(revisionId);
+				var flt = [];
+				flt.push(compFilter);
+				//执行子查询
+				var components = getBomRevisionComponents(flt);
+				//添加组件明细
+				bomObj.components = components;
+
+				resultSet.push(bomObj);
+			});
+		});
 		return resultSet;
 	}
 
@@ -698,7 +834,7 @@ function(record, search, error, runtime, columnset, utils) {
 
 	function getLocationResult(filterList) {
 		var filters = [ [ 'isinactive', 'is', false ] ];
-		if (filterList && filterList.length > 0) {
+		if (filterList && filterList[0].length > 0) {
 			filters.push("and");
 			filters = filters.concat(filterList);
 		}
@@ -733,7 +869,7 @@ function(record, search, error, runtime, columnset, utils) {
 		filterRecordType.push(searchType);
 		filters.push(filterRecordType);
 
-		if (filterList && filterList.length > 0) {
+		if (filterList && filterList[0].length > 0) {
 			filters.push("and");
 			filters = filters.concat(filterList);
 		}
@@ -1100,7 +1236,10 @@ function(record, search, error, runtime, columnset, utils) {
 		'upsertBomReversionRecord' : upsertBomReversionRecord,
 		'upsertBomAllRecord' : upsertBomAllRecord,
 		'upsertBomAllRecordList' : upsertBomAllRecordList,
-		'getBOMAllData' : getBOMAllData,
+		'getAssemblyBilofMaterials' : getAssemblyBilofMaterials,
+		'getBomRevisionData' : getBomRevisionData,
+		'getBomAssemblyItemAndRevisionAndComponet' : getBomAssemblyItemAndRevisionAndComponet,
+		'getBomRevisionComponents' : getBomRevisionComponents,
 		'upsertLocationList' : upsertLocationList,
 		'getLocationResult' : getLocationResult,
 

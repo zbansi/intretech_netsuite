@@ -7,9 +7,7 @@
 define(['PMF'], function (pmf) {
     function _get(context) {
         var runStart = new Date().getTime();
-        var types = pmf.recordTypes(context.itemType);
-        var itemData = pmf.getItemData(context.name, types.itemType, types.searchType,'itemid');
-
+        var itemData = pmf.getItemData(context.name, 'itemid', 'item');
         return [new Date().getTime() - runStart + 'ms', itemData]
     }
 

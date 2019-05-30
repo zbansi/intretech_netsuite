@@ -2,37 +2,37 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="printError" key="selection"/>
+		<item value="filterList[0].length &gt; 0" key="selection"/>
 		<item value="true" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="true" key="wholeword"/>
 		<list key="findhistory">
-			<item value="printError"/>
-			<item value="getStatus"/>
-			<item value="Boolean isIsSuccess = true;"/>
-			<item value="login"/>
-			<item value="getUpdatedEventsFromResponseList"/>
-			<item value="Ref[]"/>
-			<item value="getItemAvailability"/>
-			<item value="getItem"/>
+			<item value="filterList.length"/>
+			<item value="filterList.length &gt; 1"/>
+			<item value="filterList.length &gt; 1 &gt; 0"/>
+			<item value="filterList.length &gt; 0"/>
+			<item value="getBomAssemblyItemAndRevisionAndComponet"/>
+			<item value="getAssemblyBilofMaterials"/>
+			<item value="getBomRevisionComponents"/>
+			<item value="_bomRevisionSearchColoumns"/>
 		</list>
 		<list key="replacehistory">
+			<item value="filterList[0].length &gt; 0"/>
+			<item value="filterList.length &gt; 1"/>
+			<item value="_bomRevisionSearchColumns"/>
+			<item value="_itemSearchColumns"/>
 			<item value="if ("/>
 			<item value="getStatus().getStatusDetail())"/>
 			<item value="core_2019_1"/>
 			<item value="com.netsuite.webservices.platform.core_2019_1"/>
-			<item value="accounting.lists.webservices.netsuite.com"/>
-			<item value="setBomRevisionComponent"/>
-			<item value="getBomRevisionComponent"/>
-			<item value="BomRevisionComponent"/>
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
 		<item value="273" key="DIALOG_WIDTH"/>
 		<item value="1|微软雅黑|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|微软雅黑" key="DIALOG_FONT_NAME"/>
 		<item value="399" key="DIALOG_HEIGHT"/>
-		<item value="1130" key="DIALOG_X_ORIGIN"/>
-		<item value="224" key="DIALOG_Y_ORIGIN"/>
+		<item value="1489" key="DIALOG_X_ORIGIN"/>
+		<item value="376" key="DIALOG_Y_ORIGIN"/>
 	</section>
 </section>

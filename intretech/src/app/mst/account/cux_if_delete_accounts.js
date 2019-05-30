@@ -7,9 +7,8 @@
 define(['PMF'], function (pmf) {
     function _delete(context) {
         var runStart = new Date().getTime();
-        var types = pmf.recordTypes("22");
-        var quantity = pmf.deleteRecord(context.name, types.itemType, types.searchType, 'number');
-        return [new Date() - runStart, '成功删除' + quantity + '条记录']
+        var status = pmf.deleteRecord(context.name,'number','account');
+        return new Date().getTime() - runStart + 'ms ' + status
     }
 
     return {

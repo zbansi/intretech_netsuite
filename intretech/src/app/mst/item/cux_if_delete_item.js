@@ -5,12 +5,10 @@
  * @author ZhangYuKun
  */
 define(['PMF'], function (pmf) {
-
     function _delete(context) {
         var runStart = new Date().getTime();
-        var itemTypes = pmf.recordTypes(context.itemType);
-        var quantity = pmf.deleteRecord(context.name, itemTypes.itemType, itemTypes.searchType, 'itemid');
-        return new Date().getTime() - runStart + 'ms\n已成功删除' + quantity + '条记录'
+        var status = pmf.deleteRecord(context.name,'itemid','item');
+        return new Date().getTime() - runStart + 'ms ,' + status
     }
 
     return {

@@ -3,6 +3,7 @@
  * 
  * @NApiversion 2.x
  * @NModuleScope Public
+ * @author YQ12681 Zhu Yanlong
  */
 
 define([ 'N/search' ],
@@ -11,7 +12,13 @@ define([ 'N/search' ],
  */
 function(search) {
 
+	/**
+	 * 获取主记录的查询列
+	 */
 	function setColumns(searchType) {
+		var _itemSearchColumns = [ 'itemid', 'displayname' ];
+		var _bomSearchColumns = [ 'internalid', 'externalid', 'name', 'memo' ];
+		var _bomRevisionSearchColumns = [ 'name', 'memo', 'createddate', 'effectivestartdate', 'effectiveenddate', 'internalid', 'externalid', 'isinactive' ];
 		var _salesOrderSearchColumns = [ 'entity', 'salesrep', 'linesequencenumber', 'item', 'itemrevision', 'pricelevel', 'rate', 'status', 'trandate',
 				'startdate', 'enddate', 'quantity', 'quantityuom', 'unit', 'firmed', 'memo', 'shipdate' ];
 		var _itemFulfillmentSearchColumns = [ 'salesorder', 'entity', 'salesrep', 'linesequencenumber', 'item', 'itemrevision', 'pricelevel', 'rate', 'status',
@@ -38,6 +45,24 @@ function(search) {
 				'name', 'subsidiary', 'usesbins' ];
 		var columnList = [];
 		switch (searchType) {
+		case search.Type.ITEM:
+			return createColumns(_itemSearchColumns);
+			break;
+		case 'item':
+			return createColumns(_itemSearchColumns);
+			break;
+		case search.Type.BOM:
+			return createColumns(_bomSearchColumns);
+			break;
+		case 'bom':
+			return createColumns(_bomSearchColumns);
+			break;
+		case search.Type.BOM_REVISION:
+			return createColumns(_bomRevisionSearchColumns);
+			break;
+		case 'bomrevision':
+			return createColumns(_bomRevisionSearchColumns);
+			break;
 		case search.Type.SALES_ORDER:
 			return createColumns(_salesOrderSearchColumns);
 			break;
@@ -115,7 +140,26 @@ function(search) {
 		}
 	}
 
-	function setJoinColumns(searchType) {
+	/**
+	 * 获取主记录的外连接查询列
+	 */
+	function setJoinColumns(searchType, joinId) {
+		//item与BOM之间存在1个关系表，记录类型名称为Assembly Item BOM 记录类型id为assemblyitembom
+		//item joinid之一的assemblyitembillofmaterials和bom joinid之一的assemblyitem均指assemblyitembom
+		var _itemSearchJoins = {
+			'assemblyitembillofmaterials' : [ 'assembly', 'assemblyid', 'billofmaterials', 'billofmaterialsid', 'default', 'locations' ]
+		};
+
+		var _bomSearchJoins = {
+			'assemblyitem' : [ 'assembly', 'assemblyid', 'billofmaterials', 'billofmaterialsid', 'default', 'locations' ],
+			'revision' : [ 'internalid', 'name', 'memo' ]
+		};
+
+		var _bomRevisionSearchJoins = {
+			'billofmaterials' : [ 'name', 'isinactive' ],
+			'component' : [ 'internalid', 'item', 'bomquantity', 'quantity', 'componentyield' ]
+		};
+
 		var _salesOrderSearchJoins = {
 			'location' : [ 'name' ],
 			'subsidiary' : [ 'name' ],
@@ -173,92 +217,116 @@ function(search) {
 		};
 
 		switch (searchType) {
+		case search.Type.ITEM:
+			return createJoinColumns(_itemSearchJoins, joinId);
+			break;
+
+		case search.Type.BOM:
+			return createJoinColumns(_bomSearchJoins, joinId);
+			break;
+
+		case search.Type.BOM_REVISION:
+			return createJoinColumns(_bomRevisionSearchJoins, joinId);
+			break;
+
 		case search.Type.SALES_ORDER:
-			return createJoinColumns(_salesOrderSearchJoins);
+			return createJoinColumns(_salesOrderSearchJoins, joinId);
 			break;
 
 		case search.Type.ITEM_FULFILLMENT:
-			return createJoinColumns(_salesOrderFulfillmentSearchJoins);
+			return createJoinColumns(_salesOrderFulfillmentSearchJoins, joinId);
 			break;
 
 		case search.Type.WORK_ORDER:
-			return createJoinColumns(_workOrderSearchJoins);
+			return createJoinColumns(_workOrderSearchJoins, joinId);
 			break;
 
 		case search.Type.WORK_ORDER_ISSUE:
-			return createJoinColumns(_workOrderIssueSearchJoins);
+			return createJoinColumns(_workOrderIssueSearchJoins, joinId);
 			break;
 
 		case search.Type.WORK_ORDER_COMPLETION:
-			return createJoinColumns(_workOrderCompletionSearchJoins);
+			return createJoinColumns(_workOrderCompletionSearchJoins, joinId);
 			break;
 
 		case search.Type.WORK_ORDER_CLOSE:
-			return createJoinColumns(_workOrderCloseSearchJoins);
+			return createJoinColumns(_workOrderCloseSearchJoins, joinId);
 			break;
 
 		case search.Type.TRANSFER_ORDER:
-			return createJoinColumns(_transferOrderSearchJoins);
+			return createJoinColumns(_transferOrderSearchJoins, joinId);
 			break;
 
 		case search.Type.INVENTORY_TRANSFER:
-			return createJoinColumns(_inventoryTransferSearchJoins);
+			return createJoinColumns(_inventoryTransferSearchJoins, joinId);
 			break;
 
 		case search.Type.INVENTORY_ADJUSTMENT:
-			return createJoinColumns(_inventoryAdjustmentSearchJoins);
+			return createJoinColumns(_inventoryAdjustmentSearchJoins, joinId);
 			break;
 
 		case search.Type.PURCHASE_ORDER:
-			return createJoinColumns(_purchaseOrderSearchJoins);
+			return createJoinColumns(_purchaseOrderSearchJoins, joinId);
 			break;
 
 		case search.Type.ITEM_RECEIPT:
-			return createJoinColumns(_purchaseOrderItemReceiptSearchJoins);
+			return createJoinColumns(_purchaseOrderItemReceiptSearchJoins, joinId);
+			break;
+
+		case 'item':
+			return createJoinColumns(_itemSearchJoins, joinId);
+			break;
+
+		case 'bom':
+			return createJoinColumns(_bomSearchJoins, joinId);
+			break;
+
+		case 'bomrevision':
+			return createJoinColumns(_bomRevisionSearchJoins, joinId);
 			break;
 
 		case 'salesorder':
-			return createJoinColumns(_salesOrderSearchJoins);
+			return createJoinColumns(_salesOrderSearchJoins, joinId);
 			break;
 
 		case 'itemfulfillment':
-			return createJoinColumns(_salesOrderFulfillmentSearchJoins);
+			return createJoinColumns(_salesOrderFulfillmentSearchJoins, joinId);
 			break;
 
 		case 'workorder':
-			return createJoinColumns(_workOrderSearchJoins);
+			return createJoinColumns(_workOrderSearchJoins, joinId);
 			break;
 
 		case 'workorderissue':
-			return createJoinColumns(_workOrderIssueSearchJoins);
+			return createJoinColumns(_workOrderIssueSearchJoins, joinId);
 			break;
 
 		case 'workordercompletion':
-			return createJoinColumns(_workOrderCompletionSearchJoins);
+			return createJoinColumns(_workOrderCompletionSearchJoins, joinId);
 			break;
 
 		case 'workorderclose':
-			return createJoinColumns(_workOrderCloseSearchJoins);
+			return createJoinColumns(_workOrderCloseSearchJoins, joinId);
 			break;
 
 		case 'transferorder':
-			return createJoinColumns(_transferOrderSearchJoins);
+			return createJoinColumns(_transferOrderSearchJoins, joinId);
 			break;
 
 		case 'inventorytransfer':
-			return createJoinColumns(_inventoryTransferSearchJoins);
+			return createJoinColumns(_inventoryTransferSearchJoins, joinId);
 			break;
 
 		case 'inventoryadjustment':
-			return createJoinColumns(_inventoryAdjustmentSearchJoins);
+			return createJoinColumns(_inventoryAdjustmentSearchJoins, joinId);
 			break;
 
 		case 'purchaseorder':
-			return createJoinColumns(_purchaseOrderSearchJoins);
+			return createJoinColumns(_purchaseOrderSearchJoins, joinId);
 			break;
 
 		case 'itemreceipt':
-			return createJoinColumns(_purchaseOrderItemReceiptSearchJoins);
+			return createJoinColumns(_purchaseOrderItemReceiptSearchJoins, joinId);
 			break;
 
 		default:
@@ -278,17 +346,48 @@ function(search) {
 		return columnList;
 	}
 
-	function createJoinColumns(searchJoins) {
+	//	function createJoinColumns(searchJoins) {
+	//		var joinColumns = [];
+	//		if (searchJoins) {
+	//			for ( var key in searchJoins) {
+	//				if (searchJoins.hasOwnProperty(key)) {
+	//					searchJoins[key].forEach(function(value) {
+	//						joinColumns.push(search.createColumn({
+	//							name : value,
+	//							join : key
+	//						}));
+	//					});
+	//				}
+	//			}
+	//		}
+	//		return joinColumns;
+	//	}
+
+	/**
+	 * @param {String} joinId - 如果为 null，则查询全部外连接列
+	 */
+	function createJoinColumns(searchJoins, joinId) {
 		var joinColumns = [];
 		if (searchJoins) {
 			for ( var key in searchJoins) {
-				if (searchJoins.hasOwnProperty(key)) {
-					searchJoins[key].forEach(function(value) {
-						joinColumns.push(search.createColumn({
-							name : value,
-							join : key
-						}));
-					});
+				if (joinId) {
+					if (searchJoins.hasOwnProperty(key) && key == joinId) {
+						searchJoins[key].forEach(function(value) {
+							joinColumns.push(search.createColumn({
+								name : value,
+								join : key
+							}));
+						});
+					}
+				} else {
+					if (searchJoins.hasOwnProperty(key)) {
+						searchJoins[key].forEach(function(value) {
+							joinColumns.push(search.createColumn({
+								name : value,
+								join : key
+							}));
+						});
+					}
 				}
 			}
 		}

@@ -1,0 +1,121 @@
+require([ 'N/search', '/SuiteScripts/intretech/src/utils/search_columns' ], function(search, columnset) {
+
+	function getAssemblyBilofMaterials(filterList) {
+		var filters = [ [ 'isinactive', 'is', 'F' ] ];
+		if (filterList && filterList.length > 0) {
+			filters.push("and");
+			filters = filters.concat(filterList);
+		}
+		var resultSet = [];
+		var columns = [];
+		var columnList = columnset.setColumns(search.Type.ITEM);
+		var columnJoins = columnset.setJoinColumns(search.Type.ITEM);
+		columns = columns.concat(columnList);
+		columns = columns.concat(columnJoins);
+		var pagedData = search.create({
+			type : search.Type.ITEM,
+			filters : filters,
+			columns : columns
+		}).runPaged();
+
+		var resultSet = [];
+		pagedData.pageRanges.forEach(function(pageRange) {
+			var page = pagedData.fetch({
+				index : pageRange.index
+			});
+			page.data.forEach(function(result) {
+				resultSet.push(result);
+			});
+		});
+		log.debug({
+			"title" : "result",
+			"details" : resultSet
+		});
+	}
+	var filterList = [ [ 'itemid', 'is', 'S00001' ] ];
+	getAssemblyBilofMaterials(filterList);
+
+});
+
+require([ 'N/search', '/SuiteScripts/intretech/src/utils/search_columns' ], function(search, columnset) {
+
+	function getBomAssemblyItem(filterList) {
+		var filters = [ [ 'isinactive', 'is', 'F' ] ];
+		if (filterList && filterList.length > 0) {
+			filters.push("and");
+			filters = filters.concat(filterList);
+		}
+		var resultSet = [];
+		var columns = [];
+		var columnList = columnset.setColumns(search.Type.BOM);
+		var columnJoins = columnset.setJoinColumns(search.Type.BOM);
+		columns = columns.concat(columnList);
+		columns = columns.concat(columnJoins);
+		var pagedData = search.create({
+			type : search.Type.BOM,
+			filters : filters,
+			columns : columns
+		}).runPaged();
+
+		var resultSet = [];
+		pagedData.pageRanges.forEach(function(pageRange) {
+			var page = pagedData.fetch({
+				index : pageRange.index
+			});
+			page.data.forEach(function(result) {
+				resultSet.push(result);
+			});
+		});
+		log.debug({
+			"title" : "result",
+			"details" : resultSet
+		});
+	}
+	var filterList = [ [ 'name', 'is', 'S00001' ] ];
+	getBomAssemblyItem(filterList);
+
+});
+
+require([ 'N/search', '/SuiteScripts/intretech/src/utils/search_columns' ], function(search, columnset) {
+
+	/**
+	 * 获取主记录BOM，及其关联的AssemblyItem、版本和组件明细
+	 */
+	function getBomAssemblyItemAndRevisionAndComponet() {
+		var filters = [ [ 'isinactive', 'is', 'F' ] ];
+		if (filterList && filterList.length > 0) {
+			filters.push("and");
+			filters = filters.concat(filterList);
+		}
+		var resultSet = [];
+		var columns = [];
+		var columnList = columnset.setColumns(search.Type.BOM);
+		var columnJoins = columnset.setColumns(search.Type.BOM);
+		columns = columns.concat(columnList);
+		columns = columns.concat(columnJoins);
+		var pagedData = search.create({
+			type : search.Type.ITEM,
+			filters : filters,
+			columns : columns
+		}).runPaged();
+
+		var resultSet = [];
+		pagedData.pageRanges.forEach(function(pageRange) {
+			var page = pagedData.fetch({
+				index : pageRange.index
+			});
+			page.data.forEach(function(result) {
+
+				//添加组件明细
+				var components = getBomRevisionComponents(result['revision.internalid']);
+				resultSet.push(result);
+				resultSet.push(components);
+
+			});
+		});
+		return resultSet;
+	}
+	var filterList = [ [ 'name', 'is', 'S00001' ] ];
+	getBomAssemblyItem(filterList);
+
+});
