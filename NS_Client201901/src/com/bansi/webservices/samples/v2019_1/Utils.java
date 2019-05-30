@@ -3,10 +3,12 @@ package com.bansi.webservices.samples.v2019_1;
 import com.netsuite.webservices.platform.core_2019_1.BaseRef;
 import com.netsuite.webservices.platform.core_2019_1.Passport;
 import com.netsuite.webservices.platform.core_2019_1.Record;
+import com.netsuite.webservices.platform.core_2019_1.RecordList;
 //import com.netsuite.webservices.platform.core_2019_1.RecordList;
 import com.netsuite.webservices.platform.core_2019_1.RecordRef;
 import com.netsuite.webservices.platform.core_2019_1.SearchResult;
 import com.netsuite.webservices.platform.core_2019_1.SearchRow;
+import com.netsuite.webservices.platform.core_2019_1.SearchRowList;
 //import com.netsuite.webservices.platform.core_2019_1.SearchRowList;
 import com.netsuite.webservices.platform.core_2019_1.SsoPassport;
 import com.netsuite.webservices.platform.core_2019_1.StatusDetail;
@@ -156,7 +158,7 @@ public final class Utils {
 		return Arrays.stream(writeResponseList.getWriteResponse()).map(writeResponse -> {
 			
 			Boolean isIsSuccess = true;
-			for (StatusDetail sd : writeResponse.getStatus()) {
+			for (StatusDetail sd : writeResponse.getStatus().getStatusDetail()) {
 				isIsSuccess = !sd.getAfterSubmitFailed() && isIsSuccess;
 			}
 			
@@ -175,7 +177,7 @@ public final class Utils {
 	 */
 	public static List<Boolean> getSuccess(WriteResponseList writeResponseList) {
 		
-		return Arrays.stream(writeResponseList.getWriteResponse()).map(writeResponse -> writeResponse != null && writeResponse.getStatus().length > 0)
+		return Arrays.stream(writeResponseList.getWriteResponse()).map(writeResponse -> writeResponse != null && writeResponse.getStatus().getStatusDetail().length > 0)
 				.collect(Collectors.toList());
 	}
 
@@ -197,14 +199,14 @@ public final class Utils {
 	 * @return List of {@code SearchRow}s in case of result from advanced search or list of {@code Record}s otherwise
 	 */
 	public static List<?> getSearchResults(SearchResult searchResult) {
-		if (searchResult == null || searchResult.getStatus() == null || searchResult.getStatus().length <= 0) {
+		if (searchResult == null || searchResult.getStatus() == null || searchResult.getStatus().getStatusDetail().length <= 0) {
 			return null;
 		}
 		if (searchResult.getTotalRecords() == 0) {
 			return Collections.emptyList();
 		}
-		Record[] recordList = searchResult.getRecordList();
-		SearchRow[] searchRowList = searchResult.getSearchRowList();
+		RecordList recordList = searchResult.getRecordList();
+		SearchRowList searchRowList = searchResult.getSearchRowList();
 		if (recordList == null && searchRowList == null) {
 			return null;
 		}

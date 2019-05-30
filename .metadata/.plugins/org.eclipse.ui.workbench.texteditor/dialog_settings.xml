@@ -2,37 +2,37 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="save" key="selection"/>
+		<item value="printError" key="selection"/>
 		<item value="true" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="true" key="wholeword"/>
 		<list key="findhistory">
-			<item value="save"/>
-			<item value="throws"/>
-			<item value="throw"/>
-			<item value="getBomRevisionRecordIdJoinBomId"/>
-			<item value="bomData is"/>
-			<item value="_gb18030"/>
-			<item value="getBomHeaderRecordId"/>
-			<item value="Object.create"/>
+			<item value="printError"/>
+			<item value="getStatus"/>
+			<item value="Boolean isIsSuccess = true;"/>
+			<item value="login"/>
+			<item value="getUpdatedEventsFromResponseList"/>
+			<item value="Ref[]"/>
+			<item value="getItemAvailability"/>
+			<item value="getItem"/>
 		</list>
 		<list key="replacehistory">
-			<item value="_utf8"/>
-			<item value="discardObject"/>
-			<item value="accounting_2019_1"/>
-			<item value="com.netsuite.webservices.lists.accounting_2019_1"/>
+			<item value="if ("/>
+			<item value="getStatus().getStatusDetail())"/>
+			<item value="core_2019_1"/>
 			<item value="com.netsuite.webservices.platform.core_2019_1"/>
-			<item value="com.netsuite.suitetalk.proxy.v2017_2.platform.core"/>
-			<item value="VENDORS"/>
-			<item value="Purchase Order"/>
+			<item value="accounting.lists.webservices.netsuite.com"/>
+			<item value="setBomRevisionComponent"/>
+			<item value="getBomRevisionComponent"/>
+			<item value="BomRevisionComponent"/>
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
 		<item value="273" key="DIALOG_WIDTH"/>
 		<item value="1|微软雅黑|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|微软雅黑" key="DIALOG_FONT_NAME"/>
 		<item value="399" key="DIALOG_HEIGHT"/>
-		<item value="1499" key="DIALOG_X_ORIGIN"/>
-		<item value="178" key="DIALOG_Y_ORIGIN"/>
+		<item value="1130" key="DIALOG_X_ORIGIN"/>
+		<item value="224" key="DIALOG_Y_ORIGIN"/>
 	</section>
 </section>

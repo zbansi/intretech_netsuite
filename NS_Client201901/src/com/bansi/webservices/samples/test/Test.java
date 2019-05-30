@@ -100,7 +100,8 @@ public class Test {
 			RecordRef subsidiary = new RecordRef();
 			subsidiary.setInternalId(p_subsidiaryList.toString());
 			subsidiary.setType(RecordType.subsidiary);
-			RecordRef[] subsidiaryList = new RecordRef[] { subsidiary };
+			RecordRefList subsidiaryList = new RecordRefList();
+			subsidiaryList.setRecordRef(new RecordRef[]{subsidiary});
 			newBom.setSubsidiaryList(subsidiaryList);
 
 			System.out.println(newBom.getRestrictToAssembliesList());

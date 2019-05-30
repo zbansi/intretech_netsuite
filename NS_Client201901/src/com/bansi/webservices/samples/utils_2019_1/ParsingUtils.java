@@ -30,21 +30,21 @@ public final class ParsingUtils {
         if (response == null || response.getStatus() == null) {
             return NOT_AVAILABLE;
         }
-        return getErrorMessage(response.getStatus());
+        return getErrorMessage(response.getStatus().getStatusDetail());
     }
 
     public static String getErrorMessage(WriteResponse response) {
         if (response == null || response.getStatus() == null) {
             return NOT_AVAILABLE;
         }
-        return getErrorMessage(response.getStatus());
+        return getErrorMessage(response.getStatus().getStatusDetail());
     }
 
     public static String getErrorMessage(SearchResult searchResult) {
         if (searchResult == null || searchResult.getStatus() == null) {
             return NOT_AVAILABLE;
         }
-        return getErrorMessage(searchResult.getStatus());
+        return getErrorMessage(searchResult.getStatus().getStatusDetail());
     }
 
     public static String getErrorMessage(StatusDetail[] statusDetails) {

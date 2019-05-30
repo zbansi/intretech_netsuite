@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;com.bansi.webservices.samples.test.TestSampleOperations_2019_1&apos; to &apos;TestDao&apos;&#x0D;&#x0A;- Original project: &apos;NS_Client201901&apos;&#x0D;&#x0A;- Original element: &apos;com.bansi.webservices.samples.test.TestSampleOperations_2019_1&apos;&#x0D;&#x0A;- Renamed element: &apos;com.bansi.webservices.samples.test.TestDao&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;TestSampleOperations_2019_1&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;com.bansi.webservices.samples.test{TestSampleOperations_2019_1.java[TestSampleOperations_2019_1" matchStrategy="1" name="TestDao" qualified="false" references="true" similarDeclarations="false" stamp="1559043187498" textual="false" version="1.0"/>
+</session>

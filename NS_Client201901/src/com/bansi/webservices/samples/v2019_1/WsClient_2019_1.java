@@ -17,6 +17,7 @@ import com.netsuite.webservices.platform.core_2019_1.ChangePassword;
 import com.netsuite.webservices.platform.core_2019_1.CurrencyRate;
 import com.netsuite.webservices.platform.core_2019_1.CurrencyRateFilter;
 import com.netsuite.webservices.platform.core_2019_1.CustomizationRef;
+import com.netsuite.webservices.platform.core_2019_1.CustomizationRefList;
 import com.netsuite.webservices.platform.core_2019_1.CustomizationType;
 import com.netsuite.webservices.platform.core_2019_1.DataCenterUrls;
 import com.netsuite.webservices.platform.core_2019_1.DeletedRecord;
@@ -42,10 +43,12 @@ import com.netsuite.webservices.platform.core_2019_1.InitializeRecord;
 import com.netsuite.webservices.platform.core_2019_1.InitializeRef;
 import com.netsuite.webservices.platform.core_2019_1.ItemAvailability;
 import com.netsuite.webservices.platform.core_2019_1.ItemAvailabilityFilter;
+import com.netsuite.webservices.platform.core_2019_1.ItemAvailabilityList;
 import com.netsuite.webservices.platform.core_2019_1.PostingTransactionSummaryField;
 import com.netsuite.webservices.platform.core_2019_1.PostingTransactionSummaryFilter;
 import com.netsuite.webservices.platform.core_2019_1.Record;
 import com.netsuite.webservices.platform.core_2019_1.RecordRef;
+import com.netsuite.webservices.platform.core_2019_1.RecordRefList;
 import com.netsuite.webservices.platform.core_2019_1.SearchRecord;
 import com.netsuite.webservices.platform.core_2019_1.SearchResult;
 import com.netsuite.webservices.platform.core_2019_1.SsoCredentials;
@@ -108,7 +111,6 @@ import static com.netsuite.suitetalk.client.common.Constants.*;
 import static com.netsuite.suitetalk.client.common.utils.CommonUtils.getCookieWithoutSessionId;
 import static com.netsuite.suitetalk.client.common.utils.CommonUtils.isEmptyString;
 import static com.netsuite.suitetalk.client.common.utils.CommonUtils.parseSessionIdFromCookie;
-
 
 @ParametersAreNonnullByDefault
 public class WsClient_2019_1 extends WsCoreClient_2019_1 implements WebServicesSoapClient {
@@ -465,15 +467,15 @@ public class WsClient_2019_1 extends WsCoreClient_2019_1 implements WebServicesS
 	 * @return {@code true} if login was successful, {@code false} otherwise
 	 * @see #logout()
 	 */
-	public StatusDetail[] login(Passport passport) {
+	public Boolean login(Passport passport) {
 		SessionResponse sessionResponse = null;
 		try {
 			sessionResponse = callLogin(passport);
 		} catch (RemoteException e) {
 			LOG.warn("Login failed", e);
-			return sessionResponse.getStatus();
+			return sessionResponse.getStatus().isIsSuccess();
 		}
-		return sessionResponse.getStatus();
+		return sessionResponse.getStatus().isIsSuccess();
 	}
 
 	/**
@@ -485,7 +487,7 @@ public class WsClient_2019_1 extends WsCoreClient_2019_1 implements WebServicesS
 	 * @see #setPassport(Passport)
 	 * @see #logout()
 	 */
-	public StatusDetail[] login() {
+	public Boolean login() {
 		Passport passport = getPassport();
 		if (passport == null) {
 			throw new IllegalStateException("Passport must be set before invoking login operation.");
@@ -499,11 +501,7 @@ public class WsClient_2019_1 extends WsCoreClient_2019_1 implements WebServicesS
 	 * @param sessionResponse {@code SessionResponse} which contains JSESSIONID and usually comes from login operation
 	 */
 	private void saveSessionId(SessionResponse sessionResponse) {
-		Boolean isIsSuccess = true;
-		for (StatusDetail sd : sessionResponse.getStatus()) {
-			isIsSuccess = !sd.getAfterSubmitFailed() && isIsSuccess;
-		}
-		if (isIsSuccess) {
+		if (sessionResponse.getStatus().isIsSuccess()) {
 			List<String> cookiesWithSession = getResponseHttpHeader(RESPONSE_COOKIE_HEADER).stream().filter(cookie -> cookie.contains(SESSION_ID))
 					.collect(Collectors.toList());
 			if (cookiesWithSession.isEmpty()) {
@@ -546,12 +544,7 @@ public class WsClient_2019_1 extends WsCoreClient_2019_1 implements WebServicesS
 			LOG.warn("Logout failed", e);
 			return false;
 		}
-		Boolean isIsSuccess = true;
-		for (StatusDetail sd : sessionResponse.getStatus()) {
-			isIsSuccess = !sd.getAfterSubmitFailed() && isIsSuccess;
-		}
-
-		return isIsSuccess;
+		return sessionResponse.getStatus().isIsSuccess();
 	}
 
 	/**
@@ -560,11 +553,7 @@ public class WsClient_2019_1 extends WsCoreClient_2019_1 implements WebServicesS
 	 * @param sessionResponse Logout operation response
 	 */
 	private void clearSessionId(SessionResponse sessionResponse) {
-		Boolean isIsSuccess = true;
-		for (StatusDetail sd : sessionResponse.getStatus()) {
-			isIsSuccess = !sd.getAfterSubmitFailed() && isIsSuccess;
-		}
-		if (isIsSuccess) {
+		if (sessionResponse.getStatus().isIsSuccess()) {
 			sessionId = null;
 		}
 	}
@@ -629,12 +618,7 @@ public class WsClient_2019_1 extends WsCoreClient_2019_1 implements WebServicesS
 			LOG.warn("SSO mapping failed", e);
 			return false;
 		}
-		Boolean isIsSuccess = true;
-		for (StatusDetail sd : sessionResponse.getStatus()) {
-			isIsSuccess = !sd.getAfterSubmitFailed() && isIsSuccess;
-		}
-
-		return isIsSuccess;
+		return sessionResponse.getStatus().isIsSuccess();
 	}
 
 	/**
@@ -713,9 +697,9 @@ public class WsClient_2019_1 extends WsCoreClient_2019_1 implements WebServicesS
 	 */
 	public String addRecord(Record record) throws RemoteException {
 		WriteResponse writeResponse = callAddRecord(record);
-		
+
 		Boolean isIsSuccess = true;
-		for (StatusDetail sd : writeResponse.getStatus()) {
+		for (StatusDetail sd : writeResponse.getStatus().getStatusDetail()) {
 			isIsSuccess = !sd.getAfterSubmitFailed() && isIsSuccess;
 		}
 		if (isIsSuccess) {
@@ -724,18 +708,16 @@ public class WsClient_2019_1 extends WsCoreClient_2019_1 implements WebServicesS
 		}
 		return null;
 	}
-	
+
 	public WriteResponse addBOMRecord(Record record) throws RemoteException {
 		WriteResponse writeResponse = callAddRecord(record);
-		
-		
+
 		return writeResponse;
 	}
-	
+
 	public WriteResponse addBOMRevisionRecord(Record record) throws RemoteException {
 		WriteResponse writeResponse = callAddRecord(record);
-		
-		
+
 		return writeResponse;
 	}
 
@@ -826,7 +808,7 @@ public class WsClient_2019_1 extends WsCoreClient_2019_1 implements WebServicesS
 	public String updateRecord(Record record) throws RemoteException {
 		WriteResponse writeResponse = callUpdateRecord(record);
 		Boolean isIsSuccess = true;
-		for (StatusDetail sd : writeResponse.getStatus()) {
+		for (StatusDetail sd : writeResponse.getStatus().getStatusDetail()) {
 			isIsSuccess = !sd.getAfterSubmitFailed() && isIsSuccess;
 		}
 		if (isIsSuccess) {
@@ -925,7 +907,7 @@ public class WsClient_2019_1 extends WsCoreClient_2019_1 implements WebServicesS
 	public String upsertRecord(Record record) throws RemoteException {
 		WriteResponse writeResponse = callUpsertRecord(record);
 		Boolean isIsSuccess = true;
-		for (StatusDetail sd : writeResponse.getStatus()) {
+		for (StatusDetail sd : writeResponse.getStatus().getStatusDetail()) {
 			isIsSuccess = !sd.getAfterSubmitFailed() && isIsSuccess;
 		}
 		if (isIsSuccess) {
@@ -1169,7 +1151,8 @@ public class WsClient_2019_1 extends WsCoreClient_2019_1 implements WebServicesS
 	 */
 	public WriteResponse callDeleteRecord(String internalId, RecordType recordType, @Nullable RecordRef deletionReasonCode, @Nullable String deletionReasonMemo)
 			throws RemoteException {
-		return callDeleteRecord(com.bansi.webservices.samples.v2019_1.Utils.createRecordRef(internalId, recordType), getDeletionReason(deletionReasonCode, deletionReasonMemo));
+		return callDeleteRecord(com.bansi.webservices.samples.v2019_1.Utils.createRecordRef(internalId, recordType),
+				getDeletionReason(deletionReasonCode, deletionReasonMemo));
 	}
 
 	/**
@@ -1217,7 +1200,8 @@ public class WsClient_2019_1 extends WsCoreClient_2019_1 implements WebServicesS
 	 */
 	public WriteResponse callDeleteRecordByExternalId(String externalId, RecordType recordType, @Nullable RecordRef deletionReasonCode,
 			@Nullable String deletionReasonMemo) throws RemoteException {
-		return callDeleteRecord(com.bansi.webservices.samples.v2019_1.Utils.createRecordRefWithExternalId(externalId, recordType), getDeletionReason(deletionReasonCode, deletionReasonMemo));
+		return callDeleteRecord(com.bansi.webservices.samples.v2019_1.Utils.createRecordRefWithExternalId(externalId, recordType),
+				getDeletionReason(deletionReasonCode, deletionReasonMemo));
 	}
 
 	/**
@@ -1234,12 +1218,12 @@ public class WsClient_2019_1 extends WsCoreClient_2019_1 implements WebServicesS
 	 * @throws RemoteException If some unexpected error occurs between client and server
 	 */
 	public boolean deleteRecord(BaseRef baseRef, @Nullable DeletionReason deletionReason) throws RemoteException {
-		WriteResponse	deleteRecordResponse = callDeleteRecord(baseRef, deletionReason);
+		WriteResponse deleteRecordResponse = callDeleteRecord(baseRef, deletionReason);
 		Boolean isIsSuccess = true;
-		for (StatusDetail sd : deleteRecordResponse.getStatus()) {
+		for (StatusDetail sd : deleteRecordResponse.getStatus().getStatusDetail()) {
 			isIsSuccess = !sd.getAfterSubmitFailed() && isIsSuccess;
 		}
-		
+
 		return isIsSuccess;
 	}
 
@@ -1259,7 +1243,8 @@ public class WsClient_2019_1 extends WsCoreClient_2019_1 implements WebServicesS
 	 */
 	public boolean deleteRecord(String internalId, RecordType recordType, @Nullable RecordRef deletionReasonCode, @Nullable String deletionReasonMemo)
 			throws RemoteException {
-		return deleteRecord(com.bansi.webservices.samples.v2019_1.Utils.createRecordRef(internalId, recordType), getDeletionReason(deletionReasonCode, deletionReasonMemo));
+		return deleteRecord(com.bansi.webservices.samples.v2019_1.Utils.createRecordRef(internalId, recordType),
+				getDeletionReason(deletionReasonCode, deletionReasonMemo));
 	}
 
 	/**
@@ -1291,7 +1276,8 @@ public class WsClient_2019_1 extends WsCoreClient_2019_1 implements WebServicesS
 	 */
 	public boolean deleteRecordByExternalId(String externalId, RecordType recordType, @Nullable RecordRef deletionReasonCode,
 			@Nullable String deletionReasonMemo) throws RemoteException {
-		return deleteRecord(com.bansi.webservices.samples.v2019_1.Utils.createRecordRefWithExternalId(externalId, recordType), getDeletionReason(deletionReasonCode, deletionReasonMemo));
+		return deleteRecord(com.bansi.webservices.samples.v2019_1.Utils.createRecordRefWithExternalId(externalId, recordType),
+				getDeletionReason(deletionReasonCode, deletionReasonMemo));
 	}
 
 	/**
@@ -1482,12 +1468,12 @@ public class WsClient_2019_1 extends WsCoreClient_2019_1 implements WebServicesS
 	 */
 	public List<DeletedRecord> getDeletedRecords(GetDeletedFilter getDeletedFilter, int pageIndex) throws RemoteException {
 		GetDeletedResult getDeletedResult = callGetDeletedRecords(getDeletedFilter, pageIndex);
-		
-		if (getDeletedResult.getDeletedRecordList().length <=0) {
+
+		if (getDeletedResult.getDeletedRecordList().getDeletedRecord().length <= 0) {
 			return null;
 		}
 
-		DeletedRecord[] deletedRecords = getDeletedResult.getDeletedRecordList();
+		DeletedRecord[] deletedRecords = getDeletedResult.getDeletedRecordList().getDeletedRecord();
 		if (deletedRecords == null || deletedRecords.length == 0) {
 			return Collections.emptyList();
 		}
@@ -1520,10 +1506,10 @@ public class WsClient_2019_1 extends WsCoreClient_2019_1 implements WebServicesS
 	 */
 	public List<Record> getAllRecords(GetAllRecordType getAllRecordType) throws RemoteException {
 		GetAllResult getAllResult = callGetAllRecords(getAllRecordType);
-		if (getAllResult.getRecordList().length<=0) {
+		if (getAllResult.getRecordList().getRecord().length <= 0) {
 			return null;
 		}
-		Record[] allRecords = getAllResult.getRecordList();
+		Record[] allRecords = getAllResult.getRecordList().getRecord();
 		if (allRecords == null || allRecords.length == 0) {
 			return Collections.emptyList();
 		}
@@ -2290,10 +2276,10 @@ public class WsClient_2019_1 extends WsCoreClient_2019_1 implements WebServicesS
 	public boolean attach(AttachReference attachReference) throws RemoteException {
 		WriteResponse writeResponse = callAttach(attachReference);
 		Boolean isIsSuccess = true;
-		for (StatusDetail sd : writeResponse.getStatus()) {
+		for (StatusDetail sd : writeResponse.getStatus().getStatusDetail()) {
 			isIsSuccess = !sd.getAfterSubmitFailed() && isIsSuccess;
 		}
-		
+
 		return isIsSuccess;
 	}
 
@@ -2356,10 +2342,10 @@ public class WsClient_2019_1 extends WsCoreClient_2019_1 implements WebServicesS
 	public boolean detach(DetachReference detachReference) throws RemoteException {
 		WriteResponse writeResponse = callDetach(detachReference);
 		Boolean isIsSuccess = true;
-		for (StatusDetail sd : writeResponse.getStatus()) {
+		for (StatusDetail sd : writeResponse.getStatus().getStatusDetail()) {
 			isIsSuccess = !sd.getAfterSubmitFailed() && isIsSuccess;
 		}
-		
+
 		return isIsSuccess;
 	}
 
@@ -2426,11 +2412,11 @@ public class WsClient_2019_1 extends WsCoreClient_2019_1 implements WebServicesS
 	public boolean attachContact(BaseRef attachTo, RecordRef contact, RecordRef contactRole) throws RemoteException {
 		WriteResponse writeResponse = callAttachContact(attachTo, contact, contactRole);
 		Boolean isIsSuccess = true;
-		for (StatusDetail sd : writeResponse.getStatus()) {
+		for (StatusDetail sd : writeResponse.getStatus().getStatusDetail()) {
 			isIsSuccess = !sd.getAfterSubmitFailed() && isIsSuccess;
 		}
-		
-		return  isIsSuccess;
+
+		return isIsSuccess;
 	}
 
 	/**
@@ -2472,7 +2458,7 @@ public class WsClient_2019_1 extends WsCoreClient_2019_1 implements WebServicesS
 	public Calendar getServerTime() throws RemoteException {
 		GetServerTimeResult serverTimeResult = callGetServerTime();
 		Boolean isIsSuccess = true;
-		for (StatusDetail sd : serverTimeResult.getStatus()) {
+		for (StatusDetail sd : serverTimeResult.getStatus().getStatusDetail()) {
 			isIsSuccess = !sd.getAfterSubmitFailed() && isIsSuccess;
 		}
 		if (isIsSuccess) {
@@ -2511,7 +2497,7 @@ public class WsClient_2019_1 extends WsCoreClient_2019_1 implements WebServicesS
 	public DataCenterUrls getDataCenterUrls(String companyId) throws RemoteException {
 		GetDataCenterUrlsResult dataCenterUrlsResult = callGetDataCenterUrls(companyId);
 		Boolean isIsSuccess = true;
-		for (StatusDetail sd : dataCenterUrlsResult.getStatus()) {
+		for (StatusDetail sd : dataCenterUrlsResult.getStatus().getStatusDetail()) {
 			isIsSuccess = !sd.getAfterSubmitFailed() && isIsSuccess;
 		}
 		if (isIsSuccess) {
@@ -2576,11 +2562,11 @@ public class WsClient_2019_1 extends WsCoreClient_2019_1 implements WebServicesS
 	 */
 	private boolean getSuccessFromSessionResponse(SessionResponse sessionResponse) {
 		Boolean isIsSuccess = true;
-		for (StatusDetail sd : sessionResponse.getStatus()) {
+		for (StatusDetail sd : sessionResponse.getStatus().getStatusDetail()) {
 			isIsSuccess = !sd.getAfterSubmitFailed() && isIsSuccess;
 		}
-		
-		return  isIsSuccess;
+
+		return isIsSuccess;
 	}
 
 	/**
@@ -2713,11 +2699,11 @@ public class WsClient_2019_1 extends WsCoreClient_2019_1 implements WebServicesS
 	public List<BaseRef> getSelectValue(GetSelectValueFieldDescription getSelectValueFieldDescription, int pageIndex) throws RemoteException {
 		GetSelectValueResult getSelectValueResult = callGetSelectValue(getSelectValueFieldDescription, pageIndex);
 		Boolean isIsSuccess = true;
-		for (StatusDetail sd : getSelectValueResult.getStatus()) {
+		for (StatusDetail sd : getSelectValueResult.getStatus().getStatusDetail()) {
 			isIsSuccess = !sd.getAfterSubmitFailed() && isIsSuccess;
 		}
 		if (isIsSuccess) {
-			BaseRef[] baseRefList = getSelectValueResult.getBaseRefList();
+			BaseRef[] baseRefList = getSelectValueResult.getBaseRefList().getBaseRef();
 			if (baseRefList == null) {
 				return Collections.emptyList();
 			}
@@ -2743,13 +2729,13 @@ public class WsClient_2019_1 extends WsCoreClient_2019_1 implements WebServicesS
 		while (++currentPage <= totalPages) {
 			GetSelectValueResult getSelectValueResult = callGetSelectValue(getSelectValueFieldDescription, currentPage);
 			Boolean isIsSuccess = true;
-			for (StatusDetail sd : getSelectValueResult.getStatus()) {
+			for (StatusDetail sd : getSelectValueResult.getStatus().getStatusDetail()) {
 				isIsSuccess = !sd.getAfterSubmitFailed() && isIsSuccess;
 			}
-			
+
 			if (getSelectValueResult.getStatus() != null && isIsSuccess) {
 				totalPages = getSelectValueResult.getTotalPages();
-				BaseRef[] baseRefList = getSelectValueResult.getBaseRefList();
+				BaseRef[] baseRefList = getSelectValueResult.getBaseRefList().getBaseRef();
 				if (baseRefList != null) {
 					allValues.addAll(Arrays.asList(baseRefList));
 				}
@@ -2794,12 +2780,12 @@ public class WsClient_2019_1 extends WsCoreClient_2019_1 implements WebServicesS
 
 		GetBudgetExchangeRateResult getBudgetExchangeRateResult = callGetBudgetExchangeRate(budgetExchangeRateFilter);
 		Boolean isIsSuccess = true;
-		for (StatusDetail sd : getBudgetExchangeRateResult.getStatus()) {
+		for (StatusDetail sd : getBudgetExchangeRateResult.getStatus().getStatusDetail()) {
 			isIsSuccess = !sd.getAfterSubmitFailed() && isIsSuccess;
 		}
-		
+
 		if (getBudgetExchangeRateResult.getStatus() != null && isIsSuccess) {
-			BudgetExchangeRate[] budgetExchangeRateList = getBudgetExchangeRateResult.getBudgetExchangeRateList();
+			BudgetExchangeRate[] budgetExchangeRateList = getBudgetExchangeRateResult.getBudgetExchangeRateList().getBudgetExchangeRate();
 			if (budgetExchangeRateList == null) {
 				return Collections.emptyList();
 			}
@@ -2842,12 +2828,12 @@ public class WsClient_2019_1 extends WsCoreClient_2019_1 implements WebServicesS
 
 		GetCurrencyRateResult currencyRateResult = callGetCurrencyRate(currencyRateFilter);
 		Boolean isIsSuccess = true;
-		for (StatusDetail sd : currencyRateResult.getStatus()) {
+		for (StatusDetail sd : currencyRateResult.getStatus().getStatusDetail()) {
 			isIsSuccess = !sd.getAfterSubmitFailed() && isIsSuccess;
 		}
-		
+
 		if (currencyRateResult.getStatus() != null && isIsSuccess) {
-			CurrencyRate[] currencyRateList = currencyRateResult.getCurrencyRateList();
+			CurrencyRate[] currencyRateList = currencyRateResult.getCurrencyRateList().getCurrencyRate();
 			if (currencyRateList == null) {
 				return Collections.emptyList();
 			}
@@ -2889,16 +2875,16 @@ public class WsClient_2019_1 extends WsCoreClient_2019_1 implements WebServicesS
 	public List<CustomizationRef> getCustomizationId(GetCustomizationType customizationType, boolean includeInactives) throws RemoteException {
 		GetCustomizationIdResult customizationIdResult = callGetCustomizationId(new CustomizationType(customizationType), includeInactives);
 		Boolean isIsSuccess = true;
-		for (StatusDetail sd : customizationIdResult.getStatus()) {
+		for (StatusDetail sd : customizationIdResult.getStatus().getStatusDetail()) {
 			isIsSuccess = !sd.getAfterSubmitFailed() && isIsSuccess;
 		}
-		
+
 		if (customizationIdResult.getStatus() != null && isIsSuccess) {
-			CustomizationRef[] customizationRefList = customizationIdResult.getCustomizationRefList();
+			CustomizationRefList customizationRefList = customizationIdResult.getCustomizationRefList();
 			if (customizationRefList == null) {
 				return Collections.emptyList();
 			}
-			return Arrays.asList(customizationRefList);
+			return Arrays.asList(customizationRefList.getCustomizationRef());
 		}
 		return null;
 	}
@@ -2932,21 +2918,21 @@ public class WsClient_2019_1 extends WsCoreClient_2019_1 implements WebServicesS
 	 */
 	public List<ItemAvailability> getItemAvailability(Calendar lastQtyAvailableChange, RecordRef... itemsReferences) throws RemoteException {
 		ItemAvailabilityFilter itemAvailabilityFilter = new ItemAvailabilityFilter();
-		itemAvailabilityFilter.setItem(itemsReferences);
+		itemAvailabilityFilter.setItem(new RecordRefList(itemsReferences));
 		itemAvailabilityFilter.setLastQtyAvailableChange(lastQtyAvailableChange);
 
 		GetItemAvailabilityResult getItemAvailabilityResult = callGetItemAvailability(itemAvailabilityFilter);
 		Boolean isIsSuccess = true;
-		for (StatusDetail sd : getItemAvailabilityResult.getStatus()) {
+		for (StatusDetail sd : getItemAvailabilityResult.getStatus().getStatusDetail()) {
 			isIsSuccess = !sd.getAfterSubmitFailed() && isIsSuccess;
 		}
-		
+
 		if (getItemAvailabilityResult.getStatus() != null && isIsSuccess) {
-			ItemAvailability[] itemAvailabilityList = getItemAvailabilityResult.getItemAvailabilityList();
+			ItemAvailabilityList itemAvailabilityList = getItemAvailabilityResult.getItemAvailabilityList();
 			if (itemAvailabilityList == null) {
 				return Collections.emptyList();
 			}
-			return Arrays.asList(itemAvailabilityList);
+			return Arrays.asList(itemAvailabilityList.getItemAvailability());
 		}
 		return null;
 	}
@@ -3024,16 +3010,16 @@ public class WsClient_2019_1 extends WsCoreClient_2019_1 implements WebServicesS
 		getSavedSearchRecord.setSearchType(searchRecordType);
 		GetSavedSearchResult getSavedSearchResult = callGetSavedSearch(getSavedSearchRecord);
 		Boolean isIsSuccess = true;
-		for (StatusDetail sd : getSavedSearchResult.getStatus()) {
+		for (StatusDetail sd : getSavedSearchResult.getStatus().getStatusDetail()) {
 			isIsSuccess = !sd.getAfterSubmitFailed() && isIsSuccess;
 		}
-		
+
 		if (getSavedSearchResult.getStatus() != null && isIsSuccess) {
-			RecordRef[] recordRefList = getSavedSearchResult.getRecordRefList();
+			RecordRefList recordRefList = getSavedSearchResult.getRecordRefList();
 			if (recordRefList == null || recordRefList == null) {
 				return Collections.emptyList();
 			}
-			return Arrays.asList(recordRefList);
+			return Arrays.asList(recordRefList.getRecordRef());
 		}
 		return null;
 	}
@@ -3070,12 +3056,12 @@ public class WsClient_2019_1 extends WsCoreClient_2019_1 implements WebServicesS
 	 */
 	public RecordRef updateInviteeStatus(String eventInternalId, CalendarEventAttendeeResponse response) throws RemoteException {
 		WriteResponse writeResponse = callUpdateInviteeStatus(eventInternalId, response);
-		
+
 		Boolean isIsSuccess = true;
-		for (StatusDetail sd : writeResponse.getStatus()) {
+		for (StatusDetail sd : writeResponse.getStatus().getStatusDetail()) {
 			isIsSuccess = !sd.getAfterSubmitFailed() && isIsSuccess;
 		}
-		
+
 		if (writeResponse.getStatus() != null && isIsSuccess) {
 			return (RecordRef) writeResponse.getBaseRef();
 		}
@@ -3145,9 +3131,9 @@ public class WsClient_2019_1 extends WsCoreClient_2019_1 implements WebServicesS
 	public WriteResponseList callUpdateInviteeStatusList(Map<String, CalendarEventAttendeeResponse> statusUpdates) throws RemoteException {
 		return callUpdateInviteeStatusList(statusUpdates.entrySet().stream().map(entry -> {
 			UpdateInviteeStatusReference updateInviteeStatusReference = new UpdateInviteeStatusReference();
-			
+
 			updateInviteeStatusReference.setEventId(com.bansi.webservices.samples.v2019_1.Utils.createRecordRef(entry.getKey()));
-			
+
 			updateInviteeStatusReference.setResponseCode(entry.getValue());
 			return updateInviteeStatusReference;
 		}).toArray(UpdateInviteeStatusReference[]::new));
@@ -3174,7 +3160,7 @@ public class WsClient_2019_1 extends WsCoreClient_2019_1 implements WebServicesS
 	 */
 	private List<RecordRef> getUpdatedEventsFromResponseList(WriteResponseList writeResponseList) {
 		return Arrays.stream(writeResponseList.getWriteResponse())
-				.map(writeResponse -> writeResponse.getStatus().length > 0 ? (RecordRef) writeResponse.getBaseRef() : null).collect(Collectors.toList());
+				.map(writeResponse -> writeResponse.getStatus().isIsSuccess() ? (RecordRef) writeResponse.getBaseRef() : null).collect(Collectors.toList());
 	}
 
 	/**

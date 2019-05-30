@@ -250,6 +250,7 @@ public final class Messages {
 	public static final String TOTAL_AMOUNT = "Total Amount";
 	public static final String CUSTOM_RECORD_TYPE_ID = "Type ID";
 	public static final String NAME = "Name";
+	public static final String MEMO = "Memo";
 	public static final String TYPE = "Type";
 	public static final String SUBSIDIARY = "subsidiary";
 	public static final String TOTAL_RECORDS = "Total Records";

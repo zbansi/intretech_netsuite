@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<launchConfiguration type="org.eclipse.jdt.launching.localJavaApplication">
+<listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_PATHS">
+<listEntry value="/NS_Client201901/src/com/bansi/webservices/samples/test/TestDao.java"/>
+</listAttribute>
+<listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_TYPES">
+<listEntry value="1"/>
+</listAttribute>
+<stringAttribute key="org.eclipse.jdt.launching.MAIN_TYPE" value="com.bansi.webservices.samples.test.TestDao"/>
+<stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value="NS_Client201901"/>
+</launchConfiguration>

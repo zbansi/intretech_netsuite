@@ -45,23 +45,11 @@ import static com.bansi.webservices.samples.utils_2019_1.PrintUtils.*;
 public final class ResponseHandler_2019_1 {
 
 	public static void processCustomerWriteResponse(WriteResponse response, Customer customer) {
-		/*
-		if (response.getStatus()[0].getAfterSubmitFailed()) {
+		if (response.getStatus().isIsSuccess()) {
 			printWithEmptyLine(SUCCESSFUL_SAVING_CUSTOMER);
 			printMap(new Fields(response, customer));
 		} else {
 			printError(FAILED_SAVING_CUSTOMER + response.getStatus().getStatusDetail(0).getMessage());
-		}
-		*/
-		Boolean isIsSuccess = true;
-		for (StatusDetail sd : response.getStatus()) {
-			isIsSuccess = !sd.getAfterSubmitFailed() && isIsSuccess;
-		}
-		if (isIsSuccess) {
-			printWithEmptyLine(SUCCESSFUL_SAVING_CUSTOMER);
-			printMap(new Fields(response, customer));
-		} else {
-			printError(FAILED_SAVING_CUSTOMER + response.getStatus()[0].getMessage());
 		}
 	}
 
@@ -73,11 +61,8 @@ public final class ResponseHandler_2019_1 {
 		for (int i = 0; i < responses.length; i++) {
 			final WriteResponse response = responses[i];
 			final Customer customer = customers.get(i);
-			Boolean isIsSuccess = true;
-			for (StatusDetail sd : response.getStatus()) {
-				isIsSuccess = !sd.getAfterSubmitFailed() && isIsSuccess;
-			}
-			if (isIsSuccess) {
+
+			if (response.getStatus().isIsSuccess()) {
 				successfulResponses.put(response, customer);
 			} else {
 				failedResponses.put(response, customer);
@@ -113,15 +98,8 @@ public final class ResponseHandler_2019_1 {
 	}
 
 	public static void processCustomerReadResponse(ReadResponse response) {
-		Boolean isIsSuccess = true;
 
-		for (StatusDetail sd : response.getStatus()) {
-			if (sd.getAfterSubmitFailed() != null) {
-				isIsSuccess = !sd.getAfterSubmitFailed() && isIsSuccess;
-			} else
-				isIsSuccess = false;
-		}
-		if (!isIsSuccess) {
+		if (!response.getStatus().isIsSuccess()) {
 			printError("get customer failed: %s", getErrorMessage(response));
 			return;
 		}
@@ -135,11 +113,7 @@ public final class ResponseHandler_2019_1 {
 		for (int i = 0; i < responses.length; i++) {
 			final ReadResponse response = responses[i];
 			printWithEmptyLine(getIndentedString(CUSTOMER_WITH_INDEX), i + 1);
-			Boolean isIsSuccess = true;
-			for (StatusDetail sd : response.getStatus()) {
-				isIsSuccess = !sd.getAfterSubmitFailed() && isIsSuccess;
-			}
-			if (isIsSuccess) {
+			if (response.getStatus().isIsSuccess()) {
 				printMap(new Fields((Customer) response.getRecord()));
 			} else {
 				final String internalId = recordRefs[i].getInternalId();
@@ -155,37 +129,21 @@ public final class ResponseHandler_2019_1 {
 		for (int i = 0; i < responses.length; i++) {
 			printWithEmptyLine(getIndentedString(CUSTOMER_WITH_INDEX), i + 1);
 			final WriteResponse response = responses[i];
-			Boolean isIsSuccess = true;
-			for (StatusDetail sd : response.getStatus()) {
-				isIsSuccess = !sd.getAfterSubmitFailed() && isIsSuccess;
-			}
-			if (isIsSuccess) {
+			if (response.getStatus().isIsSuccess()) {
 				printMap(new Fields(getInternalId(response)));
 			} else {
 				printMap(new Fields(recordRefs[i].getInternalId(), getErrorMessage(response)));
 			}
 		}
 	}
-	
+
 	//vendor start
 	public static void processVendorWriteResponse(WriteResponse response, Vendor vendor) {
-		/*
-		if (response.getStatus()[0].getAfterSubmitFailed()) {
+		if (response.getStatus().isIsSuccess()) {
 			printWithEmptyLine(SUCCESSFUL_SAVING_VENDOR);
 			printMap(new Fields(response, vendor));
 		} else {
-			printError(FAILED_SAVING_VENDOR + response.getStatus().getStatusDetail(0).getMessage());
-		}
-		*/
-		Boolean isIsSuccess = true;
-		for (StatusDetail sd : response.getStatus()) {
-			isIsSuccess = !sd.getAfterSubmitFailed() && isIsSuccess;
-		}
-		if (isIsSuccess) {
-			printWithEmptyLine(SUCCESSFUL_SAVING_VENDOR);
-			printMap(new Fields(response, vendor));
-		} else {
-			printError(FAILED_SAVING_VENDOR + response.getStatus()[0].getMessage());
+			printError(FAILED_SAVING_VENDOR + response.getStatus());
 		}
 	}
 
@@ -197,11 +155,7 @@ public final class ResponseHandler_2019_1 {
 		for (int i = 0; i < responses.length; i++) {
 			final WriteResponse response = responses[i];
 			final Vendor vendor = vendors.get(i);
-			Boolean isIsSuccess = true;
-			for (StatusDetail sd : response.getStatus()) {
-				isIsSuccess = !sd.getAfterSubmitFailed() && isIsSuccess;
-			}
-			if (isIsSuccess) {
+			if (response.getStatus().isIsSuccess()) {
 				successfulResponses.put(response, vendor);
 			} else {
 				failedResponses.put(response, vendor);
@@ -237,15 +191,8 @@ public final class ResponseHandler_2019_1 {
 	}
 
 	public static void processVendorReadResponse(ReadResponse response) {
-		Boolean isIsSuccess = true;
 
-		for (StatusDetail sd : response.getStatus()) {
-			if (sd.getAfterSubmitFailed() != null) {
-				isIsSuccess = !sd.getAfterSubmitFailed() && isIsSuccess;
-			} else
-				isIsSuccess = false;
-		}
-		if (!isIsSuccess) {
+		if (!response.getStatus().isIsSuccess()) {
 			printError("get vendor failed: %s", getErrorMessage(response));
 			return;
 		}
@@ -259,11 +206,7 @@ public final class ResponseHandler_2019_1 {
 		for (int i = 0; i < responses.length; i++) {
 			final ReadResponse response = responses[i];
 			printWithEmptyLine(getIndentedString(VENDOR_WITH_INDEX), i + 1);
-			Boolean isIsSuccess = true;
-			for (StatusDetail sd : response.getStatus()) {
-				isIsSuccess = !sd.getAfterSubmitFailed() && isIsSuccess;
-			}
-			if (isIsSuccess) {
+			if (response.getStatus().isIsSuccess()) {
 				printMap(new Fields((Vendor) response.getRecord()));
 			} else {
 				final String internalId = recordRefs[i].getInternalId();
@@ -279,11 +222,7 @@ public final class ResponseHandler_2019_1 {
 		for (int i = 0; i < responses.length; i++) {
 			printWithEmptyLine(getIndentedString(VENDOR_WITH_INDEX), i + 1);
 			final WriteResponse response = responses[i];
-			Boolean isIsSuccess = true;
-			for (StatusDetail sd : response.getStatus()) {
-				isIsSuccess = !sd.getAfterSubmitFailed() && isIsSuccess;
-			}
-			if (isIsSuccess) {
+			if (response.getStatus().isIsSuccess()) {
 				printMap(new Fields(getInternalId(response)));
 			} else {
 				printMap(new Fields(recordRefs[i].getInternalId(), getErrorMessage(response)));
@@ -293,11 +232,7 @@ public final class ResponseHandler_2019_1 {
 	//vendor end
 
 	public static void processItemWriteResponse(WriteResponse response, InventoryItem item) {
-		Boolean isIsSuccess = true;
-		for (StatusDetail sd : response.getStatus()) {
-			isIsSuccess = !sd.getAfterSubmitFailed() && isIsSuccess;
-		}
-		if (isIsSuccess) {
+		if (response.getStatus().isIsSuccess()) {
 			printWithEmptyLine(ITEM_SUCCESSFULLY_ADDED, item.getItemId());
 			printMap(new Fields(getInternalId(response)));
 		} else {
@@ -306,45 +241,25 @@ public final class ResponseHandler_2019_1 {
 	}
 
 	public static void processBomWriteResponse(WriteResponse response, Bom bom) {
-		Boolean isIsSuccess = true;
-		if (response.getStatus() != null) {
-			for (StatusDetail sd : response.getStatus()) {
-				isIsSuccess = !sd.getAfterSubmitFailed() && isIsSuccess;
-			}
-		} else {
-			isIsSuccess = false;
-		}
-		if (isIsSuccess) {
+		if (response.getStatus().isIsSuccess()) {
 			printWithEmptyLine(BOM_SUCCESSFULLY_ADDED, bom.getName());
 			printMap(new Fields(getInternalId(response)));
 		} else {
 			printError(BOM_WAS_NOT_ADDED, bom.getName(), getErrorMessage(response));
 		}
 	}
-	
+
 	public static void processBomRevisionWriteResponse(WriteResponse response, BomRevision bomRev) {
-		Boolean isIsSuccess = true;
-		if (response.getStatus() != null) {
-			for (StatusDetail sd : response.getStatus()) {
-				isIsSuccess = !sd.getAfterSubmitFailed() && isIsSuccess;
-			}
-		} else {
-			isIsSuccess = false;
-		}
-		if (isIsSuccess) {
+		if (response.getStatus().isIsSuccess()) {
 			printWithEmptyLine(BOM_REVISION_SUCCESSFULLY_ADDED, bomRev.getName());
 			printMap(new Fields(getInternalId(response)));
 		} else {
-			printError(BOM_REVISION_WAS_NOT_ADDED, bomRev.getName(), getErrorMessage(response));
+			printError(BOM_REVISION_WAS_NOT_ADDED, null, getErrorMessage(response));
 		}
 	}
 
 	public static void processLotNumberedItemWriteResponse(WriteResponse response, LotNumberedInventoryItem item) {
-		Boolean isIsSuccess = true;
-		for (StatusDetail sd : response.getStatus()) {
-			isIsSuccess = !sd.getAfterSubmitFailed() && isIsSuccess;
-		}
-		if (isIsSuccess) {
+		if (response.getStatus().isIsSuccess()) {
 			printWithEmptyLine(ITEM_SUCCESSFULLY_ADDED, item.getItemId());
 			printMap(new Fields(getInternalId(response)));
 		} else {
@@ -368,26 +283,16 @@ public final class ResponseHandler_2019_1 {
 	//	}
 
 	public static void processLotNumberedInventoryItemReadResponse(ReadResponse response) {
-		Boolean isIsSuccess = true;
-		for (StatusDetail sd : response.getStatus()) {
-			isIsSuccess = !sd.getAfterSubmitFailed() && isIsSuccess;
-		}
-		if (!isIsSuccess) {
+		if (!response.getStatus().isIsSuccess()) {
 			printError("lotnumbered inventoryitem read failed: %s", getErrorMessage(response));
 			return;
 		}
 		printWithEmptyLine(RETRIEVED_RECORD);
 		printMap(new Fields((LotNumberedInventoryItem) response.getRecord()));
 	}
-	
-	
 
 	public static void processSalesOrderWriteResponse(WriteResponse response) {
-		Boolean isIsSuccess = true;
-		for (StatusDetail sd : response.getStatus()) {
-			isIsSuccess = !sd.getAfterSubmitFailed() && isIsSuccess;
-		}
-		if (isIsSuccess) {
+		if (response.getStatus().isIsSuccess()) {
 			printWithEmptyLine(SALES_ORDER_CREATED_OR_UPDATED_SUCCESSFULLY);
 			printMap(new Fields(getInternalId(response)));
 		} else {
@@ -396,36 +301,24 @@ public final class ResponseHandler_2019_1 {
 	}
 
 	public static ItemFulfillment processInitializeReadResponse(ReadResponse response) {
-		Boolean isIsSuccess = true;
-		for (StatusDetail sd : response.getStatus()) {
-			isIsSuccess = !sd.getAfterSubmitFailed() && isIsSuccess;
-		}
-		if (isIsSuccess) {
+		if (response.getStatus().isIsSuccess()) {
 			printWithEmptyLine(ITEM_FULFILLMENT_RETRIEVED);
 			return (ItemFulfillment) response.getRecord();
-		}
-		printError(INITIALIZE_OPERATION_FAILED, getErrorMessage(response));
+		} else
+			printError(INITIALIZE_OPERATION_FAILED, getErrorMessage(response));
 		return null;
 	}
 
 	public static void processItemFulfillmentWriteResponse(WriteResponse response, String salesOrderInternalId) {
-		Boolean isIsSuccess = true;
-		for (StatusDetail sd : response.getStatus()) {
-			isIsSuccess = !sd.getAfterSubmitFailed() && isIsSuccess;
-		}
-		if (isIsSuccess) {
+		if (response.getStatus().isIsSuccess()) {
 			printWithEmptyLine(SALES_ORDER_FULFILLED, salesOrderInternalId, getInternalId(response));
 		} else {
 			printError(SALES_ORDER_NOT_FULFILLED, getErrorMessage(response));
 		}
 	}
-	
+
 	public static void processPurchaseOrderWriteResponse(WriteResponse response) {
-		Boolean isIsSuccess = true;
-		for (StatusDetail sd : response.getStatus()) {
-			isIsSuccess = !sd.getAfterSubmitFailed() && isIsSuccess;
-		}
-		if (isIsSuccess) {
+		if (response.getStatus().isIsSuccess()) {
 			printWithEmptyLine(PURCHASE_ORDER_CREATED_OR_UPDATED_SUCCESSFULLY);
 			printMap(new Fields(getInternalId(response)));
 		} else {
@@ -434,11 +327,7 @@ public final class ResponseHandler_2019_1 {
 	}
 
 	public static void processCustomRecordWriteResponse(WriteResponse response, CustomRecord customRecord) {
-		Boolean isIsSuccess = true;
-		for (StatusDetail sd : response.getStatus()) {
-			isIsSuccess = !sd.getAfterSubmitFailed() && isIsSuccess;
-		}
-		if (isIsSuccess) {
+		if (response.getStatus().isIsSuccess()) {
 			printWithEmptyLine(CUSTOM_RECORD_SUCCESSFULLY_ADDED);
 			customRecord.setInternalId(((CustomRecordRef) response.getBaseRef()).getInternalId());
 			printMap(new Fields(customRecord));
@@ -448,11 +337,7 @@ public final class ResponseHandler_2019_1 {
 	}
 
 	public static void processCustomRecordWriteResponse(WriteResponse response) {
-		Boolean isIsSuccess = true;
-		for (StatusDetail sd : response.getStatus()) {
-			isIsSuccess = !sd.getAfterSubmitFailed() && isIsSuccess;
-		}
-		if (isIsSuccess) {
+		if (response.getStatus().isIsSuccess()) {
 			printWithEmptyLine(CUSTOM_RECORD_SUCCESSFULLY_DELETED);
 			CustomRecordRef customRecordRef = (CustomRecordRef) response.getBaseRef();
 			Fields fields = new Fields();
@@ -465,11 +350,7 @@ public final class ResponseHandler_2019_1 {
 	}
 
 	public static void processFileUploadWriteResponse(WriteResponse response) {
-		Boolean isIsSuccess = true;
-		for (StatusDetail sd : response.getStatus()) {
-			isIsSuccess = !sd.getAfterSubmitFailed() && isIsSuccess;
-		}
-		if (isIsSuccess) {
+		if (response.getStatus().isIsSuccess()) {
 			printWithEmptyLine(FILE_UPLOADED);
 			printMap(new Fields(getInternalId(response)));
 		} else {
@@ -479,12 +360,8 @@ public final class ResponseHandler_2019_1 {
 
 	public static void processSearchResult(SearchResult searchResult, @Nullable String customerName) {
 		final boolean isCustomerNameNull = customerName == null;
-		Boolean isIsSuccess = true;
-		for (StatusDetail sd : searchResult.getStatus()) {
-			isIsSuccess = !sd.getAfterSubmitFailed() && isIsSuccess;
-		}
 
-		if (searchResult == null || (isIsSuccess && searchResult.getTotalRecords() == 0)) {
+		if (searchResult == null || (searchResult.getStatus().isIsSuccess() && searchResult.getTotalRecords() == 0)) {
 			if (isCustomerNameNull) {
 				printWithEmptyLine(NO_SALES_ORDERS_FOUND);
 			} else {
@@ -492,7 +369,7 @@ public final class ResponseHandler_2019_1 {
 			}
 			return;
 		}
-		if (isIsSuccess) {
+		if (searchResult.getStatus().isIsSuccess()) {
 			final int currentPageIndex = searchResult.getPageIndex();
 			final int firstIndexOnCurrentPage = calculateFirstIndexOnPage(searchResult.getPageSize(), currentPageIndex);
 
@@ -504,7 +381,7 @@ public final class ResponseHandler_2019_1 {
 
 			List<SalesOrder> salesOrders;
 			if (isCustomerNameNull) {
-				salesOrders = Arrays.stream(searchResult.getSearchRowList()).map(row -> {
+				salesOrders = Arrays.stream(searchResult.getSearchRowList().getSearchRow()).map(row -> {
 					TransactionSearchRowBasic rowBasic = ((TransactionSearchRow) row).getBasic();
 					SalesOrder salesOrder = new SalesOrder();
 					salesOrder.setInternalId(rowBasic.getInternalId(0).getSearchValue().getInternalId());
@@ -515,7 +392,7 @@ public final class ResponseHandler_2019_1 {
 					return salesOrder;
 				}).collect(Collectors.toList());
 			} else {
-				salesOrders = Arrays.stream(searchResult.getRecordList()).map(record -> (SalesOrder) record).collect(Collectors.toList());
+				salesOrders = Arrays.stream(searchResult.getRecordList().getRecord()).map(record -> (SalesOrder) record).collect(Collectors.toList());
 			}
 
 			for (int i = 0; i < salesOrders.size(); i++) {
@@ -527,15 +404,11 @@ public final class ResponseHandler_2019_1 {
 	}
 
 	public static void processSearchResult(SearchResult searchResult) {
-		Boolean isIsSuccess = true;
-		for (StatusDetail sd : searchResult.getStatus()) {
-			isIsSuccess = !sd.getAfterSubmitFailed() && isIsSuccess;
-		}
-		if (searchResult == null || (isIsSuccess && searchResult.getTotalRecords() == 0)) {
+		if (searchResult == null || (searchResult.getStatus().isIsSuccess() && searchResult.getTotalRecords() == 0)) {
 			printWithEmptyLine(NO_CUSTOM_RECORDS_FOUND);
 			return;
 		}
-		if (isIsSuccess) {
+		if (searchResult.getStatus().isIsSuccess()) {
 			final int currentPageIndex = searchResult.getPageIndex();
 			final int firstIndexOnCurrentPage = calculateFirstIndexOnPage(searchResult.getPageSize(), currentPageIndex);
 
@@ -545,11 +418,37 @@ public final class ResponseHandler_2019_1 {
 
 			printSearchResultSummary(searchResult);
 
-			Record[] customRecords = searchResult.getRecordList();
+			Record[] customRecords = searchResult.getRecordList().getRecord();
 			if (customRecords != null)
 				for (int i = 0; i < customRecords.length; i++) {
 					printWithEmptyLine(CUSTOM_RECORD_WITH_INDEX, firstIndexOnCurrentPage + i);
 					printMap(new Fields((CustomRecord) customRecords[i]));
+				}
+		} else {
+			printError(SEARCH_FAILED, getErrorMessage(searchResult));
+		}
+	}
+
+	public static void processBomSearchResult(SearchResult searchResult) {
+		if (searchResult == null || (searchResult.getStatus().isIsSuccess() && searchResult.getTotalRecords() == 0)) {
+			printWithEmptyLine(NO_CUSTOM_RECORDS_FOUND);
+			return;
+		}
+		if (searchResult.getStatus().isIsSuccess()) {
+			final int currentPageIndex = searchResult.getPageIndex();
+			final int firstIndexOnCurrentPage = calculateFirstIndexOnPage(searchResult.getPageSize(), currentPageIndex);
+
+			if (currentPageIndex == 1) {
+				printWithEmptyLine(CUSTOM_RECORDS_FOUND);
+			}
+
+			printSearchResultSummary(searchResult);
+
+			Record[] bomRecords = searchResult.getRecordList().getRecord();
+			if (bomRecords != null)
+				for (int i = 0; i < bomRecords.length; i++) {
+					printWithEmptyLine(CUSTOM_RECORD_WITH_INDEX, firstIndexOnCurrentPage + i);
+					printMap(new Fields((Bom) bomRecords[i]));
 				}
 		} else {
 			printError(SEARCH_FAILED, getErrorMessage(searchResult));
@@ -576,7 +475,7 @@ public final class ResponseHandler_2019_1 {
 		}
 		return invalidIndex;
 	}
-	
+
 	/**
 	 * This is very ineffective way of finding vendor's index in collection.
 	 * However, we expect just small number of vendors which makes this algorithm good enough.

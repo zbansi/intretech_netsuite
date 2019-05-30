@@ -116,7 +116,7 @@ public final class PrintUtils {
 		printMap(new Fields(salesOrder, isEntityId));
 		if (salesOrder.getItemList() != null) {
 			LOG.info(ITEM_LIST);
-			for (SalesOrderItem item : salesOrder.getItemList()) {
+			for (SalesOrderItem item : salesOrder.getItemList().getItem()) {
 				printMapInline(new Fields(item));
 			}
 		}

@@ -128,8 +128,8 @@
 	</target>
 	<target name="generate.interfaces.ns201901" description="Generates client interfaces using Axis">
 			<echo>Generating netsuite 201901 client interfaces using Apache Axis</echo>
-			<axis-wsdl2java timeout="1200000" output="${src.dir}"
-				verbose="true" url="${ns201901.wsdl.url}" all="true" wrapArrays="ture">
+			<axis-wsdl2java timeout="-1" output="${src.dir}"
+				verbose="true" url="${ns201901.wsdl.url}" all="true" wrapArrays="true">
 				<mapping namespace="http://axis.apache.org/ns/interop"
 					package="interop">
 				</mapping>

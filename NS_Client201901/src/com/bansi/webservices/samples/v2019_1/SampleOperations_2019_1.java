@@ -17,6 +17,7 @@ import com.netsuite.webservices.lists.accounting_2019_1.PricingMatrix;
 import com.netsuite.webservices.lists.accounting_2019_1.types.ItemCostingMethod;
 import com.netsuite.webservices.lists.relationships_2019_1.Customer;
 import com.netsuite.webservices.lists.relationships_2019_1.CustomerAddressbook;
+import com.netsuite.webservices.lists.relationships_2019_1.CustomerAddressbookList;
 import com.netsuite.webservices.lists.relationships_2019_1.CustomerSearch;
 import com.netsuite.webservices.lists.relationships_2019_1.CustomerSearchAdvanced;
 import com.netsuite.webservices.lists.relationships_2019_1.CustomerSearchRow;
@@ -50,10 +51,12 @@ import com.netsuite.webservices.platform.messages_2019_1.WriteResponseList;
 import com.netsuite.webservices.setup.customization_2019_1.CustomRecord;
 import com.netsuite.webservices.transactions.purchases_2019_1.PurchaseOrder;
 import com.netsuite.webservices.transactions.purchases_2019_1.PurchaseOrderItem;
+import com.netsuite.webservices.transactions.purchases_2019_1.PurchaseOrderItemList;
 import com.netsuite.webservices.transactions.purchases_2019_1.types.PurchaseOrderOrderStatus;
 import com.netsuite.webservices.transactions.sales_2019_1.ItemFulfillment;
 import com.netsuite.webservices.transactions.sales_2019_1.SalesOrder;
 import com.netsuite.webservices.transactions.sales_2019_1.SalesOrderItem;
+import com.netsuite.webservices.transactions.sales_2019_1.SalesOrderItemList;
 import com.netsuite.webservices.transactions.sales_2019_1.TransactionSearch;
 import com.netsuite.webservices.transactions.sales_2019_1.TransactionSearchAdvanced;
 import com.netsuite.webservices.transactions.sales_2019_1.TransactionSearchRow;
@@ -62,6 +65,7 @@ import com.netsuite.webservices.lists.accounting_2019_1.AssemblyItem;
 import com.netsuite.webservices.lists.accounting_2019_1.Bom;
 import com.netsuite.webservices.lists.accounting_2019_1.BomRevision;
 import com.netsuite.webservices.lists.accounting_2019_1.BomRevisionComponent;
+import com.netsuite.webservices.lists.accounting_2019_1.BomRevisionComponentList;
 
 import org.apache.axis.AxisFault;
 
@@ -217,15 +221,7 @@ public class SampleOperations_2019_1 {
 			//invoke search() web services operation
 			SearchResult response = client.callSearch(isb);
 			//process response
-			Boolean isSuccess = true;
-			if (response.getStatus() != null) {
-				for (StatusDetail sd : response.getStatus()) {
-					isSuccess = !sd.getAfterSubmitFailed() && isSuccess;
-				}
-			} else
-				isSuccess = false;
-
-			if (isSuccess) {
+			if (isSuccessfulSearchResult(response)) {
 				printInfo("Success");
 			} else {
 				printError("error");
@@ -468,6 +464,7 @@ public class SampleOperations_2019_1 {
 			Bom bomRec = new Bom();
 			bomRec.setName(readLine(getIndentedString(BOM_NAME), null));
 			bomRec.setIsInactive(false);
+			bomRec.setUseComponentYield(true);
 
 			//very BOM restrict to an Assembly			
 			bomRec.setAvailableForAllAssemblies(false);
@@ -495,6 +492,9 @@ public class SampleOperations_2019_1 {
 		});
 	}
 
+	/*
+	 * Test status: success
+	 */
 	private void addBomRevision() {
 		SAMPLE_OPERATIONS.put(ADD_BOM_REVISION, () -> {
 			printWithEmptyLine(ENTER_INFORMATION_FOR_BOM_REVISION);
@@ -505,7 +505,9 @@ public class SampleOperations_2019_1 {
 			bomComp.setItem(createRecordRef("13"));
 			bomComp.setBomQuantity(3.0);
 			bomComp.setComponentYield(99.9);
-			BomRevisionComponent[] compList = new BomRevisionComponent[] { bomComp };
+			BomRevisionComponent[] comps = new BomRevisionComponent[] { bomComp };
+			BomRevisionComponentList compList = new BomRevisionComponentList();
+			compList.setBomRevisionComponent(comps);
 
 			BomRevision bomRev = new BomRevision();
 			bomRev.setName("List of ingredients - revision 1");
@@ -727,10 +729,8 @@ public class SampleOperations_2019_1 {
 				return;
 			}
 
-			CustomFieldRef[] customFieldList = new CustomFieldRef[customFieldRefs.size()];
-			//customFieldList.setCustomField(customFieldRefs.toArray(new CustomFieldRef[customFieldRefs.size()]));
-
-			customer.setCustomFieldList(customFieldList);
+			CustomFieldList customFieldList = new CustomFieldList();
+			customFieldList.setCustomField(customFieldRefs.toArray(new CustomFieldRef[customFieldRefs.size()]));
 
 			printSendingRequestMessage();
 
@@ -1101,10 +1101,8 @@ public class SampleOperations_2019_1 {
 				return;
 			}
 
-			CustomFieldRef[] customFieldList = new CustomFieldRef[customFieldRefs.size()];
-			//customFieldList.setCustomField(customFieldRefs.toArray(new CustomFieldRef[customFieldRefs.size()]));
-
-			vendor.setCustomFieldList(customFieldList);
+			CustomFieldList customFieldList = new CustomFieldList();
+			customFieldList.setCustomField(customFieldRefs.toArray(new CustomFieldRef[customFieldRefs.size()]));
 
 			printSendingRequestMessage();
 
@@ -1423,7 +1421,7 @@ public class SampleOperations_2019_1 {
 
 			// Enter the internal IDs of inventory items to be added to the Sales Order
 			List<String> itemsInternalIds = getListItems(readLine(ENTER_ITEM_IDS_FOR_SALES_ORDER));
-			SalesOrderItem[] salesOrderItemList = getSalesOrderItemList(itemsInternalIds);
+			SalesOrderItemList salesOrderItemList = getSalesOrderItemList(itemsInternalIds);
 
 			salesOrder.setItemList(salesOrderItemList);
 
@@ -1497,26 +1495,19 @@ public class SampleOperations_2019_1 {
 			}
 
 			// Search sales order for all found customers
-			/*modified by Bansi  2019/5/14
+
 			SearchMultiSelectField entities = new SearchMultiSelectField();
 			entities.setOperator(SearchMultiSelectFieldOperator.anyOf);
-			
+
 			//entities.setSearchValue(customers.stream().map(customer->));
-			
+
 			entities.setSearchValue(
 					customers.stream().map(customer -> createRecordRef(customer.getInternalId(), RecordType.customer)).toArray(RecordRef[]::new));
-			*/
-			TransactionSearchBasic transactionSearchBasic = new TransactionSearchBasic();
-			/* modified by Bansi 2019/5/14
-			transactionSearchBasic.setType(new SearchEnumMultiSelectField(
-					new String[] { RecordType._salesOrder }, SearchEnumMultiSelectFieldOperator.anyOf));
-			transactionSearchBasic.setEntity(entities);
-			*/
 
-			RecordRef[] entitiess = customers.stream().map(customer -> createRecordRef(customer.getInternalId(), RecordType.customer))
-					.toArray(RecordRef[]::new);
-			transactionSearchBasic.setType(new String[] { RecordType._salesOrder });
-			transactionSearchBasic.setEntity(entitiess);
+			TransactionSearchBasic transactionSearchBasic = new TransactionSearchBasic();
+
+			transactionSearchBasic.setType(new SearchEnumMultiSelectField(new String[] { RecordType._salesOrder }, SearchEnumMultiSelectFieldOperator.anyOf));
+			transactionSearchBasic.setEntity(entities);
 
 			// We want to returned also list of items so we need to set the following preference
 			client.setBodyFieldsOnly(false);
@@ -1553,15 +1544,12 @@ public class SampleOperations_2019_1 {
 		SAMPLE_OPERATIONS.put(ADVANCED_SEARCH_SALES_ORDERS, () -> {
 			printEmptyLine();
 
-			/*
 			SearchEnumMultiSelectField recordType = new SearchEnumMultiSelectField();
 			recordType.setOperator(SearchEnumMultiSelectFieldOperator.anyOf);
 			recordType.setSearchValue(new String[] { RecordType._salesOrder });
-			*/
+
 			TransactionSearchBasic transactionSearchBasic = new TransactionSearchBasic();
-			//--modified by Bansi 20190514 
-			//transactionSearchBasic.setType(recordType.getSearchValue());
-			transactionSearchBasic.setType(new String[] { RecordType._salesOrder });
+			transactionSearchBasic.setType(recordType);
 
 			// In order to have a particular sales order in search result just once, set the following field.
 			transactionSearchBasic.setMainLine(new SearchBooleanField(true));
@@ -1576,16 +1564,10 @@ public class SampleOperations_2019_1 {
 
 			final List<String> customerIds = getListItems(readLine(ENTER_CUSTOMER_INTERNAL_ID_FOR_SALES_ORDER_SEARCH));
 			if (!customerIds.isEmpty()) {
-				//SearchColumnEnumSelectField
-				/* modified by Bansi at 2019/5/14 am
-				SearchEnumMultiSelectField entityField = new SearchEnumMultiSelectField();
-				entityField.setOperator(SearchEnumMultiSelectFieldOperator.anyOf);
-				
+				SearchMultiSelectField entityField = new SearchMultiSelectField();
+				entityField.setOperator(SearchMultiSelectFieldOperator.anyOf);
 				entityField.setSearchValue(customerIds.stream().map(Utils::createRecordRef).toArray(RecordRef[]::new));
 				transactionSearchBasic.setEntity(entityField);
-				*/
-				RecordRef[] entities = customerIds.stream().map(Utils::createRecordRef).toArray(RecordRef[]::new);
-				transactionSearchBasic.setEntity(entities);
 			}
 
 			// Apply search criteria
@@ -1703,7 +1685,7 @@ public class SampleOperations_2019_1 {
 
 			// Enter the internal IDs of inventory items to be added to the Purchase Order
 			List<String> itemsInternalIds = getListItems(readLine(ENTER_ITEM_IDS_FOR_PURCHASE_ORDER));
-			PurchaseOrderItem[] purchaseOrderItemList = getPurchaseOrderItemList(itemsInternalIds);
+			PurchaseOrderItemList purchaseOrderItemList = getPurchaseOrderItemList(itemsInternalIds);
 
 			purchaseOrder.setItemList(purchaseOrderItemList);
 
@@ -1777,25 +1759,16 @@ public class SampleOperations_2019_1 {
 			}
 
 			// Search sales order for all found vendors
-			/*modified by Bansi  2019/5/14
 			SearchMultiSelectField entities = new SearchMultiSelectField();
 			entities.setOperator(SearchMultiSelectFieldOperator.anyOf);
-			
-			//entities.setSearchValue(vendors.stream().map(vendor->));
-			
-			entities.setSearchValue(
-					vendors.stream().map(vendor -> createRecordRef(vendor.getInternalId(), RecordType.vendor)).toArray(RecordRef[]::new));
-			*/
-			TransactionSearchBasic transactionSearchBasic = new TransactionSearchBasic();
-			/* modified by Bansi 2019/5/14
-			transactionSearchBasic.setType(new SearchEnumMultiSelectField(
-					new String[] { RecordType._purchaseOrder }, SearchEnumMultiSelectFieldOperator.anyOf));
-			transactionSearchBasic.setEntity(entities);
-			*/
 
-			RecordRef[] entitiess = vendors.stream().map(vendor -> createRecordRef(vendor.getInternalId(), RecordType.vendor)).toArray(RecordRef[]::new);
-			transactionSearchBasic.setType(new String[] { RecordType._purchaseOrder });
-			transactionSearchBasic.setEntity(entitiess);
+			//entities.setSearchValue(vendors.stream().map(vendor->));
+
+			entities.setSearchValue(vendors.stream().map(vendor -> createRecordRef(vendor.getInternalId(), RecordType.vendor)).toArray(RecordRef[]::new));
+			TransactionSearchBasic transactionSearchBasic = new TransactionSearchBasic();
+			transactionSearchBasic
+					.setType(new SearchEnumMultiSelectField(new String[] { RecordType._purchaseOrder }, SearchEnumMultiSelectFieldOperator.anyOf));
+			transactionSearchBasic.setEntity(entities);
 
 			// We want to returned also list of items so we need to set the following preference
 			client.setBodyFieldsOnly(false);
@@ -1832,15 +1805,11 @@ public class SampleOperations_2019_1 {
 		SAMPLE_OPERATIONS.put(ADVANCED_SEARCH_PURCHASE_ORDERS, () -> {
 			printEmptyLine();
 
-			/*
 			SearchEnumMultiSelectField recordType = new SearchEnumMultiSelectField();
 			recordType.setOperator(SearchEnumMultiSelectFieldOperator.anyOf);
 			recordType.setSearchValue(new String[] { RecordType._purchaseOrder });
-			*/
 			TransactionSearchBasic transactionSearchBasic = new TransactionSearchBasic();
-			//--modified by Bansi 20190514 
-			//transactionSearchBasic.setType(recordType.getSearchValue());
-			transactionSearchBasic.setType(new String[] { RecordType._purchaseOrder });
+			transactionSearchBasic.setType(recordType);
 
 			// In order to have a particular sales order in search result just once, set the following field.
 			transactionSearchBasic.setMainLine(new SearchBooleanField(true));
@@ -1855,16 +1824,10 @@ public class SampleOperations_2019_1 {
 
 			final List<String> vendorIds = getListItems(readLine(ENTER_VENDOR_INTERNAL_ID_FOR_PURCHASE_ORDER_SEARCH));
 			if (!vendorIds.isEmpty()) {
-				//SearchColumnEnumSelectField
-				/* modified by Bansi at 2019/5/14 am
-				SearchEnumMultiSelectField entityField = new SearchEnumMultiSelectField();
-				entityField.setOperator(SearchEnumMultiSelectFieldOperator.anyOf);
-				
+				SearchMultiSelectField entityField = new SearchMultiSelectField();
+				entityField.setOperator(SearchMultiSelectFieldOperator.anyOf);
 				entityField.setSearchValue(vendorIds.stream().map(Utils::createRecordRef).toArray(RecordRef[]::new));
 				transactionSearchBasic.setEntity(entityField);
-				*/
-				RecordRef[] entities = vendorIds.stream().map(Utils::createRecordRef).toArray(RecordRef[]::new);
-				transactionSearchBasic.setEntity(entities);
 			}
 
 			// Apply search criteria
@@ -2122,23 +2085,22 @@ public class SampleOperations_2019_1 {
 		addressBook.setAddressbookAddress(address);
 
 		// Attach the address to the customer
-		CustomerAddressbook[] addressBookList = customer.getAddressbookList();
+		CustomerAddressbookList addressBookList = customer.getAddressbookList();
 		if (addressBookList == null) {
-			addressBookList = new CustomerAddressbook[0];
+			addressBookList = new CustomerAddressbookList();
 		}
-		CustomerAddressbook[] addressBooks = addressBookList;
+		CustomerAddressbook[] addressBooks = addressBookList.getAddressbook();
 		if (addressBooks == null || addressBooks.length == 0) {
 			addressBooks = new CustomerAddressbook[] { addressBook };
 		} else {
 			addressBooks = Arrays.copyOf(addressBooks, addressBooks.length + 1);
 		}
-		//addressBookList.setAddressbook(addressBooks);
-		addressBookList = addressBooks;
+		addressBookList.setAddressbook(addressBooks);
 		customer.setAddressbookList(addressBookList);
 	}
 
-	private static SalesOrderItem[] getSalesOrderItemList(List<String> itemsInternalIds) {
-		SalesOrderItem[] salesOrderItems = new SalesOrderItem[itemsInternalIds.size()];
+	private static SalesOrderItemList getSalesOrderItemList(List<String> itemsInternalIds) {
+		SalesOrderItemList salesOrderItems = new SalesOrderItemList();
 
 		// Create the sales order items and populate the quantity
 		int i = 0;
@@ -2155,11 +2117,11 @@ public class SampleOperations_2019_1 {
 			}
 			item.setAmount(1.0);
 
-			salesOrderItems[i] = item;
+			salesOrderItems.setItem(i, item);
 			i++;
 		}
 
-		SalesOrderItem[] salesOrderItemList = salesOrderItems;
+		SalesOrderItemList salesOrderItemList = salesOrderItems;
 
 		return salesOrderItemList;
 	}
@@ -2210,8 +2172,8 @@ public class SampleOperations_2019_1 {
 		}).collect(Collectors.toList());
 	}
 
-	private static PurchaseOrderItem[] getPurchaseOrderItemList(List<String> itemsInternalIds) {
-		PurchaseOrderItem[] purchaseOrderItems = new PurchaseOrderItem[itemsInternalIds.size()];
+	private static PurchaseOrderItemList getPurchaseOrderItemList(List<String> itemsInternalIds) {
+		PurchaseOrderItemList purchaseOrderItems = new PurchaseOrderItemList();
 
 		// Create the sales order items and populate the quantity
 		int i = 0;
@@ -2228,18 +2190,18 @@ public class SampleOperations_2019_1 {
 			}
 			item.setAmount(1.0);
 
-			purchaseOrderItems[i] = item;
+			purchaseOrderItems.setItem(i, item);
 			i++;
 		}
 
-		PurchaseOrderItem[] purchaseOrderItemList = purchaseOrderItems;
+		PurchaseOrderItemList purchaseOrderItemList = purchaseOrderItems;
 
 		return purchaseOrderItemList;
 	}
 
 	private boolean isSuccessfulSearchResult(SearchResult searchResult) {
 		Boolean isIsSuccess = true;
-		for (StatusDetail sd : searchResult.getStatus()) {
+		for (StatusDetail sd : searchResult.getStatus().getStatusDetail()) {
 			isIsSuccess = !sd.getAfterSubmitFailed() && isIsSuccess;
 		}
 		return searchResult.getStatus() != null && isIsSuccess;
