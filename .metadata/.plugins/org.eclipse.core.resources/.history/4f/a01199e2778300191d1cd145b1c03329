@@ -1,0 +1,95 @@
+/**
+ * @NApiVersion 2.x
+ * @NScriptType Restlet
+ * @NModuleScope SameAccount
+ * @NAmdConfig /SuiteScripts/intretech/config.json
+ * @author Zhu Yanlong
+ */
+/////////////////////////通用 单记录查询////////////////////////////
+//	
+// 	GET
+//	
+//	
+//////////////////////////////////////////////////////////
+define([ 'N/record', 'N/search', 'N/runtime', 'dao', 'utils' ], function(record, search, runtime, dao, utils) {
+	/**
+	 * @param {Object} requestParams
+	 * @param {String} requestParams.recordType
+	 * @param {String} requestParams.filterList
+	 * @param {String} requestParams.columnList
+	 */
+	function doGet(requestParams) {
+		log.debug("Remaining governance units Total start: " + runtime.getCurrentScript().getRemainingUsage());
+		try {
+			var recordType = requestParams.recordType;
+			var filterList = utils.string2Array(requestParams.filterList);
+			var columnList = utils.string2Array(requestParams.columnList);
+			log.debug("Remaining governance units 1s: " + runtime.getCurrentScript().getRemainingUsage());
+			var runStart1 = new Date().getTime();
+
+			//runPaged() 5 unit 经测试实际不消耗用量
+			var pagedData = search.create({
+				type : recordType,
+				filters : filterList,
+				columns : columnList
+			}).runPaged({
+				pageSize : 100
+			});
+			var searchResults1 = [];
+			pagedData.pageRanges.forEach(function(pageRange) {
+				//fecth() 5 units 实际不消耗用量
+				var page = pagedData.fetch({
+					index : pageRange.index
+				});
+				page.data.forEach(function(result) {
+					searchResults1.push(result);
+				});
+				//				log.debug("Remaining governance units 1: " + pageRange.index + "page, " + page.data.length + "count ->"
+				//						+ runtime.getCurrentScript().getRemainingUsage());
+			});
+			var runEnd1 = new Date().getTime() - runStart1 + 'ms';
+			var resultSet1 = searchResults1;//dao.getSearchResultSet(recordType, filterList, columnList);
+			log.debug("Remaining governance units 1e: " + runtime.getCurrentScript().getRemainingUsage());
+
+			log.debug("Remaining governance units 2s: " + runtime.getCurrentScript().getRemainingUsage());
+			var runStart2 = new Date().getTime();
+			var resultSet = search.create({
+				type : recordType,
+				filters : filterList,
+				columns : columnList
+			}).run();
+			var searchResults2 = [];
+			for (var i = 0; i < 5;) {
+				//10 unit 会消耗用量且与循环次数相兄1�7
+				resultSet.getRange({
+					start : 0 + i * 1000,
+					end : ++i * 1000
+				}).forEach(function(result) {
+					searchResults2.push(result);
+				});
+				//				log.debug("Remaining governance units 2: " + i + "time ->" + runtime.getCurrentScript().getRemainingUsage());
+			}
+			var runEnd2 = new Date().getTime() - runStart2 + 'ms';
+
+			var resultSet2 = searchResults2;//dao.getSearchResultSet2nd(recordType, filterList, columnList);
+			log.debug("Remaining governance units 2e: " + runtime.getCurrentScript().getRemainingUsage());
+
+			log.debug("Remaining governance units Total end: " + runtime.getCurrentScript().getRemainingUsage());
+
+			return {
+				"resultSet1" : resultSet1,
+				"length1" : resultSet1.length,
+				"runEnd1" : runEnd1,
+				"resultSet2" : resultSet2,
+				"length2" : resultSet2.length,
+				"runEnd2" : runEnd2
+			};
+		} catch (e) {
+			return e;
+		}
+	}
+
+	return {
+		'get' : doGet
+	};
+});

@@ -1,0 +1,40 @@
+/**
+ * @NApiVersion 2.x
+ * @NScriptType Restlet
+ * @NModuleScope SameAccount
+ * @NAmdConfig /SuiteScripts/intretech/config.json
+ * @author Zhu Yanlong
+ */
+/////////////////////////BOM接口////////////////////////////
+//	POST
+// 	GET
+//	DELETE
+//	PUT
+//////////////////////////////////////////////////////////
+define([ 'N/record', 'N/search', 'N/runtime', 'dao' ], function(record, search, runtime, dao) {
+	/**
+	 * @param {Object} requestParams
+	 * @param {String} requestParams.recordType
+	 * @param {String} requestParams.filterList
+	 * @param {String} requestParams.columnList
+	 */
+	function doGet(requestParams) {
+		try {
+			var recordType = requestParams.recordType;
+			var filterList = utils.string2Array(requestParams.filterList);
+			var columnList = utils.string2Array(requestParams.columnList);
+			return {
+				"resultSet" : dao.getSearchResultSet(recordType, filterList, columnList)
+			};
+		} catch (e) {
+			log.debug({
+				title : 'doGet Error :' + e.name,
+				details : e.message
+			});
+		}
+	}
+
+	return {
+		'get' : doGet
+	};
+});

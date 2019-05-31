@@ -1,0 +1,116 @@
+/**
+ * @NApiVersion 2.x
+ * @NScriptType Restlet
+ * @NModuleScope SameAccount
+ * @NAmdConfig /SuiteScripts/intretech/config.json
+ * @author Zhu Yanlong
+ */
+/////////////////////////BOM鎺ュ彛////////////////////////////
+//	POST
+// 	GET
+//	DELETE
+//	PUT
+//////////////////////////////////////////////////////////
+define([ 'N/record', 'N/search', 'N/runtime', 'dao' ], function(record, search, runtime, dao) {
+	/**
+	 * @param {Object} requestParams
+	 * @param {String} requestParams.recordType
+	 * @param {Array} requestParams.filterList
+	 * @param {Array} requestParams.columnList
+	 */
+	function doGet(requestParams) {
+		log.debug({
+			title : 'requestParams',
+			details : requestParams
+		});
+		var filterList = [];
+		var columnList = [];
+		var columnRegExp = /.+/;
+		var filterRegExp = /.+/;
+		var fenceRegExp1 = /(\],)+|(,\[)+/;
+		var fenceRegExp2 = /,/;
+		try {
+			var recordType = requestParams.recordType;
+			//鍘婚櫎绌烘牸
+			var filterListStr = requestParams.filterList.replace(/[""''\s]/g, '');
+			//鍘婚櫎棣栧熬鏂规嫭鍙�					
+			filterListStr = filterListStr.replace(/\[{2,10}/g, '');
+			filterListStr = filterListStr.replace(/\]{2,10}/g, '');
+			log.debug({
+				title : 'filterList replace',
+				details : filterListStr
+			});
+			//灏嗗瓧绗︿覆杞崲鎴愬崟涓厓绱犳暟缁�
+			filterList = filterRegExp.exec(filterListStr);//杩斿洖鏁扮粍
+			log.debug({
+				title : 'filterRegExp.exec',
+				details : filterList
+			});
+
+			//浠ュ彸鏂规嫭鍙烽�楀彿|閫楀彿宸︽柟鎷彿涓哄垎闅旂锛屽皢鍘熸暟缁勫厓绱犳槧灏勮浆鎹㈡垚澶氫釜鍏冪礌涓�缁存暟缁�
+			filterList = filterList.map(function(f) {//f鏄瓧绗︿覆
+				return f.split(fenceRegExp1);
+			});
+			log.debug({
+				title : 'filterList.map1',
+				details : filterList
+			});
+			//杩囨护鎺夋暟缁勪腑鐨�"","],",",[",","
+			filterList = filterList[0].filter(function(e) {
+				if (e != "" && e != "]," && e != ",[" && e != ",")
+					return e;
+			});
+			log.debug({
+				title : 'filterList filter',
+				details : filterList
+			});
+			//灏嗕竴缁存暟缁勪腑鐨勫伓鏁扮储寮曠殑鍏冪礌鎸夐�楀彿鍒嗛殧鏄犲皠杞崲鎴愭暟缁�
+			filterList = filterList.map(function(f) {//f鏄暟缁�
+				if (filterList.indexOf(f) % 2)
+					return f;
+				else
+					return f.split(fenceRegExp2);
+			});
+			log.debug({
+				title : 'filterList.map2',
+				details : filterList
+			});
+
+			var columnListStr = requestParams.columnList.replace(/[""''\s]/g, '');
+
+			columnListStr = columnListStr.replace(/\[+/g, '');
+			columnListStr = columnListStr.replace(/\]+/g, '');
+
+			log.debug({
+				title : 'columnList replace 1',
+				details : columnListStr
+			});
+			columnList = columnRegExp.exec(columnListStr);//杩斿洖鏁扮粍
+			log.debug({
+				title : 'columnList regexp',
+				details : columnList
+			});
+			columnList = columnList.map(function(f) {//f鏄暟缁�
+				return f.split(",");
+			})[0];
+
+			log.debug({
+				title : 'columnList map',
+				details : columnList
+			});
+
+			return {
+				"resultSet" : dao.getSearchResultSet(recordType, filterList, columnList)
+			};
+		} catch (e) {
+			log.debug({
+				title : 'doGet Error :' + e.name,
+				details : e.message
+			});
+		}
+	}
+
+	return {
+		'get' : doGet
+	};
+});

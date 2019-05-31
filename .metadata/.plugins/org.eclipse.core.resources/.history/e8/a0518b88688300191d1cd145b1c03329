@@ -1,0 +1,67 @@
+/**
+ * @NApiVersion 2.x
+ * @NScriptType Restlet
+ * @NModuleScope SameAccount
+ * @NAmdConfig /SuiteScripts/intretech/config.json
+ * @author Zhu Yanlong
+ */
+/////////////////////////通用 单记录查询////////////////////////////
+//	
+// 	GET
+//	
+//	
+//////////////////////////////////////////////////////////
+define([ 'N/record', 'N/search', 'N/runtime', 'dao', 'utils' ], function(record, search, runtime, dao, utils) {
+	/**
+	 * @param {Object} requestParams
+	 * @param {String} requestParams.recordType
+	 * @param {String} requestParams.filterList
+	 * @param {String} requestParams.columnList
+	 */
+	function doGet(requestParams) {
+		log.debug("Remaining governance units Total start: " + runtime.getCurrentScript().getRemainingUsage());
+		try {
+			var recordType = requestParams.recordType;
+			var filterList = utils.string2Array(requestParams.filterList);
+			var columnList = utils.string2Array(requestParams.columnList);
+			log.debug("Remaining governance units 1s: " + runtime.getCurrentScript().getRemainingUsage());
+			var resultSet1 = dao.getSearchResultSet(recordType, filterList, columnList);
+			log.debug("Remaining governance units 1e: " + runtime.getCurrentScript().getRemainingUsage());
+
+			log.debug("Remaining governance units 2s: " + runtime.getCurrentScript().getRemainingUsage());
+			var resultSet = search.create({
+				type : recordType,
+				filters : filterList,
+				columns : columnList
+			}).run();
+			var searchResults = [];
+			for (var i = 0; i < 100;) {
+				//10 unit
+				resultSet.getRange({
+					start : 0 + i * 1000,
+					end : ++i * 1000
+				}).forEach(function(result) {
+					searchResults.push(result);
+				});
+				log.debug("Remaining governance units 2: " + i + "time ->" + runtime.getCurrentScript().getRemainingUsage());
+			}
+			var resultSet2 = searchResults;//dao.getSearchResultSet2nd(recordType, filterList, columnList);
+			log.debug("Remaining governance units 2e: " + runtime.getCurrentScript().getRemainingUsage());
+
+			log.debug("Remaining governance units Total end: " + runtime.getCurrentScript().getRemainingUsage());
+
+			return {
+				"resultSet1" : resultSet1,
+				"length1" : resultSet1.length,
+				"resultSet2" : resultSet2,
+				"length2" : resultSet2.length,
+			};
+		} catch (e) {
+			return e;
+		}
+	}
+
+	return {
+		'get' : doGet
+	};
+});

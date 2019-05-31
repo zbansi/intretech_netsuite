@@ -13,34 +13,50 @@ define([ 'N/search' ],
 function(search) {
 
 	/**
-	 * 获取主记录的查询列
+	 * @param {search.Type | String} searchType - 用作参数，获取主记录的查询列
+	 * @returns {Array} - search.Column Array
 	 */
 	function setColumns(searchType) {
+		//物料记录
 		var _itemSearchColumns = [ 'itemid', 'displayname' ];
+		//bom记录
 		var _bomSearchColumns = [ 'internalid', 'externalid', 'name', 'memo' ];
+		//bom版本
 		var _bomRevisionSearchColumns = [ 'name', 'memo', 'createddate', 'effectivestartdate', 'effectiveenddate', 'internalid', 'externalid', 'isinactive' ];
+		//销售订单
 		var _salesOrderSearchColumns = [ 'entity', 'salesrep', 'linesequencenumber', 'item', 'itemrevision', 'pricelevel', 'rate', 'status', 'trandate',
 				'startdate', 'enddate', 'quantity', 'quantityuom', 'unit', 'firmed', 'memo', 'shipdate' ];
+		//货品履行事务处理：销售出库，采购退货出库，库存转移订单-转出
 		var _itemFulfillmentSearchColumns = [ 'salesorder', 'entity', 'salesrep', 'linesequencenumber', 'item', 'itemrevision', 'pricelevel', 'rate', 'status',
 				'trandate', 'startdate', 'enddate', 'quantity', 'quantityuom', 'unit', 'firmed', 'memo', 'shipdate' ];
+		//工单
 		var _workOrderSearchColumns = [ 'item', 'itemrevision', 'iswip', 'status', 'trandate', 'startdate', 'enddate', 'quantity', 'quantityuom', 'unit',
 				'firmed', 'memo' ];
+		//工单组件投料
 		var _workOrderIssueSearchColumns = [ 'item', 'itemrevision', 'iswip', 'status', 'trandate', 'startdate', 'enddate', 'quantity', 'quantityuom', 'unit',
 				'firmed', 'memo' ];
+		//工单完工
 		var _workOrderCompletionSearchColumns = [ 'item', 'itemrevision', 'iswip', 'status', 'trandate', 'startdate', 'enddate', 'quantity', 'quantityuom',
 				'unit', 'firmed', 'memo' ];
+		//工单关闭
 		var _workOrderCloseSearchColumns = [ 'item', 'itemrevision', 'iswip', 'status', 'trandate', 'startdate', 'enddate', 'quantity', 'quantityuom', 'unit',
 				'firmed', 'memo' ];
+		//库存转移订单
 		var _transferOrderSearchColumns = [ 'entity', 'salesrep', 'linesequencenumber', 'item', 'itemrevision', 'pricelevel', 'rate', 'status', 'trandate',
 				'startdate', 'enddate', 'quantity', 'quantityuom', 'unit', 'firmed', 'memo', 'shipdate' ];
+		//库存转移事务处理
 		var _inventoryTransferSearchColumns = [ 'entity', 'salesrep', 'linesequencenumber', 'item', 'itemrevision', 'pricelevel', 'rate', 'status', 'trandate',
 				'startdate', 'enddate', 'quantity', 'quantityuom', 'unit', 'firmed', 'memo', 'shipdate' ];
+		//库存调整事务处理
 		var _inventoryAdjustmentSearchColumns = [ 'entity', 'salesrep', 'linesequencenumber', 'item', 'itemrevision', 'pricelevel', 'rate', 'status',
 				'trandate', 'startdate', 'enddate', 'quantity', 'quantityuom', 'unit', 'firmed', 'memo', 'shipdate' ];
+		//采购订单
 		var _purchaseOrderSearchColumns = [ 'entity', 'salesrep', 'linesequencenumber', 'item', 'itemrevision', 'pricelevel', 'rate', 'status', 'trandate',
 				'startdate', 'enddate', 'quantity', 'quantityuom', 'unit', 'firmed', 'memo', 'shipdate' ];
+		//货品接收事务处理：采购入库、销售退货入库、库存转移订单-转入
 		var _itemReceiptSearchColumns = [ 'entity', 'salesrep', 'linesequencenumber', 'item', 'itemrevision', 'pricelevel', 'rate', 'status', 'trandate',
 				'startdate', 'enddate', 'quantity', 'quantityuom', 'unit', 'firmed', 'memo', 'shipdate' ];
+		//地点
 		var _locationSearchColumns = [ 'externalid', 'internalid', 'isinactive', 'locationtype', 'makeinventoryavailable', 'makeinventoryavailablestore',
 				'name', 'subsidiary', 'usesbins' ];
 		var columnList = [];
@@ -141,7 +157,9 @@ function(search) {
 	}
 
 	/**
-	 * 获取主记录的外连接查询列
+	 * @param {search.Type | String} searchType - 用作参数，获取主记录的查询列
+	 * @param {String} joinId - 用作过滤外连接的参数，如果joinId未指定，那么方法会选取所有外连接记录的列
+	 * @returns {Array} - search.Column Array
 	 */
 	function setJoinColumns(searchType, joinId) {
 		//item与BOM之间存在1个关系表，记录类型名称为Assembly Item BOM 记录类型id为assemblyitembom
@@ -333,7 +351,10 @@ function(search) {
 			break;
 		}
 	}
-
+	/**
+	 * @param {Array} searchColumns
+	 * @returns {Array} - search.Column Array
+	 */
 	function createColumns(searchColumns) {
 		var columnList = [];
 		if (searchColumns && searchColumns.length > 0) {
@@ -364,7 +385,9 @@ function(search) {
 	//	}
 
 	/**
+	 * @param {Array} searchJoins
 	 * @param {String} joinId - 如果为 null，则查询全部外连接列
+	 * @returns {Array} - search.Column Array
 	 */
 	function createJoinColumns(searchJoins, joinId) {
 		var joinColumns = [];

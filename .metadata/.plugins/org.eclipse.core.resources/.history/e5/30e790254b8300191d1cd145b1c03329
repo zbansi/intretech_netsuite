@@ -1,0 +1,425 @@
+/**
+ * search_columns.js
+ * 
+ * @NApiversion 2.x
+ * @NModuleScope Public
+ * @author YQ12681 Zhu Yanlong
+ */
+
+define([ 'N/search' ],
+/**
+ * @param {search} search
+ */
+function(search) {
+
+	/**
+	 * @param {search.Type | String} searchType - 用作参数，获取主记录的查询列
+	 * @returns {Array} - search.Column Array
+	 */
+	function setColumns(searchType) {
+		//物料记录
+		var _itemSearchColumns = [ 'itemid', 'displayname' ];
+		//bom记录
+		var _bomSearchColumns = [ 'internalid', 'externalid', 'name', 'memo' ];
+		//bom版本
+		var _bomRevisionSearchColumns = [ 'name', 'memo', 'createddate', 'effectivestartdate', 'effectiveenddate', 'internalid', 'externalid', 'isinactive' ];
+		//销售订单
+		var _salesOrderSearchColumns = [ 'entity', 'salesrep', 'linesequencenumber', 'item', 'itemrevision', 'pricelevel', 'rate', 'status', 'trandate',
+				'startdate', 'enddate', 'quantity', 'quantityuom', 'unit', 'firmed', 'memo', 'shipdate' ];
+		//货品履行事务处理：销售出库，采购退货出库，库存转移订单-转出
+		var _itemFulfillmentSearchColumns = [ 'salesorder', 'entity', 'salesrep', 'linesequencenumber', 'item', 'itemrevision', 'pricelevel', 'rate', 'status',
+				'trandate', 'startdate', 'enddate', 'quantity', 'quantityuom', 'unit', 'firmed', 'memo', 'shipdate' ];
+		//工单
+		var _workOrderSearchColumns = [ 'item', 'itemrevision', 'iswip', 'status', 'trandate', 'startdate', 'enddate', 'quantity', 'quantityuom', 'unit',
+				'firmed', 'memo' ];
+		//工单组件投料
+		var _workOrderIssueSearchColumns = [ 'item', 'itemrevision', 'iswip', 'status', 'trandate', 'startdate', 'enddate', 'quantity', 'quantityuom', 'unit',
+				'firmed', 'memo' ];
+		//工单完工
+		var _workOrderCompletionSearchColumns = [ 'item', 'itemrevision', 'iswip', 'status', 'trandate', 'startdate', 'enddate', 'quantity', 'quantityuom',
+				'unit', 'firmed', 'memo' ];
+		//工单关闭
+		var _workOrderCloseSearchColumns = [ 'item', 'itemrevision', 'iswip', 'status', 'trandate', 'startdate', 'enddate', 'quantity', 'quantityuom', 'unit',
+				'firmed', 'memo' ];
+		//库存转移订单
+		var _transferOrderSearchColumns = [ 'entity', 'salesrep', 'linesequencenumber', 'item', 'itemrevision', 'pricelevel', 'rate', 'status', 'trandate',
+				'startdate', 'enddate', 'quantity', 'quantityuom', 'unit', 'firmed', 'memo', 'shipdate' ];
+		//库存转移事务处理
+		var _inventoryTransferSearchColumns = [ 'entity', 'salesrep', 'linesequencenumber', 'item', 'itemrevision', 'pricelevel', 'rate', 'status', 'trandate',
+				'startdate', 'enddate', 'quantity', 'quantityuom', 'unit', 'firmed', 'memo', 'shipdate' ];
+		//库存调整事务处理
+		var _inventoryAdjustmentSearchColumns = [ 'entity', 'salesrep', 'linesequencenumber', 'item', 'itemrevision', 'pricelevel', 'rate', 'status',
+				'trandate', 'startdate', 'enddate', 'quantity', 'quantityuom', 'unit', 'firmed', 'memo', 'shipdate' ];
+		//采购订单
+		var _purchaseOrderSearchColumns = [ 'entity', 'salesrep', 'linesequencenumber', 'item', 'itemrevision', 'pricelevel', 'rate', 'status', 'trandate',
+				'startdate', 'enddate', 'quantity', 'quantityuom', 'unit', 'firmed', 'memo', 'shipdate' ];
+		//货品接收事务处理：采购入库、销售退货入库、库存转移订单-转入
+		var _itemReceiptSearchColumns = [ 'entity', 'salesrep', 'linesequencenumber', 'item', 'itemrevision', 'pricelevel', 'rate', 'status', 'trandate',
+				'startdate', 'enddate', 'quantity', 'quantityuom', 'unit', 'firmed', 'memo', 'shipdate' ];
+		//地点
+		var _locationSearchColumns = [ 'externalid', 'internalid', 'isinactive', 'locationtype', 'makeinventoryavailable', 'makeinventoryavailablestore',
+				'name', 'subsidiary', 'usesbins' ];
+		var columnList = [];
+		switch (searchType) {
+		case search.Type.ITEM:
+			return createColumns(_itemSearchColumns);
+			break;
+		case 'item':
+			return createColumns(_itemSearchColumns);
+			break;
+		case search.Type.BOM:
+			return createColumns(_bomSearchColumns);
+			break;
+		case 'bom':
+			return createColumns(_bomSearchColumns);
+			break;
+		case search.Type.BOM_REVISION:
+			return createColumns(_bomRevisionSearchColumns);
+			break;
+		case 'bomrevision':
+			return createColumns(_bomRevisionSearchColumns);
+			break;
+		case search.Type.SALES_ORDER:
+			return createColumns(_salesOrderSearchColumns);
+			break;
+		case 'salesorder':
+			return createColumns(_salesOrderSearchColumns);
+			break;
+		case search.Type.ITEM_FULFILLMENT:
+			return createColumns(_itemFulfillmentSearchColumns);
+			break;
+		case 'itemfulfillment':
+			return createColumns(_itemFulfillmentSearchColumns);
+			break;
+		case search.Type.WORK_ORDER:
+			return createColumns(_workOrderSearchColumns);
+			break;
+		case 'workorder':
+			return createColumns(_workOrderSearchColumns);
+			break;
+		case search.Type.WORK_ORDER_ISSUE:
+			return createColumns(_workOrderIssueSearchColumns);
+			break;
+		case 'workorderissue':
+			return createColumns(_workOrderIssueSearchColumns);
+			break;
+		case search.Type.WORK_ORDER_COMPLETION:
+			return createColumns(_workOrderCompletionSearchColumns);
+			break;
+		case 'workordercompletion':
+			return createColumns(_workOrderCompletionSearchColumns);
+			break;
+		case search.Type.WORK_ORDER_CLOSE:
+			return createColumns(_workOrderCloseSearchColumns);
+			break;
+		case 'workorderclose':
+			return createColumns(_workOrderCloseSearchColumns);
+			break;
+		case search.Type.TRANSFER_ORDER:
+			return createColumns(_transferOrderSearchColumns);
+			break;
+		case 'transferorder':
+			return createColumns(_transferOrderSearchColumns);
+			break;
+		case search.Type.INVENTORY_TRANSFER:
+			return createColumns(_inventoryTransferSearchColumns);
+			break;
+		case 'inventorytransfer':
+			return createColumns(_inventoryTransferSearchColumns);
+			break;
+		case search.Type.INVENTORY_ADJUSTMENT:
+			return createColumns(_inventoryAdjustmentSearchColumns);
+			break;
+		case 'inventoryadjustment':
+			return createColumns(_inventoryAdjustmentSearchColumns);
+			break;
+		case search.Type.PURCHASE_ORDER:
+			return createColumns(_purchaseOrderSearchColumns);
+			break;
+		case 'purchaseorder':
+			return createColumns(_purchaseOrderSearchColumns);
+			break;
+		case search.Type.ITEM_RECEIPT:
+			return createColumns(_itemReceiptSearchColumns);
+			break;
+		case 'itemreceipt':
+			return createColumns(_itemReceiptSearchColumns);
+			break;
+		case search.Type.LOCATION:
+			return createColumns(_locationSearchColumns);
+			break;
+		case 'location':
+			return createColumns(_locationSearchColumns);
+			break;
+		default:
+			break;
+		}
+	}
+
+	/**
+	 * @param {search.Type | String} searchType - 用作参数，获取主记录的查询列
+	 * @param {String} joinId - 用作过滤外连接的参数，如果joinId未指定，那么方法会选取所有外连接记录的列
+	 * @returns {Array} - search.Column Array
+	 */
+	function setJoinColumns(searchType, joinId) {
+		//item与BOM之间存在1个关系表，记录类型名称为Assembly Item BOM 记录类型id为assemblyitembom
+		//item joinid之一的assemblyitembillofmaterials和bom joinid之一的assemblyitem均指assemblyitembom
+		var _itemSearchJoins = {
+			'assemblyitembillofmaterials' : [ 'assembly', 'assemblyid', 'billofmaterials', 'billofmaterialsid', 'default', 'locations' ]
+		};
+
+		var _bomSearchJoins = {
+			'assemblyitem' : [ 'assembly', 'assemblyid', 'billofmaterials', 'billofmaterialsid', 'default', 'locations' ],
+			'revision' : [ 'internalid', 'name', 'memo' ]
+		};
+
+		var _bomRevisionSearchJoins = {
+			'billofmaterials' : [ 'name', 'isinactive' ],
+			'component' : [ 'internalid', 'item', 'bomquantity', 'quantity', 'componentyield' ]
+		};
+
+		var _salesOrderSearchJoins = {
+			'location' : [ 'name' ],
+			'subsidiary' : [ 'name' ],
+			'item' : [ 'itemid' ]
+		};
+		var _purchaseOrderSearchJoins = {
+			'location' : [ 'name' ],
+			'subsidiary' : [ 'name' ],
+			'item' : [ 'itemid' ]
+		};
+		var _workOrderSearchJoins = {
+			'location' : [ 'name' ],
+			'subsidiary' : [ 'name' ],
+			'item' : [ 'itemid' ]
+		};
+		var _transferOrderSearchJoins = {
+			'location' : [ 'name' ],
+			'subsidiary' : [ 'name' ],
+			'item' : [ 'itemid' ]
+		};
+		var _salesOrderFulfillmentSearchJoins = {
+			'location' : [ 'name' ],
+			'subsidiary' : [ 'name' ],
+			'item' : [ 'itemid' ]
+		};
+		var _purchaseOrderItemReceiptSearchJoins = {
+			'location' : [ 'name' ],
+			'subsidiary' : [ 'name' ],
+			'item' : [ 'itemid' ]
+		};
+		var _workOrderIssueSearchJoins = {
+			'location' : [ 'name' ],
+			'subsidiary' : [ 'name' ],
+			'item' : [ 'itemid' ]
+		};
+		var _workOrderCompletionSearchJoins = {
+			'location' : [ 'name' ],
+			'subsidiary' : [ 'name' ],
+			'item' : [ 'itemid' ]
+		};
+		var _workOrderCloseSearchJoins = {
+			'location' : [ 'name' ],
+			'subsidiary' : [ 'name' ],
+			'item' : [ 'itemid' ]
+		};
+		var _inventoryAdjustmentSearchJoins = {
+			'location' : [ 'name' ],
+			'subsidiary' : [ 'name' ],
+			'item' : [ 'itemid' ]
+		};
+		var _inventoryTransferSearchJoins = {
+			'location' : [ 'name' ],
+			'subsidiary' : [ 'name' ],
+			'item' : [ 'itemid' ]
+		};
+
+		switch (searchType) {
+		case search.Type.ITEM:
+			return createJoinColumns(_itemSearchJoins, joinId);
+			break;
+
+		case search.Type.BOM:
+			return createJoinColumns(_bomSearchJoins, joinId);
+			break;
+
+		case search.Type.BOM_REVISION:
+			return createJoinColumns(_bomRevisionSearchJoins, joinId);
+			break;
+
+		case search.Type.SALES_ORDER:
+			return createJoinColumns(_salesOrderSearchJoins, joinId);
+			break;
+
+		case search.Type.ITEM_FULFILLMENT:
+			return createJoinColumns(_salesOrderFulfillmentSearchJoins, joinId);
+			break;
+
+		case search.Type.WORK_ORDER:
+			return createJoinColumns(_workOrderSearchJoins, joinId);
+			break;
+
+		case search.Type.WORK_ORDER_ISSUE:
+			return createJoinColumns(_workOrderIssueSearchJoins, joinId);
+			break;
+
+		case search.Type.WORK_ORDER_COMPLETION:
+			return createJoinColumns(_workOrderCompletionSearchJoins, joinId);
+			break;
+
+		case search.Type.WORK_ORDER_CLOSE:
+			return createJoinColumns(_workOrderCloseSearchJoins, joinId);
+			break;
+
+		case search.Type.TRANSFER_ORDER:
+			return createJoinColumns(_transferOrderSearchJoins, joinId);
+			break;
+
+		case search.Type.INVENTORY_TRANSFER:
+			return createJoinColumns(_inventoryTransferSearchJoins, joinId);
+			break;
+
+		case search.Type.INVENTORY_ADJUSTMENT:
+			return createJoinColumns(_inventoryAdjustmentSearchJoins, joinId);
+			break;
+
+		case search.Type.PURCHASE_ORDER:
+			return createJoinColumns(_purchaseOrderSearchJoins, joinId);
+			break;
+
+		case search.Type.ITEM_RECEIPT:
+			return createJoinColumns(_purchaseOrderItemReceiptSearchJoins, joinId);
+			break;
+
+		case 'item':
+			return createJoinColumns(_itemSearchJoins, joinId);
+			break;
+
+		case 'bom':
+			return createJoinColumns(_bomSearchJoins, joinId);
+			break;
+
+		case 'bomrevision':
+			return createJoinColumns(_bomRevisionSearchJoins, joinId);
+			break;
+
+		case 'salesorder':
+			return createJoinColumns(_salesOrderSearchJoins, joinId);
+			break;
+
+		case 'itemfulfillment':
+			return createJoinColumns(_salesOrderFulfillmentSearchJoins, joinId);
+			break;
+
+		case 'workorder':
+			return createJoinColumns(_workOrderSearchJoins, joinId);
+			break;
+
+		case 'workorderissue':
+			return createJoinColumns(_workOrderIssueSearchJoins, joinId);
+			break;
+
+		case 'workordercompletion':
+			return createJoinColumns(_workOrderCompletionSearchJoins, joinId);
+			break;
+
+		case 'workorderclose':
+			return createJoinColumns(_workOrderCloseSearchJoins, joinId);
+			break;
+
+		case 'transferorder':
+			return createJoinColumns(_transferOrderSearchJoins, joinId);
+			break;
+
+		case 'inventorytransfer':
+			return createJoinColumns(_inventoryTransferSearchJoins, joinId);
+			break;
+
+		case 'inventoryadjustment':
+			return createJoinColumns(_inventoryAdjustmentSearchJoins, joinId);
+			break;
+
+		case 'purchaseorder':
+			return createJoinColumns(_purchaseOrderSearchJoins, joinId);
+			break;
+
+		case 'itemreceipt':
+			return createJoinColumns(_purchaseOrderItemReceiptSearchJoins, joinId);
+			break;
+
+		default:
+			break;
+		}
+	}
+	/**
+	 * @param {Array} searchColumns
+	 * @returns {Array} - search.Column Array
+	 */
+	function createColumns(searchColumns) {
+		var columnList = [];
+		if (searchColumns && searchColumns.length > 0) {
+			searchColumns.forEach(function(e) {
+				columnList.push(search.createColumn({
+					name : e
+				}));
+			});
+		}
+		return columnList;
+	}
+
+	//	function createJoinColumns(searchJoins) {
+	//		var joinColumns = [];
+	//		if (searchJoins) {
+	//			for ( var key in searchJoins) {
+	//				if (searchJoins.hasOwnProperty(key)) {
+	//					searchJoins[key].forEach(function(value) {
+	//						joinColumns.push(search.createColumn({
+	//							name : value,
+	//							join : key
+	//						}));
+	//					});
+	//				}
+	//			}
+	//		}
+	//		return joinColumns;
+	//	}
+
+	/**
+	 * @param {String} joinId - 如果为 null，则查询全部外连接列
+	 * @returns {Array} - search.Column Array
+	 */
+	function createJoinColumns(searchJoins, joinId) {
+		var joinColumns = [];
+		if (searchJoins) {
+			for ( var key in searchJoins) {
+				if (joinId) {
+					if (searchJoins.hasOwnProperty(key) && key == joinId) {
+						searchJoins[key].forEach(function(value) {
+							joinColumns.push(search.createColumn({
+								name : value,
+								join : key
+							}));
+						});
+					}
+				} else {
+					if (searchJoins.hasOwnProperty(key)) {
+						searchJoins[key].forEach(function(value) {
+							joinColumns.push(search.createColumn({
+								name : value,
+								join : key
+							}));
+						});
+					}
+				}
+			}
+		}
+		return joinColumns;
+	}
+
+	return {
+		'setColumns' : setColumns,
+		'setJoinColumns' : setJoinColumns,
+		'createColumns' : createColumns,
+		'createJoinColumns' : createJoinColumns
+	}
+});

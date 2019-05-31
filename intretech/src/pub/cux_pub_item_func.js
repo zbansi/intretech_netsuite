@@ -6,113 +6,21 @@
  * @author ZhangYuKun
  */
 
-define(['N/record', 'N/search', 'N/format'], function (record, search, format) {
+define(['N/record', 'N/search', 'N/runtime', 'N/format', 'N/task'], function (record, search, runtime, format, task) {
 
-        //recordType and searchType transform
-        function recordTypes(itemType) {
-            var searchType;
-            switch (itemType) {
-                case "1":
-                    itemType = record.Type.ASSEMBLY_ITEM;
-                    searchType = search.Type.ASSEMBLY_ITEM;
-                    break;
-                case "2" :
-                    itemType = record.Type.LOT_NUMBERED_ASSEMBLY_ITEM;
-                    searchType = search.Type.LOT_NUMBERED_ASSEMBLY_ITEM;
-                    break;
-                case "3" :
-                    itemType = record.Type.SERIALIZED_ASSEMBLY_ITEM;
-                    searchType = search.Type.SERIALIZED_ASSEMBLY_ITEM;
-                    break;
-                case "4" :
-                    itemType = record.Type.INVENTORY_ITEM;
-                    searchType = search.Type.INVENTORY_ITEM;
-                    break;
-                case "5" :
-                    itemType = record.Type.LOT_NUMBERED_INVENTORY_ITEM;
-                    searchType = search.Type.LOT_NUMBERED_INVENTORY_ITEM;
-                    break;
-                case "6" :
-                    itemType = record.Type.SERIALIZED_INVENTORY_ITEM;
-                    searchType = search.Type.SERIALIZED_INVENTORY_ITEM;
-                    break;
-                case "7" :
-                    itemType = record.Type.OTHER_CHARGE_ITEM;
-                    searchType = search.Type.OTHER_CHARGE_ITEM;
-                    break;
-                case "8" :
-                    itemType = record.Type.NON_INVENTORY_ITEM;
-                    searchType = search.Type.NON_INVENTORY_ITEM;
-                    break;
-                case "9" :
-                    itemType = record.Type.SERVICE_ITEM;
-                    searchType = search.Type.SERVICE_ITEM;
-                    break;
-                case "10":
-                    itemType = record.Type.MARKUP_ITEM;
-                    searchType = search.Type.MARKUP_ITEM;
-                    break;
-                case "11":
-                    itemType = record.Type.DISCOUNT_ITEM;
-                    searchType = search.Type.DISCOUNT_ITEM;
-                    break;
-                case "12":
-                    itemType = record.Type.DESCRIPTION_ITEM;
-                    searchType = search.Type.DESCRIPTION_ITEM;
-                    break;
-                case "13":
-                    itemType = record.Type.KIT_ITEM;
-                    searchType = search.Type.KIT_ITEM;
-                    break;
-                case "14":
-                    itemType = record.Type.GIFT_CERTIFICATE_ITEM;
-                    searchType = search.Type.GIFT_CERTIFICATE_ITEM;
-                    break;
-                case "15":
-                    itemType = record.Type.PAYMENT_ITEM;
-                    searchType = search.Type.PAYMENT_ITEM;
-                    break;
-                case "16":
-                    itemType = record.Type.SUBTOTAL_ITEM;
-                    searchType = search.Type.SUBTOTAL_ITEM;
-                    break;
-                case "17":
-                    itemType = record.Type.PAYMENT_ITEM;
-                    searchType = search.Type.PAYMENT_ITEM;
-                    break;
-                case "18":
-                    itemType = record.Type.ITEM_GROUP;
-                    searchType = search.Type.ITEM_GROUP;
-                    break;
-                case "19":
-                    itemType = record.Type.CUSTOMER;
-                    searchType = search.Type.CUSTOMER;
-                    break;
-                case "20":
-                    itemType = record.Type.VENDOR;
-                    searchType = search.Type.VENDOR;
-                    break;
-                case "21":
-                    itemType = record.Type.MANUFACTURING_ROUTING;
-                    searchType = search.Type.MANUFACTURING_ROUTING;
-                    break;
-                case "22":
-                    itemType = record.Type.ACCOUNT;
-                    searchType = search.Type.ACCOUNT;
-                    break;
-                case "23":
-                    itemType = record.Type.BOM;
-                    searchType = search.Type.BOM;
-                    break;
-                default:
-                    return 'RECORD ERROR!'
-            }
-            return {itemType: itemType, searchType: searchType}
+        //recordType and Id
+        function itemRecIdAndType(names, filterName, searchType) {
+            var filter = [search.createFilter({
+                name: filterName,
+                operator: search.Operator.IS,
+                values: names
+            })];
+            return search.create({type: searchType, filters: filter}).run().getRange(0, 1)[0];
         }
 
         //create Item record
         function createItemMain(jsonData, itemType) {
-            var recId = 0;
+            var recId = -1;
             jsonData.forEach(function (itemData) {
                 var itemRecord = record.create({
                     type: itemType
@@ -179,54 +87,79 @@ define(['N/record', 'N/search', 'N/format'], function (record, search, format) {
         }
 
         //get Item Data
-        function getItemData(names, itemType, searchType, filterName) {
+        function getItemData(names, filterName, searchType) {
             var itemNames = names.split(',');
             var itemData = [];
             for (var i = 0; i < itemNames.length; i++) {
-                var filter = search.createFilter({
-                    name: filterName,
-                    operator: search.Operator.IS,
-                    values: itemNames[i]
-                });
+                var itemRec = itemRecIdAndType(itemNames[i], filterName, searchType);
+                if (runtime.getCurrentScript().getRemainingUsage() >= 4900) {
+                    itemData.push(record.load({type: itemRec.recordType, id: itemRec.id}));
+                } else {
+                    var itemNames2 = names.split(',');
+                    itemNames2.splice(0, i);
+                    var scriptRecord = record.load({
+                        type: 'scriptdeployment',
+                        id: 569
+                    });
+                    scriptRecord.setValue({
+                        fieldId: 'custscript_get_input_data_0527',
+                        value: JSON.stringify(itemNames2)
+                    });
+                    scriptRecord.save();
 
-                itemData.push(record.load({
-                    type: itemType,
-                    id: search.create({type: searchType, filters: filter}).run().getRange(0, 1)[0].id
-                }))
+                    // Execute the MapReduce script
+                    var scriptTask = task.create({taskType: task.TaskType.MAP_REDUCE});
+                    scriptTask.scriptId = 'customscript396';
+                    scriptTask.deploymentId = 'customdeploy1';
+                    var scriptTaskId = scriptTask.submit();
 
+                    var taskId = scriptTaskId.toString();
+                    var statusObject = task.checkStatus({taskId: taskId});
+
+                    while (statusObject.status != 'COMPLETE') {
+                        statusObject = task.checkStatus({taskId: taskId});
+                    }
+
+                    var rec = record.load({
+                        type: 'scriptdeployment',
+                        id: 507
+                    });
+
+                    var getData = rec.getValue({fieldId: 'custscript_return_get_data'});
+
+                    itemData.push(JSON.parse(getData));
+
+                    break;
+                }
             }
-
 
             return itemData
         }
 
+        //get Item Data
+        function getBeyondItemData(names, filterName, searchType) {
+            var itemRec = itemRecIdAndType(names, filterName, searchType);
+            return record.load({type: itemRec.recordType, id: itemRec.id})
+        }
+
         //delete record
-        function deleteRecord(names, itemType, searchType, filterName) {
-            var recordNames = names.split(','), n = 0;
+        function deleteRecord(names, filterName, searchType) {
+            var recordNames = names.split(',');
             for (var i = 0; i < recordNames.length; i++) {
-                var bomRec = search.create({
-                    type: searchType,
-                    filters: [[filterName, 'is', recordNames[i]]]
-                }).run().getRange(0, 1);
-                record.delete({type: itemType, id: bomRec[0].id});
-                n++;
+                var itemRec = itemRecIdAndType(recordNames[i], filterName, searchType);
+                record.delete({type: itemRec.recordType, id: itemRec.id});
             }
-            return n
+            return ' Success Delete Record'
         }
 
         //update record
-        function modifyRecord(jsonData, itemType, searchType, filterName) {
+        function modifyRecord(jsonData, filterName, searchType) {
             var i = 0;
             jsonData.forEach(function (itemData) {
-                var filter = search.createFilter({
-                    name: filterName,
-                    operator: search.Operator.IS,
-                    values: itemData.dataName
-                });
-
+                var recIT = itemRecIdAndType(itemData.dataName, filterName, searchType);
                 var itemRecord = record.load({
-                    type: itemType,
-                    id: search.create({type: searchType, filters: filter}).run().getRange(0, 1)[0].id
+                    type: recIT.recordType,
+                    id: recIT.id
                 });
 
                 for (var key in itemData) {
@@ -260,13 +193,95 @@ define(['N/record', 'N/search', 'N/format'], function (record, search, format) {
             return i
         }
 
+        //GetAllData Or GetIncrease
+        function getAllOrIncrease(getManner) {
+            var lastDateTime = runtime.getCurrentScript().getParameter('custscript_set_last_runtime');
+            // getManner = runtime.getCurrentScript().getParameter('custscript_get_data_manner');
+
+            var scriptRecord = record.load({//usage = 5
+                type: 'scriptdeployment',
+                id: 507
+            });
+            var dateNow = new Date(new Date().getTime() + 60 * 60 * 1000);
+            var dateStr = format.format({
+                    value: dateNow,
+                    type: format.Type.DATETIME
+                }),
+                dateObj = format.parse({
+                    value: dateStr,
+                    type: format.Type.DATETIME
+                });
+
+            scriptRecord.setValue({
+                fieldId: 'custscript_set_last_runtime',
+                value: dateObj
+            });
+
+            scriptRecord.save();//usage = 10
+
+            var recordData = {}, columns = [];
+            columns[0] = search.createColumn({name: 'internalid'});
+            columns[1] = search.createColumn({name: 'itemid'});
+            columns[2] = search.createColumn({name: 'category'});
+            columns[3] = search.createColumn({name: 'purchaseunit'});
+            columns[4] = search.createColumn({name: 'location'});
+            columns[5] = search.createColumn({name: 'created'});
+
+
+            if (getManner == 'all' || getManner == 'ALL' || !lastDateTime) {
+                recordData = search.create({
+                    type: 'item',
+                    columns: columns
+                }).run().getRange({
+                    start: 0,
+                    end: 1000
+                });
+            } else {
+                var lastTimeStr = format.format({
+                    value: lastDateTime,
+                    type: format.Type.DATETIME,
+                    timezone: format.Timezone.ASIA_HONG_KONG
+                }).split('分')[0] + '分';
+
+                var strTime = format.format({
+                    value: lastTimeStr,
+                    type: format.Type.DATETIME
+                });
+
+                var filters = [];
+                filters[0] = search.createFilter({
+                    name: 'created',
+                    operator: search.Operator.ONORAFTER,
+                    values: strTime
+                });
+
+                // log.debug({title: 'lastTimeStrs', details: strTime});
+                filters[1] = search.createFilter({
+                    name: 'isinactive',
+                    operator: search.Operator.EQUALTO,
+                    values: 'N'
+                });
+
+                recordData = search.create({
+                    type: 'item',
+                    filters: filters,
+                    columns: columns
+                }).run().getRange({
+                    start: 0,
+                    end: 100
+                });
+            }
+            return recordData
+        }
+
         return {
-            'recordTypes': recordTypes,
             'createItemMain': createItemMain,
             'createAccount': createAccount,
             'getItemData': getItemData,
             'deleteRecord': deleteRecord,
             'modifyRecord': modifyRecord,
+            'getAllOrIncrease': getAllOrIncrease,
+            'getBeyondItemData': getBeyondItemData
         }
     }
 );

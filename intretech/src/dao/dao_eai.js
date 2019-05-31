@@ -43,22 +43,54 @@ function(record, search, error, runtime, columnset, utils) {
 		}
 	}
 
+	/**
+	 * @param {String | search.Type} recordType
+	 * @param {Array} filterList
+	 * @param {Array} columnList
+	 * @returns {Array} resultSet
+	 */
 	function getSearchResultSet(recordType, filterList, columnList) {
+		//runPaged() 5 unit
 		var pagedData = search.create({
 			type : recordType,
 			filters : filterList,
 			columns : columnList
 		}).runPaged();
-		var resultSet = [];
+		var searchResults = [];
 		pagedData.pageRanges.forEach(function(pageRange) {
+			//fecth() 5 units
 			var page = pagedData.fetch({
 				index : pageRange.index
 			});
 			page.data.forEach(function(result) {
-				resultSet.push(result);
+				searchResults.push(result);
 			});
 		});
-		return resultSet;
+		return searchResults;
+	}
+	/**
+	 * @param {String | search.Type} recordType
+	 * @param {Array} filterList
+	 * @param {Array} columnList
+	 * @returns {Array} resultSet
+	 */
+	function getSearchResultSet2nd(recordType, filterList, columnList) {
+		var resultSet = search.create({
+			type : recordType,
+			filters : filterList,
+			columns : columnList
+		}).run();
+		var searchResults = [];
+		for (var i = 0; i < 100;) {
+			//10 unit
+			resultSet.getRange({
+				start : 0 + i * 1000,
+				end : (++i) * 1000
+			}).forEach(function(result) {
+				searchResults.push(result);
+			});
+		}
+		return searchResults;
 	}
 
 	function deleteRecords(recordType, recordIdList) {
@@ -718,29 +750,29 @@ function(record, search, error, runtime, columnset, utils) {
 
 				//构建JSON格式的响应报文
 				var bomObj = Object.create(null);
-//				bomObj.assemblyid = result.getValue({
-//					'name' : 'assemblyid',
-//					'joinid' : 'assemblyitem'
-//				});
-//				bomObj.assembly = result.getValue({
-//					'name' : 'assembly',
-//					'joinid' : 'assemblyitem'
-//				});
-//				bomObj['default'] = result.getValue({
-//					'name' : 'default',
-//					'joinid' : 'assemblyitem'
-//				});
-//				bomObj.billofmaterialsid = result.getValue({
-//					'name' : 'billofmaterialsid',
-//					'joinid' : 'assemblyitem'
-//				});
+				//				bomObj.assemblyid = result.getValue({
+				//					'name' : 'assemblyid',
+				//					'joinid' : 'assemblyitem'
+				//				});
+				//				bomObj.assembly = result.getValue({
+				//					'name' : 'assembly',
+				//					'joinid' : 'assemblyitem'
+				//				});
+				//				bomObj['default'] = result.getValue({
+				//					'name' : 'default',
+				//					'joinid' : 'assemblyitem'
+				//				});
+				//				bomObj.billofmaterialsid = result.getValue({
+				//					'name' : 'billofmaterialsid',
+				//					'joinid' : 'assemblyitem'
+				//				});
 				bomObj.assemblyid = result.getValue(result.columns[5]);
 				bomObj.assembly = result.getText(result.columns[4]);
 				bomObj['default'] = result.getValue(result.columns[8]);
-				
+
 				bomObj.bom_id = result.getValue('internalid');
 				bomObj.bom_name = result.getValue('name');
-				
+
 				bomObj.revision_internalid = result.getValue({
 					'name' : 'internalid',
 					'joinid' : 'revision'
@@ -1227,6 +1259,7 @@ function(record, search, error, runtime, columnset, utils) {
 	return {
 		'getRecordId' : getRecordId,
 		'getSearchResultSet' : getSearchResultSet,
+		'getSearchResultSet2nd' : getSearchResultSet2nd,
 		'deleteRecords' : deleteRecords,
 		'deleteRecord' : deleteRecord,
 		'getBomHeaderRecordId' : getBomHeaderRecordId,

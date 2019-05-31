@@ -3,6 +3,7 @@
  * 
  * @NApiversion 2.x
  * @NModuleScope Public
+ * @author YQ12681 Zhu-Yanlong
  */
 
 define([],
@@ -16,7 +17,8 @@ function() {
 	}
 
 	/**
-	 * filterExpressionString e.g. filterExpressionStr = "[['name','operator','value']]"
+	 * @param {String} filterExpressionStr - e.g. filterExpressionStr = "[['name','operator','value']]"
+	 * @returns {Array}
 	 */
 	function filterExpressionString2Array(filterExpressionStr) {
 
@@ -55,8 +57,26 @@ function() {
 		}
 	}
 
-	/*
-	 * 将一个类数组字符串转换成数组，比如"['a','b','c']"=>['a','b','c'] 
+	/**
+	 * @param {String} columnsStr - e.g. columnsStr = "['name','memo','createdate']"
+	 * @returns {Array}
+	 */
+	function columnsString2Array(columnsStr) {
+		var columnList = [];
+		var columnRegExp = /.+/;
+		var columnListStr = columnsStr.replace(/[""''\s]/g, '');
+		columnListStr = columnListStr.replace(/\[+/g, '');
+		columnListStr = columnListStr.replace(/\]+/g, '');
+		columnList = columnRegExp.exec(columnListStr);//返回数组
+		columnList = columnList.map(function(f) {//f是数组
+			return f.split(",");
+		})[0];
+		return columnList;
+	}
+
+	/**
+	 * @param {String} arrayString - 将一个类数组字符串转换成数组，比如"['a','b','c']"=>['a','b','c']
+	 * @returns {Array}
 	 */
 	function string2Array(arrayString) {
 		return eval("(" + arrayString + ")");
@@ -65,8 +85,9 @@ function() {
 		//		return array;
 	}
 
-	/*
-	 * 将一个JSON对象字符串转换成JSON对象，比如"{'key': 'value'}"=>{'key': 'value'}
+	/**
+	 * @param {String} JSONObjectString - 将一个JSON对象字符串转换成JSON对象，比如"{'key': 'value'}"=>{'key': 'value'}
+	 * @returns {Object}
 	 */
 	function string2JSONObject(JSONObjectString) {
 		eval("var jsonObject = " + JSONObjectString);
@@ -86,10 +107,9 @@ function() {
 	}
 
 	/**
-	 * 过滤对象中的""、null、 undefined、test,并返回新对象
-	 * 
-	 * @param {obj} obj
-	 * @param {test} test
+	 * @param {Object} obj
+	 * @param {String} testValue - 过滤对象中的""、null、 undefined、test,并返回新对象
+	 * @returns {Object}
 	 */
 	function discardObjectValue(obj, testValue) {
 		var param = Object.create(null);
@@ -107,10 +127,9 @@ function() {
 	}
 
 	/**
-	 * 过滤对象中特定key,并返回新对象
-	 * 
-	 * @param {obj} obj
-	 * @param {test} test
+	 * @param {Object} obj
+	 * @param {String} testKey - 过滤对象中特定key,并返回新对象
+	 * @returns {Object}
 	 */
 	function discardObjectKey(obj, testKey) {
 		var param = Object.create(null);
@@ -125,9 +144,8 @@ function() {
 	}
 
 	/**
-	 * 判断传入参数的类型，以字符串的形式返回
-	 * 
-	 * @obj: data
+	 * @param {Object} obj - 判断传入参数的类型，以字符串的形式返回
+	 * @returns {String} 对象类型
 	 */
 	function dataType(obj) {
 		if (obj === null)
@@ -138,7 +156,7 @@ function() {
 	}
 
 	/**
-	 * 
+	 * @param {Number} milliseconds
 	 */
 	function sleep(milliseconds) {
 		var start = new Date().getTime();

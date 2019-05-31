@@ -111,7 +111,7 @@
 	<target name="generate.interfaces.ns201802" description="Generates client interfaces using Axis">
 		<echo>Generating netsuite 201802 client interfaces using Apache Axis</echo>
 		<axis-wsdl2java timeout="1200000" output="${src.dir}"
-			verbose="true" url="${ns201802.wsdl.url}" all="true" wrapArrays="ture">
+			verbose="true" url="${ns201802.wsdl.url}" all="true" wrapArrays="true">
 			<mapping namespace="http://axis.apache.org/ns/interop"
 				package="interop">
 			</mapping>
@@ -120,7 +120,7 @@
 	<target name="generate.interfaces.ns201702" description="Generates client interfaces using Axis">
 		<echo>Generating netsuite 201702 client interfaces using Apache Axis</echo>
 		<axis-wsdl2java timeout="1200000" output="${src.dir}"
-			verbose="true" url="${ns201702.wsdl.url}" all="true" wrapArrays="ture">
+			verbose="true" url="${ns201702.wsdl.url}" all="true" wrapArrays="true">
 			<mapping namespace="http://axis.apache.org/ns/interop"
 				package="interop">
 			</mapping>

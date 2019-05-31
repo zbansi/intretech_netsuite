@@ -1,0 +1,53 @@
+/**
+ * @NApiVersion 2.x
+ * @NScriptType Restlet
+ * @NModuleScope SameAccount
+ * @NAmdConfig /SuiteScripts/intretech/config.json
+ * @author Zhu Yanlong
+ */
+/////////////////////////////////////////////////////
+//	POST
+// 	GET
+//	DELETE
+//	PUT
+//////////////////////////////////////////////////////////
+define([ 'N/record', 'N/search', 'N/runtime', 'dao' ], function(record, search, runtime, dao) {
+	/**
+	 * @param {Object} requestParams
+	 * @param {String} requestParams.recordType
+	 * @param {String} requestParams.filterList
+	 * @param {String} requestParams.columnList
+	 */
+	function doGet(requestParams) {
+		var scriptObj = runtime.getCurrentScript();
+		log.debug("Remaining governance units Total start: " + scriptObj.getRemainingUsage());
+		try {
+			var recordType = requestParams.recordType;
+			var filterList = utils.string2Array(requestParams.filterList);
+			var columnList = utils.string2Array(requestParams.columnList);
+			log.debug("Remaining governance units 1s: " + scriptObj.getRemainingUsage());
+			var resultSet1 = dao.getSearchResultSet(recordType, filterList, columnList);
+			log.debug("Remaining governance units 1e: " + scriptObj.getRemainingUsage());
+
+			log.debug("Remaining governance units 2s: " + scriptObj.getRemainingUsage());
+			var resultSet2 = dao.getSearchResultSet2nd(recordType, filterList, columnList);
+			log.debug("Remaining governance units 2e: " + scriptObj.getRemainingUsage());
+
+			log.debug("Remaining governance units Total end: " + scriptObj.getRemainingUsage());
+
+			return {
+				"resultSet1" : resultSet1,
+				"resultSet2" : resultSet2
+			};
+		} catch (e) {
+			log.debug({
+				title : 'doGet Error :' + e.name,
+				details : e.message
+			});
+		}
+	}
+
+	return {
+		'get' : doGet
+	};
+});
