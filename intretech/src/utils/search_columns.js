@@ -20,7 +20,7 @@ function(search) {
 		//物料记录
 		var _itemSearchColumns = [ 'itemid', 'displayname' ];
 		//bom记录
-		var _bomSearchColumns = [ 'internalid', 'externalid', 'name', 'memo' ];
+		var _bomSearchColumns = [ 'internalid', 'externalid', 'name', 'memo', 'subsidiary' ];
 		//bom版本
 		var _bomRevisionSearchColumns = [ 'name', 'memo', 'createddate', 'effectivestartdate', 'effectiveenddate', 'internalid', 'externalid', 'isinactive' ];
 		//销售订单
@@ -159,7 +159,7 @@ function(search) {
 	/**
 	 * @param {search.Type | String} searchType - 用作参数，获取主记录的查询列
 	 * @param {String} joinId - 用作过滤外连接的参数，如果joinId未指定，那么方法会选取所有外连接记录的列
-	 * @returns {Array} - search.Column Array
+	 * @returns {Column|Column[]|string} a single search.Column or string or an array that contains elements of the two types
 	 */
 	function setJoinColumns(searchType, joinId) {
 		//item与BOM之间存在1个关系表，记录类型名称为Assembly Item BOM 记录类型id为assemblyitembom

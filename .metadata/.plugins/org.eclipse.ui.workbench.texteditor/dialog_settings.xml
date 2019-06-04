@@ -2,20 +2,20 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="getItemData" key="selection"/>
+		<item value="" key="selection"/>
 		<item value="true" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="true" key="wholeword"/>
 		<list key="findhistory">
+			<item value="value"/>
+			<item value="createFilterExpressions"/>
 			<item value="getItemData"/>
 			<item value="getSearchResultSet2nd"/>
 			<item value="getSearchResultSet"/>
 			<item value="filterList.length"/>
 			<item value="filterList.length &gt; 1"/>
 			<item value="filterList.length &gt; 1 &gt; 0"/>
-			<item value="filterList.length &gt; 0"/>
-			<item value="getBomAssemblyItemAndRevisionAndComponet"/>
 		</list>
 		<list key="replacehistory">
 			<item value="filterList[0].length &gt; 0"/>

@@ -9,7 +9,6 @@ import com.netsuite.webservices.platform.core_2019_1.CustomRecordRef;
 import com.netsuite.webservices.platform.core_2019_1.Record;
 import com.netsuite.webservices.platform.core_2019_1.RecordRef;
 import com.netsuite.webservices.platform.core_2019_1.SearchResult;
-import com.netsuite.webservices.platform.core_2019_1.StatusDetail;
 import com.netsuite.webservices.platform.messages_2019_1.ReadResponse;
 import com.netsuite.webservices.platform.messages_2019_1.ReadResponseList;
 import com.netsuite.webservices.platform.messages_2019_1.WriteResponse;

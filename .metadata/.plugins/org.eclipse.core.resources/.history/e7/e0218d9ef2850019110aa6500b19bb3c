@@ -1,0 +1,380 @@
+/**
+ * search_filters.js
+ * 
+ * @NApiversion 2.x
+ * @NModuleScope Public
+ * @author YQ12681 Zhu Yanlong
+ */
+
+/**
+ * 设置查询条件，以用于接口查询
+ */
+define([ 'N/search' ],
+/**
+ * @param {search} search
+ */
+function(search) {
+
+	//==============================Filter[]=================================
+
+	/**
+	 * @param {Boolean} filterValues - 用作参数，获取主记录有效状态的查询结果
+	 * @returns {Filter|Filter[]} - options.filters (optional) a single filter object or an array of filter objects
+	 * 
+	 */
+	function setActiveStatusFilter(isactive) {
+		var _isActiveFilter = [ {
+			name : 'isinactive',
+			operator : search.Operator.ISNOT,
+			value : isactive
+		} ];
+
+		return _isActiveFilter;
+	}
+
+	/**
+	 * @param {DateTime} lastmodifieddate - 用作参数，获取主记录的增量同步且有效状态的查询结果
+	 * @returns {Filter|Filter[]|Array[]} - options.filters (optional) a single filter object or an array of filter objects
+	 * 
+	 */
+	function setStatusAndTimeStampFilters(lastmodifieddate) {
+		var _timeStampFilter = [ {
+			name : 'lastmodifieddate',
+			operator : search.Operator.AFTER
+		} ];
+
+		return setActiveStatusFilter(true).concate(createFilters(_timeStampFilter, lastmodifieddate));
+	}
+
+	/**
+	 * 设置各类查询接口的过滤条件
+	 * 
+	 * @param {search.Type | String} searchType - 用作参数，获取满足条件的主记录的查询结果
+	 * @returns {Filter|Filter[]|Array[]} - options.filters (optional) a single filter object or an array of filter objects
+	 * 
+	 */
+	function setMainFilters(searchType, filterValues) {
+
+		//item
+		var _itemSearchFilterNames = [ {
+			name : 'name',
+			operator : search.Operator.CONTAINS,
+			values : null
+		}, {
+			name : 'meomo',
+			operator : search.Operator.ISNOTEMPTY
+		} ];
+
+		//bom
+		var _bomSearchFilterNames = [ {
+			name : 'subsidiary',
+			operator : search.Operator.IS,
+			values : null
+		}, {
+			name : 'includechildren',
+			operator : search.Operator.IS,
+			values : null
+		} ];
+
+		//transaction
+		var _transactionSearchFilterNames = [ {
+			name : 'name',
+			operator : search.Operator.CONTAINS,
+			values : null
+		}, {
+			name : 'meomo',
+			operator : search.Operator.ISNOTEMPTY
+		} ];
+
+		switch (searchType) {
+		case search.Type.ITEM:
+			return createFilters(_itemSearchFilterNames, filterValues);
+			break;
+
+		case search.Type.BOM:
+			return createFilters(_bomSearchFilterNames, filterValues);
+			break;
+
+		case search.Type.TRANSACTION:
+			return setStatusAndTimeStampFilters(filterValues.lastmodifieddate).concate(createFilters(_transactionSearchFilterNames, filterValues));
+			break;
+
+		default:
+			break;
+		}
+
+	}
+
+	/**
+	 * @param {search.Type | String} searchType - 用作参数，获取主记录的查询列
+	 * @param {String} joinId - 用作过滤外连接的参数，如果joinId未指定，那么方法会选取所有外连接记录的列
+	 * @returns {Column|Column[]|string} a single filter object or an array of filter objects
+	 */
+	function setJoinFilters(searchType, joinId,joinFilterValues) {
+		//item与BOM之间存在1个关系表，记录类型名称为Assembly Item BOM 记录类型id为assemblyitembom
+		//item joinid之一的assemblyitembillofmaterials和bom joinid之一的assemblyitem均指assemblyitembom
+		//bom
+		var _bomSearchJoinFilterNames = {
+			'assemblyitem' : [ {
+				name : 'default',
+				operator : search.Operator.IS,
+				values : 'default'
+			}, {
+				name : 'locations',
+				operator : search.Operator.ISNOTEMPTY
+			} ],
+			'revision' : [ {
+				name : 'name',
+				operator : search.Operator.ANYOF,
+				values : 'default'
+			} ]
+		};
+
+		//transaction
+		var _transactionSearchJoinFilterNames = [ {
+			name : 'name',
+			operator : search.Operator.CONTAINS,
+			value:'default'
+		}, {
+			name : 'meomo',
+			operator : search.Operator.ISNOTEMPTY
+		} ];
+	
+
+		switch (searchType) {
+		case search.Type.ITEM:
+			return createJoinFilters(_itemSearchFilterNames, _itemSearchFilterValues);
+			break;
+
+		case search.Type.BOM:
+			return createJoinFilters(_bomSearchJoinFilterNames, _bomSearchJoinFilterValues);
+			break;
+
+		case search.Type.TRANSACTION:
+			return setStatusAndTimeStampFilters(filterValues.lastmodifieddate).concate(
+					createFilters(_transactionSearchFilterNames, _transactionSearchFilterValues));
+			break;
+
+		default:
+			break;
+		}
+
+	}
+
+	/**
+	 * A single search.Filter object, an array of search.Filter objects, a search filter expression, or an array of search filter expressions. Cannot mixed with
+	 * Filter Object and filter expression in an array.
+	 */
+	function createFilters(nameAndOperators, values) {
+		var filterList = [];
+		if (nameAndOperators && nameAndOperators.length > 0) {
+			nameAndOperators.forEach(function(obj) {
+				filterList.push(search.createFilter({
+					name : obj.name,
+					operator : obj.operator,
+					values : values[obj.name]
+				}));
+			});
+		}
+		return filterList;
+	}
+
+	function createJoinFilters(filterJoins, values, joinId) {
+		var joinFilters = [];
+		if (filterJoins) {
+			for ( var key in filterJoins) {
+				if (joinId) {
+					if (filterJoins.hasOwnProperty(key) && key == joinId) {
+						filterJoins[key].forEach(function(obj) {
+							joinFilters.push(search.createFilter({
+								name : obj.name,
+								join : key,
+								operator : obj.operator,
+								values : values[key][obj.name]
+							}))
+						})
+					}
+				} else {
+					if (filterJoins.hasOwnProperty(key)) {
+						filterJoins[key].forEach(function(obj) {
+							joinFilters.push(search.createFilter({
+								//Name or internal ID of the joined record field.
+								name : obj.name,
+								//Join ID for the search filter.
+								join : key,
+								operator : obj.operator,
+								values : values[key][obj.name]
+							}))
+						})
+					}
+				}
+			}
+		}
+		return joinFilters;
+	}
+
+	//==============================filterexpressions===================================
+	/**
+	 * @param {Boolean} filterValues - 用作参数，获取主记录有效状态的查询结果
+	 * @returns {Array[]} - options.filters (optional) a search filter expression
+	 * 
+	 */
+	function setActiveStatusFilterExpression(isactive) {
+		var _isActiveFilter = [ 'isinactive', search.Operator.ISNOT, isactive ];
+
+		return _isActiveFilter;
+	}
+
+	/**
+	 * @param {DateTime} lastmodifieddate - 用作参数，获取主记录的增量同步且有效状态的查询结果
+	 * @returns {Array[]} - options.filters (optional) an array of search filter expressions
+	 * 
+	 */
+	function setStatusAndTimeStampFilterExpressions(lastmodifieddate) {
+		var _timeStampFilter = [ 'lastmodifieddate', search.Operator.AFTER, lastmodifieddate ];
+
+		return [].push(setActiveStatusFilter(true)).push('AND').push(_timeStampFilter);
+	}
+
+	/**
+	 * 设置各类查询接口的过滤条件
+	 * 
+	 * @param {search.Type | String} searchType - 用作参数，获取满足条件的主记录的查询结果
+	 * @returns {Array[]} - options.filters (optional) an array of search filter expressions
+	 * 
+	 */
+	function setMainFilterExpressions(searchType, filterValues) {
+
+		//item
+		var _itemSearchFilterExpressions = [ [ 'name', search.Operator.CONTAINS, '' ], 'AND', [ 'meomo', search.Operator.ISNOTEMPTY, '' ] ];
+
+		//bom
+		var _bomSearchFilterExpressions = [ [ 'subsidiary', search.Operator.IS, '1' ], 'AND', [ 'includechildren', search.Operator.IS, true ] ];
+
+		//transaction
+		var _transactionSearchFilterExpressions = [ [ 'name', search.Operator.CONTAINS, 'v' ], 'AND', [ 'meomo', search.Operator.ISNOTEMPTY ] ];
+
+		switch (searchType) {
+		case search.Type.ITEM:
+			return setStatusAndTimeStampFilterExpressions(filterValues.lastmodifieddate).push('AND').concate(_itemSearchFilterExpressions);
+			break;
+
+		case search.Type.BOM:
+			return setStatusAndTimeStampFilterExpressions(filterValues.lastmodifieddate).push('AND').concate(_bomSearchFilterExpressions);
+			break;
+
+		case search.Type.TRANSACTION:
+			return setStatusAndTimeStampFilterExpressions(filterValues.lastmodifieddate).push('AND').concate(_transactionSearchFilterExpressions);
+			break;
+
+		default:
+			break;
+		}
+
+	}
+
+	/**
+	 * @param {search.Type | String} searchType - 用作参数，获取主记录的查询列
+	 * @param {String} joinId - 用作过滤外连接的参数，如果joinId未指定，那么方法会选取所有外连接记录的列
+	 * @returns {Array[]} an array of search filter expressions
+	 */
+	function setJoinFilterExpressions(searchType, joinId) {
+		//item与BOM之间存在1个关系表，记录类型名称为Assembly Item BOM 记录类型id为assemblyitembom
+		//item joinid之一的assemblyitembillofmaterials和bom joinid之一的assemblyitem均指assemblyitembom
+		//bom
+		var _bomSearchJoinFilterExpressions = [
+				[ 'assemblyitem.default', search.Operator.IS, '', 'AND', 'assemblyitem.locations', search.Operator.ANYOF, [ '', '' ] ], 'AND',
+				[ 'revision.name', search.Operator.ANYOF, [ '', '' ] ] ];
+
+		//transaction
+		var _transactionSearchJoinFilterExpressions = [];
+
+		switch (searchType) {
+		case search.Type.ITEM:
+			return createFilters(_itemSearchFilterNames, _itemSearchFilterValues);
+			break;
+
+		case search.Type.BOM:
+			return createFilters(_bomSearchJoinFilterNames, _bomSearchJoinFilterValues);
+			break;
+
+		case search.Type.TRANSACTION:
+			return setStatusAndTimeStampFilters(filterValues.lastmodifieddate).concate(
+					createFilters(_transactionSearchFilterNames, _transactionSearchFilterValues));
+			break;
+
+		default:
+			break;
+		}
+
+	}
+
+	/**
+	 * A single search.Filter object, an array of search.Filter objects, a search filter expression, or an array of search filter expressions. Cannot mixed with
+	 * Filter Object and filter expression in an array.
+	 */
+	function createFilterExpressions(nameAndOperators, values) {
+		var filterList = [];
+		if (nameAndOperators && nameAndOperators.length > 0) {
+			nameAndOperators.forEach(function(obj) {
+				filterList.push(search.createFilter({
+					name : obj.name,
+					operator : obj.opeartor,
+					values : values[obj.name]
+				}));
+			});
+		}
+		return filterList;
+	}
+
+	function createJoinFilterExpressions(filterJoins, joinId, values) {
+		var joinFilters = [];
+		if (filterJoins) {
+			for ( var key in filterJoins) {
+				if (joinId) {
+					if (filterJoins.hasOwnProperty(key) && key == joinId) {
+						filterJoins[key].forEach(function(obj) {
+							joinFilters.push(search.createFilter({
+								//Name or internal ID of the joined record field.
+								name : obj.name,
+								//Join ID for the search filter.
+								join : key,
+								operator : obj.operator,
+								values : values[key][obj.name]
+							}))
+						})
+					}
+				} else {
+					if (filterJoins.hasOwnProperty(key)) {
+						filterJoins[key].forEach(function(value) {
+							joinFilters.push(search.createFilter({
+								//Name or internal ID of the joined record field.
+								name : obj.name,
+								//Join ID for the search filter.
+								join : key,
+								operator : obj.operator,
+								values : values[key][obj.name]
+							}))
+						})
+					}
+				}
+			}
+		}
+		return joinFilters;
+	}
+
+	return {
+		'setActiveStatusFilter' : setActiveStatusFilter,
+		'setStatusAndTimeStampFilters' : setStatusAndTimeStampFilters,
+		'setMainFilters' : setMainFilters,
+		'setJoinFilters' : setJoinFilters,
+		'createFilters' : createFilters,
+		'createJoinFilters' : createJoinFilters,
+		'setActiveStatusFilterExpression' : setActiveStatusFilterExpression,
+		'setStatusAndTimeStampFilterExpressions' : setStatusAndTimeStampFilterExpressions,
+		'setMainFilterExpressions' : setMainFilterExpressions,
+		'setJoinFilterExpressions' : setJoinFilterExpressions,
+		'createFilterExpressions' : createFilterExpressions,
+		'createJoinFilterExpressions' : createJoinFilterExpressions
+	};
+});

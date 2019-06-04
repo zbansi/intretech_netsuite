@@ -7,16 +7,19 @@
  * @author YQ12681 Zhu Yanlong
  */
 
-define([ 'N/record', 'N/search', 'N/error', 'N/runtime', '/SuiteScripts/intretech/src/utils/search_columns', '/SuiteScripts/intretech/src/utils/utils' ],
+define([ 'N/record', 'N/search', 'N/error', 'N/runtime', 'N/format', '/SuiteScripts/intretech/src/utils/search_columns',
+		'/SuiteScripts/intretech/src/utils/search_filters', '/SuiteScripts/intretech/src/utils/utils' ],
 /**
  * @param {record} record
  * @param {search} search
  * @param {error} error
  * @param {runtime} runtime
+ * @param {format} format
  * @param {columnset} columnset
+ * @param {filterset} filterset
  * @param {utils} utils
  */
-function(record, search, error, runtime, columnset, utils) {
+function(record, search, error, runtime, format, columnset, filterset, utils) {
 	//create and save BOM and BOM Reversion
 	function getRecordId(recordType, name) {
 
@@ -724,11 +727,28 @@ function(record, search, error, runtime, columnset, utils) {
 	 * 获取主记录BOM，及其关联的AssemblyItem、版本和组件明细
 	 */
 	function getBomAssemblyItemAndRevisionAndComponet(filterList) {
-		var filters = [ [ 'isinactive', 'is', 'F' ] ];
+		//主字段过滤
+		var filters = [];
+		filters.push(filterset.setActiveStatusFilterExpression('T'));
+		//		var filters = [ [ 'isinactive', 'is', 'F' ] ];
+
+		//		var curDateFld = '1/1/2010 00:01 am'
+		//		var dateObject = utils.dateFormat(curDateFld);
+		//      var filters = filterset.setStatusAndTimeStampFilterExpressions(dateObject.MMddyy_H_mm);
+		//		var filters = filterset.setMainFilters(search.Type.BOM);
+
+		//外连接字段过滤
+		filters.push("and");
+		filters = filters.concat(filterset.setJoinFilterExpressions(search.Type.BOM));
+
+		//参数过滤
 		if (filterList && filterList[0].length > 0) {
 			filters.push("and");
 			filters = filters.concat(filterList);
 		}
+		
+		log.debug({title:'filters',details:filters});
+
 		var resultSet = [];
 		var columns = [];
 		var columnList = columnset.setColumns(search.Type.BOM);
@@ -766,12 +786,14 @@ function(record, search, error, runtime, columnset, utils) {
 				//					'name' : 'billofmaterialsid',
 				//					'joinid' : 'assemblyitem'
 				//				});
-				bomObj.assemblyid = result.getValue(result.columns[5]);
-				bomObj.assembly = result.getText(result.columns[4]);
-				bomObj['default'] = result.getValue(result.columns[8]);
+				bomObj.assembly = result.getText(result.columns[5]);
+				bomObj.assemblyid = result.getValue(result.columns[6]);
+				bomObj['default'] = result.getValue(result.columns[9]);
+				bomObj.locations = result.getValue(result.columns[10]);
 
 				bomObj.bom_id = result.getValue('internalid');
 				bomObj.bom_name = result.getValue('name');
+				bomObj.subsidiary = result.getValue('subsidiary');
 
 				bomObj.revision_internalid = result.getValue({
 					'name' : 'internalid',
