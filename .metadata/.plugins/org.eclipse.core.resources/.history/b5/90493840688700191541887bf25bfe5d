@@ -1,0 +1,282 @@
+/**
+ * utils.js
+ * 
+ * @NApiversion 2.x
+ * @NModuleScope Public
+ * @author YQ12681 Zhu-Yanlong
+ */
+
+define([],
+
+function() {
+	function isEmpty(object) {
+		if (Object.keys(object).length == 0)
+			return true;
+		else
+			return false;
+	}
+
+	/**
+	 * @param {String} filterExpressionStr - e.g. filterExpressionStr = "[['name','operator','value']]"
+	 * @returns {Array}
+	 */
+	function filterExpressionString2Array(filterExpressionStr) {
+
+		var filterList = [];
+		var filterRegExp = /.+/;
+		var fenceRegExp1 = /(\],)+|(,\[)+/;
+		var fenceRegExp2 = /,/;
+		if (filterExpressionStr) {
+			var filterListStr = filterExpressionStr.replace(/[""''\s]/g, '');
+			//去除首尾方括号					
+			filterListStr = filterListStr.replace(/\[{2,10}/g, '');
+			filterListStr = filterListStr.replace(/\]{2,10}/g, '');
+
+			//将字符串转换成单个元素数组
+			filterList = filterRegExp.exec(filterListStr);//返回数组
+
+			//以右方括号逗号|逗号左方括号为分隔符，将原数组元素映射转换成多个元素一维数组
+			filterList = filterList.map(function(f) {//f是字符串
+				return f.split(fenceRegExp1);
+			});
+
+			//过滤掉数组中的"","],",",[",","
+			filterList = filterList[0].filter(function(e) {
+				if (e != "" && e != "]," && e != ",[" && e != ",")
+					return e;
+			});
+
+			//将一维数组中的偶数索引的元素按逗号分隔映射转换成数组
+			filterList = filterList.map(function(f) {//f是数组
+				if (filterList.indexOf(f) % 2)
+					return f;
+				else
+					return f.split(fenceRegExp2);
+			});
+			return filterList;
+		}
+	}
+
+	/**
+	 * @param {String} columnsStr - e.g. columnsStr = "['name','memo','createdate']"
+	 * @returns {Array}
+	 */
+	function columnsString2Array(columnsStr) {
+		var columnList = [];
+		var columnRegExp = /.+/;
+		var columnListStr = columnsStr.replace(/[""''\s]/g, '');
+		columnListStr = columnListStr.replace(/\[+/g, '');
+		columnListStr = columnListStr.replace(/\]+/g, '');
+		columnList = columnRegExp.exec(columnListStr);//返回数组
+		columnList = columnList.map(function(f) {//f是数组
+			return f.split(",");
+		})[0];
+		return columnList;
+	}
+
+	/**
+	 * @param {String} arrayString - 将一个类数组字符串转换成数组，比如"['a','b','c']"=>['a','b','c']
+	 * @returns {Array}
+	 */
+	function string2Array(arrayString) {
+		return eval("(" + arrayString + ")");
+		//2nd method
+		//		eval("var array = " + arrayString);
+		//		return array;
+	}
+
+	/**
+	 * @param {String} JSONObjectString - 将一个JSON对象字符串转换成JSON对象，比如"{'key': 'value'}"=>{'key': 'value'}
+	 * @returns {Object}
+	 */
+	function string2JSONObject(JSONObjectString) {
+		eval("var jsonObject = " + JSONObjectString);
+		return jsonObject;
+	}
+
+	/**
+	 * doValidation
+	 */
+	function doValidation(args, argNames, methodName) {
+		for (var i = 0; i < args.length; i++)
+			if (!args[i] && args[i] !== 0)
+				throw error.create({
+					name : 'MISSING_REQ_ARG',
+					message : 'Missing a required argument: [' + argNames[i] + '] for method: ' + methodName
+				});
+	}
+
+	/**
+	 * @param {Object} obj
+	 * @param {String} testValue - 过滤对象中的""、null、 undefined、test,并返回新对象
+	 * @returns {Object}
+	 */
+	function discardObjectValue(obj, testValue) {
+		var param = Object.create(null);
+		if (obj === null || obj === undefined || obj === "")
+			return param;
+		for ( var key in obj) {
+			if (dataType(obj[key]) === "Object") {
+				param[key] = dealObjectValue(obj[key]);
+			} else if (obj[key] !== null && obj[key] !== undefined && obj[key] !== "" && obj[key] != testValue) {
+				param[key] = obj[key];
+			}
+		}
+		return param;
+
+	}
+
+	/**
+	 * @param {Object} obj
+	 * @param {String} testKey - 过滤对象中特定key,并返回新对象
+	 * @returns {Object}
+	 */
+	function discardObjectKey(obj, testKey) {
+		var param = Object.create(null);
+		if (obj === null || obj === undefined || obj === "")
+			return param;
+		for ( var key in obj) {
+			if (key != testKey) {
+				param[key] = obj[key];
+			}
+		}
+		return param;
+	}
+
+	/**
+	 * @param {Object} obj - 判断传入参数的类型，以字符串的形式返回
+	 * @returns {String} 对象类型
+	 */
+	function dataType(obj) {
+		if (obj === null)
+			return "Null";
+		if (obj === undefined)
+			return "Undefined";
+		return Object.prototype.toString.call(obj).slice(8, -1);
+	}
+
+	/**
+	 * @param {Number} milliseconds
+	 */
+	function sleep(milliseconds) {
+		var start = new Date().getTime();
+		for (var i = 0; i < 1e7; i++) {
+			if ((new Date().getTime() - start) > milliseconds) {
+				break;
+			}
+		}
+	}
+	
+	/**
+	 * 
+	 */
+	function padZero(param) {
+		if(param.length =1) 
+			return param.padStart("0");
+	}
+	//=======================Date Utils Start============================//
+	/**
+	 * @param {String} dataPrama
+	 * @returns {Object} dateObject
+	 * @returns {String} dateObject.yyyy_MM_dd_H_mm_ss - '2019-1-1 13:01:21'
+	 * @returns {String} dateObject.yyyyMMdd_H_mm_ss - '2019/1/1 13:01:21'
+	 * @returns {String} dateObject.yyMMdd_H_mm - '19/1/1 13:01'
+	 * @returns {String} dateObject.yyMMdd - '19/1/1'
+	 * @returns {String} dateObject.MMddyy_H_mm - '1/1/19 13:01'
+	 */
+	function dateFormat(datePrama) {
+		var dateObject = Object.create(null);
+		var MM_dd_yyyy_Exp = /(\d{1,2})-(\d{1,2})-(\d{4})/;
+		var yy_MM_dd_H_mm_Exp = /(\d{2})-(\d{1,2})-(\d{1,2}) (\d{1,2}):(\d{2})/;
+		var yyyy_MM_dd_H_mm_ss_Exp = /\b(\d{4})-(\d{1,2})-(\d{1,2}) (\d{1,2}):(\d{2}):(\d{2})\b/;
+		var yyyyMMdd_H_mm_ss_Exp = /\b(\d{4})\/(\d{1,2})\/(\d{1,2}) (\d{1,2}):(\d{2}):(\d{2})\b/;
+		var MMddyyyy_H_mm_ss_apm_Exp = /\b(\d{1,2})\/(\d{1,2})\/(\d{4}) (\d{2}):(\d{2}):(\d{2}) (\wm)\b/;
+
+		if (yyyy_MM_dd_H_mm_ss_Exp.test(datePrama)) {
+			var[_, year, month, day, hour, minute, second] = yyyy_MM_dd_H_mm_ss_Exp.exec(datePrama);
+			//转换成yyyy-MM-dd hh:mi:ss
+			dateObject.yyyy_MM_dd_H_mm_ss = year + "-" + month + "-" + day + " " + hour + ":" + minute + ":" + second;
+
+			//转换成yyyy/MM/dd hh:mi:ss
+			dateObject.yyyyMMdd_H_mm_ss = year + "/" + month + "/" + day + " " + hour + ":" + minute + ":" + second;
+
+			//转换成yy/MM/dd H:mm
+			dateObject.yyMMdd_H_mm = year.slice(2, 4) + "/" + month + "/" + day + " " + hour + ":" + minute;
+
+			//转换成yy/MM/dd 一位和两位数年份将被解释为 19xx 年
+			dateObject.yyMMdd = year.slice(2, 4) + "/" + month + "/" + day;
+
+			//转换成MM/dd/yy H:mm
+			dateObject.MMddyy_H_mm = month + "/" + day + "/" + year.slice(2, 4) + " " + hour + ":" + minute;
+			
+			//javascript支持4种日期格式
+			//ISO YYYY-MM-DD
+			dataObject.isoDate = new Date(year+"-"+month+"-"+day);
+			
+			//ISO 日期（完整的日期加时、分和秒）
+			dataObject.isoDatetime = new Date(year+"-"+month+"-"+day+"T"+hour+minute+second);
+			
+			
+			//短日期  MM/DD/YYYY
+			dataObject.shortDate = new Date(month+"/"+day+"/"+year);
+			
+			//长日期
+			
+		}
+
+		if (yyyyMMdd_H_mm_ss_Exp.test(datePrama)) {
+			var[_, year, month, day, hour, minute, second] = yyyyMMdd_H_mm_ss_Exp.exec(datePrama);
+			//转换成yyyy-MM-dd hh:mi:ss
+			dateObject.yyyy_MM_dd_H_mm_ss = year + "-" + month + "-" + day + " " + hour + ":" + minute + ":" + second;
+
+			//转换成yyyy/MM/dd hh:mi:ss
+			dateObject.yyyyMMdd_H_mm_ss = year + "/" + month + "/" + day + " " + hour + ":" + minute + ":" + second;
+
+			//转换成yy/MM/dd H:mm
+			dateObject.yyMMdd_H_mm = year.slice(2, 4) + "/" + month + "/" + day + " " + hour + ":" + minute;
+
+			//转换成yy/MM/dd
+			dateObject.yyMMdd = year.slice(2, 4) + "/" + month + "/" + day;
+
+			//转换成MM/dd/yy H:mm
+			dateObject.MMddyy_H_mm = month + "/" + day + "/" + year.slice(2, 4) + " " + hour + ":" + minute;
+		}
+
+		if (MMddyyyy_H_mm_ss_apm_Exp.test(datePrama)) {
+			var[_, month, day, year, hour, minute, second, noon] = MMddyyyy_H_mm_ss_apm_Exp.exec(datePrama);
+			//转换成yyyy-MM-dd hh:mi:ss
+			dateObject.yyyy_MM_dd_H_mm_ss = year + "-" + month + "-" + day + " " + hour + ":" + minute + ":" + second;
+
+			//转换成yyyy/MM/dd hh:mi:ss
+			dateObject.yyyyMMdd_H_mm_ss = year + "/" + month + "/" + day + " " + hour + ":" + minute + ":" + second;
+
+			//转换成yy/MM/dd H:mm
+			dateObject.yyMMdd_H_mm = year.slice(2, 4) + "/" + month + "/" + day + " " + hour + ":" + minute;
+
+			//转换成yy/MM/dd
+			dateObject.yyMMdd = year.slice(2, 4) + "/" + month + "/" + day;
+
+			//转换成MM/dd/yy H:mm
+			dateObject.MMddyy_H_mm = month + "/" + day + "/" + year.slice(2, 4) + " " + hour + ":" + minute;
+		}
+
+		return dateObject;
+
+	}
+
+	//console.log(name('1/1/2000 00:01:00 am'))
+
+	//=======================Date Utils End============================//
+	return {
+		'isEmpty' : isEmpty,
+		'filterExpressionString2Array' : filterExpressionString2Array,
+		'string2Array' : string2Array,
+		'string2JSONObject' : string2JSONObject,
+		'doValidation' : doValidation,
+		'discardObjectValue' : discardObjectValue,
+		'discardObjectKey' : discardObjectKey,
+		'dataType' : dataType,
+		'sleep' : sleep,
+		'dateFormat':dateFormat
+	};
+});

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;/Bansi_Scripts/ins_inventory_integration_platform.erm&apos; to &apos;ns_bom.erm&apos;&#x0D;&#x0A;- Original project: &apos;Bansi_Scripts&apos;&#x0D;&#x0A;- Original element: &apos;ins_inventory_integration_platform.erm&apos;" description="Rename resource &apos;ins_inventory_integration_platform.erm&apos;" flags="7" id="org.eclipse.wst.jsdt.ui.rename.resource" input="ins_inventory_integration_platform.erm" name="ns_bom.erm" stamp="1559717959451" version="1.0"/>
+</session>

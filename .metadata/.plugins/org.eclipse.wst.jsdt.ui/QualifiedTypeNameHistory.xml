@@ -6,4 +6,5 @@
 <fullyQualifiedTypeName name="runtime"/>
 <fullyQualifiedTypeName name="Object"/>
 <fullyQualifiedTypeName name="Function"/>
+<fullyQualifiedTypeName name="String"/>
 </qualifiedTypeNameHistroy>

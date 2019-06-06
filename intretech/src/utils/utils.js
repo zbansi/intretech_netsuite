@@ -165,80 +165,8 @@ function() {
 				break;
 			}
 		}
-	}
-	//=======================Date Utils Start============================//
-	/**
-	 * Date
-	 */
-	function dateFormat(datePrama) {
-		var dateObject = Object.create(null);
-		var MM_dd_yyyy_Exp = /(\d{1,2})-(\d{1,2})-(\d{4})/;
-		var yy_MM_dd_H_mm_Exp = /(\d{2})-(\d{1,2})-(\d{1,2}) (\d{1,2}):(\d{2})/;
-		var yyyy_MM_dd_H_mm_ss_Exp = /\b(\d{4})-(\d{1,2})-(\d{1,2}) (\d{1,2}):(\d{2}):(\d{2})\b/;
-		var yyyyMMdd_H_mm_ss_Exp = /\b(\d{4})\/(\d{1,2})\/(\d{1,2}) (\d{1,2}):(\d{2}):(\d{2})\b/;
-		var MMddyyyy_H_mm_ss_apm_Exp = /\b(\d{1,2})\/(\d{1,2})\/(\d{4}) (\d{2}):(\d{2}):(\d{2}) (\wm)\b/;
-
-		if (yyyy_MM_dd_H_mm_ss_Exp.test(datePrama)) {
-			var[_, year, month, day, hour, minute, second] = yyyy_MM_dd_H_mm_ss_Exp.exec(datePrama);
-			//转换成yyyy-MM-dd hh:mi:ss
-			dateObject.yyyy_MM_dd_H_mm_ss = year + "-" + month + "-" + day + " " + hour + ":" + minute + ":" + second;
-
-			//转换成yyyy/MM/dd hh:mi:ss
-			dateObject.yyyyMMdd_H_mm_ss = year + "/" + month + "/" + day + " " + hour + ":" + minute + ":" + second;
-
-			//转换成yy/MM/dd H:mm
-			dateObject.yyMMdd_H_mm = year.slice(2, 4) + "/" + month + "/" + day + " " + hour + ":" + minute;
-
-			//转换成yy/MM/dd
-			dateObject.yyMMdd = year.slice(2, 4) + "/" + month + "/" + day;
-
-			//转换成MM/dd/yy H:mm
-			dateObject.MMddyy_H_mm = month + "/" + day + "/" + year.slice(2, 4) + " " + hour + ":" + minute;
-		}
-
-		if (yyyyMMdd_H_mm_ss_Exp.test(datePrama)) {
-			var[_, year, month, day, hour, minute, second] = yyyyMMdd_H_mm_ss_Exp.exec(datePrama);
-			//转换成yyyy-MM-dd hh:mi:ss
-			dateObject.yyyy_MM_dd_H_mm_ss = year + "-" + month + "-" + day + " " + hour + ":" + minute + ":" + second;
-
-			//转换成yyyy/MM/dd hh:mi:ss
-			dateObject.yyyyMMdd_H_mm_ss = year + "/" + month + "/" + day + " " + hour + ":" + minute + ":" + second;
-
-			//转换成yy/MM/dd H:mm
-			dateObject.yyMMdd_H_mm = year.slice(2, 4) + "/" + month + "/" + day + " " + hour + ":" + minute;
-
-			//转换成yy/MM/dd
-			dateObject.yyMMdd = year.slice(2, 4) + "/" + month + "/" + day;
-
-			//转换成MM/dd/yy H:mm
-			dateObject.MMddyy_H_mm = month + "/" + day + "/" + year.slice(2, 4) + " " + hour + ":" + minute;
-		}
-
-		if (MMddyyyy_H_mm_ss_apm_Exp.test(datePrama)) {
-			var[_, month, day, year, hour, minute, second, noon] = MMddyyyy_H_mm_ss_apm_Exp.exec(datePrama);
-			//转换成yyyy-MM-dd hh:mi:ss
-			dateObject.yyyy_MM_dd_H_mm_ss = year + "-" + month + "-" + day + " " + hour + ":" + minute + ":" + second;
-
-			//转换成yyyy/MM/dd hh:mi:ss
-			dateObject.yyyyMMdd_H_mm_ss = year + "/" + month + "/" + day + " " + hour + ":" + minute + ":" + second;
-
-			//转换成yy/MM/dd H:mm
-			dateObject.yyMMdd_H_mm = year.slice(2, 4) + "/" + month + "/" + day + " " + hour + ":" + minute;
-
-			//转换成yy/MM/dd
-			dateObject.yyMMdd = year.slice(2, 4) + "/" + month + "/" + day;
-
-			//转换成MM/dd/yy H:mm
-			dateObject.MMddyy_H_mm = month + "/" + day + "/" + year.slice(2, 4) + " " + hour + ":" + minute;
-		}
-
-		return dateObject;
-
-	}
-
-	//console.log(name('1/1/2000 00:01:00 am'))
-
-	//=======================Date Utils End============================//
+	}	
+	
 	return {
 		'isEmpty' : isEmpty,
 		'filterExpressionString2Array' : filterExpressionString2Array,
@@ -248,7 +176,6 @@ function() {
 		'discardObjectValue' : discardObjectValue,
 		'discardObjectKey' : discardObjectKey,
 		'dataType' : dataType,
-		'sleep' : sleep,
-		'dateFormat':dateFormat
+		'sleep' : sleep
 	};
 });

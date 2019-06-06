@@ -1,0 +1,167 @@
+/**
+ * dateUtils.js
+ *
+ * @NApiversion 2.x
+ * @NModuleScope Public
+ * @author YQ12681 Zhu-Yanlong
+ */
+
+define([],
+
+	function () {
+	/**
+	 *
+	 */
+	function padZero(param) {
+		if (param.length = 1)
+			return param.padStart(2, "0");
+		if (param.length = 2)
+			return param;
+	}
+
+	function indicator(i) {
+		var cent = i % 100;
+		if (cent >= 10 && cent <= 20)
+			return 'th';
+		var dec = i % 10
+			if (dec === 1)
+				return 'st';
+			if (dec === 2)
+				return 'nd';
+			if (dec === 3)
+				return 'rd';
+			return 'th';
+	}
+
+	function ordinal(i) {
+		if (typeof i !== 'number')
+			throw new TypeError('Expected Number, got ' + (typeof i) + ' ' + i);
+		return i + indicator(i);
+	}
+
+	function dateNames() {
+		return {
+			__locale: "en",
+			days: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
+			abbreviated_days: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
+			months: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
+			abbreviated_months: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+			am: 'AM',
+			pm: 'PM'
+		};
+	}
+	
+	function formatDate(date,format){
+		var days = dateNames().days;
+		var months = dateNames().months;
+		var abbreviated_months = dateNames().abbreviated_months;
+		return format.replace(/YYYY|M(MMM)?|Do?|dddd/g, 
+				function (tag) {
+			if (tag == "YYYY") return date.getFullYear();
+			if (tag == "M") return date.getMonth();
+			if (tag == "MM") return padZero(date.getMonth());
+			if (tag == "MMM") return abbreviated_months[date.getMonth()];
+			if (tag == "MMMM") return months[date.getMonth()];
+			if (tag == "D") return date.getDate();
+			if (tag == "D") return padZero(date.getDate());
+			if (tag == "Do") return ordinal(date.getDate());
+			if (tag == "dddd") return days[date.getDay()];}				
+			);
+	}
+
+	/**
+	 * @param {String} dataPrama
+	 * @returns {Object} dateObject
+	 * @returns {String} dateObject.yyyy_MM_dd_H_mm_ss - '2019-1-1 13:01:21'
+	 * @returns {String} dateObject.yyyyMMdd_H_mm_ss - '2019/1/1 13:01:21'
+	 * @returns {String} dateObject.yyMMdd_H_mm - '19/1/1 13:01'
+	 * @returns {String} dateObject.yyMMdd - '19/1/1'
+	 * @returns {String} dateObject.MMddyy_H_mm - '1/1/19 13:01'
+	 */
+	function dateFormat(datePrama) {
+		var dateObject = Object.create(null);
+		var MM_dd_yyyy_Exp = /(\d{1,2})-(\d{1,2})-(\d{4})/;
+		var yy_MM_dd_H_mm_Exp = /(\d{2})-(\d{1,2})-(\d{1,2}) (\d{1,2}):(\d{2})/;
+		var yyyy_MM_dd_H_mm_ss_Exp = /\b(\d{4})-(\d{1,2})-(\d{1,2}) (\d{1,2}):(\d{2}):(\d{2})\b/;
+		var yyyyMMdd_H_mm_ss_Exp = /\b(\d{4})\/(\d{1,2})\/(\d{1,2}) (\d{1,2}):(\d{2}):(\d{2})\b/;
+		var MMddyyyy_H_mm_ss_apm_Exp = /\b(\d{1,2})\/(\d{1,2})\/(\d{4}) (\d{2}):(\d{2}):(\d{2}) (\wm)\b/;
+
+		if (yyyy_MM_dd_H_mm_ss_Exp.test(datePrama)) {
+			var[_, year, month, day, hour, minute, second] = yyyy_MM_dd_H_mm_ss_Exp.exec(datePrama);
+			//转换成yyyy-MM-dd hh:mi:ss
+			dateObject.yyyy_MM_dd_H_mm_ss = year + "-" + month + "-" + day + " " + hour + ":" + minute + ":" + second;
+
+			//转换成yyyy/MM/dd hh:mi:ss
+			dateObject.yyyyMMdd_H_mm_ss = year + "/" + month + "/" + day + " " + hour + ":" + minute + ":" + second;
+
+			//转换成yy/MM/dd H:mm
+			dateObject.yyMMdd_H_mm = year.slice(2, 4) + "/" + month + "/" + day + " " + hour + ":" + minute;
+
+			//转换成yy/MM/dd 一位和两位数年份将被解释为 19xx 年
+			dateObject.yyMMdd = year.slice(2, 4) + "/" + month + "/" + day;
+
+			//转换成MM/dd/yy H:mm
+			dateObject.MMddyy_H_mm = month + "/" + day + "/" + year.slice(2, 4) + " " + hour + ":" + minute;
+
+			//javascript支持4种日期格式
+			//ISO YYYY-MM-DD
+			dataObject.isoDate = new Date(year + "-" + month + "-" + day);
+
+			//ISO 日期（完整的日期加时、分和秒）
+			dataObject.isoDatetime = new Date(year + "-" + padZero(month) + "-" + padZero(day) + "T" + padZero(hour) + padZero(minute) + padZero(second));
+
+			//短日期  MM/DD/YYYY
+			dataObject.shortDate = new Date(month + "/" + day + "/" + year);
+
+			//长日期
+			dataObject.shortDate = new Date(month + "/" + day + "/" + year);
+
+		}
+
+		if (yyyyMMdd_H_mm_ss_Exp.test(datePrama)) {
+			var[_, year, month, day, hour, minute, second] = yyyyMMdd_H_mm_ss_Exp.exec(datePrama);
+			//转换成yyyy-MM-dd hh:mi:ss
+			dateObject.yyyy_MM_dd_H_mm_ss = year + "-" + month + "-" + day + " " + hour + ":" + minute + ":" + second;
+
+			//转换成yyyy/MM/dd hh:mi:ss
+			dateObject.yyyyMMdd_H_mm_ss = year + "/" + month + "/" + day + " " + hour + ":" + minute + ":" + second;
+
+			//转换成yy/MM/dd H:mm
+			dateObject.yyMMdd_H_mm = year.slice(2, 4) + "/" + month + "/" + day + " " + hour + ":" + minute;
+
+			//转换成yy/MM/dd
+			dateObject.yyMMdd = year.slice(2, 4) + "/" + month + "/" + day;
+
+			//转换成MM/dd/yy H:mm
+			dateObject.MMddyy_H_mm = month + "/" + day + "/" + year.slice(2, 4) + " " + hour + ":" + minute;
+		}
+
+		if (MMddyyyy_H_mm_ss_apm_Exp.test(datePrama)) {
+			var[_, month, day, year, hour, minute, second, noon] = MMddyyyy_H_mm_ss_apm_Exp.exec(datePrama);
+			//转换成yyyy-MM-dd hh:mi:ss
+			dateObject.yyyy_MM_dd_H_mm_ss = year + "-" + month + "-" + day + " " + hour + ":" + minute + ":" + second;
+
+			//转换成yyyy/MM/dd hh:mi:ss
+			dateObject.yyyyMMdd_H_mm_ss = year + "/" + month + "/" + day + " " + hour + ":" + minute + ":" + second;
+
+			//转换成yy/MM/dd H:mm
+			dateObject.yyMMdd_H_mm = year.slice(2, 4) + "/" + month + "/" + day + " " + hour + ":" + minute;
+
+			//转换成yy/MM/dd
+			dateObject.yyMMdd = year.slice(2, 4) + "/" + month + "/" + day;
+
+			//转换成MM/dd/yy H:mm
+			dateObject.MMddyy_H_mm = month + "/" + day + "/" + year.slice(2, 4) + " " + hour + ":" + minute;
+		}
+
+		return dateObject;
+
+	}
+
+	return {
+		'formatDate': formatDate,
+		'dateFormat': dateFormat,
+		'dateNames': dateNames,
+		'ordinal': ordinal
+	};
+});
